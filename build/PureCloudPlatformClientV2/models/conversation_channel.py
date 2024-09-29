@@ -85,7 +85,7 @@ class ConversationChannel(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Unknown", "Call", "Callback", "Email", "GenericObject", "Messaging", "Social", "Webchat", "Voice", "Chat", "Cobrowse", "Video", "Screenshare", "Message"]
+        allowed_values = ["Unknown", "Call", "Callback", "Email", "GenericObject", "Messaging", "Social", "Webchat", "Voice", "Chat", "Cobrowse", "Video", "Screenshare", "Message", "InternalMessage"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

@@ -85,7 +85,7 @@ class CriteriaItem(object):
         """
         if isinstance(key, int):
             key = str(key)
-        allowed_values = ["FlowStartDateTime", "FlowEndDateTime", "ConversationId", "FlowType", "FlowId", "FlowErrorReason", "FlowWarningReason", "FlowAlternateExecutionId", "FlowObjectExecutionId", "FlowActionId", "FlowActionType", "FlowActionOutputPathId", "FlowActionOutputPathName", "FlowActionIdOutputPathId", "FlowActionIdOutputPathName", "FlowActionTypeOutputPathId", "FlowActionTypeOutputPathName", "BotId", "BotErrorReason", "BotFlowExecutionId", "BotObjectExecutionId"]
+        allowed_values = ["FlowStartDateTime", "FlowEndDateTime", "ConversationId", "WorkitemId", "FlowType", "FlowId", "FlowErrorReason", "FlowWarningReason", "FlowAlternateExecutionId", "FlowObjectExecutionId", "FlowActionId", "FlowActionType", "FlowActionOutputPathId", "FlowActionOutputPathName", "FlowActionIdOutputPathId", "FlowActionIdOutputPathName", "FlowActionTypeOutputPathId", "FlowActionTypeOutputPathName", "BotId", "BotErrorReason", "BotFlowExecutionId", "BotObjectExecutionId"]
         if key.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for key -> " + key)
             self._key = "outdated_sdk_version"

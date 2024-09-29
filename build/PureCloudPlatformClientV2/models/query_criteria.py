@@ -96,7 +96,7 @@ class QueryCriteria(object):
         """
         if isinstance(criteria_key, int):
             criteria_key = str(criteria_key)
-        allowed_values = ["FlowStartDateTime", "FlowEndDateTime", "ConversationId", "FlowType", "FlowId", "FlowErrorReason", "FlowWarningReason", "FlowAlternateExecutionId", "FlowObjectExecutionId", "FlowActionId", "FlowActionType", "FlowActionOutputPathId", "FlowActionOutputPathName", "FlowActionIdOutputPathId", "FlowActionIdOutputPathName", "FlowActionTypeOutputPathId", "FlowActionTypeOutputPathName", "BotId", "BotErrorReason", "BotFlowExecutionId", "BotObjectExecutionId"]
+        allowed_values = ["FlowStartDateTime", "FlowEndDateTime", "ConversationId", "WorkitemId", "FlowType", "FlowId", "FlowErrorReason", "FlowWarningReason", "FlowAlternateExecutionId", "FlowObjectExecutionId", "FlowActionId", "FlowActionType", "FlowActionOutputPathId", "FlowActionOutputPathName", "FlowActionIdOutputPathId", "FlowActionIdOutputPathName", "FlowActionTypeOutputPathId", "FlowActionTypeOutputPathName", "BotId", "BotErrorReason", "BotFlowExecutionId", "BotObjectExecutionId"]
         if criteria_key.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for criteria_key -> " + criteria_key)
             self._criteria_key = "outdated_sdk_version"

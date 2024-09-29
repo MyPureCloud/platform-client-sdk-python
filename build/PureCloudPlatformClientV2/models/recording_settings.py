@@ -169,7 +169,7 @@ class RecordingSettings(object):
     def recording_batch_download_url_ttl(self) -> int:
         """
         Gets the recording_batch_download_url_ttl of this RecordingSettings.
-        TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+        The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
 
         :return: The recording_batch_download_url_ttl of this RecordingSettings.
         :rtype: int
@@ -180,7 +180,7 @@ class RecordingSettings(object):
     def recording_batch_download_url_ttl(self, recording_batch_download_url_ttl: int) -> None:
         """
         Sets the recording_batch_download_url_ttl of this RecordingSettings.
-        TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+        The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
 
         :param recording_batch_download_url_ttl: The recording_batch_download_url_ttl of this RecordingSettings.
         :type: int

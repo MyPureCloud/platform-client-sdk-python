@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import V2FlowExecutionDataFlowidTopicJourneyActionMap
     from . import V2FlowExecutionDataFlowidTopicProcessAutomation
     from . import V2FlowExecutionDataFlowidTopicQuality
+    from . import V2FlowExecutionDataFlowidTopicWorkitem
 
 class V2FlowExecutionDataFlowidTopicInvokingContext(object):
     """
@@ -56,20 +57,23 @@ class V2FlowExecutionDataFlowidTopicInvokingContext(object):
             'flow': 'V2FlowExecutionDataFlowidTopicFlow',
             'journey_action_map': 'V2FlowExecutionDataFlowidTopicJourneyActionMap',
             'process_automation': 'V2FlowExecutionDataFlowidTopicProcessAutomation',
-            'quality': 'V2FlowExecutionDataFlowidTopicQuality'
+            'quality': 'V2FlowExecutionDataFlowidTopicQuality',
+            'workitem': 'V2FlowExecutionDataFlowidTopicWorkitem'
         }
 
         self.attribute_map = {
             'flow': 'flow',
             'journey_action_map': 'journeyActionMap',
             'process_automation': 'processAutomation',
-            'quality': 'quality'
+            'quality': 'quality',
+            'workitem': 'workitem'
         }
 
         self._flow = None
         self._journey_action_map = None
         self._process_automation = None
         self._quality = None
+        self._workitem = None
 
     @property
     def flow(self) -> 'V2FlowExecutionDataFlowidTopicFlow':
@@ -166,6 +170,30 @@ class V2FlowExecutionDataFlowidTopicInvokingContext(object):
         
 
         self._quality = quality
+
+    @property
+    def workitem(self) -> 'V2FlowExecutionDataFlowidTopicWorkitem':
+        """
+        Gets the workitem of this V2FlowExecutionDataFlowidTopicInvokingContext.
+
+
+        :return: The workitem of this V2FlowExecutionDataFlowidTopicInvokingContext.
+        :rtype: V2FlowExecutionDataFlowidTopicWorkitem
+        """
+        return self._workitem
+
+    @workitem.setter
+    def workitem(self, workitem: 'V2FlowExecutionDataFlowidTopicWorkitem') -> None:
+        """
+        Sets the workitem of this V2FlowExecutionDataFlowidTopicInvokingContext.
+
+
+        :param workitem: The workitem of this V2FlowExecutionDataFlowidTopicInvokingContext.
+        :type: V2FlowExecutionDataFlowidTopicWorkitem
+        """
+        
+
+        self._workitem = workitem
 
     def to_dict(self):
         """

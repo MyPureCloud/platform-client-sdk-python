@@ -52,18 +52,24 @@ class WorkitemPagedEntityListing(object):
         self.swagger_types = {
             'entities': 'list[Workitem]',
             'page_size': 'int',
-            'page_number': 'int'
+            'page_number': 'int',
+            'total': 'int',
+            'page_count': 'int'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
-            'page_number': 'pageNumber'
+            'page_number': 'pageNumber',
+            'total': 'total',
+            'page_count': 'pageCount'
         }
 
         self._entities = None
         self._page_size = None
         self._page_number = None
+        self._total = None
+        self._page_count = None
 
     @property
     def entities(self) -> List['Workitem']:
@@ -93,7 +99,7 @@ class WorkitemPagedEntityListing(object):
     def page_size(self) -> int:
         """
         Gets the page_size of this WorkitemPagedEntityListing.
-        The total page size requested
+
 
         :return: The page_size of this WorkitemPagedEntityListing.
         :rtype: int
@@ -104,7 +110,7 @@ class WorkitemPagedEntityListing(object):
     def page_size(self, page_size: int) -> None:
         """
         Sets the page_size of this WorkitemPagedEntityListing.
-        The total page size requested
+
 
         :param page_size: The page_size of this WorkitemPagedEntityListing.
         :type: int
@@ -117,7 +123,7 @@ class WorkitemPagedEntityListing(object):
     def page_number(self) -> int:
         """
         Gets the page_number of this WorkitemPagedEntityListing.
-        The page number requested
+
 
         :return: The page_number of this WorkitemPagedEntityListing.
         :rtype: int
@@ -128,7 +134,7 @@ class WorkitemPagedEntityListing(object):
     def page_number(self, page_number: int) -> None:
         """
         Sets the page_number of this WorkitemPagedEntityListing.
-        The page number requested
+
 
         :param page_number: The page_number of this WorkitemPagedEntityListing.
         :type: int
@@ -136,6 +142,54 @@ class WorkitemPagedEntityListing(object):
         
 
         self._page_number = page_number
+
+    @property
+    def total(self) -> int:
+        """
+        Gets the total of this WorkitemPagedEntityListing.
+
+
+        :return: The total of this WorkitemPagedEntityListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total: int) -> None:
+        """
+        Sets the total of this WorkitemPagedEntityListing.
+
+
+        :param total: The total of this WorkitemPagedEntityListing.
+        :type: int
+        """
+        
+
+        self._total = total
+
+    @property
+    def page_count(self) -> int:
+        """
+        Gets the page_count of this WorkitemPagedEntityListing.
+
+
+        :return: The page_count of this WorkitemPagedEntityListing.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count: int) -> None:
+        """
+        Sets the page_count of this WorkitemPagedEntityListing.
+
+
+        :param page_count: The page_count of this WorkitemPagedEntityListing.
+        :type: int
+        """
+        
+
+        self._page_count = page_count
 
     def to_dict(self):
         """

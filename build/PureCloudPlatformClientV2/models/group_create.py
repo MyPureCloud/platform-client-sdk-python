@@ -64,6 +64,7 @@ class GroupCreate(object):
             'rules_visible': 'bool',
             'visibility': 'str',
             'roles_enabled': 'bool',
+            'include_owners': 'bool',
             'owner_ids': 'list[str]',
             'self_uri': 'str'
         }
@@ -82,6 +83,7 @@ class GroupCreate(object):
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
             'roles_enabled': 'rolesEnabled',
+            'include_owners': 'includeOwners',
             'owner_ids': 'ownerIds',
             'self_uri': 'selfUri'
         }
@@ -99,6 +101,7 @@ class GroupCreate(object):
         self._rules_visible = None
         self._visibility = None
         self._roles_enabled = None
+        self._include_owners = None
         self._owner_ids = None
         self._self_uri = None
 
@@ -428,6 +431,30 @@ class GroupCreate(object):
         
 
         self._roles_enabled = roles_enabled
+
+    @property
+    def include_owners(self) -> bool:
+        """
+        Gets the include_owners of this GroupCreate.
+        Allow owners to be included as members of the group
+
+        :return: The include_owners of this GroupCreate.
+        :rtype: bool
+        """
+        return self._include_owners
+
+    @include_owners.setter
+    def include_owners(self, include_owners: bool) -> None:
+        """
+        Sets the include_owners of this GroupCreate.
+        Allow owners to be included as members of the group
+
+        :param include_owners: The include_owners of this GroupCreate.
+        :type: bool
+        """
+        
+
+        self._include_owners = include_owners
 
     @property
     def owner_ids(self) -> List[str]:

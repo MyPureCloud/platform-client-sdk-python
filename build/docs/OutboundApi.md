@@ -48,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_campaign_interactions**](#get_outbound_campaign_interactions) | Get dialer campaign interactions.|
 |[**get_outbound_campaign_linedistribution**](#get_outbound_campaign_linedistribution) | Get line distribution information for campaigns using same Edge Group or Site as given campaign|
 |[**get_outbound_campaign_progress**](#get_outbound_campaign_progress) | Get campaign progress|
+|[**get_outbound_campaign_skillcombinations**](#get_outbound_campaign_skillcombinations) | Get the remaining and total contact count for each skill combination in a skills campaign|
 |[**get_outbound_campaign_stats**](#get_outbound_campaign_stats) | Get statistics about a Dialer Campaign|
 |[**get_outbound_campaignrule**](#get_outbound_campaignrule) | Get Campaign Rule|
 |[**get_outbound_campaignrules**](#get_outbound_campaignrules) | Query Campaign Rule list|
@@ -2229,6 +2230,58 @@ except ApiException as e:
 ### Return type
 
 [**CampaignProgress**](CampaignProgress)
+
+
+## get_outbound_campaign_skillcombinations
+
+> [**PagedSkillCombinationListing**](PagedSkillCombinationListing) get_outbound_campaign_skillcombinations(campaign_id, page_number=page_number, page_size=page_size)
+
+
+Get the remaining and total contact count for each skill combination in a skills campaign
+
+Wraps GET /api/v2/outbound/campaigns/{campaignId}/skillcombinations 
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get the remaining and total contact count for each skill combination in a skills campaign
+    api_response = api_instance.get_outbound_campaign_skillcombinations(campaign_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_campaign_skillcombinations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**PagedSkillCombinationListing**](PagedSkillCombinationListing)
 
 
 ## get_outbound_campaign_stats
@@ -8348,4 +8401,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

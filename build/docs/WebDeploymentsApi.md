@@ -582,7 +582,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
-expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected.  (optional)
 
 try:
     # Get deployments
@@ -597,7 +597,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: Configuration, SupportedContent |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent |
 
 ### Return type
 
@@ -937,4 +937,4 @@ except ApiException as e:
 [**WebDeployment**](WebDeployment)
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

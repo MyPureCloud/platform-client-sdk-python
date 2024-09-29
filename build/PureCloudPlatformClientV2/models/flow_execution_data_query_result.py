@@ -55,6 +55,7 @@ class FlowExecutionDataQueryResult(object):
             'flow_id': 'str',
             'flow_version': 'str',
             'conversation_id': 'str',
+            'workitem_id': 'str',
             'flow_type': 'str',
             'flow_error_reason': 'str',
             'flow_warning_reason': 'str',
@@ -70,6 +71,7 @@ class FlowExecutionDataQueryResult(object):
             'flow_id': 'flowId',
             'flow_version': 'flowVersion',
             'conversation_id': 'conversationId',
+            'workitem_id': 'workitemId',
             'flow_type': 'flowType',
             'flow_error_reason': 'flowErrorReason',
             'flow_warning_reason': 'flowWarningReason',
@@ -84,6 +86,7 @@ class FlowExecutionDataQueryResult(object):
         self._flow_id = None
         self._flow_version = None
         self._conversation_id = None
+        self._workitem_id = None
         self._flow_type = None
         self._flow_error_reason = None
         self._flow_warning_reason = None
@@ -257,6 +260,30 @@ class FlowExecutionDataQueryResult(object):
         
 
         self._conversation_id = conversation_id
+
+    @property
+    def workitem_id(self) -> str:
+        """
+        Gets the workitem_id of this FlowExecutionDataQueryResult.
+        The id of the workitem that executed this flow.
+
+        :return: The workitem_id of this FlowExecutionDataQueryResult.
+        :rtype: str
+        """
+        return self._workitem_id
+
+    @workitem_id.setter
+    def workitem_id(self, workitem_id: str) -> None:
+        """
+        Sets the workitem_id of this FlowExecutionDataQueryResult.
+        The id of the workitem that executed this flow.
+
+        :param workitem_id: The workitem_id of this FlowExecutionDataQueryResult.
+        :type: str
+        """
+        
+
+        self._workitem_id = workitem_id
 
     @property
     def flow_type(self) -> str:

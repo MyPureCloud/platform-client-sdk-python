@@ -52,8 +52,9 @@
 | **flagged_reason** | str | The reason specifying why participant flagged the conversation. | [optional] |
 | **start_acw_time** | datetime | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **end_acw_time** | datetime | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **internal_messages** | [list[InternalMessage]](InternalMessage) |  | [optional] |
 | **barged_participant_id** | str | If this participant barged in a participant&#39;s call, then this will be the id of the targeted participant. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

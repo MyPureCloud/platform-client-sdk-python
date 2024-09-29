@@ -48,14 +48,17 @@ class Intent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'name': 'str'
+            'name': 'str',
+            'description': 'str'
         }
 
         self.attribute_map = {
-            'name': 'name'
+            'name': 'name',
+            'description': 'description'
         }
 
         self._name = None
+        self._description = None
 
     @property
     def name(self) -> str:
@@ -80,6 +83,30 @@ class Intent(object):
         
 
         self._name = name
+
+    @property
+    def description(self) -> str:
+        """
+        Gets the description of this Intent.
+
+
+        :return: The description of this Intent.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str) -> None:
+        """
+        Sets the description of this Intent.
+
+
+        :param description: The description of this Intent.
+        :type: str
+        """
+        
+
+        self._description = description
 
     def to_dict(self):
         """

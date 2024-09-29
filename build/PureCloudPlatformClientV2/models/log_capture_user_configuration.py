@@ -49,17 +49,20 @@ class LogCaptureUserConfiguration(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'date_started': 'datetime',
             'date_expired': 'datetime',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'date_started': 'dateStarted',
             'date_expired': 'dateExpired',
             'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._date_started = None
         self._date_expired = None
         self._self_uri = None
 
@@ -86,6 +89,30 @@ class LogCaptureUserConfiguration(object):
         
 
         self._id = id
+
+    @property
+    def date_started(self) -> datetime:
+        """
+        Gets the date_started of this LogCaptureUserConfiguration.
+        Indicates when log capture was enabled for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_started of this LogCaptureUserConfiguration.
+        :rtype: datetime
+        """
+        return self._date_started
+
+    @date_started.setter
+    def date_started(self, date_started: datetime) -> None:
+        """
+        Sets the date_started of this LogCaptureUserConfiguration.
+        Indicates when log capture was enabled for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_started: The date_started of this LogCaptureUserConfiguration.
+        :type: datetime
+        """
+        
+
+        self._date_started = date_started
 
     @property
     def date_expired(self) -> datetime:

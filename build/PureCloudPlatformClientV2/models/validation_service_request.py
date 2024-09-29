@@ -49,16 +49,19 @@ class ValidationServiceRequest(object):
         """
         self.swagger_types = {
             'date_import_ended': 'datetime',
-            'upload_key': 'str'
+            'upload_key': 'str',
+            'file_name': 'str'
         }
 
         self.attribute_map = {
             'date_import_ended': 'dateImportEnded',
-            'upload_key': 'uploadKey'
+            'upload_key': 'uploadKey',
+            'file_name': 'fileName'
         }
 
         self._date_import_ended = None
         self._upload_key = None
+        self._file_name = None
 
     @property
     def date_import_ended(self) -> datetime:
@@ -107,6 +110,30 @@ class ValidationServiceRequest(object):
         
 
         self._upload_key = upload_key
+
+    @property
+    def file_name(self) -> str:
+        """
+        Gets the file_name of this ValidationServiceRequest.
+        Name of the uploaded file
+
+        :return: The file_name of this ValidationServiceRequest.
+        :rtype: str
+        """
+        return self._file_name
+
+    @file_name.setter
+    def file_name(self, file_name: str) -> None:
+        """
+        Sets the file_name of this ValidationServiceRequest.
+        Name of the uploaded file
+
+        :param file_name: The file_name of this ValidationServiceRequest.
+        :type: str
+        """
+        
+
+        self._file_name = file_name
 
     def to_dict(self):
         """

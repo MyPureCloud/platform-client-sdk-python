@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import AcwSettings
     from . import AgentOwnedRouting
     from . import Bullseye
+    from . import CannedResponseLibraries
     from . import ConditionalGroupRouting
     from . import DirectRouting
     from . import Division
@@ -86,6 +87,7 @@ class UserQueue(object):
             'message_in_queue_flow': 'DomainEntityRef',
             'whisper_prompt': 'DomainEntityRef',
             'on_hold_prompt': 'DomainEntityRef',
+            'canned_response_libraries': 'CannedResponseLibraries',
             'enable_transcription': 'bool',
             'enable_audio_monitoring': 'bool',
             'enable_manual_assignment': 'bool',
@@ -127,6 +129,7 @@ class UserQueue(object):
             'message_in_queue_flow': 'messageInQueueFlow',
             'whisper_prompt': 'whisperPrompt',
             'on_hold_prompt': 'onHoldPrompt',
+            'canned_response_libraries': 'cannedResponseLibraries',
             'enable_transcription': 'enableTranscription',
             'enable_audio_monitoring': 'enableAudioMonitoring',
             'enable_manual_assignment': 'enableManualAssignment',
@@ -167,6 +170,7 @@ class UserQueue(object):
         self._message_in_queue_flow = None
         self._whisper_prompt = None
         self._on_hold_prompt = None
+        self._canned_response_libraries = None
         self._enable_transcription = None
         self._enable_audio_monitoring = None
         self._enable_manual_assignment = None
@@ -767,6 +771,30 @@ class UserQueue(object):
         
 
         self._on_hold_prompt = on_hold_prompt
+
+    @property
+    def canned_response_libraries(self) -> 'CannedResponseLibraries':
+        """
+        Gets the canned_response_libraries of this UserQueue.
+        Canned response library IDs and mode with which they are associated with the queue
+
+        :return: The canned_response_libraries of this UserQueue.
+        :rtype: CannedResponseLibraries
+        """
+        return self._canned_response_libraries
+
+    @canned_response_libraries.setter
+    def canned_response_libraries(self, canned_response_libraries: 'CannedResponseLibraries') -> None:
+        """
+        Sets the canned_response_libraries of this UserQueue.
+        Canned response library IDs and mode with which they are associated with the queue
+
+        :param canned_response_libraries: The canned_response_libraries of this UserQueue.
+        :type: CannedResponseLibraries
+        """
+        
+
+        self._canned_response_libraries = canned_response_libraries
 
     @property
     def enable_transcription(self) -> bool:

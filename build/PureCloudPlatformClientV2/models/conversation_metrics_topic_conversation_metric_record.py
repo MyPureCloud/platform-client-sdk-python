@@ -102,6 +102,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'media_type': 'str',
             'message_type': 'str',
             'originating_direction': 'str',
+            'originating_social_media_public': 'bool',
             'outbound_campaign_id': 'str',
             'outbound_contact_id': 'str',
             'outbound_contact_list_id': 'str',
@@ -188,6 +189,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'media_type': 'mediaType',
             'message_type': 'messageType',
             'originating_direction': 'originatingDirection',
+            'originating_social_media_public': 'originatingSocialMediaPublic',
             'outbound_campaign_id': 'outboundCampaignId',
             'outbound_contact_id': 'outboundContactId',
             'outbound_contact_list_id': 'outboundContactListId',
@@ -273,6 +275,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         self._media_type = None
         self._message_type = None
         self._originating_direction = None
+        self._originating_social_media_public = None
         self._outbound_campaign_id = None
         self._outbound_contact_id = None
         self._outbound_contact_list_id = None
@@ -1574,6 +1577,30 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             self._originating_direction = "outdated_sdk_version"
         else:
             self._originating_direction = originating_direction
+
+    @property
+    def originating_social_media_public(self) -> bool:
+        """
+        Gets the originating_social_media_public of this ConversationMetricsTopicConversationMetricRecord.
+        Indicates that the conversation originated from a public message on social media
+
+        :return: The originating_social_media_public of this ConversationMetricsTopicConversationMetricRecord.
+        :rtype: bool
+        """
+        return self._originating_social_media_public
+
+    @originating_social_media_public.setter
+    def originating_social_media_public(self, originating_social_media_public: bool) -> None:
+        """
+        Sets the originating_social_media_public of this ConversationMetricsTopicConversationMetricRecord.
+        Indicates that the conversation originated from a public message on social media
+
+        :param originating_social_media_public: The originating_social_media_public of this ConversationMetricsTopicConversationMetricRecord.
+        :type: bool
+        """
+        
+
+        self._originating_social_media_public = originating_social_media_public
 
     @property
     def outbound_campaign_id(self) -> str:

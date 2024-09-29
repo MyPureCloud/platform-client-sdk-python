@@ -96,6 +96,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'flow_milestone_ids': 'list[str]',
             'flow_name': 'str',
             'flow_out_type': 'str',
+            'flow_sub_type': 'str',
             'flow_type': 'str',
             'flow_version': 'str',
             'group_id': 'str',
@@ -197,6 +198,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'flow_milestone_ids': 'flowMilestoneIds',
             'flow_name': 'flowName',
             'flow_out_type': 'flowOutType',
+            'flow_sub_type': 'flowSubType',
             'flow_type': 'flowType',
             'flow_version': 'flowVersion',
             'group_id': 'groupId',
@@ -297,6 +299,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         self._flow_milestone_ids = None
         self._flow_name = None
         self._flow_out_type = None
+        self._flow_sub_type = None
         self._flow_type = None
         self._flow_version = None
         self._group_id = None
@@ -1447,6 +1450,35 @@ class FlowMetricsTopicFlowMetricRecord(object):
         
 
         self._flow_out_type = flow_out_type
+
+    @property
+    def flow_sub_type(self) -> str:
+        """
+        Gets the flow_sub_type of this FlowMetricsTopicFlowMetricRecord.
+        Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities.
+
+        :return: The flow_sub_type of this FlowMetricsTopicFlowMetricRecord.
+        :rtype: str
+        """
+        return self._flow_sub_type
+
+    @flow_sub_type.setter
+    def flow_sub_type(self, flow_sub_type: str) -> None:
+        """
+        Sets the flow_sub_type of this FlowMetricsTopicFlowMetricRecord.
+        Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities.
+
+        :param flow_sub_type: The flow_sub_type of this FlowMetricsTopicFlowMetricRecord.
+        :type: str
+        """
+        if isinstance(flow_sub_type, int):
+            flow_sub_type = str(flow_sub_type)
+        allowed_values = ["VIRTUAL_AGENT"]
+        if flow_sub_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for flow_sub_type -> " + flow_sub_type)
+            self._flow_sub_type = "outdated_sdk_version"
+        else:
+            self._flow_sub_type = flow_sub_type
 
     @property
     def flow_type(self) -> str:

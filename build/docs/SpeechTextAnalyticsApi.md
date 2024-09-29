@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_topics_general**](#get_speechandtextanalytics_topics_general) | Get the Speech &amp; Text Analytics general topics for a given dialect|
 |[**get_speechandtextanalytics_topics_general_status**](#get_speechandtextanalytics_topics_general_status) | Get the list of general topics from the org and the system with their current status|
 |[**get_speechandtextanalytics_topics_publishjob**](#get_speechandtextanalytics_topics_publishjob) | Get a Speech &amp; Text Analytics publish topics job by id|
+|[**get_speechandtextanalytics_translations_language_conversation**](#get_speechandtextanalytics_translations_language_conversation) | Translate all communication(s) for an interaction.|
+|[**get_speechandtextanalytics_translations_languages**](#get_speechandtextanalytics_translations_languages) | Get supported translation languages|
 |[**patch_speechandtextanalytics_settings**](#patch_speechandtextanalytics_settings) | Patch Speech And Text Analytics Settings|
 |[**post_speechandtextanalytics_categories**](#post_speechandtextanalytics_categories) | Create new Speech &amp; Text Analytics category|
 |[**post_speechandtextanalytics_dictionaryfeedback**](#post_speechandtextanalytics_dictionaryfeedback) | Create a Speech &amp; Text Analytics DictionaryFeedback|
@@ -1618,6 +1620,108 @@ except ApiException as e:
 [**TopicJob**](TopicJob)
 
 
+## get_speechandtextanalytics_translations_language_conversation
+
+> [**CommunicationTranslationList**](CommunicationTranslationList) get_speechandtextanalytics_translations_language_conversation(language_id, conversation_id, communication_id=communication_id, recording_id=recording_id)
+
+
+Translate all communication(s) for an interaction.
+
+get_speechandtextanalytics_translations_language_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:translation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+language_id = 'language_id_example' # str | Target translation language
+conversation_id = 'conversation_id_example' # str | Conversation id
+communication_id = 'communication_id_example' # str | Communication id associated with the conversation (optional)
+recording_id = 'recording_id_example' # str | Recording id associated with the communication (optional)
+
+try:
+    # Translate all communication(s) for an interaction.
+    api_response = api_instance.get_speechandtextanalytics_translations_language_conversation(language_id, conversation_id, communication_id=communication_id, recording_id=recording_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_translations_language_conversation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_id** | **str**| Target translation language |  |
+| **conversation_id** | **str**| Conversation id |  |
+| **communication_id** | **str**| Communication id associated with the conversation | [optional]  |
+| **recording_id** | **str**| Recording id associated with the communication | [optional]  |
+
+### Return type
+
+[**CommunicationTranslationList**](CommunicationTranslationList)
+
+
+## get_speechandtextanalytics_translations_languages
+
+> [**TranslateSupportedLanguageList**](TranslateSupportedLanguageList) get_speechandtextanalytics_translations_languages()
+
+
+Get supported translation languages
+
+get_speechandtextanalytics_translations_languages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/translations/languages 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:translation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+
+try:
+    # Get supported translation languages
+    api_response = api_instance.get_speechandtextanalytics_translations_languages()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_translations_languages: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**TranslateSupportedLanguageList**](TranslateSupportedLanguageList)
+
+
 ## patch_speechandtextanalytics_settings
 
 > [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse) patch_speechandtextanalytics_settings(body)
@@ -2450,4 +2554,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

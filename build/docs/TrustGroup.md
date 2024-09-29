@@ -19,10 +19,11 @@
 | **rules_visible** | bool | Are membership rules visible to the person requesting to view the group | |
 | **visibility** | str | Who can view this group | |
 | **roles_enabled** | bool | Allow roles to be assigned to this group | [optional] |
+| **include_owners** | bool | Allow owners to be included as members of the group | [optional] |
 | **owners** | [list[User]](User) | Owners of the group | [optional] |
 | **date_created** | datetime | The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **created_by** | [OrgUser](OrgUser) | The user that added trusted group. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

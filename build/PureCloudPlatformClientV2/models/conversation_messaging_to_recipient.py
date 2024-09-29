@@ -150,7 +150,7 @@ class ConversationMessagingToRecipient(object):
         """
         if isinstance(id_type, int):
             id_type = str(id_type)
-        allowed_values = ["Email", "Phone", "Opaque"]
+        allowed_values = ["Email", "Phone", "Opaque", "Topic"]
         if id_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for id_type -> " + id_type)
             self._id_type = "outdated_sdk_version"

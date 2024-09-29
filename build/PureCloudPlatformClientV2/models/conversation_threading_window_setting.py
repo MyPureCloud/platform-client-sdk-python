@@ -82,7 +82,7 @@ class ConversationThreadingWindowSetting(object):
         """
         if isinstance(messenger_type, int):
             messenger_type = str(messenger_type)
-        allowed_values = ["sms", "facebook", "twitter", "whatsapp", "webmessaging", "instagram", "open"]
+        allowed_values = ["sms", "facebook", "twitter", "whatsapp", "webmessaging", "instagram", "open", "apple"]
         if messenger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for messenger_type -> " + messenger_type)
             self._messenger_type = "outdated_sdk_version"

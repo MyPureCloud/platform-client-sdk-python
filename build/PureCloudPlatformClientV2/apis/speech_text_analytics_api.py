@@ -40,6 +40,7 @@ from typing import Any
 from ..models import Empty
 from ..models import CategoriesEntityListing
 from ..models import CategoryRequest
+from ..models import CommunicationTranslationList
 from ..models import ConversationCategoriesEntityListing
 from ..models import ConversationMetrics
 from ..models import DeleteProgramResponse
@@ -75,6 +76,7 @@ from ..models import TranscriptSearchRequest
 from ..models import TranscriptUrl
 from ..models import TranscriptUrls
 from ..models import TranscriptionEnginesRequest
+from ..models import TranslateSupportedLanguageList
 from ..models import UnifiedGeneralTopicEntityListing
 from ..models import UnpublishedProgramsEntityListing
 
@@ -2604,6 +2606,170 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TopicJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_translations_language_conversation(self, language_id: str, conversation_id: str, **kwargs) -> 'CommunicationTranslationList':
+        """
+        Translate all communication(s) for an interaction.
+        
+	    get_speechandtextanalytics_translations_language_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_translations_language_conversation(language_id, conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language_id: Target translation language (required)
+        :param str conversation_id: Conversation id (required)
+        :param str communication_id: Communication id associated with the conversation
+        :param str recording_id: Recording id associated with the communication
+        :return: CommunicationTranslationList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language_id', 'conversation_id', 'communication_id', 'recording_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_translations_language_conversation" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'language_id' is set
+        if ('language_id' not in params) or (params['language_id'] is None):
+            raise ValueError("Missing the required parameter `language_id` when calling `get_speechandtextanalytics_translations_language_conversation`")
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_speechandtextanalytics_translations_language_conversation`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'language_id' in params:
+            path_params['languageId'] = params['language_id']
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+        if 'communication_id' in params:
+            query_params['communicationId'] = params['communication_id']
+        if 'recording_id' in params:
+            query_params['recordingId'] = params['recording_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CommunicationTranslationList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_translations_languages(self, **kwargs) -> 'TranslateSupportedLanguageList':
+        """
+        Get supported translation languages
+        
+	    get_speechandtextanalytics_translations_languages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_translations_languages(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: TranslateSupportedLanguageList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_translations_languages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/speechandtextanalytics/translations/languages'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TranslateSupportedLanguageList',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

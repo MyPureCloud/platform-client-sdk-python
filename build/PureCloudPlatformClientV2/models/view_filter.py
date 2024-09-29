@@ -248,7 +248,8 @@ class ViewFilter(object):
             'is_screen_recorded': 'bool',
             'screen_monitor_user_ids': 'list[str]',
             'dashboard_type': 'str',
-            'dashboard_access_filter': 'str'
+            'dashboard_access_filter': 'str',
+            'transcript_duration_milliseconds': 'list[NumericRange]'
         }
 
         self.attribute_map = {
@@ -447,7 +448,8 @@ class ViewFilter(object):
             'is_screen_recorded': 'isScreenRecorded',
             'screen_monitor_user_ids': 'screenMonitorUserIds',
             'dashboard_type': 'dashboardType',
-            'dashboard_access_filter': 'dashboardAccessFilter'
+            'dashboard_access_filter': 'dashboardAccessFilter',
+            'transcript_duration_milliseconds': 'transcriptDurationMilliseconds'
         }
 
         self._media_types = None
@@ -646,6 +648,7 @@ class ViewFilter(object):
         self._screen_monitor_user_ids = None
         self._dashboard_type = None
         self._dashboard_access_filter = None
+        self._transcript_duration_milliseconds = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5370,6 +5373,30 @@ class ViewFilter(object):
             self._dashboard_access_filter = "outdated_sdk_version"
         else:
             self._dashboard_access_filter = dashboard_access_filter
+
+    @property
+    def transcript_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the transcript_duration_milliseconds of this ViewFilter.
+        The transcript durations in milliseconds used to filter the view
+
+        :return: The transcript_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._transcript_duration_milliseconds
+
+    @transcript_duration_milliseconds.setter
+    def transcript_duration_milliseconds(self, transcript_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the transcript_duration_milliseconds of this ViewFilter.
+        The transcript durations in milliseconds used to filter the view
+
+        :param transcript_duration_milliseconds: The transcript_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._transcript_duration_milliseconds = transcript_duration_milliseconds
 
     def to_dict(self):
         """

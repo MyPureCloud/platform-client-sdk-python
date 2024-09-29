@@ -66,6 +66,7 @@ class TrustGroup(object):
             'rules_visible': 'bool',
             'visibility': 'str',
             'roles_enabled': 'bool',
+            'include_owners': 'bool',
             'owners': 'list[User]',
             'date_created': 'datetime',
             'created_by': 'OrgUser'
@@ -85,6 +86,7 @@ class TrustGroup(object):
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
             'roles_enabled': 'rolesEnabled',
+            'include_owners': 'includeOwners',
             'owners': 'owners',
             'date_created': 'dateCreated',
             'created_by': 'createdBy'
@@ -103,6 +105,7 @@ class TrustGroup(object):
         self._rules_visible = None
         self._visibility = None
         self._roles_enabled = None
+        self._include_owners = None
         self._owners = None
         self._date_created = None
         self._created_by = None
@@ -433,6 +436,30 @@ class TrustGroup(object):
         
 
         self._roles_enabled = roles_enabled
+
+    @property
+    def include_owners(self) -> bool:
+        """
+        Gets the include_owners of this TrustGroup.
+        Allow owners to be included as members of the group
+
+        :return: The include_owners of this TrustGroup.
+        :rtype: bool
+        """
+        return self._include_owners
+
+    @include_owners.setter
+    def include_owners(self, include_owners: bool) -> None:
+        """
+        Sets the include_owners of this TrustGroup.
+        Allow owners to be included as members of the group
+
+        :param include_owners: The include_owners of this TrustGroup.
+        :type: bool
+        """
+        
+
+        self._include_owners = include_owners
 
     @property
     def owners(self) -> List['User']:
