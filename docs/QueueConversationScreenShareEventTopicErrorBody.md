@@ -16,7 +16,8 @@
 | **context_id** | str |  | [optional] |
 | **details** | [list[QueueConversationScreenShareEventTopicDetail]](QueueConversationScreenShareEventTopicDetail) |  | [optional] |
 | **errors** | [list[QueueConversationScreenShareEventTopicErrorBody]](QueueConversationScreenShareEventTopicErrorBody) |  | [optional] |
+| **limit** | [QueueConversationScreenShareEventTopicLimit](QueueConversationScreenShareEventTopicLimit) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

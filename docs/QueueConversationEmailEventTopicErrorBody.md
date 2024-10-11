@@ -16,7 +16,8 @@
 | **context_id** | str |  | [optional] |
 | **details** | [list[QueueConversationEmailEventTopicDetail]](QueueConversationEmailEventTopicDetail) |  | [optional] |
 | **errors** | [list[QueueConversationEmailEventTopicErrorBody]](QueueConversationEmailEventTopicErrorBody) |  | [optional] |
+| **limit** | [QueueConversationEmailEventTopicLimit](QueueConversationEmailEventTopicLimit) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

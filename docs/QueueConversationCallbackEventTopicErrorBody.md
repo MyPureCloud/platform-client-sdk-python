@@ -16,7 +16,8 @@
 | **context_id** | str |  | [optional] |
 | **details** | [list[QueueConversationCallbackEventTopicDetail]](QueueConversationCallbackEventTopicDetail) |  | [optional] |
 | **errors** | [list[QueueConversationCallbackEventTopicErrorBody]](QueueConversationCallbackEventTopicErrorBody) |  | [optional] |
+| **limit** | [QueueConversationCallbackEventTopicLimit](QueueConversationCallbackEventTopicLimit) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

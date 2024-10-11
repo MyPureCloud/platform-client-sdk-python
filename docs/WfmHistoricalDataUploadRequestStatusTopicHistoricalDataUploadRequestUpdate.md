@@ -15,7 +15,9 @@
 | **error** | str |  | [optional] |
 | **active** | bool |  | [optional] |
 | **type** | str |  | [optional] |
+| **file_name** | str |  | [optional] |
+| **file_size** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

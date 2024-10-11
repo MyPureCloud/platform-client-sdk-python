@@ -6608,8 +6608,6 @@ except ApiException as e:
 
 Update conversation by setting its parking state
 
-patch_conversations_email_participant_parkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate 
 
 Requires ANY permissions: 
@@ -10252,7 +10250,7 @@ except ApiException as e:
 
 ## post_conversations_message_inbound_open_message
 
-> [**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage) post_conversations_message_inbound_open_message(integration_id, body)
+> [**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage) post_conversations_message_inbound_open_message(integration_id, body, prefetch_conversation_id=prefetch_conversation_id)
 
 
 Send inbound Open Message
@@ -10280,10 +10278,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 integration_id = 'integration_id_example' # str | integrationId
 body = PureCloudPlatformClientV2.OpenInboundNormalizedMessage() # OpenInboundNormalizedMessage | NormalizedMessage
+prefetch_conversation_id = False # bool | Indicates whether or not to prefetch conversationId (optional) (default to False)
 
 try:
     # Send inbound Open Message
-    api_response = api_instance.post_conversations_message_inbound_open_message(integration_id, body)
+    api_response = api_instance.post_conversations_message_inbound_open_message(integration_id, body, prefetch_conversation_id=prefetch_conversation_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_message_inbound_open_message: %s\n" % e)
@@ -10296,6 +10295,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| integrationId |  |
 | **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage)| NormalizedMessage |  |
+| **prefetch_conversation_id** | **bool**| Indicates whether or not to prefetch conversationId | [optional] [default to False] |
 
 ### Return type
 
@@ -12227,4 +12227,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

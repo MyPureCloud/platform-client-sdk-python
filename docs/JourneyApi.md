@@ -37,8 +37,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_session_outcomescores**](#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
 |[**get_journey_view**](#get_journey_view) | Get a Journey View by ID|
 |[**get_journey_view_version**](#get_journey_view_version) | Get a Journey View by ID and version|
+|[**get_journey_view_version_chart**](#get_journey_view_version_chart) | Get a Chart by ID|
+|[**get_journey_view_version_chart_version**](#get_journey_view_version_chart_version) | Get a Chart by ID and version|
 |[**get_journey_view_version_job**](#get_journey_view_version_job) | Get the job for a journey view version.|
 |[**get_journey_view_version_job_results**](#get_journey_view_version_job_results) | Get the result of a job for a journey view version.|
+|[**get_journey_view_version_job_results_chart**](#get_journey_view_version_job_results_chart) | Get the chart result associated with a journey view job.|
 |[**get_journey_view_version_jobs_latest**](#get_journey_view_version_jobs_latest) | Get the latest job of a journey view version.|
 |[**get_journey_views**](#get_journey_views) | Get a list of Journey Views|
 |[**get_journey_views_eventdefinition**](#get_journey_views_eventdefinition) | Get an Event Definition|
@@ -49,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_journey_actiontemplate**](#patch_journey_actiontemplate) | Update a single action template.|
 |[**patch_journey_outcome**](#patch_journey_outcome) | Update an outcome.|
 |[**patch_journey_segment**](#patch_journey_segment) | Update a segment.|
+|[**patch_journey_view_version_job**](#patch_journey_view_version_job) | Update the job for a journey view version. Only the status can be changed and only to Cancelled|
 |[**post_analytics_journeys_aggregates_jobs**](#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
 |[**post_analytics_journeys_aggregates_query**](#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
 |[**post_journey_actionmaps**](#post_journey_actionmaps) | Create an action map.|
@@ -66,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_view_versions**](#post_journey_view_versions) | Update a Journey View by ID|
 |[**post_journey_views**](#post_journey_views) | Create a new Journey View|
 |[**post_journey_views_encodings_validate**](#post_journey_views_encodings_validate) | Validate whether an encoding exist for a label/value combination.|
+|[**put_journey_view_version**](#put_journey_view_version) | Update a Journey View by ID and version|
 
 
 
@@ -1636,6 +1641,114 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
+## get_journey_view_version_chart
+
+> [**JourneyViewChart**](JourneyViewChart) get_journey_view_version_chart(view_id, journey_view_version, chart_id)
+
+
+Get a Chart by ID
+
+returns the latest version
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId} 
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | viewId
+journey_view_version = 'journey_view_version_example' # str | Journey View Version
+chart_id = 'chart_id_example' # str | chartId
+
+try:
+    # Get a Chart by ID
+    api_response = api_instance.get_journey_view_version_chart(view_id, journey_view_version, chart_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version_chart: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| viewId |  |
+| **journey_view_version** | **str**| Journey View Version |  |
+| **chart_id** | **str**| chartId |  |
+
+### Return type
+
+[**JourneyViewChart**](JourneyViewChart)
+
+
+## get_journey_view_version_chart_version
+
+> [**JourneyViewChart**](JourneyViewChart) get_journey_view_version_chart_version(view_id, journey_view_version, chart_id, chart_version)
+
+
+Get a Chart by ID and version
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion} 
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | viewId
+journey_view_version = 'journey_view_version_example' # str | Journey View Version
+chart_id = 'chart_id_example' # str | chartId
+chart_version = 'chart_version_example' # str | chartVersion
+
+try:
+    # Get a Chart by ID and version
+    api_response = api_instance.get_journey_view_version_chart_version(view_id, journey_view_version, chart_id, chart_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version_chart_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| viewId |  |
+| **journey_view_version** | **str**| Journey View Version |  |
+| **chart_id** | **str**| chartId |  |
+| **chart_version** | **str**| chartVersion |  |
+
+### Return type
+
+[**JourneyViewChart**](JourneyViewChart)
+
+
 ## get_journey_view_version_job
 
 > [**JourneyViewJob**](JourneyViewJob) get_journey_view_version_job(view_id, journey_version_id, job_id)
@@ -1742,6 +1855,60 @@ except ApiException as e:
 ### Return type
 
 [**JourneyViewResult**](JourneyViewResult)
+
+
+## get_journey_view_version_job_results_chart
+
+> [**JourneyViewChartResult**](JourneyViewChartResult) get_journey_view_version_job_results_chart(view_id, journey_version_id, job_id, chart_id)
+
+
+Get the chart result associated with a journey view job.
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId} 
+
+Requires ALL permissions: 
+
+* journey:viewsResults:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+journey_version_id = 'journey_version_id_example' # str | Journey View Version
+job_id = 'job_id_example' # str | JobId
+chart_id = 'chart_id_example' # str | ChartId
+
+try:
+    # Get the chart result associated with a journey view job.
+    api_response = api_instance.get_journey_view_version_job_results_chart(view_id, journey_version_id, job_id, chart_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version_job_results_chart: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+| **journey_version_id** | **str**| Journey View Version |  |
+| **job_id** | **str**| JobId |  |
+| **chart_id** | **str**| ChartId |  |
+
+### Return type
+
+[**JourneyViewChartResult**](JourneyViewChartResult)
 
 
 ## get_journey_view_version_jobs_latest
@@ -2250,6 +2417,62 @@ except ApiException as e:
 ### Return type
 
 [**JourneySegment**](JourneySegment)
+
+
+## patch_journey_view_version_job
+
+> [**JourneyViewJob**](JourneyViewJob) patch_journey_view_version_job(view_id, journey_version_id, job_id, body)
+
+
+Update the job for a journey view version. Only the status can be changed and only to Cancelled
+
+used for long descriptions
+
+Wraps PATCH /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+journey_version_id = 'journey_version_id_example' # str | Journey View Version
+job_id = 'job_id_example' # str | JobId
+body = PureCloudPlatformClientV2.JourneyViewJob() # JourneyViewJob | journeyViewJob
+
+try:
+    # Update the job for a journey view version. Only the status can be changed and only to Cancelled
+    api_response = api_instance.patch_journey_view_version_job(view_id, journey_version_id, job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->patch_journey_view_version_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+| **journey_version_id** | **str**| Journey View Version |  |
+| **job_id** | **str**| JobId |  |
+| **body** | [**JourneyViewJob**](JourneyViewJob)| journeyViewJob |  |
+
+### Return type
+
+[**JourneyViewJob**](JourneyViewJob)
 
 
 ## post_analytics_journeys_aggregates_jobs
@@ -3077,4 +3300,58 @@ except ApiException as e:
 [**EntityListing**](EntityListing)
 
 
-_PureCloudPlatformClientV2 212.0.0_
+## put_journey_view_version
+
+> [**JourneyView**](JourneyView) put_journey_view_version(view_id, version_id, body)
+
+
+Update a Journey View by ID and version
+
+does not create a new version
+
+Wraps PUT /api/v2/journey/views/{viewId}/versions/{versionId} 
+
+Requires ALL permissions: 
+
+* journey:views:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | viewId
+version_id = 'version_id_example' # str | versionId
+body = PureCloudPlatformClientV2.JourneyView() # JourneyView | JourneyView
+
+try:
+    # Update a Journey View by ID and version
+    api_response = api_instance.put_journey_view_version(view_id, version_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->put_journey_view_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| viewId |  |
+| **version_id** | **str**| versionId |  |
+| **body** | [**JourneyView**](JourneyView)| JourneyView |  |
+
+### Return type
+
+[**JourneyView**](JourneyView)
+
+
+_PureCloudPlatformClientV2 213.0.0_

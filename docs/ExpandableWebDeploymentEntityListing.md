@@ -6,10 +6,12 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **total** | int |  | [optional] |
 | **entities** | [list[ExpandableWebDeployment]](ExpandableWebDeployment) |  | [optional] |
+| **next_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
+| **previous_uri** | str |  | [optional] |
+| **total** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_
