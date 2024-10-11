@@ -144,6 +144,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_workplanbid_group_preferences**](#patch_workforcemanagement_businessunit_workplanbid_group_preferences) | Overrides the assigned work plan for the specified agents|
 |[**patch_workforcemanagement_managementunit**](#patch_workforcemanagement_managementunit) | Update the requested management unit|
 |[**patch_workforcemanagement_managementunit_agents**](#patch_workforcemanagement_managementunit_agents) | Update agent configurations|
+|[**patch_workforcemanagement_managementunit_agents_workplans_bulk**](#patch_workforcemanagement_managementunit_agents_workplans_bulk) | Updates agent work plan configuration|
 |[**patch_workforcemanagement_managementunit_timeofflimit**](#patch_workforcemanagement_managementunit_timeofflimit) | Updates a time off limit object.|
 |[**patch_workforcemanagement_managementunit_timeoffplan**](#patch_workforcemanagement_managementunit_timeoffplan) | Updates a time off plan|
 |[**patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus**](#patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus) | Set integration status for a time off request.|
@@ -205,6 +206,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_historicaldata_deletejob**](#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization|
 |[**post_workforcemanagement_historicaldata_validate**](#post_workforcemanagement_historicaldata_validate) | Trigger validation process for historical import|
 |[**post_workforcemanagement_integrations_hri_timeofftypes_jobs**](#post_workforcemanagement_integrations_hri_timeofftypes_jobs) | Get list of time off types configured in integration|
+|[**post_workforcemanagement_managementunit_agents_workplans_query**](#post_workforcemanagement_managementunit_agents_workplans_query) | Get agents work plans configuration|
 |[**post_workforcemanagement_managementunit_agentschedules_search**](#post_workforcemanagement_managementunit_agentschedules_search) | Query published schedules for given given time range for set of users|
 |[**post_workforcemanagement_managementunit_historicaladherencequery**](#post_workforcemanagement_managementunit_historicaladherencequery) | Request a historical adherence report|
 |[**post_workforcemanagement_managementunit_move**](#post_workforcemanagement_managementunit_move) | Move the requested management unit to a new business unit|
@@ -7500,6 +7502,56 @@ except ApiException as e:
 void (empty response body)
 
 
+## patch_workforcemanagement_managementunit_agents_workplans_bulk
+
+> [**UpdateMuAgentWorkPlansBatchResponse**](UpdateMuAgentWorkPlansBatchResponse) patch_workforcemanagement_managementunit_agents_workplans_bulk(management_unit_id, body=body)
+
+
+Updates agent work plan configuration
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk 
+
+Requires ANY permissions: 
+
+* wfm:workPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+body = PureCloudPlatformClientV2.UpdateMuAgentWorkPlansBatchRequest() # UpdateMuAgentWorkPlansBatchRequest | body (optional)
+
+try:
+    # Updates agent work plan configuration
+    api_response = api_instance.patch_workforcemanagement_managementunit_agents_workplans_bulk(management_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_agents_workplans_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **body** | [**UpdateMuAgentWorkPlansBatchRequest**](UpdateMuAgentWorkPlansBatchRequest)| body | [optional]  |
+
+### Return type
+
+[**UpdateMuAgentWorkPlansBatchResponse**](UpdateMuAgentWorkPlansBatchResponse)
+
+
 ## patch_workforcemanagement_managementunit_timeofflimit
 
 > [**TimeOffLimit**](TimeOffLimit) patch_workforcemanagement_managementunit_timeofflimit(management_unit_id, time_off_limit_id, body=body)
@@ -10635,6 +10687,58 @@ except ApiException as e:
 [**HrisTimeOffTypesResponse**](HrisTimeOffTypesResponse)
 
 
+## post_workforcemanagement_managementunit_agents_workplans_query
+
+> [**AgentsWorkPlansResponse**](AgentsWorkPlansResponse) post_workforcemanagement_managementunit_agents_workplans_query(management_unit_id, force_download_service=force_download_service, body=body)
+
+
+Get agents work plans configuration
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query 
+
+Requires ANY permissions: 
+
+* wfm:workPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+body = PureCloudPlatformClientV2.GetAgentsWorkPlansRequest() # GetAgentsWorkPlansRequest | body (optional)
+
+try:
+    # Get agents work plans configuration
+    api_response = api_instance.post_workforcemanagement_managementunit_agents_workplans_query(management_unit_id, force_download_service=force_download_service, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_agents_workplans_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+| **body** | [**GetAgentsWorkPlansRequest**](GetAgentsWorkPlansRequest)| body | [optional]  |
+
+### Return type
+
+[**AgentsWorkPlansResponse**](AgentsWorkPlansResponse)
+
+
 ## post_workforcemanagement_managementunit_agentschedules_search
 
 > [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse) post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
@@ -12540,4 +12644,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

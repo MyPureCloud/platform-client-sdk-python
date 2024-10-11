@@ -6,9 +6,10 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **name** | str |  | [optional] |
 | **friendly_name** | str |  | [optional] |
 | **limits** | [list[LimitDocs]](LimitDocs) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

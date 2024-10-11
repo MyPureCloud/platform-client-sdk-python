@@ -13,8 +13,9 @@
 | **first_name** | str | First name of the recipient. | [optional] |
 | **last_name** | str | Last name of the recipient. | [optional] |
 | **email** | str | E-mail address of the recipient. | [optional] |
+| **external_contact_id** | str | The identifier of the external contact. | [optional] |
 | **additional_ids** | [list[ConversationRecipientAdditionalIdentifier]](ConversationRecipientAdditionalIdentifier) | List of recipient additional identifiers | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

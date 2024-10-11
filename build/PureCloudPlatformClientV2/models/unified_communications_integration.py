@@ -62,6 +62,7 @@ class UnifiedCommunicationsIntegration(object):
             'i10n': 'dict(str, UCI10n)',
             'polled_presence': 'bool',
             'poll_interval_sec': 'int',
+            'include_badge': 'bool',
             'user_permissions': 'list[str]',
             'oauth_scopes': 'list[str]',
             'self_uri': 'str'
@@ -78,6 +79,7 @@ class UnifiedCommunicationsIntegration(object):
             'i10n': 'i10n',
             'polled_presence': 'polledPresence',
             'poll_interval_sec': 'pollIntervalSec',
+            'include_badge': 'includeBadge',
             'user_permissions': 'userPermissions',
             'oauth_scopes': 'oauthScopes',
             'self_uri': 'selfUri'
@@ -93,6 +95,7 @@ class UnifiedCommunicationsIntegration(object):
         self._i10n = None
         self._polled_presence = None
         self._poll_interval_sec = None
+        self._include_badge = None
         self._user_permissions = None
         self._oauth_scopes = None
         self._self_uri = None
@@ -341,6 +344,30 @@ class UnifiedCommunicationsIntegration(object):
         
 
         self._poll_interval_sec = poll_interval_sec
+
+    @property
+    def include_badge(self) -> bool:
+        """
+        Gets the include_badge of this UnifiedCommunicationsIntegration.
+        includeBadge
+
+        :return: The include_badge of this UnifiedCommunicationsIntegration.
+        :rtype: bool
+        """
+        return self._include_badge
+
+    @include_badge.setter
+    def include_badge(self, include_badge: bool) -> None:
+        """
+        Sets the include_badge of this UnifiedCommunicationsIntegration.
+        includeBadge
+
+        :param include_badge: The include_badge of this UnifiedCommunicationsIntegration.
+        :type: bool
+        """
+        
+
+        self._include_badge = include_badge
 
     @property
     def user_permissions(self) -> List[str]:

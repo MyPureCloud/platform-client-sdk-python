@@ -61,7 +61,8 @@ class ConversationMessageEventTopicMessageDetails(object):
             'media': 'list[ConversationMessageEventTopicMessageMedia]',
             'stickers': 'list[ConversationMessageEventTopicMessageSticker]',
             'error_info': 'ConversationMessageEventTopicErrorDetails',
-            'message_metadata': 'ConversationMessageEventTopicMessageMetadata'
+            'message_metadata': 'ConversationMessageEventTopicMessageMetadata',
+            'social_visibility': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class ConversationMessageEventTopicMessageDetails(object):
             'media': 'media',
             'stickers': 'stickers',
             'error_info': 'errorInfo',
-            'message_metadata': 'messageMetadata'
+            'message_metadata': 'messageMetadata',
+            'social_visibility': 'socialVisibility'
         }
 
         self._message = None
@@ -83,6 +85,7 @@ class ConversationMessageEventTopicMessageDetails(object):
         self._stickers = None
         self._error_info = None
         self._message_metadata = None
+        self._social_visibility = None
 
     @property
     def message(self) -> 'ConversationMessageEventTopicUriReference':
@@ -280,6 +283,35 @@ class ConversationMessageEventTopicMessageDetails(object):
         
 
         self._message_metadata = message_metadata
+
+    @property
+    def social_visibility(self) -> str:
+        """
+        Gets the social_visibility of this ConversationMessageEventTopicMessageDetails.
+
+
+        :return: The social_visibility of this ConversationMessageEventTopicMessageDetails.
+        :rtype: str
+        """
+        return self._social_visibility
+
+    @social_visibility.setter
+    def social_visibility(self, social_visibility: str) -> None:
+        """
+        Sets the social_visibility of this ConversationMessageEventTopicMessageDetails.
+
+
+        :param social_visibility: The social_visibility of this ConversationMessageEventTopicMessageDetails.
+        :type: str
+        """
+        if isinstance(social_visibility, int):
+            social_visibility = str(social_visibility)
+        allowed_values = ["private", "public"]
+        if social_visibility.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for social_visibility -> " + social_visibility)
+            self._social_visibility = "outdated_sdk_version"
+        else:
+            self._social_visibility = social_visibility
 
     def to_dict(self):
         """

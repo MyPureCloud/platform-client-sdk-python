@@ -369,7 +369,7 @@ class Annotation(object):
     def reason(self) -> str:
         """
         Gets the reason of this Annotation.
-        Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue
+        Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause
 
         :return: The reason of this Annotation.
         :rtype: str
@@ -380,14 +380,14 @@ class Annotation(object):
     def reason(self, reason: str) -> None:
         """
         Sets the reason of this Annotation.
-        Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue
+        Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue,Pause
 
         :param reason: The reason of this Annotation.
         :type: str
         """
         if isinstance(reason, int):
             reason = str(reason)
-        allowed_values = ["Hold", "SecurePause", "FlowOrQueue"]
+        allowed_values = ["Hold", "SecurePause", "FlowOrQueue", "Pause"]
         if reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reason -> " + reason)
             self._reason = "outdated_sdk_version"

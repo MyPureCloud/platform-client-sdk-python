@@ -67,6 +67,7 @@ class TrustGroup(object):
             'visibility': 'str',
             'roles_enabled': 'bool',
             'include_owners': 'bool',
+            'calls_enabled': 'bool',
             'owners': 'list[User]',
             'date_created': 'datetime',
             'created_by': 'OrgUser'
@@ -87,6 +88,7 @@ class TrustGroup(object):
             'visibility': 'visibility',
             'roles_enabled': 'rolesEnabled',
             'include_owners': 'includeOwners',
+            'calls_enabled': 'callsEnabled',
             'owners': 'owners',
             'date_created': 'dateCreated',
             'created_by': 'createdBy'
@@ -106,6 +108,7 @@ class TrustGroup(object):
         self._visibility = None
         self._roles_enabled = None
         self._include_owners = None
+        self._calls_enabled = None
         self._owners = None
         self._date_created = None
         self._created_by = None
@@ -460,6 +463,30 @@ class TrustGroup(object):
         
 
         self._include_owners = include_owners
+
+    @property
+    def calls_enabled(self) -> bool:
+        """
+        Gets the calls_enabled of this TrustGroup.
+        Allow calls to be placed to this group.
+
+        :return: The calls_enabled of this TrustGroup.
+        :rtype: bool
+        """
+        return self._calls_enabled
+
+    @calls_enabled.setter
+    def calls_enabled(self, calls_enabled: bool) -> None:
+        """
+        Sets the calls_enabled of this TrustGroup.
+        Allow calls to be placed to this group.
+
+        :param calls_enabled: The calls_enabled of this TrustGroup.
+        :type: bool
+        """
+        
+
+        self._calls_enabled = calls_enabled
 
     @property
     def owners(self) -> List['User']:

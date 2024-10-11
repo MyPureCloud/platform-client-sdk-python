@@ -51,15 +51,18 @@ class NluUtterance(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'source': 'str',
             'segments': 'list[NluUtteranceSegment]'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'source': 'source',
             'segments': 'segments'
         }
 
         self._id = None
+        self._source = None
         self._segments = None
 
     @property
@@ -85,6 +88,35 @@ class NluUtterance(object):
         
 
         self._id = id
+
+    @property
+    def source(self) -> str:
+        """
+        Gets the source of this NluUtterance.
+        The source of the utterance.
+
+        :return: The source of this NluUtterance.
+        :rtype: str
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source: str) -> None:
+        """
+        Sets the source of this NluUtterance.
+        The source of the utterance.
+
+        :param source: The source of this NluUtterance.
+        :type: str
+        """
+        if isinstance(source, int):
+            source = str(source)
+        allowed_values = ["Generated", "User"]
+        if source.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for source -> " + source)
+            self._source = "outdated_sdk_version"
+        else:
+            self._source = source
 
     @property
     def segments(self) -> List['NluUtteranceSegment']:

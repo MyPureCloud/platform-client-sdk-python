@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationCallbackEventTopicDetail
+    from . import QueueConversationCallbackEventTopicLimit
 
 class QueueConversationCallbackEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class QueueConversationCallbackEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[QueueConversationCallbackEventTopicDetail]',
-            'errors': 'list[QueueConversationCallbackEventTopicErrorBody]'
+            'errors': 'list[QueueConversationCallbackEventTopicErrorBody]',
+            'limit': 'QueueConversationCallbackEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class QueueConversationCallbackEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class QueueConversationCallbackEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class QueueConversationCallbackEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'QueueConversationCallbackEventTopicLimit':
+        """
+        Gets the limit of this QueueConversationCallbackEventTopicErrorBody.
+
+
+        :return: The limit of this QueueConversationCallbackEventTopicErrorBody.
+        :rtype: QueueConversationCallbackEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'QueueConversationCallbackEventTopicLimit') -> None:
+        """
+        Sets the limit of this QueueConversationCallbackEventTopicErrorBody.
+
+
+        :param limit: The limit of this QueueConversationCallbackEventTopicErrorBody.
+        :type: QueueConversationCallbackEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

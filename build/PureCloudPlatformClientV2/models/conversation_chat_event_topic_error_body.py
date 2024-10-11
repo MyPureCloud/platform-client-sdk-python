@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationChatEventTopicDetail
+    from . import ConversationChatEventTopicLimit
 
 class ConversationChatEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class ConversationChatEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[ConversationChatEventTopicDetail]',
-            'errors': 'list[ConversationChatEventTopicErrorBody]'
+            'errors': 'list[ConversationChatEventTopicErrorBody]',
+            'limit': 'ConversationChatEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class ConversationChatEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class ConversationChatEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class ConversationChatEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'ConversationChatEventTopicLimit':
+        """
+        Gets the limit of this ConversationChatEventTopicErrorBody.
+
+
+        :return: The limit of this ConversationChatEventTopicErrorBody.
+        :rtype: ConversationChatEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'ConversationChatEventTopicLimit') -> None:
+        """
+        Sets the limit of this ConversationChatEventTopicErrorBody.
+
+
+        :param limit: The limit of this ConversationChatEventTopicErrorBody.
+        :type: ConversationChatEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

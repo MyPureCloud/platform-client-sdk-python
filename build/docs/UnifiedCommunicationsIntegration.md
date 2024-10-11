@@ -16,10 +16,11 @@
 | **i10n** | [dict(str, UCI10n)](UCI10n) | i10n | |
 | **polled_presence** | bool | polledPresence | |
 | **poll_interval_sec** | int | pollIntervalSec | [optional] |
+| **include_badge** | bool | includeBadge | [optional] |
 | **user_permissions** | list[str] | userPermissions | |
 | **oauth_scopes** | list[str] |  | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

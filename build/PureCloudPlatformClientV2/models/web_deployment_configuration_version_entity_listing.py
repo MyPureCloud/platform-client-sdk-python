@@ -50,44 +50,26 @@ class WebDeploymentConfigurationVersionEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'total': 'int',
             'entities': 'list[WebDeploymentConfigurationVersion]',
-            'self_uri': 'str'
+            'next_uri': 'str',
+            'self_uri': 'str',
+            'previous_uri': 'str',
+            'total': 'int'
         }
 
         self.attribute_map = {
-            'total': 'total',
             'entities': 'entities',
-            'self_uri': 'selfUri'
+            'next_uri': 'nextUri',
+            'self_uri': 'selfUri',
+            'previous_uri': 'previousUri',
+            'total': 'total'
         }
 
-        self._total = None
         self._entities = None
+        self._next_uri = None
         self._self_uri = None
-
-    @property
-    def total(self) -> int:
-        """
-        Gets the total of this WebDeploymentConfigurationVersionEntityListing.
-
-
-        :return: The total of this WebDeploymentConfigurationVersionEntityListing.
-        :rtype: int
-        """
-        return self._total
-
-    @total.setter
-    def total(self, total: int) -> None:
-        """
-        Sets the total of this WebDeploymentConfigurationVersionEntityListing.
-
-
-        :param total: The total of this WebDeploymentConfigurationVersionEntityListing.
-        :type: int
-        """
-        
-
-        self._total = total
+        self._previous_uri = None
+        self._total = None
 
     @property
     def entities(self) -> List['WebDeploymentConfigurationVersion']:
@@ -114,6 +96,30 @@ class WebDeploymentConfigurationVersionEntityListing(object):
         self._entities = entities
 
     @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this WebDeploymentConfigurationVersionEntityListing.
+
+
+        :return: The next_uri of this WebDeploymentConfigurationVersionEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this WebDeploymentConfigurationVersionEntityListing.
+
+
+        :param next_uri: The next_uri of this WebDeploymentConfigurationVersionEntityListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
+
+    @property
     def self_uri(self) -> str:
         """
         Gets the self_uri of this WebDeploymentConfigurationVersionEntityListing.
@@ -136,6 +142,54 @@ class WebDeploymentConfigurationVersionEntityListing(object):
         
 
         self._self_uri = self_uri
+
+    @property
+    def previous_uri(self) -> str:
+        """
+        Gets the previous_uri of this WebDeploymentConfigurationVersionEntityListing.
+
+
+        :return: The previous_uri of this WebDeploymentConfigurationVersionEntityListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri: str) -> None:
+        """
+        Sets the previous_uri of this WebDeploymentConfigurationVersionEntityListing.
+
+
+        :param previous_uri: The previous_uri of this WebDeploymentConfigurationVersionEntityListing.
+        :type: str
+        """
+        
+
+        self._previous_uri = previous_uri
+
+    @property
+    def total(self) -> int:
+        """
+        Gets the total of this WebDeploymentConfigurationVersionEntityListing.
+
+
+        :return: The total of this WebDeploymentConfigurationVersionEntityListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total: int) -> None:
+        """
+        Sets the total of this WebDeploymentConfigurationVersionEntityListing.
+
+
+        :param total: The total of this WebDeploymentConfigurationVersionEntityListing.
+        :type: int
+        """
+        
+
+        self._total = total
 
     def to_dict(self):
         """

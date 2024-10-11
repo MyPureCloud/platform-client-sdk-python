@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import CampaignBusinessCategoryMetrics
     from . import CampaignLinesUtilization
     from . import ConnectRate
 
@@ -59,7 +60,10 @@ class CampaignStats(object):
             'scheduled_calls': 'int',
             'time_zone_rescheduled_calls': 'int',
             'filtered_out_contacts_count': 'int',
-            'lines_utilization': 'CampaignLinesUtilization'
+            'right_party_contacts_count': 'int',
+            'valid_attempts': 'int',
+            'lines_utilization': 'CampaignLinesUtilization',
+            'business_category_metrics': 'CampaignBusinessCategoryMetrics'
         }
 
         self.attribute_map = {
@@ -71,7 +75,10 @@ class CampaignStats(object):
             'scheduled_calls': 'scheduledCalls',
             'time_zone_rescheduled_calls': 'timeZoneRescheduledCalls',
             'filtered_out_contacts_count': 'filteredOutContactsCount',
-            'lines_utilization': 'linesUtilization'
+            'right_party_contacts_count': 'rightPartyContactsCount',
+            'valid_attempts': 'validAttempts',
+            'lines_utilization': 'linesUtilization',
+            'business_category_metrics': 'businessCategoryMetrics'
         }
 
         self._contact_rate = None
@@ -82,7 +89,10 @@ class CampaignStats(object):
         self._scheduled_calls = None
         self._time_zone_rescheduled_calls = None
         self._filtered_out_contacts_count = None
+        self._right_party_contacts_count = None
+        self._valid_attempts = None
         self._lines_utilization = None
+        self._business_category_metrics = None
 
     @property
     def contact_rate(self) -> 'ConnectRate':
@@ -277,6 +287,54 @@ class CampaignStats(object):
         self._filtered_out_contacts_count = filtered_out_contacts_count
 
     @property
+    def right_party_contacts_count(self) -> int:
+        """
+        Gets the right_party_contacts_count of this CampaignStats.
+        Information on the campaign's number of Right Party Contacts
+
+        :return: The right_party_contacts_count of this CampaignStats.
+        :rtype: int
+        """
+        return self._right_party_contacts_count
+
+    @right_party_contacts_count.setter
+    def right_party_contacts_count(self, right_party_contacts_count: int) -> None:
+        """
+        Sets the right_party_contacts_count of this CampaignStats.
+        Information on the campaign's number of Right Party Contacts
+
+        :param right_party_contacts_count: The right_party_contacts_count of this CampaignStats.
+        :type: int
+        """
+        
+
+        self._right_party_contacts_count = right_party_contacts_count
+
+    @property
+    def valid_attempts(self) -> int:
+        """
+        Gets the valid_attempts of this CampaignStats.
+        Information on the campaign's valid attempts
+
+        :return: The valid_attempts of this CampaignStats.
+        :rtype: int
+        """
+        return self._valid_attempts
+
+    @valid_attempts.setter
+    def valid_attempts(self, valid_attempts: int) -> None:
+        """
+        Sets the valid_attempts of this CampaignStats.
+        Information on the campaign's valid attempts
+
+        :param valid_attempts: The valid_attempts of this CampaignStats.
+        :type: int
+        """
+        
+
+        self._valid_attempts = valid_attempts
+
+    @property
     def lines_utilization(self) -> 'CampaignLinesUtilization':
         """
         Gets the lines_utilization of this CampaignStats.
@@ -299,6 +357,30 @@ class CampaignStats(object):
         
 
         self._lines_utilization = lines_utilization
+
+    @property
+    def business_category_metrics(self) -> 'CampaignBusinessCategoryMetrics':
+        """
+        Gets the business_category_metrics of this CampaignStats.
+        Information on the campaign's business category metrics
+
+        :return: The business_category_metrics of this CampaignStats.
+        :rtype: CampaignBusinessCategoryMetrics
+        """
+        return self._business_category_metrics
+
+    @business_category_metrics.setter
+    def business_category_metrics(self, business_category_metrics: 'CampaignBusinessCategoryMetrics') -> None:
+        """
+        Sets the business_category_metrics of this CampaignStats.
+        Information on the campaign's business category metrics
+
+        :param business_category_metrics: The business_category_metrics of this CampaignStats.
+        :type: CampaignBusinessCategoryMetrics
+        """
+        
+
+        self._business_category_metrics = business_category_metrics
 
     def to_dict(self):
         """

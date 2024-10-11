@@ -56,7 +56,9 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
             'status': 'str',
             'error': 'str',
             'active': 'bool',
-            'type': 'str'
+            'type': 'str',
+            'file_name': 'str',
+            'file_size': 'int'
         }
 
         self.attribute_map = {
@@ -68,7 +70,9 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
             'status': 'status',
             'error': 'error',
             'active': 'active',
-            'type': 'type'
+            'type': 'type',
+            'file_name': 'fileName',
+            'file_size': 'fileSize'
         }
 
         self._request_id = None
@@ -80,6 +84,8 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
         self._error = None
         self._active = None
         self._type = None
+        self._file_name = None
+        self._file_size = None
 
     @property
     def request_id(self) -> str:
@@ -306,6 +312,54 @@ class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def file_name(self) -> str:
+        """
+        Gets the file_name of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :return: The file_name of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :rtype: str
+        """
+        return self._file_name
+
+    @file_name.setter
+    def file_name(self, file_name: str) -> None:
+        """
+        Sets the file_name of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :param file_name: The file_name of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :type: str
+        """
+        
+
+        self._file_name = file_name
+
+    @property
+    def file_size(self) -> int:
+        """
+        Gets the file_size of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :return: The file_size of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :rtype: int
+        """
+        return self._file_size
+
+    @file_size.setter
+    def file_size(self, file_size: int) -> None:
+        """
+        Sets the file_size of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+
+
+        :param file_size: The file_size of this WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.
+        :type: int
+        """
+        
+
+        self._file_size = file_size
 
     def to_dict(self):
         """

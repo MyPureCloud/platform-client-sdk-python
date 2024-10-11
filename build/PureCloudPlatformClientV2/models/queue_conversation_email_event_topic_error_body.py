@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationEmailEventTopicDetail
+    from . import QueueConversationEmailEventTopicLimit
 
 class QueueConversationEmailEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class QueueConversationEmailEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[QueueConversationEmailEventTopicDetail]',
-            'errors': 'list[QueueConversationEmailEventTopicErrorBody]'
+            'errors': 'list[QueueConversationEmailEventTopicErrorBody]',
+            'limit': 'QueueConversationEmailEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class QueueConversationEmailEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class QueueConversationEmailEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class QueueConversationEmailEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'QueueConversationEmailEventTopicLimit':
+        """
+        Gets the limit of this QueueConversationEmailEventTopicErrorBody.
+
+
+        :return: The limit of this QueueConversationEmailEventTopicErrorBody.
+        :rtype: QueueConversationEmailEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'QueueConversationEmailEventTopicLimit') -> None:
+        """
+        Sets the limit of this QueueConversationEmailEventTopicErrorBody.
+
+
+        :param limit: The limit of this QueueConversationEmailEventTopicErrorBody.
+        :type: QueueConversationEmailEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

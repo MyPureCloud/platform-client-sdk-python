@@ -992,4 +992,4 @@ except ApiException as e:
 [**WebChatSettings**](WebChatSettings)
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

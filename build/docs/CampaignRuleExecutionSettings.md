@@ -6,7 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **frequency** | str | Execution control frequency | |
+| **time_zone_id** | str | The time zone for the execution control frequency&#x3D;\&quot;oncePerDay\&quot;; for example, Africa/Abidjan. This property is ignored when frequency is not \&quot;oncePerDay\&quot; | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

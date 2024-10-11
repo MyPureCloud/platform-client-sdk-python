@@ -48,13 +48,70 @@ class CampaignRuleExecutionSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'frequency': 'str',
+            'time_zone_id': 'str'
         }
 
         self.attribute_map = {
-            
+            'frequency': 'frequency',
+            'time_zone_id': 'timeZoneId'
         }
 
+        self._frequency = None
+        self._time_zone_id = None
+
+    @property
+    def frequency(self) -> str:
+        """
+        Gets the frequency of this CampaignRuleExecutionSettings.
+        Execution control frequency
+
+        :return: The frequency of this CampaignRuleExecutionSettings.
+        :rtype: str
+        """
+        return self._frequency
+
+    @frequency.setter
+    def frequency(self, frequency: str) -> None:
+        """
+        Sets the frequency of this CampaignRuleExecutionSettings.
+        Execution control frequency
+
+        :param frequency: The frequency of this CampaignRuleExecutionSettings.
+        :type: str
+        """
+        if isinstance(frequency, int):
+            frequency = str(frequency)
+        allowed_values = ["onEachTrigger", "oncePerDay"]
+        if frequency.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for frequency -> " + frequency)
+            self._frequency = "outdated_sdk_version"
+        else:
+            self._frequency = frequency
+
+    @property
+    def time_zone_id(self) -> str:
+        """
+        Gets the time_zone_id of this CampaignRuleExecutionSettings.
+        The time zone for the execution control frequency=\"oncePerDay\"; for example, Africa/Abidjan. This property is ignored when frequency is not \"oncePerDay\"
+
+        :return: The time_zone_id of this CampaignRuleExecutionSettings.
+        :rtype: str
+        """
+        return self._time_zone_id
+
+    @time_zone_id.setter
+    def time_zone_id(self, time_zone_id: str) -> None:
+        """
+        Sets the time_zone_id of this CampaignRuleExecutionSettings.
+        The time zone for the execution control frequency=\"oncePerDay\"; for example, Africa/Abidjan. This property is ignored when frequency is not \"oncePerDay\"
+
+        :param time_zone_id: The time_zone_id of this CampaignRuleExecutionSettings.
+        :type: str
+        """
+        
+
+        self._time_zone_id = time_zone_id
 
     def to_dict(self):
         """

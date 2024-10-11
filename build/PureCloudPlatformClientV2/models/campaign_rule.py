@@ -35,7 +35,9 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import CampaignRuleAction
     from . import CampaignRuleCondition
+    from . import CampaignRuleConditionGroup
     from . import CampaignRuleEntities
+    from . import CampaignRuleExecutionSettings
 
 class CampaignRule(object):
     """
@@ -62,6 +64,9 @@ class CampaignRule(object):
             'campaign_rule_actions': 'list[CampaignRuleAction]',
             'match_any_conditions': 'bool',
             'enabled': 'bool',
+            'campaign_rule_processing': 'str',
+            'condition_groups': 'list[CampaignRuleConditionGroup]',
+            'execution_settings': 'CampaignRuleExecutionSettings',
             'self_uri': 'str'
         }
 
@@ -76,6 +81,9 @@ class CampaignRule(object):
             'campaign_rule_actions': 'campaignRuleActions',
             'match_any_conditions': 'matchAnyConditions',
             'enabled': 'enabled',
+            'campaign_rule_processing': 'campaignRuleProcessing',
+            'condition_groups': 'conditionGroups',
+            'execution_settings': 'executionSettings',
             'self_uri': 'selfUri'
         }
 
@@ -89,6 +97,9 @@ class CampaignRule(object):
         self._campaign_rule_actions = None
         self._match_any_conditions = None
         self._enabled = None
+        self._campaign_rule_processing = None
+        self._condition_groups = None
+        self._execution_settings = None
         self._self_uri = None
 
     @property
@@ -330,6 +341,83 @@ class CampaignRule(object):
         
 
         self._enabled = enabled
+
+    @property
+    def campaign_rule_processing(self) -> str:
+        """
+        Gets the campaign_rule_processing of this CampaignRule.
+        CampaignRule processing algorithm
+
+        :return: The campaign_rule_processing of this CampaignRule.
+        :rtype: str
+        """
+        return self._campaign_rule_processing
+
+    @campaign_rule_processing.setter
+    def campaign_rule_processing(self, campaign_rule_processing: str) -> None:
+        """
+        Sets the campaign_rule_processing of this CampaignRule.
+        CampaignRule processing algorithm
+
+        :param campaign_rule_processing: The campaign_rule_processing of this CampaignRule.
+        :type: str
+        """
+        if isinstance(campaign_rule_processing, int):
+            campaign_rule_processing = str(campaign_rule_processing)
+        allowed_values = ["v2"]
+        if campaign_rule_processing.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for campaign_rule_processing -> " + campaign_rule_processing)
+            self._campaign_rule_processing = "outdated_sdk_version"
+        else:
+            self._campaign_rule_processing = campaign_rule_processing
+
+    @property
+    def condition_groups(self) -> List['CampaignRuleConditionGroup']:
+        """
+        Gets the condition_groups of this CampaignRule.
+        List of condition groups that are evaluated, used only with campaignRuleProcessing=\"v2\"
+
+        :return: The condition_groups of this CampaignRule.
+        :rtype: list[CampaignRuleConditionGroup]
+        """
+        return self._condition_groups
+
+    @condition_groups.setter
+    def condition_groups(self, condition_groups: List['CampaignRuleConditionGroup']) -> None:
+        """
+        Sets the condition_groups of this CampaignRule.
+        List of condition groups that are evaluated, used only with campaignRuleProcessing=\"v2\"
+
+        :param condition_groups: The condition_groups of this CampaignRule.
+        :type: list[CampaignRuleConditionGroup]
+        """
+        
+
+        self._condition_groups = condition_groups
+
+    @property
+    def execution_settings(self) -> 'CampaignRuleExecutionSettings':
+        """
+        Gets the execution_settings of this CampaignRule.
+        CampaignRule execution settings
+
+        :return: The execution_settings of this CampaignRule.
+        :rtype: CampaignRuleExecutionSettings
+        """
+        return self._execution_settings
+
+    @execution_settings.setter
+    def execution_settings(self, execution_settings: 'CampaignRuleExecutionSettings') -> None:
+        """
+        Sets the execution_settings of this CampaignRule.
+        CampaignRule execution settings
+
+        :param execution_settings: The execution_settings of this CampaignRule.
+        :type: CampaignRuleExecutionSettings
+        """
+        
+
+        self._execution_settings = execution_settings
 
     @property
     def self_uri(self) -> str:

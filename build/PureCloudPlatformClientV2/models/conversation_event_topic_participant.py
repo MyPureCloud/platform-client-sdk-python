@@ -39,6 +39,7 @@ if TYPE_CHECKING:
     from . import ConversationEventTopicCobrowse
     from . import ConversationEventTopicConversationRoutingData
     from . import ConversationEventTopicEmail
+    from . import ConversationEventTopicInternalMessage
     from . import ConversationEventTopicMessage
     from . import ConversationEventTopicScreenshare
     from . import ConversationEventTopicSocialExpression
@@ -96,6 +97,7 @@ class ConversationEventTopicParticipant(object):
             'cobrowsesessions': 'list[ConversationEventTopicCobrowse]',
             'emails': 'list[ConversationEventTopicEmail]',
             'messages': 'list[ConversationEventTopicMessage]',
+            'internal_messages': 'list[ConversationEventTopicInternalMessage]',
             'screenshares': 'list[ConversationEventTopicScreenshare]',
             'social_expressions': 'list[ConversationEventTopicSocialExpression]',
             'videos': 'list[ConversationEventTopicVideo]',
@@ -138,6 +140,7 @@ class ConversationEventTopicParticipant(object):
             'cobrowsesessions': 'cobrowsesessions',
             'emails': 'emails',
             'messages': 'messages',
+            'internal_messages': 'internalMessages',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
@@ -179,6 +182,7 @@ class ConversationEventTopicParticipant(object):
         self._cobrowsesessions = None
         self._emails = None
         self._messages = None
+        self._internal_messages = None
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
@@ -1028,6 +1032,30 @@ class ConversationEventTopicParticipant(object):
         
 
         self._messages = messages
+
+    @property
+    def internal_messages(self) -> List['ConversationEventTopicInternalMessage']:
+        """
+        Gets the internal_messages of this ConversationEventTopicParticipant.
+
+
+        :return: The internal_messages of this ConversationEventTopicParticipant.
+        :rtype: list[ConversationEventTopicInternalMessage]
+        """
+        return self._internal_messages
+
+    @internal_messages.setter
+    def internal_messages(self, internal_messages: List['ConversationEventTopicInternalMessage']) -> None:
+        """
+        Sets the internal_messages of this ConversationEventTopicParticipant.
+
+
+        :param internal_messages: The internal_messages of this ConversationEventTopicParticipant.
+        :type: list[ConversationEventTopicInternalMessage]
+        """
+        
+
+        self._internal_messages = internal_messages
 
     @property
     def screenshares(self) -> List['ConversationEventTopicScreenshare']:

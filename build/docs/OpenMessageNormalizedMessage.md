@@ -12,7 +12,8 @@
 | **text** | str | Message text. | [optional] |
 | **content** | [list[OpenMessageContent]](OpenMessageContent) | List of content elements. | [optional] |
 | **metadata** | dict(str, str) | Additional metadata about this message. | [optional] |
+| **conversation_id** | str | The conversationId context for the message | [optional] |
 
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

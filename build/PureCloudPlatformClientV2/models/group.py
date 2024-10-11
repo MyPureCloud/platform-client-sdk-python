@@ -66,6 +66,7 @@ class Group(object):
             'visibility': 'str',
             'roles_enabled': 'bool',
             'include_owners': 'bool',
+            'calls_enabled': 'bool',
             'owners': 'list[User]',
             'self_uri': 'str'
         }
@@ -85,6 +86,7 @@ class Group(object):
             'visibility': 'visibility',
             'roles_enabled': 'rolesEnabled',
             'include_owners': 'includeOwners',
+            'calls_enabled': 'callsEnabled',
             'owners': 'owners',
             'self_uri': 'selfUri'
         }
@@ -103,6 +105,7 @@ class Group(object):
         self._visibility = None
         self._roles_enabled = None
         self._include_owners = None
+        self._calls_enabled = None
         self._owners = None
         self._self_uri = None
 
@@ -456,6 +459,30 @@ class Group(object):
         
 
         self._include_owners = include_owners
+
+    @property
+    def calls_enabled(self) -> bool:
+        """
+        Gets the calls_enabled of this Group.
+        Allow calls to be placed to this group.
+
+        :return: The calls_enabled of this Group.
+        :rtype: bool
+        """
+        return self._calls_enabled
+
+    @calls_enabled.setter
+    def calls_enabled(self, calls_enabled: bool) -> None:
+        """
+        Sets the calls_enabled of this Group.
+        Allow calls to be placed to this group.
+
+        :param calls_enabled: The calls_enabled of this Group.
+        :type: bool
+        """
+        
+
+        self._calls_enabled = calls_enabled
 
     @property
     def owners(self) -> List['User']:

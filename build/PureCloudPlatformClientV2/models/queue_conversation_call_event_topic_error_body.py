@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationCallEventTopicDetail
+    from . import QueueConversationCallEventTopicLimit
 
 class QueueConversationCallEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class QueueConversationCallEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[QueueConversationCallEventTopicDetail]',
-            'errors': 'list[QueueConversationCallEventTopicErrorBody]'
+            'errors': 'list[QueueConversationCallEventTopicErrorBody]',
+            'limit': 'QueueConversationCallEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class QueueConversationCallEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class QueueConversationCallEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class QueueConversationCallEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'QueueConversationCallEventTopicLimit':
+        """
+        Gets the limit of this QueueConversationCallEventTopicErrorBody.
+
+
+        :return: The limit of this QueueConversationCallEventTopicErrorBody.
+        :rtype: QueueConversationCallEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'QueueConversationCallEventTopicLimit') -> None:
+        """
+        Sets the limit of this QueueConversationCallEventTopicErrorBody.
+
+
+        :param limit: The limit of this QueueConversationCallEventTopicErrorBody.
+        :type: QueueConversationCallEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

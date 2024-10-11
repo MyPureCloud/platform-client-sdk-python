@@ -79,7 +79,7 @@ class ConversationEnrichmentSentimentV2(object):
         """
         if isinstance(tag, int):
             tag = str(tag)
-        allowed_values = ["Positive", "Negative", "Neutral"]
+        allowed_values = ["Unknown", "Positive", "Negative", "Neutral"]
         if tag.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for tag -> " + tag)
             self._tag = "outdated_sdk_version"

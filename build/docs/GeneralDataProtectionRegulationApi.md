@@ -211,4 +211,4 @@ except ApiException as e:
 [**GDPRRequest**](GDPRRequest)
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

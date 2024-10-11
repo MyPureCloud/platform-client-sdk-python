@@ -54,6 +54,7 @@ class IntentDefinition(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'description': 'str',
             'entity_type_bindings': 'list[NamedEntityTypeBinding]',
             'entity_name_references': 'list[str]',
             'utterances': 'list[NluUtterance]',
@@ -63,6 +64,7 @@ class IntentDefinition(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'description': 'description',
             'entity_type_bindings': 'entityTypeBindings',
             'entity_name_references': 'entityNameReferences',
             'utterances': 'utterances',
@@ -71,6 +73,7 @@ class IntentDefinition(object):
 
         self._id = None
         self._name = None
+        self._description = None
         self._entity_type_bindings = None
         self._entity_name_references = None
         self._utterances = None
@@ -123,6 +126,30 @@ class IntentDefinition(object):
         
 
         self._name = name
+
+    @property
+    def description(self) -> str:
+        """
+        Gets the description of this IntentDefinition.
+        The description of the intent.
+
+        :return: The description of this IntentDefinition.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str) -> None:
+        """
+        Sets the description of this IntentDefinition.
+        The description of the intent.
+
+        :param description: The description of this IntentDefinition.
+        :type: str
+        """
+        
+
+        self._description = description
 
     @property
     def entity_type_bindings(self) -> List['NamedEntityTypeBinding']:

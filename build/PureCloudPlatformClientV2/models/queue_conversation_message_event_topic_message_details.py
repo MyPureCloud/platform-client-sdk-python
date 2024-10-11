@@ -61,7 +61,8 @@ class QueueConversationMessageEventTopicMessageDetails(object):
             'media': 'list[QueueConversationMessageEventTopicMessageMedia]',
             'stickers': 'list[QueueConversationMessageEventTopicMessageSticker]',
             'error_info': 'QueueConversationMessageEventTopicErrorDetails',
-            'message_metadata': 'QueueConversationMessageEventTopicMessageMetadata'
+            'message_metadata': 'QueueConversationMessageEventTopicMessageMetadata',
+            'social_visibility': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class QueueConversationMessageEventTopicMessageDetails(object):
             'media': 'media',
             'stickers': 'stickers',
             'error_info': 'errorInfo',
-            'message_metadata': 'messageMetadata'
+            'message_metadata': 'messageMetadata',
+            'social_visibility': 'socialVisibility'
         }
 
         self._message = None
@@ -83,6 +85,7 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         self._stickers = None
         self._error_info = None
         self._message_metadata = None
+        self._social_visibility = None
 
     @property
     def message(self) -> 'QueueConversationMessageEventTopicUriReference':
@@ -280,6 +283,35 @@ class QueueConversationMessageEventTopicMessageDetails(object):
         
 
         self._message_metadata = message_metadata
+
+    @property
+    def social_visibility(self) -> str:
+        """
+        Gets the social_visibility of this QueueConversationMessageEventTopicMessageDetails.
+
+
+        :return: The social_visibility of this QueueConversationMessageEventTopicMessageDetails.
+        :rtype: str
+        """
+        return self._social_visibility
+
+    @social_visibility.setter
+    def social_visibility(self, social_visibility: str) -> None:
+        """
+        Sets the social_visibility of this QueueConversationMessageEventTopicMessageDetails.
+
+
+        :param social_visibility: The social_visibility of this QueueConversationMessageEventTopicMessageDetails.
+        :type: str
+        """
+        if isinstance(social_visibility, int):
+            social_visibility = str(social_visibility)
+        allowed_values = ["private", "public"]
+        if social_visibility.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for social_visibility -> " + social_visibility)
+            self._social_visibility = "outdated_sdk_version"
+        else:
+            self._social_visibility = social_visibility
 
     def to_dict(self):
         """

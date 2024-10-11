@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationMessageEventTopicDetail
+    from . import ConversationMessageEventTopicLimit
 
 class ConversationMessageEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class ConversationMessageEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[ConversationMessageEventTopicDetail]',
-            'errors': 'list[ConversationMessageEventTopicErrorBody]'
+            'errors': 'list[ConversationMessageEventTopicErrorBody]',
+            'limit': 'ConversationMessageEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class ConversationMessageEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class ConversationMessageEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class ConversationMessageEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'ConversationMessageEventTopicLimit':
+        """
+        Gets the limit of this ConversationMessageEventTopicErrorBody.
+
+
+        :return: The limit of this ConversationMessageEventTopicErrorBody.
+        :rtype: ConversationMessageEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'ConversationMessageEventTopicLimit') -> None:
+        """
+        Sets the limit of this ConversationMessageEventTopicErrorBody.
+
+
+        :param limit: The limit of this ConversationMessageEventTopicErrorBody.
+        :type: ConversationMessageEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

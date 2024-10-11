@@ -70,6 +70,7 @@ class Participant(object):
             'user_uri': 'str',
             'user_id': 'str',
             'external_contact_id': 'str',
+            'external_contact_initial_division_id': 'str',
             'external_organization_id': 'str',
             'queue_id': 'str',
             'group_id': 'str',
@@ -121,6 +122,7 @@ class Participant(object):
             'user_uri': 'userUri',
             'user_id': 'userId',
             'external_contact_id': 'externalContactId',
+            'external_contact_initial_division_id': 'externalContactInitialDivisionId',
             'external_organization_id': 'externalOrganizationId',
             'queue_id': 'queueId',
             'group_id': 'groupId',
@@ -171,6 +173,7 @@ class Participant(object):
         self._user_uri = None
         self._user_id = None
         self._external_contact_id = None
+        self._external_contact_initial_division_id = None
         self._external_organization_id = None
         self._queue_id = None
         self._group_id = None
@@ -403,6 +406,30 @@ class Participant(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def external_contact_initial_division_id(self) -> str:
+        """
+        Gets the external_contact_initial_division_id of this Participant.
+        If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+
+        :return: The external_contact_initial_division_id of this Participant.
+        :rtype: str
+        """
+        return self._external_contact_initial_division_id
+
+    @external_contact_initial_division_id.setter
+    def external_contact_initial_division_id(self, external_contact_initial_division_id: str) -> None:
+        """
+        Sets the external_contact_initial_division_id of this Participant.
+        If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+
+        :param external_contact_initial_division_id: The external_contact_initial_division_id of this Participant.
+        :type: str
+        """
+        
+
+        self._external_contact_initial_division_id = external_contact_initial_division_id
 
     @property
     def external_organization_id(self) -> str:

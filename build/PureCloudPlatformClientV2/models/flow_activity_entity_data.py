@@ -485,7 +485,7 @@ class FlowActivityEntityData(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["callback", "chat", "cobrowse", "email", "message", "internalmessage", "screenshare", "unknown", "video", "voice"]
+        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

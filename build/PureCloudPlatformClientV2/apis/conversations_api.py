@@ -10768,7 +10768,6 @@ class ConversationsApi(object):
         """
         Update conversation by setting its parking state
         
-	    patch_conversations_email_participant_parkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -16902,12 +16901,13 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param str integration_id: integrationId (required)
         :param OpenInboundNormalizedMessage body: NormalizedMessage (required)
+        :param bool prefetch_conversation_id: Indicates whether or not to prefetch conversationId
         :return: OpenMessageNormalizedMessage
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['integration_id', 'body']
+        all_params = ['integration_id', 'body', 'prefetch_conversation_id']
         all_params.append('callback')
 
         params = locals()
@@ -16934,6 +16934,8 @@ class ConversationsApi(object):
             path_params['integrationId'] = params['integration_id']
 
         query_params = {}
+        if 'prefetch_conversation_id' in params:
+            query_params['prefetchConversationId'] = params['prefetch_conversation_id']
 
         header_params = {}
 

@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ConversationProperties
     from . import NumericRange
+    from . import SocialKeyword
     from . import TranscriptTopics
     from . import Transcripts
 
@@ -249,7 +250,19 @@ class ViewFilter(object):
             'screen_monitor_user_ids': 'list[str]',
             'dashboard_type': 'str',
             'dashboard_access_filter': 'str',
-            'transcript_duration_milliseconds': 'list[NumericRange]'
+            'transcript_duration_milliseconds': 'list[NumericRange]',
+            'social_countries': 'list[str]',
+            'social_languages': 'list[str]',
+            'social_channels': 'list[str]',
+            'social_sentiment_category': 'list[str]',
+            'social_topic_ids': 'list[str]',
+            'social_ingestion_rule_ids': 'list[str]',
+            'social_conversation_created': 'bool',
+            'social_content_type': 'list[str]',
+            'social_keywords': 'list[SocialKeyword]',
+            'social_post_escalated': 'bool',
+            'social_classifications': 'list[str]',
+            'filter_users_by_manager_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -449,7 +462,19 @@ class ViewFilter(object):
             'screen_monitor_user_ids': 'screenMonitorUserIds',
             'dashboard_type': 'dashboardType',
             'dashboard_access_filter': 'dashboardAccessFilter',
-            'transcript_duration_milliseconds': 'transcriptDurationMilliseconds'
+            'transcript_duration_milliseconds': 'transcriptDurationMilliseconds',
+            'social_countries': 'socialCountries',
+            'social_languages': 'socialLanguages',
+            'social_channels': 'socialChannels',
+            'social_sentiment_category': 'socialSentimentCategory',
+            'social_topic_ids': 'socialTopicIds',
+            'social_ingestion_rule_ids': 'socialIngestionRuleIds',
+            'social_conversation_created': 'socialConversationCreated',
+            'social_content_type': 'socialContentType',
+            'social_keywords': 'socialKeywords',
+            'social_post_escalated': 'socialPostEscalated',
+            'social_classifications': 'socialClassifications',
+            'filter_users_by_manager_ids': 'filterUsersByManagerIds'
         }
 
         self._media_types = None
@@ -649,6 +674,18 @@ class ViewFilter(object):
         self._dashboard_type = None
         self._dashboard_access_filter = None
         self._transcript_duration_milliseconds = None
+        self._social_countries = None
+        self._social_languages = None
+        self._social_channels = None
+        self._social_sentiment_category = None
+        self._social_topic_ids = None
+        self._social_ingestion_rule_ids = None
+        self._social_conversation_created = None
+        self._social_content_type = None
+        self._social_keywords = None
+        self._social_post_escalated = None
+        self._social_classifications = None
+        self._filter_users_by_manager_ids = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5397,6 +5434,294 @@ class ViewFilter(object):
         
 
         self._transcript_duration_milliseconds = transcript_duration_milliseconds
+
+    @property
+    def social_countries(self) -> List[str]:
+        """
+        Gets the social_countries of this ViewFilter.
+        List of countries for social filtering
+
+        :return: The social_countries of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_countries
+
+    @social_countries.setter
+    def social_countries(self, social_countries: List[str]) -> None:
+        """
+        Sets the social_countries of this ViewFilter.
+        List of countries for social filtering
+
+        :param social_countries: The social_countries of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_countries = social_countries
+
+    @property
+    def social_languages(self) -> List[str]:
+        """
+        Gets the social_languages of this ViewFilter.
+        List of languages for social filtering
+
+        :return: The social_languages of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_languages
+
+    @social_languages.setter
+    def social_languages(self, social_languages: List[str]) -> None:
+        """
+        Sets the social_languages of this ViewFilter.
+        List of languages for social filtering
+
+        :param social_languages: The social_languages of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_languages = social_languages
+
+    @property
+    def social_channels(self) -> List[str]:
+        """
+        Gets the social_channels of this ViewFilter.
+        List of channels for social filtering
+
+        :return: The social_channels of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_channels
+
+    @social_channels.setter
+    def social_channels(self, social_channels: List[str]) -> None:
+        """
+        Sets the social_channels of this ViewFilter.
+        List of channels for social filtering
+
+        :param social_channels: The social_channels of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_channels = social_channels
+
+    @property
+    def social_sentiment_category(self) -> List[str]:
+        """
+        Gets the social_sentiment_category of this ViewFilter.
+        The sentiment of the social post
+
+        :return: The social_sentiment_category of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_sentiment_category
+
+    @social_sentiment_category.setter
+    def social_sentiment_category(self, social_sentiment_category: List[str]) -> None:
+        """
+        Sets the social_sentiment_category of this ViewFilter.
+        The sentiment of the social post
+
+        :param social_sentiment_category: The social_sentiment_category of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_sentiment_category = social_sentiment_category
+
+    @property
+    def social_topic_ids(self) -> List[str]:
+        """
+        Gets the social_topic_ids of this ViewFilter.
+        The list of topicIds for social filtering
+
+        :return: The social_topic_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_topic_ids
+
+    @social_topic_ids.setter
+    def social_topic_ids(self, social_topic_ids: List[str]) -> None:
+        """
+        Sets the social_topic_ids of this ViewFilter.
+        The list of topicIds for social filtering
+
+        :param social_topic_ids: The social_topic_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_topic_ids = social_topic_ids
+
+    @property
+    def social_ingestion_rule_ids(self) -> List[str]:
+        """
+        Gets the social_ingestion_rule_ids of this ViewFilter.
+        The list of ingestion ruleIds for social filtering
+
+        :return: The social_ingestion_rule_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_ingestion_rule_ids
+
+    @social_ingestion_rule_ids.setter
+    def social_ingestion_rule_ids(self, social_ingestion_rule_ids: List[str]) -> None:
+        """
+        Sets the social_ingestion_rule_ids of this ViewFilter.
+        The list of ingestion ruleIds for social filtering
+
+        :param social_ingestion_rule_ids: The social_ingestion_rule_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_ingestion_rule_ids = social_ingestion_rule_ids
+
+    @property
+    def social_conversation_created(self) -> bool:
+        """
+        Gets the social_conversation_created of this ViewFilter.
+        Filter to indicate if the post has created a conversation
+
+        :return: The social_conversation_created of this ViewFilter.
+        :rtype: bool
+        """
+        return self._social_conversation_created
+
+    @social_conversation_created.setter
+    def social_conversation_created(self, social_conversation_created: bool) -> None:
+        """
+        Sets the social_conversation_created of this ViewFilter.
+        Filter to indicate if the post has created a conversation
+
+        :param social_conversation_created: The social_conversation_created of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._social_conversation_created = social_conversation_created
+
+    @property
+    def social_content_type(self) -> List[str]:
+        """
+        Gets the social_content_type of this ViewFilter.
+        The list of content Type for social filtering
+
+        :return: The social_content_type of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_content_type
+
+    @social_content_type.setter
+    def social_content_type(self, social_content_type: List[str]) -> None:
+        """
+        Sets the social_content_type of this ViewFilter.
+        The list of content Type for social filtering
+
+        :param social_content_type: The social_content_type of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_content_type = social_content_type
+
+    @property
+    def social_keywords(self) -> List['SocialKeyword']:
+        """
+        Gets the social_keywords of this ViewFilter.
+        The list of keywords for social filtering
+
+        :return: The social_keywords of this ViewFilter.
+        :rtype: list[SocialKeyword]
+        """
+        return self._social_keywords
+
+    @social_keywords.setter
+    def social_keywords(self, social_keywords: List['SocialKeyword']) -> None:
+        """
+        Sets the social_keywords of this ViewFilter.
+        The list of keywords for social filtering
+
+        :param social_keywords: The social_keywords of this ViewFilter.
+        :type: list[SocialKeyword]
+        """
+        
+
+        self._social_keywords = social_keywords
+
+    @property
+    def social_post_escalated(self) -> bool:
+        """
+        Gets the social_post_escalated of this ViewFilter.
+        Filter to indicate if the post is escalated
+
+        :return: The social_post_escalated of this ViewFilter.
+        :rtype: bool
+        """
+        return self._social_post_escalated
+
+    @social_post_escalated.setter
+    def social_post_escalated(self, social_post_escalated: bool) -> None:
+        """
+        Sets the social_post_escalated of this ViewFilter.
+        Filter to indicate if the post is escalated
+
+        :param social_post_escalated: The social_post_escalated of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._social_post_escalated = social_post_escalated
+
+    @property
+    def social_classifications(self) -> List[str]:
+        """
+        Gets the social_classifications of this ViewFilter.
+        Indicates if a social message was public or private
+
+        :return: The social_classifications of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_classifications
+
+    @social_classifications.setter
+    def social_classifications(self, social_classifications: List[str]) -> None:
+        """
+        Sets the social_classifications of this ViewFilter.
+        Indicates if a social message was public or private
+
+        :param social_classifications: The social_classifications of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_classifications = social_classifications
+
+    @property
+    def filter_users_by_manager_ids(self) -> List[str]:
+        """
+        Gets the filter_users_by_manager_ids of this ViewFilter.
+        The manager ids used to fetch associated users for the view
+
+        :return: The filter_users_by_manager_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._filter_users_by_manager_ids
+
+    @filter_users_by_manager_ids.setter
+    def filter_users_by_manager_ids(self, filter_users_by_manager_ids: List[str]) -> None:
+        """
+        Sets the filter_users_by_manager_ids of this ViewFilter.
+        The manager ids used to fetch associated users for the view
+
+        :param filter_users_by_manager_ids: The filter_users_by_manager_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._filter_users_by_manager_ids = filter_users_by_manager_ids
 
     def to_dict(self):
         """

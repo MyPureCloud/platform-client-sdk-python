@@ -60,7 +60,8 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
             'media': 'list[QueueConversationSocialExpressionEventTopicMessageMedia]',
             'error_info': 'QueueConversationSocialExpressionEventTopicErrorDetails',
             'stickers': 'list[QueueConversationSocialExpressionEventTopicMessageSticker]',
-            'message_metadata': 'QueueConversationSocialExpressionEventTopicMessageMetadata'
+            'message_metadata': 'QueueConversationSocialExpressionEventTopicMessageMetadata',
+            'social_visibility': 'str'
         }
 
         self.attribute_map = {
@@ -71,7 +72,8 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
             'media': 'media',
             'error_info': 'errorInfo',
             'stickers': 'stickers',
-            'message_metadata': 'messageMetadata'
+            'message_metadata': 'messageMetadata',
+            'social_visibility': 'socialVisibility'
         }
 
         self._message_id = None
@@ -82,6 +84,7 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         self._error_info = None
         self._stickers = None
         self._message_metadata = None
+        self._social_visibility = None
 
     @property
     def message_id(self) -> str:
@@ -279,6 +282,35 @@ class QueueConversationSocialExpressionEventTopicMessageDetails(object):
         
 
         self._message_metadata = message_metadata
+
+    @property
+    def social_visibility(self) -> str:
+        """
+        Gets the social_visibility of this QueueConversationSocialExpressionEventTopicMessageDetails.
+        For social media messages, the visibility of the message in the originating social platform
+
+        :return: The social_visibility of this QueueConversationSocialExpressionEventTopicMessageDetails.
+        :rtype: str
+        """
+        return self._social_visibility
+
+    @social_visibility.setter
+    def social_visibility(self, social_visibility: str) -> None:
+        """
+        Sets the social_visibility of this QueueConversationSocialExpressionEventTopicMessageDetails.
+        For social media messages, the visibility of the message in the originating social platform
+
+        :param social_visibility: The social_visibility of this QueueConversationSocialExpressionEventTopicMessageDetails.
+        :type: str
+        """
+        if isinstance(social_visibility, int):
+            social_visibility = str(social_visibility)
+        allowed_values = ["private", "public"]
+        if social_visibility.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for social_visibility -> " + social_visibility)
+            self._social_visibility = "outdated_sdk_version"
+        else:
+            self._social_visibility = social_visibility
 
     def to_dict(self):
         """

@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DivisionEntityRef
     from . import DomainEntityRef
 
 class ConversationDivisionMembership(object):
@@ -51,7 +52,7 @@ class ConversationDivisionMembership(object):
         """
         self.swagger_types = {
             'division': 'DomainEntityRef',
-            'entities': 'list[DomainEntityRef]'
+            'entities': 'list[DivisionEntityRef]'
         }
 
         self.attribute_map = {
@@ -87,24 +88,24 @@ class ConversationDivisionMembership(object):
         self._division = division
 
     @property
-    def entities(self) -> List['DomainEntityRef']:
+    def entities(self) -> List['DivisionEntityRef']:
         """
         Gets the entities of this ConversationDivisionMembership.
         The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
 
         :return: The entities of this ConversationDivisionMembership.
-        :rtype: list[DomainEntityRef]
+        :rtype: list[DivisionEntityRef]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['DomainEntityRef']) -> None:
+    def entities(self, entities: List['DivisionEntityRef']) -> None:
         """
         Sets the entities of this ConversationDivisionMembership.
         The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
 
         :param entities: The entities of this ConversationDivisionMembership.
-        :type: list[DomainEntityRef]
+        :type: list[DivisionEntityRef]
         """
         
 

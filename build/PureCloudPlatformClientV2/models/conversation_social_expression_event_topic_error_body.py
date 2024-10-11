@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationSocialExpressionEventTopicDetail
+    from . import ConversationSocialExpressionEventTopicLimit
 
 class ConversationSocialExpressionEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class ConversationSocialExpressionEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[ConversationSocialExpressionEventTopicDetail]',
-            'errors': 'list[ConversationSocialExpressionEventTopicErrorBody]'
+            'errors': 'list[ConversationSocialExpressionEventTopicErrorBody]',
+            'limit': 'ConversationSocialExpressionEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class ConversationSocialExpressionEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class ConversationSocialExpressionEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class ConversationSocialExpressionEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'ConversationSocialExpressionEventTopicLimit':
+        """
+        Gets the limit of this ConversationSocialExpressionEventTopicErrorBody.
+
+
+        :return: The limit of this ConversationSocialExpressionEventTopicErrorBody.
+        :rtype: ConversationSocialExpressionEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'ConversationSocialExpressionEventTopicLimit') -> None:
+        """
+        Sets the limit of this ConversationSocialExpressionEventTopicErrorBody.
+
+
+        :param limit: The limit of this ConversationSocialExpressionEventTopicErrorBody.
+        :type: ConversationSocialExpressionEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

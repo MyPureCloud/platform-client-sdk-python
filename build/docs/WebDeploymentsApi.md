@@ -387,7 +387,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
-show_only_published = False # bool | Get only configuration drafts with published versions (optional) (default to False)
+show_only_published = True # bool | Filter by published status. (optional)
 
 try:
     # View configuration drafts
@@ -402,7 +402,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **show_only_published** | **bool**| Get only configuration drafts with published versions | [optional] [default to False] |
+| **show_only_published** | **bool**| Filter by published status. | [optional]  |
 
 ### Return type
 
@@ -937,4 +937,4 @@ except ApiException as e:
 [**WebDeployment**](WebDeployment)
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

@@ -1869,4 +1869,4 @@ except ApiException as e:
 [**TagValue**](TagValue)
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

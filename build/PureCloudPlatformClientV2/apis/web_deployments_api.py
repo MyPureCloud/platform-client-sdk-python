@@ -639,7 +639,7 @@ class WebDeploymentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param bool show_only_published: Get only configuration drafts with published versions
+        :param bool show_only_published: Filter by published status.
         :return: WebDeploymentConfigurationVersionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

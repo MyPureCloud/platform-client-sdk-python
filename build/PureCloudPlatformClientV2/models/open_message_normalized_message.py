@@ -56,7 +56,8 @@ class OpenMessageNormalizedMessage(object):
             'type': 'str',
             'text': 'str',
             'content': 'list[OpenMessageContent]',
-            'metadata': 'dict(str, str)'
+            'metadata': 'dict(str, str)',
+            'conversation_id': 'str'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class OpenMessageNormalizedMessage(object):
             'type': 'type',
             'text': 'text',
             'content': 'content',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'conversation_id': 'conversationId'
         }
 
         self._id = None
@@ -74,6 +76,7 @@ class OpenMessageNormalizedMessage(object):
         self._text = None
         self._content = None
         self._metadata = None
+        self._conversation_id = None
 
     @property
     def id(self) -> str:
@@ -223,6 +226,30 @@ class OpenMessageNormalizedMessage(object):
         
 
         self._metadata = metadata
+
+    @property
+    def conversation_id(self) -> str:
+        """
+        Gets the conversation_id of this OpenMessageNormalizedMessage.
+        The conversationId context for the message
+
+        :return: The conversation_id of this OpenMessageNormalizedMessage.
+        :rtype: str
+        """
+        return self._conversation_id
+
+    @conversation_id.setter
+    def conversation_id(self, conversation_id: str) -> None:
+        """
+        Sets the conversation_id of this OpenMessageNormalizedMessage.
+        The conversationId context for the message
+
+        :param conversation_id: The conversation_id of this OpenMessageNormalizedMessage.
+        :type: str
+        """
+        
+
+        self._conversation_id = conversation_id
 
     def to_dict(self):
         """

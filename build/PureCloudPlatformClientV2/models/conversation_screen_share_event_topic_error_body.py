@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationScreenShareEventTopicDetail
+    from . import ConversationScreenShareEventTopicLimit
 
 class ConversationScreenShareEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class ConversationScreenShareEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[ConversationScreenShareEventTopicDetail]',
-            'errors': 'list[ConversationScreenShareEventTopicErrorBody]'
+            'errors': 'list[ConversationScreenShareEventTopicErrorBody]',
+            'limit': 'ConversationScreenShareEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class ConversationScreenShareEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class ConversationScreenShareEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class ConversationScreenShareEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'ConversationScreenShareEventTopicLimit':
+        """
+        Gets the limit of this ConversationScreenShareEventTopicErrorBody.
+
+
+        :return: The limit of this ConversationScreenShareEventTopicErrorBody.
+        :rtype: ConversationScreenShareEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'ConversationScreenShareEventTopicLimit') -> None:
+        """
+        Sets the limit of this ConversationScreenShareEventTopicErrorBody.
+
+
+        :param limit: The limit of this ConversationScreenShareEventTopicErrorBody.
+        :type: ConversationScreenShareEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

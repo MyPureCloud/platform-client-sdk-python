@@ -229,7 +229,7 @@ class InfrastructureascodeJob(object):
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["Created", "Queued", "Running", "Complete", "Failed", "Incomplete"]
+        allowed_values = ["Created", "Queued", "Running", "Complete", "InternalError", "Incomplete", "Failed", "RollbackFailed", "RollbackComplete"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"

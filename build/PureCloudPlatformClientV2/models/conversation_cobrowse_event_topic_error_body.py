@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationCobrowseEventTopicDetail
+    from . import ConversationCobrowseEventTopicLimit
 
 class ConversationCobrowseEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class ConversationCobrowseEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[ConversationCobrowseEventTopicDetail]',
-            'errors': 'list[ConversationCobrowseEventTopicErrorBody]'
+            'errors': 'list[ConversationCobrowseEventTopicErrorBody]',
+            'limit': 'ConversationCobrowseEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class ConversationCobrowseEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class ConversationCobrowseEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class ConversationCobrowseEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'ConversationCobrowseEventTopicLimit':
+        """
+        Gets the limit of this ConversationCobrowseEventTopicErrorBody.
+
+
+        :return: The limit of this ConversationCobrowseEventTopicErrorBody.
+        :rtype: ConversationCobrowseEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'ConversationCobrowseEventTopicLimit') -> None:
+        """
+        Sets the limit of this ConversationCobrowseEventTopicErrorBody.
+
+
+        :param limit: The limit of this ConversationCobrowseEventTopicErrorBody.
+        :type: ConversationCobrowseEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

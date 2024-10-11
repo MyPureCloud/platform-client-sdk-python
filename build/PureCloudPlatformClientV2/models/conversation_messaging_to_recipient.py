@@ -57,6 +57,7 @@ class ConversationMessagingToRecipient(object):
             'first_name': 'str',
             'last_name': 'str',
             'email': 'str',
+            'external_contact_id': 'str',
             'additional_ids': 'list[ConversationRecipientAdditionalIdentifier]'
         }
 
@@ -68,6 +69,7 @@ class ConversationMessagingToRecipient(object):
             'first_name': 'firstName',
             'last_name': 'lastName',
             'email': 'email',
+            'external_contact_id': 'externalContactId',
             'additional_ids': 'additionalIds'
         }
 
@@ -78,6 +80,7 @@ class ConversationMessagingToRecipient(object):
         self._first_name = None
         self._last_name = None
         self._email = None
+        self._external_contact_id = None
         self._additional_ids = None
 
     @property
@@ -252,6 +255,30 @@ class ConversationMessagingToRecipient(object):
         
 
         self._email = email
+
+    @property
+    def external_contact_id(self) -> str:
+        """
+        Gets the external_contact_id of this ConversationMessagingToRecipient.
+        The identifier of the external contact.
+
+        :return: The external_contact_id of this ConversationMessagingToRecipient.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id: str) -> None:
+        """
+        Sets the external_contact_id of this ConversationMessagingToRecipient.
+        The identifier of the external contact.
+
+        :param external_contact_id: The external_contact_id of this ConversationMessagingToRecipient.
+        :type: str
+        """
+        
+
+        self._external_contact_id = external_contact_id
 
     @property
     def additional_ids(self) -> List['ConversationRecipientAdditionalIdentifier']:

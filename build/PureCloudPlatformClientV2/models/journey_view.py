@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import JourneyViewChart
     from . import JourneyViewElement
     from . import JourneyViewUser
 
@@ -60,6 +61,7 @@ class JourneyView(object):
             'interval': 'str',
             'duration': 'str',
             'elements': 'list[JourneyViewElement]',
+            'charts': 'list[JourneyViewChart]',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'self_uri': 'str'
@@ -75,6 +77,7 @@ class JourneyView(object):
             'interval': 'interval',
             'duration': 'duration',
             'elements': 'elements',
+            'charts': 'charts',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'self_uri': 'selfUri'
@@ -89,6 +92,7 @@ class JourneyView(object):
         self._interval = None
         self._duration = None
         self._elements = None
+        self._charts = None
         self._date_created = None
         self._date_modified = None
         self._self_uri = None
@@ -308,6 +312,30 @@ class JourneyView(object):
         
 
         self._elements = elements
+
+    @property
+    def charts(self) -> List['JourneyViewChart']:
+        """
+        Gets the charts of this JourneyView.
+        A list of charts to measure within context of the elements of the the journey view
+
+        :return: The charts of this JourneyView.
+        :rtype: list[JourneyViewChart]
+        """
+        return self._charts
+
+    @charts.setter
+    def charts(self, charts: List['JourneyViewChart']) -> None:
+        """
+        Sets the charts of this JourneyView.
+        A list of charts to measure within context of the elements of the the journey view
+
+        :param charts: The charts of this JourneyView.
+        :type: list[JourneyViewChart]
+        """
+        
+
+        self._charts = charts
 
     @property
     def date_created(self) -> datetime:

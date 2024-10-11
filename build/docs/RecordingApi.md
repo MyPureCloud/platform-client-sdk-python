@@ -1550,10 +1550,8 @@ Get the Recording Settings for the Organization
 
 Wraps GET /api/v2/recording/settings 
 
-Requires ANY permissions: 
+Requires no permissions
 
-* recording:screenRecording:view
-* recording:settings:editScreenRecordings
 
 ### Example
 
@@ -3003,6 +3001,8 @@ Wraps PUT /api/v2/recording/settings
 Requires ANY permissions: 
 
 * recording:settings:editScreenRecordings
+* recording:settings:editRegionalStorage
+* recording:settings:editUrlExpiration
 
 ### Example
 
@@ -3089,4 +3089,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 212.0.0_
+_PureCloudPlatformClientV2 213.0.0_

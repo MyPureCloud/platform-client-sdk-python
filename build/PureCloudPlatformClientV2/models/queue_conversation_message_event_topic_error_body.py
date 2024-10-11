@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationMessageEventTopicDetail
+    from . import QueueConversationMessageEventTopicLimit
 
 class QueueConversationMessageEventTopicErrorBody(object):
     """
@@ -59,7 +60,8 @@ class QueueConversationMessageEventTopicErrorBody(object):
             'message_params': 'dict(str, str)',
             'context_id': 'str',
             'details': 'list[QueueConversationMessageEventTopicDetail]',
-            'errors': 'list[QueueConversationMessageEventTopicErrorBody]'
+            'errors': 'list[QueueConversationMessageEventTopicErrorBody]',
+            'limit': 'QueueConversationMessageEventTopicLimit'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class QueueConversationMessageEventTopicErrorBody(object):
             'message_params': 'messageParams',
             'context_id': 'contextId',
             'details': 'details',
-            'errors': 'errors'
+            'errors': 'errors',
+            'limit': 'limit'
         }
 
         self._message = None
@@ -85,6 +88,7 @@ class QueueConversationMessageEventTopicErrorBody(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
 
     @property
     def message(self) -> str:
@@ -325,6 +329,30 @@ class QueueConversationMessageEventTopicErrorBody(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'QueueConversationMessageEventTopicLimit':
+        """
+        Gets the limit of this QueueConversationMessageEventTopicErrorBody.
+
+
+        :return: The limit of this QueueConversationMessageEventTopicErrorBody.
+        :rtype: QueueConversationMessageEventTopicLimit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'QueueConversationMessageEventTopicLimit') -> None:
+        """
+        Sets the limit of this QueueConversationMessageEventTopicErrorBody.
+
+
+        :param limit: The limit of this QueueConversationMessageEventTopicErrorBody.
+        :type: QueueConversationMessageEventTopicLimit
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

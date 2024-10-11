@@ -125,7 +125,7 @@ class ConversationDetailQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["conversationEnd", "conversationId", "conversationInitiator", "conversationStart", "customerParticipation", "divisionId", "externalTag", "mediaStatsMinConversationMos", "originatingDirection"]
+        allowed_values = ["conversationEnd", "conversationId", "conversationInitiator", "conversationStart", "customerParticipation", "divisionId", "externalTag", "mediaStatsMinConversationMos", "originatingDirection", "originatingSocialMediaPublic"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

@@ -50,17 +50,44 @@ class FreeTrialNamespace(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'name': 'str',
             'friendly_name': 'str',
             'limits': 'list[FreeTrialLimit]'
         }
 
         self.attribute_map = {
+            'name': 'name',
             'friendly_name': 'friendlyName',
             'limits': 'limits'
         }
 
+        self._name = None
         self._friendly_name = None
         self._limits = None
+
+    @property
+    def name(self) -> str:
+        """
+        Gets the name of this FreeTrialNamespace.
+
+
+        :return: The name of this FreeTrialNamespace.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: str) -> None:
+        """
+        Sets the name of this FreeTrialNamespace.
+
+
+        :param name: The name of this FreeTrialNamespace.
+        :type: str
+        """
+        
+
+        self._name = name
 
     @property
     def friendly_name(self) -> str:

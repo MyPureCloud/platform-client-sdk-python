@@ -68,6 +68,7 @@ from ..models import AgentWorkPlanBids
 from ..models import AgentWorkPlanListResponse
 from ..models import AgentsBidAssignedWorkPlanOverrideRequest
 from ..models import AgentsIntegrationsListing
+from ..models import AgentsWorkPlansResponse
 from ..models import AlternativeShiftAsyncResponse
 from ..models import AlternativeShiftBuSettingsResponse
 from ..models import AlternativeShiftJobResponse
@@ -148,6 +149,7 @@ from ..models import EstimateAvailableTimeOffRequest
 from ..models import EstimateAvailableTimeOffResponse
 from ..models import ForecastPlanningGroupsResponse
 from ..models import GenerateBuForecastRequest
+from ..models import GetAgentsWorkPlansRequest
 from ..models import HistoricalImportDeleteJobResponse
 from ..models import HistoricalImportStatusListing
 from ..models import HrisTimeOffTypesJobResponse
@@ -216,6 +218,8 @@ from ..models import UpdateAgentWorkPlanBiddingPreference
 from ..models import UpdateAlternativeShiftBuSettingsRequest
 from ..models import UpdateBusinessUnitRequest
 from ..models import UpdateManagementUnitRequest
+from ..models import UpdateMuAgentWorkPlansBatchRequest
+from ..models import UpdateMuAgentWorkPlansBatchResponse
 from ..models import UpdateMuAgentsRequest
 from ..models import UpdateNotificationsRequest
 from ..models import UpdateNotificationsResponse
@@ -11735,6 +11739,87 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_managementunit_agents_workplans_bulk(self, management_unit_id: str, **kwargs) -> 'UpdateMuAgentWorkPlansBatchResponse':
+        """
+        Updates agent work plan configuration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_managementunit_agents_workplans_bulk(management_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param UpdateMuAgentWorkPlansBatchRequest body: body
+        :return: UpdateMuAgentWorkPlansBatchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_managementunit_agents_workplans_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit_agents_workplans_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UpdateMuAgentWorkPlansBatchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> 'TimeOffLimit':
         """
         Updates a time off limit object.
@@ -16907,6 +16992,90 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='HrisTimeOffTypesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_managementunit_agents_workplans_query(self, management_unit_id: str, **kwargs) -> 'AgentsWorkPlansResponse':
+        """
+        Get agents work plans configuration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_managementunit_agents_workplans_query(management_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :param GetAgentsWorkPlansRequest body: body
+        :return: AgentsWorkPlansResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'force_download_service', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_managementunit_agents_workplans_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_agents_workplans_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+
+        query_params = {}
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentsWorkPlansResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
