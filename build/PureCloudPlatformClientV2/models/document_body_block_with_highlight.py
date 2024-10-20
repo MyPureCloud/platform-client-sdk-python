@@ -34,9 +34,9 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DocumentBodyImage
-    from . import DocumentBodyList
+    from . import DocumentBodyListWithHighlight
     from . import DocumentBodyParagraphWithHighlight
-    from . import DocumentBodyTable
+    from . import DocumentBodyTableWithHighlight
     from . import DocumentBodyVideo
 
 class DocumentBodyBlockWithHighlight(object):
@@ -57,26 +57,26 @@ class DocumentBodyBlockWithHighlight(object):
             'type': 'str',
             'image': 'DocumentBodyImage',
             'video': 'DocumentBodyVideo',
-            'list': 'DocumentBodyList',
-            'table': 'DocumentBodyTable',
-            'paragraph': 'DocumentBodyParagraphWithHighlight'
+            'paragraph': 'DocumentBodyParagraphWithHighlight',
+            'list': 'DocumentBodyListWithHighlight',
+            'table': 'DocumentBodyTableWithHighlight'
         }
 
         self.attribute_map = {
             'type': 'type',
             'image': 'image',
             'video': 'video',
+            'paragraph': 'paragraph',
             'list': 'list',
-            'table': 'table',
-            'paragraph': 'paragraph'
+            'table': 'table'
         }
 
         self._type = None
         self._image = None
         self._video = None
+        self._paragraph = None
         self._list = None
         self._table = None
-        self._paragraph = None
 
     @property
     def type(self) -> str:
@@ -156,54 +156,6 @@ class DocumentBodyBlockWithHighlight(object):
         self._video = video
 
     @property
-    def list(self) -> 'DocumentBodyList':
-        """
-        Gets the list of this DocumentBodyBlockWithHighlight.
-        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
-
-        :return: The list of this DocumentBodyBlockWithHighlight.
-        :rtype: DocumentBodyList
-        """
-        return self._list
-
-    @list.setter
-    def list(self, list: 'DocumentBodyList') -> None:
-        """
-        Sets the list of this DocumentBodyBlockWithHighlight.
-        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
-
-        :param list: The list of this DocumentBodyBlockWithHighlight.
-        :type: DocumentBodyList
-        """
-        
-
-        self._list = list
-
-    @property
-    def table(self) -> 'DocumentBodyTable':
-        """
-        Gets the table of this DocumentBodyBlockWithHighlight.
-        Table. It must contain a value if type of the block is Table.
-
-        :return: The table of this DocumentBodyBlockWithHighlight.
-        :rtype: DocumentBodyTable
-        """
-        return self._table
-
-    @table.setter
-    def table(self, table: 'DocumentBodyTable') -> None:
-        """
-        Sets the table of this DocumentBodyBlockWithHighlight.
-        Table. It must contain a value if type of the block is Table.
-
-        :param table: The table of this DocumentBodyBlockWithHighlight.
-        :type: DocumentBodyTable
-        """
-        
-
-        self._table = table
-
-    @property
     def paragraph(self) -> 'DocumentBodyParagraphWithHighlight':
         """
         Gets the paragraph of this DocumentBodyBlockWithHighlight.
@@ -226,6 +178,54 @@ class DocumentBodyBlockWithHighlight(object):
         
 
         self._paragraph = paragraph
+
+    @property
+    def list(self) -> 'DocumentBodyListWithHighlight':
+        """
+        Gets the list of this DocumentBodyBlockWithHighlight.
+        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
+
+        :return: The list of this DocumentBodyBlockWithHighlight.
+        :rtype: DocumentBodyListWithHighlight
+        """
+        return self._list
+
+    @list.setter
+    def list(self, list: 'DocumentBodyListWithHighlight') -> None:
+        """
+        Sets the list of this DocumentBodyBlockWithHighlight.
+        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
+
+        :param list: The list of this DocumentBodyBlockWithHighlight.
+        :type: DocumentBodyListWithHighlight
+        """
+        
+
+        self._list = list
+
+    @property
+    def table(self) -> 'DocumentBodyTableWithHighlight':
+        """
+        Gets the table of this DocumentBodyBlockWithHighlight.
+        Table. It must contain a value if type of the block is Table.
+
+        :return: The table of this DocumentBodyBlockWithHighlight.
+        :rtype: DocumentBodyTableWithHighlight
+        """
+        return self._table
+
+    @table.setter
+    def table(self, table: 'DocumentBodyTableWithHighlight') -> None:
+        """
+        Sets the table of this DocumentBodyBlockWithHighlight.
+        Table. It must contain a value if type of the block is Table.
+
+        :param table: The table of this DocumentBodyBlockWithHighlight.
+        :type: DocumentBodyTableWithHighlight
+        """
+        
+
+        self._table = table
 
     def to_dict(self):
         """

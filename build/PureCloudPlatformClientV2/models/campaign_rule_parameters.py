@@ -58,7 +58,10 @@ class CampaignRuleParameters(object):
             'outbound_line_count': 'int',
             'relative_weight': 'int',
             'max_calls_per_agent': 'float',
-            'queue': 'DomainEntityRef'
+            'queue': 'DomainEntityRef',
+            'messages_per_minute': 'int',
+            'sms_content_template': 'DomainEntityRef',
+            'email_content_template': 'DomainEntityRef'
         }
 
         self.attribute_map = {
@@ -70,7 +73,10 @@ class CampaignRuleParameters(object):
             'outbound_line_count': 'outboundLineCount',
             'relative_weight': 'relativeWeight',
             'max_calls_per_agent': 'maxCallsPerAgent',
-            'queue': 'queue'
+            'queue': 'queue',
+            'messages_per_minute': 'messagesPerMinute',
+            'sms_content_template': 'smsContentTemplate',
+            'email_content_template': 'emailContentTemplate'
         }
 
         self._operator = None
@@ -82,6 +88,9 @@ class CampaignRuleParameters(object):
         self._relative_weight = None
         self._max_calls_per_agent = None
         self._queue = None
+        self._messages_per_minute = None
+        self._sms_content_template = None
+        self._email_content_template = None
 
     @property
     def operator(self) -> str:
@@ -313,6 +322,78 @@ class CampaignRuleParameters(object):
         
 
         self._queue = queue
+
+    @property
+    def messages_per_minute(self) -> int:
+        """
+        Gets the messages_per_minute of this CampaignRuleParameters.
+        The number of messages per minute to set a messaging campaign to.
+
+        :return: The messages_per_minute of this CampaignRuleParameters.
+        :rtype: int
+        """
+        return self._messages_per_minute
+
+    @messages_per_minute.setter
+    def messages_per_minute(self, messages_per_minute: int) -> None:
+        """
+        Sets the messages_per_minute of this CampaignRuleParameters.
+        The number of messages per minute to set a messaging campaign to.
+
+        :param messages_per_minute: The messages_per_minute of this CampaignRuleParameters.
+        :type: int
+        """
+        
+
+        self._messages_per_minute = messages_per_minute
+
+    @property
+    def sms_content_template(self) -> 'DomainEntityRef':
+        """
+        Gets the sms_content_template of this CampaignRuleParameters.
+        The content template to set a SMS campaign to.
+
+        :return: The sms_content_template of this CampaignRuleParameters.
+        :rtype: DomainEntityRef
+        """
+        return self._sms_content_template
+
+    @sms_content_template.setter
+    def sms_content_template(self, sms_content_template: 'DomainEntityRef') -> None:
+        """
+        Sets the sms_content_template of this CampaignRuleParameters.
+        The content template to set a SMS campaign to.
+
+        :param sms_content_template: The sms_content_template of this CampaignRuleParameters.
+        :type: DomainEntityRef
+        """
+        
+
+        self._sms_content_template = sms_content_template
+
+    @property
+    def email_content_template(self) -> 'DomainEntityRef':
+        """
+        Gets the email_content_template of this CampaignRuleParameters.
+        The content template to set a Email campaign to.
+
+        :return: The email_content_template of this CampaignRuleParameters.
+        :rtype: DomainEntityRef
+        """
+        return self._email_content_template
+
+    @email_content_template.setter
+    def email_content_template(self, email_content_template: 'DomainEntityRef') -> None:
+        """
+        Sets the email_content_template of this CampaignRuleParameters.
+        The content template to set a Email campaign to.
+
+        :param email_content_template: The email_content_template of this CampaignRuleParameters.
+        :type: DomainEntityRef
+        """
+        
+
+        self._email_content_template = email_content_template
 
     def to_dict(self):
         """

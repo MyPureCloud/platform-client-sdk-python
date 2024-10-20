@@ -1020,7 +1020,6 @@ class KnowledgeApi(object):
         """
         Delete Salesforce Knowledge integration source
         
-	    delete_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1105,7 +1104,6 @@ class KnowledgeApi(object):
         """
         Delete ServiceNow Knowledge integration source
         
-	    delete_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1190,7 +1188,6 @@ class KnowledgeApi(object):
         """
         Delete synchronization job
         
-	    delete_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1548,7 +1545,6 @@ class KnowledgeApi(object):
         """
         Get sync options available for a knowledge-connect integration
         
-	    get_knowledge_integration_options is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3997,7 +3993,6 @@ class KnowledgeApi(object):
         """
         Get operations
         
-	    get_knowledge_knowledgebase_operations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4100,7 +4095,6 @@ class KnowledgeApi(object):
         """
         Get ids of operation creator users and oauth clients
         
-	    get_knowledge_knowledgebase_operations_users_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4267,7 +4261,6 @@ class KnowledgeApi(object):
         """
         Get Knowledge integration sources
         
-	    get_knowledge_knowledgebase_sources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4355,7 +4348,6 @@ class KnowledgeApi(object):
         """
         Get Salesforce Knowledge integration source
         
-	    get_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4443,7 +4435,6 @@ class KnowledgeApi(object):
         """
         Get ServiceNow Knowledge integration source
         
-	    get_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4531,7 +4522,6 @@ class KnowledgeApi(object):
         """
         Get synchronization job report
         
-	    get_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6362,7 +6352,6 @@ class KnowledgeApi(object):
         """
         Update synchronization job
         
-	    patch_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9631,7 +9620,6 @@ class KnowledgeApi(object):
         """
         Create Salesforce Knowledge integration source
         
-	    post_knowledge_knowledgebase_sources_salesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9716,7 +9704,6 @@ class KnowledgeApi(object):
         """
         Start sync on Salesforce Knowledge integration source
         
-	    post_knowledge_knowledgebase_sources_salesforce_source_id_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9801,7 +9788,6 @@ class KnowledgeApi(object):
         """
         Create ServiceNow Knowledge integration source
         
-	    post_knowledge_knowledgebase_sources_servicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9886,7 +9872,6 @@ class KnowledgeApi(object):
         """
         Start synchronization on ServiceNow Knowledge integration source
         
-	    post_knowledge_knowledgebase_sources_servicenow_source_id_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9971,7 +9956,6 @@ class KnowledgeApi(object):
         """
         Create synchronization job
         
-	    post_knowledge_knowledgebase_synchronize_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10219,7 +10203,6 @@ class KnowledgeApi(object):
         """
         Update Salesforce Knowledge integration source
         
-	    put_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10310,7 +10293,6 @@ class KnowledgeApi(object):
         """
         Update ServiceNow Knowledge integration source
         
-	    put_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

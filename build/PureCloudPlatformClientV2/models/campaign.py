@@ -88,6 +88,7 @@ class Campaign(object):
             'contact_list_filters': 'list[DomainEntityRef]',
             'division': 'DomainEntityRef',
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
+            'skill_columns': 'list[str]',
             'max_calls_per_agent': 'int',
             'callback_auto_answer': 'bool',
             'dynamic_line_balancing_settings': 'DynamicLineBalancingSettings',
@@ -128,6 +129,7 @@ class Campaign(object):
             'contact_list_filters': 'contactListFilters',
             'division': 'division',
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
+            'skill_columns': 'skillColumns',
             'max_calls_per_agent': 'maxCallsPerAgent',
             'callback_auto_answer': 'callbackAutoAnswer',
             'dynamic_line_balancing_settings': 'dynamicLineBalancingSettings',
@@ -167,6 +169,7 @@ class Campaign(object):
         self._contact_list_filters = None
         self._division = None
         self._dynamic_contact_queueing_settings = None
+        self._skill_columns = None
         self._max_calls_per_agent = None
         self._callback_auto_answer = None
         self._dynamic_line_balancing_settings = None
@@ -973,6 +976,30 @@ class Campaign(object):
         
 
         self._dynamic_contact_queueing_settings = dynamic_contact_queueing_settings
+
+    @property
+    def skill_columns(self) -> List[str]:
+        """
+        Gets the skill_columns of this Campaign.
+        The skill columns on the ContactList that this Campaign should take into account when dialing
+
+        :return: The skill_columns of this Campaign.
+        :rtype: list[str]
+        """
+        return self._skill_columns
+
+    @skill_columns.setter
+    def skill_columns(self, skill_columns: List[str]) -> None:
+        """
+        Sets the skill_columns of this Campaign.
+        The skill columns on the ContactList that this Campaign should take into account when dialing
+
+        :param skill_columns: The skill_columns of this Campaign.
+        :type: list[str]
+        """
+        
+
+        self._skill_columns = skill_columns
 
     @property
     def max_calls_per_agent(self) -> int:

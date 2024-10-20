@@ -122,7 +122,7 @@ class ResolutionAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["conversationId", "mediaType", "queueId", "requestedRouting", "usedRouting", "userId"]
+        allowed_values = ["conversationId", "mediaType", "queueId", "requestedRouting", "usedRouting", "userId", "wrapUpDate"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

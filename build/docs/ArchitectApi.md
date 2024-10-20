@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flow_instances_settings_loglevels**](#get_flow_instances_settings_loglevels) | Retrieves the log level for a flow by flow id.|
 |[**get_flow_latestconfiguration**](#get_flow_latestconfiguration) | Get the latest configuration for flow|
 |[**get_flow_version**](#get_flow_version) | Get flow version|
-|[**get_flow_version_configuration**](#get_flow_version_configuration) | Create flow version configuration|
+|[**get_flow_version_configuration**](#get_flow_version_configuration) | Get flow version configuration|
 |[**get_flow_version_health**](#get_flow_version_health) | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.|
 |[**get_flow_version_intent_health**](#get_flow_version_intent_health) | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.|
 |[**get_flow_version_intent_utterance_health**](#get_flow_version_intent_utterance_health) | Get health metrics associated with a specific utterance of an intent.|
@@ -3300,7 +3300,7 @@ except ApiException as e:
 > object** get_flow_version_configuration(flow_id, version_id, deleted=deleted)
 
 
-Create flow version configuration
+Get flow version configuration
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration 
 
@@ -3326,7 +3326,7 @@ version_id = 'version_id_example' # str | Version ID
 deleted = 'deleted_example' # str | Deleted flows (optional)
 
 try:
-    # Create flow version configuration
+    # Get flow version configuration
     api_response = api_instance.get_flow_version_configuration(flow_id, version_id, deleted=deleted)
     pprint(api_response)
 except ApiException as e:
@@ -7593,4 +7593,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

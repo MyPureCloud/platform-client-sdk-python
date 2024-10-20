@@ -301,7 +301,7 @@ class ResolutionAsyncAggregationQuery(object):
         """
         if isinstance(alternate_time_dimension, int):
             alternate_time_dimension = str(alternate_time_dimension)
-        allowed_values = ["eventTime"]
+        allowed_values = ["eventTime", "wrapUpDate"]
         if alternate_time_dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for alternate_time_dimension -> " + alternate_time_dimension)
             self._alternate_time_dimension = "outdated_sdk_version"

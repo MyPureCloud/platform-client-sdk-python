@@ -56,29 +56,29 @@ class DocumentTableContentBlock(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'paragraph': 'DocumentBodyParagraph',
             'text': 'DocumentText',
             'image': 'DocumentBodyImage',
             'video': 'DocumentBodyVideo',
+            'paragraph': 'DocumentBodyParagraph',
             'list': 'DocumentBodyList',
             'table': 'DocumentBodyTable'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'paragraph': 'paragraph',
             'text': 'text',
             'image': 'image',
             'video': 'video',
+            'paragraph': 'paragraph',
             'list': 'list',
             'table': 'table'
         }
 
         self._type = None
-        self._paragraph = None
         self._text = None
         self._image = None
         self._video = None
+        self._paragraph = None
         self._list = None
         self._table = None
 
@@ -110,30 +110,6 @@ class DocumentTableContentBlock(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
-
-    @property
-    def paragraph(self) -> 'DocumentBodyParagraph':
-        """
-        Gets the paragraph of this DocumentTableContentBlock.
-        Paragraph. It must contain a value if the type of the block is Paragraph.
-
-        :return: The paragraph of this DocumentTableContentBlock.
-        :rtype: DocumentBodyParagraph
-        """
-        return self._paragraph
-
-    @paragraph.setter
-    def paragraph(self, paragraph: 'DocumentBodyParagraph') -> None:
-        """
-        Sets the paragraph of this DocumentTableContentBlock.
-        Paragraph. It must contain a value if the type of the block is Paragraph.
-
-        :param paragraph: The paragraph of this DocumentTableContentBlock.
-        :type: DocumentBodyParagraph
-        """
-        
-
-        self._paragraph = paragraph
 
     @property
     def text(self) -> 'DocumentText':
@@ -206,6 +182,30 @@ class DocumentTableContentBlock(object):
         
 
         self._video = video
+
+    @property
+    def paragraph(self) -> 'DocumentBodyParagraph':
+        """
+        Gets the paragraph of this DocumentTableContentBlock.
+        Paragraph. It must contain a value if the type of the block is Paragraph.
+
+        :return: The paragraph of this DocumentTableContentBlock.
+        :rtype: DocumentBodyParagraph
+        """
+        return self._paragraph
+
+    @paragraph.setter
+    def paragraph(self, paragraph: 'DocumentBodyParagraph') -> None:
+        """
+        Sets the paragraph of this DocumentTableContentBlock.
+        Paragraph. It must contain a value if the type of the block is Paragraph.
+
+        :param paragraph: The paragraph of this DocumentTableContentBlock.
+        :type: DocumentBodyParagraph
+        """
+        
+
+        self._paragraph = paragraph
 
     @property
     def list(self) -> 'DocumentBodyList':

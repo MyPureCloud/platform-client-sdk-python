@@ -244,7 +244,7 @@ class Assistant(object):
     def google_dialogflow_config(self) -> 'GoogleDialogflowConfig':
         """
         Gets the google_dialogflow_config of this Assistant.
-        Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
+        (Deprecated: use the 'knowledgeSuggestionConfig' for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
 
         :return: The google_dialogflow_config of this Assistant.
         :rtype: GoogleDialogflowConfig
@@ -255,7 +255,7 @@ class Assistant(object):
     def google_dialogflow_config(self, google_dialogflow_config: 'GoogleDialogflowConfig') -> None:
         """
         Sets the google_dialogflow_config of this Assistant.
-        Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
+        (Deprecated: use the 'knowledgeSuggestionConfig' for genesys knowledge suggestions) Configuration of Dialogflow used to assist the agent with transcriptions and knowledge suggestions.
 
         :param google_dialogflow_config: The google_dialogflow_config of this Assistant.
         :type: GoogleDialogflowConfig

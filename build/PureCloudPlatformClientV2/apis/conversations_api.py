@@ -13384,10 +13384,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversation_suggestions_feedback is deprecated")
     def post_conversation_suggestions_feedback(self, conversation_id: str, body: 'Feedback', **kwargs) -> None:
         """
         Suggestion feedback.
-        
+        Google Agent Assist offering within Genesys will no longer be supported
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

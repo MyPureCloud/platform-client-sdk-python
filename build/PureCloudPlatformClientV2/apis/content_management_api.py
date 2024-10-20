@@ -1171,7 +1171,6 @@ class ContentManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str shared_id: Shared ID (required)
-        :param bool redirect: Turn on or off redirect
         :param str disposition: Request how the share content will be downloaded: attached as a file or inline. Default is attachment.
         :param str content_type: The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
         :param str expand: Expand some document fields
@@ -1180,7 +1179,7 @@ class ContentManagementApi(object):
                  returns the request thread.
         """
 
-        all_params = ['shared_id', 'redirect', 'disposition', 'content_type', 'expand']
+        all_params = ['shared_id', 'disposition', 'content_type', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -1204,8 +1203,6 @@ class ContentManagementApi(object):
             path_params['sharedId'] = params['shared_id']
 
         query_params = {}
-        if 'redirect' in params:
-            query_params['redirect'] = params['redirect']
         if 'disposition' in params:
             query_params['disposition'] = params['disposition']
         if 'content_type' in params:

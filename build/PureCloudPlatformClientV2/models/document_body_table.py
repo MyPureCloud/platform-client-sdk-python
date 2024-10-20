@@ -51,41 +51,17 @@ class DocumentBodyTable(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'rows': 'list[DocumentBodyTableRowBlock]',
-            'properties': 'DocumentBodyTableProperties'
+            'properties': 'DocumentBodyTableProperties',
+            'rows': 'list[DocumentBodyTableRowBlock]'
         }
 
         self.attribute_map = {
-            'rows': 'rows',
-            'properties': 'properties'
+            'properties': 'properties',
+            'rows': 'rows'
         }
 
-        self._rows = None
         self._properties = None
-
-    @property
-    def rows(self) -> List['DocumentBodyTableRowBlock']:
-        """
-        Gets the rows of this DocumentBodyTable.
-        The list of rows for the table.
-
-        :return: The rows of this DocumentBodyTable.
-        :rtype: list[DocumentBodyTableRowBlock]
-        """
-        return self._rows
-
-    @rows.setter
-    def rows(self, rows: List['DocumentBodyTableRowBlock']) -> None:
-        """
-        Sets the rows of this DocumentBodyTable.
-        The list of rows for the table.
-
-        :param rows: The rows of this DocumentBodyTable.
-        :type: list[DocumentBodyTableRowBlock]
-        """
-        
-
-        self._rows = rows
+        self._rows = None
 
     @property
     def properties(self) -> 'DocumentBodyTableProperties':
@@ -110,6 +86,30 @@ class DocumentBodyTable(object):
         
 
         self._properties = properties
+
+    @property
+    def rows(self) -> List['DocumentBodyTableRowBlock']:
+        """
+        Gets the rows of this DocumentBodyTable.
+        The list of rows for the table.
+
+        :return: The rows of this DocumentBodyTable.
+        :rtype: list[DocumentBodyTableRowBlock]
+        """
+        return self._rows
+
+    @rows.setter
+    def rows(self, rows: List['DocumentBodyTableRowBlock']) -> None:
+        """
+        Sets the rows of this DocumentBodyTable.
+        The list of rows for the table.
+
+        :param rows: The rows of this DocumentBodyTable.
+        :type: list[DocumentBodyTableRowBlock]
+        """
+        
+
+        self._rows = rows
 
     def to_dict(self):
         """

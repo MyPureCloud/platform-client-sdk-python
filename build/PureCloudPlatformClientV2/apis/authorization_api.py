@@ -57,7 +57,7 @@ from ..models import RoleSettings
 from ..models import SubjectDivisionGrantsEntityListing
 from ..models import SubjectDivisions
 from ..models import UserAuthorization
-from ..models import UserEntityListing
+from ..models import UserReferenceEntityListing
 
 class AuthorizationApi(object):
     """
@@ -1409,7 +1409,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_role_users(self, role_id: str, **kwargs) -> 'UserEntityListing':
+    def get_authorization_role_users(self, role_id: str, **kwargs) -> 'UserReferenceEntityListing':
         """
         Get a list of the users in a specified role.
         Get an array of the UUIDs of the users in the specified role.
@@ -1427,7 +1427,7 @@ class AuthorizationApi(object):
         :param str role_id: Role ID (required)
         :param int page_size: Page size
         :param int page_number: Page number
-        :return: UserEntityListing
+        :return: UserReferenceEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1488,7 +1488,7 @@ class AuthorizationApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='UserEntityListing',
+                                            response_type='UserReferenceEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

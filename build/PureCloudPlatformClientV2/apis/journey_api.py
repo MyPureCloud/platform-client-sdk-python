@@ -3276,7 +3276,6 @@ class JourneyApi(object):
         """
         Get an Event Definition
         
-	    get_journey_views_eventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3355,7 +3354,6 @@ class JourneyApi(object):
         """
         Get a list of Event Definitions
         
-	    get_journey_views_eventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5266,7 +5264,6 @@ class JourneyApi(object):
         """
         Validate whether an encoding exist for a label/value combination.
         True indicates a valid encoding
-	    post_journey_views_encodings_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

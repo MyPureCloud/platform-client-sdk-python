@@ -51,41 +51,17 @@ class DocumentBodyList(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'blocks': 'list[DocumentBodyListBlock]',
-            'properties': 'DocumentBodyListBlockProperties'
+            'properties': 'DocumentBodyListBlockProperties',
+            'blocks': 'list[DocumentBodyListBlock]'
         }
 
         self.attribute_map = {
-            'blocks': 'blocks',
-            'properties': 'properties'
+            'properties': 'properties',
+            'blocks': 'blocks'
         }
 
-        self._blocks = None
         self._properties = None
-
-    @property
-    def blocks(self) -> List['DocumentBodyListBlock']:
-        """
-        Gets the blocks of this DocumentBodyList.
-        The list of items for an OrderedList or an UnorderedList.
-
-        :return: The blocks of this DocumentBodyList.
-        :rtype: list[DocumentBodyListBlock]
-        """
-        return self._blocks
-
-    @blocks.setter
-    def blocks(self, blocks: List['DocumentBodyListBlock']) -> None:
-        """
-        Sets the blocks of this DocumentBodyList.
-        The list of items for an OrderedList or an UnorderedList.
-
-        :param blocks: The blocks of this DocumentBodyList.
-        :type: list[DocumentBodyListBlock]
-        """
-        
-
-        self._blocks = blocks
+        self._blocks = None
 
     @property
     def properties(self) -> 'DocumentBodyListBlockProperties':
@@ -110,6 +86,30 @@ class DocumentBodyList(object):
         
 
         self._properties = properties
+
+    @property
+    def blocks(self) -> List['DocumentBodyListBlock']:
+        """
+        Gets the blocks of this DocumentBodyList.
+        The list of items for an OrderedList or an UnorderedList.
+
+        :return: The blocks of this DocumentBodyList.
+        :rtype: list[DocumentBodyListBlock]
+        """
+        return self._blocks
+
+    @blocks.setter
+    def blocks(self, blocks: List['DocumentBodyListBlock']) -> None:
+        """
+        Sets the blocks of this DocumentBodyList.
+        The list of items for an OrderedList or an UnorderedList.
+
+        :param blocks: The blocks of this DocumentBodyList.
+        :type: list[DocumentBodyListBlock]
+        """
+        
+
+        self._blocks = blocks
 
     def to_dict(self):
         """

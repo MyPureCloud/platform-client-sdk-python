@@ -51,41 +51,17 @@ class DocumentBodyTableCellBlock(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'blocks': 'list[DocumentTableContentBlock]',
-            'properties': 'DocumentBodyTableCellBlockProperties'
+            'properties': 'DocumentBodyTableCellBlockProperties',
+            'blocks': 'list[DocumentTableContentBlock]'
         }
 
         self.attribute_map = {
-            'blocks': 'blocks',
-            'properties': 'properties'
+            'properties': 'properties',
+            'blocks': 'blocks'
         }
 
-        self._blocks = None
         self._properties = None
-
-    @property
-    def blocks(self) -> List['DocumentTableContentBlock']:
-        """
-        Gets the blocks of this DocumentBodyTableCellBlock.
-        The list of content blocks for the table.
-
-        :return: The blocks of this DocumentBodyTableCellBlock.
-        :rtype: list[DocumentTableContentBlock]
-        """
-        return self._blocks
-
-    @blocks.setter
-    def blocks(self, blocks: List['DocumentTableContentBlock']) -> None:
-        """
-        Sets the blocks of this DocumentBodyTableCellBlock.
-        The list of content blocks for the table.
-
-        :param blocks: The blocks of this DocumentBodyTableCellBlock.
-        :type: list[DocumentTableContentBlock]
-        """
-        
-
-        self._blocks = blocks
+        self._blocks = None
 
     @property
     def properties(self) -> 'DocumentBodyTableCellBlockProperties':
@@ -110,6 +86,30 @@ class DocumentBodyTableCellBlock(object):
         
 
         self._properties = properties
+
+    @property
+    def blocks(self) -> List['DocumentTableContentBlock']:
+        """
+        Gets the blocks of this DocumentBodyTableCellBlock.
+        The list of content blocks for the table.
+
+        :return: The blocks of this DocumentBodyTableCellBlock.
+        :rtype: list[DocumentTableContentBlock]
+        """
+        return self._blocks
+
+    @blocks.setter
+    def blocks(self, blocks: List['DocumentTableContentBlock']) -> None:
+        """
+        Sets the blocks of this DocumentBodyTableCellBlock.
+        The list of content blocks for the table.
+
+        :param blocks: The blocks of this DocumentBodyTableCellBlock.
+        :type: list[DocumentTableContentBlock]
+        """
+        
+
+        self._blocks = blocks
 
     def to_dict(self):
         """

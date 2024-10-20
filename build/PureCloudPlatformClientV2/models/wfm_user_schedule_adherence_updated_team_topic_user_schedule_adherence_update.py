@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference
     from . import WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation
     from . import WfmUserScheduleAdherenceUpdatedTeamTopicUriReference
+    from . import WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder
     from . import WfmUserScheduleAdherenceUpdatedTeamTopicUserReference
 
 class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(object):
@@ -71,7 +72,9 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(object
             'presence_update_time': 'datetime',
             'active_queues': 'list[WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference]',
             'active_queues_modified_time': 'datetime',
-            'removed_from_management_unit': 'bool'
+            'removed_from_management_unit': 'bool',
+            'suppress_on_time_reminder': 'bool',
+            'next_activity_reminders': 'list[WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder]'
         }
 
         self.attribute_map = {
@@ -92,7 +95,9 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(object
             'presence_update_time': 'presenceUpdateTime',
             'active_queues': 'activeQueues',
             'active_queues_modified_time': 'activeQueuesModifiedTime',
-            'removed_from_management_unit': 'removedFromManagementUnit'
+            'removed_from_management_unit': 'removedFromManagementUnit',
+            'suppress_on_time_reminder': 'suppressOnTimeReminder',
+            'next_activity_reminders': 'nextActivityReminders'
         }
 
         self._user = None
@@ -113,6 +118,8 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(object
         self._active_queues = None
         self._active_queues_modified_time = None
         self._removed_from_management_unit = None
+        self._suppress_on_time_reminder = None
+        self._next_activity_reminders = None
 
     @property
     def user(self) -> 'WfmUserScheduleAdherenceUpdatedTeamTopicUserReference':
@@ -555,6 +562,54 @@ class WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate(object
         
 
         self._removed_from_management_unit = removed_from_management_unit
+
+    @property
+    def suppress_on_time_reminder(self) -> bool:
+        """
+        Gets the suppress_on_time_reminder of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The suppress_on_time_reminder of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+        :rtype: bool
+        """
+        return self._suppress_on_time_reminder
+
+    @suppress_on_time_reminder.setter
+    def suppress_on_time_reminder(self, suppress_on_time_reminder: bool) -> None:
+        """
+        Sets the suppress_on_time_reminder of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+
+
+        :param suppress_on_time_reminder: The suppress_on_time_reminder of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+        :type: bool
+        """
+        
+
+        self._suppress_on_time_reminder = suppress_on_time_reminder
+
+    @property
+    def next_activity_reminders(self) -> List['WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder']:
+        """
+        Gets the next_activity_reminders of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The next_activity_reminders of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+        :rtype: list[WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder]
+        """
+        return self._next_activity_reminders
+
+    @next_activity_reminders.setter
+    def next_activity_reminders(self, next_activity_reminders: List['WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder']) -> None:
+        """
+        Sets the next_activity_reminders of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+
+
+        :param next_activity_reminders: The next_activity_reminders of this WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.
+        :type: list[WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder]
+        """
+        
+
+        self._next_activity_reminders = next_activity_reminders
 
     def to_dict(self):
         """

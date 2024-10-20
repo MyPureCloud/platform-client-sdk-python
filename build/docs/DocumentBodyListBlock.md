@@ -7,9 +7,9 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **type** | str | The type of the list block. | |
-| **blocks** | [list[DocumentListContentBlock]](DocumentListContentBlock) | The list of items for an OrderedList or an UnorderedList. | |
 | **properties** | [DocumentBodyListItemProperties](DocumentBodyListItemProperties) | The properties for the list block. | [optional] |
+| **blocks** | [list[DocumentListContentBlock]](DocumentListContentBlock) | The list of items for an OrderedList or an UnorderedList. | |
 
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

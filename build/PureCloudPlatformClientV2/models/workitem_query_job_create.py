@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import WorkitemQueryJobFilter
+    from . import WorkitemQueryJobQueryFilters
     from . import WorkitemQueryJobSort
 
 class WorkitemQueryJobCreate(object):
@@ -54,26 +55,35 @@ class WorkitemQueryJobCreate(object):
             'page_size': 'int',
             'page_number': 'int',
             'filters': 'list[WorkitemQueryJobFilter]',
+            'query_filters': 'list[WorkitemQueryJobQueryFilters]',
             'expands': 'list[str]',
             'attributes': 'list[str]',
-            'sort': 'WorkitemQueryJobSort'
+            'sort': 'WorkitemQueryJobSort',
+            'date_interval_start': 'datetime',
+            'date_interval_end': 'datetime'
         }
 
         self.attribute_map = {
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'filters': 'filters',
+            'query_filters': 'queryFilters',
             'expands': 'expands',
             'attributes': 'attributes',
-            'sort': 'sort'
+            'sort': 'sort',
+            'date_interval_start': 'dateIntervalStart',
+            'date_interval_end': 'dateIntervalEnd'
         }
 
         self._page_size = None
         self._page_number = None
         self._filters = None
+        self._query_filters = None
         self._expands = None
         self._attributes = None
         self._sort = None
+        self._date_interval_start = None
+        self._date_interval_end = None
 
     @property
     def page_size(self) -> int:
@@ -157,6 +167,30 @@ class WorkitemQueryJobCreate(object):
         self._filters = filters
 
     @property
+    def query_filters(self) -> List['WorkitemQueryJobQueryFilters']:
+        """
+        Gets the query_filters of this WorkitemQueryJobCreate.
+        Query filters for nested attributes.
+
+        :return: The query_filters of this WorkitemQueryJobCreate.
+        :rtype: list[WorkitemQueryJobQueryFilters]
+        """
+        return self._query_filters
+
+    @query_filters.setter
+    def query_filters(self, query_filters: List['WorkitemQueryJobQueryFilters']) -> None:
+        """
+        Sets the query_filters of this WorkitemQueryJobCreate.
+        Query filters for nested attributes.
+
+        :param query_filters: The query_filters of this WorkitemQueryJobCreate.
+        :type: list[WorkitemQueryJobQueryFilters]
+        """
+        
+
+        self._query_filters = query_filters
+
+    @property
     def expands(self) -> List[str]:
         """
         Gets the expands of this WorkitemQueryJobCreate.
@@ -227,6 +261,54 @@ class WorkitemQueryJobCreate(object):
         
 
         self._sort = sort
+
+    @property
+    def date_interval_start(self) -> datetime:
+        """
+        Gets the date_interval_start of this WorkitemQueryJobCreate.
+        Interval start date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_interval_start of this WorkitemQueryJobCreate.
+        :rtype: datetime
+        """
+        return self._date_interval_start
+
+    @date_interval_start.setter
+    def date_interval_start(self, date_interval_start: datetime) -> None:
+        """
+        Sets the date_interval_start of this WorkitemQueryJobCreate.
+        Interval start date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_interval_start: The date_interval_start of this WorkitemQueryJobCreate.
+        :type: datetime
+        """
+        
+
+        self._date_interval_start = date_interval_start
+
+    @property
+    def date_interval_end(self) -> datetime:
+        """
+        Gets the date_interval_end of this WorkitemQueryJobCreate.
+        Interval end date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_interval_end of this WorkitemQueryJobCreate.
+        :rtype: datetime
+        """
+        return self._date_interval_end
+
+    @date_interval_end.setter
+    def date_interval_end(self, date_interval_end: datetime) -> None:
+        """
+        Sets the date_interval_end of this WorkitemQueryJobCreate.
+        Interval end date to use to filter results based on create date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_interval_end: The date_interval_end of this WorkitemQueryJobCreate.
+        :type: datetime
+        """
+        
+
+        self._date_interval_end = date_interval_end
 
     def to_dict(self):
         """

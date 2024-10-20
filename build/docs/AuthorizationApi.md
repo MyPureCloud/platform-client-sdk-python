@@ -889,7 +889,7 @@ except ApiException as e:
 
 ## get_authorization_role_users
 
-> [**UserEntityListing**](UserEntityListing) get_authorization_role_users(role_id, page_size=page_size, page_number=page_number)
+> [**UserReferenceEntityListing**](UserReferenceEntityListing) get_authorization_role_users(role_id, page_size=page_size, page_number=page_number)
 
 
 Get a list of the users in a specified role.
@@ -937,7 +937,7 @@ except ApiException as e:
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing)
+[**UserReferenceEntityListing**](UserReferenceEntityListing)
 
 
 ## get_authorization_roles
@@ -2306,4 +2306,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

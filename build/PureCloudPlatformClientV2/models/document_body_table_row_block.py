@@ -51,41 +51,17 @@ class DocumentBodyTableRowBlock(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'cells': 'list[DocumentBodyTableCellBlock]',
-            'properties': 'DocumentBodyTableRowBlockProperties'
+            'properties': 'DocumentBodyTableRowBlockProperties',
+            'cells': 'list[DocumentBodyTableCellBlock]'
         }
 
         self.attribute_map = {
-            'cells': 'cells',
-            'properties': 'properties'
+            'properties': 'properties',
+            'cells': 'cells'
         }
 
-        self._cells = None
         self._properties = None
-
-    @property
-    def cells(self) -> List['DocumentBodyTableCellBlock']:
-        """
-        Gets the cells of this DocumentBodyTableRowBlock.
-        The list of cells for the table.
-
-        :return: The cells of this DocumentBodyTableRowBlock.
-        :rtype: list[DocumentBodyTableCellBlock]
-        """
-        return self._cells
-
-    @cells.setter
-    def cells(self, cells: List['DocumentBodyTableCellBlock']) -> None:
-        """
-        Sets the cells of this DocumentBodyTableRowBlock.
-        The list of cells for the table.
-
-        :param cells: The cells of this DocumentBodyTableRowBlock.
-        :type: list[DocumentBodyTableCellBlock]
-        """
-        
-
-        self._cells = cells
+        self._cells = None
 
     @property
     def properties(self) -> 'DocumentBodyTableRowBlockProperties':
@@ -110,6 +86,30 @@ class DocumentBodyTableRowBlock(object):
         
 
         self._properties = properties
+
+    @property
+    def cells(self) -> List['DocumentBodyTableCellBlock']:
+        """
+        Gets the cells of this DocumentBodyTableRowBlock.
+        The list of cells for the table.
+
+        :return: The cells of this DocumentBodyTableRowBlock.
+        :rtype: list[DocumentBodyTableCellBlock]
+        """
+        return self._cells
+
+    @cells.setter
+    def cells(self, cells: List['DocumentBodyTableCellBlock']) -> None:
+        """
+        Sets the cells of this DocumentBodyTableRowBlock.
+        The list of cells for the table.
+
+        :param cells: The cells of this DocumentBodyTableRowBlock.
+        :type: list[DocumentBodyTableCellBlock]
+        """
+        
+
+        self._cells = cells
 
     def to_dict(self):
         """

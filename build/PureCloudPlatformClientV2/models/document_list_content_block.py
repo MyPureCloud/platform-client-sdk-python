@@ -56,23 +56,23 @@ class DocumentListContentBlock(object):
             'type': 'str',
             'text': 'DocumentText',
             'image': 'DocumentBodyImage',
-            'list': 'DocumentBodyList',
-            'video': 'DocumentBodyVideo'
+            'video': 'DocumentBodyVideo',
+            'list': 'DocumentBodyList'
         }
 
         self.attribute_map = {
             'type': 'type',
             'text': 'text',
             'image': 'image',
-            'list': 'list',
-            'video': 'video'
+            'video': 'video',
+            'list': 'list'
         }
 
         self._type = None
         self._text = None
         self._image = None
-        self._list = None
         self._video = None
+        self._list = None
 
     @property
     def type(self) -> str:
@@ -152,30 +152,6 @@ class DocumentListContentBlock(object):
         self._image = image
 
     @property
-    def list(self) -> 'DocumentBodyList':
-        """
-        Gets the list of this DocumentListContentBlock.
-        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
-
-        :return: The list of this DocumentListContentBlock.
-        :rtype: DocumentBodyList
-        """
-        return self._list
-
-    @list.setter
-    def list(self, list: 'DocumentBodyList') -> None:
-        """
-        Sets the list of this DocumentListContentBlock.
-        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
-
-        :param list: The list of this DocumentListContentBlock.
-        :type: DocumentBodyList
-        """
-        
-
-        self._list = list
-
-    @property
     def video(self) -> 'DocumentBodyVideo':
         """
         Gets the video of this DocumentListContentBlock.
@@ -198,6 +174,30 @@ class DocumentListContentBlock(object):
         
 
         self._video = video
+
+    @property
+    def list(self) -> 'DocumentBodyList':
+        """
+        Gets the list of this DocumentListContentBlock.
+        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
+
+        :return: The list of this DocumentListContentBlock.
+        :rtype: DocumentBodyList
+        """
+        return self._list
+
+    @list.setter
+    def list(self, list: 'DocumentBodyList') -> None:
+        """
+        Sets the list of this DocumentListContentBlock.
+        List. It must contain a value if the type of the block is UnorderedList or OrderedList.
+
+        :param list: The list of this DocumentListContentBlock.
+        :type: DocumentBodyList
+        """
+        
+
+        self._list = list
 
     def to_dict(self):
         """

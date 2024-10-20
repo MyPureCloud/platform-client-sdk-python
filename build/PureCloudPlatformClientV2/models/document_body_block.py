@@ -57,26 +57,26 @@ class DocumentBodyBlock(object):
             'type': 'str',
             'image': 'DocumentBodyImage',
             'video': 'DocumentBodyVideo',
+            'paragraph': 'DocumentBodyParagraph',
             'list': 'DocumentBodyList',
-            'table': 'DocumentBodyTable',
-            'paragraph': 'DocumentBodyParagraph'
+            'table': 'DocumentBodyTable'
         }
 
         self.attribute_map = {
             'type': 'type',
             'image': 'image',
             'video': 'video',
+            'paragraph': 'paragraph',
             'list': 'list',
-            'table': 'table',
-            'paragraph': 'paragraph'
+            'table': 'table'
         }
 
         self._type = None
         self._image = None
         self._video = None
+        self._paragraph = None
         self._list = None
         self._table = None
-        self._paragraph = None
 
     @property
     def type(self) -> str:
@@ -156,6 +156,30 @@ class DocumentBodyBlock(object):
         self._video = video
 
     @property
+    def paragraph(self) -> 'DocumentBodyParagraph':
+        """
+        Gets the paragraph of this DocumentBodyBlock.
+        Paragraph. It must contain a value if the type of the block is Paragraph.
+
+        :return: The paragraph of this DocumentBodyBlock.
+        :rtype: DocumentBodyParagraph
+        """
+        return self._paragraph
+
+    @paragraph.setter
+    def paragraph(self, paragraph: 'DocumentBodyParagraph') -> None:
+        """
+        Sets the paragraph of this DocumentBodyBlock.
+        Paragraph. It must contain a value if the type of the block is Paragraph.
+
+        :param paragraph: The paragraph of this DocumentBodyBlock.
+        :type: DocumentBodyParagraph
+        """
+        
+
+        self._paragraph = paragraph
+
+    @property
     def list(self) -> 'DocumentBodyList':
         """
         Gets the list of this DocumentBodyBlock.
@@ -202,30 +226,6 @@ class DocumentBodyBlock(object):
         
 
         self._table = table
-
-    @property
-    def paragraph(self) -> 'DocumentBodyParagraph':
-        """
-        Gets the paragraph of this DocumentBodyBlock.
-        Paragraph. It must contain a value if the type of the block is Paragraph.
-
-        :return: The paragraph of this DocumentBodyBlock.
-        :rtype: DocumentBodyParagraph
-        """
-        return self._paragraph
-
-    @paragraph.setter
-    def paragraph(self, paragraph: 'DocumentBodyParagraph') -> None:
-        """
-        Sets the paragraph of this DocumentBodyBlock.
-        Paragraph. It must contain a value if the type of the block is Paragraph.
-
-        :param paragraph: The paragraph of this DocumentBodyBlock.
-        :type: DocumentBodyParagraph
-        """
-        
-
-        self._paragraph = paragraph
 
     def to_dict(self):
         """

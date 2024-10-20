@@ -5197,7 +5197,7 @@ class ArchitectApi(object):
 
     def get_flow_version_configuration(self, flow_id: str, version_id: str, **kwargs) -> object:
         """
-        Create flow version configuration
+        Get flow version configuration
         
 
         This method makes a synchronous HTTP request by default. To make an

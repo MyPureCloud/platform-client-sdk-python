@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AddressableEntityRef
     from . import ConversationReference
     from . import DomainEntityRef
     from . import QueueReference
@@ -67,6 +68,9 @@ class Survey(object):
             'completed_date': 'datetime',
             'survey_error_details': 'SurveyErrorDetails',
             'agent_team': 'Team',
+            'survey_type': 'str',
+            'missing_required_answer': 'bool',
+            'flow': 'AddressableEntityRef',
             'self_uri': 'str'
         }
 
@@ -82,6 +86,9 @@ class Survey(object):
             'completed_date': 'completedDate',
             'survey_error_details': 'surveyErrorDetails',
             'agent_team': 'agentTeam',
+            'survey_type': 'surveyType',
+            'missing_required_answer': 'missingRequiredAnswer',
+            'flow': 'flow',
             'self_uri': 'selfUri'
         }
 
@@ -96,6 +103,9 @@ class Survey(object):
         self._completed_date = None
         self._survey_error_details = None
         self._agent_team = None
+        self._survey_type = None
+        self._missing_required_answer = None
+        self._flow = None
         self._self_uri = None
 
     @property
@@ -366,6 +376,83 @@ class Survey(object):
         
 
         self._agent_team = agent_team
+
+    @property
+    def survey_type(self) -> str:
+        """
+        Gets the survey_type of this Survey.
+        Type of the survey
+
+        :return: The survey_type of this Survey.
+        :rtype: str
+        """
+        return self._survey_type
+
+    @survey_type.setter
+    def survey_type(self, survey_type: str) -> None:
+        """
+        Sets the survey_type of this Survey.
+        Type of the survey
+
+        :param survey_type: The survey_type of this Survey.
+        :type: str
+        """
+        if isinstance(survey_type, int):
+            survey_type = str(survey_type)
+        allowed_values = ["Web", "Voice"]
+        if survey_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for survey_type -> " + survey_type)
+            self._survey_type = "outdated_sdk_version"
+        else:
+            self._survey_type = survey_type
+
+    @property
+    def missing_required_answer(self) -> bool:
+        """
+        Gets the missing_required_answer of this Survey.
+        True if any of the required questions for the survey form have not been answered. Null if survey is not finished.
+
+        :return: The missing_required_answer of this Survey.
+        :rtype: bool
+        """
+        return self._missing_required_answer
+
+    @missing_required_answer.setter
+    def missing_required_answer(self, missing_required_answer: bool) -> None:
+        """
+        Sets the missing_required_answer of this Survey.
+        True if any of the required questions for the survey form have not been answered. Null if survey is not finished.
+
+        :param missing_required_answer: The missing_required_answer of this Survey.
+        :type: bool
+        """
+        
+
+        self._missing_required_answer = missing_required_answer
+
+    @property
+    def flow(self) -> 'AddressableEntityRef':
+        """
+        Gets the flow of this Survey.
+        An Architect flow that executed in order to collect the answers for this survey.
+
+        :return: The flow of this Survey.
+        :rtype: AddressableEntityRef
+        """
+        return self._flow
+
+    @flow.setter
+    def flow(self, flow: 'AddressableEntityRef') -> None:
+        """
+        Sets the flow of this Survey.
+        An Architect flow that executed in order to collect the answers for this survey.
+
+        :param flow: The flow of this Survey.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._flow = flow
 
     @property
     def self_uri(self) -> str:

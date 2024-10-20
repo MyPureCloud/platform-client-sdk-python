@@ -628,6 +628,7 @@ PureCloudPlatformClientV2/models/business_unit_listing.py
 PureCloudPlatformClientV2/models/business_unit_reference.py
 PureCloudPlatformClientV2/models/business_unit_response.py
 PureCloudPlatformClientV2/models/business_unit_settings_response.py
+PureCloudPlatformClientV2/models/button.py
 PureCloudPlatformClientV2/models/button_component.py
 PureCloudPlatformClientV2/models/button_response.py
 PureCloudPlatformClientV2/models/cached_media_item.py
@@ -695,6 +696,8 @@ PureCloudPlatformClientV2/models/campaign_rule_entities.py
 PureCloudPlatformClientV2/models/campaign_rule_entity_listing.py
 PureCloudPlatformClientV2/models/campaign_rule_execution_settings.py
 PureCloudPlatformClientV2/models/campaign_rule_parameters.py
+PureCloudPlatformClientV2/models/campaign_rule_warning.py
+PureCloudPlatformClientV2/models/campaign_rule_warning_parameters.py
 PureCloudPlatformClientV2/models/campaign_schedule.py
 PureCloudPlatformClientV2/models/campaign_sequence.py
 PureCloudPlatformClientV2/models/campaign_sequence_entity_listing.py
@@ -1171,6 +1174,14 @@ PureCloudPlatformClientV2/models/conversation_summary.py
 PureCloudPlatformClientV2/models/conversation_summary_followup.py
 PureCloudPlatformClientV2/models/conversation_summary_reason.py
 PureCloudPlatformClientV2/models/conversation_summary_resolution.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_conversation_headline.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_conversation_reason.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_conversation_resolution.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_conversation_summary.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_conversation_summary_event.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_conversation_summary_participant.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_conversation_wrap_up_code.py
+PureCloudPlatformClientV2/models/conversation_summary_topic_virtual_agents_trigger_source.py
 PureCloudPlatformClientV2/models/conversation_summary_wrapup_code.py
 PureCloudPlatformClientV2/models/conversation_tags_update.py
 PureCloudPlatformClientV2/models/conversation_threading_window.py
@@ -1287,6 +1298,14 @@ PureCloudPlatformClientV2/models/cross_platform_policy.py
 PureCloudPlatformClientV2/models/cross_platform_policy_actions.py
 PureCloudPlatformClientV2/models/cross_platform_policy_create.py
 PureCloudPlatformClientV2/models/cross_platform_policy_update.py
+PureCloudPlatformClientV2/models/csv_job_request.py
+PureCloudPlatformClientV2/models/csv_job_response.py
+PureCloudPlatformClientV2/models/csv_mapping_entry.py
+PureCloudPlatformClientV2/models/csv_settings.py
+PureCloudPlatformClientV2/models/csv_upload_details_response.py
+PureCloudPlatformClientV2/models/csv_upload_preview_response.py
+PureCloudPlatformClientV2/models/csv_upload_request.py
+PureCloudPlatformClientV2/models/csv_upload_response.py
 PureCloudPlatformClientV2/models/cta_button_style_properties.py
 PureCloudPlatformClientV2/models/current_user_schedule_request_body.py
 PureCloudPlatformClientV2/models/current_user_time_off_integration_status_request.py
@@ -1504,7 +1523,9 @@ PureCloudPlatformClientV2/models/document_body_image_properties.py
 PureCloudPlatformClientV2/models/document_body_list.py
 PureCloudPlatformClientV2/models/document_body_list_block.py
 PureCloudPlatformClientV2/models/document_body_list_block_properties.py
+PureCloudPlatformClientV2/models/document_body_list_block_with_highlight.py
 PureCloudPlatformClientV2/models/document_body_list_item_properties.py
+PureCloudPlatformClientV2/models/document_body_list_with_highlight.py
 PureCloudPlatformClientV2/models/document_body_paragraph.py
 PureCloudPlatformClientV2/models/document_body_paragraph_properties.py
 PureCloudPlatformClientV2/models/document_body_paragraph_with_highlight.py
@@ -1513,9 +1534,12 @@ PureCloudPlatformClientV2/models/document_body_table_caption_block.py
 PureCloudPlatformClientV2/models/document_body_table_caption_item.py
 PureCloudPlatformClientV2/models/document_body_table_cell_block.py
 PureCloudPlatformClientV2/models/document_body_table_cell_block_properties.py
+PureCloudPlatformClientV2/models/document_body_table_cell_block_with_highlight.py
 PureCloudPlatformClientV2/models/document_body_table_properties.py
 PureCloudPlatformClientV2/models/document_body_table_row_block.py
 PureCloudPlatformClientV2/models/document_body_table_row_block_properties.py
+PureCloudPlatformClientV2/models/document_body_table_row_block_with_highlight.py
+PureCloudPlatformClientV2/models/document_body_table_with_highlight.py
 PureCloudPlatformClientV2/models/document_body_video.py
 PureCloudPlatformClientV2/models/document_body_video_properties.py
 PureCloudPlatformClientV2/models/document_body_with_highlight.py
@@ -1527,6 +1551,7 @@ PureCloudPlatformClientV2/models/document_element_length.py
 PureCloudPlatformClientV2/models/document_entity_listing.py
 PureCloudPlatformClientV2/models/document_faq.py
 PureCloudPlatformClientV2/models/document_list_content_block.py
+PureCloudPlatformClientV2/models/document_list_content_block_with_highlight.py
 PureCloudPlatformClientV2/models/document_listing.py
 PureCloudPlatformClientV2/models/document_query.py
 PureCloudPlatformClientV2/models/document_query_clause.py
@@ -1534,6 +1559,7 @@ PureCloudPlatformClientV2/models/document_query_interval.py
 PureCloudPlatformClientV2/models/document_query_predicate.py
 PureCloudPlatformClientV2/models/document_reference.py
 PureCloudPlatformClientV2/models/document_table_content_block.py
+PureCloudPlatformClientV2/models/document_table_content_block_with_highlight.py
 PureCloudPlatformClientV2/models/document_text.py
 PureCloudPlatformClientV2/models/document_text_properties.py
 PureCloudPlatformClientV2/models/document_thumbnail.py
@@ -2084,6 +2110,7 @@ PureCloudPlatformClientV2/models/guest_member_info.py
 PureCloudPlatformClientV2/models/guest_response_category.py
 PureCloudPlatformClientV2/models/headcount_forecast.py
 PureCloudPlatformClientV2/models/headcount_interval.py
+PureCloudPlatformClientV2/models/header.py
 PureCloudPlatformClientV2/models/health_info.py
 PureCloudPlatformClientV2/models/help_link.py
 PureCloudPlatformClientV2/models/help_settings.py
@@ -2624,6 +2651,7 @@ PureCloudPlatformClientV2/models/list_wrapper_string.py
 PureCloudPlatformClientV2/models/listed_dictionary_feedback.py
 PureCloudPlatformClientV2/models/listed_program.py
 PureCloudPlatformClientV2/models/listed_topic.py
+PureCloudPlatformClientV2/models/listing.py
 PureCloudPlatformClientV2/models/local_date_range.py
 PureCloudPlatformClientV2/models/local_encryption_configuration.py
 PureCloudPlatformClientV2/models/local_encryption_key_request.py
@@ -2704,6 +2732,8 @@ PureCloudPlatformClientV2/models/message_conversation_entity_listing.py
 PureCloudPlatformClientV2/models/message_data.py
 PureCloudPlatformClientV2/models/message_details.py
 PureCloudPlatformClientV2/models/message_evaluation.py
+PureCloudPlatformClientV2/models/message_footer.py
+PureCloudPlatformClientV2/models/message_header.py
 PureCloudPlatformClientV2/models/message_info.py
 PureCloudPlatformClientV2/models/message_media.py
 PureCloudPlatformClientV2/models/message_media_attachment.py
@@ -4136,6 +4166,7 @@ PureCloudPlatformClientV2/models/trustee.py
 PureCloudPlatformClientV2/models/trustee_audit_query_request.py
 PureCloudPlatformClientV2/models/trustee_authorization.py
 PureCloudPlatformClientV2/models/trustee_billing_overview.py
+PureCloudPlatformClientV2/models/trustee_reference_list.py
 PureCloudPlatformClientV2/models/trustor.py
 PureCloudPlatformClientV2/models/trustor_audit_query_request.py
 PureCloudPlatformClientV2/models/trustor_entity_listing.py
@@ -4288,6 +4319,7 @@ PureCloudPlatformClientV2/models/user_queue_entity_listing.py
 PureCloudPlatformClientV2/models/user_recording.py
 PureCloudPlatformClientV2/models/user_recording_entity_listing.py
 PureCloudPlatformClientV2/models/user_reference.py
+PureCloudPlatformClientV2/models/user_reference_entity_listing.py
 PureCloudPlatformClientV2/models/user_reference_with_name.py
 PureCloudPlatformClientV2/models/user_routing_language.py
 PureCloudPlatformClientV2/models/user_routing_language_post.py
@@ -4392,7 +4424,9 @@ PureCloudPlatformClientV2/models/validate_address_response.py
 PureCloudPlatformClientV2/models/validate_assign_users.py
 PureCloudPlatformClientV2/models/validate_work_plan_messages.py
 PureCloudPlatformClientV2/models/validate_work_plan_response.py
+PureCloudPlatformClientV2/models/validation_error.py
 PureCloudPlatformClientV2/models/validation_limits.py
+PureCloudPlatformClientV2/models/validation_result.py
 PureCloudPlatformClientV2/models/validation_service_request.py
 PureCloudPlatformClientV2/models/value_wrapper_activity_plan_service_goal_impact_overrides.py
 PureCloudPlatformClientV2/models/value_wrapper_date.py
@@ -4655,6 +4689,7 @@ PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_mu_topic_qu
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_mu_topic_real_time_adherence_explanation.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_mu_topic_secondary_presence_reference.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_mu_topic_uri_reference.py
+PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_mu_topic_user_next_activity_reminder.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_mu_topic_user_reference.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_mu_topic_user_schedule_adherence_update.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_activity_code_reference.py
@@ -4662,6 +4697,7 @@ PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_real_time_adherence_explanation.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_secondary_presence_reference.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_uri_reference.py
+PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_user_next_activity_reminder.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_user_reference.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_team_topic_user_schedule_adherence_update.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_activity_code_reference.py
@@ -4669,6 +4705,7 @@ PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_queue
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_real_time_adherence_explanation.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_secondary_presence_reference.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_uri_reference.py
+PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_user_next_activity_reminder.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_user_reference.py
 PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_user_schedule_adherence_update.py
 PureCloudPlatformClientV2/models/wfm_versioned_entity_metadata.py
@@ -4763,6 +4800,9 @@ PureCloudPlatformClientV2/models/workitem_post_query_entity_listing.py
 PureCloudPlatformClientV2/models/workitem_query_job_create.py
 PureCloudPlatformClientV2/models/workitem_query_job_error.py
 PureCloudPlatformClientV2/models/workitem_query_job_filter.py
+PureCloudPlatformClientV2/models/workitem_query_job_query_filters.py
+PureCloudPlatformClientV2/models/workitem_query_job_query_filters_criteria.py
+PureCloudPlatformClientV2/models/workitem_query_job_query_filters_predicate.py
 PureCloudPlatformClientV2/models/workitem_query_job_response.py
 PureCloudPlatformClientV2/models/workitem_query_job_sort.py
 PureCloudPlatformClientV2/models/workitem_query_post_request.py
@@ -5411,6 +5451,7 @@ docs/BusinessUnitListing.md
 docs/BusinessUnitReference.md
 docs/BusinessUnitResponse.md
 docs/BusinessUnitSettingsResponse.md
+docs/Button.md
 docs/ButtonComponent.md
 docs/ButtonResponse.md
 docs/CachedMediaItem.md
@@ -5478,6 +5519,8 @@ docs/CampaignRuleEntities.md
 docs/CampaignRuleEntityListing.md
 docs/CampaignRuleExecutionSettings.md
 docs/CampaignRuleParameters.md
+docs/CampaignRuleWarning.md
+docs/CampaignRuleWarningParameters.md
 docs/CampaignSchedule.md
 docs/CampaignSequence.md
 docs/CampaignSequenceEntityListing.md
@@ -5962,6 +6005,14 @@ docs/ConversationSummary.md
 docs/ConversationSummaryFollowup.md
 docs/ConversationSummaryReason.md
 docs/ConversationSummaryResolution.md
+docs/ConversationSummaryTopicVirtualAgentsConversationHeadline.md
+docs/ConversationSummaryTopicVirtualAgentsConversationReason.md
+docs/ConversationSummaryTopicVirtualAgentsConversationResolution.md
+docs/ConversationSummaryTopicVirtualAgentsConversationSummary.md
+docs/ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.md
+docs/ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant.md
+docs/ConversationSummaryTopicVirtualAgentsConversationWrapUpCode.md
+docs/ConversationSummaryTopicVirtualAgentsTriggerSource.md
 docs/ConversationSummaryWrapupCode.md
 docs/ConversationTagsUpdate.md
 docs/ConversationThreadingWindow.md
@@ -6080,6 +6131,14 @@ docs/CrossPlatformPolicy.md
 docs/CrossPlatformPolicyActions.md
 docs/CrossPlatformPolicyCreate.md
 docs/CrossPlatformPolicyUpdate.md
+docs/CsvJobRequest.md
+docs/CsvJobResponse.md
+docs/CsvMappingEntry.md
+docs/CsvSettings.md
+docs/CsvUploadDetailsResponse.md
+docs/CsvUploadPreviewResponse.md
+docs/CsvUploadRequest.md
+docs/CsvUploadResponse.md
 docs/CtaButtonStyleProperties.md
 docs/CurrentUserScheduleRequestBody.md
 docs/CurrentUserTimeOffIntegrationStatusRequest.md
@@ -6299,7 +6358,9 @@ docs/DocumentBodyImageProperties.md
 docs/DocumentBodyList.md
 docs/DocumentBodyListBlock.md
 docs/DocumentBodyListBlockProperties.md
+docs/DocumentBodyListBlockWithHighlight.md
 docs/DocumentBodyListItemProperties.md
+docs/DocumentBodyListWithHighlight.md
 docs/DocumentBodyParagraph.md
 docs/DocumentBodyParagraphProperties.md
 docs/DocumentBodyParagraphWithHighlight.md
@@ -6308,9 +6369,12 @@ docs/DocumentBodyTableCaptionBlock.md
 docs/DocumentBodyTableCaptionItem.md
 docs/DocumentBodyTableCellBlock.md
 docs/DocumentBodyTableCellBlockProperties.md
+docs/DocumentBodyTableCellBlockWithHighlight.md
 docs/DocumentBodyTableProperties.md
 docs/DocumentBodyTableRowBlock.md
 docs/DocumentBodyTableRowBlockProperties.md
+docs/DocumentBodyTableRowBlockWithHighlight.md
+docs/DocumentBodyTableWithHighlight.md
 docs/DocumentBodyVideo.md
 docs/DocumentBodyVideoProperties.md
 docs/DocumentBodyWithHighlight.md
@@ -6322,6 +6386,7 @@ docs/DocumentElementLength.md
 docs/DocumentEntityListing.md
 docs/DocumentFaq.md
 docs/DocumentListContentBlock.md
+docs/DocumentListContentBlockWithHighlight.md
 docs/DocumentListing.md
 docs/DocumentQuery.md
 docs/DocumentQueryClause.md
@@ -6329,6 +6394,7 @@ docs/DocumentQueryInterval.md
 docs/DocumentQueryPredicate.md
 docs/DocumentReference.md
 docs/DocumentTableContentBlock.md
+docs/DocumentTableContentBlockWithHighlight.md
 docs/DocumentText.md
 docs/DocumentTextProperties.md
 docs/DocumentThumbnail.md
@@ -6903,6 +6969,7 @@ docs/GuestMemberInfo.md
 docs/GuestResponseCategory.md
 docs/HeadcountForecast.md
 docs/HeadcountInterval.md
+docs/Header.md
 docs/HealthInfo.md
 docs/HelpLink.md
 docs/HelpSettings.md
@@ -7461,6 +7528,7 @@ docs/ListWrapperString.md
 docs/ListedDictionaryFeedback.md
 docs/ListedProgram.md
 docs/ListedTopic.md
+docs/Listing.md
 docs/LocalDateRange.md
 docs/LocalEncryptionConfiguration.md
 docs/LocalEncryptionKeyRequest.md
@@ -7545,6 +7613,8 @@ docs/MessageConversationEntityListing.md
 docs/MessageData.md
 docs/MessageDetails.md
 docs/MessageEvaluation.md
+docs/MessageFooter.md
+docs/MessageHeader.md
 docs/MessageInfo.md
 docs/MessageMedia.md
 docs/MessageMediaAttachment.md
@@ -9035,6 +9105,7 @@ docs/Trustee.md
 docs/TrusteeAuditQueryRequest.md
 docs/TrusteeAuthorization.md
 docs/TrusteeBillingOverview.md
+docs/TrusteeReferenceList.md
 docs/Trustor.md
 docs/TrustorAuditQueryRequest.md
 docs/TrustorEntityListing.md
@@ -9193,6 +9264,7 @@ docs/UserRecordingEntityListing.md
 docs/UserRecordingsApi.json
 docs/UserRecordingsApi.md
 docs/UserReference.md
+docs/UserReferenceEntityListing.md
 docs/UserReferenceWithName.md
 docs/UserRoutingLanguage.md
 docs/UserRoutingLanguagePost.md
@@ -9301,7 +9373,9 @@ docs/ValidateAddressResponse.md
 docs/ValidateAssignUsers.md
 docs/ValidateWorkPlanMessages.md
 docs/ValidateWorkPlanResponse.md
+docs/ValidationError.md
 docs/ValidationLimits.md
+docs/ValidationResult.md
 docs/ValidationServiceRequest.md
 docs/ValueWrapperActivityPlanServiceGoalImpactOverrides.md
 docs/ValueWrapperDate.md
@@ -9572,6 +9646,7 @@ docs/WfmUserScheduleAdherenceUpdatedMuTopicQueueReference.md
 docs/WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.md
 docs/WfmUserScheduleAdherenceUpdatedMuTopicSecondaryPresenceReference.md
 docs/WfmUserScheduleAdherenceUpdatedMuTopicUriReference.md
+docs/WfmUserScheduleAdherenceUpdatedMuTopicUserNextActivityReminder.md
 docs/WfmUserScheduleAdherenceUpdatedMuTopicUserReference.md
 docs/WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate.md
 docs/WfmUserScheduleAdherenceUpdatedTeamTopicActivityCodeReference.md
@@ -9579,6 +9654,7 @@ docs/WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference.md
 docs/WfmUserScheduleAdherenceUpdatedTeamTopicRealTimeAdherenceExplanation.md
 docs/WfmUserScheduleAdherenceUpdatedTeamTopicSecondaryPresenceReference.md
 docs/WfmUserScheduleAdherenceUpdatedTeamTopicUriReference.md
+docs/WfmUserScheduleAdherenceUpdatedTeamTopicUserNextActivityReminder.md
 docs/WfmUserScheduleAdherenceUpdatedTeamTopicUserReference.md
 docs/WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate.md
 docs/WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference.md
@@ -9586,6 +9662,7 @@ docs/WfmUserScheduleAdherenceUpdatedTopicQueueReference.md
 docs/WfmUserScheduleAdherenceUpdatedTopicRealTimeAdherenceExplanation.md
 docs/WfmUserScheduleAdherenceUpdatedTopicSecondaryPresenceReference.md
 docs/WfmUserScheduleAdherenceUpdatedTopicUriReference.md
+docs/WfmUserScheduleAdherenceUpdatedTopicUserNextActivityReminder.md
 docs/WfmUserScheduleAdherenceUpdatedTopicUserReference.md
 docs/WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.md
 docs/WfmVersionedEntityMetadata.md
@@ -9684,6 +9761,9 @@ docs/WorkitemPostQueryEntityListing.md
 docs/WorkitemQueryJobCreate.md
 docs/WorkitemQueryJobError.md
 docs/WorkitemQueryJobFilter.md
+docs/WorkitemQueryJobQueryFilters.md
+docs/WorkitemQueryJobQueryFiltersCriteria.md
+docs/WorkitemQueryJobQueryFiltersPredicate.md
 docs/WorkitemQueryJobResponse.md
 docs/WorkitemQueryJobSort.md
 docs/WorkitemQueryPostRequest.md
@@ -9830,6 +9910,7 @@ docs/delete_externalcontacts_contact-example.txt
 docs/delete_externalcontacts_contact_note-example.txt
 docs/delete_externalcontacts_contacts_schema-example.txt
 docs/delete_externalcontacts_externalsource-example.txt
+docs/delete_externalcontacts_import_csv_setting-example.txt
 docs/delete_externalcontacts_organization-example.txt
 docs/delete_externalcontacts_organization_note-example.txt
 docs/delete_externalcontacts_organization_trustor-example.txt
@@ -10359,6 +10440,10 @@ docs/get_externalcontacts_contacts_schema_versions-example.txt
 docs/get_externalcontacts_contacts_schemas-example.txt
 docs/get_externalcontacts_externalsource-example.txt
 docs/get_externalcontacts_externalsources-example.txt
+docs/get_externalcontacts_import_csv_setting-example.txt
+docs/get_externalcontacts_import_csv_settings-example.txt
+docs/get_externalcontacts_import_csv_upload_details-example.txt
+docs/get_externalcontacts_import_csv_upload_preview-example.txt
 docs/get_externalcontacts_organization-example.txt
 docs/get_externalcontacts_organization_contacts-example.txt
 docs/get_externalcontacts_organization_note-example.txt
@@ -10722,6 +10807,7 @@ docs/get_orgauthorization_trustee_user-example.txt
 docs/get_orgauthorization_trustee_user_roles-example.txt
 docs/get_orgauthorization_trustee_users-example.txt
 docs/get_orgauthorization_trustees-example.txt
+docs/get_orgauthorization_trustees_care-example.txt
 docs/get_orgauthorization_trustees_default-example.txt
 docs/get_orgauthorization_trustor-example.txt
 docs/get_orgauthorization_trustor_cloneduser-example.txt
@@ -11739,6 +11825,9 @@ docs/post_externalcontacts_contacts-example.txt
 docs/post_externalcontacts_contacts_schemas-example.txt
 docs/post_externalcontacts_externalsources-example.txt
 docs/post_externalcontacts_identifierlookup-example.txt
+docs/post_externalcontacts_import_csv_jobs-example.txt
+docs/post_externalcontacts_import_csv_settings-example.txt
+docs/post_externalcontacts_import_csv_uploads-example.txt
 docs/post_externalcontacts_merge_contacts-example.txt
 docs/post_externalcontacts_organization_notes-example.txt
 docs/post_externalcontacts_organizations-example.txt
@@ -11903,6 +11992,7 @@ docs/post_orgauthorization_trustee_groups-example.txt
 docs/post_orgauthorization_trustee_users-example.txt
 docs/post_orgauthorization_trustees-example.txt
 docs/post_orgauthorization_trustees_audits-example.txt
+docs/post_orgauthorization_trustees_care-example.txt
 docs/post_orgauthorization_trustees_default-example.txt
 docs/post_orgauthorization_trustor_audits-example.txt
 docs/post_outbound_attemptlimits-example.txt
@@ -12238,6 +12328,7 @@ docs/put_externalcontacts_contact_note-example.txt
 docs/put_externalcontacts_contacts_schema-example.txt
 docs/put_externalcontacts_conversation-example.txt
 docs/put_externalcontacts_externalsource-example.txt
+docs/put_externalcontacts_import_csv_setting-example.txt
 docs/put_externalcontacts_organization-example.txt
 docs/put_externalcontacts_organization_note-example.txt
 docs/put_externalcontacts_organization_trustor_trustor_id-example.txt
