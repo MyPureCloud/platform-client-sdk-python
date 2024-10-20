@@ -642,8 +642,6 @@ void (empty response body)
 
 Delete Salesforce Knowledge integration source
 
-delete_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} 
 
 Requires ALL permissions: 
@@ -693,8 +691,6 @@ void (empty response body)
 
 Delete ServiceNow Knowledge integration source
 
-delete_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} 
 
 Requires ALL permissions: 
@@ -743,8 +739,6 @@ void (empty response body)
 
 
 Delete synchronization job
-
-delete_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} 
 
@@ -950,8 +944,6 @@ except ApiException as e:
 
 
 Get sync options available for a knowledge-connect integration
-
-get_knowledge_integration_options is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/integrations/{integrationId}/options 
 
@@ -2435,8 +2427,6 @@ except ApiException as e:
 
 Get operations
 
-get_knowledge_knowledgebase_operations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations 
 
 Requires ALL permissions: 
@@ -2500,8 +2490,6 @@ except ApiException as e:
 
 
 Get ids of operation creator users and oauth clients
-
-get_knowledge_knowledgebase_operations_users_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query 
 
@@ -2605,8 +2593,6 @@ except ApiException as e:
 
 Get Knowledge integration sources
 
-get_knowledge_knowledgebase_sources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources 
 
 Requires ALL permissions: 
@@ -2661,8 +2647,6 @@ except ApiException as e:
 
 Get Salesforce Knowledge integration source
 
-get_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} 
 
 Requires ALL permissions: 
@@ -2715,8 +2699,6 @@ except ApiException as e:
 
 Get ServiceNow Knowledge integration source
 
-get_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} 
 
 Requires ALL permissions: 
@@ -2768,8 +2750,6 @@ except ApiException as e:
 
 
 Get synchronization job report
-
-get_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} 
 
@@ -3848,8 +3828,6 @@ void (empty response body)
 
 
 Update synchronization job
-
-patch_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} 
 
@@ -5786,8 +5764,6 @@ except ApiException as e:
 
 Create Salesforce Knowledge integration source
 
-post_knowledge_knowledgebase_sources_salesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce 
 
 Requires ALL permissions: 
@@ -5837,8 +5813,6 @@ except ApiException as e:
 
 
 Start sync on Salesforce Knowledge integration source
-
-post_knowledge_knowledgebase_sources_salesforce_source_id_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync 
 
@@ -5890,8 +5864,6 @@ except ApiException as e:
 
 Create ServiceNow Knowledge integration source
 
-post_knowledge_knowledgebase_sources_servicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow 
 
 Requires ALL permissions: 
@@ -5942,8 +5914,6 @@ except ApiException as e:
 
 Start synchronization on ServiceNow Knowledge integration source
 
-post_knowledge_knowledgebase_sources_servicenow_source_id_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync 
 
 Requires ALL permissions: 
@@ -5993,8 +5963,6 @@ except ApiException as e:
 
 
 Create synchronization job
-
-post_knowledge_knowledgebase_synchronize_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs 
 
@@ -6146,8 +6114,6 @@ except ApiException as e:
 
 Update Salesforce Knowledge integration source
 
-put_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} 
 
 Requires ALL permissions: 
@@ -6200,8 +6166,6 @@ except ApiException as e:
 
 Update ServiceNow Knowledge integration source
 
-put_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} 
 
 Requires ALL permissions: 
@@ -6247,4 +6211,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

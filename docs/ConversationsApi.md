@@ -8174,8 +8174,13 @@ except ApiException as e:
 
 >  post_conversation_suggestions_feedback(conversation_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Suggestion feedback.
+
+Google Agent Assist offering within Genesys will no longer be supported
 
 Wraps POST /api/v2/conversations/{conversationId}/suggestions/feedback 
 
@@ -12227,4 +12232,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

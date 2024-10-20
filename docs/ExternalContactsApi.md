@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_externalcontacts_contact_note**](#delete_externalcontacts_contact_note) | Delete a note for an external contact|
 |[**delete_externalcontacts_contacts_schema**](#delete_externalcontacts_contacts_schema) | Delete a schema|
 |[**delete_externalcontacts_externalsource**](#delete_externalcontacts_externalsource) | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.|
+|[**delete_externalcontacts_import_csv_setting**](#delete_externalcontacts_import_csv_setting) | Delete settings for CSV import|
 |[**delete_externalcontacts_organization**](#delete_externalcontacts_organization) | Delete an external organization|
 |[**delete_externalcontacts_organization_note**](#delete_externalcontacts_organization_note) | Delete a note for an external organization|
 |[**delete_externalcontacts_organization_trustor**](#delete_externalcontacts_organization_trustor) | Unlink the Trustor for this External Organization|
@@ -27,6 +28,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contacts_schemas**](#get_externalcontacts_contacts_schemas) | Get a list of schemas.|
 |[**get_externalcontacts_externalsource**](#get_externalcontacts_externalsource) | Fetch an External Source|
 |[**get_externalcontacts_externalsources**](#get_externalcontacts_externalsources) | Fetch a list of External Sources|
+|[**get_externalcontacts_import_csv_setting**](#get_externalcontacts_import_csv_setting) | Get settings for CSV import|
+|[**get_externalcontacts_import_csv_settings**](#get_externalcontacts_import_csv_settings) | Retrieve all settings for organization filtered by externalSettingsId if provided|
+|[**get_externalcontacts_import_csv_upload_details**](#get_externalcontacts_import_csv_upload_details) | Get details for CSV upload|
+|[**get_externalcontacts_import_csv_upload_preview**](#get_externalcontacts_import_csv_upload_preview) | Get preview for CSV upload|
 |[**get_externalcontacts_organization**](#get_externalcontacts_organization) | Fetch an external organization|
 |[**get_externalcontacts_organization_contacts**](#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
 |[**get_externalcontacts_organization_note**](#get_externalcontacts_organization_note) | Fetch a note for an external organization|
@@ -67,6 +72,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_contacts_schemas**](#post_externalcontacts_contacts_schemas) | Create a schema|
 |[**post_externalcontacts_externalsources**](#post_externalcontacts_externalsources) | Create an External Source|
 |[**post_externalcontacts_identifierlookup**](#post_externalcontacts_identifierlookup) | Fetch a contact using an identifier type and value.|
+|[**post_externalcontacts_import_csv_jobs**](#post_externalcontacts_import_csv_jobs) | Create CSV import job|
+|[**post_externalcontacts_import_csv_settings**](#post_externalcontacts_import_csv_settings) | Create settings for CSV import|
+|[**post_externalcontacts_import_csv_uploads**](#post_externalcontacts_import_csv_uploads) | Get url for CSV upload|
 |[**post_externalcontacts_merge_contacts**](#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
 |[**post_externalcontacts_organization_notes**](#post_externalcontacts_organization_notes) | Create a note for an external organization|
 |[**post_externalcontacts_organizations**](#post_externalcontacts_organizations) | Create an external organization|
@@ -77,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_externalcontacts_contacts_schema**](#put_externalcontacts_contacts_schema) | Update a schema|
 |[**put_externalcontacts_conversation**](#put_externalcontacts_conversation) | Associate/disassociate an external contact with a conversation|
 |[**put_externalcontacts_externalsource**](#put_externalcontacts_externalsource) | Update an External Source|
+|[**put_externalcontacts_import_csv_setting**](#put_externalcontacts_import_csv_setting) | Update settings for CSV import|
 |[**put_externalcontacts_organization**](#put_externalcontacts_organization) | Update an external organization|
 |[**put_externalcontacts_organization_note**](#put_externalcontacts_organization_note) | Update a note for an external organization|
 |[**put_externalcontacts_organization_trustor_trustor_id**](#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an External Organization|
@@ -280,6 +289,53 @@ except ApiException as e:
 ### Return type
 
 **object**
+
+
+## delete_externalcontacts_import_csv_setting
+
+>  delete_externalcontacts_import_csv_setting(settings_id)
+
+
+Delete settings for CSV import
+
+Wraps DELETE /api/v2/externalcontacts/import/csv/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvSettings:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+settings_id = 'settings_id_example' # str | Settings id
+
+try:
+    # Delete settings for CSV import
+    api_instance.delete_externalcontacts_import_csv_setting(settings_id)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_import_csv_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **settings_id** | **str**| Settings id |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_externalcontacts_organization
@@ -1146,6 +1202,202 @@ except ApiException as e:
 ### Return type
 
 [**CursorExternalSourceListing**](CursorExternalSourceListing)
+
+
+## get_externalcontacts_import_csv_setting
+
+> [**CsvSettings**](CsvSettings) get_externalcontacts_import_csv_setting(settings_id)
+
+
+Get settings for CSV import
+
+Wraps GET /api/v2/externalcontacts/import/csv/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+settings_id = 'settings_id_example' # str | Settings id
+
+try:
+    # Get settings for CSV import
+    api_response = api_instance.get_externalcontacts_import_csv_setting(settings_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_csv_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **settings_id** | **str**| Settings id |  |
+
+### Return type
+
+[**CsvSettings**](CsvSettings)
+
+
+## get_externalcontacts_import_csv_settings
+
+> [**Listing**](Listing) get_externalcontacts_import_csv_settings(after=after, page_size=page_size, external_settings_id=external_settings_id)
+
+
+Retrieve all settings for organization filtered by externalSettingsId if provided
+
+Wraps GET /api/v2/externalcontacts/import/csv/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+external_settings_id = 'external_settings_id_example' # str | External Settings Id to filter the list. (optional)
+
+try:
+    # Retrieve all settings for organization filtered by externalSettingsId if provided
+    api_response = api_instance.get_externalcontacts_import_csv_settings(after=after, page_size=page_size, external_settings_id=external_settings_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_csv_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **external_settings_id** | **str**| External Settings Id to filter the list. | [optional]  |
+
+### Return type
+
+[**Listing**](Listing)
+
+
+## get_externalcontacts_import_csv_upload_details
+
+> [**CsvUploadDetailsResponse**](CsvUploadDetailsResponse) get_externalcontacts_import_csv_upload_details(upload_id)
+
+
+Get details for CSV upload
+
+Wraps GET /api/v2/externalcontacts/import/csv/uploads/{uploadId}/details 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvUpload:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+upload_id = 'upload_id_example' # str | Upload id
+
+try:
+    # Get details for CSV upload
+    api_response = api_instance.get_externalcontacts_import_csv_upload_details(upload_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_csv_upload_details: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **upload_id** | **str**| Upload id |  |
+
+### Return type
+
+[**CsvUploadDetailsResponse**](CsvUploadDetailsResponse)
+
+
+## get_externalcontacts_import_csv_upload_preview
+
+> [**CsvUploadPreviewResponse**](CsvUploadPreviewResponse) get_externalcontacts_import_csv_upload_preview(upload_id)
+
+
+Get preview for CSV upload
+
+Wraps GET /api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvUpload:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+upload_id = 'upload_id_example' # str | Upload id
+
+try:
+    # Get preview for CSV upload
+    api_response = api_instance.get_externalcontacts_import_csv_upload_preview(upload_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_csv_upload_preview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **upload_id** | **str**| Upload id |  |
+
+### Return type
+
+[**CsvUploadPreviewResponse**](CsvUploadPreviewResponse)
 
 
 ## get_externalcontacts_organization
@@ -3156,6 +3408,150 @@ except ApiException as e:
 [**ExternalContact**](ExternalContact)
 
 
+## post_externalcontacts_import_csv_jobs
+
+> [**CsvJobResponse**](CsvJobResponse) post_externalcontacts_import_csv_jobs(body)
+
+
+Create CSV import job
+
+Wraps POST /api/v2/externalcontacts/import/csv/jobs 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.CsvJobRequest() # CsvJobRequest | ImportRequest
+
+try:
+    # Create CSV import job
+    api_response = api_instance.post_externalcontacts_import_csv_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_import_csv_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CsvJobRequest**](CsvJobRequest)| ImportRequest |  |
+
+### Return type
+
+[**CsvJobResponse**](CsvJobResponse)
+
+
+## post_externalcontacts_import_csv_settings
+
+> [**CsvSettings**](CsvSettings) post_externalcontacts_import_csv_settings(body)
+
+
+Create settings for CSV import
+
+Wraps POST /api/v2/externalcontacts/import/csv/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvSettings:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.CsvSettings() # CsvSettings | Settings
+
+try:
+    # Create settings for CSV import
+    api_response = api_instance.post_externalcontacts_import_csv_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_import_csv_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CsvSettings**](CsvSettings)| Settings |  |
+
+### Return type
+
+[**CsvSettings**](CsvSettings)
+
+
+## post_externalcontacts_import_csv_uploads
+
+> [**CsvUploadResponse**](CsvUploadResponse) post_externalcontacts_import_csv_uploads(body)
+
+
+Get url for CSV upload
+
+Wraps POST /api/v2/externalcontacts/import/csv/uploads 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvUpload:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.CsvUploadRequest() # CsvUploadRequest | UploadRequest
+
+try:
+    # Get url for CSV upload
+    api_response = api_instance.post_externalcontacts_import_csv_uploads(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_import_csv_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CsvUploadRequest**](CsvUploadRequest)| UploadRequest |  |
+
+### Return type
+
+[**CsvUploadResponse**](CsvUploadResponse)
+
+
 ## post_externalcontacts_merge_contacts
 
 > [**ExternalContact**](ExternalContact) post_externalcontacts_merge_contacts(body)
@@ -3661,6 +4057,56 @@ except ApiException as e:
 [**ExternalSource**](ExternalSource)
 
 
+## put_externalcontacts_import_csv_setting
+
+> [**CsvSettings**](CsvSettings) put_externalcontacts_import_csv_setting(settings_id, body)
+
+
+Update settings for CSV import
+
+Wraps PUT /api/v2/externalcontacts/import/csv/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importCsvSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+settings_id = 'settings_id_example' # str | Settings id
+body = PureCloudPlatformClientV2.CsvSettings() # CsvSettings | Settings
+
+try:
+    # Update settings for CSV import
+    api_response = api_instance.put_externalcontacts_import_csv_setting(settings_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_import_csv_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **settings_id** | **str**| Settings id |  |
+| **body** | [**CsvSettings**](CsvSettings)| Settings |  |
+
+### Return type
+
+[**CsvSettings**](CsvSettings)
+
+
 ## put_externalcontacts_organization
 
 > [**ExternalOrganization**](ExternalOrganization) put_externalcontacts_organization(external_organization_id, body)
@@ -3916,4 +4362,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

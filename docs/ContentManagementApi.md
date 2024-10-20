@@ -696,7 +696,7 @@ except ApiException as e:
 
 ## get_contentmanagement_shared_shared_id
 
-> [**SharedResponse**](SharedResponse) get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
+> [**SharedResponse**](SharedResponse) get_contentmanagement_shared_shared_id(shared_id, disposition=disposition, content_type=content_type, expand=expand)
 
 
 Get shared documents. Securely download a shared document.
@@ -722,14 +722,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ContentManagementApi()
 shared_id = 'shared_id_example' # str | Shared ID
-redirect = True # bool | Turn on or off redirect (optional) (default to True)
 disposition = ''attachment'' # str | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional) (default to 'attachment')
 content_type = 'content_type_example' # str | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
 expand = 'expand_example' # str | Expand some document fields (optional)
 
 try:
     # Get shared documents. Securely download a shared document.
-    api_response = api_instance.get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
+    api_response = api_instance.get_contentmanagement_shared_shared_id(shared_id, disposition=disposition, content_type=content_type, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContentManagementApi->get_contentmanagement_shared_shared_id: %s\n" % e)
@@ -741,7 +740,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **shared_id** | **str**| Shared ID |  |
-| **redirect** | **bool**| Turn on or off redirect | [optional] [default to True] |
 | **disposition** | **str**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to &#39;attachment&#39;]<br />**Values**: attachment, inline, none |
 | **content_type** | **str**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional]  |
 | **expand** | **str**| Expand some document fields | [optional] <br />**Values**: document.acl |
@@ -1869,4 +1867,4 @@ except ApiException as e:
 [**TagValue**](TagValue)
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

@@ -2026,8 +2026,6 @@ except ApiException as e:
 
 Get an Event Definition
 
-get_journey_views_eventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId} 
 
 Requires ALL permissions: 
@@ -2075,8 +2073,6 @@ except ApiException as e:
 
 
 Get a list of Event Definitions
-
-get_journey_views_eventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/eventdefinitions 
 
@@ -3257,8 +3253,6 @@ Validate whether an encoding exist for a label/value combination.
 
 True indicates a valid encoding
 
-post_journey_views_encodings_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/journey/views/encodings/validate 
 
 Requires ALL permissions: 
@@ -3354,4 +3348,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_

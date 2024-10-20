@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_orgauthorization_trustee_user_roles**](#get_orgauthorization_trustee_user_roles) | Get Trustee User Roles|
 |[**get_orgauthorization_trustee_users**](#get_orgauthorization_trustee_users) | The list of trustee users for this organization (i.e. users granted access to this organization).|
 |[**get_orgauthorization_trustees**](#get_orgauthorization_trustees) | The list of trustees for this organization (i.e. organizations granted access to this organization).|
+|[**get_orgauthorization_trustees_care**](#get_orgauthorization_trustees_care) | Get Customer Care organization ids.|
 |[**get_orgauthorization_trustees_default**](#get_orgauthorization_trustees_default) | Get organization authorization trust with Customer Care, if one exists.|
 |[**get_orgauthorization_trustor**](#get_orgauthorization_trustor) | Get Org Trust|
 |[**get_orgauthorization_trustor_cloneduser**](#get_orgauthorization_trustor_cloneduser) | Get Cloned User|
@@ -42,6 +43,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_orgauthorization_trustee_users**](#post_orgauthorization_trustee_users) | Add a user to the trust.|
 |[**post_orgauthorization_trustees**](#post_orgauthorization_trustees) | Create a new organization authorization trust. This is required to grant other organizations access to your organization.|
 |[**post_orgauthorization_trustees_audits**](#post_orgauthorization_trustees_audits) | Get Org Trustee Audits|
+|[**post_orgauthorization_trustees_care**](#post_orgauthorization_trustees_care) | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.|
 |[**post_orgauthorization_trustees_default**](#post_orgauthorization_trustees_default) | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.|
 |[**post_orgauthorization_trustor_audits**](#post_orgauthorization_trustor_audits) | Get Org Trustor Audits|
 |[**put_orgauthorization_trustee**](#put_orgauthorization_trustee) | Update Org Trust|
@@ -1140,6 +1142,51 @@ except ApiException as e:
 [**TrustEntityListing**](TrustEntityListing)
 
 
+## get_orgauthorization_trustees_care
+
+> [**TrusteeReferenceList**](TrusteeReferenceList) get_orgauthorization_trustees_care()
+
+
+Get Customer Care organization ids.
+
+Wraps GET /api/v2/orgauthorization/trustees/care 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+
+try:
+    # Get Customer Care organization ids.
+    api_response = api_instance.get_orgauthorization_trustees_care()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->get_orgauthorization_trustees_care: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**TrusteeReferenceList**](TrusteeReferenceList)
+
+
 ## get_orgauthorization_trustees_default
 
 > [**Trustee**](Trustee) get_orgauthorization_trustees_default()
@@ -1838,6 +1885,61 @@ except ApiException as e:
 **object**
 
 
+## post_orgauthorization_trustees_care
+
+> [**TrustEntityListing**](TrustEntityListing) post_orgauthorization_trustees_care(assign_default_role=assign_default_role, auto_expire=auto_expire, assign_full_access=assign_full_access, allow_trusted_user_access=allow_trusted_user_access)
+
+
+Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+
+Wraps POST /api/v2/orgauthorization/trustees/care 
+
+Requires ALL permissions: 
+
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+assign_default_role = True # bool | Assign Admin role to default pairing with Customer Care (optional)
+auto_expire = True # bool | Automatically expire pairing after 30 days (optional)
+assign_full_access = True # bool | Grant Customer Care full access to the organization (optional)
+allow_trusted_user_access = True # bool | Make Customer Care a Trusted User (optional)
+
+try:
+    # Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+    api_response = api_instance.post_orgauthorization_trustees_care(assign_default_role=assign_default_role, auto_expire=auto_expire, assign_full_access=assign_full_access, allow_trusted_user_access=allow_trusted_user_access)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees_care: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assign_default_role** | **bool**| Assign Admin role to default pairing with Customer Care | [optional]  |
+| **auto_expire** | **bool**| Automatically expire pairing after 30 days | [optional]  |
+| **assign_full_access** | **bool**| Grant Customer Care full access to the organization | [optional]  |
+| **allow_trusted_user_access** | **bool**| Make Customer Care a Trusted User | [optional]  |
+
+### Return type
+
+[**TrustEntityListing**](TrustEntityListing)
+
+
 ## post_orgauthorization_trustees_default
 
 > [**Trustee**](Trustee) post_orgauthorization_trustees_default(assign_default_role=assign_default_role, auto_expire=auto_expire)
@@ -2353,4 +2455,4 @@ except ApiException as e:
 [**TrustUser**](TrustUser)
 
 
-_PureCloudPlatformClientV2 213.0.0_
+_PureCloudPlatformClientV2 214.0.0_
