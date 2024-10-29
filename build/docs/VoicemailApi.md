@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_voicemail_policy**](#get_voicemail_policy) | Get a policy|
 |[**get_voicemail_queue_messages**](#get_voicemail_queue_messages) | List voicemail messages|
 |[**get_voicemail_search**](#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
+|[**get_voicemail_user_mailbox**](#get_voicemail_user_mailbox) | Get a user&#39;s mailbox information|
+|[**get_voicemail_user_messages**](#get_voicemail_user_messages) | List voicemail messages|
 |[**get_voicemail_userpolicy**](#get_voicemail_userpolicy) | Get a user&#39;s voicemail policy|
 |[**patch_voicemail_group_policy**](#patch_voicemail_group_policy) | Update a group&#39;s voicemail policy|
 |[**patch_voicemail_me_policy**](#patch_voicemail_me_policy) | Update the current user&#39;s voicemail policy|
@@ -741,6 +743,106 @@ except ApiException as e:
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
+## get_voicemail_user_mailbox
+
+> [**VoicemailMailboxInfo**](VoicemailMailboxInfo) get_voicemail_user_mailbox(user_id)
+
+
+Get a user's mailbox information
+
+Wraps GET /api/v2/voicemail/users/{userId}/mailbox 
+
+Requires ANY permissions: 
+
+* voicemail:mailbox:viewOther
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.VoicemailApi()
+user_id = 'user_id_example' # str | userId
+
+try:
+    # Get a user's mailbox information
+    api_response = api_instance.get_voicemail_user_mailbox(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VoicemailApi->get_voicemail_user_mailbox: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| userId |  |
+
+### Return type
+
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo)
+
+
+## get_voicemail_user_messages
+
+> [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing) get_voicemail_user_messages(user_id, page_size=page_size, page_number=page_number)
+
+
+List voicemail messages
+
+Wraps GET /api/v2/voicemail/users/{userId}/messages 
+
+Requires ANY permissions: 
+
+* voicemail:voicemail:viewOther
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.VoicemailApi()
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # List voicemail messages
+    api_response = api_instance.get_voicemail_user_messages(user_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VoicemailApi->get_voicemail_user_messages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing)
+
+
 ## get_voicemail_userpolicy
 
 > [**VoicemailUserPolicy**](VoicemailUserPolicy) get_voicemail_userpolicy(user_id)
@@ -1229,4 +1331,4 @@ except ApiException as e:
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

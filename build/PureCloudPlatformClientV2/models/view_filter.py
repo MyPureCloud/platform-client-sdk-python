@@ -5375,7 +5375,7 @@ class ViewFilter(object):
         """
         if isinstance(dashboard_type, int):
             dashboard_type = str(dashboard_type)
-        allowed_values = ["All", "Public", "Private", "Shared", "Favorites"]
+        allowed_values = ["All", "Public", "Private", "Shared", "Favorites", "Deleted"]
         if dashboard_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dashboard_type -> " + dashboard_type)
             self._dashboard_type = "outdated_sdk_version"

@@ -61,7 +61,7 @@ class ConversationEnrichmentLanguage(object):
     def language(self) -> str:
         """
         Gets the language of this ConversationEnrichmentLanguage.
-        The ISO 639-3 detected language code of this message.
+        The IETF detected language code of this message.
 
         :return: The language of this ConversationEnrichmentLanguage.
         :rtype: str
@@ -72,7 +72,7 @@ class ConversationEnrichmentLanguage(object):
     def language(self, language: str) -> None:
         """
         Sets the language of this ConversationEnrichmentLanguage.
-        The ISO 639-3 detected language code of this message.
+        The IETF detected language code of this message.
 
         :param language: The language of this ConversationEnrichmentLanguage.
         :type: str

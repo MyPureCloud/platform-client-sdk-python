@@ -16,6 +16,7 @@
 | **assignment_enabled** | bool | When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false. | [optional] |
 | **schema_id** | str | The ID of the custom attribute schema for Workitems created from the Worktype. Must be a valid UUID. | [optional] |
 | **service_level_target** | int | The target service level for Workitems created from the Worktype. The default value is 100. | [optional] |
+| **rule_settings** | [WorkitemRuleSettings](WorkitemRuleSettings) | Settings for the worktypes rules. | [optional] |
 | **description** | str | The description of the Worktype. Maximum length of 512 characters. | [optional] |
 | **default_status_id** | str | The ID of the default status for Workitems created from the Worktype. | [optional] |
 | **schema_version** | int | The version of the Worktypes custom attribute schema. The latest schema version will be used if this property is not set. | [optional] |
@@ -25,4 +26,4 @@
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

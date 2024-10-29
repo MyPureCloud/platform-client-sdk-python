@@ -83,9 +83,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_knowledge_aggregates_query**](#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
 |[**post_analytics_queues_observations_query**](#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_analytics_ratelimits_aggregates_query**](#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.|
-|[**post_analytics_reporting_dashboards_users_bulk_remove**](#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk delete dashboards owned by other user(s)|
+|[**post_analytics_reporting_dashboards_users_bulk_remove**](#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk soft delete dashboards owned by other user(s)|
 |[**post_analytics_reporting_exports**](#post_analytics_reporting_exports) | Generate a view export request|
-|[**post_analytics_reporting_settings_dashboards_bulk_remove**](#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk remove dashboard configurations|
+|[**post_analytics_reporting_settings_dashboards_bulk_remove**](#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk soft delete dashboard configurations|
 |[**post_analytics_reporting_settings_dashboards_query**](#post_analytics_reporting_settings_dashboards_query) | Query dashboard configurations|
 |[**post_analytics_resolutions_aggregates_jobs**](#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
 |[**post_analytics_routing_activity_query**](#post_analytics_routing_activity_query) | Query for user activity observations|
@@ -1650,7 +1650,7 @@ except ApiException as e:
 
 ## get_analytics_reporting_dashboards_users
 
-> [**DashboardUserListing**](DashboardUserListing) get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state)
+> [**DashboardUserListing**](DashboardUserListing) get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state, deleted_only=deleted_only)
 
 
 Get dashboards summary for users in a org
@@ -1679,10 +1679,11 @@ page_number = 1 # int |  (optional) (default to 1)
 page_size = 25 # int |  (optional) (default to 25)
 id = ['id_example'] # list[str] | A list of user IDs to fetch by bulk (optional)
 state = 'state_example' # str | Only list users of this state (optional)
+deleted_only = True # bool | Only list deleted dashboards that are still recoverable (optional)
 
 try:
     # Get dashboards summary for users in a org
-    api_response = api_instance.get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state)
+    api_response = api_instance.get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state, deleted_only=deleted_only)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_reporting_dashboards_users: %s\n" % e)
@@ -1698,6 +1699,7 @@ except ApiException as e:
 | **page_size** | **int**|  | [optional] [default to 25] |
 | **id** | [**list[str]**](str)| A list of user IDs to fetch by bulk | [optional]  |
 | **state** | **str**| Only list users of this state | [optional] <br />**Values**: active, inactive |
+| **deleted_only** | **bool**| Only list deleted dashboards that are still recoverable | [optional]  |
 
 ### Return type
 
@@ -1887,7 +1889,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **dashboard_type** | **str**| List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
+| **dashboard_type** | **str**| List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites, Deleted |
 | **dashboard_access_filter** | **str**| Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
 | **name** | **str**| name of the dashboard | [optional]  |
 | **sort_by** | **str**|  | [optional] [default to &#39;desc&#39;] |
@@ -1901,7 +1903,7 @@ except ApiException as e:
 
 ## get_analytics_reporting_settings_user_dashboards
 
-> [**DashboardConfigurationListing**](DashboardConfigurationListing) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, name=name)
+> [**DashboardConfigurationListing**](DashboardConfigurationListing) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, deleted_only=deleted_only, name=name)
 
 
 Get list of dashboards for an user
@@ -1931,11 +1933,12 @@ page_number = 1 # int |  (optional) (default to 1)
 page_size = 50 # int |  (optional) (default to 50)
 public_only = True # bool | If true, retrieve only public dashboards (optional)
 favorite_only = True # bool | If true, retrieve only favorite dashboards (optional)
+deleted_only = True # bool | If true, retrieve only deleted dashboards that are still recoverable (optional)
 name = 'name_example' # str | retrieve dashboards that match with given name (optional)
 
 try:
     # Get list of dashboards for an user
-    api_response = api_instance.get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, name=name)
+    api_response = api_instance.get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, deleted_only=deleted_only, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_reporting_settings_user_dashboards: %s\n" % e)
@@ -1952,6 +1955,7 @@ except ApiException as e:
 | **page_size** | **int**|  | [optional] [default to 50] |
 | **public_only** | **bool**| If true, retrieve only public dashboards | [optional]  |
 | **favorite_only** | **bool**| If true, retrieve only favorite dashboards | [optional]  |
+| **deleted_only** | **bool**| If true, retrieve only deleted dashboards that are still recoverable | [optional]  |
 | **name** | **str**| retrieve dashboards that match with given name | [optional]  |
 
 ### Return type
@@ -3996,7 +4000,7 @@ except ApiException as e:
 >  post_analytics_reporting_dashboards_users_bulk_remove(body)
 
 
-Bulk delete dashboards owned by other user(s)
+Bulk soft delete dashboards owned by other user(s)
 
 Wraps POST /api/v2/analytics/reporting/dashboards/users/bulk/remove 
 
@@ -4021,7 +4025,7 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 body = ['body_example'] # list[str] | List of userIds
 
 try:
-    # Bulk delete dashboards owned by other user(s)
+    # Bulk soft delete dashboards owned by other user(s)
     api_instance.post_analytics_reporting_dashboards_users_bulk_remove(body)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->post_analytics_reporting_dashboards_users_bulk_remove: %s\n" % e)
@@ -4094,7 +4098,7 @@ except ApiException as e:
 >  post_analytics_reporting_settings_dashboards_bulk_remove(body)
 
 
-Bulk remove dashboard configurations
+Bulk soft delete dashboard configurations
 
 Wraps POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove 
 
@@ -4118,7 +4122,7 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 body = PureCloudPlatformClientV2.DashboardConfigurationBulkRequest() # DashboardConfigurationBulkRequest | 
 
 try:
-    # Bulk remove dashboard configurations
+    # Bulk soft delete dashboard configurations
     api_instance.post_analytics_reporting_settings_dashboards_bulk_remove(body)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->post_analytics_reporting_settings_dashboards_bulk_remove: %s\n" % e)
@@ -4440,8 +4444,6 @@ except ApiException as e:
 
 
 Query for task management aggregates
-
-post_analytics_taskmanagement_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/taskmanagement/aggregates/query 
 
@@ -4976,4 +4978,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

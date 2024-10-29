@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WorkitemRuleSettings
 
 class WorktypeUpdate(object):
     """
@@ -58,6 +60,7 @@ class WorktypeUpdate(object):
             'assignment_enabled': 'bool',
             'schema_id': 'str',
             'service_level_target': 'int',
+            'rule_settings': 'WorkitemRuleSettings',
             'description': 'str',
             'default_status_id': 'str',
             'schema_version': 'int',
@@ -77,6 +80,7 @@ class WorktypeUpdate(object):
             'assignment_enabled': 'assignmentEnabled',
             'schema_id': 'schemaId',
             'service_level_target': 'serviceLevelTarget',
+            'rule_settings': 'ruleSettings',
             'description': 'description',
             'default_status_id': 'defaultStatusId',
             'schema_version': 'schemaVersion',
@@ -95,6 +99,7 @@ class WorktypeUpdate(object):
         self._assignment_enabled = None
         self._schema_id = None
         self._service_level_target = None
+        self._rule_settings = None
         self._description = None
         self._default_status_id = None
         self._schema_version = None
@@ -347,6 +352,30 @@ class WorktypeUpdate(object):
 
 
         self._service_level_target = service_level_target
+
+    @property
+    def rule_settings(self) -> 'WorkitemRuleSettings':
+        """
+        Gets the rule_settings of this WorktypeUpdate.
+        Settings for the worktypes rules.
+
+        :return: The rule_settings of this WorktypeUpdate.
+        :rtype: WorkitemRuleSettings
+        """
+        return self._rule_settings
+
+    @rule_settings.setter
+    def rule_settings(self, rule_settings: 'WorkitemRuleSettings') -> None:
+        """
+        Sets the rule_settings of this WorktypeUpdate.
+        Settings for the worktypes rules.
+
+        :param rule_settings: The rule_settings of this WorktypeUpdate.
+        :type: WorkitemRuleSettings
+        """
+        
+
+        self._rule_settings = rule_settings
 
     @property
     def description(self) -> str:

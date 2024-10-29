@@ -48,13 +48,38 @@ class WorkitemRuleSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'flow_rules_enabled': 'bool'
         }
 
         self.attribute_map = {
-            
+            'flow_rules_enabled': 'flowRulesEnabled'
         }
 
+        self._flow_rules_enabled = None
+
+    @property
+    def flow_rules_enabled(self) -> bool:
+        """
+        Gets the flow_rules_enabled of this WorkitemRuleSettings.
+        When set to true, the worktypes flow rules will be processed. Default value is false.
+
+        :return: The flow_rules_enabled of this WorkitemRuleSettings.
+        :rtype: bool
+        """
+        return self._flow_rules_enabled
+
+    @flow_rules_enabled.setter
+    def flow_rules_enabled(self, flow_rules_enabled: bool) -> None:
+        """
+        Sets the flow_rules_enabled of this WorkitemRuleSettings.
+        When set to true, the worktypes flow rules will be processed. Default value is false.
+
+        :param flow_rules_enabled: The flow_rules_enabled of this WorkitemRuleSettings.
+        :type: bool
+        """
+        
+
+        self._flow_rules_enabled = flow_rules_enabled
 
     def to_dict(self):
         """

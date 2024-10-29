@@ -160,7 +160,7 @@ class DataSchema(object):
     def applies_to(self) -> List[str]:
         """
         Gets the applies_to of this DataSchema.
-        One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.
+        Indicates the built-in entity type to which this schema applies.
 
         :return: The applies_to of this DataSchema.
         :rtype: list[str]
@@ -171,7 +171,7 @@ class DataSchema(object):
     def applies_to(self, applies_to: List[str]) -> None:
         """
         Sets the applies_to of this DataSchema.
-        One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.
+        Indicates the built-in entity type to which this schema applies.
 
         :param applies_to: The applies_to of this DataSchema.
         :type: list[str]

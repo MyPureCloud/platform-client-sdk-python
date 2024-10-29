@@ -273,6 +273,7 @@ from .array_node import ArrayNode
 from .article import Article
 from .article_content import ArticleContent
 from .article_content_body import ArticleContentBody
+from .articles_filter import ArticlesFilter
 from .assessment_form import AssessmentForm
 from .assessment_form_question import AssessmentFormQuestion
 from .assessment_form_question_group import AssessmentFormQuestionGroup
@@ -625,8 +626,10 @@ from .canned_response_libraries import CannedResponseLibraries
 from .card import Card
 from .card_action import CardAction
 from .categories_entity_listing import CategoriesEntityListing
+from .categories_filter import CategoriesFilter
 from .category import Category
 from .category_create_request import CategoryCreateRequest
+from .category_entity import CategoryEntity
 from .category_entity_listing import CategoryEntityListing
 from .category_listing import CategoryListing
 from .category_reference import CategoryReference
@@ -650,6 +653,9 @@ from .chat_badge_topic_badge_entity import ChatBadgeTopicBadgeEntity
 from .chat_badge_topic_chat_badge import ChatBadgeTopicChatBadge
 from .chat_conversation import ChatConversation
 from .chat_conversation_entity_listing import ChatConversationEntityListing
+from .chat_favorite import ChatFavorite
+from .chat_item import ChatItem
+from .chat_item_cursor_listing import ChatItemCursorListing
 from .chat_media_participant import ChatMediaParticipant
 from .chat_media_policy import ChatMediaPolicy
 from .chat_media_policy_conditions import ChatMediaPolicyConditions
@@ -657,10 +663,12 @@ from .chat_message import ChatMessage
 from .chat_message_entity_listing import ChatMessageEntityListing
 from .chat_message_response import ChatMessageResponse
 from .chat_message_user import ChatMessageUser
+from .chat_presence import ChatPresence
 from .chat_reaction import ChatReaction
 from .chat_reaction_update import ChatReactionUpdate
 from .chat_send_message_response import ChatSendMessageResponse
 from .chat_settings import ChatSettings
+from .chat_user_ref import ChatUserRef
 from .chat_user_settings import ChatUserSettings
 from .check import Check
 from .client_app import ClientApp
@@ -793,6 +801,8 @@ from .content_button_response import ContentButtonResponse
 from .content_card import ContentCard
 from .content_card_action import ContentCardAction
 from .content_carousel import ContentCarousel
+from .content_file_request import ContentFileRequest
+from .content_file_response import ContentFileResponse
 from .content_filter_item import ContentFilterItem
 from .content_generic import ContentGeneric
 from .content_list import ContentList
@@ -1446,6 +1456,8 @@ from .document_body_list_with_highlight import DocumentBodyListWithHighlight
 from .document_body_paragraph import DocumentBodyParagraph
 from .document_body_paragraph_properties import DocumentBodyParagraphProperties
 from .document_body_paragraph_with_highlight import DocumentBodyParagraphWithHighlight
+from .document_body_request import DocumentBodyRequest
+from .document_body_response import DocumentBodyResponse
 from .document_body_table import DocumentBodyTable
 from .document_body_table_caption_block import DocumentBodyTableCaptionBlock
 from .document_body_table_caption_item import DocumentBodyTableCaptionItem
@@ -1482,10 +1494,11 @@ from .document_text_properties import DocumentTextProperties
 from .document_thumbnail import DocumentThumbnail
 from .document_update import DocumentUpdate
 from .document_upload import DocumentUpload
-from .document_variation import DocumentVariation
 from .document_variation_answer import DocumentVariationAnswer
 from .document_variation_context import DocumentVariationContext
-from .document_variation_listing import DocumentVariationListing
+from .document_variation_request import DocumentVariationRequest
+from .document_variation_response import DocumentVariationResponse
+from .document_variation_response_listing import DocumentVariationResponseListing
 from .documentation_result import DocumentationResult
 from .documentation_search_criteria import DocumentationSearchCriteria
 from .documentation_search_request import DocumentationSearchRequest
@@ -1603,6 +1616,7 @@ from .email_initial_configuration import EmailInitialConfiguration
 from .email_media_participant import EmailMediaParticipant
 from .email_media_policy import EmailMediaPolicy
 from .email_media_policy_conditions import EmailMediaPolicyConditions
+from .email_media_settings import EmailMediaSettings
 from .email_message import EmailMessage
 from .email_message_preview import EmailMessagePreview
 from .email_message_preview_listing import EmailMessagePreviewListing
@@ -2067,6 +2081,7 @@ from .identity_resolution_queue_config import IdentityResolutionQueueConfig
 from .idle_event_trigger import IdleEventTrigger
 from .idle_token_timeout import IdleTokenTimeout
 from .ignored_activity_categories import IgnoredActivityCategories
+from .image import Image
 from .imap_settings import ImapSettings
 from .import_error import ImportError
 from .import_forecast_response import ImportForecastResponse
@@ -2340,6 +2355,8 @@ from .knowledge_document_bulk_version_add_entity import KnowledgeDocumentBulkVer
 from .knowledge_document_bulk_version_add_request import KnowledgeDocumentBulkVersionAddRequest
 from .knowledge_document_content_upload import KnowledgeDocumentContentUpload
 from .knowledge_document_copy import KnowledgeDocumentCopy
+from .knowledge_document_create_request import KnowledgeDocumentCreateRequest
+from .knowledge_document_descriptor import KnowledgeDocumentDescriptor
 from .knowledge_document_feedback import KnowledgeDocumentFeedback
 from .knowledge_document_feedback_response import KnowledgeDocumentFeedbackResponse
 from .knowledge_document_feedback_response_listing import KnowledgeDocumentFeedbackResponseListing
@@ -2428,11 +2445,13 @@ from .knowledge_training import KnowledgeTraining
 from .kpi_result import KpiResult
 from .label import Label
 from .label_create_request import LabelCreateRequest
+from .label_entity import LabelEntity
 from .label_listing import LabelListing
 from .label_response import LabelResponse
 from .label_update_request import LabelUpdateRequest
 from .label_utilization_request import LabelUtilizationRequest
 from .label_utilization_response import LabelUtilizationResponse
+from .labels_filter import LabelsFilter
 from .language import Language
 from .language_entity_listing import LanguageEntityListing
 from .language_override import LanguageOverride
@@ -2744,6 +2763,7 @@ from .named_entity_type_binding import NamedEntityTypeBinding
 from .named_entity_type_definition import NamedEntityTypeDefinition
 from .named_entity_type_item import NamedEntityTypeItem
 from .named_entity_type_mechanism import NamedEntityTypeMechanism
+from .named_entity_type_mechanism_example import NamedEntityTypeMechanismExample
 from .namespace_docs import NamespaceDocs
 from .network_connectivity import NetworkConnectivity
 from .next_occurrence_details import NextOccurrenceDetails
@@ -3423,6 +3443,7 @@ from .recording_annotation_flow import RecordingAnnotationFlow
 from .recording_annotation_queue import RecordingAnnotationQueue
 from .recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
 from .recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
+from .recording_attachment import RecordingAttachment
 from .recording_button_component import RecordingButtonComponent
 from .recording_content_actions import RecordingContentActions
 from .recording_content_story import RecordingContentStory
@@ -3437,9 +3458,14 @@ from .recording_job_failed_recording import RecordingJobFailedRecording
 from .recording_jobs_query import RecordingJobsQuery
 from .recording_messaging_message import RecordingMessagingMessage
 from .recording_metadata import RecordingMetadata
+from .recording_notification_template import RecordingNotificationTemplate
 from .recording_retention import RecordingRetention
 from .recording_retention_cursor_entity_listing import RecordingRetentionCursorEntityListing
 from .recording_settings import RecordingSettings
+from .recording_template_body import RecordingTemplateBody
+from .recording_template_button import RecordingTemplateButton
+from .recording_template_footer import RecordingTemplateFooter
+from .recording_template_header import RecordingTemplateHeader
 from .recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
 from .recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
 from .recording_upload_report import RecordingUploadReport
@@ -4206,7 +4232,6 @@ from .user_external_identifier import UserExternalIdentifier
 from .user_greeting_event_greeting import UserGreetingEventGreeting
 from .user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAudioFile
 from .user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner
-from .user_image import UserImage
 from .user_insights_trend import UserInsightsTrend
 from .user_insights_trend_metric_item import UserInsightsTrendMetricItem
 from .user_insights_trend_total_item import UserInsightsTrendTotalItem
@@ -4405,6 +4430,7 @@ from .web_deployment_configuration_version import WebDeploymentConfigurationVers
 from .web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
 from .web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
 from .web_deployment_configuration_version_response import WebDeploymentConfigurationVersionResponse
+from .web_deployment_flow_entity_ref import WebDeploymentFlowEntityRef
 from .web_deployment_headless_mode import WebDeploymentHeadlessMode
 from .web_deployments_authorization_response import WebDeploymentsAuthorizationResponse
 from .web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody

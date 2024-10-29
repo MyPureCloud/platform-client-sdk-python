@@ -356,6 +356,7 @@ PureCloudPlatformClientV2/models/array_node.py
 PureCloudPlatformClientV2/models/article.py
 PureCloudPlatformClientV2/models/article_content.py
 PureCloudPlatformClientV2/models/article_content_body.py
+PureCloudPlatformClientV2/models/articles_filter.py
 PureCloudPlatformClientV2/models/assessment_form.py
 PureCloudPlatformClientV2/models/assessment_form_question.py
 PureCloudPlatformClientV2/models/assessment_form_question_group.py
@@ -708,8 +709,10 @@ PureCloudPlatformClientV2/models/canned_response_libraries.py
 PureCloudPlatformClientV2/models/card.py
 PureCloudPlatformClientV2/models/card_action.py
 PureCloudPlatformClientV2/models/categories_entity_listing.py
+PureCloudPlatformClientV2/models/categories_filter.py
 PureCloudPlatformClientV2/models/category.py
 PureCloudPlatformClientV2/models/category_create_request.py
+PureCloudPlatformClientV2/models/category_entity.py
 PureCloudPlatformClientV2/models/category_entity_listing.py
 PureCloudPlatformClientV2/models/category_listing.py
 PureCloudPlatformClientV2/models/category_reference.py
@@ -733,6 +736,9 @@ PureCloudPlatformClientV2/models/chat_badge_topic_badge_entity.py
 PureCloudPlatformClientV2/models/chat_badge_topic_chat_badge.py
 PureCloudPlatformClientV2/models/chat_conversation.py
 PureCloudPlatformClientV2/models/chat_conversation_entity_listing.py
+PureCloudPlatformClientV2/models/chat_favorite.py
+PureCloudPlatformClientV2/models/chat_item.py
+PureCloudPlatformClientV2/models/chat_item_cursor_listing.py
 PureCloudPlatformClientV2/models/chat_media_participant.py
 PureCloudPlatformClientV2/models/chat_media_policy.py
 PureCloudPlatformClientV2/models/chat_media_policy_conditions.py
@@ -740,10 +746,12 @@ PureCloudPlatformClientV2/models/chat_message.py
 PureCloudPlatformClientV2/models/chat_message_entity_listing.py
 PureCloudPlatformClientV2/models/chat_message_response.py
 PureCloudPlatformClientV2/models/chat_message_user.py
+PureCloudPlatformClientV2/models/chat_presence.py
 PureCloudPlatformClientV2/models/chat_reaction.py
 PureCloudPlatformClientV2/models/chat_reaction_update.py
 PureCloudPlatformClientV2/models/chat_send_message_response.py
 PureCloudPlatformClientV2/models/chat_settings.py
+PureCloudPlatformClientV2/models/chat_user_ref.py
 PureCloudPlatformClientV2/models/chat_user_settings.py
 PureCloudPlatformClientV2/models/check.py
 PureCloudPlatformClientV2/models/client_app.py
@@ -876,6 +884,8 @@ PureCloudPlatformClientV2/models/content_button_response.py
 PureCloudPlatformClientV2/models/content_card.py
 PureCloudPlatformClientV2/models/content_card_action.py
 PureCloudPlatformClientV2/models/content_carousel.py
+PureCloudPlatformClientV2/models/content_file_request.py
+PureCloudPlatformClientV2/models/content_file_response.py
 PureCloudPlatformClientV2/models/content_filter_item.py
 PureCloudPlatformClientV2/models/content_generic.py
 PureCloudPlatformClientV2/models/content_list.py
@@ -1529,6 +1539,8 @@ PureCloudPlatformClientV2/models/document_body_list_with_highlight.py
 PureCloudPlatformClientV2/models/document_body_paragraph.py
 PureCloudPlatformClientV2/models/document_body_paragraph_properties.py
 PureCloudPlatformClientV2/models/document_body_paragraph_with_highlight.py
+PureCloudPlatformClientV2/models/document_body_request.py
+PureCloudPlatformClientV2/models/document_body_response.py
 PureCloudPlatformClientV2/models/document_body_table.py
 PureCloudPlatformClientV2/models/document_body_table_caption_block.py
 PureCloudPlatformClientV2/models/document_body_table_caption_item.py
@@ -1565,10 +1577,11 @@ PureCloudPlatformClientV2/models/document_text_properties.py
 PureCloudPlatformClientV2/models/document_thumbnail.py
 PureCloudPlatformClientV2/models/document_update.py
 PureCloudPlatformClientV2/models/document_upload.py
-PureCloudPlatformClientV2/models/document_variation.py
 PureCloudPlatformClientV2/models/document_variation_answer.py
 PureCloudPlatformClientV2/models/document_variation_context.py
-PureCloudPlatformClientV2/models/document_variation_listing.py
+PureCloudPlatformClientV2/models/document_variation_request.py
+PureCloudPlatformClientV2/models/document_variation_response.py
+PureCloudPlatformClientV2/models/document_variation_response_listing.py
 PureCloudPlatformClientV2/models/documentation_result.py
 PureCloudPlatformClientV2/models/documentation_search_criteria.py
 PureCloudPlatformClientV2/models/documentation_search_request.py
@@ -1686,6 +1699,7 @@ PureCloudPlatformClientV2/models/email_initial_configuration.py
 PureCloudPlatformClientV2/models/email_media_participant.py
 PureCloudPlatformClientV2/models/email_media_policy.py
 PureCloudPlatformClientV2/models/email_media_policy_conditions.py
+PureCloudPlatformClientV2/models/email_media_settings.py
 PureCloudPlatformClientV2/models/email_message.py
 PureCloudPlatformClientV2/models/email_message_preview.py
 PureCloudPlatformClientV2/models/email_message_preview_listing.py
@@ -2146,6 +2160,7 @@ PureCloudPlatformClientV2/models/identity_resolution_queue_config.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
 PureCloudPlatformClientV2/models/idle_token_timeout.py
 PureCloudPlatformClientV2/models/ignored_activity_categories.py
+PureCloudPlatformClientV2/models/image.py
 PureCloudPlatformClientV2/models/imap_settings.py
 PureCloudPlatformClientV2/models/import_error.py
 PureCloudPlatformClientV2/models/import_forecast_response.py
@@ -2423,6 +2438,8 @@ PureCloudPlatformClientV2/models/knowledge_document_bulk_version_add_entity.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_version_add_request.py
 PureCloudPlatformClientV2/models/knowledge_document_content_upload.py
 PureCloudPlatformClientV2/models/knowledge_document_copy.py
+PureCloudPlatformClientV2/models/knowledge_document_create_request.py
+PureCloudPlatformClientV2/models/knowledge_document_descriptor.py
 PureCloudPlatformClientV2/models/knowledge_document_feedback.py
 PureCloudPlatformClientV2/models/knowledge_document_feedback_response.py
 PureCloudPlatformClientV2/models/knowledge_document_feedback_response_listing.py
@@ -2511,11 +2528,13 @@ PureCloudPlatformClientV2/models/knowledge_training.py
 PureCloudPlatformClientV2/models/kpi_result.py
 PureCloudPlatformClientV2/models/label.py
 PureCloudPlatformClientV2/models/label_create_request.py
+PureCloudPlatformClientV2/models/label_entity.py
 PureCloudPlatformClientV2/models/label_listing.py
 PureCloudPlatformClientV2/models/label_response.py
 PureCloudPlatformClientV2/models/label_update_request.py
 PureCloudPlatformClientV2/models/label_utilization_request.py
 PureCloudPlatformClientV2/models/label_utilization_response.py
+PureCloudPlatformClientV2/models/labels_filter.py
 PureCloudPlatformClientV2/models/language.py
 PureCloudPlatformClientV2/models/language_entity_listing.py
 PureCloudPlatformClientV2/models/language_override.py
@@ -2826,6 +2845,7 @@ PureCloudPlatformClientV2/models/named_entity_type_binding.py
 PureCloudPlatformClientV2/models/named_entity_type_definition.py
 PureCloudPlatformClientV2/models/named_entity_type_item.py
 PureCloudPlatformClientV2/models/named_entity_type_mechanism.py
+PureCloudPlatformClientV2/models/named_entity_type_mechanism_example.py
 PureCloudPlatformClientV2/models/namespace_docs.py
 PureCloudPlatformClientV2/models/network_connectivity.py
 PureCloudPlatformClientV2/models/next_occurrence_details.py
@@ -3506,6 +3526,7 @@ PureCloudPlatformClientV2/models/recording_annotation_flow.py
 PureCloudPlatformClientV2/models/recording_annotation_queue.py
 PureCloudPlatformClientV2/models/recording_archive_restore_topic_media_result.py
 PureCloudPlatformClientV2/models/recording_archive_restore_topic_recording.py
+PureCloudPlatformClientV2/models/recording_attachment.py
 PureCloudPlatformClientV2/models/recording_button_component.py
 PureCloudPlatformClientV2/models/recording_content_actions.py
 PureCloudPlatformClientV2/models/recording_content_story.py
@@ -3520,9 +3541,14 @@ PureCloudPlatformClientV2/models/recording_job_failed_recording.py
 PureCloudPlatformClientV2/models/recording_jobs_query.py
 PureCloudPlatformClientV2/models/recording_messaging_message.py
 PureCloudPlatformClientV2/models/recording_metadata.py
+PureCloudPlatformClientV2/models/recording_notification_template.py
 PureCloudPlatformClientV2/models/recording_retention.py
 PureCloudPlatformClientV2/models/recording_retention_cursor_entity_listing.py
 PureCloudPlatformClientV2/models/recording_settings.py
+PureCloudPlatformClientV2/models/recording_template_body.py
+PureCloudPlatformClientV2/models/recording_template_button.py
+PureCloudPlatformClientV2/models/recording_template_footer.py
+PureCloudPlatformClientV2/models/recording_template_header.py
 PureCloudPlatformClientV2/models/recording_transcode_complete_topic_media_result.py
 PureCloudPlatformClientV2/models/recording_transcode_complete_topic_recording.py
 PureCloudPlatformClientV2/models/recording_upload_report.py
@@ -4289,7 +4315,6 @@ PureCloudPlatformClientV2/models/user_external_identifier.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting_audio_file.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting_owner.py
-PureCloudPlatformClientV2/models/user_image.py
 PureCloudPlatformClientV2/models/user_insights_trend.py
 PureCloudPlatformClientV2/models/user_insights_trend_metric_item.py
 PureCloudPlatformClientV2/models/user_insights_trend_total_item.py
@@ -4488,6 +4513,7 @@ PureCloudPlatformClientV2/models/web_deployment_configuration_version.py
 PureCloudPlatformClientV2/models/web_deployment_configuration_version_entity_listing.py
 PureCloudPlatformClientV2/models/web_deployment_configuration_version_entity_ref.py
 PureCloudPlatformClientV2/models/web_deployment_configuration_version_response.py
+PureCloudPlatformClientV2/models/web_deployment_flow_entity_ref.py
 PureCloudPlatformClientV2/models/web_deployment_headless_mode.py
 PureCloudPlatformClientV2/models/web_deployments_authorization_response.py
 PureCloudPlatformClientV2/models/web_deployments_config_topic_web_messaging_config_change_event_body.py
@@ -5173,6 +5199,7 @@ docs/ArrayNode.md
 docs/Article.md
 docs/ArticleContent.md
 docs/ArticleContentBody.md
+docs/ArticlesFilter.md
 docs/AssessmentForm.md
 docs/AssessmentFormQuestion.md
 docs/AssessmentFormQuestionGroup.md
@@ -5533,8 +5560,10 @@ docs/CardAction.md
 docs/CarrierServicesApi.json
 docs/CarrierServicesApi.md
 docs/CategoriesEntityListing.md
+docs/CategoriesFilter.md
 docs/Category.md
 docs/CategoryCreateRequest.md
+docs/CategoryEntity.md
 docs/CategoryEntityListing.md
 docs/CategoryListing.md
 docs/CategoryReference.md
@@ -5560,6 +5589,9 @@ docs/ChatBadgeTopicBadgeEntity.md
 docs/ChatBadgeTopicChatBadge.md
 docs/ChatConversation.md
 docs/ChatConversationEntityListing.md
+docs/ChatFavorite.md
+docs/ChatItem.md
+docs/ChatItemCursorListing.md
 docs/ChatMediaParticipant.md
 docs/ChatMediaPolicy.md
 docs/ChatMediaPolicyConditions.md
@@ -5567,10 +5599,12 @@ docs/ChatMessage.md
 docs/ChatMessageEntityListing.md
 docs/ChatMessageResponse.md
 docs/ChatMessageUser.md
+docs/ChatPresence.md
 docs/ChatReaction.md
 docs/ChatReactionUpdate.md
 docs/ChatSendMessageResponse.md
 docs/ChatSettings.md
+docs/ChatUserRef.md
 docs/ChatUserSettings.md
 docs/Check.md
 docs/ClientApp.md
@@ -5705,6 +5739,8 @@ docs/ContentButtonResponse.md
 docs/ContentCard.md
 docs/ContentCardAction.md
 docs/ContentCarousel.md
+docs/ContentFileRequest.md
+docs/ContentFileResponse.md
 docs/ContentFilterItem.md
 docs/ContentGeneric.md
 docs/ContentList.md
@@ -6364,6 +6400,8 @@ docs/DocumentBodyListWithHighlight.md
 docs/DocumentBodyParagraph.md
 docs/DocumentBodyParagraphProperties.md
 docs/DocumentBodyParagraphWithHighlight.md
+docs/DocumentBodyRequest.md
+docs/DocumentBodyResponse.md
 docs/DocumentBodyTable.md
 docs/DocumentBodyTableCaptionBlock.md
 docs/DocumentBodyTableCaptionItem.md
@@ -6400,10 +6438,11 @@ docs/DocumentTextProperties.md
 docs/DocumentThumbnail.md
 docs/DocumentUpdate.md
 docs/DocumentUpload.md
-docs/DocumentVariation.md
 docs/DocumentVariationAnswer.md
 docs/DocumentVariationContext.md
-docs/DocumentVariationListing.md
+docs/DocumentVariationRequest.md
+docs/DocumentVariationResponse.md
+docs/DocumentVariationResponseListing.md
 docs/DocumentationResult.md
 docs/DocumentationSearchCriteria.md
 docs/DocumentationSearchRequest.md
@@ -6523,6 +6562,7 @@ docs/EmailInitialConfiguration.md
 docs/EmailMediaParticipant.md
 docs/EmailMediaPolicy.md
 docs/EmailMediaPolicyConditions.md
+docs/EmailMediaSettings.md
 docs/EmailMessage.md
 docs/EmailMessagePreview.md
 docs/EmailMessagePreviewListing.md
@@ -7011,6 +7051,7 @@ docs/IdentityResolutionQueueConfig.md
 docs/IdleEventTrigger.md
 docs/IdleTokenTimeout.md
 docs/IgnoredActivityCategories.md
+docs/Image.md
 docs/ImapSettings.md
 docs/ImportError.md
 docs/ImportForecastResponse.md
@@ -7292,6 +7333,8 @@ docs/KnowledgeDocumentBulkVersionAddEntity.md
 docs/KnowledgeDocumentBulkVersionAddRequest.md
 docs/KnowledgeDocumentContentUpload.md
 docs/KnowledgeDocumentCopy.md
+docs/KnowledgeDocumentCreateRequest.md
+docs/KnowledgeDocumentDescriptor.md
 docs/KnowledgeDocumentFeedback.md
 docs/KnowledgeDocumentFeedbackResponse.md
 docs/KnowledgeDocumentFeedbackResponseListing.md
@@ -7380,11 +7423,13 @@ docs/KnowledgeTraining.md
 docs/KpiResult.md
 docs/Label.md
 docs/LabelCreateRequest.md
+docs/LabelEntity.md
 docs/LabelListing.md
 docs/LabelResponse.md
 docs/LabelUpdateRequest.md
 docs/LabelUtilizationRequest.md
 docs/LabelUtilizationResponse.md
+docs/LabelsFilter.md
 docs/Language.md
 docs/LanguageEntityListing.md
 docs/LanguageOverride.md
@@ -7712,6 +7757,7 @@ docs/NamedEntityTypeBinding.md
 docs/NamedEntityTypeDefinition.md
 docs/NamedEntityTypeItem.md
 docs/NamedEntityTypeMechanism.md
+docs/NamedEntityTypeMechanismExample.md
 docs/NamespaceDocs.md
 docs/NetworkConnectivity.md
 docs/NextOccurrenceDetails.md
@@ -8413,6 +8459,7 @@ docs/RecordingApi.json
 docs/RecordingApi.md
 docs/RecordingArchiveRestoreTopicMediaResult.md
 docs/RecordingArchiveRestoreTopicRecording.md
+docs/RecordingAttachment.md
 docs/RecordingButtonComponent.md
 docs/RecordingContentActions.md
 docs/RecordingContentStory.md
@@ -8427,9 +8474,14 @@ docs/RecordingJobFailedRecording.md
 docs/RecordingJobsQuery.md
 docs/RecordingMessagingMessage.md
 docs/RecordingMetadata.md
+docs/RecordingNotificationTemplate.md
 docs/RecordingRetention.md
 docs/RecordingRetentionCursorEntityListing.md
 docs/RecordingSettings.md
+docs/RecordingTemplateBody.md
+docs/RecordingTemplateButton.md
+docs/RecordingTemplateFooter.md
+docs/RecordingTemplateHeader.md
 docs/RecordingTranscodeCompleteTopicMediaResult.md
 docs/RecordingTranscodeCompleteTopicRecording.md
 docs/RecordingUploadReport.md
@@ -9232,7 +9284,6 @@ docs/UserExternalIdentifier.md
 docs/UserGreetingEventGreeting.md
 docs/UserGreetingEventGreetingAudioFile.md
 docs/UserGreetingEventGreetingOwner.md
-docs/UserImage.md
 docs/UserInsightsTrend.md
 docs/UserInsightsTrendMetricItem.md
 docs/UserInsightsTrendTotalItem.md
@@ -9441,6 +9492,7 @@ docs/WebDeploymentConfigurationVersion.md
 docs/WebDeploymentConfigurationVersionEntityListing.md
 docs/WebDeploymentConfigurationVersionEntityRef.md
 docs/WebDeploymentConfigurationVersionResponse.md
+docs/WebDeploymentFlowEntityRef.md
 docs/WebDeploymentHeadlessMode.md
 docs/WebDeploymentsApi.json
 docs/WebDeploymentsApi.md
@@ -11238,6 +11290,7 @@ docs/get_userrecordings_summary-example.txt
 docs/get_users-example.txt
 docs/get_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/get_users_agentui_agents_autoanswer_agent_id_settings-example.txt
+docs/get_users_chats_me-example.txt
 docs/get_users_development_activities-example.txt
 docs/get_users_development_activities_me-example.txt
 docs/get_users_development_activity-example.txt
@@ -11260,6 +11313,8 @@ docs/get_voicemail_policy-example.txt
 docs/get_voicemail_queue_messages-example.txt
 docs/get_voicemail_search-example.txt
 docs/get_voicemail_search-example.txt
+docs/get_voicemail_user_mailbox-example.txt
+docs/get_voicemail_user_messages-example.txt
 docs/get_voicemail_userpolicy-example.txt
 docs/get_webchat_deployment-example.txt
 docs/get_webchat_deployments-example.txt
@@ -12000,6 +12055,8 @@ docs/post_outbound_callabletimesets-example.txt
 docs/post_outbound_callanalysisresponsesets-example.txt
 docs/post_outbound_campaign_agentownedmappingpreview-example.txt
 docs/post_outbound_campaign_callback_schedule-example.txt
+docs/post_outbound_campaign_start-example.txt
+docs/post_outbound_campaign_stop-example.txt
 docs/post_outbound_campaignrules-example.txt
 docs/post_outbound_campaigns-example.txt
 docs/post_outbound_campaigns_progress-example.txt
@@ -12026,6 +12083,8 @@ docs/post_outbound_dnclists-example.txt
 docs/post_outbound_filespecificationtemplates-example.txt
 docs/post_outbound_importtemplates-example.txt
 docs/post_outbound_importtemplates_bulk_add-example.txt
+docs/post_outbound_messagingcampaign_start-example.txt
+docs/post_outbound_messagingcampaign_stop-example.txt
 docs/post_outbound_messagingcampaigns-example.txt
 docs/post_outbound_messagingcampaigns_progress-example.txt
 docs/post_outbound_rulesets-example.txt

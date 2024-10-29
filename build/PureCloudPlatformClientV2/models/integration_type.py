@@ -35,7 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import CredentialSpecification
     from . import HelpLink
-    from . import UserImage
+    from . import Image
 
 class IntegrationType(object):
     """
@@ -57,7 +57,7 @@ class IntegrationType(object):
             'description': 'str',
             'provider': 'str',
             'category': 'str',
-            'images': 'list[UserImage]',
+            'images': 'list[Image]',
             'config_properties_schema_uri': 'str',
             'config_advanced_schema_uri': 'str',
             'help_uri': 'str',
@@ -251,24 +251,24 @@ class IntegrationType(object):
         self._category = category
 
     @property
-    def images(self) -> List['UserImage']:
+    def images(self) -> List['Image']:
         """
         Gets the images of this IntegrationType.
         Collection of logos.
 
         :return: The images of this IntegrationType.
-        :rtype: list[UserImage]
+        :rtype: list[Image]
         """
         return self._images
 
     @images.setter
-    def images(self, images: List['UserImage']) -> None:
+    def images(self, images: List['Image']) -> None:
         """
         Sets the images of this IntegrationType.
         Collection of logos.
 
         :param images: The images of this IntegrationType.
-        :type: list[UserImage]
+        :type: list[Image]
         """
         
 

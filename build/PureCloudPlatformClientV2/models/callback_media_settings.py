@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import BaseMediaSettings
+    from . import DomainEntityRef
     from . import ServiceLevel
 
 class CallbackMediaSettings(object):
@@ -57,9 +58,15 @@ class CallbackMediaSettings(object):
             'auto_answer_alert_tone_seconds': 'float',
             'manual_answer_alert_tone_seconds': 'float',
             'sub_type_settings': 'dict(str, BaseMediaSettings)',
+            'mode': 'str',
             'enable_auto_dial_and_end': 'bool',
             'auto_dial_delay_seconds': 'int',
-            'auto_end_delay_seconds': 'int'
+            'auto_end_delay_seconds': 'int',
+            'pacing_modifier': 'float',
+            'live_voice_reaction_type': 'str',
+            'live_voice_flow': 'DomainEntityRef',
+            'answering_machine_reaction_type': 'str',
+            'answering_machine_flow': 'DomainEntityRef'
         }
 
         self.attribute_map = {
@@ -69,9 +76,15 @@ class CallbackMediaSettings(object):
             'auto_answer_alert_tone_seconds': 'autoAnswerAlertToneSeconds',
             'manual_answer_alert_tone_seconds': 'manualAnswerAlertToneSeconds',
             'sub_type_settings': 'subTypeSettings',
+            'mode': 'mode',
             'enable_auto_dial_and_end': 'enableAutoDialAndEnd',
             'auto_dial_delay_seconds': 'autoDialDelaySeconds',
-            'auto_end_delay_seconds': 'autoEndDelaySeconds'
+            'auto_end_delay_seconds': 'autoEndDelaySeconds',
+            'pacing_modifier': 'pacingModifier',
+            'live_voice_reaction_type': 'liveVoiceReactionType',
+            'live_voice_flow': 'liveVoiceFlow',
+            'answering_machine_reaction_type': 'answeringMachineReactionType',
+            'answering_machine_flow': 'answeringMachineFlow'
         }
 
         self._enable_auto_answer = None
@@ -80,9 +93,15 @@ class CallbackMediaSettings(object):
         self._auto_answer_alert_tone_seconds = None
         self._manual_answer_alert_tone_seconds = None
         self._sub_type_settings = None
+        self._mode = None
         self._enable_auto_dial_and_end = None
         self._auto_dial_delay_seconds = None
         self._auto_end_delay_seconds = None
+        self._pacing_modifier = None
+        self._live_voice_reaction_type = None
+        self._live_voice_flow = None
+        self._answering_machine_reaction_type = None
+        self._answering_machine_flow = None
 
     @property
     def enable_auto_answer(self) -> bool:
@@ -229,6 +248,35 @@ class CallbackMediaSettings(object):
         self._sub_type_settings = sub_type_settings
 
     @property
+    def mode(self) -> str:
+        """
+        Gets the mode of this CallbackMediaSettings.
+        The mode callbacks will use on this queue.
+
+        :return: The mode of this CallbackMediaSettings.
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode: str) -> None:
+        """
+        Sets the mode of this CallbackMediaSettings.
+        The mode callbacks will use on this queue.
+
+        :param mode: The mode of this CallbackMediaSettings.
+        :type: str
+        """
+        if isinstance(mode, int):
+            mode = str(mode)
+        allowed_values = ["AgentFirst", "CustomerFirst"]
+        if mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for mode -> " + mode)
+            self._mode = "outdated_sdk_version"
+        else:
+            self._mode = mode
+
+    @property
     def enable_auto_dial_and_end(self) -> bool:
         """
         Gets the enable_auto_dial_and_end of this CallbackMediaSettings.
@@ -299,6 +347,136 @@ class CallbackMediaSettings(object):
         
 
         self._auto_end_delay_seconds = auto_end_delay_seconds
+
+    @property
+    def pacing_modifier(self) -> float:
+        """
+        Gets the pacing_modifier of this CallbackMediaSettings.
+        Controls the maximum number of outbound calls at one time when mode is CustomerFirst.
+
+        :return: The pacing_modifier of this CallbackMediaSettings.
+        :rtype: float
+        """
+        return self._pacing_modifier
+
+    @pacing_modifier.setter
+    def pacing_modifier(self, pacing_modifier: float) -> None:
+        """
+        Sets the pacing_modifier of this CallbackMediaSettings.
+        Controls the maximum number of outbound calls at one time when mode is CustomerFirst.
+
+        :param pacing_modifier: The pacing_modifier of this CallbackMediaSettings.
+        :type: float
+        """
+        
+
+        self._pacing_modifier = pacing_modifier
+
+    @property
+    def live_voice_reaction_type(self) -> str:
+        """
+        Gets the live_voice_reaction_type of this CallbackMediaSettings.
+        The action to take if a live voice is detected during the outbound call of a customer first callback.
+
+        :return: The live_voice_reaction_type of this CallbackMediaSettings.
+        :rtype: str
+        """
+        return self._live_voice_reaction_type
+
+    @live_voice_reaction_type.setter
+    def live_voice_reaction_type(self, live_voice_reaction_type: str) -> None:
+        """
+        Sets the live_voice_reaction_type of this CallbackMediaSettings.
+        The action to take if a live voice is detected during the outbound call of a customer first callback.
+
+        :param live_voice_reaction_type: The live_voice_reaction_type of this CallbackMediaSettings.
+        :type: str
+        """
+        if isinstance(live_voice_reaction_type, int):
+            live_voice_reaction_type = str(live_voice_reaction_type)
+        allowed_values = ["HangUp", "TransferToQueue", "TransferToFlow"]
+        if live_voice_reaction_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for live_voice_reaction_type -> " + live_voice_reaction_type)
+            self._live_voice_reaction_type = "outdated_sdk_version"
+        else:
+            self._live_voice_reaction_type = live_voice_reaction_type
+
+    @property
+    def live_voice_flow(self) -> 'DomainEntityRef':
+        """
+        Gets the live_voice_flow of this CallbackMediaSettings.
+        The inbound flow to transfer to if a live voice is detected during the outbound call of a customer first callback.
+
+        :return: The live_voice_flow of this CallbackMediaSettings.
+        :rtype: DomainEntityRef
+        """
+        return self._live_voice_flow
+
+    @live_voice_flow.setter
+    def live_voice_flow(self, live_voice_flow: 'DomainEntityRef') -> None:
+        """
+        Sets the live_voice_flow of this CallbackMediaSettings.
+        The inbound flow to transfer to if a live voice is detected during the outbound call of a customer first callback.
+
+        :param live_voice_flow: The live_voice_flow of this CallbackMediaSettings.
+        :type: DomainEntityRef
+        """
+        
+
+        self._live_voice_flow = live_voice_flow
+
+    @property
+    def answering_machine_reaction_type(self) -> str:
+        """
+        Gets the answering_machine_reaction_type of this CallbackMediaSettings.
+        The action to take if an answering machine is detected during the outbound call of a customer first callback.
+
+        :return: The answering_machine_reaction_type of this CallbackMediaSettings.
+        :rtype: str
+        """
+        return self._answering_machine_reaction_type
+
+    @answering_machine_reaction_type.setter
+    def answering_machine_reaction_type(self, answering_machine_reaction_type: str) -> None:
+        """
+        Sets the answering_machine_reaction_type of this CallbackMediaSettings.
+        The action to take if an answering machine is detected during the outbound call of a customer first callback.
+
+        :param answering_machine_reaction_type: The answering_machine_reaction_type of this CallbackMediaSettings.
+        :type: str
+        """
+        if isinstance(answering_machine_reaction_type, int):
+            answering_machine_reaction_type = str(answering_machine_reaction_type)
+        allowed_values = ["HangUp", "TransferToQueue", "TransferToFlow"]
+        if answering_machine_reaction_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for answering_machine_reaction_type -> " + answering_machine_reaction_type)
+            self._answering_machine_reaction_type = "outdated_sdk_version"
+        else:
+            self._answering_machine_reaction_type = answering_machine_reaction_type
+
+    @property
+    def answering_machine_flow(self) -> 'DomainEntityRef':
+        """
+        Gets the answering_machine_flow of this CallbackMediaSettings.
+        The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow.
+
+        :return: The answering_machine_flow of this CallbackMediaSettings.
+        :rtype: DomainEntityRef
+        """
+        return self._answering_machine_flow
+
+    @answering_machine_flow.setter
+    def answering_machine_flow(self, answering_machine_flow: 'DomainEntityRef') -> None:
+        """
+        Sets the answering_machine_flow of this CallbackMediaSettings.
+        The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow.
+
+        :param answering_machine_flow: The answering_machine_flow of this CallbackMediaSettings.
+        :type: DomainEntityRef
+        """
+        
+
+        self._answering_machine_flow = answering_machine_flow
 
     def to_dict(self):
         """

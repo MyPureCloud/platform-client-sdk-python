@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import NamedEntityTypeItem
+    from . import NamedEntityTypeMechanismExample
 
 class NamedEntityTypeMechanism(object):
     """
@@ -52,18 +53,27 @@ class NamedEntityTypeMechanism(object):
         self.swagger_types = {
             'items': 'list[NamedEntityTypeItem]',
             'restricted': 'bool',
-            'type': 'str'
+            'type': 'str',
+            'sub_type': 'str',
+            'max_length': 'int',
+            'examples': 'list[NamedEntityTypeMechanismExample]'
         }
 
         self.attribute_map = {
             'items': 'items',
             'restricted': 'restricted',
-            'type': 'type'
+            'type': 'type',
+            'sub_type': 'subType',
+            'max_length': 'maxLength',
+            'examples': 'examples'
         }
 
         self._items = None
         self._restricted = None
         self._type = None
+        self._sub_type = None
+        self._max_length = None
+        self._examples = None
 
     @property
     def items(self) -> List['NamedEntityTypeItem']:
@@ -135,12 +145,89 @@ class NamedEntityTypeMechanism(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["DynamicList", "List", "Regex", "Unknown"]
+        allowed_values = ["AI", "DynamicList", "List", "Regex", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def sub_type(self) -> str:
+        """
+        Gets the sub_type of this NamedEntityTypeMechanism.
+        Subtype of detection mechanism
+
+        :return: The sub_type of this NamedEntityTypeMechanism.
+        :rtype: str
+        """
+        return self._sub_type
+
+    @sub_type.setter
+    def sub_type(self, sub_type: str) -> None:
+        """
+        Sets the sub_type of this NamedEntityTypeMechanism.
+        Subtype of detection mechanism
+
+        :param sub_type: The sub_type of this NamedEntityTypeMechanism.
+        :type: str
+        """
+        if isinstance(sub_type, int):
+            sub_type = str(sub_type)
+        allowed_values = ["Alphanumeric", "NumberSequence", "FreeForm"]
+        if sub_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sub_type -> " + sub_type)
+            self._sub_type = "outdated_sdk_version"
+        else:
+            self._sub_type = sub_type
+
+    @property
+    def max_length(self) -> int:
+        """
+        Gets the max_length of this NamedEntityTypeMechanism.
+        The maximum length of the entity resolved value
+
+        :return: The max_length of this NamedEntityTypeMechanism.
+        :rtype: int
+        """
+        return self._max_length
+
+    @max_length.setter
+    def max_length(self, max_length: int) -> None:
+        """
+        Sets the max_length of this NamedEntityTypeMechanism.
+        The maximum length of the entity resolved value
+
+        :param max_length: The max_length of this NamedEntityTypeMechanism.
+        :type: int
+        """
+        
+
+        self._max_length = max_length
+
+    @property
+    def examples(self) -> List['NamedEntityTypeMechanismExample']:
+        """
+        Gets the examples of this NamedEntityTypeMechanism.
+        Examples for entity detection
+
+        :return: The examples of this NamedEntityTypeMechanism.
+        :rtype: list[NamedEntityTypeMechanismExample]
+        """
+        return self._examples
+
+    @examples.setter
+    def examples(self, examples: List['NamedEntityTypeMechanismExample']) -> None:
+        """
+        Sets the examples of this NamedEntityTypeMechanism.
+        Examples for entity detection
+
+        :param examples: The examples of this NamedEntityTypeMechanism.
+        :type: list[NamedEntityTypeMechanismExample]
+        """
+        
+
+        self._examples = examples
 
     def to_dict(self):
         """

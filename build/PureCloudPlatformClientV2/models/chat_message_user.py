@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import UserImage
+    from . import Image
 
 class ChatMessageUser(object):
     """
@@ -54,7 +54,7 @@ class ChatMessageUser(object):
             'name': 'str',
             'display_name': 'str',
             'username': 'str',
-            'images': 'list[UserImage]'
+            'images': 'list[Image]'
         }
 
         self.attribute_map = {
@@ -168,24 +168,24 @@ class ChatMessageUser(object):
         self._username = username
 
     @property
-    def images(self) -> List['UserImage']:
+    def images(self) -> List['Image']:
         """
         Gets the images of this ChatMessageUser.
 
 
         :return: The images of this ChatMessageUser.
-        :rtype: list[UserImage]
+        :rtype: list[Image]
         """
         return self._images
 
     @images.setter
-    def images(self, images: List['UserImage']) -> None:
+    def images(self, images: List['Image']) -> None:
         """
         Sets the images of this ChatMessageUser.
 
 
         :param images: The images of this ChatMessageUser.
-        :type: list[UserImage]
+        :type: list[Image]
         """
         
 

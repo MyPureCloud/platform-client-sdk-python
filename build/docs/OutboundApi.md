@@ -116,6 +116,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_callanalysisresponsesets**](#post_outbound_callanalysisresponsesets) | Create a dialer call analysis response set.|
 |[**post_outbound_campaign_agentownedmappingpreview**](#post_outbound_campaign_agentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.|
 |[**post_outbound_campaign_callback_schedule**](#post_outbound_campaign_callback_schedule) | Schedule a Callback for a Dialer Campaign (Deprecated)|
+|[**post_outbound_campaign_start**](#post_outbound_campaign_start) | Start the campaign|
+|[**post_outbound_campaign_stop**](#post_outbound_campaign_stop) | Stop the campaign|
 |[**post_outbound_campaignrules**](#post_outbound_campaignrules) | Create Campaign Rule|
 |[**post_outbound_campaigns**](#post_outbound_campaigns) | Create a campaign.|
 |[**post_outbound_campaigns_progress**](#post_outbound_campaigns_progress) | Get progress for a list of campaigns|
@@ -142,6 +144,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_filespecificationtemplates**](#post_outbound_filespecificationtemplates) | Create File Specification Template|
 |[**post_outbound_importtemplates**](#post_outbound_importtemplates) | Create Import Template|
 |[**post_outbound_importtemplates_bulk_add**](#post_outbound_importtemplates_bulk_add) | Add multiple import templates|
+|[**post_outbound_messagingcampaign_start**](#post_outbound_messagingcampaign_start) | Start the campaign|
+|[**post_outbound_messagingcampaign_stop**](#post_outbound_messagingcampaign_stop) | Stop the campaign|
 |[**post_outbound_messagingcampaigns**](#post_outbound_messagingcampaigns) | Create a Messaging Campaign|
 |[**post_outbound_messagingcampaigns_progress**](#post_outbound_messagingcampaigns_progress) | Get progress for a list of messaging campaigns|
 |[**post_outbound_rulesets**](#post_outbound_rulesets) | Create a Rule Set.|
@@ -5825,6 +5829,100 @@ except ApiException as e:
 [**ContactCallbackRequest**](ContactCallbackRequest)
 
 
+## post_outbound_campaign_start
+
+>  post_outbound_campaign_start(campaign_id)
+
+
+Start the campaign
+
+Wraps POST /api/v2/outbound/campaigns/{campaignId}/start 
+
+Requires ANY permissions: 
+
+* outbound:campaign:start
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+
+try:
+    # Start the campaign
+    api_instance.post_outbound_campaign_start(campaign_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_campaign_start: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## post_outbound_campaign_stop
+
+>  post_outbound_campaign_stop(campaign_id)
+
+
+Stop the campaign
+
+Wraps POST /api/v2/outbound/campaigns/{campaignId}/stop 
+
+Requires ANY permissions: 
+
+* outbound:campaign:stop
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+
+try:
+    # Stop the campaign
+    api_instance.post_outbound_campaign_stop(campaign_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_campaign_stop: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## post_outbound_campaignrules
 
 > [**CampaignRule**](CampaignRule) post_outbound_campaignrules(body)
@@ -7101,6 +7199,106 @@ except ApiException as e:
 ### Return type
 
 [**ImportTemplateEntityListing**](ImportTemplateEntityListing)
+
+
+## post_outbound_messagingcampaign_start
+
+>  post_outbound_messagingcampaign_start(messaging_campaign_id)
+
+
+Start the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Wraps POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:start
+* outbound:emailCampaign:start
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Start the campaign
+    api_instance.post_outbound_messagingcampaign_start(messaging_campaign_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_messagingcampaign_start: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## post_outbound_messagingcampaign_stop
+
+>  post_outbound_messagingcampaign_stop(messaging_campaign_id)
+
+
+Stop the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Wraps POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:stop
+* outbound:emailCampaign:stop
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Stop the campaign
+    api_instance.post_outbound_messagingcampaign_stop(messaging_campaign_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_messagingcampaign_stop: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## post_outbound_messagingcampaigns
@@ -8401,4 +8599,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

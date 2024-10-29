@@ -63,6 +63,7 @@ class DashboardConfiguration(object):
             'layout_type': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
+            'date_deleted': 'datetime',
             'created_by': 'AddressableEntityRef',
             'shared': 'bool',
             'dashboards_shared_with': 'DashboardsSharedWith',
@@ -81,6 +82,7 @@ class DashboardConfiguration(object):
             'layout_type': 'layoutType',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
+            'date_deleted': 'dateDeleted',
             'created_by': 'createdBy',
             'shared': 'shared',
             'dashboards_shared_with': 'dashboardsSharedWith',
@@ -98,6 +100,7 @@ class DashboardConfiguration(object):
         self._layout_type = None
         self._date_created = None
         self._date_modified = None
+        self._date_deleted = None
         self._created_by = None
         self._shared = None
         self._dashboards_shared_with = None
@@ -371,6 +374,30 @@ class DashboardConfiguration(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def date_deleted(self) -> datetime:
+        """
+        Gets the date_deleted of this DashboardConfiguration.
+        The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_deleted of this DashboardConfiguration.
+        :rtype: datetime
+        """
+        return self._date_deleted
+
+    @date_deleted.setter
+    def date_deleted(self, date_deleted: datetime) -> None:
+        """
+        Sets the date_deleted of this DashboardConfiguration.
+        The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_deleted: The date_deleted of this DashboardConfiguration.
+        :type: datetime
+        """
+        
+
+        self._date_deleted = date_deleted
 
     @property
     def created_by(self) -> 'AddressableEntityRef':

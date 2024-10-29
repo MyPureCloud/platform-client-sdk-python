@@ -47,8 +47,9 @@ from ..models import CategoryUpdateRequest
 from ..models import CreateUploadSourceUrlJobRequest
 from ..models import CreateUploadSourceUrlJobResponse
 from ..models import DocumentListing
-from ..models import DocumentVariation
-from ..models import DocumentVariationListing
+from ..models import DocumentVariationRequest
+from ..models import DocumentVariationResponse
+from ..models import DocumentVariationResponseListing
 from ..models import ErrorBody
 from ..models import GetUploadSourceUrlJobStatusResponse
 from ..models import GuestCategoryResponseListing
@@ -67,6 +68,7 @@ from ..models import KnowledgeDocumentBulkUpdateRequest
 from ..models import KnowledgeDocumentBulkVersionAddRequest
 from ..models import KnowledgeDocumentContentUpload
 from ..models import KnowledgeDocumentCopy
+from ..models import KnowledgeDocumentCreateRequest
 from ..models import KnowledgeDocumentFeedback
 from ..models import KnowledgeDocumentFeedbackResponse
 from ..models import KnowledgeDocumentFeedbackResponseListing
@@ -2183,7 +2185,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, **kwargs) -> 'DocumentVariation':
+    def get_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, **kwargs) -> 'DocumentVariationResponse':
         """
         Get a variation for a document.
         
@@ -2202,7 +2204,7 @@ class KnowledgeApi(object):
         :param str document_id: Globally unique identifier for a document. (required)
         :param str knowledge_base_id: Globally unique identifier for a knowledge base. (required)
         :param str document_state: The state of the document.
-        :return: DocumentVariation
+        :return: DocumentVariationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2271,12 +2273,12 @@ class KnowledgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DocumentVariation',
+                                            response_type='DocumentVariationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'DocumentVariationListing':
+    def get_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'DocumentVariationResponseListing':
         """
         Get variations for a document.
         
@@ -2297,7 +2299,7 @@ class KnowledgeApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str document_state: The state of the document.
-        :return: DocumentVariationListing
+        :return: DocumentVariationResponseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2367,7 +2369,7 @@ class KnowledgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DocumentVariationListing',
+                                            response_type='DocumentVariationResponseListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5512,7 +5514,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, body: 'DocumentVariation', **kwargs) -> 'DocumentVariation':
+    def patch_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, body: 'DocumentVariationRequest', **kwargs) -> 'DocumentVariationResponse':
         """
         Update a variation for a document.
         
@@ -5530,8 +5532,8 @@ class KnowledgeApi(object):
         :param str document_variation_id: Globally unique identifier for a document variation. (required)
         :param str document_id: Globally unique identifier for a document. (required)
         :param str knowledge_base_id: Globally unique identifier for a knowledge base. (required)
-        :param DocumentVariation body:  (required)
-        :return: DocumentVariation
+        :param DocumentVariationRequest body:  (required)
+        :return: DocumentVariationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5603,7 +5605,7 @@ class KnowledgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DocumentVariation',
+                                            response_type='DocumentVariationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -7539,7 +7541,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, body: 'DocumentVariation', **kwargs) -> 'DocumentVariation':
+    def post_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, body: 'DocumentVariationRequest', **kwargs) -> 'DocumentVariationResponse':
         """
         Create a variation for a document.
         
@@ -7556,8 +7558,8 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str knowledge_base_id: Globally unique identifier for the knowledge base. (required)
         :param str document_id: Globally unique identifier for the document. (required)
-        :param DocumentVariation body:  (required)
-        :return: DocumentVariation
+        :param DocumentVariationRequest body:  (required)
+        :return: DocumentVariationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7624,7 +7626,7 @@ class KnowledgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DocumentVariation',
+                                            response_type='DocumentVariationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -7806,7 +7808,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_documents(self, knowledge_base_id: str, body: 'KnowledgeDocumentReq', **kwargs) -> 'KnowledgeDocumentResponse':
+    def post_knowledge_knowledgebase_documents(self, knowledge_base_id: str, body: 'KnowledgeDocumentCreateRequest', **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Create document.
         
@@ -7822,7 +7824,7 @@ class KnowledgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
-        :param KnowledgeDocumentReq body:  (required)
+        :param KnowledgeDocumentCreateRequest body:  (required)
         :return: KnowledgeDocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.

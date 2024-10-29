@@ -273,6 +273,7 @@ from .models.array_node import ArrayNode
 from .models.article import Article
 from .models.article_content import ArticleContent
 from .models.article_content_body import ArticleContentBody
+from .models.articles_filter import ArticlesFilter
 from .models.assessment_form import AssessmentForm
 from .models.assessment_form_question import AssessmentFormQuestion
 from .models.assessment_form_question_group import AssessmentFormQuestionGroup
@@ -625,8 +626,10 @@ from .models.canned_response_libraries import CannedResponseLibraries
 from .models.card import Card
 from .models.card_action import CardAction
 from .models.categories_entity_listing import CategoriesEntityListing
+from .models.categories_filter import CategoriesFilter
 from .models.category import Category
 from .models.category_create_request import CategoryCreateRequest
+from .models.category_entity import CategoryEntity
 from .models.category_entity_listing import CategoryEntityListing
 from .models.category_listing import CategoryListing
 from .models.category_reference import CategoryReference
@@ -650,6 +653,9 @@ from .models.chat_badge_topic_badge_entity import ChatBadgeTopicBadgeEntity
 from .models.chat_badge_topic_chat_badge import ChatBadgeTopicChatBadge
 from .models.chat_conversation import ChatConversation
 from .models.chat_conversation_entity_listing import ChatConversationEntityListing
+from .models.chat_favorite import ChatFavorite
+from .models.chat_item import ChatItem
+from .models.chat_item_cursor_listing import ChatItemCursorListing
 from .models.chat_media_participant import ChatMediaParticipant
 from .models.chat_media_policy import ChatMediaPolicy
 from .models.chat_media_policy_conditions import ChatMediaPolicyConditions
@@ -657,10 +663,12 @@ from .models.chat_message import ChatMessage
 from .models.chat_message_entity_listing import ChatMessageEntityListing
 from .models.chat_message_response import ChatMessageResponse
 from .models.chat_message_user import ChatMessageUser
+from .models.chat_presence import ChatPresence
 from .models.chat_reaction import ChatReaction
 from .models.chat_reaction_update import ChatReactionUpdate
 from .models.chat_send_message_response import ChatSendMessageResponse
 from .models.chat_settings import ChatSettings
+from .models.chat_user_ref import ChatUserRef
 from .models.chat_user_settings import ChatUserSettings
 from .models.check import Check
 from .models.client_app import ClientApp
@@ -793,6 +801,8 @@ from .models.content_button_response import ContentButtonResponse
 from .models.content_card import ContentCard
 from .models.content_card_action import ContentCardAction
 from .models.content_carousel import ContentCarousel
+from .models.content_file_request import ContentFileRequest
+from .models.content_file_response import ContentFileResponse
 from .models.content_filter_item import ContentFilterItem
 from .models.content_generic import ContentGeneric
 from .models.content_list import ContentList
@@ -1446,6 +1456,8 @@ from .models.document_body_list_with_highlight import DocumentBodyListWithHighli
 from .models.document_body_paragraph import DocumentBodyParagraph
 from .models.document_body_paragraph_properties import DocumentBodyParagraphProperties
 from .models.document_body_paragraph_with_highlight import DocumentBodyParagraphWithHighlight
+from .models.document_body_request import DocumentBodyRequest
+from .models.document_body_response import DocumentBodyResponse
 from .models.document_body_table import DocumentBodyTable
 from .models.document_body_table_caption_block import DocumentBodyTableCaptionBlock
 from .models.document_body_table_caption_item import DocumentBodyTableCaptionItem
@@ -1482,10 +1494,11 @@ from .models.document_text_properties import DocumentTextProperties
 from .models.document_thumbnail import DocumentThumbnail
 from .models.document_update import DocumentUpdate
 from .models.document_upload import DocumentUpload
-from .models.document_variation import DocumentVariation
 from .models.document_variation_answer import DocumentVariationAnswer
 from .models.document_variation_context import DocumentVariationContext
-from .models.document_variation_listing import DocumentVariationListing
+from .models.document_variation_request import DocumentVariationRequest
+from .models.document_variation_response import DocumentVariationResponse
+from .models.document_variation_response_listing import DocumentVariationResponseListing
 from .models.documentation_result import DocumentationResult
 from .models.documentation_search_criteria import DocumentationSearchCriteria
 from .models.documentation_search_request import DocumentationSearchRequest
@@ -1603,6 +1616,7 @@ from .models.email_initial_configuration import EmailInitialConfiguration
 from .models.email_media_participant import EmailMediaParticipant
 from .models.email_media_policy import EmailMediaPolicy
 from .models.email_media_policy_conditions import EmailMediaPolicyConditions
+from .models.email_media_settings import EmailMediaSettings
 from .models.email_message import EmailMessage
 from .models.email_message_preview import EmailMessagePreview
 from .models.email_message_preview_listing import EmailMessagePreviewListing
@@ -2067,6 +2081,7 @@ from .models.identity_resolution_queue_config import IdentityResolutionQueueConf
 from .models.idle_event_trigger import IdleEventTrigger
 from .models.idle_token_timeout import IdleTokenTimeout
 from .models.ignored_activity_categories import IgnoredActivityCategories
+from .models.image import Image
 from .models.imap_settings import ImapSettings
 from .models.import_error import ImportError
 from .models.import_forecast_response import ImportForecastResponse
@@ -2340,6 +2355,8 @@ from .models.knowledge_document_bulk_version_add_entity import KnowledgeDocument
 from .models.knowledge_document_bulk_version_add_request import KnowledgeDocumentBulkVersionAddRequest
 from .models.knowledge_document_content_upload import KnowledgeDocumentContentUpload
 from .models.knowledge_document_copy import KnowledgeDocumentCopy
+from .models.knowledge_document_create_request import KnowledgeDocumentCreateRequest
+from .models.knowledge_document_descriptor import KnowledgeDocumentDescriptor
 from .models.knowledge_document_feedback import KnowledgeDocumentFeedback
 from .models.knowledge_document_feedback_response import KnowledgeDocumentFeedbackResponse
 from .models.knowledge_document_feedback_response_listing import KnowledgeDocumentFeedbackResponseListing
@@ -2428,11 +2445,13 @@ from .models.knowledge_training import KnowledgeTraining
 from .models.kpi_result import KpiResult
 from .models.label import Label
 from .models.label_create_request import LabelCreateRequest
+from .models.label_entity import LabelEntity
 from .models.label_listing import LabelListing
 from .models.label_response import LabelResponse
 from .models.label_update_request import LabelUpdateRequest
 from .models.label_utilization_request import LabelUtilizationRequest
 from .models.label_utilization_response import LabelUtilizationResponse
+from .models.labels_filter import LabelsFilter
 from .models.language import Language
 from .models.language_entity_listing import LanguageEntityListing
 from .models.language_override import LanguageOverride
@@ -2744,6 +2763,7 @@ from .models.named_entity_type_binding import NamedEntityTypeBinding
 from .models.named_entity_type_definition import NamedEntityTypeDefinition
 from .models.named_entity_type_item import NamedEntityTypeItem
 from .models.named_entity_type_mechanism import NamedEntityTypeMechanism
+from .models.named_entity_type_mechanism_example import NamedEntityTypeMechanismExample
 from .models.namespace_docs import NamespaceDocs
 from .models.network_connectivity import NetworkConnectivity
 from .models.next_occurrence_details import NextOccurrenceDetails
@@ -3423,6 +3443,7 @@ from .models.recording_annotation_flow import RecordingAnnotationFlow
 from .models.recording_annotation_queue import RecordingAnnotationQueue
 from .models.recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
 from .models.recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
+from .models.recording_attachment import RecordingAttachment
 from .models.recording_button_component import RecordingButtonComponent
 from .models.recording_content_actions import RecordingContentActions
 from .models.recording_content_story import RecordingContentStory
@@ -3437,9 +3458,14 @@ from .models.recording_job_failed_recording import RecordingJobFailedRecording
 from .models.recording_jobs_query import RecordingJobsQuery
 from .models.recording_messaging_message import RecordingMessagingMessage
 from .models.recording_metadata import RecordingMetadata
+from .models.recording_notification_template import RecordingNotificationTemplate
 from .models.recording_retention import RecordingRetention
 from .models.recording_retention_cursor_entity_listing import RecordingRetentionCursorEntityListing
 from .models.recording_settings import RecordingSettings
+from .models.recording_template_body import RecordingTemplateBody
+from .models.recording_template_button import RecordingTemplateButton
+from .models.recording_template_footer import RecordingTemplateFooter
+from .models.recording_template_header import RecordingTemplateHeader
 from .models.recording_transcode_complete_topic_media_result import RecordingTranscodeCompleteTopicMediaResult
 from .models.recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
 from .models.recording_upload_report import RecordingUploadReport
@@ -4206,7 +4232,6 @@ from .models.user_external_identifier import UserExternalIdentifier
 from .models.user_greeting_event_greeting import UserGreetingEventGreeting
 from .models.user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAudioFile
 from .models.user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner
-from .models.user_image import UserImage
 from .models.user_insights_trend import UserInsightsTrend
 from .models.user_insights_trend_metric_item import UserInsightsTrendMetricItem
 from .models.user_insights_trend_total_item import UserInsightsTrendTotalItem
@@ -4405,6 +4430,7 @@ from .models.web_deployment_configuration_version import WebDeploymentConfigurat
 from .models.web_deployment_configuration_version_entity_listing import WebDeploymentConfigurationVersionEntityListing
 from .models.web_deployment_configuration_version_entity_ref import WebDeploymentConfigurationVersionEntityRef
 from .models.web_deployment_configuration_version_response import WebDeploymentConfigurationVersionResponse
+from .models.web_deployment_flow_entity_ref import WebDeploymentFlowEntityRef
 from .models.web_deployment_headless_mode import WebDeploymentHeadlessMode
 from .models.web_deployments_authorization_response import WebDeploymentsAuthorizationResponse
 from .models.web_deployments_config_topic_web_messaging_config_change_event_body import WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody

@@ -1043,7 +1043,7 @@ class CreateQueueRequest(object):
     def outbound_email_address(self) -> 'QueueEmailAddress':
         """
         Gets the outbound_email_address of this CreateQueueRequest.
-
+        The default email address to use for outbound email from this queue.
 
         :return: The outbound_email_address of this CreateQueueRequest.
         :rtype: QueueEmailAddress
@@ -1054,7 +1054,7 @@ class CreateQueueRequest(object):
     def outbound_email_address(self, outbound_email_address: 'QueueEmailAddress') -> None:
         """
         Sets the outbound_email_address of this CreateQueueRequest.
-
+        The default email address to use for outbound email from this queue.
 
         :param outbound_email_address: The outbound_email_address of this CreateQueueRequest.
         :type: QueueEmailAddress

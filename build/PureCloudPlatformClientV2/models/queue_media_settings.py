@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CallbackMediaSettings
+    from . import EmailMediaSettings
     from . import MediaSettings
 
 class QueueMediaSettings(object):
@@ -54,7 +55,7 @@ class QueueMediaSettings(object):
             'call': 'MediaSettings',
             'callback': 'CallbackMediaSettings',
             'chat': 'MediaSettings',
-            'email': 'MediaSettings',
+            'email': 'EmailMediaSettings',
             'message': 'MediaSettings'
         }
 
@@ -145,24 +146,24 @@ class QueueMediaSettings(object):
         self._chat = chat
 
     @property
-    def email(self) -> 'MediaSettings':
+    def email(self) -> 'EmailMediaSettings':
         """
         Gets the email of this QueueMediaSettings.
         The queue media settings for email interactions.
 
         :return: The email of this QueueMediaSettings.
-        :rtype: MediaSettings
+        :rtype: EmailMediaSettings
         """
         return self._email
 
     @email.setter
-    def email(self, email: 'MediaSettings') -> None:
+    def email(self, email: 'EmailMediaSettings') -> None:
         """
         Sets the email of this QueueMediaSettings.
         The queue media settings for email interactions.
 
         :param email: The email of this QueueMediaSettings.
-        :type: MediaSettings
+        :type: EmailMediaSettings
         """
         
 

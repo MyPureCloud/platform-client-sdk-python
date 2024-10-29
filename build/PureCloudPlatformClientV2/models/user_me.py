@@ -45,6 +45,7 @@ if TYPE_CHECKING:
     from . import Geolocation
     from . import GeolocationSettings
     from . import Group
+    from . import Image
     from . import Location
     from . import LocationDefinition
     from . import OAuthLastTokenIssued
@@ -61,7 +62,6 @@ if TYPE_CHECKING:
     from . import User
     from . import UserAuthorization
     from . import UserConversationSummary
-    from . import UserImage
     from . import UserPresence
     from . import UserRoutingLanguage
     from . import UserRoutingSkill
@@ -95,7 +95,7 @@ class UserMe(object):
             'title': 'str',
             'username': 'str',
             'manager': 'User',
-            'images': 'list[UserImage]',
+            'images': 'list[Image]',
             'version': 'int',
             'certifications': 'list[str]',
             'biography': 'Biography',
@@ -545,24 +545,24 @@ class UserMe(object):
         self._manager = manager
 
     @property
-    def images(self) -> List['UserImage']:
+    def images(self) -> List['Image']:
         """
         Gets the images of this UserMe.
 
 
         :return: The images of this UserMe.
-        :rtype: list[UserImage]
+        :rtype: list[Image]
         """
         return self._images
 
     @images.setter
-    def images(self, images: List['UserImage']) -> None:
+    def images(self, images: List['Image']) -> None:
         """
         Sets the images of this UserMe.
 
 
         :param images: The images of this UserMe.
-        :type: list[UserImage]
+        :type: list[Image]
         """
         
 

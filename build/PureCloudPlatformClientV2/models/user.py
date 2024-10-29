@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import EmployerInfo
     from . import Geolocation
     from . import Group
+    from . import Image
     from . import Location
     from . import OAuthLastTokenIssued
     from . import OutOfOffice
@@ -47,7 +48,6 @@ if TYPE_CHECKING:
     from . import Team
     from . import UserAuthorization
     from . import UserConversationSummary
-    from . import UserImage
     from . import UserPresence
     from . import UserRoutingLanguage
     from . import UserRoutingSkill
@@ -81,7 +81,7 @@ class User(object):
             'title': 'str',
             'username': 'str',
             'manager': 'User',
-            'images': 'list[UserImage]',
+            'images': 'list[Image]',
             'version': 'int',
             'certifications': 'list[str]',
             'biography': 'Biography',
@@ -483,24 +483,24 @@ class User(object):
         self._manager = manager
 
     @property
-    def images(self) -> List['UserImage']:
+    def images(self) -> List['Image']:
         """
         Gets the images of this User.
 
 
         :return: The images of this User.
-        :rtype: list[UserImage]
+        :rtype: list[Image]
         """
         return self._images
 
     @images.setter
-    def images(self, images: List['UserImage']) -> None:
+    def images(self, images: List['Image']) -> None:
         """
         Sets the images of this User.
 
 
         :param images: The images of this User.
-        :type: list[UserImage]
+        :type: list[Image]
         """
         
 

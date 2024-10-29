@@ -243,12 +243,13 @@ class TeamsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str team_id: Team ID (required)
+        :param str expand: Expand the division name
         :return: Team
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['team_id']
+        all_params = ['team_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -272,6 +273,8 @@ class TeamsApi(object):
             path_params['teamId'] = params['team_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

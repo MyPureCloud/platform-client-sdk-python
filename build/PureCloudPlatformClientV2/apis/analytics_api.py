@@ -2611,12 +2611,13 @@ class AnalyticsApi(object):
         :param int page_size: 
         :param list[str] id: A list of user IDs to fetch by bulk
         :param str state: Only list users of this state
+        :param bool deleted_only: Only list deleted dashboards that are still recoverable
         :return: DashboardUserListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['sort_by', 'page_number', 'page_size', 'id', 'state']
+        all_params = ['sort_by', 'page_number', 'page_size', 'id', 'state', 'deleted_only']
         all_params.append('callback')
 
         params = locals()
@@ -2645,6 +2646,8 @@ class AnalyticsApi(object):
             query_params['id'] = params['id']
         if 'state' in params:
             query_params['state'] = params['state']
+        if 'deleted_only' in params:
+            query_params['deletedOnly'] = params['deleted_only']
 
         header_params = {}
 
@@ -3017,13 +3020,14 @@ class AnalyticsApi(object):
         :param int page_size: 
         :param bool public_only: If true, retrieve only public dashboards
         :param bool favorite_only: If true, retrieve only favorite dashboards
+        :param bool deleted_only: If true, retrieve only deleted dashboards that are still recoverable
         :param str name: retrieve dashboards that match with given name
         :return: DashboardConfigurationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'sort_by', 'page_number', 'page_size', 'public_only', 'favorite_only', 'name']
+        all_params = ['user_id', 'sort_by', 'page_number', 'page_size', 'public_only', 'favorite_only', 'deleted_only', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -3057,6 +3061,8 @@ class AnalyticsApi(object):
             query_params['publicOnly'] = params['public_only']
         if 'favorite_only' in params:
             query_params['favoriteOnly'] = params['favorite_only']
+        if 'deleted_only' in params:
+            query_params['deletedOnly'] = params['deleted_only']
         if 'name' in params:
             query_params['name'] = params['name']
 
@@ -6344,7 +6350,7 @@ class AnalyticsApi(object):
 
     def post_analytics_reporting_dashboards_users_bulk_remove(self, body: List['str'], **kwargs) -> None:
         """
-        Bulk delete dashboards owned by other user(s)
+        Bulk soft delete dashboards owned by other user(s)
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -6500,7 +6506,7 @@ class AnalyticsApi(object):
 
     def post_analytics_reporting_settings_dashboards_bulk_remove(self, body: 'DashboardConfigurationBulkRequest', **kwargs) -> None:
         """
-        Bulk remove dashboard configurations
+        Bulk soft delete dashboard configurations
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -7057,7 +7063,6 @@ class AnalyticsApi(object):
         """
         Query for task management aggregates
         
-	    post_analytics_taskmanagement_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

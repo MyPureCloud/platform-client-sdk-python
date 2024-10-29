@@ -38,7 +38,9 @@ if TYPE_CHECKING:
     from . import RoutingSkillReference
     from . import UserReference
     from . import WorkbinReference
+    from . import WorkitemFlowReference
     from . import WorkitemQueueReference
+    from . import WorkitemRuleSettings
     from . import WorkitemSchema
     from . import WorkitemStatus
     from . import WorkitemStatusReference
@@ -79,6 +81,8 @@ class Worktype(object):
             'assignment_enabled': 'bool',
             'schema': 'WorkitemSchema',
             'service_level_target': 'int',
+            'rule_settings': 'WorkitemRuleSettings',
+            'flow': 'WorkitemFlowReference',
             'self_uri': 'str'
         }
 
@@ -104,6 +108,8 @@ class Worktype(object):
             'assignment_enabled': 'assignmentEnabled',
             'schema': 'schema',
             'service_level_target': 'serviceLevelTarget',
+            'rule_settings': 'ruleSettings',
+            'flow': 'flow',
             'self_uri': 'selfUri'
         }
 
@@ -128,6 +134,8 @@ class Worktype(object):
         self._assignment_enabled = None
         self._schema = None
         self._service_level_target = None
+        self._rule_settings = None
+        self._flow = None
         self._self_uri = None
 
     @property
@@ -633,6 +641,54 @@ class Worktype(object):
         
 
         self._service_level_target = service_level_target
+
+    @property
+    def rule_settings(self) -> 'WorkitemRuleSettings':
+        """
+        Gets the rule_settings of this Worktype.
+        Settings for the worktypes rules.
+
+        :return: The rule_settings of this Worktype.
+        :rtype: WorkitemRuleSettings
+        """
+        return self._rule_settings
+
+    @rule_settings.setter
+    def rule_settings(self, rule_settings: 'WorkitemRuleSettings') -> None:
+        """
+        Sets the rule_settings of this Worktype.
+        Settings for the worktypes rules.
+
+        :param rule_settings: The rule_settings of this Worktype.
+        :type: WorkitemRuleSettings
+        """
+        
+
+        self._rule_settings = rule_settings
+
+    @property
+    def flow(self) -> 'WorkitemFlowReference':
+        """
+        Gets the flow of this Worktype.
+        The flow associated with the Worktype.
+
+        :return: The flow of this Worktype.
+        :rtype: WorkitemFlowReference
+        """
+        return self._flow
+
+    @flow.setter
+    def flow(self, flow: 'WorkitemFlowReference') -> None:
+        """
+        Sets the flow of this Worktype.
+        The flow associated with the Worktype.
+
+        :param flow: The flow of this Worktype.
+        :type: WorkitemFlowReference
+        """
+        
+
+        self._flow = flow
 
     @property
     def self_uri(self) -> str:

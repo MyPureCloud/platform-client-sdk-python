@@ -34,9 +34,9 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
-    from . import DomainEntityRef
     from . import SupportedContentReference
     from . import WebDeploymentConfigurationVersionEntityRef
+    from . import WebDeploymentFlowEntityRef
 
 class WebDeployment(object):
     """
@@ -63,7 +63,7 @@ class WebDeployment(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'last_modified_user': 'AddressableEntityRef',
-            'flow': 'DomainEntityRef',
+            'flow': 'WebDeploymentFlowEntityRef',
             'status': 'str',
             'configuration': 'WebDeploymentConfigurationVersionEntityRef',
             'self_uri': 'str'
@@ -342,24 +342,24 @@ class WebDeployment(object):
         self._last_modified_user = last_modified_user
 
     @property
-    def flow(self) -> 'DomainEntityRef':
+    def flow(self) -> 'WebDeploymentFlowEntityRef':
         """
         Gets the flow of this WebDeployment.
         A reference to the inboundshortmessage flow used by this deployment
 
         :return: The flow of this WebDeployment.
-        :rtype: DomainEntityRef
+        :rtype: WebDeploymentFlowEntityRef
         """
         return self._flow
 
     @flow.setter
-    def flow(self, flow: 'DomainEntityRef') -> None:
+    def flow(self, flow: 'WebDeploymentFlowEntityRef') -> None:
         """
         Sets the flow of this WebDeployment.
         A reference to the inboundshortmessage flow used by this deployment
 
         :param flow: The flow of this WebDeployment.
-        :type: DomainEntityRef
+        :type: WebDeploymentFlowEntityRef
         """
         
 

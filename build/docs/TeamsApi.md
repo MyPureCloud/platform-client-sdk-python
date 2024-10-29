@@ -117,7 +117,7 @@ void (empty response body)
 
 ## get_team
 
-> [**Team**](Team) get_team(team_id)
+> [**Team**](Team) get_team(team_id, expand=expand)
 
 
 Get team
@@ -142,10 +142,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TeamsApi()
 team_id = 'team_id_example' # str | Team ID
+expand = 'expand_example' # str | Expand the division name (optional)
 
 try:
     # Get team
-    api_response = api_instance.get_team(team_id)
+    api_response = api_instance.get_team(team_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->get_team: %s\n" % e)
@@ -157,6 +158,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
+| **expand** | **str**| Expand the division name | [optional] <br />**Values**: entities.division |
 
 ### Return type
 
@@ -523,4 +525,4 @@ except ApiException as e:
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

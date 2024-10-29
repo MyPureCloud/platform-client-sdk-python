@@ -34,7 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import GroupContact
-    from . import UserImage
+    from . import Image
 
 class GroupCreate(object):
     """
@@ -59,7 +59,7 @@ class GroupCreate(object):
             'state': 'str',
             'version': 'int',
             'type': 'str',
-            'images': 'list[UserImage]',
+            'images': 'list[Image]',
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
@@ -311,24 +311,24 @@ class GroupCreate(object):
             self._type = type
 
     @property
-    def images(self) -> List['UserImage']:
+    def images(self) -> List['Image']:
         """
         Gets the images of this GroupCreate.
 
 
         :return: The images of this GroupCreate.
-        :rtype: list[UserImage]
+        :rtype: list[Image]
         """
         return self._images
 
     @images.setter
-    def images(self, images: List['UserImage']) -> None:
+    def images(self, images: List['Image']) -> None:
         """
         Sets the images of this GroupCreate.
 
 
         :param images: The images of this GroupCreate.
-        :type: list[UserImage]
+        :type: list[Image]
         """
         
 

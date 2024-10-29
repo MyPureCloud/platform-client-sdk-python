@@ -35,7 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import CategoryResponse
-    from . import DocumentVariation
+    from . import DocumentVariationResponse
     from . import KnowledgeBaseReference
     from . import KnowledgeDocumentAlternative
     from . import LabelResponse
@@ -76,7 +76,7 @@ class KnowledgeDocumentResponse(object):
             'external_url': 'str',
             'source': 'AddressableEntityRef',
             'readonly': 'bool',
-            'variations': 'list[DocumentVariation]',
+            'variations': 'list[DocumentVariationResponse]',
             'self_uri': 'str'
         }
 
@@ -614,24 +614,24 @@ class KnowledgeDocumentResponse(object):
         self._readonly = readonly
 
     @property
-    def variations(self) -> List['DocumentVariation']:
+    def variations(self) -> List['DocumentVariationResponse']:
         """
         Gets the variations of this KnowledgeDocumentResponse.
         Variations of the document.
 
         :return: The variations of this KnowledgeDocumentResponse.
-        :rtype: list[DocumentVariation]
+        :rtype: list[DocumentVariationResponse]
         """
         return self._variations
 
     @variations.setter
-    def variations(self, variations: List['DocumentVariation']) -> None:
+    def variations(self, variations: List['DocumentVariationResponse']) -> None:
         """
         Sets the variations of this KnowledgeDocumentResponse.
         Variations of the document.
 
         :param variations: The variations of this KnowledgeDocumentResponse.
-        :type: list[DocumentVariation]
+        :type: list[DocumentVariationResponse]
         """
         
 

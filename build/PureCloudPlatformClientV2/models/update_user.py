@@ -38,8 +38,8 @@ if TYPE_CHECKING:
     from . import Contact
     from . import EmployerInfo
     from . import Group
+    from . import Image
     from . import Location
-    from . import UserImage
 
 class UpdateUser(object):
     """
@@ -67,7 +67,7 @@ class UpdateUser(object):
             'username': 'str',
             'preferred_name': 'str',
             'manager': 'str',
-            'images': 'list[UserImage]',
+            'images': 'list[Image]',
             'version': 'int',
             'profile_skills': 'list[str]',
             'locations': 'list[Location]',
@@ -393,24 +393,24 @@ class UpdateUser(object):
         self._manager = manager
 
     @property
-    def images(self) -> List['UserImage']:
+    def images(self) -> List['Image']:
         """
         Gets the images of this UpdateUser.
 
 
         :return: The images of this UpdateUser.
-        :rtype: list[UserImage]
+        :rtype: list[Image]
         """
         return self._images
 
     @images.setter
-    def images(self, images: List['UserImage']) -> None:
+    def images(self, images: List['Image']) -> None:
         """
         Sets the images of this UpdateUser.
 
 
         :param images: The images of this UpdateUser.
-        :type: list[UserImage]
+        :type: list[Image]
         """
         
 
