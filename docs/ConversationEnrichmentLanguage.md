@@ -6,8 +6,8 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **language** | str | The ISO 639-3 detected language code of this message. | |
+| **language** | str | The IETF detected language code of this message. | |
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

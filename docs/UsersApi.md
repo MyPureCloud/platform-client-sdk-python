@@ -53,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_trustors**](#get_user_trustors) | List the organizations that have authorized/trusted the user.|
 |[**get_user_verifiers**](#get_user_verifiers) | Get a list of verifiers|
 |[**get_users**](#get_users) | Get the list of available users.|
+|[**get_users_chats_me**](#get_users_chats_me) | Get chats for a user|
 |[**get_users_development_activities**](#get_users_development_activities) | Get list of Development Activities|
 |[**get_users_development_activities_me**](#get_users_development_activities_me) | Get list of Development Activities for current user|
 |[**get_users_development_activity**](#get_users_development_activity) | Get a Development Activity|
@@ -2466,6 +2467,59 @@ except ApiException as e:
 ### Return type
 
 [**UserEntityListing**](UserEntityListing)
+
+
+## get_users_chats_me
+
+> [**ChatItemCursorListing**](ChatItemCursorListing) get_users_chats_me(exclude_closed=exclude_closed, include_presence=include_presence, after=after)
+
+
+Get chats for a user
+
+Wraps GET /api/v2/users/chats/me 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* user:chats:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+exclude_closed = True # bool | Whether or not to exclude closed chats (optional)
+include_presence = True # bool | Whether or not to include user presence (optional)
+after = 'after_example' # str | The key to start after (optional)
+
+try:
+    # Get chats for a user
+    api_response = api_instance.get_users_chats_me(exclude_closed=exclude_closed, include_presence=include_presence, after=after)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_chats_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **exclude_closed** | **bool**| Whether or not to exclude closed chats | [optional]  |
+| **include_presence** | **bool**| Whether or not to include user presence | [optional]  |
+| **after** | **str**| The key to start after | [optional]  |
+
+### Return type
+
+[**ChatItemCursorListing**](ChatItemCursorListing)
 
 
 ## get_users_development_activities
@@ -5026,4 +5080,4 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

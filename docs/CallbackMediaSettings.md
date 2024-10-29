@@ -12,10 +12,16 @@
 | **auto_answer_alert_tone_seconds** | float | How long to play the alerting tone for an auto-answer interaction | [optional] |
 | **manual_answer_alert_tone_seconds** | float | How long to play the alerting tone for a manual-answer interaction | [optional] |
 | **sub_type_settings** | [dict(str, BaseMediaSettings)](BaseMediaSettings) | Map of media subtype to media subtype specific settings. | [optional] |
+| **mode** | str | The mode callbacks will use on this queue. | [optional] |
 | **enable_auto_dial_and_end** | bool | Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue. | [optional] |
 | **auto_dial_delay_seconds** | int | Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds. | [optional] |
 | **auto_end_delay_seconds** | int | Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds. | [optional] |
+| **pacing_modifier** | float | Controls the maximum number of outbound calls at one time when mode is CustomerFirst. | [optional] |
+| **live_voice_reaction_type** | str | The action to take if a live voice is detected during the outbound call of a customer first callback. | [optional] |
+| **live_voice_flow** | [DomainEntityRef](DomainEntityRef) | The inbound flow to transfer to if a live voice is detected during the outbound call of a customer first callback. | [optional] |
+| **answering_machine_reaction_type** | str | The action to take if an answering machine is detected during the outbound call of a customer first callback. | [optional] |
+| **answering_machine_flow** | [DomainEntityRef](DomainEntityRef) | The inbound flow to transfer to if an answering machine is detected during the outbound call of a customer first callback when answeringMachineReactionType is set to TransferToFlow. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

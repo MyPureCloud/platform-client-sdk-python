@@ -12,9 +12,9 @@
 | **document_version** | [AddressableEntityRef](AddressableEntityRef) | The version of the document. | [optional] |
 | **contexts** | [list[KnowledgeGuestDocumentVariationContext]](KnowledgeGuestDocumentVariationContext) | The context values associated with the variation. | |
 | **document** | [AddressableEntityRef](AddressableEntityRef) | The reference to document to which the variation is associated. | [optional] |
-| **body** | [DocumentBody](DocumentBody) | The content for the variation. | [optional] |
+| **body** | [DocumentBodyResponse](DocumentBodyResponse) | The content for the variation. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

@@ -1,16 +1,16 @@
-# DocumentVariationListing
+# ChatItemCursorListing
 
-## DocumentVariationListing
+## ChatItemCursorListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [list[DocumentVariation]](DocumentVariation) |  | [optional] |
+| **entities** | [list[ChatItem]](ChatItem) |  | [optional] |
 | **next_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
 | **previous_uri** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

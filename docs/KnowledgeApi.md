@@ -1330,7 +1330,7 @@ except ApiException as e:
 
 ## get_knowledge_knowledgebase_document_variation
 
-> [**DocumentVariation**](DocumentVariation) get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state)
+> [**DocumentVariationResponse**](DocumentVariationResponse) get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state)
 
 
 Get a variation for a document.
@@ -1379,12 +1379,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation)
+[**DocumentVariationResponse**](DocumentVariationResponse)
 
 
 ## get_knowledge_knowledgebase_document_variations
 
-> [**DocumentVariationListing**](DocumentVariationListing) get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state)
+> [**DocumentVariationResponseListing**](DocumentVariationResponseListing) get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state)
 
 
 Get variations for a document.
@@ -1437,7 +1437,7 @@ except ApiException as e:
 
 ### Return type
 
-[**DocumentVariationListing**](DocumentVariationListing)
+[**DocumentVariationResponseListing**](DocumentVariationResponseListing)
 
 
 ## get_knowledge_knowledgebase_document_version
@@ -3335,7 +3335,7 @@ except ApiException as e:
 
 ## patch_knowledge_knowledgebase_document_variation
 
-> [**DocumentVariation**](DocumentVariation) patch_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, body)
+> [**DocumentVariationResponse**](DocumentVariationResponse) patch_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, body)
 
 
 Update a variation for a document.
@@ -3362,7 +3362,7 @@ api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 document_variation_id = 'document_variation_id_example' # str | Globally unique identifier for a document variation.
 document_id = 'document_id_example' # str | Globally unique identifier for a document.
 knowledge_base_id = 'knowledge_base_id_example' # str | Globally unique identifier for a knowledge base.
-body = PureCloudPlatformClientV2.DocumentVariation() # DocumentVariation | 
+body = PureCloudPlatformClientV2.DocumentVariationRequest() # DocumentVariationRequest | 
 
 try:
     # Update a variation for a document.
@@ -3380,11 +3380,11 @@ except ApiException as e:
 | **document_variation_id** | **str**| Globally unique identifier for a document variation. |  |
 | **document_id** | **str**| Globally unique identifier for a document. |  |
 | **knowledge_base_id** | **str**| Globally unique identifier for a knowledge base. |  |
-| **body** | [**DocumentVariation**](DocumentVariation)|  |  |
+| **body** | [**DocumentVariationRequest**](DocumentVariationRequest)|  |  |
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation)
+[**DocumentVariationResponse**](DocumentVariationResponse)
 
 
 ## patch_knowledge_knowledgebase_documents_search_search_id
@@ -4503,7 +4503,7 @@ except ApiException as e:
 
 ## post_knowledge_knowledgebase_document_variations
 
-> [**DocumentVariation**](DocumentVariation) post_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, body)
+> [**DocumentVariationResponse**](DocumentVariationResponse) post_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, body)
 
 
 Create a variation for a document.
@@ -4530,7 +4530,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Globally unique identifier for the knowledge base.
 document_id = 'document_id_example' # str | Globally unique identifier for the document.
-body = PureCloudPlatformClientV2.DocumentVariation() # DocumentVariation | 
+body = PureCloudPlatformClientV2.DocumentVariationRequest() # DocumentVariationRequest | 
 
 try:
     # Create a variation for a document.
@@ -4547,11 +4547,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Globally unique identifier for the knowledge base. |  |
 | **document_id** | **str**| Globally unique identifier for the document. |  |
-| **body** | [**DocumentVariation**](DocumentVariation)|  |  |
+| **body** | [**DocumentVariationRequest**](DocumentVariationRequest)|  |  |
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation)
+[**DocumentVariationResponse**](DocumentVariationResponse)
 
 
 ## post_knowledge_knowledgebase_document_versions
@@ -4684,7 +4684,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
-body = PureCloudPlatformClientV2.KnowledgeDocumentReq() # KnowledgeDocumentReq | 
+body = PureCloudPlatformClientV2.KnowledgeDocumentCreateRequest() # KnowledgeDocumentCreateRequest | 
 
 try:
     # Create document.
@@ -4700,7 +4700,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  |  |
+| **body** | [**KnowledgeDocumentCreateRequest**](KnowledgeDocumentCreateRequest)|  |  |
 
 ### Return type
 
@@ -6211,4 +6211,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

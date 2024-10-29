@@ -40,7 +40,7 @@
 | **calling_party_number** | str | The phone number to use for caller identification for outbound calls from this queue. | [optional] |
 | **default_scripts** | [dict(str, Script)](Script) | The default script Ids for the communication types. | [optional] |
 | **outbound_messaging_addresses** | [QueueMessagingAddresses](QueueMessagingAddresses) | The messaging addresses for the queue. | [optional] |
-| **outbound_email_address** | [QueueEmailAddress](QueueEmailAddress) |  | [optional] |
+| **outbound_email_address** | [QueueEmailAddress](QueueEmailAddress) | The default email address to use for outbound email from this queue. | [optional] |
 | **peer_id** | str | The ID of an associated external queue. | [optional] |
 | **suppress_in_queue_call_recording** | bool | Indicates whether recording in-queue calls is suppressed for this queue. | [optional] |
 | **joined** | bool |  | [optional] |
@@ -48,4 +48,4 @@
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

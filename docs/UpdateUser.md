@@ -17,7 +17,7 @@
 | **username** | str |  | [optional] |
 | **preferred_name** | str | Preferred full name of agent | [optional] |
 | **manager** | str |  | [optional] |
-| **images** | [list[UserImage]](UserImage) |  | [optional] |
+| **images** | [list[Image]](Image) |  | [optional] |
 | **version** | int | This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH. | |
 | **profile_skills** | list[str] | Profile skills possessed by the user | [optional] |
 | **locations** | [list[Location]](Location) | The user placement at each site location. | [optional] |
@@ -31,4 +31,4 @@
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_

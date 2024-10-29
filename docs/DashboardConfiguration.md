@@ -17,6 +17,7 @@
 | **layout_type** | str | The layout type of the dashboard | [optional] |
 | **date_created** | datetime | The created date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **date_modified** | datetime | The last modified date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
+| **date_deleted** | datetime | The deleted date of the dashboard. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **created_by** | [AddressableEntityRef](AddressableEntityRef) | The id of user who created the dashboard | [optional] |
 | **shared** | bool | The flag to indicate if the dashboard is shared | [optional] |
 | **dashboards_shared_with** | [DashboardsSharedWith](DashboardsSharedWith) | The list of users and teams the dashboard is shared with | [optional] |
@@ -24,4 +25,4 @@
 
 
 
-_PureCloudPlatformClientV2 214.0.0_
+_PureCloudPlatformClientV2 215.0.0_
