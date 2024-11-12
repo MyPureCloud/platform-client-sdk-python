@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import JourneyAppEventsNotificationOutcomeAchievedMessage
     from . import JourneyAppEventsNotificationSegmentAssignmentMessage
     from . import JourneyAppEventsNotificationSession
+    from . import JourneyAppEventsNotificationWebActionMessage
 
 class JourneyAppEventsNotificationAppEventsNotification(object):
     """
@@ -64,7 +65,8 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
             'event_type': 'str',
             'app_event': 'JourneyAppEventsNotificationAppMessage',
             'outcome_achieved_event': 'JourneyAppEventsNotificationOutcomeAchievedMessage',
-            'segment_assignment_event': 'JourneyAppEventsNotificationSegmentAssignmentMessage'
+            'segment_assignment_event': 'JourneyAppEventsNotificationSegmentAssignmentMessage',
+            'web_action_event': 'JourneyAppEventsNotificationWebActionMessage'
         }
 
         self.attribute_map = {
@@ -78,7 +80,8 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
             'event_type': 'eventType',
             'app_event': 'appEvent',
             'outcome_achieved_event': 'outcomeAchievedEvent',
-            'segment_assignment_event': 'segmentAssignmentEvent'
+            'segment_assignment_event': 'segmentAssignmentEvent',
+            'web_action_event': 'webActionEvent'
         }
 
         self._id = None
@@ -92,6 +95,7 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
         self._app_event = None
         self._outcome_achieved_event = None
         self._segment_assignment_event = None
+        self._web_action_event = None
 
     @property
     def id(self) -> str:
@@ -283,7 +287,7 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["AppEvent", "OutcomeAchievedEvent", "SegmentAssignmentEvent"]
+        allowed_values = ["AppEvent", "OutcomeAchievedEvent", "SegmentAssignmentEvent", "WebActionEvent"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -361,6 +365,30 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
         
 
         self._segment_assignment_event = segment_assignment_event
+
+    @property
+    def web_action_event(self) -> 'JourneyAppEventsNotificationWebActionMessage':
+        """
+        Gets the web_action_event of this JourneyAppEventsNotificationAppEventsNotification.
+
+
+        :return: The web_action_event of this JourneyAppEventsNotificationAppEventsNotification.
+        :rtype: JourneyAppEventsNotificationWebActionMessage
+        """
+        return self._web_action_event
+
+    @web_action_event.setter
+    def web_action_event(self, web_action_event: 'JourneyAppEventsNotificationWebActionMessage') -> None:
+        """
+        Sets the web_action_event of this JourneyAppEventsNotificationAppEventsNotification.
+
+
+        :param web_action_event: The web_action_event of this JourneyAppEventsNotificationAppEventsNotification.
+        :type: JourneyAppEventsNotificationWebActionMessage
+        """
+        
+
+        self._web_action_event = web_action_event
 
     def to_dict(self):
         """

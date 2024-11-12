@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationCallbackEventTopicCallbackMediaParticipant
+    from . import QueueConversationCallbackEventTopicConversationDivisionMembership
 
 class QueueConversationCallbackEventTopicCallbackConversation(object):
     """
@@ -55,7 +56,8 @@ class QueueConversationCallbackEventTopicCallbackConversation(object):
             'participants': 'list[QueueConversationCallbackEventTopicCallbackMediaParticipant]',
             'other_media_uris': 'list[str]',
             'address': 'str',
-            'utilization_label_id': 'str'
+            'utilization_label_id': 'str',
+            'divisions': 'list[QueueConversationCallbackEventTopicConversationDivisionMembership]'
         }
 
         self.attribute_map = {
@@ -64,7 +66,8 @@ class QueueConversationCallbackEventTopicCallbackConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
-            'utilization_label_id': 'utilizationLabelId'
+            'utilization_label_id': 'utilizationLabelId',
+            'divisions': 'divisions'
         }
 
         self._id = None
@@ -73,6 +76,7 @@ class QueueConversationCallbackEventTopicCallbackConversation(object):
         self._other_media_uris = None
         self._address = None
         self._utilization_label_id = None
+        self._divisions = None
 
     @property
     def id(self) -> str:
@@ -217,6 +221,30 @@ class QueueConversationCallbackEventTopicCallbackConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def divisions(self) -> List['QueueConversationCallbackEventTopicConversationDivisionMembership']:
+        """
+        Gets the divisions of this QueueConversationCallbackEventTopicCallbackConversation.
+
+
+        :return: The divisions of this QueueConversationCallbackEventTopicCallbackConversation.
+        :rtype: list[QueueConversationCallbackEventTopicConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['QueueConversationCallbackEventTopicConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this QueueConversationCallbackEventTopicCallbackConversation.
+
+
+        :param divisions: The divisions of this QueueConversationCallbackEventTopicCallbackConversation.
+        :type: list[QueueConversationCallbackEventTopicConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     def to_dict(self):
         """

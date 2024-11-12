@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_outcomes_predictor**](#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
 |[**delete_journey_segment**](#delete_journey_segment) | Delete a segment.|
 |[**delete_journey_view**](#delete_journey_view) | Delete a Journey View by ID|
+|[**delete_journey_view_schedules**](#delete_journey_view_schedules) | Delete the Schedule of a JourneyView|
 |[**get_analytics_journeys_aggregates_job**](#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
 |[**get_analytics_journeys_aggregates_job_results**](#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_externalcontacts_contact_journey_sessions**](#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_session_events**](#get_journey_session_events) | Retrieve all events for a given session.|
 |[**get_journey_session_outcomescores**](#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
 |[**get_journey_view**](#get_journey_view) | Get a Journey View by ID|
+|[**get_journey_view_schedules**](#get_journey_view_schedules) | Get the Schedule for a JourneyView|
 |[**get_journey_view_version**](#get_journey_view_version) | Get a Journey View by ID and version|
 |[**get_journey_view_version_chart**](#get_journey_view_version_chart) | Get a Chart by ID|
 |[**get_journey_view_version_chart_version**](#get_journey_view_version_chart_version) | Get a Chart by ID and version|
@@ -47,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_views_eventdefinition**](#get_journey_views_eventdefinition) | Get an Event Definition|
 |[**get_journey_views_eventdefinitions**](#get_journey_views_eventdefinitions) | Get a list of Event Definitions|
 |[**get_journey_views_jobs**](#get_journey_views_jobs) | Get the jobs for an organization.|
+|[**get_journey_views_schedules**](#get_journey_views_schedules) | Get the journey schedules for an organization.|
 |[**patch_journey_actionmap**](#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](#patch_journey_actiontemplate) | Update a single action template.|
@@ -66,10 +69,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_outcomes_attributions_jobs**](#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
 |[**post_journey_outcomes_predictors**](#post_journey_outcomes_predictors) | Create an outcome predictor.|
 |[**post_journey_segments**](#post_journey_segments) | Create a segment.|
+|[**post_journey_view_schedules**](#post_journey_view_schedules) | Add a new Schedule to a JourneyView|
 |[**post_journey_view_version_jobs**](#post_journey_view_version_jobs) | Submit a job request for a journey view version.|
 |[**post_journey_view_versions**](#post_journey_view_versions) | Update a Journey View by ID|
 |[**post_journey_views**](#post_journey_views) | Create a new Journey View|
 |[**post_journey_views_encodings_validate**](#post_journey_views_encodings_validate) | Validate whether an encoding exist for a label/value combination.|
+|[**put_journey_view_schedules**](#put_journey_view_schedules) | Update the Schedule for a JourneyView|
 |[**put_journey_view_version**](#put_journey_view_version) | Update a Journey View by ID and version|
 
 
@@ -358,6 +363,56 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+
+## delete_journey_view_schedules
+
+> [**JourneyViewSchedule**](JourneyViewSchedule) delete_journey_view_schedules(view_id)
+
+
+Delete the Schedule of a JourneyView
+
+used for long descriptions
+
+Wraps DELETE /api/v2/journey/views/{viewId}/schedules 
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+
+try:
+    # Delete the Schedule of a JourneyView
+    api_response = api_instance.delete_journey_view_schedules(view_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_view_schedules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
 
 
 ## get_analytics_journeys_aggregates_job
@@ -1591,6 +1646,56 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
+## get_journey_view_schedules
+
+> [**JourneyViewSchedule**](JourneyViewSchedule) get_journey_view_schedules(view_id)
+
+
+Get the Schedule for a JourneyView
+
+used for long descriptions
+
+Wraps GET /api/v2/journey/views/{viewId}/schedules 
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+
+try:
+    # Get the Schedule for a JourneyView
+    api_response = api_instance.get_journey_view_schedules(view_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_schedules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
+
+
 ## get_journey_view_version
 
 > [**JourneyView**](JourneyView) get_journey_view_version(view_id, version_id)
@@ -2163,6 +2268,56 @@ except ApiException as e:
 ### Return type
 
 [**JourneyViewJobListing**](JourneyViewJobListing)
+
+
+## get_journey_views_schedules
+
+> [**JourneyViewScheduleListing**](JourneyViewScheduleListing) get_journey_views_schedules(page_number=page_number, page_size=page_size)
+
+
+Get the journey schedules for an organization.
+
+Wraps GET /api/v2/journey/views/schedules 
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+page_number = 1 # int | The number of the page to return (optional) (default to 1)
+page_size = 25 # int | Max number of entities to return (optional) (default to 25)
+
+try:
+    # Get the journey schedules for an organization.
+    api_response = api_instance.get_journey_views_schedules(page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_schedules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| The number of the page to return | [optional] [default to 1] |
+| **page_size** | **int**| Max number of entities to return | [optional] [default to 25] |
+
+### Return type
+
+[**JourneyViewScheduleListing**](JourneyViewScheduleListing)
 
 
 ## patch_journey_actionmap
@@ -3092,6 +3247,56 @@ except ApiException as e:
 [**JourneySegment**](JourneySegment)
 
 
+## post_journey_view_schedules
+
+> [**JourneyViewSchedule**](JourneyViewSchedule) post_journey_view_schedules(view_id, body)
+
+
+Add a new Schedule to a JourneyView
+
+Wraps POST /api/v2/journey/views/{viewId}/schedules 
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+body = PureCloudPlatformClientV2.JourneyViewSchedule() # JourneyViewSchedule | journeyViewSchedule
+
+try:
+    # Add a new Schedule to a JourneyView
+    api_response = api_instance.post_journey_view_schedules(view_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_view_schedules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+| **body** | [**JourneyViewSchedule**](JourneyViewSchedule)| journeyViewSchedule |  |
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
+
+
 ## post_journey_view_version_jobs
 
 > [**JourneyViewJob**](JourneyViewJob) post_journey_view_version_jobs(view_id, journey_version_id)
@@ -3294,6 +3499,58 @@ except ApiException as e:
 [**EntityListing**](EntityListing)
 
 
+## put_journey_view_schedules
+
+> [**JourneyViewSchedule**](JourneyViewSchedule) put_journey_view_schedules(view_id, body)
+
+
+Update the Schedule for a JourneyView
+
+used for long descriptions
+
+Wraps PUT /api/v2/journey/views/{viewId}/schedules 
+
+Requires ALL permissions: 
+
+* journey:viewsSchedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+body = PureCloudPlatformClientV2.JourneyViewSchedule() # JourneyViewSchedule | journeyViewSchedule
+
+try:
+    # Update the Schedule for a JourneyView
+    api_response = api_instance.put_journey_view_schedules(view_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->put_journey_view_schedules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+| **body** | [**JourneyViewSchedule**](JourneyViewSchedule)| journeyViewSchedule |  |
+
+### Return type
+
+[**JourneyViewSchedule**](JourneyViewSchedule)
+
+
 ## put_journey_view_version
 
 > [**JourneyView**](JourneyView) put_journey_view_version(view_id, version_id, body)
@@ -3348,4 +3605,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

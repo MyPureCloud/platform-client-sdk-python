@@ -24,6 +24,7 @@
 | **line_id** | [LineId](LineId) |  | [optional] |
 | **whats_app_id** | [WhatsAppId](WhatsAppId) |  | [optional] |
 | **facebook_id** | [FacebookId](FacebookId) |  | [optional] |
+| **external_ids** | [list[ExternalId]](ExternalId) | A list of external identifiers that identify this contact in an external system | [optional] |
 | **modify_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **create_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **external_organization** | [ExternalOrganization](ExternalOrganization) |  | [optional] |
@@ -40,4 +41,4 @@
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

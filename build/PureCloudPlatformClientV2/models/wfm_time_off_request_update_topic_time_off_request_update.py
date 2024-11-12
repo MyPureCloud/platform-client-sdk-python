@@ -61,6 +61,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
             'partial_day_start_date_times': 'list[str]',
             'full_day_management_unit_dates': 'list[str]',
             'daily_duration_minutes': 'int',
+            'duration_minutes': 'list[int]',
+            'payable_minutes': 'list[int]',
             'notes': 'str',
             'reviewed_date': 'str',
             'reviewed_by': 'str',
@@ -82,6 +84,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
             'daily_duration_minutes': 'dailyDurationMinutes',
+            'duration_minutes': 'durationMinutes',
+            'payable_minutes': 'payableMinutes',
             'notes': 'notes',
             'reviewed_date': 'reviewedDate',
             'reviewed_by': 'reviewedBy',
@@ -102,6 +106,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         self._partial_day_start_date_times = None
         self._full_day_management_unit_dates = None
         self._daily_duration_minutes = None
+        self._duration_minutes = None
+        self._payable_minutes = None
         self._notes = None
         self._reviewed_date = None
         self._reviewed_by = None
@@ -383,6 +389,54 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         
 
         self._daily_duration_minutes = daily_duration_minutes
+
+    @property
+    def duration_minutes(self) -> List[int]:
+        """
+        Gets the duration_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :return: The duration_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :rtype: list[int]
+        """
+        return self._duration_minutes
+
+    @duration_minutes.setter
+    def duration_minutes(self, duration_minutes: List[int]) -> None:
+        """
+        Sets the duration_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :param duration_minutes: The duration_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :type: list[int]
+        """
+        
+
+        self._duration_minutes = duration_minutes
+
+    @property
+    def payable_minutes(self) -> List[int]:
+        """
+        Gets the payable_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :return: The payable_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :rtype: list[int]
+        """
+        return self._payable_minutes
+
+    @payable_minutes.setter
+    def payable_minutes(self, payable_minutes: List[int]) -> None:
+        """
+        Sets the payable_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :param payable_minutes: The payable_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :type: list[int]
+        """
+        
+
+        self._payable_minutes = payable_minutes
 
     @property
     def notes(self) -> str:

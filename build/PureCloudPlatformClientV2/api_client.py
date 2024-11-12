@@ -52,6 +52,7 @@ except ImportError:
     # for python2
     from urllib import quote
 
+from .gateway_configuration import GatewayConfiguration
 from .configuration import Configuration
 
 
@@ -100,8 +101,39 @@ class ApiClient(object):
         self.refresh_token_lock = threading.Lock()
         # flag indicating a token refresh is being carried out
         self.refresh_in_progress = False
+        # gateway configuration
+        self.gateway_configuration = Configuration().gateway_configuration
 
 
+    def get_conf_url(self, path_type, base_path):
+        if path_type is not None and path_type == "login":
+            if self.gateway_configuration is None or not self.gateway_configuration.host:
+                url = re.sub(r'\/\/(api)\.', '//login.', base_path)
+                return url
+            else:
+                url = self.gateway_configuration.protocol + "://" + self.gateway_configuration.host
+                if self.gateway_configuration.port > -1:
+                    url = url + ":" + str(self.gateway_configuration.port)
+                if self.gateway_configuration.path_params_login is not None and self.gateway_configuration.path_params_login:
+                    if self.gateway_configuration.path_params_login.startswith("/"):
+                        url = url + self.gateway_configuration.path_params_login
+                    else:
+                        url = url + "/" + self.gateway_configuration.path_params_login
+                return url
+        else:
+            if self.gateway_configuration is None or not self.gateway_configuration.host:
+                url = base_path
+                return url
+            else:
+                url = self.gateway_configuration.protocol + "://" + self.gateway_configuration.host
+                if self.gateway_configuration.port > -1:
+                    url = url + ":" + str(self.gateway_configuration.port)
+                if self.gateway_configuration.path_params_api is not None and self.gateway_configuration.path_params_api:
+                    if self.gateway_configuration.path_params_api.startswith("/"):
+                        url = url + self.gateway_configuration.path_params_api
+                    else:
+                        url = url + "/" + self.gateway_configuration.path_params_api
+                return url
 
     def get_client_credentials_token(self, client_id, client_secret):
         """
@@ -111,7 +143,7 @@ class ApiClient(object):
         """
         query_params = {}
         body = None
-        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
+        url = self.get_conf_url("login", self.host) + '/oauth/token'
 
         post_params = {'grant_type': 'client_credentials'}
 
@@ -143,7 +175,7 @@ class ApiClient(object):
 
         query_params = {}
         body = None
-        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
+        url = self.get_conf_url("login", self.host) + '/oauth/token'
 
         post_params = {'grant_type': 'urn:ietf:params:oauth:grant-type:saml2-bearer',
                        'orgName': org_name,
@@ -181,7 +213,7 @@ class ApiClient(object):
 
         query_params = {}
         body = None
-        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
+        url = self.get_conf_url("login", self.host) + '/oauth/token'
 
         post_params = {'grant_type': 'authorization_code',
                        'code': auth_code,
@@ -218,7 +250,7 @@ class ApiClient(object):
 
         query_params = {}
         body = None
-        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
+        url = self.get_conf_url("login", self.host) + '/oauth/token'
 
         post_params = {'grant_type': 'refresh_token',
                        'refresh_token': refresh_token
@@ -280,7 +312,7 @@ class ApiClient(object):
 
         query_params = {}
         body = None
-        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
+        url = self.get_conf_url("login", self.host) + '/oauth/token'
 
         post_params = {'grant_type': 'authorization_code',
                        'code': auth_code,
@@ -322,6 +354,9 @@ class ApiClient(object):
     def set_default_header(self, header_name, header_value):
         self.default_headers[header_name] = header_value
 
+    def set_gateway(self, host, protocol, port, path_params_login, path_params_api):
+        self.gateway_configuration = GatewayConfiguration(host = host, protocol = protocol, port = port, path_params_login = path_params_login, path_params_api = path_params_api)
+
     def handle_expired_access_token(self):
         if self.refresh_token_lock.acquire(False):
             try:
@@ -357,7 +392,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '215.0.0'
+        header_params['purecloud-sdk'] = '216.0.0'
 
         # path parameters
         if path_params:
@@ -386,7 +421,7 @@ class ApiClient(object):
             body = self.sanitize_for_serialization(body)
 
         # request url
-        url = self.host + resource_path
+        url = self.get_conf_url("api", self.host) + resource_path
 
         response_data = None
 

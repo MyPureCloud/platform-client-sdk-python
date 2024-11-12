@@ -12,7 +12,8 @@
 | **other_media_uris** | list[str] |  | [optional] |
 | **address** | str |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
+| **divisions** | [list[ConversationEmailEventTopicConversationDivisionMembership]](ConversationEmailEventTopicConversationDivisionMembership) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

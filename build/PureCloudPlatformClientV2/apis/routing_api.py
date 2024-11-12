@@ -1882,7 +1882,7 @@ class RoutingApi(object):
 
     def delete_user_routinglanguage(self, user_id: str, language_id: str, **kwargs) -> None:
         """
-        Remove routing language from user
+        Remove a routing language from a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1966,7 +1966,7 @@ class RoutingApi(object):
 
     def delete_user_routingskill(self, user_id: str, skill_id: str, **kwargs) -> None:
         """
-        Remove routing skill from user
+        Remove a routing skill from a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -7403,7 +7403,7 @@ class RoutingApi(object):
 
     def get_user_routinglanguages(self, user_id: str, **kwargs) -> 'UserLanguageEntityListing':
         """
-        List routing language for user
+        List routing languages assigned to a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -7490,7 +7490,7 @@ class RoutingApi(object):
 
     def get_user_routingskills(self, user_id: str, **kwargs) -> 'UserSkillEntityListing':
         """
-        List routing skills for user
+        List routing skills assigned to a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -8764,7 +8764,7 @@ class RoutingApi(object):
 
     def patch_user_routinglanguage(self, user_id: str, language_id: str, body: 'UserRoutingLanguage', **kwargs) -> 'UserRoutingLanguage':
         """
-        Update routing language proficiency or state.
+        Update an assigned routing language's proficiency
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -8854,7 +8854,7 @@ class RoutingApi(object):
 
     def patch_user_routinglanguages_bulk(self, user_id: str, body: List['UserRoutingLanguagePost'], **kwargs) -> 'UserLanguageEntityListing':
         """
-        Add bulk routing language to user. Max limit 50 languages
+        Assign multiple routing languages to a user. Max 50 routing languages in request body
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -8938,7 +8938,7 @@ class RoutingApi(object):
 
     def patch_user_routingskills_bulk(self, user_id: str, body: List['UserRoutingSkillPost'], **kwargs) -> 'UserSkillEntityListing':
         """
-        Bulk add routing skills to user
+        Assign multiple routing skills to a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -11008,7 +11008,7 @@ class RoutingApi(object):
 
     def post_user_routinglanguages(self, user_id: str, body: 'UserRoutingLanguagePost', **kwargs) -> 'UserRoutingLanguage':
         """
-        Add routing language to user
+        Assign a routing language to a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -11092,7 +11092,7 @@ class RoutingApi(object):
 
     def post_user_routingskills(self, user_id: str, body: 'UserRoutingSkillPost', **kwargs) -> 'UserRoutingSkill':
         """
-        Add routing skill to user
+        Assign a routing skill to a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -12244,7 +12244,7 @@ class RoutingApi(object):
 
     def put_user_routingskill(self, user_id: str, skill_id: str, body: 'UserRoutingSkill', **kwargs) -> 'UserRoutingSkill':
         """
-        Update routing skill proficiency or state.
+        Update an assigned routing skill's proficiency
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -12334,7 +12334,7 @@ class RoutingApi(object):
 
     def put_user_routingskills_bulk(self, user_id: str, body: List['UserRoutingSkillPost'], **kwargs) -> 'UserSkillEntityListing':
         """
-        Replace all routing skills assigned to a user
+        Assign multiple routing skills to a user, replacing any current assignments
         
 
         This method makes a synchronous HTTP request by default. To make an

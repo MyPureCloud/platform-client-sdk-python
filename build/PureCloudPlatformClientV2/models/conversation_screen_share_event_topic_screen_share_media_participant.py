@@ -81,6 +81,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'alerting_timeout_ms': 'int',
             'provider': 'str',
             'external_contact': 'ConversationScreenShareEventTopicUriReference',
+            'external_contact_initial_division_id': 'str',
             'external_organization': 'ConversationScreenShareEventTopicUriReference',
             'wrapup': 'ConversationScreenShareEventTopicWrapup',
             'conversation_routing_data': 'ConversationScreenShareEventTopicConversationRoutingData',
@@ -126,6 +127,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'provider': 'provider',
             'external_contact': 'externalContact',
+            'external_contact_initial_division_id': 'externalContactInitialDivisionId',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'conversation_routing_data': 'conversationRoutingData',
@@ -170,6 +172,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         self._alerting_timeout_ms = None
         self._provider = None
         self._external_contact = None
+        self._external_contact_initial_division_id = None
         self._external_organization = None
         self._wrapup = None
         self._conversation_routing_data = None
@@ -830,6 +833,30 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         
 
         self._external_contact = external_contact
+
+    @property
+    def external_contact_initial_division_id(self) -> str:
+        """
+        Gets the external_contact_initial_division_id of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :return: The external_contact_initial_division_id of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :rtype: str
+        """
+        return self._external_contact_initial_division_id
+
+    @external_contact_initial_division_id.setter
+    def external_contact_initial_division_id(self, external_contact_initial_division_id: str) -> None:
+        """
+        Sets the external_contact_initial_division_id of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :param external_contact_initial_division_id: The external_contact_initial_division_id of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :type: str
+        """
+        
+
+        self._external_contact_initial_division_id = external_contact_initial_division_id
 
     @property
     def external_organization(self) -> 'ConversationScreenShareEventTopicUriReference':

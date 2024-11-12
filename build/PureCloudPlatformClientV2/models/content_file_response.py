@@ -51,20 +51,23 @@ class ContentFileResponse(object):
             'name': 'str',
             'type': 'str',
             'checksum': 'str',
-            'size': 'int'
+            'size': 'int',
+            'content_url': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'checksum': 'checksum',
-            'size': 'size'
+            'size': 'size',
+            'content_url': 'contentUrl'
         }
 
         self._name = None
         self._type = None
         self._checksum = None
         self._size = None
+        self._content_url = None
 
     @property
     def name(self) -> str:
@@ -166,6 +169,30 @@ class ContentFileResponse(object):
         
 
         self._size = size
+
+    @property
+    def content_url(self) -> str:
+        """
+        Gets the content_url of this ContentFileResponse.
+        Public download url for content. Needs to be expanded
+
+        :return: The content_url of this ContentFileResponse.
+        :rtype: str
+        """
+        return self._content_url
+
+    @content_url.setter
+    def content_url(self, content_url: str) -> None:
+        """
+        Sets the content_url of this ContentFileResponse.
+        Public download url for content. Needs to be expanded
+
+        :param content_url: The content_url of this ContentFileResponse.
+        :type: str
+        """
+        
+
+        self._content_url = content_url
 
     def to_dict(self):
         """

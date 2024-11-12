@@ -33,8 +33,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import QueueConversationVideoEventTopicConversationDivisionMembership
     from . import QueueConversationVideoEventTopicParticipant
-    from . import QueueConversationVideoEventTopicRecentTransfer
+    from . import QueueConversationVideoEventTopicTransferResponse
 
 class QueueConversationVideoEventTopicConversation(object):
     """
@@ -54,12 +55,13 @@ class QueueConversationVideoEventTopicConversation(object):
             'id': 'str',
             'max_participants': 'int',
             'participants': 'list[QueueConversationVideoEventTopicParticipant]',
-            'recent_transfers': 'list[QueueConversationVideoEventTopicRecentTransfer]',
+            'recent_transfers': 'list[QueueConversationVideoEventTopicTransferResponse]',
             'recording_state': 'str',
             'address': 'str',
             'external_tag': 'str',
             'utilization_label_id': 'str',
-            'secure_pause': 'bool'
+            'secure_pause': 'bool',
+            'divisions': 'list[QueueConversationVideoEventTopicConversationDivisionMembership]'
         }
 
         self.attribute_map = {
@@ -71,7 +73,8 @@ class QueueConversationVideoEventTopicConversation(object):
             'address': 'address',
             'external_tag': 'externalTag',
             'utilization_label_id': 'utilizationLabelId',
-            'secure_pause': 'securePause'
+            'secure_pause': 'securePause',
+            'divisions': 'divisions'
         }
 
         self._id = None
@@ -83,6 +86,7 @@ class QueueConversationVideoEventTopicConversation(object):
         self._external_tag = None
         self._utilization_label_id = None
         self._secure_pause = None
+        self._divisions = None
 
     @property
     def id(self) -> str:
@@ -157,24 +161,24 @@ class QueueConversationVideoEventTopicConversation(object):
         self._participants = participants
 
     @property
-    def recent_transfers(self) -> List['QueueConversationVideoEventTopicRecentTransfer']:
+    def recent_transfers(self) -> List['QueueConversationVideoEventTopicTransferResponse']:
         """
         Gets the recent_transfers of this QueueConversationVideoEventTopicConversation.
 
 
         :return: The recent_transfers of this QueueConversationVideoEventTopicConversation.
-        :rtype: list[QueueConversationVideoEventTopicRecentTransfer]
+        :rtype: list[QueueConversationVideoEventTopicTransferResponse]
         """
         return self._recent_transfers
 
     @recent_transfers.setter
-    def recent_transfers(self, recent_transfers: List['QueueConversationVideoEventTopicRecentTransfer']) -> None:
+    def recent_transfers(self, recent_transfers: List['QueueConversationVideoEventTopicTransferResponse']) -> None:
         """
         Sets the recent_transfers of this QueueConversationVideoEventTopicConversation.
 
 
         :param recent_transfers: The recent_transfers of this QueueConversationVideoEventTopicConversation.
-        :type: list[QueueConversationVideoEventTopicRecentTransfer]
+        :type: list[QueueConversationVideoEventTopicTransferResponse]
         """
         
 
@@ -299,6 +303,30 @@ class QueueConversationVideoEventTopicConversation(object):
         
 
         self._secure_pause = secure_pause
+
+    @property
+    def divisions(self) -> List['QueueConversationVideoEventTopicConversationDivisionMembership']:
+        """
+        Gets the divisions of this QueueConversationVideoEventTopicConversation.
+
+
+        :return: The divisions of this QueueConversationVideoEventTopicConversation.
+        :rtype: list[QueueConversationVideoEventTopicConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['QueueConversationVideoEventTopicConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this QueueConversationVideoEventTopicConversation.
+
+
+        :param divisions: The divisions of this QueueConversationVideoEventTopicConversation.
+        :type: list[QueueConversationVideoEventTopicConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     def to_dict(self):
         """

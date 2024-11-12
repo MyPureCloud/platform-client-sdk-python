@@ -85,7 +85,8 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
             'custom_fields': 'dict(str, WorkitemsQueueEventsNotificationCustomAttribute)',
             'wrapup': 'WorkitemsQueueEventsNotificationWrapup',
             'sessions': 'list[WorkitemsQueueEventsNotificationSession]',
-            'skill_ids': 'list[str]'
+            'skill_ids': 'list[str]',
+            'script_id': 'str'
         }
 
         self.attribute_map = {
@@ -121,7 +122,8 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
             'custom_fields': 'customFields',
             'wrapup': 'wrapup',
             'sessions': 'sessions',
-            'skill_ids': 'skillIds'
+            'skill_ids': 'skillIds',
+            'script_id': 'scriptId'
         }
 
         self._id = None
@@ -157,6 +159,7 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
         self._wrapup = None
         self._sessions = None
         self._skill_ids = None
+        self._script_id = None
 
     @property
     def id(self) -> str:
@@ -964,6 +967,30 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
         
 
         self._skill_ids = skill_ids
+
+    @property
+    def script_id(self) -> str:
+        """
+        Gets the script_id of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :return: The script_id of this WorkitemsQueueEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id: str) -> None:
+        """
+        Sets the script_id of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :param script_id: The script_id of this WorkitemsQueueEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._script_id = script_id
 
     def to_dict(self):
         """

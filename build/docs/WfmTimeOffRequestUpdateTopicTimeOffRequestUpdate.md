@@ -17,6 +17,8 @@
 | **partial_day_start_date_times** | list[str] |  | [optional] |
 | **full_day_management_unit_dates** | list[str] |  | [optional] |
 | **daily_duration_minutes** | int |  | [optional] |
+| **duration_minutes** | list[int] |  | [optional] |
+| **payable_minutes** | list[int] |  | [optional] |
 | **notes** | str |  | [optional] |
 | **reviewed_date** | str |  | [optional] |
 | **reviewed_by** | str |  | [optional] |
@@ -27,4 +29,4 @@
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

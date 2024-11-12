@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import MessagingTemplateRequest
+    from . import SendMessagingTemplateRequest
 
 class AdditionalMessage(object):
     """
@@ -53,7 +53,7 @@ class AdditionalMessage(object):
             'text_body': 'str',
             'media_ids': 'list[str]',
             'sticker_ids': 'list[str]',
-            'messaging_template': 'MessagingTemplateRequest'
+            'messaging_template': 'SendMessagingTemplateRequest'
         }
 
         self.attribute_map = {
@@ -141,24 +141,24 @@ class AdditionalMessage(object):
         self._sticker_ids = sticker_ids
 
     @property
-    def messaging_template(self) -> 'MessagingTemplateRequest':
+    def messaging_template(self) -> 'SendMessagingTemplateRequest':
         """
         Gets the messaging_template of this AdditionalMessage.
         The messaging template use to send a predefined canned response with the message
 
         :return: The messaging_template of this AdditionalMessage.
-        :rtype: MessagingTemplateRequest
+        :rtype: SendMessagingTemplateRequest
         """
         return self._messaging_template
 
     @messaging_template.setter
-    def messaging_template(self, messaging_template: 'MessagingTemplateRequest') -> None:
+    def messaging_template(self, messaging_template: 'SendMessagingTemplateRequest') -> None:
         """
         Sets the messaging_template of this AdditionalMessage.
         The messaging template use to send a predefined canned response with the message
 
         :param messaging_template: The messaging_template of this AdditionalMessage.
-        :type: MessagingTemplateRequest
+        :type: SendMessagingTemplateRequest
         """
         
 

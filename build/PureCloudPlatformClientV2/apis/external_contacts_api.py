@@ -346,7 +346,6 @@ class ExternalContactsApi(object):
         """
         Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
         
-	    delete_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1256,7 +1255,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact ID (required)
-        :param list[str] expand: which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+        :param list[str] expand: which fields, if any, to expand
         :return: ExternalContact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1724,7 +1723,6 @@ class ExternalContactsApi(object):
         """
         Fetch an External Source
         
-	    get_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1803,7 +1801,6 @@ class ExternalContactsApi(object):
         """
         Fetch a list of External Sources
         
-	    get_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2215,7 +2212,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
-        :param list[str] expand: which fields, if any, to expand (externalDataSources)
+        :param list[str] expand: which fields, if any, to expand
         :param bool include_trustors: (true or false) whether or not to include trustor information embedded in the externalOrganization
         :return: ExternalOrganization
                  If the method is called asynchronously,
@@ -5254,7 +5251,6 @@ class ExternalContactsApi(object):
         """
         Create an External Source
         
-	    post_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6386,7 +6382,6 @@ class ExternalContactsApi(object):
         """
         Update an External Source
         
-	    put_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

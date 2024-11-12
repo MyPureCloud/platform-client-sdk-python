@@ -60,6 +60,7 @@ class WorkitemStatus(object):
             'status_transition_delay_seconds': 'int',
             'status_transition_time': 'str',
             'worktype': 'WorktypeReference',
+            'auto_terminate_workitem': 'bool',
             'self_uri': 'str'
         }
 
@@ -73,6 +74,7 @@ class WorkitemStatus(object):
             'status_transition_delay_seconds': 'statusTransitionDelaySeconds',
             'status_transition_time': 'statusTransitionTime',
             'worktype': 'worktype',
+            'auto_terminate_workitem': 'autoTerminateWorkitem',
             'self_uri': 'selfUri'
         }
 
@@ -85,6 +87,7 @@ class WorkitemStatus(object):
         self._status_transition_delay_seconds = None
         self._status_transition_time = None
         self._worktype = None
+        self._auto_terminate_workitem = None
         self._self_uri = None
 
     @property
@@ -307,6 +310,30 @@ class WorkitemStatus(object):
         
 
         self._worktype = worktype
+
+    @property
+    def auto_terminate_workitem(self) -> bool:
+        """
+        Gets the auto_terminate_workitem of this WorkitemStatus.
+        Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
+
+        :return: The auto_terminate_workitem of this WorkitemStatus.
+        :rtype: bool
+        """
+        return self._auto_terminate_workitem
+
+    @auto_terminate_workitem.setter
+    def auto_terminate_workitem(self, auto_terminate_workitem: bool) -> None:
+        """
+        Sets the auto_terminate_workitem of this WorkitemStatus.
+        Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
+
+        :param auto_terminate_workitem: The auto_terminate_workitem of this WorkitemStatus.
+        :type: bool
+        """
+        
+
+        self._auto_terminate_workitem = auto_terminate_workitem
 
     @property
     def self_uri(self) -> str:

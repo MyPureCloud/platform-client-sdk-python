@@ -166,4 +166,4 @@ except ApiException as e:
 [**StationEntityListing**](StationEntityListing)
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

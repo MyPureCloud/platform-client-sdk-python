@@ -95,6 +95,8 @@ from ..models import PhysicalInterfaceEntityListing
 from ..models import Site
 from ..models import SiteConnections
 from ..models import SiteEntityListing
+from ..models import SiteSearchRequest
+from ..models import SitesSearchResponse
 from ..models import TimeZoneEntityListing
 from ..models import Trunk
 from ..models import TrunkBase
@@ -6098,6 +6100,87 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_telephony_providers_edges_sites_search(self, q64: str, **kwargs) -> 'SitesSearchResponse':
+        """
+        Search sites using the q64 value returned from a previous search
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edges_sites_search(q64, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str q64: q64 (required)
+        :param list[str] expand: expand
+        :return: SitesSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['q64', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edges_sites_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'q64' is set
+        if ('q64' not in params) or (params['q64'] is None):
+            raise ValueError("Missing the required parameter `q64` when calling `get_telephony_providers_edges_sites_search`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/sites/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'q64' in params:
+            query_params['q64'] = params['q64']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SitesSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_telephony_providers_edges_timezones(self, **kwargs) -> 'TimeZoneEntityListing':
         """
         Get a list of Edge-compatible time zones
@@ -8857,6 +8940,84 @@ class TelephonyProvidersEdgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Site',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edges_sites_search(self, body: 'SiteSearchRequest', **kwargs) -> 'SitesSearchResponse':
+        """
+        Search sites
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edges_sites_search(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SiteSearchRequest body: Search request options (required)
+        :return: SitesSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edges_sites_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edges_sites_search`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/sites/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SitesSearchResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_topics_general**](#get_speechandtextanalytics_topics_general) | Get the Speech &amp; Text Analytics general topics for a given dialect|
 |[**get_speechandtextanalytics_topics_general_status**](#get_speechandtextanalytics_topics_general_status) | Get the list of general topics from the org and the system with their current status|
 |[**get_speechandtextanalytics_topics_publishjob**](#get_speechandtextanalytics_topics_publishjob) | Get a Speech &amp; Text Analytics publish topics job by id|
-|[**get_speechandtextanalytics_translations_language_conversation**](#get_speechandtextanalytics_translations_language_conversation) | Translate all communication(s) for an interaction.|
+|[**get_speechandtextanalytics_translations_language_conversation**](#get_speechandtextanalytics_translations_language_conversation) | Translate a single interaction recording (or an email conversation)|
 |[**get_speechandtextanalytics_translations_languages**](#get_speechandtextanalytics_translations_languages) | Get supported translation languages|
 |[**patch_speechandtextanalytics_settings**](#patch_speechandtextanalytics_settings) | Patch Speech And Text Analytics Settings|
 |[**post_speechandtextanalytics_categories**](#post_speechandtextanalytics_categories) | Create new Speech &amp; Text Analytics category|
@@ -1625,7 +1625,7 @@ except ApiException as e:
 > [**CommunicationTranslationList**](CommunicationTranslationList) get_speechandtextanalytics_translations_language_conversation(language_id, conversation_id, communication_id=communication_id, recording_id=recording_id)
 
 
-Translate all communication(s) for an interaction.
+Translate a single interaction recording (or an email conversation)
 
 get_speechandtextanalytics_translations_language_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -1650,11 +1650,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 language_id = 'language_id_example' # str | Target translation language
 conversation_id = 'conversation_id_example' # str | Conversation id
-communication_id = 'communication_id_example' # str | Communication id associated with the conversation (optional)
-recording_id = 'recording_id_example' # str | Recording id associated with the communication (optional)
+communication_id = 'communication_id_example' # str | Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. (optional)
+recording_id = 'recording_id_example' # str | Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions. (optional)
 
 try:
-    # Translate all communication(s) for an interaction.
+    # Translate a single interaction recording (or an email conversation)
     api_response = api_instance.get_speechandtextanalytics_translations_language_conversation(language_id, conversation_id, communication_id=communication_id, recording_id=recording_id)
     pprint(api_response)
 except ApiException as e:
@@ -1668,8 +1668,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **language_id** | **str**| Target translation language |  |
 | **conversation_id** | **str**| Conversation id |  |
-| **communication_id** | **str**| Communication id associated with the conversation | [optional]  |
-| **recording_id** | **str**| Recording id associated with the communication | [optional]  |
+| **communication_id** | **str**| Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. | [optional]  |
+| **recording_id** | **str**| Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions. | [optional]  |
 
 ### Return type
 
@@ -2554,4 +2554,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

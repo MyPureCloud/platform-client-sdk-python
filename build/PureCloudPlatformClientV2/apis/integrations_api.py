@@ -957,12 +957,13 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
         :param str file_name: Name of schema file to be retrieved for this draft. (required)
+        :param bool flatten: Indicates the response should be reformatted, based on Architect's flattening format.
         :return: JsonSchemaDocument
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['action_id', 'file_name']
+        all_params = ['action_id', 'file_name', 'flatten']
         all_params.append('callback')
 
         params = locals()
@@ -991,6 +992,8 @@ class IntegrationsApi(object):
             path_params['fileName'] = params['file_name']
 
         query_params = {}
+        if 'flatten' in params:
+            query_params['flatten'] = params['flatten']
 
         header_params = {}
 
@@ -1282,12 +1285,13 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
         :param str file_name: Name of schema file to be retrieved for this action. (required)
+        :param bool flatten: Indicates the response should be reformatted, based on Architect's flattening format.
         :return: JsonSchemaDocument
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['action_id', 'file_name']
+        all_params = ['action_id', 'file_name', 'flatten']
         all_params.append('callback')
 
         params = locals()
@@ -1316,6 +1320,8 @@ class IntegrationsApi(object):
             path_params['fileName'] = params['file_name']
 
         query_params = {}
+        if 'flatten' in params:
+            query_params['flatten'] = params['flatten']
 
         header_params = {}
 
@@ -5890,12 +5896,13 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
         :param object body: Map of parameters used for variable substitution. (required)
+        :param bool flatten: Indicates the response should be reformatted, based on Architect's flattening format.
         :return: TestExecutionResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['action_id', 'body']
+        all_params = ['action_id', 'body', 'flatten']
         all_params.append('callback')
 
         params = locals()
@@ -5922,6 +5929,8 @@ class IntegrationsApi(object):
             path_params['actionId'] = params['action_id']
 
         query_params = {}
+        if 'flatten' in params:
+            query_params['flatten'] = params['flatten']
 
         header_params = {}
 
@@ -5974,12 +5983,13 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
         :param object body: Map of parameters used for variable substitution. (required)
+        :param bool flatten: Indicates the response should be reformatted, based on Architect's flattening format.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['action_id', 'body']
+        all_params = ['action_id', 'body', 'flatten']
         all_params.append('callback')
 
         params = locals()
@@ -6006,6 +6016,8 @@ class IntegrationsApi(object):
             path_params['actionId'] = params['action_id']
 
         query_params = {}
+        if 'flatten' in params:
+            query_params['flatten'] = params['flatten']
 
         header_params = {}
 
@@ -6058,12 +6070,13 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
         :param object body: Map of parameters used for variable substitution. (required)
+        :param bool flatten: Indicates the response should be reformatted, based on Architect's flattening format.
         :return: TestExecutionResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['action_id', 'body']
+        all_params = ['action_id', 'body', 'flatten']
         all_params.append('callback')
 
         params = locals()
@@ -6090,6 +6103,8 @@ class IntegrationsApi(object):
             path_params['actionId'] = params['action_id']
 
         query_params = {}
+        if 'flatten' in params:
+            query_params['flatten'] = params['flatten']
 
         header_params = {}
 

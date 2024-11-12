@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationCallEventTopicCallMediaParticipant
+    from . import QueueConversationCallEventTopicConversationDivisionMembership
 
 class QueueConversationCallEventTopicCallConversation(object):
     """
@@ -56,6 +57,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'other_media_uris': 'list[str]',
             'address': 'str',
             'utilization_label_id': 'str',
+            'divisions': 'list[QueueConversationCallEventTopicConversationDivisionMembership]',
             'recording_state': 'str',
             'secure_pause': 'bool',
             'max_participants': 'int'
@@ -68,6 +70,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
             'utilization_label_id': 'utilizationLabelId',
+            'divisions': 'divisions',
             'recording_state': 'recordingState',
             'secure_pause': 'securePause',
             'max_participants': 'maxParticipants'
@@ -79,6 +82,7 @@ class QueueConversationCallEventTopicCallConversation(object):
         self._other_media_uris = None
         self._address = None
         self._utilization_label_id = None
+        self._divisions = None
         self._recording_state = None
         self._secure_pause = None
         self._max_participants = None
@@ -226,6 +230,30 @@ class QueueConversationCallEventTopicCallConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def divisions(self) -> List['QueueConversationCallEventTopicConversationDivisionMembership']:
+        """
+        Gets the divisions of this QueueConversationCallEventTopicCallConversation.
+
+
+        :return: The divisions of this QueueConversationCallEventTopicCallConversation.
+        :rtype: list[QueueConversationCallEventTopicConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['QueueConversationCallEventTopicConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this QueueConversationCallEventTopicCallConversation.
+
+
+        :param divisions: The divisions of this QueueConversationCallEventTopicCallConversation.
+        :type: list[QueueConversationCallEventTopicConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     @property
     def recording_state(self) -> str:

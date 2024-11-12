@@ -73,6 +73,8 @@ from ..models import JourneyViewJob
 from ..models import JourneyViewJobListing
 from ..models import JourneyViewListing
 from ..models import JourneyViewResult
+from ..models import JourneyViewSchedule
+from ..models import JourneyViewScheduleListing
 from ..models import Label
 from ..models import Outcome
 from ..models import OutcomeAttributionAsyncResponse
@@ -579,6 +581,84 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_journey_view_schedules(self, view_id: str, **kwargs) -> 'JourneyViewSchedule':
+        """
+        Delete the Schedule of a JourneyView
+        used for long descriptions
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_journey_view_schedules(view_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: Journey View Id (required)
+        :return: JourneyViewSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_journey_view_schedules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `delete_journey_view_schedules`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/schedules'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewSchedule',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2555,6 +2635,84 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_journey_view_schedules(self, view_id: str, **kwargs) -> 'JourneyViewSchedule':
+        """
+        Get the Schedule for a JourneyView
+        used for long descriptions
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_view_schedules(view_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: Journey View Id (required)
+        :return: JourneyViewSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_view_schedules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `get_journey_view_schedules`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/schedules'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_journey_view_version(self, view_id: str, version_id: str, **kwargs) -> 'JourneyView':
         """
         Get a Journey View by ID and version
@@ -3502,6 +3660,84 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyViewJobListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_views_schedules(self, **kwargs) -> 'JourneyViewScheduleListing':
+        """
+        Get the journey schedules for an organization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_views_schedules(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: The number of the page to return
+        :param int page_size: Max number of entities to return
+        :return: JourneyViewScheduleListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_views_schedules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/views/schedules'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewScheduleListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5014,6 +5250,90 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_journey_view_schedules(self, view_id: str, body: 'JourneyViewSchedule', **kwargs) -> 'JourneyViewSchedule':
+        """
+        Add a new Schedule to a JourneyView
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_view_schedules(view_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: Journey View Id (required)
+        :param JourneyViewSchedule body: journeyViewSchedule (required)
+        :return: JourneyViewSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_view_schedules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `post_journey_view_schedules`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_journey_view_schedules`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/schedules'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_journey_view_version_jobs(self, view_id: str, journey_version_id: str, **kwargs) -> 'JourneyViewJob':
         """
         Submit a job request for a journey view version.
@@ -5331,6 +5651,90 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_journey_view_schedules(self, view_id: str, body: 'JourneyViewSchedule', **kwargs) -> 'JourneyViewSchedule':
+        """
+        Update the Schedule for a JourneyView
+        used for long descriptions
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_journey_view_schedules(view_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: Journey View Id (required)
+        :param JourneyViewSchedule body: journeyViewSchedule (required)
+        :return: JourneyViewSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_journey_view_schedules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `put_journey_view_schedules`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_journey_view_schedules`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/schedules'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewSchedule',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

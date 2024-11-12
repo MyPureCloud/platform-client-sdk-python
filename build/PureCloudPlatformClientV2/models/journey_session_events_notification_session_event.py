@@ -107,7 +107,8 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'app': 'JourneySessionEventsNotificationApp',
             'sdk_library': 'JourneySessionEventsNotificationSdkLibrary',
             'network_connectivity': 'JourneySessionEventsNotificationNetworkConnectivity',
-            'division_ids': 'list[str]'
+            'division_ids': 'list[str]',
+            'last_screen': 'str'
         }
 
         self.attribute_map = {
@@ -151,7 +152,8 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'app': 'app',
             'sdk_library': 'sdkLibrary',
             'network_connectivity': 'networkConnectivity',
-            'division_ids': 'divisionIds'
+            'division_ids': 'divisionIds',
+            'last_screen': 'lastScreen'
         }
 
         self._id = None
@@ -195,6 +197,7 @@ class JourneySessionEventsNotificationSessionEvent(object):
         self._sdk_library = None
         self._network_connectivity = None
         self._division_ids = None
+        self._last_screen = None
 
     @property
     def id(self) -> str:
@@ -1194,6 +1197,30 @@ class JourneySessionEventsNotificationSessionEvent(object):
         
 
         self._division_ids = division_ids
+
+    @property
+    def last_screen(self) -> str:
+        """
+        Gets the last_screen of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The last_screen of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: str
+        """
+        return self._last_screen
+
+    @last_screen.setter
+    def last_screen(self, last_screen: str) -> None:
+        """
+        Sets the last_screen of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param last_screen: The last_screen of this JourneySessionEventsNotificationSessionEvent.
+        :type: str
+        """
+        
+
+        self._last_screen = last_screen
 
     def to_dict(self):
         """

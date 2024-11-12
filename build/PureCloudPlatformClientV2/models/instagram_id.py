@@ -51,16 +51,19 @@ class InstagramId(object):
         """
         self.swagger_types = {
             'ids': 'list[InstagramScopedId]',
-            'display_name': 'str'
+            'display_name': 'str',
+            'handle': 'str'
         }
 
         self.attribute_map = {
             'ids': 'ids',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'handle': 'handle'
         }
 
         self._ids = None
         self._display_name = None
+        self._handle = None
 
     @property
     def ids(self) -> List['InstagramScopedId']:
@@ -109,6 +112,30 @@ class InstagramId(object):
         
 
         self._display_name = display_name
+
+    @property
+    def handle(self) -> str:
+        """
+        Gets the handle of this InstagramId.
+        The handle of the person who owns this Instagram account
+
+        :return: The handle of this InstagramId.
+        :rtype: str
+        """
+        return self._handle
+
+    @handle.setter
+    def handle(self, handle: str) -> None:
+        """
+        Sets the handle of this InstagramId.
+        The handle of the person who owns this Instagram account
+
+        :param handle: The handle of this InstagramId.
+        :type: str
+        """
+        
+
+        self._handle = handle
 
     def to_dict(self):
         """

@@ -106,6 +106,7 @@ class Session(object):
             'last_user_disconnect_type': 'str',
             'last_acd_outcome': 'str',
             'authenticated': 'bool',
+            'last_screen': 'str',
             'self_uri': 'str',
             'created_date': 'datetime',
             'ended_date': 'datetime',
@@ -154,6 +155,7 @@ class Session(object):
             'last_user_disconnect_type': 'lastUserDisconnectType',
             'last_acd_outcome': 'lastAcdOutcome',
             'authenticated': 'authenticated',
+            'last_screen': 'lastScreen',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
             'ended_date': 'endedDate',
@@ -201,6 +203,7 @@ class Session(object):
         self._last_user_disconnect_type = None
         self._last_acd_outcome = None
         self._authenticated = None
+        self._last_screen = None
         self._self_uri = None
         self._created_date = None
         self._ended_date = None
@@ -1135,6 +1138,30 @@ class Session(object):
         
 
         self._authenticated = authenticated
+
+    @property
+    def last_screen(self) -> str:
+        """
+        Gets the last_screen of this Session.
+        The app screen name where the customer's last app interaction occurred.
+
+        :return: The last_screen of this Session.
+        :rtype: str
+        """
+        return self._last_screen
+
+    @last_screen.setter
+    def last_screen(self, last_screen: str) -> None:
+        """
+        Sets the last_screen of this Session.
+        The app screen name where the customer's last app interaction occurred.
+
+        :param last_screen: The last_screen of this Session.
+        :type: str
+        """
+        
+
+        self._last_screen = last_screen
 
     @property
     def self_uri(self) -> str:

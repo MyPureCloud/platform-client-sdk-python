@@ -335,7 +335,7 @@ class ReportingTurn(object):
         """
         if isinstance(ask_action_result, int):
             ask_action_result = str(ask_action_result)
-        allowed_values = ["SuccessCollection", "SuccessConfirmationYes", "SuccessConfirmationNo", "SkippedCollection", "NoMatchCollection", "NoMatchConfirmation", "AgentRequestedByUser", "ConfirmationRequired", "Error", "ExpressionError", "NoInputCollection", "NoInputConfirmation", "DisambiguationRequired", "SuccessDisambiguation", "SuccessDisambiguationNone", "NoMatchDisambiguation", "NoInputDisambiguation"]
+        allowed_values = ["SuccessCollection", "SuccessConfirmationYes", "SuccessConfirmationNo", "SkippedCollection", "PartialCollection", "NoMatchCollection", "NoMatchConfirmation", "AgentRequestedByUser", "ConfirmationRequired", "Error", "ExpressionError", "NoInputCollection", "NoInputConfirmation", "DisambiguationRequired", "SuccessDisambiguation", "SuccessDisambiguationNone", "NoMatchDisambiguation", "NoInputDisambiguation"]
         if ask_action_result.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for ask_action_result -> " + ask_action_result)
             self._ask_action_result = "outdated_sdk_version"

@@ -82,6 +82,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'alerting_timeout_ms': 'int',
             'provider': 'str',
             'external_contact': 'QueueConversationCallEventTopicUriReference',
+            'external_contact_initial_division_id': 'str',
             'external_organization': 'QueueConversationCallEventTopicUriReference',
             'wrapup': 'QueueConversationCallEventTopicWrapup',
             'conversation_routing_data': 'QueueConversationCallEventTopicConversationRoutingData',
@@ -139,6 +140,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'provider': 'provider',
             'external_contact': 'externalContact',
+            'external_contact_initial_division_id': 'externalContactInitialDivisionId',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'conversation_routing_data': 'conversationRoutingData',
@@ -195,6 +197,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         self._alerting_timeout_ms = None
         self._provider = None
         self._external_contact = None
+        self._external_contact_initial_division_id = None
         self._external_organization = None
         self._wrapup = None
         self._conversation_routing_data = None
@@ -867,6 +870,30 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         
 
         self._external_contact = external_contact
+
+    @property
+    def external_contact_initial_division_id(self) -> str:
+        """
+        Gets the external_contact_initial_division_id of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The external_contact_initial_division_id of this QueueConversationCallEventTopicCallMediaParticipant.
+        :rtype: str
+        """
+        return self._external_contact_initial_division_id
+
+    @external_contact_initial_division_id.setter
+    def external_contact_initial_division_id(self, external_contact_initial_division_id: str) -> None:
+        """
+        Sets the external_contact_initial_division_id of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :param external_contact_initial_division_id: The external_contact_initial_division_id of this QueueConversationCallEventTopicCallMediaParticipant.
+        :type: str
+        """
+        
+
+        self._external_contact_initial_division_id = external_contact_initial_division_id
 
     @property
     def external_organization(self) -> 'QueueConversationCallEventTopicUriReference':

@@ -607,7 +607,7 @@ except ApiException as e:
 
 ## get_integrations_action_draft_schema
 
-> [**JsonSchemaDocument**](JsonSchemaDocument) get_integrations_action_draft_schema(action_id, file_name)
+> [**JsonSchemaDocument**](JsonSchemaDocument) get_integrations_action_draft_schema(action_id, file_name, flatten=flatten)
 
 
 Retrieve schema for a Draft based on filename.
@@ -634,10 +634,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 file_name = 'file_name_example' # str | Name of schema file to be retrieved for this draft.
+flatten = False # bool | Indicates the response should be reformatted, based on Architect's flattening format. (optional) (default to False)
 
 try:
     # Retrieve schema for a Draft based on filename.
-    api_response = api_instance.get_integrations_action_draft_schema(action_id, file_name)
+    api_response = api_instance.get_integrations_action_draft_schema(action_id, file_name, flatten=flatten)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_action_draft_schema: %s\n" % e)
@@ -650,6 +651,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **file_name** | **str**| Name of schema file to be retrieved for this draft. |  |
+| **flatten** | **bool**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to False] |
 
 ### Return type
 
@@ -807,7 +809,7 @@ except ApiException as e:
 
 ## get_integrations_action_schema
 
-> [**JsonSchemaDocument**](JsonSchemaDocument) get_integrations_action_schema(action_id, file_name)
+> [**JsonSchemaDocument**](JsonSchemaDocument) get_integrations_action_schema(action_id, file_name, flatten=flatten)
 
 
 Retrieve schema for an action based on filename.
@@ -834,10 +836,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 file_name = 'file_name_example' # str | Name of schema file to be retrieved for this action.
+flatten = False # bool | Indicates the response should be reformatted, based on Architect's flattening format. (optional) (default to False)
 
 try:
     # Retrieve schema for an action based on filename.
-    api_response = api_instance.get_integrations_action_schema(action_id, file_name)
+    api_response = api_instance.get_integrations_action_schema(action_id, file_name, flatten=flatten)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_action_schema: %s\n" % e)
@@ -850,6 +853,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **file_name** | **str**| Name of schema file to be retrieved for this action. |  |
+| **flatten** | **bool**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to False] |
 
 ### Return type
 
@@ -3677,7 +3681,7 @@ except ApiException as e:
 
 ## post_integrations_action_draft_test
 
-> [**TestExecutionResult**](TestExecutionResult) post_integrations_action_draft_test(action_id, body)
+> [**TestExecutionResult**](TestExecutionResult) post_integrations_action_draft_test(action_id, body, flatten=flatten)
 
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -3703,10 +3707,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 body = NULL # object | Map of parameters used for variable substitution.
+flatten = False # bool | Indicates the response should be reformatted, based on Architect's flattening format. (optional) (default to False)
 
 try:
     # Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
-    api_response = api_instance.post_integrations_action_draft_test(action_id, body)
+    api_response = api_instance.post_integrations_action_draft_test(action_id, body, flatten=flatten)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->post_integrations_action_draft_test: %s\n" % e)
@@ -3719,6 +3724,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **body** | [**object**](object)| Map of parameters used for variable substitution. |  |
+| **flatten** | **bool**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to False] |
 
 ### Return type
 
@@ -3727,7 +3733,7 @@ except ApiException as e:
 
 ## post_integrations_action_execute
 
-> object** post_integrations_action_execute(action_id, body)
+> object** post_integrations_action_execute(action_id, body, flatten=flatten)
 
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
@@ -3754,10 +3760,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 body = NULL # object | Map of parameters used for variable substitution.
+flatten = False # bool | Indicates the response should be reformatted, based on Architect's flattening format. (optional) (default to False)
 
 try:
     # Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
-    api_response = api_instance.post_integrations_action_execute(action_id, body)
+    api_response = api_instance.post_integrations_action_execute(action_id, body, flatten=flatten)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->post_integrations_action_execute: %s\n" % e)
@@ -3770,6 +3777,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **body** | [**object**](object)| Map of parameters used for variable substitution. |  |
+| **flatten** | **bool**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to False] |
 
 ### Return type
 
@@ -3778,7 +3786,7 @@ except ApiException as e:
 
 ## post_integrations_action_test
 
-> [**TestExecutionResult**](TestExecutionResult) post_integrations_action_test(action_id, body)
+> [**TestExecutionResult**](TestExecutionResult) post_integrations_action_test(action_id, body, flatten=flatten)
 
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -3805,10 +3813,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 body = NULL # object | Map of parameters used for variable substitution.
+flatten = False # bool | Indicates the response should be reformatted, based on Architect's flattening format. (optional) (default to False)
 
 try:
     # Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
-    api_response = api_instance.post_integrations_action_test(action_id, body)
+    api_response = api_instance.post_integrations_action_test(action_id, body, flatten=flatten)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->post_integrations_action_test: %s\n" % e)
@@ -3821,6 +3830,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **body** | [**object**](object)| Map of parameters used for variable substitution. |  |
+| **flatten** | **bool**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to False] |
 
 ### Return type
 
@@ -4478,4 +4488,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

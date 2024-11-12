@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationChatEventTopicChatMediaParticipant
+    from . import QueueConversationChatEventTopicConversationDivisionMembership
 
 class QueueConversationChatEventTopicChatConversation(object):
     """
@@ -55,7 +56,8 @@ class QueueConversationChatEventTopicChatConversation(object):
             'participants': 'list[QueueConversationChatEventTopicChatMediaParticipant]',
             'other_media_uris': 'list[str]',
             'address': 'str',
-            'utilization_label_id': 'str'
+            'utilization_label_id': 'str',
+            'divisions': 'list[QueueConversationChatEventTopicConversationDivisionMembership]'
         }
 
         self.attribute_map = {
@@ -64,7 +66,8 @@ class QueueConversationChatEventTopicChatConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
-            'utilization_label_id': 'utilizationLabelId'
+            'utilization_label_id': 'utilizationLabelId',
+            'divisions': 'divisions'
         }
 
         self._id = None
@@ -73,6 +76,7 @@ class QueueConversationChatEventTopicChatConversation(object):
         self._other_media_uris = None
         self._address = None
         self._utilization_label_id = None
+        self._divisions = None
 
     @property
     def id(self) -> str:
@@ -217,6 +221,30 @@ class QueueConversationChatEventTopicChatConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def divisions(self) -> List['QueueConversationChatEventTopicConversationDivisionMembership']:
+        """
+        Gets the divisions of this QueueConversationChatEventTopicChatConversation.
+
+
+        :return: The divisions of this QueueConversationChatEventTopicChatConversation.
+        :rtype: list[QueueConversationChatEventTopicConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['QueueConversationChatEventTopicConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this QueueConversationChatEventTopicChatConversation.
+
+
+        :param divisions: The divisions of this QueueConversationChatEventTopicChatConversation.
+        :type: list[QueueConversationChatEventTopicConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     def to_dict(self):
         """

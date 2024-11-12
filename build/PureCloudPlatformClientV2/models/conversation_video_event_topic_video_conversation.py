@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationVideoEventTopicConversationDivisionMembership
     from . import ConversationVideoEventTopicVideoMediaParticipant
 
 class ConversationVideoEventTopicVideoConversation(object):
@@ -55,7 +56,8 @@ class ConversationVideoEventTopicVideoConversation(object):
             'participants': 'list[ConversationVideoEventTopicVideoMediaParticipant]',
             'other_media_uris': 'list[str]',
             'address': 'str',
-            'utilization_label_id': 'str'
+            'utilization_label_id': 'str',
+            'divisions': 'list[ConversationVideoEventTopicConversationDivisionMembership]'
         }
 
         self.attribute_map = {
@@ -64,7 +66,8 @@ class ConversationVideoEventTopicVideoConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
-            'utilization_label_id': 'utilizationLabelId'
+            'utilization_label_id': 'utilizationLabelId',
+            'divisions': 'divisions'
         }
 
         self._id = None
@@ -73,6 +76,7 @@ class ConversationVideoEventTopicVideoConversation(object):
         self._other_media_uris = None
         self._address = None
         self._utilization_label_id = None
+        self._divisions = None
 
     @property
     def id(self) -> str:
@@ -217,6 +221,30 @@ class ConversationVideoEventTopicVideoConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def divisions(self) -> List['ConversationVideoEventTopicConversationDivisionMembership']:
+        """
+        Gets the divisions of this ConversationVideoEventTopicVideoConversation.
+
+
+        :return: The divisions of this ConversationVideoEventTopicVideoConversation.
+        :rtype: list[ConversationVideoEventTopicConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['ConversationVideoEventTopicConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this ConversationVideoEventTopicVideoConversation.
+
+
+        :param divisions: The divisions of this ConversationVideoEventTopicVideoConversation.
+        :type: list[ConversationVideoEventTopicConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     def to_dict(self):
         """

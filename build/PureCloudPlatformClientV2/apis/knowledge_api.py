@@ -2204,12 +2204,13 @@ class KnowledgeApi(object):
         :param str document_id: Globally unique identifier for a document. (required)
         :param str knowledge_base_id: Globally unique identifier for a knowledge base. (required)
         :param str document_state: The state of the document.
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected.
         :return: DocumentVariationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['document_variation_id', 'document_id', 'knowledge_base_id', 'document_state']
+        all_params = ['document_variation_id', 'document_id', 'knowledge_base_id', 'document_state', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2245,6 +2246,8 @@ class KnowledgeApi(object):
         query_params = {}
         if 'document_state' in params:
             query_params['documentState'] = params['document_state']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -2299,12 +2302,13 @@ class KnowledgeApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str document_state: The state of the document.
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected.
         :return: DocumentVariationResponseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'document_id', 'before', 'after', 'page_size', 'document_state']
+        all_params = ['knowledge_base_id', 'document_id', 'before', 'after', 'page_size', 'document_state', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2341,6 +2345,8 @@ class KnowledgeApi(object):
             query_params['pageSize'] = params['page_size']
         if 'document_state' in params:
             query_params['documentState'] = params['document_state']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

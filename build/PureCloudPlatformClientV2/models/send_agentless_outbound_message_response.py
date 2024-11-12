@@ -35,7 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import MessageData
-    from . import MessagingTemplateRequest
+    from . import SendMessagingTemplateRequest
 
 class SendAgentlessOutboundMessageResponse(object):
     """
@@ -58,7 +58,7 @@ class SendAgentlessOutboundMessageResponse(object):
             'to_address': 'str',
             'messenger_type': 'str',
             'text_body': 'str',
-            'messaging_template': 'MessagingTemplateRequest',
+            'messaging_template': 'SendMessagingTemplateRequest',
             'use_existing_active_conversation': 'bool',
             'message': 'MessageData',
             'timestamp': 'datetime',
@@ -223,7 +223,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def text_body(self) -> str:
         """
         Gets the text_body of this SendAgentlessOutboundMessageResponse.
-        The body of the text message.
+        The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
 
         :return: The text_body of this SendAgentlessOutboundMessageResponse.
         :rtype: str
@@ -234,7 +234,7 @@ class SendAgentlessOutboundMessageResponse(object):
     def text_body(self, text_body: str) -> None:
         """
         Sets the text_body of this SendAgentlessOutboundMessageResponse.
-        The body of the text message.
+        The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
 
         :param text_body: The text_body of this SendAgentlessOutboundMessageResponse.
         :type: str
@@ -244,24 +244,24 @@ class SendAgentlessOutboundMessageResponse(object):
         self._text_body = text_body
 
     @property
-    def messaging_template(self) -> 'MessagingTemplateRequest':
+    def messaging_template(self) -> 'SendMessagingTemplateRequest':
         """
         Gets the messaging_template of this SendAgentlessOutboundMessageResponse.
-        The messaging template sent
+        The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
 
         :return: The messaging_template of this SendAgentlessOutboundMessageResponse.
-        :rtype: MessagingTemplateRequest
+        :rtype: SendMessagingTemplateRequest
         """
         return self._messaging_template
 
     @messaging_template.setter
-    def messaging_template(self, messaging_template: 'MessagingTemplateRequest') -> None:
+    def messaging_template(self, messaging_template: 'SendMessagingTemplateRequest') -> None:
         """
         Sets the messaging_template of this SendAgentlessOutboundMessageResponse.
-        The messaging template sent
+        The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
 
         :param messaging_template: The messaging_template of this SendAgentlessOutboundMessageResponse.
-        :type: MessagingTemplateRequest
+        :type: SendMessagingTemplateRequest
         """
         
 

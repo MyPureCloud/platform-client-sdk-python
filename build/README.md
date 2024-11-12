@@ -5,7 +5,7 @@
 
 Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-Documentation version PureCloudPlatformClientV2 215.0.0
+Documentation version PureCloudPlatformClientV2 216.0.0
 
 ## Preview APIs
 
@@ -124,6 +124,43 @@ region = PureCloudPlatformClientV2.PureCloudRegionHosts.us_east_1
 PureCloudPlatformClientV2.configuration.host = region.get_api_host()
 ```
 
+#### Setting the gateway
+
+The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).
+
+This can be achieved setting the gateway on the `ApiClient` instance with *set_gateway*. You can use *None* as parameter's value for default configuration (e.g. "https" for protocol, -1 for port, ...).
+
+```python
+apiClient = PureCloudPlatformClientV2.api_client.ApiClient()
+apiClient.set_gateway("mygateway.mydomain.myextension", "https", 1443, "myadditionalpathforlogin", "myadditionalpathforapi")
+apiClient.get_client_credentials_token(os.environ['GENESYS_CLOUD_CLIENT_ID'],
+                                        os.environ['GENESYS_CLOUD_CLIENT_SECRET'])
+```
+
+or setting as default for all clients
+
+```python
+gateway_configuration = PureCloudPlatformClientV2.GatewayConfiguration()
+gateway_configuration.host = "mygateway.mydomain.myextension";
+gateway_configuration.protocol = "https";
+gateway_configuration.port = 1443;
+gateway_configuration.path_params_login = "myadditionalpathforlogin";
+gateway_configuration.path_params_api = "myadditionalpathforapi";
+...
+PureCloudPlatformClientV2.configuration.gateway_configuration = gateway_configuration
+```
+
+* "host" is the address of your gateway.
+* "protocol" is not mandatory. It will default to "https" if the parameter is not defined or empty.
+* "port" is not mandatory. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater or equal to 0). Set to -1 to use default port (default unspecified port).
+* "path_params_login" and "path_params_api" are not mandatory. They will be appended to the gateway url path if these parameters are defined and non empty (for Login requests and for API requests).
+* "username" and "password" are not used at this stage. This is for a possible future use.
+
+With the configuration below, this would result in:
+
+* Login requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/oauth/token")
+* API requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforapi" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/api/v2/users/me")
+
 ### Connect to a Proxy Server
 
 If connecting to a proxy server, set the the address of your proxy server as follows:
@@ -218,6 +255,79 @@ JSON:
     "general": {
         "live_reload_config": true,
         "host": "https://api.mypurecloud.com"
+    }
+}
+```
+
+The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).
+
+This can be achieved defining a "gateway" configuration, in the INI or the JSON configuration file.
+
+* "host" is the address of your gateway.
+* "protocol" is not mandatory. It will default to "https" if the parameter is not defined or empty.
+* "port" is not mandatory. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater or equal to 0). Set to -1 to use default port (default unspecified port).
+* "path_params_login" and "path_params_api" are not mandatory. They will be appended to the gateway url path if these parameters are defined and non empty (for Login requests and for API requests).
+* "username" and "password" are not used at this stage. This is for a possible future use.
+
+With the configuration below, this would result in:
+
+* Login requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/oauth/token")
+* API requests to: "https://mygateway.mydomain.myextension:1443/myadditionalpathforapi" (e.g. "https://mygateway.mydomain.myextension:1443/myadditionalpathforlogin/api/v2/users/me")
+
+INI:
+
+```ini
+[logging]
+log_level = trace
+log_format = text
+log_to_console = false
+log_file_path = /var/log/pythonsdk.log
+log_response_body = false
+log_request_body = false
+[reauthentication]
+refresh_access_token = true
+refresh_token_wait_max = 10
+[general]
+live_reload_config = true
+host = https://api.mypurecloud.com
+[gateway]
+host = mygateway.mydomain.myextension
+protocol = https
+port = 1443
+path_params_login = myadditionalpathforlogin
+path_params_api = myadditionalpathforapi
+username = username
+password = password
+```
+
+JSON:
+
+```json
+{
+    "logging": {
+        "log_level": "trace",
+        "log_format": "text",
+        "log_to_console": false,
+        "log_file_path": "/var/log/pythonsdk.log",
+        "log_response_body": false,
+        "log_request_body": false
+    },
+    "reauthentication": {
+        "refresh_access_token": true,
+        "refresh_token_wait_max": 10
+    },
+    "general": {
+        "live_reload_config": true,
+        "host": "https://api.mypurecloud.com"
+    },
+    "gateway": {
+        "host": "mygateway.mydomain.myextension",
+        "protocol": "https",
+        "port": 1443,
+        "path_params_login": "myadditionalpathforlogin",
+        "path_params_api": "myadditionalpathforapi",
+        "username": "username",
+        "password": "password"
     }
 }
 ```

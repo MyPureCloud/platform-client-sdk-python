@@ -41,6 +41,7 @@ import hashlib
 import json
 
 from .logger import Logger, LogFormat, LogLevel
+from .gateway_configuration import GatewayConfiguration
 
 def singleton(cls, *args, **kw):
     instances = {}
@@ -107,6 +108,9 @@ class Configuration(object):
 
         # proxy password
         self.proxy_password = None
+
+        # gateway configuration
+        self.gateway_configuration = None
 
         # Logging Settings
         self.logger = Logger()
@@ -202,7 +206,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 215.0.0".\
+               "SDK Package Version: 216.0.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):
@@ -262,6 +266,31 @@ class Configuration(object):
             refresh_token_wait_max = _get_config_int(config, "reauthentication", "refresh_token_wait_max")
             if refresh_token_wait_max is not None:
                 self.refresh_token_wait_time = refresh_token_wait_max
+            
+            # gateway configuration
+            gateway_host = _get_config_string(config, "gateway", "host")
+            if not gateway_host:
+                self.gateway_configuration = None
+            else:
+                self.gateway_configuration = GatewayConfiguration(host = gateway_host)
+                gateway_protocol = _get_config_string(config, "gateway", "protocol")
+                if gateway_protocol is not None:
+                    self.gateway_configuration.protocol = gateway_protocol;
+                gateway_port = _get_config_int(config, "gateway", "port")
+                if gateway_port is not None:
+                    self.gateway_configuration.port = gateway_port;
+                gateway_path_params_login = _get_config_string(config, "gateway", "path_params_login")
+                if gateway_path_params_login is not None:
+                    self.gateway_configuration.path_params_login = gateway_path_params_login;
+                gateway_path_params_api = _get_config_string(config, "gateway", "path_params_api")
+                if gateway_path_params_api is not None:
+                    self.gateway_configuration.path_params_api = gateway_path_params_api;
+                gateway_username = _get_config_string(config, "gateway", "username")
+                if gateway_username is not None:
+                    self.gateway_configuration.username = gateway_username;
+                gateway_password = _get_config_string(config, "gateway", "password")
+                if gateway_password is not None:
+                    self.gateway_configuration.password = gateway_password;
         except Exception:
             return
 

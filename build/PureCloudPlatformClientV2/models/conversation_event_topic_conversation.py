@@ -33,8 +33,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationEventTopicConversationDivisionMembership
     from . import ConversationEventTopicParticipant
-    from . import ConversationEventTopicRecentTransfer
+    from . import ConversationEventTopicTransferResponse
 
 class ConversationEventTopicConversation(object):
     """
@@ -54,12 +55,13 @@ class ConversationEventTopicConversation(object):
             'id': 'str',
             'max_participants': 'int',
             'participants': 'list[ConversationEventTopicParticipant]',
-            'recent_transfers': 'list[ConversationEventTopicRecentTransfer]',
+            'recent_transfers': 'list[ConversationEventTopicTransferResponse]',
             'recording_state': 'str',
             'address': 'str',
             'external_tag': 'str',
             'utilization_label_id': 'str',
-            'secure_pause': 'bool'
+            'secure_pause': 'bool',
+            'divisions': 'list[ConversationEventTopicConversationDivisionMembership]'
         }
 
         self.attribute_map = {
@@ -71,7 +73,8 @@ class ConversationEventTopicConversation(object):
             'address': 'address',
             'external_tag': 'externalTag',
             'utilization_label_id': 'utilizationLabelId',
-            'secure_pause': 'securePause'
+            'secure_pause': 'securePause',
+            'divisions': 'divisions'
         }
 
         self._id = None
@@ -83,6 +86,7 @@ class ConversationEventTopicConversation(object):
         self._external_tag = None
         self._utilization_label_id = None
         self._secure_pause = None
+        self._divisions = None
 
     @property
     def id(self) -> str:
@@ -157,24 +161,24 @@ class ConversationEventTopicConversation(object):
         self._participants = participants
 
     @property
-    def recent_transfers(self) -> List['ConversationEventTopicRecentTransfer']:
+    def recent_transfers(self) -> List['ConversationEventTopicTransferResponse']:
         """
         Gets the recent_transfers of this ConversationEventTopicConversation.
 
 
         :return: The recent_transfers of this ConversationEventTopicConversation.
-        :rtype: list[ConversationEventTopicRecentTransfer]
+        :rtype: list[ConversationEventTopicTransferResponse]
         """
         return self._recent_transfers
 
     @recent_transfers.setter
-    def recent_transfers(self, recent_transfers: List['ConversationEventTopicRecentTransfer']) -> None:
+    def recent_transfers(self, recent_transfers: List['ConversationEventTopicTransferResponse']) -> None:
         """
         Sets the recent_transfers of this ConversationEventTopicConversation.
 
 
         :param recent_transfers: The recent_transfers of this ConversationEventTopicConversation.
-        :type: list[ConversationEventTopicRecentTransfer]
+        :type: list[ConversationEventTopicTransferResponse]
         """
         
 
@@ -299,6 +303,30 @@ class ConversationEventTopicConversation(object):
         
 
         self._secure_pause = secure_pause
+
+    @property
+    def divisions(self) -> List['ConversationEventTopicConversationDivisionMembership']:
+        """
+        Gets the divisions of this ConversationEventTopicConversation.
+
+
+        :return: The divisions of this ConversationEventTopicConversation.
+        :rtype: list[ConversationEventTopicConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['ConversationEventTopicConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this ConversationEventTopicConversation.
+
+
+        :param divisions: The divisions of this ConversationEventTopicConversation.
+        :type: list[ConversationEventTopicConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     def to_dict(self):
         """

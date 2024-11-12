@@ -87,6 +87,7 @@ class Campaign(object):
             'priority': 'int',
             'contact_list_filters': 'list[DomainEntityRef]',
             'division': 'DomainEntityRef',
+            'agent_owned_column': 'str',
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'skill_columns': 'list[str]',
             'max_calls_per_agent': 'int',
@@ -128,6 +129,7 @@ class Campaign(object):
             'priority': 'priority',
             'contact_list_filters': 'contactListFilters',
             'division': 'division',
+            'agent_owned_column': 'agentOwnedColumn',
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'skill_columns': 'skillColumns',
             'max_calls_per_agent': 'maxCallsPerAgent',
@@ -168,6 +170,7 @@ class Campaign(object):
         self._priority = None
         self._contact_list_filters = None
         self._division = None
+        self._agent_owned_column = None
         self._dynamic_contact_queueing_settings = None
         self._skill_columns = None
         self._max_calls_per_agent = None
@@ -952,6 +955,30 @@ class Campaign(object):
         
 
         self._division = division
+
+    @property
+    def agent_owned_column(self) -> str:
+        """
+        Gets the agent_owned_column of this Campaign.
+        Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.
+
+        :return: The agent_owned_column of this Campaign.
+        :rtype: str
+        """
+        return self._agent_owned_column
+
+    @agent_owned_column.setter
+    def agent_owned_column(self, agent_owned_column: str) -> None:
+        """
+        Sets the agent_owned_column of this Campaign.
+        Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.
+
+        :param agent_owned_column: The agent_owned_column of this Campaign.
+        :type: str
+        """
+        
+
+        self._agent_owned_column = agent_owned_column
 
     @property
     def dynamic_contact_queueing_settings(self) -> 'DynamicContactQueueingSettings':

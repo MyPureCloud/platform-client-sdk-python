@@ -33,8 +33,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import QueueConversationSocialExpressionEventTopicConversationDivisionMembership
     from . import QueueConversationSocialExpressionEventTopicParticipant
-    from . import QueueConversationSocialExpressionEventTopicRecentTransfer
+    from . import QueueConversationSocialExpressionEventTopicTransferResponse
 
 class QueueConversationSocialExpressionEventTopicConversation(object):
     """
@@ -54,12 +55,13 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'id': 'str',
             'max_participants': 'int',
             'participants': 'list[QueueConversationSocialExpressionEventTopicParticipant]',
-            'recent_transfers': 'list[QueueConversationSocialExpressionEventTopicRecentTransfer]',
+            'recent_transfers': 'list[QueueConversationSocialExpressionEventTopicTransferResponse]',
             'recording_state': 'str',
             'address': 'str',
             'external_tag': 'str',
             'utilization_label_id': 'str',
-            'secure_pause': 'bool'
+            'secure_pause': 'bool',
+            'divisions': 'list[QueueConversationSocialExpressionEventTopicConversationDivisionMembership]'
         }
 
         self.attribute_map = {
@@ -71,7 +73,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'address': 'address',
             'external_tag': 'externalTag',
             'utilization_label_id': 'utilizationLabelId',
-            'secure_pause': 'securePause'
+            'secure_pause': 'securePause',
+            'divisions': 'divisions'
         }
 
         self._id = None
@@ -83,6 +86,7 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         self._external_tag = None
         self._utilization_label_id = None
         self._secure_pause = None
+        self._divisions = None
 
     @property
     def id(self) -> str:
@@ -157,24 +161,24 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         self._participants = participants
 
     @property
-    def recent_transfers(self) -> List['QueueConversationSocialExpressionEventTopicRecentTransfer']:
+    def recent_transfers(self) -> List['QueueConversationSocialExpressionEventTopicTransferResponse']:
         """
         Gets the recent_transfers of this QueueConversationSocialExpressionEventTopicConversation.
 
 
         :return: The recent_transfers of this QueueConversationSocialExpressionEventTopicConversation.
-        :rtype: list[QueueConversationSocialExpressionEventTopicRecentTransfer]
+        :rtype: list[QueueConversationSocialExpressionEventTopicTransferResponse]
         """
         return self._recent_transfers
 
     @recent_transfers.setter
-    def recent_transfers(self, recent_transfers: List['QueueConversationSocialExpressionEventTopicRecentTransfer']) -> None:
+    def recent_transfers(self, recent_transfers: List['QueueConversationSocialExpressionEventTopicTransferResponse']) -> None:
         """
         Sets the recent_transfers of this QueueConversationSocialExpressionEventTopicConversation.
 
 
         :param recent_transfers: The recent_transfers of this QueueConversationSocialExpressionEventTopicConversation.
-        :type: list[QueueConversationSocialExpressionEventTopicRecentTransfer]
+        :type: list[QueueConversationSocialExpressionEventTopicTransferResponse]
         """
         
 
@@ -299,6 +303,30 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         
 
         self._secure_pause = secure_pause
+
+    @property
+    def divisions(self) -> List['QueueConversationSocialExpressionEventTopicConversationDivisionMembership']:
+        """
+        Gets the divisions of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :return: The divisions of this QueueConversationSocialExpressionEventTopicConversation.
+        :rtype: list[QueueConversationSocialExpressionEventTopicConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['QueueConversationSocialExpressionEventTopicConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :param divisions: The divisions of this QueueConversationSocialExpressionEventTopicConversation.
+        :type: list[QueueConversationSocialExpressionEventTopicConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     def to_dict(self):
         """

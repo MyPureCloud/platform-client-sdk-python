@@ -55,11 +55,11 @@ class TrunkMetabaseEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'total_number_of_entities': 'int',
+            'previous_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
             'next_uri': 'str',
-            'previous_uri': 'str',
             'page_count': 'int'
         }
 
@@ -69,11 +69,11 @@ class TrunkMetabaseEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'total_number_of_entities': 'totalNumberOfEntities',
+            'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'next_uri': 'nextUri',
-            'previous_uri': 'previousUri',
             'page_count': 'pageCount'
         }
 
@@ -82,11 +82,11 @@ class TrunkMetabaseEntityListing(object):
         self._page_number = None
         self._total = None
         self._total_number_of_entities = None
+        self._previous_uri = None
         self._last_uri = None
         self._first_uri = None
         self._self_uri = None
         self._next_uri = None
-        self._previous_uri = None
         self._page_count = None
 
     @property
@@ -210,6 +210,30 @@ class TrunkMetabaseEntityListing(object):
         self._total_number_of_entities = total_number_of_entities
 
     @property
+    def previous_uri(self) -> str:
+        """
+        Gets the previous_uri of this TrunkMetabaseEntityListing.
+
+
+        :return: The previous_uri of this TrunkMetabaseEntityListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri: str) -> None:
+        """
+        Sets the previous_uri of this TrunkMetabaseEntityListing.
+
+
+        :param previous_uri: The previous_uri of this TrunkMetabaseEntityListing.
+        :type: str
+        """
+        
+
+        self._previous_uri = previous_uri
+
+    @property
     def last_uri(self) -> str:
         """
         Gets the last_uri of this TrunkMetabaseEntityListing.
@@ -304,30 +328,6 @@ class TrunkMetabaseEntityListing(object):
         
 
         self._next_uri = next_uri
-
-    @property
-    def previous_uri(self) -> str:
-        """
-        Gets the previous_uri of this TrunkMetabaseEntityListing.
-
-
-        :return: The previous_uri of this TrunkMetabaseEntityListing.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri: str) -> None:
-        """
-        Sets the previous_uri of this TrunkMetabaseEntityListing.
-
-
-        :param previous_uri: The previous_uri of this TrunkMetabaseEntityListing.
-        :type: str
-        """
-        
-
-        self._previous_uri = previous_uri
 
     @property
     def page_count(self) -> int:

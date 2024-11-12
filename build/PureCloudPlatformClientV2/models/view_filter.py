@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import SocialKeyword
     from . import TranscriptTopics
     from . import Transcripts
+    from . import WorkitemStatusFilter
 
 class ViewFilter(object):
     """
@@ -251,6 +252,7 @@ class ViewFilter(object):
             'dashboard_type': 'str',
             'dashboard_access_filter': 'str',
             'transcript_duration_milliseconds': 'list[NumericRange]',
+            'workitems_statuses': 'list[WorkitemStatusFilter]',
             'social_countries': 'list[str]',
             'social_languages': 'list[str]',
             'social_channels': 'list[str]',
@@ -262,7 +264,8 @@ class ViewFilter(object):
             'social_keywords': 'list[SocialKeyword]',
             'social_post_escalated': 'bool',
             'social_classifications': 'list[str]',
-            'filter_users_by_manager_ids': 'list[str]'
+            'filter_users_by_manager_ids': 'list[str]',
+            'slideshow_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -463,6 +466,7 @@ class ViewFilter(object):
             'dashboard_type': 'dashboardType',
             'dashboard_access_filter': 'dashboardAccessFilter',
             'transcript_duration_milliseconds': 'transcriptDurationMilliseconds',
+            'workitems_statuses': 'workitemsStatuses',
             'social_countries': 'socialCountries',
             'social_languages': 'socialLanguages',
             'social_channels': 'socialChannels',
@@ -474,7 +478,8 @@ class ViewFilter(object):
             'social_keywords': 'socialKeywords',
             'social_post_escalated': 'socialPostEscalated',
             'social_classifications': 'socialClassifications',
-            'filter_users_by_manager_ids': 'filterUsersByManagerIds'
+            'filter_users_by_manager_ids': 'filterUsersByManagerIds',
+            'slideshow_ids': 'slideshowIds'
         }
 
         self._media_types = None
@@ -674,6 +679,7 @@ class ViewFilter(object):
         self._dashboard_type = None
         self._dashboard_access_filter = None
         self._transcript_duration_milliseconds = None
+        self._workitems_statuses = None
         self._social_countries = None
         self._social_languages = None
         self._social_channels = None
@@ -686,6 +692,7 @@ class ViewFilter(object):
         self._social_post_escalated = None
         self._social_classifications = None
         self._filter_users_by_manager_ids = None
+        self._slideshow_ids = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5436,6 +5443,30 @@ class ViewFilter(object):
         self._transcript_duration_milliseconds = transcript_duration_milliseconds
 
     @property
+    def workitems_statuses(self) -> List['WorkitemStatusFilter']:
+        """
+        Gets the workitems_statuses of this ViewFilter.
+        The list of workitem status with worktype
+
+        :return: The workitems_statuses of this ViewFilter.
+        :rtype: list[WorkitemStatusFilter]
+        """
+        return self._workitems_statuses
+
+    @workitems_statuses.setter
+    def workitems_statuses(self, workitems_statuses: List['WorkitemStatusFilter']) -> None:
+        """
+        Sets the workitems_statuses of this ViewFilter.
+        The list of workitem status with worktype
+
+        :param workitems_statuses: The workitems_statuses of this ViewFilter.
+        :type: list[WorkitemStatusFilter]
+        """
+        
+
+        self._workitems_statuses = workitems_statuses
+
+    @property
     def social_countries(self) -> List[str]:
         """
         Gets the social_countries of this ViewFilter.
@@ -5722,6 +5753,30 @@ class ViewFilter(object):
         
 
         self._filter_users_by_manager_ids = filter_users_by_manager_ids
+
+    @property
+    def slideshow_ids(self) -> List[str]:
+        """
+        Gets the slideshow_ids of this ViewFilter.
+        List of Dashboard slideshowIds to be filtered
+
+        :return: The slideshow_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._slideshow_ids
+
+    @slideshow_ids.setter
+    def slideshow_ids(self, slideshow_ids: List[str]) -> None:
+        """
+        Sets the slideshow_ids of this ViewFilter.
+        List of Dashboard slideshowIds to be filtered
+
+        :param slideshow_ids: The slideshow_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._slideshow_ids = slideshow_ids
 
     def to_dict(self):
         """

@@ -32,6 +32,7 @@
 | **alerting_timeout_ms** | int |  | [optional] |
 | **provider** | str |  | [optional] |
 | **external_contact** | [ConversationScreenShareEventTopicUriReference](ConversationScreenShareEventTopicUriReference) |  | [optional] |
+| **external_contact_initial_division_id** | str |  | [optional] |
 | **external_organization** | [ConversationScreenShareEventTopicUriReference](ConversationScreenShareEventTopicUriReference) |  | [optional] |
 | **wrapup** | [ConversationScreenShareEventTopicWrapup](ConversationScreenShareEventTopicWrapup) |  | [optional] |
 | **conversation_routing_data** | [ConversationScreenShareEventTopicConversationRoutingData](ConversationScreenShareEventTopicConversationRoutingData) |  | [optional] |
@@ -51,4 +52,4 @@
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

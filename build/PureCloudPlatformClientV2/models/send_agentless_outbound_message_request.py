@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import MessagingTemplateRequest
+    from . import SendMessagingTemplateRequest
 
 class SendAgentlessOutboundMessageRequest(object):
     """
@@ -54,7 +54,7 @@ class SendAgentlessOutboundMessageRequest(object):
             'to_address': 'str',
             'to_address_messenger_type': 'str',
             'text_body': 'str',
-            'messaging_template': 'MessagingTemplateRequest',
+            'messaging_template': 'SendMessagingTemplateRequest',
             'use_existing_active_conversation': 'bool'
         }
 
@@ -176,24 +176,24 @@ class SendAgentlessOutboundMessageRequest(object):
         self._text_body = text_body
 
     @property
-    def messaging_template(self) -> 'MessagingTemplateRequest':
+    def messaging_template(self) -> 'SendMessagingTemplateRequest':
         """
         Gets the messaging_template of this SendAgentlessOutboundMessageRequest.
         The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
 
         :return: The messaging_template of this SendAgentlessOutboundMessageRequest.
-        :rtype: MessagingTemplateRequest
+        :rtype: SendMessagingTemplateRequest
         """
         return self._messaging_template
 
     @messaging_template.setter
-    def messaging_template(self, messaging_template: 'MessagingTemplateRequest') -> None:
+    def messaging_template(self, messaging_template: 'SendMessagingTemplateRequest') -> None:
         """
         Sets the messaging_template of this SendAgentlessOutboundMessageRequest.
         The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
 
         :param messaging_template: The messaging_template of this SendAgentlessOutboundMessageRequest.
-        :type: MessagingTemplateRequest
+        :type: SendMessagingTemplateRequest
         """
         
 

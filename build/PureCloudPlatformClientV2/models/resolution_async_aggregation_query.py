@@ -283,7 +283,7 @@ class ResolutionAsyncAggregationQuery(object):
     def alternate_time_dimension(self) -> str:
         """
         Gets the alternate_time_dimension of this ResolutionAsyncAggregationQuery.
-        Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+        Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event and choosing \"wrapUpDate\" uses the date when conversation is ended
 
         :return: The alternate_time_dimension of this ResolutionAsyncAggregationQuery.
         :rtype: str
@@ -294,7 +294,7 @@ class ResolutionAsyncAggregationQuery(object):
     def alternate_time_dimension(self, alternate_time_dimension: str) -> None:
         """
         Sets the alternate_time_dimension of this ResolutionAsyncAggregationQuery.
-        Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+        Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event and choosing \"wrapUpDate\" uses the date when conversation is ended
 
         :param alternate_time_dimension: The alternate_time_dimension of this ResolutionAsyncAggregationQuery.
         :type: str

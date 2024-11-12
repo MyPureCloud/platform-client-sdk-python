@@ -2612,7 +2612,7 @@ class SpeechTextAnalyticsApi(object):
 
     def get_speechandtextanalytics_translations_language_conversation(self, language_id: str, conversation_id: str, **kwargs) -> 'CommunicationTranslationList':
         """
-        Translate all communication(s) for an interaction.
+        Translate a single interaction recording (or an email conversation)
         
 	    get_speechandtextanalytics_translations_language_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -2628,8 +2628,8 @@ class SpeechTextAnalyticsApi(object):
             for asynchronous request. (optional)
         :param str language_id: Target translation language (required)
         :param str conversation_id: Conversation id (required)
-        :param str communication_id: Communication id associated with the conversation
-        :param str recording_id: Recording id associated with the communication
+        :param str communication_id: Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
+        :param str recording_id: Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
         :return: CommunicationTranslationList
                  If the method is called asynchronously,
                  returns the request thread.

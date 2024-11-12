@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ContactAddressableEntityRef
     from . import DataSchema
     from . import ExternalDataSource
+    from . import ExternalId
     from . import ExternalOrganization
     from . import FacebookId
     from . import LineId
@@ -78,6 +79,7 @@ class ExternalContact(object):
             'line_id': 'LineId',
             'whats_app_id': 'WhatsAppId',
             'facebook_id': 'FacebookId',
+            'external_ids': 'list[ExternalId]',
             'modify_date': 'datetime',
             'create_date': 'datetime',
             'external_organization': 'ExternalOrganization',
@@ -112,6 +114,7 @@ class ExternalContact(object):
             'line_id': 'lineId',
             'whats_app_id': 'whatsAppId',
             'facebook_id': 'facebookId',
+            'external_ids': 'externalIds',
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
             'external_organization': 'externalOrganization',
@@ -145,6 +148,7 @@ class ExternalContact(object):
         self._line_id = None
         self._whats_app_id = None
         self._facebook_id = None
+        self._external_ids = None
         self._modify_date = None
         self._create_date = None
         self._external_organization = None
@@ -590,6 +594,30 @@ class ExternalContact(object):
         
 
         self._facebook_id = facebook_id
+
+    @property
+    def external_ids(self) -> List['ExternalId']:
+        """
+        Gets the external_ids of this ExternalContact.
+        A list of external identifiers that identify this contact in an external system
+
+        :return: The external_ids of this ExternalContact.
+        :rtype: list[ExternalId]
+        """
+        return self._external_ids
+
+    @external_ids.setter
+    def external_ids(self, external_ids: List['ExternalId']) -> None:
+        """
+        Sets the external_ids of this ExternalContact.
+        A list of external identifiers that identify this contact in an external system
+
+        :param external_ids: The external_ids of this ExternalContact.
+        :type: list[ExternalId]
+        """
+        
+
+        self._external_ids = external_ids
 
     @property
     def modify_date(self) -> datetime:

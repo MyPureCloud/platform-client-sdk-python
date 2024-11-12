@@ -67,6 +67,7 @@ class ConversationEventTopicParticipant(object):
             'end_time': 'datetime',
             'user_id': 'str',
             'external_contact_id': 'str',
+            'external_contact_initial_division_id': 'str',
             'external_organization_id': 'str',
             'name': 'str',
             'queue_id': 'str',
@@ -110,6 +111,7 @@ class ConversationEventTopicParticipant(object):
             'end_time': 'endTime',
             'user_id': 'userId',
             'external_contact_id': 'externalContactId',
+            'external_contact_initial_division_id': 'externalContactInitialDivisionId',
             'external_organization_id': 'externalOrganizationId',
             'name': 'name',
             'queue_id': 'queueId',
@@ -152,6 +154,7 @@ class ConversationEventTopicParticipant(object):
         self._end_time = None
         self._user_id = None
         self._external_contact_id = None
+        self._external_contact_initial_division_id = None
         self._external_organization_id = None
         self._name = None
         self._queue_id = None
@@ -307,6 +310,30 @@ class ConversationEventTopicParticipant(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def external_contact_initial_division_id(self) -> str:
+        """
+        Gets the external_contact_initial_division_id of this ConversationEventTopicParticipant.
+        If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+
+        :return: The external_contact_initial_division_id of this ConversationEventTopicParticipant.
+        :rtype: str
+        """
+        return self._external_contact_initial_division_id
+
+    @external_contact_initial_division_id.setter
+    def external_contact_initial_division_id(self, external_contact_initial_division_id: str) -> None:
+        """
+        Sets the external_contact_initial_division_id of this ConversationEventTopicParticipant.
+        If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+
+        :param external_contact_initial_division_id: The external_contact_initial_division_id of this ConversationEventTopicParticipant.
+        :type: str
+        """
+        
+
+        self._external_contact_initial_division_id = external_contact_initial_division_id
 
     @property
     def external_organization_id(self) -> str:
