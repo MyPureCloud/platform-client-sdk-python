@@ -248,8 +248,6 @@ void (empty response body)
 
 Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
 
-delete_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/externalcontacts/externalsources/{externalSourceId} 
 
 Requires ANY permissions: 
@@ -578,7 +576,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
 
 ### Return type
 
@@ -733,7 +731,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
 | **note_id** | **str**| Note Id |  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -790,7 +788,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -824,7 +822,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact ID
-expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
     # Fetch an unresolved external contact
@@ -840,7 +838,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, division |
 
 ### Return type
 
@@ -897,7 +895,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
 
 ### Return type
 
@@ -1101,8 +1099,6 @@ This endpoint does not need any parameters.
 
 Fetch an External Source
 
-get_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/externalsources/{externalSourceId} 
 
 Requires ANY permissions: 
@@ -1152,8 +1148,6 @@ except ApiException as e:
 
 
 Fetch a list of External Sources
-
-get_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/externalsources 
 
@@ -1428,7 +1422,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
-expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalDataSources) (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 include_trustors = True # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
 try:
@@ -1445,7 +1439,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 
 ### Return type
@@ -1505,7 +1499,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
 
 ### Return type
 
@@ -1558,7 +1552,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
 | **note_id** | **str**| Note Id |  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -1615,7 +1609,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
 
 ### Return type
 
@@ -1671,7 +1665,7 @@ except ApiException as e:
 | **external_organization_id** | **str**| External Organization ID |  |
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
 | **sort_order** | **str**| The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;relationship:desc\&quot; | [optional]  |
 
 ### Return type
@@ -1732,7 +1726,7 @@ except ApiException as e:
 | **q** | **str**| Search query | [optional]  |
 | **trustor_id** | [**list[str]**](str)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
 | **sort_order** | **str**| The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \&quot;companyType:asc\&quot;, \&quot;industry:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 
 ### Return type
@@ -1974,7 +1968,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **relationship_id** | **str**| Relationship Id |  |
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
 
 ### Return type
 
@@ -2024,7 +2018,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **lookup_val** | **str**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
-| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
+| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources, division |
 
 ### Return type
 
@@ -3312,8 +3306,6 @@ except ApiException as e:
 
 Create an External Source
 
-post_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/externalcontacts/externalsources 
 
 Requires ANY permissions: 
@@ -3401,7 +3393,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **identifier** | [**ContactIdentifier**](ContactIdentifier)|  |  |
-| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources |
+| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources, division |
 
 ### Return type
 
@@ -4012,8 +4004,6 @@ void (empty response body)
 
 Update an External Source
 
-put_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/externalcontacts/externalsources/{externalSourceId} 
 
 Requires ANY permissions: 
@@ -4362,4 +4352,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

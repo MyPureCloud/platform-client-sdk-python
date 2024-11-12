@@ -79,6 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_site_outboundroutes**](#get_telephony_providers_edges_site_outboundroutes) | Get outbound routes|
 |[**get_telephony_providers_edges_site_siteconnections**](#get_telephony_providers_edges_site_siteconnections) | Get site connections for a site.|
 |[**get_telephony_providers_edges_sites**](#get_telephony_providers_edges_sites) | Get the list of Sites.|
+|[**get_telephony_providers_edges_sites_search**](#get_telephony_providers_edges_sites_search) | Search sites using the q64 value returned from a previous search|
 |[**get_telephony_providers_edges_timezones**](#get_telephony_providers_edges_timezones) | Get a list of Edge-compatible time zones|
 |[**get_telephony_providers_edges_trunk**](#get_telephony_providers_edges_trunk) | Get a Trunk by ID|
 |[**get_telephony_providers_edges_trunk_metrics**](#get_telephony_providers_edges_trunk_metrics) | Get the trunk metrics.|
@@ -113,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_phones_reboot**](#post_telephony_providers_edges_phones_reboot) | Reboot Multiple Phones|
 |[**post_telephony_providers_edges_site_outboundroutes**](#post_telephony_providers_edges_site_outboundroutes) | Create outbound route|
 |[**post_telephony_providers_edges_sites**](#post_telephony_providers_edges_sites) | Create a Site.|
+|[**post_telephony_providers_edges_sites_search**](#post_telephony_providers_edges_sites_search) | Search sites|
 |[**post_telephony_providers_edges_trunkbasesettings**](#post_telephony_providers_edges_trunkbasesettings) | Create a Trunk Base Settings object|
 |[**put_telephony_providers_edge**](#put_telephony_providers_edge) | Update a edge.|
 |[**put_telephony_providers_edge_logicalinterface**](#put_telephony_providers_edge_logicalinterface) | Update an edge logical interface.|
@@ -3837,6 +3839,57 @@ except ApiException as e:
 [**SiteEntityListing**](SiteEntityListing)
 
 
+## get_telephony_providers_edges_sites_search
+
+> [**SitesSearchResponse**](SitesSearchResponse) get_telephony_providers_edges_sites_search(q64, expand=expand)
+
+
+Search sites using the q64 value returned from a previous search
+
+Wraps GET /api/v2/telephony/providers/edges/sites/search 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+q64 = 'q64_example' # str | q64
+expand = ['expand_example'] # list[str] | expand (optional)
+
+try:
+    # Search sites using the q64 value returned from a previous search
+    api_response = api_instance.get_telephony_providers_edges_sites_search(q64, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_sites_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str)| expand | [optional]  |
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
+
+
 ## get_telephony_providers_edges_timezones
 
 > [**TimeZoneEntityListing**](TimeZoneEntityListing) get_telephony_providers_edges_timezones(page_size=page_size, page_number=page_number)
@@ -5534,6 +5587,55 @@ except ApiException as e:
 [**Site**](Site)
 
 
+## post_telephony_providers_edges_sites_search
+
+> [**SitesSearchResponse**](SitesSearchResponse) post_telephony_providers_edges_sites_search(body)
+
+
+Search sites
+
+Wraps POST /api/v2/telephony/providers/edges/sites/search 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.SiteSearchRequest() # SiteSearchRequest | Search request options
+
+try:
+    # Search sites
+    api_response = api_instance.post_telephony_providers_edges_sites_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_sites_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SiteSearchRequest**](SiteSearchRequest)| Search request options |  |
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
+
+
 ## post_telephony_providers_edges_trunkbasesettings
 
 > [**TrunkBase**](TrunkBase) post_telephony_providers_edges_trunkbasesettings(body)
@@ -6335,4 +6437,4 @@ except ApiException as e:
 [**TrunkBase**](TrunkBase)
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

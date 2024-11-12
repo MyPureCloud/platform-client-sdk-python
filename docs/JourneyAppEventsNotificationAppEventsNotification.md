@@ -17,7 +17,8 @@
 | **app_event** | [JourneyAppEventsNotificationAppMessage](JourneyAppEventsNotificationAppMessage) |  | [optional] |
 | **outcome_achieved_event** | [JourneyAppEventsNotificationOutcomeAchievedMessage](JourneyAppEventsNotificationOutcomeAchievedMessage) |  | [optional] |
 | **segment_assignment_event** | [JourneyAppEventsNotificationSegmentAssignmentMessage](JourneyAppEventsNotificationSegmentAssignmentMessage) |  | [optional] |
+| **web_action_event** | [JourneyAppEventsNotificationWebActionMessage](JourneyAppEventsNotificationWebActionMessage) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

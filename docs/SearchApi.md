@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_locations_search**](#get_locations_search) | Search locations using the q64 value returned from a previous search|
 |[**get_search**](#get_search) | Search using the q64 value returned from a previous search.|
 |[**get_search_suggest**](#get_search_suggest) | Suggest resources using the q64 value returned from a previous suggest query.|
+|[**get_telephony_providers_edges_sites_search**](#get_telephony_providers_edges_sites_search) | Search sites using the q64 value returned from a previous search|
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**get_voicemail_search**](#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
 |[**post_analytics_conversations_transcripts_query**](#post_analytics_conversations_transcripts_query) | Search resources.|
@@ -26,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_search_suggest**](#post_search_suggest) | Suggest resources.|
 |[**post_speechandtextanalytics_transcripts_search**](#post_speechandtextanalytics_transcripts_search) | Search resources.|
 |[**post_teams_search**](#post_teams_search) | Search resources.|
+|[**post_telephony_providers_edges_sites_search**](#post_telephony_providers_edges_sites_search) | Search sites|
 |[**post_users_search**](#post_users_search) | Search users|
 |[**post_users_search_conversation_target**](#post_users_search_conversation_target) | Search users as conversation targets|
 |[**post_users_search_queuemembers_manage**](#post_users_search_queuemembers_manage) | Search manage queue member|
@@ -322,6 +324,57 @@ except ApiException as e:
 ### Return type
 
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse)
+
+
+## get_telephony_providers_edges_sites_search
+
+> [**SitesSearchResponse**](SitesSearchResponse) get_telephony_providers_edges_sites_search(q64, expand=expand)
+
+
+Search sites using the q64 value returned from a previous search
+
+Wraps GET /api/v2/telephony/providers/edges/sites/search 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+q64 = 'q64_example' # str | q64
+expand = ['expand_example'] # list[str] | expand (optional)
+
+try:
+    # Search sites using the q64 value returned from a previous search
+    api_response = api_instance.get_telephony_providers_edges_sites_search(q64, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->get_telephony_providers_edges_sites_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **q64** | **str**| q64 |  |
+| **expand** | [**list[str]**](str)| expand | [optional]  |
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
 
 
 ## get_users_search
@@ -999,6 +1052,55 @@ except ApiException as e:
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
+## post_telephony_providers_edges_sites_search
+
+> [**SitesSearchResponse**](SitesSearchResponse) post_telephony_providers_edges_sites_search(body)
+
+
+Search sites
+
+Wraps POST /api/v2/telephony/providers/edges/sites/search 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.SiteSearchRequest() # SiteSearchRequest | Search request options
+
+try:
+    # Search sites
+    api_response = api_instance.post_telephony_providers_edges_sites_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_telephony_providers_edges_sites_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SiteSearchRequest**](SiteSearchRequest)| Search request options |  |
+
+### Return type
+
+[**SitesSearchResponse**](SitesSearchResponse)
+
+
 ## post_users_search
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search(body)
@@ -1243,4 +1345,4 @@ except ApiException as e:
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

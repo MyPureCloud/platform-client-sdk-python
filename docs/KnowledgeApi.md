@@ -1330,7 +1330,7 @@ except ApiException as e:
 
 ## get_knowledge_knowledgebase_document_variation
 
-> [**DocumentVariationResponse**](DocumentVariationResponse) get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state)
+> [**DocumentVariationResponse**](DocumentVariationResponse) get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state, expand=expand)
 
 
 Get a variation for a document.
@@ -1358,10 +1358,11 @@ document_variation_id = 'document_variation_id_example' # str | Globally unique 
 document_id = 'document_id_example' # str | Globally unique identifier for a document.
 knowledge_base_id = 'knowledge_base_id_example' # str | Globally unique identifier for a knowledge base.
 document_state = 'document_state_example' # str | The state of the document. (optional)
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
 
 try:
     # Get a variation for a document.
-    api_response = api_instance.get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state)
+    api_response = api_instance.get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_document_variation: %s\n" % e)
@@ -1376,6 +1377,7 @@ except ApiException as e:
 | **document_id** | **str**| Globally unique identifier for a document. |  |
 | **knowledge_base_id** | **str**| Globally unique identifier for a knowledge base. |  |
 | **document_state** | **str**| The state of the document. | [optional] <br />**Values**: Draft, Published |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: contentUrl |
 
 ### Return type
 
@@ -1384,7 +1386,7 @@ except ApiException as e:
 
 ## get_knowledge_knowledgebase_document_variations
 
-> [**DocumentVariationResponseListing**](DocumentVariationResponseListing) get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state)
+> [**DocumentVariationResponseListing**](DocumentVariationResponseListing) get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state, expand=expand)
 
 
 Get variations for a document.
@@ -1414,10 +1416,11 @@ before = 'before_example' # str | The cursor that points to the start of the set
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 document_state = 'document_state_example' # str | The state of the document. (optional)
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
 
 try:
     # Get variations for a document.
-    api_response = api_instance.get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state)
+    api_response = api_instance.get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_document_variations: %s\n" % e)
@@ -1434,6 +1437,7 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **document_state** | **str**| The state of the document. | [optional] <br />**Values**: Draft, Published |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: contentUrl |
 
 ### Return type
 
@@ -6211,4 +6215,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

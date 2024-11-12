@@ -39,7 +39,8 @@
 | **wrapup** | [WorkitemsUserEventsNotificationWrapup](WorkitemsUserEventsNotificationWrapup) |  | [optional] |
 | **sessions** | [list[WorkitemsUserEventsNotificationSession]](WorkitemsUserEventsNotificationSession) |  | [optional] |
 | **skill_ids** | list[str] |  | [optional] |
+| **script_id** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

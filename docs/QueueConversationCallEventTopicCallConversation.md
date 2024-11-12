@@ -12,10 +12,11 @@
 | **other_media_uris** | list[str] |  | [optional] |
 | **address** | str |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
+| **divisions** | [list[QueueConversationCallEventTopicConversationDivisionMembership]](QueueConversationCallEventTopicConversationDivisionMembership) |  | [optional] |
 | **recording_state** | str |  | [optional] |
 | **secure_pause** | bool |  | [optional] |
 | **max_participants** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_

@@ -203,6 +203,7 @@
 | **dashboard_type** | str | The type of dashboard being filtered | [optional] |
 | **dashboard_access_filter** | str | The type of dashboard access being filtered | [optional] |
 | **transcript_duration_milliseconds** | [list[NumericRange]](NumericRange) | The transcript durations in milliseconds used to filter the view | [optional] |
+| **workitems_statuses** | [list[WorkitemStatusFilter]](WorkitemStatusFilter) | The list of workitem status with worktype | [optional] |
 | **social_countries** | list[str] | List of countries for social filtering | [optional] |
 | **social_languages** | list[str] | List of languages for social filtering | [optional] |
 | **social_channels** | list[str] | List of channels for social filtering | [optional] |
@@ -215,7 +216,8 @@
 | **social_post_escalated** | bool | Filter to indicate if the post is escalated | [optional] |
 | **social_classifications** | list[str] | Indicates if a social message was public or private | [optional] |
 | **filter_users_by_manager_ids** | list[str] | The manager ids used to fetch associated users for the view | [optional] |
+| **slideshow_ids** | list[str] | List of Dashboard slideshowIds to be filtered | [optional] |
 
 
 
-_PureCloudPlatformClientV2 215.0.0_
+_PureCloudPlatformClientV2 216.0.0_
