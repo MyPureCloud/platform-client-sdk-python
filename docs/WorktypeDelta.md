@@ -25,7 +25,8 @@
 | **service_level_target** | [WorkitemsAttributeChangeInteger](WorkitemsAttributeChangeInteger) |  | [optional] |
 | **date_modified** | [WorkitemsAttributeChangeInstant](WorkitemsAttributeChangeInstant) |  | [optional] |
 | **modified_by** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
+| **default_script_id** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

@@ -1623,8 +1623,6 @@ except ApiException as e:
 
 Get the summaries of the conversation.
 
-get_conversation_summaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/{conversationId}/summaries 
 
 Requires ALL permissions: 
@@ -12232,4 +12230,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

@@ -21,7 +21,8 @@
 | **wrap_up_codes** | [list[ConversationSummaryTopicVirtualAgentsConversationWrapUpCode]](ConversationSummaryTopicVirtualAgentsConversationWrapUpCode) |  | [optional] |
 | **trigger_source** | [ConversationSummaryTopicVirtualAgentsTriggerSource](ConversationSummaryTopicVirtualAgentsTriggerSource) |  | [optional] |
 | **last_edited_by** | [ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  | [optional] |
+| **error_type** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

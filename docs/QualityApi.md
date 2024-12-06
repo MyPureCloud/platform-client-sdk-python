@@ -523,7 +523,7 @@ except ApiException as e:
 
 ## get_quality_agents_activity
 
-> [**AgentActivityEntityListing**](AgentActivityEntityListing) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id)
+> [**AgentActivityEntityListing**](AgentActivityEntityListing) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id, user_state=user_state)
 
 
 Gets a list of Agent Activities
@@ -563,10 +563,11 @@ name = 'name_example' # str | name (optional)
 group = 'group_example' # str | group id (optional)
 agent_team_id = 'agent_team_id_example' # str | team id of agents requested (optional)
 form_context_id = 'form_context_id_example' # str | shared id between form versions (optional)
+user_state = ''Legacy'' # str | 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. (optional) (default to 'Legacy')
 
 try:
     # Gets a list of Agent Activities
-    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id)
+    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id, user_state=user_state)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_agents_activity: %s\n" % e)
@@ -591,6 +592,7 @@ except ApiException as e:
 | **group** | **str**| group id | [optional]  |
 | **agent_team_id** | **str**| team id of agents requested | [optional]  |
 | **form_context_id** | **str**| shared id between form versions | [optional]  |
+| **user_state** | **str**| &#39;Legacy&#39; fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  &#39;Any&#39; fetches users of &#39;active&#39;, &#39;inactive&#39; and &#39;deleted&#39; states. | [optional] [default to &#39;Legacy&#39;]<br />**Values**: Any, Legacy |
 
 ### Return type
 
@@ -923,7 +925,7 @@ except ApiException as e:
 
 ## get_quality_evaluations_query
 
-> [**EvaluationEntityListing**](EvaluationEntityListing) get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+> [**EvaluationEntityListing**](EvaluationEntityListing) get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order, include_deleted_users=include_deleted_users)
 
 
 Queries Evaluations and returns a paged list
@@ -968,10 +970,11 @@ agent_has_read = True # bool | agent has the evaluation (optional)
 expand_answer_total_scores = True # bool | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. (optional)
 maximum = 56 # int | the maximum number of results to return (optional)
 sort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)
+include_deleted_users = False # bool | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (optional) (default to False)
 
 try:
     # Queries Evaluations and returns a paged list
-    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order, include_deleted_users=include_deleted_users)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_evaluations_query: %s\n" % e)
@@ -1001,6 +1004,7 @@ except ApiException as e:
 | **expand_answer_total_scores** | **bool**| get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. | [optional]  |
 | **maximum** | **int**| the maximum number of results to return | [optional]  |
 | **sort_order** | **str**| NOTE: Does not work when conversationId is supplied. | [optional]  |
+| **include_deleted_users** | **bool**| Allow returning an agent or evaluator user with a &#39;delete&#39; status. Defaults to false. | [optional] [default to False] |
 
 ### Return type
 
@@ -3316,4 +3320,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

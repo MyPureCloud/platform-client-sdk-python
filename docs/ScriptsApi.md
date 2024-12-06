@@ -229,7 +229,7 @@ except ApiException as e:
 | **name** | **str**| Name filter | [optional]  |
 | **feature** | **str**| Feature filter | [optional]  |
 | **flow_id** | **str**| Secure flow id filter | [optional]  |
-| **sort_by** | **str**| SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+| **sort_by** | **str**| SortBy | [optional] <br />**Values**: modifiedDate, createdDate, name |
 | **sort_order** | **str**| SortOrder | [optional] <br />**Values**: ascending, descending |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 | **division_ids** | **str**| Filters scripts to requested divisionIds | [optional]  |
@@ -295,7 +295,7 @@ except ApiException as e:
 | **name** | **str**| Name filter | [optional]  |
 | **feature** | **str**| Feature filter | [optional]  |
 | **flow_id** | **str**| Secure flow id filter | [optional]  |
-| **sort_by** | **str**| SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+| **sort_by** | **str**| SortBy | [optional] <br />**Values**: modifiedDate, createdDate, name |
 | **sort_order** | **str**| SortOrder | [optional] <br />**Values**: ascending, descending |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 | **division_ids** | **str**| Filters scripts to requested divisionIds | [optional]  |
@@ -787,4 +787,4 @@ except ApiException as e:
 [**Script**](Script)
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

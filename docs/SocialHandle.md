@@ -6,9 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | str |  | [optional] |
+| **type** | str | Social Handle Type | [optional] |
 | **value** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

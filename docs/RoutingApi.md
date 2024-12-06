@@ -874,12 +874,12 @@ void (empty response body)
 
 ## delete_routing_sms_phonenumber
 
->  delete_routing_sms_phonenumber(address_id)
+>  delete_routing_sms_phonenumber(phone_number_id)
 
 
 Delete a phone number provisioned for SMS.
 
-Wraps DELETE /api/v2/routing/sms/phonenumbers/{addressId} 
+Wraps DELETE /api/v2/routing/sms/phonenumbers/{phoneNumberId} 
 
 Requires ALL permissions: 
 
@@ -898,11 +898,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-address_id = 'address_id_example' # str | Address ID
+phone_number_id = 'phone_number_id_example' # str | phone number
 
 try:
     # Delete a phone number provisioned for SMS.
-    api_instance.delete_routing_sms_phonenumber(address_id)
+    api_instance.delete_routing_sms_phonenumber(phone_number_id)
 except ApiException as e:
     print("Exception when calling RoutingApi->delete_routing_sms_phonenumber: %s\n" % e)
 ```
@@ -912,7 +912,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **address_id** | **str**| Address ID |  |
+| **phone_number_id** | **str**| phone number |  |
 
 ### Return type
 
@@ -2739,7 +2739,7 @@ except ApiException as e:
 
 ## get_routing_queue_mediatype_estimatedwaittime
 
-> [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions) get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
+> [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions) get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type, label_id=label_id)
 
 
 Get Estimated Wait Time
@@ -2765,10 +2765,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | queueId
 media_type = 'media_type_example' # str | mediaType
+label_id = 'label_id_example' # str | Unique id that represents the interaction label used with media type for EWT calculation (optional)
 
 try:
     # Get Estimated Wait Time
-    api_response = api_instance.get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
+    api_response = api_instance.get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type, label_id=label_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queue_mediatype_estimatedwaittime: %s\n" % e)
@@ -2780,7 +2781,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| queueId |  |
-| **media_type** | **str**| mediaType |  |
+| **media_type** | **str**| mediaType | <br />**Values**: all, call, chat, callback, email, videoComm, message |
+| **label_id** | **str**| Unique id that represents the interaction label used with media type for EWT calculation | [optional]  |
 
 ### Return type
 
@@ -3817,12 +3819,12 @@ except ApiException as e:
 
 ## get_routing_sms_phonenumber
 
-> [**SmsPhoneNumber**](SmsPhoneNumber) get_routing_sms_phonenumber(address_id, expand=expand)
+> [**SmsPhoneNumber**](SmsPhoneNumber) get_routing_sms_phonenumber(phone_number_id, expand=expand)
 
 
 Get a phone number provisioned for SMS.
 
-Wraps GET /api/v2/routing/sms/phonenumbers/{addressId} 
+Wraps GET /api/v2/routing/sms/phonenumbers/{phoneNumberId} 
 
 Requires ALL permissions: 
 
@@ -3841,12 +3843,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-address_id = 'address_id_example' # str | Address ID
+phone_number_id = 'phone_number_id_example' # str | phone number
 expand = 'expand_example' # str | Expand response with additional information (optional)
 
 try:
     # Get a phone number provisioned for SMS.
-    api_response = api_instance.get_routing_sms_phonenumber(address_id, expand=expand)
+    api_response = api_instance.get_routing_sms_phonenumber(phone_number_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_sms_phonenumber: %s\n" % e)
@@ -3857,7 +3859,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **address_id** | **str**| Address ID |  |
+| **phone_number_id** | **str**| phone number |  |
 | **expand** | **str**| Expand response with additional information | [optional] <br />**Values**: compliance, supportedContent |
 
 ### Return type
@@ -7312,12 +7314,12 @@ except ApiException as e:
 
 ## put_routing_sms_phonenumber
 
-> [**SmsPhoneNumber**](SmsPhoneNumber) put_routing_sms_phonenumber(address_id, body)
+> [**SmsPhoneNumber**](SmsPhoneNumber) put_routing_sms_phonenumber(phone_number_id, body)
 
 
 Update a phone number provisioned for SMS.
 
-Wraps PUT /api/v2/routing/sms/phonenumbers/{addressId} 
+Wraps PUT /api/v2/routing/sms/phonenumbers/{phoneNumberId} 
 
 Requires ALL permissions: 
 
@@ -7336,12 +7338,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-address_id = 'address_id_example' # str | Address ID
+phone_number_id = 'phone_number_id_example' # str | phone number
 body = PureCloudPlatformClientV2.SmsPhoneNumber() # SmsPhoneNumber | SmsPhoneNumber
 
 try:
     # Update a phone number provisioned for SMS.
-    api_response = api_instance.put_routing_sms_phonenumber(address_id, body)
+    api_response = api_instance.put_routing_sms_phonenumber(phone_number_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->put_routing_sms_phonenumber: %s\n" % e)
@@ -7352,7 +7354,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **address_id** | **str**| Address ID |  |
+| **phone_number_id** | **str**| phone number |  |
 | **body** | [**SmsPhoneNumber**](SmsPhoneNumber)| SmsPhoneNumber |  |
 
 ### Return type
@@ -7710,4 +7712,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_
