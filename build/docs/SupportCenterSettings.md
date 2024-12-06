@@ -12,9 +12,10 @@
 | **router_type** | str | Router type for knowledge portal (previously support center) | [optional] |
 | **screens** | [list[SupportCenterScreen]](SupportCenterScreen) | Available screens for the knowledge portal (previously support center) with its modules | |
 | **enabled_categories** | [list[SupportCenterCategory]](SupportCenterCategory) | Featured categories for knowledge portal (previously support center) home screen | |
+| **label_filter** | [SupportCenterLabelFilter](SupportCenterLabelFilter) | Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations. | [optional] |
 | **style_setting** | [SupportCenterStyleSetting](SupportCenterStyleSetting) | Style attributes for knowledge portal (previously support center) | |
 | **feedback** | [SupportCenterFeedbackSettings](SupportCenterFeedbackSettings) | Customer feedback settings | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

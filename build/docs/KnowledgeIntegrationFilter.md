@@ -8,8 +8,9 @@
 |------------ | ------------- | ------------- | -------------|
 | **name** | str | Filter name, which is the name of a setting in a knowledge source. | [optional] |
 | **type** | str | Filter type. | [optional] |
+| **action** | str | Filter action. | [optional] |
 | **values** | [list[KnowledgeIntegrationFilterValue]](KnowledgeIntegrationFilterValue) | Available options of the filter setting. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

@@ -140,7 +140,7 @@ class ShiftTradeResponse(object):
     def week_date(self) -> date:
         """
         Gets the week_date of this ShiftTradeResponse.
-        The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :return: The week_date of this ShiftTradeResponse.
         :rtype: date
@@ -151,7 +151,7 @@ class ShiftTradeResponse(object):
     def week_date(self, week_date: date) -> None:
         """
         Sets the week_date of this ShiftTradeResponse.
-        The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :param week_date: The week_date of this ShiftTradeResponse.
         :type: date

@@ -265,7 +265,8 @@ class ViewFilter(object):
             'social_post_escalated': 'bool',
             'social_classifications': 'list[str]',
             'filter_users_by_manager_ids': 'list[str]',
-            'slideshow_ids': 'list[str]'
+            'slideshow_ids': 'list[str]',
+            'conferenced': 'bool'
         }
 
         self.attribute_map = {
@@ -479,7 +480,8 @@ class ViewFilter(object):
             'social_post_escalated': 'socialPostEscalated',
             'social_classifications': 'socialClassifications',
             'filter_users_by_manager_ids': 'filterUsersByManagerIds',
-            'slideshow_ids': 'slideshowIds'
+            'slideshow_ids': 'slideshowIds',
+            'conferenced': 'conferenced'
         }
 
         self._media_types = None
@@ -693,6 +695,7 @@ class ViewFilter(object):
         self._social_classifications = None
         self._filter_users_by_manager_ids = None
         self._slideshow_ids = None
+        self._conferenced = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5777,6 +5780,30 @@ class ViewFilter(object):
         
 
         self._slideshow_ids = slideshow_ids
+
+    @property
+    def conferenced(self) -> bool:
+        """
+        Gets the conferenced of this ViewFilter.
+        Filter to indicate if the conversation has conference
+
+        :return: The conferenced of this ViewFilter.
+        :rtype: bool
+        """
+        return self._conferenced
+
+    @conferenced.setter
+    def conferenced(self, conferenced: bool) -> None:
+        """
+        Sets the conferenced of this ViewFilter.
+        Filter to indicate if the conversation has conference
+
+        :param conferenced: The conferenced of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._conferenced = conferenced
 
     def to_dict(self):
         """

@@ -1333,7 +1333,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_routing_sms_phonenumber(self, address_id: str, **kwargs) -> None:
+    def delete_routing_sms_phonenumber(self, phone_number_id: str, **kwargs) -> None:
         """
         Delete a phone number provisioned for SMS.
         
@@ -1344,17 +1344,17 @@ class RoutingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_routing_sms_phonenumber(address_id, callback=callback_function)
+        >>> thread = api.delete_routing_sms_phonenumber(phone_number_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str address_id: Address ID (required)
+        :param str phone_number_id: phone number (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['address_id']
+        all_params = ['phone_number_id']
         all_params.append('callback')
 
         params = locals()
@@ -1367,15 +1367,15 @@ class RoutingApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'address_id' is set
-        if ('address_id' not in params) or (params['address_id'] is None):
-            raise ValueError("Missing the required parameter `address_id` when calling `delete_routing_sms_phonenumber`")
+        # verify the required parameter 'phone_number_id' is set
+        if ('phone_number_id' not in params) or (params['phone_number_id'] is None):
+            raise ValueError("Missing the required parameter `phone_number_id` when calling `delete_routing_sms_phonenumber`")
 
 
-        resource_path = '/api/v2/routing/sms/phonenumbers/{addressId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/routing/sms/phonenumbers/{phoneNumberId}'.replace('{format}', 'json')
         path_params = {}
-        if 'address_id' in params:
-            path_params['addressId'] = params['address_id']
+        if 'phone_number_id' in params:
+            path_params['phoneNumberId'] = params['phone_number_id']
 
         query_params = {}
 
@@ -4375,12 +4375,13 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str queue_id: queueId (required)
         :param str media_type: mediaType (required)
+        :param str label_id: Unique id that represents the interaction label used with media type for EWT calculation
         :return: EstimatedWaitTimePredictions
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queue_id', 'media_type']
+        all_params = ['queue_id', 'media_type', 'label_id']
         all_params.append('callback')
 
         params = locals()
@@ -4409,6 +4410,8 @@ class RoutingApi(object):
             path_params['mediaType'] = params['media_type']
 
         query_params = {}
+        if 'label_id' in params:
+            query_params['labelId'] = params['label_id']
 
         header_params = {}
 
@@ -6075,7 +6078,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_sms_phonenumber(self, address_id: str, **kwargs) -> 'SmsPhoneNumber':
+    def get_routing_sms_phonenumber(self, phone_number_id: str, **kwargs) -> 'SmsPhoneNumber':
         """
         Get a phone number provisioned for SMS.
         
@@ -6086,18 +6089,18 @@ class RoutingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_routing_sms_phonenumber(address_id, callback=callback_function)
+        >>> thread = api.get_routing_sms_phonenumber(phone_number_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str address_id: Address ID (required)
+        :param str phone_number_id: phone number (required)
         :param str expand: Expand response with additional information
         :return: SmsPhoneNumber
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['address_id', 'expand']
+        all_params = ['phone_number_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -6110,15 +6113,15 @@ class RoutingApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'address_id' is set
-        if ('address_id' not in params) or (params['address_id'] is None):
-            raise ValueError("Missing the required parameter `address_id` when calling `get_routing_sms_phonenumber`")
+        # verify the required parameter 'phone_number_id' is set
+        if ('phone_number_id' not in params) or (params['phone_number_id'] is None):
+            raise ValueError("Missing the required parameter `phone_number_id` when calling `get_routing_sms_phonenumber`")
 
 
-        resource_path = '/api/v2/routing/sms/phonenumbers/{addressId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/routing/sms/phonenumbers/{phoneNumberId}'.replace('{format}', 'json')
         path_params = {}
-        if 'address_id' in params:
-            path_params['addressId'] = params['address_id']
+        if 'phone_number_id' in params:
+            path_params['phoneNumberId'] = params['phone_number_id']
 
         query_params = {}
         if 'expand' in params:
@@ -11744,7 +11747,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_sms_phonenumber(self, address_id: str, body: 'SmsPhoneNumber', **kwargs) -> 'SmsPhoneNumber':
+    def put_routing_sms_phonenumber(self, phone_number_id: str, body: 'SmsPhoneNumber', **kwargs) -> 'SmsPhoneNumber':
         """
         Update a phone number provisioned for SMS.
         
@@ -11755,18 +11758,18 @@ class RoutingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_routing_sms_phonenumber(address_id, body, callback=callback_function)
+        >>> thread = api.put_routing_sms_phonenumber(phone_number_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str address_id: Address ID (required)
+        :param str phone_number_id: phone number (required)
         :param SmsPhoneNumber body: SmsPhoneNumber (required)
         :return: SmsPhoneNumber
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['address_id', 'body']
+        all_params = ['phone_number_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -11779,18 +11782,18 @@ class RoutingApi(object):
             params[key] = val
         del params['kwargs']
 
-        # verify the required parameter 'address_id' is set
-        if ('address_id' not in params) or (params['address_id'] is None):
-            raise ValueError("Missing the required parameter `address_id` when calling `put_routing_sms_phonenumber`")
+        # verify the required parameter 'phone_number_id' is set
+        if ('phone_number_id' not in params) or (params['phone_number_id'] is None):
+            raise ValueError("Missing the required parameter `phone_number_id` when calling `put_routing_sms_phonenumber`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `put_routing_sms_phonenumber`")
 
 
-        resource_path = '/api/v2/routing/sms/phonenumbers/{addressId}'.replace('{format}', 'json')
+        resource_path = '/api/v2/routing/sms/phonenumbers/{phoneNumberId}'.replace('{format}', 'json')
         path_params = {}
-        if 'address_id' in params:
-            path_params['addressId'] = params['address_id']
+        if 'phone_number_id' in params:
+            path_params['phoneNumberId'] = params['phone_number_id']
 
         query_params = {}
 

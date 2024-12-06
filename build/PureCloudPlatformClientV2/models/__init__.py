@@ -1299,6 +1299,8 @@ from .data_action_condition_predicate import DataActionConditionPredicate
 from .data_action_condition_settings import DataActionConditionSettings
 from .data_action_contact_column_field_mapping import DataActionContactColumnFieldMapping
 from .data_availability_response import DataAvailabilityResponse
+from .data_ingestion_rule_status_patch_request import DataIngestionRuleStatusPatchRequest
+from .data_ingestion_rules import DataIngestionRules
 from .data_schema import DataSchema
 from .data_schema_listing import DataSchemaListing
 from .data_table import DataTable
@@ -1455,6 +1457,7 @@ from .disposition_parameters import DispositionParameters
 from .division import Division
 from .division_entity_ref import DivisionEntityRef
 from .division_reference import DivisionReference
+from .divisioned_domain_entity_ref import DivisionedDomainEntityRef
 from .divs_permitted_entity_listing import DivsPermittedEntityListing
 from .dnc_list import DncList
 from .dnc_list_create import DncListCreate
@@ -1741,13 +1744,18 @@ from .evaluator_activity import EvaluatorActivity
 from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .event import Event
 from .event_action import EventAction
+from .event_aggregates_query_request import EventAggregatesQueryRequest
+from .event_aggregates_response import EventAggregatesResponse
 from .event_condition import EventCondition
 from .event_definition import EventDefinition
+from .event_definition_aggregates import EventDefinitionAggregates
 from .event_definition_listing import EventDefinitionListing
 from .event_error import EventError
 from .event_listing import EventListing
 from .event_log import EventLog
 from .event_message import EventMessage
+from .event_query_request import EventQueryRequest
+from .event_query_response import EventQueryResponse
 from .event_session import EventSession
 from .event_setting import EventSetting
 from .execute_recording_jobs_query import ExecuteRecordingJobsQuery
@@ -1851,6 +1859,10 @@ from .external_organization_trustor_link import ExternalOrganizationTrustorLink
 from .external_segment import ExternalSegment
 from .external_source import ExternalSource
 from .facebook_app_credentials import FacebookAppCredentials
+from .facebook_data_ingestion_rule_request import FacebookDataIngestionRuleRequest
+from .facebook_data_ingestion_rule_response import FacebookDataIngestionRuleResponse
+from .facebook_data_ingestion_rule_version_response import FacebookDataIngestionRuleVersionResponse
+from .facebook_data_ingestion_rule_version_response_entity_listing import FacebookDataIngestionRuleVersionResponseEntityListing
 from .facebook_id import FacebookId
 from .facebook_integration import FacebookIntegration
 from .facebook_integration_entity_listing import FacebookIntegrationEntityListing
@@ -2287,6 +2299,7 @@ from .journey_view_chart_metric_result_value import JourneyViewChartMetricResult
 from .journey_view_chart_result import JourneyViewChartResult
 from .journey_view_element import JourneyViewElement
 from .journey_view_element_attributes import JourneyViewElementAttributes
+from .journey_view_element_display_attributes import JourneyViewElementDisplayAttributes
 from .journey_view_element_filter import JourneyViewElementFilter
 from .journey_view_element_filter_number_predicate import JourneyViewElementFilterNumberPredicate
 from .journey_view_element_filter_predicate import JourneyViewElementFilterPredicate
@@ -2872,6 +2885,10 @@ from .one_on_one import OneOnOne
 from .open_action_fields import OpenActionFields
 from .open_action_properties import OpenActionProperties
 from .open_content_attachment import OpenContentAttachment
+from .open_data_ingestion_rule_request import OpenDataIngestionRuleRequest
+from .open_data_ingestion_rule_response import OpenDataIngestionRuleResponse
+from .open_data_ingestion_rule_version_response import OpenDataIngestionRuleVersionResponse
+from .open_data_ingestion_rule_version_response_entity_listing import OpenDataIngestionRuleVersionResponseEntityListing
 from .open_event import OpenEvent
 from .open_event_normalized_message import OpenEventNormalizedMessage
 from .open_inbound_message_content import OpenInboundMessageContent
@@ -2890,6 +2907,7 @@ from .open_message_event import OpenMessageEvent
 from .open_message_normalized_message import OpenMessageNormalizedMessage
 from .open_messaging_channel import OpenMessagingChannel
 from .open_messaging_from_recipient import OpenMessagingFromRecipient
+from .open_messaging_identity_resolution_config import OpenMessagingIdentityResolutionConfig
 from .open_messaging_to_recipient import OpenMessagingToRecipient
 from .open_normalized_message import OpenNormalizedMessage
 from .open_receipt_normalized_message import OpenReceiptNormalizedMessage
@@ -2899,6 +2917,7 @@ from .operation import Operation
 from .operation_creator_user_response import OperationCreatorUserResponse
 from .operation_listing import OperationListing
 from .operation_response import OperationResponse
+from .operational_event import OperationalEvent
 from .operational_event_notification_topic_event_entity import OperationalEventNotificationTopicEventEntity
 from .operational_event_notification_topic_operational_event_notification import OperationalEventNotificationTopicOperationalEventNotification
 from .operator_position import OperatorPosition
@@ -3861,6 +3880,10 @@ from .sms_provisioning_status import SmsProvisioningStatus
 from .social_expression import SocialExpression
 from .social_handle import SocialHandle
 from .social_keyword import SocialKeyword
+from .social_topic_patch_request import SocialTopicPatchRequest
+from .social_topic_request import SocialTopicRequest
+from .social_topic_response import SocialTopicResponse
+from .social_topic_response_entity_listing import SocialTopicResponseEntityListing
 from .sort_item import SortItem
 from .source import Source
 from .source_base_response import SourceBaseResponse
@@ -3936,6 +3959,7 @@ from .support_center_global_style import SupportCenterGlobalStyle
 from .support_center_hero_style import SupportCenterHeroStyle
 from .support_center_image import SupportCenterImage
 from .support_center_image_source import SupportCenterImageSource
+from .support_center_label_filter import SupportCenterLabelFilter
 from .support_center_module_setting import SupportCenterModuleSetting
 from .support_center_screen import SupportCenterScreen
 from .support_center_settings import SupportCenterSettings
@@ -4190,6 +4214,10 @@ from .tts_engine_entity_listing import TtsEngineEntityListing
 from .tts_settings import TtsSettings
 from .tts_voice_entity import TtsVoiceEntity
 from .tts_voice_entity_listing import TtsVoiceEntityListing
+from .twitter_data_ingestion_rule_request import TwitterDataIngestionRuleRequest
+from .twitter_data_ingestion_rule_response import TwitterDataIngestionRuleResponse
+from .twitter_data_ingestion_rule_version_response import TwitterDataIngestionRuleVersionResponse
+from .twitter_data_ingestion_rule_version_response_entity_listing import TwitterDataIngestionRuleVersionResponseEntityListing
 from .twitter_id import TwitterId
 from .typing_setting import TypingSetting
 from .uci10n import UCI10n
@@ -4830,6 +4858,7 @@ from .workitem_rule_settings import WorkitemRuleSettings
 from .workitem_schema import WorkitemSchema
 from .workitem_scored_agent import WorkitemScoredAgent
 from .workitem_scored_agent_request import WorkitemScoredAgentRequest
+from .workitem_script_reference import WorkitemScriptReference
 from .workitem_status import WorkitemStatus
 from .workitem_status_create import WorkitemStatusCreate
 from .workitem_status_filter import WorkitemStatusFilter

@@ -13,9 +13,9 @@
 | **version** | int | Required for updates, must match the version number of the most recent update | [optional] |
 | **intervals** | [list[ScheduleInterval]](ScheduleInterval) | A list of intervals during which to run the associated Campaign. | |
 | **time_zone** | str | The time zone for this email campaign schedule. | [optional] |
-| **email_campaign** | [DomainEntityRef](DomainEntityRef) | The Campaign that this email campaign schedule is for. | |
+| **email_campaign** | [DivisionedDomainEntityRef](DivisionedDomainEntityRef) | The Campaign that this email campaign schedule is for. | |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

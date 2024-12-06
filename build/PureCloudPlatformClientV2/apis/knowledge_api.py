@@ -1559,12 +1559,13 @@ class KnowledgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
+        :param list[str] knowledge_base_ids: Narrowing down filtering option results by knowledge base.
         :return: KnowledgeIntegrationOptionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['integration_id']
+        all_params = ['integration_id', 'knowledge_base_ids']
         all_params.append('callback')
 
         params = locals()
@@ -1588,6 +1589,8 @@ class KnowledgeApi(object):
             path_params['integrationId'] = params['integration_id']
 
         query_params = {}
+        if 'knowledge_base_ids' in params:
+            query_params['knowledgeBaseIds'] = params['knowledge_base_ids']
 
         header_params = {}
 

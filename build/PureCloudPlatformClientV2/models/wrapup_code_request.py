@@ -53,6 +53,7 @@ class WrapupCodeRequest(object):
             'id': 'str',
             'name': 'str',
             'division': 'WritableStarrableDivision',
+            'description': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'created_by': 'str',
@@ -64,6 +65,7 @@ class WrapupCodeRequest(object):
             'id': 'id',
             'name': 'name',
             'division': 'division',
+            'description': 'description',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
@@ -74,6 +76,7 @@ class WrapupCodeRequest(object):
         self._id = None
         self._name = None
         self._division = None
+        self._description = None
         self._date_created = None
         self._date_modified = None
         self._created_by = None
@@ -151,6 +154,30 @@ class WrapupCodeRequest(object):
         
 
         self._division = division
+
+    @property
+    def description(self) -> str:
+        """
+        Gets the description of this WrapupCodeRequest.
+        The wrap-up code description.
+
+        :return: The description of this WrapupCodeRequest.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str) -> None:
+        """
+        Sets the description of this WrapupCodeRequest.
+        The wrap-up code description.
+
+        :param description: The description of this WrapupCodeRequest.
+        :type: str
+        """
+        
+
+        self._description = description
 
     @property
     def date_created(self) -> datetime:

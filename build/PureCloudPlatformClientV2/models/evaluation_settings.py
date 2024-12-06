@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import EvaluationSettingsAssignee
 
 class EvaluationSettings(object):
     """
@@ -48,13 +50,119 @@ class EvaluationSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'revisions_enabled': 'bool',
+            'disputes_enabled': 'bool',
+            'disputes_allowed_per_evaluation': 'int',
+            'disputes_assignees': 'list[EvaluationSettingsAssignee]'
         }
 
         self.attribute_map = {
-            
+            'revisions_enabled': 'revisionsEnabled',
+            'disputes_enabled': 'disputesEnabled',
+            'disputes_allowed_per_evaluation': 'disputesAllowedPerEvaluation',
+            'disputes_assignees': 'disputesAssignees'
         }
 
+        self._revisions_enabled = None
+        self._disputes_enabled = None
+        self._disputes_allowed_per_evaluation = None
+        self._disputes_assignees = None
+
+    @property
+    def revisions_enabled(self) -> bool:
+        """
+        Gets the revisions_enabled of this EvaluationSettings.
+        Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations.
+
+        :return: The revisions_enabled of this EvaluationSettings.
+        :rtype: bool
+        """
+        return self._revisions_enabled
+
+    @revisions_enabled.setter
+    def revisions_enabled(self, revisions_enabled: bool) -> None:
+        """
+        Sets the revisions_enabled of this EvaluationSettings.
+        Whether revisions are allowed for evaluations. When enabled, rescoring creates a new version of the evaluation and retracts the existing evaluation version. Does not apply for calibration evaluations.
+
+        :param revisions_enabled: The revisions_enabled of this EvaluationSettings.
+        :type: bool
+        """
+        
+
+        self._revisions_enabled = revisions_enabled
+
+    @property
+    def disputes_enabled(self) -> bool:
+        """
+        Gets the disputes_enabled of this EvaluationSettings.
+        Whether disputes are allowed for evaluations. Does not apply for calibration evaluations.
+
+        :return: The disputes_enabled of this EvaluationSettings.
+        :rtype: bool
+        """
+        return self._disputes_enabled
+
+    @disputes_enabled.setter
+    def disputes_enabled(self, disputes_enabled: bool) -> None:
+        """
+        Sets the disputes_enabled of this EvaluationSettings.
+        Whether disputes are allowed for evaluations. Does not apply for calibration evaluations.
+
+        :param disputes_enabled: The disputes_enabled of this EvaluationSettings.
+        :type: bool
+        """
+        
+
+        self._disputes_enabled = disputes_enabled
+
+    @property
+    def disputes_allowed_per_evaluation(self) -> int:
+        """
+        Gets the disputes_allowed_per_evaluation of this EvaluationSettings.
+        The maximum number of disputes allowed for an evaluation.
+
+        :return: The disputes_allowed_per_evaluation of this EvaluationSettings.
+        :rtype: int
+        """
+        return self._disputes_allowed_per_evaluation
+
+    @disputes_allowed_per_evaluation.setter
+    def disputes_allowed_per_evaluation(self, disputes_allowed_per_evaluation: int) -> None:
+        """
+        Sets the disputes_allowed_per_evaluation of this EvaluationSettings.
+        The maximum number of disputes allowed for an evaluation.
+
+        :param disputes_allowed_per_evaluation: The disputes_allowed_per_evaluation of this EvaluationSettings.
+        :type: int
+        """
+        
+
+        self._disputes_allowed_per_evaluation = disputes_allowed_per_evaluation
+
+    @property
+    def disputes_assignees(self) -> List['EvaluationSettingsAssignee']:
+        """
+        Gets the disputes_assignees of this EvaluationSettings.
+        A list of assignees responsible for handling each dispute. This list size needs to be equal to disputesAllowedPerEvaluation.
+
+        :return: The disputes_assignees of this EvaluationSettings.
+        :rtype: list[EvaluationSettingsAssignee]
+        """
+        return self._disputes_assignees
+
+    @disputes_assignees.setter
+    def disputes_assignees(self, disputes_assignees: List['EvaluationSettingsAssignee']) -> None:
+        """
+        Sets the disputes_assignees of this EvaluationSettings.
+        A list of assignees responsible for handling each dispute. This list size needs to be equal to disputesAllowedPerEvaluation.
+
+        :param disputes_assignees: The disputes_assignees of this EvaluationSettings.
+        :type: list[EvaluationSettingsAssignee]
+        """
+        
+
+        self._disputes_assignees = disputes_assignees
 
     def to_dict(self):
         """

@@ -84,7 +84,7 @@ class ShiftTradeNotification(object):
     def week_date(self) -> str:
         """
         Gets the week_date of this ShiftTradeNotification.
-        The start date of the schedule with which this trade is associated
+        The start week date of the initiating shift of the shift trade in yyyy-MM-dd format
 
         :return: The week_date of this ShiftTradeNotification.
         :rtype: str
@@ -95,7 +95,7 @@ class ShiftTradeNotification(object):
     def week_date(self, week_date: str) -> None:
         """
         Sets the week_date of this ShiftTradeNotification.
-        The start date of the schedule with which this trade is associated
+        The start week date of the initiating shift of the shift trade in yyyy-MM-dd format
 
         :param week_date: The week_date of this ShiftTradeNotification.
         :type: str

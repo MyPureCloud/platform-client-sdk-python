@@ -59,6 +59,7 @@ from .screen_recording_api import ScreenRecordingApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
 from .settings_api import SettingsApi
+from .social_media_api import SocialMediaApi
 from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
@@ -137,6 +138,7 @@ from .screen_recording_api import ScreenRecordingApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
 from .settings_api import SettingsApi
+from .social_media_api import SocialMediaApi
 from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi

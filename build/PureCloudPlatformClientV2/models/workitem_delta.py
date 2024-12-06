@@ -81,7 +81,8 @@ class WorkitemDelta(object):
             'custom_fields': 'WorkitemsAttributeChangeMap',
             'date_modified': 'WorkitemsAttributeChangeInstant',
             'modified_by': 'WorkitemsAttributeChangeString',
-            'status_category': 'WorkitemsAttributeChangeWorkitemStatusCategory'
+            'status_category': 'WorkitemsAttributeChangeWorkitemStatusCategory',
+            'script_id': 'WorkitemsAttributeChangeString'
         }
 
         self.attribute_map = {
@@ -110,7 +111,8 @@ class WorkitemDelta(object):
             'custom_fields': 'customFields',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
-            'status_category': 'statusCategory'
+            'status_category': 'statusCategory',
+            'script_id': 'scriptId'
         }
 
         self._name = None
@@ -139,6 +141,7 @@ class WorkitemDelta(object):
         self._date_modified = None
         self._modified_by = None
         self._status_category = None
+        self._script_id = None
 
     @property
     def name(self) -> 'WorkitemsAttributeChangeString':
@@ -763,6 +766,30 @@ class WorkitemDelta(object):
         
 
         self._status_category = status_category
+
+    @property
+    def script_id(self) -> 'WorkitemsAttributeChangeString':
+        """
+        Gets the script_id of this WorkitemDelta.
+
+
+        :return: The script_id of this WorkitemDelta.
+        :rtype: WorkitemsAttributeChangeString
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id: 'WorkitemsAttributeChangeString') -> None:
+        """
+        Sets the script_id of this WorkitemDelta.
+
+
+        :param script_id: The script_id of this WorkitemDelta.
+        :type: WorkitemsAttributeChangeString
+        """
+        
+
+        self._script_id = script_id
 
     def to_dict(self):
         """

@@ -32,7 +32,8 @@
 | **date_modified** | [WorkitemsAttributeChangeInstant](WorkitemsAttributeChangeInstant) |  | [optional] |
 | **modified_by** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
 | **status_category** | [WorkitemsAttributeChangeWorkitemStatusCategory](WorkitemsAttributeChangeWorkitemStatusCategory) |  | [optional] |
+| **script_id** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

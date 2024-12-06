@@ -72,7 +72,8 @@ class WorktypeDelta(object):
             'schema_version': 'WorkitemsAttributeChangeString',
             'service_level_target': 'WorkitemsAttributeChangeInteger',
             'date_modified': 'WorkitemsAttributeChangeInstant',
-            'modified_by': 'WorkitemsAttributeChangeString'
+            'modified_by': 'WorkitemsAttributeChangeString',
+            'default_script_id': 'WorkitemsAttributeChangeString'
         }
 
         self.attribute_map = {
@@ -94,7 +95,8 @@ class WorktypeDelta(object):
             'schema_version': 'schemaVersion',
             'service_level_target': 'serviceLevelTarget',
             'date_modified': 'dateModified',
-            'modified_by': 'modifiedBy'
+            'modified_by': 'modifiedBy',
+            'default_script_id': 'defaultScriptId'
         }
 
         self._name = None
@@ -116,6 +118,7 @@ class WorktypeDelta(object):
         self._service_level_target = None
         self._date_modified = None
         self._modified_by = None
+        self._default_script_id = None
 
     @property
     def name(self) -> 'WorkitemsAttributeChangeString':
@@ -572,6 +575,30 @@ class WorktypeDelta(object):
         
 
         self._modified_by = modified_by
+
+    @property
+    def default_script_id(self) -> 'WorkitemsAttributeChangeString':
+        """
+        Gets the default_script_id of this WorktypeDelta.
+
+
+        :return: The default_script_id of this WorktypeDelta.
+        :rtype: WorkitemsAttributeChangeString
+        """
+        return self._default_script_id
+
+    @default_script_id.setter
+    def default_script_id(self, default_script_id: 'WorkitemsAttributeChangeString') -> None:
+        """
+        Sets the default_script_id of this WorktypeDelta.
+
+
+        :param default_script_id: The default_script_id of this WorktypeDelta.
+        :type: WorkitemsAttributeChangeString
+        """
+        
+
+        self._default_script_id = default_script_id
 
     def to_dict(self):
         """

@@ -8791,7 +8791,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date week_date_id: The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param bool evaluate_matches: Whether to evaluate the matches for violations
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :return: WeekShiftTradeListResponse
@@ -12196,7 +12196,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date week_date_id: The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str trade_id: The ID of the shift trade to update (required)
         :param PatchShiftTradeRequest body: body (required)
         :return: ShiftTradeResponse
@@ -18345,7 +18345,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date week_date_id: The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str trade_id: The ID of the shift trade to update (required)
         :param MatchShiftTradeRequest body: body (required)
         :return: MatchShiftTradeResponse
@@ -18441,7 +18441,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date week_date_id: The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param AddShiftTradeRequest body: body (required)
         :return: ShiftTradeResponse
                  If the method is called asynchronously,
@@ -18531,7 +18531,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date week_date_id: The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param SearchShiftTradesRequest body: body (required)
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :return: SearchShiftTradesResponse
@@ -18624,7 +18624,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param date week_date_id: The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date week_date_id: The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param BulkShiftTradeStateUpdateRequest body: body (required)
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
         :return: BulkUpdateShiftTradeStateResponse

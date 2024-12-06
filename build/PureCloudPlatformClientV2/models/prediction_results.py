@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import AddressableEntityRef
 
 class PredictionResults(object):
     """
@@ -50,18 +52,21 @@ class PredictionResults(object):
         self.swagger_types = {
             'intent': 'str',
             'formula': 'str',
-            'estimated_wait_time_seconds': 'int'
+            'estimated_wait_time_seconds': 'int',
+            'label': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
             'intent': 'intent',
             'formula': 'formula',
-            'estimated_wait_time_seconds': 'estimatedWaitTimeSeconds'
+            'estimated_wait_time_seconds': 'estimatedWaitTimeSeconds',
+            'label': 'label'
         }
 
         self._intent = None
         self._formula = None
         self._estimated_wait_time_seconds = None
+        self._label = None
 
     @property
     def intent(self) -> str:
@@ -144,6 +149,30 @@ class PredictionResults(object):
         
 
         self._estimated_wait_time_seconds = estimated_wait_time_seconds
+
+    @property
+    def label(self) -> 'AddressableEntityRef':
+        """
+        Gets the label of this PredictionResults.
+        This specifies the interaction label scoped to this estimated wait time calculation
+
+        :return: The label of this PredictionResults.
+        :rtype: AddressableEntityRef
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label: 'AddressableEntityRef') -> None:
+        """
+        Sets the label of this PredictionResults.
+        This specifies the interaction label scoped to this estimated wait time calculation
+
+        :param label: The label of this PredictionResults.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._label = label
 
     def to_dict(self):
         """

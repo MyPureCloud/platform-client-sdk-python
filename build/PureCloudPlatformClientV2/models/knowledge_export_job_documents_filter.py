@@ -52,18 +52,21 @@ class KnowledgeExportJobDocumentsFilter(object):
         self.swagger_types = {
             'interval': 'str',
             'entities': 'list[Entity]',
-            'source_id': 'str'
+            'source_id': 'str',
+            'include_documents_with_file_body': 'bool'
         }
 
         self.attribute_map = {
             'interval': 'interval',
             'entities': 'entities',
-            'source_id': 'sourceId'
+            'source_id': 'sourceId',
+            'include_documents_with_file_body': 'includeDocumentsWithFileBody'
         }
 
         self._interval = None
         self._entities = None
         self._source_id = None
+        self._include_documents_with_file_body = None
 
     @property
     def interval(self) -> str:
@@ -136,6 +139,30 @@ class KnowledgeExportJobDocumentsFilter(object):
         
 
         self._source_id = source_id
+
+    @property
+    def include_documents_with_file_body(self) -> bool:
+        """
+        Gets the include_documents_with_file_body of this KnowledgeExportJobDocumentsFilter.
+
+
+        :return: The include_documents_with_file_body of this KnowledgeExportJobDocumentsFilter.
+        :rtype: bool
+        """
+        return self._include_documents_with_file_body
+
+    @include_documents_with_file_body.setter
+    def include_documents_with_file_body(self, include_documents_with_file_body: bool) -> None:
+        """
+        Sets the include_documents_with_file_body of this KnowledgeExportJobDocumentsFilter.
+
+
+        :param include_documents_with_file_body: The include_documents_with_file_body of this KnowledgeExportJobDocumentsFilter.
+        :type: bool
+        """
+        
+
+        self._include_documents_with_file_body = include_documents_with_file_body
 
     def to_dict(self):
         """

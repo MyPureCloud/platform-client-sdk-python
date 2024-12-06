@@ -940,7 +940,7 @@ except ApiException as e:
 
 ## get_knowledge_integration_options
 
-> [**KnowledgeIntegrationOptionsResponse**](KnowledgeIntegrationOptionsResponse) get_knowledge_integration_options(integration_id)
+> [**KnowledgeIntegrationOptionsResponse**](KnowledgeIntegrationOptionsResponse) get_knowledge_integration_options(integration_id, knowledge_base_ids=knowledge_base_ids)
 
 
 Get sync options available for a knowledge-connect integration
@@ -965,10 +965,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 integration_id = 'integration_id_example' # str | Integration ID
+knowledge_base_ids = ['knowledge_base_ids_example'] # list[str] | Narrowing down filtering option results by knowledge base. (optional)
 
 try:
     # Get sync options available for a knowledge-connect integration
-    api_response = api_instance.get_knowledge_integration_options(integration_id)
+    api_response = api_instance.get_knowledge_integration_options(integration_id, knowledge_base_ids=knowledge_base_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_integration_options: %s\n" % e)
@@ -980,6 +981,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
+| **knowledge_base_ids** | [**list[str]**](str)| Narrowing down filtering option results by knowledge base. | [optional]  |
 
 ### Return type
 
@@ -6215,4 +6217,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DomainEntityListingEvaluationForm
     from . import EvaluationQuestionGroup
+    from . import EvaluationSettings
 
 class EvaluationForm(object):
     """
@@ -58,6 +59,7 @@ class EvaluationForm(object):
             'context_id': 'str',
             'question_groups': 'list[EvaluationQuestionGroup]',
             'published_versions': 'DomainEntityListingEvaluationForm',
+            'evaluation_settings': 'EvaluationSettings',
             'self_uri': 'str'
         }
 
@@ -69,6 +71,7 @@ class EvaluationForm(object):
             'context_id': 'contextId',
             'question_groups': 'questionGroups',
             'published_versions': 'publishedVersions',
+            'evaluation_settings': 'evaluationSettings',
             'self_uri': 'selfUri'
         }
 
@@ -79,6 +82,7 @@ class EvaluationForm(object):
         self._context_id = None
         self._question_groups = None
         self._published_versions = None
+        self._evaluation_settings = None
         self._self_uri = None
 
     @property
@@ -248,6 +252,30 @@ class EvaluationForm(object):
         
 
         self._published_versions = published_versions
+
+    @property
+    def evaluation_settings(self) -> 'EvaluationSettings':
+        """
+        Gets the evaluation_settings of this EvaluationForm.
+        Settings for evaluations associated with this form
+
+        :return: The evaluation_settings of this EvaluationForm.
+        :rtype: EvaluationSettings
+        """
+        return self._evaluation_settings
+
+    @evaluation_settings.setter
+    def evaluation_settings(self, evaluation_settings: 'EvaluationSettings') -> None:
+        """
+        Sets the evaluation_settings of this EvaluationForm.
+        Settings for evaluations associated with this form
+
+        :param evaluation_settings: The evaluation_settings of this EvaluationForm.
+        :type: EvaluationSettings
+        """
+        
+
+        self._evaluation_settings = evaluation_settings
 
     @property
     def self_uri(self) -> str:

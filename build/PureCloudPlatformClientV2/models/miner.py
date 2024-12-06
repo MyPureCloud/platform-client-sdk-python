@@ -196,7 +196,7 @@ class Miner(object):
         """
         if isinstance(language, int):
             language = str(language)
-        allowed_values = ["en-us", "en-gb", "en-au", "en-in", "en-za", "es-us", "es-es", "fr-fr", "fr-ca", "de-de", "pt-pt", "pt-br", "it-it"]
+        allowed_values = ["en-us", "en-gb", "en-au", "en-in", "en-za", "es-us", "es-es", "fr-fr", "fr-ca", "de-de", "pt-pt", "pt-br", "it-it", "nl-nl"]
         if language.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for language -> " + language)
             self._language = "outdated_sdk_version"

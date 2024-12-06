@@ -55,6 +55,7 @@ class BatchDownloadJobStatusResult(object):
             'expected_result_count': 'int',
             'result_count': 'int',
             'error_count': 'int',
+            'status': 'str',
             'results': 'list[BatchDownloadJobResult]',
             'self_uri': 'str'
         }
@@ -65,6 +66,7 @@ class BatchDownloadJobStatusResult(object):
             'expected_result_count': 'expectedResultCount',
             'result_count': 'resultCount',
             'error_count': 'errorCount',
+            'status': 'status',
             'results': 'results',
             'self_uri': 'selfUri'
         }
@@ -74,6 +76,7 @@ class BatchDownloadJobStatusResult(object):
         self._expected_result_count = None
         self._result_count = None
         self._error_count = None
+        self._status = None
         self._results = None
         self._self_uri = None
 
@@ -196,6 +199,35 @@ class BatchDownloadJobStatusResult(object):
         
 
         self._error_count = error_count
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this BatchDownloadJobStatusResult.
+        Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+
+        :return: The status of this BatchDownloadJobStatusResult.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this BatchDownloadJobStatusResult.
+        Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+
+        :param status: The status of this BatchDownloadJobStatusResult.
+        :type: str
+        """
+        if isinstance(status, int):
+            status = str(status)
+        allowed_values = ["InProgress", "Completed"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
 
     @property
     def results(self) -> List['BatchDownloadJobResult']:

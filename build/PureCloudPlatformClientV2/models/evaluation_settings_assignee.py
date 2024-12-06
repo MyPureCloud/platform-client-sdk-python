@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import UserReferenceWithName
 
 class EvaluationSettingsAssignee(object):
     """
@@ -48,13 +50,70 @@ class EvaluationSettingsAssignee(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'user': 'UserReferenceWithName',
+            'type': 'str'
         }
 
         self.attribute_map = {
-            
+            'user': 'user',
+            'type': 'type'
         }
 
+        self._user = None
+        self._type = None
+
+    @property
+    def user(self) -> 'UserReferenceWithName':
+        """
+        Gets the user of this EvaluationSettingsAssignee.
+        The user the dispute should be assigned to
+
+        :return: The user of this EvaluationSettingsAssignee.
+        :rtype: UserReferenceWithName
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user: 'UserReferenceWithName') -> None:
+        """
+        Sets the user of this EvaluationSettingsAssignee.
+        The user the dispute should be assigned to
+
+        :param user: The user of this EvaluationSettingsAssignee.
+        :type: UserReferenceWithName
+        """
+        
+
+        self._user = user
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this EvaluationSettingsAssignee.
+        The assignee type. Valid values: Original, Individual, None
+
+        :return: The type of this EvaluationSettingsAssignee.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this EvaluationSettingsAssignee.
+        The assignee type. Valid values: Original, Individual, None
+
+        :param type: The type of this EvaluationSettingsAssignee.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["Original", "Individual", "None"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     def to_dict(self):
         """

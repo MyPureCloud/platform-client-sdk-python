@@ -64,7 +64,7 @@ class SocialHandle(object):
     def type(self) -> str:
         """
         Gets the type of this SocialHandle.
-
+        Social Handle Type
 
         :return: The type of this SocialHandle.
         :rtype: str
@@ -75,7 +75,7 @@ class SocialHandle(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this SocialHandle.
-
+        Social Handle Type
 
         :param type: The type of this SocialHandle.
         :type: str

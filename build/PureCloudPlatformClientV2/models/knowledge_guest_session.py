@@ -55,7 +55,8 @@ class KnowledgeGuestSession(object):
             'app': 'KnowledgeGuestSessionApp',
             'customer_id': 'str',
             'page_url': 'str',
-            'contexts': 'list[KnowledgeGuestSessionContext]'
+            'contexts': 'list[KnowledgeGuestSessionContext]',
+            'journey_session_id': 'str'
         }
 
         self.attribute_map = {
@@ -63,7 +64,8 @@ class KnowledgeGuestSession(object):
             'app': 'app',
             'customer_id': 'customerId',
             'page_url': 'pageUrl',
-            'contexts': 'contexts'
+            'contexts': 'contexts',
+            'journey_session_id': 'journeySessionId'
         }
 
         self._id = None
@@ -71,6 +73,7 @@ class KnowledgeGuestSession(object):
         self._customer_id = None
         self._page_url = None
         self._contexts = None
+        self._journey_session_id = None
 
     @property
     def id(self) -> str:
@@ -191,6 +194,30 @@ class KnowledgeGuestSession(object):
         
 
         self._contexts = contexts
+
+    @property
+    def journey_session_id(self) -> str:
+        """
+        Gets the journey_session_id of this KnowledgeGuestSession.
+        Journey session ID. Used to get the segments of the customer to filter search results.
+
+        :return: The journey_session_id of this KnowledgeGuestSession.
+        :rtype: str
+        """
+        return self._journey_session_id
+
+    @journey_session_id.setter
+    def journey_session_id(self, journey_session_id: str) -> None:
+        """
+        Sets the journey_session_id of this KnowledgeGuestSession.
+        Journey session ID. Used to get the segments of the customer to filter search results.
+
+        :param journey_session_id: The journey_session_id of this KnowledgeGuestSession.
+        :type: str
+        """
+        
+
+        self._journey_session_id = journey_session_id
 
     def to_dict(self):
         """

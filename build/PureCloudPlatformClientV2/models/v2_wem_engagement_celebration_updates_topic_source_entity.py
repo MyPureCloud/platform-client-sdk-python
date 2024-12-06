@@ -106,7 +106,7 @@ class V2WemEngagementCelebrationUpdatesTopicSourceEntity(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["UNKNOWN", "THANK_YOU", "CONGRATULATIONS", "HIGH_PERFORMANCE", "COMPANY_VALUES"]
+        allowed_values = ["UNKNOWN", "THANK_YOU", "CONGRATULATIONS", "HIGH_PERFORMANCE", "COMPANY_VALUES", "COMPETITION", "RACE", "RAFFLE", "TEAM_GOAL"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

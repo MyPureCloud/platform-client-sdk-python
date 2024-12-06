@@ -88,7 +88,7 @@ class WeekShiftTradeMatchesSummaryResponse(object):
     def count(self) -> int:
         """
         Gets the count of this WeekShiftTradeMatchesSummaryResponse.
-        The number of trades in the Matched state for the given week
+        The number of trades in the Matched state with the initiating shift in the given week
 
         :return: The count of this WeekShiftTradeMatchesSummaryResponse.
         :rtype: int
@@ -99,7 +99,7 @@ class WeekShiftTradeMatchesSummaryResponse(object):
     def count(self, count: int) -> None:
         """
         Sets the count of this WeekShiftTradeMatchesSummaryResponse.
-        The number of trades in the Matched state for the given week
+        The number of trades in the Matched state with the initiating shift in the given week
 
         :param count: The count of this WeekShiftTradeMatchesSummaryResponse.
         :type: int

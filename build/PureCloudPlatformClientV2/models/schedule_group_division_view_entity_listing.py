@@ -55,11 +55,11 @@ class ScheduleGroupDivisionViewEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'total_number_of_entities': 'int',
+            'next_uri': 'str',
             'previous_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
-            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -69,11 +69,11 @@ class ScheduleGroupDivisionViewEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'total_number_of_entities': 'totalNumberOfEntities',
+            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -82,11 +82,11 @@ class ScheduleGroupDivisionViewEntityListing(object):
         self._page_number = None
         self._total = None
         self._total_number_of_entities = None
+        self._next_uri = None
         self._previous_uri = None
         self._last_uri = None
         self._first_uri = None
         self._self_uri = None
-        self._next_uri = None
         self._page_count = None
 
     @property
@@ -210,6 +210,30 @@ class ScheduleGroupDivisionViewEntityListing(object):
         self._total_number_of_entities = total_number_of_entities
 
     @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this ScheduleGroupDivisionViewEntityListing.
+
+
+        :return: The next_uri of this ScheduleGroupDivisionViewEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this ScheduleGroupDivisionViewEntityListing.
+
+
+        :param next_uri: The next_uri of this ScheduleGroupDivisionViewEntityListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
+
+    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this ScheduleGroupDivisionViewEntityListing.
@@ -304,30 +328,6 @@ class ScheduleGroupDivisionViewEntityListing(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this ScheduleGroupDivisionViewEntityListing.
-
-
-        :return: The next_uri of this ScheduleGroupDivisionViewEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this ScheduleGroupDivisionViewEntityListing.
-
-
-        :param next_uri: The next_uri of this ScheduleGroupDivisionViewEntityListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
 
     @property
     def page_count(self) -> int:

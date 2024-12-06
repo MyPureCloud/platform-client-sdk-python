@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import JourneyViewElementAttributes
+    from . import JourneyViewElementDisplayAttributes
     from . import JourneyViewElementFilter
     from . import JourneyViewLink
 
@@ -55,6 +56,7 @@ class JourneyViewElement(object):
             'id': 'str',
             'name': 'str',
             'attributes': 'JourneyViewElementAttributes',
+            'display_attributes': 'JourneyViewElementDisplayAttributes',
             'filter': 'JourneyViewElementFilter',
             'followed_by': 'list[JourneyViewLink]'
         }
@@ -63,6 +65,7 @@ class JourneyViewElement(object):
             'id': 'id',
             'name': 'name',
             'attributes': 'attributes',
+            'display_attributes': 'displayAttributes',
             'filter': 'filter',
             'followed_by': 'followedBy'
         }
@@ -70,6 +73,7 @@ class JourneyViewElement(object):
         self._id = None
         self._name = None
         self._attributes = None
+        self._display_attributes = None
         self._filter = None
         self._followed_by = None
 
@@ -144,6 +148,30 @@ class JourneyViewElement(object):
         
 
         self._attributes = attributes
+
+    @property
+    def display_attributes(self) -> 'JourneyViewElementDisplayAttributes':
+        """
+        Gets the display_attributes of this JourneyViewElement.
+        Attributes that defines the visualization of the element in the journey view
+
+        :return: The display_attributes of this JourneyViewElement.
+        :rtype: JourneyViewElementDisplayAttributes
+        """
+        return self._display_attributes
+
+    @display_attributes.setter
+    def display_attributes(self, display_attributes: 'JourneyViewElementDisplayAttributes') -> None:
+        """
+        Sets the display_attributes of this JourneyViewElement.
+        Attributes that defines the visualization of the element in the journey view
+
+        :param display_attributes: The display_attributes of this JourneyViewElement.
+        :type: JourneyViewElementDisplayAttributes
+        """
+        
+
+        self._display_attributes = display_attributes
 
     @property
     def filter(self) -> 'JourneyViewElementFilter':

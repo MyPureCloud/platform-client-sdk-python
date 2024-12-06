@@ -207,7 +207,7 @@ class ArchitectFlowNotificationArchitectOperation(object):
         """
         if isinstance(action_name, int):
             action_name = str(action_name)
-        allowed_values = ["CREATE", "CHECKIN", "CHECKOUT", "DEBUG", "DELETE", "HISTORY", "PUBLISH", "REVERT", "SAVE", "STATE_CHANGE", "UPDATE", "VALIDATE"]
+        allowed_values = ["CREATE", "CHECKIN", "CHECKOUT", "DEACTIVATE", "DEBUG", "DELETE", "HISTORY", "PUBLISH", "REVERT", "SAVE", "STATE_CHANGE", "UPDATE", "VALIDATE"]
         if action_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action_name -> " + action_name)
             self._action_name = "outdated_sdk_version"

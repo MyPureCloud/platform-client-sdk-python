@@ -392,7 +392,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '216.0.0'
+        header_params['purecloud-sdk'] = '217.0.0'
 
         # path parameters
         if path_params:
@@ -540,7 +540,13 @@ class ApiClient(object):
 
         # fetch data from response object
         try:
-            data = json.loads(response.data)
+            content_type = response.getheader('Content-Type')
+            if content_type == 'application/json' or content_type == 'application/scim+json':
+                data = json.loads(response.data)
+            elif content_type is not None and content_type.startswith('text/'):
+                data = response.data
+            else:
+                data = json.loads(response.data)
         except ValueError:
             data = response.data
 

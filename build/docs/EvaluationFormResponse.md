@@ -13,9 +13,10 @@
 | **context_id** | str |  | [optional] |
 | **question_groups** | [list[EvaluationQuestionGroup]](EvaluationQuestionGroup) | A list of question groups | [optional] |
 | **weight_mode** | str | Mode for evaluation form weight | [optional] |
+| **evaluation_settings** | [EvaluationSettings](EvaluationSettings) | Settings for evaluations associated with this form | [optional] |
 | **published_versions** | [DomainEntityListingEvaluationForm](DomainEntityListingEvaluationForm) | A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the &#39;expand&#x3D;publishHistory&#39; query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable). | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 216.0.0_
+_PureCloudPlatformClientV2 217.0.0_

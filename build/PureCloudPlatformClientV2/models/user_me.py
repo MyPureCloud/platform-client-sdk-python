@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Adjacents
+    from . import AutoAnswerSettings
     from . import Biography
     from . import Chat
     from . import Contact
@@ -116,6 +117,7 @@ class UserMe(object):
             'work_plan_bid_ranks': 'WorkPlanBidRanks',
             'skills': 'list[UserRoutingSkill]',
             'languages': 'list[UserRoutingLanguage]',
+            'auto_answer_settings': 'AutoAnswerSettings',
             'acd_auto_answer': 'bool',
             'language_preference': 'str',
             'last_token_issued': 'OAuthLastTokenIssued',
@@ -173,6 +175,7 @@ class UserMe(object):
             'work_plan_bid_ranks': 'workPlanBidRanks',
             'skills': 'skills',
             'languages': 'languages',
+            'auto_answer_settings': 'autoAnswerSettings',
             'acd_auto_answer': 'acdAutoAnswer',
             'language_preference': 'languagePreference',
             'last_token_issued': 'lastTokenIssued',
@@ -229,6 +232,7 @@ class UserMe(object):
         self._work_plan_bid_ranks = None
         self._skills = None
         self._languages = None
+        self._auto_answer_settings = None
         self._acd_auto_answer = None
         self._language_preference = None
         self._last_token_issued = None
@@ -1047,6 +1051,30 @@ class UserMe(object):
         
 
         self._languages = languages
+
+    @property
+    def auto_answer_settings(self) -> 'AutoAnswerSettings':
+        """
+        Gets the auto_answer_settings of this UserMe.
+        Auto answer settings for this user
+
+        :return: The auto_answer_settings of this UserMe.
+        :rtype: AutoAnswerSettings
+        """
+        return self._auto_answer_settings
+
+    @auto_answer_settings.setter
+    def auto_answer_settings(self, auto_answer_settings: 'AutoAnswerSettings') -> None:
+        """
+        Sets the auto_answer_settings of this UserMe.
+        Auto answer settings for this user
+
+        :param auto_answer_settings: The auto_answer_settings of this UserMe.
+        :type: AutoAnswerSettings
+        """
+        
+
+        self._auto_answer_settings = auto_answer_settings
 
     @property
     def acd_auto_answer(self) -> bool:

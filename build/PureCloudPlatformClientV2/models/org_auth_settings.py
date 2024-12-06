@@ -54,7 +54,8 @@ class OrgAuthSettings(object):
             'domain_allowlist_enabled': 'bool',
             'domain_allowlist': 'list[str]',
             'ip_address_allowlist': 'list[str]',
-            'password_requirements': 'PasswordRequirements'
+            'password_requirements': 'PasswordRequirements',
+            'inactivity_timeout_exclusions': 'list[str]'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class OrgAuthSettings(object):
             'domain_allowlist_enabled': 'domainAllowlistEnabled',
             'domain_allowlist': 'domainAllowlist',
             'ip_address_allowlist': 'ipAddressAllowlist',
-            'password_requirements': 'passwordRequirements'
+            'password_requirements': 'passwordRequirements',
+            'inactivity_timeout_exclusions': 'inactivityTimeoutExclusions'
         }
 
         self._multifactor_authentication_required = None
@@ -70,6 +72,7 @@ class OrgAuthSettings(object):
         self._domain_allowlist = None
         self._ip_address_allowlist = None
         self._password_requirements = None
+        self._inactivity_timeout_exclusions = None
 
     @property
     def multifactor_authentication_required(self) -> bool:
@@ -190,6 +193,30 @@ class OrgAuthSettings(object):
         
 
         self._password_requirements = password_requirements
+
+    @property
+    def inactivity_timeout_exclusions(self) -> List[str]:
+        """
+        Gets the inactivity_timeout_exclusions of this OrgAuthSettings.
+        The list of exempt apis from inactivity timeout.
+
+        :return: The inactivity_timeout_exclusions of this OrgAuthSettings.
+        :rtype: list[str]
+        """
+        return self._inactivity_timeout_exclusions
+
+    @inactivity_timeout_exclusions.setter
+    def inactivity_timeout_exclusions(self, inactivity_timeout_exclusions: List[str]) -> None:
+        """
+        Sets the inactivity_timeout_exclusions of this OrgAuthSettings.
+        The list of exempt apis from inactivity timeout.
+
+        :param inactivity_timeout_exclusions: The inactivity_timeout_exclusions of this OrgAuthSettings.
+        :type: list[str]
+        """
+        
+
+        self._inactivity_timeout_exclusions = inactivity_timeout_exclusions
 
     def to_dict(self):
         """

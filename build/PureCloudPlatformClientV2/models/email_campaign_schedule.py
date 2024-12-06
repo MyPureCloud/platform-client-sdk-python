@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DomainEntityRef
+    from . import DivisionedDomainEntityRef
     from . import ScheduleInterval
 
 class EmailCampaignSchedule(object):
@@ -58,7 +58,7 @@ class EmailCampaignSchedule(object):
             'version': 'int',
             'intervals': 'list[ScheduleInterval]',
             'time_zone': 'str',
-            'email_campaign': 'DomainEntityRef',
+            'email_campaign': 'DivisionedDomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -253,24 +253,24 @@ class EmailCampaignSchedule(object):
         self._time_zone = time_zone
 
     @property
-    def email_campaign(self) -> 'DomainEntityRef':
+    def email_campaign(self) -> 'DivisionedDomainEntityRef':
         """
         Gets the email_campaign of this EmailCampaignSchedule.
         The Campaign that this email campaign schedule is for.
 
         :return: The email_campaign of this EmailCampaignSchedule.
-        :rtype: DomainEntityRef
+        :rtype: DivisionedDomainEntityRef
         """
         return self._email_campaign
 
     @email_campaign.setter
-    def email_campaign(self, email_campaign: 'DomainEntityRef') -> None:
+    def email_campaign(self, email_campaign: 'DivisionedDomainEntityRef') -> None:
         """
         Sets the email_campaign of this EmailCampaignSchedule.
         The Campaign that this email campaign schedule is for.
 
         :param email_campaign: The email_campaign of this EmailCampaignSchedule.
-        :type: DomainEntityRef
+        :type: DivisionedDomainEntityRef
         """
         
 

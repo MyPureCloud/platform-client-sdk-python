@@ -1299,6 +1299,8 @@ from .models.data_action_condition_predicate import DataActionConditionPredicate
 from .models.data_action_condition_settings import DataActionConditionSettings
 from .models.data_action_contact_column_field_mapping import DataActionContactColumnFieldMapping
 from .models.data_availability_response import DataAvailabilityResponse
+from .models.data_ingestion_rule_status_patch_request import DataIngestionRuleStatusPatchRequest
+from .models.data_ingestion_rules import DataIngestionRules
 from .models.data_schema import DataSchema
 from .models.data_schema_listing import DataSchemaListing
 from .models.data_table import DataTable
@@ -1455,6 +1457,7 @@ from .models.disposition_parameters import DispositionParameters
 from .models.division import Division
 from .models.division_entity_ref import DivisionEntityRef
 from .models.division_reference import DivisionReference
+from .models.divisioned_domain_entity_ref import DivisionedDomainEntityRef
 from .models.divs_permitted_entity_listing import DivsPermittedEntityListing
 from .models.dnc_list import DncList
 from .models.dnc_list_create import DncListCreate
@@ -1741,13 +1744,18 @@ from .models.evaluator_activity import EvaluatorActivity
 from .models.evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .models.event import Event
 from .models.event_action import EventAction
+from .models.event_aggregates_query_request import EventAggregatesQueryRequest
+from .models.event_aggregates_response import EventAggregatesResponse
 from .models.event_condition import EventCondition
 from .models.event_definition import EventDefinition
+from .models.event_definition_aggregates import EventDefinitionAggregates
 from .models.event_definition_listing import EventDefinitionListing
 from .models.event_error import EventError
 from .models.event_listing import EventListing
 from .models.event_log import EventLog
 from .models.event_message import EventMessage
+from .models.event_query_request import EventQueryRequest
+from .models.event_query_response import EventQueryResponse
 from .models.event_session import EventSession
 from .models.event_setting import EventSetting
 from .models.execute_recording_jobs_query import ExecuteRecordingJobsQuery
@@ -1851,6 +1859,10 @@ from .models.external_organization_trustor_link import ExternalOrganizationTrust
 from .models.external_segment import ExternalSegment
 from .models.external_source import ExternalSource
 from .models.facebook_app_credentials import FacebookAppCredentials
+from .models.facebook_data_ingestion_rule_request import FacebookDataIngestionRuleRequest
+from .models.facebook_data_ingestion_rule_response import FacebookDataIngestionRuleResponse
+from .models.facebook_data_ingestion_rule_version_response import FacebookDataIngestionRuleVersionResponse
+from .models.facebook_data_ingestion_rule_version_response_entity_listing import FacebookDataIngestionRuleVersionResponseEntityListing
 from .models.facebook_id import FacebookId
 from .models.facebook_integration import FacebookIntegration
 from .models.facebook_integration_entity_listing import FacebookIntegrationEntityListing
@@ -2287,6 +2299,7 @@ from .models.journey_view_chart_metric_result_value import JourneyViewChartMetri
 from .models.journey_view_chart_result import JourneyViewChartResult
 from .models.journey_view_element import JourneyViewElement
 from .models.journey_view_element_attributes import JourneyViewElementAttributes
+from .models.journey_view_element_display_attributes import JourneyViewElementDisplayAttributes
 from .models.journey_view_element_filter import JourneyViewElementFilter
 from .models.journey_view_element_filter_number_predicate import JourneyViewElementFilterNumberPredicate
 from .models.journey_view_element_filter_predicate import JourneyViewElementFilterPredicate
@@ -2872,6 +2885,10 @@ from .models.one_on_one import OneOnOne
 from .models.open_action_fields import OpenActionFields
 from .models.open_action_properties import OpenActionProperties
 from .models.open_content_attachment import OpenContentAttachment
+from .models.open_data_ingestion_rule_request import OpenDataIngestionRuleRequest
+from .models.open_data_ingestion_rule_response import OpenDataIngestionRuleResponse
+from .models.open_data_ingestion_rule_version_response import OpenDataIngestionRuleVersionResponse
+from .models.open_data_ingestion_rule_version_response_entity_listing import OpenDataIngestionRuleVersionResponseEntityListing
 from .models.open_event import OpenEvent
 from .models.open_event_normalized_message import OpenEventNormalizedMessage
 from .models.open_inbound_message_content import OpenInboundMessageContent
@@ -2890,6 +2907,7 @@ from .models.open_message_event import OpenMessageEvent
 from .models.open_message_normalized_message import OpenMessageNormalizedMessage
 from .models.open_messaging_channel import OpenMessagingChannel
 from .models.open_messaging_from_recipient import OpenMessagingFromRecipient
+from .models.open_messaging_identity_resolution_config import OpenMessagingIdentityResolutionConfig
 from .models.open_messaging_to_recipient import OpenMessagingToRecipient
 from .models.open_normalized_message import OpenNormalizedMessage
 from .models.open_receipt_normalized_message import OpenReceiptNormalizedMessage
@@ -2899,6 +2917,7 @@ from .models.operation import Operation
 from .models.operation_creator_user_response import OperationCreatorUserResponse
 from .models.operation_listing import OperationListing
 from .models.operation_response import OperationResponse
+from .models.operational_event import OperationalEvent
 from .models.operational_event_notification_topic_event_entity import OperationalEventNotificationTopicEventEntity
 from .models.operational_event_notification_topic_operational_event_notification import OperationalEventNotificationTopicOperationalEventNotification
 from .models.operator_position import OperatorPosition
@@ -3861,6 +3880,10 @@ from .models.sms_provisioning_status import SmsProvisioningStatus
 from .models.social_expression import SocialExpression
 from .models.social_handle import SocialHandle
 from .models.social_keyword import SocialKeyword
+from .models.social_topic_patch_request import SocialTopicPatchRequest
+from .models.social_topic_request import SocialTopicRequest
+from .models.social_topic_response import SocialTopicResponse
+from .models.social_topic_response_entity_listing import SocialTopicResponseEntityListing
 from .models.sort_item import SortItem
 from .models.source import Source
 from .models.source_base_response import SourceBaseResponse
@@ -3936,6 +3959,7 @@ from .models.support_center_global_style import SupportCenterGlobalStyle
 from .models.support_center_hero_style import SupportCenterHeroStyle
 from .models.support_center_image import SupportCenterImage
 from .models.support_center_image_source import SupportCenterImageSource
+from .models.support_center_label_filter import SupportCenterLabelFilter
 from .models.support_center_module_setting import SupportCenterModuleSetting
 from .models.support_center_screen import SupportCenterScreen
 from .models.support_center_settings import SupportCenterSettings
@@ -4190,6 +4214,10 @@ from .models.tts_engine_entity_listing import TtsEngineEntityListing
 from .models.tts_settings import TtsSettings
 from .models.tts_voice_entity import TtsVoiceEntity
 from .models.tts_voice_entity_listing import TtsVoiceEntityListing
+from .models.twitter_data_ingestion_rule_request import TwitterDataIngestionRuleRequest
+from .models.twitter_data_ingestion_rule_response import TwitterDataIngestionRuleResponse
+from .models.twitter_data_ingestion_rule_version_response import TwitterDataIngestionRuleVersionResponse
+from .models.twitter_data_ingestion_rule_version_response_entity_listing import TwitterDataIngestionRuleVersionResponseEntityListing
 from .models.twitter_id import TwitterId
 from .models.typing_setting import TypingSetting
 from .models.uci10n import UCI10n
@@ -4830,6 +4858,7 @@ from .models.workitem_rule_settings import WorkitemRuleSettings
 from .models.workitem_schema import WorkitemSchema
 from .models.workitem_scored_agent import WorkitemScoredAgent
 from .models.workitem_scored_agent_request import WorkitemScoredAgentRequest
+from .models.workitem_script_reference import WorkitemScriptReference
 from .models.workitem_status import WorkitemStatus
 from .models.workitem_status_create import WorkitemStatusCreate
 from .models.workitem_status_filter import WorkitemStatusFilter
@@ -4964,6 +4993,7 @@ from .apis.screen_recording_api import ScreenRecordingApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
 from .apis.settings_api import SettingsApi
+from .apis.social_media_api import SocialMediaApi
 from .apis.speech_text_analytics_api import SpeechTextAnalyticsApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi
@@ -5042,6 +5072,7 @@ from .apis.screen_recording_api import ScreenRecordingApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
 from .apis.settings_api import SettingsApi
+from .apis.social_media_api import SocialMediaApi
 from .apis.speech_text_analytics_api import SpeechTextAnalyticsApi
 from .apis.stations_api import StationsApi
 from .apis.suggest_api import SuggestApi

@@ -52,17 +52,20 @@ class KnowledgeIntegrationFilter(object):
         self.swagger_types = {
             'name': 'str',
             'type': 'str',
+            'action': 'str',
             'values': 'list[KnowledgeIntegrationFilterValue]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
+            'action': 'action',
             'values': 'values'
         }
 
         self._name = None
         self._type = None
+        self._action = None
         self._values = None
 
     @property
@@ -122,6 +125,35 @@ class KnowledgeIntegrationFilter(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def action(self) -> str:
+        """
+        Gets the action of this KnowledgeIntegrationFilter.
+        Filter action.
+
+        :return: The action of this KnowledgeIntegrationFilter.
+        :rtype: str
+        """
+        return self._action
+
+    @action.setter
+    def action(self, action: str) -> None:
+        """
+        Sets the action of this KnowledgeIntegrationFilter.
+        Filter action.
+
+        :param action: The action of this KnowledgeIntegrationFilter.
+        :type: str
+        """
+        if isinstance(action, int):
+            action = str(action)
+        allowed_values = ["None", "FilterUpdate"]
+        if action.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for action -> " + action)
+            self._action = "outdated_sdk_version"
+        else:
+            self._action = action
 
     @property
     def values(self) -> List['KnowledgeIntegrationFilterValue']:

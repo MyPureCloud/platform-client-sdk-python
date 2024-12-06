@@ -54,11 +54,11 @@ class FacebookIntegrationEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
+            'next_uri': 'str',
             'previous_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
-            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -67,11 +67,11 @@ class FacebookIntegrationEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
+            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -79,11 +79,11 @@ class FacebookIntegrationEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
+        self._next_uri = None
         self._previous_uri = None
         self._last_uri = None
         self._first_uri = None
         self._self_uri = None
-        self._next_uri = None
         self._page_count = None
 
     @property
@@ -183,6 +183,30 @@ class FacebookIntegrationEntityListing(object):
         self._total = total
 
     @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this FacebookIntegrationEntityListing.
+
+
+        :return: The next_uri of this FacebookIntegrationEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this FacebookIntegrationEntityListing.
+
+
+        :param next_uri: The next_uri of this FacebookIntegrationEntityListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
+
+    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this FacebookIntegrationEntityListing.
@@ -277,30 +301,6 @@ class FacebookIntegrationEntityListing(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this FacebookIntegrationEntityListing.
-
-
-        :return: The next_uri of this FacebookIntegrationEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this FacebookIntegrationEntityListing.
-
-
-        :param next_uri: The next_uri of this FacebookIntegrationEntityListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
 
     @property
     def page_count(self) -> int:

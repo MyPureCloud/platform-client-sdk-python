@@ -106,6 +106,7 @@ class Session(object):
             'last_user_disconnect_type': 'str',
             'last_acd_outcome': 'str',
             'authenticated': 'bool',
+            'division_ids': 'list[str]',
             'last_screen': 'str',
             'self_uri': 'str',
             'created_date': 'datetime',
@@ -155,6 +156,7 @@ class Session(object):
             'last_user_disconnect_type': 'lastUserDisconnectType',
             'last_acd_outcome': 'lastAcdOutcome',
             'authenticated': 'authenticated',
+            'division_ids': 'divisionIds',
             'last_screen': 'lastScreen',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
@@ -203,6 +205,7 @@ class Session(object):
         self._last_user_disconnect_type = None
         self._last_acd_outcome = None
         self._authenticated = None
+        self._division_ids = None
         self._last_screen = None
         self._self_uri = None
         self._created_date = None
@@ -1138,6 +1141,30 @@ class Session(object):
         
 
         self._authenticated = authenticated
+
+    @property
+    def division_ids(self) -> List[str]:
+        """
+        Gets the division_ids of this Session.
+        List of division IDs associated with the session.
+
+        :return: The division_ids of this Session.
+        :rtype: list[str]
+        """
+        return self._division_ids
+
+    @division_ids.setter
+    def division_ids(self, division_ids: List[str]) -> None:
+        """
+        Sets the division_ids of this Session.
+        List of division IDs associated with the session.
+
+        :param division_ids: The division_ids of this Session.
+        :type: list[str]
+        """
+        
+
+        self._division_ids = division_ids
 
     @property
     def last_screen(self) -> str:

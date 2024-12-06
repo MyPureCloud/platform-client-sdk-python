@@ -53,20 +53,23 @@ class ScimV2EnterpriseUser(object):
             'division': 'str',
             'department': 'str',
             'manager': 'Manager',
-            'employee_number': 'str'
+            'employee_number': 'str',
+            'date_hire': 'str'
         }
 
         self.attribute_map = {
             'division': 'division',
             'department': 'department',
             'manager': 'manager',
-            'employee_number': 'employeeNumber'
+            'employee_number': 'employeeNumber',
+            'date_hire': 'dateHire'
         }
 
         self._division = None
         self._department = None
         self._manager = None
         self._employee_number = None
+        self._date_hire = None
 
     @property
     def division(self) -> str:
@@ -163,6 +166,30 @@ class ScimV2EnterpriseUser(object):
         
 
         self._employee_number = employee_number
+
+    @property
+    def date_hire(self) -> str:
+        """
+        Gets the date_hire of this ScimV2EnterpriseUser.
+        The user's hire date. Format in JSON will be YYYY-MM-DD.
+
+        :return: The date_hire of this ScimV2EnterpriseUser.
+        :rtype: str
+        """
+        return self._date_hire
+
+    @date_hire.setter
+    def date_hire(self, date_hire: str) -> None:
+        """
+        Sets the date_hire of this ScimV2EnterpriseUser.
+        The user's hire date. Format in JSON will be YYYY-MM-DD.
+
+        :param date_hire: The date_hire of this ScimV2EnterpriseUser.
+        :type: str
+        """
+        
+
+        self._date_hire = date_hire
 
     def to_dict(self):
         """

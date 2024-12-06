@@ -67,7 +67,7 @@ class ReplacementTerm(object):
     def type(self) -> str:
         """
         Gets the type of this ReplacementTerm.
-
+        Social Handle Type
 
         :return: The type of this ReplacementTerm.
         :rtype: str
@@ -78,7 +78,7 @@ class ReplacementTerm(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this ReplacementTerm.
-
+        Social Handle Type
 
         :param type: The type of this ReplacementTerm.
         :type: str

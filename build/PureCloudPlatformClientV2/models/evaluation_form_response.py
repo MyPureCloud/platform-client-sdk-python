@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DomainEntityListingEvaluationForm
     from . import EvaluationQuestionGroup
+    from . import EvaluationSettings
 
 class EvaluationFormResponse(object):
     """
@@ -58,6 +59,7 @@ class EvaluationFormResponse(object):
             'context_id': 'str',
             'question_groups': 'list[EvaluationQuestionGroup]',
             'weight_mode': 'str',
+            'evaluation_settings': 'EvaluationSettings',
             'published_versions': 'DomainEntityListingEvaluationForm',
             'self_uri': 'str'
         }
@@ -70,6 +72,7 @@ class EvaluationFormResponse(object):
             'context_id': 'contextId',
             'question_groups': 'questionGroups',
             'weight_mode': 'weightMode',
+            'evaluation_settings': 'evaluationSettings',
             'published_versions': 'publishedVersions',
             'self_uri': 'selfUri'
         }
@@ -81,6 +84,7 @@ class EvaluationFormResponse(object):
         self._context_id = None
         self._question_groups = None
         self._weight_mode = None
+        self._evaluation_settings = None
         self._published_versions = None
         self._self_uri = None
 
@@ -256,6 +260,30 @@ class EvaluationFormResponse(object):
             self._weight_mode = "outdated_sdk_version"
         else:
             self._weight_mode = weight_mode
+
+    @property
+    def evaluation_settings(self) -> 'EvaluationSettings':
+        """
+        Gets the evaluation_settings of this EvaluationFormResponse.
+        Settings for evaluations associated with this form
+
+        :return: The evaluation_settings of this EvaluationFormResponse.
+        :rtype: EvaluationSettings
+        """
+        return self._evaluation_settings
+
+    @evaluation_settings.setter
+    def evaluation_settings(self, evaluation_settings: 'EvaluationSettings') -> None:
+        """
+        Sets the evaluation_settings of this EvaluationFormResponse.
+        Settings for evaluations associated with this form
+
+        :param evaluation_settings: The evaluation_settings of this EvaluationFormResponse.
+        :type: EvaluationSettings
+        """
+        
+
+        self._evaluation_settings = evaluation_settings
 
     @property
     def published_versions(self) -> 'DomainEntityListingEvaluationForm':

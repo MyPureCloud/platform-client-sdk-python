@@ -70,7 +70,8 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
             'resolution': 'ConversationSummaryTopicVirtualAgentsConversationResolution',
             'wrap_up_codes': 'list[ConversationSummaryTopicVirtualAgentsConversationWrapUpCode]',
             'trigger_source': 'ConversationSummaryTopicVirtualAgentsTriggerSource',
-            'last_edited_by': 'ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant'
+            'last_edited_by': 'ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant',
+            'error_type': 'str'
         }
 
         self.attribute_map = {
@@ -88,7 +89,8 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
             'resolution': 'resolution',
             'wrap_up_codes': 'wrapUpCodes',
             'trigger_source': 'triggerSource',
-            'last_edited_by': 'lastEditedBy'
+            'last_edited_by': 'lastEditedBy',
+            'error_type': 'errorType'
         }
 
         self._conversation_id = None
@@ -106,6 +108,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         self._wrap_up_codes = None
         self._trigger_source = None
         self._last_edited_by = None
+        self._error_type = None
 
     @property
     def conversation_id(self) -> str:
@@ -476,6 +479,35 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         
 
         self._last_edited_by = last_edited_by
+
+    @property
+    def error_type(self) -> str:
+        """
+        Gets the error_type of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :return: The error_type of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :rtype: str
+        """
+        return self._error_type
+
+    @error_type.setter
+    def error_type(self, error_type: str) -> None:
+        """
+        Sets the error_type of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :param error_type: The error_type of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :type: str
+        """
+        if isinstance(error_type, int):
+            error_type = str(error_type)
+        allowed_values = ["UNKNOWN", "CONVERSATION_TOO_LONG", "CONVERSATION_TOO_SHORT"]
+        if error_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for error_type -> " + error_type)
+            self._error_type = "outdated_sdk_version"
+        else:
+            self._error_type = error_type
 
     def to_dict(self):
         """

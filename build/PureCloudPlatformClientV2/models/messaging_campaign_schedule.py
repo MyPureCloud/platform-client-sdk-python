@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DomainEntityRef
+    from . import DivisionedDomainEntityRef
     from . import ScheduleInterval
 
 class MessagingCampaignSchedule(object):
@@ -58,7 +58,7 @@ class MessagingCampaignSchedule(object):
             'version': 'int',
             'intervals': 'list[ScheduleInterval]',
             'time_zone': 'str',
-            'messaging_campaign': 'DomainEntityRef',
+            'messaging_campaign': 'DivisionedDomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -253,24 +253,24 @@ class MessagingCampaignSchedule(object):
         self._time_zone = time_zone
 
     @property
-    def messaging_campaign(self) -> 'DomainEntityRef':
+    def messaging_campaign(self) -> 'DivisionedDomainEntityRef':
         """
         Gets the messaging_campaign of this MessagingCampaignSchedule.
         The Campaign that this messaging campaign schedule is for.
 
         :return: The messaging_campaign of this MessagingCampaignSchedule.
-        :rtype: DomainEntityRef
+        :rtype: DivisionedDomainEntityRef
         """
         return self._messaging_campaign
 
     @messaging_campaign.setter
-    def messaging_campaign(self, messaging_campaign: 'DomainEntityRef') -> None:
+    def messaging_campaign(self, messaging_campaign: 'DivisionedDomainEntityRef') -> None:
         """
         Sets the messaging_campaign of this MessagingCampaignSchedule.
         The Campaign that this messaging campaign schedule is for.
 
         :param messaging_campaign: The messaging_campaign of this MessagingCampaignSchedule.
-        :type: DomainEntityRef
+        :type: DivisionedDomainEntityRef
         """
         
 

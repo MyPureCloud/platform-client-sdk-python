@@ -51,16 +51,19 @@ class ExternalContactsUnresolvedContactChangedTopicInstagramId(object):
         """
         self.swagger_types = {
             'ids': 'list[ExternalContactsUnresolvedContactChangedTopicInstagramScopedId]',
-            'display_name': 'str'
+            'display_name': 'str',
+            'handle': 'str'
         }
 
         self.attribute_map = {
             'ids': 'ids',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'handle': 'handle'
         }
 
         self._ids = None
         self._display_name = None
+        self._handle = None
 
     @property
     def ids(self) -> List['ExternalContactsUnresolvedContactChangedTopicInstagramScopedId']:
@@ -109,6 +112,30 @@ class ExternalContactsUnresolvedContactChangedTopicInstagramId(object):
         
 
         self._display_name = display_name
+
+    @property
+    def handle(self) -> str:
+        """
+        Gets the handle of this ExternalContactsUnresolvedContactChangedTopicInstagramId.
+
+
+        :return: The handle of this ExternalContactsUnresolvedContactChangedTopicInstagramId.
+        :rtype: str
+        """
+        return self._handle
+
+    @handle.setter
+    def handle(self, handle: str) -> None:
+        """
+        Sets the handle of this ExternalContactsUnresolvedContactChangedTopicInstagramId.
+
+
+        :param handle: The handle of this ExternalContactsUnresolvedContactChangedTopicInstagramId.
+        :type: str
+        """
+        
+
+        self._handle = handle
 
     def to_dict(self):
         """

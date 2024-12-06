@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DomainEntityRef
+    from . import DivisionedDomainEntityRef
     from . import ScheduleInterval
 
 class CampaignSchedule(object):
@@ -58,7 +58,7 @@ class CampaignSchedule(object):
             'version': 'int',
             'intervals': 'list[ScheduleInterval]',
             'time_zone': 'str',
-            'campaign': 'DomainEntityRef',
+            'campaign': 'DivisionedDomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -253,24 +253,24 @@ class CampaignSchedule(object):
         self._time_zone = time_zone
 
     @property
-    def campaign(self) -> 'DomainEntityRef':
+    def campaign(self) -> 'DivisionedDomainEntityRef':
         """
         Gets the campaign of this CampaignSchedule.
         The Campaign that this CampaignSchedule is for.
 
         :return: The campaign of this CampaignSchedule.
-        :rtype: DomainEntityRef
+        :rtype: DivisionedDomainEntityRef
         """
         return self._campaign
 
     @campaign.setter
-    def campaign(self, campaign: 'DomainEntityRef') -> None:
+    def campaign(self, campaign: 'DivisionedDomainEntityRef') -> None:
         """
         Sets the campaign of this CampaignSchedule.
         The Campaign that this CampaignSchedule is for.
 
         :param campaign: The campaign of this CampaignSchedule.
-        :type: DomainEntityRef
+        :type: DivisionedDomainEntityRef
         """
         
 

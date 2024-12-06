@@ -149,7 +149,7 @@ class WorkitemOnAttributeChangeRule(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["OnCreate", "OnAttributeChange"]
+        allowed_values = ["OnCreate", "OnAttributeChange", "Date"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

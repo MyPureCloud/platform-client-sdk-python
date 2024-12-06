@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import SupportCenterCategory
     from . import SupportCenterCustomMessage
     from . import SupportCenterFeedbackSettings
+    from . import SupportCenterLabelFilter
     from . import SupportCenterScreen
     from . import SupportCenterStyleSetting
 
@@ -61,6 +62,7 @@ class SupportCenterSettings(object):
             'router_type': 'str',
             'screens': 'list[SupportCenterScreen]',
             'enabled_categories': 'list[SupportCenterCategory]',
+            'label_filter': 'SupportCenterLabelFilter',
             'style_setting': 'SupportCenterStyleSetting',
             'feedback': 'SupportCenterFeedbackSettings'
         }
@@ -72,6 +74,7 @@ class SupportCenterSettings(object):
             'router_type': 'routerType',
             'screens': 'screens',
             'enabled_categories': 'enabledCategories',
+            'label_filter': 'labelFilter',
             'style_setting': 'styleSetting',
             'feedback': 'feedback'
         }
@@ -82,6 +85,7 @@ class SupportCenterSettings(object):
         self._router_type = None
         self._screens = None
         self._enabled_categories = None
+        self._label_filter = None
         self._style_setting = None
         self._feedback = None
 
@@ -233,6 +237,30 @@ class SupportCenterSettings(object):
         
 
         self._enabled_categories = enabled_categories
+
+    @property
+    def label_filter(self) -> 'SupportCenterLabelFilter':
+        """
+        Gets the label_filter of this SupportCenterSettings.
+        Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations.
+
+        :return: The label_filter of this SupportCenterSettings.
+        :rtype: SupportCenterLabelFilter
+        """
+        return self._label_filter
+
+    @label_filter.setter
+    def label_filter(self, label_filter: 'SupportCenterLabelFilter') -> None:
+        """
+        Sets the label_filter of this SupportCenterSettings.
+        Document label filter. If set, only documents having at least one of the specified labels will be returned by knowledge document query operations.
+
+        :param label_filter: The label_filter of this SupportCenterSettings.
+        :type: SupportCenterLabelFilter
+        """
+        
+
+        self._label_filter = label_filter
 
     @property
     def style_setting(self) -> 'SupportCenterStyleSetting':

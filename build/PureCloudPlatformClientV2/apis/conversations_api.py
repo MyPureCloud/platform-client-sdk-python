@@ -2474,7 +2474,6 @@ class ConversationsApi(object):
         """
         Get the summaries of the conversation.
         
-	    get_conversation_summaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

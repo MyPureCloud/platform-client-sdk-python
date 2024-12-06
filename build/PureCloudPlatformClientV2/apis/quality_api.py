@@ -849,12 +849,13 @@ class QualityApi(object):
         :param str group: group id
         :param str agent_team_id: team id of agents requested
         :param str form_context_id: shared id between form versions
+        :param str user_state: 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states.
         :return: AgentActivityEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'agent_user_id', 'evaluator_user_id', 'name', 'group', 'agent_team_id', 'form_context_id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'agent_user_id', 'evaluator_user_id', 'name', 'group', 'agent_team_id', 'form_context_id', 'user_state']
         all_params.append('callback')
 
         params = locals()
@@ -901,6 +902,8 @@ class QualityApi(object):
             query_params['agentTeamId'] = params['agent_team_id']
         if 'form_context_id' in params:
             query_params['formContextId'] = params['form_context_id']
+        if 'user_state' in params:
+            query_params['userState'] = params['user_state']
 
         header_params = {}
 
@@ -1487,12 +1490,13 @@ class QualityApi(object):
         :param bool expand_answer_total_scores: get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
         :param int maximum: the maximum number of results to return
         :param str sort_order: NOTE: Does not work when conversationId is supplied.
+        :param bool include_deleted_users: Allow returning an agent or evaluator user with a 'delete' status. Defaults to false.
         :return: EvaluationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'expand', 'previous_page', 'conversation_id', 'agent_user_id', 'agent_team_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'form_context_id', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
+        all_params = ['page_size', 'page_number', 'expand', 'previous_page', 'conversation_id', 'agent_user_id', 'agent_team_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'form_context_id', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order', 'include_deleted_users']
         all_params.append('callback')
 
         params = locals()
@@ -1549,6 +1553,8 @@ class QualityApi(object):
             query_params['maximum'] = params['maximum']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'include_deleted_users' in params:
+            query_params['includeDeletedUsers'] = params['include_deleted_users']
 
         header_params = {}
 
