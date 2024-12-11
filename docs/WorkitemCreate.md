@@ -20,15 +20,15 @@
 | **custom_fields** | dict(str, object) | Custom fields defined in the schema referenced by the worktype of the workitem. | [optional] |
 | **queue_id** | str | The ID of the Workitems queue. Must be a valid UUID. | [optional] |
 | **assignee_id** | str | The ID of the assignee of the Workitem. Must be a valid UUID. | [optional] |
-| **scored_agents** | [list[WorkitemScoredAgentRequest]](WorkitemScoredAgentRequest) | A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents. | [optional] |
 | **language_id** | str | The ID of language of the Workitem. Must be a valid UUID. | [optional] |
 | **external_contact_id** | str | The ID of the external contact of the Workitem. Must be a valid UUID. | [optional] |
 | **external_tag** | str | The external tag of the Workitem. | [optional] |
 | **skill_ids** | list[str] | The skill IDs of the Workitem. Must be valid UUIDs. | [optional] |
-| **preferred_agent_ids** | list[str] | The preferred agent IDs of the Workitem. Must be valid UUIDs. | [optional] |
 | **wrapup_code** | str | The ID of the wrapup. Must be a valid UUID. | [optional] |
 | **utilization_label_id** | str | The ID of utilization label of the Workitem. Must be a valid UUID. | [optional] |
+| **scored_agents** | [list[WorkitemScoredAgentRequest]](WorkitemScoredAgentRequest) | A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents. | [optional] |
+| **preferred_agent_ids** | list[str] | The preferred agent IDs of the Workitem. Must be valid UUIDs. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 217.0.0_
+_PureCloudPlatformClientV2 218.0.0_

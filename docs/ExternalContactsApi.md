@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_externalcontacts_contacts_schema**](#delete_externalcontacts_contacts_schema) | Delete a schema|
 |[**delete_externalcontacts_externalsource**](#delete_externalcontacts_externalsource) | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.|
 |[**delete_externalcontacts_import_csv_setting**](#delete_externalcontacts_import_csv_setting) | Delete settings for CSV import|
+|[**delete_externalcontacts_import_setting**](#delete_externalcontacts_import_setting) | Delete Settings|
 |[**delete_externalcontacts_organization**](#delete_externalcontacts_organization) | Delete an external organization|
 |[**delete_externalcontacts_organization_note**](#delete_externalcontacts_organization_note) | Delete a note for an external organization|
 |[**delete_externalcontacts_organization_trustor**](#delete_externalcontacts_organization_trustor) | Unlink the Trustor for this External Organization|
@@ -32,6 +33,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_import_csv_settings**](#get_externalcontacts_import_csv_settings) | Retrieve all settings for organization filtered by externalSettingsId if provided|
 |[**get_externalcontacts_import_csv_upload_details**](#get_externalcontacts_import_csv_upload_details) | Get details for CSV upload|
 |[**get_externalcontacts_import_csv_upload_preview**](#get_externalcontacts_import_csv_upload_preview) | Get preview for CSV upload|
+|[**get_externalcontacts_import_job**](#get_externalcontacts_import_job) | Get job based on id|
+|[**get_externalcontacts_import_jobs**](#get_externalcontacts_import_jobs) | List jobs for organization|
+|[**get_externalcontacts_import_setting**](#get_externalcontacts_import_setting) | Get setting based on id|
+|[**get_externalcontacts_import_settings**](#get_externalcontacts_import_settings) | List settings for organization|
 |[**get_externalcontacts_organization**](#get_externalcontacts_organization) | Fetch an external organization|
 |[**get_externalcontacts_organization_contacts**](#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
 |[**get_externalcontacts_organization_note**](#get_externalcontacts_organization_note) | Fetch a note for an external organization|
@@ -75,6 +80,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_import_csv_jobs**](#post_externalcontacts_import_csv_jobs) | Create CSV import job|
 |[**post_externalcontacts_import_csv_settings**](#post_externalcontacts_import_csv_settings) | Create settings for CSV import|
 |[**post_externalcontacts_import_csv_uploads**](#post_externalcontacts_import_csv_uploads) | Get url for CSV upload|
+|[**post_externalcontacts_import_jobs**](#post_externalcontacts_import_jobs) | Create a new job|
+|[**post_externalcontacts_import_settings**](#post_externalcontacts_import_settings) | Create a new settings|
 |[**post_externalcontacts_merge_contacts**](#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
 |[**post_externalcontacts_organization_notes**](#post_externalcontacts_organization_notes) | Create a note for an external organization|
 |[**post_externalcontacts_organizations**](#post_externalcontacts_organizations) | Create an external organization|
@@ -86,6 +93,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_externalcontacts_conversation**](#put_externalcontacts_conversation) | Associate/disassociate an external contact with a conversation|
 |[**put_externalcontacts_externalsource**](#put_externalcontacts_externalsource) | Update an External Source|
 |[**put_externalcontacts_import_csv_setting**](#put_externalcontacts_import_csv_setting) | Update settings for CSV import|
+|[**put_externalcontacts_import_job**](#put_externalcontacts_import_job) | Update Job&#39;s workflow status|
+|[**put_externalcontacts_import_setting**](#put_externalcontacts_import_setting) | Update settings|
 |[**put_externalcontacts_organization**](#put_externalcontacts_organization) | Update an external organization|
 |[**put_externalcontacts_organization_note**](#put_externalcontacts_organization_note) | Update a note for an external organization|
 |[**put_externalcontacts_organization_trustor_trustor_id**](#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an External Organization|
@@ -322,6 +331,53 @@ try:
     api_instance.delete_externalcontacts_import_csv_setting(settings_id)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->delete_externalcontacts_import_csv_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **settings_id** | **str**| Settings id |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_externalcontacts_import_setting
+
+>  delete_externalcontacts_import_setting(settings_id)
+
+
+Delete Settings
+
+Wraps DELETE /api/v2/externalcontacts/import/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+settings_id = 'settings_id_example' # str | Settings id
+
+try:
+    # Delete Settings
+    api_instance.delete_externalcontacts_import_setting(settings_id)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_import_setting: %s\n" % e)
 ```
 
 ### Parameters
@@ -585,7 +641,7 @@ except ApiException as e:
 
 ## get_externalcontacts_contact_identifiers
 
-> [**EntityListing**](EntityListing) get_externalcontacts_contact_identifiers(contact_id)
+> [**ContactIdentifierListing**](ContactIdentifierListing) get_externalcontacts_contact_identifiers(contact_id)
 
 
 List the identifiers for a contact
@@ -628,7 +684,7 @@ except ApiException as e:
 
 ### Return type
 
-[**EntityListing**](EntityListing)
+[**ContactIdentifierListing**](ContactIdentifierListing)
 
 
 ## get_externalcontacts_contact_journey_sessions
@@ -1392,6 +1448,210 @@ except ApiException as e:
 ### Return type
 
 [**CsvUploadPreviewResponse**](CsvUploadPreviewResponse)
+
+
+## get_externalcontacts_import_job
+
+> [**ContactImportJobResponse**](ContactImportJobResponse) get_externalcontacts_import_job(job_id)
+
+
+Get job based on id
+
+Wraps GET /api/v2/externalcontacts/import/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+job_id = 'job_id_example' # str | Job id
+
+try:
+    # Get job based on id
+    api_response = api_instance.get_externalcontacts_import_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| Job id |  |
+
+### Return type
+
+[**ContactImportJobResponse**](ContactImportJobResponse)
+
+
+## get_externalcontacts_import_jobs
+
+> [**ContactImportJobEntityListing**](ContactImportJobEntityListing) get_externalcontacts_import_jobs(after=after, page_size=page_size, sort_order=sort_order, job_status=job_status)
+
+
+List jobs for organization
+
+Wraps GET /api/v2/externalcontacts/import/jobs 
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = ''25'' # str | Number of entities to return. Maximum of 100. (optional) (default to '25')
+sort_order = ''Ascending'' # str | Direction of sorting. (optional) (default to 'Ascending')
+job_status = 'job_status_example' # str | Search term to filter by jobStatus (optional)
+
+try:
+    # List jobs for organization
+    api_response = api_instance.get_externalcontacts_import_jobs(after=after, page_size=page_size, sort_order=sort_order, job_status=job_status)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional] [default to &#39;25&#39;] |
+| **sort_order** | **str**| Direction of sorting. | [optional] [default to &#39;Ascending&#39;]<br />**Values**: Ascending, Descending |
+| **job_status** | **str**| Search term to filter by jobStatus | [optional] <br />**Values**: Created, Running, Completed, Failed, Cancelled |
+
+### Return type
+
+[**ContactImportJobEntityListing**](ContactImportJobEntityListing)
+
+
+## get_externalcontacts_import_setting
+
+> [**ContactImportSettings**](ContactImportSettings) get_externalcontacts_import_setting(settings_id)
+
+
+Get setting based on id
+
+Wraps GET /api/v2/externalcontacts/import/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+settings_id = 'settings_id_example' # str | Settings id
+
+try:
+    # Get setting based on id
+    api_response = api_instance.get_externalcontacts_import_setting(settings_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **settings_id** | **str**| Settings id |  |
+
+### Return type
+
+[**ContactImportSettings**](ContactImportSettings)
+
+
+## get_externalcontacts_import_settings
+
+> [**ContactImportSettingsEntityListing**](ContactImportSettingsEntityListing) get_externalcontacts_import_settings(after=after, page_size=page_size, sort_order=sort_order, name=name)
+
+
+List settings for organization
+
+Wraps GET /api/v2/externalcontacts/import/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = ''25'' # str | Number of entities to return. Maximum of 100. (optional) (default to '25')
+sort_order = ''Ascending'' # str | Direction of sorting. (optional) (default to 'Ascending')
+name = 'name_example' # str | Search term to filter by settings name (optional)
+
+try:
+    # List settings for organization
+    api_response = api_instance.get_externalcontacts_import_settings(after=after, page_size=page_size, sort_order=sort_order, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_import_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional] [default to &#39;25&#39;] |
+| **sort_order** | **str**| Direction of sorting. | [optional] [default to &#39;Ascending&#39;]<br />**Values**: Ascending, Descending |
+| **name** | **str**| Search term to filter by settings name | [optional]  |
+
+### Return type
+
+[**ContactImportSettingsEntityListing**](ContactImportSettingsEntityListing)
 
 
 ## get_externalcontacts_organization
@@ -3544,6 +3804,102 @@ except ApiException as e:
 [**CsvUploadResponse**](CsvUploadResponse)
 
 
+## post_externalcontacts_import_jobs
+
+> [**ContactImportJobResponse**](ContactImportJobResponse) post_externalcontacts_import_jobs(body)
+
+
+Create a new job
+
+Wraps POST /api/v2/externalcontacts/import/jobs 
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.ContactImportJobRequest() # ContactImportJobRequest | Job
+
+try:
+    # Create a new job
+    api_response = api_instance.post_externalcontacts_import_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_import_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactImportJobRequest**](ContactImportJobRequest)| Job |  |
+
+### Return type
+
+[**ContactImportJobResponse**](ContactImportJobResponse)
+
+
+## post_externalcontacts_import_settings
+
+> [**ContactImportSettings**](ContactImportSettings) post_externalcontacts_import_settings(body)
+
+
+Create a new settings
+
+Wraps POST /api/v2/externalcontacts/import/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.ContactImportSettings() # ContactImportSettings | Setting
+
+try:
+    # Create a new settings
+    api_response = api_instance.post_externalcontacts_import_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_import_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactImportSettings**](ContactImportSettings)| Setting |  |
+
+### Return type
+
+[**ContactImportSettings**](ContactImportSettings)
+
+
 ## post_externalcontacts_merge_contacts
 
 > [**ExternalContact**](ExternalContact) post_externalcontacts_merge_contacts(body)
@@ -4097,6 +4453,106 @@ except ApiException as e:
 [**CsvSettings**](CsvSettings)
 
 
+## put_externalcontacts_import_job
+
+> [**ContactImportJobStatusUpdateResponse**](ContactImportJobStatusUpdateResponse) put_externalcontacts_import_job(job_id, body)
+
+
+Update Job's workflow status
+
+Wraps PUT /api/v2/externalcontacts/import/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importJob:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+job_id = 'job_id_example' # str | Job id
+body = PureCloudPlatformClientV2.ContactImportJobStatusUpdateRequest() # ContactImportJobStatusUpdateRequest | Status of the Job's workflow
+
+try:
+    # Update Job's workflow status
+    api_response = api_instance.put_externalcontacts_import_job(job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_import_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| Job id |  |
+| **body** | [**ContactImportJobStatusUpdateRequest**](ContactImportJobStatusUpdateRequest)| Status of the Job&#39;s workflow |  |
+
+### Return type
+
+[**ContactImportJobStatusUpdateResponse**](ContactImportJobStatusUpdateResponse)
+
+
+## put_externalcontacts_import_setting
+
+> [**ContactImportSettings**](ContactImportSettings) put_externalcontacts_import_setting(settings_id, body)
+
+
+Update settings
+
+Wraps PUT /api/v2/externalcontacts/import/settings/{settingsId} 
+
+Requires ANY permissions: 
+
+* externalContacts:importSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+settings_id = 'settings_id_example' # str | Settings id
+body = PureCloudPlatformClientV2.ContactImportSettings() # ContactImportSettings | Setting
+
+try:
+    # Update settings
+    api_response = api_instance.put_externalcontacts_import_setting(settings_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_import_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **settings_id** | **str**| Settings id |  |
+| **body** | [**ContactImportSettings**](ContactImportSettings)| Setting |  |
+
+### Return type
+
+[**ContactImportSettings**](ContactImportSettings)
+
+
 ## put_externalcontacts_organization
 
 > [**ExternalOrganization**](ExternalOrganization) put_externalcontacts_organization(external_organization_id, body)
@@ -4352,4 +4808,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 217.0.0_
+_PureCloudPlatformClientV2 218.0.0_

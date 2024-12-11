@@ -5464,7 +5464,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_managementunit_user_timeoffrequests
 
-> [**TimeOffRequestList**](TimeOffRequestList) get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, recently_reviewed=recently_reviewed)
+> [**TimeOffRequestList**](TimeOffRequestList) get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id)
 
 
 Get a list of time off requests for a given user
@@ -5490,11 +5490,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 user_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.
-recently_reviewed = False # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to False)
 
 try:
     # Get a list of time off requests for a given user
-    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, recently_reviewed=recently_reviewed)
+    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequests: %s\n" % e)
@@ -5507,7 +5506,6 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The userId to whom the Time Off Request applies. |  |
-| **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to False] |
 
 ### Return type
 
@@ -6393,7 +6391,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_timeoffrequests
 
-> [**TimeOffRequestList**](TimeOffRequestList) get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)
+> [**TimeOffRequestList**](TimeOffRequestList) get_workforcemanagement_timeoffrequests()
 
 
 Get a list of time off requests for the current user
@@ -6418,11 +6416,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-recently_reviewed = False # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to False)
 
 try:
     # Get a list of time off requests for the current user
-    api_response = api_instance.get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)
+    api_response = api_instance.get_workforcemanagement_timeoffrequests()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequests: %s\n" % e)
@@ -6430,10 +6427,7 @@ except ApiException as e:
 
 ### Parameters
 
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **recently_reviewed** | **bool**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to False] |
+This endpoint does not need any parameters.
 
 ### Return type
 
@@ -12644,4 +12638,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 217.0.0_
+_PureCloudPlatformClientV2 218.0.0_

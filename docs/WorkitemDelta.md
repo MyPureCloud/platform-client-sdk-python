@@ -24,6 +24,7 @@
 | **queue_id** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
 | **external_tag** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
 | **wrapup_id** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
+| **wrapup** | [WorkitemsAttributeChangeWrapupDelta](WorkitemsAttributeChangeWrapupDelta) |  | [optional] |
 | **ttl** | [WorkitemsAttributeChangeInteger](WorkitemsAttributeChangeInteger) |  | [optional] |
 | **date_closed** | [WorkitemsAttributeChangeInstant](WorkitemsAttributeChangeInstant) |  | [optional] |
 | **assignment_state** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
@@ -36,4 +37,4 @@
 
 
 
-_PureCloudPlatformClientV2 217.0.0_
+_PureCloudPlatformClientV2 218.0.0_

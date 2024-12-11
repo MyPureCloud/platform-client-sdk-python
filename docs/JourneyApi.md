@@ -372,8 +372,6 @@ void (empty response body)
 
 Delete the Schedule of a JourneyView
 
-used for long descriptions
-
 Wraps DELETE /api/v2/journey/views/{viewId}/schedules 
 
 Requires ALL permissions: 
@@ -1653,8 +1651,6 @@ except ApiException as e:
 
 Get the Schedule for a JourneyView
 
-used for long descriptions
-
 Wraps GET /api/v2/journey/views/{viewId}/schedules 
 
 Requires ALL permissions: 
@@ -1861,8 +1857,6 @@ except ApiException as e:
 
 Get the job for a journey view version.
 
-used for long descriptions
-
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -1914,8 +1908,6 @@ except ApiException as e:
 
 
 Get the result of a job for a journey view version.
-
-used for long descriptions
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results 
 
@@ -2022,8 +2014,6 @@ except ApiException as e:
 
 
 Get the latest job of a journey view version.
-
-used for long descriptions
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest 
 
@@ -2576,8 +2566,6 @@ except ApiException as e:
 
 
 Update the job for a journey view version. Only the status can be changed and only to Cancelled
-
-used for long descriptions
 
 Wraps PATCH /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} 
 
@@ -3304,8 +3292,6 @@ except ApiException as e:
 
 Submit a job request for a journey view version.
 
-used for long descriptions
-
 Wraps POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs 
 
 Requires ALL permissions: 
@@ -3506,8 +3492,6 @@ except ApiException as e:
 
 Update the Schedule for a JourneyView
 
-used for long descriptions
-
 Wraps PUT /api/v2/journey/views/{viewId}/schedules 
 
 Requires ALL permissions: 
@@ -3605,4 +3589,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 217.0.0_
+_PureCloudPlatformClientV2 218.0.0_

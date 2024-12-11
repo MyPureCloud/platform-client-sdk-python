@@ -3327,4 +3327,4 @@ except ApiException as e:
 [**GamificationStatus**](GamificationStatus)
 
 
-_PureCloudPlatformClientV2 217.0.0_
+_PureCloudPlatformClientV2 218.0.0_
