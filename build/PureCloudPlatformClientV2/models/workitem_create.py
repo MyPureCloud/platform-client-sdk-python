@@ -64,14 +64,14 @@ class WorkitemCreate(object):
             'custom_fields': 'dict(str, object)',
             'queue_id': 'str',
             'assignee_id': 'str',
-            'scored_agents': 'list[WorkitemScoredAgentRequest]',
             'language_id': 'str',
             'external_contact_id': 'str',
             'external_tag': 'str',
             'skill_ids': 'list[str]',
-            'preferred_agent_ids': 'list[str]',
             'wrapup_code': 'str',
-            'utilization_label_id': 'str'
+            'utilization_label_id': 'str',
+            'scored_agents': 'list[WorkitemScoredAgentRequest]',
+            'preferred_agent_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -89,14 +89,14 @@ class WorkitemCreate(object):
             'custom_fields': 'customFields',
             'queue_id': 'queueId',
             'assignee_id': 'assigneeId',
-            'scored_agents': 'scoredAgents',
             'language_id': 'languageId',
             'external_contact_id': 'externalContactId',
             'external_tag': 'externalTag',
             'skill_ids': 'skillIds',
-            'preferred_agent_ids': 'preferredAgentIds',
             'wrapup_code': 'wrapupCode',
-            'utilization_label_id': 'utilizationLabelId'
+            'utilization_label_id': 'utilizationLabelId',
+            'scored_agents': 'scoredAgents',
+            'preferred_agent_ids': 'preferredAgentIds'
         }
 
         self._name = None
@@ -113,14 +113,14 @@ class WorkitemCreate(object):
         self._custom_fields = None
         self._queue_id = None
         self._assignee_id = None
-        self._scored_agents = None
         self._language_id = None
         self._external_contact_id = None
         self._external_tag = None
         self._skill_ids = None
-        self._preferred_agent_ids = None
         self._wrapup_code = None
         self._utilization_label_id = None
+        self._scored_agents = None
+        self._preferred_agent_ids = None
 
     @property
     def name(self) -> str:
@@ -459,30 +459,6 @@ class WorkitemCreate(object):
         self._assignee_id = assignee_id
 
     @property
-    def scored_agents(self) -> List['WorkitemScoredAgentRequest']:
-        """
-        Gets the scored_agents of this WorkitemCreate.
-        A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
-
-        :return: The scored_agents of this WorkitemCreate.
-        :rtype: list[WorkitemScoredAgentRequest]
-        """
-        return self._scored_agents
-
-    @scored_agents.setter
-    def scored_agents(self, scored_agents: List['WorkitemScoredAgentRequest']) -> None:
-        """
-        Sets the scored_agents of this WorkitemCreate.
-        A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
-
-        :param scored_agents: The scored_agents of this WorkitemCreate.
-        :type: list[WorkitemScoredAgentRequest]
-        """
-        
-
-        self._scored_agents = scored_agents
-
-    @property
     def language_id(self) -> str:
         """
         Gets the language_id of this WorkitemCreate.
@@ -579,30 +555,6 @@ class WorkitemCreate(object):
         self._skill_ids = skill_ids
 
     @property
-    def preferred_agent_ids(self) -> List[str]:
-        """
-        Gets the preferred_agent_ids of this WorkitemCreate.
-        The preferred agent IDs of the Workitem. Must be valid UUIDs.
-
-        :return: The preferred_agent_ids of this WorkitemCreate.
-        :rtype: list[str]
-        """
-        return self._preferred_agent_ids
-
-    @preferred_agent_ids.setter
-    def preferred_agent_ids(self, preferred_agent_ids: List[str]) -> None:
-        """
-        Sets the preferred_agent_ids of this WorkitemCreate.
-        The preferred agent IDs of the Workitem. Must be valid UUIDs.
-
-        :param preferred_agent_ids: The preferred_agent_ids of this WorkitemCreate.
-        :type: list[str]
-        """
-        
-
-        self._preferred_agent_ids = preferred_agent_ids
-
-    @property
     def wrapup_code(self) -> str:
         """
         Gets the wrapup_code of this WorkitemCreate.
@@ -649,6 +601,54 @@ class WorkitemCreate(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def scored_agents(self) -> List['WorkitemScoredAgentRequest']:
+        """
+        Gets the scored_agents of this WorkitemCreate.
+        A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
+
+        :return: The scored_agents of this WorkitemCreate.
+        :rtype: list[WorkitemScoredAgentRequest]
+        """
+        return self._scored_agents
+
+    @scored_agents.setter
+    def scored_agents(self, scored_agents: List['WorkitemScoredAgentRequest']) -> None:
+        """
+        Sets the scored_agents of this WorkitemCreate.
+        A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents.
+
+        :param scored_agents: The scored_agents of this WorkitemCreate.
+        :type: list[WorkitemScoredAgentRequest]
+        """
+        
+
+        self._scored_agents = scored_agents
+
+    @property
+    def preferred_agent_ids(self) -> List[str]:
+        """
+        Gets the preferred_agent_ids of this WorkitemCreate.
+        The preferred agent IDs of the Workitem. Must be valid UUIDs.
+
+        :return: The preferred_agent_ids of this WorkitemCreate.
+        :rtype: list[str]
+        """
+        return self._preferred_agent_ids
+
+    @preferred_agent_ids.setter
+    def preferred_agent_ids(self, preferred_agent_ids: List[str]) -> None:
+        """
+        Sets the preferred_agent_ids of this WorkitemCreate.
+        The preferred agent IDs of the Workitem. Must be valid UUIDs.
+
+        :param preferred_agent_ids: The preferred_agent_ids of this WorkitemCreate.
+        :type: list[str]
+        """
+        
+
+        self._preferred_agent_ids = preferred_agent_ids
 
     def to_dict(self):
         """

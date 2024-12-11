@@ -50,44 +50,17 @@ class QuestionGroupSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'question_group_index': 'int',
             'question_group_context_id': 'str',
             'question_settings': 'list[QuestionSettings]'
         }
 
         self.attribute_map = {
-            'question_group_index': 'questionGroupIndex',
             'question_group_context_id': 'questionGroupContextId',
             'question_settings': 'questionSettings'
         }
 
-        self._question_group_index = None
         self._question_group_context_id = None
         self._question_settings = None
-
-    @property
-    def question_group_index(self) -> int:
-        """
-        Gets the question_group_index of this QuestionGroupSettings.
-        This field represents the location of the Question Group in the form. Note: Indexes are zero-based
-
-        :return: The question_group_index of this QuestionGroupSettings.
-        :rtype: int
-        """
-        return self._question_group_index
-
-    @question_group_index.setter
-    def question_group_index(self, question_group_index: int) -> None:
-        """
-        Sets the question_group_index of this QuestionGroupSettings.
-        This field represents the location of the Question Group in the form. Note: Indexes are zero-based
-
-        :param question_group_index: The question_group_index of this QuestionGroupSettings.
-        :type: int
-        """
-        
-
-        self._question_group_index = question_group_index
 
     @property
     def question_group_context_id(self) -> str:

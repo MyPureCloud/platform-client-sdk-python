@@ -48,83 +48,26 @@ class BatchDownloadJobResult(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
-            'name': 'str',
             'conversation_id': 'str',
             'recording_id': 'str',
             'result_url': 'str',
             'content_type': 'str',
-            'error_msg': 'str',
-            'self_uri': 'str'
+            'error_msg': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'name': 'name',
             'conversation_id': 'conversationId',
             'recording_id': 'recordingId',
             'result_url': 'resultUrl',
             'content_type': 'contentType',
-            'error_msg': 'errorMsg',
-            'self_uri': 'selfUri'
+            'error_msg': 'errorMsg'
         }
 
-        self._id = None
-        self._name = None
         self._conversation_id = None
         self._recording_id = None
         self._result_url = None
         self._content_type = None
         self._error_msg = None
-        self._self_uri = None
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this BatchDownloadJobResult.
-        The globally unique identifier for the object.
-
-        :return: The id of this BatchDownloadJobResult.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this BatchDownloadJobResult.
-        The globally unique identifier for the object.
-
-        :param id: The id of this BatchDownloadJobResult.
-        :type: str
-        """
-        
-
-        self._id = id
-
-    @property
-    def name(self) -> str:
-        """
-        Gets the name of this BatchDownloadJobResult.
-
-
-        :return: The name of this BatchDownloadJobResult.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: str) -> None:
-        """
-        Sets the name of this BatchDownloadJobResult.
-
-
-        :param name: The name of this BatchDownloadJobResult.
-        :type: str
-        """
-        
-
-        self._name = name
 
     @property
     def conversation_id(self) -> str:
@@ -245,30 +188,6 @@ class BatchDownloadJobResult(object):
         
 
         self._error_msg = error_msg
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this BatchDownloadJobResult.
-        The URI for this object
-
-        :return: The self_uri of this BatchDownloadJobResult.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this BatchDownloadJobResult.
-        The URI for this object
-
-        :param self_uri: The self_uri of this BatchDownloadJobResult.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

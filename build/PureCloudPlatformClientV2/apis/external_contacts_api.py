@@ -53,6 +53,14 @@ from ..models import BulkOrganizationsResponse
 from ..models import BulkRelationshipsRequest
 from ..models import BulkRelationshipsResponse
 from ..models import ContactIdentifier
+from ..models import ContactIdentifierListing
+from ..models import ContactImportJobEntityListing
+from ..models import ContactImportJobRequest
+from ..models import ContactImportJobResponse
+from ..models import ContactImportJobStatusUpdateRequest
+from ..models import ContactImportJobStatusUpdateResponse
+from ..models import ContactImportSettings
+from ..models import ContactImportSettingsEntityListing
 from ..models import ContactListing
 from ..models import ConversationAssociation
 from ..models import CsvJobRequest
@@ -69,7 +77,6 @@ from ..models import CursorOrganizationListing
 from ..models import CursorRelationshipListing
 from ..models import DataSchema
 from ..models import DataSchemaListing
-from ..models import EntityListing
 from ..models import ErrorBody
 from ..models import ExternalContact
 from ..models import ExternalOrganization
@@ -460,6 +467,84 @@ class ExternalContactsApi(object):
 
 
         resource_path = '/api/v2/externalcontacts/import/csv/settings/{settingsId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'settings_id' in params:
+            path_params['settingsId'] = params['settings_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_externalcontacts_import_setting(self, settings_id: str, **kwargs) -> None:
+        """
+        Delete Settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_externalcontacts_import_setting(settings_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str settings_id: Settings id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['settings_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_externalcontacts_import_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'settings_id' is set
+        if ('settings_id' not in params) or (params['settings_id'] is None):
+            raise ValueError("Missing the required parameter `settings_id` when calling `delete_externalcontacts_import_setting`")
+
+
+        resource_path = '/api/v2/externalcontacts/import/settings/{settingsId}'.replace('{format}', 'json')
         path_params = {}
         if 'settings_id' in params:
             path_params['settingsId'] = params['settings_id']
@@ -897,7 +982,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_externalcontacts_contact_identifiers(self, contact_id: str, **kwargs) -> 'EntityListing':
+    def get_externalcontacts_contact_identifiers(self, contact_id: str, **kwargs) -> 'ContactIdentifierListing':
         """
         List the identifiers for a contact
         
@@ -913,7 +998,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact ID (required)
-        :return: EntityListing
+        :return: ContactIdentifierListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -970,7 +1055,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EntityListing',
+                                            response_type='ContactIdentifierListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2192,6 +2277,330 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CsvUploadPreviewResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_import_job(self, job_id: str, **kwargs) -> 'ContactImportJobResponse':
+        """
+        Get job based on id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_import_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: Job id (required)
+        :return: ContactImportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_import_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_externalcontacts_import_job`")
+
+
+        resource_path = '/api/v2/externalcontacts/import/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_import_jobs(self, **kwargs) -> 'ContactImportJobEntityListing':
+        """
+        List jobs for organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_import_jobs(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 100.
+        :param str sort_order: Direction of sorting.
+        :param str job_status: Search term to filter by jobStatus
+        :return: ContactImportJobEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['after', 'page_size', 'sort_order', 'job_status']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_import_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/import/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'job_status' in params:
+            query_params['jobStatus'] = params['job_status']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportJobEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_import_setting(self, settings_id: str, **kwargs) -> 'ContactImportSettings':
+        """
+        Get setting based on id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_import_setting(settings_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str settings_id: Settings id (required)
+        :return: ContactImportSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['settings_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_import_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'settings_id' is set
+        if ('settings_id' not in params) or (params['settings_id'] is None):
+            raise ValueError("Missing the required parameter `settings_id` when calling `get_externalcontacts_import_setting`")
+
+
+        resource_path = '/api/v2/externalcontacts/import/settings/{settingsId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'settings_id' in params:
+            path_params['settingsId'] = params['settings_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_import_settings(self, **kwargs) -> 'ContactImportSettingsEntityListing':
+        """
+        List settings for organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_import_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 100.
+        :param str sort_order: Direction of sorting.
+        :param str name: Search term to filter by settings name
+        :return: ContactImportSettingsEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['after', 'page_size', 'sort_order', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_import_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/import/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportSettingsEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5640,6 +6049,162 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_externalcontacts_import_jobs(self, body: 'ContactImportJobRequest', **kwargs) -> 'ContactImportJobResponse':
+        """
+        Create a new job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_import_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactImportJobRequest body: Job (required)
+        :return: ContactImportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_import_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_import_jobs`")
+
+
+        resource_path = '/api/v2/externalcontacts/import/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_import_settings(self, body: 'ContactImportSettings', **kwargs) -> 'ContactImportSettings':
+        """
+        Create a new settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_import_settings(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactImportSettings body: Setting (required)
+        :return: ContactImportSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_import_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_import_settings`")
+
+
+        resource_path = '/api/v2/externalcontacts/import/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_externalcontacts_merge_contacts(self, body: 'MergeRequest', **kwargs) -> 'ExternalContact':
         """
         Merge two contacts into a new contact record
@@ -6542,6 +7107,174 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CsvSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_import_job(self, job_id: str, body: 'ContactImportJobStatusUpdateRequest', **kwargs) -> 'ContactImportJobStatusUpdateResponse':
+        """
+        Update Job's workflow status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_import_job(job_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: Job id (required)
+        :param ContactImportJobStatusUpdateRequest body: Status of the Job's workflow (required)
+        :return: ContactImportJobStatusUpdateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_import_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `put_externalcontacts_import_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_import_job`")
+
+
+        resource_path = '/api/v2/externalcontacts/import/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportJobStatusUpdateResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_import_setting(self, settings_id: str, body: 'ContactImportSettings', **kwargs) -> 'ContactImportSettings':
+        """
+        Update settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_import_setting(settings_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str settings_id: Settings id (required)
+        :param ContactImportSettings body: Setting (required)
+        :return: ContactImportSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['settings_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_import_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'settings_id' is set
+        if ('settings_id' not in params) or (params['settings_id'] is None):
+            raise ValueError("Missing the required parameter `settings_id` when calling `put_externalcontacts_import_setting`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_import_setting`")
+
+
+        resource_path = '/api/v2/externalcontacts/import/settings/{settingsId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'settings_id' in params:
+            path_params['settingsId'] = params['settings_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactImportSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

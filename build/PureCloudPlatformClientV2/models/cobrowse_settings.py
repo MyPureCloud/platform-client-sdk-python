@@ -53,6 +53,7 @@ class CobrowseSettings(object):
             'enabled': 'bool',
             'allow_agent_control': 'bool',
             'allow_agent_navigation': 'bool',
+            'allow_draw': 'bool',
             'mask_selectors': 'list[str]',
             'channels': 'list[str]',
             'readonly_selectors': 'list[str]',
@@ -63,6 +64,7 @@ class CobrowseSettings(object):
             'enabled': 'enabled',
             'allow_agent_control': 'allowAgentControl',
             'allow_agent_navigation': 'allowAgentNavigation',
+            'allow_draw': 'allowDraw',
             'mask_selectors': 'maskSelectors',
             'channels': 'channels',
             'readonly_selectors': 'readonlySelectors',
@@ -72,6 +74,7 @@ class CobrowseSettings(object):
         self._enabled = None
         self._allow_agent_control = None
         self._allow_agent_navigation = None
+        self._allow_draw = None
         self._mask_selectors = None
         self._channels = None
         self._readonly_selectors = None
@@ -148,6 +151,30 @@ class CobrowseSettings(object):
         
 
         self._allow_agent_navigation = allow_agent_navigation
+
+    @property
+    def allow_draw(self) -> bool:
+        """
+        Gets the allow_draw of this CobrowseSettings.
+        Should cobrowse draw be enabled
+
+        :return: The allow_draw of this CobrowseSettings.
+        :rtype: bool
+        """
+        return self._allow_draw
+
+    @allow_draw.setter
+    def allow_draw(self, allow_draw: bool) -> None:
+        """
+        Sets the allow_draw of this CobrowseSettings.
+        Should cobrowse draw be enabled
+
+        :param allow_draw: The allow_draw of this CobrowseSettings.
+        :type: bool
+        """
+        
+
+        self._allow_draw = allow_draw
 
     @property
     def mask_selectors(self) -> List[str]:

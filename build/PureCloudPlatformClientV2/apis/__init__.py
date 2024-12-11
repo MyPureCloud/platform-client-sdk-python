@@ -16,6 +16,7 @@ from .coaching_api import CoachingApi
 from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
+from .data_privacy_api import DataPrivacyApi
 from .downloads_api import DownloadsApi
 from .emails_api import EmailsApi
 from .employee_engagement_api import EmployeeEngagementApi
@@ -95,6 +96,7 @@ from .coaching_api import CoachingApi
 from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
+from .data_privacy_api import DataPrivacyApi
 from .downloads_api import DownloadsApi
 from .emails_api import EmailsApi
 from .employee_engagement_api import EmployeeEngagementApi

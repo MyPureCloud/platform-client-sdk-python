@@ -18,6 +18,7 @@ PureCloudPlatformClientV2/apis/coaching_api.py
 PureCloudPlatformClientV2/apis/content_management_api.py
 PureCloudPlatformClientV2/apis/conversations_api.py
 PureCloudPlatformClientV2/apis/data_extensions_api.py
+PureCloudPlatformClientV2/apis/data_privacy_api.py
 PureCloudPlatformClientV2/apis/downloads_api.py
 PureCloudPlatformClientV2/apis/emails_api.py
 PureCloudPlatformClientV2/apis/employee_engagement_api.py
@@ -853,6 +854,16 @@ PureCloudPlatformClientV2/models/contact_column_time_zone.py
 PureCloudPlatformClientV2/models/contact_column_to_data_action_field_mapping.py
 PureCloudPlatformClientV2/models/contact_detail_event_topic_contact_update_event.py
 PureCloudPlatformClientV2/models/contact_identifier.py
+PureCloudPlatformClientV2/models/contact_identifier_listing.py
+PureCloudPlatformClientV2/models/contact_import_field.py
+PureCloudPlatformClientV2/models/contact_import_job_entity_listing.py
+PureCloudPlatformClientV2/models/contact_import_job_metadata.py
+PureCloudPlatformClientV2/models/contact_import_job_request.py
+PureCloudPlatformClientV2/models/contact_import_job_response.py
+PureCloudPlatformClientV2/models/contact_import_job_status_update_request.py
+PureCloudPlatformClientV2/models/contact_import_job_status_update_response.py
+PureCloudPlatformClientV2/models/contact_import_settings.py
+PureCloudPlatformClientV2/models/contact_import_settings_entity_listing.py
 PureCloudPlatformClientV2/models/contact_list.py
 PureCloudPlatformClientV2/models/contact_list_division_view.py
 PureCloudPlatformClientV2/models/contact_list_division_view_listing.py
@@ -1025,6 +1036,8 @@ PureCloudPlatformClientV2/models/conversation_content_button_response.py
 PureCloudPlatformClientV2/models/conversation_content_card.py
 PureCloudPlatformClientV2/models/conversation_content_card_action.py
 PureCloudPlatformClientV2/models/conversation_content_carousel.py
+PureCloudPlatformClientV2/models/conversation_content_date_picker.py
+PureCloudPlatformClientV2/models/conversation_content_date_picker_available_time.py
 PureCloudPlatformClientV2/models/conversation_content_location.py
 PureCloudPlatformClientV2/models/conversation_content_notification_template.py
 PureCloudPlatformClientV2/models/conversation_content_quick_reply.py
@@ -2555,6 +2568,7 @@ PureCloudPlatformClientV2/models/knowledge_import_job_request.py
 PureCloudPlatformClientV2/models/knowledge_import_job_response.py
 PureCloudPlatformClientV2/models/knowledge_import_job_settings.py
 PureCloudPlatformClientV2/models/knowledge_import_job_statistics.py
+PureCloudPlatformClientV2/models/knowledge_integration_default_settings.py
 PureCloudPlatformClientV2/models/knowledge_integration_filter.py
 PureCloudPlatformClientV2/models/knowledge_integration_filter_value.py
 PureCloudPlatformClientV2/models/knowledge_integration_options_response.py
@@ -2762,6 +2776,10 @@ PureCloudPlatformClientV2/models/manager.py
 PureCloudPlatformClientV2/models/mark_contact_address_uncontactable_action_settings.py
 PureCloudPlatformClientV2/models/mark_contact_uncontactable_action_settings.py
 PureCloudPlatformClientV2/models/markdown.py
+PureCloudPlatformClientV2/models/masking_rule.py
+PureCloudPlatformClientV2/models/masking_rule_listing.py
+PureCloudPlatformClientV2/models/masking_rule_validate_request.py
+PureCloudPlatformClientV2/models/masking_rule_validate_response.py
 PureCloudPlatformClientV2/models/match_criteria.py
 PureCloudPlatformClientV2/models/match_criteria_test_result.py
 PureCloudPlatformClientV2/models/match_shift_trade_request.py
@@ -3161,6 +3179,10 @@ PureCloudPlatformClientV2/models/performance_profile.py
 PureCloudPlatformClientV2/models/permission_collection_entity_listing.py
 PureCloudPlatformClientV2/models/permission_details.py
 PureCloudPlatformClientV2/models/permissions.py
+PureCloudPlatformClientV2/models/persistent_connection_change_topic_error_info.py
+PureCloudPlatformClientV2/models/persistent_connection_change_topic_error_info_details.py
+PureCloudPlatformClientV2/models/persistent_connection_change_topic_error_location.py
+PureCloudPlatformClientV2/models/persistent_connection_change_topic_persistent_connection_change_event.py
 PureCloudPlatformClientV2/models/phone.py
 PureCloudPlatformClientV2/models/phone_base.py
 PureCloudPlatformClientV2/models/phone_base_entity_listing.py
@@ -4964,6 +4986,7 @@ PureCloudPlatformClientV2/models/workitems_attribute_change_list.py
 PureCloudPlatformClientV2/models/workitems_attribute_change_map.py
 PureCloudPlatformClientV2/models/workitems_attribute_change_string.py
 PureCloudPlatformClientV2/models/workitems_attribute_change_workitem_status_category.py
+PureCloudPlatformClientV2/models/workitems_attribute_change_wrapup_delta.py
 PureCloudPlatformClientV2/models/workitems_change_workbin_delta.py
 PureCloudPlatformClientV2/models/workitems_change_workitem_delta.py
 PureCloudPlatformClientV2/models/workitems_change_worktype_delta.py
@@ -5010,6 +5033,7 @@ PureCloudPlatformClientV2/models/wrapup_code.py
 PureCloudPlatformClientV2/models/wrapup_code_entity_listing.py
 PureCloudPlatformClientV2/models/wrapup_code_prediction_config.py
 PureCloudPlatformClientV2/models/wrapup_code_request.py
+PureCloudPlatformClientV2/models/wrapup_delta.py
 PureCloudPlatformClientV2/models/wrapup_detail_event_topic_wrapup_event.py
 PureCloudPlatformClientV2/models/wrapup_id_reference.py
 PureCloudPlatformClientV2/models/wrapup_input.py
@@ -5811,6 +5835,16 @@ docs/ContactColumnTimeZone.md
 docs/ContactColumnToDataActionFieldMapping.md
 docs/ContactDetailEventTopicContactUpdateEvent.md
 docs/ContactIdentifier.md
+docs/ContactIdentifierListing.md
+docs/ContactImportField.md
+docs/ContactImportJobEntityListing.md
+docs/ContactImportJobMetadata.md
+docs/ContactImportJobRequest.md
+docs/ContactImportJobResponse.md
+docs/ContactImportJobStatusUpdateRequest.md
+docs/ContactImportJobStatusUpdateResponse.md
+docs/ContactImportSettings.md
+docs/ContactImportSettingsEntityListing.md
 docs/ContactList.md
 docs/ContactListDivisionView.md
 docs/ContactListDivisionViewListing.md
@@ -5985,6 +6019,8 @@ docs/ConversationContentButtonResponse.md
 docs/ConversationContentCard.md
 docs/ConversationContentCardAction.md
 docs/ConversationContentCarousel.md
+docs/ConversationContentDatePicker.md
+docs/ConversationContentDatePickerAvailableTime.md
 docs/ConversationContentLocation.md
 docs/ConversationContentNotificationTemplate.md
 docs/ConversationContentQuickReply.md
@@ -6349,6 +6385,8 @@ docs/DataExtensionsApi.json
 docs/DataExtensionsApi.md
 docs/DataIngestionRuleStatusPatchRequest.md
 docs/DataIngestionRules.md
+docs/DataPrivacyApi.json
+docs/DataPrivacyApi.md
 docs/DataSchema.md
 docs/DataSchemaListing.md
 docs/DataTable.md
@@ -7553,6 +7591,7 @@ docs/KnowledgeImportJobRequest.md
 docs/KnowledgeImportJobResponse.md
 docs/KnowledgeImportJobSettings.md
 docs/KnowledgeImportJobStatistics.md
+docs/KnowledgeIntegrationDefaultSettings.md
 docs/KnowledgeIntegrationFilter.md
 docs/KnowledgeIntegrationFilterValue.md
 docs/KnowledgeIntegrationOptionsResponse.md
@@ -7772,6 +7811,10 @@ docs/Manager.md
 docs/MarkContactAddressUncontactableActionSettings.md
 docs/MarkContactUncontactableActionSettings.md
 docs/Markdown.md
+docs/MaskingRule.md
+docs/MaskingRuleListing.md
+docs/MaskingRuleValidateRequest.md
+docs/MaskingRuleValidateResponse.md
 docs/MatchCriteria.md
 docs/MatchCriteriaTestResult.md
 docs/MatchShiftTradeRequest.md
@@ -8190,6 +8233,10 @@ docs/PerformanceProfile.md
 docs/PermissionCollectionEntityListing.md
 docs/PermissionDetails.md
 docs/Permissions.md
+docs/PersistentConnectionChangeTopicErrorInfo.md
+docs/PersistentConnectionChangeTopicErrorInfoDetails.md
+docs/PersistentConnectionChangeTopicErrorLocation.md
+docs/PersistentConnectionChangeTopicPersistentConnectionChangeEvent.md
 docs/Phone.md
 docs/PhoneBase.md
 docs/PhoneBaseEntityListing.md
@@ -10056,6 +10103,7 @@ docs/WorkitemsAttributeChangeList.md
 docs/WorkitemsAttributeChangeMap.md
 docs/WorkitemsAttributeChangeString.md
 docs/WorkitemsAttributeChangeWorkitemStatusCategory.md
+docs/WorkitemsAttributeChangeWrapupDelta.md
 docs/WorkitemsChangeWorkbinDelta.md
 docs/WorkitemsChangeWorkitemDelta.md
 docs/WorkitemsChangeWorktypeDelta.md
@@ -10102,6 +10150,7 @@ docs/WrapupCode.md
 docs/WrapupCodeEntityListing.md
 docs/WrapupCodePredictionConfig.md
 docs/WrapupCodeRequest.md
+docs/WrapupDelta.md
 docs/WrapupDetailEventTopicWrapupEvent.md
 docs/WrapupIdReference.md
 docs/WrapupInput.md
@@ -10164,6 +10213,7 @@ docs/delete_conversations_messaging_integrations_whatsapp_integration_id-example
 docs/delete_conversations_messaging_setting-example.txt
 docs/delete_conversations_messaging_settings_default-example.txt
 docs/delete_conversations_messaging_supportedcontent_supported_content_id-example.txt
+docs/delete_dataprivacy_maskingrule-example.txt
 docs/delete_diagnostics_logcapture_browser_user-example.txt
 docs/delete_employeeengagement_celebration-example.txt
 docs/delete_employeeperformance_externalmetrics_definition-example.txt
@@ -10172,6 +10222,7 @@ docs/delete_externalcontacts_contact_note-example.txt
 docs/delete_externalcontacts_contacts_schema-example.txt
 docs/delete_externalcontacts_externalsource-example.txt
 docs/delete_externalcontacts_import_csv_setting-example.txt
+docs/delete_externalcontacts_import_setting-example.txt
 docs/delete_externalcontacts_organization-example.txt
 docs/delete_externalcontacts_organization_note-example.txt
 docs/delete_externalcontacts_organization_trustor-example.txt
@@ -10679,6 +10730,8 @@ docs/get_conversations_videos_meeting-example.txt
 docs/get_dataextensions_coretype-example.txt
 docs/get_dataextensions_coretypes-example.txt
 docs/get_dataextensions_limits-example.txt
+docs/get_dataprivacy_maskingrule-example.txt
+docs/get_dataprivacy_maskingrules-example.txt
 docs/get_date-example.txt
 docs/get_diagnostics_logcapture_browser_entries_download_job-example.txt
 docs/get_diagnostics_logcapture_browser_user-example.txt
@@ -10710,6 +10763,10 @@ docs/get_externalcontacts_import_csv_setting-example.txt
 docs/get_externalcontacts_import_csv_settings-example.txt
 docs/get_externalcontacts_import_csv_upload_details-example.txt
 docs/get_externalcontacts_import_csv_upload_preview-example.txt
+docs/get_externalcontacts_import_job-example.txt
+docs/get_externalcontacts_import_jobs-example.txt
+docs/get_externalcontacts_import_setting-example.txt
+docs/get_externalcontacts_import_settings-example.txt
 docs/get_externalcontacts_organization-example.txt
 docs/get_externalcontacts_organization_contacts-example.txt
 docs/get_externalcontacts_organization_note-example.txt
@@ -11731,6 +11788,7 @@ docs/patch_conversations_messaging_integrations_whatsapp_integration_id-example.
 docs/patch_conversations_messaging_setting-example.txt
 docs/patch_conversations_messaging_supportedcontent_supported_content_id-example.txt
 docs/patch_conversations_settings-example.txt
+docs/patch_dataprivacy_maskingrule-example.txt
 docs/patch_emails_settings-example.txt
 docs/patch_emails_settings-example.txt
 docs/patch_employeeengagement_celebration-example.txt
@@ -12078,6 +12136,8 @@ docs/post_conversations_screenshare_participant_communication_wrapup-example.txt
 docs/post_conversations_social_participant_communication_wrapup-example.txt
 docs/post_conversations_video_participant_communication_wrapup-example.txt
 docs/post_conversations_videos_meetings-example.txt
+docs/post_dataprivacy_maskingrules-example.txt
+docs/post_dataprivacy_maskingrules_validate-example.txt
 docs/post_diagnostics_logcapture_browser_entries_download_jobs-example.txt
 docs/post_diagnostics_logcapture_browser_entries_query-example.txt
 docs/post_diagnostics_logcapture_browser_user-example.txt
@@ -12116,6 +12176,8 @@ docs/post_externalcontacts_identifierlookup-example.txt
 docs/post_externalcontacts_import_csv_jobs-example.txt
 docs/post_externalcontacts_import_csv_settings-example.txt
 docs/post_externalcontacts_import_csv_uploads-example.txt
+docs/post_externalcontacts_import_jobs-example.txt
+docs/post_externalcontacts_import_settings-example.txt
 docs/post_externalcontacts_merge_contacts-example.txt
 docs/post_externalcontacts_organization_notes-example.txt
 docs/post_externalcontacts_organizations-example.txt
@@ -12630,6 +12692,8 @@ docs/put_externalcontacts_contacts_schema-example.txt
 docs/put_externalcontacts_conversation-example.txt
 docs/put_externalcontacts_externalsource-example.txt
 docs/put_externalcontacts_import_csv_setting-example.txt
+docs/put_externalcontacts_import_job-example.txt
+docs/put_externalcontacts_import_setting-example.txt
 docs/put_externalcontacts_organization-example.txt
 docs/put_externalcontacts_organization_note-example.txt
 docs/put_externalcontacts_organization_trustor_trustor_id-example.txt

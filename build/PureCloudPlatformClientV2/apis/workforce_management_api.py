@@ -8436,13 +8436,12 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The userId to whom the Time Off Request applies. (required)
-        :param bool recently_reviewed: Limit results to requests that have been reviewed within the preceding 30 days
         :return: TimeOffRequestList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'user_id', 'recently_reviewed']
+        all_params = ['management_unit_id', 'user_id']
         all_params.append('callback')
 
         params = locals()
@@ -8471,8 +8470,6 @@ class WorkforceManagementApi(object):
             path_params['userId'] = params['user_id']
 
         query_params = {}
-        if 'recently_reviewed' in params:
-            query_params['recentlyReviewed'] = params['recently_reviewed']
 
         header_params = {}
 
@@ -9912,13 +9909,12 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param bool recently_reviewed: Limit results to requests that have been reviewed within the preceding 30 days
         :return: TimeOffRequestList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['recently_reviewed']
+        all_params = []
         all_params.append('callback')
 
         params = locals()
@@ -9937,8 +9933,6 @@ class WorkforceManagementApi(object):
         path_params = {}
 
         query_params = {}
-        if 'recently_reviewed' in params:
-            query_params['recentlyReviewed'] = params['recently_reviewed']
 
         header_params = {}
 

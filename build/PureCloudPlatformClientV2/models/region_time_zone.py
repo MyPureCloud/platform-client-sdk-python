@@ -51,6 +51,7 @@ class RegionTimeZone(object):
             'id': 'str',
             'name': 'str',
             'offset': 'int',
+            'canonical_id': 'str',
             'self_uri': 'str'
         }
 
@@ -58,12 +59,14 @@ class RegionTimeZone(object):
             'id': 'id',
             'name': 'name',
             'offset': 'offset',
+            'canonical_id': 'canonicalId',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._offset = None
+        self._canonical_id = None
         self._self_uri = None
 
     @property
@@ -137,6 +140,30 @@ class RegionTimeZone(object):
         
 
         self._offset = offset
+
+    @property
+    def canonical_id(self) -> str:
+        """
+        Gets the canonical_id of this RegionTimeZone.
+        Canonical identifier for this time zone, if applicable
+
+        :return: The canonical_id of this RegionTimeZone.
+        :rtype: str
+        """
+        return self._canonical_id
+
+    @canonical_id.setter
+    def canonical_id(self, canonical_id: str) -> None:
+        """
+        Sets the canonical_id of this RegionTimeZone.
+        Canonical identifier for this time zone, if applicable
+
+        :param canonical_id: The canonical_id of this RegionTimeZone.
+        :type: str
+        """
+        
+
+        self._canonical_id = canonical_id
 
     @property
     def self_uri(self) -> str:

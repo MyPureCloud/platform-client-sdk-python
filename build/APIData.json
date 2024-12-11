@@ -13080,6 +13080,87 @@
     "return": "SchemaQuantityLimits",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DataExtensionsApi();\n\ntry:\n    # Get quantitative limits on schemas\n    api_response = api_instance.get_dataextensions_limits()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DataExtensionsApi->get_dataextensions_limits: %s\\n\" % e)"
   },
+  "delete_dataprivacy_maskingrule": {
+    "operationId": "delete_dataprivacy_maskingrule",
+    "functionName": "delete_dataprivacy_maskingrule",
+    "signature": "delete_dataprivacy_maskingrule(rule_id)",
+    "parameters": [
+      {
+        "name": "rule_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DataPrivacyApi();\nrule_id = 'rule_id_example' # str | ruleId\n\ntry:\n    # Delete a masking rule.\n    api_instance.delete_dataprivacy_maskingrule(rule_id)\nexcept ApiException as e:\n    print(\"Exception when calling DataPrivacyApi->delete_dataprivacy_maskingrule: %s\\n\" % e)"
+  },
+  "get_dataprivacy_maskingrule": {
+    "operationId": "get_dataprivacy_maskingrule",
+    "functionName": "get_dataprivacy_maskingrule",
+    "signature": "get_dataprivacy_maskingrule(rule_id)",
+    "parameters": [
+      {
+        "name": "rule_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "MaskingRule",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DataPrivacyApi();\nrule_id = 'rule_id_example' # str | ruleId\n\ntry:\n    # Fetch details about a masking rule.\n    api_response = api_instance.get_dataprivacy_maskingrule(rule_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DataPrivacyApi->get_dataprivacy_maskingrule: %s\\n\" % e)"
+  },
+  "get_dataprivacy_maskingrules": {
+    "operationId": "get_dataprivacy_maskingrules",
+    "functionName": "get_dataprivacy_maskingrules",
+    "signature": "get_dataprivacy_maskingrules()",
+    "return": "MaskingRuleListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DataPrivacyApi();\n\ntry:\n    # Retrieve the list of masking rules.\n    api_response = api_instance.get_dataprivacy_maskingrules()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DataPrivacyApi->get_dataprivacy_maskingrules: %s\\n\" % e)"
+  },
+  "patch_dataprivacy_maskingrule": {
+    "operationId": "patch_dataprivacy_maskingrule",
+    "functionName": "patch_dataprivacy_maskingrule",
+    "signature": "patch_dataprivacy_maskingrule(rule_id, body)",
+    "parameters": [
+      {
+        "name": "rule_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "MaskingRule",
+        "required": "false"
+      }
+    ],
+    "return": "MaskingRule",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DataPrivacyApi();\nrule_id = 'rule_id_example' # str | ruleId\nbody = PureCloudPlatformClientV2.MaskingRule() # MaskingRule |  (optional)\n\ntry:\n    # Update information about a masking rule.\n    api_response = api_instance.patch_dataprivacy_maskingrule(rule_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DataPrivacyApi->patch_dataprivacy_maskingrule: %s\\n\" % e)"
+  },
+  "post_dataprivacy_maskingrules": {
+    "operationId": "post_dataprivacy_maskingrules",
+    "functionName": "post_dataprivacy_maskingrules",
+    "signature": "post_dataprivacy_maskingrules(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "MaskingRule",
+        "required": "true"
+      }
+    ],
+    "return": "MaskingRule",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DataPrivacyApi();\nbody = PureCloudPlatformClientV2.MaskingRule() # MaskingRule | Details for creating masking rule resource\n\ntry:\n    # Create a new masking rule resource.\n    api_response = api_instance.post_dataprivacy_maskingrules(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DataPrivacyApi->post_dataprivacy_maskingrules: %s\\n\" % e)"
+  },
+  "post_dataprivacy_maskingrules_validate": {
+    "operationId": "post_dataprivacy_maskingrules_validate",
+    "functionName": "post_dataprivacy_maskingrules_validate",
+    "signature": "post_dataprivacy_maskingrules_validate(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "MaskingRuleValidateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "MaskingRuleValidateResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DataPrivacyApi();\nbody = PureCloudPlatformClientV2.MaskingRuleValidateRequest() # MaskingRuleValidateRequest | Text to be masked\n\ntry:\n    # Validate masking before creating.\n    api_response = api_instance.post_dataprivacy_maskingrules_validate(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DataPrivacyApi->post_dataprivacy_maskingrules_validate: %s\\n\" % e)"
+  },
   "get_download": {
     "operationId": "get_download",
     "functionName": "get_download",
@@ -13323,6 +13404,19 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nsettings_id = 'settings_id_example' # str | Settings id\n\ntry:\n    # Delete settings for CSV import\n    api_instance.delete_externalcontacts_import_csv_setting(settings_id)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->delete_externalcontacts_import_csv_setting: %s\\n\" % e)"
   },
+  "delete_externalcontacts_import_setting": {
+    "operationId": "delete_externalcontacts_import_setting",
+    "functionName": "delete_externalcontacts_import_setting",
+    "signature": "delete_externalcontacts_import_setting(settings_id)",
+    "parameters": [
+      {
+        "name": "settings_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nsettings_id = 'settings_id_example' # str | Settings id\n\ntry:\n    # Delete Settings\n    api_instance.delete_externalcontacts_import_setting(settings_id)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->delete_externalcontacts_import_setting: %s\\n\" % e)"
+  },
   "delete_externalcontacts_organization": {
     "operationId": "delete_externalcontacts_organization",
     "functionName": "delete_externalcontacts_organization",
@@ -13413,7 +13507,7 @@
         "required": "true"
       }
     ],
-    "return": "EntityListing",
+    "return": "ContactIdentifierListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\ncontact_id = 'contact_id_example' # str | ExternalContact ID\n\ntry:\n    # List the identifiers for a contact\n    api_response = api_instance.get_externalcontacts_contact_identifiers(contact_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_contact_identifiers: %s\\n\" % e)"
   },
   "get_externalcontacts_contact_journey_sessions": {
@@ -13718,6 +13812,92 @@
     ],
     "return": "CsvUploadPreviewResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nupload_id = 'upload_id_example' # str | Upload id\n\ntry:\n    # Get preview for CSV upload\n    api_response = api_instance.get_externalcontacts_import_csv_upload_preview(upload_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_import_csv_upload_preview: %s\\n\" % e)"
+  },
+  "get_externalcontacts_import_job": {
+    "operationId": "get_externalcontacts_import_job",
+    "functionName": "get_externalcontacts_import_job",
+    "signature": "get_externalcontacts_import_job(job_id)",
+    "parameters": [
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ContactImportJobResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\njob_id = 'job_id_example' # str | Job id\n\ntry:\n    # Get job based on id\n    api_response = api_instance.get_externalcontacts_import_job(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_import_job: %s\\n\" % e)"
+  },
+  "get_externalcontacts_import_jobs": {
+    "operationId": "get_externalcontacts_import_jobs",
+    "functionName": "get_externalcontacts_import_jobs",
+    "signature": "get_externalcontacts_import_jobs(after, page_size, sort_order, job_status)",
+    "parameters": [
+      {
+        "name": "after",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "sort_order",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "job_status",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ContactImportJobEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = ''25'' # str | Number of entities to return. Maximum of 100. (optional) (default to '25')\nsort_order = ''Ascending'' # str | Direction of sorting. (optional) (default to 'Ascending')\njob_status = 'job_status_example' # str | Search term to filter by jobStatus (optional)\n\ntry:\n    # List jobs for organization\n    api_response = api_instance.get_externalcontacts_import_jobs(after=after, page_size=page_size, sort_order=sort_order, job_status=job_status)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_import_jobs: %s\\n\" % e)"
+  },
+  "get_externalcontacts_import_setting": {
+    "operationId": "get_externalcontacts_import_setting",
+    "functionName": "get_externalcontacts_import_setting",
+    "signature": "get_externalcontacts_import_setting(settings_id)",
+    "parameters": [
+      {
+        "name": "settings_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ContactImportSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nsettings_id = 'settings_id_example' # str | Settings id\n\ntry:\n    # Get setting based on id\n    api_response = api_instance.get_externalcontacts_import_setting(settings_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_import_setting: %s\\n\" % e)"
+  },
+  "get_externalcontacts_import_settings": {
+    "operationId": "get_externalcontacts_import_settings",
+    "functionName": "get_externalcontacts_import_settings",
+    "signature": "get_externalcontacts_import_settings(after, page_size, sort_order, name)",
+    "parameters": [
+      {
+        "name": "after",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "sort_order",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "ContactImportSettingsEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = ''25'' # str | Number of entities to return. Maximum of 100. (optional) (default to '25')\nsort_order = ''Ascending'' # str | Direction of sorting. (optional) (default to 'Ascending')\nname = 'name_example' # str | Search term to filter by settings name (optional)\n\ntry:\n    # List settings for organization\n    api_response = api_instance.get_externalcontacts_import_settings(after=after, page_size=page_size, sort_order=sort_order, name=name)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_import_settings: %s\\n\" % e)"
   },
   "get_externalcontacts_organization": {
     "operationId": "get_externalcontacts_organization",
@@ -14479,6 +14659,34 @@
     "return": "CsvUploadResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nbody = PureCloudPlatformClientV2.CsvUploadRequest() # CsvUploadRequest | UploadRequest\n\ntry:\n    # Get url for CSV upload\n    api_response = api_instance.post_externalcontacts_import_csv_uploads(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->post_externalcontacts_import_csv_uploads: %s\\n\" % e)"
   },
+  "post_externalcontacts_import_jobs": {
+    "operationId": "post_externalcontacts_import_jobs",
+    "functionName": "post_externalcontacts_import_jobs",
+    "signature": "post_externalcontacts_import_jobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ContactImportJobRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ContactImportJobResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nbody = PureCloudPlatformClientV2.ContactImportJobRequest() # ContactImportJobRequest | Job\n\ntry:\n    # Create a new job\n    api_response = api_instance.post_externalcontacts_import_jobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->post_externalcontacts_import_jobs: %s\\n\" % e)"
+  },
+  "post_externalcontacts_import_settings": {
+    "operationId": "post_externalcontacts_import_settings",
+    "functionName": "post_externalcontacts_import_settings",
+    "signature": "post_externalcontacts_import_settings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ContactImportSettings",
+        "required": "true"
+      }
+    ],
+    "return": "ContactImportSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nbody = PureCloudPlatformClientV2.ContactImportSettings() # ContactImportSettings | Setting\n\ntry:\n    # Create a new settings\n    api_response = api_instance.post_externalcontacts_import_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->post_externalcontacts_import_settings: %s\\n\" % e)"
+  },
   "post_externalcontacts_merge_contacts": {
     "operationId": "post_externalcontacts_merge_contacts",
     "functionName": "post_externalcontacts_merge_contacts",
@@ -14671,6 +14879,44 @@
     ],
     "return": "CsvSettings",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nsettings_id = 'settings_id_example' # str | Settings id\nbody = PureCloudPlatformClientV2.CsvSettings() # CsvSettings | Settings\n\ntry:\n    # Update settings for CSV import\n    api_response = api_instance.put_externalcontacts_import_csv_setting(settings_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->put_externalcontacts_import_csv_setting: %s\\n\" % e)"
+  },
+  "put_externalcontacts_import_job": {
+    "operationId": "put_externalcontacts_import_job",
+    "functionName": "put_externalcontacts_import_job",
+    "signature": "put_externalcontacts_import_job(job_id, body)",
+    "parameters": [
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ContactImportJobStatusUpdateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ContactImportJobStatusUpdateResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\njob_id = 'job_id_example' # str | Job id\nbody = PureCloudPlatformClientV2.ContactImportJobStatusUpdateRequest() # ContactImportJobStatusUpdateRequest | Status of the Job's workflow\n\ntry:\n    # Update Job's workflow status\n    api_response = api_instance.put_externalcontacts_import_job(job_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->put_externalcontacts_import_job: %s\\n\" % e)"
+  },
+  "put_externalcontacts_import_setting": {
+    "operationId": "put_externalcontacts_import_setting",
+    "functionName": "put_externalcontacts_import_setting",
+    "signature": "put_externalcontacts_import_setting(settings_id, body)",
+    "parameters": [
+      {
+        "name": "settings_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ContactImportSettings",
+        "required": "true"
+      }
+    ],
+    "return": "ContactImportSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nsettings_id = 'settings_id_example' # str | Settings id\nbody = PureCloudPlatformClientV2.ContactImportSettings() # ContactImportSettings | Setting\n\ntry:\n    # Update settings\n    api_response = api_instance.put_externalcontacts_import_setting(settings_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->put_externalcontacts_import_setting: %s\\n\" % e)"
   },
   "put_externalcontacts_organization": {
     "operationId": "put_externalcontacts_organization",
@@ -48365,7 +48611,7 @@
   "get_workforcemanagement_managementunit_user_timeoffrequests": {
     "operationId": "get_workforcemanagement_managementunit_user_timeoffrequests",
     "functionName": "get_workforcemanagement_managementunit_user_timeoffrequests",
-    "signature": "get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, recently_reviewed)",
+    "signature": "get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id)",
     "parameters": [
       {
         "name": "management_unit_id",
@@ -48376,15 +48622,10 @@
         "name": "user_id",
         "type": "str",
         "required": "true"
-      },
-      {
-        "name": "recently_reviewed",
-        "type": "bool",
-        "required": "false"
       }
     ],
     "return": "TimeOffRequestList",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nmanagement_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.\nuser_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.\nrecently_reviewed = False # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to False)\n\ntry:\n    # Get a list of time off requests for a given user\n    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, recently_reviewed=recently_reviewed)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequests: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nmanagement_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.\nuser_id = 'user_id_example' # str | The userId to whom the Time Off Request applies.\n\ntry:\n    # Get a list of time off requests for a given user\n    api_response = api_instance.get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_user_timeoffrequests: %s\\n\" % e)"
   },
   "get_workforcemanagement_managementunit_users": {
     "operationId": "get_workforcemanagement_managementunit_users",
@@ -48718,16 +48959,9 @@
   "get_workforcemanagement_timeoffrequests": {
     "operationId": "get_workforcemanagement_timeoffrequests",
     "functionName": "get_workforcemanagement_timeoffrequests",
-    "signature": "get_workforcemanagement_timeoffrequests(recently_reviewed)",
-    "parameters": [
-      {
-        "name": "recently_reviewed",
-        "type": "bool",
-        "required": "false"
-      }
-    ],
+    "signature": "get_workforcemanagement_timeoffrequests()",
     "return": "TimeOffRequestList",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nrecently_reviewed = False # bool | Limit results to requests that have been reviewed within the preceding 30 days (optional) (default to False)\n\ntry:\n    # Get a list of time off requests for the current user\n    api_response = api_instance.get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequests: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\n\ntry:\n    # Get a list of time off requests for the current user\n    api_response = api_instance.get_workforcemanagement_timeoffrequests()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequests: %s\\n\" % e)"
   },
   "get_workforcemanagement_user_workplanbidranks": {
     "operationId": "get_workforcemanagement_user_workplanbidranks",

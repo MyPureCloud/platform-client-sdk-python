@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import WorkitemsAttributeChangeMap
     from . import WorkitemsAttributeChangeString
     from . import WorkitemsAttributeChangeWorkitemStatusCategory
+    from . import WorkitemsAttributeChangeWrapupDelta
 
 class WorkitemDelta(object):
     """
@@ -74,6 +75,7 @@ class WorkitemDelta(object):
             'queue_id': 'WorkitemsAttributeChangeString',
             'external_tag': 'WorkitemsAttributeChangeString',
             'wrapup_id': 'WorkitemsAttributeChangeString',
+            'wrapup': 'WorkitemsAttributeChangeWrapupDelta',
             'ttl': 'WorkitemsAttributeChangeInteger',
             'date_closed': 'WorkitemsAttributeChangeInstant',
             'assignment_state': 'WorkitemsAttributeChangeString',
@@ -104,6 +106,7 @@ class WorkitemDelta(object):
             'queue_id': 'queueId',
             'external_tag': 'externalTag',
             'wrapup_id': 'wrapupId',
+            'wrapup': 'wrapup',
             'ttl': 'ttl',
             'date_closed': 'dateClosed',
             'assignment_state': 'assignmentState',
@@ -133,6 +136,7 @@ class WorkitemDelta(object):
         self._queue_id = None
         self._external_tag = None
         self._wrapup_id = None
+        self._wrapup = None
         self._ttl = None
         self._date_closed = None
         self._assignment_state = None
@@ -574,6 +578,30 @@ class WorkitemDelta(object):
         
 
         self._wrapup_id = wrapup_id
+
+    @property
+    def wrapup(self) -> 'WorkitemsAttributeChangeWrapupDelta':
+        """
+        Gets the wrapup of this WorkitemDelta.
+
+
+        :return: The wrapup of this WorkitemDelta.
+        :rtype: WorkitemsAttributeChangeWrapupDelta
+        """
+        return self._wrapup
+
+    @wrapup.setter
+    def wrapup(self, wrapup: 'WorkitemsAttributeChangeWrapupDelta') -> None:
+        """
+        Sets the wrapup of this WorkitemDelta.
+
+
+        :param wrapup: The wrapup of this WorkitemDelta.
+        :type: WorkitemsAttributeChangeWrapupDelta
+        """
+        
+
+        self._wrapup = wrapup
 
     @property
     def ttl(self) -> 'WorkitemsAttributeChangeInteger':

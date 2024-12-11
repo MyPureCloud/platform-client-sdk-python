@@ -588,7 +588,7 @@ class JourneyApi(object):
     def delete_journey_view_schedules(self, view_id: str, **kwargs) -> 'JourneyViewSchedule':
         """
         Delete the Schedule of a JourneyView
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2638,7 +2638,7 @@ class JourneyApi(object):
     def get_journey_view_schedules(self, view_id: str, **kwargs) -> 'JourneyViewSchedule':
         """
         Get the Schedule for a JourneyView
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2986,7 +2986,7 @@ class JourneyApi(object):
     def get_journey_view_version_job(self, view_id: str, journey_version_id: str, job_id: str, **kwargs) -> 'JourneyViewJob':
         """
         Get the job for a journey view version.
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3076,7 +3076,7 @@ class JourneyApi(object):
     def get_journey_view_version_job_results(self, view_id: str, journey_view_version: str, job_id: str, **kwargs) -> 'JourneyViewResult':
         """
         Get the result of a job for a journey view version.
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3262,7 +3262,7 @@ class JourneyApi(object):
     def get_journey_view_version_jobs_latest(self, view_id: str, journey_version_id: str, **kwargs) -> 'JourneyViewJob':
         """
         Get the latest job of a journey view version.
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4150,7 +4150,7 @@ class JourneyApi(object):
     def patch_journey_view_version_job(self, view_id: str, journey_version_id: str, job_id: str, body: 'JourneyViewJob', **kwargs) -> 'JourneyViewJob':
         """
         Update the job for a journey view version. Only the status can be changed and only to Cancelled
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5337,7 +5337,7 @@ class JourneyApi(object):
     def post_journey_view_version_jobs(self, view_id: str, journey_version_id: str, **kwargs) -> 'JourneyViewJob':
         """
         Submit a job request for a journey view version.
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5658,7 +5658,7 @@ class JourneyApi(object):
     def put_journey_view_schedules(self, view_id: str, body: 'JourneyViewSchedule', **kwargs) -> 'JourneyViewSchedule':
         """
         Update the Schedule for a JourneyView
-        used for long descriptions
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

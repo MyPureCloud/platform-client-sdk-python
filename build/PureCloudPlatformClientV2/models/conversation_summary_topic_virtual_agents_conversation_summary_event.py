@@ -71,7 +71,8 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
             'wrap_up_codes': 'list[ConversationSummaryTopicVirtualAgentsConversationWrapUpCode]',
             'trigger_source': 'ConversationSummaryTopicVirtualAgentsTriggerSource',
             'last_edited_by': 'ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant',
-            'error_type': 'str'
+            'error_type': 'str',
+            'duration_ms': 'int'
         }
 
         self.attribute_map = {
@@ -90,7 +91,8 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
             'wrap_up_codes': 'wrapUpCodes',
             'trigger_source': 'triggerSource',
             'last_edited_by': 'lastEditedBy',
-            'error_type': 'errorType'
+            'error_type': 'errorType',
+            'duration_ms': 'durationMs'
         }
 
         self._conversation_id = None
@@ -109,6 +111,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         self._trigger_source = None
         self._last_edited_by = None
         self._error_type = None
+        self._duration_ms = None
 
     @property
     def conversation_id(self) -> str:
@@ -508,6 +511,30 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
             self._error_type = "outdated_sdk_version"
         else:
             self._error_type = error_type
+
+    @property
+    def duration_ms(self) -> int:
+        """
+        Gets the duration_ms of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :return: The duration_ms of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :rtype: int
+        """
+        return self._duration_ms
+
+    @duration_ms.setter
+    def duration_ms(self, duration_ms: int) -> None:
+        """
+        Sets the duration_ms of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :param duration_ms: The duration_ms of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :type: int
+        """
+        
+
+        self._duration_ms = duration_ms
 
     def to_dict(self):
         """

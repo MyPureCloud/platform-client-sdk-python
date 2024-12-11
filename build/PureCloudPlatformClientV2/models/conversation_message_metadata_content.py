@@ -82,7 +82,7 @@ class ConversationMessageMetadataContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Reactions", "Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "Unknown"]
+        allowed_values = ["Reactions", "Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker", "Unknown"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"

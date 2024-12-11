@@ -52,24 +52,24 @@ class UnpublishedProgramsEntityListing(object):
         self.swagger_types = {
             'entities': 'list[Program]',
             'page_size': 'int',
-            'next_uri': 'str',
             'self_uri': 'str',
-            'page_count': 'int'
+            'page_count': 'int',
+            'next_uri': 'str'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
-            'next_uri': 'nextUri',
             'self_uri': 'selfUri',
-            'page_count': 'pageCount'
+            'page_count': 'pageCount',
+            'next_uri': 'nextUri'
         }
 
         self._entities = None
         self._page_size = None
-        self._next_uri = None
         self._self_uri = None
         self._page_count = None
+        self._next_uri = None
 
     @property
     def entities(self) -> List['Program']:
@@ -120,30 +120,6 @@ class UnpublishedProgramsEntityListing(object):
         self._page_size = page_size
 
     @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this UnpublishedProgramsEntityListing.
-
-
-        :return: The next_uri of this UnpublishedProgramsEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this UnpublishedProgramsEntityListing.
-
-
-        :param next_uri: The next_uri of this UnpublishedProgramsEntityListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
-
-    @property
     def self_uri(self) -> str:
         """
         Gets the self_uri of this UnpublishedProgramsEntityListing.
@@ -190,6 +166,30 @@ class UnpublishedProgramsEntityListing(object):
         
 
         self._page_count = page_count
+
+    @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this UnpublishedProgramsEntityListing.
+
+
+        :return: The next_uri of this UnpublishedProgramsEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this UnpublishedProgramsEntityListing.
+
+
+        :param next_uri: The next_uri of this UnpublishedProgramsEntityListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
 
     def to_dict(self):
         """

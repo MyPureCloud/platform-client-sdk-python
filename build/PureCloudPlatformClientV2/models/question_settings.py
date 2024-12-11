@@ -50,44 +50,17 @@ class QuestionSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'question_index': 'int',
             'question_context_id': 'str',
             'settings': 'AiScoringSetting'
         }
 
         self.attribute_map = {
-            'question_index': 'questionIndex',
             'question_context_id': 'questionContextId',
             'settings': 'settings'
         }
 
-        self._question_index = None
         self._question_context_id = None
         self._settings = None
-
-    @property
-    def question_index(self) -> int:
-        """
-        Gets the question_index of this QuestionSettings.
-        This field represents the location of the Question in the form. Note: Indexes are zero-based
-
-        :return: The question_index of this QuestionSettings.
-        :rtype: int
-        """
-        return self._question_index
-
-    @question_index.setter
-    def question_index(self, question_index: int) -> None:
-        """
-        Sets the question_index of this QuestionSettings.
-        This field represents the location of the Question in the form. Note: Indexes are zero-based
-
-        :param question_index: The question_index of this QuestionSettings.
-        :type: int
-        """
-        
-
-        self._question_index = question_index
 
     @property
     def question_context_id(self) -> str:

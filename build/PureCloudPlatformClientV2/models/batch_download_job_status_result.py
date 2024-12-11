@@ -204,7 +204,7 @@ class BatchDownloadJobStatusResult(object):
     def status(self) -> str:
         """
         Gets the status of this BatchDownloadJobStatusResult.
-        Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+        Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.
 
         :return: The status of this BatchDownloadJobStatusResult.
         :rtype: str
@@ -215,7 +215,7 @@ class BatchDownloadJobStatusResult(object):
     def status(self, status: str) -> None:
         """
         Sets the status of this BatchDownloadJobStatusResult.
-        Current status of the job. This could be either IN_PROGRESS or COMPLETED. A job is considered completed when all the submitted requests have been processed and fulfilled.
+        Current status of the job. A job is considered completed when all the submitted requests have been processed and fulfilled.
 
         :param status: The status of this BatchDownloadJobStatusResult.
         :type: str

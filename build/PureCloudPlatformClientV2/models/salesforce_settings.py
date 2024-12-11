@@ -50,18 +50,21 @@ class SalesforceSettings(object):
         self.swagger_types = {
             'channel': 'str',
             'language': 'str',
-            'categories': 'list[str]'
+            'categories': 'list[str]',
+            'base_url': 'str'
         }
 
         self.attribute_map = {
             'channel': 'channel',
             'language': 'language',
-            'categories': 'categories'
+            'categories': 'categories',
+            'base_url': 'baseUrl'
         }
 
         self._channel = None
         self._language = None
         self._categories = None
+        self._base_url = None
 
     @property
     def channel(self) -> str:
@@ -139,6 +142,30 @@ class SalesforceSettings(object):
         
 
         self._categories = categories
+
+    @property
+    def base_url(self) -> str:
+        """
+        Gets the base_url of this SalesforceSettings.
+        The base URL to resources.
+
+        :return: The base_url of this SalesforceSettings.
+        :rtype: str
+        """
+        return self._base_url
+
+    @base_url.setter
+    def base_url(self, base_url: str) -> None:
+        """
+        Sets the base_url of this SalesforceSettings.
+        The base URL to resources.
+
+        :param base_url: The base_url of this SalesforceSettings.
+        :type: str
+        """
+        
+
+        self._base_url = base_url
 
     def to_dict(self):
         """

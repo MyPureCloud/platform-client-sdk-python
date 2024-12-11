@@ -769,6 +769,16 @@ from .models.contact_column_time_zone import ContactColumnTimeZone
 from .models.contact_column_to_data_action_field_mapping import ContactColumnToDataActionFieldMapping
 from .models.contact_detail_event_topic_contact_update_event import ContactDetailEventTopicContactUpdateEvent
 from .models.contact_identifier import ContactIdentifier
+from .models.contact_identifier_listing import ContactIdentifierListing
+from .models.contact_import_field import ContactImportField
+from .models.contact_import_job_entity_listing import ContactImportJobEntityListing
+from .models.contact_import_job_metadata import ContactImportJobMetadata
+from .models.contact_import_job_request import ContactImportJobRequest
+from .models.contact_import_job_response import ContactImportJobResponse
+from .models.contact_import_job_status_update_request import ContactImportJobStatusUpdateRequest
+from .models.contact_import_job_status_update_response import ContactImportJobStatusUpdateResponse
+from .models.contact_import_settings import ContactImportSettings
+from .models.contact_import_settings_entity_listing import ContactImportSettingsEntityListing
 from .models.contact_list import ContactList
 from .models.contact_list_division_view import ContactListDivisionView
 from .models.contact_list_division_view_listing import ContactListDivisionViewListing
@@ -941,6 +951,8 @@ from .models.conversation_content_button_response import ConversationContentButt
 from .models.conversation_content_card import ConversationContentCard
 from .models.conversation_content_card_action import ConversationContentCardAction
 from .models.conversation_content_carousel import ConversationContentCarousel
+from .models.conversation_content_date_picker import ConversationContentDatePicker
+from .models.conversation_content_date_picker_available_time import ConversationContentDatePickerAvailableTime
 from .models.conversation_content_location import ConversationContentLocation
 from .models.conversation_content_notification_template import ConversationContentNotificationTemplate
 from .models.conversation_content_quick_reply import ConversationContentQuickReply
@@ -2471,6 +2483,7 @@ from .models.knowledge_import_job_request import KnowledgeImportJobRequest
 from .models.knowledge_import_job_response import KnowledgeImportJobResponse
 from .models.knowledge_import_job_settings import KnowledgeImportJobSettings
 from .models.knowledge_import_job_statistics import KnowledgeImportJobStatistics
+from .models.knowledge_integration_default_settings import KnowledgeIntegrationDefaultSettings
 from .models.knowledge_integration_filter import KnowledgeIntegrationFilter
 from .models.knowledge_integration_filter_value import KnowledgeIntegrationFilterValue
 from .models.knowledge_integration_options_response import KnowledgeIntegrationOptionsResponse
@@ -2678,6 +2691,10 @@ from .models.manager import Manager
 from .models.mark_contact_address_uncontactable_action_settings import MarkContactAddressUncontactableActionSettings
 from .models.mark_contact_uncontactable_action_settings import MarkContactUncontactableActionSettings
 from .models.markdown import Markdown
+from .models.masking_rule import MaskingRule
+from .models.masking_rule_listing import MaskingRuleListing
+from .models.masking_rule_validate_request import MaskingRuleValidateRequest
+from .models.masking_rule_validate_response import MaskingRuleValidateResponse
 from .models.match_criteria import MatchCriteria
 from .models.match_criteria_test_result import MatchCriteriaTestResult
 from .models.match_shift_trade_request import MatchShiftTradeRequest
@@ -3078,6 +3095,10 @@ from .models.performance_profile import PerformanceProfile
 from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
 from .models.permission_details import PermissionDetails
 from .models.permissions import Permissions
+from .models.persistent_connection_change_topic_error_info import PersistentConnectionChangeTopicErrorInfo
+from .models.persistent_connection_change_topic_error_info_details import PersistentConnectionChangeTopicErrorInfoDetails
+from .models.persistent_connection_change_topic_error_location import PersistentConnectionChangeTopicErrorLocation
+from .models.persistent_connection_change_topic_persistent_connection_change_event import PersistentConnectionChangeTopicPersistentConnectionChangeEvent
 from .models.phone import Phone
 from .models.phone_base import PhoneBase
 from .models.phone_base_entity_listing import PhoneBaseEntityListing
@@ -4880,6 +4901,7 @@ from .models.workitems_attribute_change_list import WorkitemsAttributeChangeList
 from .models.workitems_attribute_change_map import WorkitemsAttributeChangeMap
 from .models.workitems_attribute_change_string import WorkitemsAttributeChangeString
 from .models.workitems_attribute_change_workitem_status_category import WorkitemsAttributeChangeWorkitemStatusCategory
+from .models.workitems_attribute_change_wrapup_delta import WorkitemsAttributeChangeWrapupDelta
 from .models.workitems_change_workbin_delta import WorkitemsChangeWorkbinDelta
 from .models.workitems_change_workitem_delta import WorkitemsChangeWorkitemDelta
 from .models.workitems_change_worktype_delta import WorkitemsChangeWorktypeDelta
@@ -4926,6 +4948,7 @@ from .models.wrapup_code import WrapupCode
 from .models.wrapup_code_entity_listing import WrapupCodeEntityListing
 from .models.wrapup_code_prediction_config import WrapupCodePredictionConfig
 from .models.wrapup_code_request import WrapupCodeRequest
+from .models.wrapup_delta import WrapupDelta
 from .models.wrapup_detail_event_topic_wrapup_event import WrapupDetailEventTopicWrapupEvent
 from .models.wrapup_id_reference import WrapupIdReference
 from .models.wrapup_input import WrapupInput
@@ -4950,6 +4973,7 @@ from .apis.coaching_api import CoachingApi
 from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
+from .apis.data_privacy_api import DataPrivacyApi
 from .apis.downloads_api import DownloadsApi
 from .apis.emails_api import EmailsApi
 from .apis.employee_engagement_api import EmployeeEngagementApi
@@ -5029,6 +5053,7 @@ from .apis.coaching_api import CoachingApi
 from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
+from .apis.data_privacy_api import DataPrivacyApi
 from .apis.downloads_api import DownloadsApi
 from .apis.emails_api import EmailsApi
 from .apis.employee_engagement_api import EmployeeEngagementApi
