@@ -103,7 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_email_domain_validate**](#patch_routing_email_domain_validate) | Validate domain settings|
 |[**patch_routing_predictor**](#patch_routing_predictor) | Update single predictor.|
 |[**patch_routing_queue_member**](#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
-|[**patch_routing_queue_members**](#patch_routing_queue_members) | Join or unjoin a set of users for a queue|
+|[**patch_routing_queue_members**](#patch_routing_queue_members) | Join or unjoin a set of up to 100 users for a queue|
 |[**patch_routing_queue_user**](#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
 |[**patch_routing_queue_users**](#patch_routing_queue_users) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.|
 |[**patch_routing_settings_contactcenter**](#patch_routing_settings_contactcenter) | Update Contact Center Settings|
@@ -4611,8 +4611,6 @@ Wraps GET /api/v2/users/{userId}/queues
 Requires ANY permissions: 
 
 * routing:queue:view
-* routing:queue:join
-* routing:queueMember:manage
 
 ### Example
 
@@ -5077,7 +5075,7 @@ void (empty response body)
 > [**QueueMemberEntityListing**](QueueMemberEntityListing) patch_routing_queue_members(queue_id, body)
 
 
-Join or unjoin a set of users for a queue
+Join or unjoin a set of up to 100 users for a queue
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/members 
 
@@ -5103,7 +5101,7 @@ queue_id = 'queue_id_example' # str | Queue ID
 body = [PureCloudPlatformClientV2.QueueMember()] # list[QueueMember] | Queue Members
 
 try:
-    # Join or unjoin a set of users for a queue
+    # Join or unjoin a set of up to 100 users for a queue
     api_response = api_instance.patch_routing_queue_members(queue_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -7712,4 +7710,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 218.0.0_
+_PureCloudPlatformClientV2 219.0.0_

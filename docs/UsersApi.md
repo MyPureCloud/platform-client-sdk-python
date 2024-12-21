@@ -1863,8 +1863,6 @@ Wraps GET /api/v2/users/{userId}/queues
 Requires ANY permissions: 
 
 * routing:queue:view
-* routing:queue:join
-* routing:queueMember:manage
 
 ### Example
 
@@ -5080,4 +5078,4 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 218.0.0_
+_PureCloudPlatformClientV2 219.0.0_

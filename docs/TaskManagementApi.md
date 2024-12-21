@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_taskmanagement_workitem**](#delete_taskmanagement_workitem) | Delete a workitem|
 |[**delete_taskmanagement_workitems_schema**](#delete_taskmanagement_workitems_schema) | Delete a schema|
 |[**delete_taskmanagement_worktype**](#delete_taskmanagement_worktype) | Delete a worktype|
+|[**delete_taskmanagement_worktype_flows_datebased_rule**](#delete_taskmanagement_worktype_flows_datebased_rule) | Delete a date based rule|
 |[**delete_taskmanagement_worktype_flows_onattributechange_rule**](#delete_taskmanagement_worktype_flows_onattributechange_rule) | Delete a rule|
 |[**delete_taskmanagement_worktype_flows_oncreate_rule**](#delete_taskmanagement_worktype_flows_oncreate_rule) | Delete a rule|
 |[**delete_taskmanagement_worktype_status**](#delete_taskmanagement_worktype_status) | Delete a status|
@@ -30,6 +31,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_taskmanagement_workitems_schema_versions**](#get_taskmanagement_workitems_schema_versions) | Get all versions of a schema|
 |[**get_taskmanagement_workitems_schemas**](#get_taskmanagement_workitems_schemas) | Get a list of schemas.|
 |[**get_taskmanagement_worktype**](#get_taskmanagement_worktype) | Get a worktype|
+|[**get_taskmanagement_worktype_flows_datebased_rule**](#get_taskmanagement_worktype_flows_datebased_rule) | Get a date based rule|
+|[**get_taskmanagement_worktype_flows_datebased_rules**](#get_taskmanagement_worktype_flows_datebased_rules) | Get all date based rules for a worktype|
 |[**get_taskmanagement_worktype_flows_onattributechange_rule**](#get_taskmanagement_worktype_flows_onattributechange_rule) | Get an attribute change rule|
 |[**get_taskmanagement_worktype_flows_onattributechange_rules**](#get_taskmanagement_worktype_flows_onattributechange_rules) | Get all attribute-change rules for a worktype|
 |[**get_taskmanagement_worktype_flows_oncreate_rule**](#get_taskmanagement_worktype_flows_oncreate_rule) | Get an on-create rule|
@@ -45,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_taskmanagement_workitem_user_wrapups**](#patch_taskmanagement_workitem_user_wrapups) | Add/Remove a wrapup code for a given user in a workitem.|
 |[**patch_taskmanagement_workitem_users_me_wrapups**](#patch_taskmanagement_workitem_users_me_wrapups) | Add/Remove a wrapup code for the current user in a workitem.|
 |[**patch_taskmanagement_worktype**](#patch_taskmanagement_worktype) | Update the attributes of a worktype|
+|[**patch_taskmanagement_worktype_flows_datebased_rule**](#patch_taskmanagement_worktype_flows_datebased_rule) | Update the attributes of a date based rule|
 |[**patch_taskmanagement_worktype_flows_onattributechange_rule**](#patch_taskmanagement_worktype_flows_onattributechange_rule) | Update the attributes of a rule|
 |[**patch_taskmanagement_worktype_flows_oncreate_rule**](#patch_taskmanagement_worktype_flows_oncreate_rule) | Update the attributes of a rule|
 |[**patch_taskmanagement_worktype_status**](#patch_taskmanagement_worktype_status) | Update the attributes of a status|
@@ -57,6 +61,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_taskmanagement_workitems_query**](#post_taskmanagement_workitems_query) | Query for workitems|
 |[**post_taskmanagement_workitems_query_jobs**](#post_taskmanagement_workitems_query_jobs) | Create a workitem query job|
 |[**post_taskmanagement_workitems_schemas**](#post_taskmanagement_workitems_schemas) | Create a schema|
+|[**post_taskmanagement_worktype_flows_datebased_rules**](#post_taskmanagement_worktype_flows_datebased_rules) | Add a date based rule to a worktype|
 |[**post_taskmanagement_worktype_flows_onattributechange_rules**](#post_taskmanagement_worktype_flows_onattributechange_rules) | Add an attribute-change rule to a worktype|
 |[**post_taskmanagement_worktype_flows_oncreate_rules**](#post_taskmanagement_worktype_flows_oncreate_rules) | Add an on-create rule to a worktype|
 |[**post_taskmanagement_worktype_statuses**](#post_taskmanagement_worktype_statuses) | Add a status to a worktype|
@@ -248,6 +253,55 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_taskmanagement_worktype_flows_datebased_rule
+
+>  delete_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id)
+
+
+Delete a date based rule
+
+Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId} 
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+worktype_id = 'worktype_id_example' # str | Worktype id
+rule_id = 'rule_id_example' # str | ruleId
+
+try:
+    # Delete a date based rule
+    api_instance.delete_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->delete_taskmanagement_worktype_flows_datebased_rule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **worktype_id** | **str**| Worktype id |  |
+| **rule_id** | **str**| ruleId |  |
 
 ### Return type
 
@@ -1277,6 +1331,108 @@ except ApiException as e:
 [**Worktype**](Worktype)
 
 
+## get_taskmanagement_worktype_flows_datebased_rule
+
+> [**WorkitemDateBasedRule**](WorkitemDateBasedRule) get_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id)
+
+
+Get a date based rule
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId} 
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+worktype_id = 'worktype_id_example' # str | Worktype id
+rule_id = 'rule_id_example' # str | ruleId
+
+try:
+    # Get a date based rule
+    api_response = api_instance.get_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_worktype_flows_datebased_rule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **worktype_id** | **str**| Worktype id |  |
+| **rule_id** | **str**| ruleId |  |
+
+### Return type
+
+[**WorkitemDateBasedRule**](WorkitemDateBasedRule)
+
+
+## get_taskmanagement_worktype_flows_datebased_rules
+
+> [**WorkitemDateBasedRuleListing**](WorkitemDateBasedRuleListing) get_taskmanagement_worktype_flows_datebased_rules(worktype_id, after=after, page_size=page_size)
+
+
+Get all date based rules for a worktype
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules 
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+worktype_id = 'worktype_id_example' # str | Worktype id
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 25 # int | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional) (default to 25)
+
+try:
+    # Get all date based rules for a worktype
+    api_response = api_instance.get_taskmanagement_worktype_flows_datebased_rules(worktype_id, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_worktype_flows_datebased_rules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **worktype_id** | **str**| Worktype id |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **int**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+[**WorkitemDateBasedRuleListing**](WorkitemDateBasedRuleListing)
+
+
 ## get_taskmanagement_worktype_flows_onattributechange_rule
 
 > [**WorkitemOnAttributeChangeRule**](WorkitemOnAttributeChangeRule) get_taskmanagement_worktype_flows_onattributechange_rule(worktype_id, rule_id)
@@ -2048,6 +2204,58 @@ except ApiException as e:
 [**Worktype**](Worktype)
 
 
+## patch_taskmanagement_worktype_flows_datebased_rule
+
+> [**WorkitemDateBasedRule**](WorkitemDateBasedRule) patch_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id, body)
+
+
+Update the attributes of a date based rule
+
+Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId} 
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+worktype_id = 'worktype_id_example' # str | Worktype id
+rule_id = 'rule_id_example' # str | ruleId
+body = PureCloudPlatformClientV2.WorkitemDateBasedRuleUpdate() # WorkitemDateBasedRuleUpdate | Rule
+
+try:
+    # Update the attributes of a date based rule
+    api_response = api_instance.patch_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->patch_taskmanagement_worktype_flows_datebased_rule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **worktype_id** | **str**| Worktype id |  |
+| **rule_id** | **str**| ruleId |  |
+| **body** | [**WorkitemDateBasedRuleUpdate**](WorkitemDateBasedRuleUpdate)| Rule |  |
+
+### Return type
+
+[**WorkitemDateBasedRule**](WorkitemDateBasedRule)
+
+
 ## patch_taskmanagement_worktype_flows_onattributechange_rule
 
 > [**WorkitemOnAttributeChangeRule**](WorkitemOnAttributeChangeRule) patch_taskmanagement_worktype_flows_onattributechange_rule(worktype_id, rule_id, body)
@@ -2642,6 +2850,56 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
+## post_taskmanagement_worktype_flows_datebased_rules
+
+> [**WorkitemDateBasedRule**](WorkitemDateBasedRule) post_taskmanagement_worktype_flows_datebased_rules(worktype_id, body)
+
+
+Add a date based rule to a worktype
+
+Wraps POST /api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules 
+
+Requires ANY permissions: 
+
+* workitems:flowRuleDateBased:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+worktype_id = 'worktype_id_example' # str | Worktype id
+body = PureCloudPlatformClientV2.WorkitemDateBasedRuleCreate() # WorkitemDateBasedRuleCreate | Rule
+
+try:
+    # Add a date based rule to a worktype
+    api_response = api_instance.post_taskmanagement_worktype_flows_datebased_rules(worktype_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->post_taskmanagement_worktype_flows_datebased_rules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **worktype_id** | **str**| Worktype id |  |
+| **body** | [**WorkitemDateBasedRuleCreate**](WorkitemDateBasedRuleCreate)| Rule |  |
+
+### Return type
+
+[**WorkitemDateBasedRule**](WorkitemDateBasedRule)
+
+
 ## post_taskmanagement_worktype_flows_onattributechange_rules
 
 > [**WorkitemOnAttributeChangeRule**](WorkitemOnAttributeChangeRule) post_taskmanagement_worktype_flows_onattributechange_rules(worktype_id, body)
@@ -2938,4 +3196,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 218.0.0_
+_PureCloudPlatformClientV2 219.0.0_
