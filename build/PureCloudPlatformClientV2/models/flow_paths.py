@@ -51,15 +51,21 @@ class FlowPaths(object):
         """
         self.swagger_types = {
             'category': 'str',
+            'date_start': 'datetime',
+            'date_end': 'datetime',
             'elements': 'dict(str, FlowPathsElement)'
         }
 
         self.attribute_map = {
             'category': 'category',
+            'date_start': 'dateStart',
+            'date_end': 'dateEnd',
             'elements': 'elements'
         }
 
         self._category = None
+        self._date_start = None
+        self._date_end = None
         self._elements = None
 
     @property
@@ -90,6 +96,54 @@ class FlowPaths(object):
             self._category = "outdated_sdk_version"
         else:
             self._category = category
+
+    @property
+    def date_start(self) -> datetime:
+        """
+        Gets the date_start of this FlowPaths.
+        Start date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_start of this FlowPaths.
+        :rtype: datetime
+        """
+        return self._date_start
+
+    @date_start.setter
+    def date_start(self, date_start: datetime) -> None:
+        """
+        Sets the date_start of this FlowPaths.
+        Start date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_start: The date_start of this FlowPaths.
+        :type: datetime
+        """
+        
+
+        self._date_start = date_start
+
+    @property
+    def date_end(self) -> datetime:
+        """
+        Gets the date_end of this FlowPaths.
+        End date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_end of this FlowPaths.
+        :rtype: datetime
+        """
+        return self._date_end
+
+    @date_end.setter
+    def date_end(self, date_end: datetime) -> None:
+        """
+        Sets the date_end of this FlowPaths.
+        End date of the date range included in the flow paths data. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_end: The date_end of this FlowPaths.
+        :type: datetime
+        """
+        
+
+        self._date_end = date_end
 
     @property
     def elements(self) -> Dict[str, 'FlowPathsElement']:

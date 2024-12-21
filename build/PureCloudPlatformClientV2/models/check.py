@@ -111,7 +111,7 @@ class Check(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["HandleTimeValue", "TransferRateValue", "SalesConversionRateValue", "SalesAmountValue", "RetentionRateValue", "ChurnRateValue", "InteractionVolume", "UserVariance", "DataCoverage", "ModelQuality"]
+        allowed_values = ["HandleTimeValue", "TransferRateValue", "SalesConversionRateValue", "SalesAmountValue", "RetentionRateValue", "ChurnRateValue", "NextContactAvoidanceRateValue", "InteractionVolume", "UserVariance", "DataCoverage", "ModelQuality"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

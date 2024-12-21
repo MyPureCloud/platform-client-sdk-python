@@ -302,7 +302,7 @@ class KeyPerformanceIndicator(object):
         """
         if isinstance(kpi_type, int):
             kpi_type = str(kpi_type)
-        allowed_values = ["SalesConversion", "Churn", "Retention", "SalesValue", "HandleTime"]
+        allowed_values = ["SalesConversion", "Churn", "Retention", "SalesValue", "HandleTime", "NextContactAvoidance"]
         if kpi_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for kpi_type -> " + kpi_type)
             self._kpi_type = "outdated_sdk_version"

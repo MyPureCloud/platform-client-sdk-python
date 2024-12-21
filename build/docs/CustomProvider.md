@@ -21,8 +21,9 @@
 | **name_identifier_format** | str |  | [optional] |
 | **sso_binding** | str |  | [optional] |
 | **sign_authn_requests** | bool |  | [optional] |
+| **provider_name** | str |  | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 218.0.0_
+_PureCloudPlatformClientV2 219.0.0_

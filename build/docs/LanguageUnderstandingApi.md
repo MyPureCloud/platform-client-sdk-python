@@ -1131,8 +1131,6 @@ except ApiException as e:
 
 Get Organization Configuration
 
-get_languageunderstanding_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/languageunderstanding/settings 
 
 Requires ANY permissions: 
@@ -1782,4 +1780,4 @@ except ApiException as e:
 [**NluDomainVersion**](NluDomainVersion)
 
 
-_PureCloudPlatformClientV2 218.0.0_
+_PureCloudPlatformClientV2 219.0.0_

@@ -63,6 +63,7 @@ class CustomProvider(object):
             'name_identifier_format': 'str',
             'sso_binding': 'str',
             'sign_authn_requests': 'bool',
+            'provider_name': 'str',
             'self_uri': 'str'
         }
 
@@ -82,6 +83,7 @@ class CustomProvider(object):
             'name_identifier_format': 'nameIdentifierFormat',
             'sso_binding': 'ssoBinding',
             'sign_authn_requests': 'signAuthnRequests',
+            'provider_name': 'providerName',
             'self_uri': 'selfUri'
         }
 
@@ -100,6 +102,7 @@ class CustomProvider(object):
         self._name_identifier_format = None
         self._sso_binding = None
         self._sign_authn_requests = None
+        self._provider_name = None
         self._self_uri = None
 
     @property
@@ -471,6 +474,30 @@ class CustomProvider(object):
         
 
         self._sign_authn_requests = sign_authn_requests
+
+    @property
+    def provider_name(self) -> str:
+        """
+        Gets the provider_name of this CustomProvider.
+
+
+        :return: The provider_name of this CustomProvider.
+        :rtype: str
+        """
+        return self._provider_name
+
+    @provider_name.setter
+    def provider_name(self, provider_name: str) -> None:
+        """
+        Sets the provider_name of this CustomProvider.
+
+
+        :param provider_name: The provider_name of this CustomProvider.
+        :type: str
+        """
+        
+
+        self._provider_name = provider_name
 
     @property
     def self_uri(self) -> str:

@@ -226,6 +226,15 @@ PureCloudPlatformClientV2/models/agent_possible_work_shifts_response.py
 PureCloudPlatformClientV2/models/agent_query_adherence_explanations_request.py
 PureCloudPlatformClientV2/models/agent_query_adherence_explanations_response.py
 PureCloudPlatformClientV2/models/agent_queue_time_request.py
+PureCloudPlatformClientV2/models/agent_state_agent_query_clause.py
+PureCloudPlatformClientV2/models/agent_state_agent_query_predicate.py
+PureCloudPlatformClientV2/models/agent_state_counts_request.py
+PureCloudPlatformClientV2/models/agent_state_query_request.py
+PureCloudPlatformClientV2/models/agent_state_segment_type_count.py
+PureCloudPlatformClientV2/models/agent_state_session_filter.py
+PureCloudPlatformClientV2/models/agent_state_session_query_clause.py
+PureCloudPlatformClientV2/models/agent_state_session_query_predicate.py
+PureCloudPlatformClientV2/models/agent_state_user_filter.py
 PureCloudPlatformClientV2/models/agent_time_off_request_patch.py
 PureCloudPlatformClientV2/models/agent_update_alternative_shift_trade_request.py
 PureCloudPlatformClientV2/models/agent_video_settings.py
@@ -280,6 +289,10 @@ PureCloudPlatformClientV2/models/alternative_shift_trade_response.py
 PureCloudPlatformClientV2/models/alternative_shift_trades_view_response_template.py
 PureCloudPlatformClientV2/models/amazon_lex_request.py
 PureCloudPlatformClientV2/models/analytics_agent_group.py
+PureCloudPlatformClientV2/models/analytics_agent_state_agent_response.py
+PureCloudPlatformClientV2/models/analytics_agent_state_agent_session_result.py
+PureCloudPlatformClientV2/models/analytics_agent_state_counts_response.py
+PureCloudPlatformClientV2/models/analytics_agent_state_query_response.py
 PureCloudPlatformClientV2/models/analytics_conversation.py
 PureCloudPlatformClientV2/models/analytics_conversation_async_query_response.py
 PureCloudPlatformClientV2/models/analytics_conversation_query_response.py
@@ -1734,7 +1747,6 @@ PureCloudPlatformClientV2/models/email_column.py
 PureCloudPlatformClientV2/models/email_communication_answered_event.py
 PureCloudPlatformClientV2/models/email_communication_disposition_applied_event.py
 PureCloudPlatformClientV2/models/email_communication_ended_event.py
-PureCloudPlatformClientV2/models/email_communication_replied_event.py
 PureCloudPlatformClientV2/models/email_communication_sent_message_event.py
 PureCloudPlatformClientV2/models/email_config.py
 PureCloudPlatformClientV2/models/email_conversation.py
@@ -1951,6 +1963,7 @@ PureCloudPlatformClientV2/models/external_metric_definition_create_request.py
 PureCloudPlatformClientV2/models/external_metric_definition_listing.py
 PureCloudPlatformClientV2/models/external_metric_definition_update_request.py
 PureCloudPlatformClientV2/models/external_organization.py
+PureCloudPlatformClientV2/models/external_organization_identifier.py
 PureCloudPlatformClientV2/models/external_organization_listing.py
 PureCloudPlatformClientV2/models/external_organization_trustor_link.py
 PureCloudPlatformClientV2/models/external_segment.py
@@ -4054,6 +4067,15 @@ PureCloudPlatformClientV2/models/suggestion_knowledge_article.py
 PureCloudPlatformClientV2/models/suggestion_knowledge_search.py
 PureCloudPlatformClientV2/models/suggestion_listing.py
 PureCloudPlatformClientV2/models/suggestion_script.py
+PureCloudPlatformClientV2/models/summary_aggregate_data_container.py
+PureCloudPlatformClientV2/models/summary_aggregate_query_clause.py
+PureCloudPlatformClientV2/models/summary_aggregate_query_filter.py
+PureCloudPlatformClientV2/models/summary_aggregate_query_predicate.py
+PureCloudPlatformClientV2/models/summary_aggregate_query_response.py
+PureCloudPlatformClientV2/models/summary_aggregation_query.py
+PureCloudPlatformClientV2/models/summary_aggregation_view.py
+PureCloudPlatformClientV2/models/summary_async_aggregate_query_response.py
+PureCloudPlatformClientV2/models/summary_async_aggregation_query.py
 PureCloudPlatformClientV2/models/summary_generation_config.py
 PureCloudPlatformClientV2/models/support_center_category.py
 PureCloudPlatformClientV2/models/support_center_compact_category_module_template.py
@@ -4861,6 +4883,7 @@ PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_user_
 PureCloudPlatformClientV2/models/wfm_versioned_entity_metadata.py
 PureCloudPlatformClientV2/models/whats_app_available_phone_number_details.py
 PureCloudPlatformClientV2/models/whats_app_available_phone_number_details_listing.py
+PureCloudPlatformClientV2/models/whats_app_config.py
 PureCloudPlatformClientV2/models/whats_app_definition.py
 PureCloudPlatformClientV2/models/whats_app_embedded_signup_integration_activation_request.py
 PureCloudPlatformClientV2/models/whats_app_embedded_signup_integration_request.py
@@ -4931,6 +4954,12 @@ PureCloudPlatformClientV2/models/workflow_target_settings.py
 PureCloudPlatformClientV2/models/workitem.py
 PureCloudPlatformClientV2/models/workitem_change_listing.py
 PureCloudPlatformClientV2/models/workitem_create.py
+PureCloudPlatformClientV2/models/workitem_date_based_condition.py
+PureCloudPlatformClientV2/models/workitem_date_based_condition_update.py
+PureCloudPlatformClientV2/models/workitem_date_based_rule.py
+PureCloudPlatformClientV2/models/workitem_date_based_rule_create.py
+PureCloudPlatformClientV2/models/workitem_date_based_rule_listing.py
+PureCloudPlatformClientV2/models/workitem_date_based_rule_update.py
 PureCloudPlatformClientV2/models/workitem_delta.py
 PureCloudPlatformClientV2/models/workitem_filter.py
 PureCloudPlatformClientV2/models/workitem_flow_reference.py
@@ -5187,6 +5216,15 @@ docs/AgentPossibleWorkShiftsResponse.md
 docs/AgentQueryAdherenceExplanationsRequest.md
 docs/AgentQueryAdherenceExplanationsResponse.md
 docs/AgentQueueTimeRequest.md
+docs/AgentStateAgentQueryClause.md
+docs/AgentStateAgentQueryPredicate.md
+docs/AgentStateCountsRequest.md
+docs/AgentStateQueryRequest.md
+docs/AgentStateSegmentTypeCount.md
+docs/AgentStateSessionFilter.md
+docs/AgentStateSessionQueryClause.md
+docs/AgentStateSessionQueryPredicate.md
+docs/AgentStateUserFilter.md
 docs/AgentTimeOffRequestPatch.md
 docs/AgentUIApi.json
 docs/AgentUIApi.md
@@ -5245,6 +5283,10 @@ docs/AlternativeShiftTradeResponse.md
 docs/AlternativeShiftTradesViewResponseTemplate.md
 docs/AmazonLexRequest.md
 docs/AnalyticsAgentGroup.md
+docs/AnalyticsAgentStateAgentResponse.md
+docs/AnalyticsAgentStateAgentSessionResult.md
+docs/AnalyticsAgentStateCountsResponse.md
+docs/AnalyticsAgentStateQueryResponse.md
 docs/AnalyticsApi.json
 docs/AnalyticsApi.md
 docs/AnalyticsConversation.md
@@ -6725,7 +6767,6 @@ docs/EmailColumn.md
 docs/EmailCommunicationAnsweredEvent.md
 docs/EmailCommunicationDispositionAppliedEvent.md
 docs/EmailCommunicationEndedEvent.md
-docs/EmailCommunicationRepliedEvent.md
 docs/EmailCommunicationSentMessageEvent.md
 docs/EmailConfig.md
 docs/EmailConversation.md
@@ -6950,6 +6991,7 @@ docs/ExternalMetricDefinitionCreateRequest.md
 docs/ExternalMetricDefinitionListing.md
 docs/ExternalMetricDefinitionUpdateRequest.md
 docs/ExternalOrganization.md
+docs/ExternalOrganizationIdentifier.md
 docs/ExternalOrganizationListing.md
 docs/ExternalOrganizationTrustorLink.md
 docs/ExternalSegment.md
@@ -9137,6 +9179,15 @@ docs/SuggestionKnowledgeArticle.md
 docs/SuggestionKnowledgeSearch.md
 docs/SuggestionListing.md
 docs/SuggestionScript.md
+docs/SummaryAggregateDataContainer.md
+docs/SummaryAggregateQueryClause.md
+docs/SummaryAggregateQueryFilter.md
+docs/SummaryAggregateQueryPredicate.md
+docs/SummaryAggregateQueryResponse.md
+docs/SummaryAggregationQuery.md
+docs/SummaryAggregationView.md
+docs/SummaryAsyncAggregateQueryResponse.md
+docs/SummaryAsyncAggregationQuery.md
 docs/SummaryGenerationConfig.md
 docs/SupportCenterCategory.md
 docs/SupportCenterCompactCategoryModuleTemplate.md
@@ -9974,6 +10025,7 @@ docs/WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.md
 docs/WfmVersionedEntityMetadata.md
 docs/WhatsAppAvailablePhoneNumberDetails.md
 docs/WhatsAppAvailablePhoneNumberDetailsListing.md
+docs/WhatsAppConfig.md
 docs/WhatsAppDefinition.md
 docs/WhatsAppEmbeddedSignupIntegrationActivationRequest.md
 docs/WhatsAppEmbeddedSignupIntegrationRequest.md
@@ -10048,6 +10100,12 @@ docs/WorkforceManagementApi.md
 docs/Workitem.md
 docs/WorkitemChangeListing.md
 docs/WorkitemCreate.md
+docs/WorkitemDateBasedCondition.md
+docs/WorkitemDateBasedConditionUpdate.md
+docs/WorkitemDateBasedRule.md
+docs/WorkitemDateBasedRuleCreate.md
+docs/WorkitemDateBasedRuleListing.md
+docs/WorkitemDateBasedRuleUpdate.md
 docs/WorkitemDelta.md
 docs/WorkitemFilter.md
 docs/WorkitemFlowReference.md
@@ -10392,6 +10450,7 @@ docs/delete_taskmanagement_workbin-example.txt
 docs/delete_taskmanagement_workitem-example.txt
 docs/delete_taskmanagement_workitems_schema-example.txt
 docs/delete_taskmanagement_worktype-example.txt
+docs/delete_taskmanagement_worktype_flows_datebased_rule-example.txt
 docs/delete_taskmanagement_worktype_flows_onattributechange_rule-example.txt
 docs/delete_taskmanagement_worktype_flows_oncreate_rule-example.txt
 docs/delete_taskmanagement_worktype_status-example.txt
@@ -10461,6 +10520,7 @@ docs/get_alerting_interactionstats_rules-example.txt
 docs/get_alerting_rule-example.txt
 docs/get_analytics_actions_aggregates_job-example.txt
 docs/get_analytics_actions_aggregates_job_results-example.txt
+docs/get_analytics_agent_status-example.txt
 docs/get_analytics_agentcopilots_aggregates_job-example.txt
 docs/get_analytics_agentcopilots_aggregates_job_results-example.txt
 docs/get_analytics_botflow_divisions_reportingturns-example.txt
@@ -10508,6 +10568,8 @@ docs/get_analytics_reporting_settings_dashboards_query-example.txt
 docs/get_analytics_reporting_settings_user_dashboards-example.txt
 docs/get_analytics_resolutions_aggregates_job-example.txt
 docs/get_analytics_resolutions_aggregates_job_results-example.txt
+docs/get_analytics_summaries_aggregates_job-example.txt
+docs/get_analytics_summaries_aggregates_job_results-example.txt
 docs/get_analytics_surveys_aggregates_job-example.txt
 docs/get_analytics_surveys_aggregates_job-example.txt
 docs/get_analytics_surveys_aggregates_job_results-example.txt
@@ -11441,6 +11503,8 @@ docs/get_taskmanagement_workitems_schema_version-example.txt
 docs/get_taskmanagement_workitems_schema_versions-example.txt
 docs/get_taskmanagement_workitems_schemas-example.txt
 docs/get_taskmanagement_worktype-example.txt
+docs/get_taskmanagement_worktype_flows_datebased_rule-example.txt
+docs/get_taskmanagement_worktype_flows_datebased_rules-example.txt
 docs/get_taskmanagement_worktype_flows_onattributechange_rule-example.txt
 docs/get_taskmanagement_worktype_flows_onattributechange_rules-example.txt
 docs/get_taskmanagement_worktype_flows_oncreate_rule-example.txt
@@ -11868,6 +11932,7 @@ docs/patch_taskmanagement_workitem_assignment-example.txt
 docs/patch_taskmanagement_workitem_user_wrapups-example.txt
 docs/patch_taskmanagement_workitem_users_me_wrapups-example.txt
 docs/patch_taskmanagement_worktype-example.txt
+docs/patch_taskmanagement_worktype_flows_datebased_rule-example.txt
 docs/patch_taskmanagement_worktype_flows_onattributechange_rule-example.txt
 docs/patch_taskmanagement_worktype_flows_oncreate_rule-example.txt
 docs/patch_taskmanagement_worktype_status-example.txt
@@ -11935,6 +12000,8 @@ docs/post_analytics_actions_aggregates_jobs-example.txt
 docs/post_analytics_actions_aggregates_query-example.txt
 docs/post_analytics_agentcopilots_aggregates_jobs-example.txt
 docs/post_analytics_agentcopilots_aggregates_query-example.txt
+docs/post_analytics_agents_status_counts-example.txt
+docs/post_analytics_agents_status_query-example.txt
 docs/post_analytics_bots_aggregates_jobs-example.txt
 docs/post_analytics_bots_aggregates_query-example.txt
 docs/post_analytics_conversation_details_properties-example.txt
@@ -11981,6 +12048,8 @@ docs/post_analytics_reporting_settings_dashboards_query-example.txt
 docs/post_analytics_resolutions_aggregates_jobs-example.txt
 docs/post_analytics_routing_activity_query-example.txt
 docs/post_analytics_routing_activity_query-example.txt
+docs/post_analytics_summaries_aggregates_jobs-example.txt
+docs/post_analytics_summaries_aggregates_query-example.txt
 docs/post_analytics_surveys_aggregates_jobs-example.txt
 docs/post_analytics_surveys_aggregates_jobs-example.txt
 docs/post_analytics_surveys_aggregates_query-example.txt
@@ -12476,6 +12545,7 @@ docs/post_taskmanagement_workitems-example.txt
 docs/post_taskmanagement_workitems_query-example.txt
 docs/post_taskmanagement_workitems_query_jobs-example.txt
 docs/post_taskmanagement_workitems_schemas-example.txt
+docs/post_taskmanagement_worktype_flows_datebased_rules-example.txt
 docs/post_taskmanagement_worktype_flows_onattributechange_rules-example.txt
 docs/post_taskmanagement_worktype_flows_oncreate_rules-example.txt
 docs/post_taskmanagement_worktype_statuses-example.txt

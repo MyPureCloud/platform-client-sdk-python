@@ -232,7 +232,7 @@ class SequenceSchedule(object):
     def time_zone(self) -> str:
         """
         Gets the time_zone of this SequenceSchedule.
-        The time zone for this SequenceSchedule. For example, Africa/Abidjan.
+        The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
 
         :return: The time_zone of this SequenceSchedule.
         :rtype: str
@@ -243,7 +243,7 @@ class SequenceSchedule(object):
     def time_zone(self, time_zone: str) -> None:
         """
         Sets the time_zone of this SequenceSchedule.
-        The time zone for this SequenceSchedule. For example, Africa/Abidjan.
+        The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
 
         :param time_zone: The time_zone of this SequenceSchedule.
         :type: str

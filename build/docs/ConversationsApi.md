@@ -10617,7 +10617,7 @@ except ApiException as e:
 
 ## post_conversations_messages_agentless
 
-> [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse) post_conversations_messages_agentless(body)
+> [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse) post_conversations_messages_agentless(body, use_normalized_message=use_normalized_message)
 
 
 Send an agentless outbound message
@@ -10644,10 +10644,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 body = PureCloudPlatformClientV2.SendAgentlessOutboundMessageRequest() # SendAgentlessOutboundMessageRequest | Create agentless outbound messaging request
+use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, messagingTemplate) (optional) (default to False)
 
 try:
     # Send an agentless outbound message
-    api_response = api_instance.post_conversations_messages_agentless(body)
+    api_response = api_instance.post_conversations_messages_agentless(body, use_normalized_message=use_normalized_message)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_messages_agentless: %s\n" % e)
@@ -10659,6 +10660,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest)| Create agentless outbound messaging request |  |
+| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to False] |
 
 ### Return type
 
@@ -12230,4 +12232,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 218.0.0_
+_PureCloudPlatformClientV2 219.0.0_

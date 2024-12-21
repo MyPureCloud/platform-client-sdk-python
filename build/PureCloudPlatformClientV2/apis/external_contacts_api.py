@@ -5734,10 +5734,11 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_externalcontacts_identifierlookup is deprecated")
     def post_externalcontacts_identifierlookup(self, identifier: 'ContactIdentifier', **kwargs) -> 'ExternalContact':
         """
         Fetch a contact using an identifier type and value.
-        Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+        NOTE: Deprecated. Please use /api/v2/externalcontacts/identifierlookup/contacts as an alternative endpoint instead. Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

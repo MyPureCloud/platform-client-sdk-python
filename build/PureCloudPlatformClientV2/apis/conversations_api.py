@@ -17500,12 +17500,13 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param SendAgentlessOutboundMessageRequest body: Create agentless outbound messaging request (required)
+        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, messagingTemplate)
         :return: SendAgentlessOutboundMessageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'use_normalized_message']
         all_params.append('callback')
 
         params = locals()
@@ -17527,6 +17528,8 @@ class ConversationsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'use_normalized_message' in params:
+            query_params['useNormalizedMessage'] = params['use_normalized_message']
 
         header_params = {}
 

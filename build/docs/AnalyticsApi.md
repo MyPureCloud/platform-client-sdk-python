@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_analytics_users_details_job**](#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**get_analytics_actions_aggregates_job**](#get_analytics_actions_aggregates_job) | Get status for async query for action aggregates|
 |[**get_analytics_actions_aggregates_job_results**](#get_analytics_actions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_agent_status**](#get_analytics_agent_status) | Get an agent and their active sessions by user ID|
 |[**get_analytics_agentcopilots_aggregates_job**](#get_analytics_agentcopilots_aggregates_job) | Get status for async query for agent copilot aggregates|
 |[**get_analytics_agentcopilots_aggregates_job_results**](#get_analytics_agentcopilots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_botflow_divisions_reportingturns**](#get_analytics_botflow_divisions_reportingturns) | Get Reporting Turns (division aware).|
@@ -44,6 +45,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_reporting_settings_user_dashboards**](#get_analytics_reporting_settings_user_dashboards) | Get list of dashboards for an user|
 |[**get_analytics_resolutions_aggregates_job**](#get_analytics_resolutions_aggregates_job) | Get status for async query for resolution aggregates|
 |[**get_analytics_resolutions_aggregates_job_results**](#get_analytics_resolutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_summaries_aggregates_job**](#get_analytics_summaries_aggregates_job) | Get status for async query for summary aggregates|
+|[**get_analytics_summaries_aggregates_job_results**](#get_analytics_summaries_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_surveys_aggregates_job**](#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
 |[**get_analytics_surveys_aggregates_job_results**](#get_analytics_surveys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_taskmanagement_aggregates_job**](#get_analytics_taskmanagement_aggregates_job) | Get status for async query for task management aggregates|
@@ -60,6 +63,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_actions_aggregates_query**](#post_analytics_actions_aggregates_query) | Query for action aggregates|
 |[**post_analytics_agentcopilots_aggregates_jobs**](#post_analytics_agentcopilots_aggregates_jobs) | Query for agent copilot aggregates asynchronously|
 |[**post_analytics_agentcopilots_aggregates_query**](#post_analytics_agentcopilots_aggregates_query) | Query for agent copilot aggregates|
+|[**post_analytics_agents_status_counts**](#post_analytics_agents_status_counts) | Count agents by segment type|
+|[**post_analytics_agents_status_query**](#post_analytics_agents_status_query) | Retrieve the top 50 agents matching the query filters|
 |[**post_analytics_bots_aggregates_jobs**](#post_analytics_bots_aggregates_jobs) | Query for bot aggregates asynchronously|
 |[**post_analytics_bots_aggregates_query**](#post_analytics_bots_aggregates_query) | Query for bot aggregates|
 |[**post_analytics_conversation_details_properties**](#post_analytics_conversation_details_properties) | Index conversation properties|
@@ -89,6 +94,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_reporting_settings_dashboards_query**](#post_analytics_reporting_settings_dashboards_query) | Query dashboard configurations|
 |[**post_analytics_resolutions_aggregates_jobs**](#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
 |[**post_analytics_routing_activity_query**](#post_analytics_routing_activity_query) | Query for user activity observations|
+|[**post_analytics_summaries_aggregates_jobs**](#post_analytics_summaries_aggregates_jobs) | Query for summary aggregates asynchronously|
+|[**post_analytics_summaries_aggregates_query**](#post_analytics_summaries_aggregates_query) | Query for summary aggregates|
 |[**post_analytics_surveys_aggregates_jobs**](#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
 |[**post_analytics_surveys_aggregates_query**](#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
 |[**post_analytics_taskmanagement_aggregates_jobs**](#post_analytics_taskmanagement_aggregates_jobs) | Query for task management aggregates asynchronously|
@@ -303,6 +310,56 @@ except ApiException as e:
 ### Return type
 
 [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse)
+
+
+## get_analytics_agent_status
+
+> [**AnalyticsAgentStateAgentResponse**](AnalyticsAgentStateAgentResponse) get_analytics_agent_status(user_id)
+
+
+Get an agent and their active sessions by user ID
+
+get_analytics_agent_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/agents/{userId}/status 
+
+Requires ANY permissions: 
+
+* analytics:agentState:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+user_id = 'user_id_example' # str | userId
+
+try:
+    # Get an agent and their active sessions by user ID
+    api_response = api_instance.get_analytics_agent_status(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_agent_status: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| userId |  |
+
+### Return type
+
+[**AnalyticsAgentStateAgentResponse**](AnalyticsAgentStateAgentResponse)
 
 
 ## get_analytics_agentcopilots_aggregates_job
@@ -2065,6 +2122,108 @@ except ApiException as e:
 [**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse)
 
 
+## get_analytics_summaries_aggregates_job
+
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_summaries_aggregates_job(job_id)
+
+
+Get status for async query for summary aggregates
+
+get_analytics_summaries_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/summaries/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for summary aggregates
+    api_response = api_instance.get_analytics_summaries_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_summaries_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus)
+
+
+## get_analytics_summaries_aggregates_job_results
+
+> [**SummaryAsyncAggregateQueryResponse**](SummaryAsyncAggregateQueryResponse) get_analytics_summaries_aggregates_job_results(job_id, cursor=cursor)
+
+
+Fetch a page of results for an async aggregates query
+
+get_analytics_summaries_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_summaries_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_summaries_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+[**SummaryAsyncAggregateQueryResponse**](SummaryAsyncAggregateQueryResponse)
+
+
 ## get_analytics_surveys_aggregates_job
 
 > [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_surveys_aggregates_job(job_id)
@@ -2861,6 +3020,106 @@ except ApiException as e:
 ### Return type
 
 [**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse)
+
+
+## post_analytics_agents_status_counts
+
+> [**AnalyticsAgentStateCountsResponse**](AnalyticsAgentStateCountsResponse) post_analytics_agents_status_counts(body)
+
+
+Count agents by segment type
+
+post_analytics_agents_status_counts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agents/status/counts 
+
+Requires ANY permissions: 
+
+* analytics:agentState:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.AgentStateCountsRequest() # AgentStateCountsRequest | query
+
+try:
+    # Count agents by segment type
+    api_response = api_instance.post_analytics_agents_status_counts(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_agents_status_counts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentStateCountsRequest**](AgentStateCountsRequest)| query |  |
+
+### Return type
+
+[**AnalyticsAgentStateCountsResponse**](AnalyticsAgentStateCountsResponse)
+
+
+## post_analytics_agents_status_query
+
+> [**AnalyticsAgentStateQueryResponse**](AnalyticsAgentStateQueryResponse) post_analytics_agents_status_query(body)
+
+
+Retrieve the top 50 agents matching the query filters
+
+post_analytics_agents_status_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agents/status/query 
+
+Requires ANY permissions: 
+
+* analytics:agentState:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.AgentStateQueryRequest() # AgentStateQueryRequest | query
+
+try:
+    # Retrieve the top 50 agents matching the query filters
+    api_response = api_instance.post_analytics_agents_status_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_agents_status_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentStateQueryRequest**](AgentStateQueryRequest)| query |  |
+
+### Return type
+
+[**AnalyticsAgentStateQueryResponse**](AnalyticsAgentStateQueryResponse)
 
 
 ## post_analytics_bots_aggregates_jobs
@@ -4290,6 +4549,106 @@ except ApiException as e:
 [**RoutingActivityResponse**](RoutingActivityResponse)
 
 
+## post_analytics_summaries_aggregates_jobs
+
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_summaries_aggregates_jobs(body)
+
+
+Query for summary aggregates asynchronously
+
+post_analytics_summaries_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/summaries/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.SummaryAsyncAggregationQuery() # SummaryAsyncAggregationQuery | query
+
+try:
+    # Query for summary aggregates asynchronously
+    api_response = api_instance.post_analytics_summaries_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_summaries_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SummaryAsyncAggregationQuery**](SummaryAsyncAggregationQuery)| query |  |
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse)
+
+
+## post_analytics_summaries_aggregates_query
+
+> [**SummaryAggregateQueryResponse**](SummaryAggregateQueryResponse) post_analytics_summaries_aggregates_query(body)
+
+
+Query for summary aggregates
+
+post_analytics_summaries_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/summaries/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.SummaryAggregationQuery() # SummaryAggregationQuery | query
+
+try:
+    # Query for summary aggregates
+    api_response = api_instance.post_analytics_summaries_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_summaries_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SummaryAggregationQuery**](SummaryAggregationQuery)| query |  |
+
+### Return type
+
+[**SummaryAggregateQueryResponse**](SummaryAggregateQueryResponse)
+
+
 ## post_analytics_surveys_aggregates_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_surveys_aggregates_jobs(body)
@@ -4978,4 +5337,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 218.0.0_
+_PureCloudPlatformClientV2 219.0.0_

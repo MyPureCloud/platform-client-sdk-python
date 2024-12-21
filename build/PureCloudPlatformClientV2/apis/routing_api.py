@@ -8090,7 +8090,7 @@ class RoutingApi(object):
 
     def patch_routing_queue_members(self, queue_id: str, body: List['QueueMember'], **kwargs) -> 'QueueMemberEntityListing':
         """
-        Join or unjoin a set of users for a queue
+        Join or unjoin a set of up to 100 users for a queue
         
 
         This method makes a synchronous HTTP request by default. To make an

@@ -52,6 +52,10 @@ from ..models import WorkbinVersionListing
 from ..models import Workitem
 from ..models import WorkitemChangeListing
 from ..models import WorkitemCreate
+from ..models import WorkitemDateBasedRule
+from ..models import WorkitemDateBasedRuleCreate
+from ..models import WorkitemDateBasedRuleListing
+from ..models import WorkitemDateBasedRuleUpdate
 from ..models import WorkitemManualAssign
 from ..models import WorkitemOnAttributeChangeRule
 from ..models import WorkitemOnAttributeChangeRuleCreate
@@ -379,6 +383,90 @@ class TaskManagementApi(object):
         path_params = {}
         if 'worktype_id' in params:
             path_params['worktypeId'] = params['worktype_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_taskmanagement_worktype_flows_datebased_rule(self, worktype_id: str, rule_id: str, **kwargs) -> None:
+        """
+        Delete a date based rule
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str worktype_id: Worktype id (required)
+        :param str rule_id: ruleId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['worktype_id', 'rule_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_taskmanagement_worktype_flows_datebased_rule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'worktype_id' is set
+        if ('worktype_id' not in params) or (params['worktype_id'] is None):
+            raise ValueError("Missing the required parameter `worktype_id` when calling `delete_taskmanagement_worktype_flows_datebased_rule`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `delete_taskmanagement_worktype_flows_datebased_rule`")
+
+
+        resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'worktype_id' in params:
+            path_params['worktypeId'] = params['worktype_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
 
         query_params = {}
 
@@ -2082,6 +2170,174 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_taskmanagement_worktype_flows_datebased_rule(self, worktype_id: str, rule_id: str, **kwargs) -> 'WorkitemDateBasedRule':
+        """
+        Get a date based rule
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str worktype_id: Worktype id (required)
+        :param str rule_id: ruleId (required)
+        :return: WorkitemDateBasedRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['worktype_id', 'rule_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_worktype_flows_datebased_rule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'worktype_id' is set
+        if ('worktype_id' not in params) or (params['worktype_id'] is None):
+            raise ValueError("Missing the required parameter `worktype_id` when calling `get_taskmanagement_worktype_flows_datebased_rule`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `get_taskmanagement_worktype_flows_datebased_rule`")
+
+
+        resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'worktype_id' in params:
+            path_params['worktypeId'] = params['worktype_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkitemDateBasedRule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_worktype_flows_datebased_rules(self, worktype_id: str, **kwargs) -> 'WorkitemDateBasedRuleListing':
+        """
+        Get all date based rules for a worktype
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_worktype_flows_datebased_rules(worktype_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str worktype_id: Worktype id (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param int page_size: Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+        :return: WorkitemDateBasedRuleListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['worktype_id', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_worktype_flows_datebased_rules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'worktype_id' is set
+        if ('worktype_id' not in params) or (params['worktype_id'] is None):
+            raise ValueError("Missing the required parameter `worktype_id` when calling `get_taskmanagement_worktype_flows_datebased_rules`")
+
+
+        resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules'.replace('{format}', 'json')
+        path_params = {}
+        if 'worktype_id' in params:
+            path_params['worktypeId'] = params['worktype_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkitemDateBasedRuleListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_taskmanagement_worktype_flows_onattributechange_rule(self, worktype_id: str, rule_id: str, **kwargs) -> 'WorkitemOnAttributeChangeRule':
         """
         Get an attribute change rule
@@ -3354,6 +3610,96 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_taskmanagement_worktype_flows_datebased_rule(self, worktype_id: str, rule_id: str, body: 'WorkitemDateBasedRuleUpdate', **kwargs) -> 'WorkitemDateBasedRule':
+        """
+        Update the attributes of a date based rule
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_taskmanagement_worktype_flows_datebased_rule(worktype_id, rule_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str worktype_id: Worktype id (required)
+        :param str rule_id: ruleId (required)
+        :param WorkitemDateBasedRuleUpdate body: Rule (required)
+        :return: WorkitemDateBasedRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['worktype_id', 'rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_taskmanagement_worktype_flows_datebased_rule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'worktype_id' is set
+        if ('worktype_id' not in params) or (params['worktype_id'] is None):
+            raise ValueError("Missing the required parameter `worktype_id` when calling `patch_taskmanagement_worktype_flows_datebased_rule`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `patch_taskmanagement_worktype_flows_datebased_rule`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_taskmanagement_worktype_flows_datebased_rule`")
+
+
+        resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'worktype_id' in params:
+            path_params['worktypeId'] = params['worktype_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkitemDateBasedRule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_taskmanagement_worktype_flows_onattributechange_rule(self, worktype_id: str, rule_id: str, body: 'WorkitemOnAttributeChangeRuleUpdate', **kwargs) -> 'WorkitemOnAttributeChangeRule':
         """
         Update the attributes of a rule
@@ -4326,6 +4672,90 @@ class TaskManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_taskmanagement_worktype_flows_datebased_rules(self, worktype_id: str, body: 'WorkitemDateBasedRuleCreate', **kwargs) -> 'WorkitemDateBasedRule':
+        """
+        Add a date based rule to a worktype
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_taskmanagement_worktype_flows_datebased_rules(worktype_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str worktype_id: Worktype id (required)
+        :param WorkitemDateBasedRuleCreate body: Rule (required)
+        :return: WorkitemDateBasedRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['worktype_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_taskmanagement_worktype_flows_datebased_rules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'worktype_id' is set
+        if ('worktype_id' not in params) or (params['worktype_id'] is None):
+            raise ValueError("Missing the required parameter `worktype_id` when calling `post_taskmanagement_worktype_flows_datebased_rules`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_taskmanagement_worktype_flows_datebased_rules`")
+
+
+        resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules'.replace('{format}', 'json')
+        path_params = {}
+        if 'worktype_id' in params:
+            path_params['worktypeId'] = params['worktype_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkitemDateBasedRule',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

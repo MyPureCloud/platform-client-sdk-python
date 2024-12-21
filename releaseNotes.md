@@ -1,245 +1,279 @@
-Platform API version: 8698
+Platform API version: 8730
 
 
 
 
-# Major Changes (8 changes)
+# Major Changes (3 changes)
 
-**GET /api/v2/externalcontacts/contacts/{contactId}/identifiers** (1 change)
+**POST /api/v2/externalcontacts/identifierlookup** (1 change)
 
-* Response 200 type was changed from EntityListing to ContactIdentifierListing
+* Has been deprecated
 
-**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests** (1 change)
+**POST /api/v2/conversations/messages/agentless** (1 change)
 
-* Parameter recentlyReviewed was removed
+* Parameter useNormalizedMessage was added
 
-**GET /api/v2/workforcemanagement/timeoffrequests** (1 change)
+**EmailCommunicationRepliedEvent** (1 change)
 
-* Parameter recentlyReviewed was removed
-
-**QuestionGroupSettings** (1 change)
-
-* Property questionGroupIndex was removed
-
-**QuestionSettings** (1 change)
-
-* Property questionIndex was removed
-
-**BatchDownloadJobResult** (3 changes)
-
-* Property id was removed
-* Property name was removed
-* Property selfUri was removed
+* Model EmailCommunicationRepliedEvent was removed
 
 
-# Minor Changes (53 changes)
+# Minor Changes (69 changes)
 
-**/api/v2/externalcontacts/import/jobs/{jobId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/externalcontacts/import/jobs** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/externalcontacts/import/settings/{settingsId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/externalcontacts/import/settings** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/dataprivacy/maskingrules/{ruleId}** (4 changes)
+**/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}** (4 changes)
 
 * Path was added
 * Operation GET was added
 * Operation DELETE was added
 * Operation PATCH was added
 
-**/api/v2/dataprivacy/maskingrules** (3 changes)
+**/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**/api/v2/dataprivacy/maskingrules/validate** (2 changes)
+**/api/v2/analytics/agents/{userId}/status** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/analytics/agents/status/counts** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
+**/api/v2/analytics/agents/status/query** (2 changes)
 
-* Response 202 was added
+* Path was added
+* Operation POST was added
 
-**DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
+**/api/v2/analytics/summaries/aggregates/query** (2 changes)
 
-* Response 202 was added
+* Path was added
+* Operation POST was added
 
-**ContactIdentifierListing** (1 change)
+**/api/v2/analytics/summaries/aggregates/jobs** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**ContactImportJobStatusUpdateResponse** (1 change)
+**/api/v2/analytics/summaries/aggregates/jobs/{jobId}** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**ContactImportJobStatusUpdateRequest** (1 change)
+**/api/v2/analytics/summaries/aggregates/jobs/{jobId}/results** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**ContactImportJobMetadata** (1 change)
+**CustomProvider** (1 change)
 
-* Model was added
+* Optional property providerName was added
 
-**ContactImportJobResponse** (1 change)
-
-* Model was added
-
-**ContactImportJobRequest** (1 change)
-
-* Model was added
-
-**ContactImportJobEntityListing** (1 change)
+**ExternalOrganizationIdentifier** (1 change)
 
 * Model was added
 
-**ContactImportField** (1 change)
+**WhatsAppConfig** (1 change)
 
 * Model was added
 
-**ContactImportSettings** (1 change)
+**FlowPaths** (2 changes)
+
+* Optional property dateStart was added
+* Optional property dateEnd was added
+
+**FlowPathsElement** (10 changes)
+
+* Enum value TransferReturnToAgent was added to property type
+* Enum value TransferToAcdVoicemail was added to property type
+* Enum value TransferToFlow was added to property type
+* Enum value TransferToGroup was added to property type
+* Enum value TransferToGroupVoicemail was added to property type
+* Enum value TransferToNumber was added to property type
+* Enum value TransferToSecureFlow was added to property type
+* Enum value TransferToUnknown was added to property type
+* Enum value TransferToUser was added to property type
+* Enum value TransferToUserVoicemail was added to property type
+
+**Miner** (1 change)
+
+* Enum value de-ch was added to property language
+
+**Check** (1 change)
+
+* Enum value NextContactAvoidanceRateValue was added to property type
+
+**KeyPerformanceIndicator** (1 change)
+
+* Enum value NextContactAvoidance was added to property kpiType
+
+**WorkitemDateBasedCondition** (1 change)
 
 * Model was added
 
-**ContactImportSettingsEntityListing** (1 change)
+**WorkitemDateBasedRule** (1 change)
 
 * Model was added
 
-**ConversationMessageMetadataContent** (1 change)
+**WorkPlanConfigurationViolationMessage** (2 changes)
 
-* Enum value DatePicker was added to property contentType
+* Enum value MaxPaidTimePerMonthlyPlanningPeriod was added to property type
+* Enum value MinPaidTimePerMonthlyPlanningPeriod was added to property type
 
-**ConversationContentButtonResponse** (1 change)
-
-* Enum value DatePicker was added to property type
-
-**ConversationContentDatePicker** (1 change)
+**WorkitemDateBasedConditionUpdate** (1 change)
 
 * Model was added
 
-**ConversationContentDatePickerAvailableTime** (1 change)
+**WorkitemDateBasedRuleUpdate** (1 change)
 
 * Model was added
 
-**ConversationMessageContent** (1 change)
-
-* Enum value DatePicker was added to property contentType
-
-**MaskingRule** (1 change)
+**WorkitemDateBasedRuleCreate** (1 change)
 
 * Model was added
 
-**MaskingRuleListing** (1 change)
+**WorkitemDateBasedRuleListing** (1 change)
 
 * Model was added
 
-**MaskingRuleValidateResponse** (1 change)
+**AnalyticsAgentStateAgentResponse** (1 change)
 
 * Model was added
 
-**MaskingRuleValidateRequest** (1 change)
+**AnalyticsAgentStateAgentSessionResult** (1 change)
 
 * Model was added
 
-**KnowledgeIntegrationDefaultSettings** (1 change)
+**AgentStateSegmentTypeCount** (1 change)
 
 * Model was added
 
-**SalesforceSettings** (1 change)
-
-* Optional property baseUrl was added
-
-**ServiceNowSettings** (1 change)
-
-* Optional property baseUrl was added
-
-**RegionTimeZone** (1 change)
-
-* Optional property canonicalId was added
-
-**Dependency** (1 change)
-
-* Enum value SMSPHONENUMBER was added to property type
-
-**DependencyObject** (1 change)
-
-* Enum value SMSPHONENUMBER was added to property type
-
-**CobrowseSettings** (1 change)
-
-* Optional property allowDraw was added
-
-**WorkitemDelta** (1 change)
-
-* Optional property wrapup was added
-
-**WorkitemsAttributeChangeWrapupDelta** (1 change)
+**AnalyticsAgentStateCountsResponse** (1 change)
 
 * Model was added
 
-**WrapupDelta** (1 change)
+**AgentStateAgentQueryClause** (1 change)
+
+* Model was added
+
+**AgentStateAgentQueryPredicate** (1 change)
+
+* Model was added
+
+**AgentStateCountsRequest** (1 change)
+
+* Model was added
+
+**AgentStateSessionFilter** (1 change)
+
+* Model was added
+
+**AgentStateSessionQueryClause** (1 change)
+
+* Model was added
+
+**AgentStateSessionQueryPredicate** (1 change)
+
+* Model was added
+
+**AgentStateUserFilter** (1 change)
+
+* Model was added
+
+**AnalyticsAgentStateQueryResponse** (1 change)
+
+* Model was added
+
+**AgentStateQueryRequest** (1 change)
+
+* Model was added
+
+**SummaryAggregateDataContainer** (1 change)
+
+* Model was added
+
+**SummaryAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**SummaryAggregateQueryClause** (1 change)
+
+* Model was added
+
+**SummaryAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**SummaryAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**SummaryAggregationQuery** (1 change)
+
+* Model was added
+
+**SummaryAggregationView** (1 change)
+
+* Model was added
+
+**SummaryAsyncAggregationQuery** (1 change)
+
+* Model was added
+
+**SummaryAsyncAggregateQueryResponse** (1 change)
 
 * Model was added
 
 
-# Point Changes (10 changes)
+# Point Changes (12 changes)
 
-**GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest** (1 change)
+**POST /api/v2/externalcontacts/identifierlookup** (1 change)
 
 * Description was changed
 
-**GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (1 change)
+**PATCH /api/v2/routing/queues/{queueId}/members** (1 change)
 
-* Description was changed
+* Summary was changed
 
-**PATCH /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}** (1 change)
 
-* Description was changed
+* Response 200 was changed from successful operation. to Successful operation.
 
-**POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion}** (1 change)
 
-* Description was changed
+* Response 200 was changed from successful operation. to Successful operation.
 
-**GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions** (1 change)
 
-* Description was changed
+* Response 200 was changed from successful operation. to Successful operation.
 
-**GET /api/v2/journey/views/{viewId}/schedules** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}** (1 change)
 
-* Description was changed
+* Response 200 was changed from successful operation. to Successful operation.
 
-**PUT /api/v2/journey/views/{viewId}/schedules** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions/{dataIngestionRuleVersion}** (1 change)
 
-* Description was changed
+* Response 200 was changed from successful operation. to Successful operation.
 
-**DELETE /api/v2/journey/views/{viewId}/schedules** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions** (1 change)
 
-* Description was changed
+* Response 200 was changed from successful operation. to Successful operation.
 
-**PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}** (1 change)
 
-* Response 200 was changed from successful operation to Route update completed.
+* Response 200 was changed from successful operation. to Successful operation.
 
-**DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}** (1 change)
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions/{dataIngestionRuleVersion}** (1 change)
 
-* Response 200 was changed from Operation was successful. to Route deletion completed.
+* Response 200 was changed from successful operation. to Successful operation.
+
+**GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions** (1 change)
+
+* Response 200 was changed from successful operation. to Successful operation.
+
+**GET /api/v2/socialmedia/topics** (1 change)
+
+* Response 200 was changed from successful operation. to Successful operation.
