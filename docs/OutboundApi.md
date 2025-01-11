@@ -2533,6 +2533,7 @@ Requires ANY permissions:
 * outbound:campaign:view
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example
 
@@ -2573,7 +2574,7 @@ except ApiException as e:
 | **id** | [**list[str]**](str)| Campaign ID(s) | [optional]  |
 | **name** | **str**| Campaign name(s) | [optional]  |
 | **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
-| **media_type** | [**list[str]**](str)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
+| **media_type** | [**list[str]**](str)| Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
@@ -2595,6 +2596,7 @@ Requires ANY permissions:
 * outbound:campaign:search
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
+* outbound:whatsAppCampaign:search
 
 ### Example
 
@@ -2635,7 +2637,7 @@ except ApiException as e:
 | **id** | [**list[str]**](str)| Campaign ID(s) | [optional]  |
 | **name** | **str**| Campaign name(s) | [optional]  |
 | **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
-| **media_type** | [**list[str]**](str)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
+| **media_type** | [**list[str]**](str)| Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
@@ -8610,4 +8612,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

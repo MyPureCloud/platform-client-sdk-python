@@ -5,7 +5,7 @@
 
 Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-Documentation version PureCloudPlatformClientV2 219.0.0
+Documentation version PureCloudPlatformClientV2 219.1.0
 
 ## Preview APIs
 
@@ -352,6 +352,31 @@ You can use `to_json()` method on the model to get a raw JSON string of the mode
 
 ```python
 print(usersApi.get_users_me().to_json())
+```
+
+### Force JSON Null value in API request body's attribute
+
+Some methods require a body content (i.e. a model) as input parameter (*e.g. usersApi.post_users(body), usersApi.patch_user(userid, body)*).
+
+When the method is invoked, the SDK will automatically serialize the model (the *body* input parameter) to a JSON content (the API request's body).  
+*Note: With Python, `None` value is serialized into JSON `null`.*
+
+Before issuing the request to Genesys Cloud, the SDK will **strip out** all attributes with a JSON `null` value (i.e. model properties with a value set to `None` are ignored).  
+Except for a few cases, this is what is expected by the Genesys Cloud platform.
+
+Indeed, there are couple of API endpoints, where JSON `null` value is used to reset a property.
+e.g. with *PATCH /api/v2/taskmanagement/worktypes/{worktypeId}* (*patch_taskmanagement_worktype(worktype_id, body)*), *defaultQueueId* can be set to null in order to reset this worktype's property.
+
+This is why we introduce a new singleton class - *ApiNullValue()* - which will allow overriding the SDK's default behavior.  
+A model property set to `PureCloudPlatformClientV2.ApiNullValue()`, instead of `None`, will be kept and serialized to JSON as `null`.
+
+```python
+task_api = PureCloudPlatformClientV2.TaskManagementApi()
+worktype_update = PureCloudPlatformClientV2.WorktypeUpdate()
+worktype_update.name = 'abcd'
+worktype_update.default_queue_id = PureCloudPlatformClientV2.ApiNullValue()
+...
+task_api.patch_taskmanagement_worktype(worktype_id, worktype_update)
 ```
 
 ## SDK Source Code Generation
