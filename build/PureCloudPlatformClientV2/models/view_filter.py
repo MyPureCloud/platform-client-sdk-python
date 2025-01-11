@@ -266,7 +266,10 @@ class ViewFilter(object):
             'social_classifications': 'list[str]',
             'filter_users_by_manager_ids': 'list[str]',
             'slideshow_ids': 'list[str]',
-            'conferenced': 'bool'
+            'conferenced': 'bool',
+            'video': 'bool',
+            'linked_interaction': 'bool',
+            'recommendation_sources': 'list[str]'
         }
 
         self.attribute_map = {
@@ -481,7 +484,10 @@ class ViewFilter(object):
             'social_classifications': 'socialClassifications',
             'filter_users_by_manager_ids': 'filterUsersByManagerIds',
             'slideshow_ids': 'slideshowIds',
-            'conferenced': 'conferenced'
+            'conferenced': 'conferenced',
+            'video': 'video',
+            'linked_interaction': 'linkedInteraction',
+            'recommendation_sources': 'recommendationSources'
         }
 
         self._media_types = None
@@ -696,6 +702,9 @@ class ViewFilter(object):
         self._filter_users_by_manager_ids = None
         self._slideshow_ids = None
         self._conferenced = None
+        self._video = None
+        self._linked_interaction = None
+        self._recommendation_sources = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5804,6 +5813,78 @@ class ViewFilter(object):
         
 
         self._conferenced = conferenced
+
+    @property
+    def video(self) -> bool:
+        """
+        Gets the video of this ViewFilter.
+        Filter to indicate if the conversation has video
+
+        :return: The video of this ViewFilter.
+        :rtype: bool
+        """
+        return self._video
+
+    @video.setter
+    def video(self, video: bool) -> None:
+        """
+        Sets the video of this ViewFilter.
+        Filter to indicate if the conversation has video
+
+        :param video: The video of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._video = video
+
+    @property
+    def linked_interaction(self) -> bool:
+        """
+        Gets the linked_interaction of this ViewFilter.
+        Filter to indicate if the conversation has linked interaction
+
+        :return: The linked_interaction of this ViewFilter.
+        :rtype: bool
+        """
+        return self._linked_interaction
+
+    @linked_interaction.setter
+    def linked_interaction(self, linked_interaction: bool) -> None:
+        """
+        Sets the linked_interaction of this ViewFilter.
+        Filter to indicate if the conversation has linked interaction
+
+        :param linked_interaction: The linked_interaction of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._linked_interaction = linked_interaction
+
+    @property
+    def recommendation_sources(self) -> List[str]:
+        """
+        Gets the recommendation_sources of this ViewFilter.
+        List of recommendation sources for filtering recommendation details pane
+
+        :return: The recommendation_sources of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._recommendation_sources
+
+    @recommendation_sources.setter
+    def recommendation_sources(self, recommendation_sources: List[str]) -> None:
+        """
+        Sets the recommendation_sources of this ViewFilter.
+        List of recommendation sources for filtering recommendation details pane
+
+        :param recommendation_sources: The recommendation_sources of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._recommendation_sources = recommendation_sources
 
     def to_dict(self):
         """

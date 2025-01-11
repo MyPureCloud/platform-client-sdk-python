@@ -50,6 +50,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_alternativeshifts_trade**](#get_workforcemanagement_businessunit_alternativeshifts_trade) | Get an alternative shifts trade in a business unit for a given trade ID|
 |[**get_workforcemanagement_businessunit_alternativeshifts_trades_search_job**](#get_workforcemanagement_businessunit_alternativeshifts_trades_search_job) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_businessunit_intraday_planninggroups**](#get_workforcemanagement_businessunit_intraday_planninggroups) | Get intraday planning groups for the given date|
+|[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session) | Get the latest session for the business unit ID|
+|[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id) | Get the session details for the session ID|
+|[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id) | Get the snapshot details for the snapshot ID|
 |[**get_workforcemanagement_businessunit_managementunits**](#get_workforcemanagement_businessunit_managementunits) | Get all authorized management units in the business unit|
 |[**get_workforcemanagement_businessunit_planninggroup**](#get_workforcemanagement_businessunit_planninggroup) | Get a planning group|
 |[**get_workforcemanagement_businessunit_planninggroups**](#get_workforcemanagement_businessunit_planninggroups) | Gets list of planning groups|
@@ -2597,6 +2600,162 @@ except ApiException as e:
 ### Return type
 
 [**WfmIntradayPlanningGroupListing**](WfmIntradayPlanningGroupListing)
+
+
+## get_workforcemanagement_businessunit_mainforecast_continuousforecast_session
+
+> [**ContinuousForecastGetSessionResponse**](ContinuousForecastGetSessionResponse) get_workforcemanagement_businessunit_mainforecast_continuousforecast_session(business_unit_id)
+
+
+Get the latest session for the business unit ID
+
+get_workforcemanagement_businessunit_mainforecast_continuousforecast_session is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session 
+
+Requires ALL permissions: 
+
+* wfm:mainForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | 
+
+try:
+    # Get the latest session for the business unit ID
+    api_response = api_instance.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_mainforecast_continuousforecast_session: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**|  |  |
+
+### Return type
+
+[**ContinuousForecastGetSessionResponse**](ContinuousForecastGetSessionResponse)
+
+
+## get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id
+
+> [**ContinuousForecastSessionResponse**](ContinuousForecastSessionResponse) get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id(business_unit_id, session_id)
+
+
+Get the session details for the session ID
+
+get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId} 
+
+Requires ALL permissions: 
+
+* wfm:mainForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | 
+session_id = 'session_id_example' # str | 
+
+try:
+    # Get the session details for the session ID
+    api_response = api_instance.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id(business_unit_id, session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**|  |  |
+| **session_id** | **str**|  |  |
+
+### Return type
+
+[**ContinuousForecastSessionResponse**](ContinuousForecastSessionResponse)
+
+
+## get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id
+
+> [**ContinuousForecastSnapshotResponse**](ContinuousForecastSnapshotResponse) get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id(business_unit_id, session_id, snapshot_id)
+
+
+Get the snapshot details for the snapshot ID
+
+get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId} 
+
+Requires ALL permissions: 
+
+* wfm:mainForecast:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | 
+session_id = 'session_id_example' # str | 
+snapshot_id = 'snapshot_id_example' # str | 
+
+try:
+    # Get the snapshot details for the snapshot ID
+    api_response = api_instance.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id(business_unit_id, session_id, snapshot_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**|  |  |
+| **session_id** | **str**|  |  |
+| **snapshot_id** | **str**|  |  |
+
+### Return type
+
+[**ContinuousForecastSnapshotResponse**](ContinuousForecastSnapshotResponse)
 
 
 ## get_workforcemanagement_businessunit_managementunits
@@ -12638,4 +12797,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

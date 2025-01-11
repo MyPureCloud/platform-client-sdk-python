@@ -252,7 +252,7 @@ class DncListDivisionView(object):
         """
         if isinstance(contact_method, int):
             contact_method = str(contact_method)
-        allowed_values = ["Email", "Phone", "Any"]
+        allowed_values = ["Email", "Phone", "Any", "WhatsApp"]
         if contact_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for contact_method -> " + contact_method)
             self._contact_method = "outdated_sdk_version"

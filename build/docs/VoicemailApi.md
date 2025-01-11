@@ -1331,4 +1331,4 @@ except ApiException as e:
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

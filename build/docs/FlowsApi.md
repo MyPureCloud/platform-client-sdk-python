@@ -315,4 +315,4 @@ except ApiException as e:
 [**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

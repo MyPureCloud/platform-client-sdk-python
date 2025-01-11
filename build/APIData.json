@@ -2219,6 +2219,20 @@
     "return": "AsyncQueryResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi();\nbody = PureCloudPlatformClientV2.ResolutionAsyncAggregationQuery() # ResolutionAsyncAggregationQuery | query\n\ntry:\n    # Query for resolution aggregates asynchronously\n    api_response = api_instance.post_analytics_resolutions_aggregates_jobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AnalyticsApi->post_analytics_resolutions_aggregates_jobs: %s\\n\" % e)"
   },
+  "post_analytics_resolutions_aggregates_query": {
+    "operationId": "post_analytics_resolutions_aggregates_query",
+    "functionName": "post_analytics_resolutions_aggregates_query",
+    "signature": "post_analytics_resolutions_aggregates_query(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ResolutionAggregationQuery",
+        "required": "true"
+      }
+    ],
+    "return": "ResolutionAggregateQueryResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi();\nbody = PureCloudPlatformClientV2.ResolutionAggregationQuery() # ResolutionAggregationQuery | query\n\ntry:\n    # Query for resolution aggregates\n    api_response = api_instance.post_analytics_resolutions_aggregates_query(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AnalyticsApi->post_analytics_resolutions_aggregates_query: %s\\n\" % e)"
+  },
   "post_analytics_routing_activity_query": {
     "operationId": "post_analytics_routing_activity_query",
     "functionName": "post_analytics_routing_activity_query",
@@ -15493,6 +15507,60 @@
     ],
     "return": "InsightsAgents",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\nstart_workday = '2013-10-20' # date | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Query users in a profile during a period of time\n    api_response = api_instance.get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_members: %s\\n\" % e)"
+  },
+  "get_gamification_insights_rankings": {
+    "operationId": "get_gamification_insights_rankings",
+    "functionName": "get_gamification_insights_rankings",
+    "signature": "get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id, section_size, user_ids)",
+    "parameters": [
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "sort_key",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "sort_metric_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "section_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "user_ids",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "InsightsRankings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nsort_key = 'sort_key_example' # str | Sort key\nsort_metric_id = 'sort_metric_id_example' # str | Sort Metric Id (optional)\nsection_size = 56 # int | The number of top and bottom users to return before ties (optional)\nuser_ids = 'user_ids_example' # str | A list of up to 100 comma-separated user Ids (optional)\n\ntry:\n    # Get insights rankings\n    api_response = api_instance.get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id=sort_metric_id, section_size=section_size, user_ids=user_ids)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_rankings: %s\\n\" % e)"
   },
   "get_gamification_insights_trends": {
     "operationId": "get_gamification_insights_trends",
@@ -40626,6 +40694,32 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nworkitem_id = 'workitem_id_example' # str | Workitem ID\n\ntry:\n    # Delete a workitem\n    api_instance.delete_taskmanagement_workitem(workitem_id)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->delete_taskmanagement_workitem: %s\\n\" % e)"
   },
+  "delete_taskmanagement_workitems_bulk_add_job": {
+    "operationId": "delete_taskmanagement_workitems_bulk_add_job",
+    "functionName": "delete_taskmanagement_workitems_bulk_add_job",
+    "signature": "delete_taskmanagement_workitems_bulk_add_job(bulk_job_id)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\n\ntry:\n    # Delete a bulk add job\n    api_instance.delete_taskmanagement_workitems_bulk_add_job(bulk_job_id)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->delete_taskmanagement_workitems_bulk_add_job: %s\\n\" % e)"
+  },
+  "delete_taskmanagement_workitems_bulk_terminate_job": {
+    "operationId": "delete_taskmanagement_workitems_bulk_terminate_job",
+    "functionName": "delete_taskmanagement_workitems_bulk_terminate_job",
+    "signature": "delete_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\n\ntry:\n    # Delete a Bulk job\n    api_instance.delete_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->delete_taskmanagement_workitems_bulk_terminate_job: %s\\n\" % e)"
+  },
   "delete_taskmanagement_workitems_schema": {
     "operationId": "delete_taskmanagement_workitems_schema",
     "functionName": "delete_taskmanagement_workitems_schema",
@@ -40983,6 +41077,91 @@
     ],
     "return": "WorkitemWrapupEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nworkitem_id = 'workitem_id_example' # str | The ID of the Workitem.\nexpands = 'expands_example' # str | Which fields, if any, to expand. (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = 25 # int | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (optional) (default to 25)\nsort_order = ''descending'' # str | Ascending or descending sort order (optional) (default to 'descending')\n\ntry:\n    # Get all wrapup codes added for all users for a workitem.\n    api_response = api_instance.get_taskmanagement_workitem_wrapups(workitem_id, expands=expands, after=after, page_size=page_size, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->get_taskmanagement_workitem_wrapups: %s\\n\" % e)"
+  },
+  "get_taskmanagement_workitems_bulk_add_job": {
+    "operationId": "get_taskmanagement_workitems_bulk_add_job",
+    "functionName": "get_taskmanagement_workitems_bulk_add_job",
+    "signature": "get_taskmanagement_workitems_bulk_add_job(bulk_job_id)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\n\ntry:\n    # Get the bulk add job associated with the job id.\n    api_response = api_instance.get_taskmanagement_workitems_bulk_add_job(bulk_job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_add_job: %s\\n\" % e)"
+  },
+  "get_taskmanagement_workitems_bulk_add_job_results": {
+    "operationId": "get_taskmanagement_workitems_bulk_add_job_results",
+    "functionName": "get_taskmanagement_workitems_bulk_add_job_results",
+    "signature": "get_taskmanagement_workitems_bulk_add_job_results(bulk_job_id)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJobAddResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\n\ntry:\n    # Get bulk add job results.\n    api_response = api_instance.get_taskmanagement_workitems_bulk_add_job_results(bulk_job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_add_job_results: %s\\n\" % e)"
+  },
+  "get_taskmanagement_workitems_bulk_jobs_users_me": {
+    "operationId": "get_taskmanagement_workitems_bulk_jobs_users_me",
+    "functionName": "get_taskmanagement_workitems_bulk_jobs_users_me",
+    "signature": "get_taskmanagement_workitems_bulk_jobs_users_me(after, page_size, sort_order, action)",
+    "parameters": [
+      {
+        "name": "after",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "sort_order",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "action",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "BulkJobsListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\npage_size = 25 # int | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional) (default to 25)\nsort_order = ''descending'' # str | Ascending or descending sort order (optional) (default to 'descending')\naction = 'action_example' # str | The bulk job action. (optional)\n\ntry:\n    # Get bulk jobs created by the currently logged in user.\n    api_response = api_instance.get_taskmanagement_workitems_bulk_jobs_users_me(after=after, page_size=page_size, sort_order=sort_order, action=action)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_jobs_users_me: %s\\n\" % e)"
+  },
+  "get_taskmanagement_workitems_bulk_terminate_job": {
+    "operationId": "get_taskmanagement_workitems_bulk_terminate_job",
+    "functionName": "get_taskmanagement_workitems_bulk_terminate_job",
+    "signature": "get_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\n\ntry:\n    # Get the bulk job associated with the job id.\n    api_response = api_instance.get_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_terminate_job: %s\\n\" % e)"
+  },
+  "get_taskmanagement_workitems_bulk_terminate_job_results": {
+    "operationId": "get_taskmanagement_workitems_bulk_terminate_job_results",
+    "functionName": "get_taskmanagement_workitems_bulk_terminate_job_results",
+    "signature": "get_taskmanagement_workitems_bulk_terminate_job_results(bulk_job_id)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJobTerminateResultsResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\n\ntry:\n    # Get bulk terminate job results.\n    api_response = api_instance.get_taskmanagement_workitems_bulk_terminate_job_results(bulk_job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_terminate_job_results: %s\\n\" % e)"
   },
   "get_taskmanagement_workitems_query_job": {
     "operationId": "get_taskmanagement_workitems_query_job",
@@ -41428,6 +41607,44 @@
     "return": "WorkitemWrapup",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nworkitem_id = 'workitem_id_example' # str | The ID of the Workitem.\nbody = PureCloudPlatformClientV2.WorkitemWrapupUpdate() # WorkitemWrapupUpdate | Request body to add/remove the wrapup code for workitem\n\ntry:\n    # Add/Remove a wrapup code for the current user in a workitem.\n    api_response = api_instance.patch_taskmanagement_workitem_users_me_wrapups(workitem_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->patch_taskmanagement_workitem_users_me_wrapups: %s\\n\" % e)"
   },
+  "patch_taskmanagement_workitems_bulk_add_job": {
+    "operationId": "patch_taskmanagement_workitems_bulk_add_job",
+    "functionName": "patch_taskmanagement_workitems_bulk_add_job",
+    "signature": "patch_taskmanagement_workitems_bulk_add_job(bulk_job_id, body)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "BulkJobUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\nbody = PureCloudPlatformClientV2.BulkJobUpdate() # BulkJobUpdate | Bulk add job update request\n\ntry:\n    # Update workitem bulk add job.\n    api_response = api_instance.patch_taskmanagement_workitems_bulk_add_job(bulk_job_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->patch_taskmanagement_workitems_bulk_add_job: %s\\n\" % e)"
+  },
+  "patch_taskmanagement_workitems_bulk_terminate_job": {
+    "operationId": "patch_taskmanagement_workitems_bulk_terminate_job",
+    "functionName": "patch_taskmanagement_workitems_bulk_terminate_job",
+    "signature": "patch_taskmanagement_workitems_bulk_terminate_job(bulk_job_id, body)",
+    "parameters": [
+      {
+        "name": "bulk_job_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "BulkJobUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbulk_job_id = 'bulk_job_id_example' # str | Bulk job id\nbody = PureCloudPlatformClientV2.BulkJobUpdate() # BulkJobUpdate | Bulk job update request\n\ntry:\n    # Update workitem bulk terminate job.\n    api_response = api_instance.patch_taskmanagement_workitems_bulk_terminate_job(bulk_job_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->patch_taskmanagement_workitems_bulk_terminate_job: %s\\n\" % e)"
+  },
   "patch_taskmanagement_worktype": {
     "operationId": "patch_taskmanagement_worktype",
     "functionName": "patch_taskmanagement_worktype",
@@ -41631,6 +41848,34 @@
     ],
     "return": "Workitem",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbody = PureCloudPlatformClientV2.WorkitemCreate() # WorkitemCreate | Workitem\n\ntry:\n    # Create a workitem\n    api_response = api_instance.post_taskmanagement_workitems(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->post_taskmanagement_workitems: %s\\n\" % e)"
+  },
+  "post_taskmanagement_workitems_bulk_add_jobs": {
+    "operationId": "post_taskmanagement_workitems_bulk_add_jobs",
+    "functionName": "post_taskmanagement_workitems_bulk_add_jobs",
+    "signature": "post_taskmanagement_workitems_bulk_add_jobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "BulkJobAddRequest",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbody = PureCloudPlatformClientV2.BulkJobAddRequest() # BulkJobAddRequest | Bulk job definition.\n\ntry:\n    # Create a workitem bulk add job.\n    api_response = api_instance.post_taskmanagement_workitems_bulk_add_jobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->post_taskmanagement_workitems_bulk_add_jobs: %s\\n\" % e)"
+  },
+  "post_taskmanagement_workitems_bulk_terminate_jobs": {
+    "operationId": "post_taskmanagement_workitems_bulk_terminate_jobs",
+    "functionName": "post_taskmanagement_workitems_bulk_terminate_jobs",
+    "signature": "post_taskmanagement_workitems_bulk_terminate_jobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "BulkJobTerminateRequest",
+        "required": "true"
+      }
+    ],
+    "return": "BulkJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TaskManagementApi();\nbody = PureCloudPlatformClientV2.BulkJobTerminateRequest() # BulkJobTerminateRequest | Bulk job definition.\n\ntry:\n    # Create a workitem bulk terminate job.\n    api_response = api_instance.post_taskmanagement_workitems_bulk_terminate_jobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TaskManagementApi->post_taskmanagement_workitems_bulk_terminate_jobs: %s\\n\" % e)"
   },
   "post_taskmanagement_workitems_query": {
     "operationId": "post_taskmanagement_workitems_query",
@@ -47726,6 +47971,63 @@
     ],
     "return": "WfmIntradayPlanningGroupListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\ndate = '2013-10-20' # date | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Get intraday planning groups for the given date\n    api_response = api_instance.get_workforcemanagement_businessunit_intraday_planninggroups(business_unit_id, date)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_intraday_planninggroups: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session": {
+    "operationId": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session",
+    "functionName": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session",
+    "signature": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session(business_unit_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ContinuousForecastGetSessionResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | \n\ntry:\n    # Get the latest session for the business unit ID\n    api_response = api_instance.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session(business_unit_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_mainforecast_continuousforecast_session: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id": {
+    "operationId": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id",
+    "functionName": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id",
+    "signature": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id(business_unit_id, session_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "session_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ContinuousForecastSessionResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | \nsession_id = 'session_id_example' # str | \n\ntry:\n    # Get the session details for the session ID\n    api_response = api_instance.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id(business_unit_id, session_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id": {
+    "operationId": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id",
+    "functionName": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id",
+    "signature": "get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id(business_unit_id, session_id, snapshot_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "session_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "snapshot_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ContinuousForecastSnapshotResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | \nsession_id = 'session_id_example' # str | \nsnapshot_id = 'snapshot_id_example' # str | \n\ntry:\n    # Get the snapshot details for the snapshot ID\n    api_response = api_instance.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id(business_unit_id, session_id, snapshot_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id: %s\\n\" % e)"
   },
   "get_workforcemanagement_businessunit_managementunits": {
     "operationId": "get_workforcemanagement_businessunit_managementunits",

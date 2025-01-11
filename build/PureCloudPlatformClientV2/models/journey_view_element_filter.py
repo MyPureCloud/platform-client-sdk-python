@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import JourneyViewElementFilterNumberPredicate
     from . import JourneyViewElementFilterPredicate
 
 class JourneyViewElementFilter(object):
@@ -51,16 +52,19 @@ class JourneyViewElementFilter(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'predicates': 'list[JourneyViewElementFilterPredicate]'
+            'predicates': 'list[JourneyViewElementFilterPredicate]',
+            'number_predicates': 'list[JourneyViewElementFilterNumberPredicate]'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'predicates': 'predicates'
+            'predicates': 'predicates',
+            'number_predicates': 'numberPredicates'
         }
 
         self._type = None
         self._predicates = None
+        self._number_predicates = None
 
     @property
     def type(self) -> str:
@@ -114,6 +118,30 @@ class JourneyViewElementFilter(object):
         
 
         self._predicates = predicates
+
+    @property
+    def number_predicates(self) -> List['JourneyViewElementFilterNumberPredicate']:
+        """
+        Gets the number_predicates of this JourneyViewElementFilter.
+        numberPredicates
+
+        :return: The number_predicates of this JourneyViewElementFilter.
+        :rtype: list[JourneyViewElementFilterNumberPredicate]
+        """
+        return self._number_predicates
+
+    @number_predicates.setter
+    def number_predicates(self, number_predicates: List['JourneyViewElementFilterNumberPredicate']) -> None:
+        """
+        Sets the number_predicates of this JourneyViewElementFilter.
+        numberPredicates
+
+        :param number_predicates: The number_predicates of this JourneyViewElementFilter.
+        :type: list[JourneyViewElementFilterNumberPredicate]
+        """
+        
+
+        self._number_predicates = number_predicates
 
     def to_dict(self):
         """

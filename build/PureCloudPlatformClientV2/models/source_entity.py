@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ContestCompleteData
 
 class SourceEntity(object):
     """
@@ -50,17 +52,20 @@ class SourceEntity(object):
         self.swagger_types = {
             'id': 'str',
             'type': 'str',
+            'contest_complete_data': 'ContestCompleteData',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
+            'contest_complete_data': 'contestCompleteData',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._type = None
+        self._contest_complete_data = None
         self._self_uri = None
 
     @property
@@ -109,12 +114,36 @@ class SourceEntity(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["ThankYou", "Congratulations", "HighPerformance", "CompanyValues"]
+        allowed_values = ["ThankYou", "Congratulations", "HighPerformance", "CompanyValues", "Competition", "Race", "Raffle", "TeamGoal"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def contest_complete_data(self) -> 'ContestCompleteData':
+        """
+        Gets the contest_complete_data of this SourceEntity.
+        The contest data - Only supplied when celebration is of type ContestComplete
+
+        :return: The contest_complete_data of this SourceEntity.
+        :rtype: ContestCompleteData
+        """
+        return self._contest_complete_data
+
+    @contest_complete_data.setter
+    def contest_complete_data(self, contest_complete_data: 'ContestCompleteData') -> None:
+        """
+        Sets the contest_complete_data of this SourceEntity.
+        The contest data - Only supplied when celebration is of type ContestComplete
+
+        :param contest_complete_data: The contest_complete_data of this SourceEntity.
+        :type: ContestCompleteData
+        """
+        
+
+        self._contest_complete_data = contest_complete_data
 
     @property
     def self_uri(self) -> str:

@@ -168,6 +168,7 @@ from .agentless_email_send_response_dto import AgentlessEmailSendResponseDto
 from .agents_bid_assigned_work_plan_override_request import AgentsBidAssignedWorkPlanOverrideRequest
 from .agents_integrations_listing import AgentsIntegrationsListing
 from .agents_work_plans_response import AgentsWorkPlansResponse
+from .aggregate_historical_availability import AggregateHistoricalAvailability
 from .aggregate_metric_data import AggregateMetricData
 from .aggregate_view_data import AggregateViewData
 from .aggregation_range import AggregationRange
@@ -529,6 +530,19 @@ from .bulk_fetch_notes_response import BulkFetchNotesResponse
 from .bulk_fetch_organizations_response import BulkFetchOrganizationsResponse
 from .bulk_fetch_relationships_response import BulkFetchRelationshipsResponse
 from .bulk_ids_request import BulkIdsRequest
+from .bulk_job import BulkJob
+from .bulk_job_add_request import BulkJobAddRequest
+from .bulk_job_add_response import BulkJobAddResponse
+from .bulk_job_add_result import BulkJobAddResult
+from .bulk_job_add_workitem_summary import BulkJobAddWorkitemSummary
+from .bulk_job_entity import BulkJobEntity
+from .bulk_job_error import BulkJobError
+from .bulk_job_terminate_request import BulkJobTerminateRequest
+from .bulk_job_terminate_result import BulkJobTerminateResult
+from .bulk_job_terminate_result_entity import BulkJobTerminateResultEntity
+from .bulk_job_terminate_results_response import BulkJobTerminateResultsResponse
+from .bulk_job_update import BulkJobUpdate
+from .bulk_jobs_listing import BulkJobsListing
 from .bulk_notes_request import BulkNotesRequest
 from .bulk_notes_response import BulkNotesResponse
 from .bulk_organizations_request import BulkOrganizationsRequest
@@ -744,6 +758,7 @@ from .comparison_period_listing import ComparisonPeriodListing
 from .complex_variable_info import ComplexVariableInfo
 from .compliance import Compliance
 from .compliance_response import ComplianceResponse
+from .computed_data import ComputedData
 from .condition import Condition
 from .conditional_group_routing import ConditionalGroupRouting
 from .conditional_group_routing_rule import ConditionalGroupRoutingRule
@@ -850,10 +865,19 @@ from .content_reaction import ContentReaction
 from .content_setting import ContentSetting
 from .content_story import ContentStory
 from .content_text import ContentText
+from .contest_complete_data import ContestCompleteData
+from .contest_complete_data_score import ContestCompleteDataScore
+from .contest_data_metrics import ContestDataMetrics
+from .contest_data_prizes import ContestDataPrizes
+from .contest_data_winners import ContestDataWinners
+from .contest_data_winners_users import ContestDataWinnersUsers
 from .context import Context
 from .context_entity import ContextEntity
 from .context_intent import ContextIntent
 from .context_pattern import ContextPattern
+from .continuous_forecast_get_session_response import ContinuousForecastGetSessionResponse
+from .continuous_forecast_session_response import ContinuousForecastSessionResponse
+from .continuous_forecast_snapshot_response import ContinuousForecastSnapshotResponse
 from .conversation import Conversation
 from .conversation_activity_data import ConversationActivityData
 from .conversation_activity_entity_data import ConversationActivityEntityData
@@ -1312,6 +1336,7 @@ from .did_number import DIDNumber
 from .did_number_entity_listing import DIDNumberEntityListing
 from .did_pool import DIDPool
 from .did_pool_entity_listing import DIDPoolEntityListing
+from .daily import Daily
 from .daily_possible_shift import DailyPossibleShift
 from .dashboard_configuration import DashboardConfiguration
 from .dashboard_configuration_bulk_request import DashboardConfigurationBulkRequest
@@ -1770,6 +1795,7 @@ from .event import Event
 from .event_action import EventAction
 from .event_aggregates_query_request import EventAggregatesQueryRequest
 from .event_aggregates_response import EventAggregatesResponse
+from .event_co_browse import EventCoBrowse
 from .event_condition import EventCondition
 from .event_definition import EventDefinition
 from .event_definition_aggregates import EventDefinitionAggregates
@@ -1778,10 +1804,13 @@ from .event_error import EventError
 from .event_listing import EventListing
 from .event_log import EventLog
 from .event_message import EventMessage
+from .event_presence import EventPresence
 from .event_query_request import EventQueryRequest
 from .event_query_response import EventQueryResponse
 from .event_session import EventSession
 from .event_setting import EventSetting
+from .event_typing import EventTyping
+from .event_video import EventVideo
 from .execute_recording_jobs_query import ExecuteRecordingJobsQuery
 from .execution_data_entity import ExecutionDataEntity
 from .execution_data_flow_settings_response import ExecutionDataFlowSettingsResponse
@@ -2118,6 +2147,7 @@ from .historical_adherence_actuals import HistoricalAdherenceActuals
 from .historical_adherence_day_metrics import HistoricalAdherenceDayMetrics
 from .historical_adherence_exception_info import HistoricalAdherenceExceptionInfo
 from .historical_adherence_query_result import HistoricalAdherenceQueryResult
+from .historical_data import HistoricalData
 from .historical_import_delete_job_response import HistoricalImportDeleteJobResponse
 from .historical_import_status import HistoricalImportStatus
 from .historical_import_status_listing import HistoricalImportStatusListing
@@ -2185,6 +2215,7 @@ from .insights_details_metric_item import InsightsDetailsMetricItem
 from .insights_details_metric_period_points import InsightsDetailsMetricPeriodPoints
 from .insights_details_overall_item import InsightsDetailsOverallItem
 from .insights_details_overall_period_points import InsightsDetailsOverallPeriodPoints
+from .insights_rankings import InsightsRankings
 from .insights_summary import InsightsSummary
 from .insights_summary_metric_item import InsightsSummaryMetricItem
 from .insights_summary_metric_period_points import InsightsSummaryMetricPeriodPoints
@@ -2195,6 +2226,7 @@ from .insights_trend import InsightsTrend
 from .insights_trend_metric_item import InsightsTrendMetricItem
 from .insights_trend_total_item import InsightsTrendTotalItem
 from .insights_trends import InsightsTrends
+from .instagram_data_ingestion_rule_response import InstagramDataIngestionRuleResponse
 from .instagram_id import InstagramId
 from .instagram_integration import InstagramIntegration
 from .instagram_integration_entity_listing import InstagramIntegrationEntityListing
@@ -2749,6 +2781,7 @@ from .message_conversation_entity_listing import MessageConversationEntityListin
 from .message_data import MessageData
 from .message_details import MessageDetails
 from .message_evaluation import MessageEvaluation
+from .message_event import MessageEvent
 from .message_footer import MessageFooter
 from .message_header import MessageHeader
 from .message_info import MessageInfo
@@ -2824,6 +2857,9 @@ from .miner_topic_phrase import MinerTopicPhrase
 from .miner_topics_listing import MinerTopicsListing
 from .mobile_notification_settings import MobileNotificationSettings
 from .mobile_settings import MobileSettings
+from .model_data import ModelData
+from .model_meta_data import ModelMetaData
+from .model_meta_data_result import ModelMetaDataResult
 from .modifiable_rule_properties import ModifiableRuleProperties
 from .monthly_planning_period_settings import MonthlyPlanningPeriodSettings
 from .move_agent_response import MoveAgentResponse
@@ -3141,6 +3177,7 @@ from .ping_identity import PingIdentity
 from .pinned_message_request import PinnedMessageRequest
 from .planning_group import PlanningGroup
 from .planning_group_list import PlanningGroupList
+from .planning_group_model import PlanningGroupModel
 from .planning_group_outputs import PlanningGroupOutputs
 from .planning_group_reference import PlanningGroupReference
 from .planning_period_settings import PlanningPeriodSettings
@@ -3218,6 +3255,7 @@ from .quality_audit_query_execution_results_response import QualityAuditQueryExe
 from .quality_audit_query_execution_status_response import QualityAuditQueryExecutionStatusResponse
 from .quality_audit_query_filter import QualityAuditQueryFilter
 from .quality_evaluation_score_item import QualityEvaluationScoreItem
+from .quarter_hourly import QuarterHourly
 from .query_adherence_explanations_response import QueryAdherenceExplanationsResponse
 from .query_agents_integrations_request import QueryAgentsIntegrationsRequest
 from .query_criteria import QueryCriteria
@@ -3642,6 +3680,8 @@ from .resolution_aggregate_data_container import ResolutionAggregateDataContaine
 from .resolution_aggregate_query_clause import ResolutionAggregateQueryClause
 from .resolution_aggregate_query_filter import ResolutionAggregateQueryFilter
 from .resolution_aggregate_query_predicate import ResolutionAggregateQueryPredicate
+from .resolution_aggregate_query_response import ResolutionAggregateQueryResponse
+from .resolution_aggregation_query import ResolutionAggregationQuery
 from .resolution_aggregation_view import ResolutionAggregationView
 from .resolution_async_aggregate_query_response import ResolutionAsyncAggregateQueryResponse
 from .resolution_async_aggregation_query import ResolutionAsyncAggregationQuery
@@ -3836,8 +3876,13 @@ from .service_now_source_request import ServiceNowSourceRequest
 from .service_now_source_response import ServiceNowSourceResponse
 from .session import Session
 from .session_end_details import SessionEndDetails
+from .session_files import SessionFiles
+from .session_info import SessionInfo
 from .session_last_event import SessionLastEvent
 from .session_listing import SessionListing
+from .session_meta_data import SessionMetaData
+from .session_meta_data_result import SessionMetaDataResult
+from .session_metric_data import SessionMetricData
 from .session_segment_assignment import SessionSegmentAssignment
 from .sessions_response import SessionsResponse
 from .set_content_template_action_settings import SetContentTemplateActionSettings
@@ -3911,6 +3956,12 @@ from .sms_phone_number_import import SmsPhoneNumberImport
 from .sms_phone_number_provision import SmsPhoneNumberProvision
 from .sms_phone_number_ref import SmsPhoneNumberRef
 from .sms_provisioning_status import SmsProvisioningStatus
+from .snapshot_files import SnapshotFiles
+from .snapshot_info import SnapshotInfo
+from .snapshot_meta_data import SnapshotMetaData
+from .snapshot_meta_data_result import SnapshotMetaDataResult
+from .snapshot_metric_data import SnapshotMetricData
+from .snapshots import Snapshots
 from .social_expression import SocialExpression
 from .social_handle import SocialHandle
 from .social_keyword import SocialKeyword
@@ -4149,6 +4200,7 @@ from .time_off_request_settings import TimeOffRequestSettings
 from .time_slot import TimeSlot
 from .time_zone_entity_listing import TimeZoneEntityListing
 from .time_zone_mapping_preview import TimeZoneMappingPreview
+from .timeseries import Timeseries
 from .token_info import TokenInfo
 from .token_info_cloned_user import TokenInfoClonedUser
 from .topic import Topic
@@ -4613,6 +4665,8 @@ from .week_schedule_response import WeekScheduleResponse
 from .week_shift_trade_list_response import WeekShiftTradeListResponse
 from .week_shift_trade_matches_summary_response import WeekShiftTradeMatchesSummaryResponse
 from .week_shift_trade_response import WeekShiftTradeResponse
+from .weekly import Weekly
+from .weeks import Weeks
 from .wem_coaching_user_notification_topic_coaching_appointment_reference import WemCoachingUserNotificationTopicCoachingAppointmentReference
 from .wem_coaching_user_notification_topic_coaching_user_notification import WemCoachingUserNotificationTopicCoachingUserNotification
 from .wfm_activity_plan_job_complete_topic_activity_plan_job_exception import WfmActivityPlanJobCompleteTopicActivityPlanJobException
@@ -4798,6 +4852,7 @@ from .wfm_user_schedule_adherence_updated_topic_user_schedule_adherence_update i
 from .wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .whats_app_available_phone_number_details import WhatsAppAvailablePhoneNumberDetails
 from .whats_app_available_phone_number_details_listing import WhatsAppAvailablePhoneNumberDetailsListing
+from .whats_app_column import WhatsAppColumn
 from .whats_app_config import WhatsAppConfig
 from .whats_app_definition import WhatsAppDefinition
 from .whats_app_embedded_signup_integration_activation_request import WhatsAppEmbeddedSignupIntegrationActivationRequest
@@ -4868,6 +4923,7 @@ from .workday_values_trend_item import WorkdayValuesTrendItem
 from .workflow_target_settings import WorkflowTargetSettings
 from .workitem import Workitem
 from .workitem_change_listing import WorkitemChangeListing
+from .workitem_common_create import WorkitemCommonCreate
 from .workitem_create import WorkitemCreate
 from .workitem_date_based_condition import WorkitemDateBasedCondition
 from .workitem_date_based_condition_update import WorkitemDateBasedConditionUpdate

@@ -38,6 +38,13 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import BulkJob
+from ..models import BulkJobAddRequest
+from ..models import BulkJobAddResponse
+from ..models import BulkJobTerminateRequest
+from ..models import BulkJobTerminateResultsResponse
+from ..models import BulkJobUpdate
+from ..models import BulkJobsListing
 from ..models import DataSchema
 from ..models import DataSchemaListing
 from ..models import ErrorBody
@@ -227,6 +234,162 @@ class TaskManagementApi(object):
         path_params = {}
         if 'workitem_id' in params:
             path_params['workitemId'] = params['workitem_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_taskmanagement_workitems_bulk_add_job(self, bulk_job_id: str, **kwargs) -> None:
+        """
+        Delete a bulk add job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_taskmanagement_workitems_bulk_add_job(bulk_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_taskmanagement_workitems_bulk_add_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `delete_taskmanagement_workitems_bulk_add_job`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_taskmanagement_workitems_bulk_terminate_job(self, bulk_job_id: str, **kwargs) -> None:
+        """
+        Delete a Bulk job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_taskmanagement_workitems_bulk_terminate_job(bulk_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_taskmanagement_workitems_bulk_terminate_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `delete_taskmanagement_workitems_bulk_terminate_job`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
 
         query_params = {}
 
@@ -1617,6 +1780,402 @@ class TaskManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WorkitemWrapupEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_bulk_add_job(self, bulk_job_id: str, **kwargs) -> 'BulkJob':
+        """
+        Get the bulk add job associated with the job id.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_bulk_add_job(bulk_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :return: BulkJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_bulk_add_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `get_taskmanagement_workitems_bulk_add_job`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_bulk_add_job_results(self, bulk_job_id: str, **kwargs) -> 'BulkJobAddResponse':
+        """
+        Get bulk add job results.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_bulk_add_job_results(bulk_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :return: BulkJobAddResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_bulk_add_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `get_taskmanagement_workitems_bulk_add_job_results`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJobAddResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_bulk_jobs_users_me(self, **kwargs) -> 'BulkJobsListing':
+        """
+        Get bulk jobs created by the currently logged in user.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_bulk_jobs_users_me(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param int page_size: Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+        :param str sort_order: Ascending or descending sort order
+        :param str action: The bulk job action.
+        :return: BulkJobsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['after', 'page_size', 'sort_order', 'action']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_bulk_jobs_users_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/jobs/users/me'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'action' in params:
+            query_params['action'] = params['action']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJobsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_bulk_terminate_job(self, bulk_job_id: str, **kwargs) -> 'BulkJob':
+        """
+        Get the bulk job associated with the job id.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_bulk_terminate_job(bulk_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :return: BulkJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_bulk_terminate_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `get_taskmanagement_workitems_bulk_terminate_job`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_bulk_terminate_job_results(self, bulk_job_id: str, **kwargs) -> 'BulkJobTerminateResultsResponse':
+        """
+        Get bulk terminate job results.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_bulk_terminate_job_results(bulk_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :return: BulkJobTerminateResultsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_bulk_terminate_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `get_taskmanagement_workitems_bulk_terminate_job_results`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJobTerminateResultsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3526,6 +4085,174 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_taskmanagement_workitems_bulk_add_job(self, bulk_job_id: str, body: 'BulkJobUpdate', **kwargs) -> 'BulkJob':
+        """
+        Update workitem bulk add job.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_taskmanagement_workitems_bulk_add_job(bulk_job_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :param BulkJobUpdate body: Bulk add job update request (required)
+        :return: BulkJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_taskmanagement_workitems_bulk_add_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `patch_taskmanagement_workitems_bulk_add_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_taskmanagement_workitems_bulk_add_job`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_taskmanagement_workitems_bulk_terminate_job(self, bulk_job_id: str, body: 'BulkJobUpdate', **kwargs) -> 'BulkJob':
+        """
+        Update workitem bulk terminate job.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_taskmanagement_workitems_bulk_terminate_job(bulk_job_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bulk_job_id: Bulk job id (required)
+        :param BulkJobUpdate body: Bulk job update request (required)
+        :return: BulkJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bulk_job_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_taskmanagement_workitems_bulk_terminate_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bulk_job_id' is set
+        if ('bulk_job_id' not in params) or (params['bulk_job_id'] is None):
+            raise ValueError("Missing the required parameter `bulk_job_id` when calling `patch_taskmanagement_workitems_bulk_terminate_job`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_taskmanagement_workitems_bulk_terminate_job`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'bulk_job_id' in params:
+            path_params['bulkJobId'] = params['bulk_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_taskmanagement_worktype(self, worktype_id: str, body: 'WorktypeUpdate', **kwargs) -> 'Worktype':
         """
         Update the attributes of a worktype
@@ -4437,6 +5164,162 @@ class TaskManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Workitem',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_taskmanagement_workitems_bulk_add_jobs(self, body: 'BulkJobAddRequest', **kwargs) -> 'BulkJob':
+        """
+        Create a workitem bulk add job.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_taskmanagement_workitems_bulk_add_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BulkJobAddRequest body: Bulk job definition. (required)
+        :return: BulkJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_taskmanagement_workitems_bulk_add_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_taskmanagement_workitems_bulk_add_jobs`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/add/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_taskmanagement_workitems_bulk_terminate_jobs(self, body: 'BulkJobTerminateRequest', **kwargs) -> 'BulkJob':
+        """
+        Create a workitem bulk terminate job.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_taskmanagement_workitems_bulk_terminate_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BulkJobTerminateRequest body: Bulk job definition. (required)
+        :return: BulkJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_taskmanagement_workitems_bulk_terminate_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_taskmanagement_workitems_bulk_terminate_jobs`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/bulk/terminate/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkJob',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

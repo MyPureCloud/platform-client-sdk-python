@@ -253,6 +253,7 @@ PureCloudPlatformClientV2/models/agentless_email_send_response_dto.py
 PureCloudPlatformClientV2/models/agents_bid_assigned_work_plan_override_request.py
 PureCloudPlatformClientV2/models/agents_integrations_listing.py
 PureCloudPlatformClientV2/models/agents_work_plans_response.py
+PureCloudPlatformClientV2/models/aggregate_historical_availability.py
 PureCloudPlatformClientV2/models/aggregate_metric_data.py
 PureCloudPlatformClientV2/models/aggregate_view_data.py
 PureCloudPlatformClientV2/models/aggregation_range.py
@@ -614,6 +615,19 @@ PureCloudPlatformClientV2/models/bulk_fetch_notes_response.py
 PureCloudPlatformClientV2/models/bulk_fetch_organizations_response.py
 PureCloudPlatformClientV2/models/bulk_fetch_relationships_response.py
 PureCloudPlatformClientV2/models/bulk_ids_request.py
+PureCloudPlatformClientV2/models/bulk_job.py
+PureCloudPlatformClientV2/models/bulk_job_add_request.py
+PureCloudPlatformClientV2/models/bulk_job_add_response.py
+PureCloudPlatformClientV2/models/bulk_job_add_result.py
+PureCloudPlatformClientV2/models/bulk_job_add_workitem_summary.py
+PureCloudPlatformClientV2/models/bulk_job_entity.py
+PureCloudPlatformClientV2/models/bulk_job_error.py
+PureCloudPlatformClientV2/models/bulk_job_terminate_request.py
+PureCloudPlatformClientV2/models/bulk_job_terminate_result.py
+PureCloudPlatformClientV2/models/bulk_job_terminate_result_entity.py
+PureCloudPlatformClientV2/models/bulk_job_terminate_results_response.py
+PureCloudPlatformClientV2/models/bulk_job_update.py
+PureCloudPlatformClientV2/models/bulk_jobs_listing.py
 PureCloudPlatformClientV2/models/bulk_notes_request.py
 PureCloudPlatformClientV2/models/bulk_notes_response.py
 PureCloudPlatformClientV2/models/bulk_organizations_request.py
@@ -829,6 +843,7 @@ PureCloudPlatformClientV2/models/comparison_period_listing.py
 PureCloudPlatformClientV2/models/complex_variable_info.py
 PureCloudPlatformClientV2/models/compliance.py
 PureCloudPlatformClientV2/models/compliance_response.py
+PureCloudPlatformClientV2/models/computed_data.py
 PureCloudPlatformClientV2/models/condition.py
 PureCloudPlatformClientV2/models/conditional_group_routing.py
 PureCloudPlatformClientV2/models/conditional_group_routing_rule.py
@@ -935,10 +950,19 @@ PureCloudPlatformClientV2/models/content_reaction.py
 PureCloudPlatformClientV2/models/content_setting.py
 PureCloudPlatformClientV2/models/content_story.py
 PureCloudPlatformClientV2/models/content_text.py
+PureCloudPlatformClientV2/models/contest_complete_data.py
+PureCloudPlatformClientV2/models/contest_complete_data_score.py
+PureCloudPlatformClientV2/models/contest_data_metrics.py
+PureCloudPlatformClientV2/models/contest_data_prizes.py
+PureCloudPlatformClientV2/models/contest_data_winners.py
+PureCloudPlatformClientV2/models/contest_data_winners_users.py
 PureCloudPlatformClientV2/models/context.py
 PureCloudPlatformClientV2/models/context_entity.py
 PureCloudPlatformClientV2/models/context_intent.py
 PureCloudPlatformClientV2/models/context_pattern.py
+PureCloudPlatformClientV2/models/continuous_forecast_get_session_response.py
+PureCloudPlatformClientV2/models/continuous_forecast_session_response.py
+PureCloudPlatformClientV2/models/continuous_forecast_snapshot_response.py
 PureCloudPlatformClientV2/models/conversation.py
 PureCloudPlatformClientV2/models/conversation_activity_data.py
 PureCloudPlatformClientV2/models/conversation_activity_entity_data.py
@@ -1391,6 +1415,7 @@ PureCloudPlatformClientV2/models/customer_end_detail_event_topic_customer_end_ev
 PureCloudPlatformClientV2/models/customer_interaction_center.py
 PureCloudPlatformClientV2/models/customer_start_detail_event_topic_customer_start_event.py
 PureCloudPlatformClientV2/models/customer_start_detail_event_topic_journey_context.py
+PureCloudPlatformClientV2/models/daily.py
 PureCloudPlatformClientV2/models/daily_possible_shift.py
 PureCloudPlatformClientV2/models/dashboard_configuration.py
 PureCloudPlatformClientV2/models/dashboard_configuration_bulk_request.py
@@ -1855,6 +1880,7 @@ PureCloudPlatformClientV2/models/event.py
 PureCloudPlatformClientV2/models/event_action.py
 PureCloudPlatformClientV2/models/event_aggregates_query_request.py
 PureCloudPlatformClientV2/models/event_aggregates_response.py
+PureCloudPlatformClientV2/models/event_co_browse.py
 PureCloudPlatformClientV2/models/event_condition.py
 PureCloudPlatformClientV2/models/event_definition.py
 PureCloudPlatformClientV2/models/event_definition_aggregates.py
@@ -1863,10 +1889,13 @@ PureCloudPlatformClientV2/models/event_error.py
 PureCloudPlatformClientV2/models/event_listing.py
 PureCloudPlatformClientV2/models/event_log.py
 PureCloudPlatformClientV2/models/event_message.py
+PureCloudPlatformClientV2/models/event_presence.py
 PureCloudPlatformClientV2/models/event_query_request.py
 PureCloudPlatformClientV2/models/event_query_response.py
 PureCloudPlatformClientV2/models/event_session.py
 PureCloudPlatformClientV2/models/event_setting.py
+PureCloudPlatformClientV2/models/event_typing.py
+PureCloudPlatformClientV2/models/event_video.py
 PureCloudPlatformClientV2/models/execute_recording_jobs_query.py
 PureCloudPlatformClientV2/models/execution_data_entity.py
 PureCloudPlatformClientV2/models/execution_data_flow_settings_response.py
@@ -2203,6 +2232,7 @@ PureCloudPlatformClientV2/models/historical_adherence_actuals.py
 PureCloudPlatformClientV2/models/historical_adherence_day_metrics.py
 PureCloudPlatformClientV2/models/historical_adherence_exception_info.py
 PureCloudPlatformClientV2/models/historical_adherence_query_result.py
+PureCloudPlatformClientV2/models/historical_data.py
 PureCloudPlatformClientV2/models/historical_import_delete_job_response.py
 PureCloudPlatformClientV2/models/historical_import_status.py
 PureCloudPlatformClientV2/models/historical_import_status_listing.py
@@ -2266,6 +2296,7 @@ PureCloudPlatformClientV2/models/insights_details_metric_item.py
 PureCloudPlatformClientV2/models/insights_details_metric_period_points.py
 PureCloudPlatformClientV2/models/insights_details_overall_item.py
 PureCloudPlatformClientV2/models/insights_details_overall_period_points.py
+PureCloudPlatformClientV2/models/insights_rankings.py
 PureCloudPlatformClientV2/models/insights_summary.py
 PureCloudPlatformClientV2/models/insights_summary_metric_item.py
 PureCloudPlatformClientV2/models/insights_summary_metric_period_points.py
@@ -2276,6 +2307,7 @@ PureCloudPlatformClientV2/models/insights_trend.py
 PureCloudPlatformClientV2/models/insights_trend_metric_item.py
 PureCloudPlatformClientV2/models/insights_trend_total_item.py
 PureCloudPlatformClientV2/models/insights_trends.py
+PureCloudPlatformClientV2/models/instagram_data_ingestion_rule_response.py
 PureCloudPlatformClientV2/models/instagram_id.py
 PureCloudPlatformClientV2/models/instagram_integration.py
 PureCloudPlatformClientV2/models/instagram_integration_entity_listing.py
@@ -2834,6 +2866,7 @@ PureCloudPlatformClientV2/models/message_conversation_entity_listing.py
 PureCloudPlatformClientV2/models/message_data.py
 PureCloudPlatformClientV2/models/message_details.py
 PureCloudPlatformClientV2/models/message_evaluation.py
+PureCloudPlatformClientV2/models/message_event.py
 PureCloudPlatformClientV2/models/message_footer.py
 PureCloudPlatformClientV2/models/message_header.py
 PureCloudPlatformClientV2/models/message_info.py
@@ -2909,6 +2942,9 @@ PureCloudPlatformClientV2/models/miner_topic_phrase.py
 PureCloudPlatformClientV2/models/miner_topics_listing.py
 PureCloudPlatformClientV2/models/mobile_notification_settings.py
 PureCloudPlatformClientV2/models/mobile_settings.py
+PureCloudPlatformClientV2/models/model_data.py
+PureCloudPlatformClientV2/models/model_meta_data.py
+PureCloudPlatformClientV2/models/model_meta_data_result.py
 PureCloudPlatformClientV2/models/modifiable_rule_properties.py
 PureCloudPlatformClientV2/models/monthly_planning_period_settings.py
 PureCloudPlatformClientV2/models/move_agent_response.py
@@ -3226,6 +3262,7 @@ PureCloudPlatformClientV2/models/ping_identity.py
 PureCloudPlatformClientV2/models/pinned_message_request.py
 PureCloudPlatformClientV2/models/planning_group.py
 PureCloudPlatformClientV2/models/planning_group_list.py
+PureCloudPlatformClientV2/models/planning_group_model.py
 PureCloudPlatformClientV2/models/planning_group_outputs.py
 PureCloudPlatformClientV2/models/planning_group_reference.py
 PureCloudPlatformClientV2/models/planning_period_settings.py
@@ -3303,6 +3340,7 @@ PureCloudPlatformClientV2/models/quality_audit_query_execution_results_response.
 PureCloudPlatformClientV2/models/quality_audit_query_execution_status_response.py
 PureCloudPlatformClientV2/models/quality_audit_query_filter.py
 PureCloudPlatformClientV2/models/quality_evaluation_score_item.py
+PureCloudPlatformClientV2/models/quarter_hourly.py
 PureCloudPlatformClientV2/models/query_adherence_explanations_response.py
 PureCloudPlatformClientV2/models/query_agents_integrations_request.py
 PureCloudPlatformClientV2/models/query_criteria.py
@@ -3727,6 +3765,8 @@ PureCloudPlatformClientV2/models/resolution_aggregate_data_container.py
 PureCloudPlatformClientV2/models/resolution_aggregate_query_clause.py
 PureCloudPlatformClientV2/models/resolution_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/resolution_aggregate_query_predicate.py
+PureCloudPlatformClientV2/models/resolution_aggregate_query_response.py
+PureCloudPlatformClientV2/models/resolution_aggregation_query.py
 PureCloudPlatformClientV2/models/resolution_aggregation_view.py
 PureCloudPlatformClientV2/models/resolution_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/resolution_async_aggregation_query.py
@@ -3919,8 +3959,13 @@ PureCloudPlatformClientV2/models/service_now_source_request.py
 PureCloudPlatformClientV2/models/service_now_source_response.py
 PureCloudPlatformClientV2/models/session.py
 PureCloudPlatformClientV2/models/session_end_details.py
+PureCloudPlatformClientV2/models/session_files.py
+PureCloudPlatformClientV2/models/session_info.py
 PureCloudPlatformClientV2/models/session_last_event.py
 PureCloudPlatformClientV2/models/session_listing.py
+PureCloudPlatformClientV2/models/session_meta_data.py
+PureCloudPlatformClientV2/models/session_meta_data_result.py
+PureCloudPlatformClientV2/models/session_metric_data.py
 PureCloudPlatformClientV2/models/session_segment_assignment.py
 PureCloudPlatformClientV2/models/sessions_response.py
 PureCloudPlatformClientV2/models/set_content_template_action_settings.py
@@ -3996,6 +4041,12 @@ PureCloudPlatformClientV2/models/sms_phone_number_import.py
 PureCloudPlatformClientV2/models/sms_phone_number_provision.py
 PureCloudPlatformClientV2/models/sms_phone_number_ref.py
 PureCloudPlatformClientV2/models/sms_provisioning_status.py
+PureCloudPlatformClientV2/models/snapshot_files.py
+PureCloudPlatformClientV2/models/snapshot_info.py
+PureCloudPlatformClientV2/models/snapshot_meta_data.py
+PureCloudPlatformClientV2/models/snapshot_meta_data_result.py
+PureCloudPlatformClientV2/models/snapshot_metric_data.py
+PureCloudPlatformClientV2/models/snapshots.py
 PureCloudPlatformClientV2/models/social_expression.py
 PureCloudPlatformClientV2/models/social_handle.py
 PureCloudPlatformClientV2/models/social_keyword.py
@@ -4234,6 +4285,7 @@ PureCloudPlatformClientV2/models/time_off_request_settings.py
 PureCloudPlatformClientV2/models/time_slot.py
 PureCloudPlatformClientV2/models/time_zone_entity_listing.py
 PureCloudPlatformClientV2/models/time_zone_mapping_preview.py
+PureCloudPlatformClientV2/models/timeseries.py
 PureCloudPlatformClientV2/models/token_info.py
 PureCloudPlatformClientV2/models/token_info_cloned_user.py
 PureCloudPlatformClientV2/models/topic.py
@@ -4698,6 +4750,8 @@ PureCloudPlatformClientV2/models/week_schedule_response.py
 PureCloudPlatformClientV2/models/week_shift_trade_list_response.py
 PureCloudPlatformClientV2/models/week_shift_trade_matches_summary_response.py
 PureCloudPlatformClientV2/models/week_shift_trade_response.py
+PureCloudPlatformClientV2/models/weekly.py
+PureCloudPlatformClientV2/models/weeks.py
 PureCloudPlatformClientV2/models/wem_coaching_user_notification_topic_coaching_appointment_reference.py
 PureCloudPlatformClientV2/models/wem_coaching_user_notification_topic_coaching_user_notification.py
 PureCloudPlatformClientV2/models/wfm_activity_plan_job_complete_topic_activity_plan_job_exception.py
@@ -4883,6 +4937,7 @@ PureCloudPlatformClientV2/models/wfm_user_schedule_adherence_updated_topic_user_
 PureCloudPlatformClientV2/models/wfm_versioned_entity_metadata.py
 PureCloudPlatformClientV2/models/whats_app_available_phone_number_details.py
 PureCloudPlatformClientV2/models/whats_app_available_phone_number_details_listing.py
+PureCloudPlatformClientV2/models/whats_app_column.py
 PureCloudPlatformClientV2/models/whats_app_config.py
 PureCloudPlatformClientV2/models/whats_app_definition.py
 PureCloudPlatformClientV2/models/whats_app_embedded_signup_integration_activation_request.py
@@ -4953,6 +5008,7 @@ PureCloudPlatformClientV2/models/workday_values_trend_item.py
 PureCloudPlatformClientV2/models/workflow_target_settings.py
 PureCloudPlatformClientV2/models/workitem.py
 PureCloudPlatformClientV2/models/workitem_change_listing.py
+PureCloudPlatformClientV2/models/workitem_common_create.py
 PureCloudPlatformClientV2/models/workitem_create.py
 PureCloudPlatformClientV2/models/workitem_date_based_condition.py
 PureCloudPlatformClientV2/models/workitem_date_based_condition_update.py
@@ -5245,6 +5301,7 @@ docs/AgentlessEmailSendResponseDto.md
 docs/AgentsBidAssignedWorkPlanOverrideRequest.md
 docs/AgentsIntegrationsListing.md
 docs/AgentsWorkPlansResponse.md
+docs/AggregateHistoricalAvailability.md
 docs/AggregateMetricData.md
 docs/AggregateViewData.md
 docs/AggregationRange.md
@@ -5618,6 +5675,19 @@ docs/BulkFetchNotesResponse.md
 docs/BulkFetchOrganizationsResponse.md
 docs/BulkFetchRelationshipsResponse.md
 docs/BulkIdsRequest.md
+docs/BulkJob.md
+docs/BulkJobAddRequest.md
+docs/BulkJobAddResponse.md
+docs/BulkJobAddResult.md
+docs/BulkJobAddWorkitemSummary.md
+docs/BulkJobEntity.md
+docs/BulkJobError.md
+docs/BulkJobTerminateRequest.md
+docs/BulkJobTerminateResult.md
+docs/BulkJobTerminateResultEntity.md
+docs/BulkJobTerminateResultsResponse.md
+docs/BulkJobUpdate.md
+docs/BulkJobsListing.md
 docs/BulkNotesRequest.md
 docs/BulkNotesResponse.md
 docs/BulkOrganizationsRequest.md
@@ -5839,6 +5909,7 @@ docs/ComparisonPeriodListing.md
 docs/ComplexVariableInfo.md
 docs/Compliance.md
 docs/ComplianceResponse.md
+docs/ComputedData.md
 docs/Condition.md
 docs/ConditionalGroupRouting.md
 docs/ConditionalGroupRoutingRule.md
@@ -5947,10 +6018,19 @@ docs/ContentReaction.md
 docs/ContentSetting.md
 docs/ContentStory.md
 docs/ContentText.md
+docs/ContestCompleteData.md
+docs/ContestCompleteDataScore.md
+docs/ContestDataMetrics.md
+docs/ContestDataPrizes.md
+docs/ContestDataWinners.md
+docs/ContestDataWinnersUsers.md
 docs/Context.md
 docs/ContextEntity.md
 docs/ContextIntent.md
 docs/ContextPattern.md
+docs/ContinuousForecastGetSessionResponse.md
+docs/ContinuousForecastSessionResponse.md
+docs/ContinuousForecastSnapshotResponse.md
 docs/Conversation.md
 docs/ConversationActivityData.md
 docs/ConversationActivityEntityData.md
@@ -6411,6 +6491,7 @@ docs/DIDNumber.md
 docs/DIDNumberEntityListing.md
 docs/DIDPool.md
 docs/DIDPoolEntityListing.md
+docs/Daily.md
 docs/DailyPossibleShift.md
 docs/DashboardConfiguration.md
 docs/DashboardConfigurationBulkRequest.md
@@ -6879,6 +6960,7 @@ docs/Event.md
 docs/EventAction.md
 docs/EventAggregatesQueryRequest.md
 docs/EventAggregatesResponse.md
+docs/EventCoBrowse.md
 docs/EventCondition.md
 docs/EventDefinition.md
 docs/EventDefinitionAggregates.md
@@ -6887,10 +6969,13 @@ docs/EventError.md
 docs/EventListing.md
 docs/EventLog.md
 docs/EventMessage.md
+docs/EventPresence.md
 docs/EventQueryRequest.md
 docs/EventQueryResponse.md
 docs/EventSession.md
 docs/EventSetting.md
+docs/EventTyping.md
+docs/EventVideo.md
 docs/EventsApi.json
 docs/EventsApi.md
 docs/ExecuteRecordingJobsQuery.md
@@ -7245,6 +7330,7 @@ docs/HistoricalAdherenceActuals.md
 docs/HistoricalAdherenceDayMetrics.md
 docs/HistoricalAdherenceExceptionInfo.md
 docs/HistoricalAdherenceQueryResult.md
+docs/HistoricalData.md
 docs/HistoricalImportDeleteJobResponse.md
 docs/HistoricalImportStatus.md
 docs/HistoricalImportStatusListing.md
@@ -7316,6 +7402,7 @@ docs/InsightsDetailsMetricItem.md
 docs/InsightsDetailsMetricPeriodPoints.md
 docs/InsightsDetailsOverallItem.md
 docs/InsightsDetailsOverallPeriodPoints.md
+docs/InsightsRankings.md
 docs/InsightsSummary.md
 docs/InsightsSummaryMetricItem.md
 docs/InsightsSummaryMetricPeriodPoints.md
@@ -7326,6 +7413,7 @@ docs/InsightsTrend.md
 docs/InsightsTrendMetricItem.md
 docs/InsightsTrendTotalItem.md
 docs/InsightsTrends.md
+docs/InstagramDataIngestionRuleResponse.md
 docs/InstagramId.md
 docs/InstagramIntegration.md
 docs/InstagramIntegrationEntityListing.md
@@ -7898,6 +7986,7 @@ docs/MessageConversationEntityListing.md
 docs/MessageData.md
 docs/MessageDetails.md
 docs/MessageEvaluation.md
+docs/MessageEvent.md
 docs/MessageFooter.md
 docs/MessageHeader.md
 docs/MessageInfo.md
@@ -7977,6 +8066,9 @@ docs/MobileDevicesApi.json
 docs/MobileDevicesApi.md
 docs/MobileNotificationSettings.md
 docs/MobileSettings.md
+docs/ModelData.md
+docs/ModelMetaData.md
+docs/ModelMetaDataResult.md
 docs/ModifiableRuleProperties.md
 docs/MonthlyPlanningPeriodSettings.md
 docs/MoveAgentResponse.md
@@ -8308,6 +8400,7 @@ docs/PingIdentity.md
 docs/PinnedMessageRequest.md
 docs/PlanningGroup.md
 docs/PlanningGroupList.md
+docs/PlanningGroupModel.md
 docs/PlanningGroupOutputs.md
 docs/PlanningGroupReference.md
 docs/PlanningPeriodSettings.md
@@ -8391,6 +8484,7 @@ docs/QualityAuditQueryExecutionResultsResponse.md
 docs/QualityAuditQueryExecutionStatusResponse.md
 docs/QualityAuditQueryFilter.md
 docs/QualityEvaluationScoreItem.md
+docs/QuarterHourly.md
 docs/QueryAdherenceExplanationsResponse.md
 docs/QueryAgentsIntegrationsRequest.md
 docs/QueryCriteria.md
@@ -8817,6 +8911,8 @@ docs/ResolutionAggregateDataContainer.md
 docs/ResolutionAggregateQueryClause.md
 docs/ResolutionAggregateQueryFilter.md
 docs/ResolutionAggregateQueryPredicate.md
+docs/ResolutionAggregateQueryResponse.md
+docs/ResolutionAggregationQuery.md
 docs/ResolutionAggregationView.md
 docs/ResolutionAsyncAggregateQueryResponse.md
 docs/ResolutionAsyncAggregationQuery.md
@@ -9023,8 +9119,13 @@ docs/ServiceNowSourceRequest.md
 docs/ServiceNowSourceResponse.md
 docs/Session.md
 docs/SessionEndDetails.md
+docs/SessionFiles.md
+docs/SessionInfo.md
 docs/SessionLastEvent.md
 docs/SessionListing.md
+docs/SessionMetaData.md
+docs/SessionMetaDataResult.md
+docs/SessionMetricData.md
 docs/SessionSegmentAssignment.md
 docs/SessionsResponse.md
 docs/SetContentTemplateActionSettings.md
@@ -9100,6 +9201,12 @@ docs/SmsPhoneNumberImport.md
 docs/SmsPhoneNumberProvision.md
 docs/SmsPhoneNumberRef.md
 docs/SmsProvisioningStatus.md
+docs/SnapshotFiles.md
+docs/SnapshotInfo.md
+docs/SnapshotMetaData.md
+docs/SnapshotMetaDataResult.md
+docs/SnapshotMetricData.md
+docs/Snapshots.md
 docs/SocialExpression.md
 docs/SocialHandle.md
 docs/SocialKeyword.md
@@ -9356,6 +9463,7 @@ docs/TimeOffRequestSettings.md
 docs/TimeSlot.md
 docs/TimeZoneEntityListing.md
 docs/TimeZoneMappingPreview.md
+docs/Timeseries.md
 docs/TokenInfo.md
 docs/TokenInfoClonedUser.md
 docs/TokensApi.json
@@ -9840,6 +9948,8 @@ docs/WeekScheduleResponse.md
 docs/WeekShiftTradeListResponse.md
 docs/WeekShiftTradeMatchesSummaryResponse.md
 docs/WeekShiftTradeResponse.md
+docs/Weekly.md
+docs/Weeks.md
 docs/WemCoachingUserNotificationTopicCoachingAppointmentReference.md
 docs/WemCoachingUserNotificationTopicCoachingUserNotification.md
 docs/WfmActivityPlanJobCompleteTopicActivityPlanJobException.md
@@ -10025,6 +10135,7 @@ docs/WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.md
 docs/WfmVersionedEntityMetadata.md
 docs/WhatsAppAvailablePhoneNumberDetails.md
 docs/WhatsAppAvailablePhoneNumberDetailsListing.md
+docs/WhatsAppColumn.md
 docs/WhatsAppConfig.md
 docs/WhatsAppDefinition.md
 docs/WhatsAppEmbeddedSignupIntegrationActivationRequest.md
@@ -10099,6 +10210,7 @@ docs/WorkforceManagementApi.json
 docs/WorkforceManagementApi.md
 docs/Workitem.md
 docs/WorkitemChangeListing.md
+docs/WorkitemCommonCreate.md
 docs/WorkitemCreate.md
 docs/WorkitemDateBasedCondition.md
 docs/WorkitemDateBasedConditionUpdate.md
@@ -10448,6 +10560,8 @@ docs/delete_speechandtextanalytics_topic-example.txt
 docs/delete_station_associateduser-example.txt
 docs/delete_taskmanagement_workbin-example.txt
 docs/delete_taskmanagement_workitem-example.txt
+docs/delete_taskmanagement_workitems_bulk_add_job-example.txt
+docs/delete_taskmanagement_workitems_bulk_terminate_job-example.txt
 docs/delete_taskmanagement_workitems_schema-example.txt
 docs/delete_taskmanagement_worktype-example.txt
 docs/delete_taskmanagement_worktype_flows_datebased_rule-example.txt
@@ -10894,6 +11008,7 @@ docs/get_gamification_insights_details-example.txt
 docs/get_gamification_insights_groups_trends-example.txt
 docs/get_gamification_insights_groups_trends_all-example.txt
 docs/get_gamification_insights_members-example.txt
+docs/get_gamification_insights_rankings-example.txt
 docs/get_gamification_insights_trends-example.txt
 docs/get_gamification_insights_user_details-example.txt
 docs/get_gamification_insights_user_trends-example.txt
@@ -11496,6 +11611,11 @@ docs/get_taskmanagement_workitem_user_wrapups-example.txt
 docs/get_taskmanagement_workitem_version-example.txt
 docs/get_taskmanagement_workitem_versions-example.txt
 docs/get_taskmanagement_workitem_wrapups-example.txt
+docs/get_taskmanagement_workitems_bulk_add_job-example.txt
+docs/get_taskmanagement_workitems_bulk_add_job_results-example.txt
+docs/get_taskmanagement_workitems_bulk_jobs_users_me-example.txt
+docs/get_taskmanagement_workitems_bulk_terminate_job-example.txt
+docs/get_taskmanagement_workitems_bulk_terminate_job_results-example.txt
 docs/get_taskmanagement_workitems_query_job-example.txt
 docs/get_taskmanagement_workitems_query_job_results-example.txt
 docs/get_taskmanagement_workitems_schema-example.txt
@@ -11712,6 +11832,9 @@ docs/get_workforcemanagement_businessunit_alternativeshifts_settings-example.txt
 docs/get_workforcemanagement_businessunit_alternativeshifts_trade-example.txt
 docs/get_workforcemanagement_businessunit_alternativeshifts_trades_search_job-example.txt
 docs/get_workforcemanagement_businessunit_intraday_planninggroups-example.txt
+docs/get_workforcemanagement_businessunit_mainforecast_continuousforecast_session-example.txt
+docs/get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id-example.txt
+docs/get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id-example.txt
 docs/get_workforcemanagement_businessunit_managementunits-example.txt
 docs/get_workforcemanagement_businessunit_planninggroup-example.txt
 docs/get_workforcemanagement_businessunit_planninggroups-example.txt
@@ -11931,6 +12054,8 @@ docs/patch_taskmanagement_workitem-example.txt
 docs/patch_taskmanagement_workitem_assignment-example.txt
 docs/patch_taskmanagement_workitem_user_wrapups-example.txt
 docs/patch_taskmanagement_workitem_users_me_wrapups-example.txt
+docs/patch_taskmanagement_workitems_bulk_add_job-example.txt
+docs/patch_taskmanagement_workitems_bulk_terminate_job-example.txt
 docs/patch_taskmanagement_worktype-example.txt
 docs/patch_taskmanagement_worktype_flows_datebased_rule-example.txt
 docs/patch_taskmanagement_worktype_flows_onattributechange_rule-example.txt
@@ -12046,6 +12171,7 @@ docs/post_analytics_reporting_exports-example.txt
 docs/post_analytics_reporting_settings_dashboards_bulk_remove-example.txt
 docs/post_analytics_reporting_settings_dashboards_query-example.txt
 docs/post_analytics_resolutions_aggregates_jobs-example.txt
+docs/post_analytics_resolutions_aggregates_query-example.txt
 docs/post_analytics_routing_activity_query-example.txt
 docs/post_analytics_routing_activity_query-example.txt
 docs/post_analytics_summaries_aggregates_jobs-example.txt
@@ -12542,6 +12668,8 @@ docs/post_taskmanagement_workitem_acd_cancel-example.txt
 docs/post_taskmanagement_workitem_disconnect-example.txt
 docs/post_taskmanagement_workitem_terminate-example.txt
 docs/post_taskmanagement_workitems-example.txt
+docs/post_taskmanagement_workitems_bulk_add_jobs-example.txt
+docs/post_taskmanagement_workitems_bulk_terminate_jobs-example.txt
 docs/post_taskmanagement_workitems_query-example.txt
 docs/post_taskmanagement_workitems_query_jobs-example.txt
 docs/post_taskmanagement_workitems_schemas-example.txt

@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_insights_groups_trends**](#get_gamification_insights_groups_trends) | Get insights overall trend for the current user|
 |[**get_gamification_insights_groups_trends_all**](#get_gamification_insights_groups_trends_all) | Get insights overall trend|
 |[**get_gamification_insights_members**](#get_gamification_insights_members) | Query users in a profile during a period of time|
+|[**get_gamification_insights_rankings**](#get_gamification_insights_rankings) | Get insights rankings|
 |[**get_gamification_insights_trends**](#get_gamification_insights_trends) | Get insights user trend for the current user|
 |[**get_gamification_insights_user_details**](#get_gamification_insights_user_details) | Get insights details for the user|
 |[**get_gamification_insights_user_trends**](#get_gamification_insights_user_trends) | Get insights user trend for the user|
@@ -513,6 +514,70 @@ except ApiException as e:
 ### Return type
 
 [**InsightsAgents**](InsightsAgents)
+
+
+## get_gamification_insights_rankings
+
+> [**InsightsRankings**](InsightsRankings) get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id=sort_metric_id, section_size=section_size, user_ids=user_ids)
+
+
+Get insights rankings
+
+Wraps GET /api/v2/gamification/insights/rankings 
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+sort_key = 'sort_key_example' # str | Sort key
+sort_metric_id = 'sort_metric_id_example' # str | Sort Metric Id (optional)
+section_size = 56 # int | The number of top and bottom users to return before ties (optional)
+user_ids = 'user_ids_example' # str | A list of up to 100 comma-separated user Ids (optional)
+
+try:
+    # Get insights rankings
+    api_response = api_instance.get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id=sort_metric_id, section_size=section_size, user_ids=user_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_rankings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Weekly, Monthly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **sort_key** | **str**| Sort key | <br />**Values**: percentOfGoal, percentOfGoalChange, overallPercentOfGoal, overallPercentOfGoalChange, value, valueChange |
+| **sort_metric_id** | **str**| Sort Metric Id | [optional]  |
+| **section_size** | **int**| The number of top and bottom users to return before ties | [optional]  |
+| **user_ids** | **str**| A list of up to 100 comma-separated user Ids | [optional]  |
+
+### Return type
+
+[**InsightsRankings**](InsightsRankings)
 
 
 ## get_gamification_insights_trends
@@ -3327,4 +3392,4 @@ except ApiException as e:
 [**GamificationStatus**](GamificationStatus)
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

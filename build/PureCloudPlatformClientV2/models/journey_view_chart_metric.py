@@ -118,7 +118,7 @@ class JourneyViewChartMetric(object):
     def aggregate(self) -> str:
         """
         Gets the aggregate of this JourneyViewChartMetric.
-        How to aggregate the given element, defaults to EventCount
+        How to aggregate the given element, defaults to CustomerCount
 
         :return: The aggregate of this JourneyViewChartMetric.
         :rtype: str
@@ -129,7 +129,7 @@ class JourneyViewChartMetric(object):
     def aggregate(self, aggregate: str) -> None:
         """
         Sets the aggregate of this JourneyViewChartMetric.
-        How to aggregate the given element, defaults to EventCount
+        How to aggregate the given element, defaults to CustomerCount
 
         :param aggregate: The aggregate of this JourneyViewChartMetric.
         :type: str

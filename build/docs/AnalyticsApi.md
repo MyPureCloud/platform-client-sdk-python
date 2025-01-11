@@ -93,6 +93,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_reporting_settings_dashboards_bulk_remove**](#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk soft delete dashboard configurations|
 |[**post_analytics_reporting_settings_dashboards_query**](#post_analytics_reporting_settings_dashboards_query) | Query dashboard configurations|
 |[**post_analytics_resolutions_aggregates_jobs**](#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
+|[**post_analytics_resolutions_aggregates_query**](#post_analytics_resolutions_aggregates_query) | Query for resolution aggregates|
 |[**post_analytics_routing_activity_query**](#post_analytics_routing_activity_query) | Query for user activity observations|
 |[**post_analytics_summaries_aggregates_jobs**](#post_analytics_summaries_aggregates_jobs) | Query for summary aggregates asynchronously|
 |[**post_analytics_summaries_aggregates_query**](#post_analytics_summaries_aggregates_query) | Query for summary aggregates|
@@ -4497,6 +4498,54 @@ except ApiException as e:
 [**AsyncQueryResponse**](AsyncQueryResponse)
 
 
+## post_analytics_resolutions_aggregates_query
+
+> [**ResolutionAggregateQueryResponse**](ResolutionAggregateQueryResponse) post_analytics_resolutions_aggregates_query(body)
+
+
+Query for resolution aggregates
+
+Wraps POST /api/v2/analytics/resolutions/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:resolutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.ResolutionAggregationQuery() # ResolutionAggregationQuery | query
+
+try:
+    # Query for resolution aggregates
+    api_response = api_instance.post_analytics_resolutions_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_resolutions_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ResolutionAggregationQuery**](ResolutionAggregationQuery)| query |  |
+
+### Return type
+
+[**ResolutionAggregateQueryResponse**](ResolutionAggregateQueryResponse)
+
+
 ## post_analytics_routing_activity_query
 
 > [**RoutingActivityResponse**](RoutingActivityResponse) post_analytics_routing_activity_query(body, page_size=page_size, page_number=page_number)
@@ -5337,4 +5386,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

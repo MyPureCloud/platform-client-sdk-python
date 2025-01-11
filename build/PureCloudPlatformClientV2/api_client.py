@@ -22,6 +22,7 @@ from __future__ import absolute_import
 from . import models
 from .rest import RESTClientObject
 from .rest import ApiException
+from .api_null_value import ApiNullValue
 
 import os
 import re
@@ -392,7 +393,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '219.0.0'
+        header_params['purecloud-sdk'] = '219.1.0'
 
         # path parameters
         if path_params:
@@ -500,6 +501,8 @@ class ApiClient(object):
             types = types + (unicode,)
         if isinstance(obj, type(None)):
             return None
+        elif isinstance(obj, type(ApiNullValue())):
+            return None
         elif isinstance(obj, types):
             return obj
         elif isinstance(obj, list):
@@ -518,7 +521,7 @@ class ApiClient(object):
                 # model definition for request.
                 obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
                             for attr, _ in iteritems(obj.swagger_types)
-                            if getattr(obj, attr) is not None}
+                            if getattr(obj, attr) is not None or isinstance(getattr(obj, attr), type(ApiNullValue()))}
 
             return {key: self.sanitize_for_serialization(val)
                     for key, val in iteritems(obj_dict)}

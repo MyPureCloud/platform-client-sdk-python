@@ -60,6 +60,7 @@ from ..models import GetProfilesResponse
 from ..models import GetTemplatesResponse
 from ..models import InsightsAgents
 from ..models import InsightsDetails
+from ..models import InsightsRankings
 from ..models import InsightsSummary
 from ..models import InsightsTrend
 from ..models import Leaderboard
@@ -874,6 +875,123 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InsightsAgents',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_rankings(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, primary_period_start_workday: date, sort_key: str, **kwargs) -> 'InsightsRankings':
+        """
+        Get insights rankings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param str sort_key: Sort key (required)
+        :param str sort_metric_id: Sort Metric Id
+        :param int section_size: The number of top and bottom users to return before ties
+        :param str user_ids: A list of up to 100 comma-separated user Ids
+        :return: InsightsRankings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday', 'sort_key', 'sort_metric_id', 'section_size', 'user_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_rankings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_rankings`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_rankings`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_rankings`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights_rankings`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights_rankings`")
+        # verify the required parameter 'sort_key' is set
+        if ('sort_key' not in params) or (params['sort_key'] is None):
+            raise ValueError("Missing the required parameter `sort_key` when calling `get_gamification_insights_rankings`")
+
+
+        resource_path = '/api/v2/gamification/insights/rankings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+        if 'sort_key' in params:
+            query_params['sortKey'] = params['sort_key']
+        if 'sort_metric_id' in params:
+            query_params['sortMetricId'] = params['sort_metric_id']
+        if 'section_size' in params:
+            query_params['sectionSize'] = params['section_size']
+        if 'user_ids' in params:
+            query_params['userIds'] = params['user_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InsightsRankings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

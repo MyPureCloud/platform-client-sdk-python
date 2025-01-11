@@ -8,7 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **type** | str | Boolean operation to apply to the provided predicates and clauses. Valid values: And | |
 | **predicates** | [list[JourneyViewElementFilterPredicate]](JourneyViewElementFilterPredicate) | predicates | [optional] |
+| **number_predicates** | [list[JourneyViewElementFilterNumberPredicate]](JourneyViewElementFilterNumberPredicate) | numberPredicates | [optional] |
 
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

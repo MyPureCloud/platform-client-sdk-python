@@ -8,6 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_taskmanagement_workbin**](#delete_taskmanagement_workbin) | Delete a workbin|
 |[**delete_taskmanagement_workitem**](#delete_taskmanagement_workitem) | Delete a workitem|
+|[**delete_taskmanagement_workitems_bulk_add_job**](#delete_taskmanagement_workitems_bulk_add_job) | Delete a bulk add job|
+|[**delete_taskmanagement_workitems_bulk_terminate_job**](#delete_taskmanagement_workitems_bulk_terminate_job) | Delete a Bulk job|
 |[**delete_taskmanagement_workitems_schema**](#delete_taskmanagement_workitems_schema) | Delete a schema|
 |[**delete_taskmanagement_worktype**](#delete_taskmanagement_worktype) | Delete a worktype|
 |[**delete_taskmanagement_worktype_flows_datebased_rule**](#delete_taskmanagement_worktype_flows_datebased_rule) | Delete a date based rule|
@@ -24,6 +26,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_taskmanagement_workitem_version**](#get_taskmanagement_workitem_version) | Get a version of a workitem|
 |[**get_taskmanagement_workitem_versions**](#get_taskmanagement_workitem_versions) | Get all versions of a workitem|
 |[**get_taskmanagement_workitem_wrapups**](#get_taskmanagement_workitem_wrapups) | Get all wrapup codes added for all users for a workitem.|
+|[**get_taskmanagement_workitems_bulk_add_job**](#get_taskmanagement_workitems_bulk_add_job) | Get the bulk add job associated with the job id.|
+|[**get_taskmanagement_workitems_bulk_add_job_results**](#get_taskmanagement_workitems_bulk_add_job_results) | Get bulk add job results.|
+|[**get_taskmanagement_workitems_bulk_jobs_users_me**](#get_taskmanagement_workitems_bulk_jobs_users_me) | Get bulk jobs created by the currently logged in user.|
+|[**get_taskmanagement_workitems_bulk_terminate_job**](#get_taskmanagement_workitems_bulk_terminate_job) | Get the bulk job associated with the job id.|
+|[**get_taskmanagement_workitems_bulk_terminate_job_results**](#get_taskmanagement_workitems_bulk_terminate_job_results) | Get bulk terminate job results.|
 |[**get_taskmanagement_workitems_query_job**](#get_taskmanagement_workitems_query_job) | Get the workitem query job associated with the job id.|
 |[**get_taskmanagement_workitems_query_job_results**](#get_taskmanagement_workitems_query_job_results) | Get results from for workitem query job |
 |[**get_taskmanagement_workitems_schema**](#get_taskmanagement_workitems_schema) | Get a schema|
@@ -47,6 +54,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_taskmanagement_workitem_assignment**](#patch_taskmanagement_workitem_assignment) | Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.|
 |[**patch_taskmanagement_workitem_user_wrapups**](#patch_taskmanagement_workitem_user_wrapups) | Add/Remove a wrapup code for a given user in a workitem.|
 |[**patch_taskmanagement_workitem_users_me_wrapups**](#patch_taskmanagement_workitem_users_me_wrapups) | Add/Remove a wrapup code for the current user in a workitem.|
+|[**patch_taskmanagement_workitems_bulk_add_job**](#patch_taskmanagement_workitems_bulk_add_job) | Update workitem bulk add job.|
+|[**patch_taskmanagement_workitems_bulk_terminate_job**](#patch_taskmanagement_workitems_bulk_terminate_job) | Update workitem bulk terminate job.|
 |[**patch_taskmanagement_worktype**](#patch_taskmanagement_worktype) | Update the attributes of a worktype|
 |[**patch_taskmanagement_worktype_flows_datebased_rule**](#patch_taskmanagement_worktype_flows_datebased_rule) | Update the attributes of a date based rule|
 |[**patch_taskmanagement_worktype_flows_onattributechange_rule**](#patch_taskmanagement_worktype_flows_onattributechange_rule) | Update the attributes of a rule|
@@ -58,6 +67,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_taskmanagement_workitem_disconnect**](#post_taskmanagement_workitem_disconnect) | Disconnect the assignee of the workitem|
 |[**post_taskmanagement_workitem_terminate**](#post_taskmanagement_workitem_terminate) | Terminate a workitem|
 |[**post_taskmanagement_workitems**](#post_taskmanagement_workitems) | Create a workitem|
+|[**post_taskmanagement_workitems_bulk_add_jobs**](#post_taskmanagement_workitems_bulk_add_jobs) | Create a workitem bulk add job.|
+|[**post_taskmanagement_workitems_bulk_terminate_jobs**](#post_taskmanagement_workitems_bulk_terminate_jobs) | Create a workitem bulk terminate job.|
 |[**post_taskmanagement_workitems_query**](#post_taskmanagement_workitems_query) | Query for workitems|
 |[**post_taskmanagement_workitems_query_jobs**](#post_taskmanagement_workitems_query_jobs) | Create a workitem query job|
 |[**post_taskmanagement_workitems_schemas**](#post_taskmanagement_workitems_schemas) | Create a schema|
@@ -159,6 +170,100 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| Workitem ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_taskmanagement_workitems_bulk_add_job
+
+>  delete_taskmanagement_workitems_bulk_add_job(bulk_job_id)
+
+
+Delete a bulk add job
+
+Wraps DELETE /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId} 
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+
+try:
+    # Delete a bulk add job
+    api_instance.delete_taskmanagement_workitems_bulk_add_job(bulk_job_id)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->delete_taskmanagement_workitems_bulk_add_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_taskmanagement_workitems_bulk_terminate_job
+
+>  delete_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)
+
+
+Delete a Bulk job
+
+Wraps DELETE /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId} 
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+
+try:
+    # Delete a Bulk job
+    api_instance.delete_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->delete_taskmanagement_workitems_bulk_terminate_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
 
 ### Return type
 
@@ -993,6 +1098,252 @@ except ApiException as e:
 ### Return type
 
 [**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing)
+
+
+## get_taskmanagement_workitems_bulk_add_job
+
+> [**BulkJob**](BulkJob) get_taskmanagement_workitems_bulk_add_job(bulk_job_id)
+
+
+Get the bulk add job associated with the job id.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId} 
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+
+try:
+    # Get the bulk add job associated with the job id.
+    api_response = api_instance.get_taskmanagement_workitems_bulk_add_job(bulk_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_add_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+## get_taskmanagement_workitems_bulk_add_job_results
+
+> [**BulkJobAddResponse**](BulkJobAddResponse) get_taskmanagement_workitems_bulk_add_job_results(bulk_job_id)
+
+
+Get bulk add job results.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results 
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJobResults:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+
+try:
+    # Get bulk add job results.
+    api_response = api_instance.get_taskmanagement_workitems_bulk_add_job_results(bulk_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_add_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
+
+### Return type
+
+[**BulkJobAddResponse**](BulkJobAddResponse)
+
+
+## get_taskmanagement_workitems_bulk_jobs_users_me
+
+> [**BulkJobsListing**](BulkJobsListing) get_taskmanagement_workitems_bulk_jobs_users_me(after=after, page_size=page_size, sort_order=sort_order, action=action)
+
+
+Get bulk jobs created by the currently logged in user.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/jobs/users/me 
+
+Requires ANY permissions: 
+
+* workitems:bulkJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 25 # int | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional) (default to 25)
+sort_order = ''descending'' # str | Ascending or descending sort order (optional) (default to 'descending')
+action = 'action_example' # str | The bulk job action. (optional)
+
+try:
+    # Get bulk jobs created by the currently logged in user.
+    api_response = api_instance.get_taskmanagement_workitems_bulk_jobs_users_me(after=after, page_size=page_size, sort_order=sort_order, action=action)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_jobs_users_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **int**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;descending&#39;]<br />**Values**: ascending, descending |
+| **action** | **str**| The bulk job action. | [optional] <br />**Values**: TerminateWorkitems, AddWorkitems |
+
+### Return type
+
+[**BulkJobsListing**](BulkJobsListing)
+
+
+## get_taskmanagement_workitems_bulk_terminate_job
+
+> [**BulkJob**](BulkJob) get_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)
+
+
+Get the bulk job associated with the job id.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId} 
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+
+try:
+    # Get the bulk job associated with the job id.
+    api_response = api_instance.get_taskmanagement_workitems_bulk_terminate_job(bulk_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_terminate_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+## get_taskmanagement_workitems_bulk_terminate_job_results
+
+> [**BulkJobTerminateResultsResponse**](BulkJobTerminateResultsResponse) get_taskmanagement_workitems_bulk_terminate_job_results(bulk_job_id)
+
+
+Get bulk terminate job results.
+
+Wraps GET /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results 
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJobResults:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+
+try:
+    # Get bulk terminate job results.
+    api_response = api_instance.get_taskmanagement_workitems_bulk_terminate_job_results(bulk_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_bulk_terminate_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
+
+### Return type
+
+[**BulkJobTerminateResultsResponse**](BulkJobTerminateResultsResponse)
 
 
 ## get_taskmanagement_workitems_query_job
@@ -2154,6 +2505,106 @@ except ApiException as e:
 [**WorkitemWrapup**](WorkitemWrapup)
 
 
+## patch_taskmanagement_workitems_bulk_add_job
+
+> [**BulkJob**](BulkJob) patch_taskmanagement_workitems_bulk_add_job(bulk_job_id, body)
+
+
+Update workitem bulk add job.
+
+Wraps PATCH /api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId} 
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+body = PureCloudPlatformClientV2.BulkJobUpdate() # BulkJobUpdate | Bulk add job update request
+
+try:
+    # Update workitem bulk add job.
+    api_response = api_instance.patch_taskmanagement_workitems_bulk_add_job(bulk_job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->patch_taskmanagement_workitems_bulk_add_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
+| **body** | [**BulkJobUpdate**](BulkJobUpdate)| Bulk add job update request |  |
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+## patch_taskmanagement_workitems_bulk_terminate_job
+
+> [**BulkJob**](BulkJob) patch_taskmanagement_workitems_bulk_terminate_job(bulk_job_id, body)
+
+
+Update workitem bulk terminate job.
+
+Wraps PATCH /api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId} 
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+bulk_job_id = 'bulk_job_id_example' # str | Bulk job id
+body = PureCloudPlatformClientV2.BulkJobUpdate() # BulkJobUpdate | Bulk job update request
+
+try:
+    # Update workitem bulk terminate job.
+    api_response = api_instance.patch_taskmanagement_workitems_bulk_terminate_job(bulk_job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->patch_taskmanagement_workitems_bulk_terminate_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bulk_job_id** | **str**| Bulk job id |  |
+| **body** | [**BulkJobUpdate**](BulkJobUpdate)| Bulk job update request |  |
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
 ## patch_taskmanagement_worktype
 
 > [**Worktype**](Worktype) patch_taskmanagement_worktype(worktype_id, body)
@@ -2702,6 +3153,102 @@ except ApiException as e:
 [**Workitem**](Workitem)
 
 
+## post_taskmanagement_workitems_bulk_add_jobs
+
+> [**BulkJob**](BulkJob) post_taskmanagement_workitems_bulk_add_jobs(body)
+
+
+Create a workitem bulk add job.
+
+Wraps POST /api/v2/taskmanagement/workitems/bulk/add/jobs 
+
+Requires ANY permissions: 
+
+* workitems:bulkAddJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+body = PureCloudPlatformClientV2.BulkJobAddRequest() # BulkJobAddRequest | Bulk job definition.
+
+try:
+    # Create a workitem bulk add job.
+    api_response = api_instance.post_taskmanagement_workitems_bulk_add_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->post_taskmanagement_workitems_bulk_add_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkJobAddRequest**](BulkJobAddRequest)| Bulk job definition. |  |
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
+## post_taskmanagement_workitems_bulk_terminate_jobs
+
+> [**BulkJob**](BulkJob) post_taskmanagement_workitems_bulk_terminate_jobs(body)
+
+
+Create a workitem bulk terminate job.
+
+Wraps POST /api/v2/taskmanagement/workitems/bulk/terminate/jobs 
+
+Requires ALL permissions: 
+
+* workitems:bulkTerminateJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+body = PureCloudPlatformClientV2.BulkJobTerminateRequest() # BulkJobTerminateRequest | Bulk job definition.
+
+try:
+    # Create a workitem bulk terminate job.
+    api_response = api_instance.post_taskmanagement_workitems_bulk_terminate_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->post_taskmanagement_workitems_bulk_terminate_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkJobTerminateRequest**](BulkJobTerminateRequest)| Bulk job definition. |  |
+
+### Return type
+
+[**BulkJob**](BulkJob)
+
+
 ## post_taskmanagement_workitems_query
 
 > [**WorkitemPostQueryEntityListing**](WorkitemPostQueryEntityListing) post_taskmanagement_workitems_query(body)
@@ -3196,4 +3743,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 219.0.0_
+_PureCloudPlatformClientV2 219.1.0_

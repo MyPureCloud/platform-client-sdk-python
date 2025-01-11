@@ -165,7 +165,7 @@ class CommonCampaign(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["email", "sms", "voice"]
+        allowed_values = ["email", "sms", "voice", "whatsapp"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

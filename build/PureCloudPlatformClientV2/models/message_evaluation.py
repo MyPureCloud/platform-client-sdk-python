@@ -139,7 +139,7 @@ class MessageEvaluation(object):
         """
         if isinstance(message_type, int):
             message_type = str(message_type)
-        allowed_values = ["Sms", "Email"]
+        allowed_values = ["Sms", "Email", "WhatsApp"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)
             self._message_type = "outdated_sdk_version"

@@ -5,6 +5,8 @@ import functools
 import inspect
 import warnings
 
+from .api_null_value import ApiNullValue
+
 string_types = (type(b''), type(u''))
 
 def sanitize_for_serialization(obj):
@@ -26,6 +28,8 @@ def sanitize_for_serialization(obj):
     if sys.version_info < (3,0):
         types = types + (unicode,)
     if isinstance(obj, type(None)):
+        return None
+    elif isinstance(obj, type(ApiNullValue())):
         return None
     elif isinstance(obj, types):
         return obj
