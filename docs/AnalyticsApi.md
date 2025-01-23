@@ -1903,7 +1903,7 @@ This endpoint does not need any parameters.
 
 ## get_analytics_reporting_settings_dashboards_query
 
-> [**DashboardConfigurationListing**](DashboardConfigurationListing) get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, sort_by=sort_by, page_number=page_number, page_size=page_size)
+> [**DashboardConfigurationListing**](DashboardConfigurationListing) get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, dashboard_state=dashboard_state, sort_by=sort_by, page_number=page_number, page_size=page_size)
 
 
 Get list of dashboard configurations
@@ -1930,13 +1930,14 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 dashboard_type = 'dashboard_type_example' # str | List dashboard of given type
 dashboard_access_filter = 'dashboard_access_filter_example' # str | Filter dashboard based on the owner of dashboard
 name = 'name_example' # str | name of the dashboard (optional)
+dashboard_state = ''Active'' # str | List dashboard of given state (optional) (default to 'Active')
 sort_by = ''desc'' # str |  (optional) (default to 'desc')
 page_number = 1 # int |  (optional) (default to 1)
 page_size = 9 # int |  (optional) (default to 9)
 
 try:
     # Get list of dashboard configurations
-    api_response = api_instance.get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, sort_by=sort_by, page_number=page_number, page_size=page_size)
+    api_response = api_instance.get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, dashboard_state=dashboard_state, sort_by=sort_by, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_reporting_settings_dashboards_query: %s\n" % e)
@@ -1947,9 +1948,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **dashboard_type** | **str**| List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites, Deleted |
+| **dashboard_type** | **str**| List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
 | **dashboard_access_filter** | **str**| Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
 | **name** | **str**| name of the dashboard | [optional]  |
+| **dashboard_state** | **str**| List dashboard of given state | [optional] [default to &#39;Active&#39;]<br />**Values**: Active, Deleted |
 | **sort_by** | **str**|  | [optional] [default to &#39;desc&#39;] |
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**|  | [optional] [default to 9] |
@@ -5386,4 +5388,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 219.1.0_
+_PureCloudPlatformClientV2 220.0.0_

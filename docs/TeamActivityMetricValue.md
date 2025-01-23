@@ -6,9 +6,12 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **metric** | str | metric | [optional] |
-| **count** | int | metric count | [optional] |
+| **metric** | str | Metric | [optional] |
+| **qualifier** | str | Metric qualifier | [optional] |
+| **secondary_qualifier** | str | Secondary metric qualifier | [optional] |
+| **entity_ids** | list[str] | Entity ids for matching entities if details were requested | [optional] |
+| **count** | int | Metric count | [optional] |
 
 
 
-_PureCloudPlatformClientV2 219.1.0_
+_PureCloudPlatformClientV2 220.0.0_

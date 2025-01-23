@@ -149,7 +149,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.GroupsApi()
 group_id = 'group_id_example' # str | Group ID
-ids = 'ids_example' # str | Comma separated list of userIds to remove
+ids = 'ids_example' # str | Comma separated list of userIds to remove. A maximum of 50 members are allowed per request.
 
 try:
     # Remove members
@@ -165,7 +165,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-| **ids** | **str**| Comma separated list of userIds to remove |  |
+| **ids** | **str**| Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. |  |
 
 ### Return type
 
@@ -937,4 +937,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 219.1.0_
+_PureCloudPlatformClientV2 220.0.0_

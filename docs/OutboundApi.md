@@ -4489,7 +4489,7 @@ except ApiException as e:
 
 ## get_outbound_messagingcampaigns
 
-> [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing) get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id)
+> [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing) get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id, content_template_id=content_template_id, campaign_status=campaign_status)
 
 
 Query a list of Messaging Campaigns
@@ -4525,10 +4525,12 @@ division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
 type = 'type_example' # str | Campaign Type (optional)
 sender_sms_phone_number = 'sender_sms_phone_number_example' # str | Sender SMS Phone Number (optional)
 id = ['id_example'] # list[str] | A list of messaging campaign ids to bulk fetch (optional)
+content_template_id = 'content_template_id_example' # str | Content template ID (optional)
+campaign_status = 'campaign_status_example' # str | Campaign Status (optional)
 
 try:
     # Query a list of Messaging Campaigns
-    api_response = api_instance.get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id)
+    api_response = api_instance.get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id, content_template_id=content_template_id, campaign_status=campaign_status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_messagingcampaigns: %s\n" % e)
@@ -4549,6 +4551,8 @@ except ApiException as e:
 | **type** | **str**| Campaign Type | [optional] <br />**Values**: EMAIL, SMS, WHATSAPP |
 | **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
 | **id** | [**list[str]**](str)| A list of messaging campaign ids to bulk fetch | [optional]  |
+| **content_template_id** | **str**| Content template ID | [optional]  |
+| **campaign_status** | **str**| Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
 
 ### Return type
 
@@ -4608,7 +4612,7 @@ except ApiException as e:
 
 ## get_outbound_messagingcampaigns_divisionviews
 
-> [**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing) get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number)
+> [**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing) get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number, content_template_id=content_template_id, campaign_status=campaign_status)
 
 
 Query a list of basic Messaging Campaign information objects
@@ -4642,10 +4646,12 @@ name = 'name_example' # str | Name (optional)
 type = 'type_example' # str | Campaign Type (optional)
 id = ['id_example'] # list[str] | id (optional)
 sender_sms_phone_number = 'sender_sms_phone_number_example' # str | Sender SMS Phone Number (optional)
+content_template_id = 'content_template_id_example' # str | Content template ID (optional)
+campaign_status = 'campaign_status_example' # str | Campaign Status (optional)
 
 try:
     # Query a list of basic Messaging Campaign information objects
-    api_response = api_instance.get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number)
+    api_response = api_instance.get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number, content_template_id=content_template_id, campaign_status=campaign_status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionviews: %s\n" % e)
@@ -4663,6 +4669,8 @@ except ApiException as e:
 | **type** | **str**| Campaign Type | [optional] <br />**Values**: EMAIL, SMS, WHATSAPP |
 | **id** | [**list[str]**](str)| id | [optional]  |
 | **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
+| **content_template_id** | **str**| Content template ID | [optional]  |
+| **campaign_status** | **str**| Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
 
 ### Return type
 
@@ -8612,4 +8620,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 219.1.0_
+_PureCloudPlatformClientV2 220.0.0_
