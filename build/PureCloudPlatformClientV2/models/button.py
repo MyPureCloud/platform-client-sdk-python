@@ -48,13 +48,97 @@ class Button(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'type': 'str',
+            'content': 'str',
+            'content_text': 'str'
         }
 
         self.attribute_map = {
-            
+            'type': 'type',
+            'content': 'content',
+            'content_text': 'contentText'
         }
 
+        self._type = None
+        self._content = None
+        self._content_text = None
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this Button.
+        Type of button to include in whatsApp template
+
+        :return: The type of this Button.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this Button.
+        Type of button to include in whatsApp template
+
+        :param type: The type of this Button.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["QuickReply", "PhoneNumber", "Url"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def content(self) -> str:
+        """
+        Gets the content of this Button.
+        Content of the button. Use for 'Url' or 'PhoneNumber' button type
+
+        :return: The content of this Button.
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content: str) -> None:
+        """
+        Sets the content of this Button.
+        Content of the button. Use for 'Url' or 'PhoneNumber' button type
+
+        :param content: The content of this Button.
+        :type: str
+        """
+        
+
+        self._content = content
+
+    @property
+    def content_text(self) -> str:
+        """
+        Gets the content_text of this Button.
+        The text label that will be displayed on the button
+
+        :return: The content_text of this Button.
+        :rtype: str
+        """
+        return self._content_text
+
+    @content_text.setter
+    def content_text(self, content_text: str) -> None:
+        """
+        Sets the content_text of this Button.
+        The text label that will be displayed on the button
+
+        :param content_text: The content_text of this Button.
+        :type: str
+        """
+        
+
+        self._content_text = content_text
 
     def to_dict(self):
         """

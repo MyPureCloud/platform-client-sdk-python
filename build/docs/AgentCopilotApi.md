@@ -109,4 +109,4 @@ except ApiException as e:
 [**Copilot**](Copilot)
 
 
-_PureCloudPlatformClientV2 219.1.0_
+_PureCloudPlatformClientV2 220.0.0_

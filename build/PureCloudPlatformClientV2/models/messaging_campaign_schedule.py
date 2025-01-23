@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DivisionedDomainEntityRef
+    from . import Reoccurrence
     from . import ScheduleInterval
 
 class MessagingCampaignSchedule(object):
@@ -57,6 +58,7 @@ class MessagingCampaignSchedule(object):
             'date_modified': 'datetime',
             'version': 'int',
             'intervals': 'list[ScheduleInterval]',
+            'recurrences': 'list[Reoccurrence]',
             'time_zone': 'str',
             'messaging_campaign': 'DivisionedDomainEntityRef',
             'self_uri': 'str'
@@ -69,6 +71,7 @@ class MessagingCampaignSchedule(object):
             'date_modified': 'dateModified',
             'version': 'version',
             'intervals': 'intervals',
+            'recurrences': 'recurrences',
             'time_zone': 'timeZone',
             'messaging_campaign': 'messagingCampaign',
             'self_uri': 'selfUri'
@@ -80,6 +83,7 @@ class MessagingCampaignSchedule(object):
         self._date_modified = None
         self._version = None
         self._intervals = None
+        self._recurrences = None
         self._time_zone = None
         self._messaging_campaign = None
         self._self_uri = None
@@ -227,6 +231,30 @@ class MessagingCampaignSchedule(object):
         
 
         self._intervals = intervals
+
+    @property
+    def recurrences(self) -> List['Reoccurrence']:
+        """
+        Gets the recurrences of this MessagingCampaignSchedule.
+        Recurring schedules of the campaign
+
+        :return: The recurrences of this MessagingCampaignSchedule.
+        :rtype: list[Reoccurrence]
+        """
+        return self._recurrences
+
+    @recurrences.setter
+    def recurrences(self, recurrences: List['Reoccurrence']) -> None:
+        """
+        Sets the recurrences of this MessagingCampaignSchedule.
+        Recurring schedules of the campaign
+
+        :param recurrences: The recurrences of this MessagingCampaignSchedule.
+        :type: list[Reoccurrence]
+        """
+        
+
+        self._recurrences = recurrences
 
     @property
     def time_zone(self) -> str:

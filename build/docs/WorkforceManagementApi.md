@@ -92,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_calendar_url_ics**](#get_workforcemanagement_calendar_url_ics) | Get existing calendar link for the current user|
 |[**get_workforcemanagement_historicaldata_deletejob**](#get_workforcemanagement_historicaldata_deletejob) | Retrieves delete job status for historical data imports of the organization|
 |[**get_workforcemanagement_historicaldata_importstatus**](#get_workforcemanagement_historicaldata_importstatus) | Retrieves status of the historical data imports of the organization|
+|[**get_workforcemanagement_historicaldata_importstatus_job_id**](#get_workforcemanagement_historicaldata_importstatus_job_id) | Retrieves status of the historical data imports associated with job id|
 |[**get_workforcemanagement_integrations_hris**](#get_workforcemanagement_integrations_hris) | Get integrations|
 |[**get_workforcemanagement_integrations_hris_timeofftypes_job**](#get_workforcemanagement_integrations_hris_timeofftypes_job) | Query the results of time off types job|
 |[**get_workforcemanagement_managementunit**](#get_workforcemanagement_managementunit) | Get management unit|
@@ -4764,6 +4765,54 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**HistoricalImportStatusListing**](HistoricalImportStatusListing)
+
+
+## get_workforcemanagement_historicaldata_importstatus_job_id
+
+> [**HistoricalImportStatusJobResponse**](HistoricalImportStatusJobResponse) get_workforcemanagement_historicaldata_importstatus_job_id(job_id)
+
+
+Retrieves status of the historical data imports associated with job id
+
+Wraps GET /api/v2/workforcemanagement/historicaldata/importstatus/{jobId} 
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The job Id of the historical data import request
+
+try:
+    # Retrieves status of the historical data imports associated with job id
+    api_response = api_instance.get_workforcemanagement_historicaldata_importstatus_job_id(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_historicaldata_importstatus_job_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The job Id of the historical data import request |  |
+
+### Return type
+
+[**HistoricalImportStatusJobResponse**](HistoricalImportStatusJobResponse)
 
 
 ## get_workforcemanagement_integrations_hris
@@ -10747,7 +10796,7 @@ This endpoint does not need any parameters.
 
 ## post_workforcemanagement_historicaldata_validate
 
->  post_workforcemanagement_historicaldata_validate(body=body)
+> [**ValidationServiceAsyncResponse**](ValidationServiceAsyncResponse) post_workforcemanagement_historicaldata_validate(body=body)
 
 
 Trigger validation process for historical import
@@ -10775,7 +10824,8 @@ body = PureCloudPlatformClientV2.ValidationServiceRequest() # ValidationServiceR
 
 try:
     # Trigger validation process for historical import
-    api_instance.post_workforcemanagement_historicaldata_validate(body=body)
+    api_response = api_instance.post_workforcemanagement_historicaldata_validate(body=body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_historicaldata_validate: %s\n" % e)
 ```
@@ -10789,7 +10839,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**ValidationServiceAsyncResponse**](ValidationServiceAsyncResponse)
 
 
 ## post_workforcemanagement_integrations_hri_timeofftypes_jobs
@@ -12797,4 +12847,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 219.1.0_
+_PureCloudPlatformClientV2 220.0.0_

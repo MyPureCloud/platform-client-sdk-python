@@ -55,7 +55,8 @@ class BuFullDayTimeOffMarker(object):
             'paid': 'bool',
             'payable_minutes': 'int',
             'time_off_request_id': 'str',
-            'time_off_request_sync_version': 'int'
+            'time_off_request_sync_version': 'int',
+            'delete': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class BuFullDayTimeOffMarker(object):
             'paid': 'paid',
             'payable_minutes': 'payableMinutes',
             'time_off_request_id': 'timeOffRequestId',
-            'time_off_request_sync_version': 'timeOffRequestSyncVersion'
+            'time_off_request_sync_version': 'timeOffRequestSyncVersion',
+            'delete': 'delete'
         }
 
         self._business_unit_date = None
@@ -77,6 +79,7 @@ class BuFullDayTimeOffMarker(object):
         self._payable_minutes = None
         self._time_off_request_id = None
         self._time_off_request_sync_version = None
+        self._delete = None
 
     @property
     def business_unit_date(self) -> date:
@@ -269,6 +272,30 @@ class BuFullDayTimeOffMarker(object):
         
 
         self._time_off_request_sync_version = time_off_request_sync_version
+
+    @property
+    def delete(self) -> bool:
+        """
+        Gets the delete of this BuFullDayTimeOffMarker.
+        Set to 'true' to delete this time off marker. Will always be null on responses, only has an effect on schedule update
+
+        :return: The delete of this BuFullDayTimeOffMarker.
+        :rtype: bool
+        """
+        return self._delete
+
+    @delete.setter
+    def delete(self, delete: bool) -> None:
+        """
+        Sets the delete of this BuFullDayTimeOffMarker.
+        Set to 'true' to delete this time off marker. Will always be null on responses, only has an effect on schedule update
+
+        :param delete: The delete of this BuFullDayTimeOffMarker.
+        :type: bool
+        """
+        
+
+        self._delete = delete
 
     def to_dict(self):
         """

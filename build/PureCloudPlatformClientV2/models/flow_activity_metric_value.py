@@ -49,22 +49,28 @@ class FlowActivityMetricValue(object):
         """
         self.swagger_types = {
             'metric': 'str',
+            'qualifier': 'str',
+            'entity_ids': 'list[str]',
             'count': 'int'
         }
 
         self.attribute_map = {
             'metric': 'metric',
+            'qualifier': 'qualifier',
+            'entity_ids': 'entityIds',
             'count': 'count'
         }
 
         self._metric = None
+        self._qualifier = None
+        self._entity_ids = None
         self._count = None
 
     @property
     def metric(self) -> str:
         """
         Gets the metric of this FlowActivityMetricValue.
-        metric
+        Metric
 
         :return: The metric of this FlowActivityMetricValue.
         :rtype: str
@@ -75,7 +81,7 @@ class FlowActivityMetricValue(object):
     def metric(self, metric: str) -> None:
         """
         Sets the metric of this FlowActivityMetricValue.
-        metric
+        Metric
 
         :param metric: The metric of this FlowActivityMetricValue.
         :type: str
@@ -90,10 +96,58 @@ class FlowActivityMetricValue(object):
             self._metric = metric
 
     @property
+    def qualifier(self) -> str:
+        """
+        Gets the qualifier of this FlowActivityMetricValue.
+        Metric qualifier
+
+        :return: The qualifier of this FlowActivityMetricValue.
+        :rtype: str
+        """
+        return self._qualifier
+
+    @qualifier.setter
+    def qualifier(self, qualifier: str) -> None:
+        """
+        Sets the qualifier of this FlowActivityMetricValue.
+        Metric qualifier
+
+        :param qualifier: The qualifier of this FlowActivityMetricValue.
+        :type: str
+        """
+        
+
+        self._qualifier = qualifier
+
+    @property
+    def entity_ids(self) -> List[str]:
+        """
+        Gets the entity_ids of this FlowActivityMetricValue.
+        Entity ids for matching entities if details were requested
+
+        :return: The entity_ids of this FlowActivityMetricValue.
+        :rtype: list[str]
+        """
+        return self._entity_ids
+
+    @entity_ids.setter
+    def entity_ids(self, entity_ids: List[str]) -> None:
+        """
+        Sets the entity_ids of this FlowActivityMetricValue.
+        Entity ids for matching entities if details were requested
+
+        :param entity_ids: The entity_ids of this FlowActivityMetricValue.
+        :type: list[str]
+        """
+        
+
+        self._entity_ids = entity_ids
+
+    @property
     def count(self) -> int:
         """
         Gets the count of this FlowActivityMetricValue.
-        metric count
+        Metric count
 
         :return: The count of this FlowActivityMetricValue.
         :rtype: int
@@ -104,7 +158,7 @@ class FlowActivityMetricValue(object):
     def count(self, count: int) -> None:
         """
         Sets the count of this FlowActivityMetricValue.
-        metric count
+        Metric count
 
         :param count: The count of this FlowActivityMetricValue.
         :type: int

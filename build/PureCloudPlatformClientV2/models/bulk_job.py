@@ -130,7 +130,7 @@ class BulkJob(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["Idle", "Queued", "Running", "Succeeded", "Failed", "Cancelled"]
+        allowed_values = ["Idle", "Queued", "Running", "Succeeded", "Failed", "Cancelled", "Terminated"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"

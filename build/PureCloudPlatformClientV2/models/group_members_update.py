@@ -64,7 +64,7 @@ class GroupMembersUpdate(object):
     def member_ids(self) -> List[str]:
         """
         Gets the member_ids of this GroupMembersUpdate.
-        A list of the ids of the members to add.
+        A list of the ids of the members to add. A maximum of 50 members are allowed per request.
 
         :return: The member_ids of this GroupMembersUpdate.
         :rtype: list[str]
@@ -75,7 +75,7 @@ class GroupMembersUpdate(object):
     def member_ids(self, member_ids: List[str]) -> None:
         """
         Sets the member_ids of this GroupMembersUpdate.
-        A list of the ids of the members to add.
+        A list of the ids of the members to add. A maximum of 50 members are allowed per request.
 
         :param member_ids: The member_ids of this GroupMembersUpdate.
         :type: list[str]

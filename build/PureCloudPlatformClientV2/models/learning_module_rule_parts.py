@@ -117,7 +117,7 @@ class LearningModuleRuleParts(object):
         """
         if isinstance(selector, int):
             selector = str(selector)
-        allowed_values = ["AcdSkills", "AgentName", "Division", "Group", "Location", "Queue", "Role", "Team"]
+        allowed_values = ["AcdSkills", "AgentName", "Division", "Group", "Location", "Queue", "Role", "Team", "User"]
         if selector.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for selector -> " + selector)
             self._selector = "outdated_sdk_version"

@@ -944,6 +944,7 @@ from .conversation_callback_event_topic_wrapup import ConversationCallbackEventT
 from .conversation_categories_entity_listing import ConversationCategoriesEntityListing
 from .conversation_category import ConversationCategory
 from .conversation_channel import ConversationChannel
+from .conversation_channel_location import ConversationChannelLocation
 from .conversation_channel_metadata import ConversationChannelMetadata
 from .conversation_chat import ConversationChat
 from .conversation_chat_event_topic_chat_conversation import ConversationChatEventTopicChatConversation
@@ -2150,6 +2151,7 @@ from .historical_adherence_query_result import HistoricalAdherenceQueryResult
 from .historical_data import HistoricalData
 from .historical_import_delete_job_response import HistoricalImportDeleteJobResponse
 from .historical_import_status import HistoricalImportStatus
+from .historical_import_status_job_response import HistoricalImportStatusJobResponse
 from .historical_import_status_listing import HistoricalImportStatusListing
 from .historical_shrinkage_activity_category_response import HistoricalShrinkageActivityCategoryResponse
 from .historical_shrinkage_activity_code_response import HistoricalShrinkageActivityCodeResponse
@@ -3249,6 +3251,7 @@ from .published_survey_form_reference import PublishedSurveyFormReference
 from .punctuality_event import PunctualityEvent
 from .pure_cloud import PureCloud
 from .pure_engage import PureEngage
+from .push_integration import PushIntegration
 from .qm_audit_query_request import QMAuditQueryRequest
 from .quality_audit_log_message import QualityAuditLogMessage
 from .quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
@@ -4564,6 +4567,7 @@ from .validate_work_plan_response import ValidateWorkPlanResponse
 from .validation_error import ValidationError
 from .validation_limits import ValidationLimits
 from .validation_result import ValidationResult
+from .validation_service_async_response import ValidationServiceAsyncResponse
 from .validation_service_request import ValidationServiceRequest
 from .value_wrapper_activity_plan_service_goal_impact_overrides import ValueWrapperActivityPlanServiceGoalImpactOverrides
 from .value_wrapper_date import ValueWrapperDate

@@ -243,7 +243,7 @@ class GroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: Group ID (required)
-        :param str ids: Comma separated list of userIds to remove (required)
+        :param str ids: Comma separated list of userIds to remove. A maximum of 50 members are allowed per request. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.

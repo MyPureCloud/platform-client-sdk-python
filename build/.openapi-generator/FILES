@@ -1029,6 +1029,7 @@ PureCloudPlatformClientV2/models/conversation_callback_event_topic_wrapup.py
 PureCloudPlatformClientV2/models/conversation_categories_entity_listing.py
 PureCloudPlatformClientV2/models/conversation_category.py
 PureCloudPlatformClientV2/models/conversation_channel.py
+PureCloudPlatformClientV2/models/conversation_channel_location.py
 PureCloudPlatformClientV2/models/conversation_channel_metadata.py
 PureCloudPlatformClientV2/models/conversation_chat.py
 PureCloudPlatformClientV2/models/conversation_chat_event_topic_chat_conversation.py
@@ -2235,6 +2236,7 @@ PureCloudPlatformClientV2/models/historical_adherence_query_result.py
 PureCloudPlatformClientV2/models/historical_data.py
 PureCloudPlatformClientV2/models/historical_import_delete_job_response.py
 PureCloudPlatformClientV2/models/historical_import_status.py
+PureCloudPlatformClientV2/models/historical_import_status_job_response.py
 PureCloudPlatformClientV2/models/historical_import_status_listing.py
 PureCloudPlatformClientV2/models/historical_shrinkage_activity_category_response.py
 PureCloudPlatformClientV2/models/historical_shrinkage_activity_code_response.py
@@ -3334,6 +3336,7 @@ PureCloudPlatformClientV2/models/published_survey_form_reference.py
 PureCloudPlatformClientV2/models/punctuality_event.py
 PureCloudPlatformClientV2/models/pure_cloud.py
 PureCloudPlatformClientV2/models/pure_engage.py
+PureCloudPlatformClientV2/models/push_integration.py
 PureCloudPlatformClientV2/models/qm_audit_query_request.py
 PureCloudPlatformClientV2/models/quality_audit_log_message.py
 PureCloudPlatformClientV2/models/quality_audit_query_execution_results_response.py
@@ -4649,6 +4652,7 @@ PureCloudPlatformClientV2/models/validate_work_plan_response.py
 PureCloudPlatformClientV2/models/validation_error.py
 PureCloudPlatformClientV2/models/validation_limits.py
 PureCloudPlatformClientV2/models/validation_result.py
+PureCloudPlatformClientV2/models/validation_service_async_response.py
 PureCloudPlatformClientV2/models/validation_service_request.py
 PureCloudPlatformClientV2/models/value_wrapper_activity_plan_service_goal_impact_overrides.py
 PureCloudPlatformClientV2/models/value_wrapper_date.py
@@ -6097,6 +6101,7 @@ docs/ConversationCallbackEventTopicWrapup.md
 docs/ConversationCategoriesEntityListing.md
 docs/ConversationCategory.md
 docs/ConversationChannel.md
+docs/ConversationChannelLocation.md
 docs/ConversationChannelMetadata.md
 docs/ConversationChat.md
 docs/ConversationChatEventTopicChatConversation.md
@@ -7333,6 +7338,7 @@ docs/HistoricalAdherenceQueryResult.md
 docs/HistoricalData.md
 docs/HistoricalImportDeleteJobResponse.md
 docs/HistoricalImportStatus.md
+docs/HistoricalImportStatusJobResponse.md
 docs/HistoricalImportStatusListing.md
 docs/HistoricalShrinkageActivityCategoryResponse.md
 docs/HistoricalShrinkageActivityCodeResponse.md
@@ -8476,6 +8482,7 @@ docs/PublishedSurveyFormReference.md
 docs/PunctualityEvent.md
 docs/PureCloud.md
 docs/PureEngage.md
+docs/PushIntegration.md
 docs/QMAuditQueryRequest.md
 docs/QualityApi.json
 docs/QualityApi.md
@@ -9839,6 +9846,7 @@ docs/ValidateWorkPlanResponse.md
 docs/ValidationError.md
 docs/ValidationLimits.md
 docs/ValidationResult.md
+docs/ValidationServiceAsyncResponse.md
 docs/ValidationServiceRequest.md
 docs/ValueWrapperActivityPlanServiceGoalImpactOverrides.md
 docs/ValueWrapperDate.md
@@ -11874,6 +11882,7 @@ docs/get_workforcemanagement_calendar_data_ics-example.txt
 docs/get_workforcemanagement_calendar_url_ics-example.txt
 docs/get_workforcemanagement_historicaldata_deletejob-example.txt
 docs/get_workforcemanagement_historicaldata_importstatus-example.txt
+docs/get_workforcemanagement_historicaldata_importstatus_job_id-example.txt
 docs/get_workforcemanagement_integrations_hris-example.txt
 docs/get_workforcemanagement_integrations_hris_timeofftypes_job-example.txt
 docs/get_workforcemanagement_managementunit-example.txt

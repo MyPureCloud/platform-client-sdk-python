@@ -7062,12 +7062,14 @@ class OutboundApi(object):
         :param str type: Campaign Type
         :param str sender_sms_phone_number: Sender SMS Phone Number
         :param list[str] id: A list of messaging campaign ids to bulk fetch
+        :param str content_template_id: Content template ID
+        :param str campaign_status: Campaign Status
         :return: MessagingCampaignEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'contact_list_id', 'division_id', 'type', 'sender_sms_phone_number', 'id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'contact_list_id', 'division_id', 'type', 'sender_sms_phone_number', 'id', 'content_template_id', 'campaign_status']
         all_params.append('callback')
 
         params = locals()
@@ -7106,6 +7108,10 @@ class OutboundApi(object):
             query_params['senderSmsPhoneNumber'] = params['sender_sms_phone_number']
         if 'id' in params:
             query_params['id'] = params['id']
+        if 'content_template_id' in params:
+            query_params['contentTemplateId'] = params['content_template_id']
+        if 'campaign_status' in params:
+            query_params['campaignStatus'] = params['campaign_status']
 
         header_params = {}
 
@@ -7239,12 +7245,14 @@ class OutboundApi(object):
         :param str type: Campaign Type
         :param list[str] id: id
         :param str sender_sms_phone_number: Sender SMS Phone Number
+        :param str content_template_id: Content template ID
+        :param str campaign_status: Campaign Status
         :return: MessagingCampaignDivisionViewEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_order', 'name', 'type', 'id', 'sender_sms_phone_number']
+        all_params = ['page_size', 'page_number', 'sort_order', 'name', 'type', 'id', 'sender_sms_phone_number', 'content_template_id', 'campaign_status']
         all_params.append('callback')
 
         params = locals()
@@ -7277,6 +7285,10 @@ class OutboundApi(object):
             query_params['id'] = params['id']
         if 'sender_sms_phone_number' in params:
             query_params['senderSmsPhoneNumber'] = params['sender_sms_phone_number']
+        if 'content_template_id' in params:
+            query_params['contentTemplateId'] = params['content_template_id']
+        if 'campaign_status' in params:
+            query_params['campaignStatus'] = params['campaign_status']
 
         header_params = {}
 

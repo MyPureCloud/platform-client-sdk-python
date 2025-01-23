@@ -3607,10 +3607,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_chat is deprecated")
     def get_conversations_chat(self, conversation_id: str, **kwargs) -> 'ChatConversation':
         """
         Get chat conversation
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3685,10 +3686,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_chat_message is deprecated")
     def get_conversations_chat_message(self, conversation_id: str, message_id: str, **kwargs) -> 'WebChatMessage':
         """
         Get a web chat conversation message
-        The current user must be involved with the conversation to get its messages.
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3769,10 +3771,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_chat_messages is deprecated")
     def get_conversations_chat_messages(self, conversation_id: str, **kwargs) -> 'WebChatMessageEntityList':
         """
         Get the messages of a chat conversation.
-        The current user must be involved with the conversation to get its messages.
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3859,10 +3862,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_chat_participant_communication_wrapup is deprecated")
     def get_conversations_chat_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3952,10 +3956,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_chat_participant_wrapup is deprecated")
     def get_conversations_chat_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4039,10 +4044,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_chat_participant_wrapupcodes is deprecated")
     def get_conversations_chat_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4123,10 +4129,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_chats is deprecated")
     def get_conversations_chats(self, **kwargs) -> 'ChatConversationEntityListing':
         """
         Get active chat conversations for the logged in user
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9598,10 +9605,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_chat is deprecated")
     def patch_conversations_chat(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9682,10 +9690,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_chat_participant is deprecated")
     def patch_conversations_chat_participant(self, conversation_id: str, participant_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
         """
         Update conversation participant
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9772,10 +9781,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_chat_participant_attributes is deprecated")
     def patch_conversations_chat_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9862,10 +9872,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_chat_participant_communication is deprecated")
     def patch_conversations_chat_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15013,10 +15024,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_chat_communication_messages is deprecated")
     def post_conversations_chat_communication_messages(self, conversation_id: str, communication_id: str, body: 'CreateWebChatMessageRequest', **kwargs) -> 'WebChatMessage':
         """
         Send a message on behalf of a communication in a chat conversation.
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15103,10 +15115,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_chat_communication_typing is deprecated")
     def post_conversations_chat_communication_typing(self, conversation_id: str, communication_id: str, **kwargs) -> 'WebChatTyping':
         """
         Send a typing-indicator on behalf of a communication in a chat conversation.
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15187,10 +15200,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_chat_participant_communication_wrapup is deprecated")
     def post_conversations_chat_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15280,10 +15294,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_chat_participant_replace is deprecated")
     def post_conversations_chat_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15370,10 +15385,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_chats is deprecated")
     def post_conversations_chats(self, body: 'CreateWebChatRequest', **kwargs) -> 'ChatConversation':
         """
         Create a web chat conversation
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -19144,10 +19160,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_conversations_chat_recordingstate is deprecated")
     def put_conversations_chat_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

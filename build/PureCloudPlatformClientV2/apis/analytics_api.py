@@ -3011,6 +3011,7 @@ class AnalyticsApi(object):
         :param str dashboard_type: List dashboard of given type (required)
         :param str dashboard_access_filter: Filter dashboard based on the owner of dashboard (required)
         :param str name: name of the dashboard
+        :param str dashboard_state: List dashboard of given state
         :param str sort_by: 
         :param int page_number: 
         :param int page_size: 
@@ -3019,7 +3020,7 @@ class AnalyticsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['dashboard_type', 'dashboard_access_filter', 'name', 'sort_by', 'page_number', 'page_size']
+        all_params = ['dashboard_type', 'dashboard_access_filter', 'name', 'dashboard_state', 'sort_by', 'page_number', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -3048,6 +3049,8 @@ class AnalyticsApi(object):
             query_params['name'] = params['name']
         if 'dashboard_type' in params:
             query_params['dashboardType'] = params['dashboard_type']
+        if 'dashboard_state' in params:
+            query_params['dashboardState'] = params['dashboard_state']
         if 'dashboard_access_filter' in params:
             query_params['dashboardAccessFilter'] = params['dashboard_access_filter']
         if 'sort_by' in params:

@@ -49,22 +49,31 @@ class RoutingActivityMetricValue(object):
         """
         self.swagger_types = {
             'metric': 'str',
+            'qualifier': 'str',
+            'secondary_qualifier': 'str',
+            'entity_ids': 'list[str]',
             'count': 'int'
         }
 
         self.attribute_map = {
             'metric': 'metric',
+            'qualifier': 'qualifier',
+            'secondary_qualifier': 'secondaryQualifier',
+            'entity_ids': 'entityIds',
             'count': 'count'
         }
 
         self._metric = None
+        self._qualifier = None
+        self._secondary_qualifier = None
+        self._entity_ids = None
         self._count = None
 
     @property
     def metric(self) -> str:
         """
         Gets the metric of this RoutingActivityMetricValue.
-        metric
+        Metric
 
         :return: The metric of this RoutingActivityMetricValue.
         :rtype: str
@@ -75,7 +84,7 @@ class RoutingActivityMetricValue(object):
     def metric(self, metric: str) -> None:
         """
         Sets the metric of this RoutingActivityMetricValue.
-        metric
+        Metric
 
         :param metric: The metric of this RoutingActivityMetricValue.
         :type: str
@@ -90,10 +99,82 @@ class RoutingActivityMetricValue(object):
             self._metric = metric
 
     @property
+    def qualifier(self) -> str:
+        """
+        Gets the qualifier of this RoutingActivityMetricValue.
+        Metric qualifier
+
+        :return: The qualifier of this RoutingActivityMetricValue.
+        :rtype: str
+        """
+        return self._qualifier
+
+    @qualifier.setter
+    def qualifier(self, qualifier: str) -> None:
+        """
+        Sets the qualifier of this RoutingActivityMetricValue.
+        Metric qualifier
+
+        :param qualifier: The qualifier of this RoutingActivityMetricValue.
+        :type: str
+        """
+        
+
+        self._qualifier = qualifier
+
+    @property
+    def secondary_qualifier(self) -> str:
+        """
+        Gets the secondary_qualifier of this RoutingActivityMetricValue.
+        Secondary metric qualifier
+
+        :return: The secondary_qualifier of this RoutingActivityMetricValue.
+        :rtype: str
+        """
+        return self._secondary_qualifier
+
+    @secondary_qualifier.setter
+    def secondary_qualifier(self, secondary_qualifier: str) -> None:
+        """
+        Sets the secondary_qualifier of this RoutingActivityMetricValue.
+        Secondary metric qualifier
+
+        :param secondary_qualifier: The secondary_qualifier of this RoutingActivityMetricValue.
+        :type: str
+        """
+        
+
+        self._secondary_qualifier = secondary_qualifier
+
+    @property
+    def entity_ids(self) -> List[str]:
+        """
+        Gets the entity_ids of this RoutingActivityMetricValue.
+        Entity ids for matching entities if details were requested
+
+        :return: The entity_ids of this RoutingActivityMetricValue.
+        :rtype: list[str]
+        """
+        return self._entity_ids
+
+    @entity_ids.setter
+    def entity_ids(self, entity_ids: List[str]) -> None:
+        """
+        Sets the entity_ids of this RoutingActivityMetricValue.
+        Entity ids for matching entities if details were requested
+
+        :param entity_ids: The entity_ids of this RoutingActivityMetricValue.
+        :type: list[str]
+        """
+        
+
+        self._entity_ids = entity_ids
+
+    @property
     def count(self) -> int:
         """
         Gets the count of this RoutingActivityMetricValue.
-        metric count
+        Metric count
 
         :return: The count of this RoutingActivityMetricValue.
         :rtype: int
@@ -104,7 +185,7 @@ class RoutingActivityMetricValue(object):
     def count(self, count: int) -> None:
         """
         Sets the count of this RoutingActivityMetricValue.
-        metric count
+        Metric count
 
         :param count: The count of this RoutingActivityMetricValue.
         :type: int

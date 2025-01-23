@@ -55,8 +55,8 @@ class LearningAssignmentUserListing(object):
             'page_number': 'int',
             'total': 'int',
             'unfiltered_total': 'int',
-            'last_uri': 'str',
             'first_uri': 'str',
+            'last_uri': 'str',
             'self_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str',
@@ -69,8 +69,8 @@ class LearningAssignmentUserListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'unfiltered_total': 'unfilteredTotal',
-            'last_uri': 'lastUri',
             'first_uri': 'firstUri',
+            'last_uri': 'lastUri',
             'self_uri': 'selfUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
@@ -82,8 +82,8 @@ class LearningAssignmentUserListing(object):
         self._page_number = None
         self._total = None
         self._unfiltered_total = None
-        self._last_uri = None
         self._first_uri = None
+        self._last_uri = None
         self._self_uri = None
         self._next_uri = None
         self._previous_uri = None
@@ -210,30 +210,6 @@ class LearningAssignmentUserListing(object):
         self._unfiltered_total = unfiltered_total
 
     @property
-    def last_uri(self) -> str:
-        """
-        Gets the last_uri of this LearningAssignmentUserListing.
-
-
-        :return: The last_uri of this LearningAssignmentUserListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
-        """
-        Sets the last_uri of this LearningAssignmentUserListing.
-
-
-        :param last_uri: The last_uri of this LearningAssignmentUserListing.
-        :type: str
-        """
-        
-
-        self._last_uri = last_uri
-
-    @property
     def first_uri(self) -> str:
         """
         Gets the first_uri of this LearningAssignmentUserListing.
@@ -256,6 +232,30 @@ class LearningAssignmentUserListing(object):
         
 
         self._first_uri = first_uri
+
+    @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this LearningAssignmentUserListing.
+
+
+        :return: The last_uri of this LearningAssignmentUserListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this LearningAssignmentUserListing.
+
+
+        :param last_uri: The last_uri of this LearningAssignmentUserListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
 
     @property
     def self_uri(self) -> str:

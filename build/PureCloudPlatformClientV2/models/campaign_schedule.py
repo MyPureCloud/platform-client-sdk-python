@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DivisionedDomainEntityRef
+    from . import Reoccurrence
     from . import ScheduleInterval
 
 class CampaignSchedule(object):
@@ -57,6 +58,7 @@ class CampaignSchedule(object):
             'date_modified': 'datetime',
             'version': 'int',
             'intervals': 'list[ScheduleInterval]',
+            'recurrences': 'list[Reoccurrence]',
             'time_zone': 'str',
             'campaign': 'DivisionedDomainEntityRef',
             'self_uri': 'str'
@@ -69,6 +71,7 @@ class CampaignSchedule(object):
             'date_modified': 'dateModified',
             'version': 'version',
             'intervals': 'intervals',
+            'recurrences': 'recurrences',
             'time_zone': 'timeZone',
             'campaign': 'campaign',
             'self_uri': 'selfUri'
@@ -80,6 +83,7 @@ class CampaignSchedule(object):
         self._date_modified = None
         self._version = None
         self._intervals = None
+        self._recurrences = None
         self._time_zone = None
         self._campaign = None
         self._self_uri = None
@@ -227,6 +231,30 @@ class CampaignSchedule(object):
         
 
         self._intervals = intervals
+
+    @property
+    def recurrences(self) -> List['Reoccurrence']:
+        """
+        Gets the recurrences of this CampaignSchedule.
+        Recurring schedules of the campaign
+
+        :return: The recurrences of this CampaignSchedule.
+        :rtype: list[Reoccurrence]
+        """
+        return self._recurrences
+
+    @recurrences.setter
+    def recurrences(self, recurrences: List['Reoccurrence']) -> None:
+        """
+        Sets the recurrences of this CampaignSchedule.
+        Recurring schedules of the campaign
+
+        :param recurrences: The recurrences of this CampaignSchedule.
+        :type: list[Reoccurrence]
+        """
+        
+
+        self._recurrences = recurrences
 
     @property
     def time_zone(self) -> str:

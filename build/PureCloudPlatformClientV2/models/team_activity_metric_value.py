@@ -49,22 +49,31 @@ class TeamActivityMetricValue(object):
         """
         self.swagger_types = {
             'metric': 'str',
+            'qualifier': 'str',
+            'secondary_qualifier': 'str',
+            'entity_ids': 'list[str]',
             'count': 'int'
         }
 
         self.attribute_map = {
             'metric': 'metric',
+            'qualifier': 'qualifier',
+            'secondary_qualifier': 'secondaryQualifier',
+            'entity_ids': 'entityIds',
             'count': 'count'
         }
 
         self._metric = None
+        self._qualifier = None
+        self._secondary_qualifier = None
+        self._entity_ids = None
         self._count = None
 
     @property
     def metric(self) -> str:
         """
         Gets the metric of this TeamActivityMetricValue.
-        metric
+        Metric
 
         :return: The metric of this TeamActivityMetricValue.
         :rtype: str
@@ -75,7 +84,7 @@ class TeamActivityMetricValue(object):
     def metric(self, metric: str) -> None:
         """
         Sets the metric of this TeamActivityMetricValue.
-        metric
+        Metric
 
         :param metric: The metric of this TeamActivityMetricValue.
         :type: str
@@ -90,10 +99,82 @@ class TeamActivityMetricValue(object):
             self._metric = metric
 
     @property
+    def qualifier(self) -> str:
+        """
+        Gets the qualifier of this TeamActivityMetricValue.
+        Metric qualifier
+
+        :return: The qualifier of this TeamActivityMetricValue.
+        :rtype: str
+        """
+        return self._qualifier
+
+    @qualifier.setter
+    def qualifier(self, qualifier: str) -> None:
+        """
+        Sets the qualifier of this TeamActivityMetricValue.
+        Metric qualifier
+
+        :param qualifier: The qualifier of this TeamActivityMetricValue.
+        :type: str
+        """
+        
+
+        self._qualifier = qualifier
+
+    @property
+    def secondary_qualifier(self) -> str:
+        """
+        Gets the secondary_qualifier of this TeamActivityMetricValue.
+        Secondary metric qualifier
+
+        :return: The secondary_qualifier of this TeamActivityMetricValue.
+        :rtype: str
+        """
+        return self._secondary_qualifier
+
+    @secondary_qualifier.setter
+    def secondary_qualifier(self, secondary_qualifier: str) -> None:
+        """
+        Sets the secondary_qualifier of this TeamActivityMetricValue.
+        Secondary metric qualifier
+
+        :param secondary_qualifier: The secondary_qualifier of this TeamActivityMetricValue.
+        :type: str
+        """
+        
+
+        self._secondary_qualifier = secondary_qualifier
+
+    @property
+    def entity_ids(self) -> List[str]:
+        """
+        Gets the entity_ids of this TeamActivityMetricValue.
+        Entity ids for matching entities if details were requested
+
+        :return: The entity_ids of this TeamActivityMetricValue.
+        :rtype: list[str]
+        """
+        return self._entity_ids
+
+    @entity_ids.setter
+    def entity_ids(self, entity_ids: List[str]) -> None:
+        """
+        Sets the entity_ids of this TeamActivityMetricValue.
+        Entity ids for matching entities if details were requested
+
+        :param entity_ids: The entity_ids of this TeamActivityMetricValue.
+        :type: list[str]
+        """
+        
+
+        self._entity_ids = entity_ids
+
+    @property
     def count(self) -> int:
         """
         Gets the count of this TeamActivityMetricValue.
-        metric count
+        Metric count
 
         :return: The count of this TeamActivityMetricValue.
         :rtype: int
@@ -104,7 +185,7 @@ class TeamActivityMetricValue(object):
     def count(self, count: int) -> None:
         """
         Sets the count of this TeamActivityMetricValue.
-        metric count
+        Metric count
 
         :param count: The count of this TeamActivityMetricValue.
         :type: int

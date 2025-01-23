@@ -944,6 +944,7 @@ from .models.conversation_callback_event_topic_wrapup import ConversationCallbac
 from .models.conversation_categories_entity_listing import ConversationCategoriesEntityListing
 from .models.conversation_category import ConversationCategory
 from .models.conversation_channel import ConversationChannel
+from .models.conversation_channel_location import ConversationChannelLocation
 from .models.conversation_channel_metadata import ConversationChannelMetadata
 from .models.conversation_chat import ConversationChat
 from .models.conversation_chat_event_topic_chat_conversation import ConversationChatEventTopicChatConversation
@@ -2150,6 +2151,7 @@ from .models.historical_adherence_query_result import HistoricalAdherenceQueryRe
 from .models.historical_data import HistoricalData
 from .models.historical_import_delete_job_response import HistoricalImportDeleteJobResponse
 from .models.historical_import_status import HistoricalImportStatus
+from .models.historical_import_status_job_response import HistoricalImportStatusJobResponse
 from .models.historical_import_status_listing import HistoricalImportStatusListing
 from .models.historical_shrinkage_activity_category_response import HistoricalShrinkageActivityCategoryResponse
 from .models.historical_shrinkage_activity_code_response import HistoricalShrinkageActivityCodeResponse
@@ -3249,6 +3251,7 @@ from .models.published_survey_form_reference import PublishedSurveyFormReference
 from .models.punctuality_event import PunctualityEvent
 from .models.pure_cloud import PureCloud
 from .models.pure_engage import PureEngage
+from .models.push_integration import PushIntegration
 from .models.qm_audit_query_request import QMAuditQueryRequest
 from .models.quality_audit_log_message import QualityAuditLogMessage
 from .models.quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
@@ -4564,6 +4567,7 @@ from .models.validate_work_plan_response import ValidateWorkPlanResponse
 from .models.validation_error import ValidationError
 from .models.validation_limits import ValidationLimits
 from .models.validation_result import ValidationResult
+from .models.validation_service_async_response import ValidationServiceAsyncResponse
 from .models.validation_service_request import ValidationServiceRequest
 from .models.value_wrapper_activity_plan_service_goal_impact_overrides import ValueWrapperActivityPlanServiceGoalImpactOverrides
 from .models.value_wrapper_date import ValueWrapperDate

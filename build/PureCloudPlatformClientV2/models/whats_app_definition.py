@@ -32,6 +32,10 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import Button
+    from . import MessageFooter
+    from . import MessageHeader
 
 class WhatsAppDefinition(object):
     """
@@ -50,18 +54,27 @@ class WhatsAppDefinition(object):
         self.swagger_types = {
             'name': 'str',
             'namespace': 'str',
-            'language': 'str'
+            'language': 'str',
+            'buttons': 'list[Button]',
+            'message_footer': 'MessageFooter',
+            'header': 'MessageHeader'
         }
 
         self.attribute_map = {
             'name': 'name',
             'namespace': 'namespace',
-            'language': 'language'
+            'language': 'language',
+            'buttons': 'buttons',
+            'message_footer': 'messageFooter',
+            'header': 'header'
         }
 
         self._name = None
         self._namespace = None
         self._language = None
+        self._buttons = None
+        self._message_footer = None
+        self._header = None
 
     @property
     def name(self) -> str:
@@ -134,6 +147,78 @@ class WhatsAppDefinition(object):
         
 
         self._language = language
+
+    @property
+    def buttons(self) -> List['Button']:
+        """
+        Gets the buttons of this WhatsAppDefinition.
+        List of buttons to be included in the WhatsApp messages channel
+
+        :return: The buttons of this WhatsAppDefinition.
+        :rtype: list[Button]
+        """
+        return self._buttons
+
+    @buttons.setter
+    def buttons(self, buttons: List['Button']) -> None:
+        """
+        Sets the buttons of this WhatsAppDefinition.
+        List of buttons to be included in the WhatsApp messages channel
+
+        :param buttons: The buttons of this WhatsAppDefinition.
+        :type: list[Button]
+        """
+        
+
+        self._buttons = buttons
+
+    @property
+    def message_footer(self) -> 'MessageFooter':
+        """
+        Gets the message_footer of this WhatsAppDefinition.
+        Footer for the message in the WhatsApp messages channel
+
+        :return: The message_footer of this WhatsAppDefinition.
+        :rtype: MessageFooter
+        """
+        return self._message_footer
+
+    @message_footer.setter
+    def message_footer(self, message_footer: 'MessageFooter') -> None:
+        """
+        Sets the message_footer of this WhatsAppDefinition.
+        Footer for the message in the WhatsApp messages channel
+
+        :param message_footer: The message_footer of this WhatsAppDefinition.
+        :type: MessageFooter
+        """
+        
+
+        self._message_footer = message_footer
+
+    @property
+    def header(self) -> 'MessageHeader':
+        """
+        Gets the header of this WhatsAppDefinition.
+        Header for the message in the WhatsApp messages channel
+
+        :return: The header of this WhatsAppDefinition.
+        :rtype: MessageHeader
+        """
+        return self._header
+
+    @header.setter
+    def header(self, header: 'MessageHeader') -> None:
+        """
+        Sets the header of this WhatsAppDefinition.
+        Header for the message in the WhatsApp messages channel
+
+        :param header: The header of this WhatsAppDefinition.
+        :type: MessageHeader
+        """
+        
+
+        self._header = header
 
     def to_dict(self):
         """

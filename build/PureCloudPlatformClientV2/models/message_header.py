@@ -48,13 +48,70 @@ class MessageHeader(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'type': 'str',
+            'content': 'str'
         }
 
         self.attribute_map = {
-            
+            'type': 'type',
+            'content': 'content'
         }
 
+        self._type = None
+        self._content = None
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this MessageHeader.
+        Defines the content type of the Header in message
+
+        :return: The type of this MessageHeader.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this MessageHeader.
+        Defines the content type of the Header in message
+
+        :param type: The type of this MessageHeader.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["Text", "Image"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def content(self) -> str:
+        """
+        Gets the content of this MessageHeader.
+        Content associated with the header in the message
+
+        :return: The content of this MessageHeader.
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content: str) -> None:
+        """
+        Sets the content of this MessageHeader.
+        Content associated with the header in the message
+
+        :param content: The content of this MessageHeader.
+        :type: str
+        """
+        
+
+        self._content = content
 
     def to_dict(self):
         """

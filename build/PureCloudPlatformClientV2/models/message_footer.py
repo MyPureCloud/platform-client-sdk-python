@@ -48,13 +48,70 @@ class MessageFooter(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'type': 'str',
+            'content': 'str'
         }
 
         self.attribute_map = {
-            
+            'type': 'type',
+            'content': 'content'
         }
 
+        self._type = None
+        self._content = None
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this MessageFooter.
+        Defines the content type of the footer in message
+
+        :return: The type of this MessageFooter.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this MessageFooter.
+        Defines the content type of the footer in message
+
+        :param type: The type of this MessageFooter.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["Text"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def content(self) -> str:
+        """
+        Gets the content of this MessageFooter.
+        Content associated with the footer in the message
+
+        :return: The content of this MessageFooter.
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content: str) -> None:
+        """
+        Sets the content of this MessageFooter.
+        Content associated with the footer in the message
+
+        :param content: The content of this MessageFooter.
+        :type: str
+        """
+        
+
+        self._content = content
 
     def to_dict(self):
         """

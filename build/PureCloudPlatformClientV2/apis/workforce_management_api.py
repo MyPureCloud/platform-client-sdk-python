@@ -154,6 +154,7 @@ from ..models import ForecastPlanningGroupsResponse
 from ..models import GenerateBuForecastRequest
 from ..models import GetAgentsWorkPlansRequest
 from ..models import HistoricalImportDeleteJobResponse
+from ..models import HistoricalImportStatusJobResponse
 from ..models import HistoricalImportStatusListing
 from ..models import HrisTimeOffTypesJobResponse
 from ..models import HrisTimeOffTypesResponse
@@ -243,6 +244,7 @@ from ..models import UserStaffingGroupListing
 from ..models import UserTimeOffIntegrationStatusResponse
 from ..models import UserTimeOffIntegrationStatusResponseListing
 from ..models import ValidateWorkPlanResponse
+from ..models import ValidationServiceAsyncResponse
 from ..models import ValidationServiceRequest
 from ..models import WaitlistPositionListing
 from ..models import WeekScheduleListResponse
@@ -7448,6 +7450,84 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='HistoricalImportStatusListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_historicaldata_importstatus_job_id(self, job_id: str, **kwargs) -> 'HistoricalImportStatusJobResponse':
+        """
+        Retrieves status of the historical data imports associated with job id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_historicaldata_importstatus_job_id(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The job Id of the historical data import request (required)
+        :return: HistoricalImportStatusJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_historicaldata_importstatus_job_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_historicaldata_importstatus_job_id`")
+
+
+        resource_path = '/api/v2/workforcemanagement/historicaldata/importstatus/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='HistoricalImportStatusJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -17095,7 +17175,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_historicaldata_validate(self, **kwargs) -> None:
+    def post_workforcemanagement_historicaldata_validate(self, **kwargs) -> 'ValidationServiceAsyncResponse':
         """
         Trigger validation process for historical import
         
@@ -17111,7 +17191,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param ValidationServiceRequest body: body
-        :return: None
+        :return: ValidationServiceAsyncResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17165,7 +17245,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ValidationServiceAsyncResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
