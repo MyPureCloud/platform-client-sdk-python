@@ -14,8 +14,9 @@
 | **value** | float |  | [optional] |
 | **status** | str |  | [optional] |
 | **media_type** | str |  | [optional] |
+| **topic** | str |  | [optional] |
 | **comparison_operator** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

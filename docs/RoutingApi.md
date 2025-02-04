@@ -148,7 +148,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_queue**](#put_routing_queue) | Update a queue|
 |[**put_routing_settings**](#put_routing_settings) | Update an organization&#39;s routing settings|
 |[**put_routing_settings_transcription**](#put_routing_settings_transcription) | Update Transcription Settings|
-|[**put_routing_sms_phonenumber**](#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
 |[**put_routing_user_directroutingbackup_settings**](#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_utilization**](#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
@@ -7310,56 +7309,6 @@ except ApiException as e:
 [**TranscriptionSettings**](TranscriptionSettings)
 
 
-## put_routing_sms_phonenumber
-
-> [**SmsPhoneNumber**](SmsPhoneNumber) put_routing_sms_phonenumber(phone_number_id, body)
-
-
-Update a phone number provisioned for SMS.
-
-Wraps PUT /api/v2/routing/sms/phonenumbers/{phoneNumberId} 
-
-Requires ALL permissions: 
-
-* sms:phoneNumber:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-phone_number_id = 'phone_number_id_example' # str | phone number
-body = PureCloudPlatformClientV2.SmsPhoneNumber() # SmsPhoneNumber | SmsPhoneNumber
-
-try:
-    # Update a phone number provisioned for SMS.
-    api_response = api_instance.put_routing_sms_phonenumber(phone_number_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RoutingApi->put_routing_sms_phonenumber: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **phone_number_id** | **str**| phone number |  |
-| **body** | [**SmsPhoneNumber**](SmsPhoneNumber)| SmsPhoneNumber |  |
-
-### Return type
-
-[**SmsPhoneNumber**](SmsPhoneNumber)
-
-
 ## put_routing_user_directroutingbackup_settings
 
 > [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) put_routing_user_directroutingbackup_settings(user_id, body)
@@ -7710,4 +7659,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

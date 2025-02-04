@@ -18,15 +18,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_conversation_categories**](#get_speechandtextanalytics_conversation_categories) | Get the list of detected Speech and Text Analytics categories of conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturls**](#get_speechandtextanalytics_conversation_communication_transcripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation|
+|[**get_speechandtextanalytics_conversation_summaries**](#get_speechandtextanalytics_conversation_summaries) | Get conversation summaries by conversation id.|
 |[**get_speechandtextanalytics_dictionaryfeedback**](#get_speechandtextanalytics_dictionaryfeedback) | Get the list of Speech &amp; Text Analytics dictionary feedbacks|
 |[**get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](#get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Get a Speech &amp; Text Analytics dictionary feedback by id|
 |[**get_speechandtextanalytics_program**](#get_speechandtextanalytics_program) | Get a Speech &amp; Text Analytics program by id|
 |[**get_speechandtextanalytics_program_mappings**](#get_speechandtextanalytics_program_mappings) | Get Speech &amp; Text Analytics program mappings to queues and flows by id|
+|[**get_speechandtextanalytics_program_settings_insights**](#get_speechandtextanalytics_program_settings_insights) | Get AI Insights settings of a program|
 |[**get_speechandtextanalytics_program_transcriptionengines**](#get_speechandtextanalytics_program_transcriptionengines) | Get transcription engine settings of a program|
 |[**get_speechandtextanalytics_programs**](#get_speechandtextanalytics_programs) | Get the list of Speech &amp; Text Analytics programs|
 |[**get_speechandtextanalytics_programs_general_job**](#get_speechandtextanalytics_programs_general_job) | Get a Speech &amp; Text Analytics general program job by id|
 |[**get_speechandtextanalytics_programs_mappings**](#get_speechandtextanalytics_programs_mappings) | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows|
 |[**get_speechandtextanalytics_programs_publishjob**](#get_speechandtextanalytics_programs_publishjob) | Get a Speech &amp; Text Analytics publish programs job by id|
+|[**get_speechandtextanalytics_programs_settings_insights**](#get_speechandtextanalytics_programs_settings_insights) | Get the list of program AI Insights settings for the organization|
 |[**get_speechandtextanalytics_programs_transcriptionengines_dialects**](#get_speechandtextanalytics_programs_transcriptionengines_dialects) | Get supported dialects for each transcription engine|
 |[**get_speechandtextanalytics_programs_unpublished**](#get_speechandtextanalytics_programs_unpublished) | Get the list of Speech &amp; Text Analytics unpublished programs|
 |[**get_speechandtextanalytics_sentiment_dialects**](#get_speechandtextanalytics_sentiment_dialects) | Get the list of Speech &amp; Text Analytics sentiment supported dialects|
@@ -54,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](#put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Update existing Speech &amp; Text Analytics dictionary feedback by id|
 |[**put_speechandtextanalytics_program**](#put_speechandtextanalytics_program) | Update existing Speech &amp; Text Analytics program|
 |[**put_speechandtextanalytics_program_mappings**](#put_speechandtextanalytics_program_mappings) | Set Speech &amp; Text Analytics program mappings to queues and flows|
+|[**put_speechandtextanalytics_program_settings_insights**](#put_speechandtextanalytics_program_settings_insights) | Update AI Insights settings of a program|
 |[**put_speechandtextanalytics_program_transcriptionengines**](#put_speechandtextanalytics_program_transcriptionengines) | Update transcription engine settings of a program|
 |[**put_speechandtextanalytics_settings**](#put_speechandtextanalytics_settings) | Update Speech And Text Analytics Settings|
 |[**put_speechandtextanalytics_topic**](#put_speechandtextanalytics_topic) | Update existing Speech &amp; Text Analytics topic|
@@ -650,6 +654,56 @@ except ApiException as e:
 [**TranscriptUrls**](TranscriptUrls)
 
 
+## get_speechandtextanalytics_conversation_summaries
+
+> [**SpeechTextAnalyticsConversationSummaryListing**](SpeechTextAnalyticsConversationSummaryListing) get_speechandtextanalytics_conversation_summaries(conversation_id)
+
+
+Get conversation summaries by conversation id.
+
+Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/summaries 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:aiSummary:view
+* recording:recording:view
+* recording:recording:viewSensitiveData
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+conversation_id = 'conversation_id_example' # str | The conversation ID of the summaries
+
+try:
+    # Get conversation summaries by conversation id.
+    api_response = api_instance.get_speechandtextanalytics_conversation_summaries(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation_summaries: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| The conversation ID of the summaries |  |
+
+### Return type
+
+[**SpeechTextAnalyticsConversationSummaryListing**](SpeechTextAnalyticsConversationSummaryListing)
+
+
 ## get_speechandtextanalytics_dictionaryfeedback
 
 > [**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing) get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, next_page=next_page, page_size=page_size)
@@ -844,6 +898,55 @@ except ApiException as e:
 ### Return type
 
 [**ProgramMappings**](ProgramMappings)
+
+
+## get_speechandtextanalytics_program_settings_insights
+
+> [**ProgramInsightsSettings**](ProgramInsightsSettings) get_speechandtextanalytics_program_settings_insights(program_id)
+
+
+Get AI Insights settings of a program
+
+Wraps GET /api/v2/speechandtextanalytics/programs/{programId}/settings/insights 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+* speechAndTextAnalytics:insightsSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+program_id = 'program_id_example' # str | The id of the program
+
+try:
+    # Get AI Insights settings of a program
+    api_response = api_instance.get_speechandtextanalytics_program_settings_insights(program_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_program_settings_insights: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| The id of the program |  |
+
+### Return type
+
+[**ProgramInsightsSettings**](ProgramInsightsSettings)
 
 
 ## get_speechandtextanalytics_program_transcriptionengines
@@ -1093,6 +1196,59 @@ except ApiException as e:
 ### Return type
 
 [**ProgramJob**](ProgramJob)
+
+
+## get_speechandtextanalytics_programs_settings_insights
+
+> [**ProgramInsightsSettingsEntityListing**](ProgramInsightsSettingsEntityListing) get_speechandtextanalytics_programs_settings_insights(page_size=page_size, page_number=page_number, program_ids=program_ids)
+
+
+Get the list of program AI Insights settings for the organization
+
+Wraps GET /api/v2/speechandtextanalytics/programs/settings/insights 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+* speechAndTextAnalytics:insightsSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+page_size = 100 # int | The page size for the listing. The max that will be returned is 100. (optional) (default to 100)
+page_number = 1 # int | The page number for the listing (optional) (default to 1)
+program_ids = ['program_ids_example'] # list[str] | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. (optional)
+
+try:
+    # Get the list of program AI Insights settings for the organization
+    api_response = api_instance.get_speechandtextanalytics_programs_settings_insights(page_size=page_size, page_number=page_number, program_ids=program_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs_settings_insights: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 100. | [optional] [default to 100] |
+| **page_number** | **int**| The page number for the listing | [optional] [default to 1] |
+| **program_ids** | [**list[str]**](str)| Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. | [optional]  |
+
+### Return type
+
+[**ProgramInsightsSettingsEntityListing**](ProgramInsightsSettingsEntityListing)
 
 
 ## get_speechandtextanalytics_programs_transcriptionengines_dialects
@@ -2406,6 +2562,57 @@ except ApiException as e:
 [**ProgramMappings**](ProgramMappings)
 
 
+## put_speechandtextanalytics_program_settings_insights
+
+> [**ProgramInsightsSettings**](ProgramInsightsSettings) put_speechandtextanalytics_program_settings_insights(program_id, body)
+
+
+Update AI Insights settings of a program
+
+Wraps PUT /api/v2/speechandtextanalytics/programs/{programId}/settings/insights 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:edit
+* speechAndTextAnalytics:insightsSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+program_id = 'program_id_example' # str | The id of the program
+body = PureCloudPlatformClientV2.InsightsSettingsRequest() # InsightsSettingsRequest | Program AI Insights setting
+
+try:
+    # Update AI Insights settings of a program
+    api_response = api_instance.put_speechandtextanalytics_program_settings_insights(program_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_program_settings_insights: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| The id of the program |  |
+| **body** | [**InsightsSettingsRequest**](InsightsSettingsRequest)| Program AI Insights setting |  |
+
+### Return type
+
+[**ProgramInsightsSettings**](ProgramInsightsSettings)
+
+
 ## put_speechandtextanalytics_program_transcriptionengines
 
 > [**ProgramTranscriptionEngines**](ProgramTranscriptionEngines) put_speechandtextanalytics_program_transcriptionengines(program_id, body)
@@ -2554,4 +2761,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

@@ -77,8 +77,6 @@ except ApiException as e:
 
 Create upload presigned URL for draft function package file.
 
-post_integrations_action_draft_function_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/function/upload 
 
 Requires ANY permissions: 
@@ -464,4 +462,4 @@ except ApiException as e:
 [**UploadUrlResponse**](UploadUrlResponse)
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

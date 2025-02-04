@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_user_directroutingbackup_settings**](#delete_routing_user_directroutingbackup_settings) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
 |[**delete_routing_user_utilization**](#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_user**](#delete_user) | Delete user|
+|[**delete_user_externalid_authority_name_external_key**](#delete_user_externalid_authority_name_external_key) | Delete the external identifier for user.|
 |[**delete_user_routinglanguage**](#delete_user_routinglanguage) | Remove a routing language from a user|
 |[**delete_user_routingskill**](#delete_user_routingskill) | Remove a routing skill from a user|
 |[**delete_user_station_associatedstation**](#delete_user_station_associatedstation) | Clear associated station|
@@ -36,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_adjacents**](#get_user_adjacents) | Get adjacents|
 |[**get_user_callforwarding**](#get_user_callforwarding) | Get a user&#39;s CallForwarding|
 |[**get_user_directreports**](#get_user_directreports) | Get direct reports|
+|[**get_user_externalid**](#get_user_externalid) | Get the external identifiers for a user.|
+|[**get_user_externalid_authority_name**](#get_user_externalid_authority_name) | Get the external identifier of user for an authority.|
 |[**get_user_favorites**](#get_user_favorites) | Deprecated; will be revived with new contract|
 |[**get_user_geolocation**](#get_user_geolocation) | Get a user&#39;s Geolocation|
 |[**get_user_outofoffice**](#get_user_outofoffice) | Get a OutOfOffice|
@@ -57,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_users_development_activities**](#get_users_development_activities) | Get list of Development Activities|
 |[**get_users_development_activities_me**](#get_users_development_activities_me) | Get list of Development Activities for current user|
 |[**get_users_development_activity**](#get_users_development_activity) | Get a Development Activity|
+|[**get_users_externalid_authority_name_external_key**](#get_users_externalid_authority_name_external_key) | Get the user associated with external identifier.|
 |[**get_users_me**](#get_users_me) | Get current user details.|
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**patch_user**](#patch_user) | Update user|
@@ -390,6 +394,57 @@ except ApiException as e:
 ### Return type
 
 **object**
+
+
+## delete_user_externalid_authority_name_external_key
+
+>  delete_user_externalid_authority_name_external_key(user_id, authority_name, external_key)
+
+
+Delete the external identifier for user.
+
+Wraps DELETE /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+authority_name = 'authority_name_example' # str | Authority Name
+external_key = 'external_key_example' # str | External Key
+
+try:
+    # Delete the external identifier for user.
+    api_instance.delete_user_externalid_authority_name_external_key(user_id, authority_name, external_key)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_user_externalid_authority_name_external_key: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **authority_name** | **str**| Authority Name |  |
+| **external_key** | **str**| External Key |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_user_routinglanguage
@@ -1593,6 +1648,104 @@ except ApiException as e:
 [**list[User]**](User)
 
 
+## get_user_externalid
+
+> [**list[UserExternalIdentifier]**](UserExternalIdentifier) get_user_externalid(user_id)
+
+
+Get the external identifiers for a user.
+
+Wraps GET /api/v2/users/{userId}/externalid 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get the external identifiers for a user.
+    api_response = api_instance.get_user_externalid(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_externalid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+
+### Return type
+
+[**list[UserExternalIdentifier]**](UserExternalIdentifier)
+
+
+## get_user_externalid_authority_name
+
+> [**UserExternalIdentifier**](UserExternalIdentifier) get_user_externalid_authority_name(user_id, authority_name)
+
+
+Get the external identifier of user for an authority.
+
+Authority name and external key are case sensitive.
+
+Wraps GET /api/v2/users/{userId}/externalid/{authorityName} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+authority_name = 'authority_name_example' # str | Authority Name
+
+try:
+    # Get the external identifier of user for an authority.
+    api_response = api_instance.get_user_externalid_authority_name(user_id, authority_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_externalid_authority_name: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **authority_name** | **str**| Authority Name |  |
+
+### Return type
+
+[**UserExternalIdentifier**](UserExternalIdentifier)
+
+
 ## get_user_favorites
 
 > [**UserEntityListing**](UserEntityListing) get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
@@ -2713,6 +2866,59 @@ except ApiException as e:
 ### Return type
 
 [**DevelopmentActivity**](DevelopmentActivity)
+
+
+## get_users_externalid_authority_name_external_key
+
+> [**User**](User) get_users_externalid_authority_name_external_key(authority_name, external_key, expand=expand)
+
+
+Get the user associated with external identifier.
+
+Authority name and external key are case sensitive.
+
+Wraps GET /api/v2/users/externalid/{authorityName}/{externalKey} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+authority_name = 'authority_name_example' # str | Authority Name
+external_key = 'external_key_example' # str | External Key
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Get the user associated with external identifier.
+    api_response = api_instance.get_users_externalid_authority_name_external_key(authority_name, external_key, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_externalid_authority_name_external_key: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **authority_name** | **str**| Authority Name |  |
+| **external_key** | **str**| External Key |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+
+### Return type
+
+[**User**](User)
 
 
 ## get_users_me
@@ -5078,4 +5284,4 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

@@ -11,8 +11,8 @@
 | **page_number** | int |  | [optional] |
 | **total** | int |  | [optional] |
 | **contacts_count** | int |  | [optional] |
-| **first_uri** | str |  | [optional] |
 | **last_uri** | str |  | [optional] |
+| **first_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
 | **next_uri** | str |  | [optional] |
 | **previous_uri** | str |  | [optional] |
@@ -20,4 +20,4 @@
 
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

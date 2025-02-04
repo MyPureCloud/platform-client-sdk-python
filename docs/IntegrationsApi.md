@@ -562,8 +562,6 @@ except ApiException as e:
 
 Get draft function settings for Action
 
-get_integrations_action_draft_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/function 
 
 Requires ANY permissions: 
@@ -763,8 +761,6 @@ except ApiException as e:
 
 
 Get published function settings for Action
-
-get_integrations_action_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/actions/{actionId}/function 
 
@@ -1210,8 +1206,6 @@ except ApiException as e:
 
 
 Get action function settings for Action
-
-get_integrations_actions_functions_runtimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/actions/functions/runtimes 
 
@@ -3584,8 +3578,6 @@ except ApiException as e:
 
 Create upload presigned URL for draft function package file.
 
-post_integrations_action_draft_function_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/function/upload 
 
 Requires ANY permissions: 
@@ -4195,8 +4187,6 @@ except ApiException as e:
 
 Update draft function settings.
 
-put_integrations_action_draft_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/integrations/actions/{actionId}/draft/function 
 
 Requires ANY permissions: 
@@ -4488,4 +4478,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_
