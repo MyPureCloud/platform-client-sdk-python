@@ -16,9 +16,11 @@
 | **max_calls_per_agent** | float | The maximum number of calls per agent to set a campaign to. Required for the &#39;setCampaignMaxCallsPerAgent&#39; action. | [optional] |
 | **queue** | [DomainEntityRef](DomainEntityRef) | The queue a campaign to. Required for the &#39;changeCampaignQueue&#39; action. | [optional] |
 | **messages_per_minute** | int | The number of messages per minute to set a messaging campaign to. | [optional] |
+| **sms_messages_per_minute** | int | The number of messages per minute to set a SMS messaging campaign to. | [optional] |
+| **email_messages_per_minute** | int | The number of messages per minute to set a Email messaging campaign to. | [optional] |
 | **sms_content_template** | [DomainEntityRef](DomainEntityRef) | The content template to set a SMS campaign to. | [optional] |
 | **email_content_template** | [DomainEntityRef](DomainEntityRef) | The content template to set a Email campaign to. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

@@ -269,7 +269,9 @@ class ViewFilter(object):
             'conferenced': 'bool',
             'video': 'bool',
             'linked_interaction': 'bool',
-            'recommendation_sources': 'list[str]'
+            'recommendation_sources': 'list[str]',
+            'evaluation_role': 'str',
+            'comparison_queue_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -487,7 +489,9 @@ class ViewFilter(object):
             'conferenced': 'conferenced',
             'video': 'video',
             'linked_interaction': 'linkedInteraction',
-            'recommendation_sources': 'recommendationSources'
+            'recommendation_sources': 'recommendationSources',
+            'evaluation_role': 'evaluationRole',
+            'comparison_queue_ids': 'comparisonQueueIds'
         }
 
         self._media_types = None
@@ -705,6 +709,8 @@ class ViewFilter(object):
         self._video = None
         self._linked_interaction = None
         self._recommendation_sources = None
+        self._evaluation_role = None
+        self._comparison_queue_ids = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5885,6 +5891,59 @@ class ViewFilter(object):
         
 
         self._recommendation_sources = recommendation_sources
+
+    @property
+    def evaluation_role(self) -> str:
+        """
+        Gets the evaluation_role of this ViewFilter.
+        Sets the role when viewing agent evaluations
+
+        :return: The evaluation_role of this ViewFilter.
+        :rtype: str
+        """
+        return self._evaluation_role
+
+    @evaluation_role.setter
+    def evaluation_role(self, evaluation_role: str) -> None:
+        """
+        Sets the evaluation_role of this ViewFilter.
+        Sets the role when viewing agent evaluations
+
+        :param evaluation_role: The evaluation_role of this ViewFilter.
+        :type: str
+        """
+        if isinstance(evaluation_role, int):
+            evaluation_role = str(evaluation_role)
+        allowed_values = ["Evaluator", "Supervisor"]
+        if evaluation_role.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for evaluation_role -> " + evaluation_role)
+            self._evaluation_role = "outdated_sdk_version"
+        else:
+            self._evaluation_role = evaluation_role
+
+    @property
+    def comparison_queue_ids(self) -> List[str]:
+        """
+        Gets the comparison_queue_ids of this ViewFilter.
+        The queue ids are used to for comparison to the primary queue filter in reporting
+
+        :return: The comparison_queue_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._comparison_queue_ids
+
+    @comparison_queue_ids.setter
+    def comparison_queue_ids(self, comparison_queue_ids: List[str]) -> None:
+        """
+        Sets the comparison_queue_ids of this ViewFilter.
+        The queue ids are used to for comparison to the primary queue filter in reporting
+
+        :param comparison_queue_ids: The comparison_queue_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._comparison_queue_ids = comparison_queue_ids
 
     def to_dict(self):
         """

@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import OutboundMessagingMessagingCampaignConfigChangeErrorDetail
     from . import OutboundMessagingMessagingCampaignConfigChangeSmsConfig
     from . import OutboundMessagingMessagingCampaignConfigChangeUriReference
+    from . import OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig
 
 class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
     """
@@ -65,6 +66,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'rule_sets': 'list[OutboundMessagingMessagingCampaignConfigChangeUriReference]',
             'sms_config': 'OutboundMessagingMessagingCampaignConfigChangeSmsConfig',
             'email_config': 'OutboundMessagingMessagingCampaignConfigChangeEmailConfig',
+            'whats_app_config': 'OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig',
             'errors': 'list[OutboundMessagingMessagingCampaignConfigChangeErrorDetail]',
             'id': 'str',
             'name': 'str',
@@ -86,6 +88,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
             'rule_sets': 'ruleSets',
             'sms_config': 'smsConfig',
             'email_config': 'emailConfig',
+            'whats_app_config': 'whatsAppConfig',
             'errors': 'errors',
             'id': 'id',
             'name': 'name',
@@ -106,6 +109,7 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         self._rule_sets = None
         self._sms_config = None
         self._email_config = None
+        self._whats_app_config = None
         self._errors = None
         self._id = None
         self._name = None
@@ -382,6 +386,30 @@ class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign(object):
         
 
         self._email_config = email_config
+
+    @property
+    def whats_app_config(self) -> 'OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig':
+        """
+        Gets the whats_app_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+
+
+        :return: The whats_app_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :rtype: OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig
+        """
+        return self._whats_app_config
+
+    @whats_app_config.setter
+    def whats_app_config(self, whats_app_config: 'OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig') -> None:
+        """
+        Sets the whats_app_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+
+
+        :param whats_app_config: The whats_app_config of this OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign.
+        :type: OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig
+        """
+        
+
+        self._whats_app_config = whats_app_config
 
     @property
     def errors(self) -> List['OutboundMessagingMessagingCampaignConfigChangeErrorDetail']:

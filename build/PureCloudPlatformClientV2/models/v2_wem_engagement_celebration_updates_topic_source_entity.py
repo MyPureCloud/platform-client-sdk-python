@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import V2WemEngagementCelebrationUpdatesTopicContestCompleteData
 
 class V2WemEngagementCelebrationUpdatesTopicSourceEntity(object):
     """
@@ -49,16 +51,19 @@ class V2WemEngagementCelebrationUpdatesTopicSourceEntity(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'type': 'str'
+            'type': 'str',
+            'contest_complete_data': 'V2WemEngagementCelebrationUpdatesTopicContestCompleteData'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'type': 'type'
+            'type': 'type',
+            'contest_complete_data': 'contestCompleteData'
         }
 
         self._id = None
         self._type = None
+        self._contest_complete_data = None
 
     @property
     def id(self) -> str:
@@ -112,6 +117,30 @@ class V2WemEngagementCelebrationUpdatesTopicSourceEntity(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def contest_complete_data(self) -> 'V2WemEngagementCelebrationUpdatesTopicContestCompleteData':
+        """
+        Gets the contest_complete_data of this V2WemEngagementCelebrationUpdatesTopicSourceEntity.
+
+
+        :return: The contest_complete_data of this V2WemEngagementCelebrationUpdatesTopicSourceEntity.
+        :rtype: V2WemEngagementCelebrationUpdatesTopicContestCompleteData
+        """
+        return self._contest_complete_data
+
+    @contest_complete_data.setter
+    def contest_complete_data(self, contest_complete_data: 'V2WemEngagementCelebrationUpdatesTopicContestCompleteData') -> None:
+        """
+        Sets the contest_complete_data of this V2WemEngagementCelebrationUpdatesTopicSourceEntity.
+
+
+        :param contest_complete_data: The contest_complete_data of this V2WemEngagementCelebrationUpdatesTopicSourceEntity.
+        :type: V2WemEngagementCelebrationUpdatesTopicContestCompleteData
+        """
+        
+
+        self._contest_complete_data = contest_complete_data
 
     def to_dict(self):
         """

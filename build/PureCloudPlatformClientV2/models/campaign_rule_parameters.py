@@ -60,6 +60,8 @@ class CampaignRuleParameters(object):
             'max_calls_per_agent': 'float',
             'queue': 'DomainEntityRef',
             'messages_per_minute': 'int',
+            'sms_messages_per_minute': 'int',
+            'email_messages_per_minute': 'int',
             'sms_content_template': 'DomainEntityRef',
             'email_content_template': 'DomainEntityRef'
         }
@@ -75,6 +77,8 @@ class CampaignRuleParameters(object):
             'max_calls_per_agent': 'maxCallsPerAgent',
             'queue': 'queue',
             'messages_per_minute': 'messagesPerMinute',
+            'sms_messages_per_minute': 'smsMessagesPerMinute',
+            'email_messages_per_minute': 'emailMessagesPerMinute',
             'sms_content_template': 'smsContentTemplate',
             'email_content_template': 'emailContentTemplate'
         }
@@ -89,6 +93,8 @@ class CampaignRuleParameters(object):
         self._max_calls_per_agent = None
         self._queue = None
         self._messages_per_minute = None
+        self._sms_messages_per_minute = None
+        self._email_messages_per_minute = None
         self._sms_content_template = None
         self._email_content_template = None
 
@@ -346,6 +352,54 @@ class CampaignRuleParameters(object):
         
 
         self._messages_per_minute = messages_per_minute
+
+    @property
+    def sms_messages_per_minute(self) -> int:
+        """
+        Gets the sms_messages_per_minute of this CampaignRuleParameters.
+        The number of messages per minute to set a SMS messaging campaign to.
+
+        :return: The sms_messages_per_minute of this CampaignRuleParameters.
+        :rtype: int
+        """
+        return self._sms_messages_per_minute
+
+    @sms_messages_per_minute.setter
+    def sms_messages_per_minute(self, sms_messages_per_minute: int) -> None:
+        """
+        Sets the sms_messages_per_minute of this CampaignRuleParameters.
+        The number of messages per minute to set a SMS messaging campaign to.
+
+        :param sms_messages_per_minute: The sms_messages_per_minute of this CampaignRuleParameters.
+        :type: int
+        """
+        
+
+        self._sms_messages_per_minute = sms_messages_per_minute
+
+    @property
+    def email_messages_per_minute(self) -> int:
+        """
+        Gets the email_messages_per_minute of this CampaignRuleParameters.
+        The number of messages per minute to set a Email messaging campaign to.
+
+        :return: The email_messages_per_minute of this CampaignRuleParameters.
+        :rtype: int
+        """
+        return self._email_messages_per_minute
+
+    @email_messages_per_minute.setter
+    def email_messages_per_minute(self, email_messages_per_minute: int) -> None:
+        """
+        Sets the email_messages_per_minute of this CampaignRuleParameters.
+        The number of messages per minute to set a Email messaging campaign to.
+
+        :param email_messages_per_minute: The email_messages_per_minute of this CampaignRuleParameters.
+        :type: int
+        """
+        
+
+        self._email_messages_per_minute = email_messages_per_minute
 
     @property
     def sms_content_template(self) -> 'DomainEntityRef':

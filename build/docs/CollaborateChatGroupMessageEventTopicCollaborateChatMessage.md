@@ -13,7 +13,8 @@
 | **pcFrom** | [CollaborateChatGroupMessageEventTopicCollaborateChatEntity](CollaborateChatGroupMessageEventTopicCollaborateChatEntity) |  | [optional] |
 | **to** | [CollaborateChatGroupMessageEventTopicCollaborateChatEntity](CollaborateChatGroupMessageEventTopicCollaborateChatEntity) |  | [optional] |
 | **mentions** | [list[CollaborateChatGroupMessageEventTopicCollaborateChatEntity]](CollaborateChatGroupMessageEventTopicCollaborateChatEntity) |  | [optional] |
+| **notify_all** | bool |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

@@ -64,6 +64,7 @@ class CustomProvider(object):
             'sso_binding': 'str',
             'sign_authn_requests': 'bool',
             'provider_name': 'str',
+            'display_on_login': 'bool',
             'self_uri': 'str'
         }
 
@@ -84,6 +85,7 @@ class CustomProvider(object):
             'sso_binding': 'ssoBinding',
             'sign_authn_requests': 'signAuthnRequests',
             'provider_name': 'providerName',
+            'display_on_login': 'displayOnLogin',
             'self_uri': 'selfUri'
         }
 
@@ -103,6 +105,7 @@ class CustomProvider(object):
         self._sso_binding = None
         self._sign_authn_requests = None
         self._provider_name = None
+        self._display_on_login = None
         self._self_uri = None
 
     @property
@@ -498,6 +501,30 @@ class CustomProvider(object):
         
 
         self._provider_name = provider_name
+
+    @property
+    def display_on_login(self) -> bool:
+        """
+        Gets the display_on_login of this CustomProvider.
+
+
+        :return: The display_on_login of this CustomProvider.
+        :rtype: bool
+        """
+        return self._display_on_login
+
+    @display_on_login.setter
+    def display_on_login(self, display_on_login: bool) -> None:
+        """
+        Sets the display_on_login of this CustomProvider.
+
+
+        :param display_on_login: The display_on_login of this CustomProvider.
+        :type: bool
+        """
+        
+
+        self._display_on_login = display_on_login
 
     @property
     def self_uri(self) -> str:

@@ -848,7 +848,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         """
         if isinstance(delivery_status, int):
             delivery_status = str(delivery_status)
-        allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Published", "Queued", "Read", "Received", "Sent"]
+        allowed_values = ["DeliveryFailed", "DeliveryPushed", "DeliverySuccess", "Failed", "Published", "Queued", "Read", "Received", "Sent"]
         if delivery_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for delivery_status -> " + delivery_status)
             self._delivery_status = "outdated_sdk_version"

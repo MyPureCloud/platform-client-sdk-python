@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import CampaignRuleConditionGroup
     from . import CampaignRuleEntities
     from . import CampaignRuleExecutionSettings
+    from . import CampaignRuleWarning
 
 class CampaignRule(object):
     """
@@ -67,6 +68,7 @@ class CampaignRule(object):
             'campaign_rule_processing': 'str',
             'condition_groups': 'list[CampaignRuleConditionGroup]',
             'execution_settings': 'CampaignRuleExecutionSettings',
+            'warnings': 'list[CampaignRuleWarning]',
             'self_uri': 'str'
         }
 
@@ -84,6 +86,7 @@ class CampaignRule(object):
             'campaign_rule_processing': 'campaignRuleProcessing',
             'condition_groups': 'conditionGroups',
             'execution_settings': 'executionSettings',
+            'warnings': 'warnings',
             'self_uri': 'selfUri'
         }
 
@@ -100,6 +103,7 @@ class CampaignRule(object):
         self._campaign_rule_processing = None
         self._condition_groups = None
         self._execution_settings = None
+        self._warnings = None
         self._self_uri = None
 
     @property
@@ -418,6 +422,30 @@ class CampaignRule(object):
         
 
         self._execution_settings = execution_settings
+
+    @property
+    def warnings(self) -> List['CampaignRuleWarning']:
+        """
+        Gets the warnings of this CampaignRule.
+        A list of current warning conditions associated with the campaign rule.
+
+        :return: The warnings of this CampaignRule.
+        :rtype: list[CampaignRuleWarning]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings: List['CampaignRuleWarning']) -> None:
+        """
+        Sets the warnings of this CampaignRule.
+        A list of current warning conditions associated with the campaign rule.
+
+        :param warnings: The warnings of this CampaignRule.
+        :type: list[CampaignRuleWarning]
+        """
+        
+
+        self._warnings = warnings
 
     @property
     def self_uri(self) -> str:

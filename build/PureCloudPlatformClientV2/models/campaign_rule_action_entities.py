@@ -52,17 +52,23 @@ class CampaignRuleActionEntities(object):
         self.swagger_types = {
             'campaigns': 'list[DomainEntityRef]',
             'sequences': 'list[DomainEntityRef]',
+            'email_campaigns': 'list[DomainEntityRef]',
+            'sms_campaigns': 'list[DomainEntityRef]',
             'use_triggering_entity': 'bool'
         }
 
         self.attribute_map = {
             'campaigns': 'campaigns',
             'sequences': 'sequences',
+            'email_campaigns': 'emailCampaigns',
+            'sms_campaigns': 'smsCampaigns',
             'use_triggering_entity': 'useTriggeringEntity'
         }
 
         self._campaigns = None
         self._sequences = None
+        self._email_campaigns = None
+        self._sms_campaigns = None
         self._use_triggering_entity = None
 
     @property
@@ -112,6 +118,54 @@ class CampaignRuleActionEntities(object):
         
 
         self._sequences = sequences
+
+    @property
+    def email_campaigns(self) -> List['DomainEntityRef']:
+        """
+        Gets the email_campaigns of this CampaignRuleActionEntities.
+        The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
+
+        :return: The email_campaigns of this CampaignRuleActionEntities.
+        :rtype: list[DomainEntityRef]
+        """
+        return self._email_campaigns
+
+    @email_campaigns.setter
+    def email_campaigns(self, email_campaigns: List['DomainEntityRef']) -> None:
+        """
+        Sets the email_campaigns of this CampaignRuleActionEntities.
+        The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
+
+        :param email_campaigns: The email_campaigns of this CampaignRuleActionEntities.
+        :type: list[DomainEntityRef]
+        """
+        
+
+        self._email_campaigns = email_campaigns
+
+    @property
+    def sms_campaigns(self) -> List['DomainEntityRef']:
+        """
+        Gets the sms_campaigns of this CampaignRuleActionEntities.
+        The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
+
+        :return: The sms_campaigns of this CampaignRuleActionEntities.
+        :rtype: list[DomainEntityRef]
+        """
+        return self._sms_campaigns
+
+    @sms_campaigns.setter
+    def sms_campaigns(self, sms_campaigns: List['DomainEntityRef']) -> None:
+        """
+        Sets the sms_campaigns of this CampaignRuleActionEntities.
+        The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
+
+        :param sms_campaigns: The sms_campaigns of this CampaignRuleActionEntities.
+        :type: list[DomainEntityRef]
+        """
+        
+
+        self._sms_campaigns = sms_campaigns
 
     @property
     def use_triggering_entity(self) -> bool:

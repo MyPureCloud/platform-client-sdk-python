@@ -56,7 +56,8 @@ class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage(object):
             'body': 'str',
             'pcFrom': 'CollaborateChatAdhocMessageEventTopicCollaborateChatEntity',
             'to': 'CollaborateChatAdhocMessageEventTopicCollaborateChatEntity',
-            'mentions': 'list[CollaborateChatAdhocMessageEventTopicCollaborateChatEntity]'
+            'mentions': 'list[CollaborateChatAdhocMessageEventTopicCollaborateChatEntity]',
+            'notify_all': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage(object):
             'body': 'body',
             'pcFrom': 'from',
             'to': 'to',
-            'mentions': 'mentions'
+            'mentions': 'mentions',
+            'notify_all': 'notifyAll'
         }
 
         self._message_id = None
@@ -76,6 +78,7 @@ class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage(object):
         self._pcFrom = None
         self._to = None
         self._mentions = None
+        self._notify_all = None
 
     @property
     def message_id(self) -> str:
@@ -249,6 +252,30 @@ class CollaborateChatAdhocMessageEventTopicCollaborateChatMessage(object):
         
 
         self._mentions = mentions
+
+    @property
+    def notify_all(self) -> bool:
+        """
+        Gets the notify_all of this CollaborateChatAdhocMessageEventTopicCollaborateChatMessage.
+
+
+        :return: The notify_all of this CollaborateChatAdhocMessageEventTopicCollaborateChatMessage.
+        :rtype: bool
+        """
+        return self._notify_all
+
+    @notify_all.setter
+    def notify_all(self, notify_all: bool) -> None:
+        """
+        Sets the notify_all of this CollaborateChatAdhocMessageEventTopicCollaborateChatMessage.
+
+
+        :param notify_all: The notify_all of this CollaborateChatAdhocMessageEventTopicCollaborateChatMessage.
+        :type: bool
+        """
+        
+
+        self._notify_all = notify_all
 
     def to_dict(self):
         """

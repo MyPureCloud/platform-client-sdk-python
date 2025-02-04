@@ -592,6 +592,96 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_user_externalid_authority_name_external_key(self, user_id: str, authority_name: str, external_key: str, **kwargs) -> None:
+        """
+        Delete the external identifier for user.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_user_externalid_authority_name_external_key(user_id, authority_name, external_key, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :param str authority_name: Authority Name (required)
+        :param str external_key: External Key (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'authority_name', 'external_key']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_user_externalid_authority_name_external_key" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_user_externalid_authority_name_external_key`")
+        # verify the required parameter 'authority_name' is set
+        if ('authority_name' not in params) or (params['authority_name'] is None):
+            raise ValueError("Missing the required parameter `authority_name` when calling `delete_user_externalid_authority_name_external_key`")
+        # verify the required parameter 'external_key' is set
+        if ('external_key' not in params) or (params['external_key'] is None):
+            raise ValueError("Missing the required parameter `external_key` when calling `delete_user_externalid_authority_name_external_key`")
+
+
+        resource_path = '/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'authority_name' in params:
+            path_params['authorityName'] = params['authority_name']
+        if 'external_key' in params:
+            path_params['externalKey'] = params['external_key']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_user_routinglanguage(self, user_id: str, language_id: str, **kwargs) -> None:
         """
         Remove a routing language from a user
@@ -2536,6 +2626,168 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_user_externalid(self, user_id: str, **kwargs) -> List['UserExternalIdentifier']:
+        """
+        Get the external identifiers for a user.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_user_externalid(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :return: list[UserExternalIdentifier]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_externalid" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_user_externalid`")
+
+
+        resource_path = '/api/v2/users/{userId}/externalid'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[UserExternalIdentifier]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_user_externalid_authority_name(self, user_id: str, authority_name: str, **kwargs) -> 'UserExternalIdentifier':
+        """
+        Get the external identifier of user for an authority.
+        Authority name and external key are case sensitive.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_user_externalid_authority_name(user_id, authority_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :param str authority_name: Authority Name (required)
+        :return: UserExternalIdentifier
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'authority_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_externalid_authority_name" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_user_externalid_authority_name`")
+        # verify the required parameter 'authority_name' is set
+        if ('authority_name' not in params) or (params['authority_name'] is None):
+            raise ValueError("Missing the required parameter `authority_name` when calling `get_user_externalid_authority_name`")
+
+
+        resource_path = '/api/v2/users/{userId}/externalid/{authorityName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'authority_name' in params:
+            path_params['authorityName'] = params['authority_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserExternalIdentifier',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("get_user_favorites is deprecated")
     def get_user_favorites(self, user_id: str, **kwargs) -> 'UserEntityListing':
         """
@@ -4328,6 +4580,93 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DevelopmentActivity',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_externalid_authority_name_external_key(self, authority_name: str, external_key: str, **kwargs) -> 'User':
+        """
+        Get the user associated with external identifier.
+        Authority name and external key are case sensitive.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_externalid_authority_name_external_key(authority_name, external_key, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str authority_name: Authority Name (required)
+        :param str external_key: External Key (required)
+        :param list[str] expand: Which fields, if any, to expand
+        :return: User
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['authority_name', 'external_key', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_externalid_authority_name_external_key" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'authority_name' is set
+        if ('authority_name' not in params) or (params['authority_name'] is None):
+            raise ValueError("Missing the required parameter `authority_name` when calling `get_users_externalid_authority_name_external_key`")
+        # verify the required parameter 'external_key' is set
+        if ('external_key' not in params) or (params['external_key'] is None):
+            raise ValueError("Missing the required parameter `external_key` when calling `get_users_externalid_authority_name_external_key`")
+
+
+        resource_path = '/api/v2/users/externalid/{authorityName}/{externalKey}'.replace('{format}', 'json')
+        path_params = {}
+        if 'authority_name' in params:
+            path_params['authorityName'] = params['authority_name']
+        if 'external_key' in params:
+            path_params['externalKey'] = params['external_key']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='User',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

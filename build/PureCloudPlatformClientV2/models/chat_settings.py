@@ -48,14 +48,17 @@ class ChatSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'message_retention_period_days': 'int'
+            'message_retention_period_days': 'int',
+            'reactions_enabled': 'bool'
         }
 
         self.attribute_map = {
-            'message_retention_period_days': 'messageRetentionPeriodDays'
+            'message_retention_period_days': 'messageRetentionPeriodDays',
+            'reactions_enabled': 'reactionsEnabled'
         }
 
         self._message_retention_period_days = None
+        self._reactions_enabled = None
 
     @property
     def message_retention_period_days(self) -> int:
@@ -80,6 +83,30 @@ class ChatSettings(object):
         
 
         self._message_retention_period_days = message_retention_period_days
+
+    @property
+    def reactions_enabled(self) -> bool:
+        """
+        Gets the reactions_enabled of this ChatSettings.
+        Reactions enabled for org
+
+        :return: The reactions_enabled of this ChatSettings.
+        :rtype: bool
+        """
+        return self._reactions_enabled
+
+    @reactions_enabled.setter
+    def reactions_enabled(self, reactions_enabled: bool) -> None:
+        """
+        Sets the reactions_enabled of this ChatSettings.
+        Reactions enabled for org
+
+        :param reactions_enabled: The reactions_enabled of this ChatSettings.
+        :type: bool
+        """
+        
+
+        self._reactions_enabled = reactions_enabled
 
     def to_dict(self):
         """

@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_alerting_alert**](#delete_alerting_alert) | Delete an alert|
+|[**delete_alerting_alerts_all**](#delete_alerting_alerts_all) | Delete all alerts for the user|
 |[**delete_alerting_interactionstats_alert**](#delete_alerting_interactionstats_alert) | Delete an interaction stats alert|
 |[**delete_alerting_interactionstats_rule**](#delete_alerting_interactionstats_rule) | Delete an interaction stats rule|
 |[**delete_alerting_rule**](#delete_alerting_rule) | Delete a rule.|
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_alerting_interactionstats_rules**](#get_alerting_interactionstats_rules) | Get an interaction stats rule list|
 |[**get_alerting_rule**](#get_alerting_rule) | Get a rule.|
 |[**patch_alerting_alert**](#patch_alerting_alert) | Allows an entity to mute/snooze an alert or update the unread status of the alert.|
+|[**patch_alerting_alerts_all**](#patch_alerting_alerts_all) | Updates all alerts|
 |[**patch_alerting_alerts_bulk**](#patch_alerting_alerts_bulk) | Bulk alert updates|
 |[**patch_alerting_rules_bulk**](#patch_alerting_rules_bulk) | Bulk update of notification lists|
 |[**post_alerting_alerts_query**](#post_alerting_alerts_query) | Gets a paged list of alerts. The max page size is 50|
@@ -78,6 +80,50 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+
+## delete_alerting_alerts_all
+
+> object** delete_alerting_alerts_all()
+
+
+Delete all alerts for the user
+
+Wraps DELETE /api/v2/alerting/alerts/all 
+
+Requires ALL permissions: 
+
+* alerting:alert:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AlertingApi()
+
+try:
+    # Delete all alerts for the user
+    api_response = api_instance.delete_alerting_alerts_all()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AlertingApi->delete_alerting_alerts_all: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+**object**
 
 
 ## delete_alerting_interactionstats_alert
@@ -691,6 +737,54 @@ except ApiException as e:
 [**CommonAlert**](CommonAlert)
 
 
+## patch_alerting_alerts_all
+
+> object** patch_alerting_alerts_all(body=body)
+
+
+Updates all alerts
+
+Wraps PATCH /api/v2/alerting/alerts/all 
+
+Requires ALL permissions: 
+
+* alerting:alert:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AlertingApi()
+body = PureCloudPlatformClientV2.CommonAllAlertUpdateRequest() # CommonAllAlertUpdateRequest |  (optional)
+
+try:
+    # Updates all alerts
+    api_response = api_instance.patch_alerting_alerts_all(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AlertingApi->patch_alerting_alerts_all: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CommonAllAlertUpdateRequest**](CommonAllAlertUpdateRequest)|  | [optional]  |
+
+### Return type
+
+**object**
+
+
 ## patch_alerting_alerts_bulk
 
 > [**BulkResponse**](BulkResponse) patch_alerting_alerts_bulk(body)
@@ -1248,4 +1342,4 @@ except ApiException as e:
 [**CommonRule**](CommonRule)
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

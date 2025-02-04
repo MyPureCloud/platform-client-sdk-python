@@ -19,8 +19,9 @@
 | **campaign_rule_processing** | str | CampaignRule processing algorithm | [optional] |
 | **condition_groups** | [list[CampaignRuleConditionGroup]](CampaignRuleConditionGroup) | List of condition groups that are evaluated, used only with campaignRuleProcessing&#x3D;\&quot;v2\&quot; | [optional] |
 | **execution_settings** | [CampaignRuleExecutionSettings](CampaignRuleExecutionSettings) | CampaignRule execution settings | [optional] |
+| **warnings** | [list[CampaignRuleWarning]](CampaignRuleWarning) | A list of current warning conditions associated with the campaign rule. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 220.0.0_
+_PureCloudPlatformClientV2 221.0.0_

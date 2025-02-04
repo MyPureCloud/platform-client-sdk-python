@@ -57,6 +57,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         """
         self.swagger_types = {
             'conversation_id': 'str',
+            'queue_id': 'str',
             'participants': 'list[ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant]',
             'communication_ids': 'list[str]',
             'created_date': 'datetime',
@@ -77,6 +78,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
 
         self.attribute_map = {
             'conversation_id': 'conversationId',
+            'queue_id': 'queueId',
             'participants': 'participants',
             'communication_ids': 'communicationIds',
             'created_date': 'createdDate',
@@ -96,6 +98,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         }
 
         self._conversation_id = None
+        self._queue_id = None
         self._participants = None
         self._communication_ids = None
         self._created_date = None
@@ -136,6 +139,30 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         
 
         self._conversation_id = conversation_id
+
+    @property
+    def queue_id(self) -> str:
+        """
+        Gets the queue_id of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :return: The queue_id of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :rtype: str
+        """
+        return self._queue_id
+
+    @queue_id.setter
+    def queue_id(self, queue_id: str) -> None:
+        """
+        Sets the queue_id of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :param queue_id: The queue_id of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :type: str
+        """
+        
+
+        self._queue_id = queue_id
 
     @property
     def participants(self) -> List['ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant']:
@@ -231,7 +258,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         """
         if isinstance(message_type, int):
             message_type = str(message_type)
-        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "INSTAGRAM", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN"]
+        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "INSTAGRAM", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "APPLE"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)
             self._message_type = "outdated_sdk_version"
@@ -505,7 +532,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         """
         if isinstance(error_type, int):
             error_type = str(error_type)
-        allowed_values = ["UNKNOWN", "CONVERSATION_TOO_LONG", "CONVERSATION_TOO_SHORT"]
+        allowed_values = ["UNKNOWN", "CONVERSATION_TOO_LONG", "CONVERSATION_TOO_SHORT", "RATE_LIMITED"]
         if error_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for error_type -> " + error_type)
             self._error_type = "outdated_sdk_version"

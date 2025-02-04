@@ -58,6 +58,7 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
             'value': 'float',
             'status': 'str',
             'media_type': 'str',
+            'topic': 'str',
             'comparison_operator': 'str'
         }
 
@@ -70,6 +71,7 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
             'value': 'value',
             'status': 'status',
             'media_type': 'mediaType',
+            'topic': 'topic',
             'comparison_operator': 'comparisonOperator'
         }
 
@@ -81,6 +83,7 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
         self._value = None
         self._status = None
         self._media_type = None
+        self._topic = None
         self._comparison_operator = None
 
     @property
@@ -289,6 +292,30 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def topic(self) -> str:
+        """
+        Gets the topic of this V2MobiusAlertsTopicConditionRulePredicate.
+
+
+        :return: The topic of this V2MobiusAlertsTopicConditionRulePredicate.
+        :rtype: str
+        """
+        return self._topic
+
+    @topic.setter
+    def topic(self, topic: str) -> None:
+        """
+        Sets the topic of this V2MobiusAlertsTopicConditionRulePredicate.
+
+
+        :param topic: The topic of this V2MobiusAlertsTopicConditionRulePredicate.
+        :type: str
+        """
+        
+
+        self._topic = topic
 
     @property
     def comparison_operator(self) -> str:
