@@ -41,7 +41,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recordings_screensessions_details**](#get_recordings_screensessions_details) | Retrieves an object containing the total number of concurrent active screen recordings|
 |[**patch_recording_crossplatform_mediaretentionpolicy**](#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recording_mediaretentionpolicy**](#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
-|[**patch_recordings_screensession**](#patch_recordings_screensession) | Update a screen recording session|
 |[**post_conversation_recording_annotations**](#post_conversation_recording_annotations) | Create annotation|
 |[**post_recording_batchrequests**](#post_recording_batchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.|
 |[**post_recording_crossplatform_mediaretentionpolicies**](#post_recording_crossplatform_mediaretentionpolicies) | Create media retention policy|
@@ -1887,60 +1886,6 @@ except ApiException as e:
 [**Policy**](Policy)
 
 
-## patch_recordings_screensession
-
->  patch_recordings_screensession(recording_session_id, body=body)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Update a screen recording session
-
-This API is deprecated and the functionality to stop screen recording will be no longer supported.
-
-Wraps PATCH /api/v2/recordings/screensessions/{recordingSessionId} 
-
-Requires ANY permissions: 
-
-* recording:screenRecording:stop
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RecordingApi()
-recording_session_id = 'recording_session_id_example' # str | Screen recording session ID
-body = PureCloudPlatformClientV2.ScreenRecordingSessionRequest() # ScreenRecordingSessionRequest |  (optional)
-
-try:
-    # Update a screen recording session
-    api_instance.patch_recordings_screensession(recording_session_id, body=body)
-except ApiException as e:
-    print("Exception when calling RecordingApi->patch_recordings_screensession: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **recording_session_id** | **str**| Screen recording session ID |  |
-| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest)|  | [optional]  |
-
-### Return type
-
-void (empty response body)
-
-
 ## post_conversation_recording_annotations
 
 > [**Annotation**](Annotation) post_conversation_recording_annotations(conversation_id, recording_id, body)
@@ -3089,4 +3034,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

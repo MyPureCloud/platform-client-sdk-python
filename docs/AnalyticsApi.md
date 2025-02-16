@@ -4657,8 +4657,6 @@ except ApiException as e:
 
 Query for summary aggregates
 
-post_analytics_summaries_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/summaries/aggregates/query 
 
 Requires ANY permissions: 
@@ -5388,4 +5386,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

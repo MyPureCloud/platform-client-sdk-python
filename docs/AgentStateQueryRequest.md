@@ -11,8 +11,8 @@
 | **user_order_by** | str | Search user order dimension names; default to userName | [optional] |
 | **user_order** | str | Search user order direction; default to asc | [optional] |
 | **session_order_by** | str | Search session order dimension names; default to segmentStart | [optional] |
-| **session_order** | str | Search session order direction; default to desc | [optional] |
+| **session_order** | str | Search session order direction; default to asc | [optional] |
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

@@ -90,6 +90,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunits_divisionviews**](#get_workforcemanagement_businessunits_divisionviews) | Get business units across divisions|
 |[**get_workforcemanagement_calendar_data_ics**](#get_workforcemanagement_calendar_data_ics) | Get ics formatted calendar based on shareable link|
 |[**get_workforcemanagement_calendar_url_ics**](#get_workforcemanagement_calendar_url_ics) | Get existing calendar link for the current user|
+|[**get_workforcemanagement_historicaldata_bulk_remove_job**](#get_workforcemanagement_historicaldata_bulk_remove_job) | Retrieves delete job status for historical data imports associated with the job id|
+|[**get_workforcemanagement_historicaldata_bulk_remove_jobs**](#get_workforcemanagement_historicaldata_bulk_remove_jobs) | Retrieves all delete job status for historical data|
 |[**get_workforcemanagement_historicaldata_deletejob**](#get_workforcemanagement_historicaldata_deletejob) | Retrieves delete job status for historical data imports of the organization|
 |[**get_workforcemanagement_historicaldata_importstatus**](#get_workforcemanagement_historicaldata_importstatus) | Retrieves status of the historical data imports of the organization|
 |[**get_workforcemanagement_historicaldata_importstatus_job_id**](#get_workforcemanagement_historicaldata_importstatus_job_id) | Retrieves status of the historical data imports associated with job id|
@@ -207,6 +209,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_workplanbids**](#post_workforcemanagement_businessunit_workplanbids) | Create a new work plan bid|
 |[**post_workforcemanagement_businessunits**](#post_workforcemanagement_businessunits) | Add a new business unit|
 |[**post_workforcemanagement_calendar_url_ics**](#post_workforcemanagement_calendar_url_ics) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned|
+|[**post_workforcemanagement_historicaldata_bulk_remove_jobs**](#post_workforcemanagement_historicaldata_bulk_remove_jobs) | Delete the list of the historical data import entries|
 |[**post_workforcemanagement_historicaldata_deletejob**](#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization|
 |[**post_workforcemanagement_historicaldata_validate**](#post_workforcemanagement_historicaldata_validate) | Trigger validation process for historical import|
 |[**post_workforcemanagement_integrations_hri_timeofftypes_jobs**](#post_workforcemanagement_integrations_hri_timeofftypes_jobs) | Get list of time off types configured in integration|
@@ -4677,6 +4680,98 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**CalendarUrlResponse**](CalendarUrlResponse)
+
+
+## get_workforcemanagement_historicaldata_bulk_remove_job
+
+> [**HistoricalImportDeleteFilesJobResponse**](HistoricalImportDeleteFilesJobResponse) get_workforcemanagement_historicaldata_bulk_remove_job(job_id)
+
+
+Retrieves delete job status for historical data imports associated with the job id
+
+Wraps GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The job ID of the historical data delete request
+
+try:
+    # Retrieves delete job status for historical data imports associated with the job id
+    api_response = api_instance.get_workforcemanagement_historicaldata_bulk_remove_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_historicaldata_bulk_remove_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The job ID of the historical data delete request |  |
+
+### Return type
+
+[**HistoricalImportDeleteFilesJobResponse**](HistoricalImportDeleteFilesJobResponse)
+
+
+## get_workforcemanagement_historicaldata_bulk_remove_jobs
+
+> [**HistoricalImportOverallDeleteStatusResponse**](HistoricalImportOverallDeleteStatusResponse) get_workforcemanagement_historicaldata_bulk_remove_jobs()
+
+
+Retrieves all delete job status for historical data
+
+Wraps GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs 
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Retrieves all delete job status for historical data
+    api_response = api_instance.get_workforcemanagement_historicaldata_bulk_remove_jobs()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_historicaldata_bulk_remove_jobs: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**HistoricalImportOverallDeleteStatusResponse**](HistoricalImportOverallDeleteStatusResponse)
 
 
 ## get_workforcemanagement_historicaldata_deletejob
@@ -10750,6 +10845,54 @@ except ApiException as e:
 [**CalendarUrlResponse**](CalendarUrlResponse)
 
 
+## post_workforcemanagement_historicaldata_bulk_remove_jobs
+
+> [**HistoricalImportDeleteFilesJobResponse**](HistoricalImportDeleteFilesJobResponse) post_workforcemanagement_historicaldata_bulk_remove_jobs(body=body)
+
+
+Delete the list of the historical data import entries
+
+Wraps POST /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs 
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.HistoricalImportDeleteFilesJobRequest() # HistoricalImportDeleteFilesJobRequest | body (optional)
+
+try:
+    # Delete the list of the historical data import entries
+    api_response = api_instance.post_workforcemanagement_historicaldata_bulk_remove_jobs(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_historicaldata_bulk_remove_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**HistoricalImportDeleteFilesJobRequest**](HistoricalImportDeleteFilesJobRequest)| body | [optional]  |
+
+### Return type
+
+[**HistoricalImportDeleteFilesJobResponse**](HistoricalImportDeleteFilesJobResponse)
+
+
 ## post_workforcemanagement_historicaldata_deletejob
 
 > [**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse) post_workforcemanagement_historicaldata_deletejob()
@@ -12847,4 +12990,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

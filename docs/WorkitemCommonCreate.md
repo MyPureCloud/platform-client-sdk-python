@@ -24,7 +24,8 @@
 | **external_contact_id** | str | The ID of the external contact of the Workitem. Must be a valid UUID. | [optional] |
 | **external_tag** | str | The external tag of the Workitem. | [optional] |
 | **skill_ids** | list[str] | The skill IDs of the Workitem. Must be valid UUIDs. | [optional] |
+| **script_id** | str | The ID of the Workitems script. Must be a valid UUID. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

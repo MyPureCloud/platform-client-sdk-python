@@ -6,7 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **activity_category** | str | Upcoming activity for which the user is scheduled | [optional] |
+| **start_date** | datetime | The start timestamp of the scheduled activity in ISO-8601 format | [optional] |
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_
