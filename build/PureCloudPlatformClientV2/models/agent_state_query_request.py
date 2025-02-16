@@ -214,7 +214,7 @@ class AgentStateQueryRequest(object):
     def session_order(self) -> str:
         """
         Gets the session_order of this AgentStateQueryRequest.
-        Search session order direction; default to desc
+        Search session order direction; default to asc
 
         :return: The session_order of this AgentStateQueryRequest.
         :rtype: str
@@ -225,7 +225,7 @@ class AgentStateQueryRequest(object):
     def session_order(self, session_order: str) -> None:
         """
         Sets the session_order of this AgentStateQueryRequest.
-        Search session order direction; default to desc
+        Search session order direction; default to asc
 
         :param session_order: The session_order of this AgentStateQueryRequest.
         :type: str

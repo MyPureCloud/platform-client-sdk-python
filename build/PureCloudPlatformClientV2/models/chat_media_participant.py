@@ -89,6 +89,7 @@ class ChatMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'park_time': 'datetime',
+            'resume_time': 'datetime',
             'room_id': 'str',
             'avatar_image_url': 'str'
         }
@@ -129,6 +130,7 @@ class ChatMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'park_time': 'parkTime',
+            'resume_time': 'resumeTime',
             'room_id': 'roomId',
             'avatar_image_url': 'avatarImageUrl'
         }
@@ -168,6 +170,7 @@ class ChatMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._park_time = None
+        self._resume_time = None
         self._room_id = None
         self._avatar_image_url = None
 
@@ -1030,6 +1033,30 @@ class ChatMediaParticipant(object):
         
 
         self._park_time = park_time
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this ChatMediaParticipant.
+        The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The resume_time of this ChatMediaParticipant.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this ChatMediaParticipant.
+        The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param resume_time: The resume_time of this ChatMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     @property
     def room_id(self) -> str:

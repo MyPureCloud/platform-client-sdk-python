@@ -818,7 +818,7 @@ class AnalyticsSession(object):
     def cobrowse_room_id(self) -> str:
         """
         Gets the cobrowse_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud cobrowse room
+        A unique identifier for a Genesys Cloud cobrowse room
 
         :return: The cobrowse_room_id of this AnalyticsSession.
         :rtype: str
@@ -829,7 +829,7 @@ class AnalyticsSession(object):
     def cobrowse_room_id(self, cobrowse_room_id: str) -> None:
         """
         Sets the cobrowse_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud cobrowse room
+        A unique identifier for a Genesys Cloud cobrowse room
 
         :param cobrowse_room_id: The cobrowse_room_id of this AnalyticsSession.
         :type: str
@@ -1846,7 +1846,7 @@ class AnalyticsSession(object):
     def screen_share_address_self(self) -> str:
         """
         Gets the screen_share_address_self of this AnalyticsSession.
-        Direct ScreenShare address
+        Direct screen share address
 
         :return: The screen_share_address_self of this AnalyticsSession.
         :rtype: str
@@ -1857,7 +1857,7 @@ class AnalyticsSession(object):
     def screen_share_address_self(self, screen_share_address_self: str) -> None:
         """
         Sets the screen_share_address_self of this AnalyticsSession.
-        Direct ScreenShare address
+        Direct screen share address
 
         :param screen_share_address_self: The screen_share_address_self of this AnalyticsSession.
         :type: str
@@ -1870,7 +1870,7 @@ class AnalyticsSession(object):
     def screen_share_room_id(self) -> str:
         """
         Gets the screen_share_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud ScreenShare room
+        A unique identifier for a Genesys Cloud screen share room
 
         :return: The screen_share_room_id of this AnalyticsSession.
         :rtype: str
@@ -1881,7 +1881,7 @@ class AnalyticsSession(object):
     def screen_share_room_id(self, screen_share_room_id: str) -> None:
         """
         Sets the screen_share_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud ScreenShare room
+        A unique identifier for a Genesys Cloud screen share room
 
         :param screen_share_room_id: The screen_share_room_id of this AnalyticsSession.
         :type: str
@@ -2014,7 +2014,7 @@ class AnalyticsSession(object):
     def sharing_screen(self) -> bool:
         """
         Gets the sharing_screen of this AnalyticsSession.
-        Flag determining if screenShare is started or not (true/false)
+        Flag determining if screen share is started or not (true/false)
 
         :return: The sharing_screen of this AnalyticsSession.
         :rtype: bool
@@ -2025,7 +2025,7 @@ class AnalyticsSession(object):
     def sharing_screen(self, sharing_screen: bool) -> None:
         """
         Sets the sharing_screen of this AnalyticsSession.
-        Flag determining if screenShare is started or not (true/false)
+        Flag determining if screen share is started or not (true/false)
 
         :param sharing_screen: The sharing_screen of this AnalyticsSession.
         :type: bool
@@ -2062,7 +2062,7 @@ class AnalyticsSession(object):
     def timeout_seconds(self) -> int:
         """
         Gets the timeout_seconds of this AnalyticsSession.
-        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+        The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)
 
         :return: The timeout_seconds of this AnalyticsSession.
         :rtype: int
@@ -2073,7 +2073,7 @@ class AnalyticsSession(object):
     def timeout_seconds(self, timeout_seconds: int) -> None:
         """
         Sets the timeout_seconds of this AnalyticsSession.
-        The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+        The number of seconds before Genesys Cloud begins the call for a call back (0 disables automatic calling)
 
         :param timeout_seconds: The timeout_seconds of this AnalyticsSession.
         :type: int
@@ -2139,7 +2139,7 @@ class AnalyticsSession(object):
     def video_room_id(self) -> str:
         """
         Gets the video_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud video room
+        A unique identifier for a Genesys Cloud video room
 
         :return: The video_room_id of this AnalyticsSession.
         :rtype: str
@@ -2150,7 +2150,7 @@ class AnalyticsSession(object):
     def video_room_id(self, video_room_id: str) -> None:
         """
         Sets the video_room_id of this AnalyticsSession.
-        A unique identifier for a PureCloud video room
+        A unique identifier for a Genesys Cloud video room
 
         :param video_room_id: The video_room_id of this AnalyticsSession.
         :type: str

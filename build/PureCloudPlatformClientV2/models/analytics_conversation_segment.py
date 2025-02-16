@@ -285,7 +285,7 @@ class AnalyticsConversationSegment(object):
     def group_id(self) -> str:
         """
         Gets the group_id of this AnalyticsConversationSegment.
-        Unique identifier for a PureCloud group
+        Unique identifier for a Genesys Cloud group
 
         :return: The group_id of this AnalyticsConversationSegment.
         :rtype: str
@@ -296,7 +296,7 @@ class AnalyticsConversationSegment(object):
     def group_id(self, group_id: str) -> None:
         """
         Sets the group_id of this AnalyticsConversationSegment.
-        Unique identifier for a PureCloud group
+        Unique identifier for a Genesys Cloud group
 
         :param group_id: The group_id of this AnalyticsConversationSegment.
         :type: str

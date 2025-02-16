@@ -2297,12 +2297,13 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str job_id: Job id (required)
+        :param list[str] expand: which fields, if any, to expand
         :return: ContactImportJobResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['job_id']
+        all_params = ['job_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2326,6 +2327,8 @@ class ExternalContactsApi(object):
             path_params['jobId'] = params['job_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -2374,6 +2377,7 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param list[str] expand: which fields, if any, to expand
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 100.
         :param str sort_order: Direction of sorting.
@@ -2383,7 +2387,7 @@ class ExternalContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['after', 'page_size', 'sort_order', 'job_status']
+        all_params = ['expand', 'after', 'page_size', 'sort_order', 'job_status']
         all_params.append('callback')
 
         params = locals()
@@ -2402,6 +2406,8 @@ class ExternalContactsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
         if 'after' in params:
             query_params['after'] = params['after']
         if 'page_size' in params:

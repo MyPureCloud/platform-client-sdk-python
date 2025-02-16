@@ -68,6 +68,7 @@ class WorkitemCreate(object):
             'external_contact_id': 'str',
             'external_tag': 'str',
             'skill_ids': 'list[str]',
+            'script_id': 'str',
             'wrapup_code': 'str',
             'utilization_label_id': 'str',
             'scored_agents': 'list[WorkitemScoredAgentRequest]',
@@ -93,6 +94,7 @@ class WorkitemCreate(object):
             'external_contact_id': 'externalContactId',
             'external_tag': 'externalTag',
             'skill_ids': 'skillIds',
+            'script_id': 'scriptId',
             'wrapup_code': 'wrapupCode',
             'utilization_label_id': 'utilizationLabelId',
             'scored_agents': 'scoredAgents',
@@ -117,6 +119,7 @@ class WorkitemCreate(object):
         self._external_contact_id = None
         self._external_tag = None
         self._skill_ids = None
+        self._script_id = None
         self._wrapup_code = None
         self._utilization_label_id = None
         self._scored_agents = None
@@ -553,6 +556,30 @@ class WorkitemCreate(object):
         
 
         self._skill_ids = skill_ids
+
+    @property
+    def script_id(self) -> str:
+        """
+        Gets the script_id of this WorkitemCreate.
+        The ID of the Workitems script. Must be a valid UUID.
+
+        :return: The script_id of this WorkitemCreate.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id: str) -> None:
+        """
+        Sets the script_id of this WorkitemCreate.
+        The ID of the Workitems script. Must be a valid UUID.
+
+        :param script_id: The script_id of this WorkitemCreate.
+        :type: str
+        """
+        
+
+        self._script_id = script_id
 
     @property
     def wrapup_code(self) -> str:

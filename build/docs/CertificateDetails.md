@@ -11,9 +11,9 @@
 | **expiration_date** | datetime | The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **issue_date** | datetime | The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **expired** | bool | True if the certificate is expired, false otherwise. | [optional] |
-| **valid** | bool |  | [optional] |
 | **signature_valid** | bool |  | [optional] |
+| **valid** | bool |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

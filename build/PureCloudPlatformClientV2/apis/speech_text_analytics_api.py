@@ -580,12 +580,12 @@ class SpeechTextAnalyticsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int page_size: The page size for the listing. The max that will be returned is 50.
+        :param int page_size: The page size for the listing. The max that will be returned is 25.
         :param int page_number: The page number for the listing
         :param str name: The category name filter applied to the listing
         :param str sort_order: The sort order for the listing
         :param str sort_by: The field to sort by for the listing
-        :param list[str] ids: Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+        :param list[str] ids: Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
         :return: CategoriesEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

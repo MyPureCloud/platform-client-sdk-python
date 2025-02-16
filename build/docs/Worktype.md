@@ -29,8 +29,9 @@
 | **service_level_target** | int | The target service level for Workitems created from the Worktype. The default value is 100. | [optional] |
 | **rule_settings** | [WorkitemRuleSettings](WorkitemRuleSettings) | Settings for the worktypes rules. | [optional] |
 | **flow** | [WorkitemFlowReference](WorkitemFlowReference) | The flow associated with the Worktype. | [optional] |
+| **default_script** | [WorkitemScriptReference](WorkitemScriptReference) | The default script for Workitems created from the Worktype. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

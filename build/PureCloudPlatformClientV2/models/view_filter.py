@@ -249,6 +249,7 @@ class ViewFilter(object):
             'overtalk_instances': 'NumericRange',
             'is_screen_recorded': 'bool',
             'screen_monitor_user_ids': 'list[str]',
+            'dashboard_state': 'str',
             'dashboard_type': 'str',
             'dashboard_access_filter': 'str',
             'transcript_duration_milliseconds': 'list[NumericRange]',
@@ -271,7 +272,9 @@ class ViewFilter(object):
             'linked_interaction': 'bool',
             'recommendation_sources': 'list[str]',
             'evaluation_role': 'str',
-            'comparison_queue_ids': 'list[str]'
+            'comparison_queue_ids': 'list[str]',
+            'view_metrics': 'list[str]',
+            'timeline_categories': 'list[str]'
         }
 
         self.attribute_map = {
@@ -469,6 +472,7 @@ class ViewFilter(object):
             'overtalk_instances': 'overtalkInstances',
             'is_screen_recorded': 'isScreenRecorded',
             'screen_monitor_user_ids': 'screenMonitorUserIds',
+            'dashboard_state': 'dashboardState',
             'dashboard_type': 'dashboardType',
             'dashboard_access_filter': 'dashboardAccessFilter',
             'transcript_duration_milliseconds': 'transcriptDurationMilliseconds',
@@ -491,7 +495,9 @@ class ViewFilter(object):
             'linked_interaction': 'linkedInteraction',
             'recommendation_sources': 'recommendationSources',
             'evaluation_role': 'evaluationRole',
-            'comparison_queue_ids': 'comparisonQueueIds'
+            'comparison_queue_ids': 'comparisonQueueIds',
+            'view_metrics': 'viewMetrics',
+            'timeline_categories': 'timelineCategories'
         }
 
         self._media_types = None
@@ -688,6 +694,7 @@ class ViewFilter(object):
         self._overtalk_instances = None
         self._is_screen_recorded = None
         self._screen_monitor_user_ids = None
+        self._dashboard_state = None
         self._dashboard_type = None
         self._dashboard_access_filter = None
         self._transcript_duration_milliseconds = None
@@ -711,6 +718,8 @@ class ViewFilter(object):
         self._recommendation_sources = None
         self._evaluation_role = None
         self._comparison_queue_ids = None
+        self._view_metrics = None
+        self._timeline_categories = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5379,6 +5388,35 @@ class ViewFilter(object):
         self._screen_monitor_user_ids = screen_monitor_user_ids
 
     @property
+    def dashboard_state(self) -> str:
+        """
+        Gets the dashboard_state of this ViewFilter.
+        The state of dashboard being filtered
+
+        :return: The dashboard_state of this ViewFilter.
+        :rtype: str
+        """
+        return self._dashboard_state
+
+    @dashboard_state.setter
+    def dashboard_state(self, dashboard_state: str) -> None:
+        """
+        Sets the dashboard_state of this ViewFilter.
+        The state of dashboard being filtered
+
+        :param dashboard_state: The dashboard_state of this ViewFilter.
+        :type: str
+        """
+        if isinstance(dashboard_state, int):
+            dashboard_state = str(dashboard_state)
+        allowed_values = ["Active", "Deleted"]
+        if dashboard_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for dashboard_state -> " + dashboard_state)
+            self._dashboard_state = "outdated_sdk_version"
+        else:
+            self._dashboard_state = dashboard_state
+
+    @property
     def dashboard_type(self) -> str:
         """
         Gets the dashboard_type of this ViewFilter.
@@ -5944,6 +5982,54 @@ class ViewFilter(object):
         
 
         self._comparison_queue_ids = comparison_queue_ids
+
+    @property
+    def view_metrics(self) -> List[str]:
+        """
+        Gets the view_metrics of this ViewFilter.
+        A list of metrics selected for the view
+
+        :return: The view_metrics of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._view_metrics
+
+    @view_metrics.setter
+    def view_metrics(self, view_metrics: List[str]) -> None:
+        """
+        Sets the view_metrics of this ViewFilter.
+        A list of metrics selected for the view
+
+        :param view_metrics: The view_metrics of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._view_metrics = view_metrics
+
+    @property
+    def timeline_categories(self) -> List[str]:
+        """
+        Gets the timeline_categories of this ViewFilter.
+        A list of timeline categories
+
+        :return: The timeline_categories of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._timeline_categories
+
+    @timeline_categories.setter
+    def timeline_categories(self, timeline_categories: List[str]) -> None:
+        """
+        Sets the timeline_categories of this ViewFilter.
+        A list of timeline categories
+
+        :param timeline_categories: The timeline_categories of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._timeline_categories = timeline_categories
 
     def to_dict(self):
         """

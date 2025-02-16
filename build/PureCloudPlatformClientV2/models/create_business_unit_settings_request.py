@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import BuNotificationSettingsRequest
     from . import BuSchedulingSettingsRequest
     from . import BuShortTermForecastingSettings
 
@@ -54,20 +55,23 @@ class CreateBusinessUnitSettingsRequest(object):
             'start_day_of_week': 'str',
             'time_zone': 'str',
             'short_term_forecasting': 'BuShortTermForecastingSettings',
-            'scheduling': 'BuSchedulingSettingsRequest'
+            'scheduling': 'BuSchedulingSettingsRequest',
+            'notifications': 'BuNotificationSettingsRequest'
         }
 
         self.attribute_map = {
             'start_day_of_week': 'startDayOfWeek',
             'time_zone': 'timeZone',
             'short_term_forecasting': 'shortTermForecasting',
-            'scheduling': 'scheduling'
+            'scheduling': 'scheduling',
+            'notifications': 'notifications'
         }
 
         self._start_day_of_week = None
         self._time_zone = None
         self._short_term_forecasting = None
         self._scheduling = None
+        self._notifications = None
 
     @property
     def start_day_of_week(self) -> str:
@@ -169,6 +173,30 @@ class CreateBusinessUnitSettingsRequest(object):
         
 
         self._scheduling = scheduling
+
+    @property
+    def notifications(self) -> 'BuNotificationSettingsRequest':
+        """
+        Gets the notifications of this CreateBusinessUnitSettingsRequest.
+        Notification settings
+
+        :return: The notifications of this CreateBusinessUnitSettingsRequest.
+        :rtype: BuNotificationSettingsRequest
+        """
+        return self._notifications
+
+    @notifications.setter
+    def notifications(self, notifications: 'BuNotificationSettingsRequest') -> None:
+        """
+        Sets the notifications of this CreateBusinessUnitSettingsRequest.
+        Notification settings
+
+        :param notifications: The notifications of this CreateBusinessUnitSettingsRequest.
+        :type: BuNotificationSettingsRequest
+        """
+        
+
+        self._notifications = notifications
 
     def to_dict(self):
         """

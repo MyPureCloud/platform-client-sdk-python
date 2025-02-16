@@ -41,6 +41,7 @@
 | **start_acw_time** | datetime | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **end_acw_time** | datetime | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **park_time** | datetime | The time when this participant&#39;s communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **resume_time** | datetime | The time when this participant&#39;s communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **muted** | bool | Value is true when the call is muted. | [optional] |
 | **confined** | bool | Value is true when the call is confined. | [optional] |
 | **recording** | bool | Value is true when the call is being recorded. | [optional] |
@@ -61,4 +62,4 @@
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

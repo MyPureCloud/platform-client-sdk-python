@@ -53,10 +53,11 @@ class OpenDataIngestionRuleResponse(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
             'status': 'str',
             'version': 'int',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'platform': 'str',
             'external_source': 'DomainEntityRef',
             'self_uri': 'str'
         }
@@ -65,10 +66,11 @@ class OpenDataIngestionRuleResponse(object):
             'id': 'id',
             'name': 'name',
             'description': 'description',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
             'status': 'status',
             'version': 'version',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'platform': 'platform',
             'external_source': 'externalSource',
             'self_uri': 'selfUri'
         }
@@ -76,10 +78,11 @@ class OpenDataIngestionRuleResponse(object):
         self._id = None
         self._name = None
         self._description = None
-        self._date_created = None
-        self._date_modified = None
         self._status = None
         self._version = None
+        self._date_created = None
+        self._date_modified = None
+        self._platform = None
         self._external_source = None
         self._self_uri = None
 
@@ -156,54 +159,6 @@ class OpenDataIngestionRuleResponse(object):
         self._description = description
 
     @property
-    def date_created(self) -> datetime:
-        """
-        Gets the date_created of this OpenDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_created of this OpenDataIngestionRuleResponse.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created: datetime) -> None:
-        """
-        Sets the date_created of this OpenDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_created: The date_created of this OpenDataIngestionRuleResponse.
-        :type: datetime
-        """
-        
-
-        self._date_created = date_created
-
-    @property
-    def date_modified(self) -> datetime:
-        """
-        Gets the date_modified of this OpenDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_modified of this OpenDataIngestionRuleResponse.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified: datetime) -> None:
-        """
-        Sets the date_modified of this OpenDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_modified: The date_modified of this OpenDataIngestionRuleResponse.
-        :type: datetime
-        """
-        
-
-        self._date_modified = date_modified
-
-    @property
     def status(self) -> str:
         """
         Gets the status of this OpenDataIngestionRuleResponse.
@@ -255,6 +210,78 @@ class OpenDataIngestionRuleResponse(object):
         
 
         self._version = version
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this OpenDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this OpenDataIngestionRuleResponse.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this OpenDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this OpenDataIngestionRuleResponse.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
+
+    @property
+    def date_modified(self) -> datetime:
+        """
+        Gets the date_modified of this OpenDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_modified of this OpenDataIngestionRuleResponse.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified: datetime) -> None:
+        """
+        Sets the date_modified of this OpenDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_modified: The date_modified of this OpenDataIngestionRuleResponse.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
+
+    @property
+    def platform(self) -> str:
+        """
+        Gets the platform of this OpenDataIngestionRuleResponse.
+        The platform of the data ingestion rule.
+
+        :return: The platform of this OpenDataIngestionRuleResponse.
+        :rtype: str
+        """
+        return self._platform
+
+    @platform.setter
+    def platform(self, platform: str) -> None:
+        """
+        Sets the platform of this OpenDataIngestionRuleResponse.
+        The platform of the data ingestion rule.
+
+        :param platform: The platform of this OpenDataIngestionRuleResponse.
+        :type: str
+        """
+        
+
+        self._platform = platform
 
     @property
     def external_source(self) -> 'DomainEntityRef':

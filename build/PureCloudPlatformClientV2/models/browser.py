@@ -187,7 +187,7 @@ class Browser(object):
     def is_mobile(self) -> bool:
         """
         Gets the is_mobile of this Browser.
-        Flag that is true for mobile devices.
+        (Deprecated, use Device.isMobile instead) Flag that is true for mobile devices.
 
         :return: The is_mobile of this Browser.
         :rtype: bool
@@ -198,7 +198,7 @@ class Browser(object):
     def is_mobile(self, is_mobile: bool) -> None:
         """
         Sets the is_mobile of this Browser.
-        Flag that is true for mobile devices.
+        (Deprecated, use Device.isMobile instead) Flag that is true for mobile devices.
 
         :param is_mobile: The is_mobile of this Browser.
         :type: bool

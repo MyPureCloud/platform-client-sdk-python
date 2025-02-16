@@ -79,6 +79,7 @@ class UserQueue(object):
             'conditional_group_routing': 'ConditionalGroupRouting',
             'bullseye': 'Bullseye',
             'scoring_method': 'str',
+            'last_agent_routing_mode': 'str',
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
             'member_groups': 'list[MemberGroup]',
@@ -121,6 +122,7 @@ class UserQueue(object):
             'conditional_group_routing': 'conditionalGroupRouting',
             'bullseye': 'bullseye',
             'scoring_method': 'scoringMethod',
+            'last_agent_routing_mode': 'lastAgentRoutingMode',
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
             'member_groups': 'memberGroups',
@@ -162,6 +164,7 @@ class UserQueue(object):
         self._conditional_group_routing = None
         self._bullseye = None
         self._scoring_method = None
+        self._last_agent_routing_mode = None
         self._acw_settings = None
         self._skill_evaluation_method = None
         self._member_groups = None
@@ -550,7 +553,7 @@ class UserQueue(object):
     def scoring_method(self) -> str:
         """
         Gets the scoring_method of this UserQueue.
-        The Scoring Method for the queue
+        The Scoring Method for the queue.
 
         :return: The scoring_method of this UserQueue.
         :rtype: str
@@ -561,7 +564,7 @@ class UserQueue(object):
     def scoring_method(self, scoring_method: str) -> None:
         """
         Sets the scoring_method of this UserQueue.
-        The Scoring Method for the queue
+        The Scoring Method for the queue.
 
         :param scoring_method: The scoring_method of this UserQueue.
         :type: str
@@ -574,6 +577,35 @@ class UserQueue(object):
             self._scoring_method = "outdated_sdk_version"
         else:
             self._scoring_method = scoring_method
+
+    @property
+    def last_agent_routing_mode(self) -> str:
+        """
+        Gets the last_agent_routing_mode of this UserQueue.
+        The Last Agent Routing Mode for the queue.
+
+        :return: The last_agent_routing_mode of this UserQueue.
+        :rtype: str
+        """
+        return self._last_agent_routing_mode
+
+    @last_agent_routing_mode.setter
+    def last_agent_routing_mode(self, last_agent_routing_mode: str) -> None:
+        """
+        Sets the last_agent_routing_mode of this UserQueue.
+        The Last Agent Routing Mode for the queue.
+
+        :param last_agent_routing_mode: The last_agent_routing_mode of this UserQueue.
+        :type: str
+        """
+        if isinstance(last_agent_routing_mode, int):
+            last_agent_routing_mode = str(last_agent_routing_mode)
+        allowed_values = ["Disabled", "QueueMembersOnly", "AnyAgent"]
+        if last_agent_routing_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for last_agent_routing_mode -> " + last_agent_routing_mode)
+            self._last_agent_routing_mode = "outdated_sdk_version"
+        else:
+            self._last_agent_routing_mode = last_agent_routing_mode
 
     @property
     def acw_settings(self) -> 'AcwSettings':

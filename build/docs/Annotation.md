@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The globally unique identifier for the object. | [optional] |
+| **id** | str | Annotation id. All pause annotations on a recording will share an ID value, bookmark annotations will have unique IDs, and hold annotations will have randomly generated UUIDs (i.e. the ID will change at each request). | [optional] |
 | **name** | str |  | [optional] |
 | **type** | str |  | [optional] |
 | **location** | int | Offset of annotation in milliseconds. | [optional] |
@@ -24,4 +24,4 @@
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

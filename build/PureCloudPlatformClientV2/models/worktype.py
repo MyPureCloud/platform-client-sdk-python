@@ -42,6 +42,7 @@ if TYPE_CHECKING:
     from . import WorkitemQueueReference
     from . import WorkitemRuleSettings
     from . import WorkitemSchema
+    from . import WorkitemScriptReference
     from . import WorkitemStatus
     from . import WorkitemStatusReference
 
@@ -83,6 +84,7 @@ class Worktype(object):
             'service_level_target': 'int',
             'rule_settings': 'WorkitemRuleSettings',
             'flow': 'WorkitemFlowReference',
+            'default_script': 'WorkitemScriptReference',
             'self_uri': 'str'
         }
 
@@ -110,6 +112,7 @@ class Worktype(object):
             'service_level_target': 'serviceLevelTarget',
             'rule_settings': 'ruleSettings',
             'flow': 'flow',
+            'default_script': 'defaultScript',
             'self_uri': 'selfUri'
         }
 
@@ -136,6 +139,7 @@ class Worktype(object):
         self._service_level_target = None
         self._rule_settings = None
         self._flow = None
+        self._default_script = None
         self._self_uri = None
 
     @property
@@ -689,6 +693,30 @@ class Worktype(object):
         
 
         self._flow = flow
+
+    @property
+    def default_script(self) -> 'WorkitemScriptReference':
+        """
+        Gets the default_script of this Worktype.
+        The default script for Workitems created from the Worktype.
+
+        :return: The default_script of this Worktype.
+        :rtype: WorkitemScriptReference
+        """
+        return self._default_script
+
+    @default_script.setter
+    def default_script(self, default_script: 'WorkitemScriptReference') -> None:
+        """
+        Sets the default_script of this Worktype.
+        The default script for Workitems created from the Worktype.
+
+        :param default_script: The default_script of this Worktype.
+        :type: WorkitemScriptReference
+        """
+        
+
+        self._default_script = default_script
 
     @property
     def self_uri(self) -> str:

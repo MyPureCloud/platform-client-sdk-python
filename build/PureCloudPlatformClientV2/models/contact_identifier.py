@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ExternalSource
 
 class ContactIdentifier(object):
     """
@@ -52,6 +54,7 @@ class ContactIdentifier(object):
             'type': 'str',
             'value': 'str',
             'date_created': 'datetime',
+            'external_source': 'ExternalSource',
             'self_uri': 'str'
         }
 
@@ -60,6 +63,7 @@ class ContactIdentifier(object):
             'type': 'type',
             'value': 'value',
             'date_created': 'dateCreated',
+            'external_source': 'externalSource',
             'self_uri': 'selfUri'
         }
 
@@ -67,6 +71,7 @@ class ContactIdentifier(object):
         self._type = None
         self._value = None
         self._date_created = None
+        self._external_source = None
         self._self_uri = None
 
     @property
@@ -169,6 +174,30 @@ class ContactIdentifier(object):
         
 
         self._date_created = date_created
+
+    @property
+    def external_source(self) -> 'ExternalSource':
+        """
+        Gets the external_source of this ContactIdentifier.
+        The External Source ID of the identifier
+
+        :return: The external_source of this ContactIdentifier.
+        :rtype: ExternalSource
+        """
+        return self._external_source
+
+    @external_source.setter
+    def external_source(self, external_source: 'ExternalSource') -> None:
+        """
+        Sets the external_source of this ContactIdentifier.
+        The External Source ID of the identifier
+
+        :param external_source: The external_source of this ContactIdentifier.
+        :type: ExternalSource
+        """
+        
+
+        self._external_source = external_source
 
     @property
     def self_uri(self) -> str:

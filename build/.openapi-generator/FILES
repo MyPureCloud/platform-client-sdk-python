@@ -438,6 +438,8 @@ PureCloudPlatformClientV2/models/audit_topic_domain_entity_ref.py
 PureCloudPlatformClientV2/models/audit_topic_message_info.py
 PureCloudPlatformClientV2/models/audit_topic_property_change.py
 PureCloudPlatformClientV2/models/authentication_settings.py
+PureCloudPlatformClientV2/models/authorization_policy.py
+PureCloudPlatformClientV2/models/authorization_policy_entity_listing.py
 PureCloudPlatformClientV2/models/authorization_settings.py
 PureCloudPlatformClientV2/models/authz_division.py
 PureCloudPlatformClientV2/models/authz_division_entity_listing.py
@@ -1168,6 +1170,7 @@ PureCloudPlatformClientV2/models/conversation_event_topic_workflow.py
 PureCloudPlatformClientV2/models/conversation_event_topic_wrapup.py
 PureCloudPlatformClientV2/models/conversation_event_typing.py
 PureCloudPlatformClientV2/models/conversation_event_video.py
+PureCloudPlatformClientV2/models/conversation_insight.py
 PureCloudPlatformClientV2/models/conversation_message_content.py
 PureCloudPlatformClientV2/models/conversation_message_event.py
 PureCloudPlatformClientV2/models/conversation_message_event_topic_conversation_division_membership.py
@@ -1432,6 +1435,8 @@ PureCloudPlatformClientV2/models/data_action_contact_column_field_mapping.py
 PureCloudPlatformClientV2/models/data_availability_response.py
 PureCloudPlatformClientV2/models/data_ingestion_rule_status_patch_request.py
 PureCloudPlatformClientV2/models/data_ingestion_rules.py
+PureCloudPlatformClientV2/models/data_ingestion_rules_metadata.py
+PureCloudPlatformClientV2/models/data_range.py
 PureCloudPlatformClientV2/models/data_schema.py
 PureCloudPlatformClientV2/models/data_schema_listing.py
 PureCloudPlatformClientV2/models/data_table.py
@@ -1440,6 +1445,8 @@ PureCloudPlatformClientV2/models/data_table_import_entity_listing.py
 PureCloudPlatformClientV2/models/data_table_import_job.py
 PureCloudPlatformClientV2/models/data_table_row_entity_listing.py
 PureCloudPlatformClientV2/models/data_tables_domain_entity_listing.py
+PureCloudPlatformClientV2/models/date_picker.py
+PureCloudPlatformClientV2/models/date_picker_available_date_time.py
 PureCloudPlatformClientV2/models/date_range.py
 PureCloudPlatformClientV2/models/date_range_with_optional_end.py
 PureCloudPlatformClientV2/models/default_greeting_list.py
@@ -2190,6 +2197,7 @@ PureCloudPlatformClientV2/models/gkn_documentation_result.py
 PureCloudPlatformClientV2/models/gkn_documentation_search_criteria.py
 PureCloudPlatformClientV2/models/gkn_documentation_search_request.py
 PureCloudPlatformClientV2/models/gkn_documentation_search_response.py
+PureCloudPlatformClientV2/models/google_business_profile_data_ingestion_rule_response.py
 PureCloudPlatformClientV2/models/google_dialogflow_config.py
 PureCloudPlatformClientV2/models/google_dialogflow_custom_settings.py
 PureCloudPlatformClientV2/models/grammar.py
@@ -2235,7 +2243,13 @@ PureCloudPlatformClientV2/models/historical_adherence_day_metrics.py
 PureCloudPlatformClientV2/models/historical_adherence_exception_info.py
 PureCloudPlatformClientV2/models/historical_adherence_query_result.py
 PureCloudPlatformClientV2/models/historical_data.py
+PureCloudPlatformClientV2/models/historical_data_delete_entity.py
+PureCloudPlatformClientV2/models/historical_data_disallowed_delete_entity.py
+PureCloudPlatformClientV2/models/historical_data_job_entity_status.py
+PureCloudPlatformClientV2/models/historical_import_delete_files_job_request.py
+PureCloudPlatformClientV2/models/historical_import_delete_files_job_response.py
 PureCloudPlatformClientV2/models/historical_import_delete_job_response.py
+PureCloudPlatformClientV2/models/historical_import_overall_delete_status_response.py
 PureCloudPlatformClientV2/models/historical_import_status.py
 PureCloudPlatformClientV2/models/historical_import_status_job_response.py
 PureCloudPlatformClientV2/models/historical_import_status_listing.py
@@ -3276,11 +3290,17 @@ PureCloudPlatformClientV2/models/planning_group_reference.py
 PureCloudPlatformClientV2/models/planning_period_settings.py
 PureCloudPlatformClientV2/models/policy.py
 PureCloudPlatformClientV2/models/policy_actions.py
+PureCloudPlatformClientV2/models/policy_attribute.py
+PureCloudPlatformClientV2/models/policy_attribute_set.py
+PureCloudPlatformClientV2/models/policy_condition.py
+PureCloudPlatformClientV2/models/policy_condition_result.py
 PureCloudPlatformClientV2/models/policy_conditions.py
 PureCloudPlatformClientV2/models/policy_create.py
 PureCloudPlatformClientV2/models/policy_entity_listing.py
 PureCloudPlatformClientV2/models/policy_error_message.py
 PureCloudPlatformClientV2/models/policy_errors.py
+PureCloudPlatformClientV2/models/policy_test_payload.py
+PureCloudPlatformClientV2/models/policy_test_result.py
 PureCloudPlatformClientV2/models/policy_update.py
 PureCloudPlatformClientV2/models/position_settings.py
 PureCloudPlatformClientV2/models/possible_work_shifts_for_week.py
@@ -3919,7 +3939,6 @@ PureCloudPlatformClientV2/models/screen_recording_meta_data.py
 PureCloudPlatformClientV2/models/screen_recording_meta_data_request.py
 PureCloudPlatformClientV2/models/screen_recording_session.py
 PureCloudPlatformClientV2/models/screen_recording_session_listing.py
-PureCloudPlatformClientV2/models/screen_recording_session_request.py
 PureCloudPlatformClientV2/models/screen_recording_user_authenticated_info.py
 PureCloudPlatformClientV2/models/screenshare.py
 PureCloudPlatformClientV2/models/script.py
@@ -4113,6 +4132,7 @@ PureCloudPlatformClientV2/models/story_setting.py
 PureCloudPlatformClientV2/models/street_address.py
 PureCloudPlatformClientV2/models/stt_engine_entity.py
 PureCloudPlatformClientV2/models/stt_engine_entity_listing.py
+PureCloudPlatformClientV2/models/subject.py
 PureCloudPlatformClientV2/models/subject_division_grants.py
 PureCloudPlatformClientV2/models/subject_division_grants_entity_listing.py
 PureCloudPlatformClientV2/models/subject_divisions.py
@@ -4198,6 +4218,8 @@ PureCloudPlatformClientV2/models/system_prompt_entity_listing.py
 PureCloudPlatformClientV2/models/tag_query_request.py
 PureCloudPlatformClientV2/models/tag_value.py
 PureCloudPlatformClientV2/models/tag_value_entity_listing.py
+PureCloudPlatformClientV2/models/target_attribute_value.py
+PureCloudPlatformClientV2/models/target_attributes.py
 PureCloudPlatformClientV2/models/target_performance_profile.py
 PureCloudPlatformClientV2/models/task_management_aggregate_data_container.py
 PureCloudPlatformClientV2/models/task_management_aggregate_query_clause.py
@@ -4412,6 +4434,7 @@ PureCloudPlatformClientV2/models/twitter_data_ingestion_rule_response.py
 PureCloudPlatformClientV2/models/twitter_data_ingestion_rule_version_response.py
 PureCloudPlatformClientV2/models/twitter_data_ingestion_rule_version_response_entity_listing.py
 PureCloudPlatformClientV2/models/twitter_id.py
+PureCloudPlatformClientV2/models/typed_attribute.py
 PureCloudPlatformClientV2/models/typing_setting.py
 PureCloudPlatformClientV2/models/uc_icon.py
 PureCloudPlatformClientV2/models/uc_integration.py
@@ -4666,6 +4689,8 @@ PureCloudPlatformClientV2/models/validate_assign_users.py
 PureCloudPlatformClientV2/models/validate_work_plan_messages.py
 PureCloudPlatformClientV2/models/validate_work_plan_response.py
 PureCloudPlatformClientV2/models/validation_error.py
+PureCloudPlatformClientV2/models/validation_error_listing.py
+PureCloudPlatformClientV2/models/validation_error_response.py
 PureCloudPlatformClientV2/models/validation_limits.py
 PureCloudPlatformClientV2/models/validation_result.py
 PureCloudPlatformClientV2/models/validation_service_async_response.py
@@ -5516,6 +5541,8 @@ docs/AuditTopicPropertyChange.md
 docs/AuthenticationSettings.md
 docs/AuthorizationApi.json
 docs/AuthorizationApi.md
+docs/AuthorizationPolicy.md
+docs/AuthorizationPolicyEntityListing.md
 docs/AuthorizationSettings.md
 docs/AuthzDivision.md
 docs/AuthzDivisionEntityListing.md
@@ -6256,6 +6283,7 @@ docs/ConversationEventTopicWorkflow.md
 docs/ConversationEventTopicWrapup.md
 docs/ConversationEventTyping.md
 docs/ConversationEventVideo.md
+docs/ConversationInsight.md
 docs/ConversationMessageContent.md
 docs/ConversationMessageEvent.md
 docs/ConversationMessageEventTopicConversationDivisionMembership.md
@@ -6530,8 +6558,10 @@ docs/DataExtensionsApi.json
 docs/DataExtensionsApi.md
 docs/DataIngestionRuleStatusPatchRequest.md
 docs/DataIngestionRules.md
+docs/DataIngestionRulesMetadata.md
 docs/DataPrivacyApi.json
 docs/DataPrivacyApi.md
+docs/DataRange.md
 docs/DataSchema.md
 docs/DataSchemaListing.md
 docs/DataTable.md
@@ -6540,6 +6570,8 @@ docs/DataTableImportEntityListing.md
 docs/DataTableImportJob.md
 docs/DataTableRowEntityListing.md
 docs/DataTablesDomainEntityListing.md
+docs/DatePicker.md
+docs/DatePickerAvailableDateTime.md
 docs/DateRange.md
 docs/DateRangeWithOptionalEnd.md
 docs/DefaultGreetingList.md
@@ -7304,6 +7336,7 @@ docs/GetProfilesResponse.md
 docs/GetRulesQuery.md
 docs/GetTemplatesResponse.md
 docs/GetUploadSourceUrlJobStatusResponse.md
+docs/GoogleBusinessProfileDataIngestionRuleResponse.md
 docs/GoogleDialogflowConfig.md
 docs/GoogleDialogflowCustomSettings.md
 docs/Grammar.md
@@ -7353,7 +7386,13 @@ docs/HistoricalAdherenceDayMetrics.md
 docs/HistoricalAdherenceExceptionInfo.md
 docs/HistoricalAdherenceQueryResult.md
 docs/HistoricalData.md
+docs/HistoricalDataDeleteEntity.md
+docs/HistoricalDataDisallowedDeleteEntity.md
+docs/HistoricalDataJobEntityStatus.md
+docs/HistoricalImportDeleteFilesJobRequest.md
+docs/HistoricalImportDeleteFilesJobResponse.md
 docs/HistoricalImportDeleteJobResponse.md
+docs/HistoricalImportOverallDeleteStatusResponse.md
 docs/HistoricalImportStatus.md
 docs/HistoricalImportStatusJobResponse.md
 docs/HistoricalImportStatusListing.md
@@ -8434,11 +8473,17 @@ docs/PlanningGroupReference.md
 docs/PlanningPeriodSettings.md
 docs/Policy.md
 docs/PolicyActions.md
+docs/PolicyAttribute.md
+docs/PolicyAttributeSet.md
+docs/PolicyCondition.md
+docs/PolicyConditionResult.md
 docs/PolicyConditions.md
 docs/PolicyCreate.md
 docs/PolicyEntityListing.md
 docs/PolicyErrorMessage.md
 docs/PolicyErrors.md
+docs/PolicyTestPayload.md
+docs/PolicyTestResult.md
 docs/PolicyUpdate.md
 docs/PositionSettings.md
 docs/PossibleWorkShiftsForWeek.md
@@ -9095,7 +9140,6 @@ docs/ScreenRecordingMetaData.md
 docs/ScreenRecordingMetaDataRequest.md
 docs/ScreenRecordingSession.md
 docs/ScreenRecordingSessionListing.md
-docs/ScreenRecordingSessionRequest.md
 docs/ScreenRecordingUserAuthenticatedInfo.md
 docs/Screenshare.md
 docs/Script.md
@@ -9299,6 +9343,7 @@ docs/StorySetting.md
 docs/StreetAddress.md
 docs/SttEngineEntity.md
 docs/SttEngineEntityListing.md
+docs/Subject.md
 docs/SubjectDivisionGrants.md
 docs/SubjectDivisionGrantsEntityListing.md
 docs/SubjectDivisions.md
@@ -9386,6 +9431,8 @@ docs/SystemPromptEntityListing.md
 docs/TagQueryRequest.md
 docs/TagValue.md
 docs/TagValueEntityListing.md
+docs/TargetAttributeValue.md
+docs/TargetAttributes.md
 docs/TargetPerformanceProfile.md
 docs/TaskManagementAggregateDataContainer.md
 docs/TaskManagementAggregateQueryClause.md
@@ -9612,6 +9659,7 @@ docs/TwitterDataIngestionRuleResponse.md
 docs/TwitterDataIngestionRuleVersionResponse.md
 docs/TwitterDataIngestionRuleVersionResponseEntityListing.md
 docs/TwitterId.md
+docs/TypedAttribute.md
 docs/TypingSetting.md
 docs/UCI10n.md
 docs/UCIcon.md
@@ -9876,6 +9924,8 @@ docs/ValidateAssignUsers.md
 docs/ValidateWorkPlanMessages.md
 docs/ValidateWorkPlanResponse.md
 docs/ValidationError.md
+docs/ValidationErrorListing.md
+docs/ValidationErrorResponse.md
 docs/ValidationLimits.md
 docs/ValidationResult.md
 docs/ValidationServiceAsyncResponse.md
@@ -10395,6 +10445,7 @@ docs/delete_assistant_queue-example.txt
 docs/delete_assistant_queues-example.txt
 docs/delete_authorization_division-example.txt
 docs/delete_authorization_division-example.txt
+docs/delete_authorization_policies_target_subject_subject_id-example.txt
 docs/delete_authorization_role-example.txt
 docs/delete_authorization_subject_division_role-example.txt
 docs/delete_authorization_subject_division_role-example.txt
@@ -10804,6 +10855,13 @@ docs/get_authorization_divisionspermitted_paged_me-example.txt
 docs/get_authorization_divisionspermitted_paged_subject_id-example.txt
 docs/get_authorization_divisionspermitted_paged_subject_id-example.txt
 docs/get_authorization_permissions-example.txt
+docs/get_authorization_policies-example.txt
+docs/get_authorization_policies_subject_subject_id-example.txt
+docs/get_authorization_policies_target-example.txt
+docs/get_authorization_policies_target_subject_subject_id-example.txt
+docs/get_authorization_policies_targets-example.txt
+docs/get_authorization_policy-example.txt
+docs/get_authorization_policy_attributes-example.txt
 docs/get_authorization_products-example.txt
 docs/get_authorization_role-example.txt
 docs/get_authorization_role_comparedefault_right_role_id-example.txt
@@ -11215,6 +11273,7 @@ docs/get_journey_view_version_job_results-example.txt
 docs/get_journey_view_version_job_results_chart-example.txt
 docs/get_journey_view_version_jobs_latest-example.txt
 docs/get_journey_views-example.txt
+docs/get_journey_views_data_details-example.txt
 docs/get_journey_views_eventdefinition-example.txt
 docs/get_journey_views_eventdefinitions-example.txt
 docs/get_journey_views_jobs-example.txt
@@ -11920,6 +11979,8 @@ docs/get_workforcemanagement_businessunits-example.txt
 docs/get_workforcemanagement_businessunits_divisionviews-example.txt
 docs/get_workforcemanagement_calendar_data_ics-example.txt
 docs/get_workforcemanagement_calendar_url_ics-example.txt
+docs/get_workforcemanagement_historicaldata_bulk_remove_job-example.txt
+docs/get_workforcemanagement_historicaldata_bulk_remove_jobs-example.txt
 docs/get_workforcemanagement_historicaldata_deletejob-example.txt
 docs/get_workforcemanagement_historicaldata_importstatus-example.txt
 docs/get_workforcemanagement_historicaldata_importstatus_job_id-example.txt
@@ -12077,7 +12138,6 @@ docs/patch_outbound_settings-example.txt
 docs/patch_quality_forms_survey-example.txt
 docs/patch_recording_crossplatform_mediaretentionpolicy-example.txt
 docs/patch_recording_mediaretentionpolicy-example.txt
-docs/patch_recordings_screensession-example.txt
 docs/patch_routing_conversation-example.txt
 docs/patch_routing_email_domain-example.txt
 docs/patch_routing_email_domain_validate-example.txt
@@ -12272,6 +12332,9 @@ docs/post_authorization_division_restore-example.txt
 docs/post_authorization_division_restore-example.txt
 docs/post_authorization_divisions-example.txt
 docs/post_authorization_divisions-example.txt
+docs/post_authorization_policies_target-example.txt
+docs/post_authorization_policies_target_validate-example.txt
+docs/post_authorization_policy_simulate-example.txt
 docs/post_authorization_role-example.txt
 docs/post_authorization_role_comparedefault_right_role_id-example.txt
 docs/post_authorization_roles-example.txt
@@ -12850,6 +12913,7 @@ docs/post_workforcemanagement_businessunit_workplanbid_groups-example.txt
 docs/post_workforcemanagement_businessunit_workplanbids-example.txt
 docs/post_workforcemanagement_businessunits-example.txt
 docs/post_workforcemanagement_calendar_url_ics-example.txt
+docs/post_workforcemanagement_historicaldata_bulk_remove_jobs-example.txt
 docs/post_workforcemanagement_historicaldata_deletejob-example.txt
 docs/post_workforcemanagement_historicaldata_validate-example.txt
 docs/post_workforcemanagement_integrations_hri_timeofftypes_jobs-example.txt
@@ -12904,6 +12968,8 @@ docs/put_assistant_copilot-example.txt
 docs/put_assistant_queue-example.txt
 docs/put_authorization_division-example.txt
 docs/put_authorization_division-example.txt
+docs/put_authorization_policies_target-example.txt
+docs/put_authorization_policy-example.txt
 docs/put_authorization_role-example.txt
 docs/put_authorization_role_users_add-example.txt
 docs/put_authorization_role_users_remove-example.txt

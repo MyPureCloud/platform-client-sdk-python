@@ -72,7 +72,8 @@ class WorkitemUpdate(object):
             'skill_ids': 'list[str]',
             'language_id': 'str',
             'utilization_label_id': 'str',
-            'preferred_agent_ids': 'list[str]'
+            'preferred_agent_ids': 'list[str]',
+            'script_id': 'str'
         }
 
         self.attribute_map = {
@@ -98,7 +99,8 @@ class WorkitemUpdate(object):
             'skill_ids': 'skillIds',
             'language_id': 'languageId',
             'utilization_label_id': 'utilizationLabelId',
-            'preferred_agent_ids': 'preferredAgentIds'
+            'preferred_agent_ids': 'preferredAgentIds',
+            'script_id': 'scriptId'
         }
 
         self._name = None
@@ -124,6 +126,7 @@ class WorkitemUpdate(object):
         self._language_id = None
         self._utilization_label_id = None
         self._preferred_agent_ids = None
+        self._script_id = None
 
     @property
     def name(self) -> str:
@@ -686,6 +689,30 @@ class WorkitemUpdate(object):
         
 
         self._preferred_agent_ids = preferred_agent_ids
+
+    @property
+    def script_id(self) -> str:
+        """
+        Gets the script_id of this WorkitemUpdate.
+        The ID of the Workitems script. Must be a valid UUID.
+
+        :return: The script_id of this WorkitemUpdate.
+        :rtype: str
+        """
+        return self._script_id
+
+    @script_id.setter
+    def script_id(self, script_id: str) -> None:
+        """
+        Sets the script_id of this WorkitemUpdate.
+        The ID of the Workitems script. Must be a valid UUID.
+
+        :param script_id: The script_id of this WorkitemUpdate.
+        :type: str
+        """
+        
+
+        self._script_id = script_id
 
     def to_dict(self):
         """

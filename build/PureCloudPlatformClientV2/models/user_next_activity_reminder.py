@@ -48,13 +48,70 @@ class UserNextActivityReminder(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'activity_category': 'str',
+            'start_date': 'datetime'
         }
 
         self.attribute_map = {
-            
+            'activity_category': 'activityCategory',
+            'start_date': 'startDate'
         }
 
+        self._activity_category = None
+        self._start_date = None
+
+    @property
+    def activity_category(self) -> str:
+        """
+        Gets the activity_category of this UserNextActivityReminder.
+        Upcoming activity for which the user is scheduled
+
+        :return: The activity_category of this UserNextActivityReminder.
+        :rtype: str
+        """
+        return self._activity_category
+
+    @activity_category.setter
+    def activity_category(self, activity_category: str) -> None:
+        """
+        Sets the activity_category of this UserNextActivityReminder.
+        Upcoming activity for which the user is scheduled
+
+        :param activity_category: The activity_category of this UserNextActivityReminder.
+        :type: str
+        """
+        if isinstance(activity_category, int):
+            activity_category = str(activity_category)
+        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
+        if activity_category.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for activity_category -> " + activity_category)
+            self._activity_category = "outdated_sdk_version"
+        else:
+            self._activity_category = activity_category
+
+    @property
+    def start_date(self) -> datetime:
+        """
+        Gets the start_date of this UserNextActivityReminder.
+        The start timestamp of the scheduled activity in ISO-8601 format
+
+        :return: The start_date of this UserNextActivityReminder.
+        :rtype: datetime
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date: datetime) -> None:
+        """
+        Sets the start_date of this UserNextActivityReminder.
+        The start timestamp of the scheduled activity in ISO-8601 format
+
+        :param start_date: The start_date of this UserNextActivityReminder.
+        :type: datetime
+        """
+        
+
+        self._start_date = start_date
 
     def to_dict(self):
         """

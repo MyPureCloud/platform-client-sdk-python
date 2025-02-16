@@ -67,7 +67,8 @@ class WorktypeCreate(object):
             'schema_version': 'int',
             'default_queue_id': 'str',
             'default_language_id': 'str',
-            'default_skill_ids': 'list[str]'
+            'default_skill_ids': 'list[str]',
+            'default_script_id': 'str'
         }
 
         self.attribute_map = {
@@ -88,7 +89,8 @@ class WorktypeCreate(object):
             'schema_version': 'schemaVersion',
             'default_queue_id': 'defaultQueueId',
             'default_language_id': 'defaultLanguageId',
-            'default_skill_ids': 'defaultSkillIds'
+            'default_skill_ids': 'defaultSkillIds',
+            'default_script_id': 'defaultScriptId'
         }
 
         self._name = None
@@ -109,6 +111,7 @@ class WorktypeCreate(object):
         self._default_queue_id = None
         self._default_language_id = None
         self._default_skill_ids = None
+        self._default_script_id = None
 
     @property
     def name(self) -> str:
@@ -547,6 +550,30 @@ class WorktypeCreate(object):
         
 
         self._default_skill_ids = default_skill_ids
+
+    @property
+    def default_script_id(self) -> str:
+        """
+        Gets the default_script_id of this WorktypeCreate.
+        The default script for Workitems created from the Worktype. Must be a valid UUID.
+
+        :return: The default_script_id of this WorktypeCreate.
+        :rtype: str
+        """
+        return self._default_script_id
+
+    @default_script_id.setter
+    def default_script_id(self, default_script_id: str) -> None:
+        """
+        Sets the default_script_id of this WorktypeCreate.
+        The default script for Workitems created from the Worktype. Must be a valid UUID.
+
+        :param default_script_id: The default_script_id of this WorktypeCreate.
+        :type: str
+        """
+        
+
+        self._default_script_id = default_script_id
 
     def to_dict(self):
         """

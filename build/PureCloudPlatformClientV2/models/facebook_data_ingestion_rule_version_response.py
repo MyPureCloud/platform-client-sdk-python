@@ -53,9 +53,10 @@ class FacebookDataIngestionRuleVersionResponse(object):
             'description': 'str',
             'status': 'str',
             'version': 'int',
-            'integration_id': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
+            'platform': 'str',
+            'integration_id': 'str',
             'self_uri': 'str'
         }
 
@@ -65,9 +66,10 @@ class FacebookDataIngestionRuleVersionResponse(object):
             'description': 'description',
             'status': 'status',
             'version': 'version',
-            'integration_id': 'integrationId',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
+            'platform': 'platform',
+            'integration_id': 'integrationId',
             'self_uri': 'selfUri'
         }
 
@@ -76,9 +78,10 @@ class FacebookDataIngestionRuleVersionResponse(object):
         self._description = None
         self._status = None
         self._version = None
-        self._integration_id = None
         self._date_created = None
         self._date_modified = None
+        self._platform = None
+        self._integration_id = None
         self._self_uri = None
 
     @property
@@ -207,6 +210,78 @@ class FacebookDataIngestionRuleVersionResponse(object):
         self._version = version
 
     @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this FacebookDataIngestionRuleVersionResponse.
+        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this FacebookDataIngestionRuleVersionResponse.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this FacebookDataIngestionRuleVersionResponse.
+        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this FacebookDataIngestionRuleVersionResponse.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
+
+    @property
+    def date_modified(self) -> datetime:
+        """
+        Gets the date_modified of this FacebookDataIngestionRuleVersionResponse.
+        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_modified of this FacebookDataIngestionRuleVersionResponse.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified: datetime) -> None:
+        """
+        Sets the date_modified of this FacebookDataIngestionRuleVersionResponse.
+        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_modified: The date_modified of this FacebookDataIngestionRuleVersionResponse.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
+
+    @property
+    def platform(self) -> str:
+        """
+        Gets the platform of this FacebookDataIngestionRuleVersionResponse.
+        The platform of the data ingestion rule.
+
+        :return: The platform of this FacebookDataIngestionRuleVersionResponse.
+        :rtype: str
+        """
+        return self._platform
+
+    @platform.setter
+    def platform(self, platform: str) -> None:
+        """
+        Sets the platform of this FacebookDataIngestionRuleVersionResponse.
+        The platform of the data ingestion rule.
+
+        :param platform: The platform of this FacebookDataIngestionRuleVersionResponse.
+        :type: str
+        """
+        
+
+        self._platform = platform
+
+    @property
     def integration_id(self) -> str:
         """
         Gets the integration_id of this FacebookDataIngestionRuleVersionResponse.
@@ -229,54 +304,6 @@ class FacebookDataIngestionRuleVersionResponse(object):
         
 
         self._integration_id = integration_id
-
-    @property
-    def date_created(self) -> datetime:
-        """
-        Gets the date_created of this FacebookDataIngestionRuleVersionResponse.
-        Date this ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_created of this FacebookDataIngestionRuleVersionResponse.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created: datetime) -> None:
-        """
-        Sets the date_created of this FacebookDataIngestionRuleVersionResponse.
-        Date this ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_created: The date_created of this FacebookDataIngestionRuleVersionResponse.
-        :type: datetime
-        """
-        
-
-        self._date_created = date_created
-
-    @property
-    def date_modified(self) -> datetime:
-        """
-        Gets the date_modified of this FacebookDataIngestionRuleVersionResponse.
-        Date this ingestion rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_modified of this FacebookDataIngestionRuleVersionResponse.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified: datetime) -> None:
-        """
-        Sets the date_modified of this FacebookDataIngestionRuleVersionResponse.
-        Date this ingestion rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_modified: The date_modified of this FacebookDataIngestionRuleVersionResponse.
-        :type: datetime
-        """
-        
-
-        self._date_modified = date_modified
 
     @property
     def self_uri(self) -> str:

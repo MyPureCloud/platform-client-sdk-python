@@ -1452,7 +1452,7 @@ except ApiException as e:
 
 ## get_externalcontacts_import_job
 
-> [**ContactImportJobResponse**](ContactImportJobResponse) get_externalcontacts_import_job(job_id)
+> [**ContactImportJobResponse**](ContactImportJobResponse) get_externalcontacts_import_job(job_id, expand=expand)
 
 
 Get job based on id
@@ -1477,10 +1477,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 job_id = 'job_id_example' # str | Job id
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
     # Get job based on id
-    api_response = api_instance.get_externalcontacts_import_job(job_id)
+    api_response = api_instance.get_externalcontacts_import_job(job_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_import_job: %s\n" % e)
@@ -1492,6 +1493,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| Job id |  |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: division |
 
 ### Return type
 
@@ -1500,7 +1502,7 @@ except ApiException as e:
 
 ## get_externalcontacts_import_jobs
 
-> [**ContactImportJobEntityListing**](ContactImportJobEntityListing) get_externalcontacts_import_jobs(after=after, page_size=page_size, sort_order=sort_order, job_status=job_status)
+> [**ContactImportJobEntityListing**](ContactImportJobEntityListing) get_externalcontacts_import_jobs(expand=expand, after=after, page_size=page_size, sort_order=sort_order, job_status=job_status)
 
 
 List jobs for organization
@@ -1524,6 +1526,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = ''25'' # str | Number of entities to return. Maximum of 100. (optional) (default to '25')
 sort_order = ''Ascending'' # str | Direction of sorting. (optional) (default to 'Ascending')
@@ -1531,7 +1534,7 @@ job_status = 'job_status_example' # str | Search term to filter by jobStatus (op
 
 try:
     # List jobs for organization
-    api_response = api_instance.get_externalcontacts_import_jobs(after=after, page_size=page_size, sort_order=sort_order, job_status=job_status)
+    api_response = api_instance.get_externalcontacts_import_jobs(expand=expand, after=after, page_size=page_size, sort_order=sort_order, job_status=job_status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_import_jobs: %s\n" % e)
@@ -1542,6 +1545,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: division |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional] [default to &#39;25&#39;] |
 | **sort_order** | **str**| Direction of sorting. | [optional] [default to &#39;Ascending&#39;]<br />**Values**: Ascending, Descending |
@@ -4811,4 +4815,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

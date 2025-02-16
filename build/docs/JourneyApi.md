@@ -46,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_view_version_job_results_chart**](#get_journey_view_version_job_results_chart) | Get the chart result associated with a journey view job.|
 |[**get_journey_view_version_jobs_latest**](#get_journey_view_version_jobs_latest) | Get the latest job of a journey view version.|
 |[**get_journey_views**](#get_journey_views) | Get a list of Journey Views|
+|[**get_journey_views_data_details**](#get_journey_views_data_details) | Get details about the data available for journey queries including oldest and newest event dates|
 |[**get_journey_views_eventdefinition**](#get_journey_views_eventdefinition) | Get an Event Definition|
 |[**get_journey_views_eventdefinitions**](#get_journey_views_eventdefinitions) | Get a list of Event Definitions|
 |[**get_journey_views_jobs**](#get_journey_views_jobs) | Get the jobs for an organization.|
@@ -2114,6 +2115,50 @@ except ApiException as e:
 [**JourneyViewListing**](JourneyViewListing)
 
 
+## get_journey_views_data_details
+
+> [**DataRange**](DataRange) get_journey_views_data_details()
+
+
+Get details about the data available for journey queries including oldest and newest event dates
+
+Wraps GET /api/v2/journey/views/data/details 
+
+Requires ALL permissions: 
+
+* journey:dataDetails:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get details about the data available for journey queries including oldest and newest event dates
+    api_response = api_instance.get_journey_views_data_details()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_data_details: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**DataRange**](DataRange)
+
+
 ## get_journey_views_eventdefinition
 
 > [**JourneyEventDefinition**](JourneyEventDefinition) get_journey_views_eventdefinition(event_definition_id)
@@ -3589,4 +3634,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

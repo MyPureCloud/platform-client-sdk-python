@@ -55,6 +55,7 @@ class CommonRulePredicate(object):
             'comparison_operator': 'str',
             'value': 'float',
             'status': 'str',
+            'topic': 'str',
             'entity': 'CommonRulePredicateEntity',
             'media_type': 'str',
             'metric': 'str'
@@ -66,6 +67,7 @@ class CommonRulePredicate(object):
             'comparison_operator': 'comparisonOperator',
             'value': 'value',
             'status': 'status',
+            'topic': 'topic',
             'entity': 'entity',
             'media_type': 'mediaType',
             'metric': 'metric'
@@ -76,6 +78,7 @@ class CommonRulePredicate(object):
         self._comparison_operator = None
         self._value = None
         self._status = None
+        self._topic = None
         self._entity = None
         self._media_type = None
         self._metric = None
@@ -216,6 +219,30 @@ class CommonRulePredicate(object):
         self._status = status
 
     @property
+    def topic(self) -> str:
+        """
+        Gets the topic of this CommonRulePredicate.
+        The operational console topic corresponding to the metric.
+
+        :return: The topic of this CommonRulePredicate.
+        :rtype: str
+        """
+        return self._topic
+
+    @topic.setter
+    def topic(self, topic: str) -> None:
+        """
+        Sets the topic of this CommonRulePredicate.
+        The operational console topic corresponding to the metric.
+
+        :param topic: The topic of this CommonRulePredicate.
+        :type: str
+        """
+        
+
+        self._topic = topic
+
+    @property
     def entity(self) -> 'CommonRulePredicateEntity':
         """
         Gets the entity of this CommonRulePredicate.
@@ -290,7 +317,7 @@ class CommonRulePredicate(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["nAbandon", "nConnected", "nInteractions", "nOffered", "nOutbound", "nTransferred", "serviceLevel", "oServiceLevel", "oWaiting", "tAbandon", "tAcw", "tAlert", "tAnswered", "tHandle", "tHeldComplete", "tTalkComplete", "tWait", "tTalk", "tHeld", "tOrganizationPresence", "tSystemPresence", "tAgentRoutingStatus", "oUserRoutingStatuses", "oUserPresences", "oInteracting", "tFlowOut", "tAdherenceStatus"]
+        allowed_values = ["nAbandon", "nConnected", "nInteractions", "nOffered", "nOutbound", "nTransferred", "serviceLevel", "oServiceLevel", "oWaiting", "tAbandon", "tAcw", "tAlert", "tAnswered", "tHandle", "tHeldComplete", "tTalkComplete", "tWait", "tTalk", "tHeld", "tOrganizationPresence", "tSystemPresence", "tAgentRoutingStatus", "oUserRoutingStatuses", "oUserPresences", "oInteracting", "tFlowOut", "tAdherenceStatus", "nEvents"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"

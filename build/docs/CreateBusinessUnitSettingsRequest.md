@@ -10,7 +10,8 @@
 | **time_zone** | str | The time zone for this business unit, using the Olsen tz database format | |
 | **short_term_forecasting** | [BuShortTermForecastingSettings](BuShortTermForecastingSettings) | Short term forecasting settings | [optional] |
 | **scheduling** | [BuSchedulingSettingsRequest](BuSchedulingSettingsRequest) | Scheduling settings | [optional] |
+| **notifications** | [BuNotificationSettingsRequest](BuNotificationSettingsRequest) | Notification settings | [optional] |
 
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

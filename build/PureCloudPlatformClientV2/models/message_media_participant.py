@@ -92,6 +92,7 @@ class MessageMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'park_time': 'datetime',
+            'resume_time': 'datetime',
             'to_address': 'Address',
             'from_address': 'Address',
             'messages': 'list[MessageDetails]',
@@ -139,6 +140,7 @@ class MessageMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'park_time': 'parkTime',
+            'resume_time': 'resumeTime',
             'to_address': 'toAddress',
             'from_address': 'fromAddress',
             'messages': 'messages',
@@ -185,6 +187,7 @@ class MessageMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._park_time = None
+        self._resume_time = None
         self._to_address = None
         self._from_address = None
         self._messages = None
@@ -1054,6 +1057,30 @@ class MessageMediaParticipant(object):
         
 
         self._park_time = park_time
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this MessageMediaParticipant.
+        The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The resume_time of this MessageMediaParticipant.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this MessageMediaParticipant.
+        The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param resume_time: The resume_time of this MessageMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     @property
     def to_address(self) -> 'Address':

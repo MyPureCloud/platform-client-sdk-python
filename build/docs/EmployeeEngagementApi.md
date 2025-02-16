@@ -256,4 +256,4 @@ except ApiException as e:
 [**RecognitionBase**](RecognitionBase)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

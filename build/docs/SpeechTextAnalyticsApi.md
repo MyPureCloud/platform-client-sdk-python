@@ -371,12 +371,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
-page_size = 25 # int | The page size for the listing. The max that will be returned is 50. (optional) (default to 25)
+page_size = 25 # int | The page size for the listing. The max that will be returned is 25. (optional) (default to 25)
 page_number = 1 # int | The page number for the listing (optional) (default to 1)
 name = 'name_example' # str | The category name filter applied to the listing (optional)
 sort_order = ''asc'' # str | The sort order for the listing (optional) (default to 'asc')
 sort_by = ''name'' # str | The field to sort by for the listing (optional) (default to 'name')
-ids = ['ids_example'] # list[str] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+ids = ['ids_example'] # list[str] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. (optional)
 
 try:
     # Get the list of Speech and Text Analytics categories
@@ -391,12 +391,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] |
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 25. | [optional] [default to 25] |
 | **page_number** | **int**| The page number for the listing | [optional] [default to 1] |
 | **name** | **str**| The category name filter applied to the listing | [optional]  |
 | **sort_order** | **str**| The sort order for the listing | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **sort_by** | **str**| The field to sort by for the listing | [optional] [default to &#39;name&#39;]<br />**Values**: name, description |
-| **ids** | [**list[str]**](str)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+| **ids** | [**list[str]**](str)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. | [optional]  |
 
 ### Return type
 
@@ -2761,4 +2761,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

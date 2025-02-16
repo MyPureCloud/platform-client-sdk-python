@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import BuNotificationSettingsRequest
     from . import BuSchedulingSettingsRequest
     from . import BuShortTermForecastingSettings
     from . import WfmVersionedEntityMetadata
@@ -56,6 +57,7 @@ class UpdateBusinessUnitSettingsRequest(object):
             'time_zone': 'str',
             'short_term_forecasting': 'BuShortTermForecastingSettings',
             'scheduling': 'BuSchedulingSettingsRequest',
+            'notifications': 'BuNotificationSettingsRequest',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -64,6 +66,7 @@ class UpdateBusinessUnitSettingsRequest(object):
             'time_zone': 'timeZone',
             'short_term_forecasting': 'shortTermForecasting',
             'scheduling': 'scheduling',
+            'notifications': 'notifications',
             'metadata': 'metadata'
         }
 
@@ -71,6 +74,7 @@ class UpdateBusinessUnitSettingsRequest(object):
         self._time_zone = None
         self._short_term_forecasting = None
         self._scheduling = None
+        self._notifications = None
         self._metadata = None
 
     @property
@@ -173,6 +177,30 @@ class UpdateBusinessUnitSettingsRequest(object):
         
 
         self._scheduling = scheduling
+
+    @property
+    def notifications(self) -> 'BuNotificationSettingsRequest':
+        """
+        Gets the notifications of this UpdateBusinessUnitSettingsRequest.
+        Notification settings
+
+        :return: The notifications of this UpdateBusinessUnitSettingsRequest.
+        :rtype: BuNotificationSettingsRequest
+        """
+        return self._notifications
+
+    @notifications.setter
+    def notifications(self, notifications: 'BuNotificationSettingsRequest') -> None:
+        """
+        Sets the notifications of this UpdateBusinessUnitSettingsRequest.
+        Notification settings
+
+        :param notifications: The notifications of this UpdateBusinessUnitSettingsRequest.
+        :type: BuNotificationSettingsRequest
+        """
+        
+
+        self._notifications = notifications
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

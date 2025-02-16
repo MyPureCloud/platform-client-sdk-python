@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_authorization_division**](#delete_authorization_division) | Delete a division.|
+|[**delete_authorization_policies_target_subject_subject_id**](#delete_authorization_policies_target_subject_subject_id) | Delete an access control policy|
 |[**delete_authorization_role**](#delete_authorization_role) | Delete an organization role.|
 |[**delete_authorization_subject_division_role**](#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**get_authorization_division**](#get_authorization_division) | Returns an authorization division.|
@@ -18,6 +19,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_divisionspermitted_paged_me**](#get_authorization_divisionspermitted_paged_me) | Returns which divisions the current user has the given permission in.|
 |[**get_authorization_divisionspermitted_paged_subject_id**](#get_authorization_divisionspermitted_paged_subject_id) | Returns which divisions the specified user has the given permission in.|
 |[**get_authorization_permissions**](#get_authorization_permissions) | Get all permissions.|
+|[**get_authorization_policies**](#get_authorization_policies) | Get a page of access policies for an organization|
+|[**get_authorization_policies_subject_subject_id**](#get_authorization_policies_subject_subject_id) | Get a page of access policies for a given subject|
+|[**get_authorization_policies_target**](#get_authorization_policies_target) | Get a page of access policies for a given policy target|
+|[**get_authorization_policies_target_subject_subject_id**](#get_authorization_policies_target_subject_subject_id) | Get an access control policy for a specified resource target and subject|
+|[**get_authorization_policies_targets**](#get_authorization_policies_targets) | Get a map of policy targets to valid attributes for those targets|
+|[**get_authorization_policy**](#get_authorization_policy) | Get an access control policy with the specified policy ID|
+|[**get_authorization_policy_attributes**](#get_authorization_policy_attributes) | Get the list of attributes used to evaluate an access control policy with the specified policy ID|
 |[**get_authorization_products**](#get_authorization_products) | Get the list of enabled products|
 |[**get_authorization_role**](#get_authorization_role) | Get a single organization role.|
 |[**get_authorization_role_comparedefault_right_role_id**](#get_authorization_role_comparedefault_right_role_id) | Get an org role to default role comparison|
@@ -35,6 +43,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_authorization_division_object**](#post_authorization_division_object) | Assign a list of objects to a division|
 |[**post_authorization_division_restore**](#post_authorization_division_restore) | Recreate a previously deleted division.|
 |[**post_authorization_divisions**](#post_authorization_divisions) | Create a division.|
+|[**post_authorization_policies_target**](#post_authorization_policies_target) | Add an access control policy for a specified resource target and subject|
+|[**post_authorization_policies_target_validate**](#post_authorization_policies_target_validate) | Validate the conditions and attributes of an access control policy for a specified resource target|
+|[**post_authorization_policy_simulate**](#post_authorization_policy_simulate) | Simulate a request and evaluate the specified policy ID against the provided values|
 |[**post_authorization_role**](#post_authorization_role) | Bulk-grant subjects and divisions with an organization role.|
 |[**post_authorization_role_comparedefault_right_role_id**](#post_authorization_role_comparedefault_right_role_id) | Get an unsaved org role to default role comparison|
 |[**post_authorization_roles**](#post_authorization_roles) | Create an organization role.|
@@ -44,6 +55,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_authorization_subject_bulkreplace**](#post_authorization_subject_bulkreplace) | Replace subject&#39;s roles and divisions with the exact list supplied in the request.|
 |[**post_authorization_subject_division_role**](#post_authorization_subject_division_role) | Make a grant of a role in a division|
 |[**put_authorization_division**](#put_authorization_division) | Update a division.|
+|[**put_authorization_policies_target**](#put_authorization_policies_target) | Add an access control policy for a specified resource target and subject, overwriting any existing policy|
+|[**put_authorization_policy**](#put_authorization_policy) | Update an access control policy with a given ID|
 |[**put_authorization_role**](#put_authorization_role) | Update an organization role.|
 |[**put_authorization_role_users_add**](#put_authorization_role_users_add) | Sets the users for the role|
 |[**put_authorization_role_users_remove**](#put_authorization_role_users_remove) | Removes the users from the role|
@@ -96,6 +109,57 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
 | **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to False] |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_authorization_policies_target_subject_subject_id
+
+>  delete_authorization_policies_target_subject_subject_id(target_name, subject_id)
+
+
+Delete an access control policy
+
+delete_authorization_policies_target_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} 
+
+Requires ANY permissions: 
+
+* authorization:policy:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+target_name = 'target_name_example' # str | The domain:entity:action target to which the policy is applied
+subject_id = 'subject_id_example' # str | The ID of the subject to which the policy is applied
+
+try:
+    # Delete an access control policy
+    api_instance.delete_authorization_policies_target_subject_subject_id(target_name, subject_id)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->delete_authorization_policies_target_subject_subject_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **target_name** | **str**| The domain:entity:action target to which the policy is applied |  |
+| **subject_id** | **str**| The ID of the subject to which the policy is applied |  |
 
 ### Return type
 
@@ -672,6 +736,364 @@ except ApiException as e:
 ### Return type
 
 [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing)
+
+
+## get_authorization_policies
+
+> [**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing) get_authorization_policies(after=after, page_size=page_size)
+
+
+Get a page of access policies for an organization
+
+get_authorization_policies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 25 # int | Number of entities to return. Maximum of 200. (optional) (default to 25)
+
+try:
+    # Get a page of access policies for an organization
+    api_response = api_instance.get_authorization_policies(after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policies: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **int**| Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+[**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing)
+
+
+## get_authorization_policies_subject_subject_id
+
+> [**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing) get_authorization_policies_subject_subject_id(subject_id, after=after, page_size=page_size)
+
+
+Get a page of access policies for a given subject
+
+get_authorization_policies_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/subject/{subjectId} 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+subject_id = 'subject_id_example' # str | The ID of the subject to which policies are applied
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 25 # int | Number of entities to return. Maximum of 200. (optional) (default to 25)
+
+try:
+    # Get a page of access policies for a given subject
+    api_response = api_instance.get_authorization_policies_subject_subject_id(subject_id, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policies_subject_subject_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **subject_id** | **str**| The ID of the subject to which policies are applied |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **int**| Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+[**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing)
+
+
+## get_authorization_policies_target
+
+> [**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing) get_authorization_policies_target(target_name, after=after, page_size=page_size)
+
+
+Get a page of access policies for a given policy target
+
+get_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/targets/{targetName} 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+target_name = 'target_name_example' # str | The domain:entity:action resource target to which policies are applied
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 25 # int | Number of entities to return. Maximum of 200. (optional) (default to 25)
+
+try:
+    # Get a page of access policies for a given policy target
+    api_response = api_instance.get_authorization_policies_target(target_name, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policies_target: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **target_name** | **str**| The domain:entity:action resource target to which policies are applied |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **int**| Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+[**AuthorizationPolicyEntityListing**](AuthorizationPolicyEntityListing)
+
+
+## get_authorization_policies_target_subject_subject_id
+
+> [**AuthorizationPolicy**](AuthorizationPolicy) get_authorization_policies_target_subject_subject_id(target_name, subject_id)
+
+
+Get an access control policy for a specified resource target and subject
+
+get_authorization_policies_target_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+target_name = 'target_name_example' # str | The domain:entity:action resource target to which the policy is applied
+subject_id = 'subject_id_example' # str | The ID of the subject to which the policy is applied
+
+try:
+    # Get an access control policy for a specified resource target and subject
+    api_response = api_instance.get_authorization_policies_target_subject_subject_id(target_name, subject_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policies_target_subject_subject_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **target_name** | **str**| The domain:entity:action resource target to which the policy is applied |  |
+| **subject_id** | **str**| The ID of the subject to which the policy is applied |  |
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+## get_authorization_policies_targets
+
+> [**TargetAttributes**](TargetAttributes) get_authorization_policies_targets()
+
+
+Get a map of policy targets to valid attributes for those targets
+
+get_authorization_policies_targets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/targets 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+
+try:
+    # Get a map of policy targets to valid attributes for those targets
+    api_response = api_instance.get_authorization_policies_targets()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policies_targets: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**TargetAttributes**](TargetAttributes)
+
+
+## get_authorization_policy
+
+> [**AuthorizationPolicy**](AuthorizationPolicy) get_authorization_policy(policy_id)
+
+
+Get an access control policy with the specified policy ID
+
+get_authorization_policy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/{policyId} 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+policy_id = 'policy_id_example' # str | The ID of the policy to retrieve
+
+try:
+    # Get an access control policy with the specified policy ID
+    api_response = api_instance.get_authorization_policy(policy_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| The ID of the policy to retrieve |  |
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+## get_authorization_policy_attributes
+
+> [**PolicyAttributeSet**](PolicyAttributeSet) get_authorization_policy_attributes(policy_id)
+
+
+Get the list of attributes used to evaluate an access control policy with the specified policy ID
+
+get_authorization_policy_attributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/authorization/policies/{policyId}/attributes 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+policy_id = 'policy_id_example' # str | The ID of the policy to retrieve attributes
+
+try:
+    # Get the list of attributes used to evaluate an access control policy with the specified policy ID
+    api_response = api_instance.get_authorization_policy_attributes(policy_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policy_attributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| The ID of the policy to retrieve attributes |  |
+
+### Return type
+
+[**PolicyAttributeSet**](PolicyAttributeSet)
 
 
 ## get_authorization_products
@@ -1545,6 +1967,162 @@ except ApiException as e:
 [**AuthzDivision**](AuthzDivision)
 
 
+## post_authorization_policies_target
+
+> [**AuthorizationPolicy**](AuthorizationPolicy) post_authorization_policies_target(target_name, body)
+
+
+Add an access control policy for a specified resource target and subject
+
+post_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/authorization/policies/targets/{targetName} 
+
+Requires ANY permissions: 
+
+* authorization:policy:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+target_name = 'target_name_example' # str | The domain:entity:action target to which the policy will be applied
+body = PureCloudPlatformClientV2.AuthorizationPolicy() # AuthorizationPolicy | Access control policy
+
+try:
+    # Add an access control policy for a specified resource target and subject
+    api_response = api_instance.post_authorization_policies_target(target_name, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->post_authorization_policies_target: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **target_name** | **str**| The domain:entity:action target to which the policy will be applied |  |
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy |  |
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+## post_authorization_policies_target_validate
+
+> [**ValidationErrorListing**](ValidationErrorListing) post_authorization_policies_target_validate(target_name, body)
+
+
+Validate the conditions and attributes of an access control policy for a specified resource target
+
+post_authorization_policies_target_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/authorization/policies/targets/{targetName}/validate 
+
+Requires ANY permissions: 
+
+* authorization:policy:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+target_name = 'target_name_example' # str | The domain:entity:action target to which the policy will be applied
+body = PureCloudPlatformClientV2.AuthorizationPolicy() # AuthorizationPolicy | Access control policy
+
+try:
+    # Validate the conditions and attributes of an access control policy for a specified resource target
+    api_response = api_instance.post_authorization_policies_target_validate(target_name, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->post_authorization_policies_target_validate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **target_name** | **str**| The domain:entity:action target to which the policy will be applied |  |
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy |  |
+
+### Return type
+
+[**ValidationErrorListing**](ValidationErrorListing)
+
+
+## post_authorization_policy_simulate
+
+> [**PolicyTestResult**](PolicyTestResult) post_authorization_policy_simulate(policy_id, body)
+
+
+Simulate a request and evaluate the specified policy ID against the provided values
+
+post_authorization_policy_simulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/authorization/policies/{policyId}/simulate 
+
+Requires ANY permissions: 
+
+* authorization:policy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+policy_id = 'policy_id_example' # str | The ID of the policy to test the simulated data against
+body = PureCloudPlatformClientV2.PolicyTestPayload() # PolicyTestPayload | A map of attribute names to type and simulated data value
+
+try:
+    # Simulate a request and evaluate the specified policy ID against the provided values
+    api_response = api_instance.post_authorization_policy_simulate(policy_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->post_authorization_policy_simulate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| The ID of the policy to test the simulated data against |  |
+| **body** | [**PolicyTestPayload**](PolicyTestPayload)| A map of attribute names to type and simulated data value |  |
+
+### Return type
+
+[**PolicyTestResult**](PolicyTestResult)
+
+
 ## post_authorization_role
 
 >  post_authorization_role(role_id, body, subject_type=subject_type)
@@ -2005,6 +2583,111 @@ except ApiException as e:
 [**AuthzDivision**](AuthzDivision)
 
 
+## put_authorization_policies_target
+
+> [**AuthorizationPolicy**](AuthorizationPolicy) put_authorization_policies_target(target_name, body)
+
+
+Add an access control policy for a specified resource target and subject, overwriting any existing policy
+
+put_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/authorization/policies/targets/{targetName} 
+
+Requires ANY permissions: 
+
+* authorization:policy:edit
+* authorization:policy:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+target_name = 'target_name_example' # str | The domain:entity:action target to which the policy will be applied
+body = PureCloudPlatformClientV2.AuthorizationPolicy() # AuthorizationPolicy | Access control policy
+
+try:
+    # Add an access control policy for a specified resource target and subject, overwriting any existing policy
+    api_response = api_instance.put_authorization_policies_target(target_name, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->put_authorization_policies_target: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **target_name** | **str**| The domain:entity:action target to which the policy will be applied |  |
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy |  |
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
+## put_authorization_policy
+
+> [**AuthorizationPolicy**](AuthorizationPolicy) put_authorization_policy(policy_id, body)
+
+
+Update an access control policy with a given ID
+
+put_authorization_policy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/authorization/policies/{policyId} 
+
+Requires ANY permissions: 
+
+* authorization:policy:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+policy_id = 'policy_id_example' # str | The ID of the policy to update
+body = PureCloudPlatformClientV2.AuthorizationPolicy() # AuthorizationPolicy | Access control policy
+
+try:
+    # Update an access control policy with a given ID
+    api_response = api_instance.put_authorization_policy(policy_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->put_authorization_policy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **policy_id** | **str**| The ID of the policy to update |  |
+| **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy |  |
+
+### Return type
+
+[**AuthorizationPolicy**](AuthorizationPolicy)
+
+
 ## put_authorization_role
 
 > [**DomainOrganizationRole**](DomainOrganizationRole) put_authorization_role(role_id, body)
@@ -2306,4 +2989,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

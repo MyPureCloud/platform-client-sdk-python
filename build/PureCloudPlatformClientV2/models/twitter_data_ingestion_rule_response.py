@@ -51,12 +51,13 @@ class TwitterDataIngestionRuleResponse(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
-            'search_terms': 'str',
-            'countries': 'list[str]',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
             'status': 'str',
             'version': 'int',
+            'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'platform': 'str',
+            'search_terms': 'str',
+            'countries': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -64,24 +65,26 @@ class TwitterDataIngestionRuleResponse(object):
             'id': 'id',
             'name': 'name',
             'description': 'description',
-            'search_terms': 'searchTerms',
-            'countries': 'countries',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
             'status': 'status',
             'version': 'version',
+            'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'platform': 'platform',
+            'search_terms': 'searchTerms',
+            'countries': 'countries',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._description = None
-        self._search_terms = None
-        self._countries = None
-        self._date_created = None
-        self._date_modified = None
         self._status = None
         self._version = None
+        self._date_created = None
+        self._date_modified = None
+        self._platform = None
+        self._search_terms = None
+        self._countries = None
         self._self_uri = None
 
     @property
@@ -157,102 +160,6 @@ class TwitterDataIngestionRuleResponse(object):
         self._description = description
 
     @property
-    def search_terms(self) -> str:
-        """
-        Gets the search_terms of this TwitterDataIngestionRuleResponse.
-        Search terms for X (formally Twitter).
-
-        :return: The search_terms of this TwitterDataIngestionRuleResponse.
-        :rtype: str
-        """
-        return self._search_terms
-
-    @search_terms.setter
-    def search_terms(self, search_terms: str) -> None:
-        """
-        Sets the search_terms of this TwitterDataIngestionRuleResponse.
-        Search terms for X (formally Twitter).
-
-        :param search_terms: The search_terms of this TwitterDataIngestionRuleResponse.
-        :type: str
-        """
-        
-
-        self._search_terms = search_terms
-
-    @property
-    def countries(self) -> List[str]:
-        """
-        Gets the countries of this TwitterDataIngestionRuleResponse.
-        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-
-        :return: The countries of this TwitterDataIngestionRuleResponse.
-        :rtype: list[str]
-        """
-        return self._countries
-
-    @countries.setter
-    def countries(self, countries: List[str]) -> None:
-        """
-        Sets the countries of this TwitterDataIngestionRuleResponse.
-        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-
-        :param countries: The countries of this TwitterDataIngestionRuleResponse.
-        :type: list[str]
-        """
-        
-
-        self._countries = countries
-
-    @property
-    def date_created(self) -> datetime:
-        """
-        Gets the date_created of this TwitterDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_created of this TwitterDataIngestionRuleResponse.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created: datetime) -> None:
-        """
-        Sets the date_created of this TwitterDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_created: The date_created of this TwitterDataIngestionRuleResponse.
-        :type: datetime
-        """
-        
-
-        self._date_created = date_created
-
-    @property
-    def date_modified(self) -> datetime:
-        """
-        Gets the date_modified of this TwitterDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_modified of this TwitterDataIngestionRuleResponse.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified: datetime) -> None:
-        """
-        Sets the date_modified of this TwitterDataIngestionRuleResponse.
-        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_modified: The date_modified of this TwitterDataIngestionRuleResponse.
-        :type: datetime
-        """
-        
-
-        self._date_modified = date_modified
-
-    @property
     def status(self) -> str:
         """
         Gets the status of this TwitterDataIngestionRuleResponse.
@@ -304,6 +211,126 @@ class TwitterDataIngestionRuleResponse(object):
         
 
         self._version = version
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this TwitterDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this TwitterDataIngestionRuleResponse.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this TwitterDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this TwitterDataIngestionRuleResponse.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
+
+    @property
+    def date_modified(self) -> datetime:
+        """
+        Gets the date_modified of this TwitterDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_modified of this TwitterDataIngestionRuleResponse.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified: datetime) -> None:
+        """
+        Sets the date_modified of this TwitterDataIngestionRuleResponse.
+        Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_modified: The date_modified of this TwitterDataIngestionRuleResponse.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
+
+    @property
+    def platform(self) -> str:
+        """
+        Gets the platform of this TwitterDataIngestionRuleResponse.
+        The platform of the data ingestion rule.
+
+        :return: The platform of this TwitterDataIngestionRuleResponse.
+        :rtype: str
+        """
+        return self._platform
+
+    @platform.setter
+    def platform(self, platform: str) -> None:
+        """
+        Sets the platform of this TwitterDataIngestionRuleResponse.
+        The platform of the data ingestion rule.
+
+        :param platform: The platform of this TwitterDataIngestionRuleResponse.
+        :type: str
+        """
+        
+
+        self._platform = platform
+
+    @property
+    def search_terms(self) -> str:
+        """
+        Gets the search_terms of this TwitterDataIngestionRuleResponse.
+        Search terms for X (formally Twitter).
+
+        :return: The search_terms of this TwitterDataIngestionRuleResponse.
+        :rtype: str
+        """
+        return self._search_terms
+
+    @search_terms.setter
+    def search_terms(self, search_terms: str) -> None:
+        """
+        Sets the search_terms of this TwitterDataIngestionRuleResponse.
+        Search terms for X (formally Twitter).
+
+        :param search_terms: The search_terms of this TwitterDataIngestionRuleResponse.
+        :type: str
+        """
+        
+
+        self._search_terms = search_terms
+
+    @property
+    def countries(self) -> List[str]:
+        """
+        Gets the countries of this TwitterDataIngestionRuleResponse.
+        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+
+        :return: The countries of this TwitterDataIngestionRuleResponse.
+        :rtype: list[str]
+        """
+        return self._countries
+
+    @countries.setter
+    def countries(self, countries: List[str]) -> None:
+        """
+        Sets the countries of this TwitterDataIngestionRuleResponse.
+        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+
+        :param countries: The countries of this TwitterDataIngestionRuleResponse.
+        :type: list[str]
+        """
+        
+
+        self._countries = countries
 
     @property
     def self_uri(self) -> str:

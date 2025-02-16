@@ -41,6 +41,7 @@ if TYPE_CHECKING:
     from . import MessengerSettings
     from . import PositionSettings
     from . import SupportCenterSettings
+    from . import VideoSettings
     from . import WebDeploymentHeadlessMode
 
 class WebDeploymentConfigurationVersion(object):
@@ -72,6 +73,7 @@ class WebDeploymentConfigurationVersion(object):
             'cobrowse': 'CobrowseSettings',
             'journey_events': 'JourneyEventsSettings',
             'authentication_settings': 'AuthenticationSettings',
+            'video': 'VideoSettings',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'date_published': 'datetime',
@@ -97,6 +99,7 @@ class WebDeploymentConfigurationVersion(object):
             'cobrowse': 'cobrowse',
             'journey_events': 'journeyEvents',
             'authentication_settings': 'authenticationSettings',
+            'video': 'video',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'date_published': 'datePublished',
@@ -121,6 +124,7 @@ class WebDeploymentConfigurationVersion(object):
         self._cobrowse = None
         self._journey_events = None
         self._authentication_settings = None
+        self._video = None
         self._date_created = None
         self._date_modified = None
         self._date_published = None
@@ -465,6 +469,30 @@ class WebDeploymentConfigurationVersion(object):
         
 
         self._authentication_settings = authentication_settings
+
+    @property
+    def video(self) -> 'VideoSettings':
+        """
+        Gets the video of this WebDeploymentConfigurationVersion.
+        The settings for video
+
+        :return: The video of this WebDeploymentConfigurationVersion.
+        :rtype: VideoSettings
+        """
+        return self._video
+
+    @video.setter
+    def video(self, video: 'VideoSettings') -> None:
+        """
+        Sets the video of this WebDeploymentConfigurationVersion.
+        The settings for video
+
+        :param video: The video of this WebDeploymentConfigurationVersion.
+        :type: VideoSettings
+        """
+        
+
+        self._video = video
 
     @property
     def date_created(self) -> datetime:

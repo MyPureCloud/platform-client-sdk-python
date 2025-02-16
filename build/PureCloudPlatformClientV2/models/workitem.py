@@ -44,6 +44,7 @@ if TYPE_CHECKING:
     from . import WorkitemQueueReference
     from . import WorkitemSchema
     from . import WorkitemScoredAgent
+    from . import WorkitemScriptReference
     from . import WorkitemStatusReference
     from . import WorkitemUtilizationLabelReference
     from . import WorktypeReference
@@ -98,6 +99,7 @@ class Workitem(object):
             'custom_fields': 'dict(str, object)',
             'auto_status_transition_detail': 'AutoStatusTransitionDetail',
             'scored_agents': 'list[WorkitemScoredAgent]',
+            'script': 'WorkitemScriptReference',
             'self_uri': 'str'
         }
 
@@ -137,6 +139,7 @@ class Workitem(object):
             'custom_fields': 'customFields',
             'auto_status_transition_detail': 'autoStatusTransitionDetail',
             'scored_agents': 'scoredAgents',
+            'script': 'script',
             'self_uri': 'selfUri'
         }
 
@@ -175,6 +178,7 @@ class Workitem(object):
         self._custom_fields = None
         self._auto_status_transition_detail = None
         self._scored_agents = None
+        self._script = None
         self._self_uri = None
 
     @property
@@ -1026,6 +1030,30 @@ class Workitem(object):
         
 
         self._scored_agents = scored_agents
+
+    @property
+    def script(self) -> 'WorkitemScriptReference':
+        """
+        Gets the script of this Workitem.
+        The script that will be executed for the Workitem.
+
+        :return: The script of this Workitem.
+        :rtype: WorkitemScriptReference
+        """
+        return self._script
+
+    @script.setter
+    def script(self, script: 'WorkitemScriptReference') -> None:
+        """
+        Sets the script of this Workitem.
+        The script that will be executed for the Workitem.
+
+        :param script: The script of this Workitem.
+        :type: WorkitemScriptReference
+        """
+        
+
+        self._script = script
 
     @property
     def self_uri(self) -> str:

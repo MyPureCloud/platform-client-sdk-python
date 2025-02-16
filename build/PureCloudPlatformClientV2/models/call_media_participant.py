@@ -91,6 +91,7 @@ class CallMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'park_time': 'datetime',
+            'resume_time': 'datetime',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -146,6 +147,7 @@ class CallMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'park_time': 'parkTime',
+            'resume_time': 'resumeTime',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -200,6 +202,7 @@ class CallMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._park_time = None
+        self._resume_time = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -1077,6 +1080,30 @@ class CallMediaParticipant(object):
         
 
         self._park_time = park_time
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this CallMediaParticipant.
+        The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The resume_time of this CallMediaParticipant.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this CallMediaParticipant.
+        The time when this participant's communications will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param resume_time: The resume_time of this CallMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     @property
     def muted(self) -> bool:

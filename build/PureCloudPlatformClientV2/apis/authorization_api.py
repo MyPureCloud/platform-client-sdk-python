@@ -38,6 +38,8 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import AuthorizationPolicy
+from ..models import AuthorizationPolicyEntityListing
 from ..models import AuthorizationSettings
 from ..models import AuthzDivision
 from ..models import AuthzDivisionEntityListing
@@ -52,12 +54,17 @@ from ..models import ErrorBody
 from ..models import OrganizationProductEntityListing
 from ..models import OrganizationRoleEntityListing
 from ..models import PermissionCollectionEntityListing
+from ..models import PolicyAttributeSet
+from ..models import PolicyTestPayload
+from ..models import PolicyTestResult
 from ..models import RoleDivisionGrants
 from ..models import RoleSettings
 from ..models import SubjectDivisionGrantsEntityListing
 from ..models import SubjectDivisions
+from ..models import TargetAttributes
 from ..models import UserAuthorization
 from ..models import UserReferenceEntityListing
+from ..models import ValidationErrorListing
 
 class AuthorizationApi(object):
     """
@@ -123,6 +130,91 @@ class AuthorizationApi(object):
         query_params = {}
         if 'force' in params:
             query_params['force'] = params['force']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_authorization_policies_target_subject_subject_id(self, target_name: str, subject_id: str, **kwargs) -> None:
+        """
+        Delete an access control policy
+        
+	    delete_authorization_policies_target_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_authorization_policies_target_subject_subject_id(target_name, subject_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str target_name: The domain:entity:action target to which the policy is applied (required)
+        :param str subject_id: The ID of the subject to which the policy is applied (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['target_name', 'subject_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_authorization_policies_target_subject_subject_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'target_name' is set
+        if ('target_name' not in params) or (params['target_name'] is None):
+            raise ValueError("Missing the required parameter `target_name` when calling `delete_authorization_policies_target_subject_subject_id`")
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `delete_authorization_policies_target_subject_subject_id`")
+
+
+        resource_path = '/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'target_name' in params:
+            path_params['targetName'] = params['target_name']
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+
+        query_params = {}
 
         header_params = {}
 
@@ -1069,6 +1161,571 @@ class AuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='PermissionCollectionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_policies(self, **kwargs) -> 'AuthorizationPolicyEntityListing':
+        """
+        Get a page of access policies for an organization
+        
+	    get_authorization_policies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_policies(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param int page_size: Number of entities to return. Maximum of 200.
+        :return: AuthorizationPolicyEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_policies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/policies'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicyEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_policies_subject_subject_id(self, subject_id: str, **kwargs) -> 'AuthorizationPolicyEntityListing':
+        """
+        Get a page of access policies for a given subject
+        
+	    get_authorization_policies_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_policies_subject_subject_id(subject_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subject_id: The ID of the subject to which policies are applied (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param int page_size: Number of entities to return. Maximum of 200.
+        :return: AuthorizationPolicyEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subject_id', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_policies_subject_subject_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `get_authorization_policies_subject_subject_id`")
+
+
+        resource_path = '/api/v2/authorization/policies/subject/{subjectId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicyEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_policies_target(self, target_name: str, **kwargs) -> 'AuthorizationPolicyEntityListing':
+        """
+        Get a page of access policies for a given policy target
+        
+	    get_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_policies_target(target_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str target_name: The domain:entity:action resource target to which policies are applied (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param int page_size: Number of entities to return. Maximum of 200.
+        :return: AuthorizationPolicyEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['target_name', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_policies_target" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'target_name' is set
+        if ('target_name' not in params) or (params['target_name'] is None):
+            raise ValueError("Missing the required parameter `target_name` when calling `get_authorization_policies_target`")
+
+
+        resource_path = '/api/v2/authorization/policies/targets/{targetName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'target_name' in params:
+            path_params['targetName'] = params['target_name']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicyEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_policies_target_subject_subject_id(self, target_name: str, subject_id: str, **kwargs) -> 'AuthorizationPolicy':
+        """
+        Get an access control policy for a specified resource target and subject
+        
+	    get_authorization_policies_target_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_policies_target_subject_subject_id(target_name, subject_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str target_name: The domain:entity:action resource target to which the policy is applied (required)
+        :param str subject_id: The ID of the subject to which the policy is applied (required)
+        :return: AuthorizationPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['target_name', 'subject_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_policies_target_subject_subject_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'target_name' is set
+        if ('target_name' not in params) or (params['target_name'] is None):
+            raise ValueError("Missing the required parameter `target_name` when calling `get_authorization_policies_target_subject_subject_id`")
+        # verify the required parameter 'subject_id' is set
+        if ('subject_id' not in params) or (params['subject_id'] is None):
+            raise ValueError("Missing the required parameter `subject_id` when calling `get_authorization_policies_target_subject_subject_id`")
+
+
+        resource_path = '/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'target_name' in params:
+            path_params['targetName'] = params['target_name']
+        if 'subject_id' in params:
+            path_params['subjectId'] = params['subject_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicy',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_policies_targets(self, **kwargs) -> 'TargetAttributes':
+        """
+        Get a map of policy targets to valid attributes for those targets
+        
+	    get_authorization_policies_targets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_policies_targets(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: TargetAttributes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_policies_targets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/policies/targets'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TargetAttributes',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_policy(self, policy_id: str, **kwargs) -> 'AuthorizationPolicy':
+        """
+        Get an access control policy with the specified policy ID
+        
+	    get_authorization_policy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_policy(policy_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: The ID of the policy to retrieve (required)
+        :return: AuthorizationPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_policy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `get_authorization_policy`")
+
+
+        resource_path = '/api/v2/authorization/policies/{policyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicy',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_policy_attributes(self, policy_id: str, **kwargs) -> 'PolicyAttributeSet':
+        """
+        Get the list of attributes used to evaluate an access control policy with the specified policy ID
+        
+	    get_authorization_policy_attributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_policy_attributes(policy_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: The ID of the policy to retrieve attributes (required)
+        :return: PolicyAttributeSet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_policy_attributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `get_authorization_policy_attributes`")
+
+
+        resource_path = '/api/v2/authorization/policies/{policyId}/attributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PolicyAttributeSet',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2462,6 +3119,261 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_authorization_policies_target(self, target_name: str, body: 'AuthorizationPolicy', **kwargs) -> 'AuthorizationPolicy':
+        """
+        Add an access control policy for a specified resource target and subject
+        
+	    post_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_policies_target(target_name, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str target_name: The domain:entity:action target to which the policy will be applied (required)
+        :param AuthorizationPolicy body: Access control policy (required)
+        :return: AuthorizationPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['target_name', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_policies_target" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'target_name' is set
+        if ('target_name' not in params) or (params['target_name'] is None):
+            raise ValueError("Missing the required parameter `target_name` when calling `post_authorization_policies_target`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_policies_target`")
+
+
+        resource_path = '/api/v2/authorization/policies/targets/{targetName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'target_name' in params:
+            path_params['targetName'] = params['target_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicy',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_authorization_policies_target_validate(self, target_name: str, body: 'AuthorizationPolicy', **kwargs) -> 'ValidationErrorListing':
+        """
+        Validate the conditions and attributes of an access control policy for a specified resource target
+        
+	    post_authorization_policies_target_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_policies_target_validate(target_name, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str target_name: The domain:entity:action target to which the policy will be applied (required)
+        :param AuthorizationPolicy body: Access control policy (required)
+        :return: ValidationErrorListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['target_name', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_policies_target_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'target_name' is set
+        if ('target_name' not in params) or (params['target_name'] is None):
+            raise ValueError("Missing the required parameter `target_name` when calling `post_authorization_policies_target_validate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_policies_target_validate`")
+
+
+        resource_path = '/api/v2/authorization/policies/targets/{targetName}/validate'.replace('{format}', 'json')
+        path_params = {}
+        if 'target_name' in params:
+            path_params['targetName'] = params['target_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ValidationErrorListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_authorization_policy_simulate(self, policy_id: str, body: 'PolicyTestPayload', **kwargs) -> 'PolicyTestResult':
+        """
+        Simulate a request and evaluate the specified policy ID against the provided values
+        
+	    post_authorization_policy_simulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_authorization_policy_simulate(policy_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: The ID of the policy to test the simulated data against (required)
+        :param PolicyTestPayload body: A map of attribute names to type and simulated data value (required)
+        :return: PolicyTestResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_authorization_policy_simulate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `post_authorization_policy_simulate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_policy_simulate`")
+
+
+        resource_path = '/api/v2/authorization/policies/{policyId}/simulate'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PolicyTestResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_authorization_role(self, role_id: str, body: 'SubjectDivisions', **kwargs) -> None:
         """
         Bulk-grant subjects and divisions with an organization role.
@@ -3223,6 +4135,176 @@ class AuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AuthzDivision',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_authorization_policies_target(self, target_name: str, body: 'AuthorizationPolicy', **kwargs) -> 'AuthorizationPolicy':
+        """
+        Add an access control policy for a specified resource target and subject, overwriting any existing policy
+        
+	    put_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_authorization_policies_target(target_name, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str target_name: The domain:entity:action target to which the policy will be applied (required)
+        :param AuthorizationPolicy body: Access control policy (required)
+        :return: AuthorizationPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['target_name', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_authorization_policies_target" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'target_name' is set
+        if ('target_name' not in params) or (params['target_name'] is None):
+            raise ValueError("Missing the required parameter `target_name` when calling `put_authorization_policies_target`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_authorization_policies_target`")
+
+
+        resource_path = '/api/v2/authorization/policies/targets/{targetName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'target_name' in params:
+            path_params['targetName'] = params['target_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicy',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_authorization_policy(self, policy_id: str, body: 'AuthorizationPolicy', **kwargs) -> 'AuthorizationPolicy':
+        """
+        Update an access control policy with a given ID
+        
+	    put_authorization_policy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_authorization_policy(policy_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: The ID of the policy to update (required)
+        :param AuthorizationPolicy body: Access control policy (required)
+        :return: AuthorizationPolicy
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_authorization_policy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `put_authorization_policy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_authorization_policy`")
+
+
+        resource_path = '/api/v2/authorization/policies/{policyId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policyId'] = params['policy_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthorizationPolicy',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

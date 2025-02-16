@@ -284,4 +284,4 @@ except ApiException as e:
 [**IdleTokenTimeout**](IdleTokenTimeout)
 
 
-_PureCloudPlatformClientV2 221.0.0_
+_PureCloudPlatformClientV2 222.0.0_

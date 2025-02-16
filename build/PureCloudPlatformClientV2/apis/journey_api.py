@@ -51,6 +51,7 @@ from ..models import AppEventRequest
 from ..models import AppEventResponse
 from ..models import AsyncQueryResponse
 from ..models import AsyncQueryStatus
+from ..models import DataRange
 from ..models import DeploymentPing
 from ..models import EntityListing
 from ..models import ErrorBody
@@ -3426,6 +3427,78 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyViewListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_views_data_details(self, **kwargs) -> 'DataRange':
+        """
+        Get details about the data available for journey queries including oldest and newest event dates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_views_data_details(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: DataRange
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_views_data_details" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/views/data/details'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataRange',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

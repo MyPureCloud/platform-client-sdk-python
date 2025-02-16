@@ -39,6 +39,7 @@ if TYPE_CHECKING:
     from . import QueueReference
     from . import RealTimeAdherenceExplanation
     from . import TeamReference
+    from . import UserNextActivityReminder
     from . import UserReference
 
 class UserScheduleAdherence(object):
@@ -77,6 +78,8 @@ class UserScheduleAdherence(object):
             'active_queues': 'list[QueueReference]',
             'active_queues_modified_time': 'datetime',
             'removed_from_management_unit': 'bool',
+            'next_activity_reminders': 'list[UserNextActivityReminder]',
+            'suppress_on_time_reminder': 'bool',
             'self_uri': 'str'
         }
 
@@ -102,6 +105,8 @@ class UserScheduleAdherence(object):
             'active_queues': 'activeQueues',
             'active_queues_modified_time': 'activeQueuesModifiedTime',
             'removed_from_management_unit': 'removedFromManagementUnit',
+            'next_activity_reminders': 'nextActivityReminders',
+            'suppress_on_time_reminder': 'suppressOnTimeReminder',
             'self_uri': 'selfUri'
         }
 
@@ -126,6 +131,8 @@ class UserScheduleAdherence(object):
         self._active_queues = None
         self._active_queues_modified_time = None
         self._removed_from_management_unit = None
+        self._next_activity_reminders = None
+        self._suppress_on_time_reminder = None
         self._self_uri = None
 
     @property
@@ -661,6 +668,54 @@ class UserScheduleAdherence(object):
         
 
         self._removed_from_management_unit = removed_from_management_unit
+
+    @property
+    def next_activity_reminders(self) -> List['UserNextActivityReminder']:
+        """
+        Gets the next_activity_reminders of this UserScheduleAdherence.
+        A list of upcoming activities for which the user is scheduled
+
+        :return: The next_activity_reminders of this UserScheduleAdherence.
+        :rtype: list[UserNextActivityReminder]
+        """
+        return self._next_activity_reminders
+
+    @next_activity_reminders.setter
+    def next_activity_reminders(self, next_activity_reminders: List['UserNextActivityReminder']) -> None:
+        """
+        Sets the next_activity_reminders of this UserScheduleAdherence.
+        A list of upcoming activities for which the user is scheduled
+
+        :param next_activity_reminders: The next_activity_reminders of this UserScheduleAdherence.
+        :type: list[UserNextActivityReminder]
+        """
+        
+
+        self._next_activity_reminders = next_activity_reminders
+
+    @property
+    def suppress_on_time_reminder(self) -> bool:
+        """
+        Gets the suppress_on_time_reminder of this UserScheduleAdherence.
+        Indicates whether the on-time adherence notification should be suppressed for the user
+
+        :return: The suppress_on_time_reminder of this UserScheduleAdherence.
+        :rtype: bool
+        """
+        return self._suppress_on_time_reminder
+
+    @suppress_on_time_reminder.setter
+    def suppress_on_time_reminder(self, suppress_on_time_reminder: bool) -> None:
+        """
+        Sets the suppress_on_time_reminder of this UserScheduleAdherence.
+        Indicates whether the on-time adherence notification should be suppressed for the user
+
+        :param suppress_on_time_reminder: The suppress_on_time_reminder of this UserScheduleAdherence.
+        :type: bool
+        """
+        
+
+        self._suppress_on_time_reminder = suppress_on_time_reminder
 
     @property
     def self_uri(self) -> str:

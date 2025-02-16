@@ -94,7 +94,7 @@ class LearningScheduleSlotsQueryRequest(object):
     def length_in_minutes(self) -> int:
         """
         Gets the length_in_minutes of this LearningScheduleSlotsQueryRequest.
-        The duration of coaching appointment to schedule in 15 minutes granularity
+        The duration of Learning Assignment to schedule in 15 minutes granularity
 
         :return: The length_in_minutes of this LearningScheduleSlotsQueryRequest.
         :rtype: int
@@ -105,7 +105,7 @@ class LearningScheduleSlotsQueryRequest(object):
     def length_in_minutes(self, length_in_minutes: int) -> None:
         """
         Sets the length_in_minutes of this LearningScheduleSlotsQueryRequest.
-        The duration of coaching appointment to schedule in 15 minutes granularity
+        The duration of Learning Assignment to schedule in 15 minutes granularity
 
         :param length_in_minutes: The length_in_minutes of this LearningScheduleSlotsQueryRequest.
         :type: int

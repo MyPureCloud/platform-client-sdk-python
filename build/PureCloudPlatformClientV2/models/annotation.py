@@ -105,7 +105,7 @@ class Annotation(object):
     def id(self) -> str:
         """
         Gets the id of this Annotation.
-        The globally unique identifier for the object.
+        Annotation id. All pause annotations on a recording will share an ID value, bookmark annotations will have unique IDs, and hold annotations will have randomly generated UUIDs (i.e. the ID will change at each request).
 
         :return: The id of this Annotation.
         :rtype: str
@@ -116,7 +116,7 @@ class Annotation(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this Annotation.
-        The globally unique identifier for the object.
+        Annotation id. All pause annotations on a recording will share an ID value, bookmark annotations will have unique IDs, and hold annotations will have randomly generated UUIDs (i.e. the ID will change at each request).
 
         :param id: The id of this Annotation.
         :type: str
