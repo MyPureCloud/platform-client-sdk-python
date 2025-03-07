@@ -13,8 +13,9 @@
 | **category_id** | str | The category associated with the document. | [optional] |
 | **label_ids** | list[str] | The ids of labels associated with the document. | [optional] |
 | **external_id** | str | The external id associated with the document. | [optional] |
+| **external_url** | str | The URL to external document. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

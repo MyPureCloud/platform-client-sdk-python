@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **documents** | [list[KnowledgeDocumentVersionVariationReference]](KnowledgeDocumentVersionVariationReference) | The presented documents | |
+| **documents** | [list[PresentedKnowledgeDocument]](PresentedKnowledgeDocument) | The presented documents | |
 | **search_id** | str | The search that surfaced the documents that were presented. | [optional] |
 | **query_type** | str | The type of the query that surfaced the documents. | [optional] |
 | **surfacing_method** | str | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown. | [optional] |
@@ -15,4 +15,4 @@
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

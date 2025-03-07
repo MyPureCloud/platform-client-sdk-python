@@ -5555,7 +5555,7 @@ void (empty response body)
 
 ## patch_outbound_settings
 
->  patch_outbound_settings(body)
+>  patch_outbound_settings(body, use_max_calls_per_agent_decimal=use_max_calls_per_agent_decimal)
 
 
 Update the outbound settings for this organization
@@ -5580,10 +5580,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 body = PureCloudPlatformClientV2.OutboundSettings() # OutboundSettings | outboundSettings
+use_max_calls_per_agent_decimal = True # bool | Use maxCallsPerAgent with decimal precision (optional)
 
 try:
     # Update the outbound settings for this organization
-    api_instance.patch_outbound_settings(body)
+    api_instance.patch_outbound_settings(body, use_max_calls_per_agent_decimal=use_max_calls_per_agent_decimal)
 except ApiException as e:
     print("Exception when calling OutboundApi->patch_outbound_settings: %s\n" % e)
 ```
@@ -5594,6 +5595,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**OutboundSettings**](OutboundSettings)| outboundSettings |  |
+| **use_max_calls_per_agent_decimal** | **bool**| Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
@@ -5992,7 +5994,7 @@ except ApiException as e:
 
 ## post_outbound_campaigns
 
-> [**Campaign**](Campaign) post_outbound_campaigns(body)
+> [**Campaign**](Campaign) post_outbound_campaigns(body, use_max_calls_per_agent_decimal=use_max_calls_per_agent_decimal)
 
 
 Create a campaign.
@@ -6017,10 +6019,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 body = PureCloudPlatformClientV2.Campaign() # Campaign | Campaign
+use_max_calls_per_agent_decimal = True # bool | Use maxCallsPerAgent with decimal precision (optional)
 
 try:
     # Create a campaign.
-    api_response = api_instance.post_outbound_campaigns(body)
+    api_response = api_instance.post_outbound_campaigns(body, use_max_calls_per_agent_decimal=use_max_calls_per_agent_decimal)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->post_outbound_campaigns: %s\n" % e)
@@ -6032,6 +6035,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**Campaign**](Campaign)| Campaign |  |
+| **use_max_calls_per_agent_decimal** | **bool**| Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
@@ -7669,7 +7673,7 @@ except ApiException as e:
 
 ## put_outbound_campaign
 
-> [**Campaign**](Campaign) put_outbound_campaign(campaign_id, body)
+> [**Campaign**](Campaign) put_outbound_campaign(campaign_id, body, use_max_calls_per_agent_decimal=use_max_calls_per_agent_decimal)
 
 
 Update a campaign.
@@ -7695,10 +7699,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 campaign_id = 'campaign_id_example' # str | Campaign ID
 body = PureCloudPlatformClientV2.Campaign() # Campaign | Campaign
+use_max_calls_per_agent_decimal = True # bool | Use maxCallsPerAgent with decimal precision (optional)
 
 try:
     # Update a campaign.
-    api_response = api_instance.put_outbound_campaign(campaign_id, body)
+    api_response = api_instance.put_outbound_campaign(campaign_id, body, use_max_calls_per_agent_decimal=use_max_calls_per_agent_decimal)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->put_outbound_campaign: %s\n" % e)
@@ -7711,6 +7716,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **campaign_id** | **str**| Campaign ID |  |
 | **body** | [**Campaign**](Campaign)| Campaign |  |
+| **use_max_calls_per_agent_decimal** | **bool**| Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
@@ -8622,4 +8628,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

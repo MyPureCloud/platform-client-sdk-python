@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_directroutingbackup_settings_me**](#get_routing_directroutingbackup_settings_me) | Get the user&#39;s Direct Routing Backup settings.|
 |[**get_routing_email_domain**](#get_routing_email_domain) | Get domain|
 |[**get_routing_email_domain_route**](#get_routing_email_domain_route) | Get a route|
+|[**get_routing_email_domain_route_identityresolution**](#get_routing_email_domain_route_identityresolution) | Get a route identity resolution setting.|
 |[**get_routing_email_domain_routes**](#get_routing_email_domain_routes) | Get routes|
 |[**get_routing_email_domains**](#get_routing_email_domains) | Get domains|
 |[**get_routing_email_outbound_domain**](#get_routing_email_outbound_domain) | Get domain|
@@ -59,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_queue_comparisonperiod**](#get_routing_queue_comparisonperiod) | Get a Comparison Period.|
 |[**get_routing_queue_comparisonperiods**](#get_routing_queue_comparisonperiods) | Get list of comparison periods|
 |[**get_routing_queue_estimatedwaittime**](#get_routing_queue_estimatedwaittime) | Get Estimated Wait Time|
+|[**get_routing_queue_identityresolution**](#get_routing_queue_identityresolution) | Get Queue IdentityResolution Settings.|
 |[**get_routing_queue_mediatype_estimatedwaittime**](#get_routing_queue_mediatype_estimatedwaittime) | Get Estimated Wait Time|
 |[**get_routing_queue_members**](#get_routing_queue_members) | Get the members of this queue.|
 |[**get_routing_queue_users**](#get_routing_queue_users) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.|
@@ -79,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_sms_address**](#get_routing_sms_address) | Get an Address by Id for SMS|
 |[**get_routing_sms_addresses**](#get_routing_sms_addresses) | Get a list of Addresses for SMS|
 |[**get_routing_sms_availablephonenumbers**](#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
+|[**get_routing_sms_identityresolution_phonenumber**](#get_routing_sms_identityresolution_phonenumber) | Get a SMS identity resolution settings.|
 |[**get_routing_sms_phonenumber**](#get_routing_sms_phonenumber) | Get a phone number provisioned for SMS.|
 |[**get_routing_sms_phonenumbers**](#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
 |[**get_routing_user_directroutingbackup_settings**](#get_routing_user_directroutingbackup_settings) | Get the user&#39;s Direct Routing Backup settings.|
@@ -143,11 +146,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_user_routingskills**](#post_user_routingskills) | Assign a routing skill to a user|
 |[**put_routing_directroutingbackup_settings_me**](#put_routing_directroutingbackup_settings_me) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_email_domain_route**](#put_routing_email_domain_route) | Update a route|
+|[**put_routing_email_domain_route_identityresolution**](#put_routing_email_domain_route_identityresolution) | Update identity resolution settings for a route.|
 |[**put_routing_email_outbound_domain_activation**](#put_routing_email_outbound_domain_activation) | Request an activation status (cname + dkim) update of an outbound domain|
 |[**put_routing_message_recipient**](#put_routing_message_recipient) | Update a recipient|
 |[**put_routing_queue**](#put_routing_queue) | Update a queue|
+|[**put_routing_queue_identityresolution**](#put_routing_queue_identityresolution) | Update Queue IdentityResolution Settings.|
 |[**put_routing_settings**](#put_routing_settings) | Update an organization&#39;s routing settings|
 |[**put_routing_settings_transcription**](#put_routing_settings_transcription) | Update Transcription Settings|
+|[**put_routing_sms_identityresolution_phonenumber**](#put_routing_sms_identityresolution_phonenumber) | Update an SMS identity resolution settings.|
 |[**put_routing_user_directroutingbackup_settings**](#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_utilization**](#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
@@ -1687,6 +1693,59 @@ except ApiException as e:
 [**InboundRoute**](InboundRoute)
 
 
+## get_routing_email_domain_route_identityresolution
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_routing_email_domain_route_identityresolution(domain_name, route_id)
+
+
+Get a route identity resolution setting.
+
+get_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_name = 'domain_name_example' # str | email domain
+route_id = 'route_id_example' # str | route ID
+
+try:
+    # Get a route identity resolution setting.
+    api_response = api_instance.get_routing_email_domain_route_identityresolution(domain_name, route_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_domain_route_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_name** | **str**| email domain |  |
+| **route_id** | **str**| route ID |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## get_routing_email_domain_routes
 
 > [**InboundRouteEntityListing**](InboundRouteEntityListing) get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
@@ -2734,6 +2793,57 @@ except ApiException as e:
 ### Return type
 
 [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions)
+
+
+## get_routing_queue_identityresolution
+
+> [**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig) get_routing_queue_identityresolution(queue_id)
+
+
+Get Queue IdentityResolution Settings.
+
+get_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/queues/{queueId}/identityresolution 
+
+Requires ALL permissions: 
+
+* routing:queue:view
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+queue_id = 'queue_id_example' # str | Queue ID
+
+try:
+    # Get Queue IdentityResolution Settings.
+    api_response = api_instance.get_routing_queue_identityresolution(queue_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_queue_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue ID |  |
+
+### Return type
+
+[**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig)
 
 
 ## get_routing_queue_mediatype_estimatedwaittime
@@ -3814,6 +3924,57 @@ except ApiException as e:
 ### Return type
 
 [**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing)
+
+
+## get_routing_sms_identityresolution_phonenumber
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_routing_sms_identityresolution_phonenumber(address_id)
+
+
+Get a SMS identity resolution settings.
+
+get_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} 
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:view
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+address_id = 'address_id_example' # str | Address ID
+
+try:
+    # Get a SMS identity resolution settings.
+    api_response = api_instance.get_routing_sms_identityresolution_phonenumber(address_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_sms_identityresolution_phonenumber: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **address_id** | **str**| Address ID |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 ## get_routing_sms_phonenumber
@@ -7065,6 +7226,61 @@ except ApiException as e:
 [**InboundRoute**](InboundRoute)
 
 
+## put_routing_email_domain_route_identityresolution
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_routing_email_domain_route_identityresolution(domain_name, route_id, body)
+
+
+Update identity resolution settings for a route.
+
+put_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_name = 'domain_name_example' # str | email domain
+route_id = 'route_id_example' # str | route ID
+body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+
+try:
+    # Update identity resolution settings for a route.
+    api_response = api_instance.put_routing_email_domain_route_identityresolution(domain_name, route_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->put_routing_email_domain_route_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_name** | **str**| email domain |  |
+| **route_id** | **str**| route ID |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## put_routing_email_outbound_domain_activation
 
 > [**EmailOutboundDomainResult**](EmailOutboundDomainResult) put_routing_email_outbound_domain_activation(domain_id)
@@ -7213,6 +7429,59 @@ except ApiException as e:
 [**Queue**](Queue)
 
 
+## put_routing_queue_identityresolution
+
+> [**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig) put_routing_queue_identityresolution(queue_id, body)
+
+
+Update Queue IdentityResolution Settings.
+
+put_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/queues/{queueId}/identityresolution 
+
+Requires ALL permissions: 
+
+* routing:queue:edit
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+queue_id = 'queue_id_example' # str | Queue ID
+body = PureCloudPlatformClientV2.IdentityResolutionQueueConfig() # IdentityResolutionQueueConfig | 
+
+try:
+    # Update Queue IdentityResolution Settings.
+    api_response = api_instance.put_routing_queue_identityresolution(queue_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->put_routing_queue_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig)|  |  |
+
+### Return type
+
+[**IdentityResolutionQueueConfig**](IdentityResolutionQueueConfig)
+
+
 ## put_routing_settings
 
 > [**RoutingSettings**](RoutingSettings) put_routing_settings(body)
@@ -7307,6 +7576,59 @@ except ApiException as e:
 ### Return type
 
 [**TranscriptionSettings**](TranscriptionSettings)
+
+
+## put_routing_sms_identityresolution_phonenumber
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_routing_sms_identityresolution_phonenumber(address_id, body)
+
+
+Update an SMS identity resolution settings.
+
+put_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} 
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:edit
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+address_id = 'address_id_example' # str | Address ID
+body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+
+try:
+    # Update an SMS identity resolution settings.
+    api_response = api_instance.put_routing_sms_identityresolution_phonenumber(address_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->put_routing_sms_identityresolution_phonenumber: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **address_id** | **str**| Address ID |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 ## put_routing_user_directroutingbackup_settings
@@ -7659,4 +7981,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

@@ -15,10 +15,10 @@
 | **start_date** | datetime | The start timestamp of the adherence explanation in ISO-8601 format | |
 | **length_minutes** | int | The length of the adherence explanation in minutes | |
 | **notes** | str | Notes about the adherence explanation | [optional] |
-| **reviewed_by** | [UserReference](UserReference) | The user who reviewed the adherence explanation, if applicable | [optional] |
+| **reviewed_by** | [UserReference](UserReference) | The user who reviewed the adherence explanation, if applicable. The id may be &#39;System&#39; if it was an automated process | [optional] |
 | **reviewed_date** | datetime | The timestamp for when the adherence explanation was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

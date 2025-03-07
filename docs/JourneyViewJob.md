@@ -11,8 +11,9 @@
 | **date_completed** | datetime | Timestamp of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **status** | str | The status of the job | |
 | **journey_view** | [JourneyView](JourneyView) | The journey view for which the job is executed | |
+| **date_completion_estimated** | datetime | Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

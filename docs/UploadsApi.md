@@ -25,8 +25,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get content upload from URL job status
 
-get_knowledge_knowledgebase_uploads_urls_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -174,8 +172,6 @@ except ApiException as e:
 
 
 Create content upload from URL job
-
-post_knowledge_knowledgebase_uploads_urls_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs 
 
@@ -462,4 +458,4 @@ except ApiException as e:
 [**UploadUrlResponse**](UploadUrlResponse)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

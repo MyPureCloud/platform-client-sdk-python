@@ -7,6 +7,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
+| **division** | [WritableStarrableDivision](WritableStarrableDivision) | The division to which this entity belongs. | [optional] |
 | **entity_id** | str | The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs. | [optional] |
 | **entity_type** | str | This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used. | [optional] |
 | **note_text** | str |  | [optional] |
@@ -18,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

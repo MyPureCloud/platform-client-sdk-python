@@ -2545,8 +2545,6 @@ except ApiException as e:
 
 Get parse job report
 
-get_knowledge_knowledgebase_parse_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} 
 
 Requires ALL permissions: 
@@ -2974,8 +2972,6 @@ except ApiException as e:
 
 
 Get content upload from URL job status
-
-get_knowledge_knowledgebase_uploads_urls_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} 
 
@@ -3781,8 +3777,6 @@ except ApiException as e:
 
 
 Send update to the parse operation
-
-patch_knowledge_knowledgebase_parse_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} 
 
@@ -5612,8 +5606,6 @@ except ApiException as e:
 
 Import the parsed articles
 
-post_knowledge_knowledgebase_parse_job_import is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import 
 
 Requires ALL permissions: 
@@ -5664,8 +5656,6 @@ void (empty response body)
 
 
 Create parse job
-
-post_knowledge_knowledgebase_parse_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs 
 
@@ -5815,7 +5805,7 @@ except ApiException as e:
 
 ## post_knowledge_knowledgebase_sources_salesforce_source_id_sync
 
-> [**SourceSyncResponse**](SourceSyncResponse) post_knowledge_knowledgebase_sources_salesforce_source_id_sync(knowledge_base_id, source_id)
+> [**SourceSyncResponse**](SourceSyncResponse) post_knowledge_knowledgebase_sources_salesforce_source_id_sync(knowledge_base_id, source_id, body=body)
 
 
 Start sync on Salesforce Knowledge integration source
@@ -5841,10 +5831,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 source_id = 'source_id_example' # str | Source ID
+body = NULL # object |  (optional)
 
 try:
     # Start sync on Salesforce Knowledge integration source
-    api_response = api_instance.post_knowledge_knowledgebase_sources_salesforce_source_id_sync(knowledge_base_id, source_id)
+    api_response = api_instance.post_knowledge_knowledgebase_sources_salesforce_source_id_sync(knowledge_base_id, source_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_sources_salesforce_source_id_sync: %s\n" % e)
@@ -5857,6 +5848,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **source_id** | **str**| Source ID |  |
+| **body** | **object**|  | [optional]  |
 
 ### Return type
 
@@ -5915,7 +5907,7 @@ except ApiException as e:
 
 ## post_knowledge_knowledgebase_sources_servicenow_source_id_sync
 
-> [**SourceSyncResponse**](SourceSyncResponse) post_knowledge_knowledgebase_sources_servicenow_source_id_sync(knowledge_base_id, source_id)
+> [**SourceSyncResponse**](SourceSyncResponse) post_knowledge_knowledgebase_sources_servicenow_source_id_sync(knowledge_base_id, source_id, body=body)
 
 
 Start synchronization on ServiceNow Knowledge integration source
@@ -5941,10 +5933,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 source_id = 'source_id_example' # str | Source ID
+body = NULL # object |  (optional)
 
 try:
     # Start synchronization on ServiceNow Knowledge integration source
-    api_response = api_instance.post_knowledge_knowledgebase_sources_servicenow_source_id_sync(knowledge_base_id, source_id)
+    api_response = api_instance.post_knowledge_knowledgebase_sources_servicenow_source_id_sync(knowledge_base_id, source_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_sources_servicenow_source_id_sync: %s\n" % e)
@@ -5957,6 +5950,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **source_id** | **str**| Source ID |  |
+| **body** | **object**|  | [optional]  |
 
 ### Return type
 
@@ -6019,8 +6013,6 @@ except ApiException as e:
 
 
 Create content upload from URL job
-
-post_knowledge_knowledgebase_uploads_urls_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs 
 
@@ -6217,4 +6209,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

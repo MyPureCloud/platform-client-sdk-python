@@ -9,8 +9,10 @@
 | **media_types** | list[str] | The media types are used to filter the view | [optional] |
 | **queue_ids** | list[str] | The queue ids are used to filter the view | [optional] |
 | **skill_ids** | list[str] | The skill ids are used to filter the view | [optional] |
+| **assigned_skill_ids** | list[str] | The assigned user skill ids are used to filter the view | [optional] |
 | **skill_groups** | list[str] | The skill groups used to filter the view | [optional] |
 | **language_ids** | list[str] | The language ids are used to filter the view | [optional] |
+| **assigned_language_ids** | list[str] | The assigned user language ids are used to filter the view | [optional] |
 | **language_groups** | list[str] | The language groups used to filter the view | [optional] |
 | **directions** | list[str] | The directions are used to filter the view | [optional] |
 | **originating_directions** | list[str] | The list of orginating directions used to filter the view | [optional] |
@@ -226,7 +228,9 @@
 | **comparison_queue_ids** | list[str] | The queue ids are used to for comparison to the primary queue filter in reporting | [optional] |
 | **view_metrics** | list[str] | A list of metrics selected for the view | [optional] |
 | **timeline_categories** | list[str] | A list of timeline categories | [optional] |
+| **acw** | bool | Filter to indicate for acw state | [optional] |
+| **segment_types** | list[str] | A list of filtered segment types | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

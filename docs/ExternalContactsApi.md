@@ -50,12 +50,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_relationship**](#get_externalcontacts_relationship) | Fetch a relationship|
 |[**get_externalcontacts_reversewhitepageslookup**](#get_externalcontacts_reversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.|
 |[**get_externalcontacts_scan_contacts**](#get_externalcontacts_scan_contacts) | Scan for external contacts using paging|
+|[**get_externalcontacts_scan_contacts_divisionviews_all**](#get_externalcontacts_scan_contacts_divisionviews_all) | Scan for external contacts using paging|
 |[**get_externalcontacts_scan_notes**](#get_externalcontacts_scan_notes) | Scan for notes using paging|
+|[**get_externalcontacts_scan_notes_divisionviews_all**](#get_externalcontacts_scan_notes_divisionviews_all) | Scan for notes using paging|
 |[**get_externalcontacts_scan_organizations**](#get_externalcontacts_scan_organizations) | Scan for external organizations using paging|
+|[**get_externalcontacts_scan_organizations_divisionviews_all**](#get_externalcontacts_scan_organizations_divisionviews_all) | Scan for external organizations using paging|
 |[**get_externalcontacts_scan_relationships**](#get_externalcontacts_scan_relationships) | Scan for relationships|
+|[**get_externalcontacts_scan_relationships_divisionviews_all**](#get_externalcontacts_scan_relationships_divisionviews_all) | Scan for relationships|
 |[**patch_externalcontacts_contact_identifiers**](#patch_externalcontacts_contact_identifiers) | Claim or release identifiers for a contact|
 |[**post_externalcontacts_bulk_contacts**](#post_externalcontacts_bulk_contacts) | Bulk fetch contacts|
 |[**post_externalcontacts_bulk_contacts_add**](#post_externalcontacts_bulk_contacts_add) | Bulk add contacts|
+|[**post_externalcontacts_bulk_contacts_divisionviews**](#post_externalcontacts_bulk_contacts_divisionviews) | Bulk fetch contacts across divisions|
 |[**post_externalcontacts_bulk_contacts_remove**](#post_externalcontacts_bulk_contacts_remove) | Bulk remove contacts|
 |[**post_externalcontacts_bulk_contacts_unresolved**](#post_externalcontacts_bulk_contacts_unresolved) | Bulk fetch unresolved ancestor contacts|
 |[**post_externalcontacts_bulk_contacts_update**](#post_externalcontacts_bulk_contacts_update) | Bulk update contacts|
@@ -65,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_bulk_notes_update**](#post_externalcontacts_bulk_notes_update) | Bulk update notes|
 |[**post_externalcontacts_bulk_organizations**](#post_externalcontacts_bulk_organizations) | Bulk fetch organizations|
 |[**post_externalcontacts_bulk_organizations_add**](#post_externalcontacts_bulk_organizations_add) | Bulk add organizations|
+|[**post_externalcontacts_bulk_organizations_divisionviews**](#post_externalcontacts_bulk_organizations_divisionviews) | Bulk fetch organizations across divisions|
 |[**post_externalcontacts_bulk_organizations_remove**](#post_externalcontacts_bulk_organizations_remove) | Bulk remove organizations|
 |[**post_externalcontacts_bulk_organizations_update**](#post_externalcontacts_bulk_organizations_update) | Bulk update organizations|
 |[**post_externalcontacts_bulk_relationships**](#post_externalcontacts_bulk_relationships) | Bulk fetch relationships|
@@ -903,7 +909,7 @@ except ApiException as e:
 
 ## get_externalcontacts_contacts
 
-> [**ContactListing**](ContactListing) get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+> [**ContactListing**](ContactListing) get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand, division_ids=division_ids)
 
 
 Search for external contacts
@@ -933,10 +939,11 @@ page_number = 1 # int | Page number (limited to fetching first 1,000 records; pa
 q = 'q_example' # str | User supplied search keywords (no special syntax is currently supported) (optional)
 sort_order = 'sort_order_example' # str | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
+division_ids = ['division_ids_example'] # list[str] | which divisions to search, up to 50 (optional)
 
 try:
     # Search for external contacts
-    api_response = api_instance.get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+    api_response = api_instance.get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand, division_ids=division_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts: %s\n" % e)
@@ -952,6 +959,7 @@ except ApiException as e:
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
 | **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
+| **division_ids** | [**list[str]**](str)| which divisions to search, up to 50 | [optional]  |
 
 ### Return type
 
@@ -1939,7 +1947,7 @@ except ApiException as e:
 
 ## get_externalcontacts_organizations
 
-> [**ExternalOrganizationListing**](ExternalOrganizationListing) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
+> [**ExternalOrganizationListing**](ExternalOrganizationListing) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors, division_ids=division_ids)
 
 
 Search for external organizations
@@ -1971,10 +1979,11 @@ trustor_id = ['trustor_id_example'] # list[str] | Search for external organizati
 sort_order = 'sort_order_example' # str | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\" (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 include_trustors = True # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
+division_ids = ['division_ids_example'] # list[str] | which divisions to search, up to 50 (optional)
 
 try:
     # Search for external organizations
-    api_response = api_instance.get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
+    api_response = api_instance.get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors, division_ids=division_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations: %s\n" % e)
@@ -1992,6 +2001,7 @@ except ApiException as e:
 | **sort_order** | **str**| The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \&quot;companyType:asc\&quot;, \&quot;industry:desc\&quot; | [optional]  |
 | **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division, identifiers, externalSources |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
+| **division_ids** | [**list[str]**](str)| which divisions to search, up to 50 | [optional]  |
 
 ### Return type
 
@@ -2241,7 +2251,7 @@ except ApiException as e:
 
 ## get_externalcontacts_reversewhitepageslookup
 
-> [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult) get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
+> [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult) get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand, division_id=division_id)
 
 
 Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
@@ -2267,10 +2277,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 lookup_val = 'lookup_val_example' # str | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
 expand = ['expand_example'] # list[str] | which field, if any, to expand (optional)
+division_id = ''*'' # str | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (optional) (default to '*')
 
 try:
     # Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
-    api_response = api_instance.get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
+    api_response = api_instance.get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_reversewhitepageslookup: %s\n" % e)
@@ -2283,6 +2294,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **lookup_val** | **str**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
 | **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources, division |
+| **division_id** | **str**| Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value | [optional] [default to &#39;*&#39;] |
 
 ### Return type
 
@@ -2291,7 +2303,7 @@ except ApiException as e:
 
 ## get_externalcontacts_scan_contacts
 
-> [**CursorContactListing**](CursorContactListing) get_externalcontacts_scan_contacts(limit=limit, cursor=cursor)
+> [**CursorContactListing**](CursorContactListing) get_externalcontacts_scan_contacts(limit=limit, cursor=cursor, division_id=division_id)
 
 
 Scan for external contacts using paging
@@ -2318,13 +2330,67 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 limit = 56 # int | The number of contacts per page; must be between 10 and 200, default is 100 (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+division_id = ''*'' # str | The division to scan over (optional) (default to '*')
 
 try:
     # Scan for external contacts using paging
-    api_response = api_instance.get_externalcontacts_scan_contacts(limit=limit, cursor=cursor)
+    api_response = api_instance.get_externalcontacts_scan_contacts(limit=limit, cursor=cursor, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_contacts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **int**| The number of contacts per page; must be between 10 and 200, default is 100 | [optional]  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+| **division_id** | **str**| The division to scan over | [optional] [default to &#39;*&#39;] |
+
+### Return type
+
+[**CursorContactListing**](CursorContactListing)
+
+
+## get_externalcontacts_scan_contacts_divisionviews_all
+
+> [**CursorContactListing**](CursorContactListing) get_externalcontacts_scan_contacts_divisionviews_all(limit=limit, cursor=cursor)
+
+
+Scan for external contacts using paging
+
+get_externalcontacts_scan_contacts_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/contacts/divisionviews/all 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+limit = 56 # int | The number of contacts per page; must be between 10 and 200, default is 100 (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+
+try:
+    # Scan for external contacts using paging
+    api_response = api_instance.get_externalcontacts_scan_contacts_divisionviews_all(limit=limit, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_contacts_divisionviews_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -2342,7 +2408,7 @@ except ApiException as e:
 
 ## get_externalcontacts_scan_notes
 
-> [**CursorNoteListing**](CursorNoteListing) get_externalcontacts_scan_notes(limit=limit, cursor=cursor)
+> [**CursorNoteListing**](CursorNoteListing) get_externalcontacts_scan_notes(limit=limit, cursor=cursor, division_id=division_id)
 
 
 Scan for notes using paging
@@ -2369,13 +2435,67 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 limit = 56 # int | The number of notes per page; must be between 10 and 200, default is 100 (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+division_id = ''*'' # str | The division to scan over (optional) (default to '*')
 
 try:
     # Scan for notes using paging
-    api_response = api_instance.get_externalcontacts_scan_notes(limit=limit, cursor=cursor)
+    api_response = api_instance.get_externalcontacts_scan_notes(limit=limit, cursor=cursor, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_notes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **int**| The number of notes per page; must be between 10 and 200, default is 100 | [optional]  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+| **division_id** | **str**| The division to scan over | [optional] [default to &#39;*&#39;] |
+
+### Return type
+
+[**CursorNoteListing**](CursorNoteListing)
+
+
+## get_externalcontacts_scan_notes_divisionviews_all
+
+> [**CursorNoteListing**](CursorNoteListing) get_externalcontacts_scan_notes_divisionviews_all(limit=limit, cursor=cursor)
+
+
+Scan for notes using paging
+
+get_externalcontacts_scan_notes_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/notes/divisionviews/all 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+limit = 56 # int | The number of notes per page; must be between 10 and 200, default is 100 (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+
+try:
+    # Scan for notes using paging
+    api_response = api_instance.get_externalcontacts_scan_notes_divisionviews_all(limit=limit, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_notes_divisionviews_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -2393,7 +2513,7 @@ except ApiException as e:
 
 ## get_externalcontacts_scan_organizations
 
-> [**CursorOrganizationListing**](CursorOrganizationListing) get_externalcontacts_scan_organizations(limit=limit, cursor=cursor)
+> [**CursorOrganizationListing**](CursorOrganizationListing) get_externalcontacts_scan_organizations(limit=limit, cursor=cursor, division_id=division_id)
 
 
 Scan for external organizations using paging
@@ -2420,13 +2540,67 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 limit = 56 # int | The number of organizations per page; must be between 10 and 200, default is 100 (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+division_id = ''*'' # str | The division to scan over (optional) (default to '*')
 
 try:
     # Scan for external organizations using paging
-    api_response = api_instance.get_externalcontacts_scan_organizations(limit=limit, cursor=cursor)
+    api_response = api_instance.get_externalcontacts_scan_organizations(limit=limit, cursor=cursor, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_organizations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **int**| The number of organizations per page; must be between 10 and 200, default is 100 | [optional]  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+| **division_id** | **str**| The division to scan over | [optional] [default to &#39;*&#39;] |
+
+### Return type
+
+[**CursorOrganizationListing**](CursorOrganizationListing)
+
+
+## get_externalcontacts_scan_organizations_divisionviews_all
+
+> [**CursorOrganizationListing**](CursorOrganizationListing) get_externalcontacts_scan_organizations_divisionviews_all(limit=limit, cursor=cursor)
+
+
+Scan for external organizations using paging
+
+get_externalcontacts_scan_organizations_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/organizations/divisionviews/all 
+
+Requires ALL permissions: 
+
+* externalContacts:externalOrganization:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+limit = 56 # int | The number of organizations per page; must be between 10 and 200, default is 100 (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+
+try:
+    # Scan for external organizations using paging
+    api_response = api_instance.get_externalcontacts_scan_organizations_divisionviews_all(limit=limit, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_organizations_divisionviews_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -2444,7 +2618,7 @@ except ApiException as e:
 
 ## get_externalcontacts_scan_relationships
 
-> [**CursorRelationshipListing**](CursorRelationshipListing) get_externalcontacts_scan_relationships(limit=limit, cursor=cursor)
+> [**CursorRelationshipListing**](CursorRelationshipListing) get_externalcontacts_scan_relationships(limit=limit, cursor=cursor, division_id=division_id)
 
 
 Scan for relationships
@@ -2471,13 +2645,67 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 limit = 56 # int | The number of relationships per page; must be between 10 and 200, default is 100 (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+division_id = ''*'' # str | The division to scan over (optional) (default to '*')
 
 try:
     # Scan for relationships
-    api_response = api_instance.get_externalcontacts_scan_relationships(limit=limit, cursor=cursor)
+    api_response = api_instance.get_externalcontacts_scan_relationships(limit=limit, cursor=cursor, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_relationships: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **int**| The number of relationships per page; must be between 10 and 200, default is 100 | [optional]  |
+| **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+| **division_id** | **str**| The division to scan over | [optional] [default to &#39;*&#39;] |
+
+### Return type
+
+[**CursorRelationshipListing**](CursorRelationshipListing)
+
+
+## get_externalcontacts_scan_relationships_divisionviews_all
+
+> [**CursorRelationshipListing**](CursorRelationshipListing) get_externalcontacts_scan_relationships_divisionviews_all(limit=limit, cursor=cursor)
+
+
+Scan for relationships
+
+get_externalcontacts_scan_relationships_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/scan/relationships/divisionviews/all 
+
+Requires ALL permissions: 
+
+* externalContacts:contact:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+limit = 56 # int | The number of relationships per page; must be between 10 and 200, default is 100 (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+
+try:
+    # Scan for relationships
+    api_response = api_instance.get_externalcontacts_scan_relationships_divisionviews_all(limit=limit, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_scan_relationships_divisionviews_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -2637,6 +2865,56 @@ except ApiException as e:
 ### Return type
 
 [**BulkContactsResponse**](BulkContactsResponse)
+
+
+## post_externalcontacts_bulk_contacts_divisionviews
+
+> [**BulkFetchContactsResponse**](BulkFetchContactsResponse) post_externalcontacts_bulk_contacts_divisionviews(body)
+
+
+Bulk fetch contacts across divisions
+
+post_externalcontacts_bulk_contacts_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/divisionviews 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Contact ids
+
+try:
+    # Bulk fetch contacts across divisions
+    api_response = api_instance.post_externalcontacts_bulk_contacts_divisionviews(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_contacts_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Contact ids |  |
+
+### Return type
+
+[**BulkFetchContactsResponse**](BulkFetchContactsResponse)
 
 
 ## post_externalcontacts_bulk_contacts_remove
@@ -3073,6 +3351,56 @@ except ApiException as e:
 ### Return type
 
 [**BulkOrganizationsResponse**](BulkOrganizationsResponse)
+
+
+## post_externalcontacts_bulk_organizations_divisionviews
+
+> [**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse) post_externalcontacts_bulk_organizations_divisionviews(body)
+
+
+Bulk fetch organizations across divisions
+
+post_externalcontacts_bulk_organizations_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations/divisionviews 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkIdsRequest() # BulkIdsRequest | Organizations ids
+
+try:
+    # Bulk fetch organizations across divisions
+    api_response = api_instance.post_externalcontacts_bulk_organizations_divisionviews(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_organizations_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Organizations ids |  |
+
+### Return type
+
+[**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse)
 
 
 ## post_externalcontacts_bulk_organizations_remove
@@ -4815,4 +5143,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

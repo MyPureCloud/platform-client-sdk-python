@@ -451,7 +451,7 @@ except ApiException as e:
 
 ## get_integrations_action
 
-> [**Action**](Action) get_integrations_action(action_id, expand=expand, include_config=include_config)
+> [**Action**](Action) get_integrations_action(action_id, expand=expand, flatten=flatten, include_config=include_config)
 
 
 Retrieves a single Action matching id.
@@ -478,11 +478,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 expand = 'expand_example' # str | Indicates a field in the response which should be expanded. (optional)
+flatten = False # bool | Indicates the response should be reformatted, based on Architect's flattening format. (optional) (default to False)
 include_config = False # bool | Return config in response. (optional) (default to False)
 
 try:
     # Retrieves a single Action matching id.
-    api_response = api_instance.get_integrations_action(action_id, expand=expand, include_config=include_config)
+    api_response = api_instance.get_integrations_action(action_id, expand=expand, flatten=flatten, include_config=include_config)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_action: %s\n" % e)
@@ -495,6 +496,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **expand** | **str**| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
+| **flatten** | **bool**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to False]<br />**Values**: true, false |
 | **include_config** | **bool**| Return config in response. | [optional] [default to False]<br />**Values**: true, false |
 
 ### Return type
@@ -504,7 +506,7 @@ except ApiException as e:
 
 ## get_integrations_action_draft
 
-> [**Action**](Action) get_integrations_action_draft(action_id, expand=expand, include_config=include_config)
+> [**Action**](Action) get_integrations_action_draft(action_id, expand=expand, flatten=flatten, include_config=include_config)
 
 
 Retrieve a Draft
@@ -531,11 +533,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 action_id = 'action_id_example' # str | actionId
 expand = 'expand_example' # str | Indicates a field in the response which should be expanded. (optional)
+flatten = False # bool | Indicates the response should be reformatted, based on Architect's flattening format. (optional) (default to False)
 include_config = False # bool | Return config in response. (optional) (default to False)
 
 try:
     # Retrieve a Draft
-    api_response = api_instance.get_integrations_action_draft(action_id, expand=expand, include_config=include_config)
+    api_response = api_instance.get_integrations_action_draft(action_id, expand=expand, flatten=flatten, include_config=include_config)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_action_draft: %s\n" % e)
@@ -548,6 +551,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
 | **expand** | **str**| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
+| **flatten** | **bool**| Indicates the response should be reformatted, based on Architect&#39;s flattening format. | [optional] [default to False]<br />**Values**: true, false |
 | **include_config** | **bool**| Return config in response. | [optional] [default to False]<br />**Values**: true, false |
 
 ### Return type
@@ -4478,4 +4482,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

@@ -1737,7 +1737,7 @@ page_number = 1 # int |  (optional) (default to 1)
 page_size = 25 # int |  (optional) (default to 25)
 id = ['id_example'] # list[str] | A list of user IDs to fetch by bulk (optional)
 state = 'state_example' # str | Only list users of this state (optional)
-deleted_only = True # bool | Only list deleted dashboards that are still recoverable (optional)
+deleted_only = True # bool | Only list users with deleted dashboards (optional)
 
 try:
     # Get dashboards summary for users in a org
@@ -1757,7 +1757,7 @@ except ApiException as e:
 | **page_size** | **int**|  | [optional] [default to 25] |
 | **id** | [**list[str]**](str)| A list of user IDs to fetch by bulk | [optional]  |
 | **state** | **str**| Only list users of this state | [optional] <br />**Values**: active, inactive |
-| **deleted_only** | **bool**| Only list deleted dashboards that are still recoverable | [optional]  |
+| **deleted_only** | **bool**| Only list users with deleted dashboards | [optional]  |
 
 ### Return type
 
@@ -5386,4 +5386,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

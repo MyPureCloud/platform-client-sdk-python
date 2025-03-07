@@ -464,6 +464,9 @@ except ApiException as e:
 
 > [**LimitCountListing**](LimitCountListing) get_organizations_limits_namespace_counts(namespace_name, cursor=cursor, entity_id=entity_id, user_id=user_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
 
@@ -567,6 +570,9 @@ except ApiException as e:
 
 > [**LimitCountListing**](LimitCountListing) get_organizations_limits_namespace_limit_counts(namespace_name, limit_name, entity_id=entity_id, user_id=user_id, cursor=cursor)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
 
@@ -1062,4 +1068,4 @@ except ApiException as e:
 [**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

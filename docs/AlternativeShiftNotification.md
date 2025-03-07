@@ -12,10 +12,10 @@
 | **new_state** | str | The new state of the alternative shift trade, null if there was no change | [optional] |
 | **initiating_user** | [UserReference](UserReference) | The user who initiated the alternative shift trade | |
 | **initiating_shift_date** | datetime | The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
-| **receiving_user** | [UserReference](UserReference) | The user on the receiving this alternative shift trade | [optional] |
+| **receiving_user** | [UserReference](UserReference) | The user on the receiving side of this alternative shift trade | [optional] |
 | **receiving_shift_date** | datetime | The start date and time of the receiving alternative shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_
