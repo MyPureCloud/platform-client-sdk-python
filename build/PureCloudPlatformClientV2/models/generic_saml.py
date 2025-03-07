@@ -59,8 +59,12 @@ class GenericSAML(object):
             'certificate': 'str',
             'certificates': 'list[str]',
             'logo_image_data': 'str',
-            'endpoint_compression': 'bool',
             'name_identifier_format': 'str',
+            'sso_binding': 'str',
+            'sign_authn_requests': 'bool',
+            'provider_name': 'str',
+            'display_on_login': 'bool',
+            'endpoint_compression': 'bool',
             'self_uri': 'str'
         }
 
@@ -76,8 +80,12 @@ class GenericSAML(object):
             'certificate': 'certificate',
             'certificates': 'certificates',
             'logo_image_data': 'logoImageData',
-            'endpoint_compression': 'endpointCompression',
             'name_identifier_format': 'nameIdentifierFormat',
+            'sso_binding': 'ssoBinding',
+            'sign_authn_requests': 'signAuthnRequests',
+            'provider_name': 'providerName',
+            'display_on_login': 'displayOnLogin',
+            'endpoint_compression': 'endpointCompression',
             'self_uri': 'selfUri'
         }
 
@@ -92,8 +100,12 @@ class GenericSAML(object):
         self._certificate = None
         self._certificates = None
         self._logo_image_data = None
-        self._endpoint_compression = None
         self._name_identifier_format = None
+        self._sso_binding = None
+        self._sign_authn_requests = None
+        self._provider_name = None
+        self._display_on_login = None
+        self._endpoint_compression = None
         self._self_uri = None
 
     @property
@@ -361,30 +373,6 @@ class GenericSAML(object):
         self._logo_image_data = logo_image_data
 
     @property
-    def endpoint_compression(self) -> bool:
-        """
-        Gets the endpoint_compression of this GenericSAML.
-
-
-        :return: The endpoint_compression of this GenericSAML.
-        :rtype: bool
-        """
-        return self._endpoint_compression
-
-    @endpoint_compression.setter
-    def endpoint_compression(self, endpoint_compression: bool) -> None:
-        """
-        Sets the endpoint_compression of this GenericSAML.
-
-
-        :param endpoint_compression: The endpoint_compression of this GenericSAML.
-        :type: bool
-        """
-        
-
-        self._endpoint_compression = endpoint_compression
-
-    @property
     def name_identifier_format(self) -> str:
         """
         Gets the name_identifier_format of this GenericSAML.
@@ -412,6 +400,131 @@ class GenericSAML(object):
             self._name_identifier_format = "outdated_sdk_version"
         else:
             self._name_identifier_format = name_identifier_format
+
+    @property
+    def sso_binding(self) -> str:
+        """
+        Gets the sso_binding of this GenericSAML.
+
+
+        :return: The sso_binding of this GenericSAML.
+        :rtype: str
+        """
+        return self._sso_binding
+
+    @sso_binding.setter
+    def sso_binding(self, sso_binding: str) -> None:
+        """
+        Sets the sso_binding of this GenericSAML.
+
+
+        :param sso_binding: The sso_binding of this GenericSAML.
+        :type: str
+        """
+        if isinstance(sso_binding, int):
+            sso_binding = str(sso_binding)
+        allowed_values = ["urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST", "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"]
+        if sso_binding.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sso_binding -> " + sso_binding)
+            self._sso_binding = "outdated_sdk_version"
+        else:
+            self._sso_binding = sso_binding
+
+    @property
+    def sign_authn_requests(self) -> bool:
+        """
+        Gets the sign_authn_requests of this GenericSAML.
+
+
+        :return: The sign_authn_requests of this GenericSAML.
+        :rtype: bool
+        """
+        return self._sign_authn_requests
+
+    @sign_authn_requests.setter
+    def sign_authn_requests(self, sign_authn_requests: bool) -> None:
+        """
+        Sets the sign_authn_requests of this GenericSAML.
+
+
+        :param sign_authn_requests: The sign_authn_requests of this GenericSAML.
+        :type: bool
+        """
+        
+
+        self._sign_authn_requests = sign_authn_requests
+
+    @property
+    def provider_name(self) -> str:
+        """
+        Gets the provider_name of this GenericSAML.
+
+
+        :return: The provider_name of this GenericSAML.
+        :rtype: str
+        """
+        return self._provider_name
+
+    @provider_name.setter
+    def provider_name(self, provider_name: str) -> None:
+        """
+        Sets the provider_name of this GenericSAML.
+
+
+        :param provider_name: The provider_name of this GenericSAML.
+        :type: str
+        """
+        
+
+        self._provider_name = provider_name
+
+    @property
+    def display_on_login(self) -> bool:
+        """
+        Gets the display_on_login of this GenericSAML.
+
+
+        :return: The display_on_login of this GenericSAML.
+        :rtype: bool
+        """
+        return self._display_on_login
+
+    @display_on_login.setter
+    def display_on_login(self, display_on_login: bool) -> None:
+        """
+        Sets the display_on_login of this GenericSAML.
+
+
+        :param display_on_login: The display_on_login of this GenericSAML.
+        :type: bool
+        """
+        
+
+        self._display_on_login = display_on_login
+
+    @property
+    def endpoint_compression(self) -> bool:
+        """
+        Gets the endpoint_compression of this GenericSAML.
+
+
+        :return: The endpoint_compression of this GenericSAML.
+        :rtype: bool
+        """
+        return self._endpoint_compression
+
+    @endpoint_compression.setter
+    def endpoint_compression(self, endpoint_compression: bool) -> None:
+        """
+        Sets the endpoint_compression of this GenericSAML.
+
+
+        :param endpoint_compression: The endpoint_compression of this GenericSAML.
+        :type: bool
+        """
+        
+
+        self._endpoint_compression = endpoint_compression
 
     @property
     def self_uri(self) -> str:

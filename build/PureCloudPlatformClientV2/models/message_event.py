@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ContentReaction
     from . import EventCoBrowse
     from . import EventPresence
     from . import EventTyping
@@ -57,7 +58,8 @@ class MessageEvent(object):
             'co_browse': 'EventCoBrowse',
             'typing': 'EventTyping',
             'presence': 'EventPresence',
-            'video': 'EventVideo'
+            'video': 'EventVideo',
+            'reactions': 'list[ContentReaction]'
         }
 
         self.attribute_map = {
@@ -65,7 +67,8 @@ class MessageEvent(object):
             'co_browse': 'coBrowse',
             'typing': 'typing',
             'presence': 'presence',
-            'video': 'video'
+            'video': 'video',
+            'reactions': 'reactions'
         }
 
         self._event_type = None
@@ -73,6 +76,7 @@ class MessageEvent(object):
         self._typing = None
         self._presence = None
         self._video = None
+        self._reactions = None
 
     @property
     def event_type(self) -> str:
@@ -96,7 +100,7 @@ class MessageEvent(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["CoBrowse", "Typing", "Presence", "Video"]
+        allowed_values = ["CoBrowse", "Typing", "Presence", "Video", "Reactions"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -198,6 +202,30 @@ class MessageEvent(object):
         
 
         self._video = video
+
+    @property
+    def reactions(self) -> List['ContentReaction']:
+        """
+        Gets the reactions of this MessageEvent.
+        A list of reactions to a message.
+
+        :return: The reactions of this MessageEvent.
+        :rtype: list[ContentReaction]
+        """
+        return self._reactions
+
+    @reactions.setter
+    def reactions(self, reactions: List['ContentReaction']) -> None:
+        """
+        Sets the reactions of this MessageEvent.
+        A list of reactions to a message.
+
+        :param reactions: The reactions of this MessageEvent.
+        :type: list[ContentReaction]
+        """
+        
+
+        self._reactions = reactions
 
     def to_dict(self):
         """

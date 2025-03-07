@@ -241,7 +241,7 @@ class AlternativeShiftNotification(object):
     def receiving_user(self) -> 'UserReference':
         """
         Gets the receiving_user of this AlternativeShiftNotification.
-        The user on the receiving this alternative shift trade
+        The user on the receiving side of this alternative shift trade
 
         :return: The receiving_user of this AlternativeShiftNotification.
         :rtype: UserReference
@@ -252,7 +252,7 @@ class AlternativeShiftNotification(object):
     def receiving_user(self, receiving_user: 'UserReference') -> None:
         """
         Sets the receiving_user of this AlternativeShiftNotification.
-        The user on the receiving this alternative shift trade
+        The user on the receiving side of this alternative shift trade
 
         :param receiving_user: The receiving_user of this AlternativeShiftNotification.
         :type: UserReference

@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import Ticker
     from . import Trustor
     from . import TwitterId
+    from . import WritableStarrableDivision
 
 class ExternalOrganization(object):
     """
@@ -58,6 +59,7 @@ class ExternalOrganization(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'WritableStarrableDivision',
             'company_type': 'str',
             'industry': 'str',
             'primary_contact_id': 'str',
@@ -83,6 +85,7 @@ class ExternalOrganization(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'company_type': 'companyType',
             'industry': 'industry',
             'primary_contact_id': 'primaryContactId',
@@ -107,6 +110,7 @@ class ExternalOrganization(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._company_type = None
         self._industry = None
         self._primary_contact_id = None
@@ -175,6 +179,30 @@ class ExternalOrganization(object):
         
 
         self._name = name
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this ExternalOrganization.
+        The division to which this entity belongs.
+
+        :return: The division of this ExternalOrganization.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this ExternalOrganization.
+        The division to which this entity belongs.
+
+        :param division: The division of this ExternalOrganization.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def company_type(self) -> str:

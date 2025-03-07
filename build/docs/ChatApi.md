@@ -860,8 +860,6 @@ except ApiException as e:
 
 Get a user's chat settings
 
-get_chats_user_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/users/{userId}/settings 
 
 Requires ANY permissions: 
@@ -910,8 +908,6 @@ except ApiException as e:
 
 
 Get a user's chat settings
-
-get_chats_users_me_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/users/me/settings 
 
@@ -1160,8 +1156,6 @@ except ApiException as e:
 
 Update a user's chat settings
 
-patch_chats_user_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/chats/users/{userId}/settings 
 
 Requires ANY permissions: 
@@ -1212,8 +1206,6 @@ except ApiException as e:
 
 
 Update a user's chat settings
-
-patch_chats_users_me_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/chats/users/me/settings 
 
@@ -1656,4 +1648,4 @@ except ApiException as e:
 [**ChatSettings**](ChatSettings)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

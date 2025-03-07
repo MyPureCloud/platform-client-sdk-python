@@ -58,7 +58,9 @@ class UpdateCoachingAppointmentRequest(object):
             'document_ids': 'list[str]',
             'status': 'str',
             'wfm_schedule': 'WfmScheduleReference',
-            'external_links': 'list[str]'
+            'external_links': 'list[str]',
+            'location': 'str',
+            'share_insights_data': 'bool'
         }
 
         self.attribute_map = {
@@ -70,7 +72,9 @@ class UpdateCoachingAppointmentRequest(object):
             'document_ids': 'documentIds',
             'status': 'status',
             'wfm_schedule': 'wfmSchedule',
-            'external_links': 'externalLinks'
+            'external_links': 'externalLinks',
+            'location': 'location',
+            'share_insights_data': 'shareInsightsData'
         }
 
         self._name = None
@@ -82,6 +86,8 @@ class UpdateCoachingAppointmentRequest(object):
         self._status = None
         self._wfm_schedule = None
         self._external_links = None
+        self._location = None
+        self._share_insights_data = None
 
     @property
     def name(self) -> str:
@@ -303,6 +309,54 @@ class UpdateCoachingAppointmentRequest(object):
         
 
         self._external_links = external_links
+
+    @property
+    def location(self) -> str:
+        """
+        Gets the location of this UpdateCoachingAppointmentRequest.
+        The location of the appointment
+
+        :return: The location of this UpdateCoachingAppointmentRequest.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location: str) -> None:
+        """
+        Sets the location of this UpdateCoachingAppointmentRequest.
+        The location of the appointment
+
+        :param location: The location of this UpdateCoachingAppointmentRequest.
+        :type: str
+        """
+        
+
+        self._location = location
+
+    @property
+    def share_insights_data(self) -> bool:
+        """
+        Gets the share_insights_data of this UpdateCoachingAppointmentRequest.
+        Whether to share the insight data
+
+        :return: The share_insights_data of this UpdateCoachingAppointmentRequest.
+        :rtype: bool
+        """
+        return self._share_insights_data
+
+    @share_insights_data.setter
+    def share_insights_data(self, share_insights_data: bool) -> None:
+        """
+        Sets the share_insights_data of this UpdateCoachingAppointmentRequest.
+        Whether to share the insight data
+
+        :param share_insights_data: The share_insights_data of this UpdateCoachingAppointmentRequest.
+        :type: bool
+        """
+        
+
+        self._share_insights_data = share_insights_data
 
     def to_dict(self):
         """

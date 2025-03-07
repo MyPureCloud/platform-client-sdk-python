@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ExternalDataSource
     from . import User
+    from . import WritableStarrableDivision
 
 class Note(object):
     """
@@ -52,6 +53,7 @@ class Note(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'WritableStarrableDivision',
             'entity_id': 'str',
             'entity_type': 'str',
             'note_text': 'str',
@@ -64,6 +66,7 @@ class Note(object):
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'entity_id': 'entityId',
             'entity_type': 'entityType',
             'note_text': 'noteText',
@@ -75,6 +78,7 @@ class Note(object):
         }
 
         self._id = None
+        self._division = None
         self._entity_id = None
         self._entity_type = None
         self._note_text = None
@@ -107,6 +111,30 @@ class Note(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this Note.
+        The division to which this entity belongs.
+
+        :return: The division of this Note.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this Note.
+        The division to which this entity belongs.
+
+        :param division: The division of this Note.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def entity_id(self) -> str:

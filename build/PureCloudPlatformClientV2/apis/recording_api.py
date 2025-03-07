@@ -75,7 +75,6 @@ from ..models import RecordingUploadReport
 from ..models import RecordingUploadReportRequest
 from ..models import ScreenRecordingActiveSessions
 from ..models import ScreenRecordingMetaDataRequest
-from ..models import ScreenRecordingSessionListing
 
 class RecordingApi(object):
     """
@@ -674,7 +673,7 @@ class RecordingApi(object):
         :param str message_format_id: The desired media format when downloading a message recording. Valid values:ZIP,NONE
         :param bool download: requesting a download format of the recording. Valid values:true,false
         :param str file_name: the name of the downloaded fileName
-        :param str locale: The locale for the requested file when downloading, as an ISO 639-1 code
+        :param str locale: The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
         :param list[str] media_formats: All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
         :return: Recording
                  If the method is called asynchronously,
@@ -1114,12 +1113,13 @@ class RecordingApi(object):
         :param int max_wait_ms: The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
         :param str format_id: The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
         :param list[str] media_formats: All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+        :param str locale: The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
         :return: list[Recording]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'max_wait_ms', 'format_id', 'media_formats']
+        all_params = ['conversation_id', 'max_wait_ms', 'format_id', 'media_formats', 'locale']
         all_params.append('callback')
 
         params = locals()
@@ -1149,6 +1149,8 @@ class RecordingApi(object):
             query_params['formatId'] = params['format_id']
         if 'media_formats' in params:
             query_params['mediaFormats'] = params['media_formats']
+        if 'locale' in params:
+            query_params['locale'] = params['locale']
 
         header_params = {}
 
@@ -2699,85 +2701,6 @@ class RecordingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='RecordingRetentionCursorEntityListing',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    @deprecated("get_recordings_screensessions is deprecated")
-    def get_recordings_screensessions(self, **kwargs) -> 'ScreenRecordingSessionListing':
-        """
-        Retrieves a paged listing of screen recording sessions
-        Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_recordings_screensessions(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int page_size: Page size
-        :param int page_number: Page number
-        :return: ScreenRecordingSessionListing
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['page_size', 'page_number']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_recordings_screensessions" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-
-        resource_path = '/api/v2/recordings/screensessions'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ScreenRecordingSessionListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

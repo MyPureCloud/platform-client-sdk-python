@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Group
+    from . import GroupEmailPolicy
 
 class VoicemailGroupPolicy(object):
     """
@@ -57,6 +58,7 @@ class VoicemailGroupPolicy(object):
             'disable_email_pii': 'bool',
             'include_email_transcriptions': 'bool',
             'language_preference': 'str',
+            'email_policy': 'GroupEmailPolicy',
             'rotate_calls_secs': 'int',
             'stop_ringing_after_rotations': 'int',
             'overflow_group_id': 'str',
@@ -73,6 +75,7 @@ class VoicemailGroupPolicy(object):
             'disable_email_pii': 'disableEmailPii',
             'include_email_transcriptions': 'includeEmailTranscriptions',
             'language_preference': 'languagePreference',
+            'email_policy': 'emailPolicy',
             'rotate_calls_secs': 'rotateCallsSecs',
             'stop_ringing_after_rotations': 'stopRingingAfterRotations',
             'overflow_group_id': 'overflowGroupId',
@@ -88,6 +91,7 @@ class VoicemailGroupPolicy(object):
         self._disable_email_pii = None
         self._include_email_transcriptions = None
         self._language_preference = None
+        self._email_policy = None
         self._rotate_calls_secs = None
         self._stop_ringing_after_rotations = None
         self._overflow_group_id = None
@@ -262,6 +266,30 @@ class VoicemailGroupPolicy(object):
         
 
         self._language_preference = language_preference
+
+    @property
+    def email_policy(self) -> 'GroupEmailPolicy':
+        """
+        Gets the email_policy of this VoicemailGroupPolicy.
+        The email policy for the group
+
+        :return: The email_policy of this VoicemailGroupPolicy.
+        :rtype: GroupEmailPolicy
+        """
+        return self._email_policy
+
+    @email_policy.setter
+    def email_policy(self, email_policy: 'GroupEmailPolicy') -> None:
+        """
+        Sets the email_policy of this VoicemailGroupPolicy.
+        The email policy for the group
+
+        :param email_policy: The email_policy of this VoicemailGroupPolicy.
+        :type: GroupEmailPolicy
+        """
+        
+
+        self._email_policy = email_policy
 
     @property
     def rotate_calls_secs(self) -> int:

@@ -45,7 +45,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ObjectsApi()
 division_id = 'division_id_example' # str | Division ID
-force = False # bool | Force delete this division as well as the grants and objects associated with it (optional) (default to False)
+force = False # bool | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (optional) (default to False)
 
 try:
     # Delete a division.
@@ -60,7 +60,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **force** | **bool**| Force delete this division as well as the grants and objects associated with it | [optional] [default to False] |
+| **force** | **bool**| DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. | [optional] [default to False] |
 
 ### Return type
 
@@ -323,7 +323,7 @@ void (empty response body)
 
 ## post_authorization_division_restore
 
-> [**AuthzDivision**](AuthzDivision) post_authorization_division_restore(division_id, body=body)
+> [**AuthzDivision**](AuthzDivision) post_authorization_division_restore(division_id, body)
 
 
 Recreate a previously deleted division.
@@ -348,11 +348,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ObjectsApi()
 division_id = 'division_id_example' # str | Division ID
-body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Recreated division data (optional)
+body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Recreated division data
 
 try:
     # Recreate a previously deleted division.
-    api_response = api_instance.post_authorization_division_restore(division_id, body=body)
+    api_response = api_instance.post_authorization_division_restore(division_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ObjectsApi->post_authorization_division_restore: %s\n" % e)
@@ -364,7 +364,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **body** | [**AuthzDivision**](AuthzDivision)| Recreated division data | [optional]  |
+| **body** | [**AuthzDivision**](AuthzDivision)| Recreated division data |  |
 
 ### Return type
 
@@ -470,4 +470,4 @@ except ApiException as e:
 [**AuthzDivision**](AuthzDivision)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

@@ -55,6 +55,7 @@ class JourneyViewJob(object):
             'date_completed': 'datetime',
             'status': 'str',
             'journey_view': 'JourneyView',
+            'date_completion_estimated': 'datetime',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class JourneyViewJob(object):
             'date_completed': 'dateCompleted',
             'status': 'status',
             'journey_view': 'journeyView',
+            'date_completion_estimated': 'dateCompletionEstimated',
             'self_uri': 'selfUri'
         }
 
@@ -72,6 +74,7 @@ class JourneyViewJob(object):
         self._date_completed = None
         self._status = None
         self._journey_view = None
+        self._date_completion_estimated = None
         self._self_uri = None
 
     @property
@@ -198,6 +201,30 @@ class JourneyViewJob(object):
         
 
         self._journey_view = journey_view
+
+    @property
+    def date_completion_estimated(self) -> datetime:
+        """
+        Gets the date_completion_estimated of this JourneyViewJob.
+        Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_completion_estimated of this JourneyViewJob.
+        :rtype: datetime
+        """
+        return self._date_completion_estimated
+
+    @date_completion_estimated.setter
+    def date_completion_estimated(self, date_completion_estimated: datetime) -> None:
+        """
+        Sets the date_completion_estimated of this JourneyViewJob.
+        Timestamp for the estimated time of completion. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_completion_estimated: The date_completion_estimated of this JourneyViewJob.
+        :type: datetime
+        """
+        
+
+        self._date_completion_estimated = date_completion_estimated
 
     @property
     def self_uri(self) -> str:

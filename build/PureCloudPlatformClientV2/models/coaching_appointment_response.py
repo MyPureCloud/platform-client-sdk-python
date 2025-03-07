@@ -71,6 +71,8 @@ class CoachingAppointmentResponse(object):
             'wfm_schedule': 'WfmScheduleReference',
             'date_completed': 'datetime',
             'external_links': 'list[str]',
+            'location': 'str',
+            'share_insights_data': 'bool',
             'self_uri': 'str'
         }
 
@@ -93,6 +95,8 @@ class CoachingAppointmentResponse(object):
             'wfm_schedule': 'wfmSchedule',
             'date_completed': 'dateCompleted',
             'external_links': 'externalLinks',
+            'location': 'location',
+            'share_insights_data': 'shareInsightsData',
             'self_uri': 'selfUri'
         }
 
@@ -114,6 +118,8 @@ class CoachingAppointmentResponse(object):
         self._wfm_schedule = None
         self._date_completed = None
         self._external_links = None
+        self._location = None
+        self._share_insights_data = None
         self._self_uri = None
 
     @property
@@ -552,6 +558,54 @@ class CoachingAppointmentResponse(object):
         
 
         self._external_links = external_links
+
+    @property
+    def location(self) -> str:
+        """
+        Gets the location of this CoachingAppointmentResponse.
+        The location of the appointment
+
+        :return: The location of this CoachingAppointmentResponse.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location: str) -> None:
+        """
+        Sets the location of this CoachingAppointmentResponse.
+        The location of the appointment
+
+        :param location: The location of this CoachingAppointmentResponse.
+        :type: str
+        """
+        
+
+        self._location = location
+
+    @property
+    def share_insights_data(self) -> bool:
+        """
+        Gets the share_insights_data of this CoachingAppointmentResponse.
+        Whether to share the insight data
+
+        :return: The share_insights_data of this CoachingAppointmentResponse.
+        :rtype: bool
+        """
+        return self._share_insights_data
+
+    @share_insights_data.setter
+    def share_insights_data(self, share_insights_data: bool) -> None:
+        """
+        Sets the share_insights_data of this CoachingAppointmentResponse.
+        Whether to share the insight data
+
+        :param share_insights_data: The share_insights_data of this CoachingAppointmentResponse.
+        :type: bool
+        """
+        
+
+        self._share_insights_data = share_insights_data
 
     @property
     def self_uri(self) -> str:

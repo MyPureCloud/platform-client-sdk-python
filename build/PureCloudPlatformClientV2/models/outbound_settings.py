@@ -56,6 +56,7 @@ class OutboundSettings(object):
             'date_modified': 'datetime',
             'version': 'int',
             'max_calls_per_agent': 'int',
+            'max_calls_per_agent_decimal': 'float',
             'max_configurable_calls_per_agent': 'int',
             'max_line_utilization': 'float',
             'abandon_seconds': 'float',
@@ -72,6 +73,7 @@ class OutboundSettings(object):
             'date_modified': 'dateModified',
             'version': 'version',
             'max_calls_per_agent': 'maxCallsPerAgent',
+            'max_calls_per_agent_decimal': 'maxCallsPerAgentDecimal',
             'max_configurable_calls_per_agent': 'maxConfigurableCallsPerAgent',
             'max_line_utilization': 'maxLineUtilization',
             'abandon_seconds': 'abandonSeconds',
@@ -87,6 +89,7 @@ class OutboundSettings(object):
         self._date_modified = None
         self._version = None
         self._max_calls_per_agent = None
+        self._max_calls_per_agent_decimal = None
         self._max_configurable_calls_per_agent = None
         self._max_line_utilization = None
         self._abandon_seconds = None
@@ -238,6 +241,30 @@ class OutboundSettings(object):
         
 
         self._max_calls_per_agent = max_calls_per_agent
+
+    @property
+    def max_calls_per_agent_decimal(self) -> float:
+        """
+        Gets the max_calls_per_agent_decimal of this OutboundSettings.
+        The maximum number of calls that can be placed per agent on any campaign with decimal precision
+
+        :return: The max_calls_per_agent_decimal of this OutboundSettings.
+        :rtype: float
+        """
+        return self._max_calls_per_agent_decimal
+
+    @max_calls_per_agent_decimal.setter
+    def max_calls_per_agent_decimal(self, max_calls_per_agent_decimal: float) -> None:
+        """
+        Sets the max_calls_per_agent_decimal of this OutboundSettings.
+        The maximum number of calls that can be placed per agent on any campaign with decimal precision
+
+        :param max_calls_per_agent_decimal: The max_calls_per_agent_decimal of this OutboundSettings.
+        :type: float
+        """
+        
+
+        self._max_calls_per_agent_decimal = max_calls_per_agent_decimal
 
     @property
     def max_configurable_calls_per_agent(self) -> int:

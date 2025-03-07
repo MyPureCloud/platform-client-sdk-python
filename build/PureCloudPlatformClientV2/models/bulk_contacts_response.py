@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BulkResponseResultExternalContactExternalContact
+    from . import BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact
 
 class BulkContactsResponse(object):
     """
@@ -50,7 +50,7 @@ class BulkContactsResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'results': 'list[BulkResponseResultExternalContactExternalContact]',
+            'results': 'list[BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact]',
             'error_count': 'int',
             'error_indexes': 'list[int]'
         }
@@ -66,24 +66,24 @@ class BulkContactsResponse(object):
         self._error_indexes = None
 
     @property
-    def results(self) -> List['BulkResponseResultExternalContactExternalContact']:
+    def results(self) -> List['BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact']:
         """
         Gets the results of this BulkContactsResponse.
-
+        A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
 
         :return: The results of this BulkContactsResponse.
-        :rtype: list[BulkResponseResultExternalContactExternalContact]
+        :rtype: list[BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact]
         """
         return self._results
 
     @results.setter
-    def results(self, results: List['BulkResponseResultExternalContactExternalContact']) -> None:
+    def results(self, results: List['BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact']) -> None:
         """
         Sets the results of this BulkContactsResponse.
-
+        A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
 
         :param results: The results of this BulkContactsResponse.
-        :type: list[BulkResponseResultExternalContactExternalContact]
+        :type: list[BulkResponseResultExternalContactExternalContactBulkEntityErrorExternalContact]
         """
         
 
@@ -93,7 +93,7 @@ class BulkContactsResponse(object):
     def error_count(self) -> int:
         """
         Gets the error_count of this BulkContactsResponse.
-
+        The number of failed operations in the results.
 
         :return: The error_count of this BulkContactsResponse.
         :rtype: int
@@ -104,7 +104,7 @@ class BulkContactsResponse(object):
     def error_count(self, error_count: int) -> None:
         """
         Sets the error_count of this BulkContactsResponse.
-
+        The number of failed operations in the results.
 
         :param error_count: The error_count of this BulkContactsResponse.
         :type: int
@@ -117,7 +117,7 @@ class BulkContactsResponse(object):
     def error_indexes(self) -> List[int]:
         """
         Gets the error_indexes of this BulkContactsResponse.
-
+        The indexes of all failed operations in the results field.
 
         :return: The error_indexes of this BulkContactsResponse.
         :rtype: list[int]
@@ -128,7 +128,7 @@ class BulkContactsResponse(object):
     def error_indexes(self, error_indexes: List[int]) -> None:
         """
         Sets the error_indexes of this BulkContactsResponse.
-
+        The indexes of all failed operations in the results field.
 
         :param error_indexes: The error_indexes of this BulkContactsResponse.
         :type: list[int]

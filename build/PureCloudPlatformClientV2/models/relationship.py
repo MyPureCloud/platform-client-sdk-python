@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ExternalDataSource
     from . import ExternalOrganization
     from . import User
+    from . import WritableStarrableDivision
 
 class Relationship(object):
     """
@@ -53,6 +54,7 @@ class Relationship(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'WritableStarrableDivision',
             'user': 'User',
             'external_organization': 'ExternalOrganization',
             'relationship': 'str',
@@ -62,6 +64,7 @@ class Relationship(object):
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'user': 'user',
             'external_organization': 'externalOrganization',
             'relationship': 'relationship',
@@ -70,6 +73,7 @@ class Relationship(object):
         }
 
         self._id = None
+        self._division = None
         self._user = None
         self._external_organization = None
         self._relationship = None
@@ -99,6 +103,30 @@ class Relationship(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this Relationship.
+        The division to which this entity belongs.
+
+        :return: The division of this Relationship.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this Relationship.
+        The division to which this entity belongs.
+
+        :param division: The division of this Relationship.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def user(self) -> 'User':

@@ -78,6 +78,7 @@ class Widget(object):
             'show_time_in_status': 'bool',
             'show_offline_agents': 'bool',
             'selected_statuses': 'list[str]',
+            'selected_segment_types': 'list[str]',
             'agent_interaction_sort_order': 'str'
         }
 
@@ -109,6 +110,7 @@ class Widget(object):
             'show_time_in_status': 'showTimeInStatus',
             'show_offline_agents': 'showOfflineAgents',
             'selected_statuses': 'selectedStatuses',
+            'selected_segment_types': 'selectedSegmentTypes',
             'agent_interaction_sort_order': 'agentInteractionSortOrder'
         }
 
@@ -139,6 +141,7 @@ class Widget(object):
         self._show_time_in_status = None
         self._show_offline_agents = None
         self._selected_statuses = None
+        self._selected_segment_types = None
         self._agent_interaction_sort_order = None
 
     @property
@@ -235,7 +238,7 @@ class Widget(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["METRIC", "CHART", "PIE", "HEAT_MAP", "FREE_TEXT", "AGENT_STATUS", "REALTIME_ADHERENCE", "WEB_CONTENT_URL"]
+        allowed_values = ["METRIC", "CHART", "PIE", "HEAT_MAP", "FREE_TEXT", "AGENT_STATUS", "REALTIME_ADHERENCE", "WEB_CONTENT_URL", "AGENT_ACTIVITY"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -803,6 +806,30 @@ class Widget(object):
         
 
         self._selected_statuses = selected_statuses
+
+    @property
+    def selected_segment_types(self) -> List[str]:
+        """
+        Gets the selected_segment_types of this Widget.
+        Indicates the selected segment types used to filter the agent activity in the dashboard.
+
+        :return: The selected_segment_types of this Widget.
+        :rtype: list[str]
+        """
+        return self._selected_segment_types
+
+    @selected_segment_types.setter
+    def selected_segment_types(self, selected_segment_types: List[str]) -> None:
+        """
+        Sets the selected_segment_types of this Widget.
+        Indicates the selected segment types used to filter the agent activity in the dashboard.
+
+        :param selected_segment_types: The selected_segment_types of this Widget.
+        :type: list[str]
+        """
+        
+
+        self._selected_segment_types = selected_segment_types
 
     @property
     def agent_interaction_sort_order(self) -> str:

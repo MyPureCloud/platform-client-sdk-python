@@ -36,11 +36,13 @@ if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import ButtonResponse
     from . import Card
+    from . import ConversationMessageEvent
     from . import ExternalContact
     from . import MessageMediaAttachment
     from . import MessageStickerAttachment
     from . import QuickReply
     from . import RecordingContentStory
+    from . import RecordingNotificationTemplate
     from . import User
 
 class RecordingMessagingMessage(object):
@@ -75,7 +77,9 @@ class RecordingMessagingMessage(object):
             'button_response': 'ButtonResponse',
             'story': 'RecordingContentStory',
             'cards': 'list[Card]',
-            'content_type': 'str'
+            'notification_template': 'RecordingNotificationTemplate',
+            'content_type': 'str',
+            'events': 'list[ConversationMessageEvent]'
         }
 
         self.attribute_map = {
@@ -96,7 +100,9 @@ class RecordingMessagingMessage(object):
             'button_response': 'buttonResponse',
             'story': 'story',
             'cards': 'cards',
-            'content_type': 'contentType'
+            'notification_template': 'notificationTemplate',
+            'content_type': 'contentType',
+            'events': 'events'
         }
 
         self._pcFrom = None
@@ -116,7 +122,9 @@ class RecordingMessagingMessage(object):
         self._button_response = None
         self._story = None
         self._cards = None
+        self._notification_template = None
         self._content_type = None
+        self._events = None
 
     @property
     def pcFrom(self) -> str:
@@ -527,6 +535,30 @@ class RecordingMessagingMessage(object):
         self._cards = cards
 
     @property
+    def notification_template(self) -> 'RecordingNotificationTemplate':
+        """
+        Gets the notification_template of this RecordingMessagingMessage.
+        Template notification content.
+
+        :return: The notification_template of this RecordingMessagingMessage.
+        :rtype: RecordingNotificationTemplate
+        """
+        return self._notification_template
+
+    @notification_template.setter
+    def notification_template(self, notification_template: 'RecordingNotificationTemplate') -> None:
+        """
+        Sets the notification_template of this RecordingMessagingMessage.
+        Template notification content.
+
+        :param notification_template: The notification_template of this RecordingMessagingMessage.
+        :type: RecordingNotificationTemplate
+        """
+        
+
+        self._notification_template = notification_template
+
+    @property
     def content_type(self) -> str:
         """
         Gets the content_type of this RecordingMessagingMessage.
@@ -554,6 +586,30 @@ class RecordingMessagingMessage(object):
             self._content_type = "outdated_sdk_version"
         else:
             self._content_type = content_type
+
+    @property
+    def events(self) -> List['ConversationMessageEvent']:
+        """
+        Gets the events of this RecordingMessagingMessage.
+        List of event elements
+
+        :return: The events of this RecordingMessagingMessage.
+        :rtype: list[ConversationMessageEvent]
+        """
+        return self._events
+
+    @events.setter
+    def events(self, events: List['ConversationMessageEvent']) -> None:
+        """
+        Sets the events of this RecordingMessagingMessage.
+        List of event elements
+
+        :param events: The events of this RecordingMessagingMessage.
+        :type: list[ConversationMessageEvent]
+        """
+        
+
+        self._events = events
 
     def to_dict(self):
         """

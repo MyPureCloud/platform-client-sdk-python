@@ -37,7 +37,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_settings**](#get_recording_settings) | Get the Recording Settings for the Organization|
 |[**get_recording_uploads_report**](#get_recording_uploads_report) | Get the status of a recording upload status report|
 |[**get_recordings_retention_query**](#get_recordings_retention_query) | Query for recording retention data|
-|[**get_recordings_screensessions**](#get_recordings_screensessions) | Retrieves a paged listing of screen recording sessions|
 |[**get_recordings_screensessions_details**](#get_recordings_screensessions_details) | Retrieves an object containing the total number of concurrent active screen recordings|
 |[**patch_recording_crossplatform_mediaretentionpolicy**](#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recording_mediaretentionpolicy**](#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
@@ -440,7 +439,7 @@ chat_format_id = ''ZIP'' # str | The desired media format when downloading a cha
 message_format_id = ''ZIP'' # str | The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional) (default to 'ZIP')
 download = False # bool | requesting a download format of the recording. Valid values:true,false (optional) (default to False)
 file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
-locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
+locale = 'locale_example' # str | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
 media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
 
 try:
@@ -464,7 +463,7 @@ except ApiException as e:
 | **message_format_id** | **str**| The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to &#39;ZIP&#39;]<br />**Values**: ZIP, NONE |
 | **download** | **bool**| requesting a download format of the recording. Valid values:true,false | [optional] [default to False]<br />**Values**: true, false |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
-| **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
+| **locale** | **str**| The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
 | **media_formats** | [**list[str]**](str)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 
 ### Return type
@@ -676,7 +675,7 @@ except ApiException as e:
 
 ## get_conversation_recordings
 
-> [**list[Recording]**](Recording) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats)
+> [**list[Recording]**](Recording) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats, locale=locale)
 
 
 Get all of a Conversation's Recordings.
@@ -705,10 +704,11 @@ conversation_id = 'conversation_id_example' # str | Conversation ID
 max_wait_ms = 5000 # int | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional) (default to 5000)
 format_id = ''WEBM'' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional) (default to 'WEBM')
 media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
+locale = 'locale_example' # str | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
 
 try:
     # Get all of a Conversation's Recordings.
-    api_response = api_instance.get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats)
+    api_response = api_instance.get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats, locale=locale)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_conversation_recordings: %s\n" % e)
@@ -723,6 +723,7 @@ except ApiException as e:
 | **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
 | **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 | **media_formats** | [**list[str]**](str)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
+| **locale** | **str**| The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
 
 ### Return type
 
@@ -1685,61 +1686,6 @@ except ApiException as e:
 ### Return type
 
 [**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing)
-
-
-## get_recordings_screensessions
-
-> [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing) get_recordings_screensessions(page_size=page_size, page_number=page_number)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Retrieves a paged listing of screen recording sessions
-
-Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
-
-Wraps GET /api/v2/recordings/screensessions 
-
-Requires ANY permissions: 
-
-* recording:screenRecording:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RecordingApi()
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-
-try:
-    # Retrieves a paged listing of screen recording sessions
-    api_response = api_instance.get_recordings_screensessions(page_size=page_size, page_number=page_number)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecordingApi->get_recordings_screensessions: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-
-### Return type
-
-[**ScreenRecordingSessionListing**](ScreenRecordingSessionListing)
 
 
 ## get_recordings_screensessions_details
@@ -3034,4 +2980,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

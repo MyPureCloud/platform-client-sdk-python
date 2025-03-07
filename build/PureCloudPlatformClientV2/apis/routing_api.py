@@ -59,6 +59,8 @@ from ..models import EmailOutboundDomainResult
 from ..models import EmailSetup
 from ..models import ErrorBody
 from ..models import EstimatedWaitTimePredictions
+from ..models import IdentityResolutionConfig
+from ..models import IdentityResolutionQueueConfig
 from ..models import InboundDomain
 from ..models import InboundDomainEntityListing
 from ..models import InboundDomainPatchRequest
@@ -2672,6 +2674,91 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_email_domain_route_identityresolution(self, domain_name: str, route_id: str, **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Get a route identity resolution setting.
+        
+	    get_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_email_domain_route_identityresolution(domain_name, route_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str domain_name: email domain (required)
+        :param str route_id: route ID (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['domain_name', 'route_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_email_domain_route_identityresolution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'domain_name' is set
+        if ('domain_name' not in params) or (params['domain_name'] is None):
+            raise ValueError("Missing the required parameter `domain_name` when calling `get_routing_email_domain_route_identityresolution`")
+        # verify the required parameter 'route_id' is set
+        if ('route_id' not in params) or (params['route_id'] is None):
+            raise ValueError("Missing the required parameter `route_id` when calling `get_routing_email_domain_route_identityresolution`")
+
+
+        resource_path = '/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution'.replace('{format}', 'json')
+        path_params = {}
+        if 'domain_name' in params:
+            path_params['domainName'] = params['domain_name']
+        if 'route_id' in params:
+            path_params['routeId'] = params['route_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_routing_email_domain_routes(self, domain_name: str, **kwargs) -> 'InboundRouteEntityListing':
         """
         Get routes
@@ -4354,6 +4441,85 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EstimatedWaitTimePredictions',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_queue_identityresolution(self, queue_id: str, **kwargs) -> 'IdentityResolutionQueueConfig':
+        """
+        Get Queue IdentityResolution Settings.
+        
+	    get_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_queue_identityresolution(queue_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :return: IdentityResolutionQueueConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_queue_identityresolution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `get_routing_queue_identityresolution`")
+
+
+        resource_path = '/api/v2/routing/queues/{queueId}/identityresolution'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionQueueConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6074,6 +6240,85 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='SMSAvailablePhoneNumberEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_sms_identityresolution_phonenumber(self, address_id: str, **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Get a SMS identity resolution settings.
+        
+	    get_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_sms_identityresolution_phonenumber(address_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str address_id: Address ID (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['address_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_sms_identityresolution_phonenumber" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'address_id' is set
+        if ('address_id' not in params) or (params['address_id'] is None):
+            raise ValueError("Missing the required parameter `address_id` when calling `get_routing_sms_identityresolution_phonenumber`")
+
+
+        resource_path = '/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'address_id' in params:
+            path_params['addressId'] = params['address_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11345,6 +11590,97 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_routing_email_domain_route_identityresolution(self, domain_name: str, route_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Update identity resolution settings for a route.
+        
+	    put_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_routing_email_domain_route_identityresolution(domain_name, route_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str domain_name: email domain (required)
+        :param str route_id: route ID (required)
+        :param IdentityResolutionConfig body:  (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['domain_name', 'route_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_routing_email_domain_route_identityresolution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'domain_name' is set
+        if ('domain_name' not in params) or (params['domain_name'] is None):
+            raise ValueError("Missing the required parameter `domain_name` when calling `put_routing_email_domain_route_identityresolution`")
+        # verify the required parameter 'route_id' is set
+        if ('route_id' not in params) or (params['route_id'] is None):
+            raise ValueError("Missing the required parameter `route_id` when calling `put_routing_email_domain_route_identityresolution`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_routing_email_domain_route_identityresolution`")
+
+
+        resource_path = '/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution'.replace('{format}', 'json')
+        path_params = {}
+        if 'domain_name' in params:
+            path_params['domainName'] = params['domain_name']
+        if 'route_id' in params:
+            path_params['routeId'] = params['route_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_routing_email_outbound_domain_activation(self, domain_id: str, **kwargs) -> 'EmailOutboundDomainResult':
         """
         Request an activation status (cname + dkim) update of an outbound domain
@@ -11591,6 +11927,91 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_routing_queue_identityresolution(self, queue_id: str, body: 'IdentityResolutionQueueConfig', **kwargs) -> 'IdentityResolutionQueueConfig':
+        """
+        Update Queue IdentityResolution Settings.
+        
+	    put_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_routing_queue_identityresolution(queue_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :param IdentityResolutionQueueConfig body:  (required)
+        :return: IdentityResolutionQueueConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_routing_queue_identityresolution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `put_routing_queue_identityresolution`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_routing_queue_identityresolution`")
+
+
+        resource_path = '/api/v2/routing/queues/{queueId}/identityresolution'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionQueueConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_routing_settings(self, body: 'RoutingSettings', **kwargs) -> 'RoutingSettings':
         """
         Update an organization's routing settings
@@ -11743,6 +12164,91 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TranscriptionSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_routing_sms_identityresolution_phonenumber(self, address_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Update an SMS identity resolution settings.
+        
+	    put_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_routing_sms_identityresolution_phonenumber(address_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str address_id: Address ID (required)
+        :param IdentityResolutionConfig body:  (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['address_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_routing_sms_identityresolution_phonenumber" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'address_id' is set
+        if ('address_id' not in params) or (params['address_id'] is None):
+            raise ValueError("Missing the required parameter `address_id` when calling `put_routing_sms_identityresolution_phonenumber`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_routing_sms_identityresolution_phonenumber`")
+
+
+        resource_path = '/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'address_id' in params:
+            path_params['addressId'] = params['address_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

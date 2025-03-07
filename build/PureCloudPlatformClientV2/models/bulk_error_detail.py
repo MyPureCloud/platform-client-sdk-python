@@ -67,7 +67,7 @@ class BulkErrorDetail(object):
     def field_name(self) -> str:
         """
         Gets the field_name of this BulkErrorDetail.
-
+        The name of the field which experienced an error.
 
         :return: The field_name of this BulkErrorDetail.
         :rtype: str
@@ -78,7 +78,7 @@ class BulkErrorDetail(object):
     def field_name(self, field_name: str) -> None:
         """
         Sets the field_name of this BulkErrorDetail.
-
+        The name of the field which experienced an error.
 
         :param field_name: The field_name of this BulkErrorDetail.
         :type: str
@@ -91,7 +91,7 @@ class BulkErrorDetail(object):
     def value(self) -> str:
         """
         Gets the value of this BulkErrorDetail.
-
+        The field value from the request which caused the error.
 
         :return: The value of this BulkErrorDetail.
         :rtype: str
@@ -102,7 +102,7 @@ class BulkErrorDetail(object):
     def value(self, value: str) -> None:
         """
         Sets the value of this BulkErrorDetail.
-
+        The field value from the request which caused the error.
 
         :param value: The value of this BulkErrorDetail.
         :type: str
@@ -115,7 +115,7 @@ class BulkErrorDetail(object):
     def message(self) -> str:
         """
         Gets the message of this BulkErrorDetail.
-
+        A field-specific error message describing why this operation was rejected.
 
         :return: The message of this BulkErrorDetail.
         :rtype: str
@@ -126,7 +126,7 @@ class BulkErrorDetail(object):
     def message(self, message: str) -> None:
         """
         Sets the message of this BulkErrorDetail.
-
+        A field-specific error message describing why this operation was rejected.
 
         :param message: The message of this BulkErrorDetail.
         :type: str

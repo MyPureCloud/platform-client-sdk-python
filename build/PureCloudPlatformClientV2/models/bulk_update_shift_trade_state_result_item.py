@@ -132,7 +132,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
     def reviewed_by(self) -> 'UserReference':
         """
         Gets the reviewed_by of this BulkUpdateShiftTradeStateResultItem.
-        The user who reviewed the request, if applicable
+        The user who reviewed the request, if applicable. The id may be 'System' if it was an automated process
 
         :return: The reviewed_by of this BulkUpdateShiftTradeStateResultItem.
         :rtype: UserReference
@@ -143,7 +143,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
     def reviewed_by(self, reviewed_by: 'UserReference') -> None:
         """
         Sets the reviewed_by of this BulkUpdateShiftTradeStateResultItem.
-        The user who reviewed the request, if applicable
+        The user who reviewed the request, if applicable. The id may be 'System' if it was an automated process
 
         :param reviewed_by: The reviewed_by of this BulkUpdateShiftTradeStateResultItem.
         :type: UserReference

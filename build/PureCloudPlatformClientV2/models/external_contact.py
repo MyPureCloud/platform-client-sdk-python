@@ -45,6 +45,7 @@ if TYPE_CHECKING:
     from . import PhoneNumber
     from . import TwitterId
     from . import WhatsAppId
+    from . import WritableStarrableDivision
 
 class ExternalContact(object):
     """
@@ -62,6 +63,7 @@ class ExternalContact(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'WritableStarrableDivision',
             'first_name': 'str',
             'middle_name': 'str',
             'last_name': 'str',
@@ -97,6 +99,7 @@ class ExternalContact(object):
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'first_name': 'firstName',
             'middle_name': 'middleName',
             'last_name': 'lastName',
@@ -131,6 +134,7 @@ class ExternalContact(object):
         }
 
         self._id = None
+        self._division = None
         self._first_name = None
         self._middle_name = None
         self._last_name = None
@@ -186,6 +190,30 @@ class ExternalContact(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this ExternalContact.
+        The division to which this entity belongs.
+
+        :return: The division of this ExternalContact.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this ExternalContact.
+        The division to which this entity belongs.
+
+        :param division: The division of this ExternalContact.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def first_name(self) -> str:

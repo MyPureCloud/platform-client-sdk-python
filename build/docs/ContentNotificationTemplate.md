@@ -10,8 +10,9 @@
 | **language** | str | Template language. | [optional] |
 | **header** | [NotificationTemplateHeader](NotificationTemplateHeader) | The template header. | [optional] |
 | **body** | [NotificationTemplateBody](NotificationTemplateBody) | The template body. | |
+| **buttons** | [list[NotificationTemplateButton]](NotificationTemplateButton) | Template buttons | [optional] |
 | **footer** | [NotificationTemplateFooter](NotificationTemplateFooter) | The template footer. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

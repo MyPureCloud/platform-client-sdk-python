@@ -57,6 +57,7 @@ class KnowledgeDocumentReq(object):
             'category_id': 'str',
             'label_ids': 'list[str]',
             'external_id': 'str',
+            'external_url': 'str',
             'self_uri': 'str'
         }
 
@@ -68,6 +69,7 @@ class KnowledgeDocumentReq(object):
             'category_id': 'categoryId',
             'label_ids': 'labelIds',
             'external_id': 'externalId',
+            'external_url': 'externalUrl',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +80,7 @@ class KnowledgeDocumentReq(object):
         self._category_id = None
         self._label_ids = None
         self._external_id = None
+        self._external_url = None
         self._self_uri = None
 
     @property
@@ -247,6 +250,30 @@ class KnowledgeDocumentReq(object):
         
 
         self._external_id = external_id
+
+    @property
+    def external_url(self) -> str:
+        """
+        Gets the external_url of this KnowledgeDocumentReq.
+        The URL to external document.
+
+        :return: The external_url of this KnowledgeDocumentReq.
+        :rtype: str
+        """
+        return self._external_url
+
+    @external_url.setter
+    def external_url(self, external_url: str) -> None:
+        """
+        Sets the external_url of this KnowledgeDocumentReq.
+        The URL to external document.
+
+        :param external_url: The external_url of this KnowledgeDocumentReq.
+        :type: str
+        """
+        
+
+        self._external_url = external_url
 
     @property
     def self_uri(self) -> str:

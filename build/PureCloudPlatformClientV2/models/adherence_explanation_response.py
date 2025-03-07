@@ -324,7 +324,7 @@ class AdherenceExplanationResponse(object):
     def reviewed_by(self) -> 'UserReference':
         """
         Gets the reviewed_by of this AdherenceExplanationResponse.
-        The user who reviewed the adherence explanation, if applicable
+        The user who reviewed the adherence explanation, if applicable. The id may be 'System' if it was an automated process
 
         :return: The reviewed_by of this AdherenceExplanationResponse.
         :rtype: UserReference
@@ -335,7 +335,7 @@ class AdherenceExplanationResponse(object):
     def reviewed_by(self, reviewed_by: 'UserReference') -> None:
         """
         Sets the reviewed_by of this AdherenceExplanationResponse.
-        The user who reviewed the adherence explanation, if applicable
+        The user who reviewed the adherence explanation, if applicable. The id may be 'System' if it was an automated process
 
         :param reviewed_by: The reviewed_by of this AdherenceExplanationResponse.
         :type: UserReference

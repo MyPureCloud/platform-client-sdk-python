@@ -710,13 +710,14 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
         :param str expand: Indicates a field in the response which should be expanded.
+        :param bool flatten: Indicates the response should be reformatted, based on Architect's flattening format.
         :param bool include_config: Return config in response.
         :return: Action
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['action_id', 'expand', 'include_config']
+        all_params = ['action_id', 'expand', 'flatten', 'include_config']
         all_params.append('callback')
 
         params = locals()
@@ -742,6 +743,8 @@ class IntegrationsApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'flatten' in params:
+            query_params['flatten'] = params['flatten']
         if 'include_config' in params:
             query_params['includeConfig'] = params['include_config']
 
@@ -794,13 +797,14 @@ class IntegrationsApi(object):
             for asynchronous request. (optional)
         :param str action_id: actionId (required)
         :param str expand: Indicates a field in the response which should be expanded.
+        :param bool flatten: Indicates the response should be reformatted, based on Architect's flattening format.
         :param bool include_config: Return config in response.
         :return: Action
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['action_id', 'expand', 'include_config']
+        all_params = ['action_id', 'expand', 'flatten', 'include_config']
         all_params.append('callback')
 
         params = locals()
@@ -826,6 +830,8 @@ class IntegrationsApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'flatten' in params:
+            query_params['flatten'] = params['flatten']
         if 'include_config' in params:
             query_params['includeConfig'] = params['include_config']
 

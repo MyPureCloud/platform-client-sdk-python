@@ -689,7 +689,7 @@ class ActivityPlanResponse(object):
     def modified_by(self) -> 'UserReference':
         """
         Gets the modified_by of this ActivityPlanResponse.
-        The last user to modify this activity plan
+        The last user to modify this activity plan. The id may be 'System' if it was an automated process
 
         :return: The modified_by of this ActivityPlanResponse.
         :rtype: UserReference
@@ -700,7 +700,7 @@ class ActivityPlanResponse(object):
     def modified_by(self, modified_by: 'UserReference') -> None:
         """
         Sets the modified_by of this ActivityPlanResponse.
-        The last user to modify this activity plan
+        The last user to modify this activity plan. The id may be 'System' if it was an automated process
 
         :param modified_by: The modified_by of this ActivityPlanResponse.
         :type: UserReference

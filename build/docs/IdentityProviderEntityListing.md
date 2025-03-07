@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [list[CustomProvider]](CustomProvider) |  | [optional] |
+| **entities** | [list[SAMLProvider]](SAMLProvider) |  | [optional] |
 | **page_size** | int |  | [optional] |
 | **page_number** | int |  | [optional] |
 | **total** | int |  | [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

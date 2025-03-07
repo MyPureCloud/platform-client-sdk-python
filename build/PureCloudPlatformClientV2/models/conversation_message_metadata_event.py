@@ -111,7 +111,7 @@ class ConversationMessageMetadataEvent(object):
         """
         if isinstance(sub_type, int):
             sub_type = str(sub_type)
-        allowed_values = ["On", "Join", "Offering", "OfferingExpired", "OfferingAccepted", "OfferingRejected", "Disconnect", "Clear", "SignIn", "Unknown"]
+        allowed_values = ["On", "Join", "Offering", "OfferingExpired", "OfferingAccepted", "OfferingRejected", "Disconnect", "Clear", "SignIn", "SessionExpired", "Unknown"]
         if sub_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sub_type -> " + sub_type)
             self._sub_type = "outdated_sdk_version"

@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BulkResponseResultRelationshipRelationship
+    from . import BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship
 
 class BulkRelationshipsResponse(object):
     """
@@ -50,7 +50,7 @@ class BulkRelationshipsResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'results': 'list[BulkResponseResultRelationshipRelationship]',
+            'results': 'list[BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship]',
             'error_count': 'int',
             'error_indexes': 'list[int]'
         }
@@ -66,24 +66,24 @@ class BulkRelationshipsResponse(object):
         self._error_indexes = None
 
     @property
-    def results(self) -> List['BulkResponseResultRelationshipRelationship']:
+    def results(self) -> List['BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship']:
         """
         Gets the results of this BulkRelationshipsResponse.
-
+        A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
 
         :return: The results of this BulkRelationshipsResponse.
-        :rtype: list[BulkResponseResultRelationshipRelationship]
+        :rtype: list[BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship]
         """
         return self._results
 
     @results.setter
-    def results(self, results: List['BulkResponseResultRelationshipRelationship']) -> None:
+    def results(self, results: List['BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship']) -> None:
         """
         Sets the results of this BulkRelationshipsResponse.
-
+        A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
 
         :param results: The results of this BulkRelationshipsResponse.
-        :type: list[BulkResponseResultRelationshipRelationship]
+        :type: list[BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship]
         """
         
 
@@ -93,7 +93,7 @@ class BulkRelationshipsResponse(object):
     def error_count(self) -> int:
         """
         Gets the error_count of this BulkRelationshipsResponse.
-
+        The number of failed operations in the results.
 
         :return: The error_count of this BulkRelationshipsResponse.
         :rtype: int
@@ -104,7 +104,7 @@ class BulkRelationshipsResponse(object):
     def error_count(self, error_count: int) -> None:
         """
         Sets the error_count of this BulkRelationshipsResponse.
-
+        The number of failed operations in the results.
 
         :param error_count: The error_count of this BulkRelationshipsResponse.
         :type: int
@@ -117,7 +117,7 @@ class BulkRelationshipsResponse(object):
     def error_indexes(self) -> List[int]:
         """
         Gets the error_indexes of this BulkRelationshipsResponse.
-
+        The indexes of all failed operations in the results field.
 
         :return: The error_indexes of this BulkRelationshipsResponse.
         :rtype: list[int]
@@ -128,7 +128,7 @@ class BulkRelationshipsResponse(object):
     def error_indexes(self, error_indexes: List[int]) -> None:
         """
         Sets the error_indexes of this BulkRelationshipsResponse.
-
+        The indexes of all failed operations in the results field.
 
         :param error_indexes: The error_indexes of this BulkRelationshipsResponse.
         :type: list[int]

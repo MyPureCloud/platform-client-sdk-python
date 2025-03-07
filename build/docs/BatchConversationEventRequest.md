@@ -24,7 +24,21 @@
 | **consult_transfer_events** | [list[ConsultTransferEvent]](ConsultTransferEvent) | Voice - ConsultTransfer events for this batch | [optional] |
 | **progress_consult_transfer_events** | [list[ProgressConsultTransferEvent]](ProgressConsultTransferEvent) | Voice - ProgressConsultTransfer events for this batch | [optional] |
 | **end_consult_transfer_events** | [list[EndConsultTransferEvent]](EndConsultTransferEvent) | Voice - EndConsultTransfer events for this batch | [optional] |
+| **email_begin_transmitting_events** | [list[EmailBeginTransmittingEvent]](EmailBeginTransmittingEvent) | Email - EmailBeginTransmittingEvent events for this batch | [optional] |
+| **email_communication_ended_events** | [list[EmailCommunicationEndedEvent]](EmailCommunicationEndedEvent) | Email - EmailCommunicationEndedEvent events for this batch | [optional] |
+| **email_external_established_events** | [list[EmailExternalEstablishedEvent]](EmailExternalEstablishedEvent) | Email - EmailExternalEstablishedEvent events for this batch | [optional] |
+| **email_flow_established_events** | [list[EmailFlowEstablishedEvent]](EmailFlowEstablishedEvent) | Email - EmailFlowEstablishedEvent events for this batch | [optional] |
+| **email_routing_established_events** | [list[EmailRoutingEstablishedEvent]](EmailRoutingEstablishedEvent) | Email - EmailRoutingEstablishedEvent events for this batch | [optional] |
+| **email_user_established_events** | [list[EmailUserEstablishedEvent]](EmailUserEstablishedEvent) | Email - EmailUserEstablishedEvent events for this batch | [optional] |
+| **email_communication_answered_events** | [list[EmailCommunicationAnsweredEvent]](EmailCommunicationAnsweredEvent) | Email - EmailCommunicationAnsweredEvent events for this batch | [optional] |
+| **email_communication_disposition_applied_events** | [list[EmailCommunicationDispositionAppliedEvent]](EmailCommunicationDispositionAppliedEvent) | Email - EmailCommunicationDispositionAppliedEvent events for this batch | [optional] |
+| **email_communication_sent_message_events** | [list[EmailCommunicationSentMessageEvent]](EmailCommunicationSentMessageEvent) | Email - EmailCommunicationSentMessageEvent events for this batch | [optional] |
+| **email_hold_updated_events** | [list[EmailHoldUpdatedEvent]](EmailHoldUpdatedEvent) | Email - EmailHoldUpdatedEvent events for this batch | [optional] |
+| **email_end_transfer_events** | [list[EmailEndTransferEvent]](EmailEndTransferEvent) | Email - EmailEndTransferEvent events for this batch | [optional] |
+| **email_progress_transfer_events** | [list[EmailProgressTransferEvent]](EmailProgressTransferEvent) | Email - EmailProgressTransferEvent events for this batch | [optional] |
+| **email_routing_transfer_events** | [list[EmailRoutingTransferEvent]](EmailRoutingTransferEvent) | Email - EmailRoutingTransferEvent events for this batch | [optional] |
+| **email_user_transfer_events** | [list[EmailUserTransferEvent]](EmailUserTransferEvent) | Email - EmailUserTransferEvent events for this batch | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

@@ -63,7 +63,8 @@ class CreateEmailRequest(object):
             'direction': 'str',
             'html_body': 'str',
             'text_body': 'str',
-            'external_contact_id': 'str'
+            'external_contact_id': 'str',
+            'utilization_label': 'str'
         }
 
         self.attribute_map = {
@@ -82,7 +83,8 @@ class CreateEmailRequest(object):
             'direction': 'direction',
             'html_body': 'htmlBody',
             'text_body': 'textBody',
-            'external_contact_id': 'externalContactId'
+            'external_contact_id': 'externalContactId',
+            'utilization_label': 'utilizationLabel'
         }
 
         self._queue_id = None
@@ -101,6 +103,7 @@ class CreateEmailRequest(object):
         self._html_body = None
         self._text_body = None
         self._external_contact_id = None
+        self._utilization_label = None
 
     @property
     def queue_id(self) -> str:
@@ -490,6 +493,36 @@ class CreateEmailRequest(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this CreateEmailRequest.
+        Optional. Controls the number of agent interactions for INBOUND communications
+
+        :return: The utilization_label of this CreateEmailRequest.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this CreateEmailRequest.
+        Optional. Controls the number of agent interactions for INBOUND communications
+
+        :param utilization_label: The utilization_label of this CreateEmailRequest.
+        :type: str
+        """
+        
+        if len(utilization_label) > 50:
+            raise ValueError("Invalid value for `utilization_label`, length must be less than `50`")
+
+        if len(utilization_label) < 0:
+            raise ValueError("Invalid value for `utilization_label`, length must be greater than or equal to `0`")
+
+
+        self._utilization_label = utilization_label
 
     def to_dict(self):
         """

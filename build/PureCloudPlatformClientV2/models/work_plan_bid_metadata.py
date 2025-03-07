@@ -120,7 +120,7 @@ class WorkPlanBidMetadata(object):
     def modified_by(self) -> 'UserReference':
         """
         Gets the modified_by of this WorkPlanBidMetadata.
-        The user who modified the entity
+        The user who modified the entity. The id may be 'System' if it was an automated process
 
         :return: The modified_by of this WorkPlanBidMetadata.
         :rtype: UserReference
@@ -131,7 +131,7 @@ class WorkPlanBidMetadata(object):
     def modified_by(self, modified_by: 'UserReference') -> None:
         """
         Sets the modified_by of this WorkPlanBidMetadata.
-        The user who modified the entity
+        The user who modified the entity. The id may be 'System' if it was an automated process
 
         :param modified_by: The modified_by of this WorkPlanBidMetadata.
         :type: UserReference

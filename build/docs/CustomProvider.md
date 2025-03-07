@@ -17,14 +17,14 @@
 | **certificate** | str |  | [optional] |
 | **certificates** | list[str] |  | [optional] |
 | **logo_image_data** | str |  | [optional] |
-| **endpoint_compression** | bool |  | [optional] |
 | **name_identifier_format** | str |  | [optional] |
 | **sso_binding** | str |  | [optional] |
 | **sign_authn_requests** | bool |  | [optional] |
 | **provider_name** | str |  | [optional] |
 | **display_on_login** | bool |  | [optional] |
+| **endpoint_compression** | bool |  | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

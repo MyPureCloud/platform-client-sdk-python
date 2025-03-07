@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_webdeployments_deployment**](#get_webdeployments_deployment) | Get a deployment|
 |[**get_webdeployments_deployment_cobrowse_session_id**](#get_webdeployments_deployment_cobrowse_session_id) | Retrieves a cobrowse session|
 |[**get_webdeployments_deployment_configurations**](#get_webdeployments_deployment_configurations) | Get active configuration for a given deployment|
+|[**get_webdeployments_deployment_identityresolution**](#get_webdeployments_deployment_identityresolution) | Get a deployment identity resolution setting.|
 |[**get_webdeployments_deployments**](#get_webdeployments_deployments) | Get deployments|
 |[**post_webdeployments_configuration_versions_draft_publish**](#post_webdeployments_configuration_versions_draft_publish) | Publish the configuration draft and create a new version|
 |[**post_webdeployments_configurations**](#post_webdeployments_configurations) | Create a configuration draft|
@@ -25,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_webdeployments_token_refresh**](#post_webdeployments_token_refresh) | Refresh a JWT.|
 |[**put_webdeployments_configuration_versions_draft**](#put_webdeployments_configuration_versions_draft) | Update the configuration draft|
 |[**put_webdeployments_deployment**](#put_webdeployments_deployment) | Update a deployment|
+|[**put_webdeployments_deployment_identityresolution**](#put_webdeployments_deployment_identityresolution) | Update identity resolution settings for a deployment.|
 
 
 
@@ -556,6 +558,57 @@ except ApiException as e:
 [**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment)
 
 
+## get_webdeployments_deployment_identityresolution
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_webdeployments_deployment_identityresolution(deployment_id)
+
+
+Get a deployment identity resolution setting.
+
+get_webdeployments_deployment_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution 
+
+Requires ALL permissions: 
+
+* webDeployments:deployment:view
+* webDeployments:identityResolution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+deployment_id = 'deployment_id_example' # str | The deployment ID
+
+try:
+    # Get a deployment identity resolution setting.
+    api_response = api_instance.get_webdeployments_deployment_identityresolution(deployment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->get_webdeployments_deployment_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| The deployment ID |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## get_webdeployments_deployments
 
 > [**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing) get_webdeployments_deployments(expand=expand)
@@ -937,4 +990,57 @@ except ApiException as e:
 [**WebDeployment**](WebDeployment)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+## put_webdeployments_deployment_identityresolution
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_webdeployments_deployment_identityresolution(deployment_id, body)
+
+
+Update identity resolution settings for a deployment.
+
+put_webdeployments_deployment_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution 
+
+Requires ALL permissions: 
+
+* webDeployments:deployment:edit
+* webDeployments:identityResolution:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+deployment_id = 'deployment_id_example' # str | The deployment ID
+body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+
+try:
+    # Update identity resolution settings for a deployment.
+    api_response = api_instance.put_webdeployments_deployment_identityresolution(deployment_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->put_webdeployments_deployment_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| The deployment ID |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
+_PureCloudPlatformClientV2 223.0.0_

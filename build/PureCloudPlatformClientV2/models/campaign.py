@@ -91,6 +91,7 @@ class Campaign(object):
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'skill_columns': 'list[str]',
             'max_calls_per_agent': 'int',
+            'max_calls_per_agent_decimal': 'float',
             'callback_auto_answer': 'bool',
             'dynamic_line_balancing_settings': 'DynamicLineBalancingSettings',
             'self_uri': 'str'
@@ -133,6 +134,7 @@ class Campaign(object):
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'skill_columns': 'skillColumns',
             'max_calls_per_agent': 'maxCallsPerAgent',
+            'max_calls_per_agent_decimal': 'maxCallsPerAgentDecimal',
             'callback_auto_answer': 'callbackAutoAnswer',
             'dynamic_line_balancing_settings': 'dynamicLineBalancingSettings',
             'self_uri': 'selfUri'
@@ -174,6 +176,7 @@ class Campaign(object):
         self._dynamic_contact_queueing_settings = None
         self._skill_columns = None
         self._max_calls_per_agent = None
+        self._max_calls_per_agent_decimal = None
         self._callback_auto_answer = None
         self._dynamic_line_balancing_settings = None
         self._self_uri = None
@@ -1051,6 +1054,30 @@ class Campaign(object):
         
 
         self._max_calls_per_agent = max_calls_per_agent
+
+    @property
+    def max_calls_per_agent_decimal(self) -> float:
+        """
+        Gets the max_calls_per_agent_decimal of this Campaign.
+        The maximum number of calls that can be placed per agent on this campaign with decimal precision
+
+        :return: The max_calls_per_agent_decimal of this Campaign.
+        :rtype: float
+        """
+        return self._max_calls_per_agent_decimal
+
+    @max_calls_per_agent_decimal.setter
+    def max_calls_per_agent_decimal(self, max_calls_per_agent_decimal: float) -> None:
+        """
+        Sets the max_calls_per_agent_decimal of this Campaign.
+        The maximum number of calls that can be placed per agent on this campaign with decimal precision
+
+        :param max_calls_per_agent_decimal: The max_calls_per_agent_decimal of this Campaign.
+        :type: float
+        """
+        
+
+        self._max_calls_per_agent_decimal = max_calls_per_agent_decimal
 
     @property
     def callback_auto_answer(self) -> bool:

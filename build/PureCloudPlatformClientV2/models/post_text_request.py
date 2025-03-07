@@ -340,7 +340,7 @@ class PostTextRequest(object):
         """
         if isinstance(messaging_platform_type, int):
             messaging_platform_type = str(messaging_platform_type)
-        allowed_values = ["Phone", "SMS", "GenesysWebWidget", "FacebookMessenger", "WeChat", "Whatsapp", "AppleBusinessChat", "Telegram", "Slack", "Signal", "Line", "Discord", "TwitterDirectMessage", "Open", "Instagram", "Other", "Unknown"]
+        allowed_values = ["Phone", "SMS", "GenesysWebWidget", "FacebookMessenger", "WeChat", "Whatsapp", "AppleBusinessChat", "Apple", "Telegram", "Slack", "Signal", "Line", "Discord", "TwitterDirectMessage", "Open", "Instagram", "Other", "Unknown"]
         if messaging_platform_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for messaging_platform_type -> " + messaging_platform_type)
             self._messaging_platform_type = "outdated_sdk_version"

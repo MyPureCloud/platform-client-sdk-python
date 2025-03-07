@@ -2701,7 +2701,7 @@ class AnalyticsApi(object):
         :param int page_size: 
         :param list[str] id: A list of user IDs to fetch by bulk
         :param str state: Only list users of this state
-        :param bool deleted_only: Only list deleted dashboards that are still recoverable
+        :param bool deleted_only: Only list users with deleted dashboards
         :return: DashboardUserListing
                  If the method is called asynchronously,
                  returns the request thread.

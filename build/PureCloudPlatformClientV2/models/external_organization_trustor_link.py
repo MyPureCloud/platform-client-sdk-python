@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WritableStarrableDivision
 
 class ExternalOrganizationTrustorLink(object):
     """
@@ -49,6 +51,7 @@ class ExternalOrganizationTrustorLink(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'WritableStarrableDivision',
             'external_organization_id': 'str',
             'trustor_org_id': 'str',
             'date_created': 'datetime',
@@ -58,6 +61,7 @@ class ExternalOrganizationTrustorLink(object):
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'external_organization_id': 'externalOrganizationId',
             'trustor_org_id': 'trustorOrgId',
             'date_created': 'dateCreated',
@@ -66,6 +70,7 @@ class ExternalOrganizationTrustorLink(object):
         }
 
         self._id = None
+        self._division = None
         self._external_organization_id = None
         self._trustor_org_id = None
         self._date_created = None
@@ -95,6 +100,30 @@ class ExternalOrganizationTrustorLink(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this ExternalOrganizationTrustorLink.
+        The division to which this entity belongs.
+
+        :return: The division of this ExternalOrganizationTrustorLink.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this ExternalOrganizationTrustorLink.
+        The division to which this entity belongs.
+
+        :param division: The division of this ExternalOrganizationTrustorLink.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def external_organization_id(self) -> str:

@@ -481,7 +481,7 @@ class ShiftTradeResponse(object):
     def reviewed_by(self) -> 'UserReference':
         """
         Gets the reviewed_by of this ShiftTradeResponse.
-        The user who reviewed this shift trade
+        The user who reviewed this shift trade. The id may be 'System' if it was an automated process
 
         :return: The reviewed_by of this ShiftTradeResponse.
         :rtype: UserReference
@@ -492,7 +492,7 @@ class ShiftTradeResponse(object):
     def reviewed_by(self, reviewed_by: 'UserReference') -> None:
         """
         Sets the reviewed_by of this ShiftTradeResponse.
-        The user who reviewed this shift trade
+        The user who reviewed this shift trade. The id may be 'System' if it was an automated process
 
         :param reviewed_by: The reviewed_by of this ShiftTradeResponse.
         :type: UserReference

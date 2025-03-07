@@ -38,6 +38,7 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import ArchitectExportJobStateResponse
 from ..models import ArchitectJobStateResponse
 from ..models import ConsumedResourcesEntityListing
 from ..models import ConsumingResourcesEntityListing
@@ -93,12 +94,15 @@ from ..models import HistoryListing
 from ..models import IVR
 from ..models import IVRDivisionViewEntityListing
 from ..models import IVREntityListing
+from ..models import IdentityResolutionConfig
 from ..models import Operation
 from ..models import Prompt
 from ..models import PromptAsset
 from ..models import PromptAssetCreate
 from ..models import PromptAssetEntityListing
 from ..models import PromptEntityListing
+from ..models import RegisterArchitectExportJob
+from ..models import RegisterArchitectExportJobResponse
 from ..models import RegisterArchitectJobResponse
 from ..models import Schedule
 from ..models import ScheduleDivisionViewEntityListing
@@ -3133,6 +3137,85 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='IVR',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_architect_ivr_identityresolution(self, ivr_id: str, **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Get an IVR IdentityResolutionConfig.
+        
+	    get_architect_ivr_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_ivr_identityresolution(ivr_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str ivr_id: IVR id (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ivr_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_ivr_identityresolution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'ivr_id' is set
+        if ('ivr_id' not in params) or (params['ivr_id'] is None):
+            raise ValueError("Missing the required parameter `ivr_id` when calling `get_architect_ivr_identityresolution`")
+
+
+        resource_path = '/api/v2/architect/ivrs/{ivrId}/identityresolution'.replace('{format}', 'json')
+        path_params = {}
+        if 'ivr_id' in params:
+            path_params['ivrId'] = params['ivr_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6742,6 +6825,87 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FlowRuntimeExecution',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_export_job(self, job_id: str, **kwargs) -> 'ArchitectExportJobStateResponse':
+        """
+        Fetch Architect Export Job Status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_export_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: Job ID (required)
+        :param list[str] expand: Which fields, if any, to expand.
+        :return: ArchitectExportJobStateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_export_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_flows_export_job`")
+
+
+        resource_path = '/api/v2/flows/export/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ArchitectExportJobStateResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10478,6 +10642,84 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_flows_export_jobs(self, body: 'RegisterArchitectExportJob', **kwargs) -> 'RegisterArchitectExportJobResponse':
+        """
+        Register Architect Export Job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_export_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param RegisterArchitectExportJob body:  (required)
+        :return: RegisterArchitectExportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_export_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flows_export_jobs`")
+
+
+        resource_path = '/api/v2/flows/export/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RegisterArchitectExportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_flows_instances_jobs(self, body: 'ExecutionDataRequest', **kwargs) -> 'GetFlowExecutionDataJobResult':
         """
         Start a process (job) that will prepare a list of execution data IDs for download.
@@ -11029,6 +11271,91 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='IVR',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_architect_ivr_identityresolution(self, ivr_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Update an IVR IdentityResolutionConfig.
+        
+	    put_architect_ivr_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_architect_ivr_identityresolution(ivr_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str ivr_id: IVR id (required)
+        :param IdentityResolutionConfig body:  (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ivr_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_architect_ivr_identityresolution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'ivr_id' is set
+        if ('ivr_id' not in params) or (params['ivr_id'] is None):
+            raise ValueError("Missing the required parameter `ivr_id` when calling `put_architect_ivr_identityresolution`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_architect_ivr_identityresolution`")
+
+
+        resource_path = '/api/v2/architect/ivrs/{ivrId}/identityresolution'.replace('{format}', 'json')
+        path_params = {}
+        if 'ivr_id' in params:
+            path_params['ivrId'] = params['ivr_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

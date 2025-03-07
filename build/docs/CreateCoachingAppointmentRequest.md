@@ -16,7 +16,9 @@
 | **document_ids** | list[str] | IDs of documents associated with this coaching appointment. | [optional] |
 | **wfm_schedule** | [WfmScheduleReference](WfmScheduleReference) | The Workforce Management schedule the appointment is associated with. | [optional] |
 | **external_links** | list[str] | The list of external links related to the appointment | [optional] |
+| **location** | str | The location of the appointment | [optional] |
+| **share_insights_data** | bool | Whether to share the insight data | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import CallbackMediaSettings
     from . import EmailMediaSettings
     from . import MediaSettings
+    from . import MessageMediaSettings
 
 class QueueMediaSettings(object):
     """
@@ -56,7 +57,7 @@ class QueueMediaSettings(object):
             'callback': 'CallbackMediaSettings',
             'chat': 'MediaSettings',
             'email': 'EmailMediaSettings',
-            'message': 'MediaSettings'
+            'message': 'MessageMediaSettings'
         }
 
         self.attribute_map = {
@@ -170,24 +171,24 @@ class QueueMediaSettings(object):
         self._email = email
 
     @property
-    def message(self) -> 'MediaSettings':
+    def message(self) -> 'MessageMediaSettings':
         """
         Gets the message of this QueueMediaSettings.
         The queue media settings for message interactions.
 
         :return: The message of this QueueMediaSettings.
-        :rtype: MediaSettings
+        :rtype: MessageMediaSettings
         """
         return self._message
 
     @message.setter
-    def message(self, message: 'MediaSettings') -> None:
+    def message(self, message: 'MessageMediaSettings') -> None:
         """
         Sets the message of this QueueMediaSettings.
         The queue media settings for message interactions.
 
         :param message: The message of this QueueMediaSettings.
-        :type: MediaSettings
+        :type: MessageMediaSettings
         """
         
 

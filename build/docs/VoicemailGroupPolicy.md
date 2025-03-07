@@ -13,6 +13,7 @@
 | **disable_email_pii** | bool | Removes any PII from group emails. This is overridden by the analogous organization configuration value. This is always true if HIPAA is enabled or unknown for an organization. | [optional] |
 | **include_email_transcriptions** | bool | Whether to include the voicemail transcription in a group notification email | [optional] |
 | **language_preference** | str | The language preference for the group.  Used for group voicemail transcription | [optional] |
+| **email_policy** | [GroupEmailPolicy](GroupEmailPolicy) | The email policy for the group | [optional] |
 | **rotate_calls_secs** | int | How many seconds to ring before rotating to the next member in the group | [optional] |
 | **stop_ringing_after_rotations** | int | How many rotations to go through | [optional] |
 | **overflow_group_id** | str | A fallback group to contact when all of the members in this group did not answer the call. | [optional] |
@@ -22,4 +23,4 @@
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

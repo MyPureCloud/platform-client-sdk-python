@@ -6,10 +6,10 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **field_name** | str |  | [optional] |
-| **value** | str |  | [optional] |
-| **message** | str |  | [optional] |
+| **field_name** | str | The name of the field which experienced an error. | [optional] |
+| **value** | str | The field value from the request which caused the error. | [optional] |
+| **message** | str | A field-specific error message describing why this operation was rejected. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

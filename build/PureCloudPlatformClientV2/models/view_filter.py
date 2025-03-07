@@ -58,8 +58,10 @@ class ViewFilter(object):
             'media_types': 'list[str]',
             'queue_ids': 'list[str]',
             'skill_ids': 'list[str]',
+            'assigned_skill_ids': 'list[str]',
             'skill_groups': 'list[str]',
             'language_ids': 'list[str]',
+            'assigned_language_ids': 'list[str]',
             'language_groups': 'list[str]',
             'directions': 'list[str]',
             'originating_directions': 'list[str]',
@@ -274,15 +276,19 @@ class ViewFilter(object):
             'evaluation_role': 'str',
             'comparison_queue_ids': 'list[str]',
             'view_metrics': 'list[str]',
-            'timeline_categories': 'list[str]'
+            'timeline_categories': 'list[str]',
+            'acw': 'bool',
+            'segment_types': 'list[str]'
         }
 
         self.attribute_map = {
             'media_types': 'mediaTypes',
             'queue_ids': 'queueIds',
             'skill_ids': 'skillIds',
+            'assigned_skill_ids': 'assignedSkillIds',
             'skill_groups': 'skillGroups',
             'language_ids': 'languageIds',
+            'assigned_language_ids': 'assignedLanguageIds',
             'language_groups': 'languageGroups',
             'directions': 'directions',
             'originating_directions': 'originatingDirections',
@@ -497,14 +503,18 @@ class ViewFilter(object):
             'evaluation_role': 'evaluationRole',
             'comparison_queue_ids': 'comparisonQueueIds',
             'view_metrics': 'viewMetrics',
-            'timeline_categories': 'timelineCategories'
+            'timeline_categories': 'timelineCategories',
+            'acw': 'acw',
+            'segment_types': 'segmentTypes'
         }
 
         self._media_types = None
         self._queue_ids = None
         self._skill_ids = None
+        self._assigned_skill_ids = None
         self._skill_groups = None
         self._language_ids = None
+        self._assigned_language_ids = None
         self._language_groups = None
         self._directions = None
         self._originating_directions = None
@@ -720,6 +730,8 @@ class ViewFilter(object):
         self._comparison_queue_ids = None
         self._view_metrics = None
         self._timeline_categories = None
+        self._acw = None
+        self._segment_types = None
 
     @property
     def media_types(self) -> List[str]:
@@ -794,6 +806,30 @@ class ViewFilter(object):
         self._skill_ids = skill_ids
 
     @property
+    def assigned_skill_ids(self) -> List[str]:
+        """
+        Gets the assigned_skill_ids of this ViewFilter.
+        The assigned user skill ids are used to filter the view
+
+        :return: The assigned_skill_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._assigned_skill_ids
+
+    @assigned_skill_ids.setter
+    def assigned_skill_ids(self, assigned_skill_ids: List[str]) -> None:
+        """
+        Sets the assigned_skill_ids of this ViewFilter.
+        The assigned user skill ids are used to filter the view
+
+        :param assigned_skill_ids: The assigned_skill_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._assigned_skill_ids = assigned_skill_ids
+
+    @property
     def skill_groups(self) -> List[str]:
         """
         Gets the skill_groups of this ViewFilter.
@@ -840,6 +876,30 @@ class ViewFilter(object):
         
 
         self._language_ids = language_ids
+
+    @property
+    def assigned_language_ids(self) -> List[str]:
+        """
+        Gets the assigned_language_ids of this ViewFilter.
+        The assigned user language ids are used to filter the view
+
+        :return: The assigned_language_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._assigned_language_ids
+
+    @assigned_language_ids.setter
+    def assigned_language_ids(self, assigned_language_ids: List[str]) -> None:
+        """
+        Sets the assigned_language_ids of this ViewFilter.
+        The assigned user language ids are used to filter the view
+
+        :param assigned_language_ids: The assigned_language_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._assigned_language_ids = assigned_language_ids
 
     @property
     def language_groups(self) -> List[str]:
@@ -6030,6 +6090,54 @@ class ViewFilter(object):
         
 
         self._timeline_categories = timeline_categories
+
+    @property
+    def acw(self) -> bool:
+        """
+        Gets the acw of this ViewFilter.
+        Filter to indicate for acw state
+
+        :return: The acw of this ViewFilter.
+        :rtype: bool
+        """
+        return self._acw
+
+    @acw.setter
+    def acw(self, acw: bool) -> None:
+        """
+        Sets the acw of this ViewFilter.
+        Filter to indicate for acw state
+
+        :param acw: The acw of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._acw = acw
+
+    @property
+    def segment_types(self) -> List[str]:
+        """
+        Gets the segment_types of this ViewFilter.
+        A list of filtered segment types
+
+        :return: The segment_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._segment_types
+
+    @segment_types.setter
+    def segment_types(self, segment_types: List[str]) -> None:
+        """
+        Sets the segment_types of this ViewFilter.
+        A list of filtered segment types
+
+        :param segment_types: The segment_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._segment_types = segment_types
 
     def to_dict(self):
         """

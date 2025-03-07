@@ -90,7 +90,7 @@ class BuAgentScheduleHistoryChangeMetadata(object):
     def modified_by(self) -> 'UserReference':
         """
         Gets the modified_by of this BuAgentScheduleHistoryChangeMetadata.
-        The user that made the schedule change
+        The user that made the schedule change. The id may be 'System' if it was an automated process
 
         :return: The modified_by of this BuAgentScheduleHistoryChangeMetadata.
         :rtype: UserReference
@@ -101,7 +101,7 @@ class BuAgentScheduleHistoryChangeMetadata(object):
     def modified_by(self, modified_by: 'UserReference') -> None:
         """
         Sets the modified_by of this BuAgentScheduleHistoryChangeMetadata.
-        The user that made the schedule change
+        The user that made the schedule change. The id may be 'System' if it was an automated process
 
         :param modified_by: The modified_by of this BuAgentScheduleHistoryChangeMetadata.
         :type: UserReference

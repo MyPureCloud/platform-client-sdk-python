@@ -68,7 +68,6 @@ class UploadsApi(object):
         """
         Get content upload from URL job status
         
-	    get_knowledge_knowledgebase_uploads_urls_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -315,7 +314,6 @@ class UploadsApi(object):
         """
         Create content upload from URL job
         
-	    post_knowledge_knowledgebase_uploads_urls_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -74,7 +74,7 @@ class ObjectsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str division_id: Division ID (required)
-        :param bool force: Force delete this division as well as the grants and objects associated with it
+        :param bool force: DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -553,7 +553,7 @@ class ObjectsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_authorization_division_restore(self, division_id: str, **kwargs) -> 'AuthzDivision':
+    def post_authorization_division_restore(self, division_id: str, body: 'AuthzDivision', **kwargs) -> 'AuthzDivision':
         """
         Recreate a previously deleted division.
         
@@ -564,12 +564,12 @@ class ObjectsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_authorization_division_restore(division_id, callback=callback_function)
+        >>> thread = api.post_authorization_division_restore(division_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str division_id: Division ID (required)
-        :param AuthzDivision body: Recreated division data
+        :param AuthzDivision body: Recreated division data (required)
         :return: AuthzDivision
                  If the method is called asynchronously,
                  returns the request thread.
@@ -591,6 +591,9 @@ class ObjectsApi(object):
         # verify the required parameter 'division_id' is set
         if ('division_id' not in params) or (params['division_id'] is None):
             raise ValueError("Missing the required parameter `division_id` when calling `post_authorization_division_restore`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_authorization_division_restore`")
 
 
         resource_path = '/api/v2/authorization/divisions/{divisionId}/restore'.replace('{format}', 'json')

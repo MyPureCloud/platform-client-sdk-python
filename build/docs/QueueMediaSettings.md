@@ -10,8 +10,8 @@
 | **callback** | [CallbackMediaSettings](CallbackMediaSettings) | The queue media settings for callback interactions. | [optional] |
 | **chat** | [MediaSettings](MediaSettings) | The queue media settings for chat interactions. | [optional] |
 | **email** | [EmailMediaSettings](EmailMediaSettings) | The queue media settings for email interactions. | [optional] |
-| **message** | [MediaSettings](MediaSettings) | The queue media settings for message interactions. | [optional] |
+| **message** | [MessageMediaSettings](MessageMediaSettings) | The queue media settings for message interactions. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

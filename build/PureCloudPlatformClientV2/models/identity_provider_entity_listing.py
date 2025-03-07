@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import CustomProvider
+    from . import SAMLProvider
 
 class IdentityProviderEntityListing(object):
     """
@@ -50,7 +50,7 @@ class IdentityProviderEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[CustomProvider]',
+            'entities': 'list[SAMLProvider]',
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
@@ -87,24 +87,24 @@ class IdentityProviderEntityListing(object):
         self._page_count = None
 
     @property
-    def entities(self) -> List['CustomProvider']:
+    def entities(self) -> List['SAMLProvider']:
         """
         Gets the entities of this IdentityProviderEntityListing.
 
 
         :return: The entities of this IdentityProviderEntityListing.
-        :rtype: list[CustomProvider]
+        :rtype: list[SAMLProvider]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['CustomProvider']) -> None:
+    def entities(self, entities: List['SAMLProvider']) -> None:
         """
         Sets the entities of this IdentityProviderEntityListing.
 
 
         :param entities: The entities of this IdentityProviderEntityListing.
-        :type: list[CustomProvider]
+        :type: list[SAMLProvider]
         """
         
 

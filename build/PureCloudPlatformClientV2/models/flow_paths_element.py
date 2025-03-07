@@ -124,7 +124,7 @@ class FlowPathsElement(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Abandoned", "AgentEscalation", "Disconnect", "Error", "Exit", "Milestone", "Outcome", "RecognitionFailure", "Root", "TransferReturnToAgent", "TransferToAcd", "TransferToAcdVoicemail", "TransferToFlow", "TransferToGroup", "TransferToGroupVoicemail", "TransferToNumber", "TransferToSecureFlow", "TransferToUnknown", "TransferToUser", "TransferToUserVoicemail"]
+        allowed_values = ["Abandoned", "AgentEscalation", "Disconnect", "Error", "Exit", "Milestone", "Outcome", "RecognitionFailure", "Root", "TransferReturnToAgent", "TransferToAcd", "TransferToAcdVoicemail", "TransferToFlow", "TransferToGroup", "TransferToGroupVoicemail", "TransferToNumber", "TransferToSecureFlow", "TransferToUser", "TransferToUserVoicemail"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

@@ -754,6 +754,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_organizations_limits_namespace_counts is deprecated")
     def get_organizations_limits_namespace_counts(self, namespace_name: str, **kwargs) -> 'LimitCountListing':
         """
         Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
@@ -919,6 +920,7 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_organizations_limits_namespace_limit_counts is deprecated")
     def get_organizations_limits_namespace_limit_counts(self, namespace_name: str, limit_name: str, **kwargs) -> 'LimitCountListing':
         """
         Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.

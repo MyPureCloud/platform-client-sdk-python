@@ -33,8 +33,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import KnowledgeDocumentVersionVariationReference
     from . import KnowledgeGuestSearchClientApplication
+    from . import PresentedKnowledgeDocument
 
 class KnowledgeGuestDocumentPresentation(object):
     """
@@ -51,7 +51,7 @@ class KnowledgeGuestDocumentPresentation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'documents': 'list[KnowledgeDocumentVersionVariationReference]',
+            'documents': 'list[PresentedKnowledgeDocument]',
             'search_id': 'str',
             'query_type': 'str',
             'surfacing_method': 'str',
@@ -76,24 +76,24 @@ class KnowledgeGuestDocumentPresentation(object):
         self._application = None
 
     @property
-    def documents(self) -> List['KnowledgeDocumentVersionVariationReference']:
+    def documents(self) -> List['PresentedKnowledgeDocument']:
         """
         Gets the documents of this KnowledgeGuestDocumentPresentation.
         The presented documents
 
         :return: The documents of this KnowledgeGuestDocumentPresentation.
-        :rtype: list[KnowledgeDocumentVersionVariationReference]
+        :rtype: list[PresentedKnowledgeDocument]
         """
         return self._documents
 
     @documents.setter
-    def documents(self, documents: List['KnowledgeDocumentVersionVariationReference']) -> None:
+    def documents(self, documents: List['PresentedKnowledgeDocument']) -> None:
         """
         Sets the documents of this KnowledgeGuestDocumentPresentation.
         The presented documents
 
         :param documents: The documents of this KnowledgeGuestDocumentPresentation.
-        :type: list[KnowledgeDocumentVersionVariationReference]
+        :type: list[PresentedKnowledgeDocument]
         """
         
 

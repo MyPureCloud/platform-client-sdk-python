@@ -37,9 +37,9 @@ if TYPE_CHECKING:
     from . import ContentButtonResponse
     from . import ContentCard
     from . import ContentCarousel
+    from . import ContentDatePicker
     from . import ContentGeneric
     from . import ContentList
-    from . import ContentLocation
     from . import ContentNotificationTemplate
     from . import ContentPostback
     from . import ContentQuickReply
@@ -65,7 +65,6 @@ class MessageContent(object):
         """
         self.swagger_types = {
             'content_type': 'str',
-            'location': 'ContentLocation',
             'attachment': 'ContentAttachment',
             'quick_reply': 'ContentQuickReply',
             'button_response': 'ContentButtonResponse',
@@ -79,12 +78,12 @@ class MessageContent(object):
             'card': 'ContentCard',
             'carousel': 'ContentCarousel',
             'text': 'ContentText',
-            'quick_reply_v2': 'ContentQuickReplyV2'
+            'quick_reply_v2': 'ContentQuickReplyV2',
+            'date_picker': 'ContentDatePicker'
         }
 
         self.attribute_map = {
             'content_type': 'contentType',
-            'location': 'location',
             'attachment': 'attachment',
             'quick_reply': 'quickReply',
             'button_response': 'buttonResponse',
@@ -98,11 +97,11 @@ class MessageContent(object):
             'card': 'card',
             'carousel': 'carousel',
             'text': 'text',
-            'quick_reply_v2': 'quickReplyV2'
+            'quick_reply_v2': 'quickReplyV2',
+            'date_picker': 'datePicker'
         }
 
         self._content_type = None
-        self._location = None
         self._attachment = None
         self._quick_reply = None
         self._button_response = None
@@ -117,6 +116,7 @@ class MessageContent(object):
         self._carousel = None
         self._text = None
         self._quick_reply_v2 = None
+        self._date_picker = None
 
     @property
     def content_type(self) -> str:
@@ -140,36 +140,12 @@ class MessageContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "Story", "Card", "Carousel", "Text", "QuickReplyV2"]
+        allowed_values = ["Attachment", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "Story", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
         else:
             self._content_type = content_type
-
-    @property
-    def location(self) -> 'ContentLocation':
-        """
-        Gets the location of this MessageContent.
-        Location content.
-
-        :return: The location of this MessageContent.
-        :rtype: ContentLocation
-        """
-        return self._location
-
-    @location.setter
-    def location(self, location: 'ContentLocation') -> None:
-        """
-        Sets the location of this MessageContent.
-        Location content.
-
-        :param location: The location of this MessageContent.
-        :type: ContentLocation
-        """
-        
-
-        self._location = location
 
     @property
     def attachment(self) -> 'ContentAttachment':
@@ -506,6 +482,30 @@ class MessageContent(object):
         
 
         self._quick_reply_v2 = quick_reply_v2
+
+    @property
+    def date_picker(self) -> 'ContentDatePicker':
+        """
+        Gets the date_picker of this MessageContent.
+        DatePicker content.
+
+        :return: The date_picker of this MessageContent.
+        :rtype: ContentDatePicker
+        """
+        return self._date_picker
+
+    @date_picker.setter
+    def date_picker(self, date_picker: 'ContentDatePicker') -> None:
+        """
+        Sets the date_picker of this MessageContent.
+        DatePicker content.
+
+        :param date_picker: The date_picker of this MessageContent.
+        :type: ContentDatePicker
+        """
+        
+
+        self._date_picker = date_picker
 
     def to_dict(self):
         """

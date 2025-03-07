@@ -38,6 +38,20 @@ if TYPE_CHECKING:
     from . import CommunicationDispositionAppliedEvent
     from . import CommunicationEndedEvent
     from . import ConsultTransferEvent
+    from . import EmailBeginTransmittingEvent
+    from . import EmailCommunicationAnsweredEvent
+    from . import EmailCommunicationDispositionAppliedEvent
+    from . import EmailCommunicationEndedEvent
+    from . import EmailCommunicationSentMessageEvent
+    from . import EmailEndTransferEvent
+    from . import EmailExternalEstablishedEvent
+    from . import EmailFlowEstablishedEvent
+    from . import EmailHoldUpdatedEvent
+    from . import EmailProgressTransferEvent
+    from . import EmailRoutingEstablishedEvent
+    from . import EmailRoutingTransferEvent
+    from . import EmailUserEstablishedEvent
+    from . import EmailUserTransferEvent
     from . import EndConsultTransferEvent
     from . import EndTransferEvent
     from . import ExternalEstablishedEvent
@@ -84,7 +98,21 @@ class BatchConversationEventRequest(object):
             'communication_ended_events': 'list[CommunicationEndedEvent]',
             'consult_transfer_events': 'list[ConsultTransferEvent]',
             'progress_consult_transfer_events': 'list[ProgressConsultTransferEvent]',
-            'end_consult_transfer_events': 'list[EndConsultTransferEvent]'
+            'end_consult_transfer_events': 'list[EndConsultTransferEvent]',
+            'email_begin_transmitting_events': 'list[EmailBeginTransmittingEvent]',
+            'email_communication_ended_events': 'list[EmailCommunicationEndedEvent]',
+            'email_external_established_events': 'list[EmailExternalEstablishedEvent]',
+            'email_flow_established_events': 'list[EmailFlowEstablishedEvent]',
+            'email_routing_established_events': 'list[EmailRoutingEstablishedEvent]',
+            'email_user_established_events': 'list[EmailUserEstablishedEvent]',
+            'email_communication_answered_events': 'list[EmailCommunicationAnsweredEvent]',
+            'email_communication_disposition_applied_events': 'list[EmailCommunicationDispositionAppliedEvent]',
+            'email_communication_sent_message_events': 'list[EmailCommunicationSentMessageEvent]',
+            'email_hold_updated_events': 'list[EmailHoldUpdatedEvent]',
+            'email_end_transfer_events': 'list[EmailEndTransferEvent]',
+            'email_progress_transfer_events': 'list[EmailProgressTransferEvent]',
+            'email_routing_transfer_events': 'list[EmailRoutingTransferEvent]',
+            'email_user_transfer_events': 'list[EmailUserTransferEvent]'
         }
 
         self.attribute_map = {
@@ -105,7 +133,21 @@ class BatchConversationEventRequest(object):
             'communication_ended_events': 'communicationEndedEvents',
             'consult_transfer_events': 'consultTransferEvents',
             'progress_consult_transfer_events': 'progressConsultTransferEvents',
-            'end_consult_transfer_events': 'endConsultTransferEvents'
+            'end_consult_transfer_events': 'endConsultTransferEvents',
+            'email_begin_transmitting_events': 'emailBeginTransmittingEvents',
+            'email_communication_ended_events': 'emailCommunicationEndedEvents',
+            'email_external_established_events': 'emailExternalEstablishedEvents',
+            'email_flow_established_events': 'emailFlowEstablishedEvents',
+            'email_routing_established_events': 'emailRoutingEstablishedEvents',
+            'email_user_established_events': 'emailUserEstablishedEvents',
+            'email_communication_answered_events': 'emailCommunicationAnsweredEvents',
+            'email_communication_disposition_applied_events': 'emailCommunicationDispositionAppliedEvents',
+            'email_communication_sent_message_events': 'emailCommunicationSentMessageEvents',
+            'email_hold_updated_events': 'emailHoldUpdatedEvents',
+            'email_end_transfer_events': 'emailEndTransferEvents',
+            'email_progress_transfer_events': 'emailProgressTransferEvents',
+            'email_routing_transfer_events': 'emailRoutingTransferEvents',
+            'email_user_transfer_events': 'emailUserTransferEvents'
         }
 
         self._end_transfer_events = None
@@ -126,6 +168,20 @@ class BatchConversationEventRequest(object):
         self._consult_transfer_events = None
         self._progress_consult_transfer_events = None
         self._end_consult_transfer_events = None
+        self._email_begin_transmitting_events = None
+        self._email_communication_ended_events = None
+        self._email_external_established_events = None
+        self._email_flow_established_events = None
+        self._email_routing_established_events = None
+        self._email_user_established_events = None
+        self._email_communication_answered_events = None
+        self._email_communication_disposition_applied_events = None
+        self._email_communication_sent_message_events = None
+        self._email_hold_updated_events = None
+        self._email_end_transfer_events = None
+        self._email_progress_transfer_events = None
+        self._email_routing_transfer_events = None
+        self._email_user_transfer_events = None
 
     @property
     def end_transfer_events(self) -> List['EndTransferEvent']:
@@ -558,6 +614,342 @@ class BatchConversationEventRequest(object):
         
 
         self._end_consult_transfer_events = end_consult_transfer_events
+
+    @property
+    def email_begin_transmitting_events(self) -> List['EmailBeginTransmittingEvent']:
+        """
+        Gets the email_begin_transmitting_events of this BatchConversationEventRequest.
+        Email - EmailBeginTransmittingEvent events for this batch
+
+        :return: The email_begin_transmitting_events of this BatchConversationEventRequest.
+        :rtype: list[EmailBeginTransmittingEvent]
+        """
+        return self._email_begin_transmitting_events
+
+    @email_begin_transmitting_events.setter
+    def email_begin_transmitting_events(self, email_begin_transmitting_events: List['EmailBeginTransmittingEvent']) -> None:
+        """
+        Sets the email_begin_transmitting_events of this BatchConversationEventRequest.
+        Email - EmailBeginTransmittingEvent events for this batch
+
+        :param email_begin_transmitting_events: The email_begin_transmitting_events of this BatchConversationEventRequest.
+        :type: list[EmailBeginTransmittingEvent]
+        """
+        
+
+        self._email_begin_transmitting_events = email_begin_transmitting_events
+
+    @property
+    def email_communication_ended_events(self) -> List['EmailCommunicationEndedEvent']:
+        """
+        Gets the email_communication_ended_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationEndedEvent events for this batch
+
+        :return: The email_communication_ended_events of this BatchConversationEventRequest.
+        :rtype: list[EmailCommunicationEndedEvent]
+        """
+        return self._email_communication_ended_events
+
+    @email_communication_ended_events.setter
+    def email_communication_ended_events(self, email_communication_ended_events: List['EmailCommunicationEndedEvent']) -> None:
+        """
+        Sets the email_communication_ended_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationEndedEvent events for this batch
+
+        :param email_communication_ended_events: The email_communication_ended_events of this BatchConversationEventRequest.
+        :type: list[EmailCommunicationEndedEvent]
+        """
+        
+
+        self._email_communication_ended_events = email_communication_ended_events
+
+    @property
+    def email_external_established_events(self) -> List['EmailExternalEstablishedEvent']:
+        """
+        Gets the email_external_established_events of this BatchConversationEventRequest.
+        Email - EmailExternalEstablishedEvent events for this batch
+
+        :return: The email_external_established_events of this BatchConversationEventRequest.
+        :rtype: list[EmailExternalEstablishedEvent]
+        """
+        return self._email_external_established_events
+
+    @email_external_established_events.setter
+    def email_external_established_events(self, email_external_established_events: List['EmailExternalEstablishedEvent']) -> None:
+        """
+        Sets the email_external_established_events of this BatchConversationEventRequest.
+        Email - EmailExternalEstablishedEvent events for this batch
+
+        :param email_external_established_events: The email_external_established_events of this BatchConversationEventRequest.
+        :type: list[EmailExternalEstablishedEvent]
+        """
+        
+
+        self._email_external_established_events = email_external_established_events
+
+    @property
+    def email_flow_established_events(self) -> List['EmailFlowEstablishedEvent']:
+        """
+        Gets the email_flow_established_events of this BatchConversationEventRequest.
+        Email - EmailFlowEstablishedEvent events for this batch
+
+        :return: The email_flow_established_events of this BatchConversationEventRequest.
+        :rtype: list[EmailFlowEstablishedEvent]
+        """
+        return self._email_flow_established_events
+
+    @email_flow_established_events.setter
+    def email_flow_established_events(self, email_flow_established_events: List['EmailFlowEstablishedEvent']) -> None:
+        """
+        Sets the email_flow_established_events of this BatchConversationEventRequest.
+        Email - EmailFlowEstablishedEvent events for this batch
+
+        :param email_flow_established_events: The email_flow_established_events of this BatchConversationEventRequest.
+        :type: list[EmailFlowEstablishedEvent]
+        """
+        
+
+        self._email_flow_established_events = email_flow_established_events
+
+    @property
+    def email_routing_established_events(self) -> List['EmailRoutingEstablishedEvent']:
+        """
+        Gets the email_routing_established_events of this BatchConversationEventRequest.
+        Email - EmailRoutingEstablishedEvent events for this batch
+
+        :return: The email_routing_established_events of this BatchConversationEventRequest.
+        :rtype: list[EmailRoutingEstablishedEvent]
+        """
+        return self._email_routing_established_events
+
+    @email_routing_established_events.setter
+    def email_routing_established_events(self, email_routing_established_events: List['EmailRoutingEstablishedEvent']) -> None:
+        """
+        Sets the email_routing_established_events of this BatchConversationEventRequest.
+        Email - EmailRoutingEstablishedEvent events for this batch
+
+        :param email_routing_established_events: The email_routing_established_events of this BatchConversationEventRequest.
+        :type: list[EmailRoutingEstablishedEvent]
+        """
+        
+
+        self._email_routing_established_events = email_routing_established_events
+
+    @property
+    def email_user_established_events(self) -> List['EmailUserEstablishedEvent']:
+        """
+        Gets the email_user_established_events of this BatchConversationEventRequest.
+        Email - EmailUserEstablishedEvent events for this batch
+
+        :return: The email_user_established_events of this BatchConversationEventRequest.
+        :rtype: list[EmailUserEstablishedEvent]
+        """
+        return self._email_user_established_events
+
+    @email_user_established_events.setter
+    def email_user_established_events(self, email_user_established_events: List['EmailUserEstablishedEvent']) -> None:
+        """
+        Sets the email_user_established_events of this BatchConversationEventRequest.
+        Email - EmailUserEstablishedEvent events for this batch
+
+        :param email_user_established_events: The email_user_established_events of this BatchConversationEventRequest.
+        :type: list[EmailUserEstablishedEvent]
+        """
+        
+
+        self._email_user_established_events = email_user_established_events
+
+    @property
+    def email_communication_answered_events(self) -> List['EmailCommunicationAnsweredEvent']:
+        """
+        Gets the email_communication_answered_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationAnsweredEvent events for this batch
+
+        :return: The email_communication_answered_events of this BatchConversationEventRequest.
+        :rtype: list[EmailCommunicationAnsweredEvent]
+        """
+        return self._email_communication_answered_events
+
+    @email_communication_answered_events.setter
+    def email_communication_answered_events(self, email_communication_answered_events: List['EmailCommunicationAnsweredEvent']) -> None:
+        """
+        Sets the email_communication_answered_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationAnsweredEvent events for this batch
+
+        :param email_communication_answered_events: The email_communication_answered_events of this BatchConversationEventRequest.
+        :type: list[EmailCommunicationAnsweredEvent]
+        """
+        
+
+        self._email_communication_answered_events = email_communication_answered_events
+
+    @property
+    def email_communication_disposition_applied_events(self) -> List['EmailCommunicationDispositionAppliedEvent']:
+        """
+        Gets the email_communication_disposition_applied_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationDispositionAppliedEvent events for this batch
+
+        :return: The email_communication_disposition_applied_events of this BatchConversationEventRequest.
+        :rtype: list[EmailCommunicationDispositionAppliedEvent]
+        """
+        return self._email_communication_disposition_applied_events
+
+    @email_communication_disposition_applied_events.setter
+    def email_communication_disposition_applied_events(self, email_communication_disposition_applied_events: List['EmailCommunicationDispositionAppliedEvent']) -> None:
+        """
+        Sets the email_communication_disposition_applied_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationDispositionAppliedEvent events for this batch
+
+        :param email_communication_disposition_applied_events: The email_communication_disposition_applied_events of this BatchConversationEventRequest.
+        :type: list[EmailCommunicationDispositionAppliedEvent]
+        """
+        
+
+        self._email_communication_disposition_applied_events = email_communication_disposition_applied_events
+
+    @property
+    def email_communication_sent_message_events(self) -> List['EmailCommunicationSentMessageEvent']:
+        """
+        Gets the email_communication_sent_message_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationSentMessageEvent events for this batch
+
+        :return: The email_communication_sent_message_events of this BatchConversationEventRequest.
+        :rtype: list[EmailCommunicationSentMessageEvent]
+        """
+        return self._email_communication_sent_message_events
+
+    @email_communication_sent_message_events.setter
+    def email_communication_sent_message_events(self, email_communication_sent_message_events: List['EmailCommunicationSentMessageEvent']) -> None:
+        """
+        Sets the email_communication_sent_message_events of this BatchConversationEventRequest.
+        Email - EmailCommunicationSentMessageEvent events for this batch
+
+        :param email_communication_sent_message_events: The email_communication_sent_message_events of this BatchConversationEventRequest.
+        :type: list[EmailCommunicationSentMessageEvent]
+        """
+        
+
+        self._email_communication_sent_message_events = email_communication_sent_message_events
+
+    @property
+    def email_hold_updated_events(self) -> List['EmailHoldUpdatedEvent']:
+        """
+        Gets the email_hold_updated_events of this BatchConversationEventRequest.
+        Email - EmailHoldUpdatedEvent events for this batch
+
+        :return: The email_hold_updated_events of this BatchConversationEventRequest.
+        :rtype: list[EmailHoldUpdatedEvent]
+        """
+        return self._email_hold_updated_events
+
+    @email_hold_updated_events.setter
+    def email_hold_updated_events(self, email_hold_updated_events: List['EmailHoldUpdatedEvent']) -> None:
+        """
+        Sets the email_hold_updated_events of this BatchConversationEventRequest.
+        Email - EmailHoldUpdatedEvent events for this batch
+
+        :param email_hold_updated_events: The email_hold_updated_events of this BatchConversationEventRequest.
+        :type: list[EmailHoldUpdatedEvent]
+        """
+        
+
+        self._email_hold_updated_events = email_hold_updated_events
+
+    @property
+    def email_end_transfer_events(self) -> List['EmailEndTransferEvent']:
+        """
+        Gets the email_end_transfer_events of this BatchConversationEventRequest.
+        Email - EmailEndTransferEvent events for this batch
+
+        :return: The email_end_transfer_events of this BatchConversationEventRequest.
+        :rtype: list[EmailEndTransferEvent]
+        """
+        return self._email_end_transfer_events
+
+    @email_end_transfer_events.setter
+    def email_end_transfer_events(self, email_end_transfer_events: List['EmailEndTransferEvent']) -> None:
+        """
+        Sets the email_end_transfer_events of this BatchConversationEventRequest.
+        Email - EmailEndTransferEvent events for this batch
+
+        :param email_end_transfer_events: The email_end_transfer_events of this BatchConversationEventRequest.
+        :type: list[EmailEndTransferEvent]
+        """
+        
+
+        self._email_end_transfer_events = email_end_transfer_events
+
+    @property
+    def email_progress_transfer_events(self) -> List['EmailProgressTransferEvent']:
+        """
+        Gets the email_progress_transfer_events of this BatchConversationEventRequest.
+        Email - EmailProgressTransferEvent events for this batch
+
+        :return: The email_progress_transfer_events of this BatchConversationEventRequest.
+        :rtype: list[EmailProgressTransferEvent]
+        """
+        return self._email_progress_transfer_events
+
+    @email_progress_transfer_events.setter
+    def email_progress_transfer_events(self, email_progress_transfer_events: List['EmailProgressTransferEvent']) -> None:
+        """
+        Sets the email_progress_transfer_events of this BatchConversationEventRequest.
+        Email - EmailProgressTransferEvent events for this batch
+
+        :param email_progress_transfer_events: The email_progress_transfer_events of this BatchConversationEventRequest.
+        :type: list[EmailProgressTransferEvent]
+        """
+        
+
+        self._email_progress_transfer_events = email_progress_transfer_events
+
+    @property
+    def email_routing_transfer_events(self) -> List['EmailRoutingTransferEvent']:
+        """
+        Gets the email_routing_transfer_events of this BatchConversationEventRequest.
+        Email - EmailRoutingTransferEvent events for this batch
+
+        :return: The email_routing_transfer_events of this BatchConversationEventRequest.
+        :rtype: list[EmailRoutingTransferEvent]
+        """
+        return self._email_routing_transfer_events
+
+    @email_routing_transfer_events.setter
+    def email_routing_transfer_events(self, email_routing_transfer_events: List['EmailRoutingTransferEvent']) -> None:
+        """
+        Sets the email_routing_transfer_events of this BatchConversationEventRequest.
+        Email - EmailRoutingTransferEvent events for this batch
+
+        :param email_routing_transfer_events: The email_routing_transfer_events of this BatchConversationEventRequest.
+        :type: list[EmailRoutingTransferEvent]
+        """
+        
+
+        self._email_routing_transfer_events = email_routing_transfer_events
+
+    @property
+    def email_user_transfer_events(self) -> List['EmailUserTransferEvent']:
+        """
+        Gets the email_user_transfer_events of this BatchConversationEventRequest.
+        Email - EmailUserTransferEvent events for this batch
+
+        :return: The email_user_transfer_events of this BatchConversationEventRequest.
+        :rtype: list[EmailUserTransferEvent]
+        """
+        return self._email_user_transfer_events
+
+    @email_user_transfer_events.setter
+    def email_user_transfer_events(self, email_user_transfer_events: List['EmailUserTransferEvent']) -> None:
+        """
+        Sets the email_user_transfer_events of this BatchConversationEventRequest.
+        Email - EmailUserTransferEvent events for this batch
+
+        :param email_user_transfer_events: The email_user_transfer_events of this BatchConversationEventRequest.
+        :type: list[EmailUserTransferEvent]
+        """
+        
+
+        self._email_user_transfer_events = email_user_transfer_events
 
     def to_dict(self):
         """

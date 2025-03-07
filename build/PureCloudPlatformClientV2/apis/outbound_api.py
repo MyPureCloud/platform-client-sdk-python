@@ -8760,12 +8760,13 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param OutboundSettings body: outboundSettings (required)
+        :param bool use_max_calls_per_agent_decimal: Use maxCallsPerAgent with decimal precision
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'use_max_calls_per_agent_decimal']
         all_params.append('callback')
 
         params = locals()
@@ -8787,6 +8788,8 @@ class OutboundApi(object):
         path_params = {}
 
         query_params = {}
+        if 'use_max_calls_per_agent_decimal' in params:
+            query_params['useMaxCallsPerAgentDecimal'] = params['use_max_calls_per_agent_decimal']
 
         header_params = {}
 
@@ -9469,12 +9472,13 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Campaign body: Campaign (required)
+        :param bool use_max_calls_per_agent_decimal: Use maxCallsPerAgent with decimal precision
         :return: Campaign
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'use_max_calls_per_agent_decimal']
         all_params.append('callback')
 
         params = locals()
@@ -9496,6 +9500,8 @@ class OutboundApi(object):
         path_params = {}
 
         query_params = {}
+        if 'use_max_calls_per_agent_decimal' in params:
+            query_params['useMaxCallsPerAgentDecimal'] = params['use_max_calls_per_agent_decimal']
 
         header_params = {}
 
@@ -12197,12 +12203,13 @@ class OutboundApi(object):
             for asynchronous request. (optional)
         :param str campaign_id: Campaign ID (required)
         :param Campaign body: Campaign (required)
+        :param bool use_max_calls_per_agent_decimal: Use maxCallsPerAgent with decimal precision
         :return: Campaign
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['campaign_id', 'body']
+        all_params = ['campaign_id', 'body', 'use_max_calls_per_agent_decimal']
         all_params.append('callback')
 
         params = locals()
@@ -12229,6 +12236,8 @@ class OutboundApi(object):
             path_params['campaignId'] = params['campaign_id']
 
         query_params = {}
+        if 'use_max_calls_per_agent_decimal' in params:
+            query_params['useMaxCallsPerAgentDecimal'] = params['use_max_calls_per_agent_decimal']
 
         header_params = {}
 

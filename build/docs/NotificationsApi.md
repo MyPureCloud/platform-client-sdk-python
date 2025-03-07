@@ -401,4 +401,4 @@ except ApiException as e:
 [**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

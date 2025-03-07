@@ -99,7 +99,7 @@ class WfmVersionedEntityMetadata(object):
     def modified_by(self) -> 'UserReference':
         """
         Gets the modified_by of this WfmVersionedEntityMetadata.
-        The user who last modified the associated entity
+        The user who last modified the associated entity. The id may be 'System' if it was an automated process
 
         :return: The modified_by of this WfmVersionedEntityMetadata.
         :rtype: UserReference
@@ -110,7 +110,7 @@ class WfmVersionedEntityMetadata(object):
     def modified_by(self, modified_by: 'UserReference') -> None:
         """
         Sets the modified_by of this WfmVersionedEntityMetadata.
-        The user who last modified the associated entity
+        The user who last modified the associated entity. The id may be 'System' if it was an automated process
 
         :param modified_by: The modified_by of this WfmVersionedEntityMetadata.
         :type: UserReference
@@ -147,7 +147,7 @@ class WfmVersionedEntityMetadata(object):
     def created_by(self) -> 'UserReference':
         """
         Gets the created_by of this WfmVersionedEntityMetadata.
-        The user who created the associated entity, if available
+        The user who created the associated entity, if available. The id may be 'System' if it was an automated process
 
         :return: The created_by of this WfmVersionedEntityMetadata.
         :rtype: UserReference
@@ -158,7 +158,7 @@ class WfmVersionedEntityMetadata(object):
     def created_by(self, created_by: 'UserReference') -> None:
         """
         Sets the created_by of this WfmVersionedEntityMetadata.
-        The user who created the associated entity, if available
+        The user who created the associated entity, if available. The id may be 'System' if it was an automated process
 
         :param created_by: The created_by of this WfmVersionedEntityMetadata.
         :type: UserReference

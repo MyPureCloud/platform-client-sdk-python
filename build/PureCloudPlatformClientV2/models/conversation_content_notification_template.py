@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationNotificationTemplateBody
+    from . import ConversationNotificationTemplateButton
     from . import ConversationNotificationTemplateFooter
     from . import ConversationNotificationTemplateHeader
 
@@ -56,6 +57,7 @@ class ConversationContentNotificationTemplate(object):
             'language': 'str',
             'header': 'ConversationNotificationTemplateHeader',
             'body': 'ConversationNotificationTemplateBody',
+            'buttons': 'list[ConversationNotificationTemplateButton]',
             'footer': 'ConversationNotificationTemplateFooter'
         }
 
@@ -64,6 +66,7 @@ class ConversationContentNotificationTemplate(object):
             'language': 'language',
             'header': 'header',
             'body': 'body',
+            'buttons': 'buttons',
             'footer': 'footer'
         }
 
@@ -71,6 +74,7 @@ class ConversationContentNotificationTemplate(object):
         self._language = None
         self._header = None
         self._body = None
+        self._buttons = None
         self._footer = None
 
     @property
@@ -168,6 +172,30 @@ class ConversationContentNotificationTemplate(object):
         
 
         self._body = body
+
+    @property
+    def buttons(self) -> List['ConversationNotificationTemplateButton']:
+        """
+        Gets the buttons of this ConversationContentNotificationTemplate.
+        Template buttons
+
+        :return: The buttons of this ConversationContentNotificationTemplate.
+        :rtype: list[ConversationNotificationTemplateButton]
+        """
+        return self._buttons
+
+    @buttons.setter
+    def buttons(self, buttons: List['ConversationNotificationTemplateButton']) -> None:
+        """
+        Sets the buttons of this ConversationContentNotificationTemplate.
+        Template buttons
+
+        :param buttons: The buttons of this ConversationContentNotificationTemplate.
+        :type: list[ConversationNotificationTemplateButton]
+        """
+        
+
+        self._buttons = buttons
 
     @property
     def footer(self) -> 'ConversationNotificationTemplateFooter':

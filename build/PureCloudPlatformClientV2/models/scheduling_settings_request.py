@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ShrinkageOverrides
+    from . import ValueWrapperMonthlyPlanningPeriodSettings
     from . import ValueWrapperPlanningPeriodSettings
 
 class SchedulingSettingsRequest(object):
@@ -55,6 +56,7 @@ class SchedulingSettingsRequest(object):
             'default_shrinkage_percent': 'float',
             'shrinkage_overrides': 'ShrinkageOverrides',
             'planning_period': 'ValueWrapperPlanningPeriodSettings',
+            'monthly_planning_period': 'ValueWrapperMonthlyPlanningPeriodSettings',
             'start_day_of_weekend': 'str'
         }
 
@@ -63,6 +65,7 @@ class SchedulingSettingsRequest(object):
             'default_shrinkage_percent': 'defaultShrinkagePercent',
             'shrinkage_overrides': 'shrinkageOverrides',
             'planning_period': 'planningPeriod',
+            'monthly_planning_period': 'monthlyPlanningPeriod',
             'start_day_of_weekend': 'startDayOfWeekend'
         }
 
@@ -70,6 +73,7 @@ class SchedulingSettingsRequest(object):
         self._default_shrinkage_percent = None
         self._shrinkage_overrides = None
         self._planning_period = None
+        self._monthly_planning_period = None
         self._start_day_of_weekend = None
 
     @property
@@ -148,7 +152,7 @@ class SchedulingSettingsRequest(object):
     def planning_period(self) -> 'ValueWrapperPlanningPeriodSettings':
         """
         Gets the planning_period of this SchedulingSettingsRequest.
-        Planning period settings for scheduling
+        Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
 
         :return: The planning_period of this SchedulingSettingsRequest.
         :rtype: ValueWrapperPlanningPeriodSettings
@@ -159,7 +163,7 @@ class SchedulingSettingsRequest(object):
     def planning_period(self, planning_period: 'ValueWrapperPlanningPeriodSettings') -> None:
         """
         Sets the planning_period of this SchedulingSettingsRequest.
-        Planning period settings for scheduling
+        Planning period settings for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
 
         :param planning_period: The planning_period of this SchedulingSettingsRequest.
         :type: ValueWrapperPlanningPeriodSettings
@@ -167,6 +171,30 @@ class SchedulingSettingsRequest(object):
         
 
         self._planning_period = planning_period
+
+    @property
+    def monthly_planning_period(self) -> 'ValueWrapperMonthlyPlanningPeriodSettings':
+        """
+        Gets the monthly_planning_period of this SchedulingSettingsRequest.
+        Monthly planning period setting for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
+
+        :return: The monthly_planning_period of this SchedulingSettingsRequest.
+        :rtype: ValueWrapperMonthlyPlanningPeriodSettings
+        """
+        return self._monthly_planning_period
+
+    @monthly_planning_period.setter
+    def monthly_planning_period(self, monthly_planning_period: 'ValueWrapperMonthlyPlanningPeriodSettings') -> None:
+        """
+        Sets the monthly_planning_period of this SchedulingSettingsRequest.
+        Monthly planning period setting for scheduling. Only one of planningPeriod or monthlyPlanningPeriod may be defined
+
+        :param monthly_planning_period: The monthly_planning_period of this SchedulingSettingsRequest.
+        :type: ValueWrapperMonthlyPlanningPeriodSettings
+        """
+        
+
+        self._monthly_planning_period = monthly_planning_period
 
     @property
     def start_day_of_weekend(self) -> str:

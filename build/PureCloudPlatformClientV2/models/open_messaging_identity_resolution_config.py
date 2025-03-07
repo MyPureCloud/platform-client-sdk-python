@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WritableStarrableDivision
 
 class OpenMessagingIdentityResolutionConfig(object):
     """
@@ -49,17 +51,20 @@ class OpenMessagingIdentityResolutionConfig(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'WritableStarrableDivision',
             'resolve_identities': 'bool',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'resolve_identities': 'resolveIdentities',
             'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._division = None
         self._resolve_identities = None
         self._self_uri = None
 
@@ -86,6 +91,30 @@ class OpenMessagingIdentityResolutionConfig(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this OpenMessagingIdentityResolutionConfig.
+        The division to which this entity belongs.
+
+        :return: The division of this OpenMessagingIdentityResolutionConfig.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this OpenMessagingIdentityResolutionConfig.
+        The division to which this entity belongs.
+
+        :param division: The division of this OpenMessagingIdentityResolutionConfig.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def resolve_identities(self) -> bool:

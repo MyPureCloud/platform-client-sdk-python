@@ -389,4 +389,4 @@ except ApiException as e:
 [**FaxConfig**](FaxConfig)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

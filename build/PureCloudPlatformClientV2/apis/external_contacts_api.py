@@ -1425,12 +1425,13 @@ class ExternalContactsApi(object):
         :param str q: User supplied search keywords (no special syntax is currently supported)
         :param str sort_order: The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\"
         :param list[str] expand: which fields, if any, to expand
+        :param list[str] division_ids: which divisions to search, up to 50
         :return: ContactListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'q', 'sort_order', 'expand']
+        all_params = ['page_size', 'page_number', 'q', 'sort_order', 'expand', 'division_ids']
         all_params.append('callback')
 
         params = locals()
@@ -1459,6 +1460,8 @@ class ExternalContactsApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
 
         header_params = {}
 
@@ -3077,12 +3080,13 @@ class ExternalContactsApi(object):
         :param str sort_order: The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\"
         :param list[str] expand: which fields, if any, to expand
         :param bool include_trustors: (true or false) whether or not to include trustor information embedded in the externalOrganization
+        :param list[str] division_ids: which divisions to search, up to 50
         :return: ExternalOrganizationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'q', 'trustor_id', 'sort_order', 'expand', 'include_trustors']
+        all_params = ['page_size', 'page_number', 'q', 'trustor_id', 'sort_order', 'expand', 'include_trustors', 'division_ids']
         all_params.append('callback')
 
         params = locals()
@@ -3115,6 +3119,8 @@ class ExternalContactsApi(object):
             query_params['expand'] = params['expand']
         if 'include_trustors' in params:
             query_params['includeTrustors'] = params['include_trustors']
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
 
         header_params = {}
 
@@ -3558,12 +3564,13 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param str lookup_val: User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
         :param list[str] expand: which field, if any, to expand
+        :param str division_id: Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value
         :return: ReverseWhitepagesLookupResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['lookup_val', 'expand']
+        all_params = ['lookup_val', 'expand', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3589,6 +3596,8 @@ class ExternalContactsApi(object):
             query_params['lookupVal'] = params['lookup_val']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -3639,12 +3648,13 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: The number of contacts per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :param str division_id: The division to scan over
         :return: CursorContactListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'cursor']
+        all_params = ['limit', 'cursor', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3660,6 +3670,87 @@ class ExternalContactsApi(object):
 
 
         resource_path = '/api/v2/externalcontacts/scan/contacts'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CursorContactListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_scan_contacts_divisionviews_all(self, **kwargs) -> 'CursorContactListing':
+        """
+        Scan for external contacts using paging
+        
+	    get_externalcontacts_scan_contacts_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_scan_contacts_divisionviews_all(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int limit: The number of contacts per page; must be between 10 and 200, default is 100
+        :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :return: CursorContactListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['limit', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_scan_contacts_divisionviews_all" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/scan/contacts/divisionviews/all'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -3717,12 +3808,13 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: The number of notes per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :param str division_id: The division to scan over
         :return: CursorNoteListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'cursor']
+        all_params = ['limit', 'cursor', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3738,6 +3830,87 @@ class ExternalContactsApi(object):
 
 
         resource_path = '/api/v2/externalcontacts/scan/notes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CursorNoteListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_scan_notes_divisionviews_all(self, **kwargs) -> 'CursorNoteListing':
+        """
+        Scan for notes using paging
+        
+	    get_externalcontacts_scan_notes_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_scan_notes_divisionviews_all(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int limit: The number of notes per page; must be between 10 and 200, default is 100
+        :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :return: CursorNoteListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['limit', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_scan_notes_divisionviews_all" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/scan/notes/divisionviews/all'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -3795,12 +3968,13 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: The number of organizations per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :param str division_id: The division to scan over
         :return: CursorOrganizationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'cursor']
+        all_params = ['limit', 'cursor', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3816,6 +3990,87 @@ class ExternalContactsApi(object):
 
 
         resource_path = '/api/v2/externalcontacts/scan/organizations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CursorOrganizationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_scan_organizations_divisionviews_all(self, **kwargs) -> 'CursorOrganizationListing':
+        """
+        Scan for external organizations using paging
+        
+	    get_externalcontacts_scan_organizations_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_scan_organizations_divisionviews_all(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int limit: The number of organizations per page; must be between 10 and 200, default is 100
+        :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :return: CursorOrganizationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['limit', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_scan_organizations_divisionviews_all" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/scan/organizations/divisionviews/all'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -3873,12 +4128,13 @@ class ExternalContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: The number of relationships per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :param str division_id: The division to scan over
         :return: CursorRelationshipListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'cursor']
+        all_params = ['limit', 'cursor', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3894,6 +4150,87 @@ class ExternalContactsApi(object):
 
 
         resource_path = '/api/v2/externalcontacts/scan/relationships'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CursorRelationshipListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_scan_relationships_divisionviews_all(self, **kwargs) -> 'CursorRelationshipListing':
+        """
+        Scan for relationships
+        
+	    get_externalcontacts_scan_relationships_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_scan_relationships_divisionviews_all(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int limit: The number of relationships per page; must be between 10 and 200, default is 100
+        :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :return: CursorRelationshipListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['limit', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_scan_relationships_divisionviews_all" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/scan/relationships/divisionviews/all'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -4170,6 +4507,85 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BulkContactsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_bulk_contacts_divisionviews(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchContactsResponse':
+        """
+        Bulk fetch contacts across divisions
+        
+	    post_externalcontacts_bulk_contacts_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_bulk_contacts_divisionviews(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BulkIdsRequest body: Contact ids (required)
+        :return: BulkFetchContactsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_bulk_contacts_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_bulk_contacts_divisionviews`")
+
+
+        resource_path = '/api/v2/externalcontacts/bulk/contacts/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkFetchContactsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4872,6 +5288,85 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BulkOrganizationsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_bulk_organizations_divisionviews(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchOrganizationsResponse':
+        """
+        Bulk fetch organizations across divisions
+        
+	    post_externalcontacts_bulk_organizations_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_bulk_organizations_divisionviews(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BulkIdsRequest body: Organizations ids (required)
+        :return: BulkFetchOrganizationsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_bulk_organizations_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_bulk_organizations_divisionviews`")
+
+
+        resource_path = '/api/v2/externalcontacts/bulk/organizations/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkFetchOrganizationsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

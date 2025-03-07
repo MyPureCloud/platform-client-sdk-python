@@ -59,12 +59,12 @@ class CustomProvider(object):
             'certificate': 'str',
             'certificates': 'list[str]',
             'logo_image_data': 'str',
-            'endpoint_compression': 'bool',
             'name_identifier_format': 'str',
             'sso_binding': 'str',
             'sign_authn_requests': 'bool',
             'provider_name': 'str',
             'display_on_login': 'bool',
+            'endpoint_compression': 'bool',
             'self_uri': 'str'
         }
 
@@ -80,12 +80,12 @@ class CustomProvider(object):
             'certificate': 'certificate',
             'certificates': 'certificates',
             'logo_image_data': 'logoImageData',
-            'endpoint_compression': 'endpointCompression',
             'name_identifier_format': 'nameIdentifierFormat',
             'sso_binding': 'ssoBinding',
             'sign_authn_requests': 'signAuthnRequests',
             'provider_name': 'providerName',
             'display_on_login': 'displayOnLogin',
+            'endpoint_compression': 'endpointCompression',
             'self_uri': 'selfUri'
         }
 
@@ -100,12 +100,12 @@ class CustomProvider(object):
         self._certificate = None
         self._certificates = None
         self._logo_image_data = None
-        self._endpoint_compression = None
         self._name_identifier_format = None
         self._sso_binding = None
         self._sign_authn_requests = None
         self._provider_name = None
         self._display_on_login = None
+        self._endpoint_compression = None
         self._self_uri = None
 
     @property
@@ -373,30 +373,6 @@ class CustomProvider(object):
         self._logo_image_data = logo_image_data
 
     @property
-    def endpoint_compression(self) -> bool:
-        """
-        Gets the endpoint_compression of this CustomProvider.
-
-
-        :return: The endpoint_compression of this CustomProvider.
-        :rtype: bool
-        """
-        return self._endpoint_compression
-
-    @endpoint_compression.setter
-    def endpoint_compression(self, endpoint_compression: bool) -> None:
-        """
-        Sets the endpoint_compression of this CustomProvider.
-
-
-        :param endpoint_compression: The endpoint_compression of this CustomProvider.
-        :type: bool
-        """
-        
-
-        self._endpoint_compression = endpoint_compression
-
-    @property
     def name_identifier_format(self) -> str:
         """
         Gets the name_identifier_format of this CustomProvider.
@@ -525,6 +501,30 @@ class CustomProvider(object):
         
 
         self._display_on_login = display_on_login
+
+    @property
+    def endpoint_compression(self) -> bool:
+        """
+        Gets the endpoint_compression of this CustomProvider.
+
+
+        :return: The endpoint_compression of this CustomProvider.
+        :rtype: bool
+        """
+        return self._endpoint_compression
+
+    @endpoint_compression.setter
+    def endpoint_compression(self, endpoint_compression: bool) -> None:
+        """
+        Sets the endpoint_compression of this CustomProvider.
+
+
+        :param endpoint_compression: The endpoint_compression of this CustomProvider.
+        :type: bool
+        """
+        
+
+        self._endpoint_compression = endpoint_compression
 
     @property
     def self_uri(self) -> str:

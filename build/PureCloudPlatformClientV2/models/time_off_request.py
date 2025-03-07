@@ -470,7 +470,7 @@ class TimeOffRequest(object):
     def submitted_by(self) -> 'UserReference':
         """
         Gets the submitted_by of this TimeOffRequest.
-        The user who submitted this time off request
+        The user who submitted this time off request. The id may be 'System' if it was an automated process
 
         :return: The submitted_by of this TimeOffRequest.
         :rtype: UserReference
@@ -481,7 +481,7 @@ class TimeOffRequest(object):
     def submitted_by(self, submitted_by: 'UserReference') -> None:
         """
         Sets the submitted_by of this TimeOffRequest.
-        The user who submitted this time off request
+        The user who submitted this time off request. The id may be 'System' if it was an automated process
 
         :param submitted_by: The submitted_by of this TimeOffRequest.
         :type: UserReference
@@ -518,7 +518,7 @@ class TimeOffRequest(object):
     def reviewed_by(self) -> 'UserReference':
         """
         Gets the reviewed_by of this TimeOffRequest.
-        The user who reviewed this time off request
+        The user who reviewed this time off request. The id may be 'System' if it was an automated process
 
         :return: The reviewed_by of this TimeOffRequest.
         :rtype: UserReference
@@ -529,7 +529,7 @@ class TimeOffRequest(object):
     def reviewed_by(self, reviewed_by: 'UserReference') -> None:
         """
         Sets the reviewed_by of this TimeOffRequest.
-        The user who reviewed this time off request
+        The user who reviewed this time off request. The id may be 'System' if it was an automated process
 
         :param reviewed_by: The reviewed_by of this TimeOffRequest.
         :type: UserReference

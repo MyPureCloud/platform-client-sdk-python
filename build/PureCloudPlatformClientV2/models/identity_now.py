@@ -58,6 +58,12 @@ class IdentityNow(object):
             'relying_party_identifier': 'str',
             'certificate': 'str',
             'certificates': 'list[str]',
+            'logo_image_data': 'str',
+            'name_identifier_format': 'str',
+            'sso_binding': 'str',
+            'sign_authn_requests': 'bool',
+            'provider_name': 'str',
+            'display_on_login': 'bool',
             'self_uri': 'str'
         }
 
@@ -72,6 +78,12 @@ class IdentityNow(object):
             'relying_party_identifier': 'relyingPartyIdentifier',
             'certificate': 'certificate',
             'certificates': 'certificates',
+            'logo_image_data': 'logoImageData',
+            'name_identifier_format': 'nameIdentifierFormat',
+            'sso_binding': 'ssoBinding',
+            'sign_authn_requests': 'signAuthnRequests',
+            'provider_name': 'providerName',
+            'display_on_login': 'displayOnLogin',
             'self_uri': 'selfUri'
         }
 
@@ -85,6 +97,12 @@ class IdentityNow(object):
         self._relying_party_identifier = None
         self._certificate = None
         self._certificates = None
+        self._logo_image_data = None
+        self._name_identifier_format = None
+        self._sso_binding = None
+        self._sign_authn_requests = None
+        self._provider_name = None
+        self._display_on_login = None
         self._self_uri = None
 
     @property
@@ -326,6 +344,160 @@ class IdentityNow(object):
         
 
         self._certificates = certificates
+
+    @property
+    def logo_image_data(self) -> str:
+        """
+        Gets the logo_image_data of this IdentityNow.
+
+
+        :return: The logo_image_data of this IdentityNow.
+        :rtype: str
+        """
+        return self._logo_image_data
+
+    @logo_image_data.setter
+    def logo_image_data(self, logo_image_data: str) -> None:
+        """
+        Sets the logo_image_data of this IdentityNow.
+
+
+        :param logo_image_data: The logo_image_data of this IdentityNow.
+        :type: str
+        """
+        
+
+        self._logo_image_data = logo_image_data
+
+    @property
+    def name_identifier_format(self) -> str:
+        """
+        Gets the name_identifier_format of this IdentityNow.
+
+
+        :return: The name_identifier_format of this IdentityNow.
+        :rtype: str
+        """
+        return self._name_identifier_format
+
+    @name_identifier_format.setter
+    def name_identifier_format(self, name_identifier_format: str) -> None:
+        """
+        Sets the name_identifier_format of this IdentityNow.
+
+
+        :param name_identifier_format: The name_identifier_format of this IdentityNow.
+        :type: str
+        """
+        if isinstance(name_identifier_format, int):
+            name_identifier_format = str(name_identifier_format)
+        allowed_values = ["urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified", "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress", "urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName", "urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName", "urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos", "urn:oasis:names:tc:SAML:2.0:nameid-format:entity", "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent", "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"]
+        if name_identifier_format.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for name_identifier_format -> " + name_identifier_format)
+            self._name_identifier_format = "outdated_sdk_version"
+        else:
+            self._name_identifier_format = name_identifier_format
+
+    @property
+    def sso_binding(self) -> str:
+        """
+        Gets the sso_binding of this IdentityNow.
+
+
+        :return: The sso_binding of this IdentityNow.
+        :rtype: str
+        """
+        return self._sso_binding
+
+    @sso_binding.setter
+    def sso_binding(self, sso_binding: str) -> None:
+        """
+        Sets the sso_binding of this IdentityNow.
+
+
+        :param sso_binding: The sso_binding of this IdentityNow.
+        :type: str
+        """
+        if isinstance(sso_binding, int):
+            sso_binding = str(sso_binding)
+        allowed_values = ["urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST", "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"]
+        if sso_binding.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sso_binding -> " + sso_binding)
+            self._sso_binding = "outdated_sdk_version"
+        else:
+            self._sso_binding = sso_binding
+
+    @property
+    def sign_authn_requests(self) -> bool:
+        """
+        Gets the sign_authn_requests of this IdentityNow.
+
+
+        :return: The sign_authn_requests of this IdentityNow.
+        :rtype: bool
+        """
+        return self._sign_authn_requests
+
+    @sign_authn_requests.setter
+    def sign_authn_requests(self, sign_authn_requests: bool) -> None:
+        """
+        Sets the sign_authn_requests of this IdentityNow.
+
+
+        :param sign_authn_requests: The sign_authn_requests of this IdentityNow.
+        :type: bool
+        """
+        
+
+        self._sign_authn_requests = sign_authn_requests
+
+    @property
+    def provider_name(self) -> str:
+        """
+        Gets the provider_name of this IdentityNow.
+
+
+        :return: The provider_name of this IdentityNow.
+        :rtype: str
+        """
+        return self._provider_name
+
+    @provider_name.setter
+    def provider_name(self, provider_name: str) -> None:
+        """
+        Sets the provider_name of this IdentityNow.
+
+
+        :param provider_name: The provider_name of this IdentityNow.
+        :type: str
+        """
+        
+
+        self._provider_name = provider_name
+
+    @property
+    def display_on_login(self) -> bool:
+        """
+        Gets the display_on_login of this IdentityNow.
+
+
+        :return: The display_on_login of this IdentityNow.
+        :rtype: bool
+        """
+        return self._display_on_login
+
+    @display_on_login.setter
+    def display_on_login(self, display_on_login: bool) -> None:
+        """
+        Sets the display_on_login of this IdentityNow.
+
+
+        :param display_on_login: The display_on_login of this IdentityNow.
+        :type: bool
+        """
+        
+
+        self._display_on_login = display_on_login
 
     @property
     def self_uri(self) -> str:

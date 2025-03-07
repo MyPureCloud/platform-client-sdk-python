@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import NotificationTemplateBody
+    from . import NotificationTemplateButton
     from . import NotificationTemplateFooter
     from . import NotificationTemplateHeader
 
@@ -56,6 +57,7 @@ class ContentNotificationTemplate(object):
             'language': 'str',
             'header': 'NotificationTemplateHeader',
             'body': 'NotificationTemplateBody',
+            'buttons': 'list[NotificationTemplateButton]',
             'footer': 'NotificationTemplateFooter'
         }
 
@@ -64,6 +66,7 @@ class ContentNotificationTemplate(object):
             'language': 'language',
             'header': 'header',
             'body': 'body',
+            'buttons': 'buttons',
             'footer': 'footer'
         }
 
@@ -71,6 +74,7 @@ class ContentNotificationTemplate(object):
         self._language = None
         self._header = None
         self._body = None
+        self._buttons = None
         self._footer = None
 
     @property
@@ -168,6 +172,30 @@ class ContentNotificationTemplate(object):
         
 
         self._body = body
+
+    @property
+    def buttons(self) -> List['NotificationTemplateButton']:
+        """
+        Gets the buttons of this ContentNotificationTemplate.
+        Template buttons
+
+        :return: The buttons of this ContentNotificationTemplate.
+        :rtype: list[NotificationTemplateButton]
+        """
+        return self._buttons
+
+    @buttons.setter
+    def buttons(self, buttons: List['NotificationTemplateButton']) -> None:
+        """
+        Sets the buttons of this ContentNotificationTemplate.
+        Template buttons
+
+        :param buttons: The buttons of this ContentNotificationTemplate.
+        :type: list[NotificationTemplateButton]
+        """
+        
+
+        self._buttons = buttons
 
     @property
     def footer(self) -> 'NotificationTemplateFooter':

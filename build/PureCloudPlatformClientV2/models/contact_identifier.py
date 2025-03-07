@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ExternalSource
+    from . import WritableStarrableDivision
 
 class ContactIdentifier(object):
     """
@@ -51,6 +52,7 @@ class ContactIdentifier(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'WritableStarrableDivision',
             'type': 'str',
             'value': 'str',
             'date_created': 'datetime',
@@ -60,6 +62,7 @@ class ContactIdentifier(object):
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'type': 'type',
             'value': 'value',
             'date_created': 'dateCreated',
@@ -68,6 +71,7 @@ class ContactIdentifier(object):
         }
 
         self._id = None
+        self._division = None
         self._type = None
         self._value = None
         self._date_created = None
@@ -97,6 +101,30 @@ class ContactIdentifier(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this ContactIdentifier.
+        The division to which this entity belongs.
+
+        :return: The division of this ContactIdentifier.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this ContactIdentifier.
+        The division to which this entity belongs.
+
+        :param division: The division of this ContactIdentifier.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def type(self) -> str:

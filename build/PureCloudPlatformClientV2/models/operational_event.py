@@ -52,6 +52,7 @@ class OperationalEvent(object):
         self.swagger_types = {
             'event_definition': 'AddressableEntityRef',
             'entity_id': 'str',
+            'entity_token': 'str',
             'entity_name': 'str',
             'previous_value': 'str',
             'current_value': 'str',
@@ -65,6 +66,7 @@ class OperationalEvent(object):
         self.attribute_map = {
             'event_definition': 'eventDefinition',
             'entity_id': 'entityId',
+            'entity_token': 'entityToken',
             'entity_name': 'entityName',
             'previous_value': 'previousValue',
             'current_value': 'currentValue',
@@ -77,6 +79,7 @@ class OperationalEvent(object):
 
         self._event_definition = None
         self._entity_id = None
+        self._entity_token = None
         self._entity_name = None
         self._previous_value = None
         self._current_value = None
@@ -133,6 +136,30 @@ class OperationalEvent(object):
         
 
         self._entity_id = entity_id
+
+    @property
+    def entity_token(self) -> str:
+        """
+        Gets the entity_token of this OperationalEvent.
+        A token representing the entity
+
+        :return: The entity_token of this OperationalEvent.
+        :rtype: str
+        """
+        return self._entity_token
+
+    @entity_token.setter
+    def entity_token(self, entity_token: str) -> None:
+        """
+        Sets the entity_token of this OperationalEvent.
+        A token representing the entity
+
+        :param entity_token: The entity_token of this OperationalEvent.
+        :type: str
+        """
+        
+
+        self._entity_token = entity_token
 
     @property
     def entity_name(self) -> str:

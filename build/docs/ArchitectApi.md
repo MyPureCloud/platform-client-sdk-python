@@ -42,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_grammar_language**](#get_architect_grammar_language) | Get a grammar language.|
 |[**get_architect_grammars**](#get_architect_grammars) | Get a pageable list of grammars, filtered by query parameters|
 |[**get_architect_ivr**](#get_architect_ivr) | Get an IVR config.|
+|[**get_architect_ivr_identityresolution**](#get_architect_ivr_identityresolution) | Get an IVR IdentityResolutionConfig.|
 |[**get_architect_ivrs**](#get_architect_ivrs) | Get IVR configs.|
 |[**get_architect_ivrs_divisionviews**](#get_architect_ivrs_divisionviews) | Get a pageable list of basic ivr configuration information objects filterable by query parameters.|
 |[**get_architect_prompt**](#get_architect_prompt) | Get specified user prompt|
@@ -82,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_datatables_divisionviews**](#get_flows_datatables_divisionviews) | Retrieve a list of datatables for the org|
 |[**get_flows_divisionviews**](#get_flows_divisionviews) | Get a pageable list of basic flow information objects filterable by query parameters.|
 |[**get_flows_execution**](#get_flows_execution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.|
+|[**get_flows_export_job**](#get_flows_export_job) | Fetch Architect Export Job Status|
 |[**get_flows_instance**](#get_flows_instance) | Start a process (job) to prepare a download of a singular flow execution data instance by Id|
 |[**get_flows_instances_job**](#get_flows_instances_job) | Get the status and/or results of an asynchronous flow execution data retrieval job|
 |[**get_flows_instances_querycapabilities**](#get_flows_instances_querycapabilities) | Retrieve a list of capabilities that the org can use to query for execution data|
@@ -128,6 +130,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_datatable_rows**](#post_flows_datatable_rows) | Create a new row entry for the datatable.|
 |[**post_flows_datatables**](#post_flows_datatables) | Create a new datatable with the specified json-schema definition|
 |[**post_flows_executions**](#post_flows_executions) | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.|
+|[**post_flows_export_jobs**](#post_flows_export_jobs) | Register Architect Export Job|
 |[**post_flows_instances_jobs**](#post_flows_instances_jobs) | Start a process (job) that will prepare a list of execution data IDs for download.|
 |[**post_flows_instances_query**](#post_flows_instances_query) | Query the database of existing flow histories to look for particular flow criteria|
 |[**post_flows_jobs**](#post_flows_jobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.|
@@ -135,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_outcomes**](#post_flows_outcomes) | Create a flow outcome|
 |[**put_architect_emergencygroup**](#put_architect_emergencygroup) | Updates a emergency group by ID|
 |[**put_architect_ivr**](#put_architect_ivr) | Update an IVR Config.|
+|[**put_architect_ivr_identityresolution**](#put_architect_ivr_identityresolution) | Update an IVR IdentityResolutionConfig.|
 |[**put_architect_prompt**](#put_architect_prompt) | Update specified user prompt|
 |[**put_architect_prompt_resource**](#put_architect_prompt_resource) | Update specified user prompt resource|
 |[**put_architect_schedule**](#put_architect_schedule) | Update schedule by ID|
@@ -2003,6 +2007,57 @@ except ApiException as e:
 ### Return type
 
 [**IVR**](IVR)
+
+
+## get_architect_ivr_identityresolution
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_architect_ivr_identityresolution(ivr_id)
+
+
+Get an IVR IdentityResolutionConfig.
+
+get_architect_ivr_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/ivrs/{ivrId}/identityresolution 
+
+Requires ALL permissions: 
+
+* routing:callRoute:view
+* routing:identityResolution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+ivr_id = 'ivr_id_example' # str | IVR id
+
+try:
+    # Get an IVR IdentityResolutionConfig.
+    api_response = api_instance.get_architect_ivr_identityresolution(ivr_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_ivr_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ivr_id** | **str**| IVR id |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 ## get_architect_ivrs
@@ -4270,6 +4325,56 @@ except ApiException as e:
 ### Return type
 
 [**FlowRuntimeExecution**](FlowRuntimeExecution)
+
+
+## get_flows_export_job
+
+> [**ArchitectExportJobStateResponse**](ArchitectExportJobStateResponse) get_flows_export_job(job_id, expand=expand)
+
+
+Fetch Architect Export Job Status
+
+Wraps GET /api/v2/flows/export/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* architect:jobExport:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+job_id = 'job_id_example' # str | Job ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+
+try:
+    # Fetch Architect Export Job Status
+    api_response = api_instance.get_flows_export_job(job_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_export_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| Job ID |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+
+### Return type
+
+[**ArchitectExportJobStateResponse**](ArchitectExportJobStateResponse)
 
 
 ## get_flows_instance
@@ -6624,6 +6729,54 @@ except ApiException as e:
 [**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse)
 
 
+## post_flows_export_jobs
+
+> [**RegisterArchitectExportJobResponse**](RegisterArchitectExportJobResponse) post_flows_export_jobs(body)
+
+
+Register Architect Export Job
+
+Wraps POST /api/v2/flows/export/jobs 
+
+Requires ALL permissions: 
+
+* architect:jobExport:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.RegisterArchitectExportJob() # RegisterArchitectExportJob | 
+
+try:
+    # Register Architect Export Job
+    api_response = api_instance.post_flows_export_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_flows_export_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RegisterArchitectExportJob**](RegisterArchitectExportJob)|  |  |
+
+### Return type
+
+[**RegisterArchitectExportJobResponse**](RegisterArchitectExportJobResponse)
+
+
 ## post_flows_instances_jobs
 
 > [**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult) post_flows_instances_jobs(body, expand=expand)
@@ -6970,6 +7123,59 @@ except ApiException as e:
 ### Return type
 
 [**IVR**](IVR)
+
+
+## put_architect_ivr_identityresolution
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_architect_ivr_identityresolution(ivr_id, body)
+
+
+Update an IVR IdentityResolutionConfig.
+
+put_architect_ivr_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/architect/ivrs/{ivrId}/identityresolution 
+
+Requires ALL permissions: 
+
+* routing:callRoute:edit
+* routing:identityResolution:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+ivr_id = 'ivr_id_example' # str | IVR id
+body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+
+try:
+    # Update an IVR IdentityResolutionConfig.
+    api_response = api_instance.put_architect_ivr_identityresolution(ivr_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->put_architect_ivr_identityresolution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ivr_id** | **str**| IVR id |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 ## put_architect_prompt
@@ -7593,4 +7799,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

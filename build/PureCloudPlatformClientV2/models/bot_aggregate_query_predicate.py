@@ -122,7 +122,7 @@ class BotAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["askActionId", "askActionResult", "askActionType", "botFinalIntent", "botFlowSubType", "botFlowType", "botId", "botIntent", "botProduct", "botProvider", "botRecognitionFailureReason", "botResult", "botSessionId", "botSlot", "botVersion", "conversationId", "externalContactId", "intermediateIntentName", "knowledgeBaseId", "languageCode", "lastActionId", "lastInputActionId", "mediaType", "messageType", "previewMode", "selfServed"]
+        allowed_values = ["askActionId", "askActionResult", "askActionType", "botFinalIntent", "botFlowSubType", "botFlowType", "botId", "botIntent", "botName", "botProduct", "botProvider", "botRecognitionFailureReason", "botResult", "botSessionId", "botSlot", "botSlotMechanism", "botVersion", "conversationId", "externalContactId", "intermediateIntentName", "knowledgeBaseId", "languageCode", "lastActionId", "lastInputActionId", "mediaType", "messageType", "previewMode", "selfServed"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

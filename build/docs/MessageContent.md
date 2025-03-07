@@ -7,7 +7,6 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **content_type** | str | Type of this content element. | |
-| **location** | [ContentLocation](ContentLocation) | Location content. | [optional] |
 | **attachment** | [ContentAttachment](ContentAttachment) | Attachment content. | [optional] |
 | **quick_reply** | [ContentQuickReply](ContentQuickReply) | Quick reply content. | [optional] |
 | **button_response** | [ContentButtonResponse](ContentButtonResponse) | Button response content. | [optional] |
@@ -22,7 +21,8 @@
 | **carousel** | [ContentCarousel](ContentCarousel) | Carousel content | [optional] |
 | **text** | [ContentText](ContentText) | Text content. | [optional] |
 | **quick_reply_v2** | [ContentQuickReplyV2](ContentQuickReplyV2) | Quick reply V2 content. | [optional] |
+| **date_picker** | [ContentDatePicker](ContentDatePicker) | DatePicker content. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 222.0.0_
+_PureCloudPlatformClientV2 223.0.0_

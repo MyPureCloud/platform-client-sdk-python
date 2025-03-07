@@ -4184,7 +4184,6 @@ class KnowledgeApi(object):
         """
         Get parse job report
         
-	    get_knowledge_knowledgebase_parse_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4896,7 +4895,6 @@ class KnowledgeApi(object):
         """
         Get content upload from URL job status
         
-	    get_knowledge_knowledgebase_uploads_urls_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6272,7 +6270,6 @@ class KnowledgeApi(object):
         """
         Send update to the parse operation
         
-	    patch_knowledge_knowledgebase_parse_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9373,7 +9370,6 @@ class KnowledgeApi(object):
         """
         Import the parsed articles
         
-	    post_knowledge_knowledgebase_parse_job_import is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9464,7 +9460,6 @@ class KnowledgeApi(object):
         """
         Create parse job
         
-	    post_knowledge_knowledgebase_parse_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9728,12 +9723,13 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
         :param str source_id: Source ID (required)
+        :param object body: 
         :return: SourceSyncResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'source_id']
+        all_params = ['knowledge_base_id', 'source_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -9769,6 +9765,8 @@ class KnowledgeApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -9896,12 +9894,13 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
         :param str source_id: Source ID (required)
+        :param object body: 
         :return: SourceSyncResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'source_id']
+        all_params = ['knowledge_base_id', 'source_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -9937,6 +9936,8 @@ class KnowledgeApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -10051,7 +10052,6 @@ class KnowledgeApi(object):
         """
         Create content upload from URL job
         
-	    post_knowledge_knowledgebase_uploads_urls_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
