@@ -52,6 +52,7 @@ class EvaluationQuestionGroup(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'context_id': 'str',
             'name': 'str',
             'type': 'str',
             'default_answers_to_highest': 'bool',
@@ -65,6 +66,7 @@ class EvaluationQuestionGroup(object):
 
         self.attribute_map = {
             'id': 'id',
+            'context_id': 'contextId',
             'name': 'name',
             'type': 'type',
             'default_answers_to_highest': 'defaultAnswersToHighest',
@@ -77,6 +79,7 @@ class EvaluationQuestionGroup(object):
         }
 
         self._id = None
+        self._context_id = None
         self._name = None
         self._type = None
         self._default_answers_to_highest = None
@@ -110,6 +113,30 @@ class EvaluationQuestionGroup(object):
         
 
         self._id = id
+
+    @property
+    def context_id(self) -> str:
+        """
+        Gets the context_id of this EvaluationQuestionGroup.
+        An identifier for this question group that stays the same across versions of the form.
+
+        :return: The context_id of this EvaluationQuestionGroup.
+        :rtype: str
+        """
+        return self._context_id
+
+    @context_id.setter
+    def context_id(self, context_id: str) -> None:
+        """
+        Sets the context_id of this EvaluationQuestionGroup.
+        An identifier for this question group that stays the same across versions of the form.
+
+        :param context_id: The context_id of this EvaluationQuestionGroup.
+        :type: str
+        """
+        
+
+        self._context_id = context_id
 
     @property
     def name(self) -> str:

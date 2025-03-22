@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DocumentElementLength
 
 class DocumentBodyTableCellBlockProperties(object):
     """
@@ -50,6 +52,7 @@ class DocumentBodyTableCellBlockProperties(object):
         self.swagger_types = {
             'cell_type': 'str',
             'width': 'float',
+            'width_with_unit': 'DocumentElementLength',
             'height': 'float',
             'horizontal_align': 'str',
             'vertical_align': 'str',
@@ -65,6 +68,7 @@ class DocumentBodyTableCellBlockProperties(object):
         self.attribute_map = {
             'cell_type': 'cellType',
             'width': 'width',
+            'width_with_unit': 'widthWithUnit',
             'height': 'height',
             'horizontal_align': 'horizontalAlign',
             'vertical_align': 'verticalAlign',
@@ -79,6 +83,7 @@ class DocumentBodyTableCellBlockProperties(object):
 
         self._cell_type = None
         self._width = None
+        self._width_with_unit = None
         self._height = None
         self._horizontal_align = None
         self._vertical_align = None
@@ -142,6 +147,30 @@ class DocumentBodyTableCellBlockProperties(object):
         
 
         self._width = width
+
+    @property
+    def width_with_unit(self) -> 'DocumentElementLength':
+        """
+        Gets the width_with_unit of this DocumentBodyTableCellBlockProperties.
+        The width of the table cell in the specified unit.
+
+        :return: The width_with_unit of this DocumentBodyTableCellBlockProperties.
+        :rtype: DocumentElementLength
+        """
+        return self._width_with_unit
+
+    @width_with_unit.setter
+    def width_with_unit(self, width_with_unit: 'DocumentElementLength') -> None:
+        """
+        Sets the width_with_unit of this DocumentBodyTableCellBlockProperties.
+        The width of the table cell in the specified unit.
+
+        :param width_with_unit: The width_with_unit of this DocumentBodyTableCellBlockProperties.
+        :type: DocumentElementLength
+        """
+        
+
+        self._width_with_unit = width_with_unit
 
     @property
     def height(self) -> float:

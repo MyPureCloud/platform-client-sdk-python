@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DataIngestionRules
+    from . import DataIngestionRulesMetadata
 
 class SocialTopicResponse(object):
     """
@@ -57,7 +57,7 @@ class SocialTopicResponse(object):
             'date_modified': 'datetime',
             'division_id': 'str',
             'status': 'str',
-            'data_ingestion_rules': 'DataIngestionRules',
+            'data_ingestion_rules_metadata': 'list[DataIngestionRulesMetadata]',
             'self_uri': 'str'
         }
 
@@ -69,7 +69,7 @@ class SocialTopicResponse(object):
             'date_modified': 'dateModified',
             'division_id': 'divisionId',
             'status': 'status',
-            'data_ingestion_rules': 'dataIngestionRules',
+            'data_ingestion_rules_metadata': 'dataIngestionRulesMetadata',
             'self_uri': 'selfUri'
         }
 
@@ -80,7 +80,7 @@ class SocialTopicResponse(object):
         self._date_modified = None
         self._division_id = None
         self._status = None
-        self._data_ingestion_rules = None
+        self._data_ingestion_rules_metadata = None
         self._self_uri = None
 
     @property
@@ -257,28 +257,28 @@ class SocialTopicResponse(object):
             self._status = status
 
     @property
-    def data_ingestion_rules(self) -> 'DataIngestionRules':
+    def data_ingestion_rules_metadata(self) -> List['DataIngestionRulesMetadata']:
         """
-        Gets the data_ingestion_rules of this SocialTopicResponse.
-        The data ingestion rules that apply to the social topic.
+        Gets the data_ingestion_rules_metadata of this SocialTopicResponse.
+        The data ingestion rule metadata.
 
-        :return: The data_ingestion_rules of this SocialTopicResponse.
-        :rtype: DataIngestionRules
+        :return: The data_ingestion_rules_metadata of this SocialTopicResponse.
+        :rtype: list[DataIngestionRulesMetadata]
         """
-        return self._data_ingestion_rules
+        return self._data_ingestion_rules_metadata
 
-    @data_ingestion_rules.setter
-    def data_ingestion_rules(self, data_ingestion_rules: 'DataIngestionRules') -> None:
+    @data_ingestion_rules_metadata.setter
+    def data_ingestion_rules_metadata(self, data_ingestion_rules_metadata: List['DataIngestionRulesMetadata']) -> None:
         """
-        Sets the data_ingestion_rules of this SocialTopicResponse.
-        The data ingestion rules that apply to the social topic.
+        Sets the data_ingestion_rules_metadata of this SocialTopicResponse.
+        The data ingestion rule metadata.
 
-        :param data_ingestion_rules: The data_ingestion_rules of this SocialTopicResponse.
-        :type: DataIngestionRules
+        :param data_ingestion_rules_metadata: The data_ingestion_rules_metadata of this SocialTopicResponse.
+        :type: list[DataIngestionRulesMetadata]
         """
         
 
-        self._data_ingestion_rules = data_ingestion_rules
+        self._data_ingestion_rules_metadata = data_ingestion_rules_metadata
 
     @property
     def self_uri(self) -> str:

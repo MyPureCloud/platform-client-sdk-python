@@ -51,20 +51,20 @@ class V2MobiusRulesTopicCondition(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'conditions': 'list[V2MobiusRulesTopicCondition]',
+            'clauses': 'list[V2MobiusRulesTopicCondition]',
             'predicates': 'list[V2MobiusRulesTopicConditionRulePredicate]',
             'type': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'conditions': 'conditions',
+            'clauses': 'clauses',
             'predicates': 'predicates',
             'type': 'type'
         }
 
         self._id = None
-        self._conditions = None
+        self._clauses = None
         self._predicates = None
         self._type = None
 
@@ -93,28 +93,28 @@ class V2MobiusRulesTopicCondition(object):
         self._id = id
 
     @property
-    def conditions(self) -> List['V2MobiusRulesTopicCondition']:
+    def clauses(self) -> List['V2MobiusRulesTopicCondition']:
         """
-        Gets the conditions of this V2MobiusRulesTopicCondition.
+        Gets the clauses of this V2MobiusRulesTopicCondition.
 
 
-        :return: The conditions of this V2MobiusRulesTopicCondition.
+        :return: The clauses of this V2MobiusRulesTopicCondition.
         :rtype: list[V2MobiusRulesTopicCondition]
         """
-        return self._conditions
+        return self._clauses
 
-    @conditions.setter
-    def conditions(self, conditions: List['V2MobiusRulesTopicCondition']) -> None:
+    @clauses.setter
+    def clauses(self, clauses: List['V2MobiusRulesTopicCondition']) -> None:
         """
-        Sets the conditions of this V2MobiusRulesTopicCondition.
+        Sets the clauses of this V2MobiusRulesTopicCondition.
 
 
-        :param conditions: The conditions of this V2MobiusRulesTopicCondition.
+        :param clauses: The clauses of this V2MobiusRulesTopicCondition.
         :type: list[V2MobiusRulesTopicCondition]
         """
         
 
-        self._conditions = conditions
+        self._clauses = clauses
 
     @property
     def predicates(self) -> List['V2MobiusRulesTopicConditionRulePredicate']:

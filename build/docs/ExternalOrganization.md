@@ -11,7 +11,6 @@
 | **division** | [WritableStarrableDivision](WritableStarrableDivision) | The division to which this entity belongs. | [optional] |
 | **company_type** | str |  | [optional] |
 | **industry** | str |  | [optional] |
-| **primary_contact_id** | str |  | [optional] |
 | **address** | [ContactAddress](ContactAddress) |  | [optional] |
 | **phone_number** | [PhoneNumber](PhoneNumber) |  | [optional] |
 | **fax_number** | [PhoneNumber](PhoneNumber) |  | [optional] |
@@ -32,4 +31,4 @@
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

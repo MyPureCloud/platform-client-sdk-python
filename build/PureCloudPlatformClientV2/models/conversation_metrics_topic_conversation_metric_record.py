@@ -331,7 +331,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["nBlindTransferred", "nBotInteractions", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oExternalMediaCount", "oMediaCount", "oMessageCount", "oMessageSegmentCount", "oMessageTurn", "tAbandon", "tAcd", "tActiveCallback", "tActiveCallbackComplete", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tBarging", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tPark", "tParkComplete", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
+        allowed_values = ["nBlindTransferred", "nBotInteractions", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oExternalMediaCount", "oMediaCount", "oMessageCount", "oMessageSegmentCount", "oMessageTurn", "tAbandon", "tAcd", "tActiveCallback", "tActiveCallbackComplete", "tAcw", "tAgentResponseTime", "tAlert", "tAnswered", "tAverageAgentResponseTime", "tAverageCustomerResponseTime", "tBarging", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFirstEngagement", "tFirstResponse", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tPark", "tParkComplete", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
@@ -1236,7 +1236,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
     def group_id(self) -> str:
         """
         Gets the group_id of this ConversationMetricsTopicConversationMetricRecord.
-        Unique identifier for a PureCloud group
+        Unique identifier for a Genesys Cloud group
 
         :return: The group_id of this ConversationMetricsTopicConversationMetricRecord.
         :rtype: str
@@ -1247,7 +1247,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
     def group_id(self, group_id: str) -> None:
         """
         Sets the group_id of this ConversationMetricsTopicConversationMetricRecord.
-        Unique identifier for a PureCloud group
+        Unique identifier for a Genesys Cloud group
 
         :param group_id: The group_id of this ConversationMetricsTopicConversationMetricRecord.
         :type: str
@@ -1518,7 +1518,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["callback", "chat", "cobrowse", "email", "message", "screenshare", "unknown", "video", "voice"]
+        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

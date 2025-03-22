@@ -14,8 +14,9 @@
 | **responses** | [dict(str, Reaction)](Reaction) | Map of disposition identifiers to reactions. For example: {\&quot;disposition.classification.callable.person\&quot;: {\&quot;reactionType\&quot;: \&quot;transfer\&quot;}}. | |
 | **beep_detection_enabled** | bool | Whether to enable answering machine beep detection | [optional] |
 | **amd_speech_distinguish_enabled** | bool | Whether to enable answering machine detection | [optional] |
+| **live_speaker_detection_mode** | str | Setting level of live speaker detection based on ringbacks | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

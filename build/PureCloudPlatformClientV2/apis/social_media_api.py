@@ -38,20 +38,34 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import AsyncQueryResponse
+from ..models import AsyncQueryStatus
+from ..models import DataIngestionRuleResponseEntityListing
 from ..models import DataIngestionRuleStatusPatchRequest
 from ..models import ErrorBody
+from ..models import EscalationRuleRequest
+from ..models import EscalationRuleResponse
 from ..models import FacebookDataIngestionRuleRequest
 from ..models import FacebookDataIngestionRuleResponse
 from ..models import FacebookDataIngestionRuleVersionResponse
 from ..models import FacebookDataIngestionRuleVersionResponseEntityListing
+from ..models import ManualEscalationRequest
+from ..models import ManualEscalationResponse
 from ..models import OpenDataIngestionRuleRequest
 from ..models import OpenDataIngestionRuleResponse
 from ..models import OpenDataIngestionRuleVersionResponse
 from ..models import OpenDataIngestionRuleVersionResponseEntityListing
+from ..models import SocialEscalationResponseEntityListing
+from ..models import SocialMediaAsyncAggregateQueryResponse
+from ..models import SocialMediaAsyncAggregationQuery
+from ..models import SocialMediaAsyncDetailQuery
+from ..models import SocialMediaAsyncDetailQueryResponse
 from ..models import SocialTopicPatchRequest
 from ..models import SocialTopicRequest
 from ..models import SocialTopicResponse
 from ..models import SocialTopicResponseEntityListing
+from ..models import TwitterDataHistoricalTweetRequest
+from ..models import TwitterDataHistoricalTweetResponse
 from ..models import TwitterDataIngestionRuleRequest
 from ..models import TwitterDataIngestionRuleResponse
 from ..models import TwitterDataIngestionRuleVersionResponse
@@ -73,11 +87,167 @@ class SocialMediaApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_socialmedia_escalationrule(self, escalation_rule_id: str, **kwargs) -> None:
+        """
+        Delete an escalation rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_socialmedia_escalationrule(escalation_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str escalation_rule_id: escalationRuleId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['escalation_rule_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_socialmedia_escalationrule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'escalation_rule_id' is set
+        if ('escalation_rule_id' not in params) or (params['escalation_rule_id'] is None):
+            raise ValueError("Missing the required parameter `escalation_rule_id` when calling `delete_socialmedia_escalationrule`")
+
+
+        resource_path = '/api/v2/socialmedia/escalationrules/{escalationRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'escalation_rule_id' in params:
+            path_params['escalationRuleId'] = params['escalation_rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_socialmedia_message(self, message_id: str, **kwargs) -> None:
+        """
+        Delete a social media message.
+        
+	    delete_socialmedia_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_socialmedia_message(message_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str message_id: messageId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_socialmedia_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `delete_socialmedia_message`")
+
+
+        resource_path = '/api/v2/socialmedia/messages/{messageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_socialmedia_topic(self, topic_id: str, **kwargs) -> None:
         """
         Delete a social topic.
         
-	    delete_socialmedia_topic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -159,7 +329,6 @@ class SocialMediaApi(object):
         """
         Delete a Facebook data ingestion rule.
         
-	    delete_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -335,7 +504,6 @@ class SocialMediaApi(object):
         """
         Delete a X (formally Twitter) data ingestion rule.
         
-	    delete_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -419,11 +587,490 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_socialmedia_analytics_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
+        """
+        Get status for async query for social media aggregates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_analytics_aggregates_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: AsyncQueryStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_analytics_aggregates_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_socialmedia_analytics_aggregates_job`")
+
+
+        resource_path = '/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_analytics_aggregates_job_results(self, job_id: str, **kwargs) -> 'SocialMediaAsyncAggregateQueryResponse':
+        """
+        Fetch a page of results for an async social media query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_analytics_aggregates_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :param str cursor: Cursor token to retrieve next page
+        :return: SocialMediaAsyncAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_analytics_aggregates_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_socialmedia_analytics_aggregates_job_results`")
+
+
+        resource_path = '/api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SocialMediaAsyncAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_analytics_messages_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
+        """
+        Get status for async query for social media messages job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_analytics_messages_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: AsyncQueryStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_analytics_messages_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_socialmedia_analytics_messages_job`")
+
+
+        resource_path = '/api/v2/socialmedia/analytics/messages/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_analytics_messages_job_results(self, job_id: str, **kwargs) -> 'SocialMediaAsyncDetailQueryResponse':
+        """
+        Fetch a page of results for an async social media messages query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_analytics_messages_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :param str cursor: Cursor token to retrieve next page
+        :return: SocialMediaAsyncDetailQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_analytics_messages_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_socialmedia_analytics_messages_job_results`")
+
+
+        resource_path = '/api/v2/socialmedia/analytics/messages/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SocialMediaAsyncDetailQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_escalationrule(self, escalation_rule_id: str, **kwargs) -> 'EscalationRuleResponse':
+        """
+        Get a single escalation rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_escalationrule(escalation_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str escalation_rule_id: escalationRuleId (required)
+        :return: EscalationRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['escalation_rule_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_escalationrule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'escalation_rule_id' is set
+        if ('escalation_rule_id' not in params) or (params['escalation_rule_id'] is None):
+            raise ValueError("Missing the required parameter `escalation_rule_id` when calling `get_socialmedia_escalationrule`")
+
+
+        resource_path = '/api/v2/socialmedia/escalationrules/{escalationRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'escalation_rule_id' in params:
+            path_params['escalationRuleId'] = params['escalation_rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EscalationRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_escalationrules(self, division_id: str, **kwargs) -> 'SocialEscalationResponseEntityListing':
+        """
+        Retrieve all escalation rules for a division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_escalationrules(division_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str division_id: One division ID (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: SocialEscalationResponseEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_id', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_escalationrules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `get_socialmedia_escalationrules`")
+
+
+        resource_path = '/api/v2/socialmedia/escalationrules'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SocialEscalationResponseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_socialmedia_topic(self, topic_id: str, **kwargs) -> 'SocialTopicResponse':
         """
         Get a single social topic.
         
-	    get_socialmedia_topic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -501,11 +1148,97 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_socialmedia_topic_dataingestionrules(self, topic_id: str, **kwargs) -> 'DataIngestionRuleResponseEntityListing':
+        """
+        Retrieve all social topic data ingestion rules with pagination.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_topic_dataingestionrules(topic_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param bool include_deleted: Determines whether to include soft-deleted items in the result.
+        :return: DataIngestionRuleResponseEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'page_number', 'page_size', 'include_deleted']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_topic_dataingestionrules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `get_socialmedia_topic_dataingestionrules`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'include_deleted' in params:
+            query_params['includeDeleted'] = params['include_deleted']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataIngestionRuleResponseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id(self, topic_id: str, facebook_ingestion_rule_id: str, **kwargs) -> 'FacebookDataIngestionRuleResponse':
         """
         Get a single Facebook data ingestion rule.
         
-	    get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -593,7 +1326,6 @@ class SocialMediaApi(object):
         """
         Get a single Facebook data ingestion rule version.
         
-	    get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -687,7 +1419,6 @@ class SocialMediaApi(object):
         """
         Get the Facebook data ingestion rule versions.
         
-	    get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1057,7 +1788,6 @@ class SocialMediaApi(object):
         """
         Get a single X (formally Twitter) data ingestion rule.
         
-	    get_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1145,7 +1875,6 @@ class SocialMediaApi(object):
         """
         Get a single X (formally Twitter) data ingestion rule version.
         
-	    get_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1239,7 +1968,6 @@ class SocialMediaApi(object):
         """
         Get the Open data ingestion rule versions.
         
-	    get_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1333,7 +2061,6 @@ class SocialMediaApi(object):
         """
         Retrieve all social topics.
         
-	    get_socialmedia_topics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1418,7 +2145,6 @@ class SocialMediaApi(object):
         """
         Update a social topic.
         
-	    patch_socialmedia_topic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1500,7 +2226,6 @@ class SocialMediaApi(object):
         """
         Update the status of a Facebook data ingestion rule.
         
-	    patch_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1676,7 +2401,6 @@ class SocialMediaApi(object):
         """
         Update the status of a X (formally Twitter) data ingestion rule.
         
-	    patch_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1760,11 +2484,322 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_socialmedia_analytics_aggregates_jobs(self, body: 'SocialMediaAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
+        """
+        Query for social media aggregates asynchronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_analytics_aggregates_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SocialMediaAsyncAggregationQuery body: query (required)
+        :return: AsyncQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_analytics_aggregates_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_socialmedia_analytics_aggregates_jobs`")
+
+
+        resource_path = '/api/v2/socialmedia/analytics/aggregates/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_socialmedia_analytics_messages_jobs(self, body: 'SocialMediaAsyncDetailQuery', **kwargs) -> 'AsyncQueryResponse':
+        """
+        Query for social media messages asynchronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_analytics_messages_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SocialMediaAsyncDetailQuery body: query (required)
+        :return: AsyncQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_analytics_messages_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_socialmedia_analytics_messages_jobs`")
+
+
+        resource_path = '/api/v2/socialmedia/analytics/messages/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_socialmedia_escalationrules(self, **kwargs) -> 'EscalationRuleResponse':
+        """
+        Create an escalation rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_escalationrules(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param EscalationRuleRequest body: 
+        :return: EscalationRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_escalationrules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/socialmedia/escalationrules'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EscalationRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_socialmedia_escalations_messages(self, division_id: str, **kwargs) -> 'ManualEscalationResponse':
+        """
+        Escalate message to a conversation manually
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_escalations_messages(division_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str division_id: One division ID (required)
+        :param ManualEscalationRequest body: 
+        :return: ManualEscalationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_escalations_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'division_id' is set
+        if ('division_id' not in params) or (params['division_id'] is None):
+            raise ValueError("Missing the required parameter `division_id` when calling `post_socialmedia_escalations_messages`")
+
+
+        resource_path = '/api/v2/socialmedia/escalations/messages'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ManualEscalationResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_socialmedia_topic_dataingestionrules_facebook(self, topic_id: str, **kwargs) -> 'FacebookDataIngestionRuleResponse':
         """
         Create an Facebook data ingestion rule.
         
-	    post_socialmedia_topic_dataingestionrules_facebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1928,7 +2963,6 @@ class SocialMediaApi(object):
         """
         Create an twitter data ingestion rule.
         
-	    post_socialmedia_topic_dataingestionrules_twitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2010,7 +3044,6 @@ class SocialMediaApi(object):
         """
         Create a social topic.
         
-	    post_socialmedia_topics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2082,11 +3115,169 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_socialmedia_twitter_historical_tweets(self, body: 'TwitterDataHistoricalTweetRequest', **kwargs) -> 'TwitterDataHistoricalTweetResponse':
+        """
+        Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_twitter_historical_tweets(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TwitterDataHistoricalTweetRequest body: TwitterDataHistoricalTweetRequest (required)
+        :return: TwitterDataHistoricalTweetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_twitter_historical_tweets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_socialmedia_twitter_historical_tweets`")
+
+
+        resource_path = '/api/v2/socialmedia/twitter/historical/tweets'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TwitterDataHistoricalTweetResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_socialmedia_escalationrule(self, escalation_rule_id: str, **kwargs) -> 'EscalationRuleResponse':
+        """
+        Update the escalation rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_socialmedia_escalationrule(escalation_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str escalation_rule_id: escalationRuleId (required)
+        :param EscalationRuleRequest body: 
+        :return: EscalationRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['escalation_rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_socialmedia_escalationrule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'escalation_rule_id' is set
+        if ('escalation_rule_id' not in params) or (params['escalation_rule_id'] is None):
+            raise ValueError("Missing the required parameter `escalation_rule_id` when calling `put_socialmedia_escalationrule`")
+
+
+        resource_path = '/api/v2/socialmedia/escalationrules/{escalationRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'escalation_rule_id' in params:
+            path_params['escalationRuleId'] = params['escalation_rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EscalationRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id(self, topic_id: str, facebook_ingestion_rule_id: str, **kwargs) -> 'FacebookDataIngestionRuleResponse':
         """
         Update the Facebook data ingestion rule.
         
-	    put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2262,7 +3453,6 @@ class SocialMediaApi(object):
         """
         Update the X (formally Twitter) data ingestion rule.
         
-	    put_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AiScoringSettings
     from . import DomainEntityListingEvaluationForm
     from . import EvaluationQuestionGroup
     from . import EvaluationSettings
@@ -60,6 +61,7 @@ class EvaluationForm(object):
             'question_groups': 'list[EvaluationQuestionGroup]',
             'published_versions': 'DomainEntityListingEvaluationForm',
             'evaluation_settings': 'EvaluationSettings',
+            'ai_scoring': 'AiScoringSettings',
             'self_uri': 'str'
         }
 
@@ -72,6 +74,7 @@ class EvaluationForm(object):
             'question_groups': 'questionGroups',
             'published_versions': 'publishedVersions',
             'evaluation_settings': 'evaluationSettings',
+            'ai_scoring': 'aiScoring',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +86,7 @@ class EvaluationForm(object):
         self._question_groups = None
         self._published_versions = None
         self._evaluation_settings = None
+        self._ai_scoring = None
         self._self_uri = None
 
     @property
@@ -276,6 +280,30 @@ class EvaluationForm(object):
         
 
         self._evaluation_settings = evaluation_settings
+
+    @property
+    def ai_scoring(self) -> 'AiScoringSettings':
+        """
+        Gets the ai_scoring of this EvaluationForm.
+        AI scoring settings for the evaluation form.
+
+        :return: The ai_scoring of this EvaluationForm.
+        :rtype: AiScoringSettings
+        """
+        return self._ai_scoring
+
+    @ai_scoring.setter
+    def ai_scoring(self, ai_scoring: 'AiScoringSettings') -> None:
+        """
+        Sets the ai_scoring of this EvaluationForm.
+        AI scoring settings for the evaluation form.
+
+        :param ai_scoring: The ai_scoring of this EvaluationForm.
+        :type: AiScoringSettings
+        """
+        
+
+        self._ai_scoring = ai_scoring
 
     @property
     def self_uri(self) -> str:

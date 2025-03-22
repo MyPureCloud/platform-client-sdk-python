@@ -411,7 +411,6 @@ class ChatApi(object):
         """
         Remove a pinned message from a 1on1
         
-	    delete_chats_user_messages_pin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1144,7 +1143,6 @@ class ChatApi(object):
         """
         Get information for a 1on1
         
-	    get_chats_user is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2462,7 +2460,6 @@ class ChatApi(object):
         """
         Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
         
-	    post_chats_user_messages_pins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

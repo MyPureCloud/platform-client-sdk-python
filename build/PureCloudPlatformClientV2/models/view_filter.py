@@ -278,7 +278,9 @@ class ViewFilter(object):
             'view_metrics': 'list[str]',
             'timeline_categories': 'list[str]',
             'acw': 'bool',
-            'segment_types': 'list[str]'
+            'segment_types': 'list[str]',
+            'program_ids': 'list[str]',
+            'category_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -505,7 +507,9 @@ class ViewFilter(object):
             'view_metrics': 'viewMetrics',
             'timeline_categories': 'timelineCategories',
             'acw': 'acw',
-            'segment_types': 'segmentTypes'
+            'segment_types': 'segmentTypes',
+            'program_ids': 'programIds',
+            'category_ids': 'categoryIds'
         }
 
         self._media_types = None
@@ -732,6 +736,8 @@ class ViewFilter(object):
         self._timeline_categories = None
         self._acw = None
         self._segment_types = None
+        self._program_ids = None
+        self._category_ids = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6138,6 +6144,54 @@ class ViewFilter(object):
         
 
         self._segment_types = segment_types
+
+    @property
+    def program_ids(self) -> List[str]:
+        """
+        Gets the program_ids of this ViewFilter.
+        A list of program ids for filtering
+
+        :return: The program_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._program_ids
+
+    @program_ids.setter
+    def program_ids(self, program_ids: List[str]) -> None:
+        """
+        Sets the program_ids of this ViewFilter.
+        A list of program ids for filtering
+
+        :param program_ids: The program_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._program_ids = program_ids
+
+    @property
+    def category_ids(self) -> List[str]:
+        """
+        Gets the category_ids of this ViewFilter.
+        A list of category ids for filtering
+
+        :return: The category_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._category_ids
+
+    @category_ids.setter
+    def category_ids(self, category_ids: List[str]) -> None:
+        """
+        Sets the category_ids of this ViewFilter.
+        A list of category ids for filtering
+
+        :param category_ids: The category_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._category_ids = category_ids
 
     def to_dict(self):
         """

@@ -58,6 +58,7 @@ class ResponseSet(object):
             'responses': 'dict(str, Reaction)',
             'beep_detection_enabled': 'bool',
             'amd_speech_distinguish_enabled': 'bool',
+            'live_speaker_detection_mode': 'str',
             'self_uri': 'str'
         }
 
@@ -70,6 +71,7 @@ class ResponseSet(object):
             'responses': 'responses',
             'beep_detection_enabled': 'beepDetectionEnabled',
             'amd_speech_distinguish_enabled': 'amdSpeechDistinguishEnabled',
+            'live_speaker_detection_mode': 'liveSpeakerDetectionMode',
             'self_uri': 'selfUri'
         }
 
@@ -81,6 +83,7 @@ class ResponseSet(object):
         self._responses = None
         self._beep_detection_enabled = None
         self._amd_speech_distinguish_enabled = None
+        self._live_speaker_detection_mode = None
         self._self_uri = None
 
     @property
@@ -274,6 +277,35 @@ class ResponseSet(object):
         
 
         self._amd_speech_distinguish_enabled = amd_speech_distinguish_enabled
+
+    @property
+    def live_speaker_detection_mode(self) -> str:
+        """
+        Gets the live_speaker_detection_mode of this ResponseSet.
+        Setting level of live speaker detection based on ringbacks
+
+        :return: The live_speaker_detection_mode of this ResponseSet.
+        :rtype: str
+        """
+        return self._live_speaker_detection_mode
+
+    @live_speaker_detection_mode.setter
+    def live_speaker_detection_mode(self, live_speaker_detection_mode: str) -> None:
+        """
+        Sets the live_speaker_detection_mode of this ResponseSet.
+        Setting level of live speaker detection based on ringbacks
+
+        :param live_speaker_detection_mode: The live_speaker_detection_mode of this ResponseSet.
+        :type: str
+        """
+        if isinstance(live_speaker_detection_mode, int):
+            live_speaker_detection_mode = str(live_speaker_detection_mode)
+        allowed_values = ["Disabled", "Low", "Medium", "High"]
+        if live_speaker_detection_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for live_speaker_detection_mode -> " + live_speaker_detection_mode)
+            self._live_speaker_detection_mode = "outdated_sdk_version"
+        else:
+            self._live_speaker_detection_mode = live_speaker_detection_mode
 
     @property
     def self_uri(self) -> str:

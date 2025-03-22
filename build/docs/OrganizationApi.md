@@ -15,9 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_organizations_limits_docs**](#get_organizations_limits_docs) | Get limit documentation|
 |[**get_organizations_limits_docs_freetrial**](#get_organizations_limits_docs_freetrial) | Get free trial limit documentation|
 |[**get_organizations_limits_namespace**](#get_organizations_limits_namespace) | Get the effective limits in a namespace for an organization|
-|[**get_organizations_limits_namespace_counts**](#get_organizations_limits_namespace_counts) | Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.|
 |[**get_organizations_limits_namespace_defaults**](#get_organizations_limits_namespace_defaults) | Get the default limits in a namespace for an organization|
-|[**get_organizations_limits_namespace_limit_counts**](#get_organizations_limits_namespace_limit_counts) | Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.|
 |[**get_organizations_limits_namespaces**](#get_organizations_limits_namespaces) | Get the available limit namespaces|
 |[**get_organizations_me**](#get_organizations_me) | Get organization.|
 |[**get_organizations_whitelist**](#get_organizations_whitelist) | This route is deprecated, please use /api/v2/organizations/authentication/settings instead|
@@ -460,65 +458,6 @@ except ApiException as e:
 [**LimitsEntityListing**](LimitsEntityListing)
 
 
-## get_organizations_limits_namespace_counts
-
-> [**LimitCountListing**](LimitCountListing) get_organizations_limits_namespace_counts(namespace_name, cursor=cursor, entity_id=entity_id, user_id=user_id)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-
-See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-
-Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/counts 
-
-Requires ANY permissions: 
-
-* limits:count:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.OrganizationApi()
-namespace_name = 'namespace_name_example' # str | The namespace to get
-cursor = 'cursor_example' # str | Cursor provided when retrieving the last page (optional)
-entity_id = 'entity_id_example' # str | entity id of the count (optional)
-user_id = 'user_id_example' # str | userid of the count (optional)
-
-try:
-    # Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-    api_response = api_instance.get_organizations_limits_namespace_counts(namespace_name, cursor=cursor, entity_id=entity_id, user_id=user_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganizationApi->get_organizations_limits_namespace_counts: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **namespace_name** | **str**| The namespace to get |  |
-| **cursor** | **str**| Cursor provided when retrieving the last page | [optional]  |
-| **entity_id** | **str**| entity id of the count | [optional]  |
-| **user_id** | **str**| userid of the count | [optional]  |
-
-### Return type
-
-[**LimitCountListing**](LimitCountListing)
-
-
 ## get_organizations_limits_namespace_defaults
 
 > [**LimitsEntityListing**](LimitsEntityListing) get_organizations_limits_namespace_defaults(namespace_name)
@@ -564,67 +503,6 @@ except ApiException as e:
 ### Return type
 
 [**LimitsEntityListing**](LimitsEntityListing)
-
-
-## get_organizations_limits_namespace_limit_counts
-
-> [**LimitCountListing**](LimitCountListing) get_organizations_limits_namespace_limit_counts(namespace_name, limit_name, entity_id=entity_id, user_id=user_id, cursor=cursor)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-
-See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
-
-Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts 
-
-Requires ANY permissions: 
-
-* limits:count:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.OrganizationApi()
-namespace_name = 'namespace_name_example' # str | The namespace to get
-limit_name = 'limit_name_example' # str | The limit to get
-entity_id = 'entity_id_example' # str | entity id of the count (optional)
-user_id = 'user_id_example' # str | userid of the count (optional)
-cursor = 'cursor_example' # str | Cursor provided when retrieving the last page (optional)
-
-try:
-    # Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
-    api_response = api_instance.get_organizations_limits_namespace_limit_counts(namespace_name, limit_name, entity_id=entity_id, user_id=user_id, cursor=cursor)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganizationApi->get_organizations_limits_namespace_limit_counts: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **namespace_name** | **str**| The namespace to get |  |
-| **limit_name** | **str**| The limit to get |  |
-| **entity_id** | **str**| entity id of the count | [optional]  |
-| **user_id** | **str**| userid of the count | [optional]  |
-| **cursor** | **str**| Cursor provided when retrieving the last page | [optional]  |
-
-### Return type
-
-[**LimitCountListing**](LimitCountListing)
 
 
 ## get_organizations_limits_namespaces
@@ -1068,4 +946,4 @@ except ApiException as e:
 [**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

@@ -3513,7 +3513,6 @@ class KnowledgeApi(object):
         """
         Get document content upload status
         
-	    get_knowledge_knowledgebase_language_document_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7986,7 +7985,6 @@ class KnowledgeApi(object):
         """
         Bulk remove documents.
         
-	    post_knowledge_knowledgebase_documents_bulk_remove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8071,7 +8069,6 @@ class KnowledgeApi(object):
         """
         Bulk update documents.
         
-	    post_knowledge_knowledgebase_documents_bulk_update is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8486,7 +8483,6 @@ class KnowledgeApi(object):
         """
         Bulk add document versions.
         
-	    post_knowledge_knowledgebase_documents_versions_bulk_add is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8915,7 +8911,6 @@ class KnowledgeApi(object):
         """
         Upload Article Content
         
-	    post_knowledge_knowledgebase_language_document_uploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

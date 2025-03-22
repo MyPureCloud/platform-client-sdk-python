@@ -51,16 +51,19 @@ class KnowledgeExportJobFilter(object):
         """
         self.swagger_types = {
             'documents_filter': 'KnowledgeExportJobDocumentsFilter',
-            'version_filter': 'str'
+            'version_filter': 'str',
+            'exclude': 'list[str]'
         }
 
         self.attribute_map = {
             'documents_filter': 'documentsFilter',
-            'version_filter': 'versionFilter'
+            'version_filter': 'versionFilter',
+            'exclude': 'exclude'
         }
 
         self._documents_filter = None
         self._version_filter = None
+        self._exclude = None
 
     @property
     def documents_filter(self) -> 'KnowledgeExportJobDocumentsFilter':
@@ -114,6 +117,30 @@ class KnowledgeExportJobFilter(object):
             self._version_filter = "outdated_sdk_version"
         else:
             self._version_filter = version_filter
+
+    @property
+    def exclude(self) -> List[str]:
+        """
+        Gets the exclude of this KnowledgeExportJobFilter.
+        Reduce the size of the export file by excluding certain items.
+
+        :return: The exclude of this KnowledgeExportJobFilter.
+        :rtype: list[str]
+        """
+        return self._exclude
+
+    @exclude.setter
+    def exclude(self, exclude: List[str]) -> None:
+        """
+        Sets the exclude of this KnowledgeExportJobFilter.
+        Reduce the size of the export file by excluding certain items.
+
+        :param exclude: The exclude of this KnowledgeExportJobFilter.
+        :type: list[str]
+        """
+        
+
+        self._exclude = exclude
 
     def to_dict(self):
         """

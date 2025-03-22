@@ -3681,12 +3681,13 @@ class TelephonyProvidersEdgeApi(object):
         :param int page_number: Page number
         :param str sort_by: Sort by
         :param str number: Deprecated, filtering by number not supported
+        :param list[str] division_id: List of divisionIds on which to filter.
         :return: ExtensionPoolEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'number']
+        all_params = ['page_size', 'page_number', 'sort_by', 'number', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3713,6 +3714,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'number' in params:
             query_params['number'] = params['number']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 

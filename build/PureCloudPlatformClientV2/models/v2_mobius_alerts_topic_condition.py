@@ -51,20 +51,20 @@ class V2MobiusAlertsTopicCondition(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'conditions': 'list[V2MobiusAlertsTopicCondition]',
+            'clauses': 'list[V2MobiusAlertsTopicCondition]',
             'predicates': 'list[V2MobiusAlertsTopicConditionRulePredicate]',
             'type': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'conditions': 'conditions',
+            'clauses': 'clauses',
             'predicates': 'predicates',
             'type': 'type'
         }
 
         self._id = None
-        self._conditions = None
+        self._clauses = None
         self._predicates = None
         self._type = None
 
@@ -93,28 +93,28 @@ class V2MobiusAlertsTopicCondition(object):
         self._id = id
 
     @property
-    def conditions(self) -> List['V2MobiusAlertsTopicCondition']:
+    def clauses(self) -> List['V2MobiusAlertsTopicCondition']:
         """
-        Gets the conditions of this V2MobiusAlertsTopicCondition.
+        Gets the clauses of this V2MobiusAlertsTopicCondition.
 
 
-        :return: The conditions of this V2MobiusAlertsTopicCondition.
+        :return: The clauses of this V2MobiusAlertsTopicCondition.
         :rtype: list[V2MobiusAlertsTopicCondition]
         """
-        return self._conditions
+        return self._clauses
 
-    @conditions.setter
-    def conditions(self, conditions: List['V2MobiusAlertsTopicCondition']) -> None:
+    @clauses.setter
+    def clauses(self, clauses: List['V2MobiusAlertsTopicCondition']) -> None:
         """
-        Sets the conditions of this V2MobiusAlertsTopicCondition.
+        Sets the clauses of this V2MobiusAlertsTopicCondition.
 
 
-        :param conditions: The conditions of this V2MobiusAlertsTopicCondition.
+        :param clauses: The clauses of this V2MobiusAlertsTopicCondition.
         :type: list[V2MobiusAlertsTopicCondition]
         """
         
 
-        self._conditions = conditions
+        self._clauses = clauses
 
     @property
     def predicates(self) -> List['V2MobiusAlertsTopicConditionRulePredicate']:

@@ -8,7 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **documents_filter** | [KnowledgeExportJobDocumentsFilter](KnowledgeExportJobDocumentsFilter) | Filters for narrowing down which documents to export. | [optional] |
 | **version_filter** | str | Specifies what version should be exported. | |
+| **exclude** | list[str] | Reduce the size of the export file by excluding certain items. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

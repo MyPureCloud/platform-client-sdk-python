@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import AiAnswer
 
 class EvaluationQuestionScore(object):
     """
@@ -55,7 +57,8 @@ class EvaluationQuestionScore(object):
             'system_marked_na': 'bool',
             'assisted_answer_id': 'str',
             'failed_kill_question': 'bool',
-            'comments': 'str'
+            'comments': 'str',
+            'ai_answer': 'AiAnswer'
         }
 
         self.attribute_map = {
@@ -66,7 +69,8 @@ class EvaluationQuestionScore(object):
             'system_marked_na': 'systemMarkedNA',
             'assisted_answer_id': 'assistedAnswerId',
             'failed_kill_question': 'failedKillQuestion',
-            'comments': 'comments'
+            'comments': 'comments',
+            'ai_answer': 'aiAnswer'
         }
 
         self._question_id = None
@@ -77,6 +81,7 @@ class EvaluationQuestionScore(object):
         self._assisted_answer_id = None
         self._failed_kill_question = None
         self._comments = None
+        self._ai_answer = None
 
     @property
     def question_id(self) -> str:
@@ -269,6 +274,30 @@ class EvaluationQuestionScore(object):
         
 
         self._comments = comments
+
+    @property
+    def ai_answer(self) -> 'AiAnswer':
+        """
+        Gets the ai_answer of this EvaluationQuestionScore.
+        Suggested AI answer
+
+        :return: The ai_answer of this EvaluationQuestionScore.
+        :rtype: AiAnswer
+        """
+        return self._ai_answer
+
+    @ai_answer.setter
+    def ai_answer(self, ai_answer: 'AiAnswer') -> None:
+        """
+        Sets the ai_answer of this EvaluationQuestionScore.
+        Suggested AI answer
+
+        :param ai_answer: The ai_answer of this EvaluationQuestionScore.
+        :type: AiAnswer
+        """
+        
+
+        self._ai_answer = ai_answer
 
     def to_dict(self):
         """

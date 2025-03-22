@@ -5055,7 +5055,6 @@ class QualityApi(object):
         """
         Update the AI Scoring settings of an evaluation form.
         
-	    put_quality_forms_evaluation_aiscoring_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

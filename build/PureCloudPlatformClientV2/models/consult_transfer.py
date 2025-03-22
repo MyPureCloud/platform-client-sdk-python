@@ -69,7 +69,7 @@ class ConsultTransfer(object):
     def speak_to(self) -> str:
         """
         Gets the speak_to of this ConsultTransfer.
-        Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+        Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
 
         :return: The speak_to of this ConsultTransfer.
         :rtype: str
@@ -80,7 +80,7 @@ class ConsultTransfer(object):
     def speak_to(self, speak_to: str) -> None:
         """
         Sets the speak_to of this ConsultTransfer.
-        Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+        Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
 
         :param speak_to: The speak_to of this ConsultTransfer.
         :type: str
@@ -122,7 +122,7 @@ class ConsultTransfer(object):
     def destination(self) -> 'Destination':
         """
         Gets the destination of this ConsultTransfer.
-        Destination phone number and name.
+        Destination. Specify one and only one parameter from the list below.
 
         :return: The destination of this ConsultTransfer.
         :rtype: Destination
@@ -133,7 +133,7 @@ class ConsultTransfer(object):
     def destination(self, destination: 'Destination') -> None:
         """
         Sets the destination of this ConsultTransfer.
-        Destination phone number and name.
+        Destination. Specify one and only one parameter from the list below.
 
         :param destination: The destination of this ConsultTransfer.
         :type: Destination

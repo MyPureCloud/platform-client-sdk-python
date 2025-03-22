@@ -51,6 +51,7 @@ class LogCaptureUserConfiguration(object):
             'id': 'str',
             'date_started': 'datetime',
             'date_expired': 'datetime',
+            'capture_method': 'str',
             'self_uri': 'str'
         }
 
@@ -58,12 +59,14 @@ class LogCaptureUserConfiguration(object):
             'id': 'id',
             'date_started': 'dateStarted',
             'date_expired': 'dateExpired',
+            'capture_method': 'captureMethod',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._date_started = None
         self._date_expired = None
+        self._capture_method = None
         self._self_uri = None
 
     @property
@@ -137,6 +140,35 @@ class LogCaptureUserConfiguration(object):
         
 
         self._date_expired = date_expired
+
+    @property
+    def capture_method(self) -> str:
+        """
+        Gets the capture_method of this LogCaptureUserConfiguration.
+        Indicates the method by which the logs were captured.
+
+        :return: The capture_method of this LogCaptureUserConfiguration.
+        :rtype: str
+        """
+        return self._capture_method
+
+    @capture_method.setter
+    def capture_method(self, capture_method: str) -> None:
+        """
+        Sets the capture_method of this LogCaptureUserConfiguration.
+        Indicates the method by which the logs were captured.
+
+        :param capture_method: The capture_method of this LogCaptureUserConfiguration.
+        :type: str
+        """
+        if isinstance(capture_method, int):
+            capture_method = str(capture_method)
+        allowed_values = ["OnDemand", "Scheduled"]
+        if capture_method.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for capture_method -> " + capture_method)
+            self._capture_method = "outdated_sdk_version"
+        else:
+            self._capture_method = capture_method
 
     @property
     def self_uri(self) -> str:

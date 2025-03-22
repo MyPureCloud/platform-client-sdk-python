@@ -53,7 +53,8 @@ class WorkitemStatusUpdate(object):
             'description': 'str',
             'default_destination_status_id': 'str',
             'status_transition_delay_seconds': 'int',
-            'status_transition_time': 'str'
+            'status_transition_time': 'str',
+            'auto_terminate_workitem': 'bool'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class WorkitemStatusUpdate(object):
             'description': 'description',
             'default_destination_status_id': 'defaultDestinationStatusId',
             'status_transition_delay_seconds': 'statusTransitionDelaySeconds',
-            'status_transition_time': 'statusTransitionTime'
+            'status_transition_time': 'statusTransitionTime',
+            'auto_terminate_workitem': 'autoTerminateWorkitem'
         }
 
         self._name = None
@@ -71,6 +73,7 @@ class WorkitemStatusUpdate(object):
         self._default_destination_status_id = None
         self._status_transition_delay_seconds = None
         self._status_transition_time = None
+        self._auto_terminate_workitem = None
 
     @property
     def name(self) -> str:
@@ -215,6 +218,30 @@ class WorkitemStatusUpdate(object):
         
 
         self._status_transition_time = status_transition_time
+
+    @property
+    def auto_terminate_workitem(self) -> bool:
+        """
+        Gets the auto_terminate_workitem of this WorkitemStatusUpdate.
+        Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
+
+        :return: The auto_terminate_workitem of this WorkitemStatusUpdate.
+        :rtype: bool
+        """
+        return self._auto_terminate_workitem
+
+    @auto_terminate_workitem.setter
+    def auto_terminate_workitem(self, auto_terminate_workitem: bool) -> None:
+        """
+        Sets the auto_terminate_workitem of this WorkitemStatusUpdate.
+        Terminate workitem on selection of status. Applicable only for statuses in the Closed category.
+
+        :param auto_terminate_workitem: The auto_terminate_workitem of this WorkitemStatusUpdate.
+        :type: bool
+        """
+        
+
+        self._auto_terminate_workitem = auto_terminate_workitem
 
     def to_dict(self):
         """

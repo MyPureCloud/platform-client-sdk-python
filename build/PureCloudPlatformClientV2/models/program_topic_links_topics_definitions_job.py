@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ProgramTopicLinksTestTopicPhraseResults
 
 class ProgramTopicLinksTopicsDefinitionsJob(object):
     """
@@ -49,16 +51,19 @@ class ProgramTopicLinksTopicsDefinitionsJob(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'state': 'str'
+            'state': 'str',
+            'test_topic_phrase_results': 'list[ProgramTopicLinksTestTopicPhraseResults]'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'state': 'state'
+            'state': 'state',
+            'test_topic_phrase_results': 'testTopicPhraseResults'
         }
 
         self._id = None
         self._state = None
+        self._test_topic_phrase_results = None
 
     @property
     def id(self) -> str:
@@ -106,12 +111,36 @@ class ProgramTopicLinksTopicsDefinitionsJob(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["Completed", "Failed"]
+        allowed_values = ["Completed", "Running", "Failed"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def test_topic_phrase_results(self) -> List['ProgramTopicLinksTestTopicPhraseResults']:
+        """
+        Gets the test_topic_phrase_results of this ProgramTopicLinksTopicsDefinitionsJob.
+
+
+        :return: The test_topic_phrase_results of this ProgramTopicLinksTopicsDefinitionsJob.
+        :rtype: list[ProgramTopicLinksTestTopicPhraseResults]
+        """
+        return self._test_topic_phrase_results
+
+    @test_topic_phrase_results.setter
+    def test_topic_phrase_results(self, test_topic_phrase_results: List['ProgramTopicLinksTestTopicPhraseResults']) -> None:
+        """
+        Sets the test_topic_phrase_results of this ProgramTopicLinksTopicsDefinitionsJob.
+
+
+        :param test_topic_phrase_results: The test_topic_phrase_results of this ProgramTopicLinksTopicsDefinitionsJob.
+        :type: list[ProgramTopicLinksTestTopicPhraseResults]
+        """
+        
+
+        self._test_topic_phrase_results = test_topic_phrase_results
 
     def to_dict(self):
         """

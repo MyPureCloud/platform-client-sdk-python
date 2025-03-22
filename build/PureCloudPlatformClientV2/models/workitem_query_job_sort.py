@@ -82,7 +82,7 @@ class WorkitemQueryJobSort(object):
         """
         if isinstance(name, int):
             name = str(name)
-        allowed_values = ["dateDue", "priority"]
+        allowed_values = ["dateDue", "dateCreated", "priority"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"

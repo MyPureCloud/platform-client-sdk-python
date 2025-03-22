@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import PublishTopicTestTopicPhraseResults
 
 class PublishTopicTopicsDefinitionsJob(object):
     """
@@ -49,16 +51,19 @@ class PublishTopicTopicsDefinitionsJob(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'state': 'str'
+            'state': 'str',
+            'test_topic_phrase_results': 'list[PublishTopicTestTopicPhraseResults]'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'state': 'state'
+            'state': 'state',
+            'test_topic_phrase_results': 'testTopicPhraseResults'
         }
 
         self._id = None
         self._state = None
+        self._test_topic_phrase_results = None
 
     @property
     def id(self) -> str:
@@ -106,12 +111,36 @@ class PublishTopicTopicsDefinitionsJob(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["Completed", "Failed"]
+        allowed_values = ["Completed", "Running", "Failed"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def test_topic_phrase_results(self) -> List['PublishTopicTestTopicPhraseResults']:
+        """
+        Gets the test_topic_phrase_results of this PublishTopicTopicsDefinitionsJob.
+
+
+        :return: The test_topic_phrase_results of this PublishTopicTopicsDefinitionsJob.
+        :rtype: list[PublishTopicTestTopicPhraseResults]
+        """
+        return self._test_topic_phrase_results
+
+    @test_topic_phrase_results.setter
+    def test_topic_phrase_results(self, test_topic_phrase_results: List['PublishTopicTestTopicPhraseResults']) -> None:
+        """
+        Sets the test_topic_phrase_results of this PublishTopicTopicsDefinitionsJob.
+
+
+        :param test_topic_phrase_results: The test_topic_phrase_results of this PublishTopicTopicsDefinitionsJob.
+        :type: list[PublishTopicTestTopicPhraseResults]
+        """
+        
+
+        self._test_topic_phrase_results = test_topic_phrase_results
 
     def to_dict(self):
         """

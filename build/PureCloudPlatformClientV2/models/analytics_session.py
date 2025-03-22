@@ -77,6 +77,7 @@ class AnalyticsSession(object):
             'coached_participant_id': 'str',
             'cobrowse_role': 'str',
             'cobrowse_room_id': 'str',
+            'delivery_pushed': 'bool',
             'delivery_status': 'str',
             'delivery_status_change_date': 'datetime',
             'destination_addresses': 'list[str]',
@@ -163,6 +164,7 @@ class AnalyticsSession(object):
             'coached_participant_id': 'coachedParticipantId',
             'cobrowse_role': 'cobrowseRole',
             'cobrowse_room_id': 'cobrowseRoomId',
+            'delivery_pushed': 'deliveryPushed',
             'delivery_status': 'deliveryStatus',
             'delivery_status_change_date': 'deliveryStatusChangeDate',
             'destination_addresses': 'destinationAddresses',
@@ -248,6 +250,7 @@ class AnalyticsSession(object):
         self._coached_participant_id = None
         self._cobrowse_role = None
         self._cobrowse_room_id = None
+        self._delivery_pushed = None
         self._delivery_status = None
         self._delivery_status_change_date = None
         self._destination_addresses = None
@@ -837,6 +840,30 @@ class AnalyticsSession(object):
         
 
         self._cobrowse_room_id = cobrowse_room_id
+
+    @property
+    def delivery_pushed(self) -> bool:
+        """
+        Gets the delivery_pushed of this AnalyticsSession.
+        Flag that indicates that the push delivery mechanism was used
+
+        :return: The delivery_pushed of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._delivery_pushed
+
+    @delivery_pushed.setter
+    def delivery_pushed(self, delivery_pushed: bool) -> None:
+        """
+        Sets the delivery_pushed of this AnalyticsSession.
+        Flag that indicates that the push delivery mechanism was used
+
+        :param delivery_pushed: The delivery_pushed of this AnalyticsSession.
+        :type: bool
+        """
+        
+
+        self._delivery_pushed = delivery_pushed
 
     @property
     def delivery_status(self) -> str:

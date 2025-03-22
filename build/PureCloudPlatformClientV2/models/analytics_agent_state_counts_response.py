@@ -50,38 +50,38 @@ class AnalyticsAgentStateCountsResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'counts': 'list[AgentStateSegmentTypeCount]'
+            'segment_counts': 'list[AgentStateSegmentTypeCount]'
         }
 
         self.attribute_map = {
-            'counts': 'counts'
+            'segment_counts': 'segmentCounts'
         }
 
-        self._counts = None
+        self._segment_counts = None
 
     @property
-    def counts(self) -> List['AgentStateSegmentTypeCount']:
+    def segment_counts(self) -> List['AgentStateSegmentTypeCount']:
         """
-        Gets the counts of this AnalyticsAgentStateCountsResponse.
+        Gets the segment_counts of this AnalyticsAgentStateCountsResponse.
         List of count by segment types
 
-        :return: The counts of this AnalyticsAgentStateCountsResponse.
+        :return: The segment_counts of this AnalyticsAgentStateCountsResponse.
         :rtype: list[AgentStateSegmentTypeCount]
         """
-        return self._counts
+        return self._segment_counts
 
-    @counts.setter
-    def counts(self, counts: List['AgentStateSegmentTypeCount']) -> None:
+    @segment_counts.setter
+    def segment_counts(self, segment_counts: List['AgentStateSegmentTypeCount']) -> None:
         """
-        Sets the counts of this AnalyticsAgentStateCountsResponse.
+        Sets the segment_counts of this AnalyticsAgentStateCountsResponse.
         List of count by segment types
 
-        :param counts: The counts of this AnalyticsAgentStateCountsResponse.
+        :param segment_counts: The segment_counts of this AnalyticsAgentStateCountsResponse.
         :type: list[AgentStateSegmentTypeCount]
         """
         
 
-        self._counts = counts
+        self._segment_counts = segment_counts
 
     def to_dict(self):
         """

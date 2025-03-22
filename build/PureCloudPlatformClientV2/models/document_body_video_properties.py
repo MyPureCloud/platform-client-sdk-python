@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DocumentElementLength
 
 class DocumentBodyVideoProperties(object):
     """
@@ -50,18 +52,24 @@ class DocumentBodyVideoProperties(object):
         self.swagger_types = {
             'background_color': 'str',
             'align': 'str',
-            'indentation': 'float'
+            'indentation': 'float',
+            'width': 'DocumentElementLength',
+            'height': 'DocumentElementLength'
         }
 
         self.attribute_map = {
             'background_color': 'backgroundColor',
             'align': 'align',
-            'indentation': 'indentation'
+            'indentation': 'indentation',
+            'width': 'width',
+            'height': 'height'
         }
 
         self._background_color = None
         self._align = None
         self._indentation = None
+        self._width = None
+        self._height = None
 
     @property
     def background_color(self) -> str:
@@ -139,6 +147,54 @@ class DocumentBodyVideoProperties(object):
         
 
         self._indentation = indentation
+
+    @property
+    def width(self) -> 'DocumentElementLength':
+        """
+        Gets the width of this DocumentBodyVideoProperties.
+        The width of the video in the specified unit.
+
+        :return: The width of this DocumentBodyVideoProperties.
+        :rtype: DocumentElementLength
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width: 'DocumentElementLength') -> None:
+        """
+        Sets the width of this DocumentBodyVideoProperties.
+        The width of the video in the specified unit.
+
+        :param width: The width of this DocumentBodyVideoProperties.
+        :type: DocumentElementLength
+        """
+        
+
+        self._width = width
+
+    @property
+    def height(self) -> 'DocumentElementLength':
+        """
+        Gets the height of this DocumentBodyVideoProperties.
+        The height of the video in the specified unit.
+
+        :return: The height of this DocumentBodyVideoProperties.
+        :rtype: DocumentElementLength
+        """
+        return self._height
+
+    @height.setter
+    def height(self, height: 'DocumentElementLength') -> None:
+        """
+        Sets the height of this DocumentBodyVideoProperties.
+        The height of the video in the specified unit.
+
+        :param height: The height of this DocumentBodyVideoProperties.
+        :type: DocumentElementLength
+        """
+        
+
+        self._height = height
 
     def to_dict(self):
         """

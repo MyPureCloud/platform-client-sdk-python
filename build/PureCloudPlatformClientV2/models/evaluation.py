@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AiScoring
     from . import Calibration
     from . import ConversationReference
     from . import EvaluationForm
@@ -89,6 +90,7 @@ class Evaluation(object):
             'authorized_actions': 'list[str]',
             'has_assistance_failed': 'bool',
             'evaluation_source': 'EvaluationSource',
+            'ai_scoring': 'AiScoring',
             'self_uri': 'str'
         }
 
@@ -125,6 +127,7 @@ class Evaluation(object):
             'authorized_actions': 'authorizedActions',
             'has_assistance_failed': 'hasAssistanceFailed',
             'evaluation_source': 'evaluationSource',
+            'ai_scoring': 'aiScoring',
             'self_uri': 'selfUri'
         }
 
@@ -160,6 +163,7 @@ class Evaluation(object):
         self._authorized_actions = None
         self._has_assistance_failed = None
         self._evaluation_source = None
+        self._ai_scoring = None
         self._self_uri = None
 
     @property
@@ -939,6 +943,30 @@ class Evaluation(object):
         
 
         self._evaluation_source = evaluation_source
+
+    @property
+    def ai_scoring(self) -> 'AiScoring':
+        """
+        Gets the ai_scoring of this Evaluation.
+        AI scoring details for the evaluation.
+
+        :return: The ai_scoring of this Evaluation.
+        :rtype: AiScoring
+        """
+        return self._ai_scoring
+
+    @ai_scoring.setter
+    def ai_scoring(self, ai_scoring: 'AiScoring') -> None:
+        """
+        Sets the ai_scoring of this Evaluation.
+        AI scoring details for the evaluation.
+
+        :param ai_scoring: The ai_scoring of this Evaluation.
+        :type: AiScoring
+        """
+        
+
+        self._ai_scoring = ai_scoring
 
     @property
     def self_uri(self) -> str:

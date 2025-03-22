@@ -444,6 +444,9 @@ class WorkitemCommonCreate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', assignee_id):
+            raise ValueError("Invalid value for `assignee_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._assignee_id = assignee_id
 

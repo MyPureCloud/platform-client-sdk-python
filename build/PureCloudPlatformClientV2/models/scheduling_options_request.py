@@ -50,14 +50,20 @@ class SchedulingOptionsRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'no_forecast_options': 'SchedulingNoForecastOptionsRequest'
+            'no_forecast_options': 'SchedulingNoForecastOptionsRequest',
+            'activity_smoothing_type': 'str',
+            'induce_schedule_variability': 'bool'
         }
 
         self.attribute_map = {
-            'no_forecast_options': 'noForecastOptions'
+            'no_forecast_options': 'noForecastOptions',
+            'activity_smoothing_type': 'activitySmoothingType',
+            'induce_schedule_variability': 'induceScheduleVariability'
         }
 
         self._no_forecast_options = None
+        self._activity_smoothing_type = None
+        self._induce_schedule_variability = None
 
     @property
     def no_forecast_options(self) -> 'SchedulingNoForecastOptionsRequest':
@@ -82,6 +88,59 @@ class SchedulingOptionsRequest(object):
         
 
         self._no_forecast_options = no_forecast_options
+
+    @property
+    def activity_smoothing_type(self) -> str:
+        """
+        Gets the activity_smoothing_type of this SchedulingOptionsRequest.
+        Overrides the default BU level activity smoothing type for this schedule generation
+
+        :return: The activity_smoothing_type of this SchedulingOptionsRequest.
+        :rtype: str
+        """
+        return self._activity_smoothing_type
+
+    @activity_smoothing_type.setter
+    def activity_smoothing_type(self, activity_smoothing_type: str) -> None:
+        """
+        Sets the activity_smoothing_type of this SchedulingOptionsRequest.
+        Overrides the default BU level activity smoothing type for this schedule generation
+
+        :param activity_smoothing_type: The activity_smoothing_type of this SchedulingOptionsRequest.
+        :type: str
+        """
+        if isinstance(activity_smoothing_type, int):
+            activity_smoothing_type = str(activity_smoothing_type)
+        allowed_values = ["ReduceConcurrentActivitiesAcrossBu", "ReduceConcurrentActivitiesAcrossMu", "ConsistentServiceLevel"]
+        if activity_smoothing_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for activity_smoothing_type -> " + activity_smoothing_type)
+            self._activity_smoothing_type = "outdated_sdk_version"
+        else:
+            self._activity_smoothing_type = activity_smoothing_type
+
+    @property
+    def induce_schedule_variability(self) -> bool:
+        """
+        Gets the induce_schedule_variability of this SchedulingOptionsRequest.
+        Overrides the default BU level induce schedule variability setting for this schedule generation
+
+        :return: The induce_schedule_variability of this SchedulingOptionsRequest.
+        :rtype: bool
+        """
+        return self._induce_schedule_variability
+
+    @induce_schedule_variability.setter
+    def induce_schedule_variability(self, induce_schedule_variability: bool) -> None:
+        """
+        Sets the induce_schedule_variability of this SchedulingOptionsRequest.
+        Overrides the default BU level induce schedule variability setting for this schedule generation
+
+        :param induce_schedule_variability: The induce_schedule_variability of this SchedulingOptionsRequest.
+        :type: bool
+        """
+        
+
+        self._induce_schedule_variability = induce_schedule_variability
 
     def to_dict(self):
         """

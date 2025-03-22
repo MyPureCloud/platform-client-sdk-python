@@ -48,13 +48,97 @@ class AiScoring(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'failure_type': 'str',
+            'pending': 'bool',
+            'date_last_changed': 'datetime'
         }
 
         self.attribute_map = {
-            
+            'failure_type': 'failureType',
+            'pending': 'pending',
+            'date_last_changed': 'dateLastChanged'
         }
 
+        self._failure_type = None
+        self._pending = None
+        self._date_last_changed = None
+
+    @property
+    def failure_type(self) -> str:
+        """
+        Gets the failure_type of this AiScoring.
+        The type of error that occurred while processing AI scores. It is null where there is no error.
+
+        :return: The failure_type of this AiScoring.
+        :rtype: str
+        """
+        return self._failure_type
+
+    @failure_type.setter
+    def failure_type(self, failure_type: str) -> None:
+        """
+        Sets the failure_type of this AiScoring.
+        The type of error that occurred while processing AI scores. It is null where there is no error.
+
+        :param failure_type: The failure_type of this AiScoring.
+        :type: str
+        """
+        if isinstance(failure_type, int):
+            failure_type = str(failure_type)
+        allowed_values = ["QuotaReached", "ParsingError", "ServiceError", "InvalidRequest", "DuplicateFormSameAgent", "Unauthorized"]
+        if failure_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for failure_type -> " + failure_type)
+            self._failure_type = "outdated_sdk_version"
+        else:
+            self._failure_type = failure_type
+
+    @property
+    def pending(self) -> bool:
+        """
+        Gets the pending of this AiScoring.
+        Indicates whether AI scoring is currently processing the evaluation.
+
+        :return: The pending of this AiScoring.
+        :rtype: bool
+        """
+        return self._pending
+
+    @pending.setter
+    def pending(self, pending: bool) -> None:
+        """
+        Sets the pending of this AiScoring.
+        Indicates whether AI scoring is currently processing the evaluation.
+
+        :param pending: The pending of this AiScoring.
+        :type: bool
+        """
+        
+
+        self._pending = pending
+
+    @property
+    def date_last_changed(self) -> datetime:
+        """
+        Gets the date_last_changed of this AiScoring.
+        The date when the AI scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_last_changed of this AiScoring.
+        :rtype: datetime
+        """
+        return self._date_last_changed
+
+    @date_last_changed.setter
+    def date_last_changed(self, date_last_changed: datetime) -> None:
+        """
+        Sets the date_last_changed of this AiScoring.
+        The date when the AI scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_last_changed: The date_last_changed of this AiScoring.
+        :type: datetime
+        """
+        
+
+        self._date_last_changed = date_last_changed
 
     def to_dict(self):
         """

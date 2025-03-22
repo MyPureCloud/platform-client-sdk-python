@@ -57,7 +57,8 @@ class CollaborateChatGroupMessageEventTopicCollaborateChatMessage(object):
             'pcFrom': 'CollaborateChatGroupMessageEventTopicCollaborateChatEntity',
             'to': 'CollaborateChatGroupMessageEventTopicCollaborateChatEntity',
             'mentions': 'list[CollaborateChatGroupMessageEventTopicCollaborateChatEntity]',
-            'notify_all': 'bool'
+            'notify_all': 'bool',
+            'reactions': 'dict(str, list[str])'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class CollaborateChatGroupMessageEventTopicCollaborateChatMessage(object):
             'pcFrom': 'from',
             'to': 'to',
             'mentions': 'mentions',
-            'notify_all': 'notifyAll'
+            'notify_all': 'notifyAll',
+            'reactions': 'reactions'
         }
 
         self._message_id = None
@@ -79,6 +81,7 @@ class CollaborateChatGroupMessageEventTopicCollaborateChatMessage(object):
         self._to = None
         self._mentions = None
         self._notify_all = None
+        self._reactions = None
 
     @property
     def message_id(self) -> str:
@@ -276,6 +279,30 @@ class CollaborateChatGroupMessageEventTopicCollaborateChatMessage(object):
         
 
         self._notify_all = notify_all
+
+    @property
+    def reactions(self) -> List[str]:
+        """
+        Gets the reactions of this CollaborateChatGroupMessageEventTopicCollaborateChatMessage.
+
+
+        :return: The reactions of this CollaborateChatGroupMessageEventTopicCollaborateChatMessage.
+        :rtype: dict(str, list[str])
+        """
+        return self._reactions
+
+    @reactions.setter
+    def reactions(self, reactions: List[str]) -> None:
+        """
+        Sets the reactions of this CollaborateChatGroupMessageEventTopicCollaborateChatMessage.
+
+
+        :param reactions: The reactions of this CollaborateChatGroupMessageEventTopicCollaborateChatMessage.
+        :type: dict(str, list[str])
+        """
+        
+
+        self._reactions = reactions
 
     def to_dict(self):
         """

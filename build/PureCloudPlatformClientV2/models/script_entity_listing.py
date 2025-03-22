@@ -54,6 +54,7 @@ class ScriptEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
+            'truncated_divisions': 'bool',
             'first_uri': 'str',
             'last_uri': 'str',
             'self_uri': 'str',
@@ -67,6 +68,7 @@ class ScriptEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
+            'truncated_divisions': 'truncatedDivisions',
             'first_uri': 'firstUri',
             'last_uri': 'lastUri',
             'self_uri': 'selfUri',
@@ -79,6 +81,7 @@ class ScriptEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
+        self._truncated_divisions = None
         self._first_uri = None
         self._last_uri = None
         self._self_uri = None
@@ -181,6 +184,30 @@ class ScriptEntityListing(object):
         
 
         self._total = total
+
+    @property
+    def truncated_divisions(self) -> bool:
+        """
+        Gets the truncated_divisions of this ScriptEntityListing.
+
+
+        :return: The truncated_divisions of this ScriptEntityListing.
+        :rtype: bool
+        """
+        return self._truncated_divisions
+
+    @truncated_divisions.setter
+    def truncated_divisions(self, truncated_divisions: bool) -> None:
+        """
+        Sets the truncated_divisions of this ScriptEntityListing.
+
+
+        :param truncated_divisions: The truncated_divisions of this ScriptEntityListing.
+        :type: bool
+        """
+        
+
+        self._truncated_divisions = truncated_divisions
 
     @property
     def first_uri(self) -> str:

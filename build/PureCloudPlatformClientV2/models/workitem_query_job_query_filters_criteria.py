@@ -95,7 +95,7 @@ class WorkitemQueryJobQueryFiltersCriteria(object):
     def predicates(self) -> List['WorkitemQueryJobQueryFiltersPredicate']:
         """
         Gets the predicates of this WorkitemQueryJobQueryFiltersCriteria.
-        Query filter predicate.
+        Query filter predicates. Number of predicates within the query filter should be between 1 and 5.
 
         :return: The predicates of this WorkitemQueryJobQueryFiltersCriteria.
         :rtype: list[WorkitemQueryJobQueryFiltersPredicate]
@@ -106,7 +106,7 @@ class WorkitemQueryJobQueryFiltersCriteria(object):
     def predicates(self, predicates: List['WorkitemQueryJobQueryFiltersPredicate']) -> None:
         """
         Sets the predicates of this WorkitemQueryJobQueryFiltersCriteria.
-        Query filter predicate.
+        Query filter predicates. Number of predicates within the query filter should be between 1 and 5.
 
         :param predicates: The predicates of this WorkitemQueryJobQueryFiltersCriteria.
         :type: list[WorkitemQueryJobQueryFiltersPredicate]

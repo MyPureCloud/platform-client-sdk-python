@@ -38,8 +38,9 @@
 | **authorized_actions** | list[str] | List of user authorized actions on evaluation. Possible values: assign, edit, editScore, editAgentSignoff, delete, release, viewAudit | [optional] |
 | **has_assistance_failed** | bool | Is true when evaluation assistance didn&#39;t execute successfully | [optional] |
 | **evaluation_source** | [EvaluationSource](EvaluationSource) | The source that created the evaluation. | [optional] |
+| **ai_scoring** | [AiScoring](AiScoring) | AI scoring details for the evaluation. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

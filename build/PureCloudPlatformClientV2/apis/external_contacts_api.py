@@ -62,6 +62,7 @@ from ..models import ContactImportJobStatusUpdateResponse
 from ..models import ContactImportSettings
 from ..models import ContactImportSettingsEntityListing
 from ..models import ContactListing
+from ..models import ContactsExport
 from ..models import ConversationAssociation
 from ..models import CsvJobRequest
 from ..models import CsvJobResponse
@@ -78,6 +79,7 @@ from ..models import CursorRelationshipListing
 from ..models import DataSchema
 from ..models import DataSchemaListing
 from ..models import ErrorBody
+from ..models import ExportListing
 from ..models import ExternalContact
 from ..models import ExternalOrganization
 from ..models import ExternalOrganizationListing
@@ -1491,6 +1493,165 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContactListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contacts_export(self, export_id: str, **kwargs) -> 'ContactsExport':
+        """
+        Get export for exportId
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_export(export_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str export_id: Export id (required)
+        :return: ContactsExport
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['export_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_export" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'export_id' is set
+        if ('export_id' not in params) or (params['export_id'] is None):
+            raise ValueError("Missing the required parameter `export_id` when calling `get_externalcontacts_contacts_export`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/exports/{exportId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'export_id' in params:
+            path_params['exportId'] = params['export_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactsExport',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contacts_exports(self, **kwargs) -> 'ExportListing':
+        """
+        List exports for organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_exports(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] division_ids: Division IDs of entities
+        :param str after: The cursor that points to the end of the set of entities
+        :param int page_size: Number of entities to return
+        :return: ExportListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['division_ids', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_exports" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/exports'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExportListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6075,6 +6236,84 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalContact',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_contacts_exports(self, body: 'ContactsExport', **kwargs) -> 'ContactsExport':
+        """
+        Create bulk export
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_contacts_exports(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactsExport body: Export (required)
+        :return: ContactsExport
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_contacts_exports" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_contacts_exports`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/exports'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactsExport',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -54,20 +54,26 @@ class BuSchedulingSettingsResponse(object):
             'message_severities': 'list[SchedulerMessageTypeSeverity]',
             'sync_time_off_properties': 'list[str]',
             'service_goal_impact': 'WfmServiceGoalImpactSettings',
-            'allow_work_plan_per_minute_granularity': 'bool'
+            'allow_work_plan_per_minute_granularity': 'bool',
+            'activity_smoothing_type': 'str',
+            'induce_schedule_variability': 'bool'
         }
 
         self.attribute_map = {
             'message_severities': 'messageSeverities',
             'sync_time_off_properties': 'syncTimeOffProperties',
             'service_goal_impact': 'serviceGoalImpact',
-            'allow_work_plan_per_minute_granularity': 'allowWorkPlanPerMinuteGranularity'
+            'allow_work_plan_per_minute_granularity': 'allowWorkPlanPerMinuteGranularity',
+            'activity_smoothing_type': 'activitySmoothingType',
+            'induce_schedule_variability': 'induceScheduleVariability'
         }
 
         self._message_severities = None
         self._sync_time_off_properties = None
         self._service_goal_impact = None
         self._allow_work_plan_per_minute_granularity = None
+        self._activity_smoothing_type = None
+        self._induce_schedule_variability = None
 
     @property
     def message_severities(self) -> List['SchedulerMessageTypeSeverity']:
@@ -164,6 +170,59 @@ class BuSchedulingSettingsResponse(object):
         
 
         self._allow_work_plan_per_minute_granularity = allow_work_plan_per_minute_granularity
+
+    @property
+    def activity_smoothing_type(self) -> str:
+        """
+        Gets the activity_smoothing_type of this BuSchedulingSettingsResponse.
+        The activity smoothing type for schedule generation in this business unit
+
+        :return: The activity_smoothing_type of this BuSchedulingSettingsResponse.
+        :rtype: str
+        """
+        return self._activity_smoothing_type
+
+    @activity_smoothing_type.setter
+    def activity_smoothing_type(self, activity_smoothing_type: str) -> None:
+        """
+        Sets the activity_smoothing_type of this BuSchedulingSettingsResponse.
+        The activity smoothing type for schedule generation in this business unit
+
+        :param activity_smoothing_type: The activity_smoothing_type of this BuSchedulingSettingsResponse.
+        :type: str
+        """
+        if isinstance(activity_smoothing_type, int):
+            activity_smoothing_type = str(activity_smoothing_type)
+        allowed_values = ["ReduceConcurrentActivitiesAcrossBu", "ReduceConcurrentActivitiesAcrossMu", "ConsistentServiceLevel"]
+        if activity_smoothing_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for activity_smoothing_type -> " + activity_smoothing_type)
+            self._activity_smoothing_type = "outdated_sdk_version"
+        else:
+            self._activity_smoothing_type = activity_smoothing_type
+
+    @property
+    def induce_schedule_variability(self) -> bool:
+        """
+        Gets the induce_schedule_variability of this BuSchedulingSettingsResponse.
+        Indicates whether to provide variability in schedule generation
+
+        :return: The induce_schedule_variability of this BuSchedulingSettingsResponse.
+        :rtype: bool
+        """
+        return self._induce_schedule_variability
+
+    @induce_schedule_variability.setter
+    def induce_schedule_variability(self, induce_schedule_variability: bool) -> None:
+        """
+        Sets the induce_schedule_variability of this BuSchedulingSettingsResponse.
+        Indicates whether to provide variability in schedule generation
+
+        :param induce_schedule_variability: The induce_schedule_variability of this BuSchedulingSettingsResponse.
+        :type: bool
+        """
+        
+
+        self._induce_schedule_variability = induce_schedule_variability
 
     def to_dict(self):
         """

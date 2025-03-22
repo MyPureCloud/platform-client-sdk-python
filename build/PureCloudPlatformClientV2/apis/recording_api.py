@@ -1114,12 +1114,13 @@ class RecordingApi(object):
         :param str format_id: The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
         :param list[str] media_formats: All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
         :param str locale: The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+        :param bool include_pause_annotations_for_screen_recordings: Include applicable Secure Pause annotations from all audio recordings to all screen recordings
         :return: list[Recording]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'max_wait_ms', 'format_id', 'media_formats', 'locale']
+        all_params = ['conversation_id', 'max_wait_ms', 'format_id', 'media_formats', 'locale', 'include_pause_annotations_for_screen_recordings']
         all_params.append('callback')
 
         params = locals()
@@ -1151,6 +1152,8 @@ class RecordingApi(object):
             query_params['mediaFormats'] = params['media_formats']
         if 'locale' in params:
             query_params['locale'] = params['locale']
+        if 'include_pause_annotations_for_screen_recordings' in params:
+            query_params['includePauseAnnotationsForScreenRecordings'] = params['include_pause_annotations_for_screen_recordings']
 
         header_params = {}
 

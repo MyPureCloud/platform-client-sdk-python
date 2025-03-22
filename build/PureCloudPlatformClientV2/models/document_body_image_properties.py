@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DocumentElementLength
 
 class DocumentBodyImageProperties(object):
     """
@@ -50,18 +52,27 @@ class DocumentBodyImageProperties(object):
         self.swagger_types = {
             'background_color': 'str',
             'align': 'str',
-            'indentation': 'float'
+            'indentation': 'float',
+            'width': 'float',
+            'width_with_unit': 'DocumentElementLength',
+            'alt_text': 'str'
         }
 
         self.attribute_map = {
             'background_color': 'backgroundColor',
             'align': 'align',
-            'indentation': 'indentation'
+            'indentation': 'indentation',
+            'width': 'width',
+            'width_with_unit': 'widthWithUnit',
+            'alt_text': 'altText'
         }
 
         self._background_color = None
         self._align = None
         self._indentation = None
+        self._width = None
+        self._width_with_unit = None
+        self._alt_text = None
 
     @property
     def background_color(self) -> str:
@@ -139,6 +150,78 @@ class DocumentBodyImageProperties(object):
         
 
         self._indentation = indentation
+
+    @property
+    def width(self) -> float:
+        """
+        Gets the width of this DocumentBodyImageProperties.
+        The width of the image converted to em unit.
+
+        :return: The width of this DocumentBodyImageProperties.
+        :rtype: float
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width: float) -> None:
+        """
+        Sets the width of this DocumentBodyImageProperties.
+        The width of the image converted to em unit.
+
+        :param width: The width of this DocumentBodyImageProperties.
+        :type: float
+        """
+        
+
+        self._width = width
+
+    @property
+    def width_with_unit(self) -> 'DocumentElementLength':
+        """
+        Gets the width_with_unit of this DocumentBodyImageProperties.
+        The width of the image in the specified unit.
+
+        :return: The width_with_unit of this DocumentBodyImageProperties.
+        :rtype: DocumentElementLength
+        """
+        return self._width_with_unit
+
+    @width_with_unit.setter
+    def width_with_unit(self, width_with_unit: 'DocumentElementLength') -> None:
+        """
+        Sets the width_with_unit of this DocumentBodyImageProperties.
+        The width of the image in the specified unit.
+
+        :param width_with_unit: The width_with_unit of this DocumentBodyImageProperties.
+        :type: DocumentElementLength
+        """
+        
+
+        self._width_with_unit = width_with_unit
+
+    @property
+    def alt_text(self) -> str:
+        """
+        Gets the alt_text of this DocumentBodyImageProperties.
+        Alternate text for the image for accessibility and when the image can't be loaded.
+
+        :return: The alt_text of this DocumentBodyImageProperties.
+        :rtype: str
+        """
+        return self._alt_text
+
+    @alt_text.setter
+    def alt_text(self, alt_text: str) -> None:
+        """
+        Sets the alt_text of this DocumentBodyImageProperties.
+        Alternate text for the image for accessibility and when the image can't be loaded.
+
+        :param alt_text: The alt_text of this DocumentBodyImageProperties.
+        :type: str
+        """
+        
+
+        self._alt_text = alt_text
 
     def to_dict(self):
         """

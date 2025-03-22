@@ -62,7 +62,6 @@ class ExternalOrganization(object):
             'division': 'WritableStarrableDivision',
             'company_type': 'str',
             'industry': 'str',
-            'primary_contact_id': 'str',
             'address': 'ContactAddress',
             'phone_number': 'PhoneNumber',
             'fax_number': 'PhoneNumber',
@@ -88,7 +87,6 @@ class ExternalOrganization(object):
             'division': 'division',
             'company_type': 'companyType',
             'industry': 'industry',
-            'primary_contact_id': 'primaryContactId',
             'address': 'address',
             'phone_number': 'phoneNumber',
             'fax_number': 'faxNumber',
@@ -113,7 +111,6 @@ class ExternalOrganization(object):
         self._division = None
         self._company_type = None
         self._industry = None
-        self._primary_contact_id = None
         self._address = None
         self._phone_number = None
         self._fax_number = None
@@ -251,30 +248,6 @@ class ExternalOrganization(object):
         
 
         self._industry = industry
-
-    @property
-    def primary_contact_id(self) -> str:
-        """
-        Gets the primary_contact_id of this ExternalOrganization.
-
-
-        :return: The primary_contact_id of this ExternalOrganization.
-        :rtype: str
-        """
-        return self._primary_contact_id
-
-    @primary_contact_id.setter
-    def primary_contact_id(self, primary_contact_id: str) -> None:
-        """
-        Sets the primary_contact_id of this ExternalOrganization.
-
-
-        :param primary_contact_id: The primary_contact_id of this ExternalOrganization.
-        :type: str
-        """
-        
-
-        self._primary_contact_id = primary_contact_id
 
     @property
     def address(self) -> 'ContactAddress':

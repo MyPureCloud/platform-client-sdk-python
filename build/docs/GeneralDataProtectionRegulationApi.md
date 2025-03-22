@@ -153,7 +153,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **search_type** | **str**| Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER |
+| **search_type** | **str**| Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER, FACEBOOK |
 | **search_value** | **str**| Search Value |  |
 
 ### Return type
@@ -211,4 +211,4 @@ except ApiException as e:
 [**GDPRRequest**](GDPRRequest)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

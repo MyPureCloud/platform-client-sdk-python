@@ -94,7 +94,7 @@ class Destination(object):
     def name(self) -> str:
         """
         Gets the name of this Destination.
-
+        The name of the internal user.
 
         :return: The name of this Destination.
         :rtype: str
@@ -105,7 +105,7 @@ class Destination(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this Destination.
-
+        The name of the internal user.
 
         :param name: The name of this Destination.
         :type: str
@@ -118,7 +118,7 @@ class Destination(object):
     def user_id(self) -> str:
         """
         Gets the user_id of this Destination.
-
+        The user ID.
 
         :return: The user_id of this Destination.
         :rtype: str
@@ -129,7 +129,7 @@ class Destination(object):
     def user_id(self, user_id: str) -> None:
         """
         Sets the user_id of this Destination.
-
+        The user ID.
 
         :param user_id: The user_id of this Destination.
         :type: str
@@ -142,7 +142,7 @@ class Destination(object):
     def queue_id(self) -> str:
         """
         Gets the queue_id of this Destination.
-
+        The queue ID.
 
         :return: The queue_id of this Destination.
         :rtype: str
@@ -153,7 +153,7 @@ class Destination(object):
     def queue_id(self, queue_id: str) -> None:
         """
         Sets the queue_id of this Destination.
-
+        The queue ID.
 
         :param queue_id: The queue_id of this Destination.
         :type: str

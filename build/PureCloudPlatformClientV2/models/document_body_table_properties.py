@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DocumentBodyTableCaptionBlock
+    from . import DocumentElementLength
 
 class DocumentBodyTableProperties(object):
     """
@@ -51,6 +52,7 @@ class DocumentBodyTableProperties(object):
         """
         self.swagger_types = {
             'width': 'float',
+            'width_with_unit': 'DocumentElementLength',
             'height': 'float',
             'cell_spacing': 'float',
             'cell_padding': 'float',
@@ -64,6 +66,7 @@ class DocumentBodyTableProperties(object):
 
         self.attribute_map = {
             'width': 'width',
+            'width_with_unit': 'widthWithUnit',
             'height': 'height',
             'cell_spacing': 'cellSpacing',
             'cell_padding': 'cellPadding',
@@ -76,6 +79,7 @@ class DocumentBodyTableProperties(object):
         }
 
         self._width = None
+        self._width_with_unit = None
         self._height = None
         self._cell_spacing = None
         self._cell_padding = None
@@ -109,6 +113,30 @@ class DocumentBodyTableProperties(object):
         
 
         self._width = width
+
+    @property
+    def width_with_unit(self) -> 'DocumentElementLength':
+        """
+        Gets the width_with_unit of this DocumentBodyTableProperties.
+        The width of the table in the specified unit.
+
+        :return: The width_with_unit of this DocumentBodyTableProperties.
+        :rtype: DocumentElementLength
+        """
+        return self._width_with_unit
+
+    @width_with_unit.setter
+    def width_with_unit(self, width_with_unit: 'DocumentElementLength') -> None:
+        """
+        Sets the width_with_unit of this DocumentBodyTableProperties.
+        The width of the table in the specified unit.
+
+        :param width_with_unit: The width_with_unit of this DocumentBodyTableProperties.
+        :type: DocumentElementLength
+        """
+        
+
+        self._width_with_unit = width_with_unit
 
     @property
     def height(self) -> float:

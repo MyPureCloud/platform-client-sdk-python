@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_messaging_integrations_facebook_integration_id**](#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
 |[**delete_conversations_messaging_integrations_instagram_integration_id**](#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
 |[**delete_conversations_messaging_integrations_open_integration_id**](#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
+|[**delete_conversations_messaging_integrations_twitter_integration_id**](#delete_conversations_messaging_integrations_twitter_integration_id) | Delete Twitter messaging integration|
 |[**delete_conversations_messaging_integrations_whatsapp_integration_id**](#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
 |[**delete_conversations_messaging_setting**](#delete_conversations_messaging_setting) | Delete a messaging setting|
 |[**delete_conversations_messaging_settings_default**](#delete_conversations_messaging_settings_default) | Delete the organization&#39;s default setting, a global default will be applied to integrations without settings|
@@ -86,6 +87,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_identityresolution_integrations_facebook_integration_id**](#get_conversations_messaging_identityresolution_integrations_facebook_integration_id) | Get Facebook messaging integration identity resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_open_integration_id**](#get_conversations_messaging_identityresolution_integrations_open_integration_id) | Get an open messaging integration Identity Resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id**](#get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id) | Get a whatsApp integration Identity Resolution settings|
+|[**get_conversations_messaging_integration_twitter_oauth_settings**](#get_conversations_messaging_integration_twitter_oauth_settings) | Get twitter oauth settings to patch an integration|
 |[**get_conversations_messaging_integrations**](#get_conversations_messaging_integrations) | Get a list of Integrations|
 |[**get_conversations_messaging_integrations_facebook**](#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
 |[**get_conversations_messaging_integrations_facebook_integration_id**](#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
@@ -93,6 +95,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations_instagram_integration_id**](#get_conversations_messaging_integrations_instagram_integration_id) | Get Instagram messaging integration|
 |[**get_conversations_messaging_integrations_open**](#get_conversations_messaging_integrations_open) | Get a list of Open messaging integrations|
 |[**get_conversations_messaging_integrations_open_integration_id**](#get_conversations_messaging_integrations_open_integration_id) | Get an Open messaging integration|
+|[**get_conversations_messaging_integrations_twitter**](#get_conversations_messaging_integrations_twitter) | Get a list of Twitter Integrations|
+|[**get_conversations_messaging_integrations_twitter_integration_id**](#get_conversations_messaging_integrations_twitter_integration_id) | Get Twitter messaging integration|
+|[**get_conversations_messaging_integrations_twitter_oauth_settings**](#get_conversations_messaging_integrations_twitter_oauth_settings) | Get twitter oauth settings|
 |[**get_conversations_messaging_integrations_whatsapp**](#get_conversations_messaging_integrations_whatsapp) | Get a list of WhatsApp Integrations|
 |[**get_conversations_messaging_integrations_whatsapp_integration_id**](#get_conversations_messaging_integrations_whatsapp_integration_id) | Get a WhatsApp messaging integration|
 |[**get_conversations_messaging_setting**](#get_conversations_messaging_setting) | Get a messaging setting|
@@ -144,6 +149,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_integrations_facebook_integration_id**](#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
 |[**patch_conversations_messaging_integrations_instagram_integration_id**](#patch_conversations_messaging_integrations_instagram_integration_id) | Update Instagram messaging integration|
 |[**patch_conversations_messaging_integrations_open_integration_id**](#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
+|[**patch_conversations_messaging_integrations_twitter_integration_id**](#patch_conversations_messaging_integrations_twitter_integration_id) | Update a Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id**](#patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow|
 |[**patch_conversations_messaging_integrations_whatsapp_integration_id**](#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update a WhatsApp messaging integration|
 |[**patch_conversations_messaging_setting**](#patch_conversations_messaging_setting) | Update a messaging setting|
@@ -220,6 +226,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_facebook**](#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
 |[**post_conversations_messaging_integrations_instagram**](#post_conversations_messaging_integrations_instagram) | Create Instagram Integration|
 |[**post_conversations_messaging_integrations_open**](#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
+|[**post_conversations_messaging_integrations_twitter**](#post_conversations_messaging_integrations_twitter) | Create Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](#post_conversations_messaging_integrations_whatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration|
 |[**post_conversations_messaging_integrations_whatsapp_embeddedsignup**](#post_conversations_messaging_integrations_whatsapp_embeddedsignup) | Create a WhatsApp Integration using the WhatsApp embedded signup flow|
 |[**post_conversations_messaging_settings**](#post_conversations_messaging_settings) | Create a messaging setting|
@@ -227,6 +234,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_participants_attributes_search**](#post_conversations_participants_attributes_search) | Search conversations|
 |[**post_conversations_screenshare_participant_communication_wrapup**](#post_conversations_screenshare_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_social_participant_communication_wrapup**](#post_conversations_social_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_video_agentconference_communication**](#post_conversations_video_agentconference_communication) | Create an Agent-Type video conference and assign an agent to it|
 |[**post_conversations_video_participant_communication_wrapup**](#post_conversations_video_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_videos_meetings**](#post_conversations_videos_meetings) | Generate a meetingId for a given conferenceId|
 |[**put_conversation_participant_flaggedreason**](#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
@@ -671,6 +679,53 @@ try:
     api_instance.delete_conversations_messaging_integrations_open_integration_id(integration_id)
 except ApiException as e:
     print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_open_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_conversations_messaging_integrations_twitter_integration_id
+
+>  delete_conversations_messaging_integrations_twitter_integration_id(integration_id)
+
+
+Delete Twitter messaging integration
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete Twitter messaging integration
+    api_instance.delete_conversations_messaging_integrations_twitter_integration_id(integration_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_twitter_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -4209,6 +4264,54 @@ except ApiException as e:
 [**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
+## get_conversations_messaging_integration_twitter_oauth_settings
+
+> [**TwitterOAuthSettings**](TwitterOAuthSettings) get_conversations_messaging_integration_twitter_oauth_settings(integration_id)
+
+
+Get twitter oauth settings to patch an integration
+
+Wraps GET /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings 
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration Id of an existing integration that needs to be patched with new oauth settings
+
+try:
+    # Get twitter oauth settings to patch an integration
+    api_response = api_instance.get_conversations_messaging_integration_twitter_oauth_settings(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integration_twitter_oauth_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration Id of an existing integration that needs to be patched with new oauth settings |  |
+
+### Return type
+
+[**TwitterOAuthSettings**](TwitterOAuthSettings)
+
+
 ## get_conversations_messaging_integrations
 
 > [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
@@ -4585,6 +4688,156 @@ except ApiException as e:
 ### Return type
 
 [**OpenIntegration**](OpenIntegration)
+
+
+## get_conversations_messaging_integrations_twitter
+
+> [**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing) get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+
+
+Get a list of Twitter Integrations
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
+
+try:
+    # Get a list of Twitter Integrations
+    api_response = api_instance.get_conversations_messaging_integrations_twitter(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
+
+### Return type
+
+[**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing)
+
+
+## get_conversations_messaging_integrations_twitter_integration_id
+
+> [**TwitterIntegration**](TwitterIntegration) get_conversations_messaging_integrations_twitter_integration_id(integration_id, expand=expand)
+
+
+Get Twitter messaging integration
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+
+try:
+    # Get Twitter messaging integration
+    api_response = api_instance.get_conversations_messaging_integrations_twitter_integration_id(integration_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration)
+
+
+## get_conversations_messaging_integrations_twitter_oauth_settings
+
+> [**TwitterSignupOAuthSettings**](TwitterSignupOAuthSettings) get_conversations_messaging_integrations_twitter_oauth_settings()
+
+
+Get twitter oauth settings
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter/oauth/settings 
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get twitter oauth settings
+    api_response = api_instance.get_conversations_messaging_integrations_twitter_oauth_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_twitter_oauth_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**TwitterSignupOAuthSettings**](TwitterSignupOAuthSettings)
 
 
 ## get_conversations_messaging_integrations_whatsapp
@@ -7215,6 +7468,56 @@ except ApiException as e:
 ### Return type
 
 [**OpenIntegration**](OpenIntegration)
+
+
+## patch_conversations_messaging_integrations_twitter_integration_id
+
+> [**TwitterIntegration**](TwitterIntegration) patch_conversations_messaging_integrations_twitter_integration_id(integration_id, body)
+
+
+Update a Twitter messaging integration
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.TwitterIntegrationUpdateRequest() # TwitterIntegrationUpdateRequest | TwitterIntegrationUpdateRequest
+
+try:
+    # Update a Twitter messaging integration
+    api_response = api_instance.patch_conversations_messaging_integrations_twitter_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_integrations_twitter_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**TwitterIntegrationUpdateRequest**](TwitterIntegrationUpdateRequest)| TwitterIntegrationUpdateRequest |  |
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration)
 
 
 ## patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id
@@ -11101,6 +11404,54 @@ except ApiException as e:
 [**OpenIntegration**](OpenIntegration)
 
 
+## post_conversations_messaging_integrations_twitter
+
+> [**TwitterIntegration**](TwitterIntegration) post_conversations_messaging_integrations_twitter(body)
+
+
+Create Twitter Integration
+
+Wraps POST /api/v2/conversations/messaging/integrations/twitter 
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.TwitterIntegrationRequest() # TwitterIntegrationRequest | TwitterIntegrationRequest
+
+try:
+    # Create Twitter Integration
+    api_response = api_instance.post_conversations_messaging_integrations_twitter(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_twitter: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest)| TwitterIntegrationRequest |  |
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration)
+
+
 ## post_conversations_messaging_integrations_whatsapp
 
 > [**WhatsAppIntegration**](WhatsAppIntegration) post_conversations_messaging_integrations_whatsapp(body)
@@ -11457,6 +11808,58 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+
+## post_conversations_video_agentconference_communication
+
+> [**VideoConferenceDetails**](VideoConferenceDetails) post_conversations_video_agentconference_communication(conversation_id, communication_id)
+
+
+Create an Agent-Type video conference and assign an agent to it
+
+post_conversations_video_agentconference_communication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId} 
+
+Requires ANY permissions: 
+
+* conversation:video:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+
+try:
+    # Create an Agent-Type video conference and assign an agent to it
+    api_response = api_instance.post_conversations_video_agentconference_communication(conversation_id, communication_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_video_agentconference_communication: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+
+### Return type
+
+[**VideoConferenceDetails**](VideoConferenceDetails)
 
 
 ## post_conversations_video_participant_communication_wrapup
@@ -12636,4 +13039,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

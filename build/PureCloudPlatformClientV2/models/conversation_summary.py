@@ -34,7 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
-    from . import ConversationEditedSummary
+    from . import ConversationEditedInput
     from . import ConversationSummaryFollowup
     from . import ConversationSummaryReason
     from . import ConversationSummaryResolution
@@ -60,7 +60,7 @@ class ConversationSummary(object):
             'media_type': 'str',
             'language': 'str',
             'predicted_wrapup_codes': 'list[ConversationSummaryWrapupCode]',
-            'edited_summary': 'ConversationEditedSummary',
+            'edited_summary': 'ConversationEditedInput',
             'reason': 'ConversationSummaryReason',
             'followup': 'ConversationSummaryFollowup',
             'resolution': 'ConversationSummaryResolution',
@@ -231,24 +231,24 @@ class ConversationSummary(object):
         self._predicted_wrapup_codes = predicted_wrapup_codes
 
     @property
-    def edited_summary(self) -> 'ConversationEditedSummary':
+    def edited_summary(self) -> 'ConversationEditedInput':
         """
         Gets the edited_summary of this ConversationSummary.
         The edited summary of the conversation.
 
         :return: The edited_summary of this ConversationSummary.
-        :rtype: ConversationEditedSummary
+        :rtype: ConversationEditedInput
         """
         return self._edited_summary
 
     @edited_summary.setter
-    def edited_summary(self, edited_summary: 'ConversationEditedSummary') -> None:
+    def edited_summary(self, edited_summary: 'ConversationEditedInput') -> None:
         """
         Sets the edited_summary of this ConversationSummary.
         The edited summary of the conversation.
 
         :param edited_summary: The edited_summary of this ConversationSummary.
-        :type: ConversationEditedSummary
+        :type: ConversationEditedInput
         """
         
 

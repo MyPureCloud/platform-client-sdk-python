@@ -37,7 +37,7 @@ if TYPE_CHECKING:
     from . import SchedulingSettingsResponse
     from . import ShiftTradeSettings
     from . import ShortTermForecastingSettings
-    from . import TimeOffRequestSettings
+    from . import TimeOffSettingsResponse
     from . import WfmVersionedEntityMetadata
 
 class ManagementUnitSettingsResponse(object):
@@ -57,7 +57,7 @@ class ManagementUnitSettingsResponse(object):
         self.swagger_types = {
             'adherence': 'AdherenceSettings',
             'short_term_forecasting': 'ShortTermForecastingSettings',
-            'time_off': 'TimeOffRequestSettings',
+            'time_off': 'TimeOffSettingsResponse',
             'scheduling': 'SchedulingSettingsResponse',
             'shift_trading': 'ShiftTradeSettings',
             'metadata': 'WfmVersionedEntityMetadata'
@@ -128,24 +128,24 @@ class ManagementUnitSettingsResponse(object):
         self._short_term_forecasting = short_term_forecasting
 
     @property
-    def time_off(self) -> 'TimeOffRequestSettings':
+    def time_off(self) -> 'TimeOffSettingsResponse':
         """
         Gets the time_off of this ManagementUnitSettingsResponse.
         Time off request settings for this management unit
 
         :return: The time_off of this ManagementUnitSettingsResponse.
-        :rtype: TimeOffRequestSettings
+        :rtype: TimeOffSettingsResponse
         """
         return self._time_off
 
     @time_off.setter
-    def time_off(self, time_off: 'TimeOffRequestSettings') -> None:
+    def time_off(self, time_off: 'TimeOffSettingsResponse') -> None:
         """
         Sets the time_off of this ManagementUnitSettingsResponse.
         Time off request settings for this management unit
 
         :param time_off: The time_off of this ManagementUnitSettingsResponse.
-        :type: TimeOffRequestSettings
+        :type: TimeOffSettingsResponse
         """
         
 

@@ -7,10 +7,10 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str |  | [optional] |
-| **conditions** | [list[V2MobiusRulesTopicCondition]](V2MobiusRulesTopicCondition) |  | [optional] |
+| **clauses** | [list[V2MobiusRulesTopicCondition]](V2MobiusRulesTopicCondition) |  | [optional] |
 | **predicates** | [list[V2MobiusRulesTopicConditionRulePredicate]](V2MobiusRulesTopicConditionRulePredicate) |  | [optional] |
 | **type** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

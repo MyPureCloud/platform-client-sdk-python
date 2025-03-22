@@ -106,7 +106,7 @@ class FeedbackAddRequest(object):
         """
         if isinstance(rating, int):
             rating = str(rating)
-        allowed_values = ["Positive", "Negative"]
+        allowed_values = ["Positive", "Negative", "Unknown"]
         if rating.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for rating -> " + rating)
             self._rating = "outdated_sdk_version"

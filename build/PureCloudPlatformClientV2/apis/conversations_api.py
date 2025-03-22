@@ -179,6 +179,12 @@ from ..models import TransferRequest
 from ..models import TransferToAgentRequest
 from ..models import TransferToExternalRequest
 from ..models import TransferToQueueRequest
+from ..models import TwitterIntegration
+from ..models import TwitterIntegrationEntityListing
+from ..models import TwitterIntegrationRequest
+from ..models import TwitterIntegrationUpdateRequest
+from ..models import TwitterOAuthSettings
+from ..models import TwitterSignupOAuthSettings
 from ..models import VideoConferenceDetails
 from ..models import WebChatMessage
 from ..models import WebChatMessageEntityList
@@ -902,6 +908,84 @@ class ConversationsApi(object):
 
 
         resource_path = '/api/v2/conversations/messaging/integrations/open/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> None:
+        """
+        Delete Twitter messaging integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_conversations_messaging_integrations_twitter_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_conversations_messaging_integrations_twitter_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `delete_conversations_messaging_integrations_twitter_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/twitter/{integrationId}'.replace('{format}', 'json')
         path_params = {}
         if 'integration_id' in params:
             path_params['integrationId'] = params['integration_id']
@@ -6715,6 +6799,84 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversations_messaging_integration_twitter_oauth_settings(self, integration_id: str, **kwargs) -> 'TwitterOAuthSettings':
+        """
+        Get twitter oauth settings to patch an integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integration_twitter_oauth_settings(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration Id of an existing integration that needs to be patched with new oauth settings (required)
+        :return: TwitterOAuthSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integration_twitter_oauth_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_conversations_messaging_integration_twitter_oauth_settings`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TwitterOAuthSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations_messaging_integrations(self, **kwargs) -> 'MessagingIntegrationEntityListing':
         """
         Get a list of Integrations
@@ -7302,6 +7464,246 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OpenIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_twitter(self, **kwargs) -> 'TwitterIntegrationEntityListing':
+        """
+        Get a list of Twitter Integrations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_twitter(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str expand: Expand instructions for the return value.
+        :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
+        :return: TwitterIntegrationEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_twitter" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/twitter'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'supported_content_id' in params:
+            query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TwitterIntegrationEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> 'TwitterIntegration':
+        """
+        Get Twitter messaging integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_twitter_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param str expand: Expand instructions for the return value.
+        :return: TwitterIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_twitter_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_conversations_messaging_integrations_twitter_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/twitter/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TwitterIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_twitter_oauth_settings(self, **kwargs) -> 'TwitterSignupOAuthSettings':
+        """
+        Get twitter oauth settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_twitter_oauth_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: TwitterSignupOAuthSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_twitter_oauth_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/twitter/oauth/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TwitterSignupOAuthSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11705,6 +12107,90 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OpenIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, body: 'TwitterIntegrationUpdateRequest', **kwargs) -> 'TwitterIntegration':
+        """
+        Update a Twitter messaging integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversations_messaging_integrations_twitter_integration_id(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param TwitterIntegrationUpdateRequest body: TwitterIntegrationUpdateRequest (required)
+        :return: TwitterIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversations_messaging_integrations_twitter_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `patch_conversations_messaging_integrations_twitter_integration_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversations_messaging_integrations_twitter_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/twitter/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TwitterIntegration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -18133,6 +18619,84 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_messaging_integrations_twitter(self, body: 'TwitterIntegrationRequest', **kwargs) -> 'TwitterIntegration':
+        """
+        Create Twitter Integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_messaging_integrations_twitter(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TwitterIntegrationRequest body: TwitterIntegrationRequest (required)
+        :return: TwitterIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_messaging_integrations_twitter" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_messaging_integrations_twitter`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/twitter'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TwitterIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("post_conversations_messaging_integrations_whatsapp is deprecated")
     def post_conversations_messaging_integrations_whatsapp(self, body: 'WhatsAppIntegrationRequest', **kwargs) -> 'WhatsAppIntegration':
         """
@@ -18707,6 +19271,91 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_video_agentconference_communication(self, conversation_id: str, communication_id: str, **kwargs) -> 'VideoConferenceDetails':
+        """
+        Create an Agent-Type video conference and assign an agent to it
+        
+	    post_conversations_video_agentconference_communication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_video_agentconference_communication(conversation_id, communication_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversationId (required)
+        :param str communication_id: communicationId (required)
+        :return: VideoConferenceDetails
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_video_agentconference_communication" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_video_agentconference_communication`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversations_video_agentconference_communication`")
+
+
+        resource_path = '/api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='VideoConferenceDetails',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

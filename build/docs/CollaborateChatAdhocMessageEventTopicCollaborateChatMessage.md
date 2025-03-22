@@ -14,7 +14,8 @@
 | **to** | [CollaborateChatAdhocMessageEventTopicCollaborateChatEntity](CollaborateChatAdhocMessageEventTopicCollaborateChatEntity) |  | [optional] |
 | **mentions** | [list[CollaborateChatAdhocMessageEventTopicCollaborateChatEntity]](CollaborateChatAdhocMessageEventTopicCollaborateChatEntity) |  | [optional] |
 | **notify_all** | bool |  | [optional] |
+| **reactions** | dict(str, list[str]) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

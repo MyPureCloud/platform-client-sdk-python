@@ -248,8 +248,6 @@ void (empty response body)
 
 Remove a pinned message from a 1on1
 
-delete_chats_user_messages_pin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId} 
 
 Requires ANY permissions: 
@@ -702,8 +700,6 @@ except ApiException as e:
 
 
 Get information for a 1on1
-
-get_chats_user is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/users/{userId} 
 
@@ -1505,8 +1501,6 @@ except ApiException as e:
 
 Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
 
-post_chats_user_messages_pins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/users/{userId}/messages/pins 
 
 Requires ANY permissions: 
@@ -1648,4 +1642,4 @@ except ApiException as e:
 [**ChatSettings**](ChatSettings)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

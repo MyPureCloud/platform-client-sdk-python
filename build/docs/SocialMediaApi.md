@@ -6,11 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_socialmedia_escalationrule**](#delete_socialmedia_escalationrule) | Delete an escalation rule.|
+|[**delete_socialmedia_message**](#delete_socialmedia_message) | Delete a social media message.|
 |[**delete_socialmedia_topic**](#delete_socialmedia_topic) | Delete a social topic.|
 |[**delete_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#delete_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Delete a Facebook data ingestion rule.|
 |[**delete_socialmedia_topic_dataingestionrules_open_open_id**](#delete_socialmedia_topic_dataingestionrules_open_open_id) | Delete a open data ingestion rule.|
 |[**delete_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id**](#delete_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id) | Delete a X (formally Twitter) data ingestion rule.|
+|[**get_socialmedia_analytics_aggregates_job**](#get_socialmedia_analytics_aggregates_job) | Get status for async query for social media aggregates|
+|[**get_socialmedia_analytics_aggregates_job_results**](#get_socialmedia_analytics_aggregates_job_results) | Fetch a page of results for an async social media query|
+|[**get_socialmedia_analytics_messages_job**](#get_socialmedia_analytics_messages_job) | Get status for async query for social media messages job|
+|[**get_socialmedia_analytics_messages_job_results**](#get_socialmedia_analytics_messages_job_results) | Fetch a page of results for an async social media messages query|
+|[**get_socialmedia_escalationrule**](#get_socialmedia_escalationrule) | Get a single escalation rule.|
+|[**get_socialmedia_escalationrules**](#get_socialmedia_escalationrules) | Retrieve all escalation rules for a division.|
 |[**get_socialmedia_topic**](#get_socialmedia_topic) | Get a single social topic.|
+|[**get_socialmedia_topic_dataingestionrules**](#get_socialmedia_topic_dataingestionrules) | Retrieve all social topic data ingestion rules with pagination.|
 |[**get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Get a single Facebook data ingestion rule.|
 |[**get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_version**](#get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_version) | Get a single Facebook data ingestion rule version.|
 |[**get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions**](#get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions) | Get the Facebook data ingestion rule versions.|
@@ -25,14 +34,116 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#patch_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Update the status of a Facebook data ingestion rule.|
 |[**patch_socialmedia_topic_dataingestionrules_open_open_id**](#patch_socialmedia_topic_dataingestionrules_open_open_id) | Update the status of a open data ingestion rule.|
 |[**patch_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id**](#patch_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id) | Update the status of a X (formally Twitter) data ingestion rule.|
+|[**post_socialmedia_analytics_aggregates_jobs**](#post_socialmedia_analytics_aggregates_jobs) | Query for social media aggregates asynchronously|
+|[**post_socialmedia_analytics_messages_jobs**](#post_socialmedia_analytics_messages_jobs) | Query for social media messages asynchronously|
+|[**post_socialmedia_escalationrules**](#post_socialmedia_escalationrules) | Create an escalation rule.|
+|[**post_socialmedia_escalations_messages**](#post_socialmedia_escalations_messages) | Escalate message to a conversation manually|
 |[**post_socialmedia_topic_dataingestionrules_facebook**](#post_socialmedia_topic_dataingestionrules_facebook) | Create an Facebook data ingestion rule.|
 |[**post_socialmedia_topic_dataingestionrules_open**](#post_socialmedia_topic_dataingestionrules_open) | Create an open data ingestion rule.|
 |[**post_socialmedia_topic_dataingestionrules_twitter**](#post_socialmedia_topic_dataingestionrules_twitter) | Create an twitter data ingestion rule.|
 |[**post_socialmedia_topics**](#post_socialmedia_topics) | Create a social topic.|
+|[**post_socialmedia_twitter_historical_tweets**](#post_socialmedia_twitter_historical_tweets) | Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.|
+|[**put_socialmedia_escalationrule**](#put_socialmedia_escalationrule) | Update the escalation rule.|
 |[**put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Update the Facebook data ingestion rule.|
 |[**put_socialmedia_topic_dataingestionrules_open_open_id**](#put_socialmedia_topic_dataingestionrules_open_open_id) | Update the open data ingestion rule.|
 |[**put_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id**](#put_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id) | Update the X (formally Twitter) data ingestion rule.|
 
+
+
+## delete_socialmedia_escalationrule
+
+>  delete_socialmedia_escalationrule(escalation_rule_id)
+
+
+Delete an escalation rule.
+
+Wraps DELETE /api/v2/socialmedia/escalationrules/{escalationRuleId} 
+
+Requires ANY permissions: 
+
+* socialmedia:escalationRules:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+escalation_rule_id = 'escalation_rule_id_example' # str | escalationRuleId
+
+try:
+    # Delete an escalation rule.
+    api_instance.delete_socialmedia_escalationrule(escalation_rule_id)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->delete_socialmedia_escalationrule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **escalation_rule_id** | **str**| escalationRuleId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_socialmedia_message
+
+>  delete_socialmedia_message(message_id)
+
+
+Delete a social media message.
+
+delete_socialmedia_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/socialmedia/messages/{messageId} 
+
+Requires ANY permissions: 
+
+* socialmedia:message:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+message_id = 'message_id_example' # str | messageId
+
+try:
+    # Delete a social media message.
+    api_instance.delete_socialmedia_message(message_id)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->delete_socialmedia_message: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **message_id** | **str**| messageId |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_socialmedia_topic
@@ -41,8 +152,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 Delete a social topic.
-
-delete_socialmedia_topic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/socialmedia/topics/{topicId} 
 
@@ -92,8 +201,6 @@ void (empty response body)
 
 
 Delete a Facebook data ingestion rule.
-
-delete_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} 
 
@@ -199,8 +306,6 @@ void (empty response body)
 
 Delete a X (formally Twitter) data ingestion rule.
 
-delete_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} 
 
 Requires ANY permissions: 
@@ -245,14 +350,308 @@ except ApiException as e:
 void (empty response body)
 
 
+## get_socialmedia_analytics_aggregates_job
+
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_socialmedia_analytics_aggregates_job(job_id)
+
+
+Get status for async query for social media aggregates
+
+Wraps GET /api/v2/socialmedia/analytics/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* socialmedia:postAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for social media aggregates
+    api_response = api_instance.get_socialmedia_analytics_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_analytics_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus)
+
+
+## get_socialmedia_analytics_aggregates_job_results
+
+> [**SocialMediaAsyncAggregateQueryResponse**](SocialMediaAsyncAggregateQueryResponse) get_socialmedia_analytics_aggregates_job_results(job_id, cursor=cursor)
+
+
+Fetch a page of results for an async social media query
+
+Wraps GET /api/v2/socialmedia/analytics/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* socialmedia:postAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async social media query
+    api_response = api_instance.get_socialmedia_analytics_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_analytics_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+[**SocialMediaAsyncAggregateQueryResponse**](SocialMediaAsyncAggregateQueryResponse)
+
+
+## get_socialmedia_analytics_messages_job
+
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_socialmedia_analytics_messages_job(job_id)
+
+
+Get status for async query for social media messages job
+
+Wraps GET /api/v2/socialmedia/analytics/messages/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* socialmedia:postDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for social media messages job
+    api_response = api_instance.get_socialmedia_analytics_messages_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_analytics_messages_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus)
+
+
+## get_socialmedia_analytics_messages_job_results
+
+> [**SocialMediaAsyncDetailQueryResponse**](SocialMediaAsyncDetailQueryResponse) get_socialmedia_analytics_messages_job_results(job_id, cursor=cursor)
+
+
+Fetch a page of results for an async social media messages query
+
+Wraps GET /api/v2/socialmedia/analytics/messages/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* socialmedia:postDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async social media messages query
+    api_response = api_instance.get_socialmedia_analytics_messages_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_analytics_messages_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+[**SocialMediaAsyncDetailQueryResponse**](SocialMediaAsyncDetailQueryResponse)
+
+
+## get_socialmedia_escalationrule
+
+> [**EscalationRuleResponse**](EscalationRuleResponse) get_socialmedia_escalationrule(escalation_rule_id)
+
+
+Get a single escalation rule.
+
+Wraps GET /api/v2/socialmedia/escalationrules/{escalationRuleId} 
+
+Requires ALL permissions: 
+
+* socialmedia:escalationRules:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+escalation_rule_id = 'escalation_rule_id_example' # str | escalationRuleId
+
+try:
+    # Get a single escalation rule.
+    api_response = api_instance.get_socialmedia_escalationrule(escalation_rule_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_escalationrule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **escalation_rule_id** | **str**| escalationRuleId |  |
+
+### Return type
+
+[**EscalationRuleResponse**](EscalationRuleResponse)
+
+
+## get_socialmedia_escalationrules
+
+> [**SocialEscalationResponseEntityListing**](SocialEscalationResponseEntityListing) get_socialmedia_escalationrules(division_id, page_number=page_number, page_size=page_size)
+
+
+Retrieve all escalation rules for a division.
+
+Wraps GET /api/v2/socialmedia/escalationrules 
+
+Requires ANY permissions: 
+
+* socialmedia:escalationRules:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+division_id = 'division_id_example' # str | One division ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Retrieve all escalation rules for a division.
+    api_response = api_instance.get_socialmedia_escalationrules(division_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_escalationrules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| One division ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**SocialEscalationResponseEntityListing**](SocialEscalationResponseEntityListing)
+
+
 ## get_socialmedia_topic
 
 > [**SocialTopicResponse**](SocialTopicResponse) get_socialmedia_topic(topic_id, include_deleted=include_deleted)
 
 
 Get a single social topic.
-
-get_socialmedia_topic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId} 
 
@@ -297,14 +696,66 @@ except ApiException as e:
 [**SocialTopicResponse**](SocialTopicResponse)
 
 
+## get_socialmedia_topic_dataingestionrules
+
+> [**DataIngestionRuleResponseEntityListing**](DataIngestionRuleResponseEntityListing) get_socialmedia_topic_dataingestionrules(topic_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)
+
+
+Retrieve all social topic data ingestion rules with pagination.
+
+Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules 
+
+Requires ANY permissions: 
+
+* socialmedia:topic:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+include_deleted = True # bool | Determines whether to include soft-deleted items in the result. (optional)
+
+try:
+    # Retrieve all social topic data ingestion rules with pagination.
+    api_response = api_instance.get_socialmedia_topic_dataingestionrules(topic_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_topic_dataingestionrules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **include_deleted** | **bool**| Determines whether to include soft-deleted items in the result. | [optional]  |
+
+### Return type
+
+[**DataIngestionRuleResponseEntityListing**](DataIngestionRuleResponseEntityListing)
+
+
 ## get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id
 
 > [**FacebookDataIngestionRuleResponse**](FacebookDataIngestionRuleResponse) get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id(topic_id, facebook_ingestion_rule_id, include_deleted=include_deleted)
 
 
 Get a single Facebook data ingestion rule.
-
-get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} 
 
@@ -357,8 +808,6 @@ except ApiException as e:
 
 
 Get a single Facebook data ingestion rule version.
-
-get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions/{dataIngestionRuleVersion} 
 
@@ -413,8 +862,6 @@ except ApiException as e:
 
 
 Get the Facebook data ingestion rule versions.
-
-get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId}/versions 
 
@@ -640,8 +1087,6 @@ except ApiException as e:
 
 Get a single X (formally Twitter) data ingestion rule.
 
-get_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} 
 
 Requires ALL permissions: 
@@ -693,8 +1138,6 @@ except ApiException as e:
 
 
 Get a single X (formally Twitter) data ingestion rule version.
-
-get_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions/{dataIngestionRuleVersion} 
 
@@ -749,8 +1192,6 @@ except ApiException as e:
 
 
 Get the Open data ingestion rule versions.
-
-get_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId}/versions 
 
@@ -808,8 +1249,6 @@ except ApiException as e:
 
 Retrieve all social topics.
 
-get_socialmedia_topics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/socialmedia/topics 
 
 Requires ANY permissions: 
@@ -864,8 +1303,6 @@ except ApiException as e:
 
 Update a social topic.
 
-patch_socialmedia_topic is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/socialmedia/topics/{topicId} 
 
 Requires ALL permissions: 
@@ -915,8 +1352,6 @@ except ApiException as e:
 
 
 Update the status of a Facebook data ingestion rule.
-
-patch_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} 
 
@@ -1024,8 +1459,6 @@ except ApiException as e:
 
 Update the status of a X (formally Twitter) data ingestion rule.
 
-patch_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} 
 
 Requires ALL permissions: 
@@ -1071,14 +1504,206 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
+## post_socialmedia_analytics_aggregates_jobs
+
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_socialmedia_analytics_aggregates_jobs(body)
+
+
+Query for social media aggregates asynchronously
+
+Wraps POST /api/v2/socialmedia/analytics/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* socialmedia:postAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+body = PureCloudPlatformClientV2.SocialMediaAsyncAggregationQuery() # SocialMediaAsyncAggregationQuery | query
+
+try:
+    # Query for social media aggregates asynchronously
+    api_response = api_instance.post_socialmedia_analytics_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_analytics_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SocialMediaAsyncAggregationQuery**](SocialMediaAsyncAggregationQuery)| query |  |
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse)
+
+
+## post_socialmedia_analytics_messages_jobs
+
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_socialmedia_analytics_messages_jobs(body)
+
+
+Query for social media messages asynchronously
+
+Wraps POST /api/v2/socialmedia/analytics/messages/jobs 
+
+Requires ANY permissions: 
+
+* socialmedia:postDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+body = PureCloudPlatformClientV2.SocialMediaAsyncDetailQuery() # SocialMediaAsyncDetailQuery | query
+
+try:
+    # Query for social media messages asynchronously
+    api_response = api_instance.post_socialmedia_analytics_messages_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_analytics_messages_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SocialMediaAsyncDetailQuery**](SocialMediaAsyncDetailQuery)| query |  |
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse)
+
+
+## post_socialmedia_escalationrules
+
+> [**EscalationRuleResponse**](EscalationRuleResponse) post_socialmedia_escalationrules(body=body)
+
+
+Create an escalation rule.
+
+Wraps POST /api/v2/socialmedia/escalationrules 
+
+Requires ANY permissions: 
+
+* socialmedia:escalationRules:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+body = PureCloudPlatformClientV2.EscalationRuleRequest() # EscalationRuleRequest |  (optional)
+
+try:
+    # Create an escalation rule.
+    api_response = api_instance.post_socialmedia_escalationrules(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_escalationrules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EscalationRuleRequest**](EscalationRuleRequest)|  | [optional]  |
+
+### Return type
+
+[**EscalationRuleResponse**](EscalationRuleResponse)
+
+
+## post_socialmedia_escalations_messages
+
+> [**ManualEscalationResponse**](ManualEscalationResponse) post_socialmedia_escalations_messages(division_id, body=body)
+
+
+Escalate message to a conversation manually
+
+Wraps POST /api/v2/socialmedia/escalations/messages 
+
+Requires ANY permissions: 
+
+* socialmedia:message:escalate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+division_id = 'division_id_example' # str | One division ID
+body = PureCloudPlatformClientV2.ManualEscalationRequest() # ManualEscalationRequest |  (optional)
+
+try:
+    # Escalate message to a conversation manually
+    api_response = api_instance.post_socialmedia_escalations_messages(division_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_escalations_messages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_id** | **str**| One division ID |  |
+| **body** | [**ManualEscalationRequest**](ManualEscalationRequest)|  | [optional]  |
+
+### Return type
+
+[**ManualEscalationResponse**](ManualEscalationResponse)
+
+
 ## post_socialmedia_topic_dataingestionrules_facebook
 
 > [**FacebookDataIngestionRuleResponse**](FacebookDataIngestionRuleResponse) post_socialmedia_topic_dataingestionrules_facebook(topic_id, body=body)
 
 
 Create an Facebook data ingestion rule.
-
-post_socialmedia_topic_dataingestionrules_facebook is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook 
 
@@ -1182,8 +1807,6 @@ except ApiException as e:
 
 Create an twitter data ingestion rule.
 
-post_socialmedia_topic_dataingestionrules_twitter is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter 
 
 Requires ANY permissions: 
@@ -1234,8 +1857,6 @@ except ApiException as e:
 
 Create a social topic.
 
-post_socialmedia_topics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/socialmedia/topics 
 
 Requires ANY permissions: 
@@ -1277,14 +1898,110 @@ except ApiException as e:
 [**SocialTopicResponse**](SocialTopicResponse)
 
 
+## post_socialmedia_twitter_historical_tweets
+
+> [**TwitterDataHistoricalTweetResponse**](TwitterDataHistoricalTweetResponse) post_socialmedia_twitter_historical_tweets(body)
+
+
+Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+
+Wraps POST /api/v2/socialmedia/twitter/historical/tweets 
+
+Requires ALL permissions: 
+
+* socialmedia:twitterDataIngestionRule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+body = PureCloudPlatformClientV2.TwitterDataHistoricalTweetRequest() # TwitterDataHistoricalTweetRequest | TwitterDataHistoricalTweetRequest
+
+try:
+    # Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.
+    api_response = api_instance.post_socialmedia_twitter_historical_tweets(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_twitter_historical_tweets: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TwitterDataHistoricalTweetRequest**](TwitterDataHistoricalTweetRequest)| TwitterDataHistoricalTweetRequest |  |
+
+### Return type
+
+[**TwitterDataHistoricalTweetResponse**](TwitterDataHistoricalTweetResponse)
+
+
+## put_socialmedia_escalationrule
+
+> [**EscalationRuleResponse**](EscalationRuleResponse) put_socialmedia_escalationrule(escalation_rule_id, body=body)
+
+
+Update the escalation rule.
+
+Wraps PUT /api/v2/socialmedia/escalationrules/{escalationRuleId} 
+
+Requires ALL permissions: 
+
+* socialmedia:escalationRules:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+escalation_rule_id = 'escalation_rule_id_example' # str | escalationRuleId
+body = PureCloudPlatformClientV2.EscalationRuleRequest() # EscalationRuleRequest |  (optional)
+
+try:
+    # Update the escalation rule.
+    api_response = api_instance.put_socialmedia_escalationrule(escalation_rule_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->put_socialmedia_escalationrule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **escalation_rule_id** | **str**| escalationRuleId |  |
+| **body** | [**EscalationRuleRequest**](EscalationRuleRequest)|  | [optional]  |
+
+### Return type
+
+[**EscalationRuleResponse**](EscalationRuleResponse)
+
+
 ## put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id
 
 > [**FacebookDataIngestionRuleResponse**](FacebookDataIngestionRuleResponse) put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id(topic_id, facebook_ingestion_rule_id, body=body)
 
 
 Update the Facebook data ingestion rule.
-
-put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/facebook/{facebookIngestionRuleId} 
 
@@ -1392,8 +2109,6 @@ except ApiException as e:
 
 Update the X (formally Twitter) data ingestion rule.
 
-put_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/twitter/{twitterIngestionRuleId} 
 
 Requires ALL permissions: 
@@ -1439,4 +2154,4 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

@@ -67,7 +67,7 @@ class ConsultTransferToExternal(object):
     def speak_to(self) -> str:
         """
         Gets the speak_to of this ConsultTransferToExternal.
-        Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+        Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
 
         :return: The speak_to of this ConsultTransferToExternal.
         :rtype: str
@@ -78,7 +78,7 @@ class ConsultTransferToExternal(object):
     def speak_to(self, speak_to: str) -> None:
         """
         Sets the speak_to of this ConsultTransferToExternal.
-        Determines to whom the initiating participant is speaking. Defaults to DESTINATION
+        Determines to whom the initiating participant is requesting to speak. Defaults to DESTINATION
 
         :param speak_to: The speak_to of this ConsultTransferToExternal.
         :type: str

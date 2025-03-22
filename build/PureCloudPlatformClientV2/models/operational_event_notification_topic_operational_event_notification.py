@@ -60,6 +60,7 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'parent_entity': 'str',
             'entity_type': 'str',
             'conversation_id': 'str',
+            'entity_token': 'str',
             'timestamp': 'int'
         }
 
@@ -74,6 +75,7 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'parent_entity': 'parentEntity',
             'entity_type': 'entityType',
             'conversation_id': 'conversationId',
+            'entity_token': 'entityToken',
             'timestamp': 'timestamp'
         }
 
@@ -87,6 +89,7 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         self._parent_entity = None
         self._entity_type = None
         self._conversation_id = None
+        self._entity_token = None
         self._timestamp = None
 
     @property
@@ -328,6 +331,30 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         
 
         self._conversation_id = conversation_id
+
+    @property
+    def entity_token(self) -> str:
+        """
+        Gets the entity_token of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The entity_token of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._entity_token
+
+    @entity_token.setter
+    def entity_token(self, entity_token: str) -> None:
+        """
+        Sets the entity_token of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param entity_token: The entity_token of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._entity_token = entity_token
 
     @property
     def timestamp(self) -> int:

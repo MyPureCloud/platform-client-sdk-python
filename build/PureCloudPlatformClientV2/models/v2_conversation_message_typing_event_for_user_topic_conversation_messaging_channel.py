@@ -118,7 +118,7 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel(o
         """
         if isinstance(platform, int):
             platform = str(platform)
-        allowed_values = ["Twitter", "Facebook", "Instagram", "Line", "Whatsapp", "WebMessaging", "Open", "Sms"]
+        allowed_values = ["Twitter", "Facebook", "Instagram", "Line", "Whatsapp", "WebMessaging", "Open", "Sms", "Apple"]
         if platform.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for platform -> " + platform)
             self._platform = "outdated_sdk_version"

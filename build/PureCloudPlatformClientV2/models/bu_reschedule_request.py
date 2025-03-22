@@ -56,7 +56,9 @@ class BuRescheduleRequest(object):
             'do_not_change_weekly_paid_time': 'bool',
             'do_not_change_daily_paid_time': 'bool',
             'do_not_change_shift_start_times': 'bool',
-            'do_not_change_manually_edited_shifts': 'bool'
+            'do_not_change_manually_edited_shifts': 'bool',
+            'activity_smoothing_type': 'str',
+            'induce_schedule_variability': 'bool'
         }
 
         self.attribute_map = {
@@ -68,7 +70,9 @@ class BuRescheduleRequest(object):
             'do_not_change_weekly_paid_time': 'doNotChangeWeeklyPaidTime',
             'do_not_change_daily_paid_time': 'doNotChangeDailyPaidTime',
             'do_not_change_shift_start_times': 'doNotChangeShiftStartTimes',
-            'do_not_change_manually_edited_shifts': 'doNotChangeManuallyEditedShifts'
+            'do_not_change_manually_edited_shifts': 'doNotChangeManuallyEditedShifts',
+            'activity_smoothing_type': 'activitySmoothingType',
+            'induce_schedule_variability': 'induceScheduleVariability'
         }
 
         self._start_date = None
@@ -80,6 +84,8 @@ class BuRescheduleRequest(object):
         self._do_not_change_daily_paid_time = None
         self._do_not_change_shift_start_times = None
         self._do_not_change_manually_edited_shifts = None
+        self._activity_smoothing_type = None
+        self._induce_schedule_variability = None
 
     @property
     def start_date(self) -> datetime:
@@ -296,6 +302,59 @@ class BuRescheduleRequest(object):
         
 
         self._do_not_change_manually_edited_shifts = do_not_change_manually_edited_shifts
+
+    @property
+    def activity_smoothing_type(self) -> str:
+        """
+        Gets the activity_smoothing_type of this BuRescheduleRequest.
+        Overrides the default BU level activity smoothing type for this reschedule run
+
+        :return: The activity_smoothing_type of this BuRescheduleRequest.
+        :rtype: str
+        """
+        return self._activity_smoothing_type
+
+    @activity_smoothing_type.setter
+    def activity_smoothing_type(self, activity_smoothing_type: str) -> None:
+        """
+        Sets the activity_smoothing_type of this BuRescheduleRequest.
+        Overrides the default BU level activity smoothing type for this reschedule run
+
+        :param activity_smoothing_type: The activity_smoothing_type of this BuRescheduleRequest.
+        :type: str
+        """
+        if isinstance(activity_smoothing_type, int):
+            activity_smoothing_type = str(activity_smoothing_type)
+        allowed_values = ["ReduceConcurrentActivitiesAcrossBu", "ReduceConcurrentActivitiesAcrossMu", "ConsistentServiceLevel"]
+        if activity_smoothing_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for activity_smoothing_type -> " + activity_smoothing_type)
+            self._activity_smoothing_type = "outdated_sdk_version"
+        else:
+            self._activity_smoothing_type = activity_smoothing_type
+
+    @property
+    def induce_schedule_variability(self) -> bool:
+        """
+        Gets the induce_schedule_variability of this BuRescheduleRequest.
+        Overrides the default BU level induce schedule variability setting for this reschedule run
+
+        :return: The induce_schedule_variability of this BuRescheduleRequest.
+        :rtype: bool
+        """
+        return self._induce_schedule_variability
+
+    @induce_schedule_variability.setter
+    def induce_schedule_variability(self, induce_schedule_variability: bool) -> None:
+        """
+        Sets the induce_schedule_variability of this BuRescheduleRequest.
+        Overrides the default BU level induce schedule variability setting for this reschedule run
+
+        :param induce_schedule_variability: The induce_schedule_variability of this BuRescheduleRequest.
+        :type: bool
+        """
+        
+
+        self._induce_schedule_variability = induce_schedule_variability
 
     def to_dict(self):
         """

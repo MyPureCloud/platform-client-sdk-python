@@ -58,10 +58,11 @@ class WidgetsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    @deprecated("delete_widgets_deployment is deprecated")
     def delete_widgets_deployment(self, deployment_id: str, **kwargs) -> None:
         """
         Delete a Widget deployment
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -136,10 +137,11 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_widgets_deployment is deprecated")
     def get_widgets_deployment(self, deployment_id: str, **kwargs) -> 'WidgetDeployment':
         """
         Get a Widget deployment
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -214,10 +216,11 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_widgets_deployments is deprecated")
     def get_widgets_deployments(self, **kwargs) -> 'WidgetDeploymentEntityListing':
         """
         List Widget deployments
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -286,10 +289,11 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_widgets_deployments is deprecated")
     def post_widgets_deployments(self, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Create Widget deployment
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -364,10 +368,11 @@ class WidgetsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_widgets_deployment is deprecated")
     def put_widgets_deployment(self, deployment_id: str, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Update a Widget deployment
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
