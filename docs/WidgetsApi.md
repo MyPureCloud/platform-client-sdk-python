@@ -18,8 +18,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 >  delete_widgets_deployment(deployment_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete a Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps DELETE /api/v2/widgets/deployments/{deploymentId} 
 
@@ -66,8 +71,13 @@ void (empty response body)
 
 > [**WidgetDeployment**](WidgetDeployment) get_widgets_deployment(deployment_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps GET /api/v2/widgets/deployments/{deploymentId} 
 
@@ -115,8 +125,13 @@ except ApiException as e:
 
 > [**WidgetDeploymentEntityListing**](WidgetDeploymentEntityListing) get_widgets_deployments()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 List Widget deployments
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps GET /api/v2/widgets/deployments 
 
@@ -160,8 +175,13 @@ This endpoint does not need any parameters.
 
 > [**WidgetDeployment**](WidgetDeployment) post_widgets_deployments(body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps POST /api/v2/widgets/deployments 
 
@@ -209,8 +229,13 @@ except ApiException as e:
 
 > [**WidgetDeployment**](WidgetDeployment) put_widgets_deployment(deployment_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps PUT /api/v2/widgets/deployments/{deploymentId} 
 
@@ -256,4 +281,4 @@ except ApiException as e:
 [**WidgetDeployment**](WidgetDeployment)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

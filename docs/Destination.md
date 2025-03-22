@@ -6,11 +6,11 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **address** | str | Address or phone number. | |
-| **name** | str |  | [optional] |
-| **user_id** | str |  | [optional] |
-| **queue_id** | str |  | [optional] |
+| **address** | str | Address or phone number. | [optional] |
+| **name** | str | The name of the internal user. | [optional] |
+| **user_id** | str | The user ID. | [optional] |
+| **queue_id** | str | The queue ID. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

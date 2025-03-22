@@ -16,8 +16,9 @@
 | **parent_entity** | str |  | [optional] |
 | **entity_type** | str |  | [optional] |
 | **conversation_id** | str |  | [optional] |
+| **entity_token** | str |  | [optional] |
 | **timestamp** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

@@ -2133,8 +2133,6 @@ This resource has been deprecated
 
 Get document content upload status
 
-get_knowledge_knowledgebase_language_document_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId} 
 
 Requires ALL permissions: 
@@ -4765,8 +4763,6 @@ except ApiException as e:
 
 Bulk remove documents.
 
-post_knowledge_knowledgebase_documents_bulk_remove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove 
 
 Requires ALL permissions: 
@@ -4816,8 +4812,6 @@ except ApiException as e:
 
 
 Bulk update documents.
-
-post_knowledge_knowledgebase_documents_bulk_update is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update 
 
@@ -5071,8 +5065,6 @@ except ApiException as e:
 
 
 Bulk add document versions.
-
-post_knowledge_knowledgebase_documents_versions_bulk_add is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add 
 
@@ -5331,8 +5323,6 @@ This resource has been deprecated
 :::
 
 Upload Article Content
-
-post_knowledge_knowledgebase_language_document_uploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads 
 
@@ -6209,4 +6199,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

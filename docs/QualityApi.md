@@ -3179,8 +3179,6 @@ except ApiException as e:
 
 Update the AI Scoring settings of an evaluation form.
 
-put_quality_forms_evaluation_aiscoring_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/quality/forms/evaluations/{formId}/aiscoring/settings 
 
 Requires ANY permissions: 
@@ -3320,4 +3318,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

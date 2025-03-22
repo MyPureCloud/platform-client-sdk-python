@@ -675,7 +675,7 @@ except ApiException as e:
 
 ## get_conversation_recordings
 
-> [**list[Recording]**](Recording) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats, locale=locale)
+> [**list[Recording]**](Recording) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats, locale=locale, include_pause_annotations_for_screen_recordings=include_pause_annotations_for_screen_recordings)
 
 
 Get all of a Conversation's Recordings.
@@ -705,10 +705,11 @@ max_wait_ms = 5000 # int | The maximum number of milliseconds to wait for the re
 format_id = ''WEBM'' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (optional) (default to 'WEBM')
 media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. (optional)
 locale = 'locale_example' # str | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code (optional)
+include_pause_annotations_for_screen_recordings = False # bool | Include applicable Secure Pause annotations from all audio recordings to all screen recordings (optional) (default to False)
 
 try:
     # Get all of a Conversation's Recordings.
-    api_response = api_instance.get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats, locale=locale)
+    api_response = api_instance.get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats, locale=locale, include_pause_annotations_for_screen_recordings=include_pause_annotations_for_screen_recordings)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->get_conversation_recordings: %s\n" % e)
@@ -724,6 +725,7 @@ except ApiException as e:
 | **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 | **media_formats** | [**list[str]**](str)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
 | **locale** | **str**| The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
+| **include_pause_annotations_for_screen_recordings** | **bool**| Include applicable Secure Pause annotations from all audio recordings to all screen recordings | [optional] [default to False] |
 
 ### Return type
 
@@ -2980,4 +2982,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

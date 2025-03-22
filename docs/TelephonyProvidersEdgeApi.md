@@ -2308,7 +2308,7 @@ except ApiException as e:
 
 ## get_telephony_providers_edges_extensionpools
 
-> [**ExtensionPoolEntityListing**](ExtensionPoolEntityListing) get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number)
+> [**ExtensionPoolEntityListing**](ExtensionPoolEntityListing) get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number, division_id=division_id)
 
 
 Get a listing of extension pools
@@ -2336,10 +2336,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 number = 'number_example' # str | Deprecated, filtering by number not supported (optional)
+division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
 
 try:
     # Get a listing of extension pools
-    api_response = api_instance.get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number)
+    api_response = api_instance.get_telephony_providers_edges_extensionpools(page_size=page_size, page_number=page_number, sort_by=sort_by, number=number, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpools: %s\n" % e)
@@ -2354,6 +2355,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **number** | **str**| Deprecated, filtering by number not supported | [optional]  |
+| **division_id** | [**list[str]**](str)| List of divisionIds on which to filter. | [optional]  |
 
 ### Return type
 
@@ -6437,4 +6439,4 @@ except ApiException as e:
 [**TrunkBase**](TrunkBase)
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_

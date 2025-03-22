@@ -53,7 +53,7 @@
 | **flow_sub_type** | str | Represents the subtype of the flow. For example a Digital Bot Flow that has been upgraded with Virtual Agent capabilities. | [optional] |
 | **flow_type** | str | The type of this flow | [optional] |
 | **flow_version** | str | The version of this flow | [optional] |
-| **group_id** | str | Unique identifier for a PureCloud group | [optional] |
+| **group_id** | str | Unique identifier for a Genesys Cloud group | [optional] |
 | **interaction_type** | str | The interaction type (enterprise or contactCenter) | [optional] |
 | **journey_action_id** | str | Identifier of the journey action. | [optional] |
 | **journey_action_map_id** | str | Identifier of the journey action map that triggered the action. | [optional] |
@@ -108,4 +108,4 @@
 
 
 
-_PureCloudPlatformClientV2 223.0.0_
+_PureCloudPlatformClientV2 224.0.0_
