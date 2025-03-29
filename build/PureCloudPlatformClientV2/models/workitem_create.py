@@ -434,6 +434,9 @@ class WorkitemCreate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', queue_id):
+            raise ValueError("Invalid value for `queue_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._queue_id = queue_id
 

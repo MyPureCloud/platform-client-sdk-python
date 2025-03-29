@@ -320,8 +320,6 @@ except ApiException as e:
 
 Get an agent and their active sessions by user ID
 
-get_analytics_agent_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/agents/{userId}/status 
 
 Requires ANY permissions: 
@@ -3032,8 +3030,6 @@ except ApiException as e:
 
 Count agents by segment type
 
-post_analytics_agents_status_counts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/agents/status/counts 
 
 Requires ANY permissions: 
@@ -3081,8 +3077,6 @@ except ApiException as e:
 
 
 Retrieve the top 50 agents matching the query filters
-
-post_analytics_agents_status_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/agents/status/query 
 
@@ -5386,4 +5380,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

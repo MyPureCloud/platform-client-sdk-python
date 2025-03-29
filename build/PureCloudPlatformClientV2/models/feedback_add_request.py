@@ -48,41 +48,17 @@ class FeedbackAddRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'summary': 'str',
-            'rating': 'str'
+            'rating': 'str',
+            'summary': 'str'
         }
 
         self.attribute_map = {
-            'summary': 'summary',
-            'rating': 'rating'
+            'rating': 'rating',
+            'summary': 'summary'
         }
 
-        self._summary = None
         self._rating = None
-
-    @property
-    def summary(self) -> str:
-        """
-        Gets the summary of this FeedbackAddRequest.
-        Agent's summary for the conversation
-
-        :return: The summary of this FeedbackAddRequest.
-        :rtype: str
-        """
-        return self._summary
-
-    @summary.setter
-    def summary(self, summary: str) -> None:
-        """
-        Sets the summary of this FeedbackAddRequest.
-        Agent's summary for the conversation
-
-        :param summary: The summary of this FeedbackAddRequest.
-        :type: str
-        """
-        
-
-        self._summary = summary
+        self._summary = None
 
     @property
     def rating(self) -> str:
@@ -112,6 +88,30 @@ class FeedbackAddRequest(object):
             self._rating = "outdated_sdk_version"
         else:
             self._rating = rating
+
+    @property
+    def summary(self) -> str:
+        """
+        Gets the summary of this FeedbackAddRequest.
+        Agent's summary for the conversation
+
+        :return: The summary of this FeedbackAddRequest.
+        :rtype: str
+        """
+        return self._summary
+
+    @summary.setter
+    def summary(self, summary: str) -> None:
+        """
+        Sets the summary of this FeedbackAddRequest.
+        Agent's summary for the conversation
+
+        :param summary: The summary of this FeedbackAddRequest.
+        :type: str
+        """
+        
+
+        self._summary = summary
 
     def to_dict(self):
         """

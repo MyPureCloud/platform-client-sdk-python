@@ -90,7 +90,7 @@ class SummaryAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nConversationSummaries", "tConversationSummary"]
+        allowed_values = ["nConversationSummaries", "nConversationSummaryEngagements", "tConversationSummary"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

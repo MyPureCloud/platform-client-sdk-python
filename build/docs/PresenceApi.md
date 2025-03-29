@@ -6,11 +6,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_presence_definition**](#delete_presence_definition) | Delete a Presence Definition|
+|[**delete_division_based_presence_definition**](#delete_division_based_presence_definition) | Delete a Presence Definition|
 |[**delete_presence_source**](#delete_presence_source) | Delete a Presence Source|
 |[**delete_presencedefinition**](#delete_presencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead|
-|[**get_presence_definition**](#get_presence_definition) | Get a Presence Definition|
-|[**get_presence_definitions**](#get_presence_definitions) | Get a list of Presence Definitions|
+|[**get_division_based_presence_definition**](#get_division_based_presence_definition) | Get a Presence Definition|
+|[**get_division_based_presence_definitions**](#get_division_based_presence_definitions) | Get a list of Presence Definitions|
 |[**get_presence_settings**](#get_presence_settings) | Get the presence settings|
 |[**get_presence_source**](#get_presence_source) | Get a Presence Source|
 |[**get_presence_sources**](#get_presence_sources) | Get a list of Presence Sources|
@@ -24,10 +24,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_users_presences_purecloud_bulk**](#get_users_presences_purecloud_bulk) | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source|
 |[**patch_user_presence**](#patch_user_presence) | Patch a user&#39;s Presence|
 |[**patch_user_presences_purecloud**](#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
-|[**post_presence_definitions**](#post_presence_definitions) | Create a Presence Definition|
+|[**post_division_based_presence_definitions**](#post_division_based_presence_definitions) | Create a Presence Definition|
 |[**post_presence_sources**](#post_presence_sources) | Create a Presence Source|
 |[**post_presencedefinitions**](#post_presencedefinitions) | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead|
-|[**put_presence_definition**](#put_presence_definition) | Update a Presence Definition|
+|[**put_division_based_presence_definition**](#put_division_based_presence_definition) | Update a Presence Definition|
 |[**put_presence_settings**](#put_presence_settings) | Update the presence settings|
 |[**put_presence_source**](#put_presence_source) | Update a Presence Source|
 |[**put_presence_user_primarysource**](#put_presence_user_primarysource) | Update a user&#39;s Primary Presence Source|
@@ -36,9 +36,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-## delete_presence_definition
+## delete_division_based_presence_definition
 
->  delete_presence_definition(definition_id)
+>  delete_division_based_presence_definition(definition_id)
 
 
 Delete a Presence Definition
@@ -67,9 +67,9 @@ definition_id = 'definition_id_example' # str | Presence Definition ID
 
 try:
     # Delete a Presence Definition
-    api_instance.delete_presence_definition(definition_id)
+    api_instance.delete_division_based_presence_definition(definition_id)
 except ApiException as e:
-    print("Exception when calling PresenceApi->delete_presence_definition: %s\n" % e)
+    print("Exception when calling PresenceApi->delete_division_based_presence_definition: %s\n" % e)
 ```
 
 ### Parameters
@@ -182,9 +182,9 @@ except ApiException as e:
 void (empty response body)
 
 
-## get_presence_definition
+## get_division_based_presence_definition
 
-> [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) get_presence_definition(definition_id, locale_code=locale_code)
+> [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) get_division_based_presence_definition(definition_id, locale_code=locale_code)
 
 
 Get a Presence Definition
@@ -213,10 +213,10 @@ locale_code = 'locale_code_example' # str | The locale code to fetch for the pre
 
 try:
     # Get a Presence Definition
-    api_response = api_instance.get_presence_definition(definition_id, locale_code=locale_code)
+    api_response = api_instance.get_division_based_presence_definition(definition_id, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PresenceApi->get_presence_definition: %s\n" % e)
+    print("Exception when calling PresenceApi->get_division_based_presence_definition: %s\n" % e)
 ```
 
 ### Parameters
@@ -232,9 +232,9 @@ except ApiException as e:
 [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
 
-## get_presence_definitions
+## get_division_based_presence_definitions
 
-> [**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing) get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
+> [**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing) get_division_based_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
 
 
 Get a list of Presence Definitions
@@ -264,10 +264,10 @@ locale_code = 'locale_code_example' # str | The locale code to fetch for the pre
 
 try:
     # Get a list of Presence Definitions
-    api_response = api_instance.get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
+    api_response = api_instance.get_division_based_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PresenceApi->get_presence_definitions: %s\n" % e)
+    print("Exception when calling PresenceApi->get_division_based_presence_definitions: %s\n" % e)
 ```
 
 ### Parameters
@@ -924,9 +924,9 @@ except ApiException as e:
 [**UserPresence**](UserPresence)
 
 
-## post_presence_definitions
+## post_division_based_presence_definitions
 
-> [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) post_presence_definitions(body)
+> [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) post_division_based_presence_definitions(body)
 
 
 Create a Presence Definition
@@ -954,10 +954,10 @@ body = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # Organization
 
 try:
     # Create a Presence Definition
-    api_response = api_instance.post_presence_definitions(body)
+    api_response = api_instance.post_division_based_presence_definitions(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PresenceApi->post_presence_definitions: %s\n" % e)
+    print("Exception when calling PresenceApi->post_division_based_presence_definitions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1071,9 +1071,9 @@ except ApiException as e:
 [**OrganizationPresence**](OrganizationPresence)
 
 
-## put_presence_definition
+## put_division_based_presence_definition
 
-> [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) put_presence_definition(definition_id, body)
+> [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) put_division_based_presence_definition(definition_id, body)
 
 
 Update a Presence Definition
@@ -1102,10 +1102,10 @@ body = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # Organization
 
 try:
     # Update a Presence Definition
-    api_response = api_instance.put_presence_definition(definition_id, body)
+    api_response = api_instance.put_division_based_presence_definition(definition_id, body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PresenceApi->put_presence_definition: %s\n" % e)
+    print("Exception when calling PresenceApi->put_division_based_presence_definition: %s\n" % e)
 ```
 
 ### Parameters
@@ -1370,4 +1370,4 @@ except ApiException as e:
 [**list[UserPresence]**](UserPresence)
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

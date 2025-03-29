@@ -946,4 +946,4 @@ except ApiException as e:
 [**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

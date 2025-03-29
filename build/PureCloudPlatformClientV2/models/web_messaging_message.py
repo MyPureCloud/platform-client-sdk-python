@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import Reason
     from . import WebMessagingChannel
     from . import WebMessagingContent
     from . import WebMessagingEvent
@@ -57,6 +58,8 @@ class WebMessagingMessage(object):
             'type': 'str',
             'text': 'str',
             'content': 'list[WebMessagingContent]',
+            'status': 'str',
+            'reasons': 'list[Reason]',
             'events': 'list[WebMessagingEvent]',
             'direction': 'str',
             'originating_entity': 'str',
@@ -69,6 +72,8 @@ class WebMessagingMessage(object):
             'type': 'type',
             'text': 'text',
             'content': 'content',
+            'status': 'status',
+            'reasons': 'reasons',
             'events': 'events',
             'direction': 'direction',
             'originating_entity': 'originatingEntity',
@@ -80,6 +85,8 @@ class WebMessagingMessage(object):
         self._type = None
         self._text = None
         self._content = None
+        self._status = None
+        self._reasons = None
         self._events = None
         self._direction = None
         self._originating_entity = None
@@ -209,6 +216,59 @@ class WebMessagingMessage(object):
         
 
         self._content = content
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this WebMessagingMessage.
+        Message receipt status, only used with type Receipt.
+
+        :return: The status of this WebMessagingMessage.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this WebMessagingMessage.
+        Message receipt status, only used with type Receipt.
+
+        :param status: The status of this WebMessagingMessage.
+        :type: str
+        """
+        if isinstance(status, int):
+            status = str(status)
+        allowed_values = ["Sent", "Delivered", "Read", "Failed", "Published", "Removed"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
+
+    @property
+    def reasons(self) -> List['Reason']:
+        """
+        Gets the reasons of this WebMessagingMessage.
+        List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
+
+        :return: The reasons of this WebMessagingMessage.
+        :rtype: list[Reason]
+        """
+        return self._reasons
+
+    @reasons.setter
+    def reasons(self, reasons: List['Reason']) -> None:
+        """
+        Sets the reasons of this WebMessagingMessage.
+        List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
+
+        :param reasons: The reasons of this WebMessagingMessage.
+        :type: list[Reason]
+        """
+        
+
+        self._reasons = reasons
 
     @property
     def events(self) -> List['WebMessagingEvent']:

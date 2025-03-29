@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CobrowseMediaParticipant
+    from . import ConversationDivisionMembership
     from . import TransferResponse
 
 class CobrowseConversation(object):
@@ -57,6 +58,7 @@ class CobrowseConversation(object):
             'other_media_uris': 'list[str]',
             'recent_transfers': 'list[TransferResponse]',
             'utilization_label_id': 'str',
+            'divisions': 'list[ConversationDivisionMembership]',
             'self_uri': 'str'
         }
 
@@ -67,6 +69,7 @@ class CobrowseConversation(object):
             'other_media_uris': 'otherMediaUris',
             'recent_transfers': 'recentTransfers',
             'utilization_label_id': 'utilizationLabelId',
+            'divisions': 'divisions',
             'self_uri': 'selfUri'
         }
 
@@ -76,6 +79,7 @@ class CobrowseConversation(object):
         self._other_media_uris = None
         self._recent_transfers = None
         self._utilization_label_id = None
+        self._divisions = None
         self._self_uri = None
 
     @property
@@ -221,6 +225,30 @@ class CobrowseConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def divisions(self) -> List['ConversationDivisionMembership']:
+        """
+        Gets the divisions of this CobrowseConversation.
+        Identifiers of divisions associated with this conversation.
+
+        :return: The divisions of this CobrowseConversation.
+        :rtype: list[ConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['ConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this CobrowseConversation.
+        Identifiers of divisions associated with this conversation.
+
+        :param divisions: The divisions of this CobrowseConversation.
+        :type: list[ConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     @property
     def self_uri(self) -> str:

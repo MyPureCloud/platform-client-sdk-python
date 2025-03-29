@@ -80,6 +80,7 @@ class ChatMediaParticipant(object):
             'alerting_timeout_ms': 'int',
             'provider': 'str',
             'external_contact': 'DomainEntityRef',
+            'external_contact_initial_division_id': 'str',
             'external_organization': 'DomainEntityRef',
             'wrapup': 'Wrapup',
             'peer': 'str',
@@ -121,6 +122,7 @@ class ChatMediaParticipant(object):
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'provider': 'provider',
             'external_contact': 'externalContact',
+            'external_contact_initial_division_id': 'externalContactInitialDivisionId',
             'external_organization': 'externalOrganization',
             'wrapup': 'wrapup',
             'peer': 'peer',
@@ -161,6 +163,7 @@ class ChatMediaParticipant(object):
         self._alerting_timeout_ms = None
         self._provider = None
         self._external_contact = None
+        self._external_contact_initial_division_id = None
         self._external_organization = None
         self._wrapup = None
         self._peer = None
@@ -812,6 +815,30 @@ class ChatMediaParticipant(object):
         
 
         self._external_contact = external_contact
+
+    @property
+    def external_contact_initial_division_id(self) -> str:
+        """
+        Gets the external_contact_initial_division_id of this ChatMediaParticipant.
+        If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+
+        :return: The external_contact_initial_division_id of this ChatMediaParticipant.
+        :rtype: str
+        """
+        return self._external_contact_initial_division_id
+
+    @external_contact_initial_division_id.setter
+    def external_contact_initial_division_id(self, external_contact_initial_division_id: str) -> None:
+        """
+        Sets the external_contact_initial_division_id of this ChatMediaParticipant.
+        If this participant represents an external contact, then this will be the initial division for the external contact. This value will not be updated if the external contact is reassigned.
+
+        :param external_contact_initial_division_id: The external_contact_initial_division_id of this ChatMediaParticipant.
+        :type: str
+        """
+        
+
+        self._external_contact_initial_division_id = external_contact_initial_division_id
 
     @property
     def external_organization(self) -> 'DomainEntityRef':

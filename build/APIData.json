@@ -5064,6 +5064,25 @@
     "return": "Operation",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nprompt_id = 'prompt_id_example' # str | Prompt ID\n\ntry:\n    # Generate prompt history\n    api_response = api_instance.post_architect_prompt_history(prompt_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->post_architect_prompt_history: %s\\n\" % e)"
   },
+  "post_architect_prompt_resource_uploads": {
+    "operationId": "post_architect_prompt_resource_uploads",
+    "functionName": "post_architect_prompt_resource_uploads",
+    "signature": "post_architect_prompt_resource_uploads(prompt_id, language_code)",
+    "parameters": [
+      {
+        "name": "prompt_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "language_code",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "PromptAssetUpload",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nprompt_id = 'prompt_id_example' # str | Prompt ID\nlanguage_code = 'language_code_example' # str | Language\n\ntry:\n    # Creates a presigned URL for uploading a user prompt file\n    api_response = api_instance.post_architect_prompt_resource_uploads(prompt_id, language_code)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->post_architect_prompt_resource_uploads: %s\\n\" % e)"
+  },
   "post_architect_prompt_resources": {
     "operationId": "post_architect_prompt_resources",
     "functionName": "post_architect_prompt_resources",
@@ -5138,6 +5157,25 @@
     ],
     "return": "Operation",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nprompt_id = 'prompt_id_example' # str | promptId\n\ntry:\n    # Generate system prompt history\n    api_response = api_instance.post_architect_systemprompt_history(prompt_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->post_architect_systemprompt_history: %s\\n\" % e)"
+  },
+  "post_architect_systemprompt_resource_uploads": {
+    "operationId": "post_architect_systemprompt_resource_uploads",
+    "functionName": "post_architect_systemprompt_resource_uploads",
+    "signature": "post_architect_systemprompt_resource_uploads(prompt_id, language_code)",
+    "parameters": [
+      {
+        "name": "prompt_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "language_code",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "PromptAssetUpload",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nprompt_id = 'prompt_id_example' # str | Prompt ID\nlanguage_code = 'language_code_example' # str | Language\n\ntry:\n    # Creates a presigned URL for uploading a system prompt file\n    api_response = api_instance.post_architect_systemprompt_resource_uploads(prompt_id, language_code)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->post_architect_systemprompt_resource_uploads: %s\\n\" % e)"
   },
   "post_architect_systemprompt_resources": {
     "operationId": "post_architect_systemprompt_resources",
@@ -10801,6 +10839,29 @@
     "return": "str",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nconversation_id = 'conversation_id_example' # str | conversation ID\nbody = PureCloudPlatformClientV2.ConversationSecureAttributes() # ConversationSecureAttributes | Conversation Secure Attributes\n\ntry:\n    # Update the secure attributes on a conversation.\n    api_response = api_instance.patch_conversation_secureattributes(conversation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->patch_conversation_secureattributes: %s\\n\" % e)"
   },
+  "patch_conversation_summary_feedback": {
+    "operationId": "patch_conversation_summary_feedback",
+    "functionName": "patch_conversation_summary_feedback",
+    "signature": "patch_conversation_summary_feedback(conversation_id, summary_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "summary_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "FeedbackUpdateRequest",
+        "required": "false"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nconversation_id = 'conversation_id_example' # str | Conversation ID\nsummary_id = 'summary_id_example' # str | Summary ID\nbody = PureCloudPlatformClientV2.FeedbackUpdateRequest() # FeedbackUpdateRequest |  (optional)\n\ntry:\n    # Update the feedback for the summary.\n    api_instance.patch_conversation_summary_feedback(conversation_id, summary_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->patch_conversation_summary_feedback: %s\\n\" % e)"
+  },
   "patch_conversation_utilizationlabel": {
     "operationId": "patch_conversation_utilizationlabel",
     "functionName": "patch_conversation_utilizationlabel",
@@ -13703,12 +13764,25 @@
     "return": "UrlResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.DownloadsApi();\ndownload_id = 'download_id_example' # str | Download ID\ncontent_disposition = 'content_disposition_example' # str |  (optional)\nissue_redirect = True # bool |  (optional) (default to True)\nredirect_to_auth = True # bool |  (optional) (default to True)\n\ntry:\n    # Issues a redirect to a signed secure download URL for specified download\n    api_response = api_instance.get_download(download_id, content_disposition=content_disposition, issue_redirect=issue_redirect, redirect_to_auth=redirect_to_auth)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling DownloadsApi->get_download: %s\\n\" % e)"
   },
+  "delete_emails_settings_threading": {
+    "operationId": "delete_emails_settings_threading",
+    "functionName": "delete_emails_settings_threading",
+    "signature": "delete_emails_settings_threading()",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SettingsApi();\n\ntry:\n    # Reset email threading settings to default\n    api_instance.delete_emails_settings_threading()\nexcept ApiException as e:\n    print(\"Exception when calling SettingsApi->delete_emails_settings_threading: %s\\n\" % e)"
+  },
   "get_emails_settings": {
     "operationId": "get_emails_settings",
     "functionName": "get_emails_settings",
     "signature": "get_emails_settings()",
     "return": "EmailSettings",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SettingsApi();\n\ntry:\n    # Get email Contact Center settings\n    api_response = api_instance.get_emails_settings()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SettingsApi->get_emails_settings: %s\\n\" % e)"
+  },
+  "get_emails_settings_threading": {
+    "operationId": "get_emails_settings_threading",
+    "functionName": "get_emails_settings_threading",
+    "signature": "get_emails_settings_threading()",
+    "return": "EmailThreadingSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SettingsApi();\n\ntry:\n    # Get email threading settings\n    api_response = api_instance.get_emails_settings_threading()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SettingsApi->get_emails_settings_threading: %s\\n\" % e)"
   },
   "patch_emails_settings": {
     "operationId": "patch_emails_settings",
@@ -13723,6 +13797,20 @@
     ],
     "return": "EmailSettings",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SettingsApi();\nbody = PureCloudPlatformClientV2.EmailSettings() # EmailSettings |  (optional)\n\ntry:\n    # Patch email Contact Center settings\n    api_response = api_instance.patch_emails_settings(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SettingsApi->patch_emails_settings: %s\\n\" % e)"
+  },
+  "patch_emails_settings_threading": {
+    "operationId": "patch_emails_settings_threading",
+    "functionName": "patch_emails_settings_threading",
+    "signature": "patch_emails_settings_threading(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "EmailThreadingSettings",
+        "required": "false"
+      }
+    ],
+    "return": "EmailThreadingSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SettingsApi();\nbody = PureCloudPlatformClientV2.EmailThreadingSettings() # EmailThreadingSettings |  (optional)\n\ntry:\n    # Patch email threading settings\n    api_response = api_instance.patch_emails_settings_threading(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SettingsApi->patch_emails_settings_threading: %s\\n\" % e)"
   },
   "delete_employeeengagement_celebration": {
     "operationId": "delete_employeeengagement_celebration",
@@ -20411,6 +20499,25 @@
       }
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi();\nnuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots\nsettings = PureCloudPlatformClientV2.BotExecutionConfiguration() # BotExecutionConfiguration | \n\ntry:\n    # Try out a single credential for a Nuance bot to know if the secret is correct\n    api_instance.post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(nuance_integration_id, settings)\nexcept ApiException as e:\n    print(\"Exception when calling IntegrationsApi->post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate: %s\\n\" % e)"
+  },
+  "post_integrations_webhook_events": {
+    "operationId": "post_integrations_webhook_events",
+    "functionName": "post_integrations_webhook_events",
+    "signature": "post_integrations_webhook_events(token_id, body)",
+    "parameters": [
+      {
+        "name": "token_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "object",
+        "required": "true"
+      }
+    ],
+    "return": "WebhookInvocationResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi();\ntoken_id = 'token_id_example' # str | The token of the webhook to be invoked\nbody = NULL # object | Webhook Invocation Payload\n\ntry:\n    # Invoke Webhook\n    api_response = api_instance.post_integrations_webhook_events(token_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling IntegrationsApi->post_integrations_webhook_events: %s\\n\" % e)"
   },
   "put_integration_config_current": {
     "operationId": "put_integration_config_current",
@@ -31979,10 +32086,10 @@
     "return": "WrapUpCodeMapping",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi();\nbody = PureCloudPlatformClientV2.WrapUpCodeMapping() # WrapUpCodeMapping | wrapUpCodeMapping\n\ntry:\n    # Update the Dialer wrap up code mapping.\n    api_response = api_instance.put_outbound_wrapupcodemappings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OutboundApi->put_outbound_wrapupcodemappings: %s\\n\" % e)"
   },
-  "delete_presence_definition": {
-    "operationId": "delete_presence_definition",
-    "functionName": "delete_presence_definition",
-    "signature": "delete_presence_definition(definition_id)",
+  "delete_division_based_presence_definition": {
+    "operationId": "delete_division_based_presence_definition",
+    "functionName": "delete_division_based_presence_definition",
+    "signature": "delete_division_based_presence_definition(definition_id)",
     "parameters": [
       {
         "name": "definition_id",
@@ -31990,7 +32097,7 @@
         "required": "true"
       }
     ],
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndefinition_id = 'definition_id_example' # str | Presence Definition ID\n\ntry:\n    # Delete a Presence Definition\n    api_instance.delete_presence_definition(definition_id)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->delete_presence_definition: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndefinition_id = 'definition_id_example' # str | Presence Definition ID\n\ntry:\n    # Delete a Presence Definition\n    api_instance.delete_division_based_presence_definition(definition_id)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->delete_division_based_presence_definition: %s\\n\" % e)"
   },
   "delete_presence_source": {
     "operationId": "delete_presence_source",
@@ -32018,10 +32125,10 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\npresence_id = 'presence_id_example' # str | Organization Presence ID\n\ntry:\n    # Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead\n    api_instance.delete_presencedefinition(presence_id)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->delete_presencedefinition: %s\\n\" % e)"
   },
-  "get_presence_definition": {
-    "operationId": "get_presence_definition",
-    "functionName": "get_presence_definition",
-    "signature": "get_presence_definition(definition_id, locale_code)",
+  "get_division_based_presence_definition": {
+    "operationId": "get_division_based_presence_definition",
+    "functionName": "get_division_based_presence_definition",
+    "signature": "get_division_based_presence_definition(definition_id, locale_code)",
     "parameters": [
       {
         "name": "definition_id",
@@ -32035,12 +32142,12 @@
       }
     ],
     "return": "OrganizationPresenceDefinition",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndefinition_id = 'definition_id_example' # str | Presence Definition ID\nlocale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)\n\ntry:\n    # Get a Presence Definition\n    api_response = api_instance.get_presence_definition(definition_id, locale_code=locale_code)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->get_presence_definition: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndefinition_id = 'definition_id_example' # str | Presence Definition ID\nlocale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)\n\ntry:\n    # Get a Presence Definition\n    api_response = api_instance.get_division_based_presence_definition(definition_id, locale_code=locale_code)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->get_division_based_presence_definition: %s\\n\" % e)"
   },
-  "get_presence_definitions": {
-    "operationId": "get_presence_definitions",
-    "functionName": "get_presence_definitions",
-    "signature": "get_presence_definitions(deactivated, division_id, locale_code)",
+  "get_division_based_presence_definitions": {
+    "operationId": "get_division_based_presence_definitions",
+    "functionName": "get_division_based_presence_definitions",
+    "signature": "get_division_based_presence_definitions(deactivated, division_id, locale_code)",
     "parameters": [
       {
         "name": "deactivated",
@@ -32059,7 +32166,7 @@
       }
     ],
     "return": "OrganizationPresenceDefinitionEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndeactivated = ''false'' # str | Deactivated query can be TRUE or FALSE (optional) (default to 'false')\ndivision_id = ['division_id_example'] # list[str] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)\nlocale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)\n\ntry:\n    # Get a list of Presence Definitions\n    api_response = api_instance.get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->get_presence_definitions: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndeactivated = ''false'' # str | Deactivated query can be TRUE or FALSE (optional) (default to 'false')\ndivision_id = ['division_id_example'] # list[str] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)\nlocale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)\n\ntry:\n    # Get a list of Presence Definitions\n    api_response = api_instance.get_division_based_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->get_division_based_presence_definitions: %s\\n\" % e)"
   },
   "get_presence_settings": {
     "operationId": "get_presence_settings",
@@ -32274,10 +32381,10 @@
     "return": "UserPresence",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\nuser_id = 'user_id_example' # str | user Id\nbody = PureCloudPlatformClientV2.UserPresence() # UserPresence | User presence\n\ntry:\n    # Patch a Genesys Cloud user's presence\n    api_response = api_instance.patch_user_presences_purecloud(user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->patch_user_presences_purecloud: %s\\n\" % e)"
   },
-  "post_presence_definitions": {
-    "operationId": "post_presence_definitions",
-    "functionName": "post_presence_definitions",
-    "signature": "post_presence_definitions(body)",
+  "post_division_based_presence_definitions": {
+    "operationId": "post_division_based_presence_definitions",
+    "functionName": "post_division_based_presence_definitions",
+    "signature": "post_division_based_presence_definitions(body)",
     "parameters": [
       {
         "name": "body",
@@ -32286,7 +32393,7 @@
       }
     ],
     "return": "OrganizationPresenceDefinition",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\nbody = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # OrganizationPresenceDefinition | The Presence Definition to create\n\ntry:\n    # Create a Presence Definition\n    api_response = api_instance.post_presence_definitions(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->post_presence_definitions: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\nbody = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # OrganizationPresenceDefinition | The Presence Definition to create\n\ntry:\n    # Create a Presence Definition\n    api_response = api_instance.post_division_based_presence_definitions(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->post_division_based_presence_definitions: %s\\n\" % e)"
   },
   "post_presence_sources": {
     "operationId": "post_presence_sources",
@@ -32316,10 +32423,10 @@
     "return": "OrganizationPresence",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\nbody = PureCloudPlatformClientV2.OrganizationPresence() # OrganizationPresence | The Presence Definition to create\n\ntry:\n    # Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead\n    api_response = api_instance.post_presencedefinitions(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->post_presencedefinitions: %s\\n\" % e)"
   },
-  "put_presence_definition": {
-    "operationId": "put_presence_definition",
-    "functionName": "put_presence_definition",
-    "signature": "put_presence_definition(definition_id, body)",
+  "put_division_based_presence_definition": {
+    "operationId": "put_division_based_presence_definition",
+    "functionName": "put_division_based_presence_definition",
+    "signature": "put_division_based_presence_definition(definition_id, body)",
     "parameters": [
       {
         "name": "definition_id",
@@ -32333,7 +32440,7 @@
       }
     ],
     "return": "OrganizationPresenceDefinition",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndefinition_id = 'definition_id_example' # str | Presence Definition ID\nbody = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # OrganizationPresenceDefinition | The updated Presence Definition\n\ntry:\n    # Update a Presence Definition\n    api_response = api_instance.put_presence_definition(definition_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->put_presence_definition: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.PresenceApi();\ndefinition_id = 'definition_id_example' # str | Presence Definition ID\nbody = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # OrganizationPresenceDefinition | The updated Presence Definition\n\ntry:\n    # Update a Presence Definition\n    api_response = api_instance.put_division_based_presence_definition(definition_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling PresenceApi->put_division_based_presence_definition: %s\\n\" % e)"
   },
   "put_presence_settings": {
     "operationId": "put_presence_settings",
@@ -34120,7 +34227,7 @@
       }
     ],
     "return": "list[RecordingMetadata]",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi();\nconversation_id = 'conversation_id_example' # str | Conversation ID\n\ntry:\n    # Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.\n    api_response = api_instance.get_conversation_recordingmetadata(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RecordingApi->get_conversation_recordingmetadata: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi();\nconversation_id = 'conversation_id_example' # str | Conversation ID\n\ntry:\n    # Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.\n    api_response = api_instance.get_conversation_recordingmetadata(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RecordingApi->get_conversation_recordingmetadata: %s\\n\" % e)"
   },
   "get_conversation_recordingmetadata_recording_id": {
     "operationId": "get_conversation_recordingmetadata_recording_id",

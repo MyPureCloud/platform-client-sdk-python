@@ -100,6 +100,7 @@ from ..models import Prompt
 from ..models import PromptAsset
 from ..models import PromptAssetCreate
 from ..models import PromptAssetEntityListing
+from ..models import PromptAssetUpload
 from ..models import PromptEntityListing
 from ..models import RegisterArchitectExportJob
 from ..models import RegisterArchitectExportJobResponse
@@ -8959,6 +8960,90 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_architect_prompt_resource_uploads(self, prompt_id: str, language_code: str, **kwargs) -> 'PromptAssetUpload':
+        """
+        Creates a presigned URL for uploading a user prompt file
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_architect_prompt_resource_uploads(prompt_id, language_code, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str prompt_id: Prompt ID (required)
+        :param str language_code: Language (required)
+        :return: PromptAssetUpload
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['prompt_id', 'language_code']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_architect_prompt_resource_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'prompt_id' is set
+        if ('prompt_id' not in params) or (params['prompt_id'] is None):
+            raise ValueError("Missing the required parameter `prompt_id` when calling `post_architect_prompt_resource_uploads`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_architect_prompt_resource_uploads`")
+
+
+        resource_path = '/api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads'.replace('{format}', 'json')
+        path_params = {}
+        if 'prompt_id' in params:
+            path_params['promptId'] = params['prompt_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PromptAssetUpload',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_architect_prompt_resources(self, prompt_id: str, body: 'PromptAssetCreate', **kwargs) -> 'PromptAsset':
         """
         Create a new user prompt resource
@@ -9351,6 +9436,90 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Operation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_architect_systemprompt_resource_uploads(self, prompt_id: str, language_code: str, **kwargs) -> 'PromptAssetUpload':
+        """
+        Creates a presigned URL for uploading a system prompt file
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_architect_systemprompt_resource_uploads(prompt_id, language_code, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str prompt_id: Prompt ID (required)
+        :param str language_code: Language (required)
+        :return: PromptAssetUpload
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['prompt_id', 'language_code']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_architect_systemprompt_resource_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'prompt_id' is set
+        if ('prompt_id' not in params) or (params['prompt_id'] is None):
+            raise ValueError("Missing the required parameter `prompt_id` when calling `post_architect_systemprompt_resource_uploads`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_architect_systemprompt_resource_uploads`")
+
+
+        resource_path = '/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads'.replace('{format}', 'json')
+        path_params = {}
+        if 'prompt_id' in params:
+            path_params['promptId'] = params['prompt_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PromptAssetUpload',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -49,6 +49,7 @@ class SpeechTextAnalyticsConversationSummary(object):
         """
         self.swagger_types = {
             'summary_type': 'str',
+            'media_type': 'str',
             'language': 'str',
             'agent_id': 'str',
             'summary': 'str',
@@ -58,6 +59,7 @@ class SpeechTextAnalyticsConversationSummary(object):
 
         self.attribute_map = {
             'summary_type': 'summaryType',
+            'media_type': 'mediaType',
             'language': 'language',
             'agent_id': 'agentId',
             'summary': 'summary',
@@ -66,6 +68,7 @@ class SpeechTextAnalyticsConversationSummary(object):
         }
 
         self._summary_type = None
+        self._media_type = None
         self._language = None
         self._agent_id = None
         self._summary = None
@@ -100,6 +103,35 @@ class SpeechTextAnalyticsConversationSummary(object):
             self._summary_type = "outdated_sdk_version"
         else:
             self._summary_type = summary_type
+
+    @property
+    def media_type(self) -> str:
+        """
+        Gets the media_type of this SpeechTextAnalyticsConversationSummary.
+        The media type of the associated interaction
+
+        :return: The media_type of this SpeechTextAnalyticsConversationSummary.
+        :rtype: str
+        """
+        return self._media_type
+
+    @media_type.setter
+    def media_type(self, media_type: str) -> None:
+        """
+        Sets the media_type of this SpeechTextAnalyticsConversationSummary.
+        The media type of the associated interaction
+
+        :param media_type: The media_type of this SpeechTextAnalyticsConversationSummary.
+        :type: str
+        """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
+        allowed_values = ["Unknown", "Message", "Call", "Email"]
+        if media_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for media_type -> " + media_type)
+            self._media_type = "outdated_sdk_version"
+        else:
+            self._media_type = media_type
 
     @property
     def language(self) -> str:

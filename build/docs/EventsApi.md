@@ -156,4 +156,4 @@ except ApiException as e:
 [**BatchEventResponse**](BatchEventResponse)
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

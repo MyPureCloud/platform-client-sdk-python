@@ -489,7 +489,6 @@ class AnalyticsApi(object):
         """
         Get an agent and their active sessions by user ID
         
-	    get_analytics_agent_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4787,7 +4786,6 @@ class AnalyticsApi(object):
         """
         Count agents by segment type
         
-	    post_analytics_agents_status_counts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4866,7 +4864,6 @@ class AnalyticsApi(object):
         """
         Retrieve the top 50 agents matching the query filters
         
-	    post_analytics_agents_status_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

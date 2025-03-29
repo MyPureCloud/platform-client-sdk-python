@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationDivisionMembership
     from . import MessageMediaParticipant
     from . import TransferResponse
 
@@ -57,6 +58,7 @@ class MessageConversation(object):
             'other_media_uris': 'list[str]',
             'recent_transfers': 'list[TransferResponse]',
             'utilization_label_id': 'str',
+            'divisions': 'list[ConversationDivisionMembership]',
             'self_uri': 'str'
         }
 
@@ -67,6 +69,7 @@ class MessageConversation(object):
             'other_media_uris': 'otherMediaUris',
             'recent_transfers': 'recentTransfers',
             'utilization_label_id': 'utilizationLabelId',
+            'divisions': 'divisions',
             'self_uri': 'selfUri'
         }
 
@@ -76,6 +79,7 @@ class MessageConversation(object):
         self._other_media_uris = None
         self._recent_transfers = None
         self._utilization_label_id = None
+        self._divisions = None
         self._self_uri = None
 
     @property
@@ -221,6 +225,30 @@ class MessageConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def divisions(self) -> List['ConversationDivisionMembership']:
+        """
+        Gets the divisions of this MessageConversation.
+        Identifiers of divisions associated with this conversation.
+
+        :return: The divisions of this MessageConversation.
+        :rtype: list[ConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['ConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this MessageConversation.
+        Identifiers of divisions associated with this conversation.
+
+        :param divisions: The divisions of this MessageConversation.
+        :type: list[ConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     @property
     def self_uri(self) -> str:

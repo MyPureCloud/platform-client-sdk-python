@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CallMediaParticipant
+    from . import ConversationDivisionMembership
     from . import TransferResponse
 
 class CallConversation(object):
@@ -57,6 +58,7 @@ class CallConversation(object):
             'other_media_uris': 'list[str]',
             'recent_transfers': 'list[TransferResponse]',
             'utilization_label_id': 'str',
+            'divisions': 'list[ConversationDivisionMembership]',
             'recording_state': 'str',
             'max_participants': 'int',
             'secure_pause': 'bool',
@@ -70,6 +72,7 @@ class CallConversation(object):
             'other_media_uris': 'otherMediaUris',
             'recent_transfers': 'recentTransfers',
             'utilization_label_id': 'utilizationLabelId',
+            'divisions': 'divisions',
             'recording_state': 'recordingState',
             'max_participants': 'maxParticipants',
             'secure_pause': 'securePause',
@@ -82,6 +85,7 @@ class CallConversation(object):
         self._other_media_uris = None
         self._recent_transfers = None
         self._utilization_label_id = None
+        self._divisions = None
         self._recording_state = None
         self._max_participants = None
         self._secure_pause = None
@@ -230,6 +234,30 @@ class CallConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def divisions(self) -> List['ConversationDivisionMembership']:
+        """
+        Gets the divisions of this CallConversation.
+        Identifiers of divisions associated with this conversation.
+
+        :return: The divisions of this CallConversation.
+        :rtype: list[ConversationDivisionMembership]
+        """
+        return self._divisions
+
+    @divisions.setter
+    def divisions(self, divisions: List['ConversationDivisionMembership']) -> None:
+        """
+        Sets the divisions of this CallConversation.
+        Identifiers of divisions associated with this conversation.
+
+        :param divisions: The divisions of this CallConversation.
+        :type: list[ConversationDivisionMembership]
+        """
+        
+
+        self._divisions = divisions
 
     @property
     def recording_state(self) -> str:

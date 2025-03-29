@@ -940,6 +940,7 @@ PureCloudPlatformClientV2/models/content_file_response.py
 PureCloudPlatformClientV2/models/content_filter_item.py
 PureCloudPlatformClientV2/models/content_generic.py
 PureCloudPlatformClientV2/models/content_list.py
+PureCloudPlatformClientV2/models/content_location.py
 PureCloudPlatformClientV2/models/content_management_single_document_topic_document_data_v2.py
 PureCloudPlatformClientV2/models/content_management_single_document_topic_lock_data.py
 PureCloudPlatformClientV2/models/content_management_single_document_topic_user_data.py
@@ -1825,6 +1826,7 @@ PureCloudPlatformClientV2/models/email_routing_established_event.py
 PureCloudPlatformClientV2/models/email_routing_transfer_event.py
 PureCloudPlatformClientV2/models/email_settings.py
 PureCloudPlatformClientV2/models/email_setup.py
+PureCloudPlatformClientV2/models/email_threading_settings.py
 PureCloudPlatformClientV2/models/email_user_established_event.py
 PureCloudPlatformClientV2/models/email_user_transfer_event.py
 PureCloudPlatformClientV2/models/emails_settings.py
@@ -1836,6 +1838,7 @@ PureCloudPlatformClientV2/models/emergency_group_division_view_entity_listing.py
 PureCloudPlatformClientV2/models/emergency_group_listing.py
 PureCloudPlatformClientV2/models/emergency_location.py
 PureCloudPlatformClientV2/models/empathy_score.py
+PureCloudPlatformClientV2/models/employee_performance_external_metrics_definition_external_metrics_definition.py
 PureCloudPlatformClientV2/models/employer_info.py
 PureCloudPlatformClientV2/models/empty.py
 PureCloudPlatformClientV2/models/encryption_key.py
@@ -2067,6 +2070,7 @@ PureCloudPlatformClientV2/models/fax_topic_workspace_data.py
 PureCloudPlatformClientV2/models/feature_state.py
 PureCloudPlatformClientV2/models/feedback.py
 PureCloudPlatformClientV2/models/feedback_add_request.py
+PureCloudPlatformClientV2/models/feedback_update_request.py
 PureCloudPlatformClientV2/models/field_config.py
 PureCloudPlatformClientV2/models/field_configs.py
 PureCloudPlatformClientV2/models/field_list.py
@@ -3178,6 +3182,22 @@ PureCloudPlatformClientV2/models/outbound_messaging_messaging_campaign_config_ch
 PureCloudPlatformClientV2/models/outbound_messaging_messaging_campaign_progress_event_campaign_progress.py
 PureCloudPlatformClientV2/models/outbound_messaging_messaging_campaign_progress_event_object.py
 PureCloudPlatformClientV2/models/outbound_messaging_messaging_campaign_progress_event_uri_reference.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_contact_sort.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_email_config.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_error_detail.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_from_email_address.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_integration_ref.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_messaging_campaign.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_object.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_reply_to_email_address.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_response_ref.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_sms_config.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_sms_phone_number_ref.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_uri_reference.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_config_change_whats_app_config.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_progress_event_campaign_progress.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_progress_event_object.py
+PureCloudPlatformClientV2/models/outbound_messaging_whatsapp_campaign_progress_event_uri_reference.py
 PureCloudPlatformClientV2/models/outbound_only_setting.py
 PureCloudPlatformClientV2/models/outbound_route.py
 PureCloudPlatformClientV2/models/outbound_route_base.py
@@ -3382,6 +3402,7 @@ PureCloudPlatformClientV2/models/prompt.py
 PureCloudPlatformClientV2/models/prompt_asset.py
 PureCloudPlatformClientV2/models/prompt_asset_create.py
 PureCloudPlatformClientV2/models/prompt_asset_entity_listing.py
+PureCloudPlatformClientV2/models/prompt_asset_upload.py
 PureCloudPlatformClientV2/models/prompt_entity_listing.py
 PureCloudPlatformClientV2/models/property_change.py
 PureCloudPlatformClientV2/models/property_index_request.py
@@ -3741,6 +3762,7 @@ PureCloudPlatformClientV2/models/rate_limit_aggregation_query.py
 PureCloudPlatformClientV2/models/rate_limit_aggregation_view.py
 PureCloudPlatformClientV2/models/reaction.py
 PureCloudPlatformClientV2/models/real_time_adherence_explanation.py
+PureCloudPlatformClientV2/models/reason.py
 PureCloudPlatformClientV2/models/recall_entry.py
 PureCloudPlatformClientV2/models/recipient.py
 PureCloudPlatformClientV2/models/recipient_additional_identifier.py
@@ -3750,6 +3772,7 @@ PureCloudPlatformClientV2/models/recipient_request.py
 PureCloudPlatformClientV2/models/recognition.py
 PureCloudPlatformClientV2/models/recognition_base.py
 PureCloudPlatformClientV2/models/record.py
+PureCloudPlatformClientV2/models/recorders_state.py
 PureCloudPlatformClientV2/models/recording.py
 PureCloudPlatformClientV2/models/recording_annotation_flow.py
 PureCloudPlatformClientV2/models/recording_annotation_queue.py
@@ -4849,6 +4872,7 @@ PureCloudPlatformClientV2/models/web_messaging_offer_fields.py
 PureCloudPlatformClientV2/models/web_messaging_offer_properties.py
 PureCloudPlatformClientV2/models/web_messaging_quick_reply.py
 PureCloudPlatformClientV2/models/web_messaging_recipient.py
+PureCloudPlatformClientV2/models/webhook_invocation_response.py
 PureCloudPlatformClientV2/models/week_schedule.py
 PureCloudPlatformClientV2/models/week_schedule_generation_result.py
 PureCloudPlatformClientV2/models/week_schedule_list_item_response.py
@@ -4968,6 +4992,9 @@ PureCloudPlatformClientV2/models/wfm_historical_adherence_query_for_teams.py
 PureCloudPlatformClientV2/models/wfm_historical_adherence_query_for_users.py
 PureCloudPlatformClientV2/models/wfm_historical_adherence_response.py
 PureCloudPlatformClientV2/models/wfm_historical_adherence_result_wrapper.py
+PureCloudPlatformClientV2/models/wfm_historical_data_import_purge_complete_topic_historical_data_delete_entity.py
+PureCloudPlatformClientV2/models/wfm_historical_data_import_purge_complete_topic_historical_data_disallowed_delete_entity.py
+PureCloudPlatformClientV2/models/wfm_historical_data_import_purge_complete_topic_historical_data_purge_request_complete.py
 PureCloudPlatformClientV2/models/wfm_historical_data_upload_purge_request_status_topic_historical_data_upload_purge_request_update.py
 PureCloudPlatformClientV2/models/wfm_historical_data_upload_request_status_topic_historical_data_upload_request_update.py
 PureCloudPlatformClientV2/models/wfm_historical_shrinkage_calculations_complete_topic_historical_shrinkage_calculations_complete_notification.py
@@ -6114,6 +6141,7 @@ docs/ContentFileResponse.md
 docs/ContentFilterItem.md
 docs/ContentGeneric.md
 docs/ContentList.md
+docs/ContentLocation.md
 docs/ContentManagementApi.json
 docs/ContentManagementApi.md
 docs/ContentManagementSingleDocumentTopicDocumentDataV2.md
@@ -7009,6 +7037,7 @@ docs/EmailRoutingEstablishedEvent.md
 docs/EmailRoutingTransferEvent.md
 docs/EmailSettings.md
 docs/EmailSetup.md
+docs/EmailThreadingSettings.md
 docs/EmailUserEstablishedEvent.md
 docs/EmailUserTransferEvent.md
 docs/EmailsApi.json
@@ -7024,6 +7053,7 @@ docs/EmergencyLocation.md
 docs/EmpathyScore.md
 docs/EmployeeEngagementApi.json
 docs/EmployeeEngagementApi.md
+docs/EmployeePerformanceExternalMetricsDefinitionExternalMetricsDefinition.md
 docs/EmployerInfo.md
 docs/Empty.md
 docs/EncryptionKey.md
@@ -7261,6 +7291,7 @@ docs/FaxTopicWorkspaceData.md
 docs/FeatureState.md
 docs/Feedback.md
 docs/FeedbackAddRequest.md
+docs/FeedbackUpdateRequest.md
 docs/FieldConfig.md
 docs/FieldConfigs.md
 docs/FieldList.md
@@ -8424,6 +8455,22 @@ docs/OutboundMessagingMessagingCampaignConfigChangeWhatsAppConfig.md
 docs/OutboundMessagingMessagingCampaignProgressEventCampaignProgress.md
 docs/OutboundMessagingMessagingCampaignProgressEventObject.md
 docs/OutboundMessagingMessagingCampaignProgressEventUriReference.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeContactSort.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeEmailConfig.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeErrorDetail.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeFromEmailAddress.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeIntegrationRef.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeObject.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeReplyToEmailAddress.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeResponseRef.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeSmsConfig.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeSmsPhoneNumberRef.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeUriReference.md
+docs/OutboundMessagingWhatsappCampaignConfigChangeWhatsAppConfig.md
+docs/OutboundMessagingWhatsappCampaignProgressEventCampaignProgress.md
+docs/OutboundMessagingWhatsappCampaignProgressEventObject.md
+docs/OutboundMessagingWhatsappCampaignProgressEventUriReference.md
 docs/OutboundOnlySetting.md
 docs/OutboundRoute.md
 docs/OutboundRouteBase.md
@@ -8632,6 +8679,7 @@ docs/Prompt.md
 docs/PromptAsset.md
 docs/PromptAssetCreate.md
 docs/PromptAssetEntityListing.md
+docs/PromptAssetUpload.md
 docs/PromptEntityListing.md
 docs/PropertyChange.md
 docs/PropertyIndexRequest.md
@@ -8993,6 +9041,7 @@ docs/RateLimitAggregationQuery.md
 docs/RateLimitAggregationView.md
 docs/Reaction.md
 docs/RealTimeAdherenceExplanation.md
+docs/Reason.md
 docs/RecallEntry.md
 docs/Recipient.md
 docs/RecipientAdditionalIdentifier.md
@@ -9002,6 +9051,7 @@ docs/RecipientRequest.md
 docs/Recognition.md
 docs/RecognitionBase.md
 docs/Record.md
+docs/RecordersState.md
 docs/Recording.md
 docs/RecordingAnnotationFlow.md
 docs/RecordingAnnotationQueue.md
@@ -10155,6 +10205,7 @@ docs/WebMessagingOfferFields.md
 docs/WebMessagingOfferProperties.md
 docs/WebMessagingQuickReply.md
 docs/WebMessagingRecipient.md
+docs/WebhookInvocationResponse.md
 docs/WeekSchedule.md
 docs/WeekScheduleGenerationResult.md
 docs/WeekScheduleListItemResponse.md
@@ -10274,6 +10325,9 @@ docs/WfmHistoricalAdherenceQueryForTeams.md
 docs/WfmHistoricalAdherenceQueryForUsers.md
 docs/WfmHistoricalAdherenceResponse.md
 docs/WfmHistoricalAdherenceResultWrapper.md
+docs/WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity.md
+docs/WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDisallowedDeleteEntity.md
+docs/WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataPurgeRequestComplete.md
 docs/WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate.md
 docs/WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate.md
 docs/WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification.md
@@ -10602,6 +10656,9 @@ docs/delete_conversations_messaging_settings_default-example.txt
 docs/delete_conversations_messaging_supportedcontent_supported_content_id-example.txt
 docs/delete_dataprivacy_maskingrule-example.txt
 docs/delete_diagnostics_logcapture_browser_user-example.txt
+docs/delete_division_based_presence_definition-example.txt
+docs/delete_emails_settings_threading-example.txt
+docs/delete_emails_settings_threading-example.txt
 docs/delete_employeeengagement_celebration-example.txt
 docs/delete_employeeperformance_externalmetrics_definition-example.txt
 docs/delete_externalcontacts_contact-example.txt
@@ -10720,7 +10777,6 @@ docs/delete_outbound_schedules_emailcampaign-example.txt
 docs/delete_outbound_schedules_messagingcampaign-example.txt
 docs/delete_outbound_schedules_sequence-example.txt
 docs/delete_outbound_sequence-example.txt
-docs/delete_presence_definition-example.txt
 docs/delete_presence_source-example.txt
 docs/delete_presencedefinition-example.txt
 docs/delete_processautomation_trigger-example.txt
@@ -11141,11 +11197,15 @@ docs/get_date-example.txt
 docs/get_diagnostics_logcapture_browser_entries_download_job-example.txt
 docs/get_diagnostics_logcapture_browser_user-example.txt
 docs/get_diagnostics_logcapture_browser_users-example.txt
+docs/get_division_based_presence_definition-example.txt
+docs/get_division_based_presence_definitions-example.txt
 docs/get_documentation_gkn_search-example.txt
 docs/get_documentation_search-example.txt
 docs/get_download-example.txt
 docs/get_emails_settings-example.txt
 docs/get_emails_settings-example.txt
+docs/get_emails_settings_threading-example.txt
+docs/get_emails_settings_threading-example.txt
 docs/get_employeeengagement_celebrations-example.txt
 docs/get_employeeengagement_recognition-example.txt
 docs/get_employeeperformance_externalmetrics_definition-example.txt
@@ -11627,8 +11687,6 @@ docs/get_outbound_sequence-example.txt
 docs/get_outbound_sequences-example.txt
 docs/get_outbound_settings-example.txt
 docs/get_outbound_wrapupcodemappings-example.txt
-docs/get_presence_definition-example.txt
-docs/get_presence_definitions-example.txt
 docs/get_presence_settings-example.txt
 docs/get_presence_source-example.txt
 docs/get_presence_sources-example.txt
@@ -12192,6 +12250,7 @@ docs/patch_coaching_notification-example.txt
 docs/patch_conversation_participant-example.txt
 docs/patch_conversation_participant_attributes-example.txt
 docs/patch_conversation_secureattributes-example.txt
+docs/patch_conversation_summary_feedback-example.txt
 docs/patch_conversation_utilizationlabel-example.txt
 docs/patch_conversations_aftercallwork_conversation_id_participant_communication-example.txt
 docs/patch_conversations_call-example.txt
@@ -12234,6 +12293,8 @@ docs/patch_conversations_settings-example.txt
 docs/patch_dataprivacy_maskingrule-example.txt
 docs/patch_emails_settings-example.txt
 docs/patch_emails_settings-example.txt
+docs/patch_emails_settings_threading-example.txt
+docs/patch_emails_settings_threading-example.txt
 docs/patch_employeeengagement_celebration-example.txt
 docs/patch_employeeperformance_externalmetrics_definition-example.txt
 docs/patch_externalcontacts_contact_identifiers-example.txt
@@ -12460,11 +12521,13 @@ docs/post_architect_grammar_languages-example.txt
 docs/post_architect_grammars-example.txt
 docs/post_architect_ivrs-example.txt
 docs/post_architect_prompt_history-example.txt
+docs/post_architect_prompt_resource_uploads-example.txt
 docs/post_architect_prompt_resources-example.txt
 docs/post_architect_prompts-example.txt
 docs/post_architect_schedulegroups-example.txt
 docs/post_architect_schedules-example.txt
 docs/post_architect_systemprompt_history-example.txt
+docs/post_architect_systemprompt_resource_uploads-example.txt
 docs/post_architect_systemprompt_resources-example.txt
 docs/post_assistants-example.txt
 docs/post_audits_query-example.txt
@@ -12595,6 +12658,7 @@ docs/post_dataprivacy_maskingrules_validate-example.txt
 docs/post_diagnostics_logcapture_browser_entries_download_jobs-example.txt
 docs/post_diagnostics_logcapture_browser_entries_query-example.txt
 docs/post_diagnostics_logcapture_browser_user-example.txt
+docs/post_division_based_presence_definitions-example.txt
 docs/post_documentation_all_search-example.txt
 docs/post_documentation_gkn_search-example.txt
 docs/post_documentation_search-example.txt
@@ -12694,6 +12758,7 @@ docs/post_integrations_credentials-example.txt
 docs/post_integrations_speech_nuance_nuance_integration_id_bot_jobs-example.txt
 docs/post_integrations_speech_nuance_nuance_integration_id_bots_jobs-example.txt
 docs/post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate-example.txt
+docs/post_integrations_webhook_events-example.txt
 docs/post_journey_actionmaps-example.txt
 docs/post_journey_actionmaps_estimates_jobs-example.txt
 docs/post_journey_actiontemplates-example.txt
@@ -12843,7 +12908,6 @@ docs/post_outbound_messagingcampaigns-example.txt
 docs/post_outbound_messagingcampaigns_progress-example.txt
 docs/post_outbound_rulesets-example.txt
 docs/post_outbound_sequences-example.txt
-docs/post_presence_definitions-example.txt
 docs/post_presence_sources-example.txt
 docs/post_presencedefinitions-example.txt
 docs/post_processautomation_trigger_test-example.txt
@@ -13157,6 +13221,7 @@ docs/put_conversations_messaging_threadingtimeline-example.txt
 docs/put_conversations_screenshare_recordingstate-example.txt
 docs/put_conversations_social_recordingstate-example.txt
 docs/put_conversations_video_recordingstate-example.txt
+docs/put_division_based_presence_definition-example.txt
 docs/put_externalcontacts_contact-example.txt
 docs/put_externalcontacts_contact_note-example.txt
 docs/put_externalcontacts_contacts_schema-example.txt
@@ -13253,7 +13318,6 @@ docs/put_outbound_schedules_messagingcampaign-example.txt
 docs/put_outbound_schedules_sequence-example.txt
 docs/put_outbound_sequence-example.txt
 docs/put_outbound_wrapupcodemappings-example.txt
-docs/put_presence_definition-example.txt
 docs/put_presence_settings-example.txt
 docs/put_presence_source-example.txt
 docs/put_presence_user_primarysource-example.txt

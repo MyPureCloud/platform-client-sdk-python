@@ -84,6 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_speech_nuance_nuance_integration_id_bot_jobs**](#post_integrations_speech_nuance_nuance_integration_id_bot_jobs) | Get a Nuance bot in the specified Integration asynchronously|
 |[**post_integrations_speech_nuance_nuance_integration_id_bots_jobs**](#post_integrations_speech_nuance_nuance_integration_id_bots_jobs) | Get a list of Nuance bots in the specified Integration asynchronously|
 |[**post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate**](#post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate) | Try out a single credential for a Nuance bot to know if the secret is correct|
+|[**post_integrations_webhook_events**](#post_integrations_webhook_events) | Invoke Webhook|
 |[**put_integration_config_current**](#put_integration_config_current) | Update integration configuration.|
 |[**put_integrations_action_draft_function**](#put_integrations_action_draft_function) | Update draft function settings.|
 |[**put_integrations_botconnector_integration_id_bots**](#put_integrations_botconnector_integration_id_bots) | Set a list of botConnector bots plus versions for this integration|
@@ -4134,6 +4135,52 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_integrations_webhook_events
+
+> [**WebhookInvocationResponse**](WebhookInvocationResponse) post_integrations_webhook_events(token_id, body)
+
+
+Invoke Webhook
+
+Wraps POST /api/v2/integrations/webhooks/{tokenId}/events 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+token_id = 'token_id_example' # str | The token of the webhook to be invoked
+body = NULL # object | Webhook Invocation Payload
+
+try:
+    # Invoke Webhook
+    api_response = api_instance.post_integrations_webhook_events(token_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_webhook_events: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **token_id** | **str**| The token of the webhook to be invoked |  |
+| **body** | [**object**](object)| Webhook Invocation Payload |  |
+
+### Return type
+
+[**WebhookInvocationResponse**](WebhookInvocationResponse)
+
+
 ## put_integration_config_current
 
 > [**IntegrationConfiguration**](IntegrationConfiguration) put_integration_config_current(integration_id, body=body)
@@ -4482,4 +4529,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

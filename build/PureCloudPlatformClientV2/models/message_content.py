@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import ContentDatePicker
     from . import ContentGeneric
     from . import ContentList
+    from . import ContentLocation
     from . import ContentNotificationTemplate
     from . import ContentPostback
     from . import ContentQuickReply
@@ -79,7 +80,8 @@ class MessageContent(object):
             'carousel': 'ContentCarousel',
             'text': 'ContentText',
             'quick_reply_v2': 'ContentQuickReplyV2',
-            'date_picker': 'ContentDatePicker'
+            'date_picker': 'ContentDatePicker',
+            'location': 'ContentLocation'
         }
 
         self.attribute_map = {
@@ -98,7 +100,8 @@ class MessageContent(object):
             'carousel': 'carousel',
             'text': 'text',
             'quick_reply_v2': 'quickReplyV2',
-            'date_picker': 'datePicker'
+            'date_picker': 'datePicker',
+            'location': 'location'
         }
 
         self._content_type = None
@@ -117,6 +120,7 @@ class MessageContent(object):
         self._text = None
         self._quick_reply_v2 = None
         self._date_picker = None
+        self._location = None
 
     @property
     def content_type(self) -> str:
@@ -140,7 +144,7 @@ class MessageContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Attachment", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "Story", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker"]
+        allowed_values = ["Attachment", "Location", "QuickReply", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "Story", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -506,6 +510,30 @@ class MessageContent(object):
         
 
         self._date_picker = date_picker
+
+    @property
+    def location(self) -> 'ContentLocation':
+        """
+        Gets the location of this MessageContent.
+        Location content.
+
+        :return: The location of this MessageContent.
+        :rtype: ContentLocation
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location: 'ContentLocation') -> None:
+        """
+        Sets the location of this MessageContent.
+        Location content.
+
+        :param location: The location of this MessageContent.
+        :type: ContentLocation
+        """
+        
+
+        self._location = location
 
     def to_dict(self):
         """

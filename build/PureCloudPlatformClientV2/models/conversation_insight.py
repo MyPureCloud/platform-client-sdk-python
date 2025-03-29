@@ -50,18 +50,21 @@ class ConversationInsight(object):
         self.swagger_types = {
             'type': 'str',
             'title': 'str',
-            'description': 'str'
+            'description': 'str',
+            'outcome': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'title': 'title',
-            'description': 'description'
+            'description': 'description',
+            'outcome': 'outcome'
         }
 
         self._type = None
         self._title = None
         self._description = None
+        self._outcome = None
 
     @property
     def type(self) -> str:
@@ -139,6 +142,30 @@ class ConversationInsight(object):
         
 
         self._description = description
+
+    @property
+    def outcome(self) -> str:
+        """
+        Gets the outcome of this ConversationInsight.
+        The outcome of a given resolution insight
+
+        :return: The outcome of this ConversationInsight.
+        :rtype: str
+        """
+        return self._outcome
+
+    @outcome.setter
+    def outcome(self, outcome: str) -> None:
+        """
+        Sets the outcome of this ConversationInsight.
+        The outcome of a given resolution insight
+
+        :param outcome: The outcome of this ConversationInsight.
+        :type: str
+        """
+        
+
+        self._outcome = outcome
 
     def to_dict(self):
         """
