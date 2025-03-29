@@ -116,6 +116,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversation_participant**](#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_secureattributes**](#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
+|[**patch_conversation_summary_feedback**](#patch_conversation_summary_feedback) | Update the feedback for the summary.|
 |[**patch_conversation_utilizationlabel**](#patch_conversation_utilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied|
 |[**patch_conversations_aftercallwork_conversation_id_participant_communication**](#patch_conversations_aftercallwork_conversation_id_participant_communication) | Update after-call work for this conversation communication.|
 |[**patch_conversations_call**](#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
@@ -5739,6 +5740,59 @@ except ApiException as e:
 ### Return type
 
 **str**
+
+
+## patch_conversation_summary_feedback
+
+>  patch_conversation_summary_feedback(conversation_id, summary_id, body=body)
+
+
+Update the feedback for the summary.
+
+patch_conversation_summary_feedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback 
+
+Requires ALL permissions: 
+
+* conversation:summaryFeedback:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+summary_id = 'summary_id_example' # str | Summary ID
+body = PureCloudPlatformClientV2.FeedbackUpdateRequest() # FeedbackUpdateRequest |  (optional)
+
+try:
+    # Update the feedback for the summary.
+    api_instance.patch_conversation_summary_feedback(conversation_id, summary_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_summary_feedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **summary_id** | **str**| Summary ID |  |
+| **body** | [**FeedbackUpdateRequest**](FeedbackUpdateRequest)|  | [optional]  |
+
+### Return type
+
+void (empty response body)
 
 
 ## patch_conversation_utilizationlabel
@@ -13039,4 +13093,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

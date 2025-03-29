@@ -7,6 +7,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **summary_type** | str | The type of summary | [optional] |
+| **media_type** | str | The media type of the associated interaction | [optional] |
 | **language** | str | Language of the summary | [optional] |
 | **agent_id** | str | The id of the agent associated with the summary | [optional] |
 | **summary** | str | A summarization of the conversation transcription | [optional] |
@@ -15,4 +16,4 @@
 
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

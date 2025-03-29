@@ -12,6 +12,7 @@
 | **direction** | str | The direction of the call | [optional] |
 | **recording** | bool | True if this call is being recorded. | [optional] |
 | **recording_state** | str | State of recording on this call. | [optional] |
+| **recorders_state** | [RecordersState](RecordersState) | Contains the states of different recorders. | [optional] |
 | **muted** | bool | True if this call is muted so that remote participants can&#39;t hear any audio from this end. | [optional] |
 | **confined** | bool | True if this call is held and the person on this side hears hold music. | [optional] |
 | **held** | bool | True if this call is held and the person on this side hears silence. | [optional] |
@@ -42,4 +43,4 @@
 
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

@@ -9,7 +9,8 @@
 | **type** | str | The type of insight | [optional] |
 | **title** | str | The reason for contact, resolution for the interaction, or follow-up action item | [optional] |
 | **description** | str | Reasoning for the given insight | [optional] |
+| **outcome** | str | The outcome of a given resolution insight | [optional] |
 
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

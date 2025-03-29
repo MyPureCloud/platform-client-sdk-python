@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_recording**](#get_conversation_recording) | Gets a specific recording.|
 |[**get_conversation_recording_annotation**](#get_conversation_recording_annotation) | Get annotation|
 |[**get_conversation_recording_annotations**](#get_conversation_recording_annotations) | Get annotations for recording|
-|[**get_conversation_recordingmetadata**](#get_conversation_recordingmetadata) | Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.|
+|[**get_conversation_recordingmetadata**](#get_conversation_recordingmetadata) | Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.|
 |[**get_conversation_recordingmetadata_recording_id**](#get_conversation_recordingmetadata_recording_id) | Get metadata for a specific recording. Does not return playable media.|
 |[**get_conversation_recordings**](#get_conversation_recordings) | Get all of a Conversation&#39;s Recordings.|
 |[**get_orphanrecording**](#get_orphanrecording) | Gets a single orphan recording|
@@ -578,7 +578,7 @@ except ApiException as e:
 > [**list[RecordingMetadata]**](RecordingMetadata) get_conversation_recordingmetadata(conversation_id)
 
 
-Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata 
 
@@ -603,7 +603,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 conversation_id = 'conversation_id_example' # str | Conversation ID
 
 try:
-    # Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+    # Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
     api_response = api_instance.get_conversation_recordingmetadata(conversation_id)
     pprint(api_response)
 except ApiException as e:
@@ -2982,4 +2982,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_

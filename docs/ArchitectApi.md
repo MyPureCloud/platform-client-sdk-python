@@ -109,11 +109,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_architect_grammars**](#post_architect_grammars) | Create a new grammar|
 |[**post_architect_ivrs**](#post_architect_ivrs) | Create IVR config.|
 |[**post_architect_prompt_history**](#post_architect_prompt_history) | Generate prompt history|
+|[**post_architect_prompt_resource_uploads**](#post_architect_prompt_resource_uploads) | Creates a presigned URL for uploading a user prompt file|
 |[**post_architect_prompt_resources**](#post_architect_prompt_resources) | Create a new user prompt resource|
 |[**post_architect_prompts**](#post_architect_prompts) | Create a new user prompt|
 |[**post_architect_schedulegroups**](#post_architect_schedulegroups) | Creates a new schedule group|
 |[**post_architect_schedules**](#post_architect_schedules) | Create a new schedule.|
 |[**post_architect_systemprompt_history**](#post_architect_systemprompt_history) | Generate system prompt history|
+|[**post_architect_systemprompt_resource_uploads**](#post_architect_systemprompt_resource_uploads) | Creates a presigned URL for uploading a system prompt file|
 |[**post_architect_systemprompt_resources**](#post_architect_systemprompt_resources) | Create system prompt resource override.|
 |[**post_flow_history**](#post_flow_history) | Generate flow history|
 |[**post_flow_instances_settings_loglevels**](#post_flow_instances_settings_loglevels) | Set the logLevel for a particular flow id|
@@ -5676,6 +5678,56 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
+## post_architect_prompt_resource_uploads
+
+> [**PromptAssetUpload**](PromptAssetUpload) post_architect_prompt_resource_uploads(prompt_id, language_code)
+
+
+Creates a presigned URL for uploading a user prompt file
+
+Wraps POST /api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads 
+
+Requires ALL permissions: 
+
+* architect:userPrompt:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+prompt_id = 'prompt_id_example' # str | Prompt ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Creates a presigned URL for uploading a user prompt file
+    api_response = api_instance.post_architect_prompt_resource_uploads(prompt_id, language_code)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_architect_prompt_resource_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
+
+### Return type
+
+[**PromptAssetUpload**](PromptAssetUpload)
+
+
 ## post_architect_prompt_resources
 
 > [**PromptAsset**](PromptAsset) post_architect_prompt_resources(prompt_id, body)
@@ -5918,6 +5970,56 @@ except ApiException as e:
 ### Return type
 
 [**Operation**](Operation)
+
+
+## post_architect_systemprompt_resource_uploads
+
+> [**PromptAssetUpload**](PromptAssetUpload) post_architect_systemprompt_resource_uploads(prompt_id, language_code)
+
+
+Creates a presigned URL for uploading a system prompt file
+
+Wraps POST /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads 
+
+Requires ALL permissions: 
+
+* architect:systemPrompt:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+prompt_id = 'prompt_id_example' # str | Prompt ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Creates a presigned URL for uploading a system prompt file
+    api_response = api_instance.post_architect_systemprompt_resource_uploads(prompt_id, language_code)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_architect_systemprompt_resource_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **prompt_id** | **str**| Prompt ID |  |
+| **language_code** | **str**| Language |  |
+
+### Return type
+
+[**PromptAssetUpload**](PromptAssetUpload)
 
 
 ## post_architect_systemprompt_resources
@@ -7799,4 +7901,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 224.0.0_
+_PureCloudPlatformClientV2 224.1.0_
