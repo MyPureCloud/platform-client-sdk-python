@@ -43,6 +43,12 @@ from ..models import AssignUsers
 from ..models import Assignment
 from ..models import AssignmentValidation
 from ..models import AttendanceStatusListing
+from ..models import ContestScoresAgentTrendList
+from ..models import ContestScoresAgentsPagedList
+from ..models import ContestScoresGroupTrendList
+from ..models import ContestsCreateRequest
+from ..models import ContestsFinalizeRequest
+from ..models import ContestsResponse
 from ..models import CreateMetric
 from ..models import CreatePerformanceProfile
 from ..models import ErrorBody
@@ -52,7 +58,9 @@ from ..models import ExternalMetricDefinition
 from ..models import ExternalMetricDefinitionCreateRequest
 from ..models import ExternalMetricDefinitionListing
 from ..models import ExternalMetricDefinitionUpdateRequest
+from ..models import GamificationContestPrizeImageUploadUrlRequest
 from ..models import GamificationStatus
+from ..models import GetContestsEssentialsListing
 from ..models import GetMetricDefinitionsResponse
 from ..models import GetMetricResponse
 from ..models import GetMetricsResponse
@@ -71,9 +79,11 @@ from ..models import MetricValueTrendAverage
 from ..models import ObjectiveTemplate
 from ..models import OverallBestPoints
 from ..models import PerformanceProfile
+from ..models import PrizeImages
 from ..models import SingleWorkdayAveragePoints
 from ..models import SingleWorkdayAverageValues
 from ..models import TargetPerformanceProfile
+from ..models import UploadUrlResponse
 from ..models import UserBestPoints
 from ..models import UserInsightsTrend
 from ..models import UserProfilesInDateRange
@@ -142,6 +152,84 @@ class GamificationApi(object):
         path_params = {}
         if 'metric_id' in params:
             path_params['metricId'] = params['metric_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_gamification_contest(self, contest_id: str, **kwargs) -> None:
+        """
+        Delete a Contest by Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_gamification_contest(contest_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_gamification_contest" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `delete_gamification_contest`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
 
         query_params = {}
 
@@ -329,6 +417,693 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalMetricDefinitionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contest(self, contest_id: str, **kwargs) -> 'ContestsResponse':
+        """
+        Get a Contest by Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contest(contest_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :return: ContestsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contest" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `get_gamification_contest`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contest_agents_scores(self, contest_id: str, **kwargs) -> 'ContestScoresAgentsPagedList':
+        """
+        Get Contest Scores (Admin)
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contest_agents_scores(contest_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :param int page_number: 
+        :param int page_size: 
+        :param date workday: Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param str returns_view: Desired response results
+        :return: ContestScoresAgentsPagedList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id', 'page_number', 'page_size', 'workday', 'returns_view']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contest_agents_scores" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `get_gamification_contest_agents_scores`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}/agents/scores'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'workday' in params:
+            query_params['workday'] = params['workday']
+        if 'returns_view' in params:
+            query_params['returnsView'] = params['returns_view']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestScoresAgentsPagedList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contest_agents_scores_me(self, contest_id: str, **kwargs) -> 'ContestScoresAgentsPagedList':
+        """
+        Get Contest Scores for the requesting Agent/Supervisor
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contest_agents_scores_me(contest_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :param int page_number: 
+        :param int page_size: 
+        :param date workday: Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param str returns_view: Desired response results (Supervisor Only)
+        :return: ContestScoresAgentsPagedList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id', 'page_number', 'page_size', 'workday', 'returns_view']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contest_agents_scores_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `get_gamification_contest_agents_scores_me`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}/agents/scores/me'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'workday' in params:
+            query_params['workday'] = params['workday']
+        if 'returns_view' in params:
+            query_params['returnsView'] = params['returns_view']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestScoresAgentsPagedList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contest_agents_scores_trends(self, contest_id: str, **kwargs) -> 'ContestScoresGroupTrendList':
+        """
+        Get a Contest Score Trend (Average Trend)
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contest_agents_scores_trends(contest_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :return: ContestScoresGroupTrendList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contest_agents_scores_trends" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `get_gamification_contest_agents_scores_trends`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}/agents/scores/trends'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestScoresGroupTrendList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contest_agents_scores_trends_me(self, contest_id: str, **kwargs) -> 'ContestScoresAgentTrendList':
+        """
+        Get a Contest Score Trend for the requesting Agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contest_agents_scores_trends_me(contest_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :return: ContestScoresAgentTrendList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contest_agents_scores_trends_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `get_gamification_contest_agents_scores_trends_me`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}/agents/scores/trends/me'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestScoresAgentTrendList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contest_prizeimage(self, contest_id: str, prize_image_id: str, **kwargs) -> 'PrizeImages':
+        """
+        Get a Contest Prize Image by Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contest_prizeimage(contest_id, prize_image_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :param str prize_image_id: The ID of the prize image (required)
+        :return: PrizeImages
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id', 'prize_image_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contest_prizeimage" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `get_gamification_contest_prizeimage`")
+        # verify the required parameter 'prize_image_id' is set
+        if ('prize_image_id' not in params) or (params['prize_image_id'] is None):
+            raise ValueError("Missing the required parameter `prize_image_id` when calling `get_gamification_contest_prizeimage`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+        if 'prize_image_id' in params:
+            path_params['prizeImageId'] = params['prize_image_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PrizeImages',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contests(self, **kwargs) -> 'GetContestsEssentialsListing':
+        """
+        Get a List of Contests (Admin)
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contests(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: 
+        :param int page_size: 
+        :param date date_start: Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date date_end: End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param list[str] status: 
+        :param str sort_by: 
+        :param str sort_order: 
+        :return: GetContestsEssentialsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'date_start', 'date_end', 'status', 'sort_by', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contests" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/gamification/contests'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GetContestsEssentialsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_contests_me(self, **kwargs) -> 'GetContestsEssentialsListing':
+        """
+        Get a List of Contests (Agent/Supervisor)
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_contests_me(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: 
+        :param int page_size: 
+        :param date date_start: Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date date_end: End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param list[str] status: 
+        :param str sort_by: 
+        :param str sort_order: 
+        :param str view: 
+        :return: GetContestsEssentialsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'date_start', 'date_end', 'status', 'sort_by', 'sort_order', 'view']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_contests_me" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/gamification/contests/me'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'view' in params:
+            query_params['view'] = params['view']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GetContestsEssentialsListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4560,6 +5335,90 @@ class GamificationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_gamification_contest(self, contest_id: str, body: 'ContestsFinalizeRequest', **kwargs) -> 'ContestsResponse':
+        """
+        Finalize a Contest by Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_gamification_contest(contest_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :param ContestsFinalizeRequest body: Finalize Contest (required)
+        :return: ContestsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_gamification_contest" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `patch_gamification_contest`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_gamification_contest`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_employeeperformance_externalmetrics_data(self, **kwargs) -> 'ExternalMetricDataWriteResponse':
         """
         Write External Metric Data
@@ -4706,6 +5565,162 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalMetricDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_contests(self, body: 'ContestsCreateRequest', **kwargs) -> 'ContestsResponse':
+        """
+        Creates a Contest
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_contests(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContestsCreateRequest body: Create Contest (required)
+        :return: ContestsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_contests" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_contests`")
+
+
+        resource_path = '/api/v2/gamification/contests'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_contests_uploads_prizeimages(self, body: 'GamificationContestPrizeImageUploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
+        """
+        Generates pre-signed URL to upload a prize image for gamification contests
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_contests_uploads_prizeimages(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param GamificationContestPrizeImageUploadUrlRequest body: query (required)
+        :return: UploadUrlResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_contests_uploads_prizeimages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_contests_uploads_prizeimages`")
+
+
+        resource_path = '/api/v2/gamification/contests/uploads/prizeimages'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UploadUrlResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5447,6 +6462,90 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UserProfilesInDateRange',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_gamification_contest(self, contest_id: str, body: 'ContestsCreateRequest', **kwargs) -> 'ContestsResponse':
+        """
+        Update a Contest by Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_gamification_contest(contest_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contest_id: The ID of the contest (required)
+        :param ContestsCreateRequest body: Contest (required)
+        :return: ContestsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contest_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_gamification_contest" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contest_id' is set
+        if ('contest_id' not in params) or (params['contest_id'] is None):
+            raise ValueError("Missing the required parameter `contest_id` when calling `put_gamification_contest`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_gamification_contest`")
+
+
+        resource_path = '/api/v2/gamification/contests/{contestId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contest_id' in params:
+            path_params['contestId'] = params['contest_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContestsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

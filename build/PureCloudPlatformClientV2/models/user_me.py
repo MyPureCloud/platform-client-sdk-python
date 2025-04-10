@@ -122,6 +122,7 @@ class UserMe(object):
             'language_preference': 'str',
             'last_token_issued': 'OAuthLastTokenIssued',
             'date_last_login': 'datetime',
+            'date_welcome_sent': 'datetime',
             'date': 'ServerDate',
             'geolocation_settings': 'GeolocationSettings',
             'organization': 'Organization',
@@ -180,6 +181,7 @@ class UserMe(object):
             'language_preference': 'languagePreference',
             'last_token_issued': 'lastTokenIssued',
             'date_last_login': 'dateLastLogin',
+            'date_welcome_sent': 'dateWelcomeSent',
             'date': 'date',
             'geolocation_settings': 'geolocationSettings',
             'organization': 'organization',
@@ -237,6 +239,7 @@ class UserMe(object):
         self._language_preference = None
         self._last_token_issued = None
         self._date_last_login = None
+        self._date_welcome_sent = None
         self._date = None
         self._geolocation_settings = None
         self._organization = None
@@ -1171,6 +1174,30 @@ class UserMe(object):
         
 
         self._date_last_login = date_last_login
+
+    @property
+    def date_welcome_sent(self) -> datetime:
+        """
+        Gets the date_welcome_sent of this UserMe.
+        The date & time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_welcome_sent of this UserMe.
+        :rtype: datetime
+        """
+        return self._date_welcome_sent
+
+    @date_welcome_sent.setter
+    def date_welcome_sent(self, date_welcome_sent: datetime) -> None:
+        """
+        Sets the date_welcome_sent of this UserMe.
+        The date & time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_welcome_sent: The date_welcome_sent of this UserMe.
+        :type: datetime
+        """
+        
+
+        self._date_welcome_sent = date_welcome_sent
 
     @property
     def date(self) -> 'ServerDate':

@@ -106,6 +106,7 @@ class User(object):
             'language_preference': 'str',
             'last_token_issued': 'OAuthLastTokenIssued',
             'date_last_login': 'datetime',
+            'date_welcome_sent': 'datetime',
             'self_uri': 'str'
         }
 
@@ -147,6 +148,7 @@ class User(object):
             'language_preference': 'languagePreference',
             'last_token_issued': 'lastTokenIssued',
             'date_last_login': 'dateLastLogin',
+            'date_welcome_sent': 'dateWelcomeSent',
             'self_uri': 'selfUri'
         }
 
@@ -187,6 +189,7 @@ class User(object):
         self._language_preference = None
         self._last_token_issued = None
         self._date_last_login = None
+        self._date_welcome_sent = None
         self._self_uri = None
 
     @property
@@ -1081,6 +1084,30 @@ class User(object):
         
 
         self._date_last_login = date_last_login
+
+    @property
+    def date_welcome_sent(self) -> datetime:
+        """
+        Gets the date_welcome_sent of this User.
+        The date & time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_welcome_sent of this User.
+        :rtype: datetime
+        """
+        return self._date_welcome_sent
+
+    @date_welcome_sent.setter
+    def date_welcome_sent(self, date_welcome_sent: datetime) -> None:
+        """
+        Sets the date_welcome_sent of this User.
+        The date & time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_welcome_sent: The date_welcome_sent of this User.
+        :type: datetime
+        """
+        
+
+        self._date_welcome_sent = date_welcome_sent
 
     @property
     def self_uri(self) -> str:

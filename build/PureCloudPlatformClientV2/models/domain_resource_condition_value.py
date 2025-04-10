@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Queue
+    from . import Team
     from . import User
 
 class DomainResourceConditionValue(object):
@@ -53,6 +54,7 @@ class DomainResourceConditionValue(object):
         self.swagger_types = {
             'user': 'User',
             'queue': 'Queue',
+            'team': 'Team',
             'value': 'str',
             'type': 'str'
         }
@@ -60,12 +62,14 @@ class DomainResourceConditionValue(object):
         self.attribute_map = {
             'user': 'user',
             'queue': 'queue',
+            'team': 'team',
             'value': 'value',
             'type': 'type'
         }
 
         self._user = None
         self._queue = None
+        self._team = None
         self._value = None
         self._type = None
 
@@ -118,6 +122,30 @@ class DomainResourceConditionValue(object):
         self._queue = queue
 
     @property
+    def team(self) -> 'Team':
+        """
+        Gets the team of this DomainResourceConditionValue.
+
+
+        :return: The team of this DomainResourceConditionValue.
+        :rtype: Team
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team: 'Team') -> None:
+        """
+        Sets the team of this DomainResourceConditionValue.
+
+
+        :param team: The team of this DomainResourceConditionValue.
+        :type: Team
+        """
+        
+
+        self._team = team
+
+    @property
     def value(self) -> str:
         """
         Gets the value of this DomainResourceConditionValue.
@@ -163,7 +191,7 @@ class DomainResourceConditionValue(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["SCALAR", "VARIABLE", "USER", "QUEUE"]
+        allowed_values = ["SCALAR", "VARIABLE", "USER", "TEAM", "QUEUE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

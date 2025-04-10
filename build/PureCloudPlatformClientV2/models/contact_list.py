@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import DomainEntityRef
     from . import EmailColumn
     from . import ImportStatus
+    from . import WhatsAppColumn
 
 class ContactList(object):
     """
@@ -63,6 +64,7 @@ class ContactList(object):
             'column_names': 'list[str]',
             'phone_columns': 'list[ContactPhoneNumberColumn]',
             'email_columns': 'list[EmailColumn]',
+            'whats_app_columns': 'list[WhatsAppColumn]',
             'import_status': 'ImportStatus',
             'preview_mode_column_name': 'str',
             'preview_mode_accepted_values': 'list[str]',
@@ -85,6 +87,7 @@ class ContactList(object):
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
             'email_columns': 'emailColumns',
+            'whats_app_columns': 'whatsAppColumns',
             'import_status': 'importStatus',
             'preview_mode_column_name': 'previewModeColumnName',
             'preview_mode_accepted_values': 'previewModeAcceptedValues',
@@ -106,6 +109,7 @@ class ContactList(object):
         self._column_names = None
         self._phone_columns = None
         self._email_columns = None
+        self._whats_app_columns = None
         self._import_status = None
         self._preview_mode_column_name = None
         self._preview_mode_accepted_values = None
@@ -332,6 +336,30 @@ class ContactList(object):
         
 
         self._email_columns = email_columns
+
+    @property
+    def whats_app_columns(self) -> List['WhatsAppColumn']:
+        """
+        Gets the whats_app_columns of this ContactList.
+        Indicates which columns are whatsApp contacts
+
+        :return: The whats_app_columns of this ContactList.
+        :rtype: list[WhatsAppColumn]
+        """
+        return self._whats_app_columns
+
+    @whats_app_columns.setter
+    def whats_app_columns(self, whats_app_columns: List['WhatsAppColumn']) -> None:
+        """
+        Sets the whats_app_columns of this ContactList.
+        Indicates which columns are whatsApp contacts
+
+        :param whats_app_columns: The whats_app_columns of this ContactList.
+        :type: list[WhatsAppColumn]
+        """
+        
+
+        self._whats_app_columns = whats_app_columns
 
     @property
     def import_status(self) -> 'ImportStatus':

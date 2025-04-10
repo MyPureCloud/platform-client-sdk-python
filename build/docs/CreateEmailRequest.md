@@ -22,8 +22,8 @@
 | **html_body** | str | An HTML body content of the email. | [optional] |
 | **text_body** | str | A text body content of the email. | [optional] |
 | **external_contact_id** | str | The external contact with which the email should be associated. This field is only valid for OUTBOUND email. | [optional] |
-| **utilization_label** | str | Optional. Controls the number of agent interactions for INBOUND communications | [optional] |
+| **utilization_label** | str | Optional. The ID of the label to controls the number of agent interactions for INBOUND communications | [optional] |
 
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

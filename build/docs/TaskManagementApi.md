@@ -37,6 +37,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_taskmanagement_workitems_schema_version**](#get_taskmanagement_workitems_schema_version) | Get a specific version of a schema|
 |[**get_taskmanagement_workitems_schema_versions**](#get_taskmanagement_workitems_schema_versions) | Get all versions of a schema|
 |[**get_taskmanagement_workitems_schemas**](#get_taskmanagement_workitems_schemas) | Get a list of schemas.|
+|[**get_taskmanagement_workitems_schemas_coretype**](#get_taskmanagement_workitems_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_taskmanagement_workitems_schemas_coretypes**](#get_taskmanagement_workitems_schemas_coretypes) | Get the core types from which all schemas are built.|
+|[**get_taskmanagement_workitems_schemas_limits**](#get_taskmanagement_workitems_schemas_limits) | Get quantitative limits on schemas|
 |[**get_taskmanagement_worktype**](#get_taskmanagement_worktype) | Get a worktype|
 |[**get_taskmanagement_worktype_flows_datebased_rule**](#get_taskmanagement_worktype_flows_datebased_rule) | Get a date based rule|
 |[**get_taskmanagement_worktype_flows_datebased_rules**](#get_taskmanagement_worktype_flows_datebased_rules) | Get all date based rules for a worktype|
@@ -1630,6 +1633,142 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**DataSchemaListing**](DataSchemaListing)
+
+
+## get_taskmanagement_workitems_schemas_coretype
+
+> [**Coretype**](Coretype) get_taskmanagement_workitems_schemas_coretype(core_type_name)
+
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName} 
+
+Requires ANY permissions: 
+
+* workitems:workitemSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+core_type_name = 'core_type_name_example' # str | Name of the core type
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_taskmanagement_workitems_schemas_coretype(core_type_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_schemas_coretype: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **core_type_name** | **str**| Name of the core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_taskmanagement_workitems_schemas_coretypes
+
+> [**Coretype**](Coretype) get_taskmanagement_workitems_schemas_coretypes()
+
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/taskmanagement/workitems/schemas/coretypes 
+
+Requires ANY permissions: 
+
+* workitems:workitemSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_taskmanagement_workitems_schemas_coretypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_schemas_coretypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_taskmanagement_workitems_schemas_limits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) get_taskmanagement_workitems_schemas_limits()
+
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/taskmanagement/workitems/schemas/limits 
+
+Requires ANY permissions: 
+
+* workitems:workitemSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+
+try:
+    # Get quantitative limits on schemas
+    api_response = api_instance.get_taskmanagement_workitems_schemas_limits()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_schemas_limits: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
 ## get_taskmanagement_worktype
@@ -3743,4 +3882,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

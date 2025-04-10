@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**get_knowledge_knowledgebase_uploads_urls_job**](#get_knowledge_knowledgebase_uploads_urls_job) | Get content upload from URL job status|
+|[**post_gamification_contests_uploads_prizeimages**](#post_gamification_contests_uploads_prizeimages) | Generates pre-signed URL to upload a prize image for gamification contests|
 |[**post_integrations_action_draft_function_upload**](#post_integrations_action_draft_function_upload) | Create upload presigned URL for draft function package file.|
 |[**post_knowledge_documentuploads**](#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
 |[**post_knowledge_knowledgebase_uploads_urls_jobs**](#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
@@ -66,6 +67,54 @@ except ApiException as e:
 ### Return type
 
 [**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse)
+
+
+## post_gamification_contests_uploads_prizeimages
+
+> [**UploadUrlResponse**](UploadUrlResponse) post_gamification_contests_uploads_prizeimages(body)
+
+
+Generates pre-signed URL to upload a prize image for gamification contests
+
+Wraps POST /api/v2/gamification/contests/uploads/prizeimages 
+
+Requires ALL permissions: 
+
+* gamification:contestPrizeImage:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UploadsApi()
+body = PureCloudPlatformClientV2.GamificationContestPrizeImageUploadUrlRequest() # GamificationContestPrizeImageUploadUrlRequest | query
+
+try:
+    # Generates pre-signed URL to upload a prize image for gamification contests
+    api_response = api_instance.post_gamification_contests_uploads_prizeimages(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UploadsApi->post_gamification_contests_uploads_prizeimages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GamificationContestPrizeImageUploadUrlRequest**](GamificationContestPrizeImageUploadUrlRequest)| query |  |
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_integrations_action_draft_function_upload
@@ -458,4 +507,4 @@ except ApiException as e:
 [**UploadUrlResponse**](UploadUrlResponse)
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

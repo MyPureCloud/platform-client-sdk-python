@@ -56,6 +56,7 @@ class NamedEntityTypeMechanism(object):
             'type': 'str',
             'sub_type': 'str',
             'max_length': 'int',
+            'min_length': 'int',
             'examples': 'list[NamedEntityTypeMechanismExample]'
         }
 
@@ -65,6 +66,7 @@ class NamedEntityTypeMechanism(object):
             'type': 'type',
             'sub_type': 'subType',
             'max_length': 'maxLength',
+            'min_length': 'minLength',
             'examples': 'examples'
         }
 
@@ -73,6 +75,7 @@ class NamedEntityTypeMechanism(object):
         self._type = None
         self._sub_type = None
         self._max_length = None
+        self._min_length = None
         self._examples = None
 
     @property
@@ -204,6 +207,30 @@ class NamedEntityTypeMechanism(object):
         
 
         self._max_length = max_length
+
+    @property
+    def min_length(self) -> int:
+        """
+        Gets the min_length of this NamedEntityTypeMechanism.
+        The minimum length of the entity resolved value
+
+        :return: The min_length of this NamedEntityTypeMechanism.
+        :rtype: int
+        """
+        return self._min_length
+
+    @min_length.setter
+    def min_length(self, min_length: int) -> None:
+        """
+        Sets the min_length of this NamedEntityTypeMechanism.
+        The minimum length of the entity resolved value
+
+        :param min_length: The min_length of this NamedEntityTypeMechanism.
+        :type: int
+        """
+        
+
+        self._min_length = min_length
 
     @property
     def examples(self) -> List['NamedEntityTypeMechanismExample']:

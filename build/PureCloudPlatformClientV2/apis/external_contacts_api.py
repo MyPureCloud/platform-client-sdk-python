@@ -38,6 +38,8 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import BulkContactsEnrichRequest
+from ..models import BulkContactsEnrichResponse
 from ..models import BulkContactsRequest
 from ..models import BulkContactsResponse
 from ..models import BulkDeleteResponse
@@ -48,10 +50,13 @@ from ..models import BulkFetchRelationshipsResponse
 from ..models import BulkIdsRequest
 from ..models import BulkNotesRequest
 from ..models import BulkNotesResponse
+from ..models import BulkOrganizationsEnrichRequest
+from ..models import BulkOrganizationsEnrichResponse
 from ..models import BulkOrganizationsRequest
 from ..models import BulkOrganizationsResponse
 from ..models import BulkRelationshipsRequest
 from ..models import BulkRelationshipsResponse
+from ..models import ContactEnrichRequest
 from ..models import ContactIdentifier
 from ..models import ContactIdentifierListing
 from ..models import ContactImportJobEntityListing
@@ -64,6 +69,7 @@ from ..models import ContactImportSettingsEntityListing
 from ..models import ContactListing
 from ..models import ContactsExport
 from ..models import ConversationAssociation
+from ..models import Coretype
 from ..models import CsvJobRequest
 from ..models import CsvJobResponse
 from ..models import CsvSettings
@@ -79,20 +85,27 @@ from ..models import CursorRelationshipListing
 from ..models import DataSchema
 from ..models import DataSchemaListing
 from ..models import ErrorBody
+from ..models import ErrorInfo
 from ..models import ExportListing
 from ..models import ExternalContact
 from ..models import ExternalOrganization
+from ..models import ExternalOrganizationEnrichRequest
+from ..models import ExternalOrganizationIdentifier
+from ..models import ExternalOrganizationIdentifierClaimRequest
+from ..models import ExternalOrganizationIdentifierListing
 from ..models import ExternalOrganizationListing
 from ..models import ExternalOrganizationTrustorLink
 from ..models import ExternalSource
 from ..models import IdentifierClaimRequest
 from ..models import Listing
+from ..models import MergeContactsRequest
 from ..models import MergeRequest
 from ..models import Note
 from ..models import NoteListing
 from ..models import Relationship
 from ..models import RelationshipListing
 from ..models import ReverseWhitepagesLookupResult
+from ..models import SchemaQuantityLimits
 from ..models import SessionListing
 
 class ExternalContactsApi(object):
@@ -1968,6 +1981,228 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_externalcontacts_contacts_schemas_coretype(self, core_type_name: str, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_schemas_coretype(core_type_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str core_type_name: Name of the core type (required)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['core_type_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_schemas_coretype" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'core_type_name' is set
+        if ('core_type_name' not in params) or (params['core_type_name'] is None):
+            raise ValueError("Missing the required parameter `core_type_name` when calling `get_externalcontacts_contacts_schemas_coretype`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'core_type_name' in params:
+            path_params['coreTypeName'] = params['core_type_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contacts_schemas_coretypes(self, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_schemas_coretypes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_schemas_coretypes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/coretypes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contacts_schemas_limits(self, **kwargs) -> 'SchemaQuantityLimits':
+        """
+        Get quantitative limits on schemas
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contacts_schemas_limits(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SchemaQuantityLimits
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contacts_schemas_limits" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/schemas/limits'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SchemaQuantityLimits',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_externalcontacts_externalsource(self, external_source_id: str, **kwargs) -> 'ExternalSource':
         """
         Fetch an External Source
@@ -2952,6 +3187,85 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_externalcontacts_organization_identifiers(self, external_organization_id: str, **kwargs) -> 'ExternalOrganizationIdentifierListing':
+        """
+        List the identifiers for an external organization
+        
+	    get_externalcontacts_organization_identifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organization_identifiers(external_organization_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_organization_id: External Organization ID (required)
+        :return: ExternalOrganizationIdentifierListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_organization_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organization_identifiers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_organization_id' is set
+        if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
+            raise ValueError("Missing the required parameter `external_organization_id` when calling `get_externalcontacts_organization_identifiers`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_organization_id' in params:
+            path_params['externalOrganizationId'] = params['external_organization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalOrganizationIdentifierListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_externalcontacts_organization_note(self, external_organization_id: str, note_id: str, **kwargs) -> 'Note':
         """
         Fetch a note for an external organization
@@ -3623,6 +3937,228 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_organizations_schemas_coretype(self, core_type_name: str, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organizations_schemas_coretype(core_type_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str core_type_name: Name of the core type (required)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['core_type_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organizations_schemas_coretype" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'core_type_name' is set
+        if ('core_type_name' not in params) or (params['core_type_name'] is None):
+            raise ValueError("Missing the required parameter `core_type_name` when calling `get_externalcontacts_organizations_schemas_coretype`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'core_type_name' in params:
+            path_params['coreTypeName'] = params['core_type_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_organizations_schemas_coretypes(self, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organizations_schemas_coretypes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organizations_schemas_coretypes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas/coretypes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_organizations_schemas_limits(self, **kwargs) -> 'SchemaQuantityLimits':
+        """
+        Get quantitative limits on schemas
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_organizations_schemas_limits(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SchemaQuantityLimits
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_organizations_schemas_limits" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/schemas/limits'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SchemaQuantityLimits',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4516,6 +5052,91 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_externalcontacts_organization_identifiers(self, external_organization_id: str, body: 'ExternalOrganizationIdentifierClaimRequest', **kwargs) -> 'ExternalOrganizationIdentifier':
+        """
+        Claim or release identifiers for an external organization
+        
+	    patch_externalcontacts_organization_identifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_externalcontacts_organization_identifiers(external_organization_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_organization_id: External Organization ID (required)
+        :param ExternalOrganizationIdentifierClaimRequest body: ClaimRequest (required)
+        :return: ExternalOrganizationIdentifier
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_organization_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_externalcontacts_organization_identifiers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_organization_id' is set
+        if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
+            raise ValueError("Missing the required parameter `external_organization_id` when calling `patch_externalcontacts_organization_identifiers`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_externalcontacts_organization_identifiers`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_organization_id' in params:
+            path_params['externalOrganizationId'] = params['external_organization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalOrganizationIdentifier',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_externalcontacts_bulk_contacts(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchContactsResponse':
         """
         Bulk fetch contacts
@@ -4747,6 +5368,88 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BulkFetchContactsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_bulk_contacts_enrich(self, body: 'BulkContactsEnrichRequest', **kwargs) -> 'BulkContactsEnrichResponse':
+        """
+        Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+        See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+	    post_externalcontacts_bulk_contacts_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_bulk_contacts_enrich(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BulkContactsEnrichRequest body: Contact Enrich Requests (required)
+        :param bool dry_run: If true, the request will not make any modifications, but will show you what the end result *would* be.
+        :return: BulkContactsEnrichResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'dry_run']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_bulk_contacts_enrich" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_bulk_contacts_enrich`")
+
+
+        resource_path = '/api/v2/externalcontacts/bulk/contacts/enrich'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'dry_run' in params:
+            query_params['dryRun'] = params['dry_run']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkContactsEnrichResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5532,6 +6235,88 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_externalcontacts_bulk_organizations_enrich(self, body: 'BulkOrganizationsEnrichRequest', **kwargs) -> 'BulkOrganizationsEnrichResponse':
+        """
+        Bulk enrich external organizations - Run up to 10 Enrich operations per request
+        See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+	    post_externalcontacts_bulk_organizations_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_bulk_organizations_enrich(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BulkOrganizationsEnrichRequest body: External Organization Enrich Requests (required)
+        :param bool dry_run: If true, the request will not make any modifications, but will show you what the end result *would* be.
+        :return: BulkOrganizationsEnrichResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'dry_run']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_bulk_organizations_enrich" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_bulk_organizations_enrich`")
+
+
+        resource_path = '/api/v2/externalcontacts/bulk/organizations/enrich'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'dry_run' in params:
+            query_params['dryRun'] = params['dry_run']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkOrganizationsEnrichResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_externalcontacts_bulk_organizations_remove(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkDeleteResponse':
         """
         Bulk remove organizations
@@ -6240,6 +7025,88 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_externalcontacts_contacts_enrich(self, body: 'ContactEnrichRequest', **kwargs) -> 'ExternalContact':
+        """
+        Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+        You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+	    post_externalcontacts_contacts_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_contacts_enrich(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactEnrichRequest body: ContactEnrichRequest (required)
+        :param bool dry_run: If true, the request will not make any modifications, but will show you what the end result *would* be.
+        :return: ExternalContact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'dry_run']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_contacts_enrich" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_contacts_enrich`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/enrich'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'dry_run' in params:
+            query_params['dryRun'] = params['dry_run']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalContact',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_externalcontacts_contacts_exports(self, body: 'ContactsExport', **kwargs) -> 'ContactsExport':
         """
         Create bulk export
@@ -6314,6 +7181,85 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContactsExport',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_contacts_merge(self, body: 'MergeContactsRequest', **kwargs) -> 'ExternalContact':
+        """
+        Merge up to 25 contacts into a new contact record
+        Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+	    post_externalcontacts_contacts_merge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_contacts_merge(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param MergeContactsRequest body: MergeRequest (required)
+        :return: ExternalContact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_contacts_merge" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_contacts_merge`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/merge'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalContact',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6552,6 +7498,170 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalContact',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_identifierlookup_contacts(self, identifier: 'ContactIdentifier', **kwargs) -> 'ExternalContact':
+        """
+        Fetch a contact using an identifier type and value.
+        Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+	    post_externalcontacts_identifierlookup_contacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_identifierlookup_contacts(identifier, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactIdentifier identifier:  (required)
+        :param list[str] expand: which field, if any, to expand
+        :return: ExternalContact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['identifier', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_identifierlookup_contacts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params) or (params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `post_externalcontacts_identifierlookup_contacts`")
+
+
+        resource_path = '/api/v2/externalcontacts/identifierlookup/contacts'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'identifier' in params:
+            body_params = params['identifier']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalContact',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_identifierlookup_organizations(self, identifier: 'ExternalOrganizationIdentifier', **kwargs) -> 'ExternalOrganization':
+        """
+        Fetch an external organization using an identifier type and value.
+        This endpoint will only accept ExternalId type identifiers.
+	    post_externalcontacts_identifierlookup_organizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_identifierlookup_organizations(identifier, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExternalOrganizationIdentifier identifier:  (required)
+        :param list[str] expand: which field, if any, to expand
+        :return: ExternalOrganization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['identifier', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_identifierlookup_organizations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params) or (params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `post_externalcontacts_identifierlookup_organizations`")
+
+
+        resource_path = '/api/v2/externalcontacts/identifierlookup/organizations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'identifier' in params:
+            body_params = params['identifier']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalOrganization',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6946,10 +8056,11 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_externalcontacts_merge_contacts is deprecated")
     def post_externalcontacts_merge_contacts(self, body: 'MergeRequest', **kwargs) -> 'ExternalContact':
         """
         Merge two contacts into a new contact record
-        Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+        Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7151,6 +8262,88 @@ class ExternalContactsApi(object):
         path_params = {}
 
         query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalOrganization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_organizations_enrich(self, body: 'ExternalOrganizationEnrichRequest', **kwargs) -> 'ExternalOrganization':
+        """
+        Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+        You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+	    post_externalcontacts_organizations_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_organizations_enrich(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExternalOrganizationEnrichRequest body: ExternalOrgEnrichRequest (required)
+        :param bool dry_run: If true, the request will not make any modifications, but will show you what the end result *would* be.
+        :return: ExternalOrganization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'dry_run']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_organizations_enrich" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_organizations_enrich`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/enrich'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'dry_run' in params:
+            query_params['dryRun'] = params['dry_run']
 
         header_params = {}
 

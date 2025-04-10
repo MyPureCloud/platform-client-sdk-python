@@ -39,6 +39,7 @@ if TYPE_CHECKING:
     from . import EmailConfig
     from . import RestErrorDetail
     from . import SmsConfig
+    from . import WhatsAppConfig
 
 class MessagingCampaign(object):
     """
@@ -74,6 +75,7 @@ class MessagingCampaign(object):
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'email_config': 'EmailConfig',
             'sms_config': 'SmsConfig',
+            'whats_app_config': 'WhatsAppConfig',
             'self_uri': 'str'
         }
 
@@ -97,6 +99,7 @@ class MessagingCampaign(object):
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'email_config': 'emailConfig',
             'sms_config': 'smsConfig',
+            'whats_app_config': 'whatsAppConfig',
             'self_uri': 'selfUri'
         }
 
@@ -119,6 +122,7 @@ class MessagingCampaign(object):
         self._dynamic_contact_queueing_settings = None
         self._email_config = None
         self._sms_config = None
+        self._whats_app_config = None
         self._self_uri = None
 
     @property
@@ -581,6 +585,30 @@ class MessagingCampaign(object):
         
 
         self._sms_config = sms_config
+
+    @property
+    def whats_app_config(self) -> 'WhatsAppConfig':
+        """
+        Gets the whats_app_config of this MessagingCampaign.
+        Configuration for this messaging campaign to send WhatsApp messages.
+
+        :return: The whats_app_config of this MessagingCampaign.
+        :rtype: WhatsAppConfig
+        """
+        return self._whats_app_config
+
+    @whats_app_config.setter
+    def whats_app_config(self, whats_app_config: 'WhatsAppConfig') -> None:
+        """
+        Sets the whats_app_config of this MessagingCampaign.
+        Configuration for this messaging campaign to send WhatsApp messages.
+
+        :param whats_app_config: The whats_app_config of this MessagingCampaign.
+        :type: WhatsAppConfig
+        """
+        
+
+        self._whats_app_config = whats_app_config
 
     @property
     def self_uri(self) -> str:

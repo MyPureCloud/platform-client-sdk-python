@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ContactAddress
     from . import ContactAddressableEntityRef
+    from . import ContactIdentifier
     from . import DataSchema
     from . import ExternalDataSource
     from . import ExternalId
@@ -82,6 +83,7 @@ class ExternalContact(object):
             'whats_app_id': 'WhatsAppId',
             'facebook_id': 'FacebookId',
             'external_ids': 'list[ExternalId]',
+            'identifiers': 'list[ContactIdentifier]',
             'modify_date': 'datetime',
             'create_date': 'datetime',
             'external_organization': 'ExternalOrganization',
@@ -118,6 +120,7 @@ class ExternalContact(object):
             'whats_app_id': 'whatsAppId',
             'facebook_id': 'facebookId',
             'external_ids': 'externalIds',
+            'identifiers': 'identifiers',
             'modify_date': 'modifyDate',
             'create_date': 'createDate',
             'external_organization': 'externalOrganization',
@@ -153,6 +156,7 @@ class ExternalContact(object):
         self._whats_app_id = None
         self._facebook_id = None
         self._external_ids = None
+        self._identifiers = None
         self._modify_date = None
         self._create_date = None
         self._external_organization = None
@@ -646,6 +650,30 @@ class ExternalContact(object):
         
 
         self._external_ids = external_ids
+
+    @property
+    def identifiers(self) -> List['ContactIdentifier']:
+        """
+        Gets the identifiers of this ExternalContact.
+        Identifiers claimed by this contact
+
+        :return: The identifiers of this ExternalContact.
+        :rtype: list[ContactIdentifier]
+        """
+        return self._identifiers
+
+    @identifiers.setter
+    def identifiers(self, identifiers: List['ContactIdentifier']) -> None:
+        """
+        Sets the identifiers of this ExternalContact.
+        Identifiers claimed by this contact
+
+        :param identifiers: The identifiers of this ExternalContact.
+        :type: list[ContactIdentifier]
+        """
+        
+
+        self._identifiers = identifiers
 
     @property
     def modify_date(self) -> datetime:

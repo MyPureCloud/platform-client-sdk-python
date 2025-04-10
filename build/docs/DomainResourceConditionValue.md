@@ -8,9 +8,10 @@
 |------------ | ------------- | ------------- | -------------|
 | **user** | [User](User) |  | [optional] |
 | **queue** | [Queue](Queue) |  | [optional] |
+| **team** | [Team](Team) |  | [optional] |
 | **value** | str |  | [optional] |
 | **type** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

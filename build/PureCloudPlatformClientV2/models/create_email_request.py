@@ -498,7 +498,7 @@ class CreateEmailRequest(object):
     def utilization_label(self) -> str:
         """
         Gets the utilization_label of this CreateEmailRequest.
-        Optional. Controls the number of agent interactions for INBOUND communications
+        Optional. The ID of the label to controls the number of agent interactions for INBOUND communications
 
         :return: The utilization_label of this CreateEmailRequest.
         :rtype: str
@@ -509,14 +509,14 @@ class CreateEmailRequest(object):
     def utilization_label(self, utilization_label: str) -> None:
         """
         Sets the utilization_label of this CreateEmailRequest.
-        Optional. Controls the number of agent interactions for INBOUND communications
+        Optional. The ID of the label to controls the number of agent interactions for INBOUND communications
 
         :param utilization_label: The utilization_label of this CreateEmailRequest.
         :type: str
         """
         
-        if len(utilization_label) > 50:
-            raise ValueError("Invalid value for `utilization_label`, length must be less than `50`")
+        if len(utilization_label) > 36:
+            raise ValueError("Invalid value for `utilization_label`, length must be less than `36`")
 
         if len(utilization_label) < 0:
             raise ValueError("Invalid value for `utilization_label`, length must be greater than or equal to `0`")

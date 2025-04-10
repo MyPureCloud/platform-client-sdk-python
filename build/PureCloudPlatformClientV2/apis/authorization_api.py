@@ -42,6 +42,7 @@ from ..models import AuthorizationPolicy
 from ..models import AuthorizationPolicyEntityListing
 from ..models import AuthorizationSettings
 from ..models import AuthzDivision
+from ..models import AuthzDivisionCursorListing
 from ..models import AuthzDivisionEntityListing
 from ..models import AuthzDivisionGrantEntityListing
 from ..models import AuthzSubject
@@ -680,6 +681,84 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_authorization_divisions_deleted(self, **kwargs) -> 'AuthzDivisionEntityListing':
+        """
+        Get a list of soft deleted divisions for the org
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisions_deleted(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: AuthzDivisionEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisions_deleted" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/divisions/deleted'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivisionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_authorization_divisions_home(self, **kwargs) -> 'AuthzDivision':
         """
         Retrieve the home division for the organization.
@@ -820,6 +899,93 @@ class AuthorizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='int',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_authorization_divisions_query(self, **kwargs) -> 'AuthzDivisionCursorListing':
+        """
+        Retrieve a list of all divisions defined for the organization with cursor
+        Use \"after\" and \"before\" param to fetch next/previous page}
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_authorization_divisions_query(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param list[str] id: Optionally request specific divisions by their IDs
+        :param str name: Optionally request specific divisions by division name
+        :return: AuthzDivisionCursorListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size', 'id', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_authorization_divisions_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/authorization/divisions/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuthzDivisionCursorListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -128,7 +128,7 @@ class Condition(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["wrapupCondition", "systemDispositionCondition", "contactAttributeCondition", "phoneNumberCondition", "phoneNumberTypeCondition", "callAnalysisCondition", "contactPropertyCondition", "dataActionCondition"]
+        allowed_values = ["wrapupCondition", "systemDispositionCondition", "contactAttributeCondition", "phoneNumberCondition", "phoneNumberTypeCondition", "callAnalysisCondition", "contactPropertyCondition", "dataActionCondition", "timeAndDateCondition"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -258,7 +258,7 @@ class Condition(object):
         """
         if isinstance(operator, int):
             operator = str(operator)
-        allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER", "IN"]
+        allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER", "IN", "BETWEEN"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"

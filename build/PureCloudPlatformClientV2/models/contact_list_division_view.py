@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import Division
     from . import EmailColumn
     from . import ImportStatus
+    from . import WhatsAppColumn
 
 class ContactListDivisionView(object):
     """
@@ -59,6 +60,7 @@ class ContactListDivisionView(object):
             'column_names': 'list[str]',
             'phone_columns': 'list[ContactPhoneNumberColumn]',
             'email_columns': 'list[EmailColumn]',
+            'whats_app_columns': 'list[WhatsAppColumn]',
             'import_status': 'ImportStatus',
             'size': 'int',
             'self_uri': 'str'
@@ -71,6 +73,7 @@ class ContactListDivisionView(object):
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
             'email_columns': 'emailColumns',
+            'whats_app_columns': 'whatsAppColumns',
             'import_status': 'importStatus',
             'size': 'size',
             'self_uri': 'selfUri'
@@ -82,6 +85,7 @@ class ContactListDivisionView(object):
         self._column_names = None
         self._phone_columns = None
         self._email_columns = None
+        self._whats_app_columns = None
         self._import_status = None
         self._size = None
         self._self_uri = None
@@ -229,6 +233,30 @@ class ContactListDivisionView(object):
         
 
         self._email_columns = email_columns
+
+    @property
+    def whats_app_columns(self) -> List['WhatsAppColumn']:
+        """
+        Gets the whats_app_columns of this ContactListDivisionView.
+        Indicates which columns are whatsApp contacts.
+
+        :return: The whats_app_columns of this ContactListDivisionView.
+        :rtype: list[WhatsAppColumn]
+        """
+        return self._whats_app_columns
+
+    @whats_app_columns.setter
+    def whats_app_columns(self, whats_app_columns: List['WhatsAppColumn']) -> None:
+        """
+        Sets the whats_app_columns of this ContactListDivisionView.
+        Indicates which columns are whatsApp contacts.
+
+        :param whats_app_columns: The whats_app_columns of this ContactListDivisionView.
+        :type: list[WhatsAppColumn]
+        """
+        
+
+        self._whats_app_columns = whats_app_columns
 
     @property
     def import_status(self) -> 'ImportStatus':

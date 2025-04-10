@@ -45,9 +45,11 @@ from ..models import BulkJobTerminateRequest
 from ..models import BulkJobTerminateResultsResponse
 from ..models import BulkJobUpdate
 from ..models import BulkJobsListing
+from ..models import Coretype
 from ..models import DataSchema
 from ..models import DataSchemaListing
 from ..models import ErrorBody
+from ..models import SchemaQuantityLimits
 from ..models import Workbin
 from ..models import WorkbinChangeListing
 from ..models import WorkbinCreate
@@ -2644,6 +2646,228 @@ class TaskManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_schemas_coretype(self, core_type_name: str, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_schemas_coretype(core_type_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str core_type_name: Name of the core type (required)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['core_type_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_schemas_coretype" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'core_type_name' is set
+        if ('core_type_name' not in params) or (params['core_type_name'] is None):
+            raise ValueError("Missing the required parameter `core_type_name` when calling `get_taskmanagement_workitems_schemas_coretype`")
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'core_type_name' in params:
+            path_params['coreTypeName'] = params['core_type_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_schemas_coretypes(self, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_schemas_coretypes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_schemas_coretypes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/schemas/coretypes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_taskmanagement_workitems_schemas_limits(self, **kwargs) -> 'SchemaQuantityLimits':
+        """
+        Get quantitative limits on schemas
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_taskmanagement_workitems_schemas_limits(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SchemaQuantityLimits
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_taskmanagement_workitems_schemas_limits" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/taskmanagement/workitems/schemas/limits'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SchemaQuantityLimits',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

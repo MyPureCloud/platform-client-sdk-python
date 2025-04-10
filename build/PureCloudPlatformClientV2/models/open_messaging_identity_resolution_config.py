@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AddressableEntityRef
     from . import WritableStarrableDivision
 
 class OpenMessagingIdentityResolutionConfig(object):
@@ -53,6 +54,7 @@ class OpenMessagingIdentityResolutionConfig(object):
             'id': 'str',
             'division': 'WritableStarrableDivision',
             'resolve_identities': 'bool',
+            'external_source': 'AddressableEntityRef',
             'self_uri': 'str'
         }
 
@@ -60,12 +62,14 @@ class OpenMessagingIdentityResolutionConfig(object):
             'id': 'id',
             'division': 'division',
             'resolve_identities': 'resolveIdentities',
+            'external_source': 'externalSource',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._division = None
         self._resolve_identities = None
+        self._external_source = None
         self._self_uri = None
 
     @property
@@ -139,6 +143,30 @@ class OpenMessagingIdentityResolutionConfig(object):
         
 
         self._resolve_identities = resolve_identities
+
+    @property
+    def external_source(self) -> 'AddressableEntityRef':
+        """
+        Gets the external_source of this OpenMessagingIdentityResolutionConfig.
+        The external source used for stitching this channel - used only for Open Messaging.
+
+        :return: The external_source of this OpenMessagingIdentityResolutionConfig.
+        :rtype: AddressableEntityRef
+        """
+        return self._external_source
+
+    @external_source.setter
+    def external_source(self, external_source: 'AddressableEntityRef') -> None:
+        """
+        Sets the external_source of this OpenMessagingIdentityResolutionConfig.
+        The external source used for stitching this channel - used only for Open Messaging.
+
+        :param external_source: The external_source of this OpenMessagingIdentityResolutionConfig.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._external_source = external_source
 
     @property
     def self_uri(self) -> str:

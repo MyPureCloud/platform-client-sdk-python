@@ -57,6 +57,7 @@ class WritableDialerContact(object):
             'data': 'dict(str, str)',
             'latest_sms_evaluations': 'dict(str, MessageEvaluation)',
             'latest_email_evaluations': 'dict(str, MessageEvaluation)',
+            'latest_whats_app_evaluations': 'dict(str, MessageEvaluation)',
             'callable': 'bool',
             'phone_number_status': 'dict(str, PhoneNumberStatus)',
             'contactable_status': 'dict(str, ContactableStatus)',
@@ -69,6 +70,7 @@ class WritableDialerContact(object):
             'data': 'data',
             'latest_sms_evaluations': 'latestSmsEvaluations',
             'latest_email_evaluations': 'latestEmailEvaluations',
+            'latest_whats_app_evaluations': 'latestWhatsAppEvaluations',
             'callable': 'callable',
             'phone_number_status': 'phoneNumberStatus',
             'contactable_status': 'contactableStatus',
@@ -80,6 +82,7 @@ class WritableDialerContact(object):
         self._data = None
         self._latest_sms_evaluations = None
         self._latest_email_evaluations = None
+        self._latest_whats_app_evaluations = None
         self._callable = None
         self._phone_number_status = None
         self._contactable_status = None
@@ -204,6 +207,30 @@ class WritableDialerContact(object):
         
 
         self._latest_email_evaluations = latest_email_evaluations
+
+    @property
+    def latest_whats_app_evaluations(self) -> Dict[str, 'MessageEvaluation']:
+        """
+        Gets the latest_whats_app_evaluations of this WritableDialerContact.
+        A map of whatsapp records for the contact whatsapp columns.
+
+        :return: The latest_whats_app_evaluations of this WritableDialerContact.
+        :rtype: dict(str, MessageEvaluation)
+        """
+        return self._latest_whats_app_evaluations
+
+    @latest_whats_app_evaluations.setter
+    def latest_whats_app_evaluations(self, latest_whats_app_evaluations: Dict[str, 'MessageEvaluation']) -> None:
+        """
+        Sets the latest_whats_app_evaluations of this WritableDialerContact.
+        A map of whatsapp records for the contact whatsapp columns.
+
+        :param latest_whats_app_evaluations: The latest_whats_app_evaluations of this WritableDialerContact.
+        :type: dict(str, MessageEvaluation)
+        """
+        
+
+        self._latest_whats_app_evaluations = latest_whats_app_evaluations
 
     @property
     def callable(self) -> bool:

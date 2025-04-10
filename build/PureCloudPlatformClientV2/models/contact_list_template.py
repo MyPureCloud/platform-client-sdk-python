@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ContactPhoneNumberColumn
     from . import DomainEntityRef
     from . import EmailColumn
+    from . import WhatsAppColumn
 
 class ContactListTemplate(object):
     """
@@ -61,6 +62,7 @@ class ContactListTemplate(object):
             'column_names': 'list[str]',
             'phone_columns': 'list[ContactPhoneNumberColumn]',
             'email_columns': 'list[EmailColumn]',
+            'whats_app_columns': 'list[WhatsAppColumn]',
             'preview_mode_column_name': 'str',
             'preview_mode_accepted_values': 'list[str]',
             'attempt_limits': 'DomainEntityRef',
@@ -80,6 +82,7 @@ class ContactListTemplate(object):
             'column_names': 'columnNames',
             'phone_columns': 'phoneColumns',
             'email_columns': 'emailColumns',
+            'whats_app_columns': 'whatsAppColumns',
             'preview_mode_column_name': 'previewModeColumnName',
             'preview_mode_accepted_values': 'previewModeAcceptedValues',
             'attempt_limits': 'attemptLimits',
@@ -98,6 +101,7 @@ class ContactListTemplate(object):
         self._column_names = None
         self._phone_columns = None
         self._email_columns = None
+        self._whats_app_columns = None
         self._preview_mode_column_name = None
         self._preview_mode_accepted_values = None
         self._attempt_limits = None
@@ -298,6 +302,30 @@ class ContactListTemplate(object):
         
 
         self._email_columns = email_columns
+
+    @property
+    def whats_app_columns(self) -> List['WhatsAppColumn']:
+        """
+        Gets the whats_app_columns of this ContactListTemplate.
+        Indicates which columns are whatsApp contacts
+
+        :return: The whats_app_columns of this ContactListTemplate.
+        :rtype: list[WhatsAppColumn]
+        """
+        return self._whats_app_columns
+
+    @whats_app_columns.setter
+    def whats_app_columns(self, whats_app_columns: List['WhatsAppColumn']) -> None:
+        """
+        Sets the whats_app_columns of this ContactListTemplate.
+        Indicates which columns are whatsApp contacts
+
+        :param whats_app_columns: The whats_app_columns of this ContactListTemplate.
+        :type: list[WhatsAppColumn]
+        """
+        
+
+        self._whats_app_columns = whats_app_columns
 
     @property
     def preview_mode_column_name(self) -> str:

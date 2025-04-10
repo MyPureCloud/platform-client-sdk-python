@@ -63,6 +63,7 @@ class DataTableImportJob(object):
             'count_records_updated': 'int',
             'count_records_deleted': 'int',
             'count_records_failed': 'int',
+            'upload_headers': 'dict(str, str)',
             'self_uri': 'str'
         }
 
@@ -79,6 +80,7 @@ class DataTableImportJob(object):
             'count_records_updated': 'countRecordsUpdated',
             'count_records_deleted': 'countRecordsDeleted',
             'count_records_failed': 'countRecordsFailed',
+            'upload_headers': 'uploadHeaders',
             'self_uri': 'selfUri'
         }
 
@@ -94,6 +96,7 @@ class DataTableImportJob(object):
         self._count_records_updated = None
         self._count_records_deleted = None
         self._count_records_failed = None
+        self._upload_headers = None
         self._self_uri = None
 
     @property
@@ -393,6 +396,30 @@ class DataTableImportJob(object):
         
 
         self._count_records_failed = count_records_failed
+
+    @property
+    def upload_headers(self) -> Dict[str, str]:
+        """
+        Gets the upload_headers of this DataTableImportJob.
+        Required headers when uploading a file through PUT request to the URL in the 'uploadURI' field
+
+        :return: The upload_headers of this DataTableImportJob.
+        :rtype: dict(str, str)
+        """
+        return self._upload_headers
+
+    @upload_headers.setter
+    def upload_headers(self, upload_headers: Dict[str, str]) -> None:
+        """
+        Sets the upload_headers of this DataTableImportJob.
+        Required headers when uploading a file through PUT request to the URL in the 'uploadURI' field
+
+        :param upload_headers: The upload_headers of this DataTableImportJob.
+        :type: dict(str, str)
+        """
+        
+
+        self._upload_headers = upload_headers
 
     @property
     def self_uri(self) -> str:

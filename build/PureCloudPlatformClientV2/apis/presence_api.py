@@ -68,7 +68,7 @@ class PresenceApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def delete_division_based_presence_definition(self, definition_id: str, **kwargs) -> None:
+    def delete_presence_definition(self, definition_id: str, **kwargs) -> None:
         """
         Delete a Presence Definition
         
@@ -79,7 +79,7 @@ class PresenceApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_division_based_presence_definition(definition_id, callback=callback_function)
+        >>> thread = api.delete_presence_definition(definition_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -97,14 +97,14 @@ class PresenceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_division_based_presence_definition" % key
+                    " to method delete_presence_definition" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'definition_id' is set
         if ('definition_id' not in params) or (params['definition_id'] is None):
-            raise ValueError("Missing the required parameter `definition_id` when calling `delete_division_based_presence_definition`")
+            raise ValueError("Missing the required parameter `definition_id` when calling `delete_presence_definition`")
 
 
         resource_path = '/api/v2/presence/definitions/{definitionId}'.replace('{format}', 'json')
@@ -303,7 +303,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_division_based_presence_definition(self, definition_id: str, **kwargs) -> 'OrganizationPresenceDefinition':
+    def get_presence_definition(self, definition_id: str, **kwargs) -> 'OrganizationPresenceDefinition':
         """
         Get a Presence Definition
         
@@ -314,7 +314,7 @@ class PresenceApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_division_based_presence_definition(definition_id, callback=callback_function)
+        >>> thread = api.get_presence_definition(definition_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -333,14 +333,14 @@ class PresenceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_division_based_presence_definition" % key
+                    " to method get_presence_definition" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'definition_id' is set
         if ('definition_id' not in params) or (params['definition_id'] is None):
-            raise ValueError("Missing the required parameter `definition_id` when calling `get_division_based_presence_definition`")
+            raise ValueError("Missing the required parameter `definition_id` when calling `get_presence_definition`")
 
 
         resource_path = '/api/v2/presence/definitions/{definitionId}'.replace('{format}', 'json')
@@ -384,7 +384,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_division_based_presence_definitions(self, **kwargs) -> 'OrganizationPresenceDefinitionEntityListing':
+    def get_presence_definitions(self, **kwargs) -> 'OrganizationPresenceDefinitionEntityListing':
         """
         Get a list of Presence Definitions
         
@@ -395,7 +395,7 @@ class PresenceApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_division_based_presence_definitions(callback=callback_function)
+        >>> thread = api.get_presence_definitions(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -415,7 +415,7 @@ class PresenceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_division_based_presence_definitions" % key
+                    " to method get_presence_definitions" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1499,7 +1499,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_division_based_presence_definitions(self, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
+    def post_presence_definitions(self, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
         """
         Create a Presence Definition
         
@@ -1510,7 +1510,7 @@ class PresenceApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_division_based_presence_definitions(body, callback=callback_function)
+        >>> thread = api.post_presence_definitions(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1528,14 +1528,14 @@ class PresenceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method post_division_based_presence_definitions" % key
+                    " to method post_presence_definitions" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_division_based_presence_definitions`")
+            raise ValueError("Missing the required parameter `body` when calling `post_presence_definitions`")
 
 
         resource_path = '/api/v2/presence/definitions'.replace('{format}', 'json')
@@ -1734,7 +1734,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_division_based_presence_definition(self, definition_id: str, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
+    def put_presence_definition(self, definition_id: str, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
         """
         Update a Presence Definition
         
@@ -1745,7 +1745,7 @@ class PresenceApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_division_based_presence_definition(definition_id, body, callback=callback_function)
+        >>> thread = api.put_presence_definition(definition_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1764,17 +1764,17 @@ class PresenceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_division_based_presence_definition" % key
+                    " to method put_presence_definition" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'definition_id' is set
         if ('definition_id' not in params) or (params['definition_id'] is None):
-            raise ValueError("Missing the required parameter `definition_id` when calling `put_division_based_presence_definition`")
+            raise ValueError("Missing the required parameter `definition_id` when calling `put_presence_definition`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `put_division_based_presence_definition`")
+            raise ValueError("Missing the required parameter `body` when calling `put_presence_definition`")
 
 
         resource_path = '/api/v2/presence/definitions/{definitionId}'.replace('{format}', 'json')

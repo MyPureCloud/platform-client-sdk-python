@@ -7463,10 +7463,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_historicaldata_deletejob is deprecated")
     def get_workforcemanagement_historicaldata_deletejob(self, **kwargs) -> 'HistoricalImportDeleteJobResponse':
         """
-        Retrieves delete job status for historical data imports of the organization
-        
+        Retrieves delete job status for historical data imports of the organization.
+        Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17331,10 +17332,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_historicaldata_deletejob is deprecated")
     def post_workforcemanagement_historicaldata_deletejob(self, **kwargs) -> 'HistoricalImportDeleteJobResponse':
         """
-        Delete the entries of the historical data imports in the organization
-        
+        Delete the entries of the historical data imports in the organization.
+        Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
