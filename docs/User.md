@@ -43,8 +43,9 @@
 | **language_preference** | str | preferred language by the user | [optional] |
 | **last_token_issued** | [OAuthLastTokenIssued](OAuthLastTokenIssued) |  | [optional] |
 | **date_last_login** | datetime | The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **date_welcome_sent** | datetime | The date &amp; time the user was sent their welcome email. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

@@ -18,8 +18,9 @@
 | **count_records_updated** | int | The current count of the number of records processed | [optional] |
 | **count_records_deleted** | int | The current count of the number of records deleted | [optional] |
 | **count_records_failed** | int | The current count of the number of records that failed to import | [optional] |
+| **upload_headers** | dict(str, str) | Required headers when uploading a file through PUT request to the URL in the &#39;uploadURI&#39; field | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

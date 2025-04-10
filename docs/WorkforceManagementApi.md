@@ -92,7 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_calendar_url_ics**](#get_workforcemanagement_calendar_url_ics) | Get existing calendar link for the current user|
 |[**get_workforcemanagement_historicaldata_bulk_remove_job**](#get_workforcemanagement_historicaldata_bulk_remove_job) | Retrieves delete job status for historical data imports associated with the job id|
 |[**get_workforcemanagement_historicaldata_bulk_remove_jobs**](#get_workforcemanagement_historicaldata_bulk_remove_jobs) | Retrieves all delete job status for historical data|
-|[**get_workforcemanagement_historicaldata_deletejob**](#get_workforcemanagement_historicaldata_deletejob) | Retrieves delete job status for historical data imports of the organization|
+|[**get_workforcemanagement_historicaldata_deletejob**](#get_workforcemanagement_historicaldata_deletejob) | Retrieves delete job status for historical data imports of the organization.|
 |[**get_workforcemanagement_historicaldata_importstatus**](#get_workforcemanagement_historicaldata_importstatus) | Retrieves status of the historical data imports of the organization|
 |[**get_workforcemanagement_historicaldata_importstatus_job_id**](#get_workforcemanagement_historicaldata_importstatus_job_id) | Retrieves status of the historical data imports associated with job id|
 |[**get_workforcemanagement_integrations_hris**](#get_workforcemanagement_integrations_hris) | Get integrations|
@@ -210,7 +210,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunits**](#post_workforcemanagement_businessunits) | Add a new business unit|
 |[**post_workforcemanagement_calendar_url_ics**](#post_workforcemanagement_calendar_url_ics) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned|
 |[**post_workforcemanagement_historicaldata_bulk_remove_jobs**](#post_workforcemanagement_historicaldata_bulk_remove_jobs) | Delete the list of the historical data import entries|
-|[**post_workforcemanagement_historicaldata_deletejob**](#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization|
+|[**post_workforcemanagement_historicaldata_deletejob**](#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization.|
 |[**post_workforcemanagement_historicaldata_validate**](#post_workforcemanagement_historicaldata_validate) | Trigger validation process for historical import|
 |[**post_workforcemanagement_integrations_hri_timeofftypes_jobs**](#post_workforcemanagement_integrations_hri_timeofftypes_jobs) | Get list of time off types configured in integration|
 |[**post_workforcemanagement_managementunit_agents_workplans_query**](#post_workforcemanagement_managementunit_agents_workplans_query) | Get agents work plans configuration|
@@ -4778,8 +4778,13 @@ This endpoint does not need any parameters.
 
 > [**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse) get_workforcemanagement_historicaldata_deletejob()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieves delete job status for historical data imports of the organization
+Retrieves delete job status for historical data imports of the organization.
+
+Deprecated: Please use GET /workforcemanagement/historicaldata/bulk/remove/jobs instead.
 
 Wraps GET /api/v2/workforcemanagement/historicaldata/deletejob 
 
@@ -4802,7 +4807,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 
 try:
-    # Retrieves delete job status for historical data imports of the organization
+    # Retrieves delete job status for historical data imports of the organization.
     api_response = api_instance.get_workforcemanagement_historicaldata_deletejob()
     pprint(api_response)
 except ApiException as e:
@@ -10897,8 +10902,13 @@ except ApiException as e:
 
 > [**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse) post_workforcemanagement_historicaldata_deletejob()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Delete the entries of the historical data imports in the organization
+Delete the entries of the historical data imports in the organization.
+
+Deprecated: Please use POST /workforcemanagement/historicaldata/bulk/remove/jobs instead.
 
 Wraps POST /api/v2/workforcemanagement/historicaldata/deletejob 
 
@@ -10921,7 +10931,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 
 try:
-    # Delete the entries of the historical data imports in the organization
+    # Delete the entries of the historical data imports in the organization.
     api_response = api_instance.post_workforcemanagement_historicaldata_deletejob()
     pprint(api_response)
 except ApiException as e:
@@ -12990,4 +13000,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

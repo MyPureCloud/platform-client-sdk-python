@@ -15,6 +15,7 @@
 | **column_names** | list[str] | The names of the contact data columns. | |
 | **phone_columns** | [list[ContactPhoneNumberColumn]](ContactPhoneNumberColumn) | Indicates which columns are phone numbers. | [optional] |
 | **email_columns** | [list[EmailColumn]](EmailColumn) | Indicates which columns are email addresses | [optional] |
+| **whats_app_columns** | [list[WhatsAppColumn]](WhatsAppColumn) | Indicates which columns are whatsApp contacts | [optional] |
 | **import_status** | [ImportStatus](ImportStatus) | The status of the import process. | [optional] |
 | **preview_mode_column_name** | str | A column to check if a contact should always be dialed in preview mode. | [optional] |
 | **preview_mode_accepted_values** | list[str] | The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode. | [optional] |
@@ -28,4 +29,4 @@
 
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

@@ -1829,7 +1829,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 exclude_status = False # bool | Exclude MX record data (optional) (default to False)
-filter = 'filter_example' # str | Optional search filter (optional)
+filter = 'filter_example' # str | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
 
 try:
     # Get domains
@@ -1847,7 +1847,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **exclude_status** | **bool**| Exclude MX record data | [optional] [default to False] |
-| **filter** | **str**| Optional search filter | [optional]  |
+| **filter** | **str**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
 
 ### Return type
 
@@ -2000,7 +2000,7 @@ except ApiException as e:
 
 ## get_routing_email_outbound_domains
 
-> [**OutboundDomainEntityListing**](OutboundDomainEntityListing) get_routing_email_outbound_domains(filter=filter)
+> [**OutboundDomainEntityListing**](OutboundDomainEntityListing) get_routing_email_outbound_domains(page_size=page_size, page_number=page_number, filter=filter)
 
 
 Get outbound domains
@@ -2024,11 +2024,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-filter = 'filter_example' # str | Optional search filter (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+filter = 'filter_example' # str | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
 
 try:
     # Get outbound domains
-    api_response = api_instance.get_routing_email_outbound_domains(filter=filter)
+    api_response = api_instance.get_routing_email_outbound_domains(page_size=page_size, page_number=page_number, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_outbound_domains: %s\n" % e)
@@ -2039,7 +2041,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **filter** | **str**| Optional search filter | [optional]  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **filter** | **str**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
 
 ### Return type
 
@@ -2958,7 +2962,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **name** | **str**| Filter by queue member name (contains-style search) | [optional]  |
 | **profile_skills** | [**list[str]**](str)| Filter by profile skill (contains-style search) | [optional]  |
 | **skills** | [**list[str]**](str)| Filter by skill (contains-style search) | [optional]  |
@@ -3033,7 +3037,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str)| Filter by profile skill | [optional]  |
@@ -7981,4 +7985,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

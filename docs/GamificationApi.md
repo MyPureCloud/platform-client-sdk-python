@@ -7,8 +7,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_employeeperformance_externalmetrics_definition**](#delete_employeeperformance_externalmetrics_definition) | Delete an External Metric Definition|
+|[**delete_gamification_contest**](#delete_gamification_contest) | Delete a Contest by Id|
 |[**get_employeeperformance_externalmetrics_definition**](#get_employeeperformance_externalmetrics_definition) | Get an External Metric Definition|
 |[**get_employeeperformance_externalmetrics_definitions**](#get_employeeperformance_externalmetrics_definitions) | Get a list of External Metric Definitions of an organization, sorted by name in ascending order|
+|[**get_gamification_contest**](#get_gamification_contest) | Get a Contest by Id|
+|[**get_gamification_contest_agents_scores**](#get_gamification_contest_agents_scores) | Get Contest Scores (Admin)|
+|[**get_gamification_contest_agents_scores_me**](#get_gamification_contest_agents_scores_me) | Get Contest Scores for the requesting Agent/Supervisor|
+|[**get_gamification_contest_agents_scores_trends**](#get_gamification_contest_agents_scores_trends) | Get a Contest Score Trend (Average Trend)|
+|[**get_gamification_contest_agents_scores_trends_me**](#get_gamification_contest_agents_scores_trends_me) | Get a Contest Score Trend for the requesting Agent|
+|[**get_gamification_contest_prizeimage**](#get_gamification_contest_prizeimage) | Get a Contest Prize Image by Id|
+|[**get_gamification_contests**](#get_gamification_contests) | Get a List of Contests (Admin)|
+|[**get_gamification_contests_me**](#get_gamification_contests_me) | Get a List of Contests (Agent/Supervisor)|
 |[**get_gamification_insights**](#get_gamification_insights) | Get insights summary|
 |[**get_gamification_insights_details**](#get_gamification_insights_details) | Get insights details for the current user|
 |[**get_gamification_insights_groups_trends**](#get_gamification_insights_groups_trends) | Get insights overall trend for the current user|
@@ -56,8 +65,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_template**](#get_gamification_template) | Objective template by id|
 |[**get_gamification_templates**](#get_gamification_templates) | All objective templates|
 |[**patch_employeeperformance_externalmetrics_definition**](#patch_employeeperformance_externalmetrics_definition) | Update External Metric Definition|
+|[**patch_gamification_contest**](#patch_gamification_contest) | Finalize a Contest by Id|
 |[**post_employeeperformance_externalmetrics_data**](#post_employeeperformance_externalmetrics_data) | Write External Metric Data|
 |[**post_employeeperformance_externalmetrics_definitions**](#post_employeeperformance_externalmetrics_definitions) | Create External Metric Definition|
+|[**post_gamification_contests**](#post_gamification_contests) | Creates a Contest|
+|[**post_gamification_contests_uploads_prizeimages**](#post_gamification_contests_uploads_prizeimages) | Generates pre-signed URL to upload a prize image for gamification contests|
 |[**post_gamification_profile_activate**](#post_gamification_profile_activate) | Activate a performance profile|
 |[**post_gamification_profile_deactivate**](#post_gamification_profile_deactivate) | Deactivate a performance profile|
 |[**post_gamification_profile_members**](#post_gamification_profile_members) | Assign members to a given performance profile|
@@ -67,6 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_gamification_profiles**](#post_gamification_profiles) | Create a new custom performance profile|
 |[**post_gamification_profiles_user_query**](#post_gamification_profiles_user_query) | Query performance profiles in date range for a user|
 |[**post_gamification_profiles_users_me_query**](#post_gamification_profiles_users_me_query) | Query performance profiles in date range for the current user|
+|[**put_gamification_contest**](#put_gamification_contest) | Update a Contest by Id|
 |[**put_gamification_profile**](#put_gamification_profile) | Updates a performance profile|
 |[**put_gamification_profile_metric**](#put_gamification_profile_metric) | Updates a metric in performance profile|
 |[**put_gamification_status**](#put_gamification_status) | Update gamification activation status|
@@ -114,6 +127,54 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metric_id** | **str**| Specifies the External Metric Definition ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_gamification_contest
+
+>  delete_gamification_contest(contest_id)
+
+
+Delete a Contest by Id
+
+Wraps DELETE /api/v2/gamification/contests/{contestId} 
+
+Requires ANY permissions: 
+
+* gamification:contest:delete
+* gamification:contest:deleteAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+
+try:
+    # Delete a Contest by Id
+    api_instance.delete_gamification_contest(contest_id)
+except ApiException as e:
+    print("Exception when calling GamificationApi->delete_gamification_contest: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
 
 ### Return type
 
@@ -216,6 +277,435 @@ except ApiException as e:
 ### Return type
 
 [**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing)
+
+
+## get_gamification_contest
+
+> [**ContestsResponse**](ContestsResponse) get_gamification_contest(contest_id)
+
+
+Get a Contest by Id
+
+Wraps GET /api/v2/gamification/contests/{contestId} 
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+
+try:
+    # Get a Contest by Id
+    api_response = api_instance.get_gamification_contest(contest_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contest: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
+## get_gamification_contest_agents_scores
+
+> [**ContestScoresAgentsPagedList**](ContestScoresAgentsPagedList) get_gamification_contest_agents_scores(contest_id, page_number=page_number, page_size=page_size, workday=workday, returns_view=returns_view)
+
+
+Get Contest Scores (Admin)
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores 
+
+Requires ANY permissions: 
+
+* gamification:contest:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int |  (optional) (default to 25)
+workday = '2013-10-20' # date | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+returns_view = ''All'' # str | Desired response results (optional) (default to 'All')
+
+try:
+    # Get Contest Scores (Admin)
+    api_response = api_instance.get_gamification_contest_agents_scores(contest_id, page_number=page_number, page_size=page_size, workday=workday, returns_view=returns_view)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contest_agents_scores: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 25] |
+| **workday** | **date**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **returns_view** | **str**| Desired response results | [optional] [default to &#39;All&#39;]<br />**Values**: All, TopAndBottom |
+
+### Return type
+
+[**ContestScoresAgentsPagedList**](ContestScoresAgentsPagedList)
+
+
+## get_gamification_contest_agents_scores_me
+
+> [**ContestScoresAgentsPagedList**](ContestScoresAgentsPagedList) get_gamification_contest_agents_scores_me(contest_id, page_number=page_number, page_size=page_size, workday=workday, returns_view=returns_view)
+
+
+Get Contest Scores for the requesting Agent/Supervisor
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores/me 
+
+Requires ALL permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int |  (optional) (default to 25)
+workday = '2013-10-20' # date | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+returns_view = ''All'' # str | Desired response results (Supervisor Only) (optional) (default to 'All')
+
+try:
+    # Get Contest Scores for the requesting Agent/Supervisor
+    api_response = api_instance.get_gamification_contest_agents_scores_me(contest_id, page_number=page_number, page_size=page_size, workday=workday, returns_view=returns_view)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contest_agents_scores_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 25] |
+| **workday** | **date**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **returns_view** | **str**| Desired response results (Supervisor Only) | [optional] [default to &#39;All&#39;]<br />**Values**: All, TopAndBottom |
+
+### Return type
+
+[**ContestScoresAgentsPagedList**](ContestScoresAgentsPagedList)
+
+
+## get_gamification_contest_agents_scores_trends
+
+> [**ContestScoresGroupTrendList**](ContestScoresGroupTrendList) get_gamification_contest_agents_scores_trends(contest_id)
+
+
+Get a Contest Score Trend (Average Trend)
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores/trends 
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+
+try:
+    # Get a Contest Score Trend (Average Trend)
+    api_response = api_instance.get_gamification_contest_agents_scores_trends(contest_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contest_agents_scores_trends: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+
+### Return type
+
+[**ContestScoresGroupTrendList**](ContestScoresGroupTrendList)
+
+
+## get_gamification_contest_agents_scores_trends_me
+
+> [**ContestScoresAgentTrendList**](ContestScoresAgentTrendList) get_gamification_contest_agents_scores_trends_me(contest_id)
+
+
+Get a Contest Score Trend for the requesting Agent
+
+Wraps GET /api/v2/gamification/contests/{contestId}/agents/scores/trends/me 
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+
+try:
+    # Get a Contest Score Trend for the requesting Agent
+    api_response = api_instance.get_gamification_contest_agents_scores_trends_me(contest_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contest_agents_scores_trends_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+
+### Return type
+
+[**ContestScoresAgentTrendList**](ContestScoresAgentTrendList)
+
+
+## get_gamification_contest_prizeimage
+
+> [**PrizeImages**](PrizeImages) get_gamification_contest_prizeimage(contest_id, prize_image_id)
+
+
+Get a Contest Prize Image by Id
+
+Wraps GET /api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId} 
+
+Requires ANY permissions: 
+
+* gamification:contest:view
+* gamification:contest:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+prize_image_id = 'prize_image_id_example' # str | The ID of the prize image
+
+try:
+    # Get a Contest Prize Image by Id
+    api_response = api_instance.get_gamification_contest_prizeimage(contest_id, prize_image_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contest_prizeimage: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+| **prize_image_id** | **str**| The ID of the prize image |  |
+
+### Return type
+
+[**PrizeImages**](PrizeImages)
+
+
+## get_gamification_contests
+
+> [**GetContestsEssentialsListing**](GetContestsEssentialsListing) get_gamification_contests(page_number=page_number, page_size=page_size, date_start=date_start, date_end=date_end, status=status, sort_by=sort_by, sort_order=sort_order)
+
+
+Get a List of Contests (Admin)
+
+Wraps GET /api/v2/gamification/contests 
+
+Requires ANY permissions: 
+
+* gamification:contest:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int |  (optional) (default to 25)
+date_start = '2013-10-20' # date | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+date_end = '2013-10-20' # date | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+status = ['status_example'] # list[str] |  (optional)
+sort_by = ''dateStart'' # str |  (optional) (default to 'dateStart')
+sort_order = ''desc'' # str |  (optional) (default to 'desc')
+
+try:
+    # Get a List of Contests (Admin)
+    api_response = api_instance.get_gamification_contests(page_number=page_number, page_size=page_size, date_start=date_start, date_end=date_end, status=status, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contests: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 25] |
+| **date_start** | **date**| Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **date_end** | **date**| End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **status** | [**list[str]**](str)|  | [optional] <br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled |
+| **sort_by** | **str**|  | [optional] [default to &#39;dateStart&#39;]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
+| **sort_order** | **str**|  | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
+
+### Return type
+
+[**GetContestsEssentialsListing**](GetContestsEssentialsListing)
+
+
+## get_gamification_contests_me
+
+> [**GetContestsEssentialsListing**](GetContestsEssentialsListing) get_gamification_contests_me(page_number=page_number, page_size=page_size, date_start=date_start, date_end=date_end, status=status, sort_by=sort_by, sort_order=sort_order, view=view)
+
+
+Get a List of Contests (Agent/Supervisor)
+
+Wraps GET /api/v2/gamification/contests/me 
+
+Requires ALL permissions: 
+
+* gamification:contest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int |  (optional) (default to 25)
+date_start = '2013-10-20' # date | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+date_end = '2013-10-20' # date | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+status = ['status_example'] # list[str] |  (optional)
+sort_by = ''dateStart'' # str |  (optional) (default to 'dateStart')
+sort_order = ''desc'' # str |  (optional) (default to 'desc')
+view = ''participant'' # str |  (optional) (default to 'participant')
+
+try:
+    # Get a List of Contests (Agent/Supervisor)
+    api_response = api_instance.get_gamification_contests_me(page_number=page_number, page_size=page_size, date_start=date_start, date_end=date_end, status=status, sort_by=sort_by, sort_order=sort_order, view=view)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contests_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 25] |
+| **date_start** | **date**| Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **date_end** | **date**| End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **status** | [**list[str]**](str)|  | [optional] <br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled |
+| **sort_by** | **str**|  | [optional] [default to &#39;dateStart&#39;]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
+| **sort_order** | **str**|  | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
+| **view** | **str**|  | [optional] [default to &#39;participant&#39;]<br />**Values**: participant, creator |
+
+### Return type
+
+[**GetContestsEssentialsListing**](GetContestsEssentialsListing)
 
 
 ## get_gamification_insights
@@ -2701,6 +3191,57 @@ except ApiException as e:
 [**ExternalMetricDefinition**](ExternalMetricDefinition)
 
 
+## patch_gamification_contest
+
+> [**ContestsResponse**](ContestsResponse) patch_gamification_contest(contest_id, body)
+
+
+Finalize a Contest by Id
+
+Wraps PATCH /api/v2/gamification/contests/{contestId} 
+
+Requires ANY permissions: 
+
+* gamification:contestStatus:edit
+* gamification:contestStatus:editAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+body = PureCloudPlatformClientV2.ContestsFinalizeRequest() # ContestsFinalizeRequest | Finalize Contest
+
+try:
+    # Finalize a Contest by Id
+    api_response = api_instance.patch_gamification_contest(contest_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->patch_gamification_contest: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+| **body** | [**ContestsFinalizeRequest**](ContestsFinalizeRequest)| Finalize Contest |  |
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
 ## post_employeeperformance_externalmetrics_data
 
 > [**ExternalMetricDataWriteResponse**](ExternalMetricDataWriteResponse) post_employeeperformance_externalmetrics_data(body=body)
@@ -2795,6 +3336,102 @@ except ApiException as e:
 ### Return type
 
 [**ExternalMetricDefinition**](ExternalMetricDefinition)
+
+
+## post_gamification_contests
+
+> [**ContestsResponse**](ContestsResponse) post_gamification_contests(body)
+
+
+Creates a Contest
+
+Wraps POST /api/v2/gamification/contests 
+
+Requires ANY permissions: 
+
+* gamification:contest:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+body = PureCloudPlatformClientV2.ContestsCreateRequest() # ContestsCreateRequest | Create Contest
+
+try:
+    # Creates a Contest
+    api_response = api_instance.post_gamification_contests(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_contests: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContestsCreateRequest**](ContestsCreateRequest)| Create Contest |  |
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
+## post_gamification_contests_uploads_prizeimages
+
+> [**UploadUrlResponse**](UploadUrlResponse) post_gamification_contests_uploads_prizeimages(body)
+
+
+Generates pre-signed URL to upload a prize image for gamification contests
+
+Wraps POST /api/v2/gamification/contests/uploads/prizeimages 
+
+Requires ALL permissions: 
+
+* gamification:contestPrizeImage:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+body = PureCloudPlatformClientV2.GamificationContestPrizeImageUploadUrlRequest() # GamificationContestPrizeImageUploadUrlRequest | query
+
+try:
+    # Generates pre-signed URL to upload a prize image for gamification contests
+    api_response = api_instance.post_gamification_contests_uploads_prizeimages(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_contests_uploads_prizeimages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GamificationContestPrizeImageUploadUrlRequest**](GamificationContestPrizeImageUploadUrlRequest)| query |  |
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_gamification_profile_activate
@@ -3242,6 +3879,57 @@ except ApiException as e:
 [**UserProfilesInDateRange**](UserProfilesInDateRange)
 
 
+## put_gamification_contest
+
+> [**ContestsResponse**](ContestsResponse) put_gamification_contest(contest_id, body)
+
+
+Update a Contest by Id
+
+Wraps PUT /api/v2/gamification/contests/{contestId} 
+
+Requires ANY permissions: 
+
+* gamification:contest:edit
+* gamification:contest:editAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+contest_id = 'contest_id_example' # str | The ID of the contest
+body = PureCloudPlatformClientV2.ContestsCreateRequest() # ContestsCreateRequest | Contest
+
+try:
+    # Update a Contest by Id
+    api_response = api_instance.put_gamification_contest(contest_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->put_gamification_contest: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contest_id** | **str**| The ID of the contest |  |
+| **body** | [**ContestsCreateRequest**](ContestsCreateRequest)| Contest |  |
+
+### Return type
+
+[**ContestsResponse**](ContestsResponse)
+
+
 ## put_gamification_profile
 
 > [**PerformanceProfile**](PerformanceProfile) put_gamification_profile(profile_id, body=body)
@@ -3392,4 +4080,4 @@ except ApiException as e:
 [**GamificationStatus**](GamificationStatus)
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

@@ -29,6 +29,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contacts_schema_version**](#get_externalcontacts_contacts_schema_version) | Get a specific version of a schema|
 |[**get_externalcontacts_contacts_schema_versions**](#get_externalcontacts_contacts_schema_versions) | Get all versions of an external contact&#39;s schema|
 |[**get_externalcontacts_contacts_schemas**](#get_externalcontacts_contacts_schemas) | Get a list of schemas.|
+|[**get_externalcontacts_contacts_schemas_coretype**](#get_externalcontacts_contacts_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_externalcontacts_contacts_schemas_coretypes**](#get_externalcontacts_contacts_schemas_coretypes) | Get the core types from which all schemas are built.|
+|[**get_externalcontacts_contacts_schemas_limits**](#get_externalcontacts_contacts_schemas_limits) | Get quantitative limits on schemas|
 |[**get_externalcontacts_externalsource**](#get_externalcontacts_externalsource) | Fetch an External Source|
 |[**get_externalcontacts_externalsources**](#get_externalcontacts_externalsources) | Fetch a list of External Sources|
 |[**get_externalcontacts_import_csv_setting**](#get_externalcontacts_import_csv_setting) | Get settings for CSV import|
@@ -41,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_import_settings**](#get_externalcontacts_import_settings) | List settings for organization|
 |[**get_externalcontacts_organization**](#get_externalcontacts_organization) | Fetch an external organization|
 |[**get_externalcontacts_organization_contacts**](#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
+|[**get_externalcontacts_organization_identifiers**](#get_externalcontacts_organization_identifiers) | List the identifiers for an external organization|
 |[**get_externalcontacts_organization_note**](#get_externalcontacts_organization_note) | Fetch a note for an external organization|
 |[**get_externalcontacts_organization_notes**](#get_externalcontacts_organization_notes) | List notes for an external organization|
 |[**get_externalcontacts_organization_relationships**](#get_externalcontacts_organization_relationships) | Fetch a relationship for an external organization|
@@ -49,6 +53,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_organizations_schema_version**](#get_externalcontacts_organizations_schema_version) | Get a specific version of a schema|
 |[**get_externalcontacts_organizations_schema_versions**](#get_externalcontacts_organizations_schema_versions) | Get all versions of an external organization&#39;s schema|
 |[**get_externalcontacts_organizations_schemas**](#get_externalcontacts_organizations_schemas) | Get a list of schemas.|
+|[**get_externalcontacts_organizations_schemas_coretype**](#get_externalcontacts_organizations_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_externalcontacts_organizations_schemas_coretypes**](#get_externalcontacts_organizations_schemas_coretypes) | Get the core types from which all schemas are built.|
+|[**get_externalcontacts_organizations_schemas_limits**](#get_externalcontacts_organizations_schemas_limits) | Get quantitative limits on schemas|
 |[**get_externalcontacts_relationship**](#get_externalcontacts_relationship) | Fetch a relationship|
 |[**get_externalcontacts_reversewhitepageslookup**](#get_externalcontacts_reversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.|
 |[**get_externalcontacts_scan_contacts**](#get_externalcontacts_scan_contacts) | Scan for external contacts using paging|
@@ -60,9 +67,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_scan_relationships**](#get_externalcontacts_scan_relationships) | Scan for relationships|
 |[**get_externalcontacts_scan_relationships_divisionviews_all**](#get_externalcontacts_scan_relationships_divisionviews_all) | Scan for relationships|
 |[**patch_externalcontacts_contact_identifiers**](#patch_externalcontacts_contact_identifiers) | Claim or release identifiers for a contact|
+|[**patch_externalcontacts_organization_identifiers**](#patch_externalcontacts_organization_identifiers) | Claim or release identifiers for an external organization|
 |[**post_externalcontacts_bulk_contacts**](#post_externalcontacts_bulk_contacts) | Bulk fetch contacts|
 |[**post_externalcontacts_bulk_contacts_add**](#post_externalcontacts_bulk_contacts_add) | Bulk add contacts|
 |[**post_externalcontacts_bulk_contacts_divisionviews**](#post_externalcontacts_bulk_contacts_divisionviews) | Bulk fetch contacts across divisions|
+|[**post_externalcontacts_bulk_contacts_enrich**](#post_externalcontacts_bulk_contacts_enrich) | Bulk Enrich Contacts - Run up to 10 Enrich operations per request|
 |[**post_externalcontacts_bulk_contacts_remove**](#post_externalcontacts_bulk_contacts_remove) | Bulk remove contacts|
 |[**post_externalcontacts_bulk_contacts_unresolved**](#post_externalcontacts_bulk_contacts_unresolved) | Bulk fetch unresolved ancestor contacts|
 |[**post_externalcontacts_bulk_contacts_update**](#post_externalcontacts_bulk_contacts_update) | Bulk update contacts|
@@ -73,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_bulk_organizations**](#post_externalcontacts_bulk_organizations) | Bulk fetch organizations|
 |[**post_externalcontacts_bulk_organizations_add**](#post_externalcontacts_bulk_organizations_add) | Bulk add organizations|
 |[**post_externalcontacts_bulk_organizations_divisionviews**](#post_externalcontacts_bulk_organizations_divisionviews) | Bulk fetch organizations across divisions|
+|[**post_externalcontacts_bulk_organizations_enrich**](#post_externalcontacts_bulk_organizations_enrich) | Bulk enrich external organizations - Run up to 10 Enrich operations per request|
 |[**post_externalcontacts_bulk_organizations_remove**](#post_externalcontacts_bulk_organizations_remove) | Bulk remove organizations|
 |[**post_externalcontacts_bulk_organizations_update**](#post_externalcontacts_bulk_organizations_update) | Bulk update organizations|
 |[**post_externalcontacts_bulk_relationships**](#post_externalcontacts_bulk_relationships) | Bulk fetch relationships|
@@ -82,10 +92,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_contact_notes**](#post_externalcontacts_contact_notes) | Create a note for an external contact|
 |[**post_externalcontacts_contact_promotion**](#post_externalcontacts_contact_promotion) | Promote an observed contact (ephemeral or identified) to a curated contact|
 |[**post_externalcontacts_contacts**](#post_externalcontacts_contacts) | Create an external contact|
+|[**post_externalcontacts_contacts_enrich**](#post_externalcontacts_contacts_enrich) | Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.|
 |[**post_externalcontacts_contacts_exports**](#post_externalcontacts_contacts_exports) | Create bulk export|
+|[**post_externalcontacts_contacts_merge**](#post_externalcontacts_contacts_merge) | Merge up to 25 contacts into a new contact record|
 |[**post_externalcontacts_contacts_schemas**](#post_externalcontacts_contacts_schemas) | Create a schema|
 |[**post_externalcontacts_externalsources**](#post_externalcontacts_externalsources) | Create an External Source|
 |[**post_externalcontacts_identifierlookup**](#post_externalcontacts_identifierlookup) | Fetch a contact using an identifier type and value.|
+|[**post_externalcontacts_identifierlookup_contacts**](#post_externalcontacts_identifierlookup_contacts) | Fetch a contact using an identifier type and value.|
+|[**post_externalcontacts_identifierlookup_organizations**](#post_externalcontacts_identifierlookup_organizations) | Fetch an external organization using an identifier type and value.|
 |[**post_externalcontacts_import_csv_jobs**](#post_externalcontacts_import_csv_jobs) | Create CSV import job|
 |[**post_externalcontacts_import_csv_settings**](#post_externalcontacts_import_csv_settings) | Create settings for CSV import|
 |[**post_externalcontacts_import_csv_uploads**](#post_externalcontacts_import_csv_uploads) | Get url for CSV upload|
@@ -94,6 +108,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_merge_contacts**](#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
 |[**post_externalcontacts_organization_notes**](#post_externalcontacts_organization_notes) | Create a note for an external organization|
 |[**post_externalcontacts_organizations**](#post_externalcontacts_organizations) | Create an external organization|
+|[**post_externalcontacts_organizations_enrich**](#post_externalcontacts_organizations_enrich) | Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.|
 |[**post_externalcontacts_organizations_schemas**](#post_externalcontacts_organizations_schemas) | Create a schema|
 |[**post_externalcontacts_relationships**](#post_externalcontacts_relationships) | Create a relationship|
 |[**put_externalcontacts_contact**](#put_externalcontacts_contact) | Update an external contact|
@@ -1261,6 +1276,142 @@ This endpoint does not need any parameters.
 [**DataSchemaListing**](DataSchemaListing)
 
 
+## get_externalcontacts_contacts_schemas_coretype
+
+> [**Coretype**](Coretype) get_externalcontacts_contacts_schemas_coretype(core_type_name)
+
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName} 
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+core_type_name = 'core_type_name_example' # str | Name of the core type
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_externalcontacts_contacts_schemas_coretype(core_type_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schemas_coretype: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **core_type_name** | **str**| Name of the core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_externalcontacts_contacts_schemas_coretypes
+
+> [**Coretype**](Coretype) get_externalcontacts_contacts_schemas_coretypes()
+
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/coretypes 
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_externalcontacts_contacts_schemas_coretypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schemas_coretypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_externalcontacts_contacts_schemas_limits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) get_externalcontacts_contacts_schemas_limits()
+
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/limits 
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+
+try:
+    # Get quantitative limits on schemas
+    api_response = api_instance.get_externalcontacts_contacts_schemas_limits()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contacts_schemas_limits: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 ## get_externalcontacts_externalsource
 
 > [**ExternalSource**](ExternalSource) get_externalcontacts_externalsource(external_source_id)
@@ -1883,6 +2034,56 @@ except ApiException as e:
 [**ContactListing**](ContactListing)
 
 
+## get_externalcontacts_organization_identifiers
+
+> [**ExternalOrganizationIdentifierListing**](ExternalOrganizationIdentifierListing) get_externalcontacts_organization_identifiers(external_organization_id)
+
+
+List the identifiers for an external organization
+
+get_externalcontacts_organization_identifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_organization_id = 'external_organization_id_example' # str | External Organization ID
+
+try:
+    # List the identifiers for an external organization
+    api_response = api_instance.get_externalcontacts_organization_identifiers(external_organization_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organization_identifiers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_organization_id** | **str**| External Organization ID |  |
+
+### Return type
+
+[**ExternalOrganizationIdentifierListing**](ExternalOrganizationIdentifierListing)
+
+
 ## get_externalcontacts_organization_note
 
 > [**Note**](Note) get_externalcontacts_organization_note(external_organization_id, note_id, expand=expand)
@@ -2301,6 +2502,142 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**DataSchemaListing**](DataSchemaListing)
+
+
+## get_externalcontacts_organizations_schemas_coretype
+
+> [**Coretype**](Coretype) get_externalcontacts_organizations_schemas_coretype(core_type_name)
+
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName} 
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+core_type_name = 'core_type_name_example' # str | Name of the core type
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_externalcontacts_organizations_schemas_coretype(core_type_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schemas_coretype: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **core_type_name** | **str**| Name of the core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_externalcontacts_organizations_schemas_coretypes
+
+> [**Coretype**](Coretype) get_externalcontacts_organizations_schemas_coretypes()
+
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/coretypes 
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_externalcontacts_organizations_schemas_coretypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schemas_coretypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_externalcontacts_organizations_schemas_limits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) get_externalcontacts_organizations_schemas_limits()
+
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/limits 
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+
+try:
+    # Get quantitative limits on schemas
+    api_response = api_instance.get_externalcontacts_organizations_schemas_limits()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_schemas_limits: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
 ## get_externalcontacts_relationship
@@ -2876,6 +3213,58 @@ except ApiException as e:
 [**ContactIdentifier**](ContactIdentifier)
 
 
+## patch_externalcontacts_organization_identifiers
+
+> [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier) patch_externalcontacts_organization_identifiers(external_organization_id, body)
+
+
+Claim or release identifiers for an external organization
+
+patch_externalcontacts_organization_identifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_organization_id = 'external_organization_id_example' # str | External Organization ID
+body = PureCloudPlatformClientV2.ExternalOrganizationIdentifierClaimRequest() # ExternalOrganizationIdentifierClaimRequest | ClaimRequest
+
+try:
+    # Claim or release identifiers for an external organization
+    api_response = api_instance.patch_externalcontacts_organization_identifiers(external_organization_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->patch_externalcontacts_organization_identifiers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_organization_id** | **str**| External Organization ID |  |
+| **body** | [**ExternalOrganizationIdentifierClaimRequest**](ExternalOrganizationIdentifierClaimRequest)| ClaimRequest |  |
+
+### Return type
+
+[**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier)
+
+
 ## post_externalcontacts_bulk_contacts
 
 > [**BulkFetchContactsResponse**](BulkFetchContactsResponse) post_externalcontacts_bulk_contacts(body)
@@ -3020,6 +3409,60 @@ except ApiException as e:
 ### Return type
 
 [**BulkFetchContactsResponse**](BulkFetchContactsResponse)
+
+
+## post_externalcontacts_bulk_contacts_enrich
+
+> [**BulkContactsEnrichResponse**](BulkContactsEnrichResponse) post_externalcontacts_bulk_contacts_enrich(body, dry_run=dry_run)
+
+
+Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+
+See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
+
+post_externalcontacts_bulk_contacts_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/enrich 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:enrich
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkContactsEnrichRequest() # BulkContactsEnrichRequest | Contact Enrich Requests
+dry_run = True # bool | If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+
+try:
+    # Bulk Enrich Contacts - Run up to 10 Enrich operations per request
+    api_response = api_instance.post_externalcontacts_bulk_contacts_enrich(body, dry_run=dry_run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_contacts_enrich: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkContactsEnrichRequest**](BulkContactsEnrichRequest)| Contact Enrich Requests |  |
+| **dry_run** | **bool**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+
+### Return type
+
+[**BulkContactsEnrichResponse**](BulkContactsEnrichResponse)
 
 
 ## post_externalcontacts_bulk_contacts_remove
@@ -3508,6 +3951,60 @@ except ApiException as e:
 [**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse)
 
 
+## post_externalcontacts_bulk_organizations_enrich
+
+> [**BulkOrganizationsEnrichResponse**](BulkOrganizationsEnrichResponse) post_externalcontacts_bulk_organizations_enrich(body, dry_run=dry_run)
+
+
+Bulk enrich external organizations - Run up to 10 Enrich operations per request
+
+See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
+
+post_externalcontacts_bulk_organizations_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations/enrich 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:enrich
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.BulkOrganizationsEnrichRequest() # BulkOrganizationsEnrichRequest | External Organization Enrich Requests
+dry_run = True # bool | If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+
+try:
+    # Bulk enrich external organizations - Run up to 10 Enrich operations per request
+    api_response = api_instance.post_externalcontacts_bulk_organizations_enrich(body, dry_run=dry_run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_bulk_organizations_enrich: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkOrganizationsEnrichRequest**](BulkOrganizationsEnrichRequest)| External Organization Enrich Requests |  |
+| **dry_run** | **bool**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+
+### Return type
+
+[**BulkOrganizationsEnrichResponse**](BulkOrganizationsEnrichResponse)
+
+
 ## post_externalcontacts_bulk_organizations_remove
 
 > [**BulkDeleteResponse**](BulkDeleteResponse) post_externalcontacts_bulk_organizations_remove(body)
@@ -3948,6 +4445,60 @@ except ApiException as e:
 [**ExternalContact**](ExternalContact)
 
 
+## post_externalcontacts_contacts_enrich
+
+> [**ExternalContact**](ExternalContact) post_externalcontacts_contacts_enrich(body, dry_run=dry_run)
+
+
+Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+
+You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
+
+post_externalcontacts_contacts_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/contacts/enrich 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:enrich
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.ContactEnrichRequest() # ContactEnrichRequest | ContactEnrichRequest
+dry_run = True # bool | If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+
+try:
+    # Modify or create an External Contact, with powerful behaviors for finding and combining data with pre-existing Contacts.
+    api_response = api_instance.post_externalcontacts_contacts_enrich(body, dry_run=dry_run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contacts_enrich: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactEnrichRequest**](ContactEnrichRequest)| ContactEnrichRequest |  |
+| **dry_run** | **bool**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
+
+
 ## post_externalcontacts_contacts_exports
 
 > [**ContactsExport**](ContactsExport) post_externalcontacts_contacts_exports(body)
@@ -3995,6 +4546,58 @@ except ApiException as e:
 ### Return type
 
 [**ContactsExport**](ContactsExport)
+
+
+## post_externalcontacts_contacts_merge
+
+> [**ExternalContact**](ExternalContact) post_externalcontacts_contacts_merge(body)
+
+
+Merge up to 25 contacts into a new contact record
+
+Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
+
+post_externalcontacts_contacts_merge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/contacts/merge 
+
+Requires ANY permissions: 
+
+* externalContacts:identity:merge
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.MergeContactsRequest() # MergeContactsRequest | MergeRequest
+
+try:
+    # Merge up to 25 contacts into a new contact record
+    api_response = api_instance.post_externalcontacts_contacts_merge(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contacts_merge: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**MergeContactsRequest**](MergeContactsRequest)| MergeRequest |  |
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
 
 
 ## post_externalcontacts_contacts_schemas
@@ -4147,6 +4750,114 @@ except ApiException as e:
 ### Return type
 
 [**ExternalContact**](ExternalContact)
+
+
+## post_externalcontacts_identifierlookup_contacts
+
+> [**ExternalContact**](ExternalContact) post_externalcontacts_identifierlookup_contacts(identifier, expand=expand)
+
+
+Fetch a contact using an identifier type and value.
+
+Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
+
+post_externalcontacts_identifierlookup_contacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/identifierlookup/contacts 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+identifier = PureCloudPlatformClientV2.ContactIdentifier() # ContactIdentifier | 
+expand = ['expand_example'] # list[str] | which field, if any, to expand (optional)
+
+try:
+    # Fetch a contact using an identifier type and value.
+    api_response = api_instance.post_externalcontacts_identifierlookup_contacts(identifier, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_identifierlookup_contacts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **identifier** | [**ContactIdentifier**](ContactIdentifier)|  |  |
+| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources, division |
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
+
+
+## post_externalcontacts_identifierlookup_organizations
+
+> [**ExternalOrganization**](ExternalOrganization) post_externalcontacts_identifierlookup_organizations(identifier, expand=expand)
+
+
+Fetch an external organization using an identifier type and value.
+
+This endpoint will only accept ExternalId type identifiers.
+
+post_externalcontacts_identifierlookup_organizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/identifierlookup/organizations 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+identifier = PureCloudPlatformClientV2.ExternalOrganizationIdentifier() # ExternalOrganizationIdentifier | 
+expand = ['expand_example'] # list[str] | which field, if any, to expand (optional)
+
+try:
+    # Fetch an external organization using an identifier type and value.
+    api_response = api_instance.post_externalcontacts_identifierlookup_organizations(identifier, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_identifierlookup_organizations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **identifier** | [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier)|  |  |
+| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: identifiers, externalSources, division |
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization)
 
 
 ## post_externalcontacts_import_csv_jobs
@@ -4393,10 +5104,13 @@ except ApiException as e:
 
 > [**ExternalContact**](ExternalContact) post_externalcontacts_merge_contacts(body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Merge two contacts into a new contact record
 
-Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details. Deprecated: This API has been superseded by a new merge API. You are encouraged to instead use /api/v2/externalcontacts/contacts/merge, which supports merging up to 25 Contacts of any type, and overriding specific fields in the resulting Contact.
 
 Wraps POST /api/v2/externalcontacts/merge/contacts 
 
@@ -4533,6 +5247,60 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**ExternalOrganization**](ExternalOrganization)| ExternalOrganization |  |
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization)
+
+
+## post_externalcontacts_organizations_enrich
+
+> [**ExternalOrganization**](ExternalOrganization) post_externalcontacts_organizations_enrich(body, dry_run=dry_run)
+
+
+Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+
+You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
+
+post_externalcontacts_organizations_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/organizations/enrich 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:enrich
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.ExternalOrganizationEnrichRequest() # ExternalOrganizationEnrichRequest | ExternalOrgEnrichRequest
+dry_run = True # bool | If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+
+try:
+    # Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+    api_response = api_instance.post_externalcontacts_organizations_enrich(body, dry_run=dry_run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_organizations_enrich: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ExternalOrganizationEnrichRequest**](ExternalOrganizationEnrichRequest)| ExternalOrgEnrichRequest |  |
+| **dry_run** | **bool**| If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
 
 ### Return type
 
@@ -5297,4 +6065,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_

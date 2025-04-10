@@ -13,8 +13,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_division**](#get_authorization_division) | Returns an authorization division.|
 |[**get_authorization_division_grants**](#get_authorization_division_grants) | Gets all grants for a given division.|
 |[**get_authorization_divisions**](#get_authorization_divisions) | Retrieve a list of all divisions defined for the organization|
+|[**get_authorization_divisions_deleted**](#get_authorization_divisions_deleted) | Get a list of soft deleted divisions for the org|
 |[**get_authorization_divisions_home**](#get_authorization_divisions_home) | Retrieve the home division for the organization.|
 |[**get_authorization_divisions_limit**](#get_authorization_divisions_limit) | Returns the maximum allowed number of divisions.|
+|[**get_authorization_divisions_query**](#get_authorization_divisions_query) | Retrieve a list of all divisions defined for the organization with cursor|
 |[**get_authorization_divisionspermitted_me**](#get_authorization_divisionspermitted_me) | Returns which divisions the current user has the given permission in.|
 |[**get_authorization_divisionspermitted_paged_me**](#get_authorization_divisionspermitted_paged_me) | Returns which divisions the current user has the given permission in.|
 |[**get_authorization_divisionspermitted_paged_subject_id**](#get_authorization_divisionspermitted_paged_subject_id) | Returns which divisions the specified user has the given permission in.|
@@ -432,6 +434,56 @@ except ApiException as e:
 [**AuthzDivisionEntityListing**](AuthzDivisionEntityListing)
 
 
+## get_authorization_divisions_deleted
+
+> [**AuthzDivisionEntityListing**](AuthzDivisionEntityListing) get_authorization_divisions_deleted(page_number=page_number, page_size=page_size)
+
+
+Get a list of soft deleted divisions for the org
+
+Wraps GET /api/v2/authorization/divisions/deleted 
+
+Requires ANY permissions: 
+
+* authorization:divisionDeleted:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get a list of soft deleted divisions for the org
+    api_response = api_instance.get_authorization_divisions_deleted(page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_divisions_deleted: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**AuthzDivisionEntityListing**](AuthzDivisionEntityListing)
+
+
 ## get_authorization_divisions_home
 
 > [**AuthzDivision**](AuthzDivision) get_authorization_divisions_home()
@@ -518,6 +570,63 @@ This endpoint does not need any parameters.
 ### Return type
 
 **int**
+
+
+## get_authorization_divisions_query
+
+> [**AuthzDivisionCursorListing**](AuthzDivisionCursorListing) get_authorization_divisions_query(before=before, after=after, page_size=page_size, id=id, name=name)
+
+
+Retrieve a list of all divisions defined for the organization with cursor
+
+Use \"after\" and \"before\" param to fetch next/previous page}
+
+Wraps GET /api/v2/authorization/divisions/query 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
+name = 'name_example' # str | Optionally request specific divisions by division name (optional)
+
+try:
+    # Retrieve a list of all divisions defined for the organization with cursor
+    api_response = api_instance.get_authorization_divisions_query(before=before, after=after, page_size=page_size, id=id, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_divisions_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **id** | [**list[str]**](str)| Optionally request specific divisions by their IDs | [optional]  |
+| **name** | **str**| Optionally request specific divisions by division name | [optional]  |
+
+### Return type
+
+[**AuthzDivisionCursorListing**](AuthzDivisionCursorListing)
 
 
 ## get_authorization_divisionspermitted_me
@@ -2989,4 +3098,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 224.1.0_
+_PureCloudPlatformClientV2 225.0.0_
