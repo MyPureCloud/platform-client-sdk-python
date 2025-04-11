@@ -5284,4 +5284,4 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 225.0.0_
+_PureCloudPlatformClientV2 226.0.0_
