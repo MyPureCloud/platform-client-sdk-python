@@ -33,4 +33,4 @@
 
 
 
-_PureCloudPlatformClientV2 225.0.0_
+_PureCloudPlatformClientV2 226.0.0_

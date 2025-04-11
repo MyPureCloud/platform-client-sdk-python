@@ -26,9 +26,6 @@ import re
 from datetime import datetime
 from datetime import date
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-
 from ..configuration import Configuration
 from ..api_client import ApiClient
 from ..utils import deprecated
@@ -95,7 +92,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -172,7 +169,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -245,7 +242,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -318,7 +315,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -391,7 +388,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -473,7 +470,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -555,7 +552,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -627,7 +624,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -700,7 +697,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -778,7 +775,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -857,7 +854,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -933,7 +930,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -1006,7 +1003,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -1079,7 +1076,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -1158,7 +1155,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -1242,7 +1239,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -1321,7 +1318,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -1399,7 +1396,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
@@ -1475,7 +1472,7 @@ class OrganizationApi(object):
         all_params.append('callback')
 
         params = locals()
-        for key, val in iteritems(params['kwargs']):
+        for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"

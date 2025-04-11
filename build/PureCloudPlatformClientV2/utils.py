@@ -1,6 +1,5 @@
 import sys
 from datetime import datetime, date
-from six import iteritems
 import functools
 import inspect
 import warnings
@@ -48,11 +47,11 @@ def sanitize_for_serialization(obj):
             # Convert attribute name to json key in
             # model definition for request.
             obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                        for attr, _ in iteritems(obj.swagger_types)
+                        for attr, _ in obj.swagger_types.items()
                         if getattr(obj, attr) is not None}
 
         return {key: sanitize_for_serialization(val)
-                for key, val in iteritems(obj_dict)}
+                for key, val in obj_dict.items()}
 
 def deprecated(reason):
     """

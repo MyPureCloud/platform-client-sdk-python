@@ -43,9 +43,6 @@ import hashlib
 from datetime import datetime, timezone
 from datetime import date
 
-# python 2 and python 3 compatibility library
-from six import iteritems
-
 try:
     # for python3
     from urllib.parse import quote
@@ -393,12 +390,12 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '225.0.0'
+        header_params['purecloud-sdk'] = '226.0.0'
 
         # path parameters
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
-            for k, v in iteritems(path_params):
+            for k, v in path_params.items():
                 replacement = quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
                     replace('{' + k + '}', replacement)
@@ -407,7 +404,7 @@ class ApiClient(object):
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
             query_params = {k: self.to_path_value(v)
-                            for k, v in iteritems(query_params)}
+                            for k, v in query_params.items()}
 
         # post parameters
         if post_params or files:
@@ -520,11 +517,11 @@ class ApiClient(object):
                 # Convert attribute name to json key in
                 # model definition for request.
                 obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                            for attr, _ in iteritems(obj.swagger_types)
+                            for attr, _ in obj.swagger_types.items()
                             if getattr(obj, attr) is not None or isinstance(getattr(obj, attr), type(ApiNullValue()))}
 
             return {key: self.sanitize_for_serialization(val)
-                    for key, val in iteritems(obj_dict)}
+                    for key, val in obj_dict.items()}
 
     def deserialize(self, response, response_type):
         """
@@ -576,7 +573,7 @@ class ApiClient(object):
             if klass.startswith('dict('):
                 sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
                 return {k: self.__deserialize(v, sub_kls)
-                        for k, v in iteritems(data)}
+                        for k, v in data.items()}
 
             # convert str to class
             # for native types
@@ -710,7 +707,7 @@ class ApiClient(object):
             params = post_params
 
         if files:
-            for k, v in iteritems(files):
+            for k, v in files.items():
                 if not v:
                     continue
                 file_names = v if type(v) is list else [v]
@@ -908,7 +905,7 @@ class ApiClient(object):
         """
         instance = klass()
 
-        for attr, attr_type in iteritems(instance.swagger_types):
+        for attr, attr_type in instance.swagger_types.items():
             if data is not None \
                and instance.attribute_map[attr] in data\
                and isinstance(data, (list, dict)):

@@ -29,7 +29,6 @@ except ImportError:
     import http.client as httplib
 
 import sys
-from six import iteritems
 from os.path import expanduser
 import configparser
 from watchdog.observers import Observer
@@ -206,7 +205,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 225.0.0".\
+               "SDK Package Version: 226.0.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):
