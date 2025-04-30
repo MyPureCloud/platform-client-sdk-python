@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationContentDatePickerAvailableTime
+    from . import ConversationContentLocation
 
 class ConversationContentDatePicker(object):
     """
@@ -54,6 +55,7 @@ class ConversationContentDatePicker(object):
             'image_url': 'str',
             'date_minimum': 'datetime',
             'date_maximum': 'datetime',
+            'location': 'ConversationContentLocation',
             'available_times': 'list[ConversationContentDatePickerAvailableTime]'
         }
 
@@ -63,6 +65,7 @@ class ConversationContentDatePicker(object):
             'image_url': 'imageUrl',
             'date_minimum': 'dateMinimum',
             'date_maximum': 'dateMaximum',
+            'location': 'location',
             'available_times': 'availableTimes'
         }
 
@@ -71,6 +74,7 @@ class ConversationContentDatePicker(object):
         self._image_url = None
         self._date_minimum = None
         self._date_maximum = None
+        self._location = None
         self._available_times = None
 
     @property
@@ -192,6 +196,30 @@ class ConversationContentDatePicker(object):
         
 
         self._date_maximum = date_maximum
+
+    @property
+    def location(self) -> 'ConversationContentLocation':
+        """
+        Gets the location of this ConversationContentDatePicker.
+        Location of the event.
+
+        :return: The location of this ConversationContentDatePicker.
+        :rtype: ConversationContentLocation
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location: 'ConversationContentLocation') -> None:
+        """
+        Sets the location of this ConversationContentDatePicker.
+        Location of the event.
+
+        :param location: The location of this ConversationContentDatePicker.
+        :type: ConversationContentLocation
+        """
+        
+
+        self._location = location
 
     @property
     def available_times(self) -> List['ConversationContentDatePickerAvailableTime']:

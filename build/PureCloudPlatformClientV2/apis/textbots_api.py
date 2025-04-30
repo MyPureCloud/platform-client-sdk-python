@@ -77,8 +77,8 @@ class TextbotsApi(object):
             for asynchronous request. (optional)
         :param list[str] bot_type: Bot types
         :param str bot_name: Bot name
-        :param list[str] bot_id: Bot IDs
-        :param int page_size: The maximum results to return
+        :param list[str] bot_id: Bot IDs. Maximum of 50
+        :param int page_size: The maximum results to return. Maximum of 100
         :return: BotSearchResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

@@ -60,7 +60,7 @@ class QueueConversationEventTopicVideo(object):
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
-            'peer_count': 'object',
+            'peer_count': 'int',
             'provider': 'str',
             'script_id': 'str',
             'peer_id': 'str',
@@ -321,24 +321,24 @@ class QueueConversationEventTopicVideo(object):
         self._sharing_screen = sharing_screen
 
     @property
-    def peer_count(self) -> 'object':
+    def peer_count(self) -> int:
         """
         Gets the peer_count of this QueueConversationEventTopicVideo.
         The number of peer participants from the perspective of the participant in the conference.
 
         :return: The peer_count of this QueueConversationEventTopicVideo.
-        :rtype: object
+        :rtype: int
         """
         return self._peer_count
 
     @peer_count.setter
-    def peer_count(self, peer_count: 'object') -> None:
+    def peer_count(self, peer_count: int) -> None:
         """
         Sets the peer_count of this QueueConversationEventTopicVideo.
         The number of peer participants from the perspective of the participant in the conference.
 
         :param peer_count: The peer_count of this QueueConversationEventTopicVideo.
-        :type: object
+        :type: int
         """
         
 

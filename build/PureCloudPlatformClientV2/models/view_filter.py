@@ -279,7 +279,8 @@ class ViewFilter(object):
             'acw': 'bool',
             'segment_types': 'list[str]',
             'program_ids': 'list[str]',
-            'category_ids': 'list[str]'
+            'category_ids': 'list[str]',
+            'delivery_pushed': 'bool'
         }
 
         self.attribute_map = {
@@ -508,7 +509,8 @@ class ViewFilter(object):
             'acw': 'acw',
             'segment_types': 'segmentTypes',
             'program_ids': 'programIds',
-            'category_ids': 'categoryIds'
+            'category_ids': 'categoryIds',
+            'delivery_pushed': 'deliveryPushed'
         }
 
         self._media_types = None
@@ -737,6 +739,7 @@ class ViewFilter(object):
         self._segment_types = None
         self._program_ids = None
         self._category_ids = None
+        self._delivery_pushed = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6191,6 +6194,30 @@ class ViewFilter(object):
         
 
         self._category_ids = category_ids
+
+    @property
+    def delivery_pushed(self) -> bool:
+        """
+        Gets the delivery_pushed of this ViewFilter.
+        Filter to indicate if push notification is sent
+
+        :return: The delivery_pushed of this ViewFilter.
+        :rtype: bool
+        """
+        return self._delivery_pushed
+
+    @delivery_pushed.setter
+    def delivery_pushed(self, delivery_pushed: bool) -> None:
+        """
+        Sets the delivery_pushed of this ViewFilter.
+        Filter to indicate if push notification is sent
+
+        :param delivery_pushed: The delivery_pushed of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._delivery_pushed = delivery_pushed
 
     def to_dict(self):
         """

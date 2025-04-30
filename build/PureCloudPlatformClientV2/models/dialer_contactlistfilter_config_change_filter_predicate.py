@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DialerContactlistfilterConfigChangeRange
+    from . import DialerContactlistfilterConfigChangeFilterRange
 
 class DialerContactlistfilterConfigChangeFilterPredicate(object):
     """
@@ -53,7 +53,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
             'column_type': 'str',
             'operator': 'str',
             'value': 'str',
-            'range': 'DialerContactlistfilterConfigChangeRange',
+            'range': 'DialerContactlistfilterConfigChangeFilterRange',
             'inverted': 'bool',
             'additional_properties': 'dict(str, object)'
         }
@@ -183,24 +183,24 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
         self._value = value
 
     @property
-    def range(self) -> 'DialerContactlistfilterConfigChangeRange':
+    def range(self) -> 'DialerContactlistfilterConfigChangeFilterRange':
         """
         Gets the range of this DialerContactlistfilterConfigChangeFilterPredicate.
 
 
         :return: The range of this DialerContactlistfilterConfigChangeFilterPredicate.
-        :rtype: DialerContactlistfilterConfigChangeRange
+        :rtype: DialerContactlistfilterConfigChangeFilterRange
         """
         return self._range
 
     @range.setter
-    def range(self, range: 'DialerContactlistfilterConfigChangeRange') -> None:
+    def range(self, range: 'DialerContactlistfilterConfigChangeFilterRange') -> None:
         """
         Sets the range of this DialerContactlistfilterConfigChangeFilterPredicate.
 
 
         :param range: The range of this DialerContactlistfilterConfigChangeFilterPredicate.
-        :type: DialerContactlistfilterConfigChangeRange
+        :type: DialerContactlistfilterConfigChangeFilterRange
         """
         
 

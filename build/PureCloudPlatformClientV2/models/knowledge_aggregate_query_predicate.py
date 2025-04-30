@@ -121,7 +121,7 @@ class KnowledgeAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["agentAssistantId", "appDeploymentId", "appType", "botFlowId", "conversationChannelType", "conversationId", "documentEngagementType", "externalContactId", "feedbackCategory", "feedbackId", "feedbackRating", "feedbackRatingType", "feedbackRatingValue", "feedbackReason", "feedbackType", "hasComment", "hasSearch", "knowledgeBaseDocumentId", "knowledgeBaseDocumentVariationId", "knowledgeBaseDocumentVersionId", "knowledgeBaseId", "languageCode", "mediaType", "presentedDocumentsCount", "queryType", "queueId", "searchId", "searchQuery", "selfServed", "sessionId", "surfacingMethod", "userId"]
+        allowed_values = ["agentAssistantId", "appDeploymentId", "appType", "botFlowId", "conversationChannelType", "conversationId", "documentEngagementType", "externalContactId", "feedbackCategory", "feedbackId", "feedbackRating", "feedbackRatingType", "feedbackRatingValue", "feedbackReason", "feedbackType", "hasComment", "hasSearch", "knowledgeBaseDocumentId", "knowledgeBaseDocumentVariationId", "knowledgeBaseDocumentVersionId", "knowledgeBaseId", "languageCode", "mediaType", "messageType", "presentedDocumentsCount", "queryType", "queueId", "searchId", "searchQuery", "selfServed", "sessionId", "surfacingMethod", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

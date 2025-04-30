@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ConversationMessagingFromRecipient
     from . import ConversationMessagingToRecipient
+    from . import ConversationPublicMetadata
 
 class ConversationMessagingChannel(object):
     """
@@ -52,33 +53,39 @@ class ConversationMessagingChannel(object):
         self.swagger_types = {
             'id': 'str',
             'platform': 'str',
+            'type': 'str',
             'message_id': 'str',
             'to': 'ConversationMessagingToRecipient',
             'pcFrom': 'ConversationMessagingFromRecipient',
             'time': 'datetime',
             'date_modified': 'datetime',
-            'date_deleted': 'datetime'
+            'date_deleted': 'datetime',
+            'public_metadata': 'ConversationPublicMetadata'
         }
 
         self.attribute_map = {
             'id': 'id',
             'platform': 'platform',
+            'type': 'type',
             'message_id': 'messageId',
             'to': 'to',
             'pcFrom': 'from',
             'time': 'time',
             'date_modified': 'dateModified',
-            'date_deleted': 'dateDeleted'
+            'date_deleted': 'dateDeleted',
+            'public_metadata': 'publicMetadata'
         }
 
         self._id = None
         self._platform = None
+        self._type = None
         self._message_id = None
         self._to = None
         self._pcFrom = None
         self._time = None
         self._date_modified = None
         self._date_deleted = None
+        self._public_metadata = None
 
     @property
     def id(self) -> str:
@@ -132,6 +139,35 @@ class ConversationMessagingChannel(object):
             self._platform = "outdated_sdk_version"
         else:
             self._platform = platform
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this ConversationMessagingChannel.
+        Specifies if this message is part of a private or public conversation.
+
+        :return: The type of this ConversationMessagingChannel.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this ConversationMessagingChannel.
+        Specifies if this message is part of a private or public conversation.
+
+        :param type: The type of this ConversationMessagingChannel.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["Public", "Private"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     @property
     def message_id(self) -> str:
@@ -276,6 +312,30 @@ class ConversationMessagingChannel(object):
         
 
         self._date_deleted = date_deleted
+
+    @property
+    def public_metadata(self) -> 'ConversationPublicMetadata':
+        """
+        Gets the public_metadata of this ConversationMessagingChannel.
+        Information about a public message.
+
+        :return: The public_metadata of this ConversationMessagingChannel.
+        :rtype: ConversationPublicMetadata
+        """
+        return self._public_metadata
+
+    @public_metadata.setter
+    def public_metadata(self, public_metadata: 'ConversationPublicMetadata') -> None:
+        """
+        Sets the public_metadata of this ConversationMessagingChannel.
+        Information about a public message.
+
+        :param public_metadata: The public_metadata of this ConversationMessagingChannel.
+        :type: ConversationPublicMetadata
+        """
+        
+
+        self._public_metadata = public_metadata
 
     def to_dict(self):
         """

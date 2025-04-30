@@ -78,6 +78,7 @@ class RecordingMessagingMessage(object):
             'cards': 'list[Card]',
             'notification_template': 'RecordingNotificationTemplate',
             'content_type': 'str',
+            'social_visibility': 'str',
             'events': 'list[ConversationMessageEvent]'
         }
 
@@ -101,6 +102,7 @@ class RecordingMessagingMessage(object):
             'cards': 'cards',
             'notification_template': 'notificationTemplate',
             'content_type': 'contentType',
+            'social_visibility': 'socialVisibility',
             'events': 'events'
         }
 
@@ -123,6 +125,7 @@ class RecordingMessagingMessage(object):
         self._cards = None
         self._notification_template = None
         self._content_type = None
+        self._social_visibility = None
         self._events = None
 
     @property
@@ -579,12 +582,41 @@ class RecordingMessagingMessage(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["QuickReply", "Story", "Card", "Carousel", "Attachment", "Location", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "DatePicker"]
+        allowed_values = ["QuickReply", "Story", "Card", "Carousel", "Attachment", "Location", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "DatePicker", "InteractiveApplication"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
         else:
             self._content_type = content_type
+
+    @property
+    def social_visibility(self) -> str:
+        """
+        Gets the social_visibility of this RecordingMessagingMessage.
+        For social media messages, the visibility of the message in the originating social platform
+
+        :return: The social_visibility of this RecordingMessagingMessage.
+        :rtype: str
+        """
+        return self._social_visibility
+
+    @social_visibility.setter
+    def social_visibility(self, social_visibility: str) -> None:
+        """
+        Sets the social_visibility of this RecordingMessagingMessage.
+        For social media messages, the visibility of the message in the originating social platform
+
+        :param social_visibility: The social_visibility of this RecordingMessagingMessage.
+        :type: str
+        """
+        if isinstance(social_visibility, int):
+            social_visibility = str(social_visibility)
+        allowed_values = ["Public", "Private"]
+        if social_visibility.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for social_visibility -> " + social_visibility)
+            self._social_visibility = "outdated_sdk_version"
+        else:
+            self._social_visibility = social_visibility
 
     @property
     def events(self) -> List['ConversationMessageEvent']:

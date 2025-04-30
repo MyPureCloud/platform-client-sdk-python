@@ -49,6 +49,7 @@ class KnowledgeConversationContext(object):
         self.swagger_types = {
             'conversation_id': 'str',
             'media_type': 'str',
+            'message_type': 'str',
             'queue_id': 'str',
             'external_contact_id': 'str'
         }
@@ -56,12 +57,14 @@ class KnowledgeConversationContext(object):
         self.attribute_map = {
             'conversation_id': 'conversationId',
             'media_type': 'mediaType',
+            'message_type': 'messageType',
             'queue_id': 'queueId',
             'external_contact_id': 'externalContactId'
         }
 
         self._conversation_id = None
         self._media_type = None
+        self._message_type = None
         self._queue_id = None
         self._external_contact_id = None
 
@@ -117,6 +120,35 @@ class KnowledgeConversationContext(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def message_type(self) -> str:
+        """
+        Gets the message_type of this KnowledgeConversationContext.
+        The message type of the conversation.
+
+        :return: The message_type of this KnowledgeConversationContext.
+        :rtype: str
+        """
+        return self._message_type
+
+    @message_type.setter
+    def message_type(self, message_type: str) -> None:
+        """
+        Sets the message_type of this KnowledgeConversationContext.
+        The message type of the conversation.
+
+        :param message_type: The message_type of this KnowledgeConversationContext.
+        :type: str
+        """
+        if isinstance(message_type, int):
+            message_type = str(message_type)
+        allowed_values = ["Unknown", "Phone", "SMS", "GenesysChatWidget", "FacebookMessenger", "WeChat", "Whatsapp", "AppleBusinessChat", "Telegram", "Slack", "Signal", "Line", "Discord", "TwitterDirectMessage", "Other", "Open", "Instagram", "Apple"]
+        if message_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for message_type -> " + message_type)
+            self._message_type = "outdated_sdk_version"
+        else:
+            self._message_type = message_type
 
     @property
     def queue_id(self) -> str:

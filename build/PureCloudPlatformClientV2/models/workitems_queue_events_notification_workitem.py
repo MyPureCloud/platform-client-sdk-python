@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import WorkitemsQueueEventsNotificationCustomAttribute
     from . import WorkitemsQueueEventsNotificationDelta
+    from . import WorkitemsQueueEventsNotificationScoredAgent
     from . import WorkitemsQueueEventsNotificationSession
     from . import WorkitemsQueueEventsNotificationWrapup
 
@@ -85,7 +86,13 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
             'wrapup': 'WorkitemsQueueEventsNotificationWrapup',
             'sessions': 'list[WorkitemsQueueEventsNotificationSession]',
             'skill_ids': 'list[str]',
-            'script_id': 'str'
+            'script_id': 'str',
+            'workbin_name': 'str',
+            'type_name': 'str',
+            'preferred_agent_ids': 'list[str]',
+            'division_id': 'str',
+            'scored_agents': 'list[WorkitemsQueueEventsNotificationScoredAgent]',
+            'utilization_label_id': 'str'
         }
 
         self.attribute_map = {
@@ -122,7 +129,13 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
             'wrapup': 'wrapup',
             'sessions': 'sessions',
             'skill_ids': 'skillIds',
-            'script_id': 'scriptId'
+            'script_id': 'scriptId',
+            'workbin_name': 'workbinName',
+            'type_name': 'typeName',
+            'preferred_agent_ids': 'preferredAgentIds',
+            'division_id': 'divisionId',
+            'scored_agents': 'scoredAgents',
+            'utilization_label_id': 'utilizationLabelId'
         }
 
         self._id = None
@@ -159,6 +172,12 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
         self._sessions = None
         self._skill_ids = None
         self._script_id = None
+        self._workbin_name = None
+        self._type_name = None
+        self._preferred_agent_ids = None
+        self._division_id = None
+        self._scored_agents = None
+        self._utilization_label_id = None
 
     @property
     def id(self) -> str:
@@ -990,6 +1009,150 @@ class WorkitemsQueueEventsNotificationWorkitem(object):
         
 
         self._script_id = script_id
+
+    @property
+    def workbin_name(self) -> str:
+        """
+        Gets the workbin_name of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :return: The workbin_name of this WorkitemsQueueEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._workbin_name
+
+    @workbin_name.setter
+    def workbin_name(self, workbin_name: str) -> None:
+        """
+        Sets the workbin_name of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :param workbin_name: The workbin_name of this WorkitemsQueueEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._workbin_name = workbin_name
+
+    @property
+    def type_name(self) -> str:
+        """
+        Gets the type_name of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :return: The type_name of this WorkitemsQueueEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._type_name
+
+    @type_name.setter
+    def type_name(self, type_name: str) -> None:
+        """
+        Sets the type_name of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :param type_name: The type_name of this WorkitemsQueueEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._type_name = type_name
+
+    @property
+    def preferred_agent_ids(self) -> List[str]:
+        """
+        Gets the preferred_agent_ids of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :return: The preferred_agent_ids of this WorkitemsQueueEventsNotificationWorkitem.
+        :rtype: list[str]
+        """
+        return self._preferred_agent_ids
+
+    @preferred_agent_ids.setter
+    def preferred_agent_ids(self, preferred_agent_ids: List[str]) -> None:
+        """
+        Sets the preferred_agent_ids of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :param preferred_agent_ids: The preferred_agent_ids of this WorkitemsQueueEventsNotificationWorkitem.
+        :type: list[str]
+        """
+        
+
+        self._preferred_agent_ids = preferred_agent_ids
+
+    @property
+    def division_id(self) -> str:
+        """
+        Gets the division_id of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :return: The division_id of this WorkitemsQueueEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._division_id
+
+    @division_id.setter
+    def division_id(self, division_id: str) -> None:
+        """
+        Sets the division_id of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :param division_id: The division_id of this WorkitemsQueueEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._division_id = division_id
+
+    @property
+    def scored_agents(self) -> List['WorkitemsQueueEventsNotificationScoredAgent']:
+        """
+        Gets the scored_agents of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :return: The scored_agents of this WorkitemsQueueEventsNotificationWorkitem.
+        :rtype: list[WorkitemsQueueEventsNotificationScoredAgent]
+        """
+        return self._scored_agents
+
+    @scored_agents.setter
+    def scored_agents(self, scored_agents: List['WorkitemsQueueEventsNotificationScoredAgent']) -> None:
+        """
+        Sets the scored_agents of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :param scored_agents: The scored_agents of this WorkitemsQueueEventsNotificationWorkitem.
+        :type: list[WorkitemsQueueEventsNotificationScoredAgent]
+        """
+        
+
+        self._scored_agents = scored_agents
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :return: The utilization_label_id of this WorkitemsQueueEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this WorkitemsQueueEventsNotificationWorkitem.
+
+
+        :param utilization_label_id: The utilization_label_id of this WorkitemsQueueEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     def to_dict(self):
         """

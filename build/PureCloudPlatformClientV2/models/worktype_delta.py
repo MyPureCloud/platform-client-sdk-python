@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import WorkitemsAttributeChangeInteger
     from . import WorkitemsAttributeChangeList
     from . import WorkitemsAttributeChangeString
+    from . import WorkitemsAttributeChangeWorkitemRuleSettings
 
 class WorktypeDelta(object):
     """
@@ -72,7 +73,10 @@ class WorktypeDelta(object):
             'service_level_target': 'WorkitemsAttributeChangeInteger',
             'date_modified': 'WorkitemsAttributeChangeInstant',
             'modified_by': 'WorkitemsAttributeChangeString',
-            'default_script_id': 'WorkitemsAttributeChangeString'
+            'default_script_id': 'WorkitemsAttributeChangeString',
+            'flow_id': 'WorkitemsAttributeChangeString',
+            'rule_settings': 'WorkitemsAttributeChangeWorkitemRuleSettings',
+            'unassigned_division_contacts_enabled': 'WorkitemsAttributeChangeBoolean'
         }
 
         self.attribute_map = {
@@ -95,7 +99,10 @@ class WorktypeDelta(object):
             'service_level_target': 'serviceLevelTarget',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
-            'default_script_id': 'defaultScriptId'
+            'default_script_id': 'defaultScriptId',
+            'flow_id': 'flowId',
+            'rule_settings': 'ruleSettings',
+            'unassigned_division_contacts_enabled': 'unassignedDivisionContactsEnabled'
         }
 
         self._name = None
@@ -118,6 +125,9 @@ class WorktypeDelta(object):
         self._date_modified = None
         self._modified_by = None
         self._default_script_id = None
+        self._flow_id = None
+        self._rule_settings = None
+        self._unassigned_division_contacts_enabled = None
 
     @property
     def name(self) -> 'WorkitemsAttributeChangeString':
@@ -598,6 +608,78 @@ class WorktypeDelta(object):
         
 
         self._default_script_id = default_script_id
+
+    @property
+    def flow_id(self) -> 'WorkitemsAttributeChangeString':
+        """
+        Gets the flow_id of this WorktypeDelta.
+
+
+        :return: The flow_id of this WorktypeDelta.
+        :rtype: WorkitemsAttributeChangeString
+        """
+        return self._flow_id
+
+    @flow_id.setter
+    def flow_id(self, flow_id: 'WorkitemsAttributeChangeString') -> None:
+        """
+        Sets the flow_id of this WorktypeDelta.
+
+
+        :param flow_id: The flow_id of this WorktypeDelta.
+        :type: WorkitemsAttributeChangeString
+        """
+        
+
+        self._flow_id = flow_id
+
+    @property
+    def rule_settings(self) -> 'WorkitemsAttributeChangeWorkitemRuleSettings':
+        """
+        Gets the rule_settings of this WorktypeDelta.
+
+
+        :return: The rule_settings of this WorktypeDelta.
+        :rtype: WorkitemsAttributeChangeWorkitemRuleSettings
+        """
+        return self._rule_settings
+
+    @rule_settings.setter
+    def rule_settings(self, rule_settings: 'WorkitemsAttributeChangeWorkitemRuleSettings') -> None:
+        """
+        Sets the rule_settings of this WorktypeDelta.
+
+
+        :param rule_settings: The rule_settings of this WorktypeDelta.
+        :type: WorkitemsAttributeChangeWorkitemRuleSettings
+        """
+        
+
+        self._rule_settings = rule_settings
+
+    @property
+    def unassigned_division_contacts_enabled(self) -> 'WorkitemsAttributeChangeBoolean':
+        """
+        Gets the unassigned_division_contacts_enabled of this WorktypeDelta.
+
+
+        :return: The unassigned_division_contacts_enabled of this WorktypeDelta.
+        :rtype: WorkitemsAttributeChangeBoolean
+        """
+        return self._unassigned_division_contacts_enabled
+
+    @unassigned_division_contacts_enabled.setter
+    def unassigned_division_contacts_enabled(self, unassigned_division_contacts_enabled: 'WorkitemsAttributeChangeBoolean') -> None:
+        """
+        Sets the unassigned_division_contacts_enabled of this WorktypeDelta.
+
+
+        :param unassigned_division_contacts_enabled: The unassigned_division_contacts_enabled of this WorktypeDelta.
+        :type: WorkitemsAttributeChangeBoolean
+        """
+        
+
+        self._unassigned_division_contacts_enabled = unassigned_division_contacts_enabled
 
     def to_dict(self):
         """

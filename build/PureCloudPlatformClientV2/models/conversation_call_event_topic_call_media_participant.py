@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ConversationCallEventTopicFaxStatus
     from . import ConversationCallEventTopicJourneyContext
     from . import ConversationCallEventTopicQueueMediaSettings
+    from . import ConversationCallEventTopicRecordersState
     from . import ConversationCallEventTopicUriReference
     from . import ConversationCallEventTopicWrapup
 
@@ -99,6 +100,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'confined': 'bool',
             'recording': 'bool',
             'recording_state': 'str',
+            'recorders_state': 'ConversationCallEventTopicRecordersState',
             'secure_pause': 'bool',
             'group': 'ConversationCallEventTopicUriReference',
             'ani': 'str',
@@ -157,6 +159,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'confined': 'confined',
             'recording': 'recording',
             'recording_state': 'recordingState',
+            'recorders_state': 'recordersState',
             'secure_pause': 'securePause',
             'group': 'group',
             'ani': 'ani',
@@ -214,6 +217,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         self._confined = None
         self._recording = None
         self._recording_state = None
+        self._recorders_state = None
         self._secure_pause = None
         self._group = None
         self._ani = None
@@ -1311,6 +1315,30 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state
+
+    @property
+    def recorders_state(self) -> 'ConversationCallEventTopicRecordersState':
+        """
+        Gets the recorders_state of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The recorders_state of this ConversationCallEventTopicCallMediaParticipant.
+        :rtype: ConversationCallEventTopicRecordersState
+        """
+        return self._recorders_state
+
+    @recorders_state.setter
+    def recorders_state(self, recorders_state: 'ConversationCallEventTopicRecordersState') -> None:
+        """
+        Sets the recorders_state of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :param recorders_state: The recorders_state of this ConversationCallEventTopicCallMediaParticipant.
+        :type: ConversationCallEventTopicRecordersState
+        """
+        
+
+        self._recorders_state = recorders_state
 
     @property
     def secure_pause(self) -> bool:

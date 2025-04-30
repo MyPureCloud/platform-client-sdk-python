@@ -62,7 +62,8 @@ class ConversationAppSettings(object):
             'conversation_disconnect': 'ConversationDisconnectSettings',
             'conversation_clear': 'ConversationClearSettings',
             'humanize': 'Humanize',
-            'notifications': 'NotificationsSettings'
+            'notifications': 'NotificationsSettings',
+            'session_duration_seconds': 'int'
         }
 
         self.attribute_map = {
@@ -74,7 +75,8 @@ class ConversationAppSettings(object):
             'conversation_disconnect': 'conversationDisconnect',
             'conversation_clear': 'conversationClear',
             'humanize': 'humanize',
-            'notifications': 'notifications'
+            'notifications': 'notifications',
+            'session_duration_seconds': 'sessionDurationSeconds'
         }
 
         self._enabled = None
@@ -86,6 +88,7 @@ class ConversationAppSettings(object):
         self._conversation_clear = None
         self._humanize = None
         self._notifications = None
+        self._session_duration_seconds = None
 
     @property
     def enabled(self) -> bool:
@@ -302,6 +305,30 @@ class ConversationAppSettings(object):
         
 
         self._notifications = notifications
+
+    @property
+    def session_duration_seconds(self) -> int:
+        """
+        Gets the session_duration_seconds of this ConversationAppSettings.
+        The guest session duration settings for messenger conversations
+
+        :return: The session_duration_seconds of this ConversationAppSettings.
+        :rtype: int
+        """
+        return self._session_duration_seconds
+
+    @session_duration_seconds.setter
+    def session_duration_seconds(self, session_duration_seconds: int) -> None:
+        """
+        Sets the session_duration_seconds of this ConversationAppSettings.
+        The guest session duration settings for messenger conversations
+
+        :param session_duration_seconds: The session_duration_seconds of this ConversationAppSettings.
+        :type: int
+        """
+        
+
+        self._session_duration_seconds = session_duration_seconds
 
     def to_dict(self):
         """

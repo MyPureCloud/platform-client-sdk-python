@@ -38,6 +38,9 @@ import time
 import threading
 import hashlib
 import json
+import io
+import ssl
+import certifi
 
 from .logger import Logger, LogFormat, LogLevel
 from .gateway_configuration import GatewayConfiguration
@@ -98,6 +101,8 @@ class Configuration(object):
         self.cert_file = None
         # client key file
         self.key_file = None
+        #ssl context
+        self.ssl_context = None
 
         # proxy
         self.proxy = None
@@ -147,6 +152,22 @@ class Configuration(object):
             return
         if self.live_reload_config:
             self._config_updater()
+
+    def create_mtls_or_ssl_context(self):
+        if self.ssl_context is None:  # set_mtls_contents() or set_mtls_certificates() were not called.
+            ssl_context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH)
+
+            if self.ssl_ca_cert:
+                ssl_context.load_verify_locations(cafile=self.ssl_ca_cert)
+            else:
+                # If no CA certs are provided, use certifi's bundle.
+                ssl_context.load_verify_locations(cafile=certifi.where())
+
+            if self.cert_file and self.key_file:
+                # mTLS configuration
+                ssl_context.load_cert_chain(certfile=self.cert_file, keyfile=self.key_file)
+
+            self.ssl_context = ssl_context
 
     def get_api_key_with_prefix(self, identifier):
         """
@@ -205,7 +226,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 226.0.0".\
+               "SDK Package Version: 227.0.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):

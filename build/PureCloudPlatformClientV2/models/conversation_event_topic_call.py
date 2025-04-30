@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import ConversationEventTopicErrorDetails
     from . import ConversationEventTopicFaxStatus
     from . import ConversationEventTopicQueueMediaSettings
+    from . import ConversationEventTopicRecordersState
     from . import ConversationEventTopicWrapup
 
 class ConversationEventTopicCall(object):
@@ -60,6 +61,7 @@ class ConversationEventTopicCall(object):
             'initial_state': 'str',
             'recording': 'bool',
             'recording_state': 'str',
+            'recorders_state': 'ConversationEventTopicRecordersState',
             'muted': 'bool',
             'confined': 'bool',
             'held': 'bool',
@@ -93,6 +95,7 @@ class ConversationEventTopicCall(object):
             'initial_state': 'initialState',
             'recording': 'recording',
             'recording_state': 'recordingState',
+            'recorders_state': 'recordersState',
             'muted': 'muted',
             'confined': 'confined',
             'held': 'held',
@@ -125,6 +128,7 @@ class ConversationEventTopicCall(object):
         self._initial_state = None
         self._recording = None
         self._recording_state = None
+        self._recorders_state = None
         self._muted = None
         self._confined = None
         self._held = None
@@ -285,6 +289,30 @@ class ConversationEventTopicCall(object):
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state
+
+    @property
+    def recorders_state(self) -> 'ConversationEventTopicRecordersState':
+        """
+        Gets the recorders_state of this ConversationEventTopicCall.
+
+
+        :return: The recorders_state of this ConversationEventTopicCall.
+        :rtype: ConversationEventTopicRecordersState
+        """
+        return self._recorders_state
+
+    @recorders_state.setter
+    def recorders_state(self, recorders_state: 'ConversationEventTopicRecordersState') -> None:
+        """
+        Sets the recorders_state of this ConversationEventTopicCall.
+
+
+        :param recorders_state: The recorders_state of this ConversationEventTopicCall.
+        :type: ConversationEventTopicRecordersState
+        """
+        
+
+        self._recorders_state = recorders_state
 
     @property
     def muted(self) -> bool:

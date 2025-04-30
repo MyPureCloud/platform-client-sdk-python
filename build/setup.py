@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "PureCloudPlatformClientV2"
-VERSION = "226.0.0"
+VERSION = "227.0.0"
 
 # To install the library, run the following
 #
@@ -17,11 +17,11 @@ REQUIRES = ["urllib3 >= 1.26.20", "certifi >= 2025.01.31", "python-dateutil >= 2
 
 setup(
     name="PureCloudPlatformClientV2",
-    version="226.0.0",
+    version="227.0.0",
     description="PureCloud Platform API SDK",
     author="Genesys Developer Evangelists",
     author_email="DeveloperEvangelists@Genesys.com",
-    url="https://developer.mypurecloud.com/api/rest/client-libraries/python/",
+    url="https://mypurecloud.github.io/platform-client-sdk-python/",
     keywords=["Swagger PureCloud Platform API Genesys"],
     install_requires=REQUIRES,
     packages=find_packages(),

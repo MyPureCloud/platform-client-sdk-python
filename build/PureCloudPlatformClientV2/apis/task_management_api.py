@@ -998,7 +998,6 @@ class TaskManagementApi(object):
         """
         Get a listing of a workbin's attribute change history
         
-	    get_taskmanagement_workbin_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1086,7 +1085,6 @@ class TaskManagementApi(object):
         """
         Get a version of a workbin
         
-	    get_taskmanagement_workbin_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1125,6 +1123,8 @@ class TaskManagementApi(object):
         if ('entity_version' not in params) or (params['entity_version'] is None):
             raise ValueError("Missing the required parameter `entity_version` when calling `get_taskmanagement_workbin_version`")
 
+        if 'entity_version' in params and params['entity_version'] < 1: 
+            raise ValueError("Invalid value for parameter `entity_version` when calling `get_taskmanagement_workbin_version`, must be a value greater than or equal to `1`")
 
         resource_path = '/api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion}'.replace('{format}', 'json')
         path_params = {}
@@ -1171,7 +1171,6 @@ class TaskManagementApi(object):
         """
         Get all versions of a workbin
         
-	    get_taskmanagement_workbin_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1340,7 +1339,6 @@ class TaskManagementApi(object):
         """
         Get a listing of a workitem's attribute change history
         
-	    get_taskmanagement_workitem_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1524,7 +1522,6 @@ class TaskManagementApi(object):
         """
         Get a version of a workitem
         
-	    get_taskmanagement_workitem_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1563,6 +1560,8 @@ class TaskManagementApi(object):
         if ('entity_version' not in params) or (params['entity_version'] is None):
             raise ValueError("Missing the required parameter `entity_version` when calling `get_taskmanagement_workitem_version`")
 
+        if 'entity_version' in params and params['entity_version'] < 1: 
+            raise ValueError("Invalid value for parameter `entity_version` when calling `get_taskmanagement_workitem_version`, must be a value greater than or equal to `1`")
 
         resource_path = '/api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion}'.replace('{format}', 'json')
         path_params = {}
@@ -1609,7 +1608,6 @@ class TaskManagementApi(object):
         """
         Get all versions of a workitem
         
-	    get_taskmanagement_workitem_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3458,7 +3456,6 @@ class TaskManagementApi(object):
         """
         Get a listing of a worktype's attribute change history
         
-	    get_taskmanagement_worktype_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3711,7 +3708,6 @@ class TaskManagementApi(object):
         """
         Get a version of a worktype
         
-	    get_taskmanagement_worktype_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3750,6 +3746,8 @@ class TaskManagementApi(object):
         if ('entity_version' not in params) or (params['entity_version'] is None):
             raise ValueError("Missing the required parameter `entity_version` when calling `get_taskmanagement_worktype_version`")
 
+        if 'entity_version' in params and params['entity_version'] < 1: 
+            raise ValueError("Invalid value for parameter `entity_version` when calling `get_taskmanagement_worktype_version`, must be a value greater than or equal to `1`")
 
         resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion}'.replace('{format}', 'json')
         path_params = {}
@@ -3796,7 +3794,6 @@ class TaskManagementApi(object):
         """
         Get all versions of a worktype
         
-	    get_taskmanagement_worktype_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

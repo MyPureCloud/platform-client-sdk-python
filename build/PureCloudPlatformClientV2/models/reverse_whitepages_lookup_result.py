@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ExternalContact
-    from . import ExternalOrganization
 
 class ReverseWhitepagesLookupResult(object):
     """
@@ -50,17 +49,14 @@ class ReverseWhitepagesLookupResult(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'contacts': 'list[ExternalContact]',
-            'external_organizations': 'list[ExternalOrganization]'
+            'contacts': 'list[ExternalContact]'
         }
 
         self.attribute_map = {
-            'contacts': 'contacts',
-            'external_organizations': 'externalOrganizations'
+            'contacts': 'contacts'
         }
 
         self._contacts = None
-        self._external_organizations = None
 
     @property
     def contacts(self) -> List['ExternalContact']:
@@ -85,30 +81,6 @@ class ReverseWhitepagesLookupResult(object):
         
 
         self._contacts = contacts
-
-    @property
-    def external_organizations(self) -> List['ExternalOrganization']:
-        """
-        Gets the external_organizations of this ReverseWhitepagesLookupResult.
-
-
-        :return: The external_organizations of this ReverseWhitepagesLookupResult.
-        :rtype: list[ExternalOrganization]
-        """
-        return self._external_organizations
-
-    @external_organizations.setter
-    def external_organizations(self, external_organizations: List['ExternalOrganization']) -> None:
-        """
-        Sets the external_organizations of this ReverseWhitepagesLookupResult.
-
-
-        :param external_organizations: The external_organizations of this ReverseWhitepagesLookupResult.
-        :type: list[ExternalOrganization]
-        """
-        
-
-        self._external_organizations = external_organizations
 
     def to_dict(self):
         """

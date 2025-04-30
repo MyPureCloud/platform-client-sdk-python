@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import WorkitemsAttributeChangeInstant
     from . import WorkitemsAttributeChangeInteger
     from . import WorkitemsAttributeChangeList
+    from . import WorkitemsAttributeChangeListWorkitemScoredAgentDelta
     from . import WorkitemsAttributeChangeMap
     from . import WorkitemsAttributeChangeString
     from . import WorkitemsAttributeChangeWorkitemStatusCategory
@@ -83,7 +84,10 @@ class WorkitemDelta(object):
             'date_modified': 'WorkitemsAttributeChangeInstant',
             'modified_by': 'WorkitemsAttributeChangeString',
             'status_category': 'WorkitemsAttributeChangeWorkitemStatusCategory',
-            'script_id': 'WorkitemsAttributeChangeString'
+            'script_id': 'WorkitemsAttributeChangeString',
+            'date_assignment_state_changed': 'WorkitemsAttributeChangeInstant',
+            'alert_timeout_seconds': 'WorkitemsAttributeChangeInteger',
+            'scored_agents': 'WorkitemsAttributeChangeListWorkitemScoredAgentDelta'
         }
 
         self.attribute_map = {
@@ -114,7 +118,10 @@ class WorkitemDelta(object):
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
             'status_category': 'statusCategory',
-            'script_id': 'scriptId'
+            'script_id': 'scriptId',
+            'date_assignment_state_changed': 'dateAssignmentStateChanged',
+            'alert_timeout_seconds': 'alertTimeoutSeconds',
+            'scored_agents': 'scoredAgents'
         }
 
         self._name = None
@@ -145,6 +152,9 @@ class WorkitemDelta(object):
         self._modified_by = None
         self._status_category = None
         self._script_id = None
+        self._date_assignment_state_changed = None
+        self._alert_timeout_seconds = None
+        self._scored_agents = None
 
     @property
     def name(self) -> 'WorkitemsAttributeChangeString':
@@ -817,6 +827,78 @@ class WorkitemDelta(object):
         
 
         self._script_id = script_id
+
+    @property
+    def date_assignment_state_changed(self) -> 'WorkitemsAttributeChangeInstant':
+        """
+        Gets the date_assignment_state_changed of this WorkitemDelta.
+
+
+        :return: The date_assignment_state_changed of this WorkitemDelta.
+        :rtype: WorkitemsAttributeChangeInstant
+        """
+        return self._date_assignment_state_changed
+
+    @date_assignment_state_changed.setter
+    def date_assignment_state_changed(self, date_assignment_state_changed: 'WorkitemsAttributeChangeInstant') -> None:
+        """
+        Sets the date_assignment_state_changed of this WorkitemDelta.
+
+
+        :param date_assignment_state_changed: The date_assignment_state_changed of this WorkitemDelta.
+        :type: WorkitemsAttributeChangeInstant
+        """
+        
+
+        self._date_assignment_state_changed = date_assignment_state_changed
+
+    @property
+    def alert_timeout_seconds(self) -> 'WorkitemsAttributeChangeInteger':
+        """
+        Gets the alert_timeout_seconds of this WorkitemDelta.
+
+
+        :return: The alert_timeout_seconds of this WorkitemDelta.
+        :rtype: WorkitemsAttributeChangeInteger
+        """
+        return self._alert_timeout_seconds
+
+    @alert_timeout_seconds.setter
+    def alert_timeout_seconds(self, alert_timeout_seconds: 'WorkitemsAttributeChangeInteger') -> None:
+        """
+        Sets the alert_timeout_seconds of this WorkitemDelta.
+
+
+        :param alert_timeout_seconds: The alert_timeout_seconds of this WorkitemDelta.
+        :type: WorkitemsAttributeChangeInteger
+        """
+        
+
+        self._alert_timeout_seconds = alert_timeout_seconds
+
+    @property
+    def scored_agents(self) -> 'WorkitemsAttributeChangeListWorkitemScoredAgentDelta':
+        """
+        Gets the scored_agents of this WorkitemDelta.
+
+
+        :return: The scored_agents of this WorkitemDelta.
+        :rtype: WorkitemsAttributeChangeListWorkitemScoredAgentDelta
+        """
+        return self._scored_agents
+
+    @scored_agents.setter
+    def scored_agents(self, scored_agents: 'WorkitemsAttributeChangeListWorkitemScoredAgentDelta') -> None:
+        """
+        Sets the scored_agents of this WorkitemDelta.
+
+
+        :param scored_agents: The scored_agents of this WorkitemDelta.
+        :type: WorkitemsAttributeChangeListWorkitemScoredAgentDelta
+        """
+        
+
+        self._scored_agents = scored_agents
 
     def to_dict(self):
         """

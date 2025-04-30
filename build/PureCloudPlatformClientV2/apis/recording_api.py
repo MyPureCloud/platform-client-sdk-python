@@ -1817,7 +1817,7 @@ class RecordingApi(object):
         :param str job_id: jobId (required)
         :param int page_size: Page size. Maximum is 100.
         :param int page_number: Page number
-        :param bool include_total: If false, cursor will be used to locate the page instead of pageNumber.
+        :param bool include_total: If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
         :param str cursor: Indicates where to resume query results (not required for first page)
         :return: FailedRecordingEntityListing
                  If the method is called asynchronously,
@@ -1910,7 +1910,7 @@ class RecordingApi(object):
         :param str state: Filter by state
         :param bool show_only_my_jobs: Show only my jobs
         :param str job_type: Job Type (Can be left empty for both)
-        :param bool include_total: If false, cursor will be used to locate the page instead of pageNumber.
+        :param bool include_total: If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
         :param str cursor: Indicates where to resume query results (not required for first page)
         :return: RecordingJobEntityListing
                  If the method is called asynchronously,

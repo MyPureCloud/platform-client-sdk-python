@@ -40,7 +40,7 @@ if TYPE_CHECKING:
     from . import QueueConversationEventTopicEmail
     from . import QueueConversationEventTopicInternalMessage
     from . import QueueConversationEventTopicMessage
-    from . import QueueConversationEventTopicScreenshare
+    from . import QueueConversationEventTopicScreenShare
     from . import QueueConversationEventTopicSocialExpression
     from . import QueueConversationEventTopicVideo
     from . import QueueConversationEventTopicWorkflow
@@ -98,7 +98,7 @@ class QueueConversationEventTopicParticipant(object):
             'emails': 'list[QueueConversationEventTopicEmail]',
             'messages': 'list[QueueConversationEventTopicMessage]',
             'internal_messages': 'list[QueueConversationEventTopicInternalMessage]',
-            'screenshares': 'list[QueueConversationEventTopicScreenshare]',
+            'screenshares': 'list[QueueConversationEventTopicScreenShare]',
             'social_expressions': 'list[QueueConversationEventTopicSocialExpression]',
             'videos': 'list[QueueConversationEventTopicVideo]',
             'workflow': 'QueueConversationEventTopicWorkflow'
@@ -1084,24 +1084,24 @@ class QueueConversationEventTopicParticipant(object):
         self._internal_messages = internal_messages
 
     @property
-    def screenshares(self) -> List['QueueConversationEventTopicScreenshare']:
+    def screenshares(self) -> List['QueueConversationEventTopicScreenShare']:
         """
         Gets the screenshares of this QueueConversationEventTopicParticipant.
 
 
         :return: The screenshares of this QueueConversationEventTopicParticipant.
-        :rtype: list[QueueConversationEventTopicScreenshare]
+        :rtype: list[QueueConversationEventTopicScreenShare]
         """
         return self._screenshares
 
     @screenshares.setter
-    def screenshares(self, screenshares: List['QueueConversationEventTopicScreenshare']) -> None:
+    def screenshares(self, screenshares: List['QueueConversationEventTopicScreenShare']) -> None:
         """
         Sets the screenshares of this QueueConversationEventTopicParticipant.
 
 
         :param screenshares: The screenshares of this QueueConversationEventTopicParticipant.
-        :type: list[QueueConversationEventTopicScreenshare]
+        :type: list[QueueConversationEventTopicScreenShare]
         """
         
 

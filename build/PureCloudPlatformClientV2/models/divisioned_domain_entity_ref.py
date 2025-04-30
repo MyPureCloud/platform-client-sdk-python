@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DivisionReference
 
 class DivisionedDomainEntityRef(object):
     """
@@ -49,18 +51,21 @@ class DivisionedDomainEntityRef(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'self_uri': 'str'
+            'self_uri': 'str',
+            'division': 'DivisionReference'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
-            'self_uri': 'selfUri'
+            'self_uri': 'selfUri',
+            'division': 'division'
         }
 
         self._id = None
         self._name = None
         self._self_uri = None
+        self._division = None
 
     @property
     def id(self) -> str:
@@ -133,6 +138,30 @@ class DivisionedDomainEntityRef(object):
         
 
         self._self_uri = self_uri
+
+    @property
+    def division(self) -> 'DivisionReference':
+        """
+        Gets the division of this DivisionedDomainEntityRef.
+        The division this entity belongs to.
+
+        :return: The division of this DivisionedDomainEntityRef.
+        :rtype: DivisionReference
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'DivisionReference') -> None:
+        """
+        Sets the division of this DivisionedDomainEntityRef.
+        The division this entity belongs to.
+
+        :param division: The division of this DivisionedDomainEntityRef.
+        :type: DivisionReference
+        """
+        
+
+        self._division = division
 
     def to_dict(self):
         """

@@ -606,6 +606,96 @@ class ScriptsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_scripts_published_divisionview_variables(self, script_id: str, **kwargs) -> object:
+        """
+        Get the published variables
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_scripts_published_divisionview_variables(script_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str script_id: Script ID (required)
+        :param str input: input
+        :param str output: output
+        :param str type: type
+        :param str script_data_version: Advanced usage - controls the data version of the script
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['script_id', 'input', 'output', 'type', 'script_data_version']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scripts_published_divisionview_variables" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'script_id' is set
+        if ('script_id' not in params) or (params['script_id'] is None):
+            raise ValueError("Missing the required parameter `script_id` when calling `get_scripts_published_divisionview_variables`")
+
+
+        resource_path = '/api/v2/scripts/published/divisionviews/{scriptId}/variables'.replace('{format}', 'json')
+        path_params = {}
+        if 'script_id' in params:
+            path_params['scriptId'] = params['script_id']
+
+        query_params = {}
+        if 'input' in params:
+            query_params['input'] = params['input']
+        if 'output' in params:
+            query_params['output'] = params['output']
+        if 'type' in params:
+            query_params['type'] = params['type']
+        if 'script_data_version' in params:
+            query_params['scriptDataVersion'] = params['script_data_version']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='object',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_scripts_published_divisionviews(self, **kwargs) -> 'ScriptEntityListing':
         """
         Get the published scripts metadata.

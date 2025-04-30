@@ -32,9 +32,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import V2FlowExecutionDataFlowidTopicExecution
     from . import V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo
-    from . import V2FlowExecutionDataFlowidTopicInvokingContext
+    from . import V2FlowExecutionDataFlowidTopicFlowExecutionItem
+    from . import V2FlowExecutionDataFlowidTopicInvokingContextInfo
 
 class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
     """
@@ -57,7 +57,7 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
             'end_date_time': 'datetime',
             'endpoint': 'str',
             'errors': 'list[V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo]',
-            'execution': 'list[V2FlowExecutionDataFlowidTopicExecution]',
+            'execution': 'list[V2FlowExecutionDataFlowidTopicFlowExecutionItem]',
             'flow_exit_reason': 'str',
             'flow_id': 'str',
             'flow_is_debug': 'bool',
@@ -65,7 +65,7 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
             'flow_type': 'str',
             'flow_version': 'str',
             'message_type': 'str',
-            'invoking_context': 'V2FlowExecutionDataFlowidTopicInvokingContext',
+            'invoking_context': 'V2FlowExecutionDataFlowidTopicInvokingContextInfo',
             'start_date_time': 'datetime',
             'warnings': 'list[V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo]'
         }
@@ -253,24 +253,24 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
         self._errors = errors
 
     @property
-    def execution(self) -> List['V2FlowExecutionDataFlowidTopicExecution']:
+    def execution(self) -> List['V2FlowExecutionDataFlowidTopicFlowExecutionItem']:
         """
         Gets the execution of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
         An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot.
 
         :return: The execution of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
-        :rtype: list[V2FlowExecutionDataFlowidTopicExecution]
+        :rtype: list[V2FlowExecutionDataFlowidTopicFlowExecutionItem]
         """
         return self._execution
 
     @execution.setter
-    def execution(self, execution: List['V2FlowExecutionDataFlowidTopicExecution']) -> None:
+    def execution(self, execution: List['V2FlowExecutionDataFlowidTopicFlowExecutionItem']) -> None:
         """
         Sets the execution of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
         An array of execution items that describe what happened when an Architect flow action container ran such as a flow, task, state or bot.
 
         :param execution: The execution of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
-        :type: list[V2FlowExecutionDataFlowidTopicExecution]
+        :type: list[V2FlowExecutionDataFlowidTopicFlowExecutionItem]
         """
         
 
@@ -450,24 +450,24 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
             self._message_type = message_type
 
     @property
-    def invoking_context(self) -> 'V2FlowExecutionDataFlowidTopicInvokingContext':
+    def invoking_context(self) -> 'V2FlowExecutionDataFlowidTopicInvokingContextInfo':
         """
         Gets the invoking_context of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
 
 
         :return: The invoking_context of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
-        :rtype: V2FlowExecutionDataFlowidTopicInvokingContext
+        :rtype: V2FlowExecutionDataFlowidTopicInvokingContextInfo
         """
         return self._invoking_context
 
     @invoking_context.setter
-    def invoking_context(self, invoking_context: 'V2FlowExecutionDataFlowidTopicInvokingContext') -> None:
+    def invoking_context(self, invoking_context: 'V2FlowExecutionDataFlowidTopicInvokingContextInfo') -> None:
         """
         Sets the invoking_context of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
 
 
         :param invoking_context: The invoking_context of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
-        :type: V2FlowExecutionDataFlowidTopicInvokingContext
+        :type: V2FlowExecutionDataFlowidTopicInvokingContextInfo
         """
         
 

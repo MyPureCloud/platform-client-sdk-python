@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
+    from . import PushIntegration
     from . import SupportedContentReference
     from . import WebDeploymentConfigurationVersionResponse
     from . import WebDeploymentFlowEntityRef
@@ -64,6 +65,7 @@ class ExpandableWebDeployment(object):
             'last_modified_user': 'AddressableEntityRef',
             'flow': 'WebDeploymentFlowEntityRef',
             'status': 'str',
+            'push_integrations': 'list[PushIntegration]',
             'configuration': 'WebDeploymentConfigurationVersionResponse',
             'self_uri': 'str'
         }
@@ -81,6 +83,7 @@ class ExpandableWebDeployment(object):
             'last_modified_user': 'lastModifiedUser',
             'flow': 'flow',
             'status': 'status',
+            'push_integrations': 'pushIntegrations',
             'configuration': 'configuration',
             'self_uri': 'selfUri'
         }
@@ -97,6 +100,7 @@ class ExpandableWebDeployment(object):
         self._last_modified_user = None
         self._flow = None
         self._status = None
+        self._push_integrations = None
         self._configuration = None
         self._self_uri = None
 
@@ -392,6 +396,30 @@ class ExpandableWebDeployment(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def push_integrations(self) -> List['PushIntegration']:
+        """
+        Gets the push_integrations of this ExpandableWebDeployment.
+        The push integration objects associated with the deployment
+
+        :return: The push_integrations of this ExpandableWebDeployment.
+        :rtype: list[PushIntegration]
+        """
+        return self._push_integrations
+
+    @push_integrations.setter
+    def push_integrations(self, push_integrations: List['PushIntegration']) -> None:
+        """
+        Sets the push_integrations of this ExpandableWebDeployment.
+        The push integration objects associated with the deployment
+
+        :param push_integrations: The push_integrations of this ExpandableWebDeployment.
+        :type: list[PushIntegration]
+        """
+        
+
+        self._push_integrations = push_integrations
 
     @property
     def configuration(self) -> 'WebDeploymentConfigurationVersionResponse':

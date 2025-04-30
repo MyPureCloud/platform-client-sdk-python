@@ -314,7 +314,7 @@ class TimeOffRequest(object):
         """
         if isinstance(substatus, int):
             substatus = str(substatus)
-        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InsufficientBalance", "InvalidDailyDuration", "OutsideShift", "RemovedFromWaitlist", "Waitlisted", "OverlapsRestrictedActivityCode"]
+        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "BlockedDate", "InsufficientBalance", "InvalidDailyDuration", "ManualApproval", "OutsideShift", "OverlapsRestrictedActivityCode", "RemovedFromWaitlist", "ReviewDate", "Waitlisted"]
         if substatus.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for substatus -> " + substatus)
             self._substatus = "outdated_sdk_version"

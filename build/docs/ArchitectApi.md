@@ -2713,7 +2713,7 @@ api_instance = PureCloudPlatformClientV2.ArchitectApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = ''name'' # str | Sort by (optional) (default to 'name')
-sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 name = 'name_example' # str | Name of the Schedule to filter by. (optional)
 division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
 
@@ -2733,7 +2733,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
-| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 | **name** | **str**| Name of the Schedule to filter by. | [optional]  |
 | **division_id** | [**list[str]**](str)| List of divisionIds on which to filter. | [optional]  |
 
@@ -7901,4 +7901,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

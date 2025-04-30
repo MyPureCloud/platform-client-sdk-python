@@ -138,7 +138,7 @@ class BotSearchResponse(object):
         """
         if isinstance(bot_type, int):
             bot_type = str(bot_type)
-        allowed_values = ["GenesysBotConnector", "GenesysDialogEngine", "AmazonLex", "GoogleDialogFlowES", "GoogleDialogFlowCX", "NuanceDlg", "GenesysBotFlow", "GenesysDigitalBotFlow", "GenesysVoiceSurveyFlow"]
+        allowed_values = ["GenesysBotConnector", "GenesysDialogEngine", "AmazonLex", "GoogleDialogFlowES", "GoogleDialogFlowCX", "NuanceDlg", "GenesysBotFlow", "GenesysDigitalBotFlow", "GenesysVoiceSurveyFlow", "GenesysDigitalBotConnector"]
         if bot_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for bot_type -> " + bot_type)
             self._bot_type = "outdated_sdk_version"

@@ -181,7 +181,7 @@ class KnowledgeDocumentsAnswerFilter(object):
         """
         if isinstance(query_type, int):
             query_type = str(query_type)
-        allowed_values = ["Unknown", "Article", "AutoSearch", "Category", "ManualSearch", "Recommendation", "Suggestion"]
+        allowed_values = ["Unknown", "Article", "AutoSearch", "Category", "ManualSearch", "Recommendation", "Suggestion", "ExpandedArticle"]
         if query_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_type -> " + query_type)
             self._query_type = "outdated_sdk_version"

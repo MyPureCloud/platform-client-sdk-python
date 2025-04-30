@@ -63,6 +63,7 @@ class CustomerInteractionCenter(object):
             'sign_authn_requests': 'bool',
             'provider_name': 'str',
             'display_on_login': 'bool',
+            'metadata_url': 'str',
             'self_uri': 'str'
         }
 
@@ -83,6 +84,7 @@ class CustomerInteractionCenter(object):
             'sign_authn_requests': 'signAuthnRequests',
             'provider_name': 'providerName',
             'display_on_login': 'displayOnLogin',
+            'metadata_url': 'metadataURL',
             'self_uri': 'selfUri'
         }
 
@@ -102,6 +104,7 @@ class CustomerInteractionCenter(object):
         self._sign_authn_requests = None
         self._provider_name = None
         self._display_on_login = None
+        self._metadata_url = None
         self._self_uri = None
 
     @property
@@ -497,6 +500,30 @@ class CustomerInteractionCenter(object):
         
 
         self._display_on_login = display_on_login
+
+    @property
+    def metadata_url(self) -> str:
+        """
+        Gets the metadata_url of this CustomerInteractionCenter.
+
+
+        :return: The metadata_url of this CustomerInteractionCenter.
+        :rtype: str
+        """
+        return self._metadata_url
+
+    @metadata_url.setter
+    def metadata_url(self, metadata_url: str) -> None:
+        """
+        Sets the metadata_url of this CustomerInteractionCenter.
+
+
+        :param metadata_url: The metadata_url of this CustomerInteractionCenter.
+        :type: str
+        """
+        
+
+        self._metadata_url = metadata_url
 
     @property
     def self_uri(self) -> str:

@@ -4243,7 +4243,7 @@ class ExternalContactsApi(object):
 
     def get_externalcontacts_reversewhitepageslookup(self, lookup_val: str, **kwargs) -> 'ReverseWhitepagesLookupResult':
         """
-        Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+        Look up contacts based on an attribute. Maximum of 25 values returned.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4256,9 +4256,9 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str lookup_val: User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) (required)
+        :param str lookup_val: User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) (required)
         :param list[str] expand: which field, if any, to expand
-        :param str division_id: Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value
+        :param str division_id: Specifies which division to lookup contacts in, for the given lookup value
         :return: ReverseWhitepagesLookupResult
                  If the method is called asynchronously,
                  returns the request thread.

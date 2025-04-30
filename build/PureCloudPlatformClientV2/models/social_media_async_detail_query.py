@@ -52,6 +52,7 @@ class SocialMediaAsyncDetailQuery(object):
             'interval': 'str',
             'time_zone': 'str',
             'filter': 'SocialMediaQueryFilter',
+            'topic_ids': 'list[str]',
             'page_size': 'int',
             'order': 'str'
         }
@@ -60,6 +61,7 @@ class SocialMediaAsyncDetailQuery(object):
             'interval': 'interval',
             'time_zone': 'timeZone',
             'filter': 'filter',
+            'topic_ids': 'topicIds',
             'page_size': 'pageSize',
             'order': 'order'
         }
@@ -67,6 +69,7 @@ class SocialMediaAsyncDetailQuery(object):
         self._interval = None
         self._time_zone = None
         self._filter = None
+        self._topic_ids = None
         self._page_size = None
         self._order = None
 
@@ -141,6 +144,30 @@ class SocialMediaAsyncDetailQuery(object):
         
 
         self._filter = filter
+
+    @property
+    def topic_ids(self) -> List[str]:
+        """
+        Gets the topic_ids of this SocialMediaAsyncDetailQuery.
+        List of topicIds to query in
+
+        :return: The topic_ids of this SocialMediaAsyncDetailQuery.
+        :rtype: list[str]
+        """
+        return self._topic_ids
+
+    @topic_ids.setter
+    def topic_ids(self, topic_ids: List[str]) -> None:
+        """
+        Sets the topic_ids of this SocialMediaAsyncDetailQuery.
+        List of topicIds to query in
+
+        :param topic_ids: The topic_ids of this SocialMediaAsyncDetailQuery.
+        :type: list[str]
+        """
+        
+
+        self._topic_ids = topic_ids
 
     @property
     def page_size(self) -> int:

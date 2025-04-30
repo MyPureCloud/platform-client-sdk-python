@@ -232,7 +232,8 @@
 | **segment_types** | list[str] | A list of filtered segment types | [optional] |
 | **program_ids** | list[str] | A list of program ids for filtering | [optional] |
 | **category_ids** | list[str] | A list of category ids for filtering | [optional] |
+| **delivery_pushed** | bool | Filter to indicate if push notification is sent | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

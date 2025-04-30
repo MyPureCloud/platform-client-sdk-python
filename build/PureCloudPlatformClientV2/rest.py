@@ -52,15 +52,42 @@ class RESTResponse(io.IOBase):
     def getheaders(self):
         """
         Returns a dictionary of the response headers.
+
+        Note: Modified to handle urllib3 v2.1.0 deprecation of getheaders() while maintaining
+        backward compatibility. New versions should directly access headers property, while
+        older versions fall back to getheaders() method.
+
+        Returns:
+            dict: Dictionary of response headers
         """
-        return self.urllib3_response.headers
+        try:
+            # New approach for urllib3 v2.1.0 and later - direct headers access
+            return self.urllib3_response.headers
+        except AttributeError:
+            # Backward compatibility for older urllib3 versions
+            return self.urllib3_response.getheaders()
 
     def getheader(self, name, default=None):
         """
         Returns a given response header.
-        """
-        return self.urllib3_response.headers.get(name, default)
 
+        Note: Modified to handle urllib3 v2.1.0 deprecation of getheader() while maintaining
+        backward compatibility. New versions use headers.get(), while older versions
+        fall back to getheader() method.
+
+        Args:
+            name: Header name to retrieve
+            default: Default value if header is not found
+
+        Returns:
+            str: Value of the requested header
+        """
+        try:
+            # New approach for urllib3 v2.1.0 and later - using headers.get()
+            return self.urllib3_response.headers.get(name, default)
+        except AttributeError:
+            # Backward compatibility for older urllib3 versions
+            return self.urllib3_response.getheader(name, default)
 
 class RESTClientObject(object):
 
@@ -77,19 +104,6 @@ class RESTClientObject(object):
         else:
             cert_reqs = ssl.CERT_NONE
 
-        # ca_certs
-        if Configuration().ssl_ca_cert:
-            ca_certs = Configuration().ssl_ca_cert
-        else:
-            # if not set certificate file, use Mozilla's root certificates.
-            ca_certs = certifi.where()
-
-        # cert_file
-        cert_file = Configuration().cert_file
-
-        # key file
-        key_file = Configuration().key_file
-
         # proxy
         proxy = Configuration().proxy
         proxy_username = Configuration().proxy_username
@@ -97,34 +111,34 @@ class RESTClientObject(object):
 
         retries = urllib3.util.Retry()
         retries.allowed_methods = {'DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'TRACE'}
+
+        kwargs = {
+            'retries': retries,
+            'num_pools': pools_size,
+            'maxsize': max_size,
+            'block': True,
+            'cert_reqs': cert_reqs,
+        }
+
+        if Configuration().verify_ssl and Configuration().ssl_context:
+            kwargs['ssl_context'] = Configuration().ssl_context
+        
         # https pool manager
         if proxy:
             headers = None
+            kwargs['proxy_url'] = proxy
             if proxy_username and proxy_password:
                 headers = urllib3.make_headers(proxy_basic_auth=proxy_username + ':' + proxy_password)
-            self.pool_manager = urllib3.ProxyManager(
-                retries=retries,
-                num_pools=pools_size,
-                maxsize=max_size,
-                block=True,
-                cert_reqs=cert_reqs,
-                ca_certs=ca_certs,
-                cert_file=cert_file,
-                key_file=key_file,
-                proxy_url=proxy,
-                proxy_headers=headers
-            )
+                kwargs['proxy_headers'] = headers
+            #self.print_kwargs(**kwargs) #Just for debugging
+            self.pool_manager = urllib3.ProxyManager(**kwargs)
         else:
-            self.pool_manager = urllib3.PoolManager(
-                retries=retries,
-                num_pools=pools_size,
-                maxsize=max_size,
-                block=True,
-                cert_reqs=cert_reqs,
-                ca_certs=ca_certs,
-                cert_file=cert_file,
-                key_file=key_file
-            )
+            #self.print_kwargs(**kwargs) #Just for debugging
+            self.pool_manager = urllib3.PoolManager(**kwargs)
+
+    def print_kwargs(self, **kwargs):
+        for key in kwargs:
+            print(f"{key} = {kwargs[key]}")
 
     def request(self, method, url, query_params=None, headers=None,
                 body=None, post_params=None):

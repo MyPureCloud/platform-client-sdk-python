@@ -48,16 +48,19 @@ class ConversationSummaryTopicTriggerSource(object):
         """
         self.swagger_types = {
             'source_type': 'str',
-            'source_id': 'str'
+            'source_id': 'str',
+            'source_outcome': 'str'
         }
 
         self.attribute_map = {
             'source_type': 'sourceType',
-            'source_id': 'sourceId'
+            'source_id': 'sourceId',
+            'source_outcome': 'sourceOutcome'
         }
 
         self._source_type = None
         self._source_id = None
+        self._source_outcome = None
 
     @property
     def source_type(self) -> str:
@@ -111,6 +114,35 @@ class ConversationSummaryTopicTriggerSource(object):
         
 
         self._source_id = source_id
+
+    @property
+    def source_outcome(self) -> str:
+        """
+        Gets the source_outcome of this ConversationSummaryTopicTriggerSource.
+
+
+        :return: The source_outcome of this ConversationSummaryTopicTriggerSource.
+        :rtype: str
+        """
+        return self._source_outcome
+
+    @source_outcome.setter
+    def source_outcome(self, source_outcome: str) -> None:
+        """
+        Sets the source_outcome of this ConversationSummaryTopicTriggerSource.
+
+
+        :param source_outcome: The source_outcome of this ConversationSummaryTopicTriggerSource.
+        :type: str
+        """
+        if isinstance(source_outcome, int):
+            source_outcome = str(source_outcome)
+        allowed_values = ["UNKNOWN", "CONTAINED", "TRANSFER"]
+        if source_outcome.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for source_outcome -> " + source_outcome)
+            self._source_outcome = "outdated_sdk_version"
+        else:
+            self._source_outcome = source_outcome
 
     def to_dict(self):
         """

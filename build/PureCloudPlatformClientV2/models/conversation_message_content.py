@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import ConversationContentNotificationTemplate
     from . import ConversationContentQuickReply
     from . import ConversationContentQuickReplyV2
+    from . import ConversationContentReaction
     from . import ConversationContentStory
     from . import ConversationContentText
 
@@ -68,7 +69,8 @@ class ConversationMessageContent(object):
             'card': 'ConversationContentCard',
             'carousel': 'ConversationContentCarousel',
             'text': 'ConversationContentText',
-            'quick_reply_v2': 'ConversationContentQuickReplyV2'
+            'quick_reply_v2': 'ConversationContentQuickReplyV2',
+            'reactions': 'list[ConversationContentReaction]'
         }
 
         self.attribute_map = {
@@ -82,7 +84,8 @@ class ConversationMessageContent(object):
             'card': 'card',
             'carousel': 'carousel',
             'text': 'text',
-            'quick_reply_v2': 'quickReplyV2'
+            'quick_reply_v2': 'quickReplyV2',
+            'reactions': 'reactions'
         }
 
         self._content_type = None
@@ -96,6 +99,7 @@ class ConversationMessageContent(object):
         self._carousel = None
         self._text = None
         self._quick_reply_v2 = None
+        self._reactions = None
 
     @property
     def content_type(self) -> str:
@@ -119,7 +123,7 @@ class ConversationMessageContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Reactions", "Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker", "InteractiveApplication", "Unknown"]
+        allowed_values = ["Reactions", "Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker", "InteractiveApplication", "ListPicker", "Unknown"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -365,6 +369,30 @@ class ConversationMessageContent(object):
         
 
         self._quick_reply_v2 = quick_reply_v2
+
+    @property
+    def reactions(self) -> List['ConversationContentReaction']:
+        """
+        Gets the reactions of this ConversationMessageContent.
+        A set of reactions to a message.
+
+        :return: The reactions of this ConversationMessageContent.
+        :rtype: list[ConversationContentReaction]
+        """
+        return self._reactions
+
+    @reactions.setter
+    def reactions(self, reactions: List['ConversationContentReaction']) -> None:
+        """
+        Sets the reactions of this ConversationMessageContent.
+        A set of reactions to a message.
+
+        :param reactions: The reactions of this ConversationMessageContent.
+        :type: list[ConversationContentReaction]
+        """
+        
+
+        self._reactions = reactions
 
     def to_dict(self):
         """

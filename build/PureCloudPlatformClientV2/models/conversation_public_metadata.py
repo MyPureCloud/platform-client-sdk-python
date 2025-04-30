@@ -48,16 +48,19 @@ class ConversationPublicMetadata(object):
         """
         self.swagger_types = {
             'root_id': 'str',
-            'reply_to_id': 'str'
+            'reply_to_id': 'str',
+            'url': 'str'
         }
 
         self.attribute_map = {
             'root_id': 'rootId',
-            'reply_to_id': 'replyToId'
+            'reply_to_id': 'replyToId',
+            'url': 'url'
         }
 
         self._root_id = None
         self._reply_to_id = None
+        self._url = None
 
     @property
     def root_id(self) -> str:
@@ -106,6 +109,30 @@ class ConversationPublicMetadata(object):
         
 
         self._reply_to_id = reply_to_id
+
+    @property
+    def url(self) -> str:
+        """
+        Gets the url of this ConversationPublicMetadata.
+        The URL of the social post on the native platform.
+
+        :return: The url of this ConversationPublicMetadata.
+        :rtype: str
+        """
+        return self._url
+
+    @url.setter
+    def url(self, url: str) -> None:
+        """
+        Sets the url of this ConversationPublicMetadata.
+        The URL of the social post on the native platform.
+
+        :param url: The url of this ConversationPublicMetadata.
+        :type: str
+        """
+        
+
+        self._url = url
 
     def to_dict(self):
         """

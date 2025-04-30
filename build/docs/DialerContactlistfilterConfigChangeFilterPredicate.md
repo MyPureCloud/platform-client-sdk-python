@@ -10,10 +10,10 @@
 | **column_type** | str | Whether a contact column is numeric or alphabetic | [optional] |
 | **operator** | str | The comparison operator | [optional] |
 | **value** | str | The value the predicate applies to | [optional] |
-| **range** | [DialerContactlistfilterConfigChangeRange](DialerContactlistfilterConfigChangeRange) |  | [optional] |
+| **range** | [DialerContactlistfilterConfigChangeFilterRange](DialerContactlistfilterConfigChangeFilterRange) |  | [optional] |
 | **inverted** | bool | Whether or not to invert to result of evaluating the predicate | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

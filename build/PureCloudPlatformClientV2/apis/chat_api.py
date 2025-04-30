@@ -51,6 +51,7 @@ from ..models import RoomParticipant
 from ..models import RoomParticipantsResponse
 from ..models import RoomUpdateRequest
 from ..models import SendMessageBody
+from ..models import UserSettingsForChat
 
 class ChatApi(object):
     """
@@ -1463,7 +1464,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_chats_users_me_settings(self, **kwargs) -> 'ChatUserSettings':
+    def get_chats_users_me_settings(self, **kwargs) -> 'UserSettingsForChat':
         """
         Get a user's chat settings
         
@@ -1478,7 +1479,7 @@ class ChatApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: ChatUserSettings
+        :return: UserSettingsForChat
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1530,7 +1531,7 @@ class ChatApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ChatUserSettings',
+                                            response_type='UserSettingsForChat',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1961,7 +1962,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_chats_users_me_settings(self, body: 'ChatUserSettings', **kwargs) -> 'ChatUserSettings':
+    def patch_chats_users_me_settings(self, body: 'UserSettingsForChat', **kwargs) -> 'UserSettingsForChat':
         """
         Update a user's chat settings
         
@@ -1976,8 +1977,8 @@ class ChatApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ChatUserSettings body:  (required)
-        :return: ChatUserSettings
+        :param UserSettingsForChat body:  (required)
+        :return: UserSettingsForChat
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2034,7 +2035,7 @@ class ChatApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ChatUserSettings',
+                                            response_type='UserSettingsForChat',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

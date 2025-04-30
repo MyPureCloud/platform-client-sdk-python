@@ -55,6 +55,8 @@ class JourneyViewJob(object):
             'status': 'str',
             'journey_view': 'JourneyView',
             'date_completion_estimated': 'datetime',
+            'estimated_completion_margin': 'int',
+            'user_id': 'str',
             'self_uri': 'str'
         }
 
@@ -65,6 +67,8 @@ class JourneyViewJob(object):
             'status': 'status',
             'journey_view': 'journeyView',
             'date_completion_estimated': 'dateCompletionEstimated',
+            'estimated_completion_margin': 'estimatedCompletionMargin',
+            'user_id': 'userId',
             'self_uri': 'selfUri'
         }
 
@@ -74,6 +78,8 @@ class JourneyViewJob(object):
         self._status = None
         self._journey_view = None
         self._date_completion_estimated = None
+        self._estimated_completion_margin = None
+        self._user_id = None
         self._self_uri = None
 
     @property
@@ -224,6 +230,54 @@ class JourneyViewJob(object):
         
 
         self._date_completion_estimated = date_completion_estimated
+
+    @property
+    def estimated_completion_margin(self) -> int:
+        """
+        Gets the estimated_completion_margin of this JourneyViewJob.
+        Margin of error of the estimated time of completion
+
+        :return: The estimated_completion_margin of this JourneyViewJob.
+        :rtype: int
+        """
+        return self._estimated_completion_margin
+
+    @estimated_completion_margin.setter
+    def estimated_completion_margin(self, estimated_completion_margin: int) -> None:
+        """
+        Sets the estimated_completion_margin of this JourneyViewJob.
+        Margin of error of the estimated time of completion
+
+        :param estimated_completion_margin: The estimated_completion_margin of this JourneyViewJob.
+        :type: int
+        """
+        
+
+        self._estimated_completion_margin = estimated_completion_margin
+
+    @property
+    def user_id(self) -> str:
+        """
+        Gets the user_id of this JourneyViewJob.
+        Id of the user who submitted the request
+
+        :return: The user_id of this JourneyViewJob.
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id: str) -> None:
+        """
+        Sets the user_id of this JourneyViewJob.
+        Id of the user who submitted the request
+
+        :param user_id: The user_id of this JourneyViewJob.
+        :type: str
+        """
+        
+
+        self._user_id = user_id
 
     @property
     def self_uri(self) -> str:

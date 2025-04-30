@@ -56,7 +56,6 @@ class JourneySegmentRequest(object):
             'version': 'int',
             'description': 'str',
             'color': 'str',
-            'scope': 'str',
             'should_display_to_agent': 'bool',
             'context': 'RequestContext',
             'journey': 'RequestJourney',
@@ -70,7 +69,6 @@ class JourneySegmentRequest(object):
             'version': 'version',
             'description': 'description',
             'color': 'color',
-            'scope': 'scope',
             'should_display_to_agent': 'shouldDisplayToAgent',
             'context': 'context',
             'journey': 'journey',
@@ -83,7 +81,6 @@ class JourneySegmentRequest(object):
         self._version = None
         self._description = None
         self._color = None
-        self._scope = None
         self._should_display_to_agent = None
         self._context = None
         self._journey = None
@@ -209,35 +206,6 @@ class JourneySegmentRequest(object):
         
 
         self._color = color
-
-    @property
-    def scope(self) -> str:
-        """
-        Gets the scope of this JourneySegmentRequest.
-        The target entity that a segment applies to.
-
-        :return: The scope of this JourneySegmentRequest.
-        :rtype: str
-        """
-        return self._scope
-
-    @scope.setter
-    def scope(self, scope: str) -> None:
-        """
-        Sets the scope of this JourneySegmentRequest.
-        The target entity that a segment applies to.
-
-        :param scope: The scope of this JourneySegmentRequest.
-        :type: str
-        """
-        if isinstance(scope, int):
-            scope = str(scope)
-        allowed_values = ["Session", "Customer"]
-        if scope.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for scope -> " + scope)
-            self._scope = "outdated_sdk_version"
-        else:
-            self._scope = scope
 
     @property
     def should_display_to_agent(self) -> bool:

@@ -135,6 +135,7 @@ from ..models import MessageConversation
 from ..models import MessageConversationEntityListing
 from ..models import MessageData
 from ..models import MessageMediaData
+from ..models import MessageMediaUploadData
 from ..models import MessageTypingEventRequest
 from ..models import MessagingConfigListing
 from ..models import MessagingIntegrationEntityListing
@@ -183,6 +184,7 @@ from ..models import TwitterIntegrationRequest
 from ..models import TwitterIntegrationUpdateRequest
 from ..models import TwitterOAuthSettings
 from ..models import TwitterSignupOAuthSettings
+from ..models import UploadMediaRequest
 from ..models import VideoConferenceDetails
 from ..models import WebChatMessage
 from ..models import WebChatMessageEntityList
@@ -17453,6 +17455,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_message_communication_messages_media is deprecated")
     def post_conversations_message_communication_messages_media(self, conversation_id: str, communication_id: str, **kwargs) -> 'MessageMediaData':
         """
         Create media
@@ -17533,6 +17536,96 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='MessageMediaData',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_message_communication_messages_media_uploads(self, conversation_id: str, communication_id: str, body: 'UploadMediaRequest', **kwargs) -> 'MessageMediaUploadData':
+        """
+        Create a URL to upload a message media file
+        See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_message_communication_messages_media_uploads(conversation_id, communication_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversationId (required)
+        :param str communication_id: communicationId (required)
+        :param UploadMediaRequest body: request (required)
+        :return: MessageMediaUploadData
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_message_communication_messages_media_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_message_communication_messages_media_uploads`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversations_message_communication_messages_media_uploads`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_message_communication_messages_media_uploads`")
+
+
+        resource_path = '/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessageMediaUploadData',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

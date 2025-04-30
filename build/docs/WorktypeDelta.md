@@ -26,7 +26,10 @@
 | **date_modified** | [WorkitemsAttributeChangeInstant](WorkitemsAttributeChangeInstant) |  | [optional] |
 | **modified_by** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
 | **default_script_id** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
+| **flow_id** | [WorkitemsAttributeChangeString](WorkitemsAttributeChangeString) |  | [optional] |
+| **rule_settings** | [WorkitemsAttributeChangeWorkitemRuleSettings](WorkitemsAttributeChangeWorkitemRuleSettings) |  | [optional] |
+| **unassigned_division_contacts_enabled** | [WorkitemsAttributeChangeBoolean](WorkitemsAttributeChangeBoolean) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

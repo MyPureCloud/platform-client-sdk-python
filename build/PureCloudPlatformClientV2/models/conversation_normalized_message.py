@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationEnrichment
     from . import ConversationMessageContent
     from . import ConversationMessageEvent
     from . import ConversationMessagingChannel
@@ -63,7 +64,9 @@ class ConversationNormalizedMessage(object):
             'originating_entity': 'str',
             'is_final_receipt': 'bool',
             'direction': 'str',
+            'related_messages': 'list[ConversationNormalizedMessage]',
             'metadata': 'dict(str, str)',
+            'enrichment': 'ConversationEnrichment',
             'byo_sms_integration_id': 'str'
         }
 
@@ -79,7 +82,9 @@ class ConversationNormalizedMessage(object):
             'originating_entity': 'originatingEntity',
             'is_final_receipt': 'isFinalReceipt',
             'direction': 'direction',
+            'related_messages': 'relatedMessages',
             'metadata': 'metadata',
+            'enrichment': 'enrichment',
             'byo_sms_integration_id': 'byoSmsIntegrationId'
         }
 
@@ -94,7 +99,9 @@ class ConversationNormalizedMessage(object):
         self._originating_entity = None
         self._is_final_receipt = None
         self._direction = None
+        self._related_messages = None
         self._metadata = None
+        self._enrichment = None
         self._byo_sms_integration_id = None
 
     @property
@@ -382,6 +389,30 @@ class ConversationNormalizedMessage(object):
             self._direction = direction
 
     @property
+    def related_messages(self) -> List['ConversationNormalizedMessage']:
+        """
+        Gets the related_messages of this ConversationNormalizedMessage.
+        A list of messages related to this one.
+
+        :return: The related_messages of this ConversationNormalizedMessage.
+        :rtype: list[ConversationNormalizedMessage]
+        """
+        return self._related_messages
+
+    @related_messages.setter
+    def related_messages(self, related_messages: List['ConversationNormalizedMessage']) -> None:
+        """
+        Sets the related_messages of this ConversationNormalizedMessage.
+        A list of messages related to this one.
+
+        :param related_messages: The related_messages of this ConversationNormalizedMessage.
+        :type: list[ConversationNormalizedMessage]
+        """
+        
+
+        self._related_messages = related_messages
+
+    @property
     def metadata(self) -> Dict[str, str]:
         """
         Gets the metadata of this ConversationNormalizedMessage.
@@ -404,6 +435,30 @@ class ConversationNormalizedMessage(object):
         
 
         self._metadata = metadata
+
+    @property
+    def enrichment(self) -> 'ConversationEnrichment':
+        """
+        Gets the enrichment of this ConversationNormalizedMessage.
+        Metadata enrichments provided by the platform.
+
+        :return: The enrichment of this ConversationNormalizedMessage.
+        :rtype: ConversationEnrichment
+        """
+        return self._enrichment
+
+    @enrichment.setter
+    def enrichment(self, enrichment: 'ConversationEnrichment') -> None:
+        """
+        Sets the enrichment of this ConversationNormalizedMessage.
+        Metadata enrichments provided by the platform.
+
+        :param enrichment: The enrichment of this ConversationNormalizedMessage.
+        :type: ConversationEnrichment
+        """
+        
+
+        self._enrichment = enrichment
 
     @property
     def byo_sms_integration_id(self) -> str:

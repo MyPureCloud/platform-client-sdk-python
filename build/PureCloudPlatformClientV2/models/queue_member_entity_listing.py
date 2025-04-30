@@ -52,29 +52,29 @@ class QueueMemberEntityListing(object):
             'entities': 'list[QueueMember]',
             'page_number': 'int',
             'page_size': 'int',
-            'first_uri': 'str',
-            'self_uri': 'str',
             'next_uri': 'str',
-            'previous_uri': 'str'
+            'previous_uri': 'str',
+            'first_uri': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'page_number': 'pageNumber',
             'page_size': 'pageSize',
-            'first_uri': 'firstUri',
-            'self_uri': 'selfUri',
             'next_uri': 'nextUri',
-            'previous_uri': 'previousUri'
+            'previous_uri': 'previousUri',
+            'first_uri': 'firstUri',
+            'self_uri': 'selfUri'
         }
 
         self._entities = None
         self._page_number = None
         self._page_size = None
-        self._first_uri = None
-        self._self_uri = None
         self._next_uri = None
         self._previous_uri = None
+        self._first_uri = None
+        self._self_uri = None
 
     @property
     def entities(self) -> List['QueueMember']:
@@ -149,54 +149,6 @@ class QueueMemberEntityListing(object):
         self._page_size = page_size
 
     @property
-    def first_uri(self) -> str:
-        """
-        Gets the first_uri of this QueueMemberEntityListing.
-
-
-        :return: The first_uri of this QueueMemberEntityListing.
-        :rtype: str
-        """
-        return self._first_uri
-
-    @first_uri.setter
-    def first_uri(self, first_uri: str) -> None:
-        """
-        Sets the first_uri of this QueueMemberEntityListing.
-
-
-        :param first_uri: The first_uri of this QueueMemberEntityListing.
-        :type: str
-        """
-        
-
-        self._first_uri = first_uri
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this QueueMemberEntityListing.
-
-
-        :return: The self_uri of this QueueMemberEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this QueueMemberEntityListing.
-
-
-        :param self_uri: The self_uri of this QueueMemberEntityListing.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this QueueMemberEntityListing.
@@ -243,6 +195,54 @@ class QueueMemberEntityListing(object):
         
 
         self._previous_uri = previous_uri
+
+    @property
+    def first_uri(self) -> str:
+        """
+        Gets the first_uri of this QueueMemberEntityListing.
+
+
+        :return: The first_uri of this QueueMemberEntityListing.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri: str) -> None:
+        """
+        Sets the first_uri of this QueueMemberEntityListing.
+
+
+        :param first_uri: The first_uri of this QueueMemberEntityListing.
+        :type: str
+        """
+        
+
+        self._first_uri = first_uri
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this QueueMemberEntityListing.
+
+
+        :return: The self_uri of this QueueMemberEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this QueueMemberEntityListing.
+
+
+        :param self_uri: The self_uri of this QueueMemberEntityListing.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

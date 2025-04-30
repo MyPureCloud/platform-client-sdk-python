@@ -8,7 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **source_type** | str |  | [optional] |
 | **source_id** | str |  | [optional] |
+| **source_outcome** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

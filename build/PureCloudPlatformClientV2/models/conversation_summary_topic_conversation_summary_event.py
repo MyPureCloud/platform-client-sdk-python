@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationSummaryTopicConversationFollowupAction
     from . import ConversationSummaryTopicConversationHeadline
     from . import ConversationSummaryTopicConversationReason
     from . import ConversationSummaryTopicConversationResolution
@@ -68,6 +69,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'headline': 'ConversationSummaryTopicConversationHeadline',
             'reason': 'ConversationSummaryTopicConversationReason',
             'resolution': 'ConversationSummaryTopicConversationResolution',
+            'followup_actions': 'list[ConversationSummaryTopicConversationFollowupAction]',
             'wrap_up_codes': 'list[ConversationSummaryTopicConversationWrapUpCode]',
             'trigger_source': 'ConversationSummaryTopicTriggerSource',
             'last_edited_by': 'ConversationSummaryTopicConversationSummaryParticipant',
@@ -89,6 +91,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'headline': 'headline',
             'reason': 'reason',
             'resolution': 'resolution',
+            'followup_actions': 'followupActions',
             'wrap_up_codes': 'wrapUpCodes',
             'trigger_source': 'triggerSource',
             'last_edited_by': 'lastEditedBy',
@@ -109,6 +112,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         self._headline = None
         self._reason = None
         self._resolution = None
+        self._followup_actions = None
         self._wrap_up_codes = None
         self._trigger_source = None
         self._last_edited_by = None
@@ -436,6 +440,30 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         
 
         self._resolution = resolution
+
+    @property
+    def followup_actions(self) -> List['ConversationSummaryTopicConversationFollowupAction']:
+        """
+        Gets the followup_actions of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :return: The followup_actions of this ConversationSummaryTopicConversationSummaryEvent.
+        :rtype: list[ConversationSummaryTopicConversationFollowupAction]
+        """
+        return self._followup_actions
+
+    @followup_actions.setter
+    def followup_actions(self, followup_actions: List['ConversationSummaryTopicConversationFollowupAction']) -> None:
+        """
+        Sets the followup_actions of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :param followup_actions: The followup_actions of this ConversationSummaryTopicConversationSummaryEvent.
+        :type: list[ConversationSummaryTopicConversationFollowupAction]
+        """
+        
+
+        self._followup_actions = followup_actions
 
     @property
     def wrap_up_codes(self) -> List['ConversationSummaryTopicConversationWrapUpCode']:

@@ -22,9 +22,10 @@
 | **sign_authn_requests** | bool |  | [optional] |
 | **provider_name** | str |  | [optional] |
 | **display_on_login** | bool |  | [optional] |
+| **metadata_url** | str |  | [optional] |
 | **endpoint_compression** | bool |  | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

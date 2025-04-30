@@ -52,8 +52,8 @@ class TopicsEntityListing(object):
             'entities': 'list[ListedTopic]',
             'page_size': 'int',
             'total': 'int',
-            'self_uri': 'str',
             'next_uri': 'str',
+            'self_uri': 'str',
             'page_count': 'int'
         }
 
@@ -61,16 +61,16 @@ class TopicsEntityListing(object):
             'entities': 'entities',
             'page_size': 'pageSize',
             'total': 'total',
-            'self_uri': 'selfUri',
             'next_uri': 'nextUri',
+            'self_uri': 'selfUri',
             'page_count': 'pageCount'
         }
 
         self._entities = None
         self._page_size = None
         self._total = None
-        self._self_uri = None
         self._next_uri = None
+        self._self_uri = None
         self._page_count = None
 
     @property
@@ -146,30 +146,6 @@ class TopicsEntityListing(object):
         self._total = total
 
     @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this TopicsEntityListing.
-
-
-        :return: The self_uri of this TopicsEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this TopicsEntityListing.
-
-
-        :param self_uri: The self_uri of this TopicsEntityListing.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this TopicsEntityListing.
@@ -192,6 +168,30 @@ class TopicsEntityListing(object):
         
 
         self._next_uri = next_uri
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this TopicsEntityListing.
+
+
+        :return: The self_uri of this TopicsEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this TopicsEntityListing.
+
+
+        :param self_uri: The self_uri of this TopicsEntityListing.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     @property
     def page_count(self) -> int:

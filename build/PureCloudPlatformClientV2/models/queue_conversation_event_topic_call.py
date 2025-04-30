@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import QueueConversationEventTopicErrorDetails
     from . import QueueConversationEventTopicFaxStatus
     from . import QueueConversationEventTopicQueueMediaSettings
+    from . import QueueConversationEventTopicRecordersState
     from . import QueueConversationEventTopicWrapup
 
 class QueueConversationEventTopicCall(object):
@@ -60,6 +61,7 @@ class QueueConversationEventTopicCall(object):
             'initial_state': 'str',
             'recording': 'bool',
             'recording_state': 'str',
+            'recorders_state': 'QueueConversationEventTopicRecordersState',
             'muted': 'bool',
             'confined': 'bool',
             'held': 'bool',
@@ -93,6 +95,7 @@ class QueueConversationEventTopicCall(object):
             'initial_state': 'initialState',
             'recording': 'recording',
             'recording_state': 'recordingState',
+            'recorders_state': 'recordersState',
             'muted': 'muted',
             'confined': 'confined',
             'held': 'held',
@@ -125,6 +128,7 @@ class QueueConversationEventTopicCall(object):
         self._initial_state = None
         self._recording = None
         self._recording_state = None
+        self._recorders_state = None
         self._muted = None
         self._confined = None
         self._held = None
@@ -285,6 +289,30 @@ class QueueConversationEventTopicCall(object):
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state
+
+    @property
+    def recorders_state(self) -> 'QueueConversationEventTopicRecordersState':
+        """
+        Gets the recorders_state of this QueueConversationEventTopicCall.
+
+
+        :return: The recorders_state of this QueueConversationEventTopicCall.
+        :rtype: QueueConversationEventTopicRecordersState
+        """
+        return self._recorders_state
+
+    @recorders_state.setter
+    def recorders_state(self, recorders_state: 'QueueConversationEventTopicRecordersState') -> None:
+        """
+        Sets the recorders_state of this QueueConversationEventTopicCall.
+
+
+        :param recorders_state: The recorders_state of this QueueConversationEventTopicCall.
+        :type: QueueConversationEventTopicRecordersState
+        """
+        
+
+        self._recorders_state = recorders_state
 
     @property
     def muted(self) -> bool:

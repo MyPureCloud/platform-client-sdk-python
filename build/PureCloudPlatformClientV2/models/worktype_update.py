@@ -130,6 +130,12 @@ class WorktypeUpdate(object):
         :type: str
         """
         
+        if len(name) > 256:
+            raise ValueError("Invalid value for `name`, length must be less than `256`")
+
+        if len(name) < 3:
+            raise ValueError("Invalid value for `name`, length must be greater than or equal to `3`")
+
 
         self._name = name
 
@@ -154,6 +160,9 @@ class WorktypeUpdate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', default_workbin_id):
+            raise ValueError("Invalid value for `default_workbin_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._default_workbin_id = default_workbin_id
 
@@ -178,6 +187,12 @@ class WorktypeUpdate(object):
         :type: int
         """
         
+        if default_duration_seconds > 31536000:
+            raise ValueError("Invalid value for `default_duration_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_duration_seconds < 0:
+            raise ValueError("Invalid value for `default_duration_seconds`, must be a value greater than or equal to `0`")
+
 
         self._default_duration_seconds = default_duration_seconds
 
@@ -202,6 +217,12 @@ class WorktypeUpdate(object):
         :type: int
         """
         
+        if default_expiration_seconds > 31536000:
+            raise ValueError("Invalid value for `default_expiration_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_expiration_seconds < 0:
+            raise ValueError("Invalid value for `default_expiration_seconds`, must be a value greater than or equal to `0`")
+
 
         self._default_expiration_seconds = default_expiration_seconds
 
@@ -226,6 +247,12 @@ class WorktypeUpdate(object):
         :type: int
         """
         
+        if default_due_duration_seconds > 31536000:
+            raise ValueError("Invalid value for `default_due_duration_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_due_duration_seconds < 0:
+            raise ValueError("Invalid value for `default_due_duration_seconds`, must be a value greater than or equal to `0`")
+
 
         self._default_due_duration_seconds = default_due_duration_seconds
 
@@ -250,6 +277,12 @@ class WorktypeUpdate(object):
         :type: int
         """
         
+        if default_priority > 25000000:
+            raise ValueError("Invalid value for `default_priority`, must be a value less than or equal to `25000000`")
+
+        if default_priority < -25000000:
+            raise ValueError("Invalid value for `default_priority`, must be a value greater than or equal to `-25000000`")
+
 
         self._default_priority = default_priority
 
@@ -274,6 +307,12 @@ class WorktypeUpdate(object):
         :type: int
         """
         
+        if default_ttl_seconds > 31536000:
+            raise ValueError("Invalid value for `default_ttl_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_ttl_seconds < 86400:
+            raise ValueError("Invalid value for `default_ttl_seconds`, must be a value greater than or equal to `86400`")
+
 
         self._default_ttl_seconds = default_ttl_seconds
 
@@ -322,6 +361,9 @@ class WorktypeUpdate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', schema_id):
+            raise ValueError("Invalid value for `schema_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._schema_id = schema_id
 
@@ -407,7 +449,7 @@ class WorktypeUpdate(object):
     def default_status_id(self) -> str:
         """
         Gets the default_status_id of this WorktypeUpdate.
-        The ID of the default status for Workitems created from the Worktype.
+        The ID of the default status for Workitems created from the Worktype. Must be a valid UUID.
 
         :return: The default_status_id of this WorktypeUpdate.
         :rtype: str
@@ -418,12 +460,15 @@ class WorktypeUpdate(object):
     def default_status_id(self, default_status_id: str) -> None:
         """
         Sets the default_status_id of this WorktypeUpdate.
-        The ID of the default status for Workitems created from the Worktype.
+        The ID of the default status for Workitems created from the Worktype. Must be a valid UUID.
 
         :param default_status_id: The default_status_id of this WorktypeUpdate.
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', default_status_id):
+            raise ValueError("Invalid value for `default_status_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._default_status_id = default_status_id
 

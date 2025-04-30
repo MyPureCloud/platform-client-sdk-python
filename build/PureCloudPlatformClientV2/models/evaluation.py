@@ -71,7 +71,9 @@ class Evaluation(object):
             'assignee_applicable': 'bool',
             'release_date': 'datetime',
             'assigned_date': 'datetime',
+            'created_date': 'datetime',
             'changed_date': 'datetime',
+            'submitted_date': 'datetime',
             'revision_created_date': 'datetime',
             'queue': 'Queue',
             'media_type': 'list[str]',
@@ -108,7 +110,9 @@ class Evaluation(object):
             'assignee_applicable': 'assigneeApplicable',
             'release_date': 'releaseDate',
             'assigned_date': 'assignedDate',
+            'created_date': 'createdDate',
             'changed_date': 'changedDate',
+            'submitted_date': 'submittedDate',
             'revision_created_date': 'revisionCreatedDate',
             'queue': 'queue',
             'media_type': 'mediaType',
@@ -144,7 +148,9 @@ class Evaluation(object):
         self._assignee_applicable = None
         self._release_date = None
         self._assigned_date = None
+        self._created_date = None
         self._changed_date = None
+        self._submitted_date = None
         self._revision_created_date = None
         self._queue = None
         self._media_type = None
@@ -507,6 +513,30 @@ class Evaluation(object):
         self._assigned_date = assigned_date
 
     @property
+    def created_date(self) -> datetime:
+        """
+        Gets the created_date of this Evaluation.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The created_date of this Evaluation.
+        :rtype: datetime
+        """
+        return self._created_date
+
+    @created_date.setter
+    def created_date(self, created_date: datetime) -> None:
+        """
+        Sets the created_date of this Evaluation.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param created_date: The created_date of this Evaluation.
+        :type: datetime
+        """
+        
+
+        self._created_date = created_date
+
+    @property
     def changed_date(self) -> datetime:
         """
         Gets the changed_date of this Evaluation.
@@ -529,6 +559,30 @@ class Evaluation(object):
         
 
         self._changed_date = changed_date
+
+    @property
+    def submitted_date(self) -> datetime:
+        """
+        Gets the submitted_date of this Evaluation.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The submitted_date of this Evaluation.
+        :rtype: datetime
+        """
+        return self._submitted_date
+
+    @submitted_date.setter
+    def submitted_date(self, submitted_date: datetime) -> None:
+        """
+        Sets the submitted_date of this Evaluation.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param submitted_date: The submitted_date of this Evaluation.
+        :type: datetime
+        """
+        
+
+        self._submitted_date = submitted_date
 
     @property
     def revision_created_date(self) -> datetime:
@@ -630,7 +684,7 @@ class Evaluation(object):
     def conversation_date(self) -> datetime:
         """
         Gets the conversation_date of this Evaluation.
-        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Creation date of the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The conversation_date of this Evaluation.
         :rtype: datetime
@@ -641,7 +695,7 @@ class Evaluation(object):
     def conversation_date(self, conversation_date: datetime) -> None:
         """
         Sets the conversation_date of this Evaluation.
-        Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Creation date of the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param conversation_date: The conversation_date of this Evaluation.
         :type: datetime

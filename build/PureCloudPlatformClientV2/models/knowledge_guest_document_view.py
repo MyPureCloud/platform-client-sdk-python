@@ -162,7 +162,7 @@ class KnowledgeGuestDocumentView(object):
         """
         if isinstance(query_type, int):
             query_type = str(query_type)
-        allowed_values = ["Unknown", "Article", "AutoSearch", "Category", "ManualSearch", "Recommendation", "Suggestion"]
+        allowed_values = ["Unknown", "Article", "AutoSearch", "Category", "ManualSearch", "Recommendation", "Suggestion", "ExpandedArticle"]
         if query_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_type -> " + query_type)
             self._query_type = "outdated_sdk_version"
@@ -173,7 +173,7 @@ class KnowledgeGuestDocumentView(object):
     def surfacing_method(self) -> str:
         """
         Gets the surfacing_method of this KnowledgeGuestDocumentView.
-        The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+        The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown.
 
         :return: The surfacing_method of this KnowledgeGuestDocumentView.
         :rtype: str
@@ -184,14 +184,14 @@ class KnowledgeGuestDocumentView(object):
     def surfacing_method(self, surfacing_method: str) -> None:
         """
         Sets the surfacing_method of this KnowledgeGuestDocumentView.
-        The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+        The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown.
 
         :param surfacing_method: The surfacing_method of this KnowledgeGuestDocumentView.
         :type: str
         """
         if isinstance(surfacing_method, int):
             surfacing_method = str(surfacing_method)
-        allowed_values = ["Unknown", "Article", "Snippet", "Highlight"]
+        allowed_values = ["Unknown", "Article", "Snippet", "Highlight", "Generative"]
         if surfacing_method.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for surfacing_method -> " + surfacing_method)
             self._surfacing_method = "outdated_sdk_version"

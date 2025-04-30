@@ -47,14 +47,17 @@ class NotificationsSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enabled': 'bool'
+            'enabled': 'bool',
+            'notification_content_type': 'str'
         }
 
         self.attribute_map = {
-            'enabled': 'enabled'
+            'enabled': 'enabled',
+            'notification_content_type': 'notificationContentType'
         }
 
         self._enabled = None
+        self._notification_content_type = None
 
     @property
     def enabled(self) -> bool:
@@ -79,6 +82,35 @@ class NotificationsSettings(object):
         
 
         self._enabled = enabled
+
+    @property
+    def notification_content_type(self) -> str:
+        """
+        Gets the notification_content_type of this NotificationsSettings.
+        The notification content type settings for messenger
+
+        :return: The notification_content_type of this NotificationsSettings.
+        :rtype: str
+        """
+        return self._notification_content_type
+
+    @notification_content_type.setter
+    def notification_content_type(self, notification_content_type: str) -> None:
+        """
+        Sets the notification_content_type of this NotificationsSettings.
+        The notification content type settings for messenger
+
+        :param notification_content_type: The notification_content_type of this NotificationsSettings.
+        :type: str
+        """
+        if isinstance(notification_content_type, int):
+            notification_content_type = str(notification_content_type)
+        allowed_values = ["IncludeMessagesContent", "ExcludeMessagesContent"]
+        if notification_content_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for notification_content_type -> " + notification_content_type)
+            self._notification_content_type = "outdated_sdk_version"
+        else:
+            self._notification_content_type = notification_content_type
 
     def to_dict(self):
         """

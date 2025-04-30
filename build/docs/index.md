@@ -5,7 +5,7 @@
 
 Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-Documentation version PureCloudPlatformClientV2 226.0.0
+Documentation version PureCloudPlatformClientV2 227.0.0
 
 ## Preview APIs
 
@@ -379,6 +379,39 @@ worktype_update.default_queue_id = PureCloudPlatformClientV2.ApiNullValue()
 task_api.patch_taskmanagement_worktype(worktype_id, worktype_update)
 ```
 
+### Managing updates in Platform API Enumerations
+
+The Platform API Client SDKs (Java, Javascript/NodeJs, Python, Go, .Net, iOS/Swift) are automatically generated using the Platform API OpenAPI v2 definition.
+The Platform API definition file is downloaded at the time of the SDK build and is used to generate operations (i.e. API methods) and definitions (i.e. classes for the different models, enumerations, ...) in the different SDK languages.
+
+The Python Platform API Client SDK implements the following strategy to manage the introduction of new enumeration values in the Platform API (i.e. in a version of the SDK which doesn't include these changes):
+* If an unknown enumeration value is received (i.e. a new enumeration value, introduced in Platform API, after the SDK version you are using was built), the SDK will map it to a `outdated_sdk_version` string value. This is to prevent errors during deserialization when an unknown enumeration value is received from Genesys Cloud.
+
+## Inject Custom HTTP Client
+By default, the SDK uses the urllib3 library as the default HTTP client. If you want to inject a new third-party/custom implementation of the client, you can set the HTTP client instance.
+
+The CustomHttpClient should be a class that inherits from AbstractHttpClient defined in the SDK and implements the request method. Here's an example:
+
+```python
+from PureCloudPlatformClientV2 import AbstractHttpClient
+import requests
+
+class CustomHttpClient(AbstractHttpClient):
+    def __init__(self):
+        super().__init__()
+        self._session = requests.Session()
+
+    def request(self, options):
+        return self._session.request(**options)
+
+# Initialize the API client
+api_client = PureCloudPlatformClientV2.api_client.ApiClient()
+
+# Create and set custom HTTP client
+http_client = CustomHttpClient()
+api_client.set_http_client(http_client)
+
+
 ## SDK Source Code Generation
 
 The SDK is automatically regenerated and published from the API's definition after each API release. For more information on the build process, see the [platform-client-sdk-common](https://github.com/MyPureCloud/platform-client-sdk-common) project.
@@ -391,4 +424,4 @@ The SDK's version is incremented according to the [Semantic Versioning Specifica
 
 This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
 
-For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.genesys.cloud/forum/).
+For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Community](https://community.genesys.com/communities/community-home1/digestviewer?CommunityKey=a39cc4d6-857e-43cb-be7b-019581ab9f38).

@@ -40,7 +40,7 @@ if TYPE_CHECKING:
     from . import ConversationEventTopicEmail
     from . import ConversationEventTopicInternalMessage
     from . import ConversationEventTopicMessage
-    from . import ConversationEventTopicScreenshare
+    from . import ConversationEventTopicScreenShare
     from . import ConversationEventTopicSocialExpression
     from . import ConversationEventTopicVideo
     from . import ConversationEventTopicWorkflow
@@ -98,7 +98,7 @@ class ConversationEventTopicParticipant(object):
             'emails': 'list[ConversationEventTopicEmail]',
             'messages': 'list[ConversationEventTopicMessage]',
             'internal_messages': 'list[ConversationEventTopicInternalMessage]',
-            'screenshares': 'list[ConversationEventTopicScreenshare]',
+            'screenshares': 'list[ConversationEventTopicScreenShare]',
             'social_expressions': 'list[ConversationEventTopicSocialExpression]',
             'videos': 'list[ConversationEventTopicVideo]',
             'workflow': 'ConversationEventTopicWorkflow'
@@ -1084,24 +1084,24 @@ class ConversationEventTopicParticipant(object):
         self._internal_messages = internal_messages
 
     @property
-    def screenshares(self) -> List['ConversationEventTopicScreenshare']:
+    def screenshares(self) -> List['ConversationEventTopicScreenShare']:
         """
         Gets the screenshares of this ConversationEventTopicParticipant.
 
 
         :return: The screenshares of this ConversationEventTopicParticipant.
-        :rtype: list[ConversationEventTopicScreenshare]
+        :rtype: list[ConversationEventTopicScreenShare]
         """
         return self._screenshares
 
     @screenshares.setter
-    def screenshares(self, screenshares: List['ConversationEventTopicScreenshare']) -> None:
+    def screenshares(self, screenshares: List['ConversationEventTopicScreenShare']) -> None:
         """
         Sets the screenshares of this ConversationEventTopicParticipant.
 
 
         :param screenshares: The screenshares of this ConversationEventTopicParticipant.
-        :type: list[ConversationEventTopicScreenshare]
+        :type: list[ConversationEventTopicScreenShare]
         """
         
 

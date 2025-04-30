@@ -20,7 +20,9 @@ Copyright 2016 SmartBear Software
 
 from __future__ import absolute_import
 from . import models
-from .rest import RESTClientObject
+from .abstract_http_client import AbstractHttpClient
+from .default_http_client import DefaultHttpClient
+from .http_request_options import HttpRequestOptions
 from .rest import ApiException
 from .api_null_value import ApiNullValue
 
@@ -76,7 +78,7 @@ class ApiClient(object):
         """
         Constructor of the class.
         """
-        self.rest_client = RESTClientObject()
+        self.http_client = None
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value
@@ -133,6 +135,21 @@ class ApiClient(object):
                         url = url + "/" + self.gateway_configuration.path_params_api
                 return url
 
+    def get_http_client(self):
+        if self.http_client is None:
+            self.http_client = DefaultHttpClient()
+        
+        return self.http_client
+
+    def set_http_client(self, http_client):
+        if http_client is None:
+            raise ValueError("http_client cannot be None")
+
+        if not isinstance(http_client, AbstractHttpClient):
+            raise ValueError("http_client must be an instance of AbstractHttpClient")
+
+        self.http_client = http_client
+
     def get_client_credentials_token(self, client_id, client_secret):
         """
         :param client_id: Client ID to authenticate with
@@ -155,10 +172,13 @@ class ApiClient(object):
         header_params = self.sanitize_for_serialization(header_params)
         post_params = self.sanitize_for_serialization(post_params)
 
-        response = self.request("POST", url,
-                                query_params=query_params,
-                                headers=header_params,
-                                post_params=post_params, body=body);
+        request_options = HttpRequestOptions(url = url, method = "POST", 
+                                             headers = header_params, 
+                                             post_params = post_params, 
+                                             body = body)
+        http_client  = self.get_http_client()
+        response = http_client.request(request_options)
+
         data = json.loads('[' + response.data + ']')
         self.access_token = data[0]["access_token"]
         return self;
@@ -190,10 +210,13 @@ class ApiClient(object):
         header_params = self.sanitize_for_serialization(header_params)
         post_params = self.sanitize_for_serialization(post_params)
 
-        response = self.request("POST", url,
-                                query_params=query_params,
-                                headers=header_params,
-                                post_params=post_params, body=body);
+        request_options = HttpRequestOptions(url = url, method = "POST", 
+                                             headers = header_params, 
+                                             post_params = post_params, 
+                                             body = body)
+        http_client  = self.get_http_client()
+        response = http_client.request(request_options)
+
         data = json.loads('[' + response.data + ']')
         self.access_token = data[0]["access_token"]
         return self;  
@@ -228,12 +251,14 @@ class ApiClient(object):
         header_params = self.sanitize_for_serialization(header_params)
         post_params = self.sanitize_for_serialization(post_params)
 
-        response = self.request("POST", url,
-                                query_params=query_params,
-                                headers=header_params,
-                                post_params=post_params, body=body)
-        data = json.loads('[' + response.data + ']')
+        request_options = HttpRequestOptions(url = url, method = "POST", 
+                                             headers = header_params, 
+                                             post_params = post_params, 
+                                             body = body)
+        http_client  = self.get_http_client()
+        response = http_client.request(request_options)
 
+        data = json.loads('[' + response.data + ']')
         self.access_token = data[0]["access_token"]
         self.refresh_token = data[0]["refresh_token"]
 
@@ -264,12 +289,14 @@ class ApiClient(object):
         header_params = self.sanitize_for_serialization(header_params)
         post_params = self.sanitize_for_serialization(post_params)
 
-        response = self.request("POST", url,
-                                query_params=query_params,
-                                headers=header_params,
-                                post_params=post_params, body=body)
-        data = json.loads('[' + response.data + ']')
+        request_options = HttpRequestOptions(url = url, method = "POST", 
+                                             headers = header_params, 
+                                             post_params = post_params, 
+                                             body = body)
+        http_client  = self.get_http_client()
+        response = http_client.request(request_options)
 
+        data = json.loads('[' + response.data + ']')
         self.access_token = data[0]["access_token"]
         self.refresh_token = data[0]["refresh_token"]
 
@@ -325,12 +352,14 @@ class ApiClient(object):
         header_params = self.sanitize_for_serialization(header_params)
         post_params = self.sanitize_for_serialization(post_params)
 
-        response = self.request("POST", url,
-                                query_params=query_params,
-                                headers=header_params,
-                                post_params=post_params, body=body)
-        data = json.loads('[' + response.data + ']')
+        request_options = HttpRequestOptions(url = url, method = "POST", 
+                                             headers = header_params,
+                                             post_params = post_params, 
+                                             body = body)
+        http_client  = self.get_http_client()
+        response = http_client.request(request_options)
 
+        data = json.loads('[' + response.data + ']')
         self.access_token = data[0]["access_token"]
 
         return self, data[0]
@@ -390,7 +419,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '226.0.0'
+        header_params['purecloud-sdk'] = '227.0.0'
 
         # path parameters
         if path_params:
@@ -435,8 +464,13 @@ class ApiClient(object):
 
         try:
             # perform request and return response
-            response_data = self.request(method, url, query_params=query_params,
-                                        headers=header_params, post_params=post_params, body=body)
+            request_options = HttpRequestOptions(url = url, method = method, 
+                                                headers = header_params, 
+                                                query_params = query_params,
+                                                post_params = post_params, 
+                                                body = body)
+            http_client  = self.get_http_client()
+            response_data = http_client.request(request_options)                                                    
             Configuration().logger.trace(method, log_url, body, response_data.status, header_params, response_data.getheaders())
             Configuration().logger.debug(method, log_url, body, response_data.status, header_params)
         except ApiException as e:
@@ -644,54 +678,6 @@ class ApiClient(object):
                                             callback))
         thread.start()
         return thread
-
-    def request(self, method, url, query_params=None, headers=None,
-                post_params=None, body=None):
-        """
-        Makes the HTTP request using RESTClient.
-        """
-        if method == "GET":
-            return self.rest_client.GET(url,
-                                        query_params=query_params,
-                                        headers=headers)
-        elif method == "HEAD":
-            return self.rest_client.HEAD(url,
-                                         query_params=query_params,
-                                         headers=headers)
-        elif method == "OPTIONS":
-            return self.rest_client.OPTIONS(url,
-                                            query_params=query_params,
-                                            headers=headers,
-                                            post_params=post_params,
-                                            body=body)
-        elif method == "POST":
-            return self.rest_client.POST(url,
-                                         query_params=query_params,
-                                         headers=headers,
-                                         post_params=post_params,
-                                         body=body)
-        elif method == "PUT":
-            return self.rest_client.PUT(url,
-                                        query_params=query_params,
-                                        headers=headers,
-                                        post_params=post_params,
-                                        body=body)
-        elif method == "PATCH":
-            return self.rest_client.PATCH(url,
-                                          query_params=query_params,
-                                          headers=headers,
-                                          post_params=post_params,
-                                          body=body)
-        elif method == "DELETE":
-            return self.rest_client.DELETE(url,
-                                           query_params=query_params,
-                                           headers=headers,
-                                           body=body)
-        else:
-            raise ValueError(
-                "http method must be `GET`, `HEAD`,"
-                " `POST`, `PATCH`, `PUT` or `DELETE`."
-            )
 
     def prepare_post_parameters(self, post_params=None, files=None):
         """

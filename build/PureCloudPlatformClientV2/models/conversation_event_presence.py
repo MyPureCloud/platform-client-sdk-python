@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ConversationContentReceivedReplyMessage
 
 class ConversationEventPresence(object):
     """
@@ -47,14 +49,20 @@ class ConversationEventPresence(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'type': 'str'
+            'type': 'str',
+            'received_message': 'ConversationContentReceivedReplyMessage',
+            'reply_message': 'ConversationContentReceivedReplyMessage'
         }
 
         self.attribute_map = {
-            'type': 'type'
+            'type': 'type',
+            'received_message': 'receivedMessage',
+            'reply_message': 'replyMessage'
         }
 
         self._type = None
+        self._received_message = None
+        self._reply_message = None
 
     @property
     def type(self) -> str:
@@ -78,12 +86,60 @@ class ConversationEventPresence(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Join", "Disconnect", "Clear", "SignIn", "SessionExpired"]
+        allowed_values = ["Join", "Disconnect", "Clear", "SignIn", "SessionExpired", "Authenticate"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def received_message(self) -> 'ConversationContentReceivedReplyMessage':
+        """
+        Gets the received_message of this ConversationEventPresence.
+        The message displayed in the received message bubble.
+
+        :return: The received_message of this ConversationEventPresence.
+        :rtype: ConversationContentReceivedReplyMessage
+        """
+        return self._received_message
+
+    @received_message.setter
+    def received_message(self, received_message: 'ConversationContentReceivedReplyMessage') -> None:
+        """
+        Sets the received_message of this ConversationEventPresence.
+        The message displayed in the received message bubble.
+
+        :param received_message: The received_message of this ConversationEventPresence.
+        :type: ConversationContentReceivedReplyMessage
+        """
+        
+
+        self._received_message = received_message
+
+    @property
+    def reply_message(self) -> 'ConversationContentReceivedReplyMessage':
+        """
+        Gets the reply_message of this ConversationEventPresence.
+        The message displayed in the reply message bubble.
+
+        :return: The reply_message of this ConversationEventPresence.
+        :rtype: ConversationContentReceivedReplyMessage
+        """
+        return self._reply_message
+
+    @reply_message.setter
+    def reply_message(self, reply_message: 'ConversationContentReceivedReplyMessage') -> None:
+        """
+        Sets the reply_message of this ConversationEventPresence.
+        The message displayed in the reply message bubble.
+
+        :param reply_message: The reply_message of this ConversationEventPresence.
+        :type: ConversationContentReceivedReplyMessage
+        """
+        
+
+        self._reply_message = reply_message
 
     def to_dict(self):
         """

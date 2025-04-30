@@ -18,9 +18,10 @@
 | **last_modified_user** | [AddressableEntityRef](AddressableEntityRef) | A reference to the user who most recently modified the deployment | [optional] |
 | **flow** | [WebDeploymentFlowEntityRef](WebDeploymentFlowEntityRef) | A reference to the inboundshortmessage flow used by this deployment | [optional] |
 | **status** | str | The current status of the deployment | [optional] |
+| **push_integrations** | [list[PushIntegration]](PushIntegration) | The push integration objects associated with the deployment | [optional] |
 | **configuration** | [WebDeploymentConfigurationVersionResponse](WebDeploymentConfigurationVersionResponse) | The config version this deployment uses | |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

@@ -181,6 +181,12 @@ class WorktypeCreate(object):
         :type: int
         """
         
+        if default_duration_seconds > 31536000:
+            raise ValueError("Invalid value for `default_duration_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_duration_seconds < 0:
+            raise ValueError("Invalid value for `default_duration_seconds`, must be a value greater than or equal to `0`")
+
 
         self._default_duration_seconds = default_duration_seconds
 
@@ -205,6 +211,12 @@ class WorktypeCreate(object):
         :type: int
         """
         
+        if default_expiration_seconds > 31536000:
+            raise ValueError("Invalid value for `default_expiration_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_expiration_seconds < 0:
+            raise ValueError("Invalid value for `default_expiration_seconds`, must be a value greater than or equal to `0`")
+
 
         self._default_expiration_seconds = default_expiration_seconds
 
@@ -229,6 +241,12 @@ class WorktypeCreate(object):
         :type: int
         """
         
+        if default_due_duration_seconds > 31536000:
+            raise ValueError("Invalid value for `default_due_duration_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_due_duration_seconds < 0:
+            raise ValueError("Invalid value for `default_due_duration_seconds`, must be a value greater than or equal to `0`")
+
 
         self._default_due_duration_seconds = default_due_duration_seconds
 
@@ -253,6 +271,12 @@ class WorktypeCreate(object):
         :type: int
         """
         
+        if default_priority > 25000000:
+            raise ValueError("Invalid value for `default_priority`, must be a value less than or equal to `25000000`")
+
+        if default_priority < -25000000:
+            raise ValueError("Invalid value for `default_priority`, must be a value greater than or equal to `-25000000`")
+
 
         self._default_priority = default_priority
 
@@ -277,6 +301,12 @@ class WorktypeCreate(object):
         :type: int
         """
         
+        if default_ttl_seconds > 31536000:
+            raise ValueError("Invalid value for `default_ttl_seconds`, must be a value less than or equal to `31536000`")
+
+        if default_ttl_seconds < 86400:
+            raise ValueError("Invalid value for `default_ttl_seconds`, must be a value greater than or equal to `86400`")
+
 
         self._default_ttl_seconds = default_ttl_seconds
 
@@ -325,6 +355,9 @@ class WorktypeCreate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', schema_id):
+            raise ValueError("Invalid value for `schema_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._schema_id = schema_id
 
@@ -403,6 +436,12 @@ class WorktypeCreate(object):
         :type: str
         """
         
+        if len(description) > 512:
+            raise ValueError("Invalid value for `description`, length must be less than `512`")
+
+        if len(description) < 0:
+            raise ValueError("Invalid value for `description`, length must be greater than or equal to `0`")
+
 
         self._description = description
 
@@ -427,6 +466,9 @@ class WorktypeCreate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', division_id):
+            raise ValueError("Invalid value for `division_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._division_id = division_id
 
@@ -499,6 +541,9 @@ class WorktypeCreate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', default_queue_id):
+            raise ValueError("Invalid value for `default_queue_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._default_queue_id = default_queue_id
 
@@ -523,6 +568,9 @@ class WorktypeCreate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', default_language_id):
+            raise ValueError("Invalid value for `default_language_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._default_language_id = default_language_id
 
@@ -571,6 +619,9 @@ class WorktypeCreate(object):
         :type: str
         """
         
+        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', default_script_id):
+            raise ValueError("Invalid value for `default_script_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
 
         self._default_script_id = default_script_id
 
