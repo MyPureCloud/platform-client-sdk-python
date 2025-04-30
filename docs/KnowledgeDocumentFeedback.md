@@ -15,7 +15,7 @@
 | **session_id** | str | Knowledge guest session ID. | [optional] |
 | **date_created** | datetime | The date and time of the feedback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **query_type** | str | The type of the query that surfaced the document on which the feedback was given. | [optional] |
-| **surfacing_method** | str | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown. | [optional] |
+| **surfacing_method** | str | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown. | [optional] |
 | **state** | str | The state of the feedback. | [optional] |
 | **document** | [KnowledgeDocumentVersionReference](KnowledgeDocumentVersionReference) | The document on which feedback was given. | |
 | **application** | [KnowledgeSearchClientApplication](KnowledgeSearchClientApplication) | The client application from which feedback was given. | |
@@ -25,4 +25,4 @@
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

@@ -900,7 +900,7 @@ except ApiException as e:
 
 ## get_chats_users_me_settings
 
-> [**ChatUserSettings**](ChatUserSettings) get_chats_users_me_settings()
+> [**UserSettingsForChat**](UserSettingsForChat) get_chats_users_me_settings()
 
 
 Get a user's chat settings
@@ -938,7 +938,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings)
+[**UserSettingsForChat**](UserSettingsForChat)
 
 
 ## patch_chats_room
@@ -1198,7 +1198,7 @@ except ApiException as e:
 
 ## patch_chats_users_me_settings
 
-> [**ChatUserSettings**](ChatUserSettings) patch_chats_users_me_settings(body)
+> [**UserSettingsForChat**](UserSettingsForChat) patch_chats_users_me_settings(body)
 
 
 Update a user's chat settings
@@ -1221,7 +1221,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ChatApi()
-body = PureCloudPlatformClientV2.ChatUserSettings() # ChatUserSettings | 
+body = PureCloudPlatformClientV2.UserSettingsForChat() # UserSettingsForChat | 
 
 try:
     # Update a user's chat settings
@@ -1236,11 +1236,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ChatUserSettings**](ChatUserSettings)|  |  |
+| **body** | [**UserSettingsForChat**](UserSettingsForChat)|  |  |
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings)
+[**UserSettingsForChat**](UserSettingsForChat)
 
 
 ## post_chats_room_messages
@@ -1642,4 +1642,4 @@ except ApiException as e:
 [**ChatSettings**](ChatSettings)
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

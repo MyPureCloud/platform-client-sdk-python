@@ -213,6 +213,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_keyconfigurations_validate**](#post_conversations_keyconfigurations_validate) | Validate encryption key configurations without saving it|
 |[**post_conversations_message_communication_messages**](#post_conversations_message_communication_messages) | Send message|
 |[**post_conversations_message_communication_messages_media**](#post_conversations_message_communication_messages_media) | Create media|
+|[**post_conversations_message_communication_messages_media_uploads**](#post_conversations_message_communication_messages_media_uploads) | Create a URL to upload a message media file|
 |[**post_conversations_message_communication_typing**](#post_conversations_message_communication_typing) | Send message typing event|
 |[**post_conversations_message_inbound_open_event**](#post_conversations_message_inbound_open_event) | Send an inbound Open Event Message|
 |[**post_conversations_message_inbound_open_message**](#post_conversations_message_inbound_open_message) | Send inbound Open Message|
@@ -10687,6 +10688,9 @@ except ApiException as e:
 
 > [**MessageMediaData**](MessageMediaData) post_conversations_message_communication_messages_media(conversation_id, communication_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create media
 
@@ -10735,6 +10739,62 @@ except ApiException as e:
 ### Return type
 
 [**MessageMediaData**](MessageMediaData)
+
+
+## post_conversations_message_communication_messages_media_uploads
+
+> [**MessageMediaUploadData**](MessageMediaUploadData) post_conversations_message_communication_messages_media_uploads(conversation_id, communication_id, body)
+
+
+Create a URL to upload a message media file
+
+See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads 
+
+Requires ANY permissions: 
+
+* conversation:message:create
+* conversation:webmessaging:create
+* conversation:socialmedia:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.UploadMediaRequest() # UploadMediaRequest | request
+
+try:
+    # Create a URL to upload a message media file
+    api_response = api_instance.post_conversations_message_communication_messages_media_uploads(conversation_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_communication_messages_media_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**UploadMediaRequest**](UploadMediaRequest)| request |  |
+
+### Return type
+
+[**MessageMediaUploadData**](MessageMediaUploadData)
 
 
 ## post_conversations_message_communication_typing
@@ -13093,4 +13153,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

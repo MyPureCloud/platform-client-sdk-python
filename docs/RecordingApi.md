@@ -1150,7 +1150,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 job_id = 'job_id_example' # str | jobId
 page_size = 25 # int | Page size. Maximum is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
-include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 
 try:
@@ -1169,7 +1169,7 @@ except ApiException as e:
 | **job_id** | **str**| jobId |  |
 | **page_size** | **int**| Page size. Maximum is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+| **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 
 ### Return type
@@ -1209,7 +1209,7 @@ sort_by = ''userId'' # str | Sort by (optional) (default to 'userId')
 state = 'state_example' # str | Filter by state (optional)
 show_only_my_jobs = True # bool | Show only my jobs (optional)
 job_type = 'job_type_example' # str | Job Type (Can be left empty for both) (optional)
-include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. (optional)
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 
 try:
@@ -1231,7 +1231,7 @@ except ApiException as e:
 | **state** | **str**| Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
 | **show_only_my_jobs** | **bool**| Show only my jobs | [optional]  |
 | **job_type** | **str**| Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
-| **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+| **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 
 ### Return type
@@ -2982,4 +2982,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

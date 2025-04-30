@@ -10,10 +10,10 @@
 | **document_version_id** | str | The version of the document whose content was copied. | |
 | **search_id** | str | The search that surfaced the document whose content was copied. | [optional] |
 | **query_type** | str | The type of the query that surfaced the document. | [optional] |
-| **surfacing_method** | str | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown. | [optional] |
+| **surfacing_method** | str | The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.Generative: A generated answer in a snippet was shown. | [optional] |
 | **session_id** | str | Knowledge session ID. | [optional] |
 | **application** | [KnowledgeGuestSearchClientApplication](KnowledgeGuestSearchClientApplication) | The client application in which the document content was copied. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

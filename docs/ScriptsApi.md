@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_scripts**](#get_scripts) | Get the list of scripts|
 |[**get_scripts_divisionviews**](#get_scripts_divisionviews) | Get the metadata for a list of scripts|
 |[**get_scripts_published**](#get_scripts_published) | Get the published scripts.|
+|[**get_scripts_published_divisionview_variables**](#get_scripts_published_divisionview_variables) | Get the published variables|
 |[**get_scripts_published_divisionviews**](#get_scripts_published_divisionviews) | Get the published scripts metadata.|
 |[**get_scripts_published_script_id**](#get_scripts_published_script_id) | Get the published script.|
 |[**get_scripts_published_script_id_page**](#get_scripts_published_script_id_page) | Get the published page.|
@@ -365,6 +366,62 @@ except ApiException as e:
 ### Return type
 
 [**ScriptEntityListing**](ScriptEntityListing)
+
+
+## get_scripts_published_divisionview_variables
+
+> object** get_scripts_published_divisionview_variables(script_id, input=input, output=output, type=type, script_data_version=script_data_version)
+
+
+Get the published variables
+
+Wraps GET /api/v2/scripts/published/divisionviews/{scriptId}/variables 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ScriptsApi()
+script_id = 'script_id_example' # str | Script ID
+input = 'input_example' # str | input (optional)
+output = 'output_example' # str | output (optional)
+type = 'type_example' # str | type (optional)
+script_data_version = 'script_data_version_example' # str | Advanced usage - controls the data version of the script (optional)
+
+try:
+    # Get the published variables
+    api_response = api_instance.get_scripts_published_divisionview_variables(script_id, input=input, output=output, type=type, script_data_version=script_data_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ScriptsApi->get_scripts_published_divisionview_variables: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **script_id** | **str**| Script ID |  |
+| **input** | **str**| input | [optional] <br />**Values**: true, false |
+| **output** | **str**| output | [optional] <br />**Values**: true, false |
+| **type** | **str**| type | [optional] <br />**Values**: string, number, boolean |
+| **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
+
+### Return type
+
+**object**
 
 
 ## get_scripts_published_divisionviews
@@ -787,4 +844,4 @@ except ApiException as e:
 [**Script**](Script)
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

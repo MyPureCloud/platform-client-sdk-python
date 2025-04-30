@@ -43,8 +43,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TextbotsApi()
 bot_type = ['bot_type_example'] # list[str] | Bot types (optional)
 bot_name = 'bot_name_example' # str | Bot name (optional)
-bot_id = ['bot_id_example'] # list[str] | Bot IDs (optional)
-page_size = 25 # int | The maximum results to return (optional) (default to 25)
+bot_id = ['bot_id_example'] # list[str] | Bot IDs. Maximum of 50 (optional)
+page_size = 25 # int | The maximum results to return. Maximum of 100 (optional) (default to 25)
 
 try:
     # Find bots using the currently configured friendly name or ID.
@@ -59,10 +59,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bot_type** | [**list[str]**](str)| Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow |
+| **bot_type** | [**list[str]**](str)| Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector |
 | **bot_name** | **str**| Bot name | [optional]  |
-| **bot_id** | [**list[str]**](str)| Bot IDs | [optional]  |
-| **page_size** | **int**| The maximum results to return | [optional] [default to 25] |
+| **bot_id** | [**list[str]**](str)| Bot IDs. Maximum of 50 | [optional]  |
+| **page_size** | **int**| The maximum results to return. Maximum of 100 | [optional] [default to 25] |
 
 ### Return type
 
@@ -221,4 +221,4 @@ except ApiException as e:
 [**PostTextResponse**](PostTextResponse)
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

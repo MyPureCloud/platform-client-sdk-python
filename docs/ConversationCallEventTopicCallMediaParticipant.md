@@ -50,6 +50,7 @@
 | **confined** | bool |  | [optional] |
 | **recording** | bool |  | [optional] |
 | **recording_state** | str |  | [optional] |
+| **recorders_state** | [ConversationCallEventTopicRecordersState](ConversationCallEventTopicRecordersState) |  | [optional] |
 | **secure_pause** | bool |  | [optional] |
 | **group** | [ConversationCallEventTopicUriReference](ConversationCallEventTopicUriReference) |  | [optional] |
 | **ani** | str |  | [optional] |
@@ -64,4 +65,4 @@
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

@@ -11,8 +11,9 @@
 | **image_url** | str | URL of an image | [optional] |
 | **date_minimum** | datetime | The minimum Date Enabled in the datepicker calendar, format: ISO 8601. | [optional] |
 | **date_maximum** | datetime | The maximum Date Enabled in the datepicker calendar, format: ISO 8601. | [optional] |
+| **location** | [ConversationContentLocation](ConversationContentLocation) | Location of the event. | [optional] |
 | **available_times** | [list[ConversationContentDatePickerAvailableTime]](ConversationContentDatePickerAvailableTime) | An array of available times objects. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

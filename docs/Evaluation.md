@@ -20,12 +20,14 @@
 | **assignee_applicable** | bool | Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable. | [optional] |
 | **release_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **assigned_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **created_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **changed_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **submitted_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **revision_created_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **queue** | [Queue](Queue) |  | [optional] |
 | **media_type** | list[str] | List of different communication types used in conversation. | [optional] |
 | **rescore** | bool | Is only true when evaluation is re-scored. | [optional] |
-| **conversation_date** | datetime | Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **conversation_date** | datetime | Creation date of the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **conversation_end_date** | datetime | End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **never_release** | bool | Signifies if the evaluation is never to be released. This cannot be set true if release date is also set. | [optional] |
 | **assigned** | bool | Set to false to unassign the evaluation. This cannot be set to false when assignee is also set. | [optional] |
@@ -43,4 +45,4 @@
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

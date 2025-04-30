@@ -7,7 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **enabled** | bool | The toggle to enable or disable notifications | [optional] |
+| **notification_content_type** | str | The notification content type settings for messenger | [optional] |
 
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

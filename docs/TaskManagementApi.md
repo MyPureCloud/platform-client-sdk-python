@@ -618,8 +618,6 @@ except ApiException as e:
 
 Get a listing of a workbin's attribute change history
 
-get_taskmanagement_workbin_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/history 
 
 Requires ANY permissions: 
@@ -674,8 +672,6 @@ except ApiException as e:
 
 Get a version of a workbin
 
-get_taskmanagement_workbin_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/versions/{entityVersion} 
 
 Requires ANY permissions: 
@@ -725,8 +721,6 @@ except ApiException as e:
 
 
 Get all versions of a workbin
-
-get_taskmanagement_workbin_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId}/versions 
 
@@ -831,8 +825,6 @@ except ApiException as e:
 
 
 Get a listing of a workitem's attribute change history
-
-get_taskmanagement_workitem_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/history 
 
@@ -946,8 +938,6 @@ except ApiException as e:
 
 Get a version of a workitem
 
-get_taskmanagement_workitem_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/versions/{entityVersion} 
 
 Requires ANY permissions: 
@@ -997,8 +987,6 @@ except ApiException as e:
 
 
 Get all versions of a workitem
-
-get_taskmanagement_workitem_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/versions 
 
@@ -2134,8 +2122,6 @@ except ApiException as e:
 
 Get a listing of a worktype's attribute change history
 
-get_taskmanagement_worktype_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/history 
 
 Requires ANY permissions: 
@@ -2290,8 +2276,6 @@ except ApiException as e:
 
 Get a version of a worktype
 
-get_taskmanagement_worktype_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions/{entityVersion} 
 
 Requires ANY permissions: 
@@ -2341,8 +2325,6 @@ except ApiException as e:
 
 
 Get all versions of a worktype
-
-get_taskmanagement_worktype_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/versions 
 
@@ -3882,4 +3864,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_

@@ -57,7 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_organizations_schemas_coretypes**](#get_externalcontacts_organizations_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**get_externalcontacts_organizations_schemas_limits**](#get_externalcontacts_organizations_schemas_limits) | Get quantitative limits on schemas|
 |[**get_externalcontacts_relationship**](#get_externalcontacts_relationship) | Fetch a relationship|
-|[**get_externalcontacts_reversewhitepageslookup**](#get_externalcontacts_reversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.|
+|[**get_externalcontacts_reversewhitepageslookup**](#get_externalcontacts_reversewhitepageslookup) | Look up contacts based on an attribute. Maximum of 25 values returned.|
 |[**get_externalcontacts_scan_contacts**](#get_externalcontacts_scan_contacts) | Scan for external contacts using paging|
 |[**get_externalcontacts_scan_contacts_divisionviews_all**](#get_externalcontacts_scan_contacts_divisionviews_all) | Scan for external contacts using paging|
 |[**get_externalcontacts_scan_notes**](#get_externalcontacts_scan_notes) | Scan for notes using paging|
@@ -2696,7 +2696,7 @@ except ApiException as e:
 > [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult) get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand, division_id=division_id)
 
 
-Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+Look up contacts based on an attribute. Maximum of 25 values returned.
 
 Wraps GET /api/v2/externalcontacts/reversewhitepageslookup 
 
@@ -2717,12 +2717,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
-lookup_val = 'lookup_val_example' # str | User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names)
+lookup_val = 'lookup_val_example' # str | User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names)
 expand = ['expand_example'] # list[str] | which field, if any, to expand (optional)
-division_id = ''*'' # str | Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value (optional) (default to '*')
+division_id = ''*'' # str | Specifies which division to lookup contacts in, for the given lookup value (optional) (default to '*')
 
 try:
-    # Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+    # Look up contacts based on an attribute. Maximum of 25 values returned.
     api_response = api_instance.get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
@@ -2734,9 +2734,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **lookup_val** | **str**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
+| **lookup_val** | **str**| User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) |  |
 | **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources, division |
-| **division_id** | **str**| Specifies which division to lookup contacts/externalOrganizations in, for the given lookup value | [optional] [default to &#39;*&#39;] |
+| **division_id** | **str**| Specifies which division to lookup contacts in, for the given lookup value | [optional] [default to &#39;*&#39;] |
 
 ### Return type
 
@@ -6065,4 +6065,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 226.0.0_
+_PureCloudPlatformClientV2 227.0.0_
