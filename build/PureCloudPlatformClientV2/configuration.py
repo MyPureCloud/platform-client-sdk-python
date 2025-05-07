@@ -155,7 +155,7 @@ class Configuration(object):
 
     def create_mtls_or_ssl_context(self):
         if self.ssl_context is None:  # set_mtls_contents() or set_mtls_certificates() were not called.
-            ssl_context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH)
+            ssl_context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH)
 
             if self.ssl_ca_cert:
                 ssl_context.load_verify_locations(cafile=self.ssl_ca_cert)
