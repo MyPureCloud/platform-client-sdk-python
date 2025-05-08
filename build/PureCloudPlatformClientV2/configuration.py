@@ -153,9 +153,39 @@ class Configuration(object):
         if self.live_reload_config:
             self._config_updater()
 
+    def set_mtls_contents(self, certContent, keyContent, caContent):
+        ssl_context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH)
+
+        if not certContent or not keyContent or not caContent:
+            raise ValueError("certContent, keyContent, and caContent must be provided for mTLS.")
+
+        if caContent:
+            ssl_context.load_verify_locations(cafile=io.BytesIO(caContent.encode('utf-8')))
+        else:	
+            # If no CA certs are provided, use certifi's bundle.
+            ssl_context.load_verify_locations(cafile=certifi.where())
+
+        ssl_context.load_cert_chain(certfile=io.BytesIO(certContent.encode('utf-8')), keyfile=io.BytesIO(keyContent.encode('utf-8')))
+        self.ssl_context = ssl_context
+
+    def set_mtls_certificates(self, certPath, keyPath, caPath = None):
+        ssl_context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH)
+
+        if not certPath or not keyPath:
+            raise ValueError("certPath, keyPath and caPath must be provided for mTLS.")
+
+        if caPath: 
+            ssl_context.load_verify_locations(cafile=caPath)
+        else:
+            # If no CA certs are provided, use certifi's bundle.
+            ssl_context.load_verify_locations(cafile=certifi.where())
+
+        ssl_context.load_cert_chain(certfile=certPath, keyfile=keyPath)        
+        self.ssl_context = ssl_context
+    
     def create_mtls_or_ssl_context(self):
         if self.ssl_context is None:  # set_mtls_contents() or set_mtls_certificates() were not called.
-            ssl_context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH)
+            ssl_context = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH)
 
             if self.ssl_ca_cert:
                 ssl_context.load_verify_locations(cafile=self.ssl_ca_cert)
@@ -226,7 +256,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 227.0.0".\
+               "SDK Package Version: 227.1.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):

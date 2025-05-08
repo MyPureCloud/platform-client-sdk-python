@@ -5,7 +5,7 @@
 
 Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-Documentation version PureCloudPlatformClientV2 227.0.0
+Documentation version PureCloudPlatformClientV2 227.1.0
 
 ## Preview APIs
 
@@ -176,7 +176,7 @@ PureCloudPlatformClientV2.configuration.proxy_username = 'YOUR_PROXY_USERNAME'
 PureCloudPlatformClientV2.configuration.proxy_password = 'YOUR_PROXY_PASSWORD'
 ```
 
-The Python SDK uses `urllib3.ProxyManager` to make requests when `proxy` is provided.
+The Python SDK uses `urllib3.ProxyManager` to make requests when `proxy` is provided with default http client implementation (refer to [Inject Custom HTTP Client](#inject-custom-http-client)).
 
 #### SDK Logging
 
@@ -410,6 +410,55 @@ api_client = PureCloudPlatformClientV2.api_client.ApiClient()
 # Create and set custom HTTP client
 http_client = CustomHttpClient()
 api_client.set_http_client(http_client)
+```
+
+## Using MTLS authentication via a Gateway
+With Python Client applications, if there is MTLS authentication that need to be set for a gateway server (i.e. if the Genesys Cloud requests must be sent through an intermediate API gateway or equivalent, with MTLS enabled), you can use set_mtls_certificates or set_mtls_contents to set the certificates.
+
+An example using set_mtls_certificates to setup MTLS for gateway is shown below
+
+```python
+MTLS_CERT_DIR = "mtls-certs"
+CA_CERT_FILENAME = "ca-chain.cert.pem"
+CLIENT_CERT_FILENAME = "localhost.cert.pem"
+CLIENT_KEY_FILENAME = "localhost.key.pem"
+base_dir = os.path.dirname(__file__)
+ca_cert_path = os.path.join(base_dir, MTLS_CERT_DIR, CA_CERT_FILENAME)
+client_cert_path = os.path.join(base_dir, MTLS_CERT_DIR, CLIENT_CERT_FILENAME)
+client_key_path = os.path.join(base_dir, MTLS_CERT_DIR, CLIENT_KEY_FILENAME)
+PureCloudPlatformClientV2.configuration.set_mtls_certificates(client_cert_path, client_key_path, ca_cert_path)
+
+apiclient_mtls = PureCloudPlatformClientV2.api_client.ApiClient()
+apiclient_mtls.set_gateway(
+    hostname="mygateway.mydomain.myextension",
+    scheme="https",
+    port=4027,
+    login_path="login",
+    api_path="api"
+)
+```
+
+
+If you have content of the private keys and cert information instead of the the filepaths , you can directly set this information using set_mtls_contents
+
+An example using set_mtls_contents to setup MTLS for gateway is shown below
+
+```python
+PureCloudPlatformClientV2.configuration.set_mtls_contents(client_cert_conts, client_key_conts, ca_cert_conts) # make sure that the content of the certificate and key have been feteched properly and supplied to set_mtls_contents() function.
+
+apiclient_mtls = PureCloudPlatformClientV2.api_client.ApiClient()
+apiclient_mtls.set_gateway(
+    hostname="mygateway.mydomain.myextension",
+    scheme="https",
+    port=4027,
+    login_path="login",
+    api_path="api"
+)
+```
+
+
+
+If you require a custom HTTP client to handle mTLS, you can utilize the set_http_client() method of the API client instance to integrate your own implementation. Remember that you will be responsible for configuring the mTLS settings within your custom HTTP client.
 
 
 ## SDK Source Code Generation
