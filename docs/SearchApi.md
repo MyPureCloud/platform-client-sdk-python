@@ -1345,4 +1345,4 @@ except ApiException as e:
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_PureCloudPlatformClientV2 227.0.0_
+_PureCloudPlatformClientV2 227.1.0_

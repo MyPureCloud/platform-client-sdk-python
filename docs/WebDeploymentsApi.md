@@ -1043,4 +1043,4 @@ except ApiException as e:
 [**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
-_PureCloudPlatformClientV2 227.0.0_
+_PureCloudPlatformClientV2 227.1.0_

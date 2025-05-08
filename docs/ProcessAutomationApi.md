@@ -423,4 +423,4 @@ except ApiException as e:
 [**Trigger**](Trigger)
 
 
-_PureCloudPlatformClientV2 227.0.0_
+_PureCloudPlatformClientV2 227.1.0_
