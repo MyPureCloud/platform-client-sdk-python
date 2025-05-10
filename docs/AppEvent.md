@@ -18,8 +18,8 @@
 | **mkt_campaign** | [JourneyCampaign](JourneyCampaign) | Marketing / traffic source information. | [optional] |
 | **search_query** | str | Represents the keywords in a customer search query. | [optional] |
 | **attributes** | [dict(str, CustomEventAttribute)](CustomEventAttribute) | User-defined attributes associated with a particular event. | |
-| **traits** | [dict(str, CustomEventAttribute)](CustomEventAttribute) | Traits are attributes intrinsic to the customer that may be sent in selected events. Examples are email, name, phone. | |
+| **traits** | [dict(str, CustomEventAttribute)](CustomEventAttribute) | Traits are attributes intrinsic to the customer that may be sent in selected events. Examples are email, givenName, cellPhone. | |
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

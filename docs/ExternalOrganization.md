@@ -26,9 +26,11 @@
 | **trustor** | [Trustor](Trustor) |  | [optional] |
 | **schema** | [DataSchema](DataSchema) | The schema defining custom fields for this contact | [optional] |
 | **custom_fields** | dict(str, object) | Custom fields defined in the schema referenced by schemaId and schemaVersion. | [optional] |
+| **identifiers** | [list[ExternalOrganizationIdentifier]](ExternalOrganizationIdentifier) | Identifiers claimed by this external org | [optional] |
+| **external_ids** | [list[ExternalId]](ExternalId) | A list of external identifiers that identify this External Organization in an external system | [optional] |
 | **external_data_sources** | [list[ExternalDataSource]](ExternalDataSource) | Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

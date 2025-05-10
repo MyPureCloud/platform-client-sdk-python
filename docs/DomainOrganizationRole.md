@@ -15,10 +15,10 @@
 | **permission_policies** | [list[DomainPermissionPolicy]](DomainPermissionPolicy) |  | [optional] |
 | **user_count** | int |  | [optional] |
 | **role_needs_update** | bool | Optional unless patch operation. | [optional] |
-| **base** | bool |  | [optional] |
 | **default** | bool |  | [optional] |
+| **base** | bool |  | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

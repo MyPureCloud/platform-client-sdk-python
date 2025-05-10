@@ -8,7 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **error** | str | name of the error | |
 | **details** | str | additional information regarding the error | [optional] |
+| **user_params** | [list[UserParam]](UserParam) | parameters to be inserted into details. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

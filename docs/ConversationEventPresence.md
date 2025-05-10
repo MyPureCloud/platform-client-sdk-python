@@ -7,9 +7,9 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **type** | str | Describes the type of Presence event. | |
-| **received_message** | [ConversationContentReceivedReplyMessage](ConversationContentReceivedReplyMessage) | The message displayed in the received message bubble. | [optional] |
-| **reply_message** | [ConversationContentReceivedReplyMessage](ConversationContentReceivedReplyMessage) | The message displayed in the reply message bubble. | [optional] |
+| **received_message** | [ConversationContentReceivedReplyMessage](ConversationContentReceivedReplyMessage) | A sign in prompt message for when the authenticate event is received. | [optional] |
+| **reply_message** | [ConversationContentReceivedReplyMessage](ConversationContentReceivedReplyMessage) | A reply message on authentication success. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

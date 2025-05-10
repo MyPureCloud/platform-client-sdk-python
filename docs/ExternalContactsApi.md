@@ -2041,8 +2041,6 @@ except ApiException as e:
 
 List the identifiers for an external organization
 
-get_externalcontacts_organization_identifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers 
 
 Requires ANY permissions: 
@@ -2803,8 +2801,6 @@ except ApiException as e:
 
 Scan for external contacts using paging
 
-get_externalcontacts_scan_contacts_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/scan/contacts/divisionviews/all 
 
 Requires ALL permissions: 
@@ -2907,8 +2903,6 @@ except ApiException as e:
 
 
 Scan for notes using paging
-
-get_externalcontacts_scan_notes_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/scan/notes/divisionviews/all 
 
@@ -3013,8 +3007,6 @@ except ApiException as e:
 
 Scan for external organizations using paging
 
-get_externalcontacts_scan_organizations_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/scan/organizations/divisionviews/all 
 
 Requires ALL permissions: 
@@ -3118,8 +3110,6 @@ except ApiException as e:
 
 Scan for relationships
 
-get_externalcontacts_scan_relationships_divisionviews_all is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/scan/relationships/divisionviews/all 
 
 Requires ALL permissions: 
@@ -3219,8 +3209,6 @@ except ApiException as e:
 
 
 Claim or release identifiers for an external organization
-
-patch_externalcontacts_organization_identifiers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers 
 
@@ -3368,8 +3356,6 @@ except ApiException as e:
 
 Bulk fetch contacts across divisions
 
-post_externalcontacts_bulk_contacts_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/externalcontacts/bulk/contacts/divisionviews 
 
 Requires ANY permissions: 
@@ -3419,8 +3405,6 @@ except ApiException as e:
 Bulk Enrich Contacts - Run up to 10 Enrich operations per request
 
 See the API endpoint /externalcontacts/contacts/enrich for docs on individual Enrich operations.
-
-post_externalcontacts_bulk_contacts_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/externalcontacts/bulk/contacts/enrich 
 
@@ -3908,8 +3892,6 @@ except ApiException as e:
 
 Bulk fetch organizations across divisions
 
-post_externalcontacts_bulk_organizations_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/externalcontacts/bulk/organizations/divisionviews 
 
 Requires ANY permissions: 
@@ -3959,8 +3941,6 @@ except ApiException as e:
 Bulk enrich external organizations - Run up to 10 Enrich operations per request
 
 See the API endpoint /externalcontacts/organizations/enrich for docs on individual Enrich operations.
-
-post_externalcontacts_bulk_organizations_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/externalcontacts/bulk/organizations/enrich 
 
@@ -4454,8 +4434,6 @@ Modify or create an External Contact, with powerful behaviors for finding and co
 
 You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/contacts. A 201 response status indicates that a new Contact was created, whereas a 200 status indicates that a Contact was updated or a merge occurred.
 
-post_externalcontacts_contacts_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/externalcontacts/contacts/enrich 
 
 Requires ANY permissions: 
@@ -4556,8 +4534,6 @@ except ApiException as e:
 Merge up to 25 contacts into a new contact record
 
 Merge operation may fail if the resulting mergeset exceeds our default limit of 52. The valueOverride field lets you override any of the Contact fields post-merge. If any Contact field is left null in `valueOverride`, it will be taken from the most recently-modified contact in the merge set. Exception for *phone/*email fields: Conflicting data will be moved to any other available phone/email fields in the merged contact.
-
-post_externalcontacts_contacts_merge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/externalcontacts/contacts/merge 
 
@@ -4761,8 +4737,6 @@ Fetch a contact using an identifier type and value.
 
 Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
 
-post_externalcontacts_identifierlookup_contacts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/externalcontacts/identifierlookup/contacts 
 
 Requires ANY permissions: 
@@ -4814,8 +4788,6 @@ except ApiException as e:
 Fetch an external organization using an identifier type and value.
 
 This endpoint will only accept ExternalId type identifiers.
-
-post_externalcontacts_identifierlookup_organizations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/externalcontacts/identifierlookup/organizations 
 
@@ -5261,8 +5233,6 @@ except ApiException as e:
 Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
 
 You may also submit multiple Enrich operations in one request via the Bulk Enrich API at /externalcontacts/bulk/organizations. A 201 response status indicates that a new External Organization was created, whereas a 200 status indicates that an External Organization was updated
-
-post_externalcontacts_organizations_enrich is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/externalcontacts/organizations/enrich 
 
@@ -6065,4 +6035,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

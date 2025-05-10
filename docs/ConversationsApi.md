@@ -116,6 +116,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversation_participant**](#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_secureattributes**](#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
+|[**patch_conversation_summary_engagements**](#patch_conversation_summary_engagements) | Update agent&#39;s engagement for the summary.|
 |[**patch_conversation_summary_feedback**](#patch_conversation_summary_feedback) | Update the feedback for the summary.|
 |[**patch_conversation_utilizationlabel**](#patch_conversation_utilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied|
 |[**patch_conversations_aftercallwork_conversation_id_participant_communication**](#patch_conversations_aftercallwork_conversation_id_participant_communication) | Update after-call work for this conversation communication.|
@@ -4120,8 +4121,6 @@ This endpoint does not need any parameters.
 
 Get Facebook messaging integration identity resolution settings
 
-get_conversations_messaging_identityresolution_integrations_facebook_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} 
 
 Requires ALL permissions: 
@@ -4171,8 +4170,6 @@ except ApiException as e:
 
 Get an open messaging integration Identity Resolution settings
 
-get_conversations_messaging_identityresolution_integrations_open_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} 
 
 Requires ALL permissions: 
@@ -4221,8 +4218,6 @@ except ApiException as e:
 
 
 Get a whatsApp integration Identity Resolution settings
-
-get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} 
 
@@ -4361,7 +4356,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | [**list[str]**](str)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | [**list[str]**](str)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4417,7 +4412,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4469,7 +4464,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -4523,7 +4518,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4575,7 +4570,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -4631,7 +4626,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4685,7 +4680,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -4739,7 +4734,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4791,7 +4786,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -4889,7 +4884,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 
@@ -4941,7 +4936,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
@@ -5604,6 +5599,7 @@ Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example
 
@@ -5743,14 +5739,63 @@ except ApiException as e:
 **str**
 
 
+## patch_conversation_summary_engagements
+
+>  patch_conversation_summary_engagements(conversation_id, summary_id, body=body)
+
+
+Update agent's engagement for the summary.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements 
+
+Requires ALL permissions: 
+
+* conversation:summaryEngagement:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+summary_id = 'summary_id_example' # str | Summary ID
+body = PureCloudPlatformClientV2.EngagementRequest() # EngagementRequest |  (optional)
+
+try:
+    # Update agent's engagement for the summary.
+    api_instance.patch_conversation_summary_engagements(conversation_id, summary_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_summary_engagements: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **summary_id** | **str**| Summary ID |  |
+| **body** | [**EngagementRequest**](EngagementRequest)|  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
 ## patch_conversation_summary_feedback
 
 >  patch_conversation_summary_feedback(conversation_id, summary_id, body=body)
 
 
 Update the feedback for the summary.
-
-patch_conversation_summary_feedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback 
 
@@ -12696,8 +12741,6 @@ except ApiException as e:
 
 Create an identity resolution settings for a Facebook messaging integration
 
-put_conversations_messaging_identityresolution_integrations_facebook_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} 
 
 Requires ALL permissions: 
@@ -12749,8 +12792,6 @@ except ApiException as e:
 
 Update an open messaging integration Identity Resolution settings
 
-put_conversations_messaging_identityresolution_integrations_open_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} 
 
 Requires ALL permissions: 
@@ -12801,8 +12842,6 @@ except ApiException as e:
 
 
 Update a whatsApp integration Identity Resolution settings
-
-put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} 
 
@@ -13153,4 +13192,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_
