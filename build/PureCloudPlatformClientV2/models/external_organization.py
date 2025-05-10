@@ -35,6 +35,8 @@ if TYPE_CHECKING:
     from . import ContactAddress
     from . import DataSchema
     from . import ExternalDataSource
+    from . import ExternalId
+    from . import ExternalOrganizationIdentifier
     from . import PhoneNumber
     from . import Ticker
     from . import Trustor
@@ -76,6 +78,8 @@ class ExternalOrganization(object):
             'trustor': 'Trustor',
             'schema': 'DataSchema',
             'custom_fields': 'dict(str, object)',
+            'identifiers': 'list[ExternalOrganizationIdentifier]',
+            'external_ids': 'list[ExternalId]',
             'external_data_sources': 'list[ExternalDataSource]',
             'self_uri': 'str'
         }
@@ -101,6 +105,8 @@ class ExternalOrganization(object):
             'trustor': 'trustor',
             'schema': 'schema',
             'custom_fields': 'customFields',
+            'identifiers': 'identifiers',
+            'external_ids': 'externalIds',
             'external_data_sources': 'externalDataSources',
             'self_uri': 'selfUri'
         }
@@ -125,6 +131,8 @@ class ExternalOrganization(object):
         self._trustor = None
         self._schema = None
         self._custom_fields = None
+        self._identifiers = None
+        self._external_ids = None
         self._external_data_sources = None
         self._self_uri = None
 
@@ -607,6 +615,54 @@ class ExternalOrganization(object):
         
 
         self._custom_fields = custom_fields
+
+    @property
+    def identifiers(self) -> List['ExternalOrganizationIdentifier']:
+        """
+        Gets the identifiers of this ExternalOrganization.
+        Identifiers claimed by this external org
+
+        :return: The identifiers of this ExternalOrganization.
+        :rtype: list[ExternalOrganizationIdentifier]
+        """
+        return self._identifiers
+
+    @identifiers.setter
+    def identifiers(self, identifiers: List['ExternalOrganizationIdentifier']) -> None:
+        """
+        Sets the identifiers of this ExternalOrganization.
+        Identifiers claimed by this external org
+
+        :param identifiers: The identifiers of this ExternalOrganization.
+        :type: list[ExternalOrganizationIdentifier]
+        """
+        
+
+        self._identifiers = identifiers
+
+    @property
+    def external_ids(self) -> List['ExternalId']:
+        """
+        Gets the external_ids of this ExternalOrganization.
+        A list of external identifiers that identify this External Organization in an external system
+
+        :return: The external_ids of this ExternalOrganization.
+        :rtype: list[ExternalId]
+        """
+        return self._external_ids
+
+    @external_ids.setter
+    def external_ids(self, external_ids: List['ExternalId']) -> None:
+        """
+        Sets the external_ids of this ExternalOrganization.
+        A list of external identifiers that identify this External Organization in an external system
+
+        :param external_ids: The external_ids of this ExternalOrganization.
+        :type: list[ExternalId]
+        """
+        
+
+        self._external_ids = external_ids
 
     @property
     def external_data_sources(self) -> List['ExternalDataSource']:

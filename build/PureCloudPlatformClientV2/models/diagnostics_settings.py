@@ -47,13 +47,38 @@ class DiagnosticsSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'report_low_max_calls_per_agent_alert': 'bool'
         }
 
         self.attribute_map = {
-            
+            'report_low_max_calls_per_agent_alert': 'reportLowMaxCallsPerAgentAlert'
         }
 
+        self._report_low_max_calls_per_agent_alert = None
+
+    @property
+    def report_low_max_calls_per_agent_alert(self) -> bool:
+        """
+        Gets the report_low_max_calls_per_agent_alert of this DiagnosticsSettings.
+        Whether to report on low max calls per agent alerts.
+
+        :return: The report_low_max_calls_per_agent_alert of this DiagnosticsSettings.
+        :rtype: bool
+        """
+        return self._report_low_max_calls_per_agent_alert
+
+    @report_low_max_calls_per_agent_alert.setter
+    def report_low_max_calls_per_agent_alert(self, report_low_max_calls_per_agent_alert: bool) -> None:
+        """
+        Sets the report_low_max_calls_per_agent_alert of this DiagnosticsSettings.
+        Whether to report on low max calls per agent alerts.
+
+        :param report_low_max_calls_per_agent_alert: The report_low_max_calls_per_agent_alert of this DiagnosticsSettings.
+        :type: bool
+        """
+        
+
+        self._report_low_max_calls_per_agent_alert = report_low_max_calls_per_agent_alert
 
     def to_dict(self):
         """

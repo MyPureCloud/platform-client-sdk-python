@@ -1783,8 +1783,6 @@ except ApiException as e:
 
 Translate a single interaction recording (or an email conversation)
 
-get_speechandtextanalytics_translations_language_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId} 
 
 Requires ALL permissions: 
@@ -1838,8 +1836,6 @@ except ApiException as e:
 
 
 Get supported translation languages
-
-get_speechandtextanalytics_translations_languages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/speechandtextanalytics/translations/languages 
 
@@ -2761,4 +2757,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

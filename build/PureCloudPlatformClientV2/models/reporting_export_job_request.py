@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ChartColumn
     from . import SelectedColumns
     from . import ViewFilter
 
@@ -69,7 +70,8 @@ class ReportingExportJobRequest(object):
             'has_custom_participant_attributes': 'bool',
             'recipient_emails': 'list[str]',
             'include_duration_format_in_header': 'bool',
-            'duration_format': 'str'
+            'duration_format': 'str',
+            'chart_columns': 'list[ChartColumn]'
         }
 
         self.attribute_map = {
@@ -92,7 +94,8 @@ class ReportingExportJobRequest(object):
             'has_custom_participant_attributes': 'hasCustomParticipantAttributes',
             'recipient_emails': 'recipientEmails',
             'include_duration_format_in_header': 'includeDurationFormatInHeader',
-            'duration_format': 'durationFormat'
+            'duration_format': 'durationFormat',
+            'chart_columns': 'chartColumns'
         }
 
         self._name = None
@@ -115,6 +118,7 @@ class ReportingExportJobRequest(object):
         self._recipient_emails = None
         self._include_duration_format_in_header = None
         self._duration_format = None
+        self._chart_columns = None
 
     @property
     def name(self) -> str:
@@ -615,6 +619,30 @@ class ReportingExportJobRequest(object):
             self._duration_format = "outdated_sdk_version"
         else:
             self._duration_format = duration_format
+
+    @property
+    def chart_columns(self) -> List['ChartColumn']:
+        """
+        Gets the chart_columns of this ReportingExportJobRequest.
+        The list of columns for which chart is going to be displayed in export
+
+        :return: The chart_columns of this ReportingExportJobRequest.
+        :rtype: list[ChartColumn]
+        """
+        return self._chart_columns
+
+    @chart_columns.setter
+    def chart_columns(self, chart_columns: List['ChartColumn']) -> None:
+        """
+        Sets the chart_columns of this ReportingExportJobRequest.
+        The list of columns for which chart is going to be displayed in export
+
+        :param chart_columns: The chart_columns of this ReportingExportJobRequest.
+        :type: list[ChartColumn]
+        """
+        
+
+        self._chart_columns = chart_columns
 
     def to_dict(self):
         """

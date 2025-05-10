@@ -4054,7 +4054,7 @@ Requires ANY permissions:
 
 * admin
 * directory:organization:admin
-* directory:userPassword:edit
+* directory:user:setPassword
 
 ### Example
 
@@ -5284,4 +5284,4 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

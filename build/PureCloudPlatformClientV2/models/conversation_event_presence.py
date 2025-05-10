@@ -86,7 +86,7 @@ class ConversationEventPresence(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Join", "Disconnect", "Clear", "SignIn", "SessionExpired", "Authenticate"]
+        allowed_values = ["Join", "Disconnect", "Clear", "SignIn", "SessionExpired", "Authenticate", "AuthenticateFailure", "AuthenticateCancel"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -97,7 +97,7 @@ class ConversationEventPresence(object):
     def received_message(self) -> 'ConversationContentReceivedReplyMessage':
         """
         Gets the received_message of this ConversationEventPresence.
-        The message displayed in the received message bubble.
+        A sign in prompt message for when the authenticate event is received.
 
         :return: The received_message of this ConversationEventPresence.
         :rtype: ConversationContentReceivedReplyMessage
@@ -108,7 +108,7 @@ class ConversationEventPresence(object):
     def received_message(self, received_message: 'ConversationContentReceivedReplyMessage') -> None:
         """
         Sets the received_message of this ConversationEventPresence.
-        The message displayed in the received message bubble.
+        A sign in prompt message for when the authenticate event is received.
 
         :param received_message: The received_message of this ConversationEventPresence.
         :type: ConversationContentReceivedReplyMessage
@@ -121,7 +121,7 @@ class ConversationEventPresence(object):
     def reply_message(self) -> 'ConversationContentReceivedReplyMessage':
         """
         Gets the reply_message of this ConversationEventPresence.
-        The message displayed in the reply message bubble.
+        A reply message on authentication success.
 
         :return: The reply_message of this ConversationEventPresence.
         :rtype: ConversationContentReceivedReplyMessage
@@ -132,7 +132,7 @@ class ConversationEventPresence(object):
     def reply_message(self, reply_message: 'ConversationContentReceivedReplyMessage') -> None:
         """
         Sets the reply_message of this ConversationEventPresence.
-        The message displayed in the reply message bubble.
+        A reply message on authentication success.
 
         :param reply_message: The reply_message of this ConversationEventPresence.
         :type: ConversationContentReceivedReplyMessage

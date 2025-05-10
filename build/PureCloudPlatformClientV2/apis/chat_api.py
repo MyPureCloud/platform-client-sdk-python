@@ -916,12 +916,13 @@ class ChatApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str room_jid: roomJid (required)
+        :param bool notify: Whether to get users to notify
         :return: RoomParticipantsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['room_jid']
+        all_params = ['room_jid', 'notify']
         all_params.append('callback')
 
         params = locals()
@@ -945,6 +946,8 @@ class ChatApi(object):
             path_params['roomJid'] = params['room_jid']
 
         query_params = {}
+        if 'notify' in params:
+            query_params['notify'] = params['notify']
 
         header_params = {}
 

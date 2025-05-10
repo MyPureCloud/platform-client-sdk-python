@@ -1645,7 +1645,7 @@ except ApiException as e:
 
 ## get_routing_email_domain_route
 
-> [**InboundRoute**](InboundRoute) get_routing_email_domain_route(domain_name, route_id)
+> [**InboundRoute**](InboundRoute) get_routing_email_domain_route(domain_name, route_id, expand=expand)
 
 
 Get a route
@@ -1671,10 +1671,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 domain_name = 'domain_name_example' # str | email domain
 route_id = 'route_id_example' # str | route ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
     # Get a route
-    api_response = api_instance.get_routing_email_domain_route(domain_name, route_id)
+    api_response = api_instance.get_routing_email_domain_route(domain_name, route_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_domain_route: %s\n" % e)
@@ -1687,6 +1688,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
 | **route_id** | **str**| route ID |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -1699,8 +1701,6 @@ except ApiException as e:
 
 
 Get a route identity resolution setting.
-
-get_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution 
 
@@ -1748,7 +1748,7 @@ except ApiException as e:
 
 ## get_routing_email_domain_routes
 
-> [**InboundRouteEntityListing**](InboundRouteEntityListing) get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
+> [**InboundRouteEntityListing**](InboundRouteEntityListing) get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern, expand=expand)
 
 
 Get routes
@@ -1776,10 +1776,11 @@ domain_name = 'domain_name_example' # str | email domain
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 pattern = 'pattern_example' # str | Filter routes by the route's pattern property (optional)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
     # Get routes
-    api_response = api_instance.get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
+    api_response = api_instance.get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_domain_routes: %s\n" % e)
@@ -1794,6 +1795,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **pattern** | **str**| Filter routes by the route&#39;s pattern property | [optional]  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -2553,7 +2555,7 @@ except ApiException as e:
 
 ## get_routing_queue
 
-> [**Queue**](Queue) get_routing_queue(queue_id)
+> [**Queue**](Queue) get_routing_queue(queue_id, expand=expand)
 
 
 Get details about this queue.
@@ -2578,10 +2580,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
     # Get details about this queue.
-    api_response = api_instance.get_routing_queue(queue_id)
+    api_response = api_instance.get_routing_queue(queue_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queue: %s\n" % e)
@@ -2593,6 +2596,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -2805,8 +2809,6 @@ except ApiException as e:
 
 
 Get Queue IdentityResolution Settings.
-
-get_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/queues/{queueId}/identityresolution 
 
@@ -3105,7 +3107,7 @@ except ApiException as e:
 
 ## get_routing_queues
 
-> [**QueueEntityListing**](QueueEntityListing) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer)
+> [**QueueEntityListing**](QueueEntityListing) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer, expand=expand)
 
 
 Get list of queues.
@@ -3138,10 +3140,11 @@ division_id = ['division_id_example'] # list[str] | Include only queues in the s
 peer_id = ['peer_id_example'] # list[str] | Include only queues with the specified peer ID(s) (optional)
 canned_response_library_id = 'canned_response_library_id_example' # str | Include only queues explicitly associated with the specified canned response library ID (optional)
 has_peer = True # bool | Include only queues with a peer ID (optional)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
     # Get list of queues.
-    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer)
+    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queues: %s\n" % e)
@@ -3161,6 +3164,7 @@ except ApiException as e:
 | **peer_id** | [**list[str]**](str)| Include only queues with the specified peer ID(s) | [optional]  |
 | **canned_response_library_id** | **str**| Include only queues explicitly associated with the specified canned response library ID | [optional]  |
 | **has_peer** | **bool**| Include only queues with a peer ID | [optional]  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
 
 ### Return type
 
@@ -3937,8 +3941,6 @@ except ApiException as e:
 
 Get a SMS identity resolution settings.
 
-get_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} 
 
 Requires ALL permissions: 
@@ -4033,7 +4035,7 @@ except ApiException as e:
 
 ## get_routing_sms_phonenumbers
 
-> [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id)
+> [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id, expand=expand)
 
 
 Get a list of provisioned phone numbers.
@@ -4068,10 +4070,11 @@ sort_order = 'sort_order_example' # str | Sort order (optional)
 language = ''en-US'' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional) (default to 'en-US')
 integration_id = 'integration_id_example' # str | Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
 supported_content_id = 'supported_content_id_example' # str | Filter based on the supported content ID (optional)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
     # Get a list of provisioned phone numbers.
-    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id)
+    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\n" % e)
@@ -4093,6 +4096,7 @@ except ApiException as e:
 | **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &#39;en-US&#39;] |
 | **integration_id** | **str**| Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional]  |
 | **supported_content_id** | **str**| Filter based on the supported content ID | [optional]  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution, supportedContent |
 
 ### Return type
 
@@ -7237,8 +7241,6 @@ except ApiException as e:
 
 Update identity resolution settings for a route.
 
-put_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution 
 
 Requires ALL permissions: 
@@ -7440,8 +7442,6 @@ except ApiException as e:
 
 Update Queue IdentityResolution Settings.
 
-put_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/routing/queues/{queueId}/identityresolution 
 
 Requires ALL permissions: 
@@ -7588,8 +7588,6 @@ except ApiException as e:
 
 
 Update an SMS identity resolution settings.
-
-put_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId} 
 
@@ -7985,4 +7983,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

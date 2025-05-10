@@ -33,8 +33,10 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CallableContactsDiagnostic
+    from . import CampaignLinesUtilization
     from . import CampaignSkillStatistics
     from . import QueueUtilizationDiagnostic
+    from . import RestErrorDetail
     from . import RuleSetDiagnostic
 
 class CampaignDiagnostics(object):
@@ -59,6 +61,12 @@ class CampaignDiagnostics(object):
             'scheduled_interactions_count': 'int',
             'time_zone_rescheduled_calls_count': 'int',
             'filtered_out_contacts_count': 'int',
+            'idle_agents': 'int',
+            'effective_idle_agents': 'float',
+            'lines_utilization': 'CampaignLinesUtilization',
+            'number_of_contacts_called': 'int',
+            'total_number_of_contacts': 'int',
+            'campaign_errors': 'list[RestErrorDetail]',
             'campaign_skill_statistics': 'CampaignSkillStatistics'
         }
 
@@ -70,6 +78,12 @@ class CampaignDiagnostics(object):
             'scheduled_interactions_count': 'scheduledInteractionsCount',
             'time_zone_rescheduled_calls_count': 'timeZoneRescheduledCallsCount',
             'filtered_out_contacts_count': 'filteredOutContactsCount',
+            'idle_agents': 'idleAgents',
+            'effective_idle_agents': 'effectiveIdleAgents',
+            'lines_utilization': 'linesUtilization',
+            'number_of_contacts_called': 'numberOfContactsCalled',
+            'total_number_of_contacts': 'totalNumberOfContacts',
+            'campaign_errors': 'campaignErrors',
             'campaign_skill_statistics': 'campaignSkillStatistics'
         }
 
@@ -80,6 +94,12 @@ class CampaignDiagnostics(object):
         self._scheduled_interactions_count = None
         self._time_zone_rescheduled_calls_count = None
         self._filtered_out_contacts_count = None
+        self._idle_agents = None
+        self._effective_idle_agents = None
+        self._lines_utilization = None
+        self._number_of_contacts_called = None
+        self._total_number_of_contacts = None
+        self._campaign_errors = None
         self._campaign_skill_statistics = None
 
     @property
@@ -249,6 +269,150 @@ class CampaignDiagnostics(object):
         
 
         self._filtered_out_contacts_count = filtered_out_contacts_count
+
+    @property
+    def idle_agents(self) -> int:
+        """
+        Gets the idle_agents of this CampaignDiagnostics.
+        Information regarding the campaign's available agents.
+
+        :return: The idle_agents of this CampaignDiagnostics.
+        :rtype: int
+        """
+        return self._idle_agents
+
+    @idle_agents.setter
+    def idle_agents(self, idle_agents: int) -> None:
+        """
+        Sets the idle_agents of this CampaignDiagnostics.
+        Information regarding the campaign's available agents.
+
+        :param idle_agents: The idle_agents of this CampaignDiagnostics.
+        :type: int
+        """
+        
+
+        self._idle_agents = idle_agents
+
+    @property
+    def effective_idle_agents(self) -> float:
+        """
+        Gets the effective_idle_agents of this CampaignDiagnostics.
+        Information regarding the campaign's effective available agents.
+
+        :return: The effective_idle_agents of this CampaignDiagnostics.
+        :rtype: float
+        """
+        return self._effective_idle_agents
+
+    @effective_idle_agents.setter
+    def effective_idle_agents(self, effective_idle_agents: float) -> None:
+        """
+        Sets the effective_idle_agents of this CampaignDiagnostics.
+        Information regarding the campaign's effective available agents.
+
+        :param effective_idle_agents: The effective_idle_agents of this CampaignDiagnostics.
+        :type: float
+        """
+        
+
+        self._effective_idle_agents = effective_idle_agents
+
+    @property
+    def lines_utilization(self) -> 'CampaignLinesUtilization':
+        """
+        Gets the lines_utilization of this CampaignDiagnostics.
+        Information on the campaign's lines utilization.
+
+        :return: The lines_utilization of this CampaignDiagnostics.
+        :rtype: CampaignLinesUtilization
+        """
+        return self._lines_utilization
+
+    @lines_utilization.setter
+    def lines_utilization(self, lines_utilization: 'CampaignLinesUtilization') -> None:
+        """
+        Sets the lines_utilization of this CampaignDiagnostics.
+        Information on the campaign's lines utilization.
+
+        :param lines_utilization: The lines_utilization of this CampaignDiagnostics.
+        :type: CampaignLinesUtilization
+        """
+        
+
+        self._lines_utilization = lines_utilization
+
+    @property
+    def number_of_contacts_called(self) -> int:
+        """
+        Gets the number_of_contacts_called of this CampaignDiagnostics.
+        Number of contacts called during the campaign.
+
+        :return: The number_of_contacts_called of this CampaignDiagnostics.
+        :rtype: int
+        """
+        return self._number_of_contacts_called
+
+    @number_of_contacts_called.setter
+    def number_of_contacts_called(self, number_of_contacts_called: int) -> None:
+        """
+        Sets the number_of_contacts_called of this CampaignDiagnostics.
+        Number of contacts called during the campaign.
+
+        :param number_of_contacts_called: The number_of_contacts_called of this CampaignDiagnostics.
+        :type: int
+        """
+        
+
+        self._number_of_contacts_called = number_of_contacts_called
+
+    @property
+    def total_number_of_contacts(self) -> int:
+        """
+        Gets the total_number_of_contacts of this CampaignDiagnostics.
+        Total number of contacts in the campaign.
+
+        :return: The total_number_of_contacts of this CampaignDiagnostics.
+        :rtype: int
+        """
+        return self._total_number_of_contacts
+
+    @total_number_of_contacts.setter
+    def total_number_of_contacts(self, total_number_of_contacts: int) -> None:
+        """
+        Sets the total_number_of_contacts of this CampaignDiagnostics.
+        Total number of contacts in the campaign.
+
+        :param total_number_of_contacts: The total_number_of_contacts of this CampaignDiagnostics.
+        :type: int
+        """
+        
+
+        self._total_number_of_contacts = total_number_of_contacts
+
+    @property
+    def campaign_errors(self) -> List['RestErrorDetail']:
+        """
+        Gets the campaign_errors of this CampaignDiagnostics.
+        A list of current error conditions associated with the campaign.
+
+        :return: The campaign_errors of this CampaignDiagnostics.
+        :rtype: list[RestErrorDetail]
+        """
+        return self._campaign_errors
+
+    @campaign_errors.setter
+    def campaign_errors(self, campaign_errors: List['RestErrorDetail']) -> None:
+        """
+        Sets the campaign_errors of this CampaignDiagnostics.
+        A list of current error conditions associated with the campaign.
+
+        :param campaign_errors: The campaign_errors of this CampaignDiagnostics.
+        :type: list[RestErrorDetail]
+        """
+        
+
+        self._campaign_errors = campaign_errors
 
     @property
     def campaign_skill_statistics(self) -> 'CampaignSkillStatistics':

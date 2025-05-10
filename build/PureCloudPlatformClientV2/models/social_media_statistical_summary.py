@@ -55,6 +55,7 @@ class SocialMediaStatisticalSummary(object):
             'count_neutral': 'int',
             'count_unknown': 'int',
             'sum': 'float',
+            'average': 'float',
             'current': 'float',
             'ratio': 'float',
             'numerator': 'float',
@@ -73,6 +74,7 @@ class SocialMediaStatisticalSummary(object):
             'count_neutral': 'countNeutral',
             'count_unknown': 'countUnknown',
             'sum': 'sum',
+            'average': 'average',
             'current': 'current',
             'ratio': 'ratio',
             'numerator': 'numerator',
@@ -90,6 +92,7 @@ class SocialMediaStatisticalSummary(object):
         self._count_neutral = None
         self._count_unknown = None
         self._sum = None
+        self._average = None
         self._current = None
         self._ratio = None
         self._numerator = None
@@ -289,6 +292,30 @@ class SocialMediaStatisticalSummary(object):
         
 
         self._sum = sum
+
+    @property
+    def average(self) -> float:
+        """
+        Gets the average of this SocialMediaStatisticalSummary.
+
+
+        :return: The average of this SocialMediaStatisticalSummary.
+        :rtype: float
+        """
+        return self._average
+
+    @average.setter
+    def average(self, average: float) -> None:
+        """
+        Sets the average of this SocialMediaStatisticalSummary.
+
+
+        :param average: The average of this SocialMediaStatisticalSummary.
+        :type: float
+        """
+        
+
+        self._average = average
 
     @property
     def current(self) -> float:

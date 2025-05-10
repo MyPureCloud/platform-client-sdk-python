@@ -397,9 +397,22 @@ from .models.benefit_assessment import BenefitAssessment
 from .models.benefit_assessment_job import BenefitAssessmentJob
 from .models.bid_group_work_plan_request import BidGroupWorkPlanRequest
 from .models.bid_group_work_plan_response import BidGroupWorkPlanResponse
+from .models.billing_charge import BillingCharge
+from .models.billing_contract import BillingContract
+from .models.billing_contract_listing import BillingContractListing
+from .models.billing_contract_period import BillingContractPeriod
+from .models.billing_contract_period_detail import BillingContractPeriodDetail
+from .models.billing_invoice import BillingInvoice
+from .models.billing_invoice_item import BillingInvoiceItem
+from .models.billing_invoice_item_listing import BillingInvoiceItemListing
+from .models.billing_invoice_listing import BillingInvoiceListing
+from .models.billing_plan import BillingPlan
+from .models.billing_plan_item import BillingPlanItem
+from .models.billing_product import BillingProduct
 from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
+from .models.billing_wallet import BillingWallet
 from .models.biography import Biography
 from .models.bot_aggregate_data_container import BotAggregateDataContainer
 from .models.bot_aggregate_query_clause import BotAggregateQueryClause
@@ -688,6 +701,7 @@ from .models.channel import Channel
 from .models.channel_entity_listing import ChannelEntityListing
 from .models.channel_topic import ChannelTopic
 from .models.channel_topic_entity_listing import ChannelTopicEntityListing
+from .models.chart_column import ChartColumn
 from .models.chat import Chat
 from .models.chat_badge_topic_badge_entity import ChatBadgeTopicBadgeEntity
 from .models.chat_badge_topic_chat_badge import ChatBadgeTopicChatBadge
@@ -928,6 +942,7 @@ from .models.context_pattern import ContextPattern
 from .models.continuous_forecast_get_session_response import ContinuousForecastGetSessionResponse
 from .models.continuous_forecast_session_response import ContinuousForecastSessionResponse
 from .models.continuous_forecast_snapshot_response import ContinuousForecastSnapshotResponse
+from .models.contractual import Contractual
 from .models.conversation import Conversation
 from .models.conversation_activity_data import ConversationActivityData
 from .models.conversation_activity_entity_data import ConversationActivityEntityData
@@ -1289,6 +1304,7 @@ from .models.copilot_rule import CopilotRule
 from .models.copilot_transcription_config import CopilotTranscriptionConfig
 from .models.copy_attachments_request import CopyAttachmentsRequest
 from .models.copy_bu_forecast_request import CopyBuForecastRequest
+from .models.copy_decision_table_request import CopyDecisionTableRequest
 from .models.copy_voicemail_message import CopyVoicemailMessage
 from .models.copy_work_plan import CopyWorkPlan
 from .models.copy_work_plan_bid import CopyWorkPlanBid
@@ -1311,6 +1327,9 @@ from .models.create_callback_command import CreateCallbackCommand
 from .models.create_callback_on_conversation_command import CreateCallbackOnConversationCommand
 from .models.create_callback_response import CreateCallbackResponse
 from .models.create_coaching_appointment_request import CreateCoachingAppointmentRequest
+from .models.create_decision_table_columns_request import CreateDecisionTableColumnsRequest
+from .models.create_decision_table_request import CreateDecisionTableRequest
+from .models.create_decision_table_row_request import CreateDecisionTableRowRequest
 from .models.create_email_request import CreateEmailRequest
 from .models.create_general_program_test_phrase_detected_phrase import CreateGeneralProgramTestPhraseDetectedPhrase
 from .models.create_general_program_test_phrase_matched_transcript import CreateGeneralProgramTestPhraseMatchedTranscript
@@ -1397,6 +1416,7 @@ from .models.custom_event_attribute import CustomEventAttribute
 from .models.custom_event_attribute_list import CustomEventAttributeList
 from .models.custom_i18n_labels import CustomI18nLabels
 from .models.custom_provider import CustomProvider
+from .models.customer import Customer
 from .models.customer_end_detail_event_topic_customer_end_event import CustomerEndDetailEventTopicCustomerEndEvent
 from .models.customer_interaction_center import CustomerInteractionCenter
 from .models.customer_start_detail_event_topic_customer_start_event import CustomerStartDetailEventTopicCustomerStartEvent
@@ -1438,8 +1458,28 @@ from .models.date_picker import DatePicker
 from .models.date_picker_available_date_time import DatePickerAvailableDateTime
 from .models.date_range import DateRange
 from .models.date_range_with_optional_end import DateRangeWithOptionalEnd
+from .models.decision_table import DecisionTable
+from .models.decision_table_column_default_row_value import DecisionTableColumnDefaultRowValue
+from .models.decision_table_columns import DecisionTableColumns
+from .models.decision_table_contract import DecisionTableContract
+from .models.decision_table_execution_request import DecisionTableExecutionRequest
+from .models.decision_table_execution_response import DecisionTableExecutionResponse
+from .models.decision_table_input_column import DecisionTableInputColumn
+from .models.decision_table_input_column_expression import DecisionTableInputColumnExpression
+from .models.decision_table_input_column_request import DecisionTableInputColumnRequest
+from .models.decision_table_listing import DecisionTableListing
+from .models.decision_table_output_column import DecisionTableOutputColumn
+from .models.decision_table_output_column_request import DecisionTableOutputColumnRequest
+from .models.decision_table_row import DecisionTableRow
+from .models.decision_table_row_execution_output import DecisionTableRowExecutionOutput
+from .models.decision_table_row_listing import DecisionTableRowListing
+from .models.decision_table_row_parameter_value import DecisionTableRowParameterValue
+from .models.decision_table_version import DecisionTableVersion
+from .models.decision_table_version_entity import DecisionTableVersionEntity
+from .models.decision_table_version_listing import DecisionTableVersionListing
 from .models.default_greeting_list import DefaultGreetingList
 from .models.default_objective import DefaultObjective
+from .models.definition import Definition
 from .models.deletable_user_reference import DeletableUserReference
 from .models.delete_program_response import DeleteProgramResponse
 from .models.delete_retention import DeleteRetention
@@ -1810,6 +1850,7 @@ from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.end_consult_transfer_event import EndConsultTransferEvent
 from .models.end_transfer_event import EndTransferEvent
 from .models.endpoint import Endpoint
+from .models.engagement_request import EngagementRequest
 from .models.engine_integration import EngineIntegration
 from .models.enrich_field_rule import EnrichFieldRule
 from .models.enrich_field_rules import EnrichFieldRules
@@ -2356,6 +2397,7 @@ from .models.internal_message_details import InternalMessageDetails
 from .models.intraday_performance_prediction_data import IntradayPerformancePredictionData
 from .models.intraday_planning_group_request import IntradayPlanningGroupRequest
 from .models.invalid_assignment import InvalidAssignment
+from .models.invoice_address import InvoiceAddress
 from .models.ip_address_authentication import IpAddressAuthentication
 from .models.ip_address_range import IpAddressRange
 from .models.ip_address_range_listing import IpAddressRangeListing
@@ -2515,6 +2557,7 @@ from .models.json_cursor_search_response import JsonCursorSearchResponse
 from .models.json_node import JsonNode
 from .models.json_node_search_response import JsonNodeSearchResponse
 from .models.json_schema_document import JsonSchemaDocument
+from .models.json_schema_with_definitions import JsonSchemaWithDefinitions
 from .models.json_search_response import JsonSearchResponse
 from .models.key_performance_indicator import KeyPerformanceIndicator
 from .models.key_performance_indicator_assessment import KeyPerformanceIndicatorAssessment
@@ -2797,6 +2840,7 @@ from .models.listed_dictionary_feedback import ListedDictionaryFeedback
 from .models.listed_program import ListedProgram
 from .models.listed_topic import ListedTopic
 from .models.listing import Listing
+from .models.literal import Literal
 from .models.local_date_range import LocalDateRange
 from .models.local_encryption_configuration import LocalEncryptionConfiguration
 from .models.local_encryption_key_request import LocalEncryptionKeyRequest
@@ -3203,6 +3247,7 @@ from .models.outcome_request import OutcomeRequest
 from .models.outcome_score import OutcomeScore
 from .models.outcome_scores_result import OutcomeScoresResult
 from .models.outlier_info import OutlierInfo
+from .models.output_value import OutputValue
 from .models.overall_best_points import OverallBestPoints
 from .models.overall_best_points_item import OverallBestPointsItem
 from .models.override_date import OverrideDate
@@ -3383,6 +3428,7 @@ from .models.prompt_asset_entity_listing import PromptAssetEntityListing
 from .models.prompt_asset_upload import PromptAssetUpload
 from .models.prompt_entity_listing import PromptEntityListing
 from .models.property_change import PropertyChange
+from .models.property_definition import PropertyDefinition
 from .models.property_index_request import PropertyIndexRequest
 from .models.provision_info import ProvisionInfo
 from .models.publish_draft_input import PublishDraftInput
@@ -3906,6 +3952,8 @@ from .models.routing_status_detail_query_clause import RoutingStatusDetailQueryC
 from .models.routing_status_detail_query_filter import RoutingStatusDetailQueryFilter
 from .models.routing_status_detail_query_predicate import RoutingStatusDetailQueryPredicate
 from .models.routing_transfer_event import RoutingTransferEvent
+from .models.row_search_filter import RowSearchFilter
+from .models.row_search_predicate import RowSearchPredicate
 from .models.rule_config import RuleConfig
 from .models.rule_engine_config import RuleEngineConfig
 from .models.rule_set import RuleSet
@@ -3990,6 +4038,7 @@ from .models.sdk_library import SdkLibrary
 from .models.search_aggregation import SearchAggregation
 from .models.search_alternative_shift_trades_request import SearchAlternativeShiftTradesRequest
 from .models.search_criteria import SearchCriteria
+from .models.search_decision_table_rows_request import SearchDecisionTableRowsRequest
 from .models.search_request import SearchRequest
 from .models.search_shift_trade_response import SearchShiftTradeResponse
 from .models.search_shift_trades_request import SearchShiftTradesRequest
@@ -4534,6 +4583,10 @@ from .models.update_business_unit_request import UpdateBusinessUnitRequest
 from .models.update_business_unit_settings_request import UpdateBusinessUnitSettingsRequest
 from .models.update_coaching_appointment_request import UpdateCoachingAppointmentRequest
 from .models.update_contact_column_action_settings import UpdateContactColumnActionSettings
+from .models.update_decision_table_columns_request import UpdateDecisionTableColumnsRequest
+from .models.update_decision_table_request import UpdateDecisionTableRequest
+from .models.update_decision_table_row_request import UpdateDecisionTableRowRequest
+from .models.update_decision_table_version_request import UpdateDecisionTableVersionRequest
 from .models.update_draft_input import UpdateDraftInput
 from .models.update_management_unit_request import UpdateManagementUnitRequest
 from .models.update_mu_agent_request import UpdateMuAgentRequest
@@ -4546,6 +4599,7 @@ from .models.update_notification_response import UpdateNotificationResponse
 from .models.update_notifications_request import UpdateNotificationsRequest
 from .models.update_notifications_response import UpdateNotificationsResponse
 from .models.update_planning_group_request import UpdatePlanningGroupRequest
+from .models.update_row_index_request import UpdateRowIndexRequest
 from .models.update_schedule_upload_response import UpdateScheduleUploadResponse
 from .models.update_schedule_upload_schema import UpdateScheduleUploadSchema
 from .models.update_service_goal_template import UpdateServiceGoalTemplate
@@ -4561,6 +4615,7 @@ from .models.update_verifier_request import UpdateVerifierRequest
 from .models.update_work_plan_bid import UpdateWorkPlanBid
 from .models.update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
 from .models.update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
+from .models.updated_settings_response import UpdatedSettingsResponse
 from .models.updated_topic_object import UpdatedTopicObject
 from .models.updated_topic_system_message import UpdatedTopicSystemMessage
 from .models.upload_media_request import UploadMediaRequest
@@ -4599,6 +4654,7 @@ from .models.user_authorization import UserAuthorization
 from .models.user_available_times import UserAvailableTimes
 from .models.user_best_points import UserBestPoints
 from .models.user_best_points_item import UserBestPointsItem
+from .models.user_chat_settings import UserChatSettings
 from .models.user_conversation_summary import UserConversationSummary
 from .models.user_conversations_event_media_summary import UserConversationsEventMediaSummary
 from .models.user_conversations_event_media_summary_detail import UserConversationsEventMediaSummaryDetail
@@ -5057,6 +5113,8 @@ from .models.wfm_user_schedule_adherence_updated_topic_user_schedule_adherence_u
 from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .models.whats_app_available_phone_number_details import WhatsAppAvailablePhoneNumberDetails
 from .models.whats_app_available_phone_number_details_listing import WhatsAppAvailablePhoneNumberDetailsListing
+from .models.whats_app_calling_configuration_request import WhatsAppCallingConfigurationRequest
+from .models.whats_app_calling_configuration_response import WhatsAppCallingConfigurationResponse
 from .models.whats_app_column import WhatsAppColumn
 from .models.whats_app_config import WhatsAppConfig
 from .models.whats_app_definition import WhatsAppDefinition
@@ -5263,6 +5321,7 @@ from .apis.architect_api import ArchitectApi
 from .apis.audit_api import AuditApi
 from .apis.authorization_api import AuthorizationApi
 from .apis.billing_api import BillingApi
+from .apis.business_rules_api import BusinessRulesApi
 from .apis.carrier_services_api import CarrierServicesApi
 from .apis.chat_api import ChatApi
 from .apis.coaching_api import CoachingApi
@@ -5343,6 +5402,7 @@ from .apis.architect_api import ArchitectApi
 from .apis.audit_api import AuditApi
 from .apis.authorization_api import AuthorizationApi
 from .apis.billing_api import BillingApi
+from .apis.business_rules_api import BusinessRulesApi
 from .apis.carrier_services_api import CarrierServicesApi
 from .apis.chat_api import ChatApi
 from .apis.coaching_api import CoachingApi

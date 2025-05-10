@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import UserParam
 
 class RestErrorDetail(object):
     """
@@ -48,16 +50,19 @@ class RestErrorDetail(object):
         """
         self.swagger_types = {
             'error': 'str',
-            'details': 'str'
+            'details': 'str',
+            'user_params': 'list[UserParam]'
         }
 
         self.attribute_map = {
             'error': 'error',
-            'details': 'details'
+            'details': 'details',
+            'user_params': 'userParams'
         }
 
         self._error = None
         self._details = None
+        self._user_params = None
 
     @property
     def error(self) -> str:
@@ -106,6 +111,30 @@ class RestErrorDetail(object):
         
 
         self._details = details
+
+    @property
+    def user_params(self) -> List['UserParam']:
+        """
+        Gets the user_params of this RestErrorDetail.
+        parameters to be inserted into details.
+
+        :return: The user_params of this RestErrorDetail.
+        :rtype: list[UserParam]
+        """
+        return self._user_params
+
+    @user_params.setter
+    def user_params(self, user_params: List['UserParam']) -> None:
+        """
+        Sets the user_params of this RestErrorDetail.
+        parameters to be inserted into details.
+
+        :param user_params: The user_params of this RestErrorDetail.
+        :type: list[UserParam]
+        """
+        
+
+        self._user_params = user_params
 
     def to_dict(self):
         """

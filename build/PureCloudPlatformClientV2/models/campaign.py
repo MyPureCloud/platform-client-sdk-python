@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ContactSort
+    from . import DiagnosticsSettings
     from . import DomainEntityRef
     from . import DynamicContactQueueingSettings
     from . import DynamicLineBalancingSettings
@@ -93,6 +94,7 @@ class Campaign(object):
             'max_calls_per_agent_decimal': 'float',
             'callback_auto_answer': 'bool',
             'dynamic_line_balancing_settings': 'DynamicLineBalancingSettings',
+            'diagnostics_settings': 'DiagnosticsSettings',
             'self_uri': 'str'
         }
 
@@ -136,6 +138,7 @@ class Campaign(object):
             'max_calls_per_agent_decimal': 'maxCallsPerAgentDecimal',
             'callback_auto_answer': 'callbackAutoAnswer',
             'dynamic_line_balancing_settings': 'dynamicLineBalancingSettings',
+            'diagnostics_settings': 'diagnosticsSettings',
             'self_uri': 'selfUri'
         }
 
@@ -178,6 +181,7 @@ class Campaign(object):
         self._max_calls_per_agent_decimal = None
         self._callback_auto_answer = None
         self._dynamic_line_balancing_settings = None
+        self._diagnostics_settings = None
         self._self_uri = None
 
     @property
@@ -1125,6 +1129,30 @@ class Campaign(object):
         
 
         self._dynamic_line_balancing_settings = dynamic_line_balancing_settings
+
+    @property
+    def diagnostics_settings(self) -> 'DiagnosticsSettings':
+        """
+        Gets the diagnostics_settings of this Campaign.
+        Campaign diagnostics settings
+
+        :return: The diagnostics_settings of this Campaign.
+        :rtype: DiagnosticsSettings
+        """
+        return self._diagnostics_settings
+
+    @diagnostics_settings.setter
+    def diagnostics_settings(self, diagnostics_settings: 'DiagnosticsSettings') -> None:
+        """
+        Sets the diagnostics_settings of this Campaign.
+        Campaign diagnostics settings
+
+        :param diagnostics_settings: The diagnostics_settings of this Campaign.
+        :type: DiagnosticsSettings
+        """
+        
+
+        self._diagnostics_settings = diagnostics_settings
 
     @property
     def self_uri(self) -> str:

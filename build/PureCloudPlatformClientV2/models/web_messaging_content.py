@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ContentCard
     from . import ContentCarousel
+    from . import ContentDatePicker
     from . import WebMessagingAttachment
     from . import WebMessagingButtonResponse
     from . import WebMessagingGeneric
@@ -60,7 +61,8 @@ class WebMessagingContent(object):
             'button_response': 'WebMessagingButtonResponse',
             'generic': 'WebMessagingGeneric',
             'card': 'ContentCard',
-            'carousel': 'ContentCarousel'
+            'carousel': 'ContentCarousel',
+            'date_picker': 'ContentDatePicker'
         }
 
         self.attribute_map = {
@@ -70,7 +72,8 @@ class WebMessagingContent(object):
             'button_response': 'buttonResponse',
             'generic': 'generic',
             'card': 'card',
-            'carousel': 'carousel'
+            'carousel': 'carousel',
+            'date_picker': 'datePicker'
         }
 
         self._content_type = None
@@ -80,6 +83,7 @@ class WebMessagingContent(object):
         self._generic = None
         self._card = None
         self._carousel = None
+        self._date_picker = None
 
     @property
     def content_type(self) -> str:
@@ -103,7 +107,7 @@ class WebMessagingContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel"]
+        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel", "DatePicker"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -253,6 +257,30 @@ class WebMessagingContent(object):
         
 
         self._carousel = carousel
+
+    @property
+    def date_picker(self) -> 'ContentDatePicker':
+        """
+        Gets the date_picker of this WebMessagingContent.
+        DatePicker content
+
+        :return: The date_picker of this WebMessagingContent.
+        :rtype: ContentDatePicker
+        """
+        return self._date_picker
+
+    @date_picker.setter
+    def date_picker(self, date_picker: 'ContentDatePicker') -> None:
+        """
+        Sets the date_picker of this WebMessagingContent.
+        DatePicker content
+
+        :param date_picker: The date_picker of this WebMessagingContent.
+        :type: ContentDatePicker
+        """
+        
+
+        self._date_picker = date_picker
 
     def to_dict(self):
         """

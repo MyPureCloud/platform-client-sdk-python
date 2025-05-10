@@ -7,15 +7,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_emails_settings_threading**](#delete_emails_settings_threading) | Reset email threading settings to default|
+|[**delete_externalcontacts_settings**](#delete_externalcontacts_settings) | Delete settings|
 |[**delete_users_agentui_agents_autoanswer_agent_id_settings**](#delete_users_agentui_agents_autoanswer_agent_id_settings) | Delete agent auto answer settings|
 |[**get_emails_settings**](#get_emails_settings) | Get email Contact Center settings|
 |[**get_emails_settings_threading**](#get_emails_settings_threading) | Get email threading settings|
+|[**get_externalcontacts_settings**](#get_externalcontacts_settings) | Get settings|
 |[**get_settings_executiondata**](#get_settings_executiondata) | Get the execution history enabled setting.|
 |[**get_users_agentui_agents_autoanswer_agent_id_settings**](#get_users_agentui_agents_autoanswer_agent_id_settings) | Get agent auto answer settings|
 |[**patch_emails_settings**](#patch_emails_settings) | Patch email Contact Center settings|
 |[**patch_emails_settings_threading**](#patch_emails_settings_threading) | Patch email threading settings|
 |[**patch_settings_executiondata**](#patch_settings_executiondata) | Edit the execution history on off setting.|
 |[**patch_users_agentui_agents_autoanswer_agent_id_settings**](#patch_users_agentui_agents_autoanswer_agent_id_settings) | Update agent auto answer settings|
+|[**put_externalcontacts_settings**](#put_externalcontacts_settings) | Set settings|
 |[**put_users_agentui_agents_autoanswer_agent_id_settings**](#put_users_agentui_agents_autoanswer_agent_id_settings) | Set agent auto answer settings|
 
 
@@ -61,6 +64,50 @@ This endpoint does not need any parameters.
 ### Return type
 
 void (empty response body)
+
+
+## delete_externalcontacts_settings
+
+> [**UpdatedSettingsResponse**](UpdatedSettingsResponse) delete_externalcontacts_settings()
+
+
+Delete settings
+
+Wraps DELETE /api/v2/externalcontacts/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:settings:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SettingsApi()
+
+try:
+    # Delete settings
+    api_response = api_instance.delete_externalcontacts_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SettingsApi->delete_externalcontacts_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**UpdatedSettingsResponse**](UpdatedSettingsResponse)
 
 
 ## delete_users_agentui_agents_autoanswer_agent_id_settings
@@ -196,6 +243,50 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**EmailThreadingSettings**](EmailThreadingSettings)
+
+
+## get_externalcontacts_settings
+
+> [**ExternalContactsSettings**](ExternalContactsSettings) get_externalcontacts_settings()
+
+
+Get settings
+
+Wraps GET /api/v2/externalcontacts/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SettingsApi()
+
+try:
+    # Get settings
+    api_response = api_instance.get_externalcontacts_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SettingsApi->get_externalcontacts_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**ExternalContactsSettings**](ExternalContactsSettings)
 
 
 ## get_settings_executiondata
@@ -488,6 +579,54 @@ except ApiException as e:
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
+## put_externalcontacts_settings
+
+> [**UpdatedSettingsResponse**](UpdatedSettingsResponse) put_externalcontacts_settings(body=body)
+
+
+Set settings
+
+Wraps PUT /api/v2/externalcontacts/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SettingsApi()
+body = PureCloudPlatformClientV2.ExternalContactsSettings() # ExternalContactsSettings |  (optional)
+
+try:
+    # Set settings
+    api_response = api_instance.put_externalcontacts_settings(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SettingsApi->put_externalcontacts_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ExternalContactsSettings**](ExternalContactsSettings)|  | [optional]  |
+
+### Return type
+
+[**UpdatedSettingsResponse**](UpdatedSettingsResponse)
+
+
 ## put_users_agentui_agents_autoanswer_agent_id_settings
 
 > [**AutoAnswerSettings**](AutoAnswerSettings) put_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
@@ -538,4 +677,4 @@ except ApiException as e:
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

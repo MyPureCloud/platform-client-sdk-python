@@ -3098,4 +3098,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

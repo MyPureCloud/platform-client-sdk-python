@@ -2604,12 +2604,13 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str domain_name: email domain (required)
         :param str route_id: route ID (required)
+        :param list[str] expand: Which fields, if any, to expand
         :return: InboundRoute
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['domain_name', 'route_id']
+        all_params = ['domain_name', 'route_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2638,6 +2639,8 @@ class RoutingApi(object):
             path_params['routeId'] = params['route_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -2675,7 +2678,6 @@ class RoutingApi(object):
         """
         Get a route identity resolution setting.
         
-	    get_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2775,12 +2777,13 @@ class RoutingApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str pattern: Filter routes by the route's pattern property
+        :param list[str] expand: Which fields, if any, to expand
         :return: InboundRouteEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['domain_name', 'page_size', 'page_number', 'pattern']
+        all_params = ['domain_name', 'page_size', 'page_number', 'pattern', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2810,6 +2813,8 @@ class RoutingApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'pattern' in params:
             query_params['pattern'] = params['pattern']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -4062,12 +4067,13 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
+        :param list[str] expand: Which fields, if any, to expand
         :return: Queue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queue_id']
+        all_params = ['queue_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -4091,6 +4097,8 @@ class RoutingApi(object):
             path_params['queueId'] = params['queue_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -4452,7 +4460,6 @@ class RoutingApi(object):
         """
         Get Queue IdentityResolution Settings.
         
-	    get_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4948,12 +4955,13 @@ class RoutingApi(object):
         :param list[str] peer_id: Include only queues with the specified peer ID(s)
         :param str canned_response_library_id: Include only queues explicitly associated with the specified canned response library ID
         :param bool has_peer: Include only queues with a peer ID
+        :param list[str] expand: Which fields, if any, to expand
         :return: QueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_order', 'name', 'id', 'division_id', 'peer_id', 'canned_response_library_id', 'has_peer']
+        all_params = ['page_number', 'page_size', 'sort_order', 'name', 'id', 'division_id', 'peer_id', 'canned_response_library_id', 'has_peer', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -4990,6 +4998,8 @@ class RoutingApi(object):
             query_params['cannedResponseLibraryId'] = params['canned_response_library_id']
         if 'has_peer' in params:
             query_params['hasPeer'] = params['has_peer']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -6251,7 +6261,6 @@ class RoutingApi(object):
         """
         Get a SMS identity resolution settings.
         
-	    get_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6433,12 +6442,13 @@ class RoutingApi(object):
         :param str language: A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
         :param str integration_id: Filter on the Genesys Cloud integration id to which the phone number belongs to
         :param str supported_content_id: Filter based on the supported content ID
+        :param list[str] expand: Which fields, if any, to expand
         :return: SmsPhoneNumberEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['phone_number', 'phone_number_type', 'phone_number_status', 'country_code', 'page_size', 'page_number', 'sort_by', 'sort_order', 'language', 'integration_id', 'supported_content_id']
+        all_params = ['phone_number', 'phone_number_type', 'phone_number_status', 'country_code', 'page_size', 'page_number', 'sort_by', 'sort_order', 'language', 'integration_id', 'supported_content_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -6479,6 +6489,8 @@ class RoutingApi(object):
             query_params['integration.id'] = params['integration_id']
         if 'supported_content_id' in params:
             query_params['supportedContent.id'] = params['supported_content_id']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -11597,7 +11609,6 @@ class RoutingApi(object):
         """
         Update identity resolution settings for a route.
         
-	    put_routing_email_domain_route_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11934,7 +11945,6 @@ class RoutingApi(object):
         """
         Update Queue IdentityResolution Settings.
         
-	    put_routing_queue_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -12175,7 +12185,6 @@ class RoutingApi(object):
         """
         Update an SMS identity resolution settings.
         
-	    put_routing_sms_identityresolution_phonenumber is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -950,7 +950,6 @@ class WebDeploymentsApi(object):
         """
         Get a deployment identity resolution setting.
         
-	    get_webdeployments_deployment_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1659,7 +1658,6 @@ class WebDeploymentsApi(object):
         """
         Update identity resolution settings for a deployment.
         
-	    put_webdeployments_deployment_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

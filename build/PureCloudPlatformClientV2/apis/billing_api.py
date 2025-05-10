@@ -35,9 +35,15 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import BillingContract
+from ..models import BillingContractListing
+from ..models import BillingContractPeriodDetail
+from ..models import BillingInvoiceItemListing
+from ..models import BillingInvoiceListing
 from ..models import BillingUsageReport
 from ..models import ErrorBody
 from ..models import TrusteeBillingOverview
+from ..models import UrlResponse
 
 class BillingApi(object):
     """
@@ -54,6 +60,522 @@ class BillingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def get_billing_contract(self, contract_id: str, **kwargs) -> 'BillingContract':
+        """
+        Get billing contract
+        Retrieve a single contract from the system.
+	    get_billing_contract is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_contract(contract_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contract_id: The contract number. (required)
+        :return: BillingContract
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contract_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_contract" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contract_id' is set
+        if ('contract_id' not in params) or (params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_billing_contract`")
+
+
+        resource_path = '/api/v2/billing/contracts/{contractId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contract_id' in params:
+            path_params['contractId'] = params['contract_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BillingContract',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_billing_contract_billingperiod(self, contract_id: str, billing_period_id: str, **kwargs) -> 'BillingContractPeriodDetail':
+        """
+        Get contract billing period
+        Fetch the billing information for a given Organization by billing period.
+	    get_billing_contract_billingperiod is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_contract_billingperiod(contract_id, billing_period_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contract_id: The contract number. (required)
+        :param str billing_period_id: The Billing Period Id for the Org. (required)
+        :return: BillingContractPeriodDetail
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contract_id', 'billing_period_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_contract_billingperiod" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contract_id' is set
+        if ('contract_id' not in params) or (params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_billing_contract_billingperiod`")
+        # verify the required parameter 'billing_period_id' is set
+        if ('billing_period_id' not in params) or (params['billing_period_id'] is None):
+            raise ValueError("Missing the required parameter `billing_period_id` when calling `get_billing_contract_billingperiod`")
+
+
+        resource_path = '/api/v2/billing/contracts/{contractId}/billingperiods/{billingPeriodId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contract_id' in params:
+            path_params['contractId'] = params['contract_id']
+        if 'billing_period_id' in params:
+            path_params['billingPeriodId'] = params['billing_period_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BillingContractPeriodDetail',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_billing_contracts(self, **kwargs) -> 'BillingContractListing':
+        """
+        Get billing contracts
+        Retrieve a list of contracts stored in the system.
+	    get_billing_contracts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_contracts(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param date date_start: Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date date_end: End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param str status: Filter by the status of contracts
+        :param str external_number: Filter by the unique external number.
+        :return: BillingContractListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size', 'date_start', 'date_end', 'status', 'external_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_contracts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/billing/contracts'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'external_number' in params:
+            query_params['externalNumber'] = params['external_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BillingContractListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_billing_contracts_invoice_document(self, invoice_id: str, **kwargs) -> 'UrlResponse':
+        """
+        Get invoice document
+        Fetch the document for a specific invoice.
+	    get_billing_contracts_invoice_document is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_contracts_invoice_document(invoice_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str invoice_id: invoiceId (required)
+        :return: UrlResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['invoice_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_contracts_invoice_document" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'invoice_id' is set
+        if ('invoice_id' not in params) or (params['invoice_id'] is None):
+            raise ValueError("Missing the required parameter `invoice_id` when calling `get_billing_contracts_invoice_document`")
+
+
+        resource_path = '/api/v2/billing/contracts/invoices/{invoiceId}/document'.replace('{format}', 'json')
+        path_params = {}
+        if 'invoice_id' in params:
+            path_params['invoiceId'] = params['invoice_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UrlResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_billing_contracts_invoice_lines(self, invoice_id: str, **kwargs) -> 'BillingInvoiceItemListing':
+        """
+        Get invoice lines
+        Fetch a list of all bills for the specified account.
+	    get_billing_contracts_invoice_lines is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_contracts_invoice_lines(invoice_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str invoice_id: invoiceId (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: BillingInvoiceItemListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['invoice_id', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_contracts_invoice_lines" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'invoice_id' is set
+        if ('invoice_id' not in params) or (params['invoice_id'] is None):
+            raise ValueError("Missing the required parameter `invoice_id` when calling `get_billing_contracts_invoice_lines`")
+
+
+        resource_path = '/api/v2/billing/contracts/invoices/{invoiceId}/lines'.replace('{format}', 'json')
+        path_params = {}
+        if 'invoice_id' in params:
+            path_params['invoiceId'] = params['invoice_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BillingInvoiceItemListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_billing_contracts_invoices(self, **kwargs) -> 'BillingInvoiceListing':
+        """
+        Get invoices
+        Retrieve a list of invoices stored in the system.
+	    get_billing_contracts_invoices is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_billing_contracts_invoices(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param date date_start: Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date date_end: End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param str payment_status: Payment Status
+        :return: BillingInvoiceListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size', 'date_start', 'date_end', 'payment_status']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_billing_contracts_invoices" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/billing/contracts/invoices'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
+        if 'payment_status' in params:
+            query_params['paymentStatus'] = params['payment_status']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BillingInvoiceListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def get_billing_reports_billableusage(self, start_date: datetime, end_date: datetime, **kwargs) -> 'BillingUsageReport':
         """

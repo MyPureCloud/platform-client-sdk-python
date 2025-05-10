@@ -565,8 +565,6 @@ except ApiException as e:
 
 Get a deployment identity resolution setting.
 
-get_webdeployments_deployment_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/identityresolution 
 
 Requires ALL permissions: 
@@ -650,7 +648,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent, identityresolution |
 
 ### Return type
 
@@ -997,8 +995,6 @@ except ApiException as e:
 
 Update identity resolution settings for a deployment.
 
-put_webdeployments_deployment_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/webdeployments/deployments/{deploymentId}/identityresolution 
 
 Requires ALL permissions: 
@@ -1043,4 +1039,4 @@ except ApiException as e:
 [**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

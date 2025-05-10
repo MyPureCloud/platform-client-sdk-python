@@ -229,7 +229,7 @@ class BotFlowSession(object):
         """
         if isinstance(bot_result, int):
             bot_result = str(bot_result)
-        allowed_values = ["Unknown", "ExitRequestedByUser", "ExitRequestedByBot", "ExitError", "ExitRecognitionFailure", "DisconnectRequestedByUser", "DisconnectRequestedByBot", "DisconnectSessionExpired", "DisconnectError", "DisconnectRecognitionFailure", "TransferToACD"]
+        allowed_values = ["Unknown", "ExitRequestedByUser", "ExitRequestedByBot", "ExitError", "ExitRecognitionFailure", "DisconnectRequestedByUser", "DisconnectRequestedByBot", "DisconnectSessionExpired", "DisconnectError", "DisconnectRecognitionFailure", "TransferToACD", "TransferToUser", "TransferToGroup", "TransferToNumber", "TransferToUserVoicemail", "TransferToGroupVoicemail", "TransferToACDVoicemail"]
         if bot_result.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for bot_result -> " + bot_result)
             self._bot_result = "outdated_sdk_version"

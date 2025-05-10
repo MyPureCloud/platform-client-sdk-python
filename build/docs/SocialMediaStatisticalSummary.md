@@ -14,6 +14,7 @@
 | **count_neutral** | int |  | [optional] |
 | **count_unknown** | int |  | [optional] |
 | **sum** | float |  | [optional] |
+| **average** | float |  | [optional] |
 | **current** | float |  | [optional] |
 | **ratio** | float |  | [optional] |
 | **numerator** | float |  | [optional] |
@@ -24,4 +25,4 @@
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

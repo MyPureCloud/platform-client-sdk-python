@@ -26,7 +26,8 @@
 | **recipient_emails** | list[str] | The list of email recipients for the exports | [optional] |
 | **include_duration_format_in_header** | bool | Indicates whether to include selected duration format to the column headers | [optional] |
 | **duration_format** | str | Indicates the duration format for the exports | [optional] |
+| **chart_columns** | [list[ChartColumn]](ChartColumn) | The list of columns for which chart is going to be displayed in export | [optional] |
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

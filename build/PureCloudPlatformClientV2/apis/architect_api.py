@@ -3143,7 +3143,6 @@ class ArchitectApi(object):
         """
         Get an IVR IdentityResolutionConfig.
         
-	    get_architect_ivr_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3240,12 +3239,13 @@ class ArchitectApi(object):
         :param str name: Name of the IVR to filter by.
         :param str dnis: The phone number of the IVR to filter by.
         :param str schedule_group: The Schedule Group of the IVR to filter by.
+        :param list[str] expand: Which fields, if any, to expand
         :return: IVREntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'dnis', 'schedule_group']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'dnis', 'schedule_group', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -3278,6 +3278,8 @@ class ArchitectApi(object):
             query_params['dnis'] = params['dnis']
         if 'schedule_group' in params:
             query_params['scheduleGroup'] = params['schedule_group']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -11445,7 +11447,6 @@ class ArchitectApi(object):
         """
         Update an IVR IdentityResolutionConfig.
         
-	    put_architect_ivr_identityresolution is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

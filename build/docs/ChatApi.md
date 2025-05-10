@@ -547,7 +547,7 @@ except ApiException as e:
 
 ## get_chats_room_participants
 
-> [**RoomParticipantsResponse**](RoomParticipantsResponse) get_chats_room_participants(room_jid)
+> [**RoomParticipantsResponse**](RoomParticipantsResponse) get_chats_room_participants(room_jid, notify=notify)
 
 
 Get room participants in a room
@@ -573,10 +573,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ChatApi()
 room_jid = 'room_jid_example' # str | roomJid
+notify = True # bool | Whether to get users to notify (optional)
 
 try:
     # Get room participants in a room
-    api_response = api_instance.get_chats_room_participants(room_jid)
+    api_response = api_instance.get_chats_room_participants(room_jid, notify=notify)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChatApi->get_chats_room_participants: %s\n" % e)
@@ -588,6 +589,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
+| **notify** | **bool**| Whether to get users to notify | [optional]  |
 
 ### Return type
 
@@ -1642,4 +1644,4 @@ except ApiException as e:
 [**ChatSettings**](ChatSettings)
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_

@@ -108,6 +108,7 @@ from ..models import EmailMessage
 from ..models import EmailMessagePreviewListing
 from ..models import EmailMessageReply
 from ..models import EmailsSettings
+from ..models import EngagementRequest
 from ..models import ErrorBody
 from ..models import FacebookAppCredentials
 from ..models import FacebookIntegration
@@ -6566,7 +6567,6 @@ class ConversationsApi(object):
         """
         Get Facebook messaging integration identity resolution settings
         
-	    get_conversations_messaging_identityresolution_integrations_facebook_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6645,7 +6645,6 @@ class ConversationsApi(object):
         """
         Get an open messaging integration Identity Resolution settings
         
-	    get_conversations_messaging_identityresolution_integrations_open_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6724,7 +6723,6 @@ class ConversationsApi(object):
         """
         Get a whatsApp integration Identity Resolution settings
         
-	    get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9178,11 +9176,97 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_conversation_summary_engagements(self, conversation_id: str, summary_id: str, **kwargs) -> None:
+        """
+        Update agent's engagement for the summary.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversation_summary_engagements(conversation_id, summary_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str summary_id: Summary ID (required)
+        :param EngagementRequest body: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'summary_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversation_summary_engagements" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversation_summary_engagements`")
+        # verify the required parameter 'summary_id' is set
+        if ('summary_id' not in params) or (params['summary_id'] is None):
+            raise ValueError("Missing the required parameter `summary_id` when calling `patch_conversation_summary_engagements`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'summary_id' in params:
+            path_params['summaryId'] = params['summary_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_conversation_summary_feedback(self, conversation_id: str, summary_id: str, **kwargs) -> None:
         """
         Update the feedback for the summary.
         
-	    patch_conversation_summary_feedback is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -20737,7 +20821,6 @@ class ConversationsApi(object):
         """
         Create an identity resolution settings for a Facebook messaging integration
         
-	    put_conversations_messaging_identityresolution_integrations_facebook_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -20822,7 +20905,6 @@ class ConversationsApi(object):
         """
         Update an open messaging integration Identity Resolution settings
         
-	    put_conversations_messaging_identityresolution_integrations_open_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -20907,7 +20989,6 @@ class ConversationsApi(object):
         """
         Update a whatsApp integration Identity Resolution settings
         
-	    put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

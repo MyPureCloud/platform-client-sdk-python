@@ -69,6 +69,7 @@ class RecordingMetadata(object):
             'max_allowed_restorations_for_org': 'int',
             'remaining_restorations_allowed_for_org': 'int',
             'session_id': 'str',
+            'region': 'str',
             'self_uri': 'str'
         }
 
@@ -93,6 +94,7 @@ class RecordingMetadata(object):
             'max_allowed_restorations_for_org': 'maxAllowedRestorationsForOrg',
             'remaining_restorations_allowed_for_org': 'remainingRestorationsAllowedForOrg',
             'session_id': 'sessionId',
+            'region': 'region',
             'self_uri': 'selfUri'
         }
 
@@ -116,6 +118,7 @@ class RecordingMetadata(object):
         self._max_allowed_restorations_for_org = None
         self._remaining_restorations_allowed_for_org = None
         self._session_id = None
+        self._region = None
         self._self_uri = None
 
     @property
@@ -612,6 +615,35 @@ class RecordingMetadata(object):
         
 
         self._session_id = session_id
+
+    @property
+    def region(self) -> str:
+        """
+        Gets the region of this RecordingMetadata.
+        The region the source recording is stored in
+
+        :return: The region of this RecordingMetadata.
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region: str) -> None:
+        """
+        Sets the region of this RecordingMetadata.
+        The region the source recording is stored in
+
+        :param region: The region of this RecordingMetadata.
+        :type: str
+        """
+        if isinstance(region, int):
+            region = str(region)
+        allowed_values = ["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ca-central-1", "eu-central-1", "eu-central-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "sa-east-1", "us-east-1", "us-west-2"]
+        if region.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for region -> " + region)
+            self._region = "outdated_sdk_version"
+        else:
+            self._region = region
 
     @property
     def self_uri(self) -> str:

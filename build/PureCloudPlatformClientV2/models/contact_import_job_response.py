@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import ContactImportJobMetadata
+    from . import StarrableDivision
 
 class ContactImportJobResponse(object):
     """
@@ -56,6 +57,7 @@ class ContactImportJobResponse(object):
             'execution_step': 'str',
             'metadata': 'ContactImportJobMetadata',
             'date_created': 'datetime',
+            'division': 'StarrableDivision',
             'self_uri': 'str',
             'settings': 'AddressableEntityRef'
         }
@@ -67,6 +69,7 @@ class ContactImportJobResponse(object):
             'execution_step': 'executionStep',
             'metadata': 'metadata',
             'date_created': 'dateCreated',
+            'division': 'division',
             'self_uri': 'selfUri',
             'settings': 'settings'
         }
@@ -77,6 +80,7 @@ class ContactImportJobResponse(object):
         self._execution_step = None
         self._metadata = None
         self._date_created = None
+        self._division = None
         self._self_uri = None
         self._settings = None
 
@@ -233,6 +237,30 @@ class ContactImportJobResponse(object):
         
 
         self._date_created = date_created
+
+    @property
+    def division(self) -> 'StarrableDivision':
+        """
+        Gets the division of this ContactImportJobResponse.
+        Division for the job
+
+        :return: The division of this ContactImportJobResponse.
+        :rtype: StarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'StarrableDivision') -> None:
+        """
+        Sets the division of this ContactImportJobResponse.
+        Division for the job
+
+        :param division: The division of this ContactImportJobResponse.
+        :type: StarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def self_uri(self) -> str:

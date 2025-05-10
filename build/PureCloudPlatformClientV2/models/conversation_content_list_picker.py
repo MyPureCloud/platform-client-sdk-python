@@ -93,7 +93,7 @@ class ConversationContentListPicker(object):
     def reply_message(self) -> 'ConversationContentReceivedReplyMessage':
         """
         Gets the reply_message of this ConversationContentListPicker.
-        The message displayed in the received message bubble.
+        The reply message after the user has selected the options from the List Picker.
 
         :return: The reply_message of this ConversationContentListPicker.
         :rtype: ConversationContentReceivedReplyMessage
@@ -104,7 +104,7 @@ class ConversationContentListPicker(object):
     def reply_message(self, reply_message: 'ConversationContentReceivedReplyMessage') -> None:
         """
         Sets the reply_message of this ConversationContentListPicker.
-        The message displayed in the received message bubble.
+        The reply message after the user has selected the options from the List Picker.
 
         :param reply_message: The reply_message of this ConversationContentListPicker.
         :type: ConversationContentReceivedReplyMessage
@@ -117,7 +117,7 @@ class ConversationContentListPicker(object):
     def received_message(self) -> 'ConversationContentReceivedReplyMessage':
         """
         Gets the received_message of this ConversationContentListPicker.
-        The message displayed in the reply message bubble.
+        The message prompt to select options in the List Picker sections.
 
         :return: The received_message of this ConversationContentListPicker.
         :rtype: ConversationContentReceivedReplyMessage
@@ -128,7 +128,7 @@ class ConversationContentListPicker(object):
     def received_message(self, received_message: 'ConversationContentReceivedReplyMessage') -> None:
         """
         Sets the received_message of this ConversationContentListPicker.
-        The message displayed in the reply message bubble.
+        The message prompt to select options in the List Picker sections.
 
         :param received_message: The received_message of this ConversationContentListPicker.
         :type: ConversationContentReceivedReplyMessage

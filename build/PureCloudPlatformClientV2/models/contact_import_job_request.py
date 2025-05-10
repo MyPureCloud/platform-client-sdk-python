@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WritableStarrableDivision
 
 class ContactImportJobRequest(object):
     """
@@ -47,14 +49,17 @@ class ContactImportJobRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'settings_id': 'str'
+            'settings_id': 'str',
+            'division': 'WritableStarrableDivision'
         }
 
         self.attribute_map = {
-            'settings_id': 'settingsId'
+            'settings_id': 'settingsId',
+            'division': 'division'
         }
 
         self._settings_id = None
+        self._division = None
 
     @property
     def settings_id(self) -> str:
@@ -79,6 +84,30 @@ class ContactImportJobRequest(object):
         
 
         self._settings_id = settings_id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this ContactImportJobRequest.
+        The division to import into
+
+        :return: The division of this ContactImportJobRequest.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this ContactImportJobRequest.
+        The division to import into
+
+        :param division: The division of this ContactImportJobRequest.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     def to_dict(self):
         """

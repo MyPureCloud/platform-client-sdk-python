@@ -50,16 +50,19 @@ class ContactBulkSearchParameters(object):
         """
         self.swagger_types = {
             'contact_list_filter_id': 'str',
-            'criteria': 'ContactBulkSearchCriteria'
+            'criteria': 'ContactBulkSearchCriteria',
+            'generate_download_uri': 'bool'
         }
 
         self.attribute_map = {
             'contact_list_filter_id': 'contactListFilterId',
-            'criteria': 'criteria'
+            'criteria': 'criteria',
+            'generate_download_uri': 'generateDownloadURI'
         }
 
         self._contact_list_filter_id = None
         self._criteria = None
+        self._generate_download_uri = None
 
     @property
     def contact_list_filter_id(self) -> str:
@@ -108,6 +111,30 @@ class ContactBulkSearchParameters(object):
         
 
         self._criteria = criteria
+
+    @property
+    def generate_download_uri(self) -> bool:
+        """
+        Gets the generate_download_uri of this ContactBulkSearchParameters.
+        Whether to do backup export as part of Bulk Operation or not. Default: true.
+
+        :return: The generate_download_uri of this ContactBulkSearchParameters.
+        :rtype: bool
+        """
+        return self._generate_download_uri
+
+    @generate_download_uri.setter
+    def generate_download_uri(self, generate_download_uri: bool) -> None:
+        """
+        Sets the generate_download_uri of this ContactBulkSearchParameters.
+        Whether to do backup export as part of Bulk Operation or not. Default: true.
+
+        :param generate_download_uri: The generate_download_uri of this ContactBulkSearchParameters.
+        :type: bool
+        """
+        
+
+        self._generate_download_uri = generate_download_uri
 
     def to_dict(self):
         """

@@ -2852,7 +2852,6 @@ class SpeechTextAnalyticsApi(object):
         """
         Translate a single interaction recording (or an email conversation)
         
-	    get_speechandtextanalytics_translations_language_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2943,7 +2942,6 @@ class SpeechTextAnalyticsApi(object):
         """
         Get supported translation languages
         
-	    get_speechandtextanalytics_translations_languages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

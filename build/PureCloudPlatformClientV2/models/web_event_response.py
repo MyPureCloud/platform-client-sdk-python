@@ -453,7 +453,7 @@ class WebEventResponse(object):
     def traits(self) -> Dict[str, 'CustomEventAttribute']:
         """
         Gets the traits of this WebEventResponse.
-        Traits are attributes intrinsic to the customer that may be sent in selected events, (e.g. email, lastName, cellPhone). Traits are used to collect information for identity resolution. For example, the same person might be using an application on different devices which might create two sessions with different customerIds. Additional information can be provided as traits to help link those two sessions and customers to a single external contact through common identifiers that were submitted via a form fill, message, or other input in both sessions.
+        Traits are attributes intrinsic to the customer that may be sent in selected events, (e.g. email, givenName, cellPhone). Traits are used to collect information for identity resolution. For example, the same person might be using an application on different devices which might create two sessions with different customerIds. Additional information can be provided as traits to help link those two sessions and customers to a single external contact through common identifiers that were submitted via a form fill, message, or other input in both sessions.
 
         :return: The traits of this WebEventResponse.
         :rtype: dict(str, CustomEventAttribute)
@@ -464,7 +464,7 @@ class WebEventResponse(object):
     def traits(self, traits: Dict[str, 'CustomEventAttribute']) -> None:
         """
         Sets the traits of this WebEventResponse.
-        Traits are attributes intrinsic to the customer that may be sent in selected events, (e.g. email, lastName, cellPhone). Traits are used to collect information for identity resolution. For example, the same person might be using an application on different devices which might create two sessions with different customerIds. Additional information can be provided as traits to help link those two sessions and customers to a single external contact through common identifiers that were submitted via a form fill, message, or other input in both sessions.
+        Traits are attributes intrinsic to the customer that may be sent in selected events, (e.g. email, givenName, cellPhone). Traits are used to collect information for identity resolution. For example, the same person might be using an application on different devices which might create two sessions with different customerIds. Additional information can be provided as traits to help link those two sessions and customers to a single external contact through common identifiers that were submitted via a form fill, message, or other input in both sessions.
 
         :param traits: The traits of this WebEventResponse.
         :type: dict(str, CustomEventAttribute)

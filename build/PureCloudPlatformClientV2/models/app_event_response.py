@@ -477,7 +477,7 @@ class AppEventResponse(object):
     def traits(self) -> Dict[str, 'CustomEventAttribute']:
         """
         Gets the traits of this AppEventResponse.
-        Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).
+        Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, givenName, cellPhone).
 
         :return: The traits of this AppEventResponse.
         :rtype: dict(str, CustomEventAttribute)
@@ -488,7 +488,7 @@ class AppEventResponse(object):
     def traits(self, traits: Dict[str, 'CustomEventAttribute']) -> None:
         """
         Sets the traits of this AppEventResponse.
-        Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).
+        Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, givenName, cellPhone).
 
         :param traits: The traits of this AppEventResponse.
         :type: dict(str, CustomEventAttribute)

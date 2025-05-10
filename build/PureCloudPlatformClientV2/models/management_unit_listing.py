@@ -53,11 +53,11 @@ class ManagementUnitListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
+            'page_count': 'int',
             'next_uri': 'str',
             'previous_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
-            'page_count': 'int',
             'self_uri': 'str'
         }
 
@@ -66,11 +66,11 @@ class ManagementUnitListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
+            'page_count': 'pageCount',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
-            'page_count': 'pageCount',
             'self_uri': 'selfUri'
         }
 
@@ -78,11 +78,11 @@ class ManagementUnitListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
+        self._page_count = None
         self._next_uri = None
         self._previous_uri = None
         self._last_uri = None
         self._first_uri = None
-        self._page_count = None
         self._self_uri = None
 
     @property
@@ -182,6 +182,30 @@ class ManagementUnitListing(object):
         self._total = total
 
     @property
+    def page_count(self) -> int:
+        """
+        Gets the page_count of this ManagementUnitListing.
+        Deprecated, paging is not supported
+
+        :return: The page_count of this ManagementUnitListing.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count: int) -> None:
+        """
+        Sets the page_count of this ManagementUnitListing.
+        Deprecated, paging is not supported
+
+        :param page_count: The page_count of this ManagementUnitListing.
+        :type: int
+        """
+        
+
+        self._page_count = page_count
+
+    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this ManagementUnitListing.
@@ -276,30 +300,6 @@ class ManagementUnitListing(object):
         
 
         self._first_uri = first_uri
-
-    @property
-    def page_count(self) -> int:
-        """
-        Gets the page_count of this ManagementUnitListing.
-        Deprecated, paging is not supported
-
-        :return: The page_count of this ManagementUnitListing.
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count: int) -> None:
-        """
-        Sets the page_count of this ManagementUnitListing.
-        Deprecated, paging is not supported
-
-        :param page_count: The page_count of this ManagementUnitListing.
-        :type: int
-        """
-        
-
-        self._page_count = page_count
 
     @property
     def self_uri(self) -> str:

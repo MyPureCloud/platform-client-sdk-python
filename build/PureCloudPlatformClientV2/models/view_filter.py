@@ -280,7 +280,8 @@ class ViewFilter(object):
             'segment_types': 'list[str]',
             'program_ids': 'list[str]',
             'category_ids': 'list[str]',
-            'delivery_pushed': 'bool'
+            'delivery_pushed': 'bool',
+            'social_ratings': 'list[float]'
         }
 
         self.attribute_map = {
@@ -510,7 +511,8 @@ class ViewFilter(object):
             'segment_types': 'segmentTypes',
             'program_ids': 'programIds',
             'category_ids': 'categoryIds',
-            'delivery_pushed': 'deliveryPushed'
+            'delivery_pushed': 'deliveryPushed',
+            'social_ratings': 'socialRatings'
         }
 
         self._media_types = None
@@ -740,6 +742,7 @@ class ViewFilter(object):
         self._program_ids = None
         self._category_ids = None
         self._delivery_pushed = None
+        self._social_ratings = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6218,6 +6221,30 @@ class ViewFilter(object):
         
 
         self._delivery_pushed = delivery_pushed
+
+    @property
+    def social_ratings(self) -> List[float]:
+        """
+        Gets the social_ratings of this ViewFilter.
+        A set of ratings for Google Business Profile
+
+        :return: The social_ratings of this ViewFilter.
+        :rtype: list[float]
+        """
+        return self._social_ratings
+
+    @social_ratings.setter
+    def social_ratings(self, social_ratings: List[float]) -> None:
+        """
+        Sets the social_ratings of this ViewFilter.
+        A set of ratings for Google Business Profile
+
+        :param social_ratings: The social_ratings of this ViewFilter.
+        :type: list[float]
+        """
+        
+
+        self._social_ratings = social_ratings
 
     def to_dict(self):
         """

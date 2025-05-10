@@ -51,24 +51,24 @@ class ProgramsMappingsEntityListing(object):
         self.swagger_types = {
             'entities': 'list[ProgramMappings]',
             'page_size': 'int',
+            'page_count': 'int',
             'next_uri': 'str',
-            'self_uri': 'str',
-            'page_count': 'int'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
+            'page_count': 'pageCount',
             'next_uri': 'nextUri',
-            'self_uri': 'selfUri',
-            'page_count': 'pageCount'
+            'self_uri': 'selfUri'
         }
 
         self._entities = None
         self._page_size = None
+        self._page_count = None
         self._next_uri = None
         self._self_uri = None
-        self._page_count = None
 
     @property
     def entities(self) -> List['ProgramMappings']:
@@ -119,6 +119,30 @@ class ProgramsMappingsEntityListing(object):
         self._page_size = page_size
 
     @property
+    def page_count(self) -> int:
+        """
+        Gets the page_count of this ProgramsMappingsEntityListing.
+
+
+        :return: The page_count of this ProgramsMappingsEntityListing.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count: int) -> None:
+        """
+        Sets the page_count of this ProgramsMappingsEntityListing.
+
+
+        :param page_count: The page_count of this ProgramsMappingsEntityListing.
+        :type: int
+        """
+        
+
+        self._page_count = page_count
+
+    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this ProgramsMappingsEntityListing.
@@ -165,30 +189,6 @@ class ProgramsMappingsEntityListing(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def page_count(self) -> int:
-        """
-        Gets the page_count of this ProgramsMappingsEntityListing.
-
-
-        :return: The page_count of this ProgramsMappingsEntityListing.
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count: int) -> None:
-        """
-        Sets the page_count of this ProgramsMappingsEntityListing.
-
-
-        :param page_count: The page_count of this ProgramsMappingsEntityListing.
-        :type: int
-        """
-        
-
-        self._page_count = page_count
 
     def to_dict(self):
         """

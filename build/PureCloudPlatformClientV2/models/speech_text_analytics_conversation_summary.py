@@ -50,7 +50,7 @@ class SpeechTextAnalyticsConversationSummary(object):
             'summary_type': 'str',
             'media_type': 'str',
             'language': 'str',
-            'agent_id': 'str',
+            'source_id': 'str',
             'summary': 'str',
             'generated': 'bool',
             'date_created': 'datetime'
@@ -60,7 +60,7 @@ class SpeechTextAnalyticsConversationSummary(object):
             'summary_type': 'summaryType',
             'media_type': 'mediaType',
             'language': 'language',
-            'agent_id': 'agentId',
+            'source_id': 'sourceId',
             'summary': 'summary',
             'generated': 'generated',
             'date_created': 'dateCreated'
@@ -69,7 +69,7 @@ class SpeechTextAnalyticsConversationSummary(object):
         self._summary_type = None
         self._media_type = None
         self._language = None
-        self._agent_id = None
+        self._source_id = None
         self._summary = None
         self._generated = None
         self._date_created = None
@@ -96,7 +96,7 @@ class SpeechTextAnalyticsConversationSummary(object):
         """
         if isinstance(summary_type, int):
             summary_type = str(summary_type)
-        allowed_values = ["Conversation", "Agent"]
+        allowed_values = ["Conversation", "Agent", "VirtualAgent"]
         if summary_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for summary_type -> " + summary_type)
             self._summary_type = "outdated_sdk_version"
@@ -157,28 +157,28 @@ class SpeechTextAnalyticsConversationSummary(object):
         self._language = language
 
     @property
-    def agent_id(self) -> str:
+    def source_id(self) -> str:
         """
-        Gets the agent_id of this SpeechTextAnalyticsConversationSummary.
-        The id of the agent associated with the summary
+        Gets the source_id of this SpeechTextAnalyticsConversationSummary.
+        The id of the source (program, agent assistant, or flow) from which summarization is triggered
 
-        :return: The agent_id of this SpeechTextAnalyticsConversationSummary.
+        :return: The source_id of this SpeechTextAnalyticsConversationSummary.
         :rtype: str
         """
-        return self._agent_id
+        return self._source_id
 
-    @agent_id.setter
-    def agent_id(self, agent_id: str) -> None:
+    @source_id.setter
+    def source_id(self, source_id: str) -> None:
         """
-        Sets the agent_id of this SpeechTextAnalyticsConversationSummary.
-        The id of the agent associated with the summary
+        Sets the source_id of this SpeechTextAnalyticsConversationSummary.
+        The id of the source (program, agent assistant, or flow) from which summarization is triggered
 
-        :param agent_id: The agent_id of this SpeechTextAnalyticsConversationSummary.
+        :param source_id: The source_id of this SpeechTextAnalyticsConversationSummary.
         :type: str
         """
         
 
-        self._agent_id = agent_id
+        self._source_id = source_id
 
     @property
     def summary(self) -> str:

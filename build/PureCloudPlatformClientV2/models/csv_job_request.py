@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WritableStarrableDivision
 
 class CsvJobRequest(object):
     """
@@ -48,16 +50,19 @@ class CsvJobRequest(object):
         """
         self.swagger_types = {
             'upload_id': 'str',
-            'settings_id': 'str'
+            'settings_id': 'str',
+            'division': 'WritableStarrableDivision'
         }
 
         self.attribute_map = {
             'upload_id': 'uploadId',
-            'settings_id': 'settingsId'
+            'settings_id': 'settingsId',
+            'division': 'division'
         }
 
         self._upload_id = None
         self._settings_id = None
+        self._division = None
 
     @property
     def upload_id(self) -> str:
@@ -106,6 +111,30 @@ class CsvJobRequest(object):
         
 
         self._settings_id = settings_id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this CsvJobRequest.
+        Division for the csv job
+
+        :return: The division of this CsvJobRequest.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this CsvJobRequest.
+        Division for the csv job
+
+        :param division: The division of this CsvJobRequest.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     def to_dict(self):
         """

@@ -13,7 +13,8 @@
 | **generic** | [WebMessagingGeneric](WebMessagingGeneric) | Generic content (Deprecated). | [optional] |
 | **card** | [ContentCard](ContentCard) | Card content | [optional] |
 | **carousel** | [ContentCarousel](ContentCarousel) | Carousel content | [optional] |
+| **date_picker** | [ContentDatePicker](ContentDatePicker) | DatePicker content | [optional] |
 
 
 
-_PureCloudPlatformClientV2 227.1.0_
+_PureCloudPlatformClientV2 228.0.0_
