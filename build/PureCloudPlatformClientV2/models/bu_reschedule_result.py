@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BuHeadcountForecast
+    from . import BuHeadcountForecastBuPlanningGroupHeadcountForecastResult
     from . import BuRescheduleAgentScheduleResult
     from . import ScheduleGenerationResult
 
@@ -53,7 +53,7 @@ class BuRescheduleResult(object):
         self.swagger_types = {
             'generation_results': 'ScheduleGenerationResult',
             'generation_results_download_url': 'str',
-            'headcount_forecast': 'BuHeadcountForecast',
+            'headcount_forecast': 'BuHeadcountForecastBuPlanningGroupHeadcountForecastResult',
             'headcount_forecast_download_url': 'str',
             'agent_schedules': 'list[BuRescheduleAgentScheduleResult]'
         }
@@ -121,24 +121,24 @@ class BuRescheduleResult(object):
         self._generation_results_download_url = generation_results_download_url
 
     @property
-    def headcount_forecast(self) -> 'BuHeadcountForecast':
+    def headcount_forecast(self) -> 'BuHeadcountForecastBuPlanningGroupHeadcountForecastResult':
         """
         Gets the headcount_forecast of this BuRescheduleResult.
-        The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
+        The headcount forecast. Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
 
         :return: The headcount_forecast of this BuRescheduleResult.
-        :rtype: BuHeadcountForecast
+        :rtype: BuHeadcountForecastBuPlanningGroupHeadcountForecastResult
         """
         return self._headcount_forecast
 
     @headcount_forecast.setter
-    def headcount_forecast(self, headcount_forecast: 'BuHeadcountForecast') -> None:
+    def headcount_forecast(self, headcount_forecast: 'BuHeadcountForecastBuPlanningGroupHeadcountForecastResult') -> None:
         """
         Sets the headcount_forecast of this BuRescheduleResult.
-        The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
+        The headcount forecast. Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
 
         :param headcount_forecast: The headcount_forecast of this BuRescheduleResult.
-        :type: BuHeadcountForecast
+        :type: BuHeadcountForecastBuPlanningGroupHeadcountForecastResult
         """
         
 

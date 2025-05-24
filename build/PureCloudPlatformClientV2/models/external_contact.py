@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import ExternalId
     from . import ExternalOrganization
     from . import FacebookId
+    from . import InstagramId
     from . import LineId
     from . import MergeOperation
     from . import PhoneNumber
@@ -81,6 +82,7 @@ class ExternalContact(object):
             'line_id': 'LineId',
             'whats_app_id': 'WhatsAppId',
             'facebook_id': 'FacebookId',
+            'instagram_id': 'InstagramId',
             'external_ids': 'list[ExternalId]',
             'identifiers': 'list[ContactIdentifier]',
             'modify_date': 'datetime',
@@ -94,6 +96,8 @@ class ExternalContact(object):
             'type': 'str',
             'canonical_contact': 'ContactAddressableEntityRef',
             'merge_set': 'list[ContactAddressableEntityRef]',
+            'merged_from': 'list[ContactAddressableEntityRef]',
+            'merged_to': 'ContactAddressableEntityRef',
             'merge_operation': 'MergeOperation',
             'self_uri': 'str'
         }
@@ -118,6 +122,7 @@ class ExternalContact(object):
             'line_id': 'lineId',
             'whats_app_id': 'whatsAppId',
             'facebook_id': 'facebookId',
+            'instagram_id': 'instagramId',
             'external_ids': 'externalIds',
             'identifiers': 'identifiers',
             'modify_date': 'modifyDate',
@@ -131,6 +136,8 @@ class ExternalContact(object):
             'type': 'type',
             'canonical_contact': 'canonicalContact',
             'merge_set': 'mergeSet',
+            'merged_from': 'mergedFrom',
+            'merged_to': 'mergedTo',
             'merge_operation': 'mergeOperation',
             'self_uri': 'selfUri'
         }
@@ -154,6 +161,7 @@ class ExternalContact(object):
         self._line_id = None
         self._whats_app_id = None
         self._facebook_id = None
+        self._instagram_id = None
         self._external_ids = None
         self._identifiers = None
         self._modify_date = None
@@ -167,6 +175,8 @@ class ExternalContact(object):
         self._type = None
         self._canonical_contact = None
         self._merge_set = None
+        self._merged_from = None
+        self._merged_to = None
         self._merge_operation = None
         self._self_uri = None
 
@@ -627,6 +637,30 @@ class ExternalContact(object):
         self._facebook_id = facebook_id
 
     @property
+    def instagram_id(self) -> 'InstagramId':
+        """
+        Gets the instagram_id of this ExternalContact.
+        User information for an Instagram account
+
+        :return: The instagram_id of this ExternalContact.
+        :rtype: InstagramId
+        """
+        return self._instagram_id
+
+    @instagram_id.setter
+    def instagram_id(self, instagram_id: 'InstagramId') -> None:
+        """
+        Sets the instagram_id of this ExternalContact.
+        User information for an Instagram account
+
+        :param instagram_id: The instagram_id of this ExternalContact.
+        :type: InstagramId
+        """
+        
+
+        self._instagram_id = instagram_id
+
+    @property
     def external_ids(self) -> List['ExternalId']:
         """
         Gets the external_ids of this ExternalContact.
@@ -942,6 +976,54 @@ class ExternalContact(object):
         
 
         self._merge_set = merge_set
+
+    @property
+    def merged_from(self) -> List['ContactAddressableEntityRef']:
+        """
+        Gets the merged_from of this ExternalContact.
+        The input contacts from the merge operation.
+
+        :return: The merged_from of this ExternalContact.
+        :rtype: list[ContactAddressableEntityRef]
+        """
+        return self._merged_from
+
+    @merged_from.setter
+    def merged_from(self, merged_from: List['ContactAddressableEntityRef']) -> None:
+        """
+        Sets the merged_from of this ExternalContact.
+        The input contacts from the merge operation.
+
+        :param merged_from: The merged_from of this ExternalContact.
+        :type: list[ContactAddressableEntityRef]
+        """
+        
+
+        self._merged_from = merged_from
+
+    @property
+    def merged_to(self) -> 'ContactAddressableEntityRef':
+        """
+        Gets the merged_to of this ExternalContact.
+        The output contact from the merge operation.
+
+        :return: The merged_to of this ExternalContact.
+        :rtype: ContactAddressableEntityRef
+        """
+        return self._merged_to
+
+    @merged_to.setter
+    def merged_to(self, merged_to: 'ContactAddressableEntityRef') -> None:
+        """
+        Sets the merged_to of this ExternalContact.
+        The output contact from the merge operation.
+
+        :param merged_to: The merged_to of this ExternalContact.
+        :type: ContactAddressableEntityRef
+        """
+        
+
+        self._merged_to = merged_to
 
     @property
     def merge_operation(self) -> 'MergeOperation':

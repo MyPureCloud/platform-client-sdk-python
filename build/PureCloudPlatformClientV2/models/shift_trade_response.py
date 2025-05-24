@@ -59,6 +59,7 @@ class ShiftTradeResponse(object):
             'initiating_shift_id': 'str',
             'initiating_shift_start': 'datetime',
             'initiating_shift_end': 'datetime',
+            'receiving_week_date': 'date',
             'receiving_user': 'UserReference',
             'receiving_shift_id': 'str',
             'receiving_shift_start': 'datetime',
@@ -80,6 +81,7 @@ class ShiftTradeResponse(object):
             'initiating_shift_id': 'initiatingShiftId',
             'initiating_shift_start': 'initiatingShiftStart',
             'initiating_shift_end': 'initiatingShiftEnd',
+            'receiving_week_date': 'receivingWeekDate',
             'receiving_user': 'receivingUser',
             'receiving_shift_id': 'receivingShiftId',
             'receiving_shift_start': 'receivingShiftStart',
@@ -100,6 +102,7 @@ class ShiftTradeResponse(object):
         self._initiating_shift_id = None
         self._initiating_shift_start = None
         self._initiating_shift_end = None
+        self._receiving_week_date = None
         self._receiving_user = None
         self._receiving_shift_id = None
         self._receiving_shift_start = None
@@ -307,6 +310,30 @@ class ShiftTradeResponse(object):
         
 
         self._initiating_shift_end = initiating_shift_end
+
+    @property
+    def receiving_week_date(self) -> date:
+        """
+        Gets the receiving_week_date of this ShiftTradeResponse.
+        The start week date of the receiving shift in yyyy-MM-dd format for a cross-week shift trade or null otherwise. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The receiving_week_date of this ShiftTradeResponse.
+        :rtype: date
+        """
+        return self._receiving_week_date
+
+    @receiving_week_date.setter
+    def receiving_week_date(self, receiving_week_date: date) -> None:
+        """
+        Sets the receiving_week_date of this ShiftTradeResponse.
+        The start week date of the receiving shift in yyyy-MM-dd format for a cross-week shift trade or null otherwise. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param receiving_week_date: The receiving_week_date of this ShiftTradeResponse.
+        :type: date
+        """
+        
+
+        self._receiving_week_date = receiving_week_date
 
     @property
     def receiving_user(self) -> 'UserReference':

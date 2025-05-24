@@ -52,18 +52,21 @@ class MatchShiftTradeResponse(object):
         self.swagger_types = {
             'trade': 'ShiftTradeResponse',
             'violations': 'list[ShiftTradeMatchViolation]',
-            'admin_review_violations': 'list[ShiftTradeMatchViolation]'
+            'admin_review_violations': 'list[ShiftTradeMatchViolation]',
+            'unevaluated_rules': 'list[str]'
         }
 
         self.attribute_map = {
             'trade': 'trade',
             'violations': 'violations',
-            'admin_review_violations': 'adminReviewViolations'
+            'admin_review_violations': 'adminReviewViolations',
+            'unevaluated_rules': 'unevaluatedRules'
         }
 
         self._trade = None
         self._violations = None
         self._admin_review_violations = None
+        self._unevaluated_rules = None
 
     @property
     def trade(self) -> 'ShiftTradeResponse':
@@ -136,6 +139,30 @@ class MatchShiftTradeResponse(object):
         
 
         self._admin_review_violations = admin_review_violations
+
+    @property
+    def unevaluated_rules(self) -> List[str]:
+        """
+        Gets the unevaluated_rules of this MatchShiftTradeResponse.
+        Unevaluated rules for this shift trade which require shift trade administrator review
+
+        :return: The unevaluated_rules of this MatchShiftTradeResponse.
+        :rtype: list[str]
+        """
+        return self._unevaluated_rules
+
+    @unevaluated_rules.setter
+    def unevaluated_rules(self, unevaluated_rules: List[str]) -> None:
+        """
+        Sets the unevaluated_rules of this MatchShiftTradeResponse.
+        Unevaluated rules for this shift trade which require shift trade administrator review
+
+        :param unevaluated_rules: The unevaluated_rules of this MatchShiftTradeResponse.
+        :type: list[str]
+        """
+        
+
+        self._unevaluated_rules = unevaluated_rules
 
     def to_dict(self):
         """

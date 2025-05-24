@@ -6,9 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **result** | [BuHeadcountForecast](BuHeadcountForecast) | The headcount forecast, null when downloadUrl is provided | [optional] |
+| **result** | [BuHeadcountForecastBuPlanningGroupHeadcountForecastResult](BuHeadcountForecastBuPlanningGroupHeadcountForecastResult) | The headcount forecast, null when downloadUrl is provided | [optional] |
 | **download_url** | str | Download URL.  Null unless the response is too large to pass directly through the api | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

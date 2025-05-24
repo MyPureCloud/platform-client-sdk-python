@@ -39,6 +39,7 @@ if TYPE_CHECKING:
     from . import ConversationSummaryTopicConversationSummary
     from . import ConversationSummaryTopicConversationSummaryParticipant
     from . import ConversationSummaryTopicConversationWrapUpCode
+    from . import ConversationSummaryTopicSummaryExtractedCustomEntity
     from . import ConversationSummaryTopicTriggerSource
 
 class ConversationSummaryTopicConversationSummaryEvent(object):
@@ -70,6 +71,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'reason': 'ConversationSummaryTopicConversationReason',
             'resolution': 'ConversationSummaryTopicConversationResolution',
             'followup_actions': 'list[ConversationSummaryTopicConversationFollowupAction]',
+            'extracted_entities': 'list[ConversationSummaryTopicSummaryExtractedCustomEntity]',
             'wrap_up_codes': 'list[ConversationSummaryTopicConversationWrapUpCode]',
             'trigger_source': 'ConversationSummaryTopicTriggerSource',
             'last_edited_by': 'ConversationSummaryTopicConversationSummaryParticipant',
@@ -92,6 +94,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'reason': 'reason',
             'resolution': 'resolution',
             'followup_actions': 'followupActions',
+            'extracted_entities': 'extractedEntities',
             'wrap_up_codes': 'wrapUpCodes',
             'trigger_source': 'triggerSource',
             'last_edited_by': 'lastEditedBy',
@@ -113,6 +116,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         self._reason = None
         self._resolution = None
         self._followup_actions = None
+        self._extracted_entities = None
         self._wrap_up_codes = None
         self._trigger_source = None
         self._last_edited_by = None
@@ -464,6 +468,30 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         
 
         self._followup_actions = followup_actions
+
+    @property
+    def extracted_entities(self) -> List['ConversationSummaryTopicSummaryExtractedCustomEntity']:
+        """
+        Gets the extracted_entities of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :return: The extracted_entities of this ConversationSummaryTopicConversationSummaryEvent.
+        :rtype: list[ConversationSummaryTopicSummaryExtractedCustomEntity]
+        """
+        return self._extracted_entities
+
+    @extracted_entities.setter
+    def extracted_entities(self, extracted_entities: List['ConversationSummaryTopicSummaryExtractedCustomEntity']) -> None:
+        """
+        Sets the extracted_entities of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :param extracted_entities: The extracted_entities of this ConversationSummaryTopicConversationSummaryEvent.
+        :type: list[ConversationSummaryTopicSummaryExtractedCustomEntity]
+        """
+        
+
+        self._extracted_entities = extracted_entities
 
     @property
     def wrap_up_codes(self) -> List['ConversationSummaryTopicConversationWrapUpCode']:

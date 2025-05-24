@@ -47,20 +47,47 @@ class ConversationContentButtonResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'originating_message_id': 'str',
             'type': 'str',
             'text': 'str',
             'payload': 'str'
         }
 
         self.attribute_map = {
+            'originating_message_id': 'originatingMessageId',
             'type': 'type',
             'text': 'text',
             'payload': 'payload'
         }
 
+        self._originating_message_id = None
         self._type = None
         self._text = None
         self._payload = None
+
+    @property
+    def originating_message_id(self) -> str:
+        """
+        Gets the originating_message_id of this ConversationContentButtonResponse.
+        Reference to the ID of the original message (e.g., list picker) this button response is replying to.
+
+        :return: The originating_message_id of this ConversationContentButtonResponse.
+        :rtype: str
+        """
+        return self._originating_message_id
+
+    @originating_message_id.setter
+    def originating_message_id(self, originating_message_id: str) -> None:
+        """
+        Sets the originating_message_id of this ConversationContentButtonResponse.
+        Reference to the ID of the original message (e.g., list picker) this button response is replying to.
+
+        :param originating_message_id: The originating_message_id of this ConversationContentButtonResponse.
+        :type: str
+        """
+        
+
+        self._originating_message_id = originating_message_id
 
     @property
     def type(self) -> str:

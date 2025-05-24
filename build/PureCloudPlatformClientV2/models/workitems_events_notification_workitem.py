@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import WorkitemsEventsNotificationCustomAttribute
     from . import WorkitemsEventsNotificationDelta
+    from . import WorkitemsEventsNotificationPropertyChange
     from . import WorkitemsEventsNotificationScoredAgent
     from . import WorkitemsEventsNotificationSession
     from . import WorkitemsEventsNotificationWrapup
@@ -78,6 +79,7 @@ class WorkitemsEventsNotificationWorkitem(object):
             'modified_by': 'str',
             'operation': 'str',
             'changes': 'list[WorkitemsEventsNotificationDelta]',
+            'property_changes': 'list[WorkitemsEventsNotificationPropertyChange]',
             'assignment_state': 'str',
             'assignment_id': 'str',
             'alert_timeout_seconds': 'int',
@@ -121,6 +123,7 @@ class WorkitemsEventsNotificationWorkitem(object):
             'modified_by': 'modifiedBy',
             'operation': 'operation',
             'changes': 'changes',
+            'property_changes': 'propertyChanges',
             'assignment_state': 'assignmentState',
             'assignment_id': 'assignmentId',
             'alert_timeout_seconds': 'alertTimeoutSeconds',
@@ -163,6 +166,7 @@ class WorkitemsEventsNotificationWorkitem(object):
         self._modified_by = None
         self._operation = None
         self._changes = None
+        self._property_changes = None
         self._assignment_state = None
         self._assignment_id = None
         self._alert_timeout_seconds = None
@@ -788,6 +792,30 @@ class WorkitemsEventsNotificationWorkitem(object):
         
 
         self._changes = changes
+
+    @property
+    def property_changes(self) -> List['WorkitemsEventsNotificationPropertyChange']:
+        """
+        Gets the property_changes of this WorkitemsEventsNotificationWorkitem.
+
+
+        :return: The property_changes of this WorkitemsEventsNotificationWorkitem.
+        :rtype: list[WorkitemsEventsNotificationPropertyChange]
+        """
+        return self._property_changes
+
+    @property_changes.setter
+    def property_changes(self, property_changes: List['WorkitemsEventsNotificationPropertyChange']) -> None:
+        """
+        Sets the property_changes of this WorkitemsEventsNotificationWorkitem.
+
+
+        :param property_changes: The property_changes of this WorkitemsEventsNotificationWorkitem.
+        :type: list[WorkitemsEventsNotificationPropertyChange]
+        """
+        
+
+        self._property_changes = property_changes
 
     @property
     def assignment_state(self) -> str:

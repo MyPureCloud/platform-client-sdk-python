@@ -61,7 +61,13 @@ class ShiftTradeSettings(object):
             'requires_matching_languages': 'bool',
             'requires_matching_skills': 'bool',
             'requires_matching_planning_groups': 'bool',
-            'activity_category_rules': 'list[ShiftTradeActivityRule]'
+            'activity_category_rules': 'list[ShiftTradeActivityRule]',
+            'max_trade_span_weeks': 'int',
+            'max_trades_per_agent_per_week': 'int',
+            'min_minutes_between_shifts': 'int',
+            'planning_period_min_paid_violations': 'str',
+            'planning_period_max_paid_violations': 'str',
+            'min_minutes_between_shifts_violations': 'str'
         }
 
         self.attribute_map = {
@@ -77,7 +83,13 @@ class ShiftTradeSettings(object):
             'requires_matching_languages': 'requiresMatchingLanguages',
             'requires_matching_skills': 'requiresMatchingSkills',
             'requires_matching_planning_groups': 'requiresMatchingPlanningGroups',
-            'activity_category_rules': 'activityCategoryRules'
+            'activity_category_rules': 'activityCategoryRules',
+            'max_trade_span_weeks': 'maxTradeSpanWeeks',
+            'max_trades_per_agent_per_week': 'maxTradesPerAgentPerWeek',
+            'min_minutes_between_shifts': 'minMinutesBetweenShifts',
+            'planning_period_min_paid_violations': 'planningPeriodMinPaidViolations',
+            'planning_period_max_paid_violations': 'planningPeriodMaxPaidViolations',
+            'min_minutes_between_shifts_violations': 'minMinutesBetweenShiftsViolations'
         }
 
         self._enabled = None
@@ -93,6 +105,12 @@ class ShiftTradeSettings(object):
         self._requires_matching_skills = None
         self._requires_matching_planning_groups = None
         self._activity_category_rules = None
+        self._max_trade_span_weeks = None
+        self._max_trades_per_agent_per_week = None
+        self._min_minutes_between_shifts = None
+        self._planning_period_min_paid_violations = None
+        self._planning_period_max_paid_violations = None
+        self._min_minutes_between_shifts_violations = None
 
     @property
     def enabled(self) -> bool:
@@ -425,6 +443,165 @@ class ShiftTradeSettings(object):
         
 
         self._activity_category_rules = activity_category_rules
+
+    @property
+    def max_trade_span_weeks(self) -> int:
+        """
+        Gets the max_trade_span_weeks of this ShiftTradeSettings.
+        The maximum number of weeks a shift trade can span
+
+        :return: The max_trade_span_weeks of this ShiftTradeSettings.
+        :rtype: int
+        """
+        return self._max_trade_span_weeks
+
+    @max_trade_span_weeks.setter
+    def max_trade_span_weeks(self, max_trade_span_weeks: int) -> None:
+        """
+        Sets the max_trade_span_weeks of this ShiftTradeSettings.
+        The maximum number of weeks a shift trade can span
+
+        :param max_trade_span_weeks: The max_trade_span_weeks of this ShiftTradeSettings.
+        :type: int
+        """
+        
+
+        self._max_trade_span_weeks = max_trade_span_weeks
+
+    @property
+    def max_trades_per_agent_per_week(self) -> int:
+        """
+        Gets the max_trades_per_agent_per_week of this ShiftTradeSettings.
+        The maximum number of shift trades an agent can submit per week
+
+        :return: The max_trades_per_agent_per_week of this ShiftTradeSettings.
+        :rtype: int
+        """
+        return self._max_trades_per_agent_per_week
+
+    @max_trades_per_agent_per_week.setter
+    def max_trades_per_agent_per_week(self, max_trades_per_agent_per_week: int) -> None:
+        """
+        Sets the max_trades_per_agent_per_week of this ShiftTradeSettings.
+        The maximum number of shift trades an agent can submit per week
+
+        :param max_trades_per_agent_per_week: The max_trades_per_agent_per_week of this ShiftTradeSettings.
+        :type: int
+        """
+        
+
+        self._max_trades_per_agent_per_week = max_trades_per_agent_per_week
+
+    @property
+    def min_minutes_between_shifts(self) -> int:
+        """
+        Gets the min_minutes_between_shifts of this ShiftTradeSettings.
+        The minimum number of minutes between shifts
+
+        :return: The min_minutes_between_shifts of this ShiftTradeSettings.
+        :rtype: int
+        """
+        return self._min_minutes_between_shifts
+
+    @min_minutes_between_shifts.setter
+    def min_minutes_between_shifts(self, min_minutes_between_shifts: int) -> None:
+        """
+        Sets the min_minutes_between_shifts of this ShiftTradeSettings.
+        The minimum number of minutes between shifts
+
+        :param min_minutes_between_shifts: The min_minutes_between_shifts of this ShiftTradeSettings.
+        :type: int
+        """
+        
+
+        self._min_minutes_between_shifts = min_minutes_between_shifts
+
+    @property
+    def planning_period_min_paid_violations(self) -> str:
+        """
+        Gets the planning_period_min_paid_violations of this ShiftTradeSettings.
+        How to handle shift trades which result in violations of planning period minimum paid time constraint
+
+        :return: The planning_period_min_paid_violations of this ShiftTradeSettings.
+        :rtype: str
+        """
+        return self._planning_period_min_paid_violations
+
+    @planning_period_min_paid_violations.setter
+    def planning_period_min_paid_violations(self, planning_period_min_paid_violations: str) -> None:
+        """
+        Sets the planning_period_min_paid_violations of this ShiftTradeSettings.
+        How to handle shift trades which result in violations of planning period minimum paid time constraint
+
+        :param planning_period_min_paid_violations: The planning_period_min_paid_violations of this ShiftTradeSettings.
+        :type: str
+        """
+        if isinstance(planning_period_min_paid_violations, int):
+            planning_period_min_paid_violations = str(planning_period_min_paid_violations)
+        allowed_values = ["Allow", "Disallow", "AdminReview"]
+        if planning_period_min_paid_violations.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for planning_period_min_paid_violations -> " + planning_period_min_paid_violations)
+            self._planning_period_min_paid_violations = "outdated_sdk_version"
+        else:
+            self._planning_period_min_paid_violations = planning_period_min_paid_violations
+
+    @property
+    def planning_period_max_paid_violations(self) -> str:
+        """
+        Gets the planning_period_max_paid_violations of this ShiftTradeSettings.
+        How to handle shift trades which result in violations of planning period maximum paid time constraint
+
+        :return: The planning_period_max_paid_violations of this ShiftTradeSettings.
+        :rtype: str
+        """
+        return self._planning_period_max_paid_violations
+
+    @planning_period_max_paid_violations.setter
+    def planning_period_max_paid_violations(self, planning_period_max_paid_violations: str) -> None:
+        """
+        Sets the planning_period_max_paid_violations of this ShiftTradeSettings.
+        How to handle shift trades which result in violations of planning period maximum paid time constraint
+
+        :param planning_period_max_paid_violations: The planning_period_max_paid_violations of this ShiftTradeSettings.
+        :type: str
+        """
+        if isinstance(planning_period_max_paid_violations, int):
+            planning_period_max_paid_violations = str(planning_period_max_paid_violations)
+        allowed_values = ["Allow", "Disallow", "AdminReview"]
+        if planning_period_max_paid_violations.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for planning_period_max_paid_violations -> " + planning_period_max_paid_violations)
+            self._planning_period_max_paid_violations = "outdated_sdk_version"
+        else:
+            self._planning_period_max_paid_violations = planning_period_max_paid_violations
+
+    @property
+    def min_minutes_between_shifts_violations(self) -> str:
+        """
+        Gets the min_minutes_between_shifts_violations of this ShiftTradeSettings.
+        How to handle shift trades which result in violations of minimum number of minutes between shifts constraint
+
+        :return: The min_minutes_between_shifts_violations of this ShiftTradeSettings.
+        :rtype: str
+        """
+        return self._min_minutes_between_shifts_violations
+
+    @min_minutes_between_shifts_violations.setter
+    def min_minutes_between_shifts_violations(self, min_minutes_between_shifts_violations: str) -> None:
+        """
+        Sets the min_minutes_between_shifts_violations of this ShiftTradeSettings.
+        How to handle shift trades which result in violations of minimum number of minutes between shifts constraint
+
+        :param min_minutes_between_shifts_violations: The min_minutes_between_shifts_violations of this ShiftTradeSettings.
+        :type: str
+        """
+        if isinstance(min_minutes_between_shifts_violations, int):
+            min_minutes_between_shifts_violations = str(min_minutes_between_shifts_violations)
+        allowed_values = ["Allow", "Disallow", "AdminReview"]
+        if min_minutes_between_shifts_violations.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for min_minutes_between_shifts_violations -> " + min_minutes_between_shifts_violations)
+            self._min_minutes_between_shifts_violations = "outdated_sdk_version"
+        else:
+            self._min_minutes_between_shifts_violations = min_minutes_between_shifts_violations
 
     def to_dict(self):
         """

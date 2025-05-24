@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId
     from . import ExternalContactsUnresolvedContactChangedTopicContactAddress
     from . import ExternalContactsUnresolvedContactChangedTopicDataSchema
     from . import ExternalContactsUnresolvedContactChangedTopicDivision
@@ -85,6 +86,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'facebook_id': 'ExternalContactsUnresolvedContactChangedTopicFacebookId',
             'instagram_id': 'ExternalContactsUnresolvedContactChangedTopicInstagramId',
             'external_ids': 'list[ExternalContactsUnresolvedContactChangedTopicExternalId]',
+            'apple_opaque_ids': 'list[ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId]',
             'canonical_contact_id': 'str',
             'schema': 'ExternalContactsUnresolvedContactChangedTopicDataSchema',
             'custom_fields': 'dict(str, object)',
@@ -122,6 +124,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'facebook_id': 'facebookId',
             'instagram_id': 'instagramId',
             'external_ids': 'externalIds',
+            'apple_opaque_ids': 'appleOpaqueIds',
             'canonical_contact_id': 'canonicalContactId',
             'schema': 'schema',
             'custom_fields': 'customFields',
@@ -158,6 +161,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         self._facebook_id = None
         self._instagram_id = None
         self._external_ids = None
+        self._apple_opaque_ids = None
         self._canonical_contact_id = None
         self._schema = None
         self._custom_fields = None
@@ -772,6 +776,30 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         
 
         self._external_ids = external_ids
+
+    @property
+    def apple_opaque_ids(self) -> List['ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId']:
+        """
+        Gets the apple_opaque_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The apple_opaque_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: list[ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId]
+        """
+        return self._apple_opaque_ids
+
+    @apple_opaque_ids.setter
+    def apple_opaque_ids(self, apple_opaque_ids: List['ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId']) -> None:
+        """
+        Sets the apple_opaque_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param apple_opaque_ids: The apple_opaque_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: list[ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId]
+        """
+        
+
+        self._apple_opaque_ids = apple_opaque_ids
 
     @property
     def canonical_contact_id(self) -> str:

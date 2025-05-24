@@ -5,7 +5,7 @@
 
 Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-Documentation version PureCloudPlatformClientV2 228.0.0
+Documentation version PureCloudPlatformClientV2 229.0.0
 
 ## Preview APIs
 
@@ -459,6 +459,28 @@ apiclient_mtls.set_gateway(
 
 
 If you require a custom HTTP client to handle mTLS, you can utilize the set_http_client() method of the API client instance to integrate your own implementation. Remember that you will be responsible for configuring the mTLS settings within your custom HTTP client.
+
+### Using Pre Commit and Post Commit Hooks
+
+For any custom requirements like pre validations or post cleanups (for ex: OCSP and CRL validation), we can inject the prehook and posthook functions.
+The SDK's default client will make sure the injected hook functions are executed.
+
+```python
+def pre_hook(http_request_options):
+    try:
+        print('Running PreHook: Certificate Validation Checks')
+
+        // Custom validation logic here
+
+        print('Certificate Validation Complete')
+    except:
+        raise Exception('Error in prehook validation')
+
+apiclient = PureCloudPlatformClientV2.api_client.ApiClient()
+http_client = apiclient.get_http_client()
+
+http_client.set_pre_request_hook(pre_hook)
+```
 
 
 ## SDK Source Code Generation

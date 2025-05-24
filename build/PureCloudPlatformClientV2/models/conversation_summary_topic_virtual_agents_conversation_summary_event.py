@@ -39,6 +39,7 @@ if TYPE_CHECKING:
     from . import ConversationSummaryTopicVirtualAgentsConversationSummary
     from . import ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant
     from . import ConversationSummaryTopicVirtualAgentsConversationWrapUpCode
+    from . import ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity
     from . import ConversationSummaryTopicVirtualAgentsTriggerSource
 
 class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
@@ -70,6 +71,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
             'reason': 'ConversationSummaryTopicVirtualAgentsConversationReason',
             'resolution': 'ConversationSummaryTopicVirtualAgentsConversationResolution',
             'followup_actions': 'list[ConversationSummaryTopicVirtualAgentsConversationFollowupAction]',
+            'extracted_entities': 'list[ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity]',
             'wrap_up_codes': 'list[ConversationSummaryTopicVirtualAgentsConversationWrapUpCode]',
             'trigger_source': 'ConversationSummaryTopicVirtualAgentsTriggerSource',
             'last_edited_by': 'ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant',
@@ -92,6 +94,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
             'reason': 'reason',
             'resolution': 'resolution',
             'followup_actions': 'followupActions',
+            'extracted_entities': 'extractedEntities',
             'wrap_up_codes': 'wrapUpCodes',
             'trigger_source': 'triggerSource',
             'last_edited_by': 'lastEditedBy',
@@ -113,6 +116,7 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         self._reason = None
         self._resolution = None
         self._followup_actions = None
+        self._extracted_entities = None
         self._wrap_up_codes = None
         self._trigger_source = None
         self._last_edited_by = None
@@ -464,6 +468,30 @@ class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent(object):
         
 
         self._followup_actions = followup_actions
+
+    @property
+    def extracted_entities(self) -> List['ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity']:
+        """
+        Gets the extracted_entities of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :return: The extracted_entities of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :rtype: list[ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity]
+        """
+        return self._extracted_entities
+
+    @extracted_entities.setter
+    def extracted_entities(self, extracted_entities: List['ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity']) -> None:
+        """
+        Sets the extracted_entities of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+
+
+        :param extracted_entities: The extracted_entities of this ConversationSummaryTopicVirtualAgentsConversationSummaryEvent.
+        :type: list[ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity]
+        """
+        
+
+        self._extracted_entities = extracted_entities
 
     @property
     def wrap_up_codes(self) -> List['ConversationSummaryTopicVirtualAgentsConversationWrapUpCode']:

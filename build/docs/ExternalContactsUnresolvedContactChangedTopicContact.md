@@ -31,6 +31,7 @@
 | **facebook_id** | [ExternalContactsUnresolvedContactChangedTopicFacebookId](ExternalContactsUnresolvedContactChangedTopicFacebookId) |  | [optional] |
 | **instagram_id** | [ExternalContactsUnresolvedContactChangedTopicInstagramId](ExternalContactsUnresolvedContactChangedTopicInstagramId) |  | [optional] |
 | **external_ids** | [list[ExternalContactsUnresolvedContactChangedTopicExternalId]](ExternalContactsUnresolvedContactChangedTopicExternalId) |  | [optional] |
+| **apple_opaque_ids** | [list[ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId]](ExternalContactsUnresolvedContactChangedTopicAppleOpaqueId) |  | [optional] |
 | **canonical_contact_id** | str |  | [optional] |
 | **schema** | [ExternalContactsUnresolvedContactChangedTopicDataSchema](ExternalContactsUnresolvedContactChangedTopicDataSchema) |  | [optional] |
 | **custom_fields** | dict(str, object) |  | [optional] |
@@ -43,4 +44,4 @@
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

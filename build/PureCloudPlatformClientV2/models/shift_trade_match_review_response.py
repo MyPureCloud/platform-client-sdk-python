@@ -53,20 +53,23 @@ class ShiftTradeMatchReviewResponse(object):
             'initiating_user': 'ShiftTradeMatchReviewUserResponse',
             'receiving_user': 'ShiftTradeMatchReviewUserResponse',
             'violations': 'list[ShiftTradeMatchViolation]',
-            'admin_review_violations': 'list[ShiftTradeMatchViolation]'
+            'admin_review_violations': 'list[ShiftTradeMatchViolation]',
+            'unevaluated_rules': 'list[str]'
         }
 
         self.attribute_map = {
             'initiating_user': 'initiatingUser',
             'receiving_user': 'receivingUser',
             'violations': 'violations',
-            'admin_review_violations': 'adminReviewViolations'
+            'admin_review_violations': 'adminReviewViolations',
+            'unevaluated_rules': 'unevaluatedRules'
         }
 
         self._initiating_user = None
         self._receiving_user = None
         self._violations = None
         self._admin_review_violations = None
+        self._unevaluated_rules = None
 
     @property
     def initiating_user(self) -> 'ShiftTradeMatchReviewUserResponse':
@@ -163,6 +166,30 @@ class ShiftTradeMatchReviewResponse(object):
         
 
         self._admin_review_violations = admin_review_violations
+
+    @property
+    def unevaluated_rules(self) -> List[str]:
+        """
+        Gets the unevaluated_rules of this ShiftTradeMatchReviewResponse.
+        Unevaluated rules for this shift trade which require shift trade administrator review
+
+        :return: The unevaluated_rules of this ShiftTradeMatchReviewResponse.
+        :rtype: list[str]
+        """
+        return self._unevaluated_rules
+
+    @unevaluated_rules.setter
+    def unevaluated_rules(self, unevaluated_rules: List[str]) -> None:
+        """
+        Sets the unevaluated_rules of this ShiftTradeMatchReviewResponse.
+        Unevaluated rules for this shift trade which require shift trade administrator review
+
+        :param unevaluated_rules: The unevaluated_rules of this ShiftTradeMatchReviewResponse.
+        :type: list[str]
+        """
+        
+
+        self._unevaluated_rules = unevaluated_rules
 
     def to_dict(self):
         """

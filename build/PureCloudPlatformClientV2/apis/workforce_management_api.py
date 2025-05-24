@@ -9279,13 +9279,14 @@ class WorkforceManagementApi(object):
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param date week_date_id: The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param bool evaluate_matches: Whether to evaluate the matches for violations
+        :param bool include_cross_week_shifts: Whether to include all shift trades with either the initiating shift or the receiving shift in the week
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :return: WeekShiftTradeListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'week_date_id', 'evaluate_matches', 'force_download_service']
+        all_params = ['management_unit_id', 'week_date_id', 'evaluate_matches', 'include_cross_week_shifts', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -9316,6 +9317,8 @@ class WorkforceManagementApi(object):
         query_params = {}
         if 'evaluate_matches' in params:
             query_params['evaluateMatches'] = params['evaluate_matches']
+        if 'include_cross_week_shifts' in params:
+            query_params['includeCrossWeekShifts'] = params['include_cross_week_shifts']
         if 'force_download_service' in params:
             query_params['forceDownloadService'] = params['force_download_service']
 

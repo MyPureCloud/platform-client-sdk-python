@@ -105,4 +105,4 @@ except ApiException as e:
 [**EmergencyLocation**](EmergencyLocation)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

@@ -11,8 +11,8 @@
 | **page_number** | int |  | [optional] |
 | **total** | int |  | [optional] |
 | **truncated_divisions** | bool |  | [optional] |
-| **next_uri** | str |  | [optional] |
 | **previous_uri** | str |  | [optional] |
+| **next_uri** | str |  | [optional] |
 | **last_uri** | str |  | [optional] |
 | **first_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
@@ -20,4 +20,4 @@
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

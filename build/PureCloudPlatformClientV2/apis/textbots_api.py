@@ -78,13 +78,14 @@ class TextbotsApi(object):
         :param list[str] bot_type: Bot types
         :param str bot_name: Bot name
         :param list[str] bot_id: Bot IDs. Maximum of 50
+        :param bool virtual_agent_enabled: Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows
         :param int page_size: The maximum results to return. Maximum of 100
         :return: BotSearchResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bot_type', 'bot_name', 'bot_id', 'page_size']
+        all_params = ['bot_type', 'bot_name', 'bot_id', 'virtual_agent_enabled', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -109,6 +110,8 @@ class TextbotsApi(object):
             query_params['botName'] = params['bot_name']
         if 'bot_id' in params:
             query_params['botId'] = params['bot_id']
+        if 'virtual_agent_enabled' in params:
+            query_params['virtualAgentEnabled'] = params['virtual_agent_enabled']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
 

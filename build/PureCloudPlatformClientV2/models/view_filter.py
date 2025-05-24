@@ -281,7 +281,8 @@ class ViewFilter(object):
             'program_ids': 'list[str]',
             'category_ids': 'list[str]',
             'delivery_pushed': 'bool',
-            'social_ratings': 'list[float]'
+            'social_ratings': 'list[float]',
+            'virtual_agent_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -512,7 +513,8 @@ class ViewFilter(object):
             'program_ids': 'programIds',
             'category_ids': 'categoryIds',
             'delivery_pushed': 'deliveryPushed',
-            'social_ratings': 'socialRatings'
+            'social_ratings': 'socialRatings',
+            'virtual_agent_ids': 'virtualAgentIds'
         }
 
         self._media_types = None
@@ -743,6 +745,7 @@ class ViewFilter(object):
         self._category_ids = None
         self._delivery_pushed = None
         self._social_ratings = None
+        self._virtual_agent_ids = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6245,6 +6248,30 @@ class ViewFilter(object):
         
 
         self._social_ratings = social_ratings
+
+    @property
+    def virtual_agent_ids(self) -> List[str]:
+        """
+        Gets the virtual_agent_ids of this ViewFilter.
+        A list of virtual agent ids for filtering.
+
+        :return: The virtual_agent_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._virtual_agent_ids
+
+    @virtual_agent_ids.setter
+    def virtual_agent_ids(self, virtual_agent_ids: List[str]) -> None:
+        """
+        Sets the virtual_agent_ids of this ViewFilter.
+        A list of virtual agent ids for filtering.
+
+        :param virtual_agent_ids: The virtual_agent_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._virtual_agent_ids = virtual_agent_ids
 
     def to_dict(self):
         """

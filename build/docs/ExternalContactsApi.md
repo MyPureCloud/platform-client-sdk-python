@@ -29,7 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contacts_schema_version**](#get_externalcontacts_contacts_schema_version) | Get a specific version of a schema|
 |[**get_externalcontacts_contacts_schema_versions**](#get_externalcontacts_contacts_schema_versions) | Get all versions of an external contact&#39;s schema|
 |[**get_externalcontacts_contacts_schemas**](#get_externalcontacts_contacts_schemas) | Get a list of schemas.|
-|[**get_externalcontacts_contacts_schemas_coretype**](#get_externalcontacts_contacts_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_externalcontacts_contacts_schemas_coretype**](#get_externalcontacts_contacts_schemas_coretype) | Get a specific named core type.|
 |[**get_externalcontacts_contacts_schemas_coretypes**](#get_externalcontacts_contacts_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**get_externalcontacts_contacts_schemas_limits**](#get_externalcontacts_contacts_schemas_limits) | Get quantitative limits on schemas|
 |[**get_externalcontacts_externalsource**](#get_externalcontacts_externalsource) | Fetch an External Source|
@@ -53,7 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_organizations_schema_version**](#get_externalcontacts_organizations_schema_version) | Get a specific version of a schema|
 |[**get_externalcontacts_organizations_schema_versions**](#get_externalcontacts_organizations_schema_versions) | Get all versions of an external organization&#39;s schema|
 |[**get_externalcontacts_organizations_schemas**](#get_externalcontacts_organizations_schemas) | Get a list of schemas.|
-|[**get_externalcontacts_organizations_schemas_coretype**](#get_externalcontacts_organizations_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_externalcontacts_organizations_schemas_coretype**](#get_externalcontacts_organizations_schemas_coretype) | Get a specific named core type.|
 |[**get_externalcontacts_organizations_schemas_coretypes**](#get_externalcontacts_organizations_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**get_externalcontacts_organizations_schemas_limits**](#get_externalcontacts_organizations_schemas_limits) | Get quantitative limits on schemas|
 |[**get_externalcontacts_relationship**](#get_externalcontacts_relationship) | Fetch a relationship|
@@ -1281,7 +1281,7 @@ This endpoint does not need any parameters.
 > [**Coretype**](Coretype) get_externalcontacts_contacts_schemas_coretype(core_type_name)
 
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Wraps GET /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName} 
 
@@ -1305,7 +1305,7 @@ api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 core_type_name = 'core_type_name_example' # str | Name of the core type
 
 try:
-    # Get the core types from which all schemas are built.
+    # Get a specific named core type.
     api_response = api_instance.get_externalcontacts_contacts_schemas_coretype(core_type_name)
     pprint(api_response)
 except ApiException as e:
@@ -1326,7 +1326,7 @@ except ApiException as e:
 
 ## get_externalcontacts_contacts_schemas_coretypes
 
-> [**Coretype**](Coretype) get_externalcontacts_contacts_schemas_coretypes()
+> [**CoretypeListing**](CoretypeListing) get_externalcontacts_contacts_schemas_coretypes()
 
 
 Get the core types from which all schemas are built.
@@ -1365,7 +1365,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 ## get_externalcontacts_contacts_schemas_limits
@@ -2507,7 +2507,7 @@ This endpoint does not need any parameters.
 > [**Coretype**](Coretype) get_externalcontacts_organizations_schemas_coretype(core_type_name)
 
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Wraps GET /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName} 
 
@@ -2531,7 +2531,7 @@ api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 core_type_name = 'core_type_name_example' # str | Name of the core type
 
 try:
-    # Get the core types from which all schemas are built.
+    # Get a specific named core type.
     api_response = api_instance.get_externalcontacts_organizations_schemas_coretype(core_type_name)
     pprint(api_response)
 except ApiException as e:
@@ -2552,7 +2552,7 @@ except ApiException as e:
 
 ## get_externalcontacts_organizations_schemas_coretypes
 
-> [**Coretype**](Coretype) get_externalcontacts_organizations_schemas_coretypes()
+> [**CoretypeListing**](CoretypeListing) get_externalcontacts_organizations_schemas_coretypes()
 
 
 Get the core types from which all schemas are built.
@@ -2591,7 +2591,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 ## get_externalcontacts_organizations_schemas_limits
@@ -6035,4 +6035,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

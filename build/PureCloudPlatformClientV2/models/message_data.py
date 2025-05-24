@@ -34,7 +34,6 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ConversationNormalizedMessage
     from . import MessageMedia
-    from . import MessageSticker
     from . import User
 
 class MessageData(object):
@@ -63,7 +62,6 @@ class MessageData(object):
             'text_body': 'str',
             'status': 'str',
             'media': 'list[MessageMedia]',
-            'stickers': 'list[MessageSticker]',
             'normalized_message': 'ConversationNormalizedMessage',
             'normalized_receipts': 'list[ConversationNormalizedMessage]',
             'created_by': 'User',
@@ -83,7 +81,6 @@ class MessageData(object):
             'text_body': 'textBody',
             'status': 'status',
             'media': 'media',
-            'stickers': 'stickers',
             'normalized_message': 'normalizedMessage',
             'normalized_receipts': 'normalizedReceipts',
             'created_by': 'createdBy',
@@ -102,7 +99,6 @@ class MessageData(object):
         self._text_body = None
         self._status = None
         self._media = None
-        self._stickers = None
         self._normalized_message = None
         self._normalized_receipts = None
         self._created_by = None
@@ -387,30 +383,6 @@ class MessageData(object):
         
 
         self._media = media
-
-    @property
-    def stickers(self) -> List['MessageSticker']:
-        """
-        Gets the stickers of this MessageData.
-        The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
-
-        :return: The stickers of this MessageData.
-        :rtype: list[MessageSticker]
-        """
-        return self._stickers
-
-    @stickers.setter
-    def stickers(self, stickers: List['MessageSticker']) -> None:
-        """
-        Sets the stickers of this MessageData.
-        The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment
-
-        :param stickers: The stickers of this MessageData.
-        :type: list[MessageSticker]
-        """
-        
-
-        self._stickers = stickers
 
     @property
     def normalized_message(self) -> 'ConversationNormalizedMessage':

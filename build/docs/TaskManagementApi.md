@@ -37,7 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_taskmanagement_workitems_schema_version**](#get_taskmanagement_workitems_schema_version) | Get a specific version of a schema|
 |[**get_taskmanagement_workitems_schema_versions**](#get_taskmanagement_workitems_schema_versions) | Get all versions of a schema|
 |[**get_taskmanagement_workitems_schemas**](#get_taskmanagement_workitems_schemas) | Get a list of schemas.|
-|[**get_taskmanagement_workitems_schemas_coretype**](#get_taskmanagement_workitems_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_taskmanagement_workitems_schemas_coretype**](#get_taskmanagement_workitems_schemas_coretype) | Get a specific named core type.|
 |[**get_taskmanagement_workitems_schemas_coretypes**](#get_taskmanagement_workitems_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**get_taskmanagement_workitems_schemas_limits**](#get_taskmanagement_workitems_schemas_limits) | Get quantitative limits on schemas|
 |[**get_taskmanagement_worktype**](#get_taskmanagement_worktype) | Get a worktype|
@@ -1628,7 +1628,7 @@ This endpoint does not need any parameters.
 > [**Coretype**](Coretype) get_taskmanagement_workitems_schemas_coretype(core_type_name)
 
 
-Get the core types from which all schemas are built.
+Get a specific named core type.
 
 Wraps GET /api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName} 
 
@@ -1652,7 +1652,7 @@ api_instance = PureCloudPlatformClientV2.TaskManagementApi()
 core_type_name = 'core_type_name_example' # str | Name of the core type
 
 try:
-    # Get the core types from which all schemas are built.
+    # Get a specific named core type.
     api_response = api_instance.get_taskmanagement_workitems_schemas_coretype(core_type_name)
     pprint(api_response)
 except ApiException as e:
@@ -1673,7 +1673,7 @@ except ApiException as e:
 
 ## get_taskmanagement_workitems_schemas_coretypes
 
-> [**Coretype**](Coretype) get_taskmanagement_workitems_schemas_coretypes()
+> [**CoretypeListing**](CoretypeListing) get_taskmanagement_workitems_schemas_coretypes()
 
 
 Get the core types from which all schemas are built.
@@ -1712,7 +1712,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Coretype**](Coretype)
+[**CoretypeListing**](CoretypeListing)
 
 
 ## get_taskmanagement_workitems_schemas_limits
@@ -3864,4 +3864,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

@@ -49,18 +49,21 @@ class IpAddressRange(object):
         self.swagger_types = {
             'cidr': 'str',
             'service': 'str',
-            'region': 'str'
+            'region': 'str',
+            'direction': 'str'
         }
 
         self.attribute_map = {
             'cidr': 'cidr',
             'service': 'service',
-            'region': 'region'
+            'region': 'region',
+            'direction': 'direction'
         }
 
         self._cidr = None
         self._service = None
         self._region = None
+        self._direction = None
 
     @property
     def cidr(self) -> str:
@@ -108,7 +111,7 @@ class IpAddressRange(object):
         """
         if isinstance(service, int):
             service = str(service)
-        allowed_values = ["data-actions", "smtp", "imap", "graphapi", "audiohook", "open-messaging", "api", "audio-connector", "byot-stt", "bot-connector", "tts-connector"]
+        allowed_values = ["api", "data-actions", "smtp", "imap", "graphapi", "audiohook", "open-messaging", "tts-connector", "audio-connector", "byot-stt", "bot-connector"]
         if service.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service -> " + service)
             self._service = "outdated_sdk_version"
@@ -138,6 +141,35 @@ class IpAddressRange(object):
         
 
         self._region = region
+
+    @property
+    def direction(self) -> str:
+        """
+        Gets the direction of this IpAddressRange.
+        The direction of traffic for the IP range from the perspective of Genesys Cloud (e.g. inbound to Genesys; outbound from Genesys)
+
+        :return: The direction of this IpAddressRange.
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction: str) -> None:
+        """
+        Sets the direction of this IpAddressRange.
+        The direction of traffic for the IP range from the perspective of Genesys Cloud (e.g. inbound to Genesys; outbound from Genesys)
+
+        :param direction: The direction of this IpAddressRange.
+        :type: str
+        """
+        if isinstance(direction, int):
+            direction = str(direction)
+        allowed_values = ["inbound", "outbound", "both"]
+        if direction.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for direction -> " + direction)
+            self._direction = "outdated_sdk_version"
+        else:
+            self._direction = direction
 
     def to_dict(self):
         """

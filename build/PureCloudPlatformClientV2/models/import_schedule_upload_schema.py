@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BuHeadcountForecast
+    from . import BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema
     from . import BuImportAgentScheduleUploadSchema
     from . import BuShortTermForecastReference
 
@@ -55,7 +55,7 @@ class ImportScheduleUploadSchema(object):
             'week_count': 'int',
             'published': 'bool',
             'short_term_forecast': 'BuShortTermForecastReference',
-            'headcount_forecast': 'BuHeadcountForecast',
+            'headcount_forecast': 'BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema',
             'agent_schedules': 'list[BuImportAgentScheduleUploadSchema]'
         }
 
@@ -172,24 +172,24 @@ class ImportScheduleUploadSchema(object):
         self._short_term_forecast = short_term_forecast
 
     @property
-    def headcount_forecast(self) -> 'BuHeadcountForecast':
+    def headcount_forecast(self) -> 'BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema':
         """
         Gets the headcount_forecast of this ImportScheduleUploadSchema.
         The headcount forecast to associate with the imported schedule
 
         :return: The headcount_forecast of this ImportScheduleUploadSchema.
-        :rtype: BuHeadcountForecast
+        :rtype: BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema
         """
         return self._headcount_forecast
 
     @headcount_forecast.setter
-    def headcount_forecast(self, headcount_forecast: 'BuHeadcountForecast') -> None:
+    def headcount_forecast(self, headcount_forecast: 'BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema') -> None:
         """
         Sets the headcount_forecast of this ImportScheduleUploadSchema.
         The headcount forecast to associate with the imported schedule
 
         :param headcount_forecast: The headcount_forecast of this ImportScheduleUploadSchema.
-        :type: BuHeadcountForecast
+        :type: BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema
         """
         
 

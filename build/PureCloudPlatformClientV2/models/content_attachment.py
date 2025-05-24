@@ -81,7 +81,7 @@ class ContentAttachment(object):
     def id(self) -> str:
         """
         Gets the id of this ContentAttachment.
-        Provider specific ID for attachment. For example, a LINE sticker ID.
+        Provider specific ID for attachment.
 
         :return: The id of this ContentAttachment.
         :rtype: str
@@ -92,7 +92,7 @@ class ContentAttachment(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this ContentAttachment.
-        Provider specific ID for attachment. For example, a LINE sticker ID.
+        Provider specific ID for attachment.
 
         :param id: The id of this ContentAttachment.
         :type: str

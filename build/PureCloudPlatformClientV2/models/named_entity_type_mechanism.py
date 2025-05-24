@@ -56,6 +56,7 @@ class NamedEntityTypeMechanism(object):
             'sub_type': 'str',
             'max_length': 'int',
             'min_length': 'int',
+            'allow_special_chars': 'bool',
             'examples': 'list[NamedEntityTypeMechanismExample]'
         }
 
@@ -66,6 +67,7 @@ class NamedEntityTypeMechanism(object):
             'sub_type': 'subType',
             'max_length': 'maxLength',
             'min_length': 'minLength',
+            'allow_special_chars': 'allowSpecialChars',
             'examples': 'examples'
         }
 
@@ -75,6 +77,7 @@ class NamedEntityTypeMechanism(object):
         self._sub_type = None
         self._max_length = None
         self._min_length = None
+        self._allow_special_chars = None
         self._examples = None
 
     @property
@@ -230,6 +233,30 @@ class NamedEntityTypeMechanism(object):
         
 
         self._min_length = min_length
+
+    @property
+    def allow_special_chars(self) -> bool:
+        """
+        Gets the allow_special_chars of this NamedEntityTypeMechanism.
+        Flag whether to allow for special characters during AI slot capture
+
+        :return: The allow_special_chars of this NamedEntityTypeMechanism.
+        :rtype: bool
+        """
+        return self._allow_special_chars
+
+    @allow_special_chars.setter
+    def allow_special_chars(self, allow_special_chars: bool) -> None:
+        """
+        Sets the allow_special_chars of this NamedEntityTypeMechanism.
+        Flag whether to allow for special characters during AI slot capture
+
+        :param allow_special_chars: The allow_special_chars of this NamedEntityTypeMechanism.
+        :type: bool
+        """
+        
+
+        self._allow_special_chars = allow_special_chars
 
     @property
     def examples(self) -> List['NamedEntityTypeMechanismExample']:

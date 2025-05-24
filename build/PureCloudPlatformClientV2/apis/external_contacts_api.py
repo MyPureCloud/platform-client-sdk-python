@@ -67,6 +67,7 @@ from ..models import ContactListing
 from ..models import ContactsExport
 from ..models import ConversationAssociation
 from ..models import Coretype
+from ..models import CoretypeListing
 from ..models import CsvJobRequest
 from ..models import CsvJobResponse
 from ..models import CsvSettings
@@ -1980,7 +1981,7 @@ class ExternalContactsApi(object):
 
     def get_externalcontacts_contacts_schemas_coretype(self, core_type_name: str, **kwargs) -> 'Coretype':
         """
-        Get the core types from which all schemas are built.
+        Get a specific named core type.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2056,7 +2057,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_externalcontacts_contacts_schemas_coretypes(self, **kwargs) -> 'Coretype':
+    def get_externalcontacts_contacts_schemas_coretypes(self, **kwargs) -> 'CoretypeListing':
         """
         Get the core types from which all schemas are built.
         
@@ -2071,7 +2072,7 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: Coretype
+        :return: CoretypeListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2123,7 +2124,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Coretype',
+                                            response_type='CoretypeListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3939,7 +3940,7 @@ class ExternalContactsApi(object):
 
     def get_externalcontacts_organizations_schemas_coretype(self, core_type_name: str, **kwargs) -> 'Coretype':
         """
-        Get the core types from which all schemas are built.
+        Get a specific named core type.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4015,7 +4016,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_externalcontacts_organizations_schemas_coretypes(self, **kwargs) -> 'Coretype':
+    def get_externalcontacts_organizations_schemas_coretypes(self, **kwargs) -> 'CoretypeListing':
         """
         Get the core types from which all schemas are built.
         
@@ -4030,7 +4031,7 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: Coretype
+        :return: CoretypeListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4082,7 +4083,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Coretype',
+                                            response_type='CoretypeListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

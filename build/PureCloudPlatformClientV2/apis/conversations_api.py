@@ -5772,7 +5772,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str message_id: messageId (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media, stickers)
+        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :return: MessageData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5854,7 +5854,7 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param str message_id: messageId (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media, stickers)
+        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :return: MessageData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6563,6 +6563,85 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversations_messaging_identityresolution_integrations_apple_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Get Apple messaging integration identity resolution settings
+        
+	    get_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_identityresolution_integrations_apple_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_identityresolution_integrations_apple_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_conversations_messaging_identityresolution_integrations_apple_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations_messaging_identityresolution_integrations_facebook_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
         """
         Get Facebook messaging integration identity resolution settings
@@ -6603,6 +6682,84 @@ class ConversationsApi(object):
 
 
         resource_path = '/api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_identityresolution_integrations_instagram_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Get an Instagram integration identity resolution settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_identityresolution_integrations_instagram_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_identityresolution_integrations_instagram_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_conversations_messaging_identityresolution_integrations_instagram_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}'.replace('{format}', 'json')
         path_params = {}
         if 'integration_id' in params:
             path_params['integrationId'] = params['integration_id']
@@ -12370,7 +12527,7 @@ class ConversationsApi(object):
     def patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id(self, integration_id: str, body: 'WhatsAppEmbeddedSignupIntegrationActivationRequest', **kwargs) -> 'WhatsAppIntegration':
         """
         Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-        Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+        Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17449,7 +17606,7 @@ class ConversationsApi(object):
     def post_conversations_message_communication_messages(self, conversation_id: str, communication_id: str, body: 'AdditionalMessage', **kwargs) -> 'MessageData':
         """
         Send message
-        Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+        Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17464,7 +17621,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str communication_id: communicationId (required)
         :param AdditionalMessage body: Message (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media, stickers)
+        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :return: MessageData
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18075,7 +18232,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id:  (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media, stickers)
+        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :param list[str] body: messageIds
         :return: TextMessageListing
                  If the method is called asynchronously,
@@ -20817,6 +20974,91 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_conversations_messaging_identityresolution_integrations_apple_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Create an identity resolution settings for a Apple messaging integration
+        
+	    put_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversations_messaging_identityresolution_integrations_apple_integration_id(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param IdentityResolutionConfig body: IdentityResolutionConfig (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversations_messaging_identityresolution_integrations_apple_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `put_conversations_messaging_identityresolution_integrations_apple_integration_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_conversations_messaging_identityresolution_integrations_apple_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_conversations_messaging_identityresolution_integrations_facebook_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
         """
         Create an identity resolution settings for a Facebook messaging integration
@@ -20861,6 +21103,90 @@ class ConversationsApi(object):
 
 
         resource_path = '/api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IdentityResolutionConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_conversations_messaging_identityresolution_integrations_instagram_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+        """
+        Create identity resolution settings for an Instagram messaging integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversations_messaging_identityresolution_integrations_instagram_integration_id(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param IdentityResolutionConfig body: IdentityResolutionConfig (required)
+        :return: IdentityResolutionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversations_messaging_identityresolution_integrations_instagram_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `put_conversations_messaging_identityresolution_integrations_instagram_integration_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_conversations_messaging_identityresolution_integrations_instagram_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}'.replace('{format}', 'json')
         path_params = {}
         if 'integration_id' in params:
             path_params['integrationId'] = params['integration_id']

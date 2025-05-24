@@ -5768,6 +5768,7 @@ class ArchitectApi(object):
         :param str secure: Secure
         :param bool deleted: Include deleted
         :param bool include_schemas: Include variable schemas
+        :param bool virtual_agent_enabled: Include/exclude virtual agent flows
         :param str published_after: Published after
         :param str published_before: Published before
         :param list[str] division_id: division ID(s)
@@ -5776,7 +5777,7 @@ class ArchitectApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'locked_by_client_id', 'secure', 'deleted', 'include_schemas', 'published_after', 'published_before', 'division_id']
+        all_params = ['type', 'page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'description', 'name_or_description', 'publish_version_id', 'editable_by', 'locked_by', 'locked_by_client_id', 'secure', 'deleted', 'include_schemas', 'virtual_agent_enabled', 'published_after', 'published_before', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -5827,6 +5828,8 @@ class ArchitectApi(object):
             query_params['deleted'] = params['deleted']
         if 'include_schemas' in params:
             query_params['includeSchemas'] = params['include_schemas']
+        if 'virtual_agent_enabled' in params:
+            query_params['virtualAgentEnabled'] = params['virtual_agent_enabled']
         if 'published_after' in params:
             query_params['publishedAfter'] = params['published_after']
         if 'published_before' in params:

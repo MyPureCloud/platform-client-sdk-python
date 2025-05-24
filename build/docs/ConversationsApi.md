@@ -84,7 +84,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messages_cachedmedia_cached_media_item_id**](#get_conversations_messages_cachedmedia_cached_media_item_id) | Get a cached media item|
 |[**get_conversations_messaging_facebook_app**](#get_conversations_messaging_facebook_app) | Get Genesys Facebook App Id|
 |[**get_conversations_messaging_facebook_permissions**](#get_conversations_messaging_facebook_permissions) | Get a list of Facebook Permissions|
+|[**get_conversations_messaging_identityresolution_integrations_apple_integration_id**](#get_conversations_messaging_identityresolution_integrations_apple_integration_id) | Get Apple messaging integration identity resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_facebook_integration_id**](#get_conversations_messaging_identityresolution_integrations_facebook_integration_id) | Get Facebook messaging integration identity resolution settings|
+|[**get_conversations_messaging_identityresolution_integrations_instagram_integration_id**](#get_conversations_messaging_identityresolution_integrations_instagram_integration_id) | Get an Instagram integration identity resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_open_integration_id**](#get_conversations_messaging_identityresolution_integrations_open_integration_id) | Get an open messaging integration Identity Resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id**](#get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id) | Get a whatsApp integration Identity Resolution settings|
 |[**get_conversations_messaging_integration_twitter_oauth_settings**](#get_conversations_messaging_integration_twitter_oauth_settings) | Get twitter oauth settings to patch an integration|
@@ -252,7 +254,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversations_email_recordingstate**](#put_conversations_email_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_keyconfiguration**](#put_conversations_keyconfiguration) | Update the encryption key configurations|
 |[**put_conversations_message_recordingstate**](#put_conversations_message_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_messaging_identityresolution_integrations_apple_integration_id**](#put_conversations_messaging_identityresolution_integrations_apple_integration_id) | Create an identity resolution settings for a Apple messaging integration|
 |[**put_conversations_messaging_identityresolution_integrations_facebook_integration_id**](#put_conversations_messaging_identityresolution_integrations_facebook_integration_id) | Create an identity resolution settings for a Facebook messaging integration|
+|[**put_conversations_messaging_identityresolution_integrations_instagram_integration_id**](#put_conversations_messaging_identityresolution_integrations_instagram_integration_id) | Create identity resolution settings for an Instagram messaging integration|
 |[**put_conversations_messaging_identityresolution_integrations_open_integration_id**](#put_conversations_messaging_identityresolution_integrations_open_integration_id) | Update an open messaging integration Identity Resolution settings|
 |[**put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id**](#put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id) | Update a whatsApp integration Identity Resolution settings|
 |[**put_conversations_messaging_settings_default**](#put_conversations_messaging_settings_default) | Set the organization&#39;s default setting that may be applied to to integrations without settings|
@@ -3652,7 +3656,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 message_id = 'message_id_example' # str | messageId
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media, stickers) (optional) (default to False)
+use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 
 try:
     # Get message
@@ -3668,7 +3672,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| messageId |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
+| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 
 ### Return type
 
@@ -3704,7 +3708,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 message_id = 'message_id_example' # str | messageId
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media, stickers) (optional) (default to False)
+use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 
 try:
     # Get conversation message
@@ -3721,7 +3725,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **message_id** | **str**| messageId |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
+| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 
 ### Return type
 
@@ -4114,6 +4118,57 @@ This endpoint does not need any parameters.
 [**FacebookPermissionEntityListing**](FacebookPermissionEntityListing)
 
 
+## get_conversations_messaging_identityresolution_integrations_apple_integration_id
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_conversations_messaging_identityresolution_integrations_apple_integration_id(integration_id)
+
+
+Get Apple messaging integration identity resolution settings
+
+get_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+* messaging:identityResolutionApple:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Get Apple messaging integration identity resolution settings
+    api_response = api_instance.get_conversations_messaging_identityresolution_integrations_apple_integration_id(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_identityresolution_integrations_apple_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## get_conversations_messaging_identityresolution_integrations_facebook_integration_id
 
 > [**IdentityResolutionConfig**](IdentityResolutionConfig) get_conversations_messaging_identityresolution_integrations_facebook_integration_id(integration_id)
@@ -4149,6 +4204,55 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_messaging_identityresolution_integrations_facebook_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
+## get_conversations_messaging_identityresolution_integrations_instagram_integration_id
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_conversations_messaging_identityresolution_integrations_instagram_integration_id(integration_id)
+
+
+Get an Instagram integration identity resolution settings
+
+Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+* messaging:identityResolutionInstagram:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Get an Instagram integration identity resolution settings
+    api_response = api_instance.get_conversations_messaging_identityresolution_integrations_instagram_integration_id(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_identityresolution_integrations_instagram_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -7627,7 +7731,7 @@ except ApiException as e:
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
 
-Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the POST call to create the integration. You can then run a GET on the integration to check if its status has been updated to Active
+Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} 
 
@@ -10190,8 +10294,9 @@ Send an email reply
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/messages 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:email:send
 
 ### Example
 
@@ -10679,7 +10784,7 @@ except ApiException as e:
 
 Send message
 
-Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages 
 
@@ -10704,7 +10809,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.AdditionalMessage() # AdditionalMessage | Message
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media, stickers) (optional) (default to False)
+use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 
 try:
     # Send message
@@ -10722,7 +10827,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
 | **body** | [**AdditionalMessage**](AdditionalMessage)| Message |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
+| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 
 ### Return type
 
@@ -11084,7 +11189,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | 
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media, stickers) (optional) (default to False)
+use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 body = ['body_example'] # list[str] | messageIds (optional)
 
 try:
@@ -11101,7 +11206,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**|  |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
+| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 | **body** | [**list[str]**](str)| messageIds | [optional]  |
 
 ### Return type
@@ -12734,6 +12839,59 @@ except ApiException as e:
 **str**
 
 
+## put_conversations_messaging_identityresolution_integrations_apple_integration_id
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_conversations_messaging_identityresolution_integrations_apple_integration_id(integration_id, body)
+
+
+Create an identity resolution settings for a Apple messaging integration
+
+put_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+* messaging:identityResolutionApple:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | IdentityResolutionConfig
+
+try:
+    # Create an identity resolution settings for a Apple messaging integration
+    api_response = api_instance.put_conversations_messaging_identityresolution_integrations_apple_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_messaging_identityresolution_integrations_apple_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## put_conversations_messaging_identityresolution_integrations_facebook_integration_id
 
 > [**IdentityResolutionConfig**](IdentityResolutionConfig) put_conversations_messaging_identityresolution_integrations_facebook_integration_id(integration_id, body)
@@ -12770,6 +12928,57 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->put_conversations_messaging_identityresolution_integrations_facebook_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
+## put_conversations_messaging_identityresolution_integrations_instagram_integration_id
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_conversations_messaging_identityresolution_integrations_instagram_integration_id(integration_id, body)
+
+
+Create identity resolution settings for an Instagram messaging integration
+
+Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+* messaging:identityResolutionInstagram:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | IdentityResolutionConfig
+
+try:
+    # Create identity resolution settings for an Instagram messaging integration
+    api_response = api_instance.put_conversations_messaging_identityresolution_integrations_instagram_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_messaging_identityresolution_integrations_instagram_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -13192,4 +13401,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

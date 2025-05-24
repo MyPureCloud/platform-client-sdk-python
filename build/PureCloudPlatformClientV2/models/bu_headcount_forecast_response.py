@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BuHeadcountForecast
+    from . import BuHeadcountForecastBuPlanningGroupHeadcountForecastResult
 
 class BuHeadcountForecastResponse(object):
     """
@@ -49,7 +49,7 @@ class BuHeadcountForecastResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'result': 'BuHeadcountForecast',
+            'result': 'BuHeadcountForecastBuPlanningGroupHeadcountForecastResult',
             'download_url': 'str'
         }
 
@@ -62,24 +62,24 @@ class BuHeadcountForecastResponse(object):
         self._download_url = None
 
     @property
-    def result(self) -> 'BuHeadcountForecast':
+    def result(self) -> 'BuHeadcountForecastBuPlanningGroupHeadcountForecastResult':
         """
         Gets the result of this BuHeadcountForecastResponse.
         The headcount forecast, null when downloadUrl is provided
 
         :return: The result of this BuHeadcountForecastResponse.
-        :rtype: BuHeadcountForecast
+        :rtype: BuHeadcountForecastBuPlanningGroupHeadcountForecastResult
         """
         return self._result
 
     @result.setter
-    def result(self, result: 'BuHeadcountForecast') -> None:
+    def result(self, result: 'BuHeadcountForecastBuPlanningGroupHeadcountForecastResult') -> None:
         """
         Sets the result of this BuHeadcountForecastResponse.
         The headcount forecast, null when downloadUrl is provided
 
         :param result: The result of this BuHeadcountForecastResponse.
-        :type: BuHeadcountForecast
+        :type: BuHeadcountForecastBuPlanningGroupHeadcountForecastResult
         """
         
 

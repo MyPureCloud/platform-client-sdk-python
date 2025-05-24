@@ -51,6 +51,7 @@ class BotSearchResponse(object):
             'name': 'str',
             'bot_type': 'str',
             'description': 'str',
+            'virtual_agent_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -59,6 +60,7 @@ class BotSearchResponse(object):
             'name': 'name',
             'bot_type': 'botType',
             'description': 'description',
+            'virtual_agent_enabled': 'virtualAgentEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -66,6 +68,7 @@ class BotSearchResponse(object):
         self._name = None
         self._bot_type = None
         self._description = None
+        self._virtual_agent_enabled = None
         self._self_uri = None
 
     @property
@@ -168,6 +171,30 @@ class BotSearchResponse(object):
         
 
         self._description = description
+
+    @property
+    def virtual_agent_enabled(self) -> bool:
+        """
+        Gets the virtual_agent_enabled of this BotSearchResponse.
+        Whether the bot is a virtual agent or not
+
+        :return: The virtual_agent_enabled of this BotSearchResponse.
+        :rtype: bool
+        """
+        return self._virtual_agent_enabled
+
+    @virtual_agent_enabled.setter
+    def virtual_agent_enabled(self, virtual_agent_enabled: bool) -> None:
+        """
+        Sets the virtual_agent_enabled of this BotSearchResponse.
+        Whether the bot is a virtual agent or not
+
+        :param virtual_agent_enabled: The virtual_agent_enabled of this BotSearchResponse.
+        :type: bool
+        """
+        
+
+        self._virtual_agent_enabled = virtual_agent_enabled
 
     @property
     def self_uri(self) -> str:

@@ -31,6 +31,7 @@
 | **modified_by** | str |  | [optional] |
 | **operation** | str |  | [optional] |
 | **changes** | [list[WorkitemsQueueEventsNotificationDelta]](WorkitemsQueueEventsNotificationDelta) |  | [optional] |
+| **property_changes** | [list[WorkitemsQueueEventsNotificationPropertyChange]](WorkitemsQueueEventsNotificationPropertyChange) |  | [optional] |
 | **assignment_state** | str |  | [optional] |
 | **assignment_id** | str |  | [optional] |
 | **alert_timeout_seconds** | int |  | [optional] |
@@ -49,4 +50,4 @@
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

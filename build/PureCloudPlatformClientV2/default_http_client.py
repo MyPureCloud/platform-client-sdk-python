@@ -18,42 +18,46 @@ class DefaultHttpClient(AbstractHttpClient):
     def request(self, http_request_options):
         if not isinstance(http_request_options, HttpRequestOptions):
             raise ValueError("httpRequestOptions must be an instance of HttpRequestOptions")
+        
+        if self.pre_hook and callable(self.pre_hook):
+            http_request_options = self.pre_hook(http_request_options)
+
         config = self.to_rest_client_config(http_request_options)
         
         if config['method'] == "GET":
-            return self.rest_client.GET(config['url'],
+            response = self.rest_client.GET(config['url'],
                                         query_params=config['query_params'],
                                         headers=config['headers'])
         elif config['method'] == "HEAD":
-            return self.rest_client.HEAD(config['url'],
+            response = self.rest_client.HEAD(config['url'],
                                         query_params=config['query_params'],
                                         headers=config['headers'])
         elif config['method'] == "OPTIONS":
-            return self.rest_client.OPTIONS(config['url'],
+            response = self.rest_client.OPTIONS(config['url'],
                                             query_params=config['query_params'],
                                             headers=config['headers'],
                                             post_params=config['post_params'],
                                             body=config['body'])
         elif config['method'] == "POST":
-            return self.rest_client.POST(config['url'],
+            response = self.rest_client.POST(config['url'],
                                         query_params=config['query_params'],
                                         headers=config['headers'],
                                         post_params=config['post_params'],
                                         body=config['body'])
         elif config['method'] == "PUT":
-            return self.rest_client.PUT(config['url'],
+            response = self.rest_client.PUT(config['url'],
                                         query_params=config['query_params'],
                                         headers=config['headers'],
                                         post_params=config['post_params'],
                                         body=config['body'])
         elif config['method'] == "PATCH":
-            return self.rest_client.PATCH(config['url'],
+            response = self.rest_client.PATCH(config['url'],
                                         query_params=config['query_params'],
                                         headers=config['headers'],
                                         post_params=config['post_params'],
                                         body=config['body'])
         elif config['method'] == "DELETE":
-            return self.rest_client.DELETE(config['url'],
+            response = self.rest_client.DELETE(config['url'],
                                         query_params=config['query_params'],
                                         headers=config['headers'],
                                         body=config['body'])
@@ -61,6 +65,11 @@ class DefaultHttpClient(AbstractHttpClient):
             raise ValueError(
                 "http method must be `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS`, `HEAD` or `TRACE`."
             )
+        
+        if self.post_hook and callable(self.post_hook):
+            response = self.post_hook(response)
+
+        return response
                     
 
     def to_rest_client_config(self, http_request_options):

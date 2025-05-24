@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import SummarySettingEntity
 
 class SummaryGenerationConfig(object):
     """
@@ -47,14 +49,17 @@ class SummaryGenerationConfig(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enabled': 'bool'
+            'enabled': 'bool',
+            'summary_setting': 'SummarySettingEntity'
         }
 
         self.attribute_map = {
-            'enabled': 'enabled'
+            'enabled': 'enabled',
+            'summary_setting': 'summarySetting'
         }
 
         self._enabled = None
+        self._summary_setting = None
 
     @property
     def enabled(self) -> bool:
@@ -79,6 +84,30 @@ class SummaryGenerationConfig(object):
         
 
         self._enabled = enabled
+
+    @property
+    def summary_setting(self) -> 'SummarySettingEntity':
+        """
+        Gets the summary_setting of this SummaryGenerationConfig.
+        Configured summary setting object.
+
+        :return: The summary_setting of this SummaryGenerationConfig.
+        :rtype: SummarySettingEntity
+        """
+        return self._summary_setting
+
+    @summary_setting.setter
+    def summary_setting(self, summary_setting: 'SummarySettingEntity') -> None:
+        """
+        Sets the summary_setting of this SummaryGenerationConfig.
+        Configured summary setting object.
+
+        :param summary_setting: The summary_setting of this SummaryGenerationConfig.
+        :type: SummarySettingEntity
+        """
+        
+
+        self._summary_setting = summary_setting
 
     def to_dict(self):
         """

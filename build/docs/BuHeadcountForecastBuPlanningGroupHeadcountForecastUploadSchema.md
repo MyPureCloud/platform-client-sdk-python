@@ -1,14 +1,14 @@
-# BuHeadcountForecast
+# BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema
 
-## BuHeadcountForecast
+## BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [list[BuPlanningGroupHeadcountForecast]](BuPlanningGroupHeadcountForecast) |  | [optional] |
+| **entities** | [list[BuPlanningGroupHeadcountForecastUploadSchema]](BuPlanningGroupHeadcountForecastUploadSchema) |  | [optional] |
 | **reference_start_date** | datetime | Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

@@ -48,16 +48,19 @@ class WeekShiftTradeMatchesSummaryResponse(object):
         """
         self.swagger_types = {
             'week_date': 'date',
-            'count': 'int'
+            'count': 'int',
+            'cross_week_receiving_count': 'int'
         }
 
         self.attribute_map = {
             'week_date': 'weekDate',
-            'count': 'count'
+            'count': 'count',
+            'cross_week_receiving_count': 'crossWeekReceivingCount'
         }
 
         self._week_date = None
         self._count = None
+        self._cross_week_receiving_count = None
 
     @property
     def week_date(self) -> date:
@@ -106,6 +109,30 @@ class WeekShiftTradeMatchesSummaryResponse(object):
         
 
         self._count = count
+
+    @property
+    def cross_week_receiving_count(self) -> int:
+        """
+        Gets the cross_week_receiving_count of this WeekShiftTradeMatchesSummaryResponse.
+        The number of cross-week trades in the 'Matched' state with the receiving shift for the given week
+
+        :return: The cross_week_receiving_count of this WeekShiftTradeMatchesSummaryResponse.
+        :rtype: int
+        """
+        return self._cross_week_receiving_count
+
+    @cross_week_receiving_count.setter
+    def cross_week_receiving_count(self, cross_week_receiving_count: int) -> None:
+        """
+        Sets the cross_week_receiving_count of this WeekShiftTradeMatchesSummaryResponse.
+        The number of cross-week trades in the 'Matched' state with the receiving shift for the given week
+
+        :param cross_week_receiving_count: The cross_week_receiving_count of this WeekShiftTradeMatchesSummaryResponse.
+        :type: int
+        """
+        
+
+        self._cross_week_receiving_count = cross_week_receiving_count
 
     def to_dict(self):
         """

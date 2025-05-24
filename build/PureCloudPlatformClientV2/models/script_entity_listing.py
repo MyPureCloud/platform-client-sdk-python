@@ -54,8 +54,8 @@ class ScriptEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'truncated_divisions': 'bool',
-            'next_uri': 'str',
             'previous_uri': 'str',
+            'next_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
@@ -68,8 +68,8 @@ class ScriptEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'truncated_divisions': 'truncatedDivisions',
-            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
@@ -81,8 +81,8 @@ class ScriptEntityListing(object):
         self._page_number = None
         self._total = None
         self._truncated_divisions = None
-        self._next_uri = None
         self._previous_uri = None
+        self._next_uri = None
         self._last_uri = None
         self._first_uri = None
         self._self_uri = None
@@ -209,30 +209,6 @@ class ScriptEntityListing(object):
         self._truncated_divisions = truncated_divisions
 
     @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this ScriptEntityListing.
-
-
-        :return: The next_uri of this ScriptEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this ScriptEntityListing.
-
-
-        :param next_uri: The next_uri of this ScriptEntityListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
-
-    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this ScriptEntityListing.
@@ -255,6 +231,30 @@ class ScriptEntityListing(object):
         
 
         self._previous_uri = previous_uri
+
+    @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this ScriptEntityListing.
+
+
+        :return: The next_uri of this ScriptEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this ScriptEntityListing.
+
+
+        :param next_uri: The next_uri of this ScriptEntityListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
 
     @property
     def last_uri(self) -> str:
