@@ -234,7 +234,8 @@
 | **category_ids** | list[str] | A list of category ids for filtering | [optional] |
 | **delivery_pushed** | bool | Filter to indicate if push notification is sent | [optional] |
 | **social_ratings** | list[float] | A set of ratings for Google Business Profile | [optional] |
+| **virtual_agent_ids** | list[str] | A list of virtual agent ids for filtering. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

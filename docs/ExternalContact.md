@@ -25,6 +25,7 @@
 | **line_id** | [LineId](LineId) |  | [optional] |
 | **whats_app_id** | [WhatsAppId](WhatsAppId) |  | [optional] |
 | **facebook_id** | [FacebookId](FacebookId) |  | [optional] |
+| **instagram_id** | [InstagramId](InstagramId) | User information for an Instagram account | [optional] |
 | **external_ids** | [list[ExternalId]](ExternalId) | A list of external identifiers that identify this contact in an external system | [optional] |
 | **identifiers** | [list[ContactIdentifier]](ContactIdentifier) | Identifiers claimed by this contact | [optional] |
 | **modify_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -38,9 +39,11 @@
 | **type** | str | The type of contact | [optional] |
 | **canonical_contact** | [ContactAddressableEntityRef](ContactAddressableEntityRef) | The contact at the head of the merge tree. If null, this contact is not a part of any merge. | [optional] |
 | **merge_set** | [list[ContactAddressableEntityRef]](ContactAddressableEntityRef) | The set of all contacts that are a part of the merge tree. If null, this contact is not a part of any merge. | [optional] |
+| **merged_from** | [list[ContactAddressableEntityRef]](ContactAddressableEntityRef) | The input contacts from the merge operation. | [optional] |
+| **merged_to** | [ContactAddressableEntityRef](ContactAddressableEntityRef) | The output contact from the merge operation. | [optional] |
 | **merge_operation** | [MergeOperation](MergeOperation) | Information about the merge history of this contact. If null, this contact is not a part of any merge. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

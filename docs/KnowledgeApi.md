@@ -1732,7 +1732,7 @@ except ApiException as e:
 | **include_subcategories** | **bool**| Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional]  |
 | **include_drafts** | **bool**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional]  |
 | **label_ids** | [**list[str]**](str)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional]  |
-| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels, variations |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
 | **external_ids** | [**list[str]**](str)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional]  |
 
 ### Return type
@@ -6199,4 +6199,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

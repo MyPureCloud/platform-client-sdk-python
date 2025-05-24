@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## get_textbots_bots_search
 
-> [**BotSearchResponseEntityListing**](BotSearchResponseEntityListing) get_textbots_bots_search(bot_type=bot_type, bot_name=bot_name, bot_id=bot_id, page_size=page_size)
+> [**BotSearchResponseEntityListing**](BotSearchResponseEntityListing) get_textbots_bots_search(bot_type=bot_type, bot_name=bot_name, bot_id=bot_id, virtual_agent_enabled=virtual_agent_enabled, page_size=page_size)
 
 
 Find bots using the currently configured friendly name or ID.
@@ -44,11 +44,12 @@ api_instance = PureCloudPlatformClientV2.TextbotsApi()
 bot_type = ['bot_type_example'] # list[str] | Bot types (optional)
 bot_name = 'bot_name_example' # str | Bot name (optional)
 bot_id = ['bot_id_example'] # list[str] | Bot IDs. Maximum of 50 (optional)
+virtual_agent_enabled = True # bool | Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows (optional)
 page_size = 25 # int | The maximum results to return. Maximum of 100 (optional) (default to 25)
 
 try:
     # Find bots using the currently configured friendly name or ID.
-    api_response = api_instance.get_textbots_bots_search(bot_type=bot_type, bot_name=bot_name, bot_id=bot_id, page_size=page_size)
+    api_response = api_instance.get_textbots_bots_search(bot_type=bot_type, bot_name=bot_name, bot_id=bot_id, virtual_agent_enabled=virtual_agent_enabled, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TextbotsApi->get_textbots_bots_search: %s\n" % e)
@@ -62,6 +63,7 @@ except ApiException as e:
 | **bot_type** | [**list[str]**](str)| Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow, GenesysDigitalBotConnector |
 | **bot_name** | **str**| Bot name | [optional]  |
 | **bot_id** | [**list[str]**](str)| Bot IDs. Maximum of 50 | [optional]  |
+| **virtual_agent_enabled** | **bool**| Include or exclude virtual agent flows, only applies to GenesysBotFlows or GenesysDigitalBotFlows | [optional]  |
 | **page_size** | **int**| The maximum results to return. Maximum of 100 | [optional] [default to 25] |
 
 ### Return type
@@ -221,4 +223,4 @@ except ApiException as e:
 [**PostTextResponse**](PostTextResponse)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

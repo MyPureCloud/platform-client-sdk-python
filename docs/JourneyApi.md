@@ -2280,7 +2280,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 page_number = 1 # int | The number of the page to return (optional) (default to 1)
 page_size = 25 # int | Max number of entities to return (optional) (default to 25)
 interval = '2023-07-17T00:00:00Z/2023-07-18T00:00:00Z' # str | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional)
-statuses = 'statuses=Accepted,Executing,Complete,Failed' # str | Job statuses to filter for (optional)
+statuses = 'statuses=Accepted,Executing,Complete,Failed,Scheduled' # str | Job statuses to filter for (optional)
 
 try:
     # Get the jobs for an organization.
@@ -3634,4 +3634,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

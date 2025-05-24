@@ -6,10 +6,10 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | str | Social Handle Type | [optional] |
+| **type** | str | Subject search type | [optional] |
 | **existing_value** | str |  | [optional] |
 | **updated_value** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

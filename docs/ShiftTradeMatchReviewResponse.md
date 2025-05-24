@@ -10,7 +10,8 @@
 | **receiving_user** | [ShiftTradeMatchReviewUserResponse](ShiftTradeMatchReviewUserResponse) | Details for the receivingUser side of the shift trade | [optional] |
 | **violations** | [list[ShiftTradeMatchViolation]](ShiftTradeMatchViolation) | Constraint violations introduced after being matched that would normally disallow a trade, but which can still be overridden by the shift trade administrator | [optional] |
 | **admin_review_violations** | [list[ShiftTradeMatchViolation]](ShiftTradeMatchViolation) | Constraint violations associated with this shift trade which require shift trade administrator review | [optional] |
+| **unevaluated_rules** | list[str] | Unevaluated rules for this shift trade which require shift trade administrator review | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

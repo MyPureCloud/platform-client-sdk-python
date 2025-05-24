@@ -12,8 +12,9 @@
 | **sub_type** | str | Subtype of detection mechanism | [optional] |
 | **max_length** | int | The maximum length of the entity resolved value | [optional] |
 | **min_length** | int | The minimum length of the entity resolved value | [optional] |
+| **allow_special_chars** | bool | Flag whether to allow for special characters during AI slot capture | [optional] |
 | **examples** | [list[NamedEntityTypeMechanismExample]](NamedEntityTypeMechanismExample) | Examples for entity detection | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

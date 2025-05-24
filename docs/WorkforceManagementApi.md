@@ -5998,7 +5998,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_managementunit_week_shifttrades
 
-> [**WeekShiftTradeListResponse**](WeekShiftTradeListResponse) get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, force_download_service=force_download_service)
+> [**WeekShiftTradeListResponse**](WeekShiftTradeListResponse) get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, include_cross_week_shifts=include_cross_week_shifts, force_download_service=force_download_service)
 
 
 Gets all the shift trades for a given week
@@ -6026,11 +6026,12 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 evaluate_matches = True # bool | Whether to evaluate the matches for violations (optional) (default to True)
+include_cross_week_shifts = False # bool | Whether to include all shift trades with either the initiating shift or the receiving shift in the week (optional) (default to False)
 force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 
 try:
     # Gets all the shift trades for a given week
-    api_response = api_instance.get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, force_download_service=force_download_service)
+    api_response = api_instance.get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, include_cross_week_shifts=include_cross_week_shifts, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_shifttrades: %s\n" % e)
@@ -6044,6 +6045,7 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **evaluate_matches** | **bool**| Whether to evaluate the matches for violations | [optional] [default to True] |
+| **include_cross_week_shifts** | **bool**| Whether to include all shift trades with either the initiating shift or the receiving shift in the week | [optional] [default to False] |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
@@ -13000,4 +13002,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

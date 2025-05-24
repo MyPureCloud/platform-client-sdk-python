@@ -9,7 +9,8 @@
 | **cidr** | str |  | [optional] |
 | **service** | str |  | [optional] |
 | **region** | str |  | [optional] |
+| **direction** | str | The direction of traffic for the IP range from the perspective of Genesys Cloud (e.g. inbound to Genesys; outbound from Genesys) | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

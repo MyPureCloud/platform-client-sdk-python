@@ -7,7 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **enabled** | bool | Copilot generated summary is enabled. | |
+| **summary_setting** | [SummarySettingEntity](SummarySettingEntity) | Configured summary setting object. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

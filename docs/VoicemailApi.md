@@ -852,8 +852,10 @@ Get a user's voicemail policy
 
 Wraps GET /api/v2/voicemail/userpolicies/{userId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* telephony:plugin:all
+* voicemail:userPolicy:viewOther
 
 ### Example
 
@@ -1048,8 +1050,10 @@ Update a user's voicemail policy
 
 Wraps PATCH /api/v2/voicemail/userpolicies/{userId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* telephony:plugin:all
+* voicemail:userPolicy:viewOther
 
 ### Example
 
@@ -1290,9 +1294,10 @@ Update a user's voicemail policy
 
 Wraps PUT /api/v2/voicemail/userpolicies/{userId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * telephony:plugin:all
+* voicemail:userPolicy:viewOther
 
 ### Example
 
@@ -1331,4 +1336,4 @@ except ApiException as e:
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_

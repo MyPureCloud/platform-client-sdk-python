@@ -17,7 +17,6 @@
 | **text_body** | str | The body of the text message. (Deprecated - Instead use normalizedMessage.text) | |
 | **status** | str | The status of the message. | |
 | **media** | [list[MessageMedia]](MessageMedia) | The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment) | [optional] |
-| **stickers** | [list[MessageSticker]](MessageSticker) | The sticker details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment | [optional] |
 | **normalized_message** | [ConversationNormalizedMessage](ConversationNormalizedMessage) | The message into normalized format | [optional] |
 | **normalized_receipts** | [list[ConversationNormalizedMessage]](ConversationNormalizedMessage) | The delivery event associated with this message in normalized format, if the message direction was outbound | [optional] |
 | **created_by** | [User](User) | User who sent this message. | [optional] |
@@ -26,4 +25,4 @@
 
 
 
-_PureCloudPlatformClientV2 228.0.0_
+_PureCloudPlatformClientV2 229.0.0_
