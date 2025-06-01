@@ -59,7 +59,8 @@ class StatisticalSummary(object):
             'denominator': 'float',
             'target': 'float',
             'p95': 'int',
-            'p99': 'int'
+            'p99': 'int',
+            'calculated_metric_value': 'int'
         }
 
         self.attribute_map = {
@@ -75,7 +76,8 @@ class StatisticalSummary(object):
             'denominator': 'denominator',
             'target': 'target',
             'p95': 'p95',
-            'p99': 'p99'
+            'p99': 'p99',
+            'calculated_metric_value': 'calculatedMetricValue'
         }
 
         self._max = None
@@ -91,6 +93,7 @@ class StatisticalSummary(object):
         self._target = None
         self._p95 = None
         self._p99 = None
+        self._calculated_metric_value = None
 
     @property
     def max(self) -> float:
@@ -403,6 +406,30 @@ class StatisticalSummary(object):
         
 
         self._p99 = p99
+
+    @property
+    def calculated_metric_value(self) -> int:
+        """
+        Gets the calculated_metric_value of this StatisticalSummary.
+
+
+        :return: The calculated_metric_value of this StatisticalSummary.
+        :rtype: int
+        """
+        return self._calculated_metric_value
+
+    @calculated_metric_value.setter
+    def calculated_metric_value(self, calculated_metric_value: int) -> None:
+        """
+        Sets the calculated_metric_value of this StatisticalSummary.
+
+
+        :param calculated_metric_value: The calculated_metric_value of this StatisticalSummary.
+        :type: int
+        """
+        
+
+        self._calculated_metric_value = calculated_metric_value
 
     def to_dict(self):
         """

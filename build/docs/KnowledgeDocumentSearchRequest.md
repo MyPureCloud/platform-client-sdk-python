@@ -23,7 +23,8 @@
 | **confidence_threshold** | float | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1. | [optional] |
 | **answer_highlight_top_results** | int | The number of articles to be sent for answer-highlighting. Can range from 1-5. | [optional] |
 | **answer_mode** | list[str] | Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults. | [optional] |
+| **preprocess_query** | bool | Indicates whether the search query should be preprocessed. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

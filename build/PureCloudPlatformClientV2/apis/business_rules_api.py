@@ -773,7 +773,7 @@ class BusinessRulesApi(object):
             for asynchronous request. (optional)
         :param str table_id: Table ID (required)
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str page_size: Number of entities to return. Maximum of 100.
         :param list[str] division_ids: One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
         :return: DecisionTableVersionListing
                  If the method is called asynchronously,
@@ -860,7 +860,7 @@ class BusinessRulesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str page_size: Number of entities to return. Maximum of 100.
         :param list[str] division_ids: One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
         :return: DecisionTableListing
                  If the method is called asynchronously,
@@ -941,9 +941,8 @@ class BusinessRulesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str page_size: Number of entities to return. Maximum of 100.
         :param str schema_id: Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
         :param str name: Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
         :return: DecisionTableListing
@@ -951,7 +950,7 @@ class BusinessRulesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'page_size', 'schema_id', 'name']
+        all_params = ['after', 'page_size', 'schema_id', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -970,8 +969,6 @@ class BusinessRulesApi(object):
         path_params = {}
 
         query_params = {}
-        if 'before' in params:
-            query_params['before'] = params['before']
         if 'after' in params:
             query_params['after'] = params['after']
         if 'page_size' in params:

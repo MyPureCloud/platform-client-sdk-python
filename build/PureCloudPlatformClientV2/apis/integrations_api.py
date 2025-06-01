@@ -41,11 +41,14 @@ from ..models import ActionEntityListing
 from ..models import AsyncJob
 from ..models import AudioConnectorIntegration
 from ..models import AudioConnectorIntegrationEntityListing
+from ..models import Bot
 from ..models import BotConnectorBot
 from ..models import BotConnectorBotSummaryEntityListing
 from ..models import BotConnectorBotVersionSummaryEntityListing
 from ..models import BotExecutionConfiguration
 from ..models import BotList
+from ..models import BotListing
+from ..models import BotSummaryEntityListing
 from ..models import CategoryEntityListing
 from ..models import ClientAppEntityListing
 from ..models import CreateIntegrationRequest
@@ -64,6 +67,8 @@ from ..models import FunctionConfig
 from ..models import FunctionRuntime
 from ..models import FunctionUploadRequest
 from ..models import FunctionUploadResponse
+from ..models import IncomingMessageRequest
+from ..models import IncomingMessageResponse
 from ..models import Integration
 from ..models import IntegrationConfiguration
 from ..models import IntegrationEntityListing
@@ -79,6 +84,8 @@ from ..models import LexV2BotEntityListing
 from ..models import NuanceBot
 from ..models import NuanceBotEntityListing
 from ..models import NuanceBotLaunchSettings
+from ..models import OutgoingMessageRequest
+from ..models import OutgoingMessageResponse
 from ..models import PostActionInput
 from ..models import PublishDraftInput
 from ..models import SttEngineEntity
@@ -1962,6 +1969,264 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[FunctionRuntime]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_botconnector_bot(self, integration_id: str, bot_id: str, **kwargs) -> 'Bot':
+        """
+        Get a specific Bot details
+        
+	    get_integrations_botconnector_bot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_botconnector_bot(integration_id, bot_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: The integration ID for this group of bots (required)
+        :param str bot_id: The bot ID for this bot (required)
+        :param str version: Specific Version
+        :return: Bot
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'bot_id', 'version']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_botconnector_bot" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_integrations_botconnector_bot`")
+        # verify the required parameter 'bot_id' is set
+        if ('bot_id' not in params) or (params['bot_id'] is None):
+            raise ValueError("Missing the required parameter `bot_id` when calling `get_integrations_botconnector_bot`")
+
+
+        resource_path = '/api/v2/integrations/botconnectors/{integrationId}/bots/{botId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+        if 'bot_id' in params:
+            path_params['botId'] = params['bot_id']
+
+        query_params = {}
+        if 'version' in params:
+            query_params['version'] = params['version']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Bot',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_botconnector_bots(self, integration_id: str, **kwargs) -> 'BotListing':
+        """
+        Get the list of bots for this integration.
+        
+	    get_integrations_botconnector_bots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_botconnector_bots(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: The integration ID for this group of bots. (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: BotListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_botconnector_bots" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_integrations_botconnector_bots`")
+
+
+        resource_path = '/api/v2/integrations/botconnectors/{integrationId}/bots'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BotListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_botconnector_bots_summaries(self, integration_id: str, **kwargs) -> 'BotSummaryEntityListing':
+        """
+        Get the summary list of bots for this integration.
+        
+	    get_integrations_botconnector_bots_summaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_botconnector_bots_summaries(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: The integration ID for this group of bots. (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :return: BotSummaryEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_botconnector_bots_summaries" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_integrations_botconnector_bots_summaries`")
+
+
+        resource_path = '/api/v2/integrations/botconnectors/{integrationId}/bots/summaries'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BotSummaryEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6292,6 +6557,164 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Action',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_integrations_botconnectors_incoming_messages(self, body: 'IncomingMessageRequest', **kwargs) -> 'IncomingMessageResponse':
+        """
+        Send an incoming message to the bot.
+        
+	    post_integrations_botconnectors_incoming_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_botconnectors_incoming_messages(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param IncomingMessageRequest body: Incoming Message Request (required)
+        :return: IncomingMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_botconnectors_incoming_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_integrations_botconnectors_incoming_messages`")
+
+
+        resource_path = '/api/v2/integrations/botconnectors/incoming/messages'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IncomingMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_integrations_botconnectors_outgoing_messages(self, body: 'OutgoingMessageRequest', **kwargs) -> 'OutgoingMessageResponse':
+        """
+        Send an outgoing message to the end user.
+        
+	    post_integrations_botconnectors_outgoing_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_botconnectors_outgoing_messages(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OutgoingMessageRequest body: Outgoing Message Request (required)
+        :return: OutgoingMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_botconnectors_outgoing_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_integrations_botconnectors_outgoing_messages`")
+
+
+        resource_path = '/api/v2/integrations/botconnectors/outgoing/messages'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OutgoingMessageResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

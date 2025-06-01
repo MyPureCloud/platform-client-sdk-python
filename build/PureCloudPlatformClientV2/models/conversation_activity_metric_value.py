@@ -50,20 +50,23 @@ class ConversationActivityMetricValue(object):
             'metric': 'str',
             'qualifier': 'str',
             'entity_ids': 'list[str]',
-            'count': 'int'
+            'count': 'int',
+            'calculated_metric_value': 'int'
         }
 
         self.attribute_map = {
             'metric': 'metric',
             'qualifier': 'qualifier',
             'entity_ids': 'entityIds',
-            'count': 'count'
+            'count': 'count',
+            'calculated_metric_value': 'calculatedMetricValue'
         }
 
         self._metric = None
         self._qualifier = None
         self._entity_ids = None
         self._count = None
+        self._calculated_metric_value = None
 
     @property
     def metric(self) -> str:
@@ -87,7 +90,7 @@ class ConversationActivityMetricValue(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["oAlerting", "oInteracting", "oWaiting"]
+        allowed_values = ["oAlerting", "oInteracting", "oLongestInteracting", "oLongestWaiting", "oWaiting"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
@@ -165,6 +168,30 @@ class ConversationActivityMetricValue(object):
         
 
         self._count = count
+
+    @property
+    def calculated_metric_value(self) -> int:
+        """
+        Gets the calculated_metric_value of this ConversationActivityMetricValue.
+        Calculated metric value
+
+        :return: The calculated_metric_value of this ConversationActivityMetricValue.
+        :rtype: int
+        """
+        return self._calculated_metric_value
+
+    @calculated_metric_value.setter
+    def calculated_metric_value(self, calculated_metric_value: int) -> None:
+        """
+        Sets the calculated_metric_value of this ConversationActivityMetricValue.
+        Calculated metric value
+
+        :param calculated_metric_value: The calculated_metric_value of this ConversationActivityMetricValue.
+        :type: int
+        """
+        
+
+        self._calculated_metric_value = calculated_metric_value
 
     def to_dict(self):
         """

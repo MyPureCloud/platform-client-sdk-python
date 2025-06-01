@@ -484,7 +484,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 table_id = 'table_id_example' # str | Table ID
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
 division_ids = ['division_ids_example'] # list[str] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
 
 try:
@@ -502,7 +502,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **table_id** | **str**| Table ID |  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
 | **division_ids** | [**list[str]**](str)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
 
 ### Return type
@@ -539,7 +539,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
 division_ids = ['division_ids_example'] # list[str] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
 
 try:
@@ -556,7 +556,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
 | **division_ids** | [**list[str]**](str)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
 
 ### Return type
@@ -566,7 +566,7 @@ except ApiException as e:
 
 ## get_businessrules_decisiontables_search
 
-> [**DecisionTableListing**](DecisionTableListing) get_businessrules_decisiontables_search(before=before, after=after, page_size=page_size, schema_id=schema_id, name=name)
+> [**DecisionTableListing**](DecisionTableListing) get_businessrules_decisiontables_search(after=after, page_size=page_size, schema_id=schema_id, name=name)
 
 
 Search for decision tables.
@@ -592,15 +592,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
-before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
 schema_id = 'schema_id_example' # str | Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
 name = 'name_example' # str | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. (optional)
 
 try:
     # Search for decision tables.
-    api_response = api_instance.get_businessrules_decisiontables_search(before=before, after=after, page_size=page_size, schema_id=schema_id, name=name)
+    api_response = api_instance.get_businessrules_decisiontables_search(after=after, page_size=page_size, schema_id=schema_id, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BusinessRulesApi->get_businessrules_decisiontables_search: %s\n" % e)
@@ -611,9 +610,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
 | **schema_id** | **str**| Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. | [optional]  |
 | **name** | **str**| Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. | [optional]  |
 
@@ -1556,4 +1554,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

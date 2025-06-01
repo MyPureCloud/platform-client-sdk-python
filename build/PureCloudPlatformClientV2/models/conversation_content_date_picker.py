@@ -50,25 +50,30 @@ class ConversationContentDatePicker(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'title': 'str',
             'subtitle': 'str',
             'image_url': 'str',
             'date_minimum': 'datetime',
             'date_maximum': 'datetime',
             'location': 'ConversationContentLocation',
-            'available_times': 'list[ConversationContentDatePickerAvailableTime]'
+            'available_times': 'list[ConversationContentDatePickerAvailableTime]',
+            'date_display_format': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'title': 'title',
             'subtitle': 'subtitle',
             'image_url': 'imageUrl',
             'date_minimum': 'dateMinimum',
             'date_maximum': 'dateMaximum',
             'location': 'location',
-            'available_times': 'availableTimes'
+            'available_times': 'availableTimes',
+            'date_display_format': 'dateDisplayFormat'
         }
 
+        self._id = None
         self._title = None
         self._subtitle = None
         self._image_url = None
@@ -76,6 +81,31 @@ class ConversationContentDatePicker(object):
         self._date_maximum = None
         self._location = None
         self._available_times = None
+        self._date_display_format = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ConversationContentDatePicker.
+        Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+
+        :return: The id of this ConversationContentDatePicker.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ConversationContentDatePicker.
+        Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+
+        :param id: The id of this ConversationContentDatePicker.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def title(self) -> str:
@@ -244,6 +274,35 @@ class ConversationContentDatePicker(object):
         
 
         self._available_times = available_times
+
+    @property
+    def date_display_format(self) -> str:
+        """
+        Gets the date_display_format of this ConversationContentDatePicker.
+        The format the date should be presented to the end user.
+
+        :return: The date_display_format of this ConversationContentDatePicker.
+        :rtype: str
+        """
+        return self._date_display_format
+
+    @date_display_format.setter
+    def date_display_format(self, date_display_format: str) -> None:
+        """
+        Sets the date_display_format of this ConversationContentDatePicker.
+        The format the date should be presented to the end user.
+
+        :param date_display_format: The date_display_format of this ConversationContentDatePicker.
+        :type: str
+        """
+        if isinstance(date_display_format, int):
+            date_display_format = str(date_display_format)
+        allowed_values = ["dayMonthYear", "monthDayYear", "yearMonthDay"]
+        if date_display_format.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for date_display_format -> " + date_display_format)
+            self._date_display_format = "outdated_sdk_version"
+        else:
+            self._date_display_format = date_display_format
 
     def to_dict(self):
         """

@@ -121,7 +121,7 @@ class TranscriptAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["addressFrom", "addressTo", "ani", "channel", "conversationDuration", "conversationId", "direction", "divisionId", "dnis", "flowId", "flowVersion", "handleTime", "mediaType", "messageType", "queueId", "resultsBy", "teamId", "topicId", "userId", "wrapUpCode"]
+        allowed_values = ["addressFrom", "addressTo", "ani", "categoryId", "channel", "conversationDuration", "conversationId", "direction", "divisionId", "dnis", "flowId", "flowVersion", "handleTime", "mediaType", "messageType", "queueId", "resultsBy", "teamId", "topicId", "userId", "wrapUpCode"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

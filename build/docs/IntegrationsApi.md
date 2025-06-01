@@ -28,6 +28,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_actions_certificates_truststore**](#get_integrations_actions_certificates_truststore) | Retrieves basic info about trusted root CA certificates|
 |[**get_integrations_actions_drafts**](#get_integrations_actions_drafts) | Retrieves all action drafts associated with the filters passed in via query param.|
 |[**get_integrations_actions_functions_runtimes**](#get_integrations_actions_functions_runtimes) | Get action function settings for Action|
+|[**get_integrations_botconnector_bot**](#get_integrations_botconnector_bot) | Get a specific Bot details|
+|[**get_integrations_botconnector_bots**](#get_integrations_botconnector_bots) | Get the list of bots for this integration.|
+|[**get_integrations_botconnector_bots_summaries**](#get_integrations_botconnector_bots_summaries) | Get the summary list of bots for this integration.|
 |[**get_integrations_botconnector_integration_id_bot**](#get_integrations_botconnector_integration_id_bot) | Get a specific botConnector bot, plus versions, for this integration|
 |[**get_integrations_botconnector_integration_id_bot_versions**](#get_integrations_botconnector_integration_id_bot_versions) | Get a list of bot versions for a bot|
 |[**get_integrations_botconnector_integration_id_bots**](#get_integrations_botconnector_integration_id_bots) | Get a list of botConnector bots for this integration|
@@ -80,6 +83,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_action_test**](#post_integrations_action_test) | Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.|
 |[**post_integrations_actions**](#post_integrations_actions) | Create a new Action. Not supported for &#39;Function Integration&#39; actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.|
 |[**post_integrations_actions_drafts**](#post_integrations_actions_drafts) | Create a new Draft|
+|[**post_integrations_botconnectors_incoming_messages**](#post_integrations_botconnectors_incoming_messages) | Send an incoming message to the bot.|
+|[**post_integrations_botconnectors_outgoing_messages**](#post_integrations_botconnectors_outgoing_messages) | Send an outgoing message to the end user.|
 |[**post_integrations_credentials**](#post_integrations_credentials) | Create a set of credentials|
 |[**post_integrations_speech_nuance_nuance_integration_id_bot_jobs**](#post_integrations_speech_nuance_nuance_integration_id_bot_jobs) | Get a Nuance bot in the specified Integration asynchronously|
 |[**post_integrations_speech_nuance_nuance_integration_id_bots_jobs**](#post_integrations_speech_nuance_nuance_integration_id_bots_jobs) | Get a list of Nuance bots in the specified Integration asynchronously|
@@ -1247,6 +1252,168 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**list[FunctionRuntime]**](FunctionRuntime)
+
+
+## get_integrations_botconnector_bot
+
+> [**Bot**](Bot) get_integrations_botconnector_bot(integration_id, bot_id, version=version)
+
+
+Get a specific Bot details
+
+get_integrations_botconnector_bot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/botconnectors/{integrationId}/bots/{botId} 
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots
+bot_id = 'bot_id_example' # str | The bot ID for this bot
+version = 'version_example' # str | Specific Version (optional)
+
+try:
+    # Get a specific Bot details
+    api_response = api_instance.get_integrations_botconnector_bot(integration_id, bot_id, version=version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_botconnector_bot: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this group of bots |  |
+| **bot_id** | **str**| The bot ID for this bot |  |
+| **version** | **str**| Specific Version | [optional]  |
+
+### Return type
+
+[**Bot**](Bot)
+
+
+## get_integrations_botconnector_bots
+
+> [**BotListing**](BotListing) get_integrations_botconnector_bots(integration_id, page_number=page_number, page_size=page_size)
+
+
+Get the list of bots for this integration.
+
+get_integrations_botconnector_bots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/botconnectors/{integrationId}/bots 
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots.
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get the list of bots for this integration.
+    api_response = api_instance.get_integrations_botconnector_bots(integration_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_botconnector_bots: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this group of bots. |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**BotListing**](BotListing)
+
+
+## get_integrations_botconnector_bots_summaries
+
+> [**BotSummaryEntityListing**](BotSummaryEntityListing) get_integrations_botconnector_bots_summaries(integration_id, page_number=page_number, page_size=page_size)
+
+
+Get the summary list of bots for this integration.
+
+get_integrations_botconnector_bots_summaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/botconnectors/{integrationId}/bots/summaries 
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID for this group of bots.
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get the summary list of bots for this integration.
+    api_response = api_instance.get_integrations_botconnector_bots_summaries(integration_id, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_botconnector_bots_summaries: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID for this group of bots. |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**BotSummaryEntityListing**](BotSummaryEntityListing)
 
 
 ## get_integrations_botconnector_integration_id_bot
@@ -3930,6 +4097,106 @@ except ApiException as e:
 [**Action**](Action)
 
 
+## post_integrations_botconnectors_incoming_messages
+
+> [**IncomingMessageResponse**](IncomingMessageResponse) post_integrations_botconnectors_incoming_messages(body)
+
+
+Send an incoming message to the bot.
+
+post_integrations_botconnectors_incoming_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/integrations/botconnectors/incoming/messages 
+
+Requires ANY permissions: 
+
+* integration:botconnector:send
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+body = PureCloudPlatformClientV2.IncomingMessageRequest() # IncomingMessageRequest | Incoming Message Request
+
+try:
+    # Send an incoming message to the bot.
+    api_response = api_instance.post_integrations_botconnectors_incoming_messages(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_botconnectors_incoming_messages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**IncomingMessageRequest**](IncomingMessageRequest)| Incoming Message Request |  |
+
+### Return type
+
+[**IncomingMessageResponse**](IncomingMessageResponse)
+
+
+## post_integrations_botconnectors_outgoing_messages
+
+> [**OutgoingMessageResponse**](OutgoingMessageResponse) post_integrations_botconnectors_outgoing_messages(body)
+
+
+Send an outgoing message to the end user.
+
+post_integrations_botconnectors_outgoing_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/integrations/botconnectors/outgoing/messages 
+
+Requires ANY permissions: 
+
+* integration:botconnector:send
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+body = PureCloudPlatformClientV2.OutgoingMessageRequest() # OutgoingMessageRequest | Outgoing Message Request
+
+try:
+    # Send an outgoing message to the end user.
+    api_response = api_instance.post_integrations_botconnectors_outgoing_messages(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_botconnectors_outgoing_messages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OutgoingMessageRequest**](OutgoingMessageRequest)| Outgoing Message Request |  |
+
+### Return type
+
+[**OutgoingMessageResponse**](OutgoingMessageResponse)
+
+
 ## post_integrations_credentials
 
 > [**CredentialInfo**](CredentialInfo) post_integrations_credentials(body=body)
@@ -4529,4 +4796,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

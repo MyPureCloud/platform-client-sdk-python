@@ -10,7 +10,8 @@
 | **payload** | str | Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response. | |
 | **image** | str | URL of an image associated with the quick reply. | [optional] |
 | **action** | str | Specifies the type of action that is triggered upon clicking the quick reply. | [optional] |
+| **summary_text** | str | Summary of what the quick reply relates to. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

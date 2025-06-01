@@ -68,7 +68,8 @@ class KnowledgeDocumentSearchRequest(object):
             'conversation_context': 'KnowledgeConversationContext',
             'confidence_threshold': 'float',
             'answer_highlight_top_results': 'int',
-            'answer_mode': 'list[str]'
+            'answer_mode': 'list[str]',
+            'preprocess_query': 'bool'
         }
 
         self.attribute_map = {
@@ -88,7 +89,8 @@ class KnowledgeDocumentSearchRequest(object):
             'conversation_context': 'conversationContext',
             'confidence_threshold': 'confidenceThreshold',
             'answer_highlight_top_results': 'answerHighlightTopResults',
-            'answer_mode': 'answerMode'
+            'answer_mode': 'answerMode',
+            'preprocess_query': 'preprocessQuery'
         }
 
         self._query = None
@@ -108,6 +110,7 @@ class KnowledgeDocumentSearchRequest(object):
         self._confidence_threshold = None
         self._answer_highlight_top_results = None
         self._answer_mode = None
+        self._preprocess_query = None
 
     @property
     def query(self) -> str:
@@ -543,6 +546,30 @@ class KnowledgeDocumentSearchRequest(object):
         
 
         self._answer_mode = answer_mode
+
+    @property
+    def preprocess_query(self) -> bool:
+        """
+        Gets the preprocess_query of this KnowledgeDocumentSearchRequest.
+        Indicates whether the search query should be preprocessed.
+
+        :return: The preprocess_query of this KnowledgeDocumentSearchRequest.
+        :rtype: bool
+        """
+        return self._preprocess_query
+
+    @preprocess_query.setter
+    def preprocess_query(self, preprocess_query: bool) -> None:
+        """
+        Sets the preprocess_query of this KnowledgeDocumentSearchRequest.
+        Indicates whether the search query should be preprocessed.
+
+        :param preprocess_query: The preprocess_query of this KnowledgeDocumentSearchRequest.
+        :type: bool
+        """
+        
+
+        self._preprocess_query = preprocess_query
 
     def to_dict(self):
         """

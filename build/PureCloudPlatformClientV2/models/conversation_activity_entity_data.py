@@ -170,7 +170,7 @@ class ConversationActivityEntityData(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["oAlerting", "oInteracting", "oWaiting"]
+        allowed_values = ["oAlerting", "oInteracting", "oLongestInteracting", "oLongestWaiting", "oWaiting"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"

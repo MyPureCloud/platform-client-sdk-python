@@ -63,7 +63,8 @@ class KnowledgeDocumentSearch(object):
             'application': 'KnowledgeSearchClientApplication',
             'conversation_context': 'KnowledgeConversationContextResponse',
             'confidence_threshold': 'float',
-            'answer_generation': 'KnowledgeAnswerGenerationResponse'
+            'answer_generation': 'KnowledgeAnswerGenerationResponse',
+            'preprocess_query': 'bool'
         }
 
         self.attribute_map = {
@@ -78,7 +79,8 @@ class KnowledgeDocumentSearch(object):
             'application': 'application',
             'conversation_context': 'conversationContext',
             'confidence_threshold': 'confidenceThreshold',
-            'answer_generation': 'answerGeneration'
+            'answer_generation': 'answerGeneration',
+            'preprocess_query': 'preprocessQuery'
         }
 
         self._query = None
@@ -93,6 +95,7 @@ class KnowledgeDocumentSearch(object):
         self._conversation_context = None
         self._confidence_threshold = None
         self._answer_generation = None
+        self._preprocess_query = None
 
     @property
     def query(self) -> str:
@@ -392,6 +395,30 @@ class KnowledgeDocumentSearch(object):
         
 
         self._answer_generation = answer_generation
+
+    @property
+    def preprocess_query(self) -> bool:
+        """
+        Gets the preprocess_query of this KnowledgeDocumentSearch.
+        Indicates whether the search query should be preprocessed.
+
+        :return: The preprocess_query of this KnowledgeDocumentSearch.
+        :rtype: bool
+        """
+        return self._preprocess_query
+
+    @preprocess_query.setter
+    def preprocess_query(self, preprocess_query: bool) -> None:
+        """
+        Sets the preprocess_query of this KnowledgeDocumentSearch.
+        Indicates whether the search query should be preprocessed.
+
+        :param preprocess_query: The preprocess_query of this KnowledgeDocumentSearch.
+        :type: bool
+        """
+        
+
+        self._preprocess_query = preprocess_query
 
     def to_dict(self):
         """

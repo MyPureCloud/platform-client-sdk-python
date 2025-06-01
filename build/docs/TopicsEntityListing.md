@@ -9,10 +9,10 @@
 | **entities** | [list[ListedTopic]](ListedTopic) |  | [optional] |
 | **page_size** | int |  | [optional] |
 | **total** | int |  | [optional] |
-| **next_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
+| **next_uri** | str |  | [optional] |
 | **page_count** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

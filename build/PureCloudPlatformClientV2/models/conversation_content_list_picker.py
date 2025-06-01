@@ -50,20 +50,47 @@ class ConversationContentListPicker(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'sections': 'list[ConversationContentListPickerSection]',
             'reply_message': 'ConversationContentReceivedReplyMessage',
             'received_message': 'ConversationContentReceivedReplyMessage'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'sections': 'sections',
             'reply_message': 'replyMessage',
             'received_message': 'receivedMessage'
         }
 
+        self._id = None
         self._sections = None
         self._reply_message = None
         self._received_message = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ConversationContentListPicker.
+        Optional unique identifier to help map component replies to form messages where multiple ListPickers can be present.
+
+        :return: The id of this ConversationContentListPicker.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ConversationContentListPicker.
+        Optional unique identifier to help map component replies to form messages where multiple ListPickers can be present.
+
+        :param id: The id of this ConversationContentListPicker.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def sections(self) -> List['ConversationContentListPickerSection']:

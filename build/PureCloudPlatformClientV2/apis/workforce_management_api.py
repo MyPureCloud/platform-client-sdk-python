@@ -10854,7 +10854,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_alternativeshifts_trade(self, trade_id: str, **kwargs) -> 'AlternativeShiftTradeResponse':
+    def patch_workforcemanagement_alternativeshifts_trade(self, trade_id: str, body: 'AgentUpdateAlternativeShiftTradeRequest', **kwargs) -> 'AlternativeShiftTradeResponse':
         """
         Update my alternative shifts trade by trade ID
         
@@ -10865,12 +10865,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_alternativeshifts_trade(trade_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_alternativeshifts_trade(trade_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str trade_id: The ID of the alternative shift trade (required)
-        :param AgentUpdateAlternativeShiftTradeRequest body: body
+        :param AgentUpdateAlternativeShiftTradeRequest body: body (required)
         :return: AlternativeShiftTradeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10892,6 +10892,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'trade_id' is set
         if ('trade_id' not in params) or (params['trade_id'] is None):
             raise ValueError("Missing the required parameter `trade_id` when calling `patch_workforcemanagement_alternativeshifts_trade`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_alternativeshifts_trade`")
 
 
         resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}'.replace('{format}', 'json')
@@ -11013,7 +11016,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit(self, business_unit_id: str, **kwargs) -> 'BusinessUnitResponse':
+    def patch_workforcemanagement_businessunit(self, business_unit_id: str, body: 'UpdateBusinessUnitRequest', **kwargs) -> 'BusinessUnitResponse':
         """
         Update business unit
         
@@ -11024,12 +11027,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit(business_unit_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-        :param UpdateBusinessUnitRequest body: body
+        :param UpdateBusinessUnitRequest body: body (required)
         :return: BusinessUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11051,6 +11054,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}'.replace('{format}', 'json')
@@ -11094,7 +11100,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_activitycode(self, business_unit_id: str, activity_code_id: str, **kwargs) -> 'BusinessUnitActivityCode':
+    def patch_workforcemanagement_businessunit_activitycode(self, business_unit_id: str, activity_code_id: str, body: 'UpdateActivityCodeRequest', **kwargs) -> 'BusinessUnitActivityCode':
         """
         Update an activity code
         
@@ -11105,13 +11111,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
         :param str activity_code_id: The ID of the activity code to update (required)
-        :param UpdateActivityCodeRequest body: body
+        :param UpdateActivityCodeRequest body: body (required)
         :return: BusinessUnitActivityCode
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11136,6 +11142,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'activity_code_id' is set
         if ('activity_code_id' not in params) or (params['activity_code_id'] is None):
             raise ValueError("Missing the required parameter `activity_code_id` when calling `patch_workforcemanagement_businessunit_activitycode`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_activitycode`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}'.replace('{format}', 'json')
@@ -11271,7 +11280,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_alternativeshifts_settings(self, business_unit_id: str, **kwargs) -> 'AlternativeShiftBuSettingsResponse':
+    def patch_workforcemanagement_businessunit_alternativeshifts_settings(self, business_unit_id: str, body: 'UpdateAlternativeShiftBuSettingsRequest', **kwargs) -> 'AlternativeShiftBuSettingsResponse':
         """
         Update alternative shifts settings for a business unit
         
@@ -11282,12 +11291,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param UpdateAlternativeShiftBuSettingsRequest body: body
+        :param UpdateAlternativeShiftBuSettingsRequest body: body (required)
         :return: AlternativeShiftBuSettingsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11309,6 +11318,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_alternativeshifts_settings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_alternativeshifts_settings`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings'.replace('{format}', 'json')
@@ -11352,7 +11364,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_planninggroup(self, business_unit_id: str, planning_group_id: str, **kwargs) -> 'PlanningGroup':
+    def patch_workforcemanagement_businessunit_planninggroup(self, business_unit_id: str, planning_group_id: str, body: 'UpdatePlanningGroupRequest', **kwargs) -> 'PlanningGroup':
         """
         Updates the planning group
         
@@ -11363,13 +11375,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit. (required)
         :param str planning_group_id: The ID of a planning group to update (required)
-        :param UpdatePlanningGroupRequest body: body
+        :param UpdatePlanningGroupRequest body: body (required)
         :return: PlanningGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11394,6 +11406,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'planning_group_id' is set
         if ('planning_group_id' not in params) or (params['planning_group_id'] is None):
             raise ValueError("Missing the required parameter `planning_group_id` when calling `patch_workforcemanagement_businessunit_planninggroup`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_planninggroup`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}'.replace('{format}', 'json')
@@ -11439,7 +11454,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_scheduling_run(self, business_unit_id: str, run_id: str, **kwargs) -> None:
+    def patch_workforcemanagement_businessunit_scheduling_run(self, business_unit_id: str, run_id: str, body: 'PatchBuScheduleRunRequest', **kwargs) -> None:
         """
         Mark a schedule run as applied
         
@@ -11450,13 +11465,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str run_id: The ID of the schedule run (required)
-        :param PatchBuScheduleRunRequest body: body
+        :param PatchBuScheduleRunRequest body: body (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11481,6 +11496,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'run_id' is set
         if ('run_id' not in params) or (params['run_id'] is None):
             raise ValueError("Missing the required parameter `run_id` when calling `patch_workforcemanagement_businessunit_scheduling_run`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_scheduling_run`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}'.replace('{format}', 'json')
@@ -11526,7 +11544,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_servicegoaltemplate(self, business_unit_id: str, service_goal_template_id: str, **kwargs) -> 'ServiceGoalTemplate':
+    def patch_workforcemanagement_businessunit_servicegoaltemplate(self, business_unit_id: str, service_goal_template_id: str, body: 'UpdateServiceGoalTemplate', **kwargs) -> 'ServiceGoalTemplate':
         """
         Updates a service goal template
         
@@ -11537,13 +11555,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit. (required)
         :param str service_goal_template_id: The ID of a service goal template to update (required)
-        :param UpdateServiceGoalTemplate body: body
+        :param UpdateServiceGoalTemplate body: body (required)
         :return: ServiceGoalTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11568,6 +11586,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'service_goal_template_id' is set
         if ('service_goal_template_id' not in params) or (params['service_goal_template_id'] is None):
             raise ValueError("Missing the required parameter `service_goal_template_id` when calling `patch_workforcemanagement_businessunit_servicegoaltemplate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_servicegoaltemplate`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}'.replace('{format}', 'json')
@@ -11613,7 +11634,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_staffinggroup(self, business_unit_id: str, staffing_group_id: str, **kwargs) -> 'StaffingGroupResponse':
+    def patch_workforcemanagement_businessunit_staffinggroup(self, business_unit_id: str, staffing_group_id: str, body: 'UpdateStaffingGroupRequest', **kwargs) -> 'StaffingGroupResponse':
         """
         Updates a staffing group
         
@@ -11624,13 +11645,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str staffing_group_id: The ID of the staffing group to update (required)
-        :param UpdateStaffingGroupRequest body: body
+        :param UpdateStaffingGroupRequest body: body (required)
         :return: StaffingGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11655,6 +11676,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'staffing_group_id' is set
         if ('staffing_group_id' not in params) or (params['staffing_group_id'] is None):
             raise ValueError("Missing the required parameter `staffing_group_id` when calling `patch_workforcemanagement_businessunit_staffinggroup`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_staffinggroup`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}'.replace('{format}', 'json')
@@ -11700,7 +11724,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_timeoffplan(self, business_unit_id: str, time_off_plan_id: str, **kwargs) -> 'BuTimeOffPlanResponse':
+    def patch_workforcemanagement_businessunit_timeoffplan(self, business_unit_id: str, time_off_plan_id: str, body: 'BuUpdateTimeOffPlanRequest', **kwargs) -> 'BuTimeOffPlanResponse':
         """
         Updates a time-off plan
         
@@ -11711,13 +11735,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str time_off_plan_id: The ID of the time-off plan to update (required)
-        :param BuUpdateTimeOffPlanRequest body: body
+        :param BuUpdateTimeOffPlanRequest body: body (required)
         :return: BuTimeOffPlanResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11742,6 +11766,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'time_off_plan_id' is set
         if ('time_off_plan_id' not in params) or (params['time_off_plan_id'] is None):
             raise ValueError("Missing the required parameter `time_off_plan_id` when calling `patch_workforcemanagement_businessunit_timeoffplan`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_timeoffplan`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}'.replace('{format}', 'json')
@@ -11877,7 +11904,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_workplanbid_group(self, business_unit_id: str, bid_id: str, bid_group_id: str, **kwargs) -> 'WorkPlanBidGroupResponse':
+    def patch_workforcemanagement_businessunit_workplanbid_group(self, business_unit_id: str, bid_id: str, bid_group_id: str, body: 'WorkPlanBidGroupUpdate', **kwargs) -> 'WorkPlanBidGroupResponse':
         """
         Update a bid group by bid group Id
         
@@ -11888,14 +11915,14 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str bid_id: The work plan bid id of the bid groups (required)
         :param str bid_group_id: Work Plan Bid Group id (required)
-        :param WorkPlanBidGroupUpdate body: body
+        :param WorkPlanBidGroupUpdate body: body (required)
         :return: WorkPlanBidGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11923,6 +11950,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'bid_group_id' is set
         if ('bid_group_id' not in params) or (params['bid_group_id'] is None):
             raise ValueError("Missing the required parameter `bid_group_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_workplanbid_group`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}'.replace('{format}', 'json')
@@ -11970,7 +12000,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_businessunit_workplanbid_group_preferences(self, business_unit_id: str, bid_id: str, bid_group_id: str, **kwargs) -> 'AdminAgentWorkPlanPreferenceResponse':
+    def patch_workforcemanagement_businessunit_workplanbid_group_preferences(self, business_unit_id: str, bid_id: str, bid_group_id: str, body: 'AgentsBidAssignedWorkPlanOverrideRequest', **kwargs) -> 'AdminAgentWorkPlanPreferenceResponse':
         """
         Overrides the assigned work plan for the specified agents
         
@@ -11981,14 +12011,14 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str bid_id: The work plan bid id of the bid groups (required)
         :param str bid_group_id: The ID of the work plan bid group (required)
-        :param AgentsBidAssignedWorkPlanOverrideRequest body: body
+        :param AgentsBidAssignedWorkPlanOverrideRequest body: body (required)
         :return: AdminAgentWorkPlanPreferenceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12016,6 +12046,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'bid_group_id' is set
         if ('bid_group_id' not in params) or (params['bid_group_id'] is None):
             raise ValueError("Missing the required parameter `bid_group_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group_preferences`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_workplanbid_group_preferences`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences'.replace('{format}', 'json')
@@ -12063,7 +12096,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit(self, management_unit_id: str, **kwargs) -> 'ManagementUnit':
+    def patch_workforcemanagement_managementunit(self, management_unit_id: str, body: 'UpdateManagementUnitRequest', **kwargs) -> 'ManagementUnit':
         """
         Update the requested management unit
         
@@ -12074,12 +12107,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit(management_unit_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param UpdateManagementUnitRequest body: body
+        :param UpdateManagementUnitRequest body: body (required)
         :return: ManagementUnit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12101,6 +12134,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}'.replace('{format}', 'json')
@@ -12144,7 +12180,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_agents(self, management_unit_id: str, **kwargs) -> None:
+    def patch_workforcemanagement_managementunit_agents(self, management_unit_id: str, body: 'UpdateMuAgentsRequest', **kwargs) -> None:
         """
         Update agent configurations
         
@@ -12155,12 +12191,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_agents(management_unit_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_agents(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param UpdateMuAgentsRequest body: body
+        :param UpdateMuAgentsRequest body: body (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12182,6 +12218,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit_agents`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_agents`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents'.replace('{format}', 'json')
@@ -12225,7 +12264,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_agents_workplans_bulk(self, management_unit_id: str, **kwargs) -> 'UpdateMuAgentWorkPlansBatchResponse':
+    def patch_workforcemanagement_managementunit_agents_workplans_bulk(self, management_unit_id: str, body: 'UpdateMuAgentWorkPlansBatchRequest', **kwargs) -> 'UpdateMuAgentWorkPlansBatchResponse':
         """
         Updates agent work plan configuration
         
@@ -12236,12 +12275,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_agents_workplans_bulk(management_unit_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_agents_workplans_bulk(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param UpdateMuAgentWorkPlansBatchRequest body: body
+        :param UpdateMuAgentWorkPlansBatchRequest body: body (required)
         :return: UpdateMuAgentWorkPlansBatchResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12263,6 +12302,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit_agents_workplans_bulk`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_agents_workplans_bulk`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk'.replace('{format}', 'json')
@@ -12306,7 +12348,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> 'TimeOffLimit':
+    def patch_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, body: 'UpdateTimeOffLimitRequest', **kwargs) -> 'TimeOffLimit':
         """
         Updates a time off limit object.
         Updates time off limit object properties, but not daily values.
@@ -12317,13 +12359,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_timeofflimit(management_unit_id, time_off_limit_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_timeofflimit(management_unit_id, time_off_limit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit. (required)
         :param str time_off_limit_id: The id of time off limit object to update (required)
-        :param UpdateTimeOffLimitRequest body: body
+        :param UpdateTimeOffLimitRequest body: body (required)
         :return: TimeOffLimit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12348,6 +12390,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'time_off_limit_id' is set
         if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
             raise ValueError("Missing the required parameter `time_off_limit_id` when calling `patch_workforcemanagement_managementunit_timeofflimit`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_timeofflimit`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}'.replace('{format}', 'json')
@@ -12393,7 +12438,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, **kwargs) -> 'TimeOffPlan':
+    def patch_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, body: 'UpdateTimeOffPlanRequest', **kwargs) -> 'TimeOffPlan':
         """
         Updates a time off plan
         
@@ -12404,13 +12449,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_timeoffplan(management_unit_id, time_off_plan_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_timeoffplan(management_unit_id, time_off_plan_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit (required)
         :param str time_off_plan_id: The ID of the time off plan to update (required)
-        :param UpdateTimeOffPlanRequest body: body
+        :param UpdateTimeOffPlanRequest body: body (required)
         :return: TimeOffPlan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12435,6 +12480,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'time_off_plan_id' is set
         if ('time_off_plan_id' not in params) or (params['time_off_plan_id'] is None):
             raise ValueError("Missing the required parameter `time_off_plan_id` when calling `patch_workforcemanagement_managementunit_timeoffplan`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_timeoffplan`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}'.replace('{format}', 'json')
@@ -12480,7 +12528,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(self, management_unit_id: str, time_off_request_id: str, user_id: str, **kwargs) -> 'UserTimeOffIntegrationStatusResponse':
+    def patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(self, management_unit_id: str, time_off_request_id: str, user_id: str, body: 'SetTimeOffIntegrationStatusRequest', **kwargs) -> 'UserTimeOffIntegrationStatusResponse':
         """
         Set integration status for a time off request.
         
@@ -12491,14 +12539,14 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(management_unit_id, time_off_request_id, user_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(management_unit_id, time_off_request_id, user_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit. (required)
         :param str time_off_request_id: The ID of the time off request. (required)
         :param str user_id: The ID of user to whom the time off request belongs. (required)
-        :param SetTimeOffIntegrationStatusRequest body: body
+        :param SetTimeOffIntegrationStatusRequest body: body (required)
         :return: UserTimeOffIntegrationStatusResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12526,6 +12574,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus'.replace('{format}', 'json')
@@ -12573,7 +12624,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id: str, user_id: str, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
+    def patch_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id: str, user_id: str, time_off_request_id: str, body: 'AdminTimeOffRequestPatch', **kwargs) -> 'TimeOffRequestResponse':
         """
         Update a time off request
         
@@ -12584,14 +12635,14 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str user_id: The id of the user the requested time off request belongs to (required)
         :param str time_off_request_id: The id of the time off request to update (required)
-        :param AdminTimeOffRequestPatch body: body
+        :param AdminTimeOffRequestPatch body: body (required)
         :return: TimeOffRequestResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12619,6 +12670,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'time_off_request_id' is set
         if ('time_off_request_id' not in params) or (params['time_off_request_id'] is None):
             raise ValueError("Missing the required parameter `time_off_request_id` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_user_timeoffrequest`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}'.replace('{format}', 'json')
@@ -12762,7 +12816,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_workplan(self, management_unit_id: str, work_plan_id: str, **kwargs) -> 'WorkPlan':
+    def patch_workforcemanagement_managementunit_workplan(self, management_unit_id: str, work_plan_id: str, body: 'WorkPlan', **kwargs) -> 'WorkPlan':
         """
         Update a work plan
         
@@ -12773,20 +12827,20 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_id: The ID of the work plan to update (required)
+        :param WorkPlan body: body (required)
         :param str validation_mode: Allows to update work plan even if validation result is invalid
-        :param WorkPlan body: body
         :return: WorkPlan
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'work_plan_id', 'validation_mode', 'body']
+        all_params = ['management_unit_id', 'work_plan_id', 'body', 'validation_mode']
         all_params.append('callback')
 
         params = locals()
@@ -12805,6 +12859,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'work_plan_id' is set
         if ('work_plan_id' not in params) or (params['work_plan_id'] is None):
             raise ValueError("Missing the required parameter `work_plan_id` when calling `patch_workforcemanagement_managementunit_workplan`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_workplan`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}'.replace('{format}', 'json')
@@ -12852,7 +12909,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_managementunit_workplanrotation(self, management_unit_id: str, work_plan_rotation_id: str, **kwargs) -> 'WorkPlanRotationResponse':
+    def patch_workforcemanagement_managementunit_workplanrotation(self, management_unit_id: str, work_plan_rotation_id: str, body: 'UpdateWorkPlanRotationRequest', **kwargs) -> 'WorkPlanRotationResponse':
         """
         Update a work plan rotation
         
@@ -12863,13 +12920,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_rotation_id: The ID of the work plan rotation to update (required)
-        :param UpdateWorkPlanRotationRequest body: body
+        :param UpdateWorkPlanRotationRequest body: body (required)
         :return: WorkPlanRotationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12894,6 +12951,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'work_plan_rotation_id' is set
         if ('work_plan_rotation_id' not in params) or (params['work_plan_rotation_id'] is None):
             raise ValueError("Missing the required parameter `work_plan_rotation_id` when calling `patch_workforcemanagement_managementunit_workplanrotation`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_workplanrotation`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}'.replace('{format}', 'json')
@@ -12939,7 +12999,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_timeoffrequest(self, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
+    def patch_workforcemanagement_timeoffrequest(self, time_off_request_id: str, body: 'AgentTimeOffRequestPatch', **kwargs) -> 'TimeOffRequestResponse':
         """
         Update a time off request for the current user
         
@@ -12950,12 +13010,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_timeoffrequest(time_off_request_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_timeoffrequest(time_off_request_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str time_off_request_id: The ID of the time off request (required)
-        :param AgentTimeOffRequestPatch body: body
+        :param AgentTimeOffRequestPatch body: body (required)
         :return: TimeOffRequestResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12977,6 +13037,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'time_off_request_id' is set
         if ('time_off_request_id' not in params) or (params['time_off_request_id'] is None):
             raise ValueError("Missing the required parameter `time_off_request_id` when calling `patch_workforcemanagement_timeoffrequest`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_timeoffrequest`")
 
 
         resource_path = '/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}'.replace('{format}', 'json')
@@ -13020,7 +13083,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_user_workplanbidranks(self, user_id: str, **kwargs) -> 'WorkPlanBidRanks':
+    def patch_workforcemanagement_user_workplanbidranks(self, user_id: str, body: 'WorkPlanBidRanks', **kwargs) -> 'WorkPlanBidRanks':
         """
         Update work plan bid ranks for a user
         
@@ -13031,12 +13094,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_user_workplanbidranks(user_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_user_workplanbidranks(user_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The userId to whom the work plan bid ranks apply. (required)
-        :param WorkPlanBidRanks body: body
+        :param WorkPlanBidRanks body: body (required)
         :return: WorkPlanBidRanks
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13058,6 +13121,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `patch_workforcemanagement_user_workplanbidranks`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_user_workplanbidranks`")
 
 
         resource_path = '/api/v2/workforcemanagement/users/{userId}/workplanbidranks'.replace('{format}', 'json')
@@ -13179,7 +13245,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_workforcemanagement_workplanbid_preferences(self, bid_id: str, **kwargs) -> 'AgentWorkPlanBiddingPreferenceResponse':
+    def patch_workforcemanagement_workplanbid_preferences(self, bid_id: str, body: 'UpdateAgentWorkPlanBiddingPreference', **kwargs) -> 'AgentWorkPlanBiddingPreferenceResponse':
         """
         Update an agent's work plan bidding preference
         
@@ -13190,12 +13256,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_workforcemanagement_workplanbid_preferences(bid_id, callback=callback_function)
+        >>> thread = api.patch_workforcemanagement_workplanbid_preferences(bid_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str bid_id: The ID of the work plan bid (required)
-        :param UpdateAgentWorkPlanBiddingPreference body: body
+        :param UpdateAgentWorkPlanBiddingPreference body: body (required)
         :return: AgentWorkPlanBiddingPreferenceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13217,6 +13283,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'bid_id' is set
         if ('bid_id' not in params) or (params['bid_id'] is None):
             raise ValueError("Missing the required parameter `bid_id` when calling `patch_workforcemanagement_workplanbid_preferences`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_workplanbid_preferences`")
 
 
         resource_path = '/api/v2/workforcemanagement/workplanbids/{bidId}/preferences'.replace('{format}', 'json')
@@ -13498,7 +13567,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_adherence_historical_bulk(self, **kwargs) -> 'WfmHistoricalAdherenceBulkResponse':
+    def post_workforcemanagement_adherence_historical_bulk(self, body: 'WfmHistoricalAdherenceBulkQuery', **kwargs) -> 'WfmHistoricalAdherenceBulkResponse':
         """
         Request a historical adherence report in bulk
         
@@ -13509,11 +13578,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_adherence_historical_bulk(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_adherence_historical_bulk(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param WfmHistoricalAdherenceBulkQuery body: body
+        :param WfmHistoricalAdherenceBulkQuery body: body (required)
         :return: WfmHistoricalAdherenceBulkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13532,6 +13601,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_adherence_historical_bulk`")
 
 
         resource_path = '/api/v2/workforcemanagement/adherence/historical/bulk'.replace('{format}', 'json')
@@ -13747,7 +13819,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_agents(self, **kwargs) -> 'MoveAgentsResponse':
+    def post_workforcemanagement_agents(self, body: 'MoveAgentsRequest', **kwargs) -> 'MoveAgentsResponse':
         """
         Move agents in and out of management unit
         
@@ -13758,11 +13830,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_agents(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_agents(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param MoveAgentsRequest body: body
+        :param MoveAgentsRequest body: body (required)
         :return: MoveAgentsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13781,6 +13853,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agents`")
 
 
         resource_path = '/api/v2/workforcemanagement/agents'.replace('{format}', 'json')
@@ -13822,7 +13897,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_agents_integrations_hris_query(self, **kwargs) -> 'AgentsIntegrationsListing':
+    def post_workforcemanagement_agents_integrations_hris_query(self, body: 'QueryAgentsIntegrationsRequest', **kwargs) -> 'AgentsIntegrationsListing':
         """
         Query integrations for agents
         
@@ -13833,11 +13908,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_agents_integrations_hris_query(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_agents_integrations_hris_query(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param QueryAgentsIntegrationsRequest body: body
+        :param QueryAgentsIntegrationsRequest body: body (required)
         :return: AgentsIntegrationsListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13856,6 +13931,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agents_integrations_hris_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/agents/integrations/hris/query'.replace('{format}', 'json')
@@ -13975,7 +14053,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_agentschedules_mine(self, **kwargs) -> 'BuCurrentAgentScheduleSearchResponse':
+    def post_workforcemanagement_agentschedules_mine(self, body: 'BuGetCurrentAgentScheduleRequest', **kwargs) -> 'BuCurrentAgentScheduleSearchResponse':
         """
         Get published schedule for the current user
         
@@ -13986,11 +14064,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_agentschedules_mine(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_agentschedules_mine(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param BuGetCurrentAgentScheduleRequest body: body
+        :param BuGetCurrentAgentScheduleRequest body: body (required)
         :return: BuCurrentAgentScheduleSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14009,6 +14087,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agentschedules_mine`")
 
 
         resource_path = '/api/v2/workforcemanagement/agentschedules/mine'.replace('{format}', 'json')
@@ -14284,7 +14365,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_activitycodes(self, business_unit_id: str, **kwargs) -> 'BusinessUnitActivityCode':
+    def post_workforcemanagement_businessunit_activitycodes(self, business_unit_id: str, body: 'CreateActivityCodeRequest', **kwargs) -> 'BusinessUnitActivityCode':
         """
         Create a new activity code
         
@@ -14295,12 +14376,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_activitycodes(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_activitycodes(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-        :param CreateActivityCodeRequest body: body
+        :param CreateActivityCodeRequest body: body (required)
         :return: BusinessUnitActivityCode
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14322,6 +14403,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_activitycodes`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_activitycodes`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes'.replace('{format}', 'json')
@@ -14623,7 +14707,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_agentschedules_search(self, business_unit_id: str, **kwargs) -> 'BuAsyncAgentSchedulesSearchResponse':
+    def post_workforcemanagement_businessunit_agentschedules_search(self, business_unit_id: str, body: 'BuSearchAgentSchedulesRequest', **kwargs) -> 'BuAsyncAgentSchedulesSearchResponse':
         """
         Search published schedules
         
@@ -14634,20 +14718,20 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
+        :param BuSearchAgentSchedulesRequest body: body (required)
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
-        :param BuSearchAgentSchedulesRequest body: body
         :return: BuAsyncAgentSchedulesSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'force_async', 'force_download_service', 'body']
+        all_params = ['business_unit_id', 'body', 'force_async', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -14663,6 +14747,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_agentschedules_search`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_agentschedules_search`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search'.replace('{format}', 'json')
@@ -14797,7 +14884,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_intraday(self, business_unit_id: str, **kwargs) -> 'AsyncIntradayResponse':
+    def post_workforcemanagement_businessunit_intraday(self, business_unit_id: str, body: 'IntradayPlanningGroupRequest', **kwargs) -> 'AsyncIntradayResponse':
         """
         Get intraday data for the given date for the requested planningGroupIds
         
@@ -14808,19 +14895,19 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_intraday(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_intraday(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
+        :param IntradayPlanningGroupRequest body: body (required)
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-        :param IntradayPlanningGroupRequest body: body
         :return: AsyncIntradayResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'force_async', 'body']
+        all_params = ['business_unit_id', 'body', 'force_async']
         all_params.append('callback')
 
         params = locals()
@@ -14836,6 +14923,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_intraday`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_intraday`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday'.replace('{format}', 'json')
@@ -14881,7 +14971,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_planninggroups(self, business_unit_id: str, **kwargs) -> 'PlanningGroup':
+    def post_workforcemanagement_businessunit_planninggroups(self, business_unit_id: str, body: 'CreatePlanningGroupRequest', **kwargs) -> 'PlanningGroup':
         """
         Adds a new planning group
         
@@ -14892,12 +14982,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_planninggroups(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_planninggroups(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit. (required)
-        :param CreatePlanningGroupRequest body: body
+        :param CreatePlanningGroupRequest body: body (required)
         :return: PlanningGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14919,6 +15009,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_planninggroups`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_planninggroups`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups'.replace('{format}', 'json')
@@ -14962,7 +15055,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_servicegoaltemplates(self, business_unit_id: str, **kwargs) -> 'ServiceGoalTemplate':
+    def post_workforcemanagement_businessunit_servicegoaltemplates(self, business_unit_id: str, body: 'CreateServiceGoalTemplate', **kwargs) -> 'ServiceGoalTemplate':
         """
         Adds a new service goal template
         
@@ -14973,12 +15066,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit. (required)
-        :param CreateServiceGoalTemplate body: body
+        :param CreateServiceGoalTemplate body: body (required)
         :return: ServiceGoalTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15000,6 +15093,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_servicegoaltemplates`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_servicegoaltemplates`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates'.replace('{format}', 'json')
@@ -15043,7 +15139,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_staffinggroups(self, business_unit_id: str, **kwargs) -> 'StaffingGroupResponse':
+    def post_workforcemanagement_businessunit_staffinggroups(self, business_unit_id: str, body: 'CreateStaffingGroupRequest', **kwargs) -> 'StaffingGroupResponse':
         """
         Creates a new staffing group
         
@@ -15054,12 +15150,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_staffinggroups(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_staffinggroups(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param CreateStaffingGroupRequest body: body
+        :param CreateStaffingGroupRequest body: body (required)
         :return: StaffingGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15081,6 +15177,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_staffinggroups`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_staffinggroups`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups'.replace('{format}', 'json')
@@ -15124,7 +15223,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_staffinggroups_query(self, business_unit_id: str, **kwargs) -> 'UserStaffingGroupListing':
+    def post_workforcemanagement_businessunit_staffinggroups_query(self, business_unit_id: str, body: 'QueryUserStaffingGroupListRequest', **kwargs) -> 'UserStaffingGroupListing':
         """
         Gets staffing group associations for a list of user IDs
         
@@ -15135,12 +15234,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param QueryUserStaffingGroupListRequest body: body
+        :param QueryUserStaffingGroupListRequest body: body (required)
         :return: UserStaffingGroupListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15162,6 +15261,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_staffinggroups_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_staffinggroups_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query'.replace('{format}', 'json')
@@ -15205,7 +15307,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_timeofflimits(self, business_unit_id: str, **kwargs) -> 'BuTimeOffLimitResponse':
+    def post_workforcemanagement_businessunit_timeofflimits(self, business_unit_id: str, body: 'BuCreateTimeOffLimitRequest', **kwargs) -> 'BuTimeOffLimitResponse':
         """
         Creates a new time-off limit object
         
@@ -15216,12 +15318,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_timeofflimits(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_timeofflimits(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param BuCreateTimeOffLimitRequest body: body
+        :param BuCreateTimeOffLimitRequest body: body (required)
         :return: BuTimeOffLimitResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15243,6 +15345,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_timeofflimits`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_timeofflimits`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits'.replace('{format}', 'json')
@@ -15286,7 +15391,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_timeofflimits_values_query(self, business_unit_id: str, **kwargs) -> 'BuTimeOffLimitValuesResponse':
+    def post_workforcemanagement_businessunit_timeofflimits_values_query(self, business_unit_id: str, body: 'QueryTimeOffLimitValuesRequest', **kwargs) -> 'BuTimeOffLimitValuesResponse':
         """
         Retrieves time-off limit related values based on a given set of filters.
         
@@ -15297,12 +15402,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_timeofflimits_values_query(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_timeofflimits_values_query(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param QueryTimeOffLimitValuesRequest body: body
+        :param QueryTimeOffLimitValuesRequest body: body (required)
         :return: BuTimeOffLimitValuesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15324,6 +15429,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_timeofflimits_values_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_timeofflimits_values_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query'.replace('{format}', 'json')
@@ -15367,7 +15475,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_timeoffplans(self, business_unit_id: str, **kwargs) -> 'BuTimeOffPlanResponse':
+    def post_workforcemanagement_businessunit_timeoffplans(self, business_unit_id: str, body: 'BuCreateTimeOffPlanRequest', **kwargs) -> 'BuTimeOffPlanResponse':
         """
         Creates a new time-off plan
         
@@ -15378,12 +15486,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_timeoffplans(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_timeoffplans(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param BuCreateTimeOffPlanRequest body: body
+        :param BuCreateTimeOffPlanRequest body: body (required)
         :return: BuTimeOffPlanResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15405,6 +15513,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_timeoffplans`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_timeoffplans`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans'.replace('{format}', 'json')
@@ -15646,7 +15757,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations(self, business_unit_id: str, week_id: str, schedule_id: str, **kwargs) -> 'PerformancePredictionRecalculationResponse':
+    def post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations(self, business_unit_id: str, week_id: str, schedule_id: str, body: 'WfmProcessUploadRequest', **kwargs) -> 'PerformancePredictionRecalculationResponse':
         """
         Request a daily recalculation of the performance prediction for the associated schedule
         
@@ -15657,14 +15768,14 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations(business_unit_id, week_id, schedule_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations(business_unit_id, week_id, schedule_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit to which the performance prediction belongs (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format (required)
         :param str schedule_id: The ID of the schedule the performance prediction belongs to (required)
-        :param WfmProcessUploadRequest body: body
+        :param WfmProcessUploadRequest body: body (required)
         :return: PerformancePredictionRecalculationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15692,6 +15803,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'schedule_id' is set
         if ('schedule_id' not in params) or (params['schedule_id'] is None):
             raise ValueError("Missing the required parameter `schedule_id` when calling `post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations'.replace('{format}', 'json')
@@ -15739,7 +15853,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl(self, business_unit_id: str, week_id: str, schedule_id: str, **kwargs) -> 'PerformancePredictionRecalculationUploadResponse':
+    def post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl(self, business_unit_id: str, week_id: str, schedule_id: str, body: 'UploadUrlRequestBody', **kwargs) -> 'PerformancePredictionRecalculationUploadResponse':
         """
         Upload daily activity changes to be able to request a performance prediction recalculation
         
@@ -15750,14 +15864,14 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl(business_unit_id, week_id, schedule_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl(business_unit_id, week_id, schedule_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit to which the performance prediction belongs (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format (required)
         :param str schedule_id: The ID of the schedule the performance prediction belongs to (required)
-        :param UploadUrlRequestBody body: body
+        :param UploadUrlRequestBody body: body (required)
         :return: PerformancePredictionRecalculationUploadResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15785,6 +15899,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'schedule_id' is set
         if ('schedule_id' not in params) or (params['schedule_id'] is None):
             raise ValueError("Missing the required parameter `schedule_id` when calling `post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl'.replace('{format}', 'json')
@@ -16939,7 +17056,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_workplanbid_groups(self, business_unit_id: str, bid_id: str, **kwargs) -> 'WorkPlanBidGroupResponse':
+    def post_workforcemanagement_businessunit_workplanbid_groups(self, business_unit_id: str, bid_id: str, body: 'WorkPlanBidGroupCreate', **kwargs) -> 'WorkPlanBidGroupResponse':
         """
         Add a bid group in a given work plan bid
         
@@ -16950,13 +17067,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_workplanbid_groups(business_unit_id, bid_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_workplanbid_groups(business_unit_id, bid_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str bid_id: The work plan bid id of the bid groups (required)
-        :param WorkPlanBidGroupCreate body: body
+        :param WorkPlanBidGroupCreate body: body (required)
         :return: WorkPlanBidGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16981,6 +17098,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'bid_id' is set
         if ('bid_id' not in params) or (params['bid_id'] is None):
             raise ValueError("Missing the required parameter `bid_id` when calling `post_workforcemanagement_businessunit_workplanbid_groups`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_workplanbid_groups`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups'.replace('{format}', 'json')
@@ -17026,7 +17146,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_workplanbids(self, business_unit_id: str, **kwargs) -> 'WorkPlanBid':
+    def post_workforcemanagement_businessunit_workplanbids(self, business_unit_id: str, body: 'CreateWorkPlanBid', **kwargs) -> 'WorkPlanBid':
         """
         Create a new work plan bid
         
@@ -17037,12 +17157,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_workplanbids(business_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_workplanbids(business_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
-        :param CreateWorkPlanBid body: The work plan bid to be created
+        :param CreateWorkPlanBid body: The work plan bid to be created (required)
         :return: WorkPlanBid
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17064,6 +17184,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'business_unit_id' is set
         if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
             raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_workplanbids`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_workplanbids`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids'.replace('{format}', 'json')
@@ -17107,7 +17230,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunits(self, **kwargs) -> 'BusinessUnitResponse':
+    def post_workforcemanagement_businessunits(self, body: 'CreateBusinessUnitRequest', **kwargs) -> 'BusinessUnitResponse':
         """
         Add a new business unit
         It may take a minute or two for a new business unit to be available for api operations
@@ -17118,11 +17241,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunits(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunits(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreateBusinessUnitRequest body: body
+        :param CreateBusinessUnitRequest body: body (required)
         :return: BusinessUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17141,6 +17264,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunits`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits'.replace('{format}', 'json')
@@ -17257,7 +17383,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_historicaldata_bulk_remove_jobs(self, **kwargs) -> 'HistoricalImportDeleteFilesJobResponse':
+    def post_workforcemanagement_historicaldata_bulk_remove_jobs(self, body: 'HistoricalImportDeleteFilesJobRequest', **kwargs) -> 'HistoricalImportDeleteFilesJobResponse':
         """
         Delete the list of the historical data import entries
         
@@ -17268,11 +17394,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_historicaldata_bulk_remove_jobs(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_historicaldata_bulk_remove_jobs(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param HistoricalImportDeleteFilesJobRequest body: body
+        :param HistoricalImportDeleteFilesJobRequest body: body (required)
         :return: HistoricalImportDeleteFilesJobResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17291,6 +17417,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_historicaldata_bulk_remove_jobs`")
 
 
         resource_path = '/api/v2/workforcemanagement/historicaldata/bulk/remove/jobs'.replace('{format}', 'json')
@@ -17405,7 +17534,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_historicaldata_validate(self, **kwargs) -> 'ValidationServiceAsyncResponse':
+    def post_workforcemanagement_historicaldata_validate(self, body: 'ValidationServiceRequest', **kwargs) -> 'ValidationServiceAsyncResponse':
         """
         Trigger validation process for historical import
         
@@ -17416,11 +17545,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_historicaldata_validate(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_historicaldata_validate(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ValidationServiceRequest body: body
+        :param ValidationServiceRequest body: body (required)
         :return: ValidationServiceAsyncResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17439,6 +17568,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_historicaldata_validate`")
 
 
         resource_path = '/api/v2/workforcemanagement/historicaldata/validate'.replace('{format}', 'json')
@@ -17558,7 +17690,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_agents_workplans_query(self, management_unit_id: str, **kwargs) -> 'AgentsWorkPlansResponse':
+    def post_workforcemanagement_managementunit_agents_workplans_query(self, management_unit_id: str, body: 'GetAgentsWorkPlansRequest', **kwargs) -> 'AgentsWorkPlansResponse':
         """
         Get agents work plans configuration
         
@@ -17569,19 +17701,19 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_agents_workplans_query(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_agents_workplans_query(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param GetAgentsWorkPlansRequest body: body (required)
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
-        :param GetAgentsWorkPlansRequest body: body
         :return: AgentsWorkPlansResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'force_download_service', 'body']
+        all_params = ['management_unit_id', 'body', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -17597,6 +17729,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_agents_workplans_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_agents_workplans_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query'.replace('{format}', 'json')
@@ -17642,7 +17777,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_agentschedules_search(self, management_unit_id: str, **kwargs) -> 'BuAsyncAgentSchedulesSearchResponse':
+    def post_workforcemanagement_managementunit_agentschedules_search(self, management_unit_id: str, body: 'BuSearchAgentSchedulesRequest', **kwargs) -> 'BuAsyncAgentSchedulesSearchResponse':
         """
         Query published schedules for given given time range for set of users
         
@@ -17653,20 +17788,20 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param BuSearchAgentSchedulesRequest body: body (required)
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
-        :param BuSearchAgentSchedulesRequest body: body
         :return: BuAsyncAgentSchedulesSearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'force_async', 'force_download_service', 'body']
+        all_params = ['management_unit_id', 'body', 'force_async', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -17682,6 +17817,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_agentschedules_search`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_agentschedules_search`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search'.replace('{format}', 'json')
@@ -17729,7 +17867,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_historicaladherencequery(self, management_unit_id: str, **kwargs) -> 'WfmHistoricalAdherenceResponse':
+    def post_workforcemanagement_managementunit_historicaladherencequery(self, management_unit_id: str, body: 'WfmHistoricalAdherenceQuery', **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
         Request a historical adherence report
         The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
@@ -17740,12 +17878,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_historicaladherencequery(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_historicaladherencequery(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit (required)
-        :param WfmHistoricalAdherenceQuery body: body
+        :param WfmHistoricalAdherenceQuery body: body (required)
         :return: WfmHistoricalAdherenceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17767,6 +17905,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_historicaladherencequery`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_historicaladherencequery`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery'.replace('{format}', 'json')
@@ -17810,7 +17951,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_move(self, management_unit_id: str, **kwargs) -> 'MoveManagementUnitResponse':
+    def post_workforcemanagement_managementunit_move(self, management_unit_id: str, body: 'MoveManagementUnitRequest', **kwargs) -> 'MoveManagementUnitResponse':
         """
         Move the requested management unit to a new business unit
         Returns status 200 if the management unit is already in the requested business unit
@@ -17821,12 +17962,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_move(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_move(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param MoveManagementUnitRequest body: body
+        :param MoveManagementUnitRequest body: body (required)
         :return: MoveManagementUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17848,6 +17989,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_move`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_move`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/move'.replace('{format}', 'json')
@@ -17892,7 +18036,7 @@ class WorkforceManagementApi(object):
         return response
 
     @deprecated("post_workforcemanagement_managementunit_schedules_search is deprecated")
-    def post_workforcemanagement_managementunit_schedules_search(self, management_unit_id: str, **kwargs) -> 'UserScheduleContainer':
+    def post_workforcemanagement_managementunit_schedules_search(self, management_unit_id: str, body: 'UserListScheduleRequestBody', **kwargs) -> 'UserScheduleContainer':
         """
         Query published schedules for given given time range for set of users
         
@@ -17903,12 +18047,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_schedules_search(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_schedules_search(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param UserListScheduleRequestBody body: body
+        :param UserListScheduleRequestBody body: body (required)
         :return: UserScheduleContainer
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17930,6 +18074,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_schedules_search`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_schedules_search`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search'.replace('{format}', 'json')
@@ -17973,7 +18120,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_shrinkage_jobs(self, management_unit_id: str, **kwargs) -> 'WfmHistoricalShrinkageResponse':
+    def post_workforcemanagement_managementunit_shrinkage_jobs(self, management_unit_id: str, body: 'WfmHistoricalShrinkageRequest', **kwargs) -> 'WfmHistoricalShrinkageResponse':
         """
         Request a historical shrinkage report
         The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
@@ -17984,12 +18131,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_shrinkage_jobs(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_shrinkage_jobs(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit (required)
-        :param WfmHistoricalShrinkageRequest body: body
+        :param WfmHistoricalShrinkageRequest body: body (required)
         :return: WfmHistoricalShrinkageResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18011,6 +18158,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_shrinkage_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_shrinkage_jobs`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs'.replace('{format}', 'json')
@@ -18054,7 +18204,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeofflimits(self, management_unit_id: str, **kwargs) -> 'TimeOffLimit':
+    def post_workforcemanagement_managementunit_timeofflimits(self, management_unit_id: str, body: 'CreateTimeOffLimitRequest', **kwargs) -> 'TimeOffLimit':
         """
         Creates a new time off limit object under management unit.
         Only one limit object is allowed under management unit, so an attempt to create second object will fail.
@@ -18065,12 +18215,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeofflimits(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeofflimits(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit. (required)
-        :param CreateTimeOffLimitRequest body: body
+        :param CreateTimeOffLimitRequest body: body (required)
         :return: TimeOffLimit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18092,6 +18242,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeofflimits`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_timeofflimits`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits'.replace('{format}', 'json')
@@ -18135,7 +18288,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeofflimits_values_query(self, management_unit_id: str, **kwargs) -> 'QueryTimeOffLimitValuesResponse':
+    def post_workforcemanagement_managementunit_timeofflimits_values_query(self, management_unit_id: str, body: 'QueryTimeOffLimitValuesRequest', **kwargs) -> 'QueryTimeOffLimitValuesResponse':
         """
         Retrieves time off limit related values based on a given set of filters.
         
@@ -18146,12 +18299,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeofflimits_values_query(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeofflimits_values_query(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit. (required)
-        :param QueryTimeOffLimitValuesRequest body: body
+        :param QueryTimeOffLimitValuesRequest body: body (required)
         :return: QueryTimeOffLimitValuesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18173,6 +18326,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeofflimits_values_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_timeofflimits_values_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query'.replace('{format}', 'json')
@@ -18216,7 +18372,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeoffplans(self, management_unit_id: str, **kwargs) -> 'TimeOffPlan':
+    def post_workforcemanagement_managementunit_timeoffplans(self, management_unit_id: str, body: 'CreateTimeOffPlanRequest', **kwargs) -> 'TimeOffPlan':
         """
         Creates a new time off plan
         
@@ -18227,12 +18383,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeoffplans(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffplans(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit (required)
-        :param CreateTimeOffPlanRequest body: body
+        :param CreateTimeOffPlanRequest body: body (required)
         :return: TimeOffPlan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18254,6 +18410,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffplans`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_timeoffplans`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans'.replace('{format}', 'json')
@@ -18297,7 +18456,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeoffrequests(self, management_unit_id: str, **kwargs) -> 'TimeOffRequestList':
+    def post_workforcemanagement_managementunit_timeoffrequests(self, management_unit_id: str, body: 'CreateAdminTimeOffRequest', **kwargs) -> 'TimeOffRequestList':
         """
         Create a new time off request
         
@@ -18308,12 +18467,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param CreateAdminTimeOffRequest body: body
+        :param CreateAdminTimeOffRequest body: body (required)
         :return: TimeOffRequestList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18335,6 +18494,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffrequests`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_timeoffrequests`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests'.replace('{format}', 'json')
@@ -18378,7 +18540,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(self, management_unit_id: str, **kwargs) -> 'UserTimeOffIntegrationStatusResponseListing':
+    def post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(self, management_unit_id: str, body: 'QueryTimeOffIntegrationStatusRequest', **kwargs) -> 'UserTimeOffIntegrationStatusResponseListing':
         """
         Retrieves integration statuses for a list of time off requests
         
@@ -18389,12 +18551,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit. (required)
-        :param QueryTimeOffIntegrationStatusRequest body: body
+        :param QueryTimeOffIntegrationStatusRequest body: body (required)
         :return: UserTimeOffIntegrationStatusResponseListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18416,6 +18578,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query'.replace('{format}', 'json')
@@ -18459,7 +18624,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeoffrequests_query(self, management_unit_id: str, **kwargs) -> 'TimeOffRequestListing':
+    def post_workforcemanagement_managementunit_timeoffrequests_query(self, management_unit_id: str, body: 'TimeOffRequestQueryBody', **kwargs) -> 'TimeOffRequestListing':
         """
         Fetches time off requests matching the conditions specified in the request body
         Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
@@ -18470,19 +18635,19 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param TimeOffRequestQueryBody body: body (required)
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
-        :param TimeOffRequestQueryBody body: body
         :return: TimeOffRequestListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'force_download_service', 'body']
+        all_params = ['management_unit_id', 'body', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -18498,6 +18663,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffrequests_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_timeoffrequests_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query'.replace('{format}', 'json')
@@ -18543,7 +18711,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query(self, management_unit_id: str, **kwargs) -> 'WaitlistPositionListing':
+    def post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query(self, management_unit_id: str, body: 'QueryWaitlistPositionsRequest', **kwargs) -> 'WaitlistPositionListing':
         """
         Retrieves daily waitlist position for a list of time off requests
         
@@ -18554,12 +18722,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit. (required)
-        :param QueryWaitlistPositionsRequest body: body
+        :param QueryWaitlistPositionsRequest body: body (required)
         :return: WaitlistPositionListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18581,6 +18749,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query'.replace('{format}', 'json')
@@ -18804,7 +18975,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_user_timeoffrequests_estimate(self, management_unit_id: str, user_id: str, **kwargs) -> 'EstimateAvailableTimeOffResponse':
+    def post_workforcemanagement_managementunit_user_timeoffrequests_estimate(self, management_unit_id: str, user_id: str, body: 'EstimateAvailableTimeOffRequest', **kwargs) -> 'EstimateAvailableTimeOffResponse':
         """
         Estimates available time off for an agent
         
@@ -18815,13 +18986,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit (required)
         :param str user_id: The id of the user for whom the time off request estimate is requested (required)
-        :param EstimateAvailableTimeOffRequest body: body
+        :param EstimateAvailableTimeOffRequest body: body (required)
         :return: EstimateAvailableTimeOffResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18846,6 +19017,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `post_workforcemanagement_managementunit_user_timeoffrequests_estimate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_user_timeoffrequests_estimate`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate'.replace('{format}', 'json')
@@ -19263,7 +19437,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_workplan_copy(self, management_unit_id: str, work_plan_id: str, **kwargs) -> 'WorkPlan':
+    def post_workforcemanagement_managementunit_workplan_copy(self, management_unit_id: str, work_plan_id: str, body: 'CopyWorkPlan', **kwargs) -> 'WorkPlan':
         """
         Create a copy of work plan
         
@@ -19274,13 +19448,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_workplan_copy(management_unit_id, work_plan_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_workplan_copy(management_unit_id, work_plan_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_id: The ID of the work plan to create a copy (required)
-        :param CopyWorkPlan body: body
+        :param CopyWorkPlan body: body (required)
         :return: WorkPlan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19305,6 +19479,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'work_plan_id' is set
         if ('work_plan_id' not in params) or (params['work_plan_id'] is None):
             raise ValueError("Missing the required parameter `work_plan_id` when calling `post_workforcemanagement_managementunit_workplan_copy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_workplan_copy`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy'.replace('{format}', 'json')
@@ -19350,7 +19527,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_workplan_validate(self, management_unit_id: str, work_plan_id: str, **kwargs) -> 'ValidateWorkPlanResponse':
+    def post_workforcemanagement_managementunit_workplan_validate(self, management_unit_id: str, work_plan_id: str, body: 'WorkPlanValidationRequest', **kwargs) -> 'ValidateWorkPlanResponse':
         """
         Validate Work Plan
         
@@ -19361,20 +19538,20 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_id: The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. (required)
+        :param WorkPlanValidationRequest body: body (required)
         :param list[str] expand: 
-        :param WorkPlanValidationRequest body: body
         :return: ValidateWorkPlanResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'work_plan_id', 'expand', 'body']
+        all_params = ['management_unit_id', 'work_plan_id', 'body', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -19393,6 +19570,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'work_plan_id' is set
         if ('work_plan_id' not in params) or (params['work_plan_id'] is None):
             raise ValueError("Missing the required parameter `work_plan_id` when calling `post_workforcemanagement_managementunit_workplan_validate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_workplan_validate`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate'.replace('{format}', 'json')
@@ -19440,7 +19620,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_workplanrotation_copy(self, management_unit_id: str, work_plan_rotation_id: str, **kwargs) -> 'WorkPlanRotationResponse':
+    def post_workforcemanagement_managementunit_workplanrotation_copy(self, management_unit_id: str, work_plan_rotation_id: str, body: 'CopyWorkPlanRotationRequest', **kwargs) -> 'WorkPlanRotationResponse':
         """
         Create a copy of work plan rotation
         
@@ -19451,13 +19631,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_workplanrotation_copy(management_unit_id, work_plan_rotation_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_workplanrotation_copy(management_unit_id, work_plan_rotation_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str work_plan_rotation_id: The ID of the work plan rotation to create a copy (required)
-        :param CopyWorkPlanRotationRequest body: body
+        :param CopyWorkPlanRotationRequest body: body (required)
         :return: WorkPlanRotationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19482,6 +19662,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'work_plan_rotation_id' is set
         if ('work_plan_rotation_id' not in params) or (params['work_plan_rotation_id'] is None):
             raise ValueError("Missing the required parameter `work_plan_rotation_id` when calling `post_workforcemanagement_managementunit_workplanrotation_copy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_workplanrotation_copy`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy'.replace('{format}', 'json')
@@ -19527,7 +19710,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_workplanrotations(self, management_unit_id: str, **kwargs) -> 'WorkPlanRotationResponse':
+    def post_workforcemanagement_managementunit_workplanrotations(self, management_unit_id: str, body: 'AddWorkPlanRotationRequest', **kwargs) -> 'WorkPlanRotationResponse':
         """
         Create a new work plan rotation
         
@@ -19538,12 +19721,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_workplanrotations(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_workplanrotations(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param AddWorkPlanRotationRequest body: body
+        :param AddWorkPlanRotationRequest body: body (required)
         :return: WorkPlanRotationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19565,6 +19748,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_workplanrotations`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_workplanrotations`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations'.replace('{format}', 'json')
@@ -19608,7 +19794,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunit_workplans(self, management_unit_id: str, **kwargs) -> 'WorkPlan':
+    def post_workforcemanagement_managementunit_workplans(self, management_unit_id: str, body: 'CreateWorkPlan', **kwargs) -> 'WorkPlan':
         """
         Create a new work plan
         
@@ -19619,19 +19805,19 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunit_workplans(management_unit_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunit_workplans(management_unit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
+        :param CreateWorkPlan body: body (required)
         :param str validation_mode: Allows to create work plan even if the validation result is invalid
-        :param CreateWorkPlan body: body
         :return: WorkPlan
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'validation_mode', 'body']
+        all_params = ['management_unit_id', 'body', 'validation_mode']
         all_params.append('callback')
 
         params = locals()
@@ -19647,6 +19833,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'management_unit_id' is set
         if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
             raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_workplans`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunit_workplans`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans'.replace('{format}', 'json')
@@ -19692,7 +19881,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_managementunits(self, **kwargs) -> 'ManagementUnit':
+    def post_workforcemanagement_managementunits(self, body: 'CreateManagementUnitApiRequest', **kwargs) -> 'ManagementUnit':
         """
         Add a management unit
         It may take a minute or two for a new management unit to be available for api operations
@@ -19703,11 +19892,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_managementunits(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_managementunits(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreateManagementUnitApiRequest body: body
+        :param CreateManagementUnitApiRequest body: body (required)
         :return: ManagementUnit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19726,6 +19915,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_managementunits`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits'.replace('{format}', 'json')
@@ -19767,7 +19959,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_notifications_update(self, **kwargs) -> 'UpdateNotificationsResponse':
+    def post_workforcemanagement_notifications_update(self, body: 'UpdateNotificationsRequest', **kwargs) -> 'UpdateNotificationsResponse':
         """
         Mark a list of notifications as read or unread
         
@@ -19778,11 +19970,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_notifications_update(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_notifications_update(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param UpdateNotificationsRequest body: body
+        :param UpdateNotificationsRequest body: body (required)
         :return: UpdateNotificationsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19801,6 +19993,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_notifications_update`")
 
 
         resource_path = '/api/v2/workforcemanagement/notifications/update'.replace('{format}', 'json')
@@ -19918,7 +20113,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_team_adherence_historical(self, team_id: str, **kwargs) -> 'WfmHistoricalAdherenceResponse':
+    def post_workforcemanagement_team_adherence_historical(self, team_id: str, body: 'WfmHistoricalAdherenceQueryForTeams', **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
         Request a teams historical adherence report
         The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
@@ -19929,12 +20124,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_team_adherence_historical(team_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_team_adherence_historical(team_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str team_id: The ID of the team (required)
-        :param WfmHistoricalAdherenceQueryForTeams body: body
+        :param WfmHistoricalAdherenceQueryForTeams body: body (required)
         :return: WfmHistoricalAdherenceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19956,6 +20151,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'team_id' is set
         if ('team_id' not in params) or (params['team_id'] is None):
             raise ValueError("Missing the required parameter `team_id` when calling `post_workforcemanagement_team_adherence_historical`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_team_adherence_historical`")
 
 
         resource_path = '/api/v2/workforcemanagement/teams/{teamId}/adherence/historical'.replace('{format}', 'json')
@@ -19999,7 +20197,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_team_shrinkage_jobs(self, team_id: str, **kwargs) -> 'WfmHistoricalShrinkageResponse':
+    def post_workforcemanagement_team_shrinkage_jobs(self, team_id: str, body: 'WfmHistoricalShrinkageTeamsRequest', **kwargs) -> 'WfmHistoricalShrinkageResponse':
         """
         Request a historical shrinkage report
         The maximum supported range for historical shrinkage queries is up to 32 days
@@ -20010,12 +20208,12 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_team_shrinkage_jobs(team_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_team_shrinkage_jobs(team_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str team_id: The ID of the team (required)
-        :param WfmHistoricalShrinkageTeamsRequest body: body
+        :param WfmHistoricalShrinkageTeamsRequest body: body (required)
         :return: WfmHistoricalShrinkageResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20037,6 +20235,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'team_id' is set
         if ('team_id' not in params) or (params['team_id'] is None):
             raise ValueError("Missing the required parameter `team_id` when calling `post_workforcemanagement_team_shrinkage_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_team_shrinkage_jobs`")
 
 
         resource_path = '/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs'.replace('{format}', 'json')
@@ -20158,7 +20359,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_timeofflimits_available_query(self, **kwargs) -> 'AvailableTimeOffResponse':
+    def post_workforcemanagement_timeofflimits_available_query(self, body: 'AvailableTimeOffRequest', **kwargs) -> 'AvailableTimeOffResponse':
         """
         Queries available time off for the current user
         
@@ -20169,11 +20370,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_timeofflimits_available_query(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_timeofflimits_available_query(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param AvailableTimeOffRequest body: body
+        :param AvailableTimeOffRequest body: body (required)
         :return: AvailableTimeOffResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20192,6 +20393,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_timeofflimits_available_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/timeofflimits/available/query'.replace('{format}', 'json')
@@ -20233,7 +20437,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_timeoffrequests(self, **kwargs) -> 'TimeOffRequestResponse':
+    def post_workforcemanagement_timeoffrequests(self, body: 'CreateAgentTimeOffRequest', **kwargs) -> 'TimeOffRequestResponse':
         """
         Create a time off request for the current user
         
@@ -20244,11 +20448,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_timeoffrequests(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_timeoffrequests(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreateAgentTimeOffRequest body: body
+        :param CreateAgentTimeOffRequest body: body (required)
         :return: TimeOffRequestResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20267,6 +20471,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_timeoffrequests`")
 
 
         resource_path = '/api/v2/workforcemanagement/timeoffrequests'.replace('{format}', 'json')
@@ -20308,7 +20515,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_timeoffrequests_estimate(self, **kwargs) -> 'EstimateAvailableTimeOffResponse':
+    def post_workforcemanagement_timeoffrequests_estimate(self, body: 'EstimateAvailableTimeOffRequest', **kwargs) -> 'EstimateAvailableTimeOffResponse':
         """
         Estimates available time off for current user
         
@@ -20319,11 +20526,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_timeoffrequests_estimate(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_timeoffrequests_estimate(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param EstimateAvailableTimeOffRequest body: body
+        :param EstimateAvailableTimeOffRequest body: body (required)
         :return: EstimateAvailableTimeOffResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20342,6 +20549,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_timeoffrequests_estimate`")
 
 
         resource_path = '/api/v2/workforcemanagement/timeoffrequests/estimate'.replace('{format}', 'json')
@@ -20383,7 +20593,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_timeoffrequests_integrationstatus_query(self, **kwargs) -> 'TimeOffIntegrationStatusResponseListing':
+    def post_workforcemanagement_timeoffrequests_integrationstatus_query(self, body: 'CurrentUserTimeOffIntegrationStatusRequest', **kwargs) -> 'TimeOffIntegrationStatusResponseListing':
         """
         Retrieves integration statuses for a list of current user time off requests
         
@@ -20394,11 +20604,11 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_timeoffrequests_integrationstatus_query(callback=callback_function)
+        >>> thread = api.post_workforcemanagement_timeoffrequests_integrationstatus_query(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CurrentUserTimeOffIntegrationStatusRequest body: body
+        :param CurrentUserTimeOffIntegrationStatusRequest body: body (required)
         :return: TimeOffIntegrationStatusResponseListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20417,6 +20627,9 @@ class WorkforceManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_timeoffrequests_integrationstatus_query`")
 
 
         resource_path = '/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query'.replace('{format}', 'json')
@@ -20542,7 +20755,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_workforcemanagement_businessunit_timeofflimit_values(self, business_unit_id: str, time_off_limit_id: str, **kwargs) -> 'BuTimeOffLimitResponse':
+    def put_workforcemanagement_businessunit_timeofflimit_values(self, business_unit_id: str, time_off_limit_id: str, body: 'BuSetTimeOffLimitValuesRequest', **kwargs) -> 'BuTimeOffLimitResponse':
         """
         Sets daily values for a date range of time-off limit object
         Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
@@ -20553,13 +20766,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_workforcemanagement_businessunit_timeofflimit_values(business_unit_id, time_off_limit_id, callback=callback_function)
+        >>> thread = api.put_workforcemanagement_businessunit_timeofflimit_values(business_unit_id, time_off_limit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str time_off_limit_id: The ID of the time-off limit object to set values for (required)
-        :param BuSetTimeOffLimitValuesRequest body: body
+        :param BuSetTimeOffLimitValuesRequest body: body (required)
         :return: BuTimeOffLimitResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20584,6 +20797,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'time_off_limit_id' is set
         if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
             raise ValueError("Missing the required parameter `time_off_limit_id` when calling `put_workforcemanagement_businessunit_timeofflimit_values`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_workforcemanagement_businessunit_timeofflimit_values`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values'.replace('{format}', 'json')
@@ -20629,7 +20845,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_workforcemanagement_managementunit_timeofflimit_values(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> 'TimeOffLimit':
+    def put_workforcemanagement_managementunit_timeofflimit_values(self, management_unit_id: str, time_off_limit_id: str, body: 'SetTimeOffLimitValuesRequest', **kwargs) -> 'TimeOffLimit':
         """
         Sets daily values for a date range of time off limit object
         Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
@@ -20640,13 +20856,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_workforcemanagement_managementunit_timeofflimit_values(management_unit_id, time_off_limit_id, callback=callback_function)
+        >>> thread = api.put_workforcemanagement_managementunit_timeofflimit_values(management_unit_id, time_off_limit_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit. (required)
         :param str time_off_limit_id: The ID of the time off limit object to set values for (required)
-        :param SetTimeOffLimitValuesRequest body: body
+        :param SetTimeOffLimitValuesRequest body: body (required)
         :return: TimeOffLimit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20671,6 +20887,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'time_off_limit_id' is set
         if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
             raise ValueError("Missing the required parameter `time_off_limit_id` when calling `put_workforcemanagement_managementunit_timeofflimit_values`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_workforcemanagement_managementunit_timeofflimit_values`")
 
 
         resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values'.replace('{format}', 'json')

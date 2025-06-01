@@ -51,21 +51,18 @@ class LogCaptureQueryResponse(object):
         self.swagger_types = {
             'entities': 'list[LogEntry]',
             'next_uri': 'str',
-            'self_uri': 'str',
-            'previous_uri': 'str'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'next_uri': 'nextUri',
-            'self_uri': 'selfUri',
-            'previous_uri': 'previousUri'
+            'self_uri': 'selfUri'
         }
 
         self._entities = None
         self._next_uri = None
         self._self_uri = None
-        self._previous_uri = None
 
     @property
     def entities(self) -> List['LogEntry']:
@@ -138,30 +135,6 @@ class LogCaptureQueryResponse(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def previous_uri(self) -> str:
-        """
-        Gets the previous_uri of this LogCaptureQueryResponse.
-
-
-        :return: The previous_uri of this LogCaptureQueryResponse.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri: str) -> None:
-        """
-        Sets the previous_uri of this LogCaptureQueryResponse.
-
-
-        :param previous_uri: The previous_uri of this LogCaptureQueryResponse.
-        :type: str
-        """
-        
-
-        self._previous_uri = previous_uri
 
     def to_dict(self):
         """

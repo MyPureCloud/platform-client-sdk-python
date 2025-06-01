@@ -50,20 +50,23 @@ class ConversationContentQuickReply(object):
             'text': 'str',
             'payload': 'str',
             'image': 'str',
-            'action': 'str'
+            'action': 'str',
+            'summary_text': 'str'
         }
 
         self.attribute_map = {
             'text': 'text',
             'payload': 'payload',
             'image': 'image',
-            'action': 'action'
+            'action': 'action',
+            'summary_text': 'summaryText'
         }
 
         self._text = None
         self._payload = None
         self._image = None
         self._action = None
+        self._summary_text = None
 
     @property
     def text(self) -> str:
@@ -165,6 +168,30 @@ class ConversationContentQuickReply(object):
             self._action = "outdated_sdk_version"
         else:
             self._action = action
+
+    @property
+    def summary_text(self) -> str:
+        """
+        Gets the summary_text of this ConversationContentQuickReply.
+        Summary of what the quick reply relates to.
+
+        :return: The summary_text of this ConversationContentQuickReply.
+        :rtype: str
+        """
+        return self._summary_text
+
+    @summary_text.setter
+    def summary_text(self, summary_text: str) -> None:
+        """
+        Sets the summary_text of this ConversationContentQuickReply.
+        Summary of what the quick reply relates to.
+
+        :param summary_text: The summary_text of this ConversationContentQuickReply.
+        :type: str
+        """
+        
+
+        self._summary_text = summary_text
 
     def to_dict(self):
         """

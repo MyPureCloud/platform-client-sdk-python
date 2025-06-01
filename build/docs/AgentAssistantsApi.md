@@ -326,7 +326,7 @@ except ApiException as e:
 
 ## get_assistants
 
-> [**AssistantListing**](AssistantListing) get_assistants(before=before, after=after, limit=limit, page_size=page_size, name=name)
+> [**AssistantListing**](AssistantListing) get_assistants(before=before, after=after, limit=limit, page_size=page_size, name=name, expand=expand)
 
 
 Get all assistants.
@@ -355,10 +355,11 @@ after = 'after_example' # str | The cursor that points to the end of the set of 
 limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 name = 'name_example' # str | Return the assistant by the given name. (optional)
+expand = 'expand_example' # str | Which fields, if any, to expand (optional)
 
 try:
     # Get all assistants.
-    api_response = api_instance.get_assistants(before=before, after=after, limit=limit, page_size=page_size, name=name)
+    api_response = api_instance.get_assistants(before=before, after=after, limit=limit, page_size=page_size, name=name, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentAssistantsApi->get_assistants: %s\n" % e)
@@ -374,6 +375,7 @@ except ApiException as e:
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Return the assistant by the given name. | [optional]  |
+| **expand** | **str**| Which fields, if any, to expand | [optional] <br />**Values**: copilot |
 
 ### Return type
 
@@ -636,4 +638,4 @@ except ApiException as e:
 [**AssistantQueue**](AssistantQueue)
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

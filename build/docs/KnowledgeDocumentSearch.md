@@ -18,7 +18,8 @@
 | **conversation_context** | [KnowledgeConversationContextResponse](KnowledgeConversationContextResponse) | Conversation context information if the search is initiated in the context of a conversation. | [optional] |
 | **confidence_threshold** | float | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. | [optional] |
 | **answer_generation** | [KnowledgeAnswerGenerationResponse](KnowledgeAnswerGenerationResponse) | The results with AI-generated answer if the answerMode request property contains \&quot;AnswerGeneration\&quot;. | [optional] |
+| **preprocess_query** | bool | Indicates whether the search query should be preprocessed. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

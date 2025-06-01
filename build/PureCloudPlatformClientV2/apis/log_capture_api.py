@@ -40,7 +40,8 @@ from ..models import LogCaptureDownloadExecutionResponse
 from ..models import LogCaptureQueryRequest
 from ..models import LogCaptureQueryResponse
 from ..models import LogCaptureUserConfiguration
-from ..models import PagelessEntityListing
+from ..models import LogCaptureUserConfigurationListing
+from ..models import LogCaptureUserConfigurationResponse
 
 class LogCaptureApi(object):
     """
@@ -214,7 +215,7 @@ class LogCaptureApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_diagnostics_logcapture_browser_user(self, user_id: str, **kwargs) -> 'LogCaptureUserConfiguration':
+    def get_diagnostics_logcapture_browser_user(self, user_id: str, **kwargs) -> 'LogCaptureUserConfigurationResponse':
         """
         Get log capture configuration for the user
         
@@ -230,7 +231,7 @@ class LogCaptureApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: The id of the user to get browser log capture configuration (required)
-        :return: LogCaptureUserConfiguration
+        :return: LogCaptureUserConfigurationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -287,12 +288,12 @@ class LogCaptureApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='LogCaptureUserConfiguration',
+                                            response_type='LogCaptureUserConfigurationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_diagnostics_logcapture_browser_users(self, **kwargs) -> 'PagelessEntityListing':
+    def get_diagnostics_logcapture_browser_users(self, **kwargs) -> 'LogCaptureUserConfigurationListing':
         """
         Get all log capture enabled users for an org
         
@@ -308,7 +309,7 @@ class LogCaptureApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param bool include_expired: Include expired users with log captures still available for search or download
-        :return: PagelessEntityListing
+        :return: LogCaptureUserConfigurationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -362,7 +363,7 @@ class LogCaptureApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PagelessEntityListing',
+                                            response_type='LogCaptureUserConfigurationListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -457,7 +458,6 @@ class LogCaptureApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
         :param LogCaptureQueryRequest body: 
@@ -466,7 +466,7 @@ class LogCaptureApi(object):
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'page_size', 'body']
+        all_params = ['after', 'page_size', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -485,8 +485,6 @@ class LogCaptureApi(object):
         path_params = {}
 
         query_params = {}
-        if 'before' in params:
-            query_params['before'] = params['before']
         if 'after' in params:
             query_params['after'] = params['after']
         if 'page_size' in params:

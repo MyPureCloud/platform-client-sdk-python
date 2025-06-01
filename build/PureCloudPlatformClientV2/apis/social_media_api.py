@@ -52,6 +52,10 @@ from ..models import OpenDataIngestionRuleRequest
 from ..models import OpenDataIngestionRuleResponse
 from ..models import OpenDataIngestionRuleVersionResponse
 from ..models import OpenDataIngestionRuleVersionResponseEntityListing
+from ..models import OpenSocialMediaNormalizedMessage
+from ..models import OpenSocialMediaReactionsRequest
+from ..models import OpenSocialNormalizedMessageEntityListing
+from ..models import OpenSocialReactionsNormalizedEventEntityListing
 from ..models import SocialEscalationResponseEntityListing
 from ..models import SocialMediaAsyncAggregateQueryResponse
 from ..models import SocialMediaAsyncAggregationQuery
@@ -413,7 +417,6 @@ class SocialMediaApi(object):
         """
         Delete a open data ingestion rule.
         
-	    delete_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1509,7 +1512,6 @@ class SocialMediaApi(object):
         """
         Get a single open data ingestion rule.
         
-	    get_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1597,7 +1599,6 @@ class SocialMediaApi(object):
         """
         Get a single Open data ingestion rule version.
         
-	    get_socialmedia_topic_dataingestionrules_open_open_id_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1691,7 +1692,6 @@ class SocialMediaApi(object):
         """
         Get the Open data ingestion rule versions.
         
-	    get_socialmedia_topic_dataingestionrules_open_open_id_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2310,7 +2310,6 @@ class SocialMediaApi(object):
         """
         Update the status of a open data ingestion rule.
         
-	    patch_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2878,7 +2877,6 @@ class SocialMediaApi(object):
         """
         Create an open data ingestion rule.
         
-	    post_socialmedia_topic_dataingestionrules_open is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2952,6 +2950,186 @@ class SocialMediaApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OpenDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk(self, topic_id: str, rule_id: str, body: List['OpenSocialMediaNormalizedMessage'], **kwargs) -> 'OpenSocialNormalizedMessageEntityListing':
+        """
+        Ingest a list of Open Social Messages
+        Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk(topic_id, rule_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: Topic ID (required)
+        :param str rule_id: Data Ingestion Rule ID (required)
+        :param list[OpenSocialMediaNormalizedMessage] body: NormalizedMessage (required)
+        :return: OpenSocialNormalizedMessageEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenSocialNormalizedMessageEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk(self, topic_id: str, rule_id: str, body: 'OpenSocialMediaReactionsRequest', **kwargs) -> 'OpenSocialReactionsNormalizedEventEntityListing':
+        """
+        Ingest a list of Open Social Reactions
+        Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk(topic_id, rule_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: Topic ID (required)
+        :param str rule_id: Data Ingestion Rule ID (required)
+        :param OpenSocialMediaReactionsRequest body: NormalizedEvent (required)
+        :return: OpenSocialReactionsNormalizedEventEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenSocialReactionsNormalizedEventEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3362,7 +3540,6 @@ class SocialMediaApi(object):
         """
         Update the open data ingestion rule.
         
-	    put_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

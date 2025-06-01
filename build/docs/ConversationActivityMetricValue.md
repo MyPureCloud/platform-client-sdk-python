@@ -10,7 +10,8 @@
 | **qualifier** | str | Metric qualifier | [optional] |
 | **entity_ids** | list[str] | Entity ids for matching entities if details were requested | [optional] |
 | **count** | int | Metric count | [optional] |
+| **calculated_metric_value** | int | Calculated metric value | [optional] |
 
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

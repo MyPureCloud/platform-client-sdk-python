@@ -578,12 +578,13 @@ class AgentAssistantsApi(object):
         :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str name: Return the assistant by the given name.
+        :param str expand: Which fields, if any, to expand
         :return: AssistantListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'limit', 'page_size', 'name']
+        all_params = ['before', 'after', 'limit', 'page_size', 'name', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -612,6 +613,8 @@ class AgentAssistantsApi(object):
             query_params['pageSize'] = params['page_size']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
