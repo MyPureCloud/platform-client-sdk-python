@@ -19,7 +19,8 @@
 | **target** | float |  | [optional] |
 | **p95** | int |  | [optional] |
 | **p99** | int |  | [optional] |
+| **calculated_metric_value** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

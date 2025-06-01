@@ -217,6 +217,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_communication_messages**](#post_conversations_message_communication_messages) | Send message|
 |[**post_conversations_message_communication_messages_media**](#post_conversations_message_communication_messages_media) | Create media|
 |[**post_conversations_message_communication_messages_media_uploads**](#post_conversations_message_communication_messages_media_uploads) | Create a URL to upload a message media file|
+|[**post_conversations_message_communication_socialmedia_messages**](#post_conversations_message_communication_socialmedia_messages) | Send a social media message|
 |[**post_conversations_message_communication_typing**](#post_conversations_message_communication_typing) | Send message typing event|
 |[**post_conversations_message_inbound_open_event**](#post_conversations_message_inbound_open_event) | Send an inbound Open Event Message|
 |[**post_conversations_message_inbound_open_message**](#post_conversations_message_inbound_open_message) | Send inbound Open Message|
@@ -6111,6 +6112,7 @@ Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participa
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example
 
@@ -6630,6 +6632,7 @@ Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participa
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example
 
@@ -6855,6 +6858,7 @@ Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example
 
@@ -7123,6 +7127,7 @@ Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{particip
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example
 
@@ -7379,6 +7384,7 @@ Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{partic
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
 
 ### Example
 
@@ -10947,6 +10953,60 @@ except ApiException as e:
 [**MessageMediaUploadData**](MessageMediaUploadData)
 
 
+## post_conversations_message_communication_socialmedia_messages
+
+> [**SocialMediaMessageData**](SocialMediaMessageData) post_conversations_message_communication_socialmedia_messages(conversation_id, communication_id, body)
+
+
+Send a social media message
+
+Send a social media message on existing conversation/communication.
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages 
+
+Requires ANY permissions: 
+
+* conversation:socialmedia:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.AdditionalSocialMediaMessage() # AdditionalSocialMediaMessage | Message
+
+try:
+    # Send a social media message
+    api_response = api_instance.post_conversations_message_communication_socialmedia_messages(conversation_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_communication_socialmedia_messages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**AdditionalSocialMediaMessage**](AdditionalSocialMediaMessage)| Message |  |
+
+### Return type
+
+[**SocialMediaMessageData**](SocialMediaMessageData)
+
+
 ## post_conversations_message_communication_typing
 
 >  post_conversations_message_communication_typing(conversation_id, communication_id, body)
@@ -13401,4 +13461,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

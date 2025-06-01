@@ -40,6 +40,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_socialmedia_escalations_messages**](#post_socialmedia_escalations_messages) | Escalate message to a conversation manually|
 |[**post_socialmedia_topic_dataingestionrules_facebook**](#post_socialmedia_topic_dataingestionrules_facebook) | Create an Facebook data ingestion rule.|
 |[**post_socialmedia_topic_dataingestionrules_open**](#post_socialmedia_topic_dataingestionrules_open) | Create an open data ingestion rule.|
+|[**post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk**](#post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk) | Ingest a list of Open Social Messages|
+|[**post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk**](#post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk) | Ingest a list of Open Social Reactions|
 |[**post_socialmedia_topic_dataingestionrules_twitter**](#post_socialmedia_topic_dataingestionrules_twitter) | Create an twitter data ingestion rule.|
 |[**post_socialmedia_topics**](#post_socialmedia_topics) | Create a social topic.|
 |[**post_socialmedia_twitter_historical_tweets**](#post_socialmedia_twitter_historical_tweets) | Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.|
@@ -252,8 +254,6 @@ void (empty response body)
 
 
 Delete a open data ingestion rule.
-
-delete_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} 
 
@@ -919,8 +919,6 @@ except ApiException as e:
 
 Get a single open data ingestion rule.
 
-get_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} 
 
 Requires ALL permissions: 
@@ -972,8 +970,6 @@ except ApiException as e:
 
 
 Get a single Open data ingestion rule version.
-
-get_socialmedia_topic_dataingestionrules_open_open_id_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions/{dataIngestionRuleVersion} 
 
@@ -1028,8 +1024,6 @@ except ApiException as e:
 
 
 Get the Open data ingestion rule versions.
-
-get_socialmedia_topic_dataingestionrules_open_open_id_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId}/versions 
 
@@ -1405,8 +1399,6 @@ except ApiException as e:
 
 Update the status of a open data ingestion rule.
 
-patch_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} 
 
 Requires ALL permissions: 
@@ -1755,8 +1747,6 @@ except ApiException as e:
 
 Create an open data ingestion rule.
 
-post_socialmedia_topic_dataingestionrules_open is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open 
 
 Requires ANY permissions: 
@@ -1798,6 +1788,114 @@ except ApiException as e:
 ### Return type
 
 [**OpenDataIngestionRuleResponse**](OpenDataIngestionRuleResponse)
+
+
+## post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk
+
+> [**OpenSocialNormalizedMessageEntityListing**](OpenSocialNormalizedMessageEntityListing) post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk(topic_id, rule_id, body)
+
+
+Ingest a list of Open Social Messages
+
+Ingest a list of open social messages to an ingestion rule on a topic. This endpoint will ingest and enrich these messages.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+
+Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/messages/bulk 
+
+Requires ALL permissions: 
+
+* socialmedia:message:receive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | Topic ID
+rule_id = 'rule_id_example' # str | Data Ingestion Rule ID
+body = [PureCloudPlatformClientV2.OpenSocialMediaNormalizedMessage()] # list[OpenSocialMediaNormalizedMessage] | NormalizedMessage
+
+try:
+    # Ingest a list of Open Social Messages
+    api_response = api_instance.post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk(topic_id, rule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| Topic ID |  |
+| **rule_id** | **str**| Data Ingestion Rule ID |  |
+| **body** | [**list[OpenSocialMediaNormalizedMessage]**](OpenSocialMediaNormalizedMessage)| NormalizedMessage |  |
+
+### Return type
+
+[**OpenSocialNormalizedMessageEntityListing**](OpenSocialNormalizedMessageEntityListing)
+
+
+## post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk
+
+> [**OpenSocialReactionsNormalizedEventEntityListing**](OpenSocialReactionsNormalizedEventEntityListing) post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk(topic_id, rule_id, body)
+
+
+Ingest a list of Open Social Reactions
+
+Ingest a list of open social reactions to an ingestion rule on a topic. This endpoint will ingest these reactions.  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least social scope.
+
+Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{ruleId}/reactions/bulk 
+
+Requires ALL permissions: 
+
+* socialmedia:reaction:receive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | Topic ID
+rule_id = 'rule_id_example' # str | Data Ingestion Rule ID
+body = PureCloudPlatformClientV2.OpenSocialMediaReactionsRequest() # OpenSocialMediaReactionsRequest | NormalizedEvent
+
+try:
+    # Ingest a list of Open Social Reactions
+    api_response = api_instance.post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk(topic_id, rule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| Topic ID |  |
+| **rule_id** | **str**| Data Ingestion Rule ID |  |
+| **body** | [**OpenSocialMediaReactionsRequest**](OpenSocialMediaReactionsRequest)| NormalizedEvent |  |
+
+### Return type
+
+[**OpenSocialReactionsNormalizedEventEntityListing**](OpenSocialReactionsNormalizedEventEntityListing)
 
 
 ## post_socialmedia_topic_dataingestionrules_twitter
@@ -2055,8 +2153,6 @@ except ApiException as e:
 
 Update the open data ingestion rule.
 
-put_socialmedia_topic_dataingestionrules_open_open_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/open/{openId} 
 
 Requires ALL permissions: 
@@ -2154,4 +2250,4 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_

@@ -113,7 +113,7 @@ except ApiException as e:
 
 ## get_diagnostics_logcapture_browser_user
 
-> [**LogCaptureUserConfiguration**](LogCaptureUserConfiguration) get_diagnostics_logcapture_browser_user(user_id)
+> [**LogCaptureUserConfigurationResponse**](LogCaptureUserConfigurationResponse) get_diagnostics_logcapture_browser_user(user_id)
 
 
 Get log capture configuration for the user
@@ -156,12 +156,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)
+[**LogCaptureUserConfigurationResponse**](LogCaptureUserConfigurationResponse)
 
 
 ## get_diagnostics_logcapture_browser_users
 
-> [**PagelessEntityListing**](PagelessEntityListing) get_diagnostics_logcapture_browser_users(include_expired=include_expired)
+> [**LogCaptureUserConfigurationListing**](LogCaptureUserConfigurationListing) get_diagnostics_logcapture_browser_users(include_expired=include_expired)
 
 
 Get all log capture enabled users for an org
@@ -204,7 +204,7 @@ except ApiException as e:
 
 ### Return type
 
-[**PagelessEntityListing**](PagelessEntityListing)
+[**LogCaptureUserConfigurationListing**](LogCaptureUserConfigurationListing)
 
 
 ## post_diagnostics_logcapture_browser_entries_download_jobs
@@ -257,7 +257,7 @@ except ApiException as e:
 
 ## post_diagnostics_logcapture_browser_entries_query
 
-> [**LogCaptureQueryResponse**](LogCaptureQueryResponse) post_diagnostics_logcapture_browser_entries_query(before=before, after=after, page_size=page_size, body=body)
+> [**LogCaptureQueryResponse**](LogCaptureQueryResponse) post_diagnostics_logcapture_browser_entries_query(after=after, page_size=page_size, body=body)
 
 
 Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
@@ -281,14 +281,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LogCaptureApi()
-before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 body = PureCloudPlatformClientV2.LogCaptureQueryRequest() # LogCaptureQueryRequest |  (optional)
 
 try:
     # Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
-    api_response = api_instance.post_diagnostics_logcapture_browser_entries_query(before=before, after=after, page_size=page_size, body=body)
+    api_response = api_instance.post_diagnostics_logcapture_browser_entries_query(after=after, page_size=page_size, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LogCaptureApi->post_diagnostics_logcapture_browser_entries_query: %s\n" % e)
@@ -299,7 +298,6 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **body** | [**LogCaptureQueryRequest**](LogCaptureQueryRequest)|  | [optional]  |
@@ -359,4 +357,4 @@ except ApiException as e:
 [**LogCaptureUserConfiguration**](LogCaptureUserConfiguration)
 
 
-_PureCloudPlatformClientV2 229.0.0_
+_PureCloudPlatformClientV2 230.0.0_
