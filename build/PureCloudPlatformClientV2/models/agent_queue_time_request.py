@@ -49,18 +49,21 @@ class AgentQueueTimeRequest(object):
         self.swagger_types = {
             'agent_id': 'str',
             'start_offset_minutes': 'list[int]',
-            'on_queue_length_minutes_per_interval': 'list[int]'
+            'on_queue_length_minutes_per_interval': 'list[int]',
+            'on_queue_activity_code_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'agent_id': 'agentId',
             'start_offset_minutes': 'startOffsetMinutes',
-            'on_queue_length_minutes_per_interval': 'onQueueLengthMinutesPerInterval'
+            'on_queue_length_minutes_per_interval': 'onQueueLengthMinutesPerInterval',
+            'on_queue_activity_code_ids': 'onQueueActivityCodeIds'
         }
 
         self._agent_id = None
         self._start_offset_minutes = None
         self._on_queue_length_minutes_per_interval = None
+        self._on_queue_activity_code_ids = None
 
     @property
     def agent_id(self) -> str:
@@ -114,7 +117,7 @@ class AgentQueueTimeRequest(object):
     def on_queue_length_minutes_per_interval(self) -> List[int]:
         """
         Gets the on_queue_length_minutes_per_interval of this AgentQueueTimeRequest.
-        List of on queue time lengths in minutes per interval of elements in startOffsetMinutes
+        List of on-queue time lengths in minutes per interval of elements in startOffsetMinutes
 
         :return: The on_queue_length_minutes_per_interval of this AgentQueueTimeRequest.
         :rtype: list[int]
@@ -125,7 +128,7 @@ class AgentQueueTimeRequest(object):
     def on_queue_length_minutes_per_interval(self, on_queue_length_minutes_per_interval: List[int]) -> None:
         """
         Sets the on_queue_length_minutes_per_interval of this AgentQueueTimeRequest.
-        List of on queue time lengths in minutes per interval of elements in startOffsetMinutes
+        List of on-queue time lengths in minutes per interval of elements in startOffsetMinutes
 
         :param on_queue_length_minutes_per_interval: The on_queue_length_minutes_per_interval of this AgentQueueTimeRequest.
         :type: list[int]
@@ -133,6 +136,30 @@ class AgentQueueTimeRequest(object):
         
 
         self._on_queue_length_minutes_per_interval = on_queue_length_minutes_per_interval
+
+    @property
+    def on_queue_activity_code_ids(self) -> List[str]:
+        """
+        Gets the on_queue_activity_code_ids of this AgentQueueTimeRequest.
+        List of on-queue activity code ids
+
+        :return: The on_queue_activity_code_ids of this AgentQueueTimeRequest.
+        :rtype: list[str]
+        """
+        return self._on_queue_activity_code_ids
+
+    @on_queue_activity_code_ids.setter
+    def on_queue_activity_code_ids(self, on_queue_activity_code_ids: List[str]) -> None:
+        """
+        Sets the on_queue_activity_code_ids of this AgentQueueTimeRequest.
+        List of on-queue activity code ids
+
+        :param on_queue_activity_code_ids: The on_queue_activity_code_ids of this AgentQueueTimeRequest.
+        :type: list[str]
+        """
+        
+
+        self._on_queue_activity_code_ids = on_queue_activity_code_ids
 
     def to_dict(self):
         """

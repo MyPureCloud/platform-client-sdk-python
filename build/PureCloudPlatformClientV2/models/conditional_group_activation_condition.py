@@ -110,7 +110,7 @@ class ConditionalGroupActivationCondition(object):
         """
         if isinstance(operator, int):
             operator = str(operator)
-        allowed_values = ["GreaterThan", "GreaterThanOrEqualTo", "LessThan", "LessThanOrEqualTo"]
+        allowed_values = ["GreaterThan", "GreaterThanOrEqualTo", "LessThan", "LessThanOrEqualTo", "EqualTo", "NotEqualTo"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"

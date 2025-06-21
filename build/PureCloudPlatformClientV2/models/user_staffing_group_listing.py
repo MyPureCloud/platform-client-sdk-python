@@ -49,14 +49,17 @@ class UserStaffingGroupListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[UserStaffingGroupResponse]'
+            'entities': 'list[UserStaffingGroupResponse]',
+            'download_url': 'str'
         }
 
         self.attribute_map = {
-            'entities': 'entities'
+            'entities': 'entities',
+            'download_url': 'downloadUrl'
         }
 
         self._entities = None
+        self._download_url = None
 
     @property
     def entities(self) -> List['UserStaffingGroupResponse']:
@@ -81,6 +84,30 @@ class UserStaffingGroupListing(object):
         
 
         self._entities = entities
+
+    @property
+    def download_url(self) -> str:
+        """
+        Gets the download_url of this UserStaffingGroupListing.
+        URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+
+        :return: The download_url of this UserStaffingGroupListing.
+        :rtype: str
+        """
+        return self._download_url
+
+    @download_url.setter
+    def download_url(self, download_url: str) -> None:
+        """
+        Sets the download_url of this UserStaffingGroupListing.
+        URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+
+        :param download_url: The download_url of this UserStaffingGroupListing.
+        :type: str
+        """
+        
+
+        self._download_url = download_url
 
     def to_dict(self):
         """

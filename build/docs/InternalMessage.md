@@ -11,6 +11,7 @@
 | **id** | str | A globally unique identifier for this communication. | [optional] |
 | **segments** | [list[Segment]](Segment) | The time line of the participant&#39;s internal message, divided into activity segments. | [optional] |
 | **disconnect_type** | str | System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects. | [optional] |
+| **start_alerting_time** | datetime | The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **connected_time** | datetime | The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **disconnected_time** | datetime | The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **provider** | str | The source provider for the message. | [optional] |
@@ -23,4 +24,4 @@
 
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

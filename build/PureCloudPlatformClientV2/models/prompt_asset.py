@@ -293,7 +293,7 @@ class PromptAsset(object):
     def upload_uri(self) -> str:
         """
         Gets the upload_uri of this PromptAsset.
-        Upload URI for the resource audio
+        Deprecated. This was use for uploading the resource audio.
 
         :return: The upload_uri of this PromptAsset.
         :rtype: str
@@ -304,7 +304,7 @@ class PromptAsset(object):
     def upload_uri(self, upload_uri: str) -> None:
         """
         Sets the upload_uri of this PromptAsset.
-        Upload URI for the resource audio
+        Deprecated. This was use for uploading the resource audio.
 
         :param upload_uri: The upload_uri of this PromptAsset.
         :type: str

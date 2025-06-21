@@ -112,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_settings_contactcenter**](#patch_routing_settings_contactcenter) | Update Contact Center Settings|
 |[**patch_routing_settings_transcription**](#patch_routing_settings_transcription) | Patch Transcription Settings|
 |[**patch_routing_skillgroup**](#patch_routing_skillgroup) | Update skill group definition|
+|[**patch_routing_sms_phonenumber**](#patch_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
 |[**patch_user_queue**](#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](#patch_user_queues) | Join or unjoin a set of queues for a user|
 |[**patch_user_routinglanguage**](#patch_user_routinglanguage) | Update an assigned routing language&#39;s proficiency|
@@ -2964,7 +2965,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **name** | **str**| Filter by queue member name (contains-style search) | [optional]  |
 | **profile_skills** | [**list[str]**](str)| Filter by profile skill (contains-style search) | [optional]  |
 | **skills** | [**list[str]**](str)| Filter by skill (contains-style search) | [optional]  |
@@ -3039,7 +3040,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str)| Filter by profile skill | [optional]  |
@@ -5543,6 +5544,56 @@ except ApiException as e:
 [**SkillGroup**](SkillGroup)
 
 
+## patch_routing_sms_phonenumber
+
+> [**SmsPhoneNumber**](SmsPhoneNumber) patch_routing_sms_phonenumber(phone_number_id, body)
+
+
+Update a phone number provisioned for SMS.
+
+Wraps PATCH /api/v2/routing/sms/phonenumbers/{phoneNumberId} 
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+phone_number_id = 'phone_number_id_example' # str | phone number
+body = PureCloudPlatformClientV2.SmsPhoneNumberPatchRequest() # SmsPhoneNumberPatchRequest | SmsPhoneNumberPatchRequest
+
+try:
+    # Update a phone number provisioned for SMS.
+    api_response = api_instance.patch_routing_sms_phonenumber(phone_number_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_sms_phonenumber: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **phone_number_id** | **str**| phone number |  |
+| **body** | [**SmsPhoneNumberPatchRequest**](SmsPhoneNumberPatchRequest)| SmsPhoneNumberPatchRequest |  |
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber)
+
+
 ## patch_user_queue
 
 > [**UserQueue**](UserQueue) patch_user_queue(queue_id, user_id, body)
@@ -7983,4 +8034,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

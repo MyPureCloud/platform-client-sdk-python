@@ -507,6 +507,8 @@ except ApiException as e:
 
 Get media playback URI for this voicemail message
 
+API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
+
 Wraps GET /api/v2/voicemail/messages/{messageId}/media 
 
 Requires no permissions
@@ -1336,4 +1338,4 @@ except ApiException as e:
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

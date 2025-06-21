@@ -66,6 +66,7 @@ class Conversation(object):
             'recent_transfers': 'list[TransferResponse]',
             'secure_pause': 'bool',
             'utilization_label_id': 'str',
+            'inactivity_timeout': 'datetime',
             'self_uri': 'str'
         }
 
@@ -85,6 +86,7 @@ class Conversation(object):
             'recent_transfers': 'recentTransfers',
             'secure_pause': 'securePause',
             'utilization_label_id': 'utilizationLabelId',
+            'inactivity_timeout': 'inactivityTimeout',
             'self_uri': 'selfUri'
         }
 
@@ -103,6 +105,7 @@ class Conversation(object):
         self._recent_transfers = None
         self._secure_pause = None
         self._utilization_label_id = None
+        self._inactivity_timeout = None
         self._self_uri = None
 
     @property
@@ -354,7 +357,7 @@ class Conversation(object):
     def state(self) -> str:
         """
         Gets the state of this Conversation.
-        The conversation's state
+        On update, 'disconnected' will disconnect the conversation. No other values are valid. When reading conversations, this field will never have a value present.
 
         :return: The state of this Conversation.
         :rtype: str
@@ -365,7 +368,7 @@ class Conversation(object):
     def state(self, state: str) -> None:
         """
         Sets the state of this Conversation.
-        The conversation's state
+        On update, 'disconnected' will disconnect the conversation. No other values are valid. When reading conversations, this field will never have a value present.
 
         :param state: The state of this Conversation.
         :type: str
@@ -474,6 +477,30 @@ class Conversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def inactivity_timeout(self) -> datetime:
+        """
+        Gets the inactivity_timeout of this Conversation.
+        The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The inactivity_timeout of this Conversation.
+        :rtype: datetime
+        """
+        return self._inactivity_timeout
+
+    @inactivity_timeout.setter
+    def inactivity_timeout(self, inactivity_timeout: datetime) -> None:
+        """
+        Sets the inactivity_timeout of this Conversation.
+        The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param inactivity_timeout: The inactivity_timeout of this Conversation.
+        :type: datetime
+        """
+        
+
+        self._inactivity_timeout = inactivity_timeout
 
     @property
     def self_uri(self) -> str:

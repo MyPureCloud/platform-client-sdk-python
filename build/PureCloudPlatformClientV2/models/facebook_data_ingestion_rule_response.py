@@ -55,6 +55,7 @@ class FacebookDataIngestionRuleResponse(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'platform': 'str',
+            'countries': 'list[str]',
             'integration_id': 'str',
             'self_uri': 'str'
         }
@@ -68,6 +69,7 @@ class FacebookDataIngestionRuleResponse(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'platform': 'platform',
+            'countries': 'countries',
             'integration_id': 'integrationId',
             'self_uri': 'selfUri'
         }
@@ -80,6 +82,7 @@ class FacebookDataIngestionRuleResponse(object):
         self._date_created = None
         self._date_modified = None
         self._platform = None
+        self._countries = None
         self._integration_id = None
         self._self_uri = None
 
@@ -279,6 +282,30 @@ class FacebookDataIngestionRuleResponse(object):
         
 
         self._platform = platform
+
+    @property
+    def countries(self) -> List[str]:
+        """
+        Gets the countries of this FacebookDataIngestionRuleResponse.
+        The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+
+        :return: The countries of this FacebookDataIngestionRuleResponse.
+        :rtype: list[str]
+        """
+        return self._countries
+
+    @countries.setter
+    def countries(self, countries: List[str]) -> None:
+        """
+        Sets the countries of this FacebookDataIngestionRuleResponse.
+        The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+
+        :param countries: The countries of this FacebookDataIngestionRuleResponse.
+        :type: list[str]
+        """
+        
+
+        self._countries = countries
 
     @property
     def integration_id(self) -> str:

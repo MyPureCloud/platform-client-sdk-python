@@ -20,10 +20,11 @@
 | **queue_id** | str | The ID of the associated queue | [optional] |
 | **released** | bool | Whether the evaluation has been released | [optional] |
 | **rescored** | bool | Whether the evaluation has been rescored at least once | [optional] |
+| **system_submitted** | bool | Whether the evaluation was auto submitted by the system | [optional] |
 | **user_id** | str | ID of the agent the evaluation was performed against | [optional] |
 | **o_total_critical_score** | int |  | [optional] |
 | **o_total_score** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

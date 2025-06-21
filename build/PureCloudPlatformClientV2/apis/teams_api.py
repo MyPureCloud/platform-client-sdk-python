@@ -414,7 +414,7 @@ class TeamsApi(object):
         :param str name: Return only teams whose names start with this value (case-insensitive matching)
         :param str after: The cursor that points to the next item in the complete list of teams
         :param str before: The cursor that points to the previous item in the complete list of teams
-        :param str expand: Expand the name on each user
+        :param str expand: Expand the division on each team
         :return: TeamEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

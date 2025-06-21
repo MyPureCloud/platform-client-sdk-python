@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 # import apis into api package
+from .ai_studio_api import AIStudioApi
 from .agent_assistants_api import AgentAssistantsApi
 from .agent_copilot_api import AgentCopilotApi
 from .agent_ui_api import AgentUIApi
@@ -82,6 +83,7 @@ from .web_messaging_api import WebMessagingApi
 from .web_deployments_api import WebDeploymentsApi
 from .widgets_api import WidgetsApi
 from .workforce_management_api import WorkforceManagementApi
+from .ai_studio_api import AIStudioApi
 from .agent_assistants_api import AgentAssistantsApi
 from .agent_copilot_api import AgentCopilotApi
 from .agent_ui_api import AgentUIApi

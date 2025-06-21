@@ -257,7 +257,7 @@ class EventLog(object):
         """
         if isinstance(category, int):
             category = str(category)
-        allowed_values = ["CALLBACK", "CALL_RESTRICTION", "CALL_RULE", "CAMPAIGN", "CAMPAIGN_RULE", "CONTACT", "CONTACT_LIST_FILTER", "DIGITAL_RULE", "DNC_LIST", "ENTITY_LIMIT", "IMPORT_ERROR", "MESSAGE_RESTRICTION", "MESSAGING_CAMPAIGN", "IMPORT_TEMPLATE", "ORGANIZATION_CONFIGURATION", "SCHEDULE", "MESSAGING_CAMPAIGN_SCHEDULE", "EMAIL_CAMPAIGN_SCHEDULE"]
+        allowed_values = ["CALLBACK", "CALL_RESTRICTION", "CALL_RULE", "CAMPAIGN", "CAMPAIGN_RULE", "CONTACT", "CONTACT_LIST_FILTER", "DIGITAL_RULE", "DNC_LIST", "ENTITY_LIMIT", "IMPORT_ERROR", "MESSAGE_RESTRICTION", "MESSAGING_CAMPAIGN", "IMPORT_TEMPLATE", "ORGANIZATION_CONFIGURATION", "SCHEDULE", "MESSAGING_CAMPAIGN_SCHEDULE", "EMAIL_CAMPAIGN_SCHEDULE", "WHATSAPP_CAMPAIGN_SCHEDULE"]
         if category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for category -> " + category)
             self._category = "outdated_sdk_version"

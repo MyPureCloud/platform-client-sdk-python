@@ -4897,12 +4897,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str management_unit_id: The ID of the management unit to get management unit specific staffing groups
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :return: StaffingGroupListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'management_unit_id']
+        all_params = ['business_unit_id', 'management_unit_id', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -4928,6 +4929,8 @@ class WorkforceManagementApi(object):
         query_params = {}
         if 'management_unit_id' in params:
             query_params['managementUnitId'] = params['management_unit_id']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 
@@ -15240,12 +15243,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param QueryUserStaffingGroupListRequest body: body (required)
+        :param bool force_download_service: Force the result of this operation to be sent via download service
         :return: UserStaffingGroupListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'body']
+        all_params = ['business_unit_id', 'body', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -15272,6 +15276,8 @@ class WorkforceManagementApi(object):
             path_params['businessUnitId'] = params['business_unit_id']
 
         query_params = {}
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 
@@ -16969,7 +16975,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_workplanbid_copy(self, business_unit_id: str, bid_id: str, **kwargs) -> 'WorkPlanBid':
+    def post_workforcemanagement_businessunit_workplanbid_copy(self, business_unit_id: str, bid_id: str, body: 'CopyWorkPlanBid', **kwargs) -> 'WorkPlanBid':
         """
         Copy a work plan bid
         
@@ -16980,13 +16986,13 @@ class WorkforceManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, callback=callback_function)
+        >>> thread = api.post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str bid_id: The ID of the work plan bid to copy (required)
-        :param CopyWorkPlanBid body: body
+        :param CopyWorkPlanBid body: body (required)
         :return: WorkPlanBid
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17011,6 +17017,9 @@ class WorkforceManagementApi(object):
         # verify the required parameter 'bid_id' is set
         if ('bid_id' not in params) or (params['bid_id'] is None):
             raise ValueError("Missing the required parameter `bid_id` when calling `post_workforcemanagement_businessunit_workplanbid_copy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_workplanbid_copy`")
 
 
         resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy'.replace('{format}', 'json')

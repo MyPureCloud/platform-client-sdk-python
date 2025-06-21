@@ -4781,7 +4781,7 @@ class AnalyticsApi(object):
 
     def post_analytics_agents_status_counts(self, body: 'AgentStateCountsRequest', **kwargs) -> 'AnalyticsAgentStateCountsResponse':
         """
-        Count agents by segment type
+        Count agents by different groupings
         
 
         This method makes a synchronous HTTP request by default. To make an

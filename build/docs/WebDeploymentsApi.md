@@ -560,7 +560,7 @@ except ApiException as e:
 
 ## get_webdeployments_deployment_identityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_webdeployments_deployment_identityresolution(deployment_id)
+> [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig) get_webdeployments_deployment_identityresolution(deployment_id)
 
 
 Get a deployment identity resolution setting.
@@ -604,7 +604,7 @@ except ApiException as e:
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
 ## get_webdeployments_deployments
@@ -990,7 +990,7 @@ except ApiException as e:
 
 ## put_webdeployments_deployment_identityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_webdeployments_deployment_identityresolution(deployment_id, body)
+> [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig) put_webdeployments_deployment_identityresolution(deployment_id, body)
 
 
 Update identity resolution settings for a deployment.
@@ -1016,7 +1016,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
 deployment_id = 'deployment_id_example' # str | The deployment ID
-body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+body = PureCloudPlatformClientV2.DeploymentIdentityResolutionConfig() # DeploymentIdentityResolutionConfig | 
 
 try:
     # Update identity resolution settings for a deployment.
@@ -1032,11 +1032,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+| **body** | [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)|  |  |
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

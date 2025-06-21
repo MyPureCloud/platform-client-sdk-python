@@ -57,6 +57,7 @@ class CobrowseConversation(object):
             'other_media_uris': 'list[str]',
             'recent_transfers': 'list[TransferResponse]',
             'utilization_label_id': 'str',
+            'inactivity_timeout': 'datetime',
             'divisions': 'list[ConversationDivisionMembership]',
             'self_uri': 'str'
         }
@@ -68,6 +69,7 @@ class CobrowseConversation(object):
             'other_media_uris': 'otherMediaUris',
             'recent_transfers': 'recentTransfers',
             'utilization_label_id': 'utilizationLabelId',
+            'inactivity_timeout': 'inactivityTimeout',
             'divisions': 'divisions',
             'self_uri': 'selfUri'
         }
@@ -78,6 +80,7 @@ class CobrowseConversation(object):
         self._other_media_uris = None
         self._recent_transfers = None
         self._utilization_label_id = None
+        self._inactivity_timeout = None
         self._divisions = None
         self._self_uri = None
 
@@ -224,6 +227,30 @@ class CobrowseConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def inactivity_timeout(self) -> datetime:
+        """
+        Gets the inactivity_timeout of this CobrowseConversation.
+        The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The inactivity_timeout of this CobrowseConversation.
+        :rtype: datetime
+        """
+        return self._inactivity_timeout
+
+    @inactivity_timeout.setter
+    def inactivity_timeout(self, inactivity_timeout: datetime) -> None:
+        """
+        Sets the inactivity_timeout of this CobrowseConversation.
+        The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param inactivity_timeout: The inactivity_timeout of this CobrowseConversation.
+        :type: datetime
+        """
+        
+
+        self._inactivity_timeout = inactivity_timeout
 
     @property
     def divisions(self) -> List['ConversationDivisionMembership']:

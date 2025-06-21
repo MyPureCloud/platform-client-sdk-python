@@ -63,7 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_actions_aggregates_query**](#post_analytics_actions_aggregates_query) | Query for action aggregates|
 |[**post_analytics_agentcopilots_aggregates_jobs**](#post_analytics_agentcopilots_aggregates_jobs) | Query for agent copilot aggregates asynchronously|
 |[**post_analytics_agentcopilots_aggregates_query**](#post_analytics_agentcopilots_aggregates_query) | Query for agent copilot aggregates|
-|[**post_analytics_agents_status_counts**](#post_analytics_agents_status_counts) | Count agents by segment type|
+|[**post_analytics_agents_status_counts**](#post_analytics_agents_status_counts) | Count agents by different groupings|
 |[**post_analytics_agents_status_query**](#post_analytics_agents_status_query) | Retrieve the top 50 agents matching the query filters|
 |[**post_analytics_bots_aggregates_jobs**](#post_analytics_bots_aggregates_jobs) | Query for bot aggregates asynchronously|
 |[**post_analytics_bots_aggregates_query**](#post_analytics_bots_aggregates_query) | Query for bot aggregates|
@@ -3028,7 +3028,7 @@ except ApiException as e:
 > [**AnalyticsAgentStateCountsResponse**](AnalyticsAgentStateCountsResponse) post_analytics_agents_status_counts(body)
 
 
-Count agents by segment type
+Count agents by different groupings
 
 Wraps POST /api/v2/analytics/agents/status/counts 
 
@@ -3052,7 +3052,7 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 body = PureCloudPlatformClientV2.AgentStateCountsRequest() # AgentStateCountsRequest | query
 
 try:
-    # Count agents by segment type
+    # Count agents by different groupings
     api_response = api_instance.post_analytics_agents_status_counts(body)
     pprint(api_response)
 except ApiException as e:
@@ -5380,4 +5380,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

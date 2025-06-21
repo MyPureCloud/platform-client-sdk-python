@@ -66,7 +66,7 @@ class WfmHistoricalAdherenceBulkJobReference(object):
     def id(self) -> str:
         """
         Gets the id of this WfmHistoricalAdherenceBulkJobReference.
-        The ID of the historical adherence bulk job to listen for via notification or query using the jobs route
+        The ID of the historical adherence job to listen for via notification or query using the jobs route
 
         :return: The id of this WfmHistoricalAdherenceBulkJobReference.
         :rtype: str
@@ -77,7 +77,7 @@ class WfmHistoricalAdherenceBulkJobReference(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this WfmHistoricalAdherenceBulkJobReference.
-        The ID of the historical adherence bulk job to listen for via notification or query using the jobs route
+        The ID of the historical adherence job to listen for via notification or query using the jobs route
 
         :param id: The id of this WfmHistoricalAdherenceBulkJobReference.
         :type: str
@@ -90,7 +90,7 @@ class WfmHistoricalAdherenceBulkJobReference(object):
     def status(self) -> str:
         """
         Gets the status of this WfmHistoricalAdherenceBulkJobReference.
-        The status of the historical adherence bulk job
+        The status of the historical adherence job
 
         :return: The status of this WfmHistoricalAdherenceBulkJobReference.
         :rtype: str
@@ -101,7 +101,7 @@ class WfmHistoricalAdherenceBulkJobReference(object):
     def status(self, status: str) -> None:
         """
         Sets the status of this WfmHistoricalAdherenceBulkJobReference.
-        The status of the historical adherence bulk job
+        The status of the historical adherence job
 
         :param status: The status of this WfmHistoricalAdherenceBulkJobReference.
         :type: str

@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_businessrules_schemas_coretypes**](#get_businessrules_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**patch_businessrules_decisiontable**](#patch_businessrules_decisiontable) | Update a decision table|
 |[**patch_businessrules_decisiontable_version**](#patch_businessrules_decisiontable_version) | Update a decision table version|
-|[**patch_businessrules_decisiontable_version_row**](#patch_businessrules_decisiontable_version_row) | Update a decision table row|
+|[**patch_businessrules_decisiontable_version_row**](#patch_businessrules_decisiontable_version_row) | Partially update a decision table row. Will be deprecated, we should use PUT request.|
 |[**post_businessrules_decisiontable_execute**](#post_businessrules_decisiontable_execute) | Execute a published decision table|
 |[**post_businessrules_decisiontable_version_copy**](#post_businessrules_decisiontable_version_copy) | Copy a decision table version|
 |[**post_businessrules_decisiontable_version_execute**](#post_businessrules_decisiontable_version_execute) | Execute a decision table version|
@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_businessrules_decisiontables**](#post_businessrules_decisiontables) | Create a decision table|
 |[**post_businessrules_schemas**](#post_businessrules_schemas) | Create a schema|
 |[**put_businessrules_decisiontable_version_publish**](#put_businessrules_decisiontable_version_publish) | Publish a decision table version|
+|[**put_businessrules_decisiontable_version_row**](#put_businessrules_decisiontable_version_row) | Full update a decision table row|
 |[**put_businessrules_schema**](#put_businessrules_schema) | Update a schema|
 
 
@@ -151,9 +152,10 @@ delete_businessrules_decisiontable_version_row is a preview method and is subjec
 
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * businessrules:decisionTableRow:delete
+* routing:queue:view
 
 ### Example
 
@@ -566,7 +568,7 @@ except ApiException as e:
 
 ## get_businessrules_decisiontables_search
 
-> [**DecisionTableListing**](DecisionTableListing) get_businessrules_decisiontables_search(after=after, page_size=page_size, schema_id=schema_id, name=name)
+> [**DecisionTableListing**](DecisionTableListing) get_businessrules_decisiontables_search(after=after, page_size=page_size, schema_id=schema_id, name=name, with_published_version=with_published_version, expand=expand, ids=ids)
 
 
 Search for decision tables.
@@ -596,10 +598,13 @@ after = 'after_example' # str | The cursor that points to the end of the set of 
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
 schema_id = 'schema_id_example' # str | Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
 name = 'name_example' # str | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. (optional)
+with_published_version = True # bool | Filters results to only decision tables that have at least one version in Published status (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in response (optional)
+ids = ['ids_example'] # list[str] | Decision table IDs to search for (optional)
 
 try:
     # Search for decision tables.
-    api_response = api_instance.get_businessrules_decisiontables_search(after=after, page_size=page_size, schema_id=schema_id, name=name)
+    api_response = api_instance.get_businessrules_decisiontables_search(after=after, page_size=page_size, schema_id=schema_id, name=name, with_published_version=with_published_version, expand=expand, ids=ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BusinessRulesApi->get_businessrules_decisiontables_search: %s\n" % e)
@@ -614,6 +619,9 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
 | **schema_id** | **str**| Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. | [optional]  |
 | **name** | **str**| Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. | [optional]  |
+| **with_published_version** | **bool**| Filters results to only decision tables that have at least one version in Published status | [optional]  |
+| **expand** | [**list[str]**](str)| Fields to expand in response | [optional] <br />**Values**: ExecutionInputSchema, ExecutionOutputSchema |
+| **ids** | [**list[str]**](str)| Decision table IDs to search for | [optional]  |
 
 ### Return type
 
@@ -923,16 +931,20 @@ except ApiException as e:
 
 > [**DecisionTableRow**](DecisionTableRow) patch_businessrules_decisiontable_version_row(table_id, table_version, row_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Update a decision table row
+Partially update a decision table row. Will be deprecated, we should use PUT request.
 
 patch_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * businessrules:decisionTableRow:edit
+* routing:queue:view
 
 ### Example
 
@@ -950,10 +962,10 @@ api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 table_id = 'table_id_example' # str | Table ID
 table_version = 56 # int | Table Version
 row_id = 'row_id_example' # str | Row ID
-body = PureCloudPlatformClientV2.UpdateDecisionTableRowRequest() # UpdateDecisionTableRowRequest | Update decision table row request
+body = PureCloudPlatformClientV2.UpdateDecisionTableRowRequest() # UpdateDecisionTableRowRequest | Partially update decision table row request
 
 try:
-    # Update a decision table row
+    # Partially update a decision table row. Will be deprecated, we should use PUT request.
     api_response = api_instance.patch_businessrules_decisiontable_version_row(table_id, table_version, row_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -968,7 +980,7 @@ except ApiException as e:
 | **table_id** | **str**| Table ID |  |
 | **table_version** | **int**| Table Version |  |
 | **row_id** | **str**| Row ID |  |
-| **body** | [**UpdateDecisionTableRowRequest**](UpdateDecisionTableRowRequest)| Update decision table row request |  |
+| **body** | [**UpdateDecisionTableRowRequest**](UpdateDecisionTableRowRequest)| Partially update decision table row request |  |
 
 ### Return type
 
@@ -1146,9 +1158,10 @@ post_businessrules_decisiontable_version_rows is a preview method and is subject
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * businessrules:decisionTableRow:add
+* routing:queue:view
 
 ### Example
 
@@ -1502,6 +1515,63 @@ except ApiException as e:
 [**DecisionTableVersion**](DecisionTableVersion)
 
 
+## put_businessrules_decisiontable_version_row
+
+> [**DecisionTableRow**](DecisionTableRow) put_businessrules_decisiontable_version_row(table_id, table_version, row_id, body)
+
+
+Full update a decision table row
+
+put_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} 
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:edit
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+row_id = 'row_id_example' # str | Row ID
+body = PureCloudPlatformClientV2.PutDecisionTableRowRequest() # PutDecisionTableRowRequest | Full update decision table row request
+
+try:
+    # Full update a decision table row
+    api_response = api_instance.put_businessrules_decisiontable_version_row(table_id, table_version, row_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->put_businessrules_decisiontable_version_row: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **table_version** | **int**| Table Version |  |
+| **row_id** | **str**| Row ID |  |
+| **body** | [**PutDecisionTableRowRequest**](PutDecisionTableRowRequest)| Full update decision table row request |  |
+
+### Return type
+
+[**DecisionTableRow**](DecisionTableRow)
+
+
 ## put_businessrules_schema
 
 > [**DataSchema**](DataSchema) put_businessrules_schema(schema_id, body)
@@ -1554,4 +1624,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

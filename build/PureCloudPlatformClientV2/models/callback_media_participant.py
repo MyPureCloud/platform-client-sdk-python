@@ -59,6 +59,7 @@ class CallbackMediaParticipant(object):
             'name': 'str',
             'address': 'str',
             'start_time': 'datetime',
+            'start_alerting_time': 'datetime',
             'connected_time': 'datetime',
             'end_time': 'datetime',
             'start_hold_time': 'datetime',
@@ -108,6 +109,7 @@ class CallbackMediaParticipant(object):
             'name': 'name',
             'address': 'address',
             'start_time': 'startTime',
+            'start_alerting_time': 'startAlertingTime',
             'connected_time': 'connectedTime',
             'end_time': 'endTime',
             'start_hold_time': 'startHoldTime',
@@ -156,6 +158,7 @@ class CallbackMediaParticipant(object):
         self._name = None
         self._address = None
         self._start_time = None
+        self._start_alerting_time = None
         self._connected_time = None
         self._end_time = None
         self._start_hold_time = None
@@ -294,6 +297,30 @@ class CallbackMediaParticipant(object):
         
 
         self._start_time = start_time
+
+    @property
+    def start_alerting_time(self) -> datetime:
+        """
+        Gets the start_alerting_time of this CallbackMediaParticipant.
+        The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The start_alerting_time of this CallbackMediaParticipant.
+        :rtype: datetime
+        """
+        return self._start_alerting_time
+
+    @start_alerting_time.setter
+    def start_alerting_time(self, start_alerting_time: datetime) -> None:
+        """
+        Sets the start_alerting_time of this CallbackMediaParticipant.
+        The timestamp when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param start_alerting_time: The start_alerting_time of this CallbackMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._start_alerting_time = start_alerting_time
 
     @property
     def connected_time(self) -> datetime:
@@ -471,7 +498,7 @@ class CallbackMediaParticipant(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "endpoint.donotdisturb", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.donotdisturb", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam"]
+        allowed_values = ["endpoint", "endpoint.donotdisturb", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.donotdisturb", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "inactivity"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"

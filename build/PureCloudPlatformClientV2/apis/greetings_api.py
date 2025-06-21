@@ -214,10 +214,172 @@ class GreetingsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_greeting_downloads(self, greeting_id: str, **kwargs) -> 'GreetingMediaInfo':
+        """
+        Download a organization greeting recording
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_greeting_downloads(greeting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str greeting_id: Greeting ID (required)
+        :param str format_id: The desired media format.
+        :return: GreetingMediaInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['greeting_id', 'format_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_greeting_downloads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'greeting_id' is set
+        if ('greeting_id' not in params) or (params['greeting_id'] is None):
+            raise ValueError("Missing the required parameter `greeting_id` when calling `get_greeting_downloads`")
+
+
+        resource_path = '/api/v2/greetings/{greetingId}/downloads'.replace('{format}', 'json')
+        path_params = {}
+        if 'greeting_id' in params:
+            path_params['greetingId'] = params['greeting_id']
+
+        query_params = {}
+        if 'format_id' in params:
+            query_params['formatId'] = params['format_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GreetingMediaInfo',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_greeting_groups_downloads(self, greeting_id: str, **kwargs) -> 'GreetingMediaInfo':
+        """
+        Download a group greeting recording
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_greeting_groups_downloads(greeting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str greeting_id: Greeting ID (required)
+        :param str format_id: The desired media format.
+        :return: GreetingMediaInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['greeting_id', 'format_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_greeting_groups_downloads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'greeting_id' is set
+        if ('greeting_id' not in params) or (params['greeting_id'] is None):
+            raise ValueError("Missing the required parameter `greeting_id` when calling `get_greeting_groups_downloads`")
+
+
+        resource_path = '/api/v2/greetings/{greetingId}/groups/downloads'.replace('{format}', 'json')
+        path_params = {}
+        if 'greeting_id' in params:
+            path_params['greetingId'] = params['greeting_id']
+
+        query_params = {}
+        if 'format_id' in params:
+            query_params['formatId'] = params['format_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GreetingMediaInfo',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_greeting_media(self, greeting_id: str, **kwargs) -> 'GreetingMediaInfo':
         """
         Get media playback URI for this greeting
-        
+        API should migrate to use GET api/v2/greetings/{greetingId}/downloads
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -255,6 +417,87 @@ class GreetingsApi(object):
 
 
         resource_path = '/api/v2/greetings/{greetingId}/media'.replace('{format}', 'json')
+        path_params = {}
+        if 'greeting_id' in params:
+            path_params['greetingId'] = params['greeting_id']
+
+        query_params = {}
+        if 'format_id' in params:
+            query_params['formatId'] = params['format_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GreetingMediaInfo',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_greeting_users_downloads(self, greeting_id: str, **kwargs) -> 'GreetingMediaInfo':
+        """
+        Download a user greeting recording
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_greeting_users_downloads(greeting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str greeting_id: Greeting ID (required)
+        :param str format_id: The desired media format.
+        :return: GreetingMediaInfo
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['greeting_id', 'format_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_greeting_users_downloads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'greeting_id' is set
+        if ('greeting_id' not in params) or (params['greeting_id'] is None):
+            raise ValueError("Missing the required parameter `greeting_id` when calling `get_greeting_users_downloads`")
+
+
+        resource_path = '/api/v2/greetings/{greetingId}/users/downloads'.replace('{format}', 'json')
         path_params = {}
         if 'greeting_id' in params:
             path_params['greetingId'] = params['greeting_id']

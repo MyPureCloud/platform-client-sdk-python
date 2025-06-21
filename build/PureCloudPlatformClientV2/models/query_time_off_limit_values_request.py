@@ -92,7 +92,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def activity_code_id(self) -> str:
         """
         Gets the activity_code_id of this QueryTimeOffLimitValuesRequest.
-        The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified
+        The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
 
         :return: The activity_code_id of this QueryTimeOffLimitValuesRequest.
         :rtype: str
@@ -103,7 +103,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def activity_code_id(self, activity_code_id: str) -> None:
         """
         Sets the activity_code_id of this QueryTimeOffLimitValuesRequest.
-        The activity code id to filter the affected limit objects by. Required if timeOffLimitId is not specified
+        The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
 
         :param activity_code_id: The activity_code_id of this QueryTimeOffLimitValuesRequest.
         :type: str

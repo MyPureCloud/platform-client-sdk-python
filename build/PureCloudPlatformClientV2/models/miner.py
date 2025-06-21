@@ -54,6 +54,7 @@ class Miner(object):
             'name': 'str',
             'language': 'str',
             'miner_type': 'str',
+            'seeding': 'bool',
             'date_created': 'datetime',
             'status': 'str',
             'conversations_date_range_start': 'date',
@@ -80,6 +81,7 @@ class Miner(object):
             'name': 'name',
             'language': 'language',
             'miner_type': 'minerType',
+            'seeding': 'seeding',
             'date_created': 'dateCreated',
             'status': 'status',
             'conversations_date_range_start': 'conversationsDateRangeStart',
@@ -105,6 +107,7 @@ class Miner(object):
         self._name = None
         self._language = None
         self._miner_type = None
+        self._seeding = None
         self._date_created = None
         self._status = None
         self._conversations_date_range_start = None
@@ -230,6 +233,30 @@ class Miner(object):
             self._miner_type = "outdated_sdk_version"
         else:
             self._miner_type = miner_type
+
+    @property
+    def seeding(self) -> bool:
+        """
+        Gets the seeding of this Miner.
+        Flag to indicate whether seeding is supported for this miner.
+
+        :return: The seeding of this Miner.
+        :rtype: bool
+        """
+        return self._seeding
+
+    @seeding.setter
+    def seeding(self, seeding: bool) -> None:
+        """
+        Sets the seeding of this Miner.
+        Flag to indicate whether seeding is supported for this miner.
+
+        :param seeding: The seeding of this Miner.
+        :type: bool
+        """
+        
+
+        self._seeding = seeding
 
     @property
     def date_created(self) -> datetime:

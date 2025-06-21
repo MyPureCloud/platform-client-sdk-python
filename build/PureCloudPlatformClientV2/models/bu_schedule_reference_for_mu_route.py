@@ -71,7 +71,7 @@ class BuScheduleReferenceForMuRoute(object):
     def id(self) -> str:
         """
         Gets the id of this BuScheduleReferenceForMuRoute.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :return: The id of this BuScheduleReferenceForMuRoute.
         :rtype: str
@@ -82,7 +82,7 @@ class BuScheduleReferenceForMuRoute(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this BuScheduleReferenceForMuRoute.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :param id: The id of this BuScheduleReferenceForMuRoute.
         :type: str

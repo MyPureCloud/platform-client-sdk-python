@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import SupportedContentReference
 
 class SmsPhoneNumberProvision(object):
     """
@@ -53,6 +55,7 @@ class SmsPhoneNumberProvision(object):
             'country_code': 'str',
             'name': 'str',
             'address_id': 'str',
+            'supported_content': 'SupportedContentReference',
             'self_uri': 'str'
         }
 
@@ -63,6 +66,7 @@ class SmsPhoneNumberProvision(object):
             'country_code': 'countryCode',
             'name': 'name',
             'address_id': 'addressId',
+            'supported_content': 'supportedContent',
             'self_uri': 'selfUri'
         }
 
@@ -72,6 +76,7 @@ class SmsPhoneNumberProvision(object):
         self._country_code = None
         self._name = None
         self._address_id = None
+        self._supported_content = None
         self._self_uri = None
 
     @property
@@ -222,6 +227,30 @@ class SmsPhoneNumberProvision(object):
         
 
         self._address_id = address_id
+
+    @property
+    def supported_content(self) -> 'SupportedContentReference':
+        """
+        Gets the supported_content of this SmsPhoneNumberProvision.
+        Defines the media SupportedContent profile configured for an MMS capable phone number.
+
+        :return: The supported_content of this SmsPhoneNumberProvision.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content: 'SupportedContentReference') -> None:
+        """
+        Sets the supported_content of this SmsPhoneNumberProvision.
+        Defines the media SupportedContent profile configured for an MMS capable phone number.
+
+        :param supported_content: The supported_content of this SmsPhoneNumberProvision.
+        :type: SupportedContentReference
+        """
+        
+
+        self._supported_content = supported_content
 
     @property
     def self_uri(self) -> str:

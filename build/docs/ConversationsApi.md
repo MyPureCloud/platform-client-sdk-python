@@ -28,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details_job_results**](#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_conversation**](#get_conversation) | Get conversation|
+|[**get_conversation_communication_internalmessage**](#get_conversation_communication_internalmessage) | Get message|
+|[**get_conversation_communication_internalmessages**](#get_conversation_communication_internalmessages) | Get messages for communication|
 |[**get_conversation_participant_secureivrsession**](#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
 |[**get_conversation_participant_secureivrsessions**](#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
 |[**get_conversation_participant_wrapup**](#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
@@ -70,6 +72,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_email_participant_wrapupcodes**](#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_email_settings**](#get_conversations_email_settings) | Get emails settings for a given conversation|
 |[**get_conversations_emails**](#get_conversations_emails) | Get active email conversations for the logged in user|
+|[**get_conversations_internalmessage**](#get_conversations_internalmessage) | Get internal message conversation|
+|[**get_conversations_internalmessages**](#get_conversations_internalmessages) | Get active internal message conversations for the logged in user|
 |[**get_conversations_keyconfiguration**](#get_conversations_keyconfiguration) | Get the encryption key configurations|
 |[**get_conversations_keyconfigurations**](#get_conversations_keyconfigurations) | Get a list of key configurations data|
 |[**get_conversations_message**](#get_conversations_message) | Get message conversation|
@@ -88,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_identityresolution_integrations_facebook_integration_id**](#get_conversations_messaging_identityresolution_integrations_facebook_integration_id) | Get Facebook messaging integration identity resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_instagram_integration_id**](#get_conversations_messaging_identityresolution_integrations_instagram_integration_id) | Get an Instagram integration identity resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_open_integration_id**](#get_conversations_messaging_identityresolution_integrations_open_integration_id) | Get an open messaging integration Identity Resolution settings|
+|[**get_conversations_messaging_identityresolution_integrations_twitter_integration_id**](#get_conversations_messaging_identityresolution_integrations_twitter_integration_id) | Get X (Formally Twitter) messaging integration identity resolution settings|
 |[**get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id**](#get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id) | Get a whatsApp integration Identity Resolution settings|
 |[**get_conversations_messaging_integration_twitter_oauth_settings**](#get_conversations_messaging_integration_twitter_oauth_settings) | Get twitter oauth settings to patch an integration|
 |[**get_conversations_messaging_integrations**](#get_conversations_messaging_integrations) | Get a list of Integrations|
@@ -168,9 +173,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_assign**](#post_conversation_assign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.|
 |[**post_conversation_barge**](#post_conversation_barge) | Barge a conversation creating a barged in conference of connected participants.|
 |[**post_conversation_cobrowse**](#post_conversation_cobrowse) | Creates a cobrowse session. Requires \&quot;conversation:cobrowse:add\&quot; (for web messaging) or \&quot;conversation:cobrowsevoice:add\&quot; permission.|
+|[**post_conversation_communication_internalmessages**](#post_conversation_communication_internalmessages) | Send internal message|
 |[**post_conversation_disconnect**](#post_conversation_disconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.|
 |[**post_conversation_participant_callbacks**](#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
 |[**post_conversation_participant_digits**](#post_conversation_participant_digits) | Sends DTMF to the participant|
+|[**post_conversation_participant_internalmessages_users_communications**](#post_conversation_participant_internalmessages_users_communications) | Setup internal message communication with user|
 |[**post_conversation_participant_replace**](#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversation_participant_replace_agent**](#post_conversation_participant_replace_agent) | Replace this participant with the specified agent|
 |[**post_conversation_participant_replace_external**](#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
@@ -222,6 +229,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_inbound_open_event**](#post_conversations_message_inbound_open_event) | Send an inbound Open Event Message|
 |[**post_conversations_message_inbound_open_message**](#post_conversations_message_inbound_open_message) | Send inbound Open Message|
 |[**post_conversations_message_inbound_open_receipt**](#post_conversations_message_inbound_open_receipt) | Send an inbound Open Receipt Message|
+|[**post_conversations_message_inbound_open_structured_response**](#post_conversations_message_inbound_open_structured_response) | Send inbound Open Response|
 |[**post_conversations_message_messages_bulk**](#post_conversations_message_messages_bulk) | Get messages in batch|
 |[**post_conversations_message_participant_communication_wrapup**](#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_message_participant_monitor**](#post_conversations_message_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
@@ -259,6 +267,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversations_messaging_identityresolution_integrations_facebook_integration_id**](#put_conversations_messaging_identityresolution_integrations_facebook_integration_id) | Create an identity resolution settings for a Facebook messaging integration|
 |[**put_conversations_messaging_identityresolution_integrations_instagram_integration_id**](#put_conversations_messaging_identityresolution_integrations_instagram_integration_id) | Create identity resolution settings for an Instagram messaging integration|
 |[**put_conversations_messaging_identityresolution_integrations_open_integration_id**](#put_conversations_messaging_identityresolution_integrations_open_integration_id) | Update an open messaging integration Identity Resolution settings|
+|[**put_conversations_messaging_identityresolution_integrations_twitter_integration_id**](#put_conversations_messaging_identityresolution_integrations_twitter_integration_id) | Create an identity resolution settings for an X (Formally Twitter) messaging integration|
 |[**put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id**](#put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id) | Update a whatsApp integration Identity Resolution settings|
 |[**put_conversations_messaging_settings_default**](#put_conversations_messaging_settings_default) | Set the organization&#39;s default setting that may be applied to to integrations without settings|
 |[**put_conversations_messaging_supportedcontent_default**](#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
@@ -1329,6 +1338,116 @@ except ApiException as e:
 [**Conversation**](Conversation)
 
 
+## get_conversation_communication_internalmessage
+
+> [**InternalMessageData**](InternalMessageData) get_conversation_communication_internalmessage(conversation_id, communication_id, message_id)
+
+
+Get message
+
+get_conversation_communication_internalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} 
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+message_id = 'message_id_example' # str | messageId
+
+try:
+    # Get message
+    api_response = api_instance.get_conversation_communication_internalmessage(conversation_id, communication_id, message_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_communication_internalmessage: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **message_id** | **str**| messageId |  |
+
+### Return type
+
+[**InternalMessageData**](InternalMessageData)
+
+
+## get_conversation_communication_internalmessages
+
+> [**InternalMessageDataEntityListing**](InternalMessageDataEntityListing) get_conversation_communication_internalmessages(conversation_id, communication_id, page_size=page_size, page_number=page_number)
+
+
+Get messages for communication
+
+get_conversation_communication_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages 
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+page_size = 25 # int | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get messages for communication
+    api_response = api_instance.get_conversation_communication_internalmessages(conversation_id, communication_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_communication_internalmessages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **page_size** | **int**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**InternalMessageDataEntityListing**](InternalMessageDataEntityListing)
+
+
 ## get_conversation_participant_secureivrsession
 
 > [**SecureSession**](SecureSession) get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
@@ -1855,7 +1974,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -1873,7 +1992,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -1907,7 +2026,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -1924,7 +2043,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -2055,7 +2174,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -2073,7 +2192,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -2107,7 +2226,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -2124,7 +2243,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -2561,7 +2680,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -2579,7 +2698,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -2618,7 +2737,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -2635,7 +2754,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -2824,7 +2943,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -2842,7 +2961,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -2881,7 +3000,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -2898,7 +3017,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -3220,7 +3339,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -3238,7 +3357,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -3272,7 +3391,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -3289,7 +3408,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -3433,6 +3552,102 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**EmailConversationEntityListing**](EmailConversationEntityListing)
+
+
+## get_conversations_internalmessage
+
+> [**InternalMessageConversation**](InternalMessageConversation) get_conversations_internalmessage(conversation_id)
+
+
+Get internal message conversation
+
+get_conversations_internalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/internalmessages/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+
+try:
+    # Get internal message conversation
+    api_response = api_instance.get_conversations_internalmessage(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_internalmessage: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+
+### Return type
+
+[**InternalMessageConversation**](InternalMessageConversation)
+
+
+## get_conversations_internalmessages
+
+> [**InternalMessageConversationEntityListing**](InternalMessageConversationEntityListing) get_conversations_internalmessages()
+
+
+Get active internal message conversations for the logged in user
+
+get_conversations_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/internalmessages 
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get active internal message conversations for the logged in user
+    api_response = api_instance.get_conversations_internalmessages()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_internalmessages: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**InternalMessageConversationEntityListing**](InternalMessageConversationEntityListing)
 
 
 ## get_conversations_keyconfiguration
@@ -3761,7 +3976,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -3779,7 +3994,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -3813,7 +4028,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation participant. 
@@ -3830,7 +4045,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -4315,6 +4530,55 @@ except ApiException as e:
 ### Return type
 
 [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig)
+
+
+## get_conversations_messaging_identityresolution_integrations_twitter_integration_id
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_conversations_messaging_identityresolution_integrations_twitter_integration_id(integration_id)
+
+
+Get X (Formally Twitter) messaging integration identity resolution settings
+
+Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+* messaging:identityResolutionX:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration Id
+
+try:
+    # Get X (Formally Twitter) messaging integration identity resolution settings
+    api_response = api_instance.get_conversations_messaging_identityresolution_integrations_twitter_integration_id(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_identityresolution_integrations_twitter_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration Id |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
 
 
 ## get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id
@@ -5415,7 +5679,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -5433,7 +5697,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -5512,7 +5776,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -5530,7 +5794,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -5615,7 +5879,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
-provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+provisional = False # bool | Indicates whether or not to fetch provisional wrap-up code. (optional) (default to False)
 
 try:
     # Get the wrap-up for this conversation communication. 
@@ -5633,7 +5897,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
+| **provisional** | **bool**| Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to False] |
 
 ### Return type
 
@@ -5705,6 +5969,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -6113,6 +6378,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -6369,6 +6635,8 @@ Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{parti
 Requires ANY permissions: 
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -6633,6 +6901,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -6859,6 +7128,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -7128,6 +7398,8 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
+* conversation:email:park
 
 ### Example
 
@@ -7385,6 +7657,7 @@ Requires ANY permissions:
 
 * conversation:participant:wrapup
 * conversation:call:record
+* conversation:communication:disconnect
 
 ### Example
 
@@ -8432,6 +8705,62 @@ except ApiException as e:
 [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
 
+## post_conversation_communication_internalmessages
+
+> [**InternalMessageData**](InternalMessageData) post_conversation_communication_internalmessages(conversation_id, communication_id, body)
+
+
+Send internal message
+
+Send a new internal message for an existing communication.
+
+post_conversation_communication_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages 
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.InternalMessageRequest() # InternalMessageRequest | Message
+
+try:
+    # Send internal message
+    api_response = api_instance.post_conversation_communication_internalmessages(conversation_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_communication_internalmessages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**InternalMessageRequest**](InternalMessageRequest)| Message |  |
+
+### Return type
+
+[**InternalMessageData**](InternalMessageData)
+
+
 ## post_conversation_disconnect
 
 > str** post_conversation_disconnect(conversation_id)
@@ -8579,6 +8908,62 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+
+## post_conversation_participant_internalmessages_users_communications
+
+> [**MessagingConferResponse**](MessagingConferResponse) post_conversation_participant_internalmessages_users_communications(conversation_id, participant_id, body)
+
+
+Setup internal message communication with user
+
+The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+
+post_conversation_participant_internalmessages_users_communications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications 
+
+Requires ANY permissions: 
+
+* conversation:internalMessaging:setupWithUser
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.MessagingConferWithUserRequest() # MessagingConferWithUserRequest | Confer request
+
+try:
+    # Setup internal message communication with user
+    api_response = api_instance.post_conversation_participant_internalmessages_users_communications(conversation_id, participant_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_participant_internalmessages_users_communications: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**MessagingConferWithUserRequest**](MessagingConferWithUserRequest)| Confer request |  |
+
+### Return type
+
+[**MessagingConferResponse**](MessagingConferResponse)
 
 
 ## post_conversation_participant_replace
@@ -11219,6 +11604,58 @@ except ApiException as e:
 [**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage)
 
 
+## post_conversations_message_inbound_open_structured_response
+
+> [**OpenStructuredResponseNormalizedMessage**](OpenStructuredResponseNormalizedMessage) post_conversations_message_inbound_open_structured_response(integration_id, body)
+
+
+Send inbound Open Response
+
+Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response 
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | integrationId
+body = PureCloudPlatformClientV2.OpenInboundStructuredResponseMessage() # OpenInboundStructuredResponseMessage | OpenInboundStructuredResponseMessage
+
+try:
+    # Send inbound Open Response
+    api_response = api_instance.post_conversations_message_inbound_open_structured_response(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_inbound_open_structured_response: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| integrationId |  |
+| **body** | [**OpenInboundStructuredResponseMessage**](OpenInboundStructuredResponseMessage)| OpenInboundStructuredResponseMessage |  |
+
+### Return type
+
+[**OpenStructuredResponseNormalizedMessage**](OpenStructuredResponseNormalizedMessage)
+
+
 ## post_conversations_message_messages_bulk
 
 > [**TextMessageListing**](TextMessageListing) post_conversations_message_messages_bulk(conversation_id, use_normalized_message=use_normalized_message, body=body)
@@ -13105,6 +13542,57 @@ except ApiException as e:
 [**OpenMessagingIdentityResolutionConfig**](OpenMessagingIdentityResolutionConfig)
 
 
+## put_conversations_messaging_identityresolution_integrations_twitter_integration_id
+
+> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_conversations_messaging_identityresolution_integrations_twitter_integration_id(integration_id, body)
+
+
+Create an identity resolution settings for an X (Formally Twitter) messaging integration
+
+Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:XIntegration:edit
+* messaging:identityResolutionX:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration Id
+body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | IdentityResolutionConfig
+
+try:
+    # Create an identity resolution settings for an X (Formally Twitter) messaging integration
+    api_response = api_instance.put_conversations_messaging_identityresolution_integrations_twitter_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_messaging_identityresolution_integrations_twitter_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration Id |  |
+| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)| IdentityResolutionConfig |  |
+
+### Return type
+
+[**IdentityResolutionConfig**](IdentityResolutionConfig)
+
+
 ## put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id
 
 > [**IdentityResolutionConfig**](IdentityResolutionConfig) put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id(integration_id, body)
@@ -13461,4 +13949,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

@@ -22,7 +22,10 @@
 | **agent_wrapup_field** | str | The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition. | [optional] |
 | **contact_column_to_data_action_field_mappings** | [list[ContactColumnToDataActionFieldMapping]](ContactColumnToDataActionFieldMapping) | A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition. | [optional] |
 | **predicates** | [list[DataActionConditionPredicate]](DataActionConditionPredicate) | A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition. | [optional] |
+| **sub_conditions** | [list[TimeAndDateSubCondition]](TimeAndDateSubCondition) | A list of sub-conditions to evaluate. Required for a timeAndDateCondition. | [optional] |
+| **match_any_conditions** | bool | If true, only one sub-condition must match for the condition to be true. If false, all sub-conditions must match. Default is false. Required for a timeAndDateCondition. | [optional] |
+| **time_zone_id** | str | The time zone to use for this condition. Required for a timeAndDateCondition. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

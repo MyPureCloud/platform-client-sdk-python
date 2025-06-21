@@ -54,6 +54,7 @@ from ..models import ClientAppEntityListing
 from ..models import CreateIntegrationRequest
 from ..models import Credential
 from ..models import CredentialInfo
+from ..models import CredentialInfoCursorListing
 from ..models import CredentialInfoListing
 from ..models import CredentialTypeListing
 from ..models import DialogflowAgent
@@ -2903,6 +2904,87 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CredentialInfoListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_credentials_listing(self, **kwargs) -> 'CredentialInfoCursorListing':
+        """
+        List multiple sets of credentials using cursor-based paging
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_credentials_listing(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: CredentialInfoCursorListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_credentials_listing" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/credentials/listing'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CredentialInfoCursorListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -14,7 +14,7 @@
 | **tts_string** | str | Text to speech of the resource | [optional] |
 | **text** | str | Text of the resource | [optional] |
 | **upload_status** | str | Audio upload status | [optional] |
-| **upload_uri** | str | Upload URI for the resource audio | [optional] |
+| **upload_uri** | str | Deprecated. This was use for uploading the resource audio. | [optional] |
 | **language_default** | bool | Whether or not this resource locale is the default for the language | [optional] |
 | **tags** | dict(str, list[str]) |  | [optional] |
 | **duration_seconds** | float |  | [optional] |
@@ -22,4 +22,4 @@
 
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

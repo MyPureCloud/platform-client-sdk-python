@@ -12,8 +12,9 @@
 | **country_code** | str | The ISO 3166-1 alpha-2 country code of the country this phone number is associated with. | |
 | **name** | str |  | [optional] |
 | **address_id** | str | The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here | [optional] |
+| **supported_content** | [SupportedContentReference](SupportedContentReference) | Defines the media SupportedContent profile configured for an MMS capable phone number. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

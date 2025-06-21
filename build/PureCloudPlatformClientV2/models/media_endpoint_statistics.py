@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import MediaIceStatistics
     from . import MediaRtpStatistics
+    from . import MediaStatisticsClientInfo
     from . import MediaStatisticsTrunkInfo
     from . import NamedEntity
 
@@ -57,7 +58,9 @@ class MediaEndpointStatistics(object):
             'user': 'NamedEntity',
             'ice': 'MediaIceStatistics',
             'rtp': 'MediaRtpStatistics',
-            'reconnect_attempt_count': 'int'
+            'reconnect_attempts': 'int',
+            'source_type': 'str',
+            'client_info': 'MediaStatisticsClientInfo'
         }
 
         self.attribute_map = {
@@ -66,7 +69,9 @@ class MediaEndpointStatistics(object):
             'user': 'user',
             'ice': 'ice',
             'rtp': 'rtp',
-            'reconnect_attempt_count': 'reconnectAttemptCount'
+            'reconnect_attempts': 'reconnectAttempts',
+            'source_type': 'sourceType',
+            'client_info': 'clientInfo'
         }
 
         self._trunk = None
@@ -74,7 +79,9 @@ class MediaEndpointStatistics(object):
         self._user = None
         self._ice = None
         self._rtp = None
-        self._reconnect_attempt_count = None
+        self._reconnect_attempts = None
+        self._source_type = None
+        self._client_info = None
 
     @property
     def trunk(self) -> 'MediaStatisticsTrunkInfo':
@@ -197,28 +204,81 @@ class MediaEndpointStatistics(object):
         self._rtp = rtp
 
     @property
-    def reconnect_attempt_count(self) -> int:
+    def reconnect_attempts(self) -> int:
         """
-        Gets the reconnect_attempt_count of this MediaEndpointStatistics.
+        Gets the reconnect_attempts of this MediaEndpointStatistics.
         Media reconnect attempt count
 
-        :return: The reconnect_attempt_count of this MediaEndpointStatistics.
+        :return: The reconnect_attempts of this MediaEndpointStatistics.
         :rtype: int
         """
-        return self._reconnect_attempt_count
+        return self._reconnect_attempts
 
-    @reconnect_attempt_count.setter
-    def reconnect_attempt_count(self, reconnect_attempt_count: int) -> None:
+    @reconnect_attempts.setter
+    def reconnect_attempts(self, reconnect_attempts: int) -> None:
         """
-        Sets the reconnect_attempt_count of this MediaEndpointStatistics.
+        Sets the reconnect_attempts of this MediaEndpointStatistics.
         Media reconnect attempt count
 
-        :param reconnect_attempt_count: The reconnect_attempt_count of this MediaEndpointStatistics.
+        :param reconnect_attempts: The reconnect_attempts of this MediaEndpointStatistics.
         :type: int
         """
         
 
-        self._reconnect_attempt_count = reconnect_attempt_count
+        self._reconnect_attempts = reconnect_attempts
+
+    @property
+    def source_type(self) -> str:
+        """
+        Gets the source_type of this MediaEndpointStatistics.
+        Source type of media endpoint
+
+        :return: The source_type of this MediaEndpointStatistics.
+        :rtype: str
+        """
+        return self._source_type
+
+    @source_type.setter
+    def source_type(self, source_type: str) -> None:
+        """
+        Sets the source_type of this MediaEndpointStatistics.
+        Source type of media endpoint
+
+        :param source_type: The source_type of this MediaEndpointStatistics.
+        :type: str
+        """
+        if isinstance(source_type, int):
+            source_type = str(source_type)
+        allowed_values = ["Client"]
+        if source_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for source_type -> " + source_type)
+            self._source_type = "outdated_sdk_version"
+        else:
+            self._source_type = source_type
+
+    @property
+    def client_info(self) -> 'MediaStatisticsClientInfo':
+        """
+        Gets the client_info of this MediaEndpointStatistics.
+        Client information associated with media endpoint
+
+        :return: The client_info of this MediaEndpointStatistics.
+        :rtype: MediaStatisticsClientInfo
+        """
+        return self._client_info
+
+    @client_info.setter
+    def client_info(self, client_info: 'MediaStatisticsClientInfo') -> None:
+        """
+        Sets the client_info of this MediaEndpointStatistics.
+        Client information associated with media endpoint
+
+        :param client_info: The client_info of this MediaEndpointStatistics.
+        :type: MediaStatisticsClientInfo
+        """
+        
+
+        self._client_info = client_info
 
     def to_dict(self):
         """

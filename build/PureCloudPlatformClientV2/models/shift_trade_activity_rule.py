@@ -124,7 +124,7 @@ class ShiftTradeActivityRule(object):
     def activity_code_id_replacement(self) -> str:
         """
         Gets the activity_code_id_replacement of this ShiftTradeActivityRule.
-        The activity code ID with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)
+        The ID of the activity code with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)
 
         :return: The activity_code_id_replacement of this ShiftTradeActivityRule.
         :rtype: str
@@ -135,7 +135,7 @@ class ShiftTradeActivityRule(object):
     def activity_code_id_replacement(self, activity_code_id_replacement: str) -> None:
         """
         Sets the activity_code_id_replacement of this ShiftTradeActivityRule.
-        The activity code ID with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)
+        The ID of the activity code with which to replace activities belonging to the original category if applicable (required if action == Replace, must be a default activity code ID)
 
         :param activity_code_id_replacement: The activity_code_id_replacement of this ShiftTradeActivityRule.
         :type: str

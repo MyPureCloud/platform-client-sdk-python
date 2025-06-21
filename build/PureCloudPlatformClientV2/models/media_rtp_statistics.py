@@ -51,7 +51,8 @@ class MediaRtpStatistics(object):
             'packets_sent': 'int',
             'rtp_events_received': 'int',
             'rtp_events_sent': 'int',
-            'estimated_average_mos': 'float'
+            'estimated_average_mos': 'float',
+            'average_jitter': 'float'
         }
 
         self.attribute_map = {
@@ -59,7 +60,8 @@ class MediaRtpStatistics(object):
             'packets_sent': 'packetsSent',
             'rtp_events_received': 'rtpEventsReceived',
             'rtp_events_sent': 'rtpEventsSent',
-            'estimated_average_mos': 'estimatedAverageMos'
+            'estimated_average_mos': 'estimatedAverageMos',
+            'average_jitter': 'averageJitter'
         }
 
         self._packets_received = None
@@ -67,6 +69,7 @@ class MediaRtpStatistics(object):
         self._rtp_events_received = None
         self._rtp_events_sent = None
         self._estimated_average_mos = None
+        self._average_jitter = None
 
     @property
     def packets_received(self) -> int:
@@ -187,6 +190,30 @@ class MediaRtpStatistics(object):
         
 
         self._estimated_average_mos = estimated_average_mos
+
+    @property
+    def average_jitter(self) -> float:
+        """
+        Gets the average_jitter of this MediaRtpStatistics.
+        The average jitter
+
+        :return: The average_jitter of this MediaRtpStatistics.
+        :rtype: float
+        """
+        return self._average_jitter
+
+    @average_jitter.setter
+    def average_jitter(self, average_jitter: float) -> None:
+        """
+        Sets the average_jitter of this MediaRtpStatistics.
+        The average jitter
+
+        :param average_jitter: The average_jitter of this MediaRtpStatistics.
+        :type: float
+        """
+        
+
+        self._average_jitter = average_jitter
 
     def to_dict(self):
         """

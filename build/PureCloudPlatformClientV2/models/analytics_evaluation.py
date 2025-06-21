@@ -61,6 +61,7 @@ class AnalyticsEvaluation(object):
             'queue_id': 'str',
             'released': 'bool',
             'rescored': 'bool',
+            'system_submitted': 'bool',
             'user_id': 'str',
             'o_total_critical_score': 'int',
             'o_total_score': 'int'
@@ -81,6 +82,7 @@ class AnalyticsEvaluation(object):
             'queue_id': 'queueId',
             'released': 'released',
             'rescored': 'rescored',
+            'system_submitted': 'systemSubmitted',
             'user_id': 'userId',
             'o_total_critical_score': 'oTotalCriticalScore',
             'o_total_score': 'oTotalScore'
@@ -100,6 +102,7 @@ class AnalyticsEvaluation(object):
         self._queue_id = None
         self._released = None
         self._rescored = None
+        self._system_submitted = None
         self._user_id = None
         self._o_total_critical_score = None
         self._o_total_score = None
@@ -444,6 +447,30 @@ class AnalyticsEvaluation(object):
         
 
         self._rescored = rescored
+
+    @property
+    def system_submitted(self) -> bool:
+        """
+        Gets the system_submitted of this AnalyticsEvaluation.
+        Whether the evaluation was auto submitted by the system
+
+        :return: The system_submitted of this AnalyticsEvaluation.
+        :rtype: bool
+        """
+        return self._system_submitted
+
+    @system_submitted.setter
+    def system_submitted(self, system_submitted: bool) -> None:
+        """
+        Sets the system_submitted of this AnalyticsEvaluation.
+        Whether the evaluation was auto submitted by the system
+
+        :param system_submitted: The system_submitted of this AnalyticsEvaluation.
+        :type: bool
+        """
+        
+
+        self._system_submitted = system_submitted
 
     @property
     def user_id(self) -> str:

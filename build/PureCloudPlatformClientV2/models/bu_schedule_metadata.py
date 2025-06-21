@@ -92,7 +92,7 @@ class BuScheduleMetadata(object):
     def id(self) -> str:
         """
         Gets the id of this BuScheduleMetadata.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :return: The id of this BuScheduleMetadata.
         :rtype: str
@@ -103,7 +103,7 @@ class BuScheduleMetadata(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this BuScheduleMetadata.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :param id: The id of this BuScheduleMetadata.
         :type: str

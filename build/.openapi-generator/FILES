@@ -6,6 +6,7 @@ PureCloudPlatformClientV2/apis/__init__.py
 PureCloudPlatformClientV2/apis/agent_assistants_api.py
 PureCloudPlatformClientV2/apis/agent_copilot_api.py
 PureCloudPlatformClientV2/apis/agent_ui_api.py
+PureCloudPlatformClientV2/apis/ai_studio_api.py
 PureCloudPlatformClientV2/apis/alerting_api.py
 PureCloudPlatformClientV2/apis/analytics_api.py
 PureCloudPlatformClientV2/apis/architect_api.py
@@ -229,7 +230,10 @@ PureCloudPlatformClientV2/models/agent_queue_time_request.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_clause.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_predicate.py
 PureCloudPlatformClientV2/models/agent_state_counts_request.py
+PureCloudPlatformClientV2/models/agent_state_is_out_of_office_count.py
+PureCloudPlatformClientV2/models/agent_state_presence_count.py
 PureCloudPlatformClientV2/models/agent_state_query_request.py
+PureCloudPlatformClientV2/models/agent_state_routing_status_count.py
 PureCloudPlatformClientV2/models/agent_state_segment_type_count.py
 PureCloudPlatformClientV2/models/agent_state_session_filter.py
 PureCloudPlatformClientV2/models/agent_state_session_query_clause.py
@@ -1364,6 +1368,7 @@ PureCloudPlatformClientV2/models/conversation_social_expression_event_topic_uri_
 PureCloudPlatformClientV2/models/conversation_social_expression_event_topic_wrapup.py
 PureCloudPlatformClientV2/models/conversation_summaries_get_response.py
 PureCloudPlatformClientV2/models/conversation_summary.py
+PureCloudPlatformClientV2/models/conversation_summary_extracted_entity.py
 PureCloudPlatformClientV2/models/conversation_summary_followup.py
 PureCloudPlatformClientV2/models/conversation_summary_reason.py
 PureCloudPlatformClientV2/models/conversation_summary_resolution.py
@@ -1453,6 +1458,8 @@ PureCloudPlatformClientV2/models/create_general_program_test_phrase_detected_phr
 PureCloudPlatformClientV2/models/create_general_program_test_phrase_matched_transcript.py
 PureCloudPlatformClientV2/models/create_general_program_test_topic_phrase_results.py
 PureCloudPlatformClientV2/models/create_general_program_topics_definitions_job.py
+PureCloudPlatformClientV2/models/create_guide.py
+PureCloudPlatformClientV2/models/create_guide_version.py
 PureCloudPlatformClientV2/models/create_integration_request.py
 PureCloudPlatformClientV2/models/create_management_unit_api_request.py
 PureCloudPlatformClientV2/models/create_management_unit_settings_request.py
@@ -1495,6 +1502,7 @@ PureCloudPlatformClientV2/models/create_work_plan_bid.py
 PureCloudPlatformClientV2/models/create_work_plan_shift.py
 PureCloudPlatformClientV2/models/credential.py
 PureCloudPlatformClientV2/models/credential_info.py
+PureCloudPlatformClientV2/models/credential_info_cursor_listing.py
 PureCloudPlatformClientV2/models/credential_info_listing.py
 PureCloudPlatformClientV2/models/credential_specification.py
 PureCloudPlatformClientV2/models/credential_type.py
@@ -1548,6 +1556,7 @@ PureCloudPlatformClientV2/models/dashboard_configuration_query_request.py
 PureCloudPlatformClientV2/models/dashboard_user.py
 PureCloudPlatformClientV2/models/dashboard_user_listing.py
 PureCloudPlatformClientV2/models/dashboards_shared_with.py
+PureCloudPlatformClientV2/models/data_action.py
 PureCloudPlatformClientV2/models/data_action_condition_predicate.py
 PureCloudPlatformClientV2/models/data_action_condition_settings.py
 PureCloudPlatformClientV2/models/data_action_contact_column_field_mapping.py
@@ -1583,6 +1592,7 @@ PureCloudPlatformClientV2/models/decision_table_listing.py
 PureCloudPlatformClientV2/models/decision_table_output_column.py
 PureCloudPlatformClientV2/models/decision_table_output_column_request.py
 PureCloudPlatformClientV2/models/decision_table_row.py
+PureCloudPlatformClientV2/models/decision_table_row_entity_ref.py
 PureCloudPlatformClientV2/models/decision_table_row_execution_output.py
 PureCloudPlatformClientV2/models/decision_table_row_listing.py
 PureCloudPlatformClientV2/models/decision_table_row_parameter_value.py
@@ -1601,6 +1611,7 @@ PureCloudPlatformClientV2/models/dependency_object_entity_listing.py
 PureCloudPlatformClientV2/models/dependency_status.py
 PureCloudPlatformClientV2/models/dependency_type.py
 PureCloudPlatformClientV2/models/dependency_type_entity_listing.py
+PureCloudPlatformClientV2/models/deployment_identity_resolution_config.py
 PureCloudPlatformClientV2/models/deployment_ping.py
 PureCloudPlatformClientV2/models/deployment_web_action.py
 PureCloudPlatformClientV2/models/destination.py
@@ -2336,7 +2347,9 @@ PureCloudPlatformClientV2/models/general_program_job_request.py
 PureCloudPlatformClientV2/models/general_topic.py
 PureCloudPlatformClientV2/models/general_topics_entity_listing.py
 PureCloudPlatformClientV2/models/generate_bu_forecast_request.py
+PureCloudPlatformClientV2/models/generate_guide_content_request.py
 PureCloudPlatformClientV2/models/generate_meeting_id_request.py
+PureCloudPlatformClientV2/models/generated_guide_content.py
 PureCloudPlatformClientV2/models/generic_saml.py
 PureCloudPlatformClientV2/models/generic_template.py
 PureCloudPlatformClientV2/models/genesys_bot_connector.py
@@ -2394,6 +2407,16 @@ PureCloudPlatformClientV2/models/guest_category_reference.py
 PureCloudPlatformClientV2/models/guest_category_response_listing.py
 PureCloudPlatformClientV2/models/guest_member_info.py
 PureCloudPlatformClientV2/models/guest_response_category.py
+PureCloudPlatformClientV2/models/guide.py
+PureCloudPlatformClientV2/models/guide_content_generation_job.py
+PureCloudPlatformClientV2/models/guide_entity_listing.py
+PureCloudPlatformClientV2/models/guide_job.py
+PureCloudPlatformClientV2/models/guide_version.py
+PureCloudPlatformClientV2/models/guide_version_publish.py
+PureCloudPlatformClientV2/models/guide_version_publish_job.py
+PureCloudPlatformClientV2/models/guide_version_publish_job_request.py
+PureCloudPlatformClientV2/models/guide_version_ref.py
+PureCloudPlatformClientV2/models/guide_version_resources.py
 PureCloudPlatformClientV2/models/headcount_forecast.py
 PureCloudPlatformClientV2/models/headcount_interval.py
 PureCloudPlatformClientV2/models/header.py
@@ -2435,6 +2458,7 @@ PureCloudPlatformClientV2/models/identifier_claim_request.py
 PureCloudPlatformClientV2/models/identity_now.py
 PureCloudPlatformClientV2/models/identity_provider.py
 PureCloudPlatformClientV2/models/identity_provider_entity_listing.py
+PureCloudPlatformClientV2/models/identity_resolution_automerge_config.py
 PureCloudPlatformClientV2/models/identity_resolution_config.py
 PureCloudPlatformClientV2/models/identity_resolution_queue_config.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
@@ -2512,7 +2536,13 @@ PureCloudPlatformClientV2/models/intent_definition.py
 PureCloudPlatformClientV2/models/intent_feedback.py
 PureCloudPlatformClientV2/models/interactive_application.py
 PureCloudPlatformClientV2/models/internal_message.py
+PureCloudPlatformClientV2/models/internal_message_conversation.py
+PureCloudPlatformClientV2/models/internal_message_conversation_entity_listing.py
+PureCloudPlatformClientV2/models/internal_message_data.py
+PureCloudPlatformClientV2/models/internal_message_data_entity_listing.py
 PureCloudPlatformClientV2/models/internal_message_details.py
+PureCloudPlatformClientV2/models/internal_message_media_participant.py
+PureCloudPlatformClientV2/models/internal_message_request.py
 PureCloudPlatformClientV2/models/intraday_performance_prediction_data.py
 PureCloudPlatformClientV2/models/intraday_planning_group_request.py
 PureCloudPlatformClientV2/models/invalid_assignment.py
@@ -3035,7 +3065,9 @@ PureCloudPlatformClientV2/models/media_result.py
 PureCloudPlatformClientV2/models/media_rtp_statistics.py
 PureCloudPlatformClientV2/models/media_settings.py
 PureCloudPlatformClientV2/models/media_statistics.py
+PureCloudPlatformClientV2/models/media_statistics_client_info.py
 PureCloudPlatformClientV2/models/media_statistics_listing.py
+PureCloudPlatformClientV2/models/media_statistics_post_request.py
 PureCloudPlatformClientV2/models/media_statistics_trunk_info.py
 PureCloudPlatformClientV2/models/media_summary.py
 PureCloudPlatformClientV2/models/media_summary_detail.py
@@ -3084,6 +3116,8 @@ PureCloudPlatformClientV2/models/messaging_campaign_schedule_entity_listing.py
 PureCloudPlatformClientV2/models/messaging_communication_answered_event.py
 PureCloudPlatformClientV2/models/messaging_communication_disposition_applied_event.py
 PureCloudPlatformClientV2/models/messaging_communication_ended_event.py
+PureCloudPlatformClientV2/models/messaging_confer_response.py
+PureCloudPlatformClientV2/models/messaging_confer_with_user_request.py
 PureCloudPlatformClientV2/models/messaging_config_listing.py
 PureCloudPlatformClientV2/models/messaging_end_transfer_event.py
 PureCloudPlatformClientV2/models/messaging_external_established_event.py
@@ -3245,6 +3279,8 @@ PureCloudPlatformClientV2/models/open_inbound_messaging_receipt_channel.py
 PureCloudPlatformClientV2/models/open_inbound_normalized_event.py
 PureCloudPlatformClientV2/models/open_inbound_normalized_message.py
 PureCloudPlatformClientV2/models/open_inbound_normalized_receipt.py
+PureCloudPlatformClientV2/models/open_inbound_structured_response_message.py
+PureCloudPlatformClientV2/models/open_inbound_structured_response_normalized_message_content.py
 PureCloudPlatformClientV2/models/open_integration.py
 PureCloudPlatformClientV2/models/open_integration_entity_listing.py
 PureCloudPlatformClientV2/models/open_integration_request.py
@@ -3271,6 +3307,7 @@ PureCloudPlatformClientV2/models/open_social_media_recipient.py
 PureCloudPlatformClientV2/models/open_social_media_recipient_additional_identifier.py
 PureCloudPlatformClientV2/models/open_social_normalized_message_entity_listing.py
 PureCloudPlatformClientV2/models/open_social_reactions_normalized_event_entity_listing.py
+PureCloudPlatformClientV2/models/open_structured_response_normalized_message.py
 PureCloudPlatformClientV2/models/operand.py
 PureCloudPlatformClientV2/models/operand_position.py
 PureCloudPlatformClientV2/models/operation.py
@@ -3449,6 +3486,9 @@ PureCloudPlatformClientV2/models/patch_user.py
 PureCloudPlatformClientV2/models/patch_web_messaging_offer_fields.py
 PureCloudPlatformClientV2/models/pattern.py
 PureCloudPlatformClientV2/models/pause_criteria.py
+PureCloudPlatformClientV2/models/payment_line_item.py
+PureCloudPlatformClientV2/models/payment_request.py
+PureCloudPlatformClientV2/models/payment_response.py
 PureCloudPlatformClientV2/models/performance_prediction_complete_event_topic_error_body.py
 PureCloudPlatformClientV2/models/performance_prediction_complete_event_topic_performance_prediction_calculation_notification.py
 PureCloudPlatformClientV2/models/performance_prediction_outputs.py
@@ -3591,6 +3631,7 @@ PureCloudPlatformClientV2/models/punctuality_event.py
 PureCloudPlatformClientV2/models/pure_cloud.py
 PureCloudPlatformClientV2/models/pure_engage.py
 PureCloudPlatformClientV2/models/push_integration.py
+PureCloudPlatformClientV2/models/put_decision_table_row_request.py
 PureCloudPlatformClientV2/models/qm_audit_query_request.py
 PureCloudPlatformClientV2/models/quality_audit_log_message.py
 PureCloudPlatformClientV2/models/quality_audit_query_execution_results_response.py
@@ -4252,6 +4293,7 @@ PureCloudPlatformClientV2/models/shared_response.py
 PureCloudPlatformClientV2/models/shift_start_variance.py
 PureCloudPlatformClientV2/models/shift_trade_activity_preview_response.py
 PureCloudPlatformClientV2/models/shift_trade_activity_rule.py
+PureCloudPlatformClientV2/models/shift_trade_external_activity_rule.py
 PureCloudPlatformClientV2/models/shift_trade_list_response.py
 PureCloudPlatformClientV2/models/shift_trade_match_review_response.py
 PureCloudPlatformClientV2/models/shift_trade_match_review_user_response.py
@@ -4303,6 +4345,7 @@ PureCloudPlatformClientV2/models/sms_config.py
 PureCloudPlatformClientV2/models/sms_phone_number.py
 PureCloudPlatformClientV2/models/sms_phone_number_entity_listing.py
 PureCloudPlatformClientV2/models/sms_phone_number_import.py
+PureCloudPlatformClientV2/models/sms_phone_number_patch_request.py
 PureCloudPlatformClientV2/models/sms_phone_number_provision.py
 PureCloudPlatformClientV2/models/sms_phone_number_ref.py
 PureCloudPlatformClientV2/models/sms_provisioning_status.py
@@ -4741,6 +4784,7 @@ PureCloudPlatformClientV2/models/update_decision_table_request.py
 PureCloudPlatformClientV2/models/update_decision_table_row_request.py
 PureCloudPlatformClientV2/models/update_decision_table_version_request.py
 PureCloudPlatformClientV2/models/update_draft_input.py
+PureCloudPlatformClientV2/models/update_guide_version.py
 PureCloudPlatformClientV2/models/update_management_unit_request.py
 PureCloudPlatformClientV2/models/update_mu_agent_request.py
 PureCloudPlatformClientV2/models/update_mu_agent_work_plan_failure_response.py
@@ -4812,6 +4856,7 @@ PureCloudPlatformClientV2/models/user_conversation_summary.py
 PureCloudPlatformClientV2/models/user_conversations_event_media_summary.py
 PureCloudPlatformClientV2/models/user_conversations_event_media_summary_detail.py
 PureCloudPlatformClientV2/models/user_conversations_event_user_conversation_summary.py
+PureCloudPlatformClientV2/models/user_cursor_entity_listing.py
 PureCloudPlatformClientV2/models/user_detail_query_clause.py
 PureCloudPlatformClientV2/models/user_detail_query_filter.py
 PureCloudPlatformClientV2/models/user_detail_query_predicate.py
@@ -4989,6 +5034,7 @@ PureCloudPlatformClientV2/models/value_wrapper_monthly_planning_period_settings.
 PureCloudPlatformClientV2/models/value_wrapper_planning_period_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_string.py
 PureCloudPlatformClientV2/models/value_wrapper_user_search_rule.py
+PureCloudPlatformClientV2/models/variable.py
 PureCloudPlatformClientV2/models/verification_result.py
 PureCloudPlatformClientV2/models/verifier.py
 PureCloudPlatformClientV2/models/verifier_entity_listing.py
@@ -5475,6 +5521,8 @@ PureCloudPlatformClientV2/models/writable_starrable_division.py
 PureCloudPlatformClientV2/rest.py
 README.md
 docs/ADFS.md
+docs/AIStudioApi.json
+docs/AIStudioApi.md
 docs/AcceleratorInput.md
 docs/AcceleratorList.md
 docs/AcceleratorMetadata.md
@@ -5620,7 +5668,10 @@ docs/AgentQueueTimeRequest.md
 docs/AgentStateAgentQueryClause.md
 docs/AgentStateAgentQueryPredicate.md
 docs/AgentStateCountsRequest.md
+docs/AgentStateIsOutOfOfficeCount.md
+docs/AgentStatePresenceCount.md
 docs/AgentStateQueryRequest.md
+docs/AgentStateRoutingStatusCount.md
 docs/AgentStateSegmentTypeCount.md
 docs/AgentStateSessionFilter.md
 docs/AgentStateSessionQueryClause.md
@@ -6779,6 +6830,7 @@ docs/ConversationSocialExpressionEventTopicUriReference.md
 docs/ConversationSocialExpressionEventTopicWrapup.md
 docs/ConversationSummariesGetResponse.md
 docs/ConversationSummary.md
+docs/ConversationSummaryExtractedEntity.md
 docs/ConversationSummaryFollowup.md
 docs/ConversationSummaryReason.md
 docs/ConversationSummaryResolution.md
@@ -6870,6 +6922,8 @@ docs/CreateGeneralProgramTestPhraseDetectedPhrase.md
 docs/CreateGeneralProgramTestPhraseMatchedTranscript.md
 docs/CreateGeneralProgramTestTopicPhraseResults.md
 docs/CreateGeneralProgramTopicsDefinitionsJob.md
+docs/CreateGuide.md
+docs/CreateGuideVersion.md
 docs/CreateIntegrationRequest.md
 docs/CreateManagementUnitApiRequest.md
 docs/CreateManagementUnitSettingsRequest.md
@@ -6912,6 +6966,7 @@ docs/CreateWorkPlanBid.md
 docs/CreateWorkPlanShift.md
 docs/Credential.md
 docs/CredentialInfo.md
+docs/CredentialInfoCursorListing.md
 docs/CredentialInfoListing.md
 docs/CredentialSpecification.md
 docs/CredentialType.md
@@ -6971,6 +7026,7 @@ docs/DashboardConfigurationQueryRequest.md
 docs/DashboardUser.md
 docs/DashboardUserListing.md
 docs/DashboardsSharedWith.md
+docs/DataAction.md
 docs/DataActionConditionPredicate.md
 docs/DataActionConditionSettings.md
 docs/DataActionContactColumnFieldMapping.md
@@ -7010,6 +7066,7 @@ docs/DecisionTableListing.md
 docs/DecisionTableOutputColumn.md
 docs/DecisionTableOutputColumnRequest.md
 docs/DecisionTableRow.md
+docs/DecisionTableRowEntityRef.md
 docs/DecisionTableRowExecutionOutput.md
 docs/DecisionTableRowListing.md
 docs/DecisionTableRowParameterValue.md
@@ -7028,6 +7085,7 @@ docs/DependencyObjectEntityListing.md
 docs/DependencyStatus.md
 docs/DependencyType.md
 docs/DependencyTypeEntityListing.md
+docs/DeploymentIdentityResolutionConfig.md
 docs/DeploymentPing.md
 docs/DeploymentWebAction.md
 docs/Destination.md
@@ -7779,7 +7837,9 @@ docs/GeneralProgramJobRequest.md
 docs/GeneralTopic.md
 docs/GeneralTopicsEntityListing.md
 docs/GenerateBuForecastRequest.md
+docs/GenerateGuideContentRequest.md
 docs/GenerateMeetingIdRequest.md
+docs/GeneratedGuideContent.md
 docs/GenericSAML.md
 docs/GenericTemplate.md
 docs/GenesysBotConnector.md
@@ -7839,6 +7899,16 @@ docs/GuestCategoryReference.md
 docs/GuestCategoryResponseListing.md
 docs/GuestMemberInfo.md
 docs/GuestResponseCategory.md
+docs/Guide.md
+docs/GuideContentGenerationJob.md
+docs/GuideEntityListing.md
+docs/GuideJob.md
+docs/GuideVersion.md
+docs/GuideVersionPublish.md
+docs/GuideVersionPublishJob.md
+docs/GuideVersionPublishJobRequest.md
+docs/GuideVersionRef.md
+docs/GuideVersionResources.md
 docs/HeadcountForecast.md
 docs/HeadcountInterval.md
 docs/Header.md
@@ -7886,6 +7956,7 @@ docs/IdentityProvider.md
 docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
 docs/IdentityProviderEntityListing.md
+docs/IdentityResolutionAutomergeConfig.md
 docs/IdentityResolutionConfig.md
 docs/IdentityResolutionQueueConfig.md
 docs/IdleEventTrigger.md
@@ -7967,7 +8038,13 @@ docs/IntentDefinition.md
 docs/IntentFeedback.md
 docs/InteractiveApplication.md
 docs/InternalMessage.md
+docs/InternalMessageConversation.md
+docs/InternalMessageConversationEntityListing.md
+docs/InternalMessageData.md
+docs/InternalMessageDataEntityListing.md
 docs/InternalMessageDetails.md
+docs/InternalMessageMediaParticipant.md
+docs/InternalMessageRequest.md
 docs/IntradayPerformancePredictionData.md
 docs/IntradayPlanningGroupRequest.md
 docs/InvalidAssignment.md
@@ -8502,7 +8579,9 @@ docs/MediaResult.md
 docs/MediaRtpStatistics.md
 docs/MediaSettings.md
 docs/MediaStatistics.md
+docs/MediaStatisticsClientInfo.md
 docs/MediaStatisticsListing.md
+docs/MediaStatisticsPostRequest.md
 docs/MediaStatisticsTrunkInfo.md
 docs/MediaSummary.md
 docs/MediaSummaryDetail.md
@@ -8553,6 +8632,8 @@ docs/MessagingCampaignScheduleEntityListing.md
 docs/MessagingCommunicationAnsweredEvent.md
 docs/MessagingCommunicationDispositionAppliedEvent.md
 docs/MessagingCommunicationEndedEvent.md
+docs/MessagingConferResponse.md
+docs/MessagingConferWithUserRequest.md
 docs/MessagingConfigListing.md
 docs/MessagingEndTransferEvent.md
 docs/MessagingExternalEstablishedEvent.md
@@ -8722,6 +8803,8 @@ docs/OpenInboundMessagingReceiptChannel.md
 docs/OpenInboundNormalizedEvent.md
 docs/OpenInboundNormalizedMessage.md
 docs/OpenInboundNormalizedReceipt.md
+docs/OpenInboundStructuredResponseMessage.md
+docs/OpenInboundStructuredResponseNormalizedMessageContent.md
 docs/OpenIntegration.md
 docs/OpenIntegrationEntityListing.md
 docs/OpenIntegrationRequest.md
@@ -8748,6 +8831,7 @@ docs/OpenSocialMediaRecipient.md
 docs/OpenSocialMediaRecipientAdditionalIdentifier.md
 docs/OpenSocialNormalizedMessageEntityListing.md
 docs/OpenSocialReactionsNormalizedEventEntityListing.md
+docs/OpenStructuredResponseNormalizedMessage.md
 docs/Operand.md
 docs/OperandPosition.md
 docs/Operation.md
@@ -8935,6 +9019,9 @@ docs/PatchUser.md
 docs/PatchWebMessagingOfferFields.md
 docs/Pattern.md
 docs/PauseCriteria.md
+docs/PaymentLineItem.md
+docs/PaymentRequest.md
+docs/PaymentResponse.md
 docs/PerformancePredictionCompleteEventTopicErrorBody.md
 docs/PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.md
 docs/PerformancePredictionOutputs.md
@@ -9080,6 +9167,7 @@ docs/PunctualityEvent.md
 docs/PureCloud.md
 docs/PureEngage.md
 docs/PushIntegration.md
+docs/PutDecisionTableRowRequest.md
 docs/QMAuditQueryRequest.md
 docs/QualityApi.json
 docs/QualityApi.md
@@ -9761,6 +9849,7 @@ docs/SharedResponse.md
 docs/ShiftStartVariance.md
 docs/ShiftTradeActivityPreviewResponse.md
 docs/ShiftTradeActivityRule.md
+docs/ShiftTradeExternalActivityRule.md
 docs/ShiftTradeListResponse.md
 docs/ShiftTradeMatchReviewResponse.md
 docs/ShiftTradeMatchReviewUserResponse.md
@@ -9810,6 +9899,7 @@ docs/SmsConfig.md
 docs/SmsPhoneNumber.md
 docs/SmsPhoneNumberEntityListing.md
 docs/SmsPhoneNumberImport.md
+docs/SmsPhoneNumberPatchRequest.md
 docs/SmsPhoneNumberProvision.md
 docs/SmsPhoneNumberRef.md
 docs/SmsProvisioningStatus.md
@@ -10268,6 +10358,7 @@ docs/UpdateDecisionTableRequest.md
 docs/UpdateDecisionTableRowRequest.md
 docs/UpdateDecisionTableVersionRequest.md
 docs/UpdateDraftInput.md
+docs/UpdateGuideVersion.md
 docs/UpdateManagementUnitRequest.md
 docs/UpdateMuAgentRequest.md
 docs/UpdateMuAgentWorkPlanFailureResponse.md
@@ -10343,6 +10434,7 @@ docs/UserConversationSummary.md
 docs/UserConversationsEventMediaSummary.md
 docs/UserConversationsEventMediaSummaryDetail.md
 docs/UserConversationsEventUserConversationSummary.md
+docs/UserCursorEntityListing.md
 docs/UserDetailQueryClause.md
 docs/UserDetailQueryFilter.md
 docs/UserDetailQueryPredicate.md
@@ -10526,6 +10618,7 @@ docs/ValueWrapperMonthlyPlanningPeriodSettings.md
 docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
 docs/ValueWrapperUserSearchRule.md
+docs/Variable.md
 docs/VerificationResult.md
 docs/Verifier.md
 docs/VerifierEntityListing.md
@@ -11111,6 +11204,7 @@ docs/delete_greeting-example.txt
 docs/delete_group-example.txt
 docs/delete_group_dynamicsettings-example.txt
 docs/delete_group_members-example.txt
+docs/delete_guide_jobs-example.txt
 docs/delete_identityprovider-example.txt
 docs/delete_identityproviders_adfs-example.txt
 docs/delete_identityproviders_cic-example.txt
@@ -11548,6 +11642,8 @@ docs/get_contentmanagement_workspace_tagvalue-example.txt
 docs/get_contentmanagement_workspace_tagvalues-example.txt
 docs/get_contentmanagement_workspaces-example.txt
 docs/get_conversation-example.txt
+docs/get_conversation_communication_internalmessage-example.txt
+docs/get_conversation_communication_internalmessages-example.txt
 docs/get_conversation_participant_secureivrsession-example.txt
 docs/get_conversation_participant_secureivrsessions-example.txt
 docs/get_conversation_participant_wrapup-example.txt
@@ -11596,6 +11692,8 @@ docs/get_conversations_email_participant_wrapup-example.txt
 docs/get_conversations_email_participant_wrapupcodes-example.txt
 docs/get_conversations_email_settings-example.txt
 docs/get_conversations_emails-example.txt
+docs/get_conversations_internalmessage-example.txt
+docs/get_conversations_internalmessages-example.txt
 docs/get_conversations_keyconfiguration-example.txt
 docs/get_conversations_keyconfigurations-example.txt
 docs/get_conversations_message-example.txt
@@ -11614,6 +11712,7 @@ docs/get_conversations_messaging_identityresolution_integrations_apple_integrati
 docs/get_conversations_messaging_identityresolution_integrations_facebook_integration_id-example.txt
 docs/get_conversations_messaging_identityresolution_integrations_instagram_integration_id-example.txt
 docs/get_conversations_messaging_identityresolution_integrations_open_integration_id-example.txt
+docs/get_conversations_messaging_identityresolution_integrations_twitter_integration_id-example.txt
 docs/get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id-example.txt
 docs/get_conversations_messaging_integration_twitter_oauth_settings-example.txt
 docs/get_conversations_messaging_integrations-example.txt
@@ -11817,7 +11916,10 @@ docs/get_gdpr_requests-example.txt
 docs/get_gdpr_subjects-example.txt
 docs/get_geolocations_settings-example.txt
 docs/get_greeting-example.txt
+docs/get_greeting_downloads-example.txt
+docs/get_greeting_groups_downloads-example.txt
 docs/get_greeting_media-example.txt
+docs/get_greeting_users_downloads-example.txt
 docs/get_greetings-example.txt
 docs/get_greetings_defaults-example.txt
 docs/get_group-example.txt
@@ -11830,6 +11932,12 @@ docs/get_group_profile-example.txt
 docs/get_groups-example.txt
 docs/get_groups_search-example.txt
 docs/get_groups_search-example.txt
+docs/get_guide-example.txt
+docs/get_guide_job-example.txt
+docs/get_guide_version-example.txt
+docs/get_guide_version_job-example.txt
+docs/get_guides-example.txt
+docs/get_guides_job-example.txt
 docs/get_identityprovider-example.txt
 docs/get_identityproviders-example.txt
 docs/get_identityproviders_adfs-example.txt
@@ -11876,6 +11984,7 @@ docs/get_integrations_clientapps-example.txt
 docs/get_integrations_clientapps_unifiedcommunications-example.txt
 docs/get_integrations_credential-example.txt
 docs/get_integrations_credentials-example.txt
+docs/get_integrations_credentials_listing-example.txt
 docs/get_integrations_credentials_types-example.txt
 docs/get_integrations_speech_audioconnector-example.txt
 docs/get_integrations_speech_audioconnector_integration_id-example.txt
@@ -12552,6 +12661,7 @@ docs/get_users_externalid_authority_name_external_key-example.txt
 docs/get_users_me-example.txt
 docs/get_users_presence_bulk-example.txt
 docs/get_users_presences_purecloud_bulk-example.txt
+docs/get_users_query-example.txt
 docs/get_users_search-example.txt
 docs/get_users_search-example.txt
 docs/get_voicemail_group_mailbox-example.txt
@@ -12783,6 +12893,7 @@ docs/patch_externalcontacts_organization_identifiers-example.txt
 docs/patch_flows_instances_settings_executiondata-example.txt
 docs/patch_gamification_contest-example.txt
 docs/patch_geolocations_settings-example.txt
+docs/patch_guide_version-example.txt
 docs/patch_integration-example.txt
 docs/patch_integrations_action-example.txt
 docs/patch_integrations_action_draft-example.txt
@@ -12839,6 +12950,7 @@ docs/patch_routing_queue_users-example.txt
 docs/patch_routing_settings_contactcenter-example.txt
 docs/patch_routing_settings_transcription-example.txt
 docs/patch_routing_skillgroup-example.txt
+docs/patch_routing_sms_phonenumber-example.txt
 docs/patch_scim_group-example.txt
 docs/patch_scim_user-example.txt
 docs/patch_scim_v2_group-example.txt
@@ -13071,9 +13183,11 @@ docs/post_contentmanagement_workspaces-example.txt
 docs/post_conversation_assign-example.txt
 docs/post_conversation_barge-example.txt
 docs/post_conversation_cobrowse-example.txt
+docs/post_conversation_communication_internalmessages-example.txt
 docs/post_conversation_disconnect-example.txt
 docs/post_conversation_participant_callbacks-example.txt
 docs/post_conversation_participant_digits-example.txt
+docs/post_conversation_participant_internalmessages_users_communications-example.txt
 docs/post_conversation_participant_replace-example.txt
 docs/post_conversation_participant_replace_agent-example.txt
 docs/post_conversation_participant_replace_external-example.txt
@@ -13126,6 +13240,7 @@ docs/post_conversations_message_communication_typing-example.txt
 docs/post_conversations_message_inbound_open_event-example.txt
 docs/post_conversations_message_inbound_open_message-example.txt
 docs/post_conversations_message_inbound_open_receipt-example.txt
+docs/post_conversations_message_inbound_open_structured_response-example.txt
 docs/post_conversations_message_messages_bulk-example.txt
 docs/post_conversations_message_participant_communication_wrapup-example.txt
 docs/post_conversations_message_participant_monitor-example.txt
@@ -13246,6 +13361,10 @@ docs/post_groups-example.txt
 docs/post_groups_dynamicsettings_preview-example.txt
 docs/post_groups_search-example.txt
 docs/post_groups_search-example.txt
+docs/post_guide_version_jobs-example.txt
+docs/post_guide_versions-example.txt
+docs/post_guides-example.txt
+docs/post_guides_jobs-example.txt
 docs/post_identityproviders-example.txt
 docs/post_infrastructureascode_jobs-example.txt
 docs/post_integrations-example.txt
@@ -13542,6 +13661,7 @@ docs/post_telephony_providers_edges_certificateauthorities-example.txt
 docs/post_telephony_providers_edges_didpools-example.txt
 docs/post_telephony_providers_edges_edgegroups-example.txt
 docs/post_telephony_providers_edges_extensionpools-example.txt
+docs/post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource-example.txt
 docs/post_telephony_providers_edges_phone_reboot-example.txt
 docs/post_telephony_providers_edges_phonebasesettings-example.txt
 docs/post_telephony_providers_edges_phones-example.txt
@@ -13704,6 +13824,7 @@ docs/put_authorization_role_users_remove-example.txt
 docs/put_authorization_roles_default-example.txt
 docs/put_authorization_roles_settings-example.txt
 docs/put_businessrules_decisiontable_version_publish-example.txt
+docs/put_businessrules_decisiontable_version_row-example.txt
 docs/put_businessrules_schema-example.txt
 docs/put_chats_message_reactions-example.txt
 docs/put_chats_settings-example.txt
@@ -13728,6 +13849,7 @@ docs/put_conversations_messaging_identityresolution_integrations_apple_integrati
 docs/put_conversations_messaging_identityresolution_integrations_facebook_integration_id-example.txt
 docs/put_conversations_messaging_identityresolution_integrations_instagram_integration_id-example.txt
 docs/put_conversations_messaging_identityresolution_integrations_open_integration_id-example.txt
+docs/put_conversations_messaging_identityresolution_integrations_twitter_integration_id-example.txt
 docs/put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id-example.txt
 docs/put_conversations_messaging_settings_default-example.txt
 docs/put_conversations_messaging_supportedcontent_default-example.txt

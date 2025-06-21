@@ -48,15 +48,18 @@ class DecisionTableRowExecutionOutput(object):
         """
         self.swagger_types = {
             'row_id': 'str',
+            'row_index': 'int',
             'outputs': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'row_id': 'rowId',
+            'row_index': 'rowIndex',
             'outputs': 'outputs'
         }
 
         self._row_id = None
+        self._row_index = None
         self._outputs = None
 
     @property
@@ -82,6 +85,30 @@ class DecisionTableRowExecutionOutput(object):
         
 
         self._row_id = row_id
+
+    @property
+    def row_index(self) -> int:
+        """
+        Gets the row_index of this DecisionTableRowExecutionOutput.
+        Unique rule identifier.
+
+        :return: The row_index of this DecisionTableRowExecutionOutput.
+        :rtype: int
+        """
+        return self._row_index
+
+    @row_index.setter
+    def row_index(self, row_index: int) -> None:
+        """
+        Sets the row_index of this DecisionTableRowExecutionOutput.
+        Unique rule identifier.
+
+        :param row_index: The row_index of this DecisionTableRowExecutionOutput.
+        :type: int
+        """
+        
+
+        self._row_index = row_index
 
     @property
     def outputs(self) -> Dict[str, object]:

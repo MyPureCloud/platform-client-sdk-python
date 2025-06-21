@@ -130,7 +130,7 @@ class WfmHistoricalAdherenceBulkUserResult(object):
     def conformance_percentage(self) -> float:
         """
         Gets the conformance_percentage of this WfmHistoricalAdherenceBulkUserResult.
-        Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
+        Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on-queue time is greater than the scheduled on-queue time for the same period.
 
         :return: The conformance_percentage of this WfmHistoricalAdherenceBulkUserResult.
         :rtype: float
@@ -141,7 +141,7 @@ class WfmHistoricalAdherenceBulkUserResult(object):
     def conformance_percentage(self, conformance_percentage: float) -> None:
         """
         Sets the conformance_percentage of this WfmHistoricalAdherenceBulkUserResult.
-        Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on queue time is greater than the scheduled on queue time for the same period.
+        Conformance percentage for this user, in the scale of 0 - 100. Conformance percentage can be greater than 100 when the actual on-queue time is greater than the scheduled on-queue time for the same period.
 
         :param conformance_percentage: The conformance_percentage of this WfmHistoricalAdherenceBulkUserResult.
         :type: float

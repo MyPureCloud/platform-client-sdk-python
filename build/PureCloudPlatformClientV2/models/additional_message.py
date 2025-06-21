@@ -116,7 +116,7 @@ class AdditionalMessage(object):
     def messaging_template(self) -> 'SendMessagingTemplateRequest':
         """
         Gets the messaging_template of this AdditionalMessage.
-        The messaging template use to send a predefined canned response with the message
+        Pre-defined message templates for structured communications. Supports various template types including WhatsApp business messaging templates, forms and canned responses with variable substitution.
 
         :return: The messaging_template of this AdditionalMessage.
         :rtype: SendMessagingTemplateRequest
@@ -127,7 +127,7 @@ class AdditionalMessage(object):
     def messaging_template(self, messaging_template: 'SendMessagingTemplateRequest') -> None:
         """
         Sets the messaging_template of this AdditionalMessage.
-        The messaging template use to send a predefined canned response with the message
+        Pre-defined message templates for structured communications. Supports various template types including WhatsApp business messaging templates, forms and canned responses with variable substitution.
 
         :param messaging_template: The messaging_template of this AdditionalMessage.
         :type: SendMessagingTemplateRequest

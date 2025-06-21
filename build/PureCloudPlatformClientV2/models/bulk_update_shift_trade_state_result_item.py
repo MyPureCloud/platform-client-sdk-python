@@ -197,7 +197,7 @@ class BulkUpdateShiftTradeStateResultItem(object):
         """
         if isinstance(failure_reason, int):
             failure_reason = str(failure_reason)
-        allowed_values = ["InitiatingAgentScheduleNotFound", "InitiatingAgentShiftHasExternalActivities", "InitiatingAgentShiftNotFound", "ReceivingAgentNotFound", "ReceivingAgentScheduleNotFound", "ReceivingAgentShiftHasExternalActivities", "ReceivingAgentShiftNotFound", "ScheduleNotPublished", "TransitionNotAllowed"]
+        allowed_values = ["InitiatingAgentScheduleNotFound", "InitiatingAgentShiftHasExternalActivities", "InitiatingAgentShiftNotFound", "InitiatingExternalActivityOutsideReceivingShift", "ReceivingAgentNotFound", "ReceivingAgentScheduleNotFound", "ReceivingAgentShiftHasExternalActivities", "ReceivingAgentShiftNotFound", "ReceivingExternalActivityOutsideInitiatingShift", "ScheduleNotPublished", "TransitionNotAllowed"]
         if failure_reason.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for failure_reason -> " + failure_reason)
             self._failure_reason = "outdated_sdk_version"

@@ -251,7 +251,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 name = 'name_example' # str | Return only teams whose names start with this value (case-insensitive matching) (optional)
 after = 'after_example' # str | The cursor that points to the next item in the complete list of teams (optional)
 before = 'before_example' # str | The cursor that points to the previous item in the complete list of teams (optional)
-expand = 'expand_example' # str | Expand the name on each user (optional)
+expand = 'expand_example' # str | Expand the division on each team (optional)
 
 try:
     # Get Team listing
@@ -270,7 +270,7 @@ except ApiException as e:
 | **name** | **str**| Return only teams whose names start with this value (case-insensitive matching) | [optional]  |
 | **after** | **str**| The cursor that points to the next item in the complete list of teams | [optional]  |
 | **before** | **str**| The cursor that points to the previous item in the complete list of teams | [optional]  |
-| **expand** | **str**| Expand the name on each user | [optional] <br />**Values**: entities.division |
+| **expand** | **str**| Expand the division on each team | [optional] <br />**Values**: entities.division |
 
 ### Return type
 
@@ -525,4 +525,4 @@ except ApiException as e:
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

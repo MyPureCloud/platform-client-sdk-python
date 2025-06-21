@@ -2805,7 +2805,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -3227,7 +3227,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_businessunit_staffinggroups
 
-> [**StaffingGroupListing**](StaffingGroupListing) get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id)
+> [**StaffingGroupListing**](StaffingGroupListing) get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
 
 
 Gets a list of staffing groups
@@ -3253,10 +3253,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit to get management unit specific staffing groups (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 
 try:
     # Gets a list of staffing groups
-    api_response = api_instance.get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_staffinggroups: %s\n" % e)
@@ -3269,6 +3270,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **management_unit_id** | **str**| The ID of the management unit to get management unit specific staffing groups | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
@@ -4537,7 +4539,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
+| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**| If specified, the list of business units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -6313,7 +6315,7 @@ except ApiException as e:
 | **page_size** | **int**| Deprecated, paging is not supported | [optional]  |
 | **page_number** | **int**| Deprecated, paging is not supported | [optional]  |
 | **expand** | **str**| Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, ActivityCodes, ActivityPlans, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -9584,7 +9586,7 @@ except ApiException as e:
 
 ## post_workforcemanagement_businessunit_staffinggroups_query
 
-> [**UserStaffingGroupListing**](UserStaffingGroupListing) post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body)
+> [**UserStaffingGroupListing**](UserStaffingGroupListing) post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body, force_download_service=force_download_service)
 
 
 Gets staffing group associations for a list of user IDs
@@ -9610,10 +9612,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 body = PureCloudPlatformClientV2.QueryUserStaffingGroupListRequest() # QueryUserStaffingGroupListRequest | body
+force_download_service = True # bool | Force the result of this operation to be sent via download service (optional)
 
 try:
     # Gets staffing group associations for a list of user IDs
-    api_response = api_instance.post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body)
+    api_response = api_instance.post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_staffinggroups_query: %s\n" % e)
@@ -9626,6 +9629,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest)| body |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service | [optional]  |
 
 ### Return type
 
@@ -10601,7 +10605,7 @@ except ApiException as e:
 
 ## post_workforcemanagement_businessunit_workplanbid_copy
 
-> [**WorkPlanBid**](WorkPlanBid) post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body=body)
+> [**WorkPlanBid**](WorkPlanBid) post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body)
 
 
 Copy a work plan bid
@@ -10627,11 +10631,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 bid_id = 'bid_id_example' # str | The ID of the work plan bid to copy
-body = PureCloudPlatformClientV2.CopyWorkPlanBid() # CopyWorkPlanBid | body (optional)
+body = PureCloudPlatformClientV2.CopyWorkPlanBid() # CopyWorkPlanBid | body
 
 try:
     # Copy a work plan bid
-    api_response = api_instance.post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body=body)
+    api_response = api_instance.post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_workplanbid_copy: %s\n" % e)
@@ -10644,7 +10648,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **bid_id** | **str**| The ID of the work plan bid to copy |  |
-| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid)| body | [optional]  |
+| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid)| body |  |
 
 ### Return type
 
@@ -13002,4 +13006,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

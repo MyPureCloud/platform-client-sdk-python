@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import TimeAndDateSubConditionRange
 
 class TimeAndDateSubCondition(object):
     """
@@ -47,13 +49,183 @@ class TimeAndDateSubCondition(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'type': 'str',
+            'operator': 'str',
+            'inverted': 'bool',
+            'include_year': 'bool',
+            'threshold_value': 'str',
+            'range': 'TimeAndDateSubConditionRange'
         }
 
         self.attribute_map = {
-            
+            'type': 'type',
+            'operator': 'operator',
+            'inverted': 'inverted',
+            'include_year': 'includeYear',
+            'threshold_value': 'thresholdValue',
+            'range': 'range'
         }
 
+        self._type = None
+        self._operator = None
+        self._inverted = None
+        self._include_year = None
+        self._threshold_value = None
+        self._range = None
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this TimeAndDateSubCondition.
+        The type of time/date sub-condition.
+
+        :return: The type of this TimeAndDateSubCondition.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this TimeAndDateSubCondition.
+        The type of time/date sub-condition.
+
+        :param type: The type of this TimeAndDateSubCondition.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["timeOfDay", "dayOfWeek", "dayOfMonth", "specificDate"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def operator(self) -> str:
+        """
+        Gets the operator of this TimeAndDateSubCondition.
+        The operator to use for comparison.
+
+        :return: The operator of this TimeAndDateSubCondition.
+        :rtype: str
+        """
+        return self._operator
+
+    @operator.setter
+    def operator(self, operator: str) -> None:
+        """
+        Sets the operator of this TimeAndDateSubCondition.
+        The operator to use for comparison.
+
+        :param operator: The operator of this TimeAndDateSubCondition.
+        :type: str
+        """
+        if isinstance(operator, int):
+            operator = str(operator)
+        allowed_values = ["EQUALS", "LESS_THAN", "LESS_THAN_EQUALS", "GREATER_THAN", "GREATER_THAN_EQUALS", "CONTAINS", "BEGINS_WITH", "ENDS_WITH", "BEFORE", "AFTER", "IN", "BETWEEN"]
+        if operator.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for operator -> " + operator)
+            self._operator = "outdated_sdk_version"
+        else:
+            self._operator = operator
+
+    @property
+    def inverted(self) -> bool:
+        """
+        Gets the inverted of this TimeAndDateSubCondition.
+        If true, inverts the result of evaluating this sub-condition. Default is false.
+
+        :return: The inverted of this TimeAndDateSubCondition.
+        :rtype: bool
+        """
+        return self._inverted
+
+    @inverted.setter
+    def inverted(self, inverted: bool) -> None:
+        """
+        Sets the inverted of this TimeAndDateSubCondition.
+        If true, inverts the result of evaluating this sub-condition. Default is false.
+
+        :param inverted: The inverted of this TimeAndDateSubCondition.
+        :type: bool
+        """
+        
+
+        self._inverted = inverted
+
+    @property
+    def include_year(self) -> bool:
+        """
+        Gets the include_year of this TimeAndDateSubCondition.
+        If true, includes year in date comparison for specificDate type. When false, only month and day are compared. Default is true. Only applicable for specificDate type.
+
+        :return: The include_year of this TimeAndDateSubCondition.
+        :rtype: bool
+        """
+        return self._include_year
+
+    @include_year.setter
+    def include_year(self, include_year: bool) -> None:
+        """
+        Sets the include_year of this TimeAndDateSubCondition.
+        If true, includes year in date comparison for specificDate type. When false, only month and day are compared. Default is true. Only applicable for specificDate type.
+
+        :param include_year: The include_year of this TimeAndDateSubCondition.
+        :type: bool
+        """
+        
+
+        self._include_year = include_year
+
+    @property
+    def threshold_value(self) -> str:
+        """
+        Gets the threshold_value of this TimeAndDateSubCondition.
+        Threshold value for BEFORE or AFTER operators. Format depends on type: timeOfDay: HH:mm, dayOfWeek: 1-7 (Monday-Sunday), dayOfMonth: 1-31 and/ or LAST_DAY, ODD_DAY, EVEN_DAY, specificDate: yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false). For single-value comparison, use a list with one element.
+
+        :return: The threshold_value of this TimeAndDateSubCondition.
+        :rtype: str
+        """
+        return self._threshold_value
+
+    @threshold_value.setter
+    def threshold_value(self, threshold_value: str) -> None:
+        """
+        Sets the threshold_value of this TimeAndDateSubCondition.
+        Threshold value for BEFORE or AFTER operators. Format depends on type: timeOfDay: HH:mm, dayOfWeek: 1-7 (Monday-Sunday), dayOfMonth: 1-31 and/ or LAST_DAY, ODD_DAY, EVEN_DAY, specificDate: yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false). For single-value comparison, use a list with one element.
+
+        :param threshold_value: The threshold_value of this TimeAndDateSubCondition.
+        :type: str
+        """
+        
+
+        self._threshold_value = threshold_value
+
+    @property
+    def range(self) -> 'TimeAndDateSubConditionRange':
+        """
+        Gets the range of this TimeAndDateSubCondition.
+        A range of values for BETWEEN and IN operators. Format follows the same rules as 'thresholdValue'.
+
+        :return: The range of this TimeAndDateSubCondition.
+        :rtype: TimeAndDateSubConditionRange
+        """
+        return self._range
+
+    @range.setter
+    def range(self, range: 'TimeAndDateSubConditionRange') -> None:
+        """
+        Sets the range of this TimeAndDateSubCondition.
+        A range of values for BETWEEN and IN operators. Format follows the same rules as 'thresholdValue'.
+
+        :param range: The range of this TimeAndDateSubCondition.
+        :type: TimeAndDateSubConditionRange
+        """
+        
+
+        self._range = range
 
     def to_dict(self):
         """

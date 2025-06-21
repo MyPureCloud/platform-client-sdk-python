@@ -47,13 +47,92 @@ class TimeAndDateSubConditionRange(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'min': 'str',
+            'max': 'str',
+            'in_set': 'list[str]'
         }
 
         self.attribute_map = {
-            
+            'min': 'min',
+            'max': 'max',
+            'in_set': 'inSet'
         }
 
+        self._min = None
+        self._max = None
+        self._in_set = None
+
+    @property
+    def min(self) -> str:
+        """
+        Gets the min of this TimeAndDateSubConditionRange.
+        The minimum value of the range. Required for the operator BETWEEN. Format depends on type: timeOfDay: HH:mm, dayOfWeek: 1-7 (Monday-Sunday), dayOfMonth: 1-31, specificDate: yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false).
+
+        :return: The min of this TimeAndDateSubConditionRange.
+        :rtype: str
+        """
+        return self._min
+
+    @min.setter
+    def min(self, min: str) -> None:
+        """
+        Sets the min of this TimeAndDateSubConditionRange.
+        The minimum value of the range. Required for the operator BETWEEN. Format depends on type: timeOfDay: HH:mm, dayOfWeek: 1-7 (Monday-Sunday), dayOfMonth: 1-31, specificDate: yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false).
+
+        :param min: The min of this TimeAndDateSubConditionRange.
+        :type: str
+        """
+        
+
+        self._min = min
+
+    @property
+    def max(self) -> str:
+        """
+        Gets the max of this TimeAndDateSubConditionRange.
+        The maximum value of the range. Required for the operator BETWEEN. Format follows the same rules as 'min'.
+
+        :return: The max of this TimeAndDateSubConditionRange.
+        :rtype: str
+        """
+        return self._max
+
+    @max.setter
+    def max(self, max: str) -> None:
+        """
+        Sets the max of this TimeAndDateSubConditionRange.
+        The maximum value of the range. Required for the operator BETWEEN. Format follows the same rules as 'min'.
+
+        :param max: The max of this TimeAndDateSubConditionRange.
+        :type: str
+        """
+        
+
+        self._max = max
+
+    @property
+    def in_set(self) -> List[str]:
+        """
+        Gets the in_set of this TimeAndDateSubConditionRange.
+        A set of values that the date/ time data should be in. Required for the IN operator. Format depends on type: dayOfWeek: 1-7 (Monday-Sunday), dayOfMonth: 1-31, and/ or LAST_DAY, ODD_DAY, EVEN_DAY,specificDate: yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false).
+
+        :return: The in_set of this TimeAndDateSubConditionRange.
+        :rtype: list[str]
+        """
+        return self._in_set
+
+    @in_set.setter
+    def in_set(self, in_set: List[str]) -> None:
+        """
+        Sets the in_set of this TimeAndDateSubConditionRange.
+        A set of values that the date/ time data should be in. Required for the IN operator. Format depends on type: dayOfWeek: 1-7 (Monday-Sunday), dayOfMonth: 1-31, and/ or LAST_DAY, ODD_DAY, EVEN_DAY,specificDate: yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false).
+
+        :param in_set: The in_set of this TimeAndDateSubConditionRange.
+        :type: list[str]
+        """
+        
+
+        self._in_set = in_set
 
     def to_dict(self):
         """

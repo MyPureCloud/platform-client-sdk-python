@@ -143,7 +143,10 @@ from .models.agent_queue_time_request import AgentQueueTimeRequest
 from .models.agent_state_agent_query_clause import AgentStateAgentQueryClause
 from .models.agent_state_agent_query_predicate import AgentStateAgentQueryPredicate
 from .models.agent_state_counts_request import AgentStateCountsRequest
+from .models.agent_state_is_out_of_office_count import AgentStateIsOutOfOfficeCount
+from .models.agent_state_presence_count import AgentStatePresenceCount
 from .models.agent_state_query_request import AgentStateQueryRequest
+from .models.agent_state_routing_status_count import AgentStateRoutingStatusCount
 from .models.agent_state_segment_type_count import AgentStateSegmentTypeCount
 from .models.agent_state_session_filter import AgentStateSessionFilter
 from .models.agent_state_session_query_clause import AgentStateSessionQueryClause
@@ -1278,6 +1281,7 @@ from .models.conversation_social_expression_event_topic_uri_reference import Con
 from .models.conversation_social_expression_event_topic_wrapup import ConversationSocialExpressionEventTopicWrapup
 from .models.conversation_summaries_get_response import ConversationSummariesGetResponse
 from .models.conversation_summary import ConversationSummary
+from .models.conversation_summary_extracted_entity import ConversationSummaryExtractedEntity
 from .models.conversation_summary_followup import ConversationSummaryFollowup
 from .models.conversation_summary_reason import ConversationSummaryReason
 from .models.conversation_summary_resolution import ConversationSummaryResolution
@@ -1367,6 +1371,8 @@ from .models.create_general_program_test_phrase_detected_phrase import CreateGen
 from .models.create_general_program_test_phrase_matched_transcript import CreateGeneralProgramTestPhraseMatchedTranscript
 from .models.create_general_program_test_topic_phrase_results import CreateGeneralProgramTestTopicPhraseResults
 from .models.create_general_program_topics_definitions_job import CreateGeneralProgramTopicsDefinitionsJob
+from .models.create_guide import CreateGuide
+from .models.create_guide_version import CreateGuideVersion
 from .models.create_integration_request import CreateIntegrationRequest
 from .models.create_management_unit_api_request import CreateManagementUnitApiRequest
 from .models.create_management_unit_settings_request import CreateManagementUnitSettingsRequest
@@ -1409,6 +1415,7 @@ from .models.create_work_plan_bid import CreateWorkPlanBid
 from .models.create_work_plan_shift import CreateWorkPlanShift
 from .models.credential import Credential
 from .models.credential_info import CredentialInfo
+from .models.credential_info_cursor_listing import CredentialInfoCursorListing
 from .models.credential_info_listing import CredentialInfoListing
 from .models.credential_specification import CredentialSpecification
 from .models.credential_type import CredentialType
@@ -1468,6 +1475,7 @@ from .models.dashboard_configuration_query_request import DashboardConfiguration
 from .models.dashboard_user import DashboardUser
 from .models.dashboard_user_listing import DashboardUserListing
 from .models.dashboards_shared_with import DashboardsSharedWith
+from .models.data_action import DataAction
 from .models.data_action_condition_predicate import DataActionConditionPredicate
 from .models.data_action_condition_settings import DataActionConditionSettings
 from .models.data_action_contact_column_field_mapping import DataActionContactColumnFieldMapping
@@ -1503,6 +1511,7 @@ from .models.decision_table_listing import DecisionTableListing
 from .models.decision_table_output_column import DecisionTableOutputColumn
 from .models.decision_table_output_column_request import DecisionTableOutputColumnRequest
 from .models.decision_table_row import DecisionTableRow
+from .models.decision_table_row_entity_ref import DecisionTableRowEntityRef
 from .models.decision_table_row_execution_output import DecisionTableRowExecutionOutput
 from .models.decision_table_row_listing import DecisionTableRowListing
 from .models.decision_table_row_parameter_value import DecisionTableRowParameterValue
@@ -1521,6 +1530,7 @@ from .models.dependency_object_entity_listing import DependencyObjectEntityListi
 from .models.dependency_status import DependencyStatus
 from .models.dependency_type import DependencyType
 from .models.dependency_type_entity_listing import DependencyTypeEntityListing
+from .models.deployment_identity_resolution_config import DeploymentIdentityResolutionConfig
 from .models.deployment_ping import DeploymentPing
 from .models.deployment_web_action import DeploymentWebAction
 from .models.destination import Destination
@@ -2254,7 +2264,9 @@ from .models.general_program_job_request import GeneralProgramJobRequest
 from .models.general_topic import GeneralTopic
 from .models.general_topics_entity_listing import GeneralTopicsEntityListing
 from .models.generate_bu_forecast_request import GenerateBuForecastRequest
+from .models.generate_guide_content_request import GenerateGuideContentRequest
 from .models.generate_meeting_id_request import GenerateMeetingIdRequest
+from .models.generated_guide_content import GeneratedGuideContent
 from .models.generic_saml import GenericSAML
 from .models.generic_template import GenericTemplate
 from .models.genesys_bot_connector import GenesysBotConnector
@@ -2308,6 +2320,16 @@ from .models.guest_category_reference import GuestCategoryReference
 from .models.guest_category_response_listing import GuestCategoryResponseListing
 from .models.guest_member_info import GuestMemberInfo
 from .models.guest_response_category import GuestResponseCategory
+from .models.guide import Guide
+from .models.guide_content_generation_job import GuideContentGenerationJob
+from .models.guide_entity_listing import GuideEntityListing
+from .models.guide_job import GuideJob
+from .models.guide_version import GuideVersion
+from .models.guide_version_publish import GuideVersionPublish
+from .models.guide_version_publish_job import GuideVersionPublishJob
+from .models.guide_version_publish_job_request import GuideVersionPublishJobRequest
+from .models.guide_version_ref import GuideVersionRef
+from .models.guide_version_resources import GuideVersionResources
 from .models.headcount_forecast import HeadcountForecast
 from .models.headcount_interval import HeadcountInterval
 from .models.header import Header
@@ -2353,6 +2375,7 @@ from .models.identifier_claim_request import IdentifierClaimRequest
 from .models.identity_now import IdentityNow
 from .models.identity_provider import IdentityProvider
 from .models.identity_provider_entity_listing import IdentityProviderEntityListing
+from .models.identity_resolution_automerge_config import IdentityResolutionAutomergeConfig
 from .models.identity_resolution_config import IdentityResolutionConfig
 from .models.identity_resolution_queue_config import IdentityResolutionQueueConfig
 from .models.idle_event_trigger import IdleEventTrigger
@@ -2430,7 +2453,13 @@ from .models.intent_definition import IntentDefinition
 from .models.intent_feedback import IntentFeedback
 from .models.interactive_application import InteractiveApplication
 from .models.internal_message import InternalMessage
+from .models.internal_message_conversation import InternalMessageConversation
+from .models.internal_message_conversation_entity_listing import InternalMessageConversationEntityListing
+from .models.internal_message_data import InternalMessageData
+from .models.internal_message_data_entity_listing import InternalMessageDataEntityListing
 from .models.internal_message_details import InternalMessageDetails
+from .models.internal_message_media_participant import InternalMessageMediaParticipant
+from .models.internal_message_request import InternalMessageRequest
 from .models.intraday_performance_prediction_data import IntradayPerformancePredictionData
 from .models.intraday_planning_group_request import IntradayPlanningGroupRequest
 from .models.invalid_assignment import InvalidAssignment
@@ -2949,7 +2978,9 @@ from .models.media_result import MediaResult
 from .models.media_rtp_statistics import MediaRtpStatistics
 from .models.media_settings import MediaSettings
 from .models.media_statistics import MediaStatistics
+from .models.media_statistics_client_info import MediaStatisticsClientInfo
 from .models.media_statistics_listing import MediaStatisticsListing
+from .models.media_statistics_post_request import MediaStatisticsPostRequest
 from .models.media_statistics_trunk_info import MediaStatisticsTrunkInfo
 from .models.media_summary import MediaSummary
 from .models.media_summary_detail import MediaSummaryDetail
@@ -2998,6 +3029,8 @@ from .models.messaging_campaign_schedule_entity_listing import MessagingCampaign
 from .models.messaging_communication_answered_event import MessagingCommunicationAnsweredEvent
 from .models.messaging_communication_disposition_applied_event import MessagingCommunicationDispositionAppliedEvent
 from .models.messaging_communication_ended_event import MessagingCommunicationEndedEvent
+from .models.messaging_confer_response import MessagingConferResponse
+from .models.messaging_confer_with_user_request import MessagingConferWithUserRequest
 from .models.messaging_config_listing import MessagingConfigListing
 from .models.messaging_end_transfer_event import MessagingEndTransferEvent
 from .models.messaging_external_established_event import MessagingExternalEstablishedEvent
@@ -3159,6 +3192,8 @@ from .models.open_inbound_messaging_receipt_channel import OpenInboundMessagingR
 from .models.open_inbound_normalized_event import OpenInboundNormalizedEvent
 from .models.open_inbound_normalized_message import OpenInboundNormalizedMessage
 from .models.open_inbound_normalized_receipt import OpenInboundNormalizedReceipt
+from .models.open_inbound_structured_response_message import OpenInboundStructuredResponseMessage
+from .models.open_inbound_structured_response_normalized_message_content import OpenInboundStructuredResponseNormalizedMessageContent
 from .models.open_integration import OpenIntegration
 from .models.open_integration_entity_listing import OpenIntegrationEntityListing
 from .models.open_integration_request import OpenIntegrationRequest
@@ -3185,6 +3220,7 @@ from .models.open_social_media_recipient import OpenSocialMediaRecipient
 from .models.open_social_media_recipient_additional_identifier import OpenSocialMediaRecipientAdditionalIdentifier
 from .models.open_social_normalized_message_entity_listing import OpenSocialNormalizedMessageEntityListing
 from .models.open_social_reactions_normalized_event_entity_listing import OpenSocialReactionsNormalizedEventEntityListing
+from .models.open_structured_response_normalized_message import OpenStructuredResponseNormalizedMessage
 from .models.operand import Operand
 from .models.operand_position import OperandPosition
 from .models.operation import Operation
@@ -3364,6 +3400,9 @@ from .models.patch_user import PatchUser
 from .models.patch_web_messaging_offer_fields import PatchWebMessagingOfferFields
 from .models.pattern import Pattern
 from .models.pause_criteria import PauseCriteria
+from .models.payment_line_item import PaymentLineItem
+from .models.payment_request import PaymentRequest
+from .models.payment_response import PaymentResponse
 from .models.performance_prediction_complete_event_topic_error_body import PerformancePredictionCompleteEventTopicErrorBody
 from .models.performance_prediction_complete_event_topic_performance_prediction_calculation_notification import PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
 from .models.performance_prediction_outputs import PerformancePredictionOutputs
@@ -3505,6 +3544,7 @@ from .models.punctuality_event import PunctualityEvent
 from .models.pure_cloud import PureCloud
 from .models.pure_engage import PureEngage
 from .models.push_integration import PushIntegration
+from .models.put_decision_table_row_request import PutDecisionTableRowRequest
 from .models.qm_audit_query_request import QMAuditQueryRequest
 from .models.quality_audit_log_message import QualityAuditLogMessage
 from .models.quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
@@ -4168,6 +4208,7 @@ from .models.shared_response import SharedResponse
 from .models.shift_start_variance import ShiftStartVariance
 from .models.shift_trade_activity_preview_response import ShiftTradeActivityPreviewResponse
 from .models.shift_trade_activity_rule import ShiftTradeActivityRule
+from .models.shift_trade_external_activity_rule import ShiftTradeExternalActivityRule
 from .models.shift_trade_list_response import ShiftTradeListResponse
 from .models.shift_trade_match_review_response import ShiftTradeMatchReviewResponse
 from .models.shift_trade_match_review_user_response import ShiftTradeMatchReviewUserResponse
@@ -4217,6 +4258,7 @@ from .models.sms_config import SmsConfig
 from .models.sms_phone_number import SmsPhoneNumber
 from .models.sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
 from .models.sms_phone_number_import import SmsPhoneNumberImport
+from .models.sms_phone_number_patch_request import SmsPhoneNumberPatchRequest
 from .models.sms_phone_number_provision import SmsPhoneNumberProvision
 from .models.sms_phone_number_ref import SmsPhoneNumberRef
 from .models.sms_provisioning_status import SmsProvisioningStatus
@@ -4655,6 +4697,7 @@ from .models.update_decision_table_request import UpdateDecisionTableRequest
 from .models.update_decision_table_row_request import UpdateDecisionTableRowRequest
 from .models.update_decision_table_version_request import UpdateDecisionTableVersionRequest
 from .models.update_draft_input import UpdateDraftInput
+from .models.update_guide_version import UpdateGuideVersion
 from .models.update_management_unit_request import UpdateManagementUnitRequest
 from .models.update_mu_agent_request import UpdateMuAgentRequest
 from .models.update_mu_agent_work_plan_failure_response import UpdateMuAgentWorkPlanFailureResponse
@@ -4726,6 +4769,7 @@ from .models.user_conversation_summary import UserConversationSummary
 from .models.user_conversations_event_media_summary import UserConversationsEventMediaSummary
 from .models.user_conversations_event_media_summary_detail import UserConversationsEventMediaSummaryDetail
 from .models.user_conversations_event_user_conversation_summary import UserConversationsEventUserConversationSummary
+from .models.user_cursor_entity_listing import UserCursorEntityListing
 from .models.user_detail_query_clause import UserDetailQueryClause
 from .models.user_detail_query_filter import UserDetailQueryFilter
 from .models.user_detail_query_predicate import UserDetailQueryPredicate
@@ -4903,6 +4947,7 @@ from .models.value_wrapper_monthly_planning_period_settings import ValueWrapperM
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .models.value_wrapper_string import ValueWrapperString
 from .models.value_wrapper_user_search_rule import ValueWrapperUserSearchRule
+from .models.variable import Variable
 from .models.verification_result import VerificationResult
 from .models.verifier import Verifier
 from .models.verifier_entity_listing import VerifierEntityListing
@@ -5388,6 +5433,7 @@ from .models.writable_entity import WritableEntity
 from .models.writable_starrable_division import WritableStarrableDivision
 
 # import apis into sdk package
+from .apis.ai_studio_api import AIStudioApi
 from .apis.agent_assistants_api import AgentAssistantsApi
 from .apis.agent_copilot_api import AgentCopilotApi
 from .apis.agent_ui_api import AgentUIApi
@@ -5469,6 +5515,7 @@ from .apis.web_messaging_api import WebMessagingApi
 from .apis.web_deployments_api import WebDeploymentsApi
 from .apis.widgets_api import WidgetsApi
 from .apis.workforce_management_api import WorkforceManagementApi
+from .apis.ai_studio_api import AIStudioApi
 from .apis.agent_assistants_api import AgentAssistantsApi
 from .apis.agent_copilot_api import AgentCopilotApi
 from .apis.agent_ui_api import AgentUIApi

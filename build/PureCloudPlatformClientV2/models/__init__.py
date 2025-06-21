@@ -143,7 +143,10 @@ from .agent_queue_time_request import AgentQueueTimeRequest
 from .agent_state_agent_query_clause import AgentStateAgentQueryClause
 from .agent_state_agent_query_predicate import AgentStateAgentQueryPredicate
 from .agent_state_counts_request import AgentStateCountsRequest
+from .agent_state_is_out_of_office_count import AgentStateIsOutOfOfficeCount
+from .agent_state_presence_count import AgentStatePresenceCount
 from .agent_state_query_request import AgentStateQueryRequest
+from .agent_state_routing_status_count import AgentStateRoutingStatusCount
 from .agent_state_segment_type_count import AgentStateSegmentTypeCount
 from .agent_state_session_filter import AgentStateSessionFilter
 from .agent_state_session_query_clause import AgentStateSessionQueryClause
@@ -1278,6 +1281,7 @@ from .conversation_social_expression_event_topic_uri_reference import Conversati
 from .conversation_social_expression_event_topic_wrapup import ConversationSocialExpressionEventTopicWrapup
 from .conversation_summaries_get_response import ConversationSummariesGetResponse
 from .conversation_summary import ConversationSummary
+from .conversation_summary_extracted_entity import ConversationSummaryExtractedEntity
 from .conversation_summary_followup import ConversationSummaryFollowup
 from .conversation_summary_reason import ConversationSummaryReason
 from .conversation_summary_resolution import ConversationSummaryResolution
@@ -1367,6 +1371,8 @@ from .create_general_program_test_phrase_detected_phrase import CreateGeneralPro
 from .create_general_program_test_phrase_matched_transcript import CreateGeneralProgramTestPhraseMatchedTranscript
 from .create_general_program_test_topic_phrase_results import CreateGeneralProgramTestTopicPhraseResults
 from .create_general_program_topics_definitions_job import CreateGeneralProgramTopicsDefinitionsJob
+from .create_guide import CreateGuide
+from .create_guide_version import CreateGuideVersion
 from .create_integration_request import CreateIntegrationRequest
 from .create_management_unit_api_request import CreateManagementUnitApiRequest
 from .create_management_unit_settings_request import CreateManagementUnitSettingsRequest
@@ -1409,6 +1415,7 @@ from .create_work_plan_bid import CreateWorkPlanBid
 from .create_work_plan_shift import CreateWorkPlanShift
 from .credential import Credential
 from .credential_info import CredentialInfo
+from .credential_info_cursor_listing import CredentialInfoCursorListing
 from .credential_info_listing import CredentialInfoListing
 from .credential_specification import CredentialSpecification
 from .credential_type import CredentialType
@@ -1468,6 +1475,7 @@ from .dashboard_configuration_query_request import DashboardConfigurationQueryRe
 from .dashboard_user import DashboardUser
 from .dashboard_user_listing import DashboardUserListing
 from .dashboards_shared_with import DashboardsSharedWith
+from .data_action import DataAction
 from .data_action_condition_predicate import DataActionConditionPredicate
 from .data_action_condition_settings import DataActionConditionSettings
 from .data_action_contact_column_field_mapping import DataActionContactColumnFieldMapping
@@ -1503,6 +1511,7 @@ from .decision_table_listing import DecisionTableListing
 from .decision_table_output_column import DecisionTableOutputColumn
 from .decision_table_output_column_request import DecisionTableOutputColumnRequest
 from .decision_table_row import DecisionTableRow
+from .decision_table_row_entity_ref import DecisionTableRowEntityRef
 from .decision_table_row_execution_output import DecisionTableRowExecutionOutput
 from .decision_table_row_listing import DecisionTableRowListing
 from .decision_table_row_parameter_value import DecisionTableRowParameterValue
@@ -1521,6 +1530,7 @@ from .dependency_object_entity_listing import DependencyObjectEntityListing
 from .dependency_status import DependencyStatus
 from .dependency_type import DependencyType
 from .dependency_type_entity_listing import DependencyTypeEntityListing
+from .deployment_identity_resolution_config import DeploymentIdentityResolutionConfig
 from .deployment_ping import DeploymentPing
 from .deployment_web_action import DeploymentWebAction
 from .destination import Destination
@@ -2254,7 +2264,9 @@ from .general_program_job_request import GeneralProgramJobRequest
 from .general_topic import GeneralTopic
 from .general_topics_entity_listing import GeneralTopicsEntityListing
 from .generate_bu_forecast_request import GenerateBuForecastRequest
+from .generate_guide_content_request import GenerateGuideContentRequest
 from .generate_meeting_id_request import GenerateMeetingIdRequest
+from .generated_guide_content import GeneratedGuideContent
 from .generic_saml import GenericSAML
 from .generic_template import GenericTemplate
 from .genesys_bot_connector import GenesysBotConnector
@@ -2308,6 +2320,16 @@ from .guest_category_reference import GuestCategoryReference
 from .guest_category_response_listing import GuestCategoryResponseListing
 from .guest_member_info import GuestMemberInfo
 from .guest_response_category import GuestResponseCategory
+from .guide import Guide
+from .guide_content_generation_job import GuideContentGenerationJob
+from .guide_entity_listing import GuideEntityListing
+from .guide_job import GuideJob
+from .guide_version import GuideVersion
+from .guide_version_publish import GuideVersionPublish
+from .guide_version_publish_job import GuideVersionPublishJob
+from .guide_version_publish_job_request import GuideVersionPublishJobRequest
+from .guide_version_ref import GuideVersionRef
+from .guide_version_resources import GuideVersionResources
 from .headcount_forecast import HeadcountForecast
 from .headcount_interval import HeadcountInterval
 from .header import Header
@@ -2353,6 +2375,7 @@ from .identifier_claim_request import IdentifierClaimRequest
 from .identity_now import IdentityNow
 from .identity_provider import IdentityProvider
 from .identity_provider_entity_listing import IdentityProviderEntityListing
+from .identity_resolution_automerge_config import IdentityResolutionAutomergeConfig
 from .identity_resolution_config import IdentityResolutionConfig
 from .identity_resolution_queue_config import IdentityResolutionQueueConfig
 from .idle_event_trigger import IdleEventTrigger
@@ -2430,7 +2453,13 @@ from .intent_definition import IntentDefinition
 from .intent_feedback import IntentFeedback
 from .interactive_application import InteractiveApplication
 from .internal_message import InternalMessage
+from .internal_message_conversation import InternalMessageConversation
+from .internal_message_conversation_entity_listing import InternalMessageConversationEntityListing
+from .internal_message_data import InternalMessageData
+from .internal_message_data_entity_listing import InternalMessageDataEntityListing
 from .internal_message_details import InternalMessageDetails
+from .internal_message_media_participant import InternalMessageMediaParticipant
+from .internal_message_request import InternalMessageRequest
 from .intraday_performance_prediction_data import IntradayPerformancePredictionData
 from .intraday_planning_group_request import IntradayPlanningGroupRequest
 from .invalid_assignment import InvalidAssignment
@@ -2949,7 +2978,9 @@ from .media_result import MediaResult
 from .media_rtp_statistics import MediaRtpStatistics
 from .media_settings import MediaSettings
 from .media_statistics import MediaStatistics
+from .media_statistics_client_info import MediaStatisticsClientInfo
 from .media_statistics_listing import MediaStatisticsListing
+from .media_statistics_post_request import MediaStatisticsPostRequest
 from .media_statistics_trunk_info import MediaStatisticsTrunkInfo
 from .media_summary import MediaSummary
 from .media_summary_detail import MediaSummaryDetail
@@ -2998,6 +3029,8 @@ from .messaging_campaign_schedule_entity_listing import MessagingCampaignSchedul
 from .messaging_communication_answered_event import MessagingCommunicationAnsweredEvent
 from .messaging_communication_disposition_applied_event import MessagingCommunicationDispositionAppliedEvent
 from .messaging_communication_ended_event import MessagingCommunicationEndedEvent
+from .messaging_confer_response import MessagingConferResponse
+from .messaging_confer_with_user_request import MessagingConferWithUserRequest
 from .messaging_config_listing import MessagingConfigListing
 from .messaging_end_transfer_event import MessagingEndTransferEvent
 from .messaging_external_established_event import MessagingExternalEstablishedEvent
@@ -3159,6 +3192,8 @@ from .open_inbound_messaging_receipt_channel import OpenInboundMessagingReceiptC
 from .open_inbound_normalized_event import OpenInboundNormalizedEvent
 from .open_inbound_normalized_message import OpenInboundNormalizedMessage
 from .open_inbound_normalized_receipt import OpenInboundNormalizedReceipt
+from .open_inbound_structured_response_message import OpenInboundStructuredResponseMessage
+from .open_inbound_structured_response_normalized_message_content import OpenInboundStructuredResponseNormalizedMessageContent
 from .open_integration import OpenIntegration
 from .open_integration_entity_listing import OpenIntegrationEntityListing
 from .open_integration_request import OpenIntegrationRequest
@@ -3185,6 +3220,7 @@ from .open_social_media_recipient import OpenSocialMediaRecipient
 from .open_social_media_recipient_additional_identifier import OpenSocialMediaRecipientAdditionalIdentifier
 from .open_social_normalized_message_entity_listing import OpenSocialNormalizedMessageEntityListing
 from .open_social_reactions_normalized_event_entity_listing import OpenSocialReactionsNormalizedEventEntityListing
+from .open_structured_response_normalized_message import OpenStructuredResponseNormalizedMessage
 from .operand import Operand
 from .operand_position import OperandPosition
 from .operation import Operation
@@ -3364,6 +3400,9 @@ from .patch_user import PatchUser
 from .patch_web_messaging_offer_fields import PatchWebMessagingOfferFields
 from .pattern import Pattern
 from .pause_criteria import PauseCriteria
+from .payment_line_item import PaymentLineItem
+from .payment_request import PaymentRequest
+from .payment_response import PaymentResponse
 from .performance_prediction_complete_event_topic_error_body import PerformancePredictionCompleteEventTopicErrorBody
 from .performance_prediction_complete_event_topic_performance_prediction_calculation_notification import PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
 from .performance_prediction_outputs import PerformancePredictionOutputs
@@ -3505,6 +3544,7 @@ from .punctuality_event import PunctualityEvent
 from .pure_cloud import PureCloud
 from .pure_engage import PureEngage
 from .push_integration import PushIntegration
+from .put_decision_table_row_request import PutDecisionTableRowRequest
 from .qm_audit_query_request import QMAuditQueryRequest
 from .quality_audit_log_message import QualityAuditLogMessage
 from .quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
@@ -4168,6 +4208,7 @@ from .shared_response import SharedResponse
 from .shift_start_variance import ShiftStartVariance
 from .shift_trade_activity_preview_response import ShiftTradeActivityPreviewResponse
 from .shift_trade_activity_rule import ShiftTradeActivityRule
+from .shift_trade_external_activity_rule import ShiftTradeExternalActivityRule
 from .shift_trade_list_response import ShiftTradeListResponse
 from .shift_trade_match_review_response import ShiftTradeMatchReviewResponse
 from .shift_trade_match_review_user_response import ShiftTradeMatchReviewUserResponse
@@ -4217,6 +4258,7 @@ from .sms_config import SmsConfig
 from .sms_phone_number import SmsPhoneNumber
 from .sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
 from .sms_phone_number_import import SmsPhoneNumberImport
+from .sms_phone_number_patch_request import SmsPhoneNumberPatchRequest
 from .sms_phone_number_provision import SmsPhoneNumberProvision
 from .sms_phone_number_ref import SmsPhoneNumberRef
 from .sms_provisioning_status import SmsProvisioningStatus
@@ -4655,6 +4697,7 @@ from .update_decision_table_request import UpdateDecisionTableRequest
 from .update_decision_table_row_request import UpdateDecisionTableRowRequest
 from .update_decision_table_version_request import UpdateDecisionTableVersionRequest
 from .update_draft_input import UpdateDraftInput
+from .update_guide_version import UpdateGuideVersion
 from .update_management_unit_request import UpdateManagementUnitRequest
 from .update_mu_agent_request import UpdateMuAgentRequest
 from .update_mu_agent_work_plan_failure_response import UpdateMuAgentWorkPlanFailureResponse
@@ -4726,6 +4769,7 @@ from .user_conversation_summary import UserConversationSummary
 from .user_conversations_event_media_summary import UserConversationsEventMediaSummary
 from .user_conversations_event_media_summary_detail import UserConversationsEventMediaSummaryDetail
 from .user_conversations_event_user_conversation_summary import UserConversationsEventUserConversationSummary
+from .user_cursor_entity_listing import UserCursorEntityListing
 from .user_detail_query_clause import UserDetailQueryClause
 from .user_detail_query_filter import UserDetailQueryFilter
 from .user_detail_query_predicate import UserDetailQueryPredicate
@@ -4903,6 +4947,7 @@ from .value_wrapper_monthly_planning_period_settings import ValueWrapperMonthlyP
 from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .value_wrapper_string import ValueWrapperString
 from .value_wrapper_user_search_rule import ValueWrapperUserSearchRule
+from .variable import Variable
 from .verification_result import VerificationResult
 from .verifier import Verifier
 from .verifier_entity_listing import VerifierEntityListing

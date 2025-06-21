@@ -51,6 +51,7 @@ from ..models import DecisionTableRowListing
 from ..models import DecisionTableVersion
 from ..models import DecisionTableVersionListing
 from ..models import ErrorBody
+from ..models import PutDecisionTableRowRequest
 from ..models import SearchDecisionTableRowsRequest
 from ..models import UpdateDecisionTableRequest
 from ..models import UpdateDecisionTableRowRequest
@@ -945,12 +946,15 @@ class BusinessRulesApi(object):
         :param str page_size: Number of entities to return. Maximum of 100.
         :param str schema_id: Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used.
         :param str name: Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used.
+        :param bool with_published_version: Filters results to only decision tables that have at least one version in Published status
+        :param list[str] expand: Fields to expand in response
+        :param list[str] ids: Decision table IDs to search for
         :return: DecisionTableListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['after', 'page_size', 'schema_id', 'name']
+        all_params = ['after', 'page_size', 'schema_id', 'name', 'with_published_version', 'expand', 'ids']
         all_params.append('callback')
 
         params = locals()
@@ -977,6 +981,12 @@ class BusinessRulesApi(object):
             query_params['schemaId'] = params['schema_id']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'with_published_version' in params:
+            query_params['withPublishedVersion'] = params['with_published_version']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
 
         header_params = {}
 
@@ -1490,9 +1500,10 @@ class BusinessRulesApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_businessrules_decisiontable_version_row is deprecated")
     def patch_businessrules_decisiontable_version_row(self, table_id: str, table_version: int, row_id: str, body: 'UpdateDecisionTableRowRequest', **kwargs) -> 'DecisionTableRow':
         """
-        Update a decision table row
+        Partially update a decision table row. Will be deprecated, we should use PUT request.
         
 	    patch_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -1509,7 +1520,7 @@ class BusinessRulesApi(object):
         :param str table_id: Table ID (required)
         :param int table_version: Table Version (required)
         :param str row_id: Row ID (required)
-        :param UpdateDecisionTableRowRequest body: Update decision table row request (required)
+        :param UpdateDecisionTableRowRequest body: Partially update decision table row request (required)
         :return: DecisionTableRow
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2445,6 +2456,103 @@ class BusinessRulesApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DecisionTableVersion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_businessrules_decisiontable_version_row(self, table_id: str, table_version: int, row_id: str, body: 'PutDecisionTableRowRequest', **kwargs) -> 'DecisionTableRow':
+        """
+        Full update a decision table row
+        
+	    put_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_businessrules_decisiontable_version_row(table_id, table_version, row_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param int table_version: Table Version (required)
+        :param str row_id: Row ID (required)
+        :param PutDecisionTableRowRequest body: Full update decision table row request (required)
+        :return: DecisionTableRow
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'table_version', 'row_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_businessrules_decisiontable_version_row" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `put_businessrules_decisiontable_version_row`")
+        # verify the required parameter 'table_version' is set
+        if ('table_version' not in params) or (params['table_version'] is None):
+            raise ValueError("Missing the required parameter `table_version` when calling `put_businessrules_decisiontable_version_row`")
+        # verify the required parameter 'row_id' is set
+        if ('row_id' not in params) or (params['row_id'] is None):
+            raise ValueError("Missing the required parameter `row_id` when calling `put_businessrules_decisiontable_version_row`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_businessrules_decisiontable_version_row`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'table_version' in params:
+            path_params['tableVersion'] = params['table_version']
+        if 'row_id' in params:
+            path_params['rowId'] = params['row_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableRow',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

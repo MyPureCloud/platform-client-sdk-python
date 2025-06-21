@@ -10,6 +10,7 @@
 | **name** | str | Chat Corpus Name. | |
 | **language** | str | Language Localization code. | [optional] |
 | **miner_type** | str | Type of the miner, intent or topic. | [optional] |
+| **seeding** | bool | Flag to indicate whether seeding is supported for this miner. | [optional] |
 | **date_created** | datetime | Date when the miner was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **status** | str | Status of the miner. | [optional] |
 | **conversations_date_range_start** | date | Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] |
@@ -32,4 +33,4 @@
 
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

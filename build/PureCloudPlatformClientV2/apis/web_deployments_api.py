@@ -36,9 +36,9 @@ from typing import Any
 
 from ..models import Empty
 from ..models import CobrowseWebMessagingSession
+from ..models import DeploymentIdentityResolutionConfig
 from ..models import ErrorBody
 from ..models import ExpandableWebDeploymentEntityListing
-from ..models import IdentityResolutionConfig
 from ..models import SignedData
 from ..models import WebDeployment
 from ..models import WebDeploymentActiveConfigurationOnDeployment
@@ -946,7 +946,7 @@ class WebDeploymentsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_webdeployments_deployment_identityresolution(self, deployment_id: str, **kwargs) -> 'IdentityResolutionConfig':
+    def get_webdeployments_deployment_identityresolution(self, deployment_id: str, **kwargs) -> 'DeploymentIdentityResolutionConfig':
         """
         Get a deployment identity resolution setting.
         
@@ -962,7 +962,7 @@ class WebDeploymentsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str deployment_id: The deployment ID (required)
-        :return: IdentityResolutionConfig
+        :return: DeploymentIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1019,7 +1019,7 @@ class WebDeploymentsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='DeploymentIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1654,7 +1654,7 @@ class WebDeploymentsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_webdeployments_deployment_identityresolution(self, deployment_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+    def put_webdeployments_deployment_identityresolution(self, deployment_id: str, body: 'DeploymentIdentityResolutionConfig', **kwargs) -> 'DeploymentIdentityResolutionConfig':
         """
         Update identity resolution settings for a deployment.
         
@@ -1670,8 +1670,8 @@ class WebDeploymentsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str deployment_id: The deployment ID (required)
-        :param IdentityResolutionConfig body:  (required)
-        :return: IdentityResolutionConfig
+        :param DeploymentIdentityResolutionConfig body:  (required)
+        :return: DeploymentIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1733,7 +1733,7 @@ class WebDeploymentsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='DeploymentIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

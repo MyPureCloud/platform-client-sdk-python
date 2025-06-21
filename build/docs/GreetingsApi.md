@@ -8,7 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_greeting**](#delete_greeting) | Deletes a Greeting with the given GreetingId|
 |[**get_greeting**](#get_greeting) | Get a Greeting with the given GreetingId|
+|[**get_greeting_downloads**](#get_greeting_downloads) | Download a organization greeting recording|
+|[**get_greeting_groups_downloads**](#get_greeting_groups_downloads) | Download a group greeting recording|
 |[**get_greeting_media**](#get_greeting_media) | Get media playback URI for this greeting|
+|[**get_greeting_users_downloads**](#get_greeting_users_downloads) | Download a user greeting recording|
 |[**get_greetings**](#get_greetings) | Gets an Organization&#39;s Greetings|
 |[**get_greetings_defaults**](#get_greetings_defaults) | Get an Organization&#39;s DefaultGreetingList|
 |[**get_group_greetings**](#get_group_greetings) | Get a list of the Group&#39;s Greetings|
@@ -118,12 +121,114 @@ except ApiException as e:
 [**Greeting**](Greeting)
 
 
+## get_greeting_downloads
+
+> [**GreetingMediaInfo**](GreetingMediaInfo) get_greeting_downloads(greeting_id, format_id=format_id)
+
+
+Download a organization greeting recording
+
+Wraps GET /api/v2/greetings/{greetingId}/downloads 
+
+Requires ANY permissions: 
+
+* greetings:greeting:download
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GreetingsApi()
+greeting_id = 'greeting_id_example' # str | Greeting ID
+format_id = ''WAV'' # str | The desired media format. (optional) (default to 'WAV')
+
+try:
+    # Download a organization greeting recording
+    api_response = api_instance.get_greeting_downloads(greeting_id, format_id=format_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GreetingsApi->get_greeting_downloads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **greeting_id** | **str**| Greeting ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WAV&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+
+### Return type
+
+[**GreetingMediaInfo**](GreetingMediaInfo)
+
+
+## get_greeting_groups_downloads
+
+> [**GreetingMediaInfo**](GreetingMediaInfo) get_greeting_groups_downloads(greeting_id, format_id=format_id)
+
+
+Download a group greeting recording
+
+Wraps GET /api/v2/greetings/{greetingId}/groups/downloads 
+
+Requires ANY permissions: 
+
+* greetings:groupGreeting:download
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GreetingsApi()
+greeting_id = 'greeting_id_example' # str | Greeting ID
+format_id = ''WAV'' # str | The desired media format. (optional) (default to 'WAV')
+
+try:
+    # Download a group greeting recording
+    api_response = api_instance.get_greeting_groups_downloads(greeting_id, format_id=format_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GreetingsApi->get_greeting_groups_downloads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **greeting_id** | **str**| Greeting ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WAV&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+
+### Return type
+
+[**GreetingMediaInfo**](GreetingMediaInfo)
+
+
 ## get_greeting_media
 
 > [**GreetingMediaInfo**](GreetingMediaInfo) get_greeting_media(greeting_id, format_id=format_id)
 
 
 Get media playback URI for this greeting
+
+API should migrate to use GET api/v2/greetings/{greetingId}/downloads
 
 Wraps GET /api/v2/greetings/{greetingId}/media 
 
@@ -152,6 +257,56 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GreetingsApi->get_greeting_media: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **greeting_id** | **str**| Greeting ID |  |
+| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WAV&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+
+### Return type
+
+[**GreetingMediaInfo**](GreetingMediaInfo)
+
+
+## get_greeting_users_downloads
+
+> [**GreetingMediaInfo**](GreetingMediaInfo) get_greeting_users_downloads(greeting_id, format_id=format_id)
+
+
+Download a user greeting recording
+
+Wraps GET /api/v2/greetings/{greetingId}/users/downloads 
+
+Requires ANY permissions: 
+
+* greetings:greeting:download
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GreetingsApi()
+greeting_id = 'greeting_id_example' # str | Greeting ID
+format_id = ''WAV'' # str | The desired media format. (optional) (default to 'WAV')
+
+try:
+    # Download a user greeting recording
+    api_response = api_instance.get_greeting_users_downloads(greeting_id, format_id=format_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GreetingsApi->get_greeting_users_downloads: %s\n" % e)
 ```
 
 ### Parameters
@@ -794,4 +949,4 @@ except ApiException as e:
 [**DefaultGreetingList**](DefaultGreetingList)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

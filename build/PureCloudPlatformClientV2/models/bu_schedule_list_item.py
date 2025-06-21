@@ -88,7 +88,7 @@ class BuScheduleListItem(object):
     def id(self) -> str:
         """
         Gets the id of this BuScheduleListItem.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :return: The id of this BuScheduleListItem.
         :rtype: str
@@ -99,7 +99,7 @@ class BuScheduleListItem(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this BuScheduleListItem.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :param id: The id of this BuScheduleListItem.
         :type: str

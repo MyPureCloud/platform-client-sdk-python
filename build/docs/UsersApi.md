@@ -62,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_users_development_activity**](#get_users_development_activity) | Get a Development Activity|
 |[**get_users_externalid_authority_name_external_key**](#get_users_externalid_authority_name_external_key) | Get the user associated with external identifier.|
 |[**get_users_me**](#get_users_me) | Get current user details.|
+|[**get_users_query**](#get_users_query) | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required|
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**patch_user**](#patch_user) | Update user|
 |[**patch_user_callforwarding**](#patch_user_callforwarding) | Patch a user&#39;s CallForwarding|
@@ -1494,7 +1495,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 | **state** | **str**| Search for a user with this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, deleted |
 
@@ -1545,7 +1546,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
@@ -1641,7 +1642,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
@@ -1797,7 +1798,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
@@ -1948,7 +1949,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups |
 | **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 
 ### Return type
@@ -2452,7 +2453,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
@@ -2611,7 +2612,7 @@ except ApiException as e:
 | **id** | [**list[str]**](str)| A list of user IDs to fetch by bulk | [optional]  |
 | **jabber_id** | [**list[str]**](str)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 | **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 
@@ -2914,7 +2915,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **authority_name** | **str**| Authority Name |  |
 | **external_key** | **str**| External Key |  |
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
@@ -2964,12 +2965,72 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
 | **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 
 ### Return type
 
 [**UserMe**](UserMe)
+
+
+## get_users_query
+
+> [**UserCursorEntityListing**](UserCursorEntityListing) get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
+
+
+Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+
+get_users_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/query 
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+state = ''active'' # str | Only list users of this state (optional) (default to 'active')
+
+try:
+    # Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+    api_response = api_instance.get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ASC, DESC |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
+
+### Return type
+
+[**UserCursorEntityListing**](UserCursorEntityListing)
 
 
 ## get_users_search
@@ -5284,4 +5345,4 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

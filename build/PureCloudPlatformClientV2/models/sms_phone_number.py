@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import DomainEntityRef
     from . import SmsAddress
     from . import SmsProvisioningStatus
+    from . import SupportedContentReference
     from . import User
 
 class SmsPhoneNumber(object):
@@ -79,6 +80,7 @@ class SmsPhoneNumber(object):
             'supports_voice': 'bool',
             'integration': 'DomainEntityRef',
             'compliance': 'Compliance',
+            'supported_content': 'SupportedContentReference',
             'self_uri': 'str'
         }
 
@@ -109,6 +111,7 @@ class SmsPhoneNumber(object):
             'supports_voice': 'supportsVoice',
             'integration': 'integration',
             'compliance': 'compliance',
+            'supported_content': 'supportedContent',
             'self_uri': 'selfUri'
         }
 
@@ -138,6 +141,7 @@ class SmsPhoneNumber(object):
         self._supports_voice = None
         self._integration = None
         self._compliance = None
+        self._supported_content = None
         self._self_uri = None
 
     @property
@@ -783,6 +787,30 @@ class SmsPhoneNumber(object):
         
 
         self._compliance = compliance
+
+    @property
+    def supported_content(self) -> 'SupportedContentReference':
+        """
+        Gets the supported_content of this SmsPhoneNumber.
+        Defines the media SupportedContent profile configured for an MMS capable phone number.
+
+        :return: The supported_content of this SmsPhoneNumber.
+        :rtype: SupportedContentReference
+        """
+        return self._supported_content
+
+    @supported_content.setter
+    def supported_content(self, supported_content: 'SupportedContentReference') -> None:
+        """
+        Sets the supported_content of this SmsPhoneNumber.
+        Defines the media SupportedContent profile configured for an MMS capable phone number.
+
+        :param supported_content: The supported_content of this SmsPhoneNumber.
+        :type: SupportedContentReference
+        """
+        
+
+        self._supported_content = supported_content
 
     @property
     def self_uri(self) -> str:

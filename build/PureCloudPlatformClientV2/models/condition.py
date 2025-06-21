@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ContactColumnToDataActionFieldMapping
     from . import DataActionConditionPredicate
     from . import DomainEntityRef
+    from . import TimeAndDateSubCondition
 
 class Condition(object):
     """
@@ -66,7 +67,10 @@ class Condition(object):
             'call_analysis_result_field': 'str',
             'agent_wrapup_field': 'str',
             'contact_column_to_data_action_field_mappings': 'list[ContactColumnToDataActionFieldMapping]',
-            'predicates': 'list[DataActionConditionPredicate]'
+            'predicates': 'list[DataActionConditionPredicate]',
+            'sub_conditions': 'list[TimeAndDateSubCondition]',
+            'match_any_conditions': 'bool',
+            'time_zone_id': 'str'
         }
 
         self.attribute_map = {
@@ -85,7 +89,10 @@ class Condition(object):
             'call_analysis_result_field': 'callAnalysisResultField',
             'agent_wrapup_field': 'agentWrapupField',
             'contact_column_to_data_action_field_mappings': 'contactColumnToDataActionFieldMappings',
-            'predicates': 'predicates'
+            'predicates': 'predicates',
+            'sub_conditions': 'subConditions',
+            'match_any_conditions': 'matchAnyConditions',
+            'time_zone_id': 'timeZoneId'
         }
 
         self._type = None
@@ -104,6 +111,9 @@ class Condition(object):
         self._agent_wrapup_field = None
         self._contact_column_to_data_action_field_mappings = None
         self._predicates = None
+        self._sub_conditions = None
+        self._match_any_conditions = None
+        self._time_zone_id = None
 
     @property
     def type(self) -> str:
@@ -508,6 +518,78 @@ class Condition(object):
         
 
         self._predicates = predicates
+
+    @property
+    def sub_conditions(self) -> List['TimeAndDateSubCondition']:
+        """
+        Gets the sub_conditions of this Condition.
+        A list of sub-conditions to evaluate. Required for a timeAndDateCondition.
+
+        :return: The sub_conditions of this Condition.
+        :rtype: list[TimeAndDateSubCondition]
+        """
+        return self._sub_conditions
+
+    @sub_conditions.setter
+    def sub_conditions(self, sub_conditions: List['TimeAndDateSubCondition']) -> None:
+        """
+        Sets the sub_conditions of this Condition.
+        A list of sub-conditions to evaluate. Required for a timeAndDateCondition.
+
+        :param sub_conditions: The sub_conditions of this Condition.
+        :type: list[TimeAndDateSubCondition]
+        """
+        
+
+        self._sub_conditions = sub_conditions
+
+    @property
+    def match_any_conditions(self) -> bool:
+        """
+        Gets the match_any_conditions of this Condition.
+        If true, only one sub-condition must match for the condition to be true. If false, all sub-conditions must match. Default is false. Required for a timeAndDateCondition.
+
+        :return: The match_any_conditions of this Condition.
+        :rtype: bool
+        """
+        return self._match_any_conditions
+
+    @match_any_conditions.setter
+    def match_any_conditions(self, match_any_conditions: bool) -> None:
+        """
+        Sets the match_any_conditions of this Condition.
+        If true, only one sub-condition must match for the condition to be true. If false, all sub-conditions must match. Default is false. Required for a timeAndDateCondition.
+
+        :param match_any_conditions: The match_any_conditions of this Condition.
+        :type: bool
+        """
+        
+
+        self._match_any_conditions = match_any_conditions
+
+    @property
+    def time_zone_id(self) -> str:
+        """
+        Gets the time_zone_id of this Condition.
+        The time zone to use for this condition. Required for a timeAndDateCondition.
+
+        :return: The time_zone_id of this Condition.
+        :rtype: str
+        """
+        return self._time_zone_id
+
+    @time_zone_id.setter
+    def time_zone_id(self, time_zone_id: str) -> None:
+        """
+        Sets the time_zone_id of this Condition.
+        The time zone to use for this condition. Required for a timeAndDateCondition.
+
+        :param time_zone_id: The time_zone_id of this Condition.
+        :type: str
+        """
+        
+
+        self._time_zone_id = time_zone_id
 
     def to_dict(self):
         """

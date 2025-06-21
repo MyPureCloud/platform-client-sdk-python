@@ -831,7 +831,7 @@ class VoicemailApi(object):
     def get_voicemail_message_media(self, message_id: str, **kwargs) -> 'VoicemailMediaInfo':
         """
         Get media playback URI for this voicemail message
-        
+        API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

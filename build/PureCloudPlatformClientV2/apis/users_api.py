@@ -74,6 +74,7 @@ from ..models import UserAggregationQuery
 from ..models import UserAsyncAggregateQueryResponse
 from ..models import UserAsyncAggregationQuery
 from ..models import UserAuthorization
+from ..models import UserCursorEntityListing
 from ..models import UserDetailsQuery
 from ..models import UserEntityListing
 from ..models import UserExternalIdentifier
@@ -4742,6 +4743,97 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UserMe',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_query(self, **kwargs) -> 'UserCursorEntityListing':
+        """
+        Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+        
+	    get_users_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_query(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str cursor: Cursor token to retrieve next page
+        :param int page_size: Page size
+        :param str sort_order: Ascending or descending sort order
+        :param list[str] expand: Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
+        :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
+        :param str state: Only list users of this state
+        :return: UserCursorEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cursor', 'page_size', 'sort_order', 'expand', 'integration_presence_source', 'state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/users/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'integration_presence_source' in params:
+            query_params['integrationPresenceSource'] = params['integration_presence_source']
+        if 'state' in params:
+            query_params['state'] = params['state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserCursorEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

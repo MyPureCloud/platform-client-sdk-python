@@ -55,8 +55,8 @@ class TwitterDataIngestionRuleVersionResponse(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'platform': 'str',
-            'search_terms': 'str',
             'countries': 'list[str]',
+            'search_terms': 'str',
             'self_uri': 'str'
         }
 
@@ -69,8 +69,8 @@ class TwitterDataIngestionRuleVersionResponse(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'platform': 'platform',
-            'search_terms': 'searchTerms',
             'countries': 'countries',
+            'search_terms': 'searchTerms',
             'self_uri': 'selfUri'
         }
 
@@ -82,8 +82,8 @@ class TwitterDataIngestionRuleVersionResponse(object):
         self._date_created = None
         self._date_modified = None
         self._platform = None
-        self._search_terms = None
         self._countries = None
+        self._search_terms = None
         self._self_uri = None
 
     @property
@@ -284,30 +284,6 @@ class TwitterDataIngestionRuleVersionResponse(object):
         self._platform = platform
 
     @property
-    def search_terms(self) -> str:
-        """
-        Gets the search_terms of this TwitterDataIngestionRuleVersionResponse.
-        Search terms for X (formally Twitter).
-
-        :return: The search_terms of this TwitterDataIngestionRuleVersionResponse.
-        :rtype: str
-        """
-        return self._search_terms
-
-    @search_terms.setter
-    def search_terms(self, search_terms: str) -> None:
-        """
-        Sets the search_terms of this TwitterDataIngestionRuleVersionResponse.
-        Search terms for X (formally Twitter).
-
-        :param search_terms: The search_terms of this TwitterDataIngestionRuleVersionResponse.
-        :type: str
-        """
-        
-
-        self._search_terms = search_terms
-
-    @property
     def countries(self) -> List[str]:
         """
         Gets the countries of this TwitterDataIngestionRuleVersionResponse.
@@ -330,6 +306,30 @@ class TwitterDataIngestionRuleVersionResponse(object):
         
 
         self._countries = countries
+
+    @property
+    def search_terms(self) -> str:
+        """
+        Gets the search_terms of this TwitterDataIngestionRuleVersionResponse.
+        Search terms for X (formally Twitter).
+
+        :return: The search_terms of this TwitterDataIngestionRuleVersionResponse.
+        :rtype: str
+        """
+        return self._search_terms
+
+    @search_terms.setter
+    def search_terms(self, search_terms: str) -> None:
+        """
+        Sets the search_terms of this TwitterDataIngestionRuleVersionResponse.
+        Search terms for X (formally Twitter).
+
+        :param search_terms: The search_terms of this TwitterDataIngestionRuleVersionResponse.
+        :type: str
+        """
+        
+
+        self._search_terms = search_terms
 
     @property
     def self_uri(self) -> str:

@@ -63,7 +63,7 @@ class PushIntegration(object):
     def id(self) -> str:
         """
         Gets the id of this PushIntegration.
-        The globally unique identifier for the object.
+        The mobile push integration id associated with the deployment
 
         :return: The id of this PushIntegration.
         :rtype: str
@@ -74,7 +74,7 @@ class PushIntegration(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this PushIntegration.
-        The globally unique identifier for the object.
+        The mobile push integration id associated with the deployment
 
         :param id: The id of this PushIntegration.
         :type: str

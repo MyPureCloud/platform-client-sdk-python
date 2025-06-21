@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_clientapps_unifiedcommunications**](#get_integrations_clientapps_unifiedcommunications) | UC integration client application configuration.|
 |[**get_integrations_credential**](#get_integrations_credential) | Get a single credential with sensitive fields redacted|
 |[**get_integrations_credentials**](#get_integrations_credentials) | List multiple sets of credentials|
+|[**get_integrations_credentials_listing**](#get_integrations_credentials_listing) | List multiple sets of credentials using cursor-based paging|
 |[**get_integrations_credentials_types**](#get_integrations_credentials_types) | List all credential types|
 |[**get_integrations_speech_audioconnector**](#get_integrations_speech_audioconnector) | Get a list of Audio Connector integrations|
 |[**get_integrations_speech_audioconnector_integration_id**](#get_integrations_speech_audioconnector_integration_id) | Get an Audio Connector integration|
@@ -1838,6 +1839,58 @@ except ApiException as e:
 ### Return type
 
 [**CredentialInfoListing**](CredentialInfoListing)
+
+
+## get_integrations_credentials_listing
+
+> [**CredentialInfoCursorListing**](CredentialInfoCursorListing) get_integrations_credentials_listing(before=before, after=after, page_size=page_size)
+
+
+List multiple sets of credentials using cursor-based paging
+
+Wraps GET /api/v2/integrations/credentials/listing 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+
+try:
+    # List multiple sets of credentials using cursor-based paging
+    api_response = api_instance.get_integrations_credentials_listing(before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_credentials_listing: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**CredentialInfoCursorListing**](CredentialInfoCursorListing)
 
 
 ## get_integrations_credentials_types
@@ -4796,4 +4849,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

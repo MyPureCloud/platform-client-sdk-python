@@ -69,7 +69,7 @@ class BuAgentSchedulePublishedScheduleReference(object):
     def id(self) -> str:
         """
         Gets the id of this BuAgentSchedulePublishedScheduleReference.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :return: The id of this BuAgentSchedulePublishedScheduleReference.
         :rtype: str
@@ -80,7 +80,7 @@ class BuAgentSchedulePublishedScheduleReference(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this BuAgentSchedulePublishedScheduleReference.
-        The globally unique identifier for the object.
+        The ID of the schedule
 
         :param id: The id of this BuAgentSchedulePublishedScheduleReference.
         :type: str

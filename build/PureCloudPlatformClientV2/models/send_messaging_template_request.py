@@ -74,7 +74,7 @@ class SendMessagingTemplateRequest(object):
     def response_id(self) -> str:
         """
         Gets the response_id of this SendMessagingTemplateRequest.
-        A Response Management response identifier for a messaging template defined response
+        Unique identifier for a Response Management response to fetch and apply pre-configured message content when sending outbound responses.
 
         :return: The response_id of this SendMessagingTemplateRequest.
         :rtype: str
@@ -85,7 +85,7 @@ class SendMessagingTemplateRequest(object):
     def response_id(self, response_id: str) -> None:
         """
         Sets the response_id of this SendMessagingTemplateRequest.
-        A Response Management response identifier for a messaging template defined response
+        Unique identifier for a Response Management response to fetch and apply pre-configured message content when sending outbound responses.
 
         :param response_id: The response_id of this SendMessagingTemplateRequest.
         :type: str

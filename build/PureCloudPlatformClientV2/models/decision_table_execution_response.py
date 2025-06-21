@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DecisionTableRowEntityRef
     from . import DecisionTableRowExecutionOutput
     from . import DecisionTableVersionEntity
 
@@ -51,15 +52,21 @@ class DecisionTableExecutionResponse(object):
         """
         self.swagger_types = {
             'table': 'DecisionTableVersionEntity',
+            'total_match_row_count': 'int',
+            'top_match_rows': 'list[DecisionTableRowEntityRef]',
             'row_execution_outputs': 'list[DecisionTableRowExecutionOutput]'
         }
 
         self.attribute_map = {
             'table': 'table',
+            'total_match_row_count': 'totalMatchRowCount',
+            'top_match_rows': 'topMatchRows',
             'row_execution_outputs': 'rowExecutionOutputs'
         }
 
         self._table = None
+        self._total_match_row_count = None
+        self._top_match_rows = None
         self._row_execution_outputs = None
 
     @property
@@ -87,10 +94,58 @@ class DecisionTableExecutionResponse(object):
         self._table = table
 
     @property
+    def total_match_row_count(self) -> int:
+        """
+        Gets the total_match_row_count of this DecisionTableExecutionResponse.
+        Total number of rows that matched execution input and would return results
+
+        :return: The total_match_row_count of this DecisionTableExecutionResponse.
+        :rtype: int
+        """
+        return self._total_match_row_count
+
+    @total_match_row_count.setter
+    def total_match_row_count(self, total_match_row_count: int) -> None:
+        """
+        Sets the total_match_row_count of this DecisionTableExecutionResponse.
+        Total number of rows that matched execution input and would return results
+
+        :param total_match_row_count: The total_match_row_count of this DecisionTableExecutionResponse.
+        :type: int
+        """
+        
+
+        self._total_match_row_count = total_match_row_count
+
+    @property
+    def top_match_rows(self) -> List['DecisionTableRowEntityRef']:
+        """
+        Gets the top_match_rows of this DecisionTableExecutionResponse.
+        Top 5 rows matching execution input, excluding the one produced the result.
+
+        :return: The top_match_rows of this DecisionTableExecutionResponse.
+        :rtype: list[DecisionTableRowEntityRef]
+        """
+        return self._top_match_rows
+
+    @top_match_rows.setter
+    def top_match_rows(self, top_match_rows: List['DecisionTableRowEntityRef']) -> None:
+        """
+        Sets the top_match_rows of this DecisionTableExecutionResponse.
+        Top 5 rows matching execution input, excluding the one produced the result.
+
+        :param top_match_rows: The top_match_rows of this DecisionTableExecutionResponse.
+        :type: list[DecisionTableRowEntityRef]
+        """
+        
+
+        self._top_match_rows = top_match_rows
+
+    @property
     def row_execution_outputs(self) -> List['DecisionTableRowExecutionOutput']:
         """
         Gets the row_execution_outputs of this DecisionTableExecutionResponse.
-        The output data for each executed row for which output is collected. 
+        The output data for each executed row for which output is collected.
 
         :return: The row_execution_outputs of this DecisionTableExecutionResponse.
         :rtype: list[DecisionTableRowExecutionOutput]
@@ -101,7 +156,7 @@ class DecisionTableExecutionResponse(object):
     def row_execution_outputs(self, row_execution_outputs: List['DecisionTableRowExecutionOutput']) -> None:
         """
         Sets the row_execution_outputs of this DecisionTableExecutionResponse.
-        The output data for each executed row for which output is collected. 
+        The output data for each executed row for which output is collected.
 
         :param row_execution_outputs: The row_execution_outputs of this DecisionTableExecutionResponse.
         :type: list[DecisionTableRowExecutionOutput]

@@ -144,7 +144,7 @@ class AgentStateQueryRequest(object):
         """
         if isinstance(user_order_by, int):
             user_order_by = str(user_order_by)
-        allowed_values = ["userName", "segmentStart", "sessionStart"]
+        allowed_values = ["userName", "segmentStart", "sessionStart", "presenceDate", "routingStatusDate", "systemPresence", "routingStatus", "organizationPresenceId"]
         if user_order_by.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for user_order_by -> " + user_order_by)
             self._user_order_by = "outdated_sdk_version"

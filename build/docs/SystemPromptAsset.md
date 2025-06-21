@@ -14,7 +14,7 @@
 | **media_uri** | str |  | [optional] |
 | **tts_string** | str |  | [optional] |
 | **text** | str |  | [optional] |
-| **upload_uri** | str |  | [optional] |
+| **upload_uri** | str | Deprecated. This was use for uploading the resource audio. | [optional] |
 | **upload_status** | str |  | [optional] |
 | **has_default** | bool |  | [optional] |
 | **language_default** | bool |  | [optional] |
@@ -23,4 +23,4 @@
 
 
 
-_PureCloudPlatformClientV2 230.0.0_
+_PureCloudPlatformClientV2 231.0.0_

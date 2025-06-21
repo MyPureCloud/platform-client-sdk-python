@@ -89,7 +89,7 @@ class PerformancePredictionUploadSchema(object):
     def on_queue_times(self) -> List['MuAgentQueueTimeRequest']:
         """
         Gets the on_queue_times of this PerformancePredictionUploadSchema.
-        List of agent on queue times by management unit
+        List of agent on-queue times by management unit
 
         :return: The on_queue_times of this PerformancePredictionUploadSchema.
         :rtype: list[MuAgentQueueTimeRequest]
@@ -100,7 +100,7 @@ class PerformancePredictionUploadSchema(object):
     def on_queue_times(self, on_queue_times: List['MuAgentQueueTimeRequest']) -> None:
         """
         Sets the on_queue_times of this PerformancePredictionUploadSchema.
-        List of agent on queue times by management unit
+        List of agent on-queue times by management unit
 
         :param on_queue_times: The on_queue_times of this PerformancePredictionUploadSchema.
         :type: list[MuAgentQueueTimeRequest]

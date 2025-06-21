@@ -108,7 +108,7 @@ class KnowledgeBaseWithDialectReference(object):
         """
         if isinstance(language_code, int):
             language_code = str(language_code)
-        allowed_values = ["en-ZA", "en-AU", "en-GB", "en-IE", "en-IN", "en-US", "es-US", "es-ES", "nl-NL", "fr-CA", "fr-FR", "de-DE", "it-IT", "pt-PT", "pt-BR", "ar-AE", "ja-JP", "sv-SE", "de-AT", "de-CH", "da-DK", "fr-BE", "fr-CH", "es-MX", "es-CO", "ko-KR", "hi-IN", "tr-TR", "es-AR"]
+        allowed_values = ["en-ZA", "en-AU", "en-GB", "en-IE", "en-IN", "en-US", "es-US", "es-ES", "nl-NL", "fr-CA", "fr-FR", "de-DE", "it-IT", "pt-PT", "pt-BR", "ar-AE", "ja-JP", "sv-SE", "de-AT", "de-CH", "da-DK", "fr-BE", "fr-CH", "es-MX", "es-CO", "ko-KR", "hi-IN", "tr-TR", "es-AR", "fi-FI", "nb-NO"]
         if language_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for language_code -> " + language_code)
             self._language_code = "outdated_sdk_version"
