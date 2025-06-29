@@ -180,9 +180,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_internalmessages_users_communications**](#post_conversation_participant_internalmessages_users_communications) | Setup internal message communication with user|
 |[**post_conversation_participant_replace**](#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversation_participant_replace_agent**](#post_conversation_participant_replace_agent) | Replace this participant with the specified agent|
+|[**post_conversation_participant_replace_contact_external**](#post_conversation_participant_replace_contact_external) | Replace this participant with the an external contact|
 |[**post_conversation_participant_replace_external**](#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
 |[**post_conversation_participant_replace_queue**](#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
 |[**post_conversation_participant_secureivrsessions**](#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
+|[**post_conversation_participant_transfer**](#post_conversation_participant_transfer) | Replace this participant by another one using the address of the destination.|
 |[**post_conversation_suggestion_engagement**](#post_conversation_suggestion_engagement) | Save an engagement on the suggestion.|
 |[**post_conversation_suggestions_feedback**](#post_conversation_suggestions_feedback) | Suggestion feedback.|
 |[**post_conversation_summary_feedback**](#post_conversation_summary_feedback) | Submit feedback for the summary.|
@@ -192,10 +194,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_call_participant_communication_wrapup**](#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_call_participant_consult**](#post_conversations_call_participant_consult) | Initiate and update consult transfer|
 |[**post_conversations_call_participant_consult_agent**](#post_conversations_call_participant_consult_agent) | Initiate a consult transfer to an agent|
+|[**post_conversations_call_participant_consult_contact_external**](#post_conversations_call_participant_consult_contact_external) | Initiate a consult transfer to an external contact|
 |[**post_conversations_call_participant_consult_external**](#post_conversations_call_participant_consult_external) | Initiate a consult transfer to an external contact|
 |[**post_conversations_call_participant_consult_queue**](#post_conversations_call_participant_consult_queue) | Initiate a consult transfer to a queue|
 |[**post_conversations_call_participant_monitor**](#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_call_participant_replace**](#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_call_participant_voice_consult**](#post_conversations_call_participant_voice_consult) | Initiate voice consult transfer|
 |[**post_conversations_call_participants**](#post_conversations_call_participants) | Add participants to a conversation|
 |[**post_conversations_callback_participant_communication_wrapup**](#post_conversations_callback_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_callback_participant_replace**](#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
@@ -9069,6 +9073,60 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_conversation_participant_replace_contact_external
+
+>  post_conversation_participant_replace_contact_external(conversation_id, participant_id, body)
+
+
+Replace this participant with the an external contact
+
+post_conversation_participant_replace_contact_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external 
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternalContact
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.TransferToExternalContactRequest() # TransferToExternalContactRequest | Transfer request
+
+try:
+    # Replace this participant with the an external contact
+    api_instance.post_conversation_participant_replace_contact_external(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_participant_replace_contact_external: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**TransferToExternalContactRequest**](TransferToExternalContactRequest)| Transfer request |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## post_conversation_participant_replace_external
 
 >  post_conversation_participant_replace_external(conversation_id, participant_id, body)
@@ -9222,6 +9280,59 @@ except ApiException as e:
 ### Return type
 
 [**SecureSession**](SecureSession)
+
+
+## post_conversation_participant_transfer
+
+>  post_conversation_participant_transfer(conversation_id, participant_id, body)
+
+
+Replace this participant by another one using the address of the destination.
+
+post_conversation_participant_transfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer 
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.TransferToAddressRequest() # TransferToAddressRequest | Transfer request
+
+try:
+    # Replace this participant by another one using the address of the destination.
+    api_instance.post_conversation_participant_transfer(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_participant_transfer: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**TransferToAddressRequest**](TransferToAddressRequest)| Transfer request |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## post_conversation_suggestion_engagement
@@ -9686,6 +9797,61 @@ except ApiException as e:
 [**ConsultTransferResponse**](ConsultTransferResponse)
 
 
+## post_conversations_call_participant_consult_contact_external
+
+> [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_contact_external(conversation_id, participant_id, body)
+
+
+Initiate a consult transfer to an external contact
+
+post_conversations_call_participant_consult_contact_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external 
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternalContact
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ConsultTransferToExternalContact() # ConsultTransferToExternalContact | Destination address & initial speak to
+
+try:
+    # Initiate a consult transfer to an external contact
+    api_response = api_instance.post_conversations_call_participant_consult_contact_external(conversation_id, participant_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_consult_contact_external: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ConsultTransferToExternalContact**](ConsultTransferToExternalContact)| Destination address &amp; initial speak to |  |
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse)
+
+
 ## post_conversations_call_participant_consult_external
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
@@ -9890,6 +10056,60 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+
+## post_conversations_call_participant_voice_consult
+
+> [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_voice_consult(conversation_id, participant_id, body)
+
+
+Initiate voice consult transfer
+
+post_conversations_call_participant_voice_consult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult 
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ConsultTransferToAddress() # ConsultTransferToAddress | Destination address & initial speak to
+
+try:
+    # Initiate voice consult transfer
+    api_response = api_instance.post_conversations_call_participant_voice_consult(conversation_id, participant_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_voice_consult: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ConsultTransferToAddress**](ConsultTransferToAddress)| Destination address &amp; initial speak to |  |
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 ## post_conversations_call_participants
@@ -13949,4 +14169,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 231.0.0_
+_PureCloudPlatformClientV2 232.0.0_

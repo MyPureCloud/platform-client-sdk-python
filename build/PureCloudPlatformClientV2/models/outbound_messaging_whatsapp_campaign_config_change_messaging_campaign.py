@@ -139,7 +139,7 @@ class OutboundMessagingWhatsappCampaignConfigChangeMessagingCampaign(object):
         """
         if isinstance(campaign_status, int):
             campaign_status = str(campaign_status)
-        allowed_values = ["on", "off", "complete", "stopping", "invalid"]
+        allowed_values = ["on", "off", "complete", "stopping", "invalid", "forced_off", "forced_stopping"]
         if campaign_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for campaign_status -> " + campaign_status)
             self._campaign_status = "outdated_sdk_version"

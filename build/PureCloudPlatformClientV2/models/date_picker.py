@@ -49,20 +49,50 @@ class DatePicker(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'title': 'str',
             'subtitle': 'str',
-            'date_picker_available_date_times': 'list[DatePickerAvailableDateTime]'
+            'date_picker_available_date_times': 'list[DatePickerAvailableDateTime]',
+            'date_selected': 'datetime'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'title': 'title',
             'subtitle': 'subtitle',
-            'date_picker_available_date_times': 'datePickerAvailableDateTimes'
+            'date_picker_available_date_times': 'datePickerAvailableDateTimes',
+            'date_selected': 'dateSelected'
         }
 
+        self._id = None
         self._title = None
         self._subtitle = None
         self._date_picker_available_date_times = None
+        self._date_selected = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this DatePicker.
+        Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+
+        :return: The id of this DatePicker.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this DatePicker.
+        Optional unique identifier to help map component replies to form messages where multiple DatePickers can be present.
+
+        :param id: The id of this DatePicker.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def title(self) -> str:
@@ -135,6 +165,30 @@ class DatePicker(object):
         
 
         self._date_picker_available_date_times = date_picker_available_date_times
+
+    @property
+    def date_selected(self) -> datetime:
+        """
+        Gets the date_selected of this DatePicker.
+        Selected date response from end customer. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_selected of this DatePicker.
+        :rtype: datetime
+        """
+        return self._date_selected
+
+    @date_selected.setter
+    def date_selected(self, date_selected: datetime) -> None:
+        """
+        Sets the date_selected of this DatePicker.
+        Selected date response from end customer. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_selected: The date_selected of this DatePicker.
+        :type: datetime
+        """
+        
+
+        self._date_selected = date_selected
 
     def to_dict(self):
         """

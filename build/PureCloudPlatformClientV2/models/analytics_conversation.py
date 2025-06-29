@@ -60,6 +60,7 @@ class AnalyticsConversation(object):
             'customer_participation': 'bool',
             'division_ids': 'list[str]',
             'external_tag': 'str',
+            'inactivity_timeout': 'datetime',
             'knowledge_base_ids': 'list[str]',
             'media_stats_min_conversation_mos': 'float',
             'media_stats_min_conversation_r_factor': 'float',
@@ -81,6 +82,7 @@ class AnalyticsConversation(object):
             'customer_participation': 'customerParticipation',
             'division_ids': 'divisionIds',
             'external_tag': 'externalTag',
+            'inactivity_timeout': 'inactivityTimeout',
             'knowledge_base_ids': 'knowledgeBaseIds',
             'media_stats_min_conversation_mos': 'mediaStatsMinConversationMos',
             'media_stats_min_conversation_r_factor': 'mediaStatsMinConversationRFactor',
@@ -101,6 +103,7 @@ class AnalyticsConversation(object):
         self._customer_participation = None
         self._division_ids = None
         self._external_tag = None
+        self._inactivity_timeout = None
         self._knowledge_base_ids = None
         self._media_stats_min_conversation_mos = None
         self._media_stats_min_conversation_r_factor = None
@@ -308,6 +311,30 @@ class AnalyticsConversation(object):
         
 
         self._external_tag = external_tag
+
+    @property
+    def inactivity_timeout(self) -> datetime:
+        """
+        Gets the inactivity_timeout of this AnalyticsConversation.
+        The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The inactivity_timeout of this AnalyticsConversation.
+        :rtype: datetime
+        """
+        return self._inactivity_timeout
+
+    @inactivity_timeout.setter
+    def inactivity_timeout(self, inactivity_timeout: datetime) -> None:
+        """
+        Sets the inactivity_timeout of this AnalyticsConversation.
+        The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param inactivity_timeout: The inactivity_timeout of this AnalyticsConversation.
+        :type: datetime
+        """
+        
+
+        self._inactivity_timeout = inactivity_timeout
 
     @property
     def knowledge_base_ids(self) -> List[str]:

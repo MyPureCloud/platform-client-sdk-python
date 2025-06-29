@@ -49,20 +49,47 @@ class ListPicker(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'title': 'str',
             'subtitle': 'str',
             'sections': 'list[ListPickerSection]'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'title': 'title',
             'subtitle': 'subtitle',
             'sections': 'sections'
         }
 
+        self._id = None
         self._title = None
         self._subtitle = None
         self._sections = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ListPicker.
+        Optional unique identifier to help map component replies to form messages where multiple List Pickers can be present.
+
+        :return: The id of this ListPicker.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ListPicker.
+        Optional unique identifier to help map component replies to form messages where multiple List Pickers can be present.
+
+        :param id: The id of this ListPicker.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def title(self) -> str:

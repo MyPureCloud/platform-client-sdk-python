@@ -56,6 +56,7 @@ class ConversationCallEventTopicCallConversation(object):
             'other_media_uris': 'list[str]',
             'address': 'str',
             'utilization_label_id': 'str',
+            'inactivity_timeout': 'datetime',
             'divisions': 'list[ConversationCallEventTopicConversationDivisionMembership]',
             'recording_state': 'str',
             'secure_pause': 'bool',
@@ -69,6 +70,7 @@ class ConversationCallEventTopicCallConversation(object):
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
             'utilization_label_id': 'utilizationLabelId',
+            'inactivity_timeout': 'inactivityTimeout',
             'divisions': 'divisions',
             'recording_state': 'recordingState',
             'secure_pause': 'securePause',
@@ -81,6 +83,7 @@ class ConversationCallEventTopicCallConversation(object):
         self._other_media_uris = None
         self._address = None
         self._utilization_label_id = None
+        self._inactivity_timeout = None
         self._divisions = None
         self._recording_state = None
         self._secure_pause = None
@@ -229,6 +232,30 @@ class ConversationCallEventTopicCallConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def inactivity_timeout(self) -> datetime:
+        """
+        Gets the inactivity_timeout of this ConversationCallEventTopicCallConversation.
+
+
+        :return: The inactivity_timeout of this ConversationCallEventTopicCallConversation.
+        :rtype: datetime
+        """
+        return self._inactivity_timeout
+
+    @inactivity_timeout.setter
+    def inactivity_timeout(self, inactivity_timeout: datetime) -> None:
+        """
+        Sets the inactivity_timeout of this ConversationCallEventTopicCallConversation.
+
+
+        :param inactivity_timeout: The inactivity_timeout of this ConversationCallEventTopicCallConversation.
+        :type: datetime
+        """
+        
+
+        self._inactivity_timeout = inactivity_timeout
 
     @property
     def divisions(self) -> List['ConversationCallEventTopicConversationDivisionMembership']:

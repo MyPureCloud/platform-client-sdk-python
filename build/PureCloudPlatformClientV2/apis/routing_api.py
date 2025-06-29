@@ -4866,12 +4866,13 @@ class RoutingApi(object):
         :param str queue_id: Queue ID (required)
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str name: Wrapup code's name (trailing asterisks allowed)
         :return: WrapupCodeEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queue_id', 'page_size', 'page_number']
+        all_params = ['queue_id', 'page_size', 'page_number', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -4899,6 +4900,8 @@ class RoutingApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 

@@ -7,8 +7,9 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **text** | str |  | [optional] |
+| **description** | str |  | [optional] |
 | **score** | float |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 231.0.0_
+_PureCloudPlatformClientV2 232.0.0_

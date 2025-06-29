@@ -32,8 +32,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationMessageContent
     from . import Format
-    from . import MessageContent
 
 class TextBotPromptSegment(object):
     """
@@ -53,7 +53,7 @@ class TextBotPromptSegment(object):
             'text': 'str',
             'type': 'str',
             'format': 'Format',
-            'content': 'list[MessageContent]'
+            'content': 'list[ConversationMessageContent]'
         }
 
         self.attribute_map = {
@@ -146,24 +146,24 @@ class TextBotPromptSegment(object):
         self._format = format
 
     @property
-    def content(self) -> List['MessageContent']:
+    def content(self) -> List['ConversationMessageContent']:
         """
         Gets the content of this TextBotPromptSegment.
         Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
 
         :return: The content of this TextBotPromptSegment.
-        :rtype: list[MessageContent]
+        :rtype: list[ConversationMessageContent]
         """
         return self._content
 
     @content.setter
-    def content(self, content: List['MessageContent']) -> None:
+    def content(self, content: List['ConversationMessageContent']) -> None:
         """
         Sets the content of this TextBotPromptSegment.
         Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
 
         :param content: The content of this TextBotPromptSegment.
-        :type: list[MessageContent]
+        :type: list[ConversationMessageContent]
         """
         
 

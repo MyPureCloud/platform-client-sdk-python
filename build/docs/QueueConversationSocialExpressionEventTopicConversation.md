@@ -15,8 +15,9 @@
 | **external_tag** | str |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
 | **secure_pause** | bool |  | [optional] |
+| **inactivity_timeout** | datetime |  | [optional] |
 | **divisions** | [list[QueueConversationSocialExpressionEventTopicConversationDivisionMembership]](QueueConversationSocialExpressionEventTopicConversationDivisionMembership) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 231.0.0_
+_PureCloudPlatformClientV2 232.0.0_

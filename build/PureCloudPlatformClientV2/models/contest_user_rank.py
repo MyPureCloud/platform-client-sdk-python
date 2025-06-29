@@ -49,17 +49,20 @@ class ContestUserRank(object):
         self.swagger_types = {
             'id': 'str',
             'rank': 'int',
+            'score': 'float',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'rank': 'rank',
+            'score': 'score',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._rank = None
+        self._score = None
         self._self_uri = None
 
     @property
@@ -109,6 +112,30 @@ class ContestUserRank(object):
         
 
         self._rank = rank
+
+    @property
+    def score(self) -> float:
+        """
+        Gets the score of this ContestUserRank.
+        The user's contest score
+
+        :return: The score of this ContestUserRank.
+        :rtype: float
+        """
+        return self._score
+
+    @score.setter
+    def score(self, score: float) -> None:
+        """
+        Sets the score of this ContestUserRank.
+        The user's contest score
+
+        :param score: The score of this ContestUserRank.
+        :type: float
+        """
+        
+
+        self._score = score
 
     @property
     def self_uri(self) -> str:

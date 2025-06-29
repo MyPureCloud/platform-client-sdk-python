@@ -50,15 +50,18 @@ class ContestWinners(object):
         """
         self.swagger_types = {
             'tier': 'int',
+            'winners_count': 'int',
             'users': 'list[ContestUserRank]'
         }
 
         self.attribute_map = {
             'tier': 'tier',
+            'winners_count': 'winnersCount',
             'users': 'users'
         }
 
         self._tier = None
+        self._winners_count = None
         self._users = None
 
     @property
@@ -84,6 +87,30 @@ class ContestWinners(object):
         
 
         self._tier = tier
+
+    @property
+    def winners_count(self) -> int:
+        """
+        Gets the winners_count of this ContestWinners.
+        The number of Contest Winners in a tier
+
+        :return: The winners_count of this ContestWinners.
+        :rtype: int
+        """
+        return self._winners_count
+
+    @winners_count.setter
+    def winners_count(self, winners_count: int) -> None:
+        """
+        Sets the winners_count of this ContestWinners.
+        The number of Contest Winners in a tier
+
+        :param winners_count: The winners_count of this ContestWinners.
+        :type: int
+        """
+        
+
+        self._winners_count = winners_count
 
     @property
     def users(self) -> List['ContestUserRank']:

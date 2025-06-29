@@ -48,15 +48,18 @@ class V2SessionConversationsSummarySettingsPreviewEventConversationFollowupActio
         """
         self.swagger_types = {
             'text': 'str',
+            'description': 'str',
             'score': 'float'
         }
 
         self.attribute_map = {
             'text': 'text',
+            'description': 'description',
             'score': 'score'
         }
 
         self._text = None
+        self._description = None
         self._score = None
 
     @property
@@ -82,6 +85,30 @@ class V2SessionConversationsSummarySettingsPreviewEventConversationFollowupActio
         
 
         self._text = text
+
+    @property
+    def description(self) -> str:
+        """
+        Gets the description of this V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction.
+
+
+        :return: The description of this V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str) -> None:
+        """
+        Sets the description of this V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction.
+
+
+        :param description: The description of this V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction.
+        :type: str
+        """
+        
+
+        self._description = description
 
     @property
     def score(self) -> float:

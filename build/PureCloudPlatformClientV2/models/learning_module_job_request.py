@@ -78,7 +78,7 @@ class LearningModuleJobRequest(object):
         """
         if isinstance(action, int):
             action = str(action)
-        allowed_values = ["Reassign", "GracefulArchive", "ImmediateArchive", "Unarchive"]
+        allowed_values = ["Reassign", "GracefulArchive", "ImmediateArchive", "Unarchive", "Assign"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"

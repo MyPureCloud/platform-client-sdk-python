@@ -56,6 +56,7 @@ class ConversationChatEventTopicChatConversation(object):
             'other_media_uris': 'list[str]',
             'address': 'str',
             'utilization_label_id': 'str',
+            'inactivity_timeout': 'datetime',
             'divisions': 'list[ConversationChatEventTopicConversationDivisionMembership]'
         }
 
@@ -66,6 +67,7 @@ class ConversationChatEventTopicChatConversation(object):
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
             'utilization_label_id': 'utilizationLabelId',
+            'inactivity_timeout': 'inactivityTimeout',
             'divisions': 'divisions'
         }
 
@@ -75,6 +77,7 @@ class ConversationChatEventTopicChatConversation(object):
         self._other_media_uris = None
         self._address = None
         self._utilization_label_id = None
+        self._inactivity_timeout = None
         self._divisions = None
 
     @property
@@ -220,6 +223,30 @@ class ConversationChatEventTopicChatConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def inactivity_timeout(self) -> datetime:
+        """
+        Gets the inactivity_timeout of this ConversationChatEventTopicChatConversation.
+
+
+        :return: The inactivity_timeout of this ConversationChatEventTopicChatConversation.
+        :rtype: datetime
+        """
+        return self._inactivity_timeout
+
+    @inactivity_timeout.setter
+    def inactivity_timeout(self, inactivity_timeout: datetime) -> None:
+        """
+        Sets the inactivity_timeout of this ConversationChatEventTopicChatConversation.
+
+
+        :param inactivity_timeout: The inactivity_timeout of this ConversationChatEventTopicChatConversation.
+        :type: datetime
+        """
+        
+
+        self._inactivity_timeout = inactivity_timeout
 
     @property
     def divisions(self) -> List['ConversationChatEventTopicConversationDivisionMembership']:

@@ -929,7 +929,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "endpointDnd", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transferDnd", "transportFailure", "uncallable"]
+        allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "endpointDnd", "error", "forwardTransfer", "inactivity", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transferDnd", "transportFailure", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"

@@ -114,7 +114,7 @@ class DecisionTableRowExecutionOutput(object):
     def outputs(self) -> Dict[str, object]:
         """
         Gets the outputs of this DecisionTableRowExecutionOutput.
-        The JSON output produced by this rule. Valid according to the execution output contract.
+        The JSON output produced by this rule. Valid according to the execution output contract. In the case of enum decision table output columns, the enum options key will be provided as the value, not the enum options label as this can be changed. For business rules queue columns both “queue” and “id” keys will always be returned  regardless of the business rules queue attribute key and these do not change.
 
         :return: The outputs of this DecisionTableRowExecutionOutput.
         :rtype: dict(str, object)
@@ -125,7 +125,7 @@ class DecisionTableRowExecutionOutput(object):
     def outputs(self, outputs: Dict[str, object]) -> None:
         """
         Sets the outputs of this DecisionTableRowExecutionOutput.
-        The JSON output produced by this rule. Valid according to the execution output contract.
+        The JSON output produced by this rule. Valid according to the execution output contract. In the case of enum decision table output columns, the enum options key will be provided as the value, not the enum options label as this can be changed. For business rules queue columns both “queue” and “id” keys will always be returned  regardless of the business rules queue attribute key and these do not change.
 
         :param outputs: The outputs of this DecisionTableRowExecutionOutput.
         :type: dict(str, object)

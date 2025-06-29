@@ -47,6 +47,8 @@ class VoicemailMailboxInfo(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
+            'owner_type': 'str',
             'usage_size_bytes': 'int',
             'total_count': 'int',
             'unread_count': 'int',
@@ -56,10 +58,13 @@ class VoicemailMailboxInfo(object):
             'newest_unread_date': 'datetime',
             'oldest_unread_date': 'datetime',
             'newest_read_date': 'datetime',
-            'oldest_read_date': 'datetime'
+            'oldest_read_date': 'datetime',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
+            'owner_type': 'ownerType',
             'usage_size_bytes': 'usageSizeBytes',
             'total_count': 'totalCount',
             'unread_count': 'unreadCount',
@@ -69,9 +74,12 @@ class VoicemailMailboxInfo(object):
             'newest_unread_date': 'newestUnreadDate',
             'oldest_unread_date': 'oldestUnreadDate',
             'newest_read_date': 'newestReadDate',
-            'oldest_read_date': 'oldestReadDate'
+            'oldest_read_date': 'oldestReadDate',
+            'self_uri': 'selfUri'
         }
 
+        self._id = None
+        self._owner_type = None
         self._usage_size_bytes = None
         self._total_count = None
         self._unread_count = None
@@ -82,6 +90,60 @@ class VoicemailMailboxInfo(object):
         self._oldest_unread_date = None
         self._newest_read_date = None
         self._oldest_read_date = None
+        self._self_uri = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this VoicemailMailboxInfo.
+        The globally unique identifier for the object.
+
+        :return: The id of this VoicemailMailboxInfo.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this VoicemailMailboxInfo.
+        The globally unique identifier for the object.
+
+        :param id: The id of this VoicemailMailboxInfo.
+        :type: str
+        """
+        
+
+        self._id = id
+
+    @property
+    def owner_type(self) -> str:
+        """
+        Gets the owner_type of this VoicemailMailboxInfo.
+        The owner type of the voicemail mailbox
+
+        :return: The owner_type of this VoicemailMailboxInfo.
+        :rtype: str
+        """
+        return self._owner_type
+
+    @owner_type.setter
+    def owner_type(self, owner_type: str) -> None:
+        """
+        Sets the owner_type of this VoicemailMailboxInfo.
+        The owner type of the voicemail mailbox
+
+        :param owner_type: The owner_type of this VoicemailMailboxInfo.
+        :type: str
+        """
+        if isinstance(owner_type, int):
+            owner_type = str(owner_type)
+        allowed_values = ["User", "Group", "Queue"]
+        if owner_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for owner_type -> " + owner_type)
+            self._owner_type = "outdated_sdk_version"
+        else:
+            self._owner_type = owner_type
 
     @property
     def usage_size_bytes(self) -> int:
@@ -322,6 +384,30 @@ class VoicemailMailboxInfo(object):
         
 
         self._oldest_read_date = oldest_read_date
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this VoicemailMailboxInfo.
+        The URI for this object
+
+        :return: The self_uri of this VoicemailMailboxInfo.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this VoicemailMailboxInfo.
+        The URI for this object
+
+        :param self_uri: The self_uri of this VoicemailMailboxInfo.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

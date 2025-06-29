@@ -2830,10 +2830,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_integrations_credentials is deprecated")
     def get_integrations_credentials(self, **kwargs) -> 'CredentialInfoListing':
         """
         List multiple sets of credentials
-        
+        This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

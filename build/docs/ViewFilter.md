@@ -238,4 +238,4 @@
 
 
 
-_PureCloudPlatformClientV2 231.0.0_
+_PureCloudPlatformClientV2 232.0.0_

@@ -60,6 +60,7 @@ class QueueConversationEventTopicConversation(object):
             'external_tag': 'str',
             'utilization_label_id': 'str',
             'secure_pause': 'bool',
+            'inactivity_timeout': 'datetime',
             'divisions': 'list[QueueConversationEventTopicConversationDivisionMembership]'
         }
 
@@ -73,6 +74,7 @@ class QueueConversationEventTopicConversation(object):
             'external_tag': 'externalTag',
             'utilization_label_id': 'utilizationLabelId',
             'secure_pause': 'securePause',
+            'inactivity_timeout': 'inactivityTimeout',
             'divisions': 'divisions'
         }
 
@@ -85,6 +87,7 @@ class QueueConversationEventTopicConversation(object):
         self._external_tag = None
         self._utilization_label_id = None
         self._secure_pause = None
+        self._inactivity_timeout = None
         self._divisions = None
 
     @property
@@ -302,6 +305,30 @@ class QueueConversationEventTopicConversation(object):
         
 
         self._secure_pause = secure_pause
+
+    @property
+    def inactivity_timeout(self) -> datetime:
+        """
+        Gets the inactivity_timeout of this QueueConversationEventTopicConversation.
+
+
+        :return: The inactivity_timeout of this QueueConversationEventTopicConversation.
+        :rtype: datetime
+        """
+        return self._inactivity_timeout
+
+    @inactivity_timeout.setter
+    def inactivity_timeout(self, inactivity_timeout: datetime) -> None:
+        """
+        Sets the inactivity_timeout of this QueueConversationEventTopicConversation.
+
+
+        :param inactivity_timeout: The inactivity_timeout of this QueueConversationEventTopicConversation.
+        :type: datetime
+        """
+        
+
+        self._inactivity_timeout = inactivity_timeout
 
     @property
     def divisions(self) -> List['QueueConversationEventTopicConversationDivisionMembership']:

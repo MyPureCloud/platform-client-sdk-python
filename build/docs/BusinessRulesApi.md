@@ -835,6 +835,7 @@ Requires ALL permissions:
 
 * businessrules:decisionTable:edit
 * businessrules:businessRulesSchema:view
+* routing:queue:view
 
 ### Example
 
@@ -1377,6 +1378,7 @@ Requires ALL permissions:
 
 * businessrules:decisionTable:add
 * businessrules:businessRulesSchema:view
+* routing:queue:view
 
 ### Example
 
@@ -1624,4 +1626,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 231.0.0_
+_PureCloudPlatformClientV2 232.0.0_
