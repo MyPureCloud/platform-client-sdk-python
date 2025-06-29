@@ -12,8 +12,9 @@
 | **other_media_uris** | list[str] |  | [optional] |
 | **address** | str |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
+| **inactivity_timeout** | datetime |  | [optional] |
 | **divisions** | [list[ConversationCallbackEventTopicConversationDivisionMembership]](ConversationCallbackEventTopicConversationDivisionMembership) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 231.0.0_
+_PureCloudPlatformClientV2 232.0.0_

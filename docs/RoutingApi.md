@@ -3056,7 +3056,7 @@ except ApiException as e:
 
 ## get_routing_queue_wrapupcodes
 
-> [**WrapupCodeEntityListing**](WrapupCodeEntityListing) get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number)
+> [**WrapupCodeEntityListing**](WrapupCodeEntityListing) get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number, name=name)
 
 
 Get the wrap-up codes for a queue
@@ -3083,10 +3083,11 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Wrapup code's name (trailing asterisks allowed) (optional)
 
 try:
     # Get the wrap-up codes for a queue
-    api_response = api_instance.get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queue_wrapupcodes: %s\n" % e)
@@ -3100,6 +3101,7 @@ except ApiException as e:
 | **queue_id** | **str**| Queue ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Wrapup code&#39;s name (trailing asterisks allowed) | [optional]  |
 
 ### Return type
 
@@ -8034,4 +8036,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 231.0.0_
+_PureCloudPlatformClientV2 232.0.0_
