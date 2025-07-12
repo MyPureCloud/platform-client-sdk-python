@@ -1533,7 +1533,7 @@ except ApiException as e:
 
 ## get_taskmanagement_workitems_schema_versions
 
-> [**DataSchema**](DataSchema) get_taskmanagement_workitems_schema_versions(schema_id)
+> [**DataSchemaListing**](DataSchemaListing) get_taskmanagement_workitems_schema_versions(schema_id)
 
 
 Get all versions of a schema
@@ -1576,7 +1576,7 @@ except ApiException as e:
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**DataSchemaListing**](DataSchemaListing)
 
 
 ## get_taskmanagement_workitems_schemas
@@ -3864,4 +3864,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 232.0.0_
+_PureCloudPlatformClientV2 233.0.0_

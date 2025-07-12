@@ -124,6 +124,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_schedulingjob**](#get_workforcemanagement_schedulingjob) | Get status of the scheduling job|
 |[**get_workforcemanagement_shifttrades**](#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
 |[**get_workforcemanagement_shrinkage_job**](#get_workforcemanagement_shrinkage_job) | Request to fetch the status of the historical shrinkage query|
+|[**get_workforcemanagement_team_adherence**](#get_workforcemanagement_team_adherence) | Get a list of user schedule adherence records for the requested team|
 |[**get_workforcemanagement_timeoffbalance_job**](#get_workforcemanagement_timeoffbalance_job) | Query the results of time off types job|
 |[**get_workforcemanagement_timeoffrequest**](#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequest_waitlistpositions**](#get_workforcemanagement_timeoffrequest_waitlistpositions) | Get the daily waitlist positions of a time off request for the current user|
@@ -6504,6 +6505,54 @@ except ApiException as e:
 ### Return type
 
 [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse)
+
+
+## get_workforcemanagement_team_adherence
+
+> [**UserScheduleAdherenceListing**](UserScheduleAdherenceListing) get_workforcemanagement_team_adherence(team_id)
+
+
+Get a list of user schedule adherence records for the requested team
+
+Wraps GET /api/v2/workforcemanagement/teams/{teamId}/adherence 
+
+Requires ANY permissions: 
+
+* wfm:realtimeAdherence:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+team_id = 'team_id_example' # str | The ID of the team
+
+try:
+    # Get a list of user schedule adherence records for the requested team
+    api_response = api_instance.get_workforcemanagement_team_adherence(team_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_team_adherence: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **team_id** | **str**| The ID of the team |  |
+
+### Return type
+
+[**UserScheduleAdherenceListing**](UserScheduleAdherenceListing)
 
 
 ## get_workforcemanagement_timeoffbalance_job
@@ -12906,4 +12955,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 232.0.0_
+_PureCloudPlatformClientV2 233.0.0_
