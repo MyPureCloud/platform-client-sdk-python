@@ -1186,7 +1186,7 @@ except ApiException as e:
 
 ## get_externalcontacts_contacts_schema_versions
 
-> [**DataSchema**](DataSchema) get_externalcontacts_contacts_schema_versions(schema_id)
+> [**DataSchemaListing**](DataSchemaListing) get_externalcontacts_contacts_schema_versions(schema_id)
 
 
 Get all versions of an external contact's schema
@@ -1229,7 +1229,7 @@ except ApiException as e:
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**DataSchemaListing**](DataSchemaListing)
 
 
 ## get_externalcontacts_contacts_schemas
@@ -2412,7 +2412,7 @@ except ApiException as e:
 
 ## get_externalcontacts_organizations_schema_versions
 
-> [**DataSchema**](DataSchema) get_externalcontacts_organizations_schema_versions(schema_id)
+> [**DataSchemaListing**](DataSchemaListing) get_externalcontacts_organizations_schema_versions(schema_id)
 
 
 Get all versions of an external organization's schema
@@ -2455,7 +2455,7 @@ except ApiException as e:
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**DataSchemaListing**](DataSchemaListing)
 
 
 ## get_externalcontacts_organizations_schemas
@@ -6035,4 +6035,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 232.0.0_
+_PureCloudPlatformClientV2 233.0.0_

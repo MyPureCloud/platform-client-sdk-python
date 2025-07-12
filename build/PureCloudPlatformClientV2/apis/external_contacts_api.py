@@ -1829,7 +1829,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_externalcontacts_contacts_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchema':
+    def get_externalcontacts_contacts_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchemaListing':
         """
         Get all versions of an external contact's schema
         
@@ -1845,7 +1845,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str schema_id: Schema ID (required)
-        :return: DataSchema
+        :return: DataSchemaListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1902,7 +1902,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataSchema',
+                                            response_type='DataSchemaListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3788,7 +3788,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_externalcontacts_organizations_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchema':
+    def get_externalcontacts_organizations_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchemaListing':
         """
         Get all versions of an external organization's schema
         
@@ -3804,7 +3804,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str schema_id: Schema ID (required)
-        :return: DataSchema
+        :return: DataSchemaListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3861,7 +3861,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataSchema',
+                                            response_type='DataSchemaListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

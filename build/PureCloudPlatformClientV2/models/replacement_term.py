@@ -66,7 +66,7 @@ class ReplacementTerm(object):
     def type(self) -> str:
         """
         Gets the type of this ReplacementTerm.
-        Subject search type
+        Replacement term type
 
         :return: The type of this ReplacementTerm.
         :rtype: str
@@ -77,7 +77,7 @@ class ReplacementTerm(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this ReplacementTerm.
-        Subject search type
+        Replacement term type
 
         :param type: The type of this ReplacementTerm.
         :type: str

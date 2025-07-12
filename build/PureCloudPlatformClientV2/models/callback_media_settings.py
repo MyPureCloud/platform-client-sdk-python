@@ -62,6 +62,8 @@ class CallbackMediaSettings(object):
             'auto_dial_delay_seconds': 'int',
             'auto_end_delay_seconds': 'int',
             'pacing_modifier': 'float',
+            'max_retry_count': 'int',
+            'retry_delay_seconds': 'int',
             'live_voice_reaction_type': 'str',
             'live_voice_flow': 'DomainEntityRef',
             'answering_machine_reaction_type': 'str',
@@ -80,6 +82,8 @@ class CallbackMediaSettings(object):
             'auto_dial_delay_seconds': 'autoDialDelaySeconds',
             'auto_end_delay_seconds': 'autoEndDelaySeconds',
             'pacing_modifier': 'pacingModifier',
+            'max_retry_count': 'maxRetryCount',
+            'retry_delay_seconds': 'retryDelaySeconds',
             'live_voice_reaction_type': 'liveVoiceReactionType',
             'live_voice_flow': 'liveVoiceFlow',
             'answering_machine_reaction_type': 'answeringMachineReactionType',
@@ -97,6 +101,8 @@ class CallbackMediaSettings(object):
         self._auto_dial_delay_seconds = None
         self._auto_end_delay_seconds = None
         self._pacing_modifier = None
+        self._max_retry_count = None
+        self._retry_delay_seconds = None
         self._live_voice_reaction_type = None
         self._live_voice_flow = None
         self._answering_machine_reaction_type = None
@@ -370,6 +376,54 @@ class CallbackMediaSettings(object):
         
 
         self._pacing_modifier = pacing_modifier
+
+    @property
+    def max_retry_count(self) -> int:
+        """
+        Gets the max_retry_count of this CallbackMediaSettings.
+        Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect.
+
+        :return: The max_retry_count of this CallbackMediaSettings.
+        :rtype: int
+        """
+        return self._max_retry_count
+
+    @max_retry_count.setter
+    def max_retry_count(self, max_retry_count: int) -> None:
+        """
+        Sets the max_retry_count of this CallbackMediaSettings.
+        Maximum number of retries that should be attempted to try and connect a customer first callback to a customer when the initial callback attempt did not connect.
+
+        :param max_retry_count: The max_retry_count of this CallbackMediaSettings.
+        :type: int
+        """
+        
+
+        self._max_retry_count = max_retry_count
+
+    @property
+    def retry_delay_seconds(self) -> int:
+        """
+        Gets the retry_delay_seconds of this CallbackMediaSettings.
+        Delay in seconds between each retry of a customer first callback.
+
+        :return: The retry_delay_seconds of this CallbackMediaSettings.
+        :rtype: int
+        """
+        return self._retry_delay_seconds
+
+    @retry_delay_seconds.setter
+    def retry_delay_seconds(self, retry_delay_seconds: int) -> None:
+        """
+        Sets the retry_delay_seconds of this CallbackMediaSettings.
+        Delay in seconds between each retry of a customer first callback.
+
+        :param retry_delay_seconds: The retry_delay_seconds of this CallbackMediaSettings.
+        :type: int
+        """
+        
+
+        self._retry_delay_seconds = retry_delay_seconds
 
     @property
     def live_voice_reaction_type(self) -> str:

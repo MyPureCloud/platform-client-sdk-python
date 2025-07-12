@@ -57,7 +57,8 @@ class EvaluationQuestionScore(object):
             'assisted_answer_id': 'str',
             'failed_kill_question': 'bool',
             'comments': 'str',
-            'ai_answer': 'AiAnswer'
+            'ai_answer': 'AiAnswer',
+            'multiple_select_question_option_scores': 'list[EvaluationQuestionScore]'
         }
 
         self.attribute_map = {
@@ -69,7 +70,8 @@ class EvaluationQuestionScore(object):
             'assisted_answer_id': 'assistedAnswerId',
             'failed_kill_question': 'failedKillQuestion',
             'comments': 'comments',
-            'ai_answer': 'aiAnswer'
+            'ai_answer': 'aiAnswer',
+            'multiple_select_question_option_scores': 'multipleSelectQuestionOptionScores'
         }
 
         self._question_id = None
@@ -81,6 +83,7 @@ class EvaluationQuestionScore(object):
         self._failed_kill_question = None
         self._comments = None
         self._ai_answer = None
+        self._multiple_select_question_option_scores = None
 
     @property
     def question_id(self) -> str:
@@ -297,6 +300,30 @@ class EvaluationQuestionScore(object):
         
 
         self._ai_answer = ai_answer
+
+    @property
+    def multiple_select_question_option_scores(self) -> List['EvaluationQuestionScore']:
+        """
+        Gets the multiple_select_question_option_scores of this EvaluationQuestionScore.
+        Only applicable to Multiple Select questions. Scores corresponding to the options of Multiple Select questions.
+
+        :return: The multiple_select_question_option_scores of this EvaluationQuestionScore.
+        :rtype: list[EvaluationQuestionScore]
+        """
+        return self._multiple_select_question_option_scores
+
+    @multiple_select_question_option_scores.setter
+    def multiple_select_question_option_scores(self, multiple_select_question_option_scores: List['EvaluationQuestionScore']) -> None:
+        """
+        Sets the multiple_select_question_option_scores of this EvaluationQuestionScore.
+        Only applicable to Multiple Select questions. Scores corresponding to the options of Multiple Select questions.
+
+        :param multiple_select_question_option_scores: The multiple_select_question_option_scores of this EvaluationQuestionScore.
+        :type: list[EvaluationQuestionScore]
+        """
+        
+
+        self._multiple_select_question_option_scores = multiple_select_question_option_scores
 
     def to_dict(self):
         """

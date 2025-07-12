@@ -6229,7 +6229,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.OutboundDomain() # OutboundDomain | Domain
+body = PureCloudPlatformClientV2.OutboundDomainRequest() # OutboundDomainRequest | Domain
 
 try:
     # Create a domain
@@ -6244,7 +6244,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundDomain**](OutboundDomain)| Domain |  |
+| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain |  |
 
 ### Return type
 
@@ -6277,7 +6277,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.OutboundDomain() # OutboundDomain | Domain
+body = PureCloudPlatformClientV2.OutboundDomainRequest() # OutboundDomainRequest | Domain
 
 try:
     # Create a simulated domain
@@ -6292,7 +6292,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundDomain**](OutboundDomain)| Domain |  |
+| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain |  |
 
 ### Return type
 
@@ -8036,4 +8036,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 232.0.0_
+_PureCloudPlatformClientV2 233.0.0_

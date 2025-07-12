@@ -50,6 +50,7 @@ class AnswerOption(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'built_in_type': 'str',
             'text': 'str',
             'value': 'int',
             'assistance_conditions': 'list[AssistanceCondition]'
@@ -57,12 +58,14 @@ class AnswerOption(object):
 
         self.attribute_map = {
             'id': 'id',
+            'built_in_type': 'builtInType',
             'text': 'text',
             'value': 'value',
             'assistance_conditions': 'assistanceConditions'
         }
 
         self._id = None
+        self._built_in_type = None
         self._text = None
         self._value = None
         self._assistance_conditions = None
@@ -90,6 +93,35 @@ class AnswerOption(object):
         
 
         self._id = id
+
+    @property
+    def built_in_type(self) -> str:
+        """
+        Gets the built_in_type of this AnswerOption.
+        The built-in type of this answer option. Only used for built-in answer options such as selection states for Multiple Select answer options. Possible values include: Selected, Unselected
+
+        :return: The built_in_type of this AnswerOption.
+        :rtype: str
+        """
+        return self._built_in_type
+
+    @built_in_type.setter
+    def built_in_type(self, built_in_type: str) -> None:
+        """
+        Sets the built_in_type of this AnswerOption.
+        The built-in type of this answer option. Only used for built-in answer options such as selection states for Multiple Select answer options. Possible values include: Selected, Unselected
+
+        :param built_in_type: The built_in_type of this AnswerOption.
+        :type: str
+        """
+        if isinstance(built_in_type, int):
+            built_in_type = str(built_in_type)
+        allowed_values = ["Selected", "Unselected"]
+        if built_in_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for built_in_type -> " + built_in_type)
+            self._built_in_type = "outdated_sdk_version"
+        else:
+            self._built_in_type = built_in_type
 
     @property
     def text(self) -> str:

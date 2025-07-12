@@ -132,7 +132,7 @@ class DecisionTableRow(object):
     def row_index(self) -> int:
         """
         Gets the row_index of this DecisionTableRow.
-        The absolute index of this row in the decision table, starting at 0
+        The absolute index of this row in the decision table, starting at 1
 
         :return: The row_index of this DecisionTableRow.
         :rtype: int
@@ -143,7 +143,7 @@ class DecisionTableRow(object):
     def row_index(self, row_index: int) -> None:
         """
         Sets the row_index of this DecisionTableRow.
-        The absolute index of this row in the decision table, starting at 0
+        The absolute index of this row in the decision table, starting at 1
 
         :param row_index: The row_index of this DecisionTableRow.
         :type: int

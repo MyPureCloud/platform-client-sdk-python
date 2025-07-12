@@ -68,6 +68,7 @@ from ..models import Language
 from ..models import LanguageEntityListing
 from ..models import OutboundDomain
 from ..models import OutboundDomainEntityListing
+from ..models import OutboundDomainRequest
 from ..models import PatchPredictorRequest
 from ..models import Predictor
 from ..models import PredictorListing
@@ -9926,7 +9927,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_outbound_domains(self, body: 'OutboundDomain', **kwargs) -> 'EmailOutboundDomainResult':
+    def post_routing_email_outbound_domains(self, body: 'OutboundDomainRequest', **kwargs) -> 'EmailOutboundDomainResult':
         """
         Create a domain
         
@@ -9941,7 +9942,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param OutboundDomain body: Domain (required)
+        :param OutboundDomainRequest body: Domain (required)
         :return: EmailOutboundDomainResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10004,7 +10005,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_outbound_domains_simulated(self, body: 'OutboundDomain', **kwargs) -> 'EmailOutboundDomainResult':
+    def post_routing_email_outbound_domains_simulated(self, body: 'OutboundDomainRequest', **kwargs) -> 'EmailOutboundDomainResult':
         """
         Create a simulated domain
         
@@ -10019,7 +10020,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param OutboundDomain body: Domain (required)
+        :param OutboundDomainRequest body: Domain (required)
         :return: EmailOutboundDomainResult
                  If the method is called asynchronously,
                  returns the request thread.

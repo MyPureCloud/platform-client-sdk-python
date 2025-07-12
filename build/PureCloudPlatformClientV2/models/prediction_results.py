@@ -118,7 +118,7 @@ class PredictionResults(object):
         """
         if isinstance(formula, int):
             formula = str(formula)
-        allowed_values = ["BEST", "SIMPLE", "ABANDON", "PATIENCE_ABANDON"]
+        allowed_values = ["BEST", "SIMPLE", "ABANDON", "PATIENCE_ABANDON", "AI-ADJUSTED-AHT", "POSITION-IN-QUEUE"]
         if formula.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for formula -> " + formula)
             self._formula = "outdated_sdk_version"

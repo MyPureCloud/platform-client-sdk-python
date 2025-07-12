@@ -1535,6 +1535,7 @@ PureCloudPlatformClientV2/models/custom_event_attribute.py
 PureCloudPlatformClientV2/models/custom_event_attribute_list.py
 PureCloudPlatformClientV2/models/custom_i18n_labels.py
 PureCloudPlatformClientV2/models/custom_provider.py
+PureCloudPlatformClientV2/models/custom_smtp_server_request.py
 PureCloudPlatformClientV2/models/customer.py
 PureCloudPlatformClientV2/models/customer_end_detail_event_topic_customer_end_event.py
 PureCloudPlatformClientV2/models/customer_interaction_center.py
@@ -2452,6 +2453,7 @@ PureCloudPlatformClientV2/models/identity_provider.py
 PureCloudPlatformClientV2/models/identity_provider_entity_listing.py
 PureCloudPlatformClientV2/models/identity_resolution_automerge_config.py
 PureCloudPlatformClientV2/models/identity_resolution_config.py
+PureCloudPlatformClientV2/models/identity_resolution_external_source.py
 PureCloudPlatformClientV2/models/identity_resolution_queue_config.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
 PureCloudPlatformClientV2/models/idle_token_timeout.py
@@ -3327,6 +3329,7 @@ PureCloudPlatformClientV2/models/out_of_office_event_user.py
 PureCloudPlatformClientV2/models/outbound_detail_event_topic_outbound_init_event.py
 PureCloudPlatformClientV2/models/outbound_domain.py
 PureCloudPlatformClientV2/models/outbound_domain_entity_listing.py
+PureCloudPlatformClientV2/models/outbound_domain_request.py
 PureCloudPlatformClientV2/models/outbound_messaging_campaign_post_contact_email_event_topic_email_attributes.py
 PureCloudPlatformClientV2/models/outbound_messaging_campaign_post_contact_email_event_topic_outbound_messaging_campaign_post_contact_email_event.py
 PureCloudPlatformClientV2/models/outbound_messaging_campaign_post_contact_sms_event_topic_outbound_messaging_campaign_post_contact_sms_event.py
@@ -4850,6 +4853,7 @@ PureCloudPlatformClientV2/models/user_available_times.py
 PureCloudPlatformClientV2/models/user_best_points.py
 PureCloudPlatformClientV2/models/user_best_points_item.py
 PureCloudPlatformClientV2/models/user_chat_settings.py
+PureCloudPlatformClientV2/models/user_chat_settings_post.py
 PureCloudPlatformClientV2/models/user_conversation_summary.py
 PureCloudPlatformClientV2/models/user_conversations_event_media_summary.py
 PureCloudPlatformClientV2/models/user_conversations_event_media_summary_detail.py
@@ -7007,6 +7011,7 @@ docs/CustomEventAttribute.md
 docs/CustomEventAttributeList.md
 docs/CustomI18nLabels.md
 docs/CustomProvider.md
+docs/CustomSmtpServerRequest.md
 docs/Customer.md
 docs/CustomerEndDetailEventTopicCustomerEndEvent.md
 docs/CustomerInteractionCenter.md
@@ -7958,6 +7963,7 @@ docs/IdentityProviderApi.md
 docs/IdentityProviderEntityListing.md
 docs/IdentityResolutionAutomergeConfig.md
 docs/IdentityResolutionConfig.md
+docs/IdentityResolutionExternalSource.md
 docs/IdentityResolutionQueueConfig.md
 docs/IdleEventTrigger.md
 docs/IdleTokenTimeout.md
@@ -8867,6 +8873,7 @@ docs/OutboundApi.md
 docs/OutboundDetailEventTopicOutboundInitEvent.md
 docs/OutboundDomain.md
 docs/OutboundDomainEntityListing.md
+docs/OutboundDomainRequest.md
 docs/OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes.md
 docs/OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent.md
 docs/OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.md
@@ -10436,6 +10443,7 @@ docs/UserAvailableTimes.md
 docs/UserBestPoints.md
 docs/UserBestPointsItem.md
 docs/UserChatSettings.md
+docs/UserChatSettingsPost.md
 docs/UserConversationSummary.md
 docs/UserConversationsEventMediaSummary.md
 docs/UserConversationsEventMediaSummaryDetail.md
@@ -11168,6 +11176,7 @@ docs/delete_chats_room_messages_pin-example.txt
 docs/delete_chats_room_participant-example.txt
 docs/delete_chats_user_message-example.txt
 docs/delete_chats_user_messages_pin-example.txt
+docs/delete_chats_users_me_settings-example.txt
 docs/delete_coaching_appointment-example.txt
 docs/delete_coaching_appointment_annotation-example.txt
 docs/delete_contentmanagement_document-example.txt
@@ -12818,6 +12827,7 @@ docs/get_workforcemanagement_notifications-example.txt
 docs/get_workforcemanagement_schedulingjob-example.txt
 docs/get_workforcemanagement_shifttrades-example.txt
 docs/get_workforcemanagement_shrinkage_job-example.txt
+docs/get_workforcemanagement_team_adherence-example.txt
 docs/get_workforcemanagement_timeoffbalance_job-example.txt
 docs/get_workforcemanagement_timeoffrequest-example.txt
 docs/get_workforcemanagement_timeoffrequest_waitlistpositions-example.txt
@@ -13182,6 +13192,7 @@ docs/post_chats_room_participant-example.txt
 docs/post_chats_rooms-example.txt
 docs/post_chats_user_messages-example.txt
 docs/post_chats_user_messages_pins-example.txt
+docs/post_chats_users_me_settings-example.txt
 docs/post_coaching_appointment_annotations-example.txt
 docs/post_coaching_appointment_conversations-example.txt
 docs/post_coaching_appointments-example.txt

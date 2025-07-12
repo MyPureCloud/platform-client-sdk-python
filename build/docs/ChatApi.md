@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_chats_room_participant**](#delete_chats_room_participant) | Remove a user from a room.|
 |[**delete_chats_user_message**](#delete_chats_user_message) | Delete a message to a user|
 |[**delete_chats_user_messages_pin**](#delete_chats_user_messages_pin) | Remove a pinned message from a 1on1|
+|[**delete_chats_users_me_settings**](#delete_chats_users_me_settings) | Delete a user&#39;s chat settings|
 |[**get_chats_message**](#get_chats_message) | Get a message|
 |[**get_chats_room**](#get_chats_room) | Get a room|
 |[**get_chats_room_message**](#get_chats_room_message) | Get messages by id(s) from a room|
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_chats_rooms**](#post_chats_rooms) | Create an adhoc room|
 |[**post_chats_user_messages**](#post_chats_user_messages) | Send a message to a user|
 |[**post_chats_user_messages_pins**](#post_chats_user_messages_pins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages|
+|[**post_chats_users_me_settings**](#post_chats_users_me_settings) | Create a user&#39;s chat settings|
 |[**put_chats_message_reactions**](#put_chats_message_reactions) | Update reactions to a message|
 |[**put_chats_settings**](#put_chats_settings) | Update Chat Settings.|
 
@@ -285,6 +287,48 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **pinned_message_id** | **str**| pinnedMessageId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_chats_users_me_settings
+
+>  delete_chats_users_me_settings()
+
+
+Delete a user's chat settings
+
+Wraps DELETE /api/v2/chats/users/me/settings 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+
+try:
+    # Delete a user's chat settings
+    api_instance.delete_chats_users_me_settings()
+except ApiException as e:
+    print("Exception when calling ChatApi->delete_chats_users_me_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
 
 ### Return type
 
@@ -1546,6 +1590,52 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_chats_users_me_settings
+
+>  post_chats_users_me_settings(body)
+
+
+Create a user's chat settings
+
+Wraps POST /api/v2/chats/users/me/settings 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+body = PureCloudPlatformClientV2.UserChatSettingsPost() # UserChatSettingsPost | 
+
+try:
+    # Create a user's chat settings
+    api_instance.post_chats_users_me_settings(body)
+except ApiException as e:
+    print("Exception when calling ChatApi->post_chats_users_me_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserChatSettingsPost**](UserChatSettingsPost)|  |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## put_chats_message_reactions
 
 >  put_chats_message_reactions(message_id, body)
@@ -1644,4 +1734,4 @@ except ApiException as e:
 [**ChatSettings**](ChatSettings)
 
 
-_PureCloudPlatformClientV2 232.0.0_
+_PureCloudPlatformClientV2 233.0.0_

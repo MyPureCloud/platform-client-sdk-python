@@ -2496,7 +2496,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_taskmanagement_workitems_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchema':
+    def get_taskmanagement_workitems_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchemaListing':
         """
         Get all versions of a schema
         
@@ -2512,7 +2512,7 @@ class TaskManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str schema_id: Schema ID (required)
-        :return: DataSchema
+        :return: DataSchemaListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2569,7 +2569,7 @@ class TaskManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataSchema',
+                                            response_type='DataSchemaListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

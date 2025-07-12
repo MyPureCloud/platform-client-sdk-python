@@ -8,10 +8,10 @@
 |------------ | ------------- | ------------- | -------------|
 | **entities** | [list[ProgramMappings]](ProgramMappings) |  | [optional] |
 | **page_size** | int |  | [optional] |
-| **self_uri** | str |  | [optional] |
 | **page_count** | int |  | [optional] |
 | **next_uri** | str |  | [optional] |
+| **self_uri** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 232.0.0_
+_PureCloudPlatformClientV2 233.0.0_

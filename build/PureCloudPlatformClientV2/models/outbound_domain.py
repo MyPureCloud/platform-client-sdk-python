@@ -191,7 +191,7 @@ class OutboundDomain(object):
         """
         if isinstance(sender_type, int):
             sender_type = str(sender_type)
-        allowed_values = ["Unknown", "EmailDomain", "MockEmailDomain"]
+        allowed_values = ["Unknown", "EmailDomain", "MockEmailDomain", "EmailSmtpDomain"]
         if sender_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for sender_type -> " + sender_type)
             self._sender_type = "outdated_sdk_version"

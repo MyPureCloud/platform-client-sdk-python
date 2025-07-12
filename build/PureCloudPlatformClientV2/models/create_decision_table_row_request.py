@@ -68,7 +68,7 @@ class CreateDecisionTableRowRequest(object):
     def row_index(self) -> int:
         """
         Gets the row_index of this CreateDecisionTableRowRequest.
-        The absolute position of this row in the decision table. Must be an integerstarting from 0, must be non-negative and less than or equal to the size of the table. If not provided row will be append to the end of the table. 
+        The absolute position of this row in the decision table. Must be an integerstarting from 1, must be positive and less than or equal to the size of the table. If not provided row will be append to the end of the table. 
 
         :return: The row_index of this CreateDecisionTableRowRequest.
         :rtype: int
@@ -79,7 +79,7 @@ class CreateDecisionTableRowRequest(object):
     def row_index(self, row_index: int) -> None:
         """
         Sets the row_index of this CreateDecisionTableRowRequest.
-        The absolute position of this row in the decision table. Must be an integerstarting from 0, must be non-negative and less than or equal to the size of the table. If not provided row will be append to the end of the table. 
+        The absolute position of this row in the decision table. Must be an integerstarting from 1, must be positive and less than or equal to the size of the table. If not provided row will be append to the end of the table. 
 
         :param row_index: The row_index of this CreateDecisionTableRowRequest.
         :type: int

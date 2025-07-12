@@ -59,6 +59,7 @@ class EvaluationQuestion(object):
             'comments_required': 'bool',
             'visibility_condition': 'VisibilityCondition',
             'answer_options': 'list[AnswerOption]',
+            'multiple_select_option_questions': 'list[EvaluationQuestion]',
             'is_kill': 'bool',
             'is_critical': 'bool'
         }
@@ -73,6 +74,7 @@ class EvaluationQuestion(object):
             'comments_required': 'commentsRequired',
             'visibility_condition': 'visibilityCondition',
             'answer_options': 'answerOptions',
+            'multiple_select_option_questions': 'multipleSelectOptionQuestions',
             'is_kill': 'isKill',
             'is_critical': 'isCritical'
         }
@@ -86,6 +88,7 @@ class EvaluationQuestion(object):
         self._comments_required = None
         self._visibility_condition = None
         self._answer_options = None
+        self._multiple_select_option_questions = None
         self._is_kill = None
         self._is_critical = None
 
@@ -309,6 +312,30 @@ class EvaluationQuestion(object):
         
 
         self._answer_options = answer_options
+
+    @property
+    def multiple_select_option_questions(self) -> List['EvaluationQuestion']:
+        """
+        Gets the multiple_select_option_questions of this EvaluationQuestion.
+        Only used by Multiple Select type questions. A list of multiple choice questions representing selectable options.
+
+        :return: The multiple_select_option_questions of this EvaluationQuestion.
+        :rtype: list[EvaluationQuestion]
+        """
+        return self._multiple_select_option_questions
+
+    @multiple_select_option_questions.setter
+    def multiple_select_option_questions(self, multiple_select_option_questions: List['EvaluationQuestion']) -> None:
+        """
+        Sets the multiple_select_option_questions of this EvaluationQuestion.
+        Only used by Multiple Select type questions. A list of multiple choice questions representing selectable options.
+
+        :param multiple_select_option_questions: The multiple_select_option_questions of this EvaluationQuestion.
+        :type: list[EvaluationQuestion]
+        """
+        
+
+        self._multiple_select_option_questions = multiple_select_option_questions
 
     @property
     def is_kill(self) -> bool:

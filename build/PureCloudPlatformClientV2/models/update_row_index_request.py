@@ -87,7 +87,7 @@ class UpdateRowIndexRequest(object):
     def row_index(self) -> int:
         """
         Gets the row_index of this UpdateRowIndexRequest.
-        The updated row index. Must be an integer value greater than or equal to 0. Must be less than or equal to x-1, where x is the number of rows in the decision table version.
+        The updated row index. Must be an integer value greater than or equal to 1. Must be less than or equal to x, where x is the number of rows in the decision table version.
 
         :return: The row_index of this UpdateRowIndexRequest.
         :rtype: int
@@ -98,7 +98,7 @@ class UpdateRowIndexRequest(object):
     def row_index(self, row_index: int) -> None:
         """
         Sets the row_index of this UpdateRowIndexRequest.
-        The updated row index. Must be an integer value greater than or equal to 0. Must be less than or equal to x-1, where x is the number of rows in the decision table version.
+        The updated row index. Must be an integer value greater than or equal to 1. Must be less than or equal to x, where x is the number of rows in the decision table version.
 
         :param row_index: The row_index of this UpdateRowIndexRequest.
         :type: int

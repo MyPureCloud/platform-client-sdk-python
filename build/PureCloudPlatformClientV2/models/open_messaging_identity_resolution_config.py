@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import AddressableEntityRef
+    from . import IdentityResolutionExternalSource
     from . import WritableStarrableDivision
 
 class OpenMessagingIdentityResolutionConfig(object):
@@ -53,7 +53,7 @@ class OpenMessagingIdentityResolutionConfig(object):
             'id': 'str',
             'division': 'WritableStarrableDivision',
             'resolve_identities': 'bool',
-            'external_source': 'AddressableEntityRef',
+            'external_source': 'IdentityResolutionExternalSource',
             'self_uri': 'str'
         }
 
@@ -144,24 +144,24 @@ class OpenMessagingIdentityResolutionConfig(object):
         self._resolve_identities = resolve_identities
 
     @property
-    def external_source(self) -> 'AddressableEntityRef':
+    def external_source(self) -> 'IdentityResolutionExternalSource':
         """
         Gets the external_source of this OpenMessagingIdentityResolutionConfig.
-        The external source used for stitching this channel - used only for Open Messaging.
+        The external source used for stitching this channel.
 
         :return: The external_source of this OpenMessagingIdentityResolutionConfig.
-        :rtype: AddressableEntityRef
+        :rtype: IdentityResolutionExternalSource
         """
         return self._external_source
 
     @external_source.setter
-    def external_source(self, external_source: 'AddressableEntityRef') -> None:
+    def external_source(self, external_source: 'IdentityResolutionExternalSource') -> None:
         """
         Sets the external_source of this OpenMessagingIdentityResolutionConfig.
-        The external source used for stitching this channel - used only for Open Messaging.
+        The external source used for stitching this channel.
 
         :param external_source: The external_source of this OpenMessagingIdentityResolutionConfig.
-        :type: AddressableEntityRef
+        :type: IdentityResolutionExternalSource
         """
         
 
