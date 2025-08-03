@@ -20,6 +20,7 @@
 | **media_settings** | [QueueMediaSettings](QueueMediaSettings) | The media settings for the queue. | [optional] |
 | **routing_rules** | [list[RoutingRule]](RoutingRule) | The routing rules for the queue, used for Preferred Agent Routing. | [optional] |
 | **conditional_group_routing** | [ConditionalGroupRouting](ConditionalGroupRouting) | The Conditional Group Routing settings for the queue. | [optional] |
+| **conditional_group_activation** | [ConditionalGroupActivation](ConditionalGroupActivation) | The Conditional Group Activation settings for the queue. | [optional] |
 | **bullseye** | [Bullseye](Bullseye) | The bullseye settings for the queue. | [optional] |
 | **scoring_method** | str | The Scoring Method for the queue. | [optional] |
 | **last_agent_routing_mode** | str | The Last Agent Routing Mode for the queue. | [optional] |
@@ -49,4 +50,4 @@
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

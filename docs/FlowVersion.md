@@ -24,6 +24,7 @@
 | **input_schema** | [JsonSchemaDocument](JsonSchemaDocument) |  | [optional] |
 | **output_schema** | [JsonSchemaDocument](JsonSchemaDocument) |  | [optional] |
 | **virtual_agent_enabled** | bool |  | [optional] |
+| **agentic_virtual_agent_enabled** | bool |  | [optional] |
 | **date_published** | datetime | The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **date_published_end** | datetime | The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **nlu_info** | [NluInfo](NluInfo) | Information about the natural language understanding configuration for the flow version | [optional] |
@@ -33,4 +34,4 @@
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

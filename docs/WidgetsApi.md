@@ -24,7 +24,7 @@ This resource has been deprecated
 
 Delete a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps DELETE /api/v2/widgets/deployments/{deploymentId} 
 
@@ -77,7 +77,7 @@ This resource has been deprecated
 
 Get a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps GET /api/v2/widgets/deployments/{deploymentId} 
 
@@ -131,7 +131,7 @@ This resource has been deprecated
 
 List Widget deployments
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps GET /api/v2/widgets/deployments 
 
@@ -181,7 +181,7 @@ This resource has been deprecated
 
 Create Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps POST /api/v2/widgets/deployments 
 
@@ -235,7 +235,7 @@ This resource has been deprecated
 
 Update a Widget deployment
 
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Wraps PUT /api/v2/widgets/deployments/{deploymentId} 
 
@@ -281,4 +281,4 @@ except ApiException as e:
 [**WidgetDeployment**](WidgetDeployment)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

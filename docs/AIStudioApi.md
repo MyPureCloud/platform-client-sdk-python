@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_guide_version_job**](#get_guide_version_job) | Get the status of the publishing job for this guide version.|
 |[**get_guides**](#get_guides) | Get all guides.|
 |[**get_guides_job**](#get_guides_job) | Get the status of the guide content generation job.|
+|[**patch_guide**](#patch_guide) | Update a guide.|
 |[**patch_guide_version**](#patch_guide_version) | Update a guide version.|
 |[**post_guide_version_jobs**](#post_guide_version_jobs) | Start the publishing of a guide version.|
 |[**post_guide_versions**](#post_guide_versions) | Create a guide version.|
@@ -391,6 +392,58 @@ except ApiException as e:
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
 
 
+## patch_guide
+
+> [**Guide**](Guide) patch_guide(guide_id, body)
+
+
+Update a guide.
+
+patch_guide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/guides/{guideId} 
+
+Requires ALL permissions: 
+
+* aiStudio:guide:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+guide_id = 'guide_id_example' # str | Guide ID
+body = PureCloudPlatformClientV2.UpdateGuide() # UpdateGuide | 
+
+try:
+    # Update a guide.
+    api_response = api_instance.patch_guide(guide_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->patch_guide: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **guide_id** | **str**| Guide ID |  |
+| **body** | [**UpdateGuide**](UpdateGuide)|  |  |
+
+### Return type
+
+[**Guide**](Guide)
+
+
 ## patch_guide_version
 
 > [**GuideVersion**](GuideVersion) patch_guide_version(guide_id, version_id, body)
@@ -651,4 +704,4 @@ except ApiException as e:
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

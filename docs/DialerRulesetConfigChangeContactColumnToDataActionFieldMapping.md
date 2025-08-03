@@ -9,7 +9,8 @@
 | **contact_column_name** | str | The name of a contact column whose data will be passed to the data action | [optional] |
 | **data_action_field** | str | The name of an output field from the data action that the contact column data will be passed to | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

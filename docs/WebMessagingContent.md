@@ -14,7 +14,8 @@
 | **card** | [ContentCard](ContentCard) | Card content | [optional] |
 | **carousel** | [ContentCarousel](ContentCarousel) | Carousel content | [optional] |
 | **date_picker** | [ContentDatePicker](ContentDatePicker) | DatePicker content | [optional] |
+| **list_picker** | [ConversationContentListPicker](ConversationContentListPicker) | ListPicker content | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

@@ -31,6 +31,8 @@
 | **maximum_days_off_per_planning_period** | int | Maximum days off in the planning period | [optional] |
 | **minimum_paid_minutes_per_planning_period** | int | Minimum paid minutes in the planning period | [optional] |
 | **maximum_paid_minutes_per_planning_period** | int | Maximum paid minutes in the planning period | [optional] |
+| **constrain_maximum_working_weekends_per_planning_period** | bool | Whether to constrain the maximum working weekends in the planning period | [optional] |
+| **maximum_working_weekends_per_planning_period** | int | Maximum working weekends in the planning period | [optional] |
 | **optional_days** | [SetWrapperDayOfWeek](SetWrapperDayOfWeek) | Optional days to schedule for this work plan. Populate with expand&#x3D;details | [optional] |
 | **shift_start_variance_type** | str | This constraint ensures that an agent starts each workday within a user-defined time threshold | [optional] |
 | **shift_start_variances** | [ListWrapperShiftStartVariance](ListWrapperShiftStartVariance) | Variance in minutes among start times of shifts in this work plan. Populate with expand&#x3D;details | [optional] |
@@ -42,4 +44,4 @@
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

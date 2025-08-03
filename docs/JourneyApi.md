@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_analytics_journeys_aggregates_job**](#delete_analytics_journeys_aggregates_job) | Delete/cancel an async request for journey aggregates|
 |[**delete_journey_actionmap**](#delete_journey_actionmap) | Delete single action map.|
 |[**delete_journey_actiontemplate**](#delete_journey_actiontemplate) | Delete a single action template.|
 |[**delete_journey_outcome**](#delete_journey_outcome) | Delete an outcome.|
@@ -15,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_view_schedules**](#delete_journey_view_schedules) | Delete the Schedule of a JourneyView|
 |[**get_analytics_journeys_aggregates_job**](#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
 |[**get_analytics_journeys_aggregates_job_results**](#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_externalcontacts_contact_journey_segments**](#get_externalcontacts_contact_journey_segments) | Retrieve segment assignments by external contact ID.|
 |[**get_externalcontacts_contact_journey_sessions**](#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
 |[**get_journey_actionmap**](#get_journey_actionmap) | Retrieve a single action map.|
 |[**get_journey_actionmaps**](#get_journey_actionmaps) | Retrieve all action maps.|
@@ -59,6 +61,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_journey_view_version_job**](#patch_journey_view_version_job) | Update the job for a journey view version. Only the status can be changed and only to Cancelled|
 |[**post_analytics_journeys_aggregates_jobs**](#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
 |[**post_analytics_journeys_aggregates_query**](#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
+|[**post_externalcontacts_contact_journey_segments**](#post_externalcontacts_contact_journey_segments) | Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.|
 |[**post_journey_actionmaps**](#post_journey_actionmaps) | Create an action map.|
 |[**post_journey_actionmaps_estimates_jobs**](#post_journey_actionmaps_estimates_jobs) | Query for estimates|
 |[**post_journey_actiontemplates**](#post_journey_actiontemplates) | Create a single action template.|
@@ -78,6 +81,55 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_journey_view_schedules**](#put_journey_view_schedules) | Update the Schedule for a JourneyView|
 |[**put_journey_view_version**](#put_journey_view_version) | Update a Journey View by ID and version|
 
+
+
+## delete_analytics_journeys_aggregates_job
+
+>  delete_analytics_journeys_aggregates_job(job_id)
+
+
+Delete/cancel an async request for journey aggregates
+
+delete_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for journey aggregates
+    api_instance.delete_analytics_journeys_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_analytics_journeys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_journey_actionmap
@@ -514,6 +566,58 @@ except ApiException as e:
 ### Return type
 
 [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse)
+
+
+## get_externalcontacts_contact_journey_segments
+
+> [**SegmentAssignmentListing**](SegmentAssignmentListing) get_externalcontacts_contact_journey_segments(contact_id, include_merged=include_merged, limit=limit)
+
+
+Retrieve segment assignments by external contact ID.
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/segments 
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+include_merged = True # bool | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. (optional)
+limit = 56 # int | Number of entities to return. Default of 25, maximum of 500. (optional)
+
+try:
+    # Retrieve segment assignments by external contact ID.
+    api_response = api_instance.get_externalcontacts_contact_journey_segments(contact_id, include_merged=include_merged, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_externalcontacts_contact_journey_segments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **include_merged** | **bool**| Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional]  |
+| **limit** | **int**| Number of entities to return. Default of 25, maximum of 500. | [optional]  |
+
+### Return type
+
+[**SegmentAssignmentListing**](SegmentAssignmentListing)
 
 
 ## get_externalcontacts_contact_journey_sessions
@@ -2757,6 +2861,57 @@ except ApiException as e:
 [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse)
 
 
+## post_externalcontacts_contact_journey_segments
+
+> [**UpdateSegmentAssignmentResponse**](UpdateSegmentAssignmentResponse) post_externalcontacts_contact_journey_segments(contact_id, body=body)
+
+
+Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+
+Wraps POST /api/v2/externalcontacts/contacts/{contactId}/journey/segments 
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:add
+* externalContacts:segmentAssignment:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+body = PureCloudPlatformClientV2.UpdateSegmentAssignmentRequest() # UpdateSegmentAssignmentRequest |  (optional)
+
+try:
+    # Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+    api_response = api_instance.post_externalcontacts_contact_journey_segments(contact_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_externalcontacts_contact_journey_segments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **body** | [**UpdateSegmentAssignmentRequest**](UpdateSegmentAssignmentRequest)|  | [optional]  |
+
+### Return type
+
+[**UpdateSegmentAssignmentResponse**](UpdateSegmentAssignmentResponse)
+
+
 ## post_journey_actionmaps
 
 > [**ActionMap**](ActionMap) post_journey_actionmaps(body=body)
@@ -3634,4 +3789,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

@@ -23,7 +23,8 @@
 | **agent_wrapup_field** | str | The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionCondition. | [optional] |
 | **contact_column_to_data_action_field_mappings** | [list[DialerRulesetConfigChangeContactColumnToDataActionFieldMapping]](DialerRulesetConfigChangeContactColumnToDataActionFieldMapping) | A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionCondition. | [optional] |
 | **predicates** | [list[DialerRulesetConfigChangeDataActionConditionPredicate]](DialerRulesetConfigChangeDataActionConditionPredicate) | A list of predicates defining the comparisons to use for this condition. Required for a dataActionCondition. | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

@@ -6,9 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **language** | str | Language of localized labels in homescreen app (eg. en-us, de-de) | [optional] |
-| **localized_labels** | [list[LocalizedLabels]](LocalizedLabels) | Contains localized labels used in homescreen app | [optional] |
+| **language** | str | Language of localized labels in homescreen app (eg. en-us, de-de) and push notification | [optional] |
+| **localized_labels** | [list[LocalizedLabels]](LocalizedLabels) | Contains localized labels used in messenger apps and push notification. PushNotificationTitle and PushNotificationBody are required when notifications are enabled. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

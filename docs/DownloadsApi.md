@@ -65,4 +65,4 @@ except ApiException as e:
 [**UrlResponse**](UrlResponse)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

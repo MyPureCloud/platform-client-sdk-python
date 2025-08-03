@@ -27,6 +27,7 @@
 | **maximum_contiguous_work_time_minutes** | int | Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime &#x3D;&#x3D; true | [optional] |
 | **constrain_day_off** | bool | Whether day off rule is enabled | [optional] |
 | **day_off_rule** | str | The day off rule for agents to have next day off or previous day off. used if constrainDayOff &#x3D; true | [optional] |
+| **planning_period_constraints** | [PlanningPeriodShiftConstraints](PlanningPeriodShiftConstraints) | Planning period constraints | [optional] |
 | **activities** | [list[WorkPlanActivity]](WorkPlanActivity) | Activities configured for this shift | [optional] |
 | **id** | str | ID of the shift. This is required only for the case of updating an existing shift | [optional] |
 | **delete** | bool | If marked true for updating an existing shift, the shift will be permanently deleted | [optional] |
@@ -34,4 +35,4 @@
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

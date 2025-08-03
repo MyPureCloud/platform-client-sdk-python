@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_externalcontacts_relationship**](#delete_externalcontacts_relationship) | Delete a relationship|
 |[**get_externalcontacts_contact**](#get_externalcontacts_contact) | Fetch an external contact|
 |[**get_externalcontacts_contact_identifiers**](#get_externalcontacts_contact_identifiers) | List the identifiers for a contact|
+|[**get_externalcontacts_contact_journey_segments**](#get_externalcontacts_contact_journey_segments) | Retrieve segment assignments by external contact ID.|
 |[**get_externalcontacts_contact_journey_sessions**](#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
 |[**get_externalcontacts_contact_note**](#get_externalcontacts_contact_note) | Fetch a note for an external contact|
 |[**get_externalcontacts_contact_notes**](#get_externalcontacts_contact_notes) | List notes for an external contact|
@@ -89,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_bulk_relationships_add**](#post_externalcontacts_bulk_relationships_add) | Bulk add relationships|
 |[**post_externalcontacts_bulk_relationships_remove**](#post_externalcontacts_bulk_relationships_remove) | Bulk remove relationships|
 |[**post_externalcontacts_bulk_relationships_update**](#post_externalcontacts_bulk_relationships_update) | Bulk update relationships|
+|[**post_externalcontacts_contact_journey_segments**](#post_externalcontacts_contact_journey_segments) | Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.|
 |[**post_externalcontacts_contact_notes**](#post_externalcontacts_contact_notes) | Create a note for an external contact|
 |[**post_externalcontacts_contact_promotion**](#post_externalcontacts_contact_promotion) | Promote an observed contact (ephemeral or identified) to a curated contact|
 |[**post_externalcontacts_contacts**](#post_externalcontacts_contacts) | Create an external contact|
@@ -709,6 +711,58 @@ except ApiException as e:
 ### Return type
 
 [**ContactIdentifierListing**](ContactIdentifierListing)
+
+
+## get_externalcontacts_contact_journey_segments
+
+> [**SegmentAssignmentListing**](SegmentAssignmentListing) get_externalcontacts_contact_journey_segments(contact_id, include_merged=include_merged, limit=limit)
+
+
+Retrieve segment assignments by external contact ID.
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/segments 
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+include_merged = True # bool | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. (optional)
+limit = 56 # int | Number of entities to return. Default of 25, maximum of 500. (optional)
+
+try:
+    # Retrieve segment assignments by external contact ID.
+    api_response = api_instance.get_externalcontacts_contact_journey_segments(contact_id, include_merged=include_merged, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_contact_journey_segments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **include_merged** | **bool**| Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional]  |
+| **limit** | **int**| Number of entities to return. Default of 25, maximum of 500. | [optional]  |
+
+### Return type
+
+[**SegmentAssignmentListing**](SegmentAssignmentListing)
 
 
 ## get_externalcontacts_contact_journey_sessions
@@ -4277,6 +4331,57 @@ except ApiException as e:
 [**BulkRelationshipsResponse**](BulkRelationshipsResponse)
 
 
+## post_externalcontacts_contact_journey_segments
+
+> [**UpdateSegmentAssignmentResponse**](UpdateSegmentAssignmentResponse) post_externalcontacts_contact_journey_segments(contact_id, body=body)
+
+
+Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+
+Wraps POST /api/v2/externalcontacts/contacts/{contactId}/journey/segments 
+
+Requires ANY permissions: 
+
+* externalContacts:segmentAssignment:add
+* externalContacts:segmentAssignment:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+body = PureCloudPlatformClientV2.UpdateSegmentAssignmentRequest() # UpdateSegmentAssignmentRequest |  (optional)
+
+try:
+    # Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+    api_response = api_instance.post_externalcontacts_contact_journey_segments(contact_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contact_journey_segments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **body** | [**UpdateSegmentAssignmentRequest**](UpdateSegmentAssignmentRequest)|  | [optional]  |
+
+### Return type
+
+[**UpdateSegmentAssignmentResponse**](UpdateSegmentAssignmentResponse)
+
+
 ## post_externalcontacts_contact_notes
 
 > [**Note**](Note) post_externalcontacts_contact_notes(contact_id, body)
@@ -6035,4 +6140,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

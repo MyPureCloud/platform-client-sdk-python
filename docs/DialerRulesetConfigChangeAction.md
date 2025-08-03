@@ -11,7 +11,8 @@
 | **update_option** | str | Indicator of the type of update action (applicable only to certain types of actions) | [optional] |
 | **properties** | dict(str, str) | Map of key-value pairs pertinent to the action (different actions require different properties) | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

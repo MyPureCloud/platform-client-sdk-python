@@ -8,10 +8,10 @@
 |------------ | ------------- | ------------- | -------------|
 | **version** | int | Version of the snapshot | [optional] |
 | **snapshot_id** | str | Snapshot Id of the continuous forecast session | [optional] |
-| **session_id** | str | Session Id of the continuous forecast session | [optional] |
+| **date_snapshot** | datetime | Date of snapshot generation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **business_unit_id** | str | Business unit ID of the continuous forecast session | [optional] |
 | **planning_groups_version** | int | Version of the planning groups | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

@@ -14,7 +14,8 @@
 | **version** | str |  | [optional] |
 | **secure** | bool |  | [optional] |
 | **virtual_agent_enabled** | bool |  | [optional] |
+| **agentic_virtual_agent_enabled** | bool |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

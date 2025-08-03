@@ -13,7 +13,8 @@
 | **order** | int | The ranked order of the rule; rules are processed from lowest number to highest | [optional] |
 | **category** | str | The category of the rule | [optional] |
 | **actions** | [list[DialerRulesetConfigChangeAction]](DialerRulesetConfigChangeAction) | The list of rule actions to be taken if the conditions are true | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_
