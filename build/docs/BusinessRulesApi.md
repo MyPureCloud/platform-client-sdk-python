@@ -23,7 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_businessrules_schemas_coretypes**](#get_businessrules_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**patch_businessrules_decisiontable**](#patch_businessrules_decisiontable) | Update a decision table|
 |[**patch_businessrules_decisiontable_version**](#patch_businessrules_decisiontable_version) | Update a decision table version|
-|[**patch_businessrules_decisiontable_version_row**](#patch_businessrules_decisiontable_version_row) | Partially update a decision table row. Will be deprecated, we should use PUT request.|
 |[**post_businessrules_decisiontable_execute**](#post_businessrules_decisiontable_execute) | Execute a published decision table|
 |[**post_businessrules_decisiontable_version_copy**](#post_businessrules_decisiontable_version_copy) | Copy a decision table version|
 |[**post_businessrules_decisiontable_version_execute**](#post_businessrules_decisiontable_version_execute) | Execute a decision table version|
@@ -458,7 +457,7 @@ except ApiException as e:
 
 ## get_businessrules_decisiontable_versions
 
-> [**DecisionTableVersionListing**](DecisionTableVersionListing) get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size, division_ids=division_ids)
+> [**DecisionTableVersionListing**](DecisionTableVersionListing) get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size)
 
 
 Get a list of decision table versions
@@ -487,11 +486,10 @@ api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 table_id = 'table_id_example' # str | Table ID
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
-division_ids = ['division_ids_example'] # list[str] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
 
 try:
     # Get a list of decision table versions
-    api_response = api_instance.get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size, division_ids=division_ids)
+    api_response = api_instance.get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BusinessRulesApi->get_businessrules_decisiontable_versions: %s\n" % e)
@@ -505,7 +503,6 @@ except ApiException as e:
 | **table_id** | **str**| Table ID |  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
-| **division_ids** | [**list[str]**](str)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
 
 ### Return type
 
@@ -514,7 +511,7 @@ except ApiException as e:
 
 ## get_businessrules_decisiontables
 
-> [**DecisionTableListing**](DecisionTableListing) get_businessrules_decisiontables(after=after, page_size=page_size, division_ids=division_ids)
+> [**DecisionTableListing**](DecisionTableListing) get_businessrules_decisiontables(after=after, page_size=page_size, division_ids=division_ids, name=name)
 
 
 Get a list of decision tables.
@@ -543,10 +540,11 @@ api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
 division_ids = ['division_ids_example'] # list[str] | One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. (optional)
+name = 'name_example' # str | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. (optional)
 
 try:
     # Get a list of decision tables.
-    api_response = api_instance.get_businessrules_decisiontables(after=after, page_size=page_size, division_ids=division_ids)
+    api_response = api_instance.get_businessrules_decisiontables(after=after, page_size=page_size, division_ids=division_ids, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BusinessRulesApi->get_businessrules_decisiontables: %s\n" % e)
@@ -560,6 +558,7 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
 | **division_ids** | [**list[str]**](str)| One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned. | [optional]  |
+| **name** | **str**| Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. | [optional]  |
 
 ### Return type
 
@@ -926,66 +925,6 @@ except ApiException as e:
 ### Return type
 
 [**DecisionTableVersion**](DecisionTableVersion)
-
-
-## patch_businessrules_decisiontable_version_row
-
-> [**DecisionTableRow**](DecisionTableRow) patch_businessrules_decisiontable_version_row(table_id, table_version, row_id, body)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Partially update a decision table row. Will be deprecated, we should use PUT request.
-
-patch_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} 
-
-Requires ALL permissions: 
-
-* businessrules:decisionTableRow:edit
-* routing:queue:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
-table_id = 'table_id_example' # str | Table ID
-table_version = 56 # int | Table Version
-row_id = 'row_id_example' # str | Row ID
-body = PureCloudPlatformClientV2.UpdateDecisionTableRowRequest() # UpdateDecisionTableRowRequest | Partially update decision table row request
-
-try:
-    # Partially update a decision table row. Will be deprecated, we should use PUT request.
-    api_response = api_instance.patch_businessrules_decisiontable_version_row(table_id, table_version, row_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BusinessRulesApi->patch_businessrules_decisiontable_version_row: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **table_id** | **str**| Table ID |  |
-| **table_version** | **int**| Table Version |  |
-| **row_id** | **str**| Row ID |  |
-| **body** | [**UpdateDecisionTableRowRequest**](UpdateDecisionTableRowRequest)| Partially update decision table row request |  |
-
-### Return type
-
-[**DecisionTableRow**](DecisionTableRow)
 
 
 ## post_businessrules_decisiontable_execute
@@ -1626,4 +1565,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

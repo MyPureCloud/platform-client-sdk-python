@@ -53,6 +53,7 @@ class AssessmentFormQuestionGroup(object):
             'id': 'str',
             'name': 'str',
             'type': 'str',
+            'context_id': 'str',
             'default_answers_to_highest': 'bool',
             'default_answers_to_na': 'bool',
             'na_enabled': 'bool',
@@ -67,6 +68,7 @@ class AssessmentFormQuestionGroup(object):
             'id': 'id',
             'name': 'name',
             'type': 'type',
+            'context_id': 'contextId',
             'default_answers_to_highest': 'defaultAnswersToHighest',
             'default_answers_to_na': 'defaultAnswersToNA',
             'na_enabled': 'naEnabled',
@@ -80,6 +82,7 @@ class AssessmentFormQuestionGroup(object):
         self._id = None
         self._name = None
         self._type = None
+        self._context_id = None
         self._default_answers_to_highest = None
         self._default_answers_to_na = None
         self._na_enabled = None
@@ -160,6 +163,30 @@ class AssessmentFormQuestionGroup(object):
         
 
         self._type = type
+
+    @property
+    def context_id(self) -> str:
+        """
+        Gets the context_id of this AssessmentFormQuestionGroup.
+        An identifier for this question group that stays the same across versions of the form.
+
+        :return: The context_id of this AssessmentFormQuestionGroup.
+        :rtype: str
+        """
+        return self._context_id
+
+    @context_id.setter
+    def context_id(self, context_id: str) -> None:
+        """
+        Sets the context_id of this AssessmentFormQuestionGroup.
+        An identifier for this question group that stays the same across versions of the form.
+
+        :param context_id: The context_id of this AssessmentFormQuestionGroup.
+        :type: str
+        """
+        
+
+        self._context_id = context_id
 
     @property
     def default_answers_to_highest(self) -> bool:

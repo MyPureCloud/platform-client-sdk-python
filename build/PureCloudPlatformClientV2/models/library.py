@@ -218,7 +218,7 @@ class Library(object):
         """
         if isinstance(response_type, int):
             response_type = str(response_type)
-        allowed_values = ["MessagingTemplate", "CampaignSmsTemplate", "CampaignEmailTemplate", "Footer"]
+        allowed_values = ["MessagingTemplate", "CampaignSmsTemplate", "CampaignEmailTemplate", "Footer", "Form"]
         if response_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for response_type -> " + response_type)
             self._response_type = "outdated_sdk_version"

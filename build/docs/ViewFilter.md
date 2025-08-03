@@ -235,7 +235,10 @@
 | **delivery_pushed** | bool | Filter to indicate if push notification is sent | [optional] |
 | **social_ratings** | list[float] | A set of ratings for Google Business Profile | [optional] |
 | **virtual_agent_ids** | list[str] | A list of virtual agent ids for filtering. | [optional] |
+| **empathy_score_categories** | list[str] | A set of Empathy Score Categories for filtering | [optional] |
+| **sentiment_score_categories** | list[str] | A set of Sentiment Score Categories  for filtering | [optional] |
+| **sentiment_trend_categories** | list[str] | A set of Sentiment Trend Categories for filtering | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

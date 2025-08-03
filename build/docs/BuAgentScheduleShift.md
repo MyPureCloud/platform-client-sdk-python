@@ -12,7 +12,9 @@
 | **activities** | [list[BuAgentScheduleActivity]](BuAgentScheduleActivity) | The activities associated with this shift | [optional] |
 | **manually_edited** | bool | Whether this shift was manually edited. This is only set by clients and is used for rescheduling | [optional] |
 | **schedule** | [BuScheduleReference](BuScheduleReference) | The schedule to which this shift belongs | [optional] |
+| **work_plan_id** | str | The ID of the work plan for which the work plan shift emanates from | [optional] |
+| **work_plan_shift_id** | str | The ID of the work plan shift that was used in schedule generation | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

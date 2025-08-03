@@ -59,7 +59,7 @@ class WidgetsApi(object):
     def delete_widgets_deployment(self, deployment_id: str, **kwargs) -> None:
         """
         Delete a Widget deployment
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -138,7 +138,7 @@ class WidgetsApi(object):
     def get_widgets_deployment(self, deployment_id: str, **kwargs) -> 'WidgetDeployment':
         """
         Get a Widget deployment
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -217,7 +217,7 @@ class WidgetsApi(object):
     def get_widgets_deployments(self, **kwargs) -> 'WidgetDeploymentEntityListing':
         """
         List Widget deployments
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -290,7 +290,7 @@ class WidgetsApi(object):
     def post_widgets_deployments(self, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Create Widget deployment
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -369,7 +369,7 @@ class WidgetsApi(object):
     def put_widgets_deployment(self, deployment_id: str, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Update a Widget deployment
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

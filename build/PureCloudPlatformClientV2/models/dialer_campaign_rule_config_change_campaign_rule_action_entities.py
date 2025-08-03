@@ -52,20 +52,23 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
             'use_triggering_entity': 'bool',
             'additional_properties': 'dict(str, object)',
             'campaigns': 'list[DialerCampaignRuleConfigChangeUriReference]',
-            'sequences': 'list[DialerCampaignRuleConfigChangeUriReference]'
+            'sequences': 'list[DialerCampaignRuleConfigChangeUriReference]',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'use_triggering_entity': 'useTriggeringEntity',
             'additional_properties': 'additionalProperties',
             'campaigns': 'campaigns',
-            'sequences': 'sequences'
+            'sequences': 'sequences',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._use_triggering_entity = None
         self._additional_properties = None
         self._campaigns = None
         self._sequences = None
+        self._get_additional_properties = None
 
     @property
     def use_triggering_entity(self) -> bool:
@@ -162,6 +165,30 @@ class DialerCampaignRuleConfigChangeCampaignRuleActionEntities(object):
         
 
         self._sequences = sequences
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+
+
+        :return: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleActionEntities.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

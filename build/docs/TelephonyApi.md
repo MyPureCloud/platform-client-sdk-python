@@ -6,13 +6,113 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**get_telephony_agent_greetings**](#get_telephony_agent_greetings) | Get an agent&#39;s greetings.|
+|[**get_telephony_agents_greetings_me**](#get_telephony_agents_greetings_me) | Get the agent&#39;s own greetings.|
 |[**get_telephony_mediaregions**](#get_telephony_mediaregions) | Retrieve the list of AWS regions media can stream through.|
 |[**get_telephony_sipmessages_conversation**](#get_telephony_sipmessages_conversation) | Get a SIP message.|
 |[**get_telephony_sipmessages_conversation_headers**](#get_telephony_sipmessages_conversation_headers) | Get SIP headers.|
 |[**get_telephony_siptraces**](#get_telephony_siptraces) | Fetch SIP metadata|
 |[**get_telephony_siptraces_download_download_id**](#get_telephony_siptraces_download_download_id) | Get signed S3 URL for a pcap download|
 |[**post_telephony_siptraces_download**](#post_telephony_siptraces_download) | Request a download of a pcap file to S3|
+|[**put_telephony_agent_greetings**](#put_telephony_agent_greetings) | Updates an agent&#39;s greetings.|
+|[**put_telephony_agents_greetings_me**](#put_telephony_agents_greetings_me) | Updates the agent&#39;s own greetings.|
 
+
+
+## get_telephony_agent_greetings
+
+> [**AgentGreeting**](AgentGreeting) get_telephony_agent_greetings(agent_id)
+
+
+Get an agent's greetings.
+
+get_telephony_agent_greetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/agents/{agentId}/greetings 
+
+Requires ANY permissions: 
+
+* telephony:otherAgentGreeting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+agent_id = 'agent_id_example' # str | User ID
+
+try:
+    # Get an agent's greetings.
+    api_response = api_instance.get_telephony_agent_greetings(agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_agent_greetings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| User ID |  |
+
+### Return type
+
+[**AgentGreeting**](AgentGreeting)
+
+
+## get_telephony_agents_greetings_me
+
+> [**SelfAgentGreeting**](SelfAgentGreeting) get_telephony_agents_greetings_me()
+
+
+Get the agent's own greetings.
+
+get_telephony_agents_greetings_me is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/agents/greetings/me 
+
+Requires ANY permissions: 
+
+* telephony:selfAgentGreeting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+
+try:
+    # Get the agent's own greetings.
+    api_response = api_instance.get_telephony_agents_greetings_me()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_agents_greetings_me: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SelfAgentGreeting**](SelfAgentGreeting)
 
 
 ## get_telephony_mediaregions
@@ -317,4 +417,106 @@ except ApiException as e:
 [**SipDownloadResponse**](SipDownloadResponse)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+## put_telephony_agent_greetings
+
+> [**AgentGreeting**](AgentGreeting) put_telephony_agent_greetings(agent_id, body)
+
+
+Updates an agent's greetings.
+
+put_telephony_agent_greetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/telephony/agents/{agentId}/greetings 
+
+Requires ANY permissions: 
+
+* telephony:otherAgentGreeting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+agent_id = 'agent_id_example' # str | User ID
+body = PureCloudPlatformClientV2.AgentGreeting() # AgentGreeting | Agent Greeting
+
+try:
+    # Updates an agent's greetings.
+    api_response = api_instance.put_telephony_agent_greetings(agent_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->put_telephony_agent_greetings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| User ID |  |
+| **body** | [**AgentGreeting**](AgentGreeting)| Agent Greeting |  |
+
+### Return type
+
+[**AgentGreeting**](AgentGreeting)
+
+
+## put_telephony_agents_greetings_me
+
+> [**SelfAgentGreeting**](SelfAgentGreeting) put_telephony_agents_greetings_me(body)
+
+
+Updates the agent's own greetings.
+
+put_telephony_agents_greetings_me is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/telephony/agents/greetings/me 
+
+Requires ANY permissions: 
+
+* telephony:selfAgentGreeting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+body = PureCloudPlatformClientV2.SelfAgentGreeting() # SelfAgentGreeting | Agent Greeting
+
+try:
+    # Updates the agent's own greetings.
+    api_response = api_instance.put_telephony_agents_greetings_me(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->put_telephony_agents_greetings_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SelfAgentGreeting**](SelfAgentGreeting)| Agent Greeting |  |
+
+### Return type
+
+[**SelfAgentGreeting**](SelfAgentGreeting)
+
+
+_PureCloudPlatformClientV2 234.0.0_

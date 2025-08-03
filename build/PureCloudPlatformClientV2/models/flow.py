@@ -78,6 +78,7 @@ class Flow(object):
             'compatible_flow_types': 'list[str]',
             'worktype_id': 'str',
             'virtual_agent_enabled': 'bool',
+            'agentic_virtual_agent_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -105,6 +106,7 @@ class Flow(object):
             'compatible_flow_types': 'compatibleFlowTypes',
             'worktype_id': 'worktypeId',
             'virtual_agent_enabled': 'virtualAgentEnabled',
+            'agentic_virtual_agent_enabled': 'agenticVirtualAgentEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -131,6 +133,7 @@ class Flow(object):
         self._compatible_flow_types = None
         self._worktype_id = None
         self._virtual_agent_enabled = None
+        self._agentic_virtual_agent_enabled = None
         self._self_uri = None
 
     @property
@@ -689,6 +692,30 @@ class Flow(object):
         
 
         self._virtual_agent_enabled = virtual_agent_enabled
+
+    @property
+    def agentic_virtual_agent_enabled(self) -> bool:
+        """
+        Gets the agentic_virtual_agent_enabled of this Flow.
+
+
+        :return: The agentic_virtual_agent_enabled of this Flow.
+        :rtype: bool
+        """
+        return self._agentic_virtual_agent_enabled
+
+    @agentic_virtual_agent_enabled.setter
+    def agentic_virtual_agent_enabled(self, agentic_virtual_agent_enabled: bool) -> None:
+        """
+        Sets the agentic_virtual_agent_enabled of this Flow.
+
+
+        :param agentic_virtual_agent_enabled: The agentic_virtual_agent_enabled of this Flow.
+        :type: bool
+        """
+        
+
+        self._agentic_virtual_agent_enabled = agentic_virtual_agent_enabled
 
     @property
     def self_uri(self) -> str:

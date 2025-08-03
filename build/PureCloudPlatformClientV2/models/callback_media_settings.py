@@ -32,7 +32,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BaseMediaSettings
     from . import DomainEntityRef
     from . import ServiceLevel
 
@@ -56,7 +55,6 @@ class CallbackMediaSettings(object):
             'service_level': 'ServiceLevel',
             'auto_answer_alert_tone_seconds': 'float',
             'manual_answer_alert_tone_seconds': 'float',
-            'sub_type_settings': 'dict(str, BaseMediaSettings)',
             'mode': 'str',
             'enable_auto_dial_and_end': 'bool',
             'auto_dial_delay_seconds': 'int',
@@ -76,7 +74,6 @@ class CallbackMediaSettings(object):
             'service_level': 'serviceLevel',
             'auto_answer_alert_tone_seconds': 'autoAnswerAlertToneSeconds',
             'manual_answer_alert_tone_seconds': 'manualAnswerAlertToneSeconds',
-            'sub_type_settings': 'subTypeSettings',
             'mode': 'mode',
             'enable_auto_dial_and_end': 'enableAutoDialAndEnd',
             'auto_dial_delay_seconds': 'autoDialDelaySeconds',
@@ -95,7 +92,6 @@ class CallbackMediaSettings(object):
         self._service_level = None
         self._auto_answer_alert_tone_seconds = None
         self._manual_answer_alert_tone_seconds = None
-        self._sub_type_settings = None
         self._mode = None
         self._enable_auto_dial_and_end = None
         self._auto_dial_delay_seconds = None
@@ -227,30 +223,6 @@ class CallbackMediaSettings(object):
         
 
         self._manual_answer_alert_tone_seconds = manual_answer_alert_tone_seconds
-
-    @property
-    def sub_type_settings(self) -> Dict[str, 'BaseMediaSettings']:
-        """
-        Gets the sub_type_settings of this CallbackMediaSettings.
-        Map of media subtype to media subtype specific settings.
-
-        :return: The sub_type_settings of this CallbackMediaSettings.
-        :rtype: dict(str, BaseMediaSettings)
-        """
-        return self._sub_type_settings
-
-    @sub_type_settings.setter
-    def sub_type_settings(self, sub_type_settings: Dict[str, 'BaseMediaSettings']) -> None:
-        """
-        Sets the sub_type_settings of this CallbackMediaSettings.
-        Map of media subtype to media subtype specific settings.
-
-        :param sub_type_settings: The sub_type_settings of this CallbackMediaSettings.
-        :type: dict(str, BaseMediaSettings)
-        """
-        
-
-        self._sub_type_settings = sub_type_settings
 
     @property
     def mode(self) -> str:

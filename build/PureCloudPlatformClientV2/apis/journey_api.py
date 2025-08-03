@@ -90,9 +90,12 @@ from ..models import PatchActionTarget
 from ..models import PatchActionTemplate
 from ..models import PatchOutcome
 from ..models import PatchSegment
+from ..models import SegmentAssignmentListing
 from ..models import SegmentListing
 from ..models import Session
 from ..models import SessionListing
+from ..models import UpdateSegmentAssignmentRequest
+from ..models import UpdateSegmentAssignmentResponse
 from ..models import WebEventRequest
 from ..models import WebEventResponse
 
@@ -111,6 +114,85 @@ class JourneyApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_analytics_journeys_aggregates_job(self, job_id: str, **kwargs) -> None:
+        """
+        Delete/cancel an async request for journey aggregates
+        
+	    delete_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_analytics_journeys_aggregates_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_analytics_journeys_aggregates_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `delete_analytics_journeys_aggregates_job`")
+
+
+        resource_path = '/api/v2/analytics/journeys/aggregates/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_journey_actionmap(self, action_map_id: str, **kwargs) -> None:
         """
@@ -818,6 +900,90 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyAsyncAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contact_journey_segments(self, contact_id: str, **kwargs) -> 'SegmentAssignmentListing':
+        """
+        Retrieve segment assignments by external contact ID.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contact_journey_segments(contact_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_id: ExternalContact ID (required)
+        :param bool include_merged: Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+        :param int limit: Number of entities to return. Default of 25, maximum of 500.
+        :return: SegmentAssignmentListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_id', 'include_merged', 'limit']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contact_journey_segments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_id' is set
+        if ('contact_id' not in params) or (params['contact_id'] is None):
+            raise ValueError("Missing the required parameter `contact_id` when calling `get_externalcontacts_contact_journey_segments`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/{contactId}/journey/segments'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_id' in params:
+            path_params['contactId'] = params['contact_id']
+
+        query_params = {}
+        if 'include_merged' in params:
+            query_params['includeMerged'] = params['include_merged']
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SegmentAssignmentListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4466,6 +4632,87 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_externalcontacts_contact_journey_segments(self, contact_id: str, **kwargs) -> 'UpdateSegmentAssignmentResponse':
+        """
+        Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_contact_journey_segments(contact_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_id: ExternalContact ID (required)
+        :param UpdateSegmentAssignmentRequest body: 
+        :return: UpdateSegmentAssignmentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_contact_journey_segments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_id' is set
+        if ('contact_id' not in params) or (params['contact_id'] is None):
+            raise ValueError("Missing the required parameter `contact_id` when calling `post_externalcontacts_contact_journey_segments`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/{contactId}/journey/segments'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_id' in params:
+            path_params['contactId'] = params['contact_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UpdateSegmentAssignmentResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

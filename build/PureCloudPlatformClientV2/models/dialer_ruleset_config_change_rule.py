@@ -56,7 +56,8 @@ class DialerRulesetConfigChangeRule(object):
             'name': 'str',
             'order': 'int',
             'category': 'str',
-            'actions': 'list[DialerRulesetConfigChangeAction]'
+            'actions': 'list[DialerRulesetConfigChangeAction]',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class DialerRulesetConfigChangeRule(object):
             'name': 'name',
             'order': 'order',
             'category': 'category',
-            'actions': 'actions'
+            'actions': 'actions',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._conditions = None
@@ -76,6 +78,7 @@ class DialerRulesetConfigChangeRule(object):
         self._order = None
         self._category = None
         self._actions = None
+        self._get_additional_properties = None
 
     @property
     def conditions(self) -> List['DialerRulesetConfigChangeCondition']:
@@ -249,6 +252,30 @@ class DialerRulesetConfigChangeRule(object):
         
 
         self._actions = actions
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerRulesetConfigChangeRule.
+
+
+        :return: The get_additional_properties of this DialerRulesetConfigChangeRule.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerRulesetConfigChangeRule.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerRulesetConfigChangeRule.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

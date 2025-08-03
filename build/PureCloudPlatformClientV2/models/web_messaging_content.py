@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ContentCard
     from . import ContentCarousel
     from . import ContentDatePicker
+    from . import ConversationContentListPicker
     from . import WebMessagingAttachment
     from . import WebMessagingButtonResponse
     from . import WebMessagingGeneric
@@ -62,7 +63,8 @@ class WebMessagingContent(object):
             'generic': 'WebMessagingGeneric',
             'card': 'ContentCard',
             'carousel': 'ContentCarousel',
-            'date_picker': 'ContentDatePicker'
+            'date_picker': 'ContentDatePicker',
+            'list_picker': 'ConversationContentListPicker'
         }
 
         self.attribute_map = {
@@ -73,7 +75,8 @@ class WebMessagingContent(object):
             'generic': 'generic',
             'card': 'card',
             'carousel': 'carousel',
-            'date_picker': 'datePicker'
+            'date_picker': 'datePicker',
+            'list_picker': 'listPicker'
         }
 
         self._content_type = None
@@ -84,6 +87,7 @@ class WebMessagingContent(object):
         self._card = None
         self._carousel = None
         self._date_picker = None
+        self._list_picker = None
 
     @property
     def content_type(self) -> str:
@@ -107,7 +111,7 @@ class WebMessagingContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel", "DatePicker"]
+        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel", "DatePicker", "ListPicker"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -281,6 +285,30 @@ class WebMessagingContent(object):
         
 
         self._date_picker = date_picker
+
+    @property
+    def list_picker(self) -> 'ConversationContentListPicker':
+        """
+        Gets the list_picker of this WebMessagingContent.
+        ListPicker content
+
+        :return: The list_picker of this WebMessagingContent.
+        :rtype: ConversationContentListPicker
+        """
+        return self._list_picker
+
+    @list_picker.setter
+    def list_picker(self, list_picker: 'ConversationContentListPicker') -> None:
+        """
+        Sets the list_picker of this WebMessagingContent.
+        ListPicker content
+
+        :param list_picker: The list_picker of this WebMessagingContent.
+        :type: ConversationContentListPicker
+        """
+        
+
+        self._list_picker = list_picker
 
     def to_dict(self):
         """

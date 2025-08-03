@@ -67,7 +67,8 @@ class DialerRulesetConfigChangeCondition(object):
             'call_analysis_result_field': 'str',
             'agent_wrapup_field': 'str',
             'contact_column_to_data_action_field_mappings': 'list[DialerRulesetConfigChangeContactColumnToDataActionFieldMapping]',
-            'predicates': 'list[DialerRulesetConfigChangeDataActionConditionPredicate]'
+            'predicates': 'list[DialerRulesetConfigChangeDataActionConditionPredicate]',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -87,7 +88,8 @@ class DialerRulesetConfigChangeCondition(object):
             'call_analysis_result_field': 'callAnalysisResultField',
             'agent_wrapup_field': 'agentWrapupField',
             'contact_column_to_data_action_field_mappings': 'contactColumnToDataActionFieldMappings',
-            'predicates': 'predicates'
+            'predicates': 'predicates',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._data_action = None
@@ -107,6 +109,7 @@ class DialerRulesetConfigChangeCondition(object):
         self._agent_wrapup_field = None
         self._contact_column_to_data_action_field_mappings = None
         self._predicates = None
+        self._get_additional_properties = None
 
     @property
     def data_action(self) -> 'DialerRulesetConfigChangeUriReference':
@@ -530,6 +533,30 @@ class DialerRulesetConfigChangeCondition(object):
         
 
         self._predicates = predicates
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerRulesetConfigChangeCondition.
+
+
+        :return: The get_additional_properties of this DialerRulesetConfigChangeCondition.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerRulesetConfigChangeCondition.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerRulesetConfigChangeCondition.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

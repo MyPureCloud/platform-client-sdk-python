@@ -487,7 +487,7 @@ except ApiException as e:
 
 ## get_chats_room_messages
 
-> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_room_messages(room_jid, limit=limit, before=before, after=after)
+> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_room_messages(room_jid, limit=limit, before=before, after=after, exclude_metadata=exclude_metadata)
 
 
 Get a room's message history
@@ -516,10 +516,11 @@ room_jid = 'room_jid_example' # str | roomJid
 limit = 'limit_example' # str | The maximum number of messages to retrieve (optional)
 before = 'before_example' # str | The cutoff date for messages to retrieve (optional)
 after = 'after_example' # str | The beginning date for messages to retrieve (optional)
+exclude_metadata = True # bool | Whether to exclude metadata for messages (optional)
 
 try:
     # Get a room's message history
-    api_response = api_instance.get_chats_room_messages(room_jid, limit=limit, before=before, after=after)
+    api_response = api_instance.get_chats_room_messages(room_jid, limit=limit, before=before, after=after, exclude_metadata=exclude_metadata)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChatApi->get_chats_room_messages: %s\n" % e)
@@ -534,6 +535,7 @@ except ApiException as e:
 | **limit** | **str**| The maximum number of messages to retrieve | [optional]  |
 | **before** | **str**| The cutoff date for messages to retrieve | [optional]  |
 | **after** | **str**| The beginning date for messages to retrieve | [optional]  |
+| **exclude_metadata** | **bool**| Whether to exclude metadata for messages | [optional]  |
 
 ### Return type
 
@@ -687,7 +689,7 @@ This endpoint does not need any parameters.
 
 ## get_chats_thread_messages
 
-> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_thread_messages(thread_id, limit=limit, before=before, after=after)
+> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_thread_messages(thread_id, limit=limit, before=before, after=after, exclude_metadata=exclude_metadata)
 
 
 Get history by thread
@@ -716,10 +718,11 @@ thread_id = 'thread_id_example' # str | threadId
 limit = 'limit_example' # str | The maximum number of messages to retrieve (optional)
 before = 'before_example' # str | The cutoff date for messages to retrieve (optional)
 after = 'after_example' # str | The beginning date for messages to retrieve (optional)
+exclude_metadata = True # bool | Whether to exclude metadata for messages (optional)
 
 try:
     # Get history by thread
-    api_response = api_instance.get_chats_thread_messages(thread_id, limit=limit, before=before, after=after)
+    api_response = api_instance.get_chats_thread_messages(thread_id, limit=limit, before=before, after=after, exclude_metadata=exclude_metadata)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChatApi->get_chats_thread_messages: %s\n" % e)
@@ -734,6 +737,7 @@ except ApiException as e:
 | **limit** | **str**| The maximum number of messages to retrieve | [optional]  |
 | **before** | **str**| The cutoff date for messages to retrieve | [optional]  |
 | **after** | **str**| The beginning date for messages to retrieve | [optional]  |
+| **exclude_metadata** | **bool**| Whether to exclude metadata for messages | [optional]  |
 
 ### Return type
 
@@ -842,7 +846,7 @@ except ApiException as e:
 
 ## get_chats_user_messages
 
-> [**ChatMessageResponse**](ChatMessageResponse) get_chats_user_messages(user_id, limit=limit, before=before, after=after)
+> [**ChatMessageResponse**](ChatMessageResponse) get_chats_user_messages(user_id, limit=limit, before=before, after=after, exclude_metadata=exclude_metadata)
 
 
 Get 1on1 History between a user
@@ -871,10 +875,11 @@ user_id = 'user_id_example' # str | userId
 limit = 'limit_example' # str | The maximum number of messages to retrieve (optional)
 before = 'before_example' # str | The cutoff date for messages to retrieve (optional)
 after = 'after_example' # str | The beginning date for messages to retrieve (optional)
+exclude_metadata = True # bool | Whether to exclude metadata for messages (optional)
 
 try:
     # Get 1on1 History between a user
-    api_response = api_instance.get_chats_user_messages(user_id, limit=limit, before=before, after=after)
+    api_response = api_instance.get_chats_user_messages(user_id, limit=limit, before=before, after=after, exclude_metadata=exclude_metadata)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChatApi->get_chats_user_messages: %s\n" % e)
@@ -889,6 +894,7 @@ except ApiException as e:
 | **limit** | **str**| The maximum number of messages to retrieve | [optional]  |
 | **before** | **str**| The cutoff date for messages to retrieve | [optional]  |
 | **after** | **str**| The beginning date for messages to retrieve | [optional]  |
+| **exclude_metadata** | **bool**| Whether to exclude metadata for messages | [optional]  |
 
 ### Return type
 
@@ -1734,4 +1740,4 @@ except ApiException as e:
 [**ChatSettings**](ChatSettings)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

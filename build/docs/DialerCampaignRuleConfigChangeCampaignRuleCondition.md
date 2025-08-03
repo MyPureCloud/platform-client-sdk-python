@@ -10,7 +10,8 @@
 | **parameters** | dict(str, str) | The parameters to match this condition | [optional] |
 | **condition_type** | str | The type of this condition | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

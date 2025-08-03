@@ -75,6 +75,8 @@ class CreateWorkPlan(object):
             'maximum_days_off_per_planning_period': 'int',
             'minimum_paid_minutes_per_planning_period': 'int',
             'maximum_paid_minutes_per_planning_period': 'int',
+            'constrain_maximum_working_weekends_per_planning_period': 'bool',
+            'maximum_working_weekends_per_planning_period': 'int',
             'optional_days': 'SetWrapperDayOfWeek',
             'shift_start_variance_type': 'str',
             'shift_start_variances': 'ListWrapperShiftStartVariance',
@@ -106,6 +108,8 @@ class CreateWorkPlan(object):
             'maximum_days_off_per_planning_period': 'maximumDaysOffPerPlanningPeriod',
             'minimum_paid_minutes_per_planning_period': 'minimumPaidMinutesPerPlanningPeriod',
             'maximum_paid_minutes_per_planning_period': 'maximumPaidMinutesPerPlanningPeriod',
+            'constrain_maximum_working_weekends_per_planning_period': 'constrainMaximumWorkingWeekendsPerPlanningPeriod',
+            'maximum_working_weekends_per_planning_period': 'maximumWorkingWeekendsPerPlanningPeriod',
             'optional_days': 'optionalDays',
             'shift_start_variance_type': 'shiftStartVarianceType',
             'shift_start_variances': 'shiftStartVariances',
@@ -136,6 +140,8 @@ class CreateWorkPlan(object):
         self._maximum_days_off_per_planning_period = None
         self._minimum_paid_minutes_per_planning_period = None
         self._maximum_paid_minutes_per_planning_period = None
+        self._constrain_maximum_working_weekends_per_planning_period = None
+        self._maximum_working_weekends_per_planning_period = None
         self._optional_days = None
         self._shift_start_variance_type = None
         self._shift_start_variances = None
@@ -693,6 +699,54 @@ class CreateWorkPlan(object):
         
 
         self._maximum_paid_minutes_per_planning_period = maximum_paid_minutes_per_planning_period
+
+    @property
+    def constrain_maximum_working_weekends_per_planning_period(self) -> bool:
+        """
+        Gets the constrain_maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        Whether to constrain the maximum working weekends in the planning period
+
+        :return: The constrain_maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        :rtype: bool
+        """
+        return self._constrain_maximum_working_weekends_per_planning_period
+
+    @constrain_maximum_working_weekends_per_planning_period.setter
+    def constrain_maximum_working_weekends_per_planning_period(self, constrain_maximum_working_weekends_per_planning_period: bool) -> None:
+        """
+        Sets the constrain_maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        Whether to constrain the maximum working weekends in the planning period
+
+        :param constrain_maximum_working_weekends_per_planning_period: The constrain_maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        :type: bool
+        """
+        
+
+        self._constrain_maximum_working_weekends_per_planning_period = constrain_maximum_working_weekends_per_planning_period
+
+    @property
+    def maximum_working_weekends_per_planning_period(self) -> int:
+        """
+        Gets the maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        Maximum working weekends in the planning period
+
+        :return: The maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        :rtype: int
+        """
+        return self._maximum_working_weekends_per_planning_period
+
+    @maximum_working_weekends_per_planning_period.setter
+    def maximum_working_weekends_per_planning_period(self, maximum_working_weekends_per_planning_period: int) -> None:
+        """
+        Sets the maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        Maximum working weekends in the planning period
+
+        :param maximum_working_weekends_per_planning_period: The maximum_working_weekends_per_planning_period of this CreateWorkPlan.
+        :type: int
+        """
+        
+
+        self._maximum_working_weekends_per_planning_period = maximum_working_weekends_per_planning_period
 
     @property
     def optional_days(self) -> 'SetWrapperDayOfWeek':

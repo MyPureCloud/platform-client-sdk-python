@@ -51,18 +51,21 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
         self.swagger_types = {
             'time_slots': 'list[DialerCallabletimesetConfigChangeTimeSlot]',
             'time_zone_id': 'str',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'time_slots': 'timeSlots',
             'time_zone_id': 'timeZoneId',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._time_slots = None
         self._time_zone_id = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def time_slots(self) -> List['DialerCallabletimesetConfigChangeTimeSlot']:
@@ -135,6 +138,30 @@ class DialerCallabletimesetConfigChangeCallableTime(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+
+
+        :return: The get_additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerCallabletimesetConfigChangeCallableTime.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

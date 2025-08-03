@@ -63,7 +63,7 @@ class LocalizedLabels(object):
     def key(self) -> str:
         """
         Gets the key of this LocalizedLabels.
-        Contains localized label key used in messenger homescreen
+        Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled.
 
         :return: The key of this LocalizedLabels.
         :rtype: str
@@ -74,7 +74,7 @@ class LocalizedLabels(object):
     def key(self, key: str) -> None:
         """
         Sets the key of this LocalizedLabels.
-        Contains localized label key used in messenger homescreen
+        Contains localized label key used in messenger homescreen and push notification. PushNotificationTitle and PushNotificationBody keys are required when notifications are enabled.
 
         :param key: The key of this LocalizedLabels.
         :type: str
@@ -92,7 +92,7 @@ class LocalizedLabels(object):
     def value(self) -> str:
         """
         Gets the value of this LocalizedLabels.
-        Contains localized label value used in messenger homescreen
+        Contains localized label value used in messenger homescreen and push notification
 
         :return: The value of this LocalizedLabels.
         :rtype: str
@@ -103,7 +103,7 @@ class LocalizedLabels(object):
     def value(self, value: str) -> None:
         """
         Sets the value of this LocalizedLabels.
-        Contains localized label value used in messenger homescreen
+        Contains localized label value used in messenger homescreen and push notification
 
         :param value: The value of this LocalizedLabels.
         :type: str

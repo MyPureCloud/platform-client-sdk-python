@@ -71,6 +71,7 @@ class FlowVersion(object):
             'input_schema': 'JsonSchemaDocument',
             'output_schema': 'JsonSchemaDocument',
             'virtual_agent_enabled': 'bool',
+            'agentic_virtual_agent_enabled': 'bool',
             'date_published': 'datetime',
             'date_published_end': 'datetime',
             'nlu_info': 'NluInfo',
@@ -98,6 +99,7 @@ class FlowVersion(object):
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
             'virtual_agent_enabled': 'virtualAgentEnabled',
+            'agentic_virtual_agent_enabled': 'agenticVirtualAgentEnabled',
             'date_published': 'datePublished',
             'date_published_end': 'datePublishedEnd',
             'nlu_info': 'nluInfo',
@@ -124,6 +126,7 @@ class FlowVersion(object):
         self._input_schema = None
         self._output_schema = None
         self._virtual_agent_enabled = None
+        self._agentic_virtual_agent_enabled = None
         self._date_published = None
         self._date_published_end = None
         self._nlu_info = None
@@ -567,6 +570,30 @@ class FlowVersion(object):
         
 
         self._virtual_agent_enabled = virtual_agent_enabled
+
+    @property
+    def agentic_virtual_agent_enabled(self) -> bool:
+        """
+        Gets the agentic_virtual_agent_enabled of this FlowVersion.
+
+
+        :return: The agentic_virtual_agent_enabled of this FlowVersion.
+        :rtype: bool
+        """
+        return self._agentic_virtual_agent_enabled
+
+    @agentic_virtual_agent_enabled.setter
+    def agentic_virtual_agent_enabled(self, agentic_virtual_agent_enabled: bool) -> None:
+        """
+        Sets the agentic_virtual_agent_enabled of this FlowVersion.
+
+
+        :param agentic_virtual_agent_enabled: The agentic_virtual_agent_enabled of this FlowVersion.
+        :type: bool
+        """
+        
+
+        self._agentic_virtual_agent_enabled = agentic_virtual_agent_enabled
 
     @property
     def date_published(self) -> datetime:

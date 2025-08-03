@@ -50,20 +50,23 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
             'id': 'str',
             'parameters': 'dict(str, str)',
             'condition_type': 'str',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
             'parameters': 'parameters',
             'condition_type': 'conditionType',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._id = None
         self._parameters = None
         self._condition_type = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def id(self) -> str:
@@ -165,6 +168,30 @@ class DialerCampaignRuleConfigChangeCampaignRuleCondition(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+
+
+        :return: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleCondition.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

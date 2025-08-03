@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_analytics_flows_aggregates_job**](#delete_analytics_flows_aggregates_job) | Delete/cancel an async request for flow aggregates|
 |[**get_analytics_flows_aggregates_job**](#get_analytics_flows_aggregates_job) | Get status for async query for Flow aggregates|
 |[**get_analytics_flows_aggregates_job_results**](#get_analytics_flows_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**post_analytics_flows_activity_query**](#post_analytics_flows_activity_query) | Query for flow activity observations|
@@ -13,6 +14,55 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_flows_aggregates_query**](#post_analytics_flows_aggregates_query) | Query for flow aggregates|
 |[**post_analytics_flows_observations_query**](#post_analytics_flows_observations_query) | Query for flow observations|
 
+
+
+## delete_analytics_flows_aggregates_job
+
+>  delete_analytics_flows_aggregates_job(job_id)
+
+
+Delete/cancel an async request for flow aggregates
+
+delete_analytics_flows_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.FlowsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for flow aggregates
+    api_instance.delete_analytics_flows_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling FlowsApi->delete_analytics_flows_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## get_analytics_flows_aggregates_job
@@ -315,4 +365,4 @@ except ApiException as e:
 [**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_analytics_users_aggregates_job**](#delete_analytics_users_aggregates_job) | Delete/cancel an async request for user aggregates|
 |[**delete_analytics_users_details_job**](#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**delete_authorization_subject_division_role**](#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
 |[**delete_routing_directroutingbackup_settings_me**](#delete_routing_directroutingbackup_settings_me) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
@@ -110,6 +111,55 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_station_defaultstation_station_id**](#put_user_station_defaultstation_station_id) | Set default station|
 |[**put_user_verifier**](#put_user_verifier) | Update a verifier|
 
+
+
+## delete_analytics_users_aggregates_job
+
+>  delete_analytics_users_aggregates_job(job_id)
+
+
+Delete/cancel an async request for user aggregates
+
+delete_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/users/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for user aggregates
+    api_instance.delete_analytics_users_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_analytics_users_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_analytics_users_details_job
@@ -5345,4 +5395,4 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

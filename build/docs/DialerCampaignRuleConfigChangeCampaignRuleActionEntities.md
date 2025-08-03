@@ -10,7 +10,8 @@
 | **additional_properties** | dict(str, object) |  | [optional] |
 | **campaigns** | [list[DialerCampaignRuleConfigChangeUriReference]](DialerCampaignRuleConfigChangeUriReference) | A list of campaignIds to act on | [optional] |
 | **sequences** | [list[DialerCampaignRuleConfigChangeUriReference]](DialerCampaignRuleConfigChangeUriReference) | A list of sequenceIds to act on | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

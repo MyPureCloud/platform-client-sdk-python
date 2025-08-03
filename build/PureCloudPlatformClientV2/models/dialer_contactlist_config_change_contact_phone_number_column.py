@@ -50,20 +50,23 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
             'column_name': 'str',
             'type': 'str',
             'callable_time_column': 'str',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
             'type': 'type',
             'callable_time_column': 'callableTimeColumn',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._column_name = None
         self._type = None
         self._callable_time_column = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def column_name(self) -> str:
@@ -160,6 +163,30 @@ class DialerContactlistConfigChangeContactPhoneNumberColumn(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
+
+
+        :return: The get_additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerContactlistConfigChangeContactPhoneNumberColumn.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

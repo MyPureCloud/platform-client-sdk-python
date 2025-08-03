@@ -55,6 +55,7 @@ class TokenInfo(object):
             'home_organization': 'NamedEntity',
             'authorized_scope': 'list[str]',
             'cloned_user': 'TokenInfoClonedUser',
+            'date_token_idles': 'datetime',
             'o_auth_client': 'OrgOAuthClient'
         }
 
@@ -63,6 +64,7 @@ class TokenInfo(object):
             'home_organization': 'homeOrganization',
             'authorized_scope': 'authorizedScope',
             'cloned_user': 'clonedUser',
+            'date_token_idles': 'dateTokenIdles',
             'o_auth_client': 'OAuthClient'
         }
 
@@ -70,6 +72,7 @@ class TokenInfo(object):
         self._home_organization = None
         self._authorized_scope = None
         self._cloned_user = None
+        self._date_token_idles = None
         self._o_auth_client = None
 
     @property
@@ -167,6 +170,30 @@ class TokenInfo(object):
         
 
         self._cloned_user = cloned_user
+
+    @property
+    def date_token_idles(self) -> datetime:
+        """
+        Gets the date_token_idles of this TokenInfo.
+        Date/Time when token is due to expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_token_idles of this TokenInfo.
+        :rtype: datetime
+        """
+        return self._date_token_idles
+
+    @date_token_idles.setter
+    def date_token_idles(self, date_token_idles: datetime) -> None:
+        """
+        Sets the date_token_idles of this TokenInfo.
+        Date/Time when token is due to expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_token_idles: The date_token_idles of this TokenInfo.
+        :type: datetime
+        """
+        
+
+        self._date_token_idles = date_token_idles
 
     @property
     def o_auth_client(self) -> 'OrgOAuthClient':

@@ -1423,7 +1423,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_taskmanagement_workitem_user_wrapups(self, workitem_id: str, user_id: str, **kwargs) -> 'WorkitemWrapup':
+    def get_taskmanagement_workitem_user_wrapups(self, workitem_id: str, user_id: str, **kwargs) -> 'WorkitemWrapupEntityListing':
         """
         Get all wrapup codes added for the given user for a workitem.
         
@@ -1444,7 +1444,7 @@ class TaskManagementApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param int page_size: Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50.
         :param str sort_order: Ascending or descending sort order
-        :return: WorkitemWrapup
+        :return: WorkitemWrapupEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1514,7 +1514,7 @@ class TaskManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='WorkitemWrapup',
+                                            response_type='WorkitemWrapupEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

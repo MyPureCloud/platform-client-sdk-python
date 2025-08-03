@@ -46,6 +46,7 @@ from ..models import GuideJob
 from ..models import GuideVersion
 from ..models import GuideVersionPublishJob
 from ..models import GuideVersionPublishJobRequest
+from ..models import UpdateGuide
 from ..models import UpdateGuideVersion
 
 class AIStudioApi(object):
@@ -652,6 +653,91 @@ class AIStudioApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='GuideContentGenerationJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_guide(self, guide_id: str, body: 'UpdateGuide', **kwargs) -> 'Guide':
+        """
+        Update a guide.
+        
+	    patch_guide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_guide(guide_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str guide_id: Guide ID (required)
+        :param UpdateGuide body:  (required)
+        :return: Guide
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['guide_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_guide" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'guide_id' is set
+        if ('guide_id' not in params) or (params['guide_id'] is None):
+            raise ValueError("Missing the required parameter `guide_id` when calling `patch_guide`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_guide`")
+
+
+        resource_path = '/api/v2/guides/{guideId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'guide_id' in params:
+            path_params['guideId'] = params['guide_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Guide',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

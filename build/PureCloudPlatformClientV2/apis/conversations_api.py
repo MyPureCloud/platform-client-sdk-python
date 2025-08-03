@@ -230,6 +230,85 @@ class ConversationsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def delete_analytics_conversations_aggregates_job(self, job_id: str, **kwargs) -> None:
+        """
+        Delete/cancel an async request for conversation aggregates
+        
+	    delete_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_analytics_conversations_aggregates_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_analytics_conversations_aggregates_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `delete_analytics_conversations_aggregates_job`")
+
+
+        resource_path = '/api/v2/analytics/conversations/aggregates/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_analytics_conversations_details_job(self, job_id: str, **kwargs) -> None:
         """
         Delete/cancel an async details job
@@ -3895,7 +3974,7 @@ class ConversationsApi(object):
     def get_conversations_chat(self, conversation_id: str, **kwargs) -> 'ChatConversation':
         """
         Get chat conversation
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3974,7 +4053,7 @@ class ConversationsApi(object):
     def get_conversations_chat_message(self, conversation_id: str, message_id: str, **kwargs) -> 'WebChatMessage':
         """
         Get a web chat conversation message
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4059,7 +4138,7 @@ class ConversationsApi(object):
     def get_conversations_chat_messages(self, conversation_id: str, **kwargs) -> 'WebChatMessageEntityList':
         """
         Get the messages of a chat conversation.
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4150,7 +4229,7 @@ class ConversationsApi(object):
     def get_conversations_chat_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4244,7 +4323,7 @@ class ConversationsApi(object):
     def get_conversations_chat_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4332,7 +4411,7 @@ class ConversationsApi(object):
     def get_conversations_chat_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4417,7 +4496,7 @@ class ConversationsApi(object):
     def get_conversations_chats(self, **kwargs) -> 'ChatConversationEntityListing':
         """
         Get active chat conversations for the logged in user
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4568,7 +4647,7 @@ class ConversationsApi(object):
     def get_conversations_cobrowsesession_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4662,7 +4741,7 @@ class ConversationsApi(object):
     def get_conversations_cobrowsesession_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4750,7 +4829,7 @@ class ConversationsApi(object):
     def get_conversations_cobrowsesession_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8990,7 +9069,7 @@ class ConversationsApi(object):
     def get_conversations_screenshare_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10380,7 +10459,7 @@ class ConversationsApi(object):
 
     def patch_conversations_call_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
-        Update conversation participant's communication by disconnecting it.
+        Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -11006,7 +11085,7 @@ class ConversationsApi(object):
     def patch_conversations_chat(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11091,7 +11170,7 @@ class ConversationsApi(object):
     def patch_conversations_chat_participant(self, conversation_id: str, participant_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
         """
         Update conversation participant
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11182,7 +11261,7 @@ class ConversationsApi(object):
     def patch_conversations_chat_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11272,8 +11351,8 @@ class ConversationsApi(object):
     @deprecated("patch_conversations_chat_participant_communication is deprecated")
     def patch_conversations_chat_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
-        Update conversation participant's communication by disconnecting it.
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11370,7 +11449,7 @@ class ConversationsApi(object):
     def patch_conversations_cobrowsesession(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11455,7 +11534,7 @@ class ConversationsApi(object):
     def patch_conversations_cobrowsesession_participant(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Update conversation participant
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11543,7 +11622,7 @@ class ConversationsApi(object):
     def patch_conversations_cobrowsesession_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11631,7 +11710,7 @@ class ConversationsApi(object):
     def patch_conversations_cobrowsesession_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -12077,7 +12156,7 @@ class ConversationsApi(object):
 
     def patch_conversations_email_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
-        Update conversation participant's communication by disconnecting it.
+        Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -12521,7 +12600,7 @@ class ConversationsApi(object):
 
     def patch_conversations_message_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
-        Update conversation participant's communication by disconnecting it.
+        Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -17055,7 +17134,7 @@ class ConversationsApi(object):
     def post_conversations_chat_communication_messages(self, conversation_id: str, communication_id: str, body: 'CreateWebChatMessageRequest', **kwargs) -> 'WebChatMessage':
         """
         Send a message on behalf of a communication in a chat conversation.
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17146,7 +17225,7 @@ class ConversationsApi(object):
     def post_conversations_chat_communication_typing(self, conversation_id: str, communication_id: str, **kwargs) -> 'WebChatTyping':
         """
         Send a typing-indicator on behalf of a communication in a chat conversation.
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17231,7 +17310,7 @@ class ConversationsApi(object):
     def post_conversations_chat_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17325,7 +17404,7 @@ class ConversationsApi(object):
     def post_conversations_chat_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17416,7 +17495,7 @@ class ConversationsApi(object):
     def post_conversations_chats(self, body: 'CreateWebChatRequest', **kwargs) -> 'ChatConversation':
         """
         Create a web chat conversation
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17495,7 +17574,7 @@ class ConversationsApi(object):
     def post_conversations_cobrowsesession_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17589,7 +17668,7 @@ class ConversationsApi(object):
     def post_conversations_cobrowsesession_participant_replace(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -20659,7 +20738,7 @@ class ConversationsApi(object):
     def post_conversations_screenshare_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -21619,7 +21698,7 @@ class ConversationsApi(object):
     def put_conversations_chat_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/.
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -21704,7 +21783,7 @@ class ConversationsApi(object):
     def put_conversations_cobrowsesession_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -22864,7 +22943,7 @@ class ConversationsApi(object):
     def put_conversations_screenshare_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
-        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
+        This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

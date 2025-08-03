@@ -282,7 +282,10 @@ class ViewFilter(object):
             'category_ids': 'list[str]',
             'delivery_pushed': 'bool',
             'social_ratings': 'list[float]',
-            'virtual_agent_ids': 'list[str]'
+            'virtual_agent_ids': 'list[str]',
+            'empathy_score_categories': 'list[str]',
+            'sentiment_score_categories': 'list[str]',
+            'sentiment_trend_categories': 'list[str]'
         }
 
         self.attribute_map = {
@@ -514,7 +517,10 @@ class ViewFilter(object):
             'category_ids': 'categoryIds',
             'delivery_pushed': 'deliveryPushed',
             'social_ratings': 'socialRatings',
-            'virtual_agent_ids': 'virtualAgentIds'
+            'virtual_agent_ids': 'virtualAgentIds',
+            'empathy_score_categories': 'empathyScoreCategories',
+            'sentiment_score_categories': 'sentimentScoreCategories',
+            'sentiment_trend_categories': 'sentimentTrendCategories'
         }
 
         self._media_types = None
@@ -746,6 +752,9 @@ class ViewFilter(object):
         self._delivery_pushed = None
         self._social_ratings = None
         self._virtual_agent_ids = None
+        self._empathy_score_categories = None
+        self._sentiment_score_categories = None
+        self._sentiment_trend_categories = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6272,6 +6281,78 @@ class ViewFilter(object):
         
 
         self._virtual_agent_ids = virtual_agent_ids
+
+    @property
+    def empathy_score_categories(self) -> List[str]:
+        """
+        Gets the empathy_score_categories of this ViewFilter.
+        A set of Empathy Score Categories for filtering
+
+        :return: The empathy_score_categories of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._empathy_score_categories
+
+    @empathy_score_categories.setter
+    def empathy_score_categories(self, empathy_score_categories: List[str]) -> None:
+        """
+        Sets the empathy_score_categories of this ViewFilter.
+        A set of Empathy Score Categories for filtering
+
+        :param empathy_score_categories: The empathy_score_categories of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._empathy_score_categories = empathy_score_categories
+
+    @property
+    def sentiment_score_categories(self) -> List[str]:
+        """
+        Gets the sentiment_score_categories of this ViewFilter.
+        A set of Sentiment Score Categories  for filtering
+
+        :return: The sentiment_score_categories of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._sentiment_score_categories
+
+    @sentiment_score_categories.setter
+    def sentiment_score_categories(self, sentiment_score_categories: List[str]) -> None:
+        """
+        Sets the sentiment_score_categories of this ViewFilter.
+        A set of Sentiment Score Categories  for filtering
+
+        :param sentiment_score_categories: The sentiment_score_categories of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._sentiment_score_categories = sentiment_score_categories
+
+    @property
+    def sentiment_trend_categories(self) -> List[str]:
+        """
+        Gets the sentiment_trend_categories of this ViewFilter.
+        A set of Sentiment Trend Categories for filtering
+
+        :return: The sentiment_trend_categories of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._sentiment_trend_categories
+
+    @sentiment_trend_categories.setter
+    def sentiment_trend_categories(self, sentiment_trend_categories: List[str]) -> None:
+        """
+        Sets the sentiment_trend_categories of this ViewFilter.
+        A set of Sentiment Trend Categories for filtering
+
+        :param sentiment_trend_categories: The sentiment_trend_categories of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._sentiment_trend_categories = sentiment_trend_categories
 
     def to_dict(self):
         """

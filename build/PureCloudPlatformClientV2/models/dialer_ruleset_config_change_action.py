@@ -51,7 +51,8 @@ class DialerRulesetConfigChangeAction(object):
             'action_type_name': 'str',
             'update_option': 'str',
             'properties': 'dict(str, str)',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -59,7 +60,8 @@ class DialerRulesetConfigChangeAction(object):
             'action_type_name': 'actionTypeName',
             'update_option': 'updateOption',
             'properties': 'properties',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._type = None
@@ -67,6 +69,7 @@ class DialerRulesetConfigChangeAction(object):
         self._update_option = None
         self._properties = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def type(self) -> str:
@@ -187,6 +190,30 @@ class DialerRulesetConfigChangeAction(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerRulesetConfigChangeAction.
+
+
+        :return: The get_additional_properties of this DialerRulesetConfigChangeAction.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerRulesetConfigChangeAction.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerRulesetConfigChangeAction.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

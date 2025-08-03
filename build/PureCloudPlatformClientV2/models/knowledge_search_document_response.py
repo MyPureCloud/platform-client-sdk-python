@@ -34,9 +34,9 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import CategoryResponse
-    from . import DocumentVariationAnswer
     from . import KnowledgeBaseReference
     from . import KnowledgeDocumentAlternative
+    from . import KnowledgeDocumentSearchVariation
     from . import LabelResponse
     from . import UserReference
 
@@ -75,7 +75,7 @@ class KnowledgeSearchDocumentResponse(object):
             'external_url': 'str',
             'source': 'AddressableEntityRef',
             'readonly': 'bool',
-            'variations': 'list[DocumentVariationAnswer]',
+            'variations': 'list[KnowledgeDocumentSearchVariation]',
             'answer': 'str',
             'self_uri': 'str'
         }
@@ -616,24 +616,24 @@ class KnowledgeSearchDocumentResponse(object):
         self._readonly = readonly
 
     @property
-    def variations(self) -> List['DocumentVariationAnswer']:
+    def variations(self) -> List['KnowledgeDocumentSearchVariation']:
         """
         Gets the variations of this KnowledgeSearchDocumentResponse.
         Variations of the document.
 
         :return: The variations of this KnowledgeSearchDocumentResponse.
-        :rtype: list[DocumentVariationAnswer]
+        :rtype: list[KnowledgeDocumentSearchVariation]
         """
         return self._variations
 
     @variations.setter
-    def variations(self, variations: List['DocumentVariationAnswer']) -> None:
+    def variations(self, variations: List['KnowledgeDocumentSearchVariation']) -> None:
         """
         Sets the variations of this KnowledgeSearchDocumentResponse.
         Variations of the document.
 
         :param variations: The variations of this KnowledgeSearchDocumentResponse.
-        :type: list[DocumentVariationAnswer]
+        :type: list[KnowledgeDocumentSearchVariation]
         """
         
 

@@ -158,7 +158,7 @@ class OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaign
         """
         if isinstance(outbound_campaign_type, int):
             outbound_campaign_type = str(outbound_campaign_type)
-        allowed_values = ["UNKNOWN", "EMAIL", "SMS"]
+        allowed_values = ["UNKNOWN", "EMAIL", "SMS", "WHATSAPP"]
         if outbound_campaign_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for outbound_campaign_type -> " + outbound_campaign_type)
             self._outbound_campaign_type = "outdated_sdk_version"

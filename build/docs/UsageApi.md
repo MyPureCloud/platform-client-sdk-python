@@ -8,9 +8,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_oauth_client_usage_query_result**](#get_oauth_client_usage_query_result) | Get the results of a usage query|
 |[**get_oauth_client_usage_summary**](#get_oauth_client_usage_summary) | Get a summary of OAuth client API usage|
+|[**get_usage_aggregates_query_job**](#get_usage_aggregates_query_job) | Get the status and results of the usage query|
+|[**get_usage_client_client_id_aggregates_query_job**](#get_usage_client_client_id_aggregates_query_job) | Get the status and results of the usage query|
 |[**get_usage_query_execution_id_results**](#get_usage_query_execution_id_results) | Get the results of a usage query|
 |[**get_usage_simplesearch_execution_id_results**](#get_usage_simplesearch_execution_id_results) | Get the results of a usage search. Number of records to be returned is limited to 20,000 results.|
 |[**post_oauth_client_usage_query**](#post_oauth_client_usage_query) | Query for OAuth client API usage|
+|[**post_usage_aggregates_query_jobs**](#post_usage_aggregates_query_jobs) | Query your organization&#39;s public api usage.|
+|[**post_usage_client_client_id_aggregates_query_jobs**](#post_usage_client_client_id_aggregates_query_jobs) | Query your client&#39;s public api usage.|
 |[**post_usage_query**](#post_usage_query) | Query organization API Usage - |
 |[**post_usage_simplesearch**](#post_usage_simplesearch) | Search organization API Usage|
 
@@ -118,6 +122,112 @@ except ApiException as e:
 ### Return type
 
 [**UsageExecutionResult**](UsageExecutionResult)
+
+
+## get_usage_aggregates_query_job
+
+> [**OrganizationPublicApiUsageResultsResponse**](OrganizationPublicApiUsageResultsResponse) get_usage_aggregates_query_job(job_id, page_size=page_size, after=after)
+
+
+Get the status and results of the usage query
+
+Wraps GET /api/v2/usage/aggregates/query/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* usage:organization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi()
+job_id = 'job_id_example' # str | jobId
+page_size = 100 # int | Page size of the results. Max is 1000. (optional) (default to 100)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+
+try:
+    # Get the status and results of the usage query
+    api_response = api_instance.get_usage_aggregates_query_job(job_id, page_size=page_size, after=after)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->get_usage_aggregates_query_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **page_size** | **int**| Page size of the results. Max is 1000. | [optional] [default to 100] |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+
+### Return type
+
+[**OrganizationPublicApiUsageResultsResponse**](OrganizationPublicApiUsageResultsResponse)
+
+
+## get_usage_client_client_id_aggregates_query_job
+
+> [**ClientPublicApiUsageResultsResponse**](ClientPublicApiUsageResultsResponse) get_usage_client_client_id_aggregates_query_job(client_id, job_id, page_size=page_size, after=after)
+
+
+Get the status and results of the usage query
+
+Wraps GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* usage:client:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi()
+client_id = 'client_id_example' # str | clientId
+job_id = 'job_id_example' # str | jobId
+page_size = 100 # int | Page size of the results. Max is 1000. (optional) (default to 100)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+
+try:
+    # Get the status and results of the usage query
+    api_response = api_instance.get_usage_client_client_id_aggregates_query_job(client_id, job_id, page_size=page_size, after=after)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->get_usage_client_client_id_aggregates_query_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **client_id** | **str**| clientId |  |
+| **job_id** | **str**| jobId |  |
+| **page_size** | **int**| Page size of the results. Max is 1000. | [optional] [default to 100] |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+
+### Return type
+
+[**ClientPublicApiUsageResultsResponse**](ClientPublicApiUsageResultsResponse)
 
 
 ## get_usage_query_execution_id_results
@@ -275,6 +385,108 @@ except ApiException as e:
 [**UsageExecutionResult**](UsageExecutionResult)
 
 
+## post_usage_aggregates_query_jobs
+
+> [**OrganizationUsageQueryResponse**](OrganizationUsageQueryResponse) post_usage_aggregates_query_jobs(body)
+
+
+Query your organization's public api usage.
+
+After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+
+Wraps POST /api/v2/usage/aggregates/query/jobs 
+
+Requires ANY permissions: 
+
+* usage:organization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi()
+body = PureCloudPlatformClientV2.OrganizationPublicApiUsageQueryRequest() # OrganizationPublicApiUsageQueryRequest | Query
+
+try:
+    # Query your organization's public api usage.
+    api_response = api_instance.post_usage_aggregates_query_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->post_usage_aggregates_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OrganizationPublicApiUsageQueryRequest**](OrganizationPublicApiUsageQueryRequest)| Query |  |
+
+### Return type
+
+[**OrganizationUsageQueryResponse**](OrganizationUsageQueryResponse)
+
+
+## post_usage_client_client_id_aggregates_query_jobs
+
+> [**ClientUsageQueryResponse**](ClientUsageQueryResponse) post_usage_client_client_id_aggregates_query_jobs(client_id, body)
+
+
+Query your client's public api usage.
+
+After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+
+Wraps POST /api/v2/usage/client/{clientId}/aggregates/query/jobs 
+
+Requires ANY permissions: 
+
+* usage:client:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi()
+client_id = 'client_id_example' # str | clientId
+body = PureCloudPlatformClientV2.ClientPublicApiUsageQueryRequest() # ClientPublicApiUsageQueryRequest | Query
+
+try:
+    # Query your client's public api usage.
+    api_response = api_instance.post_usage_client_client_id_aggregates_query_jobs(client_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->post_usage_client_client_id_aggregates_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **client_id** | **str**| clientId |  |
+| **body** | [**ClientPublicApiUsageQueryRequest**](ClientPublicApiUsageQueryRequest)| Query |  |
+
+### Return type
+
+[**ClientUsageQueryResponse**](ClientUsageQueryResponse)
+
+
 ## post_usage_query
 
 > [**UsageExecutionResult**](UsageExecutionResult) post_usage_query(body)
@@ -377,4 +589,4 @@ except ApiException as e:
 [**UsageExecutionResult**](UsageExecutionResult)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

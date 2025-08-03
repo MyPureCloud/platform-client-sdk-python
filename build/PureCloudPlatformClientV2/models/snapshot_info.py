@@ -49,7 +49,7 @@ class SnapshotInfo(object):
         self.swagger_types = {
             'version': 'int',
             'snapshot_id': 'str',
-            'session_id': 'str',
+            'date_snapshot': 'datetime',
             'business_unit_id': 'str',
             'planning_groups_version': 'int'
         }
@@ -57,14 +57,14 @@ class SnapshotInfo(object):
         self.attribute_map = {
             'version': 'version',
             'snapshot_id': 'snapshotId',
-            'session_id': 'sessionId',
+            'date_snapshot': 'dateSnapshot',
             'business_unit_id': 'businessUnitId',
             'planning_groups_version': 'planningGroupsVersion'
         }
 
         self._version = None
         self._snapshot_id = None
-        self._session_id = None
+        self._date_snapshot = None
         self._business_unit_id = None
         self._planning_groups_version = None
 
@@ -117,28 +117,28 @@ class SnapshotInfo(object):
         self._snapshot_id = snapshot_id
 
     @property
-    def session_id(self) -> str:
+    def date_snapshot(self) -> datetime:
         """
-        Gets the session_id of this SnapshotInfo.
-        Session Id of the continuous forecast session
+        Gets the date_snapshot of this SnapshotInfo.
+        Date of snapshot generation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
-        :return: The session_id of this SnapshotInfo.
-        :rtype: str
+        :return: The date_snapshot of this SnapshotInfo.
+        :rtype: datetime
         """
-        return self._session_id
+        return self._date_snapshot
 
-    @session_id.setter
-    def session_id(self, session_id: str) -> None:
+    @date_snapshot.setter
+    def date_snapshot(self, date_snapshot: datetime) -> None:
         """
-        Sets the session_id of this SnapshotInfo.
-        Session Id of the continuous forecast session
+        Sets the date_snapshot of this SnapshotInfo.
+        Date of snapshot generation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
-        :param session_id: The session_id of this SnapshotInfo.
-        :type: str
+        :param date_snapshot: The date_snapshot of this SnapshotInfo.
+        :type: datetime
         """
         
 
-        self._session_id = session_id
+        self._date_snapshot = date_snapshot
 
     @property
     def business_unit_id(self) -> str:

@@ -102,7 +102,7 @@ class Literal(object):
     def integer(self) -> int:
         """
         Gets the integer of this Literal.
-        An integer value
+        A positive or negative whole number, including zero
 
         :return: The integer of this Literal.
         :rtype: int
@@ -113,7 +113,7 @@ class Literal(object):
     def integer(self, integer: int) -> None:
         """
         Sets the integer of this Literal.
-        An integer value
+        A positive or negative whole number, including zero
 
         :param integer: The integer of this Literal.
         :type: int
@@ -126,7 +126,7 @@ class Literal(object):
     def number(self) -> float:
         """
         Gets the number of this Literal.
-        A decimal value
+        A positive or negative decimal number, including zero
 
         :return: The number of this Literal.
         :rtype: float
@@ -137,7 +137,7 @@ class Literal(object):
     def number(self, number: float) -> None:
         """
         Sets the number of this Literal.
-        A decimal value
+        A positive or negative decimal number, including zero
 
         :param number: The number of this Literal.
         :type: float

@@ -39,7 +39,13 @@ from ..models import ApiUsageClientQuery
 from ..models import ApiUsageOrganizationQuery
 from ..models import ApiUsageQueryResult
 from ..models import ApiUsageSimpleSearch
+from ..models import ClientPublicApiUsageQueryRequest
+from ..models import ClientPublicApiUsageResultsResponse
+from ..models import ClientUsageQueryResponse
 from ..models import ErrorBody
+from ..models import OrganizationPublicApiUsageQueryRequest
+from ..models import OrganizationPublicApiUsageResultsResponse
+from ..models import OrganizationUsageQueryResponse
 from ..models import UsageExecutionResult
 
 class UsageApi(object):
@@ -219,6 +225,180 @@ class UsageApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UsageExecutionResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_usage_aggregates_query_job(self, job_id: str, **kwargs) -> 'OrganizationPublicApiUsageResultsResponse':
+        """
+        Get the status and results of the usage query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_usage_aggregates_query_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :param int page_size: Page size of the results. Max is 1000.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :return: OrganizationPublicApiUsageResultsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'page_size', 'after']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_usage_aggregates_query_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_usage_aggregates_query_job`")
+
+
+        resource_path = '/api/v2/usage/aggregates/query/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'after' in params:
+            query_params['after'] = params['after']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrganizationPublicApiUsageResultsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_usage_client_client_id_aggregates_query_job(self, client_id: str, job_id: str, **kwargs) -> 'ClientPublicApiUsageResultsResponse':
+        """
+        Get the status and results of the usage query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_usage_client_client_id_aggregates_query_job(client_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str client_id: clientId (required)
+        :param str job_id: jobId (required)
+        :param int page_size: Page size of the results. Max is 1000.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :return: ClientPublicApiUsageResultsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['client_id', 'job_id', 'page_size', 'after']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_usage_client_client_id_aggregates_query_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'client_id' is set
+        if ('client_id' not in params) or (params['client_id'] is None):
+            raise ValueError("Missing the required parameter `client_id` when calling `get_usage_client_client_id_aggregates_query_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_usage_client_client_id_aggregates_query_job`")
+
+
+        resource_path = '/api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'client_id' in params:
+            path_params['clientId'] = params['client_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'after' in params:
+            query_params['after'] = params['after']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClientPublicApiUsageResultsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -465,6 +645,168 @@ class UsageApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UsageExecutionResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_usage_aggregates_query_jobs(self, body: 'OrganizationPublicApiUsageQueryRequest', **kwargs) -> 'OrganizationUsageQueryResponse':
+        """
+        Query your organization's public api usage.
+        After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_usage_aggregates_query_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OrganizationPublicApiUsageQueryRequest body: Query (required)
+        :return: OrganizationUsageQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_usage_aggregates_query_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_usage_aggregates_query_jobs`")
+
+
+        resource_path = '/api/v2/usage/aggregates/query/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrganizationUsageQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_usage_client_client_id_aggregates_query_jobs(self, client_id: str, body: 'ClientPublicApiUsageQueryRequest', **kwargs) -> 'ClientUsageQueryResponse':
+        """
+        Query your client's public api usage.
+        After calling this method, you will need to save the queryExecutionId from the response and use it in a call to the results endpoint to get the results
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_usage_client_client_id_aggregates_query_jobs(client_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str client_id: clientId (required)
+        :param ClientPublicApiUsageQueryRequest body: Query (required)
+        :return: ClientUsageQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['client_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_usage_client_client_id_aggregates_query_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'client_id' is set
+        if ('client_id' not in params) or (params['client_id'] is None):
+            raise ValueError("Missing the required parameter `client_id` when calling `post_usage_client_client_id_aggregates_query_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_usage_client_client_id_aggregates_query_jobs`")
+
+
+        resource_path = '/api/v2/usage/client/{clientId}/aggregates/query/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'client_id' in params:
+            path_params['clientId'] = params['client_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClientUsageQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BaseMediaSettings
+    from . import MessageSubtypeSettings
     from . import ServiceLevel
 
 class MessageMediaSettings(object):
@@ -55,7 +55,7 @@ class MessageMediaSettings(object):
             'service_level': 'ServiceLevel',
             'auto_answer_alert_tone_seconds': 'float',
             'manual_answer_alert_tone_seconds': 'float',
-            'sub_type_settings': 'dict(str, BaseMediaSettings)'
+            'sub_type_settings': 'dict(str, MessageSubtypeSettings)'
         }
 
         self.attribute_map = {
@@ -195,24 +195,24 @@ class MessageMediaSettings(object):
         self._manual_answer_alert_tone_seconds = manual_answer_alert_tone_seconds
 
     @property
-    def sub_type_settings(self) -> Dict[str, 'BaseMediaSettings']:
+    def sub_type_settings(self) -> Dict[str, 'MessageSubtypeSettings']:
         """
         Gets the sub_type_settings of this MessageMediaSettings.
         Map of media subtype to media subtype specific settings.
 
         :return: The sub_type_settings of this MessageMediaSettings.
-        :rtype: dict(str, BaseMediaSettings)
+        :rtype: dict(str, MessageSubtypeSettings)
         """
         return self._sub_type_settings
 
     @sub_type_settings.setter
-    def sub_type_settings(self, sub_type_settings: Dict[str, 'BaseMediaSettings']) -> None:
+    def sub_type_settings(self, sub_type_settings: Dict[str, 'MessageSubtypeSettings']) -> None:
         """
         Sets the sub_type_settings of this MessageMediaSettings.
         Map of media subtype to media subtype specific settings.
 
         :param sub_type_settings: The sub_type_settings of this MessageMediaSettings.
-        :type: dict(str, BaseMediaSettings)
+        :type: dict(str, MessageSubtypeSettings)
         """
         
 

@@ -13,7 +13,8 @@
 | **percentage** | int | numberOfContactsContacted/totalNumberOfContacts*100 | [optional] |
 | **number_of_contacts_skipped** | dict(str, int) | A map of skipped reasons and the number of contacts associated with each. | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

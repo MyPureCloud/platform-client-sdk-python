@@ -59,7 +59,8 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int'
+            'version': 'int',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version'
+            'version': 'version',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._contact_list = None
@@ -85,6 +87,7 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         self._date_created = None
         self._date_modified = None
         self._version = None
+        self._get_additional_properties = None
 
     @property
     def contact_list(self) -> 'DialerContactlistfilterConfigChangeUriReference':
@@ -330,6 +333,30 @@ class DialerContactlistfilterConfigChangeContactListFilter(object):
         
 
         self._version = version
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+
+
+        :return: The get_additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerContactlistfilterConfigChangeContactListFilter.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

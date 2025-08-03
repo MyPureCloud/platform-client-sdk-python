@@ -9,7 +9,8 @@
 | **key** | str |  | [optional] |
 | **value** | str |  | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
+| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

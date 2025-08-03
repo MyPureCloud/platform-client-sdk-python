@@ -120,10 +120,19 @@ from ..models import BusinessUnitActivityCodeListing
 from ..models import BusinessUnitListing
 from ..models import BusinessUnitResponse
 from ..models import CalendarUrlResponse
+from ..models import CapacityPlanDeleteRequest
+from ..models import CapacityPlanRequest
+from ..models import CapacityPlanResponse
+from ..models import CapacityPlanStaffingGroupAllocationsResponse
+from ..models import CapacityPlanStaffingGroupMetricChangeHistoryListResponse
+from ..models import CapacityPlanStaffingGroupMetricChangeResponse
+from ..models import CapacityPlanStaffingRequirementResult
+from ..models import CapacityPlansListResponse
 from ..models import ContinuousForecastGetSessionResponse
 from ..models import ContinuousForecastSessionResponse
 from ..models import ContinuousForecastSnapshotResponse
 from ..models import CopyBuForecastRequest
+from ..models import CopyCapacityPlanRequest
 from ..models import CopyWorkPlan
 from ..models import CopyWorkPlanBid
 from ..models import CopyWorkPlanRotationRequest
@@ -133,6 +142,7 @@ from ..models import CreateAdminTimeOffRequest
 from ..models import CreateAgentTimeOffRequest
 from ..models import CreateAlternativeShiftTradeRequest
 from ..models import CreateBusinessUnitRequest
+from ..models import CreateCapacityPlanStaffingGroupMetricChangeRequest
 from ..models import CreateManagementUnitApiRequest
 from ..models import CreatePlanningGroupRequest
 from ..models import CreateServiceGoalTemplate
@@ -163,6 +173,7 @@ from ..models import ImportScheduleUploadResponse
 from ..models import IntradayPlanningGroupRequest
 from ..models import ListAlternativeShiftTradesResponse
 from ..models import LongTermForecastResultResponse
+from ..models import LongTermRequirementsResponse
 from ..models import ManagementUnit
 from ..models import ManagementUnitListing
 from ..models import MatchShiftTradeRequest
@@ -179,9 +190,12 @@ from ..models import PerformancePredictionRecalculationUploadResponse
 from ..models import PerformancePredictionResponse
 from ..models import PlanningGroup
 from ..models import PlanningGroupList
+from ..models import PlanningGroupToStaffingGroupsListing
 from ..models import ProcessScheduleUpdateUploadRequest
 from ..models import QueryAdherenceExplanationsResponse
 from ..models import QueryAgentsIntegrationsRequest
+from ..models import QueryCapacityPlanStaffingGroupMetricChangeHistory
+from ..models import QueryPlanningGroupToStaffingGroupsRequest
 from ..models import QueryTimeOffIntegrationStatusRequest
 from ..models import QueryTimeOffLimitValuesRequest
 from ..models import QueryTimeOffLimitValuesResponse
@@ -220,6 +234,7 @@ from ..models import UpdateAdherenceExplanationStatusRequest
 from ..models import UpdateAgentWorkPlanBiddingPreference
 from ..models import UpdateAlternativeShiftBuSettingsRequest
 from ..models import UpdateBusinessUnitRequest
+from ..models import UpdateCapacityPlanRequest
 from ..models import UpdateManagementUnitRequest
 from ..models import UpdateMuAgentWorkPlansBatchRequest
 from ..models import UpdateMuAgentWorkPlansBatchResponse
@@ -421,6 +436,93 @@ class WorkforceManagementApi(object):
             path_params['activityCodeId'] = params['activity_code_id']
 
         query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory(self, business_unit_id: str, capacity_plan_id: str, **kwargs) -> None:
+        """
+        Delete staffing group allocations history created for a capacity plan before the given date
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory(business_unit_id, capacity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :param date before_date_id: The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id', 'before_date_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+        if 'before_date_id' in params:
+            query_params['beforeDateId'] = params['before_date_id']
 
         header_params = {}
 
@@ -2976,12 +3078,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
         :param list[str] expand: Include to access additional data on the business unit
+        :param bool include_scheduling_default_message_severities: Whether to include scheduling default message severities
         :return: BusinessUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'expand']
+        all_params = ['business_unit_id', 'expand', 'include_scheduling_default_message_severities']
         all_params.append('callback')
 
         params = locals()
@@ -3007,6 +3110,8 @@ class WorkforceManagementApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'include_scheduling_default_message_severities' in params:
+            query_params['includeSchedulingDefaultMessageSeverities'] = params['include_scheduling_default_message_severities']
 
         header_params = {}
 
@@ -3780,6 +3885,426 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BuAlternativeShiftJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_capacityplan(self, business_unit_id: str, capacity_plan_id: str, **kwargs) -> 'CapacityPlanResponse':
+        """
+        Get a capacity plan
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_capacityplan(business_unit_id, capacity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :return: CapacityPlanResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_capacityplan" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_capacityplan`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `get_workforcemanagement_businessunit_capacityplan`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(self, business_unit_id: str, capacity_plan_id: str, **kwargs) -> 'CapacityPlanStaffingGroupAllocationsResponse':
+        """
+        Get a capacity plan's staffing group allocations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :return: CapacityPlanStaffingGroupAllocationsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanStaffingGroupAllocationsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_capacityplan_staffingrequirements(self, business_unit_id: str, capacity_plan_id: str, **kwargs) -> 'CapacityPlanStaffingRequirementResult':
+        """
+        Get a capacity plan's staffing requirements
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_capacityplan_staffingrequirements(business_unit_id, capacity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :return: CapacityPlanStaffingRequirementResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_capacityplan_staffingrequirements" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_capacityplan_staffingrequirements`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `get_workforcemanagement_businessunit_capacityplan_staffingrequirements`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanStaffingRequirementResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> 'LongTermRequirementsResponse':
+        """
+        Get the latest long term staffing requirements for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(business_unit_id, week_date_id, forecast_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id:  (required)
+        :param date week_date_id: weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param str forecast_id: forecastId of forecast (required)
+        :return: LongTermRequirementsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'week_date_id', 'forecast_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast`")
+        # verify the required parameter 'week_date_id' is set
+        if ('week_date_id' not in params) or (params['week_date_id'] is None):
+            raise ValueError("Missing the required parameter `week_date_id` when calling `get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast`")
+        # verify the required parameter 'forecast_id' is set
+        if ('forecast_id' not in params) or (params['forecast_id'] is None):
+            raise ValueError("Missing the required parameter `forecast_id` when calling `get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'week_date_id' in params:
+            path_params['weekDateId'] = params['week_date_id']
+        if 'forecast_id' in params:
+            path_params['forecastId'] = params['forecast_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LongTermRequirementsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_capacityplans(self, business_unit_id: str, **kwargs) -> 'CapacityPlansListResponse':
+        """
+        Get list of capacity plans for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_capacityplans(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :return: CapacityPlansListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_capacityplans" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_capacityplans`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlansListResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11040,12 +11565,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
         :param UpdateBusinessUnitRequest body: body (required)
+        :param bool include_scheduling_default_message_severities: Whether to include scheduling default message severities
         :return: BusinessUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'body']
+        all_params = ['business_unit_id', 'body', 'include_scheduling_default_message_severities']
         all_params.append('callback')
 
         params = locals()
@@ -11072,6 +11598,8 @@ class WorkforceManagementApi(object):
             path_params['businessUnitId'] = params['business_unit_id']
 
         query_params = {}
+        if 'include_scheduling_default_message_severities' in params:
+            query_params['includeSchedulingDefaultMessageSeverities'] = params['include_scheduling_default_message_severities']
 
         header_params = {}
 
@@ -11367,6 +11895,96 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AlternativeShiftBuSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_capacityplan(self, business_unit_id: str, capacity_plan_id: str, body: 'UpdateCapacityPlanRequest', **kwargs) -> 'CapacityPlanResponse':
+        """
+        Update a capacity plan configuration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_capacityplan(business_unit_id, capacity_plan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :param UpdateCapacityPlanRequest body: body (required)
+        :return: CapacityPlanResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_capacityplan" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_capacityplan`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `patch_workforcemanagement_businessunit_capacityplan`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_capacityplan`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -14891,6 +15509,618 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_businessunit_capacityplan_copy(self, business_unit_id: str, capacity_plan_id: str, body: 'CopyCapacityPlanRequest', **kwargs) -> 'CapacityPlanResponse':
+        """
+        Copy a capacity plan
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_capacityplan_copy(business_unit_id, capacity_plan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :param CopyCapacityPlanRequest body: body (required)
+        :return: CapacityPlanResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_capacityplan_copy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_capacityplan_copy`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `post_workforcemanagement_businessunit_capacityplan_copy`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_capacityplan_copy`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_capacityplan_requirement_generate(self, business_unit_id: str, capacity_plan_id: str, **kwargs) -> 'CapacityPlanStaffingRequirementResult':
+        """
+        Regenerate requirements for capacity plan
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_capacityplan_requirement_generate(business_unit_id, capacity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :return: CapacityPlanStaffingRequirementResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_capacityplan_requirement_generate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_capacityplan_requirement_generate`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `post_workforcemanagement_businessunit_capacityplan_requirement_generate`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanStaffingRequirementResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(self, business_unit_id: str, capacity_plan_id: str, body: 'CreateCapacityPlanStaffingGroupMetricChangeRequest', **kwargs) -> 'CapacityPlanStaffingGroupMetricChangeResponse':
+        """
+        Create staffing group allocations for a capacity plan
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :param CreateCapacityPlanStaffingGroupMetricChangeRequest body:  (required)
+        :return: CapacityPlanStaffingGroupMetricChangeResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanStaffingGroupMetricChangeResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query(self, business_unit_id: str, capacity_plan_id: str, body: 'QueryCapacityPlanStaffingGroupMetricChangeHistory', **kwargs) -> 'CapacityPlanStaffingGroupMetricChangeHistoryListResponse':
+        """
+        Query staffing groups allocations history for a capacity plan
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query(business_unit_id, capacity_plan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :param QueryCapacityPlanStaffingGroupMetricChangeHistory body:  (required)
+        :return: CapacityPlanStaffingGroupMetricChangeHistoryListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanStaffingGroupMetricChangeHistoryListResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> 'LongTermRequirementsResponse':
+        """
+        Force regenerate the latest long term staffing requirements for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate(business_unit_id, week_date_id, forecast_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id:  (required)
+        :param date week_date_id: weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param str forecast_id: forecastId of forecast (required)
+        :return: LongTermRequirementsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'week_date_id', 'forecast_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate`")
+        # verify the required parameter 'week_date_id' is set
+        if ('week_date_id' not in params) or (params['week_date_id'] is None):
+            raise ValueError("Missing the required parameter `week_date_id` when calling `post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate`")
+        # verify the required parameter 'forecast_id' is set
+        if ('forecast_id' not in params) or (params['forecast_id'] is None):
+            raise ValueError("Missing the required parameter `forecast_id` when calling `post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'week_date_id' in params:
+            path_params['weekDateId'] = params['week_date_id']
+        if 'forecast_id' in params:
+            path_params['forecastId'] = params['forecast_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LongTermRequirementsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_capacityplans(self, business_unit_id: str, body: 'CapacityPlanRequest', **kwargs) -> 'CapacityPlanResponse':
+        """
+        Create a new capacity plan
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_capacityplans(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param CapacityPlanRequest body: body (required)
+        :return: CapacityPlanResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_capacityplans" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_capacityplans`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_capacityplans`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_capacityplans_bulk_remove(self, business_unit_id: str, body: 'CapacityPlanDeleteRequest', **kwargs) -> None:
+        """
+        Delete capacity plans in a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_capacityplans_bulk_remove(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param CapacityPlanDeleteRequest body: body (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_capacityplans_bulk_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_capacityplans_bulk_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_capacityplans_bulk_remove`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_businessunit_intraday(self, business_unit_id: str, body: 'IntradayPlanningGroupRequest', **kwargs) -> 'AsyncIntradayResponse':
         """
         Get intraday data for the given date for the requested planningGroupIds
@@ -15226,6 +16456,90 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='StaffingGroupResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_staffinggroups_planninggroups_query(self, business_unit_id: str, body: 'QueryPlanningGroupToStaffingGroupsRequest', **kwargs) -> 'PlanningGroupToStaffingGroupsListing':
+        """
+        Gets a list of planning group to staffing groups list association
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_staffinggroups_planninggroups_query(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param QueryPlanningGroupToStaffingGroupsRequest body: body (required)
+        :return: PlanningGroupToStaffingGroupsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_staffinggroups_planninggroups_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_staffinggroups_planninggroups_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_staffinggroups_planninggroups_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PlanningGroupToStaffingGroupsListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -17259,12 +18573,13 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param CreateBusinessUnitRequest body: body (required)
+        :param bool include_scheduling_default_message_severities: Whether to include scheduling default message severities
         :return: BusinessUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'include_scheduling_default_message_severities']
         all_params.append('callback')
 
         params = locals()
@@ -17286,6 +18601,8 @@ class WorkforceManagementApi(object):
         path_params = {}
 
         query_params = {}
+        if 'include_scheduling_default_message_severities' in params:
+            query_params['includeSchedulingDefaultMessageSeverities'] = params['include_scheduling_default_message_severities']
 
         header_params = {}
 

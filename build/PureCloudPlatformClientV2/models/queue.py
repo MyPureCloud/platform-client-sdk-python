@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import AgentOwnedRouting
     from . import Bullseye
     from . import CannedResponseLibraries
+    from . import ConditionalGroupActivation
     from . import ConditionalGroupRouting
     from . import DirectRouting
     from . import Division
@@ -76,6 +77,7 @@ class Queue(object):
             'media_settings': 'QueueMediaSettings',
             'routing_rules': 'list[RoutingRule]',
             'conditional_group_routing': 'ConditionalGroupRouting',
+            'conditional_group_activation': 'ConditionalGroupActivation',
             'bullseye': 'Bullseye',
             'scoring_method': 'str',
             'last_agent_routing_mode': 'str',
@@ -119,6 +121,7 @@ class Queue(object):
             'media_settings': 'mediaSettings',
             'routing_rules': 'routingRules',
             'conditional_group_routing': 'conditionalGroupRouting',
+            'conditional_group_activation': 'conditionalGroupActivation',
             'bullseye': 'bullseye',
             'scoring_method': 'scoringMethod',
             'last_agent_routing_mode': 'lastAgentRoutingMode',
@@ -161,6 +164,7 @@ class Queue(object):
         self._media_settings = None
         self._routing_rules = None
         self._conditional_group_routing = None
+        self._conditional_group_activation = None
         self._bullseye = None
         self._scoring_method = None
         self._last_agent_routing_mode = None
@@ -523,6 +527,30 @@ class Queue(object):
         
 
         self._conditional_group_routing = conditional_group_routing
+
+    @property
+    def conditional_group_activation(self) -> 'ConditionalGroupActivation':
+        """
+        Gets the conditional_group_activation of this Queue.
+        The Conditional Group Activation settings for the queue.
+
+        :return: The conditional_group_activation of this Queue.
+        :rtype: ConditionalGroupActivation
+        """
+        return self._conditional_group_activation
+
+    @conditional_group_activation.setter
+    def conditional_group_activation(self, conditional_group_activation: 'ConditionalGroupActivation') -> None:
+        """
+        Sets the conditional_group_activation of this Queue.
+        The Conditional Group Activation settings for the queue.
+
+        :param conditional_group_activation: The conditional_group_activation of this Queue.
+        :type: ConditionalGroupActivation
+        """
+        
+
+        self._conditional_group_activation = conditional_group_activation
 
     @property
     def bullseye(self) -> 'Bullseye':

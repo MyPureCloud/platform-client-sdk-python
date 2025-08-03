@@ -6,7 +6,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_analytics_actions_aggregates_job**](#delete_analytics_actions_aggregates_job) | Delete/cancel an async request for action aggregates|
+|[**delete_analytics_agentcopilots_aggregates_job**](#delete_analytics_agentcopilots_aggregates_job) | Delete/cancel an async request for agent copilot aggregates|
+|[**delete_analytics_bots_aggregates_job**](#delete_analytics_bots_aggregates_job) | Delete/cancel an async request for bot aggregates|
+|[**delete_analytics_conversations_aggregates_job**](#delete_analytics_conversations_aggregates_job) | Delete/cancel an async request for conversation aggregates|
 |[**delete_analytics_conversations_details_job**](#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
+|[**delete_analytics_evaluations_aggregates_job**](#delete_analytics_evaluations_aggregates_job) | Delete/cancel an async request for evaluation aggregates|
+|[**delete_analytics_flowexecutions_aggregates_job**](#delete_analytics_flowexecutions_aggregates_job) | Delete/cancel an async request for flow execution aggregates|
+|[**delete_analytics_flows_aggregates_job**](#delete_analytics_flows_aggregates_job) | Delete/cancel an async request for flow aggregates|
+|[**delete_analytics_journeys_aggregates_job**](#delete_analytics_journeys_aggregates_job) | Delete/cancel an async request for journey aggregates|
+|[**delete_analytics_knowledge_aggregates_job**](#delete_analytics_knowledge_aggregates_job) | Delete/cancel an async request for knowledge aggregates|
+|[**delete_analytics_resolutions_aggregates_job**](#delete_analytics_resolutions_aggregates_job) | Delete/cancel an async request for resolution aggregates|
+|[**delete_analytics_summaries_aggregates_job**](#delete_analytics_summaries_aggregates_job) | Delete/cancel an async request for summary aggregates|
+|[**delete_analytics_surveys_aggregates_job**](#delete_analytics_surveys_aggregates_job) | Delete/cancel an async request for survey aggregates|
+|[**delete_analytics_taskmanagement_aggregates_job**](#delete_analytics_taskmanagement_aggregates_job) | Delete/cancel an async request for task management aggregates|
+|[**delete_analytics_transcripts_aggregates_job**](#delete_analytics_transcripts_aggregates_job) | Delete/cancel an async request for transcript aggregates|
+|[**delete_analytics_users_aggregates_job**](#delete_analytics_users_aggregates_job) | Delete/cancel an async request for user aggregates|
 |[**delete_analytics_users_details_job**](#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**get_analytics_actions_aggregates_job**](#get_analytics_actions_aggregates_job) | Get status for async query for action aggregates|
 |[**get_analytics_actions_aggregates_job_results**](#get_analytics_actions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
@@ -73,7 +88,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_aggregates_query**](#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](#post_analytics_conversations_details_query) | Query for conversation details|
-|[**post_analytics_conversations_transcripts_query**](#post_analytics_conversations_transcripts_query) | Search resources.|
 |[**post_analytics_evaluations_aggregates_jobs**](#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
 |[**post_analytics_evaluations_aggregates_query**](#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
 |[**post_analytics_flowexecutions_aggregates_jobs**](#post_analytics_flowexecutions_aggregates_jobs) | Query for flow execution aggregates asynchronously|
@@ -114,6 +128,203 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
+## delete_analytics_actions_aggregates_job
+
+>  delete_analytics_actions_aggregates_job(job_id)
+
+
+Delete/cancel an async request for action aggregates
+
+delete_analytics_actions_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/actions/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for action aggregates
+    api_instance.delete_analytics_actions_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_actions_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_agentcopilots_aggregates_job
+
+>  delete_analytics_agentcopilots_aggregates_job(job_id)
+
+
+Delete/cancel an async request for agent copilot aggregates
+
+delete_analytics_agentcopilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for agent copilot aggregates
+    api_instance.delete_analytics_agentcopilots_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_agentcopilots_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_bots_aggregates_job
+
+>  delete_analytics_bots_aggregates_job(job_id)
+
+
+Delete/cancel an async request for bot aggregates
+
+delete_analytics_bots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/bots/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:botAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for bot aggregates
+    api_instance.delete_analytics_bots_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_bots_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_conversations_aggregates_job
+
+>  delete_analytics_conversations_aggregates_job(job_id)
+
+
+Delete/cancel an async request for conversation aggregates
+
+delete_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for conversation aggregates
+    api_instance.delete_analytics_conversations_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_conversations_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## delete_analytics_conversations_details_job
 
 >  delete_analytics_conversations_details_job(job_id)
@@ -148,6 +359,545 @@ try:
     api_instance.delete_analytics_conversations_details_job(job_id)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->delete_analytics_conversations_details_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_evaluations_aggregates_job
+
+>  delete_analytics_evaluations_aggregates_job(job_id)
+
+
+Delete/cancel an async request for evaluation aggregates
+
+delete_analytics_evaluations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for evaluation aggregates
+    api_instance.delete_analytics_evaluations_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_evaluations_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_flowexecutions_aggregates_job
+
+>  delete_analytics_flowexecutions_aggregates_job(job_id)
+
+
+Delete/cancel an async request for flow execution aggregates
+
+delete_analytics_flowexecutions_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for flow execution aggregates
+    api_instance.delete_analytics_flowexecutions_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_flowexecutions_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_flows_aggregates_job
+
+>  delete_analytics_flows_aggregates_job(job_id)
+
+
+Delete/cancel an async request for flow aggregates
+
+delete_analytics_flows_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for flow aggregates
+    api_instance.delete_analytics_flows_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_flows_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_journeys_aggregates_job
+
+>  delete_analytics_journeys_aggregates_job(job_id)
+
+
+Delete/cancel an async request for journey aggregates
+
+delete_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for journey aggregates
+    api_instance.delete_analytics_journeys_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_journeys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_knowledge_aggregates_job
+
+>  delete_analytics_knowledge_aggregates_job(job_id)
+
+
+Delete/cancel an async request for knowledge aggregates
+
+delete_analytics_knowledge_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/knowledge/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:knowledgeAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for knowledge aggregates
+    api_instance.delete_analytics_knowledge_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_knowledge_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_resolutions_aggregates_job
+
+>  delete_analytics_resolutions_aggregates_job(job_id)
+
+
+Delete/cancel an async request for resolution aggregates
+
+delete_analytics_resolutions_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/resolutions/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:resolutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for resolution aggregates
+    api_instance.delete_analytics_resolutions_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_resolutions_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_summaries_aggregates_job
+
+>  delete_analytics_summaries_aggregates_job(job_id)
+
+
+Delete/cancel an async request for summary aggregates
+
+delete_analytics_summaries_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/summaries/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:summaryAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for summary aggregates
+    api_instance.delete_analytics_summaries_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_summaries_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_surveys_aggregates_job
+
+>  delete_analytics_surveys_aggregates_job(job_id)
+
+
+Delete/cancel an async request for survey aggregates
+
+delete_analytics_surveys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for survey aggregates
+    api_instance.delete_analytics_surveys_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_surveys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_taskmanagement_aggregates_job
+
+>  delete_analytics_taskmanagement_aggregates_job(job_id)
+
+
+Delete/cancel an async request for task management aggregates
+
+delete_analytics_taskmanagement_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:taskManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for task management aggregates
+    api_instance.delete_analytics_taskmanagement_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_taskmanagement_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_transcripts_aggregates_job
+
+>  delete_analytics_transcripts_aggregates_job(job_id)
+
+
+Delete/cancel an async request for transcript aggregates
+
+delete_analytics_transcripts_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/transcripts/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for transcript aggregates
+    api_instance.delete_analytics_transcripts_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_transcripts_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_users_aggregates_job
+
+>  delete_analytics_users_aggregates_job(job_id)
+
+
+Delete/cancel an async request for user aggregates
+
+delete_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/users/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for user aggregates
+    api_instance.delete_analytics_users_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_users_aggregates_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -3515,54 +4265,6 @@ except ApiException as e:
 [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse)
 
 
-## post_analytics_conversations_transcripts_query
-
-> [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse) post_analytics_conversations_transcripts_query(body)
-
-
-Search resources.
-
-Wraps POST /api/v2/analytics/conversations/transcripts/query 
-
-Requires ANY permissions: 
-
-* analytics:conversationDetail:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.TranscriptConversationDetailSearchRequest() # TranscriptConversationDetailSearchRequest | Search request options
-
-try:
-    # Search resources.
-    api_response = api_instance.post_analytics_conversations_transcripts_query(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->post_analytics_conversations_transcripts_query: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest)| Search request options |  |
-
-### Return type
-
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
-
-
 ## post_analytics_evaluations_aggregates_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_evaluations_aggregates_jobs(body)
@@ -5380,4 +6082,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

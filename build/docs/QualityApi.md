@@ -6,6 +6,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_analytics_evaluations_aggregates_job**](#delete_analytics_evaluations_aggregates_job) | Delete/cancel an async request for evaluation aggregates|
+|[**delete_analytics_surveys_aggregates_job**](#delete_analytics_surveys_aggregates_job) | Delete/cancel an async request for survey aggregates|
 |[**delete_quality_calibration**](#delete_quality_calibration) | Delete a calibration by id.|
 |[**delete_quality_conversation_evaluation**](#delete_quality_conversation_evaluation) | Delete an evaluation|
 |[**delete_quality_form**](#delete_quality_form) | Delete an evaluation form.|
@@ -69,6 +71,104 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_quality_forms_survey**](#put_quality_forms_survey) | Update a survey form.|
 |[**put_quality_surveys_scorable**](#put_quality_surveys_scorable) | Update a survey as an end-customer, for the purposes of scoring it.|
 
+
+
+## delete_analytics_evaluations_aggregates_job
+
+>  delete_analytics_evaluations_aggregates_job(job_id)
+
+
+Delete/cancel an async request for evaluation aggregates
+
+delete_analytics_evaluations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for evaluation aggregates
+    api_instance.delete_analytics_evaluations_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling QualityApi->delete_analytics_evaluations_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_surveys_aggregates_job
+
+>  delete_analytics_surveys_aggregates_job(job_id)
+
+
+Delete/cancel an async request for survey aggregates
+
+delete_analytics_surveys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for survey aggregates
+    api_instance.delete_analytics_surveys_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling QualityApi->delete_analytics_surveys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_quality_calibration
@@ -3318,4 +3418,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

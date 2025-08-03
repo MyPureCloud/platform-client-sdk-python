@@ -51,6 +51,7 @@ class SurveyQuestion(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'context_id': 'str',
             'text': 'str',
             'help_text': 'str',
             'type': 'str',
@@ -63,6 +64,7 @@ class SurveyQuestion(object):
 
         self.attribute_map = {
             'id': 'id',
+            'context_id': 'contextId',
             'text': 'text',
             'help_text': 'helpText',
             'type': 'type',
@@ -74,6 +76,7 @@ class SurveyQuestion(object):
         }
 
         self._id = None
+        self._context_id = None
         self._text = None
         self._help_text = None
         self._type = None
@@ -106,6 +109,30 @@ class SurveyQuestion(object):
         
 
         self._id = id
+
+    @property
+    def context_id(self) -> str:
+        """
+        Gets the context_id of this SurveyQuestion.
+        An identifier for this question that stays the same across versions of the form.
+
+        :return: The context_id of this SurveyQuestion.
+        :rtype: str
+        """
+        return self._context_id
+
+    @context_id.setter
+    def context_id(self, context_id: str) -> None:
+        """
+        Sets the context_id of this SurveyQuestion.
+        An identifier for this question that stays the same across versions of the form.
+
+        :param context_id: The context_id of this SurveyQuestion.
+        :type: str
+        """
+        
+
+        self._context_id = context_id
 
     @property
     def text(self) -> str:

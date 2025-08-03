@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ManagementUnitReference
+    from . import PlanningGroupReference
     from . import UserReference
     from . import WfmVersionedEntityMetadata
 
@@ -55,6 +56,7 @@ class StaffingGroupResponse(object):
             'name': 'str',
             'users': 'list[UserReference]',
             'management_unit': 'ManagementUnitReference',
+            'planning_groups': 'list[PlanningGroupReference]',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
@@ -64,6 +66,7 @@ class StaffingGroupResponse(object):
             'name': 'name',
             'users': 'users',
             'management_unit': 'managementUnit',
+            'planning_groups': 'planningGroups',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
@@ -72,6 +75,7 @@ class StaffingGroupResponse(object):
         self._name = None
         self._users = None
         self._management_unit = None
+        self._planning_groups = None
         self._metadata = None
         self._self_uri = None
 
@@ -170,6 +174,30 @@ class StaffingGroupResponse(object):
         
 
         self._management_unit = management_unit
+
+    @property
+    def planning_groups(self) -> List['PlanningGroupReference']:
+        """
+        Gets the planning_groups of this StaffingGroupResponse.
+        The list of planning groups that are associated with the staffing group
+
+        :return: The planning_groups of this StaffingGroupResponse.
+        :rtype: list[PlanningGroupReference]
+        """
+        return self._planning_groups
+
+    @planning_groups.setter
+    def planning_groups(self, planning_groups: List['PlanningGroupReference']) -> None:
+        """
+        Sets the planning_groups of this StaffingGroupResponse.
+        The list of planning groups that are associated with the staffing group
+
+        :param planning_groups: The planning_groups of this StaffingGroupResponse.
+        :type: list[PlanningGroupReference]
+        """
+        
+
+        self._planning_groups = planning_groups
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

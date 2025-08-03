@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_workforcemanagement_businessunit**](#delete_workforcemanagement_businessunit) | Delete business unit|
 |[**delete_workforcemanagement_businessunit_activitycode**](#delete_workforcemanagement_businessunit_activitycode) | Deletes an activity code|
+|[**delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory**](#delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory) | Delete staffing group allocations history created for a capacity plan before the given date|
 |[**delete_workforcemanagement_businessunit_planninggroup**](#delete_workforcemanagement_businessunit_planninggroup) | Deletes the planning group|
 |[**delete_workforcemanagement_businessunit_scheduling_run**](#delete_workforcemanagement_businessunit_scheduling_run) | Cancel a scheduling run|
 |[**delete_workforcemanagement_businessunit_servicegoaltemplate**](#delete_workforcemanagement_businessunit_servicegoaltemplate) | Delete a service goal template|
@@ -49,6 +50,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_alternativeshifts_settings**](#get_workforcemanagement_businessunit_alternativeshifts_settings) | Get alternative shifts settings for a business unit|
 |[**get_workforcemanagement_businessunit_alternativeshifts_trade**](#get_workforcemanagement_businessunit_alternativeshifts_trade) | Get an alternative shifts trade in a business unit for a given trade ID|
 |[**get_workforcemanagement_businessunit_alternativeshifts_trades_search_job**](#get_workforcemanagement_businessunit_alternativeshifts_trades_search_job) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_businessunit_capacityplan**](#get_workforcemanagement_businessunit_capacityplan) | Get a capacity plan|
+|[**get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations**](#get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations) | Get a capacity plan&#39;s staffing group allocations|
+|[**get_workforcemanagement_businessunit_capacityplan_staffingrequirements**](#get_workforcemanagement_businessunit_capacityplan_staffingrequirements) | Get a capacity plan&#39;s staffing requirements|
+|[**get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast**](#get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast) | Get the latest long term staffing requirements for a business unit|
+|[**get_workforcemanagement_businessunit_capacityplans**](#get_workforcemanagement_businessunit_capacityplans) | Get list of capacity plans for a business unit|
 |[**get_workforcemanagement_businessunit_intraday_planninggroups**](#get_workforcemanagement_businessunit_intraday_planninggroups) | Get intraday planning groups for the given date|
 |[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session) | Get the latest session for the business unit ID|
 |[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id) | Get the session details for the session ID|
@@ -140,6 +146,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_activitycode**](#patch_workforcemanagement_businessunit_activitycode) | Update an activity code|
 |[**patch_workforcemanagement_businessunit_activityplan**](#patch_workforcemanagement_businessunit_activityplan) | Update an activity plan|
 |[**patch_workforcemanagement_businessunit_alternativeshifts_settings**](#patch_workforcemanagement_businessunit_alternativeshifts_settings) | Update alternative shifts settings for a business unit|
+|[**patch_workforcemanagement_businessunit_capacityplan**](#patch_workforcemanagement_businessunit_capacityplan) | Update a capacity plan configuration|
 |[**patch_workforcemanagement_businessunit_planninggroup**](#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
@@ -181,10 +188,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_adherence_explanations_query**](#post_workforcemanagement_businessunit_adherence_explanations_query) | Query adherence explanations across an entire business unit for the requested period|
 |[**post_workforcemanagement_businessunit_agentschedules_search**](#post_workforcemanagement_businessunit_agentschedules_search) | Search published schedules|
 |[**post_workforcemanagement_businessunit_alternativeshifts_trades_search**](#post_workforcemanagement_businessunit_alternativeshifts_trades_search) | List alternative shifts trades for a given management unit or agent|
+|[**post_workforcemanagement_businessunit_capacityplan_copy**](#post_workforcemanagement_businessunit_capacityplan_copy) | Copy a capacity plan|
+|[**post_workforcemanagement_businessunit_capacityplan_requirement_generate**](#post_workforcemanagement_businessunit_capacityplan_requirement_generate) | Regenerate requirements for capacity plan|
+|[**post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations**](#post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations) | Create staffing group allocations for a capacity plan|
+|[**post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query**](#post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query) | Query staffing groups allocations history for a capacity plan|
+|[**post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate**](#post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate) | Force regenerate the latest long term staffing requirements for a business unit|
+|[**post_workforcemanagement_businessunit_capacityplans**](#post_workforcemanagement_businessunit_capacityplans) | Create a new capacity plan|
+|[**post_workforcemanagement_businessunit_capacityplans_bulk_remove**](#post_workforcemanagement_businessunit_capacityplans_bulk_remove) | Delete capacity plans in a business unit|
 |[**post_workforcemanagement_businessunit_intraday**](#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
 |[**post_workforcemanagement_businessunit_planninggroups**](#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
 |[**post_workforcemanagement_businessunit_servicegoaltemplates**](#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
 |[**post_workforcemanagement_businessunit_staffinggroups**](#post_workforcemanagement_businessunit_staffinggroups) | Creates a new staffing group|
+|[**post_workforcemanagement_businessunit_staffinggroups_planninggroups_query**](#post_workforcemanagement_businessunit_staffinggroups_planninggroups_query) | Gets a list of planning group to staffing groups list association|
 |[**post_workforcemanagement_businessunit_staffinggroups_query**](#post_workforcemanagement_businessunit_staffinggroups_query) | Gets staffing group associations for a list of user IDs|
 |[**post_workforcemanagement_businessunit_timeofflimits**](#post_workforcemanagement_businessunit_timeofflimits) | Creates a new time-off limit object|
 |[**post_workforcemanagement_businessunit_timeofflimits_values_query**](#post_workforcemanagement_businessunit_timeofflimits_values_query) | Retrieves time-off limit related values based on a given set of filters.|
@@ -345,6 +360,57 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 | **activity_code_id** | **str**| The ID of the activity code to delete |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory
+
+>  delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory(business_unit_id, capacity_plan_id, before_date_id=before_date_id)
+
+
+Delete staffing group allocations history created for a capacity plan before the given date
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+before_date_id = '2013-10-20' # date | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+
+try:
+    # Delete staffing group allocations history created for a capacity plan before the given date
+    api_instance.delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory(business_unit_id, capacity_plan_id, before_date_id=before_date_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+| **before_date_id** | **date**| The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 
 ### Return type
 
@@ -1927,7 +1993,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_businessunit
 
-> [**BusinessUnitResponse**](BusinessUnitResponse) get_workforcemanagement_businessunit(business_unit_id, expand=expand)
+> [**BusinessUnitResponse**](BusinessUnitResponse) get_workforcemanagement_businessunit(business_unit_id, expand=expand, include_scheduling_default_message_severities=include_scheduling_default_message_severities)
 
 
 Get business unit
@@ -2025,10 +2091,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 expand = ['expand_example'] # list[str] | Include to access additional data on the business unit (optional)
+include_scheduling_default_message_severities = True # bool | Whether to include scheduling default message severities (optional)
 
 try:
     # Get business unit
-    api_response = api_instance.get_workforcemanagement_businessunit(business_unit_id, expand=expand)
+    api_response = api_instance.get_workforcemanagement_businessunit(business_unit_id, expand=expand, include_scheduling_default_message_severities=include_scheduling_default_message_severities)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit: %s\n" % e)
@@ -2041,6 +2108,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 | **expand** | [**list[str]**](str)| Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching |
+| **include_scheduling_default_message_severities** | **bool**| Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
@@ -2553,6 +2621,256 @@ except ApiException as e:
 ### Return type
 
 [**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse)
+
+
+## get_workforcemanagement_businessunit_capacityplan
+
+> [**CapacityPlanResponse**](CapacityPlanResponse) get_workforcemanagement_businessunit_capacityplan(business_unit_id, capacity_plan_id)
+
+
+Get a capacity plan
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+
+try:
+    # Get a capacity plan
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplan(business_unit_id, capacity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+## get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations
+
+> [**CapacityPlanStaffingGroupAllocationsResponse**](CapacityPlanStaffingGroupAllocationsResponse) get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id)
+
+
+Get a capacity plan's staffing group allocations
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+
+try:
+    # Get a capacity plan's staffing group allocations
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+
+### Return type
+
+[**CapacityPlanStaffingGroupAllocationsResponse**](CapacityPlanStaffingGroupAllocationsResponse)
+
+
+## get_workforcemanagement_businessunit_capacityplan_staffingrequirements
+
+> [**CapacityPlanStaffingRequirementResult**](CapacityPlanStaffingRequirementResult) get_workforcemanagement_businessunit_capacityplan_staffingrequirements(business_unit_id, capacity_plan_id)
+
+
+Get a capacity plan's staffing requirements
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+
+try:
+    # Get a capacity plan's staffing requirements
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplan_staffingrequirements(business_unit_id, capacity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplan_staffingrequirements: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+
+### Return type
+
+[**CapacityPlanStaffingRequirementResult**](CapacityPlanStaffingRequirementResult)
+
+
+## get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast
+
+> [**LongTermRequirementsResponse**](LongTermRequirementsResponse) get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(business_unit_id, week_date_id, forecast_id)
+
+
+Get the latest long term staffing requirements for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId} 
+
+Requires ANY permissions: 
+
+* wfm:longTermStaffing:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | 
+week_date_id = '2013-10-20' # date | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | forecastId of forecast
+
+try:
+    # Get the latest long term staffing requirements for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(business_unit_id, week_date_id, forecast_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**|  |  |
+| **week_date_id** | **date**| weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| forecastId of forecast |  |
+
+### Return type
+
+[**LongTermRequirementsResponse**](LongTermRequirementsResponse)
+
+
+## get_workforcemanagement_businessunit_capacityplans
+
+> [**CapacityPlansListResponse**](CapacityPlansListResponse) get_workforcemanagement_businessunit_capacityplans(business_unit_id)
+
+
+Get list of capacity plans for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get list of capacity plans for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplans(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**CapacityPlansListResponse**](CapacityPlansListResponse)
 
 
 ## get_workforcemanagement_businessunit_intraday_planninggroups
@@ -7084,7 +7402,7 @@ except ApiException as e:
 
 ## patch_workforcemanagement_businessunit
 
-> [**BusinessUnitResponse**](BusinessUnitResponse) patch_workforcemanagement_businessunit(business_unit_id, body)
+> [**BusinessUnitResponse**](BusinessUnitResponse) patch_workforcemanagement_businessunit(business_unit_id, body, include_scheduling_default_message_severities=include_scheduling_default_message_severities)
 
 
 Update business unit
@@ -7110,10 +7428,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 body = PureCloudPlatformClientV2.UpdateBusinessUnitRequest() # UpdateBusinessUnitRequest | body
+include_scheduling_default_message_severities = True # bool | Whether to include scheduling default message severities (optional)
 
 try:
     # Update business unit
-    api_response = api_instance.patch_workforcemanagement_businessunit(business_unit_id, body)
+    api_response = api_instance.patch_workforcemanagement_businessunit(business_unit_id, body, include_scheduling_default_message_severities=include_scheduling_default_message_severities)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit: %s\n" % e)
@@ -7126,6 +7445,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 | **body** | [**UpdateBusinessUnitRequest**](UpdateBusinessUnitRequest)| body |  |
+| **include_scheduling_default_message_severities** | **bool**| Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
@@ -7286,6 +7606,58 @@ except ApiException as e:
 ### Return type
 
 [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse)
+
+
+## patch_workforcemanagement_businessunit_capacityplan
+
+> [**CapacityPlanResponse**](CapacityPlanResponse) patch_workforcemanagement_businessunit_capacityplan(business_unit_id, capacity_plan_id, body)
+
+
+Update a capacity plan configuration
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+body = PureCloudPlatformClientV2.UpdateCapacityPlanRequest() # UpdateCapacityPlanRequest | body
+
+try:
+    # Update a capacity plan configuration
+    api_response = api_instance.patch_workforcemanagement_businessunit_capacityplan(business_unit_id, capacity_plan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_capacityplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+| **body** | [**UpdateCapacityPlanRequest**](UpdateCapacityPlanRequest)| body |  |
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
 
 
 ## patch_workforcemanagement_businessunit_planninggroup
@@ -9380,6 +9752,363 @@ except ApiException as e:
 [**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse)
 
 
+## post_workforcemanagement_businessunit_capacityplan_copy
+
+> [**CapacityPlanResponse**](CapacityPlanResponse) post_workforcemanagement_businessunit_capacityplan_copy(business_unit_id, capacity_plan_id, body)
+
+
+Copy a capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+body = PureCloudPlatformClientV2.CopyCapacityPlanRequest() # CopyCapacityPlanRequest | body
+
+try:
+    # Copy a capacity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_capacityplan_copy(business_unit_id, capacity_plan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_capacityplan_copy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+| **body** | [**CopyCapacityPlanRequest**](CopyCapacityPlanRequest)| body |  |
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+## post_workforcemanagement_businessunit_capacityplan_requirement_generate
+
+> [**CapacityPlanStaffingRequirementResult**](CapacityPlanStaffingRequirementResult) post_workforcemanagement_businessunit_capacityplan_requirement_generate(business_unit_id, capacity_plan_id)
+
+
+Regenerate requirements for capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+
+try:
+    # Regenerate requirements for capacity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_capacityplan_requirement_generate(business_unit_id, capacity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_capacityplan_requirement_generate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+
+### Return type
+
+[**CapacityPlanStaffingRequirementResult**](CapacityPlanStaffingRequirementResult)
+
+
+## post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations
+
+> [**CapacityPlanStaffingGroupMetricChangeResponse**](CapacityPlanStaffingGroupMetricChangeResponse) post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id, body)
+
+
+Create staffing group allocations for a capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+body = PureCloudPlatformClientV2.CreateCapacityPlanStaffingGroupMetricChangeRequest() # CreateCapacityPlanStaffingGroupMetricChangeRequest | 
+
+try:
+    # Create staffing group allocations for a capacity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+| **body** | [**CreateCapacityPlanStaffingGroupMetricChangeRequest**](CreateCapacityPlanStaffingGroupMetricChangeRequest)|  |  |
+
+### Return type
+
+[**CapacityPlanStaffingGroupMetricChangeResponse**](CapacityPlanStaffingGroupMetricChangeResponse)
+
+
+## post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query
+
+> [**CapacityPlanStaffingGroupMetricChangeHistoryListResponse**](CapacityPlanStaffingGroupMetricChangeHistoryListResponse) post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query(business_unit_id, capacity_plan_id, body)
+
+
+Query staffing groups allocations history for a capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+body = PureCloudPlatformClientV2.QueryCapacityPlanStaffingGroupMetricChangeHistory() # QueryCapacityPlanStaffingGroupMetricChangeHistory | 
+
+try:
+    # Query staffing groups allocations history for a capacity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query(business_unit_id, capacity_plan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+| **body** | [**QueryCapacityPlanStaffingGroupMetricChangeHistory**](QueryCapacityPlanStaffingGroupMetricChangeHistory)|  |  |
+
+### Return type
+
+[**CapacityPlanStaffingGroupMetricChangeHistoryListResponse**](CapacityPlanStaffingGroupMetricChangeHistoryListResponse)
+
+
+## post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate
+
+> [**LongTermRequirementsResponse**](LongTermRequirementsResponse) post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate(business_unit_id, week_date_id, forecast_id)
+
+
+Force regenerate the latest long term staffing requirements for a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate 
+
+Requires ANY permissions: 
+
+* wfm:longTermStaffing:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | 
+week_date_id = '2013-10-20' # date | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | forecastId of forecast
+
+try:
+    # Force regenerate the latest long term staffing requirements for a business unit
+    api_response = api_instance.post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate(business_unit_id, week_date_id, forecast_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**|  |  |
+| **week_date_id** | **date**| weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| forecastId of forecast |  |
+
+### Return type
+
+[**LongTermRequirementsResponse**](LongTermRequirementsResponse)
+
+
+## post_workforcemanagement_businessunit_capacityplans
+
+> [**CapacityPlanResponse**](CapacityPlanResponse) post_workforcemanagement_businessunit_capacityplans(business_unit_id, body)
+
+
+Create a new capacity plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CapacityPlanRequest() # CapacityPlanRequest | body
+
+try:
+    # Create a new capacity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_capacityplans(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_capacityplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CapacityPlanRequest**](CapacityPlanRequest)| body |  |
+
+### Return type
+
+[**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+## post_workforcemanagement_businessunit_capacityplans_bulk_remove
+
+>  post_workforcemanagement_businessunit_capacityplans_bulk_remove(business_unit_id, body)
+
+
+Delete capacity plans in a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlan:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CapacityPlanDeleteRequest() # CapacityPlanDeleteRequest | body
+
+try:
+    # Delete capacity plans in a business unit
+    api_instance.post_workforcemanagement_businessunit_capacityplans_bulk_remove(business_unit_id, body)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_capacityplans_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CapacityPlanDeleteRequest**](CapacityPlanDeleteRequest)| body |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## post_workforcemanagement_businessunit_intraday
 
 > [**AsyncIntradayResponse**](AsyncIntradayResponse) post_workforcemanagement_businessunit_intraday(business_unit_id, body, force_async=force_async)
@@ -9580,6 +10309,56 @@ except ApiException as e:
 ### Return type
 
 [**StaffingGroupResponse**](StaffingGroupResponse)
+
+
+## post_workforcemanagement_businessunit_staffinggroups_planninggroups_query
+
+> [**PlanningGroupToStaffingGroupsListing**](PlanningGroupToStaffingGroupsListing) post_workforcemanagement_businessunit_staffinggroups_planninggroups_query(business_unit_id, body)
+
+
+Gets a list of planning group to staffing groups list association
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query 
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryPlanningGroupToStaffingGroupsRequest() # QueryPlanningGroupToStaffingGroupsRequest | body
+
+try:
+    # Gets a list of planning group to staffing groups list association
+    api_response = api_instance.post_workforcemanagement_businessunit_staffinggroups_planninggroups_query(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_staffinggroups_planninggroups_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryPlanningGroupToStaffingGroupsRequest**](QueryPlanningGroupToStaffingGroupsRequest)| body |  |
+
+### Return type
+
+[**PlanningGroupToStaffingGroupsListing**](PlanningGroupToStaffingGroupsListing)
 
 
 ## post_workforcemanagement_businessunit_staffinggroups_query
@@ -10757,7 +11536,7 @@ except ApiException as e:
 
 ## post_workforcemanagement_businessunits
 
-> [**BusinessUnitResponse**](BusinessUnitResponse) post_workforcemanagement_businessunits(body)
+> [**BusinessUnitResponse**](BusinessUnitResponse) post_workforcemanagement_businessunits(body, include_scheduling_default_message_severities=include_scheduling_default_message_severities)
 
 
 Add a new business unit
@@ -10784,10 +11563,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 body = PureCloudPlatformClientV2.CreateBusinessUnitRequest() # CreateBusinessUnitRequest | body
+include_scheduling_default_message_severities = True # bool | Whether to include scheduling default message severities (optional)
 
 try:
     # Add a new business unit
-    api_response = api_instance.post_workforcemanagement_businessunits(body)
+    api_response = api_instance.post_workforcemanagement_businessunits(body, include_scheduling_default_message_severities=include_scheduling_default_message_severities)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunits: %s\n" % e)
@@ -10799,6 +11579,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**CreateBusinessUnitRequest**](CreateBusinessUnitRequest)| body |  |
+| **include_scheduling_default_message_severities** | **bool**| Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
@@ -12955,4 +13736,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

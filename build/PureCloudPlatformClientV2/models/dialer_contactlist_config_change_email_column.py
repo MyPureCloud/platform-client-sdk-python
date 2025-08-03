@@ -49,18 +49,21 @@ class DialerContactlistConfigChangeEmailColumn(object):
         self.swagger_types = {
             'column_name': 'str',
             'type': 'str',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
             'type': 'type',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._column_name = None
         self._type = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def column_name(self) -> str:
@@ -133,6 +136,30 @@ class DialerContactlistConfigChangeEmailColumn(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerContactlistConfigChangeEmailColumn.
+
+
+        :return: The get_additional_properties of this DialerContactlistConfigChangeEmailColumn.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerContactlistConfigChangeEmailColumn.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerContactlistConfigChangeEmailColumn.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

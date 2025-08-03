@@ -54,7 +54,8 @@ class ContactlistImportStatusImportStatus(object):
             'failure_reason': 'str',
             'target_contact_list_ids': 'list[str]',
             'list_name_prefix': 'str',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class ContactlistImportStatusImportStatus(object):
             'failure_reason': 'failureReason',
             'target_contact_list_ids': 'targetContactListIds',
             'list_name_prefix': 'listNamePrefix',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._import_state = None
@@ -76,6 +78,7 @@ class ContactlistImportStatusImportStatus(object):
         self._target_contact_list_ids = None
         self._list_name_prefix = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def import_state(self) -> str:
@@ -273,6 +276,30 @@ class ContactlistImportStatusImportStatus(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this ContactlistImportStatusImportStatus.
+
+
+        :return: The get_additional_properties of this ContactlistImportStatusImportStatus.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this ContactlistImportStatusImportStatus.
+
+
+        :param get_additional_properties: The get_additional_properties of this ContactlistImportStatusImportStatus.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

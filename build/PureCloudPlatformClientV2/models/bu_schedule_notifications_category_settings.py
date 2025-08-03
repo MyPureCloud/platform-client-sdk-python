@@ -84,7 +84,7 @@ class BuScheduleNotificationsCategorySettings(object):
         """
         if isinstance(activity_category, int):
             activity_category = str(activity_category)
-        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled"]
+        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable"]
         if activity_category.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for activity_category -> " + activity_category)
             self._activity_category = "outdated_sdk_version"

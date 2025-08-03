@@ -55,7 +55,8 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int'
+            'version': 'int',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version'
+            'version': 'version',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._callable_times = None
@@ -75,6 +77,7 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         self._date_created = None
         self._date_modified = None
         self._version = None
+        self._get_additional_properties = None
 
     @property
     def callable_times(self) -> List['DialerCallabletimesetConfigChangeCallableTime']:
@@ -243,6 +246,30 @@ class DialerCallabletimesetConfigChangeCallableTimeSet(object):
         
 
         self._version = version
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
+
+
+        :return: The get_additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerCallabletimesetConfigChangeCallableTimeSet.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

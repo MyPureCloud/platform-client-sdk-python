@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import KnowledgeDocumentResponse
+    from . import KnowledgeDocumentQueryResult
 
 class KnowledgeDocumentQueryResponse(object):
     """
@@ -53,7 +53,7 @@ class KnowledgeDocumentQueryResponse(object):
             'page_number': 'int',
             'total': 'int',
             'page_count': 'int',
-            'results': 'list[KnowledgeDocumentResponse]'
+            'results': 'list[KnowledgeDocumentQueryResult]'
         }
 
         self.attribute_map = {
@@ -167,24 +167,24 @@ class KnowledgeDocumentQueryResponse(object):
         self._page_count = page_count
 
     @property
-    def results(self) -> List['KnowledgeDocumentResponse']:
+    def results(self) -> List['KnowledgeDocumentQueryResult']:
         """
         Gets the results of this KnowledgeDocumentQueryResponse.
         Documents matching the query.
 
         :return: The results of this KnowledgeDocumentQueryResponse.
-        :rtype: list[KnowledgeDocumentResponse]
+        :rtype: list[KnowledgeDocumentQueryResult]
         """
         return self._results
 
     @results.setter
-    def results(self, results: List['KnowledgeDocumentResponse']) -> None:
+    def results(self, results: List['KnowledgeDocumentQueryResult']) -> None:
         """
         Sets the results of this KnowledgeDocumentQueryResponse.
         Documents matching the query.
 
         :param results: The results of this KnowledgeDocumentQueryResponse.
-        :type: list[KnowledgeDocumentResponse]
+        :type: list[KnowledgeDocumentQueryResult]
         """
         
 

@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CreateWorkPlanActivity
+    from . import PlanningPeriodShiftConstraints
     from . import SetWrapperDayOfWeek
 
 class CreateWorkPlanShift(object):
@@ -71,6 +72,7 @@ class CreateWorkPlanShift(object):
             'maximum_contiguous_work_time_minutes': 'int',
             'constrain_day_off': 'bool',
             'day_off_rule': 'str',
+            'planning_period_constraints': 'PlanningPeriodShiftConstraints',
             'activities': 'list[CreateWorkPlanActivity]'
         }
 
@@ -96,6 +98,7 @@ class CreateWorkPlanShift(object):
             'maximum_contiguous_work_time_minutes': 'maximumContiguousWorkTimeMinutes',
             'constrain_day_off': 'constrainDayOff',
             'day_off_rule': 'dayOffRule',
+            'planning_period_constraints': 'planningPeriodConstraints',
             'activities': 'activities'
         }
 
@@ -120,6 +123,7 @@ class CreateWorkPlanShift(object):
         self._maximum_contiguous_work_time_minutes = None
         self._constrain_day_off = None
         self._day_off_rule = None
+        self._planning_period_constraints = None
         self._activities = None
 
     @property
@@ -630,6 +634,30 @@ class CreateWorkPlanShift(object):
             self._day_off_rule = "outdated_sdk_version"
         else:
             self._day_off_rule = day_off_rule
+
+    @property
+    def planning_period_constraints(self) -> 'PlanningPeriodShiftConstraints':
+        """
+        Gets the planning_period_constraints of this CreateWorkPlanShift.
+        Planning period constraints
+
+        :return: The planning_period_constraints of this CreateWorkPlanShift.
+        :rtype: PlanningPeriodShiftConstraints
+        """
+        return self._planning_period_constraints
+
+    @planning_period_constraints.setter
+    def planning_period_constraints(self, planning_period_constraints: 'PlanningPeriodShiftConstraints') -> None:
+        """
+        Sets the planning_period_constraints of this CreateWorkPlanShift.
+        Planning period constraints
+
+        :param planning_period_constraints: The planning_period_constraints of this CreateWorkPlanShift.
+        :type: PlanningPeriodShiftConstraints
+        """
+        
+
+        self._planning_period_constraints = planning_period_constraints
 
     @property
     def activities(self) -> List['CreateWorkPlanActivity']:

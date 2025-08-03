@@ -49,18 +49,21 @@ class Transcripts(object):
         self.swagger_types = {
             'exact_match': 'list[str]',
             'contains': 'list[str]',
-            'does_not_contain': 'list[str]'
+            'does_not_contain': 'list[str]',
+            'not_similar_to': 'list[str]'
         }
 
         self.attribute_map = {
             'exact_match': 'exactMatch',
             'contains': 'contains',
-            'does_not_contain': 'doesNotContain'
+            'does_not_contain': 'doesNotContain',
+            'not_similar_to': 'notSimilarTo'
         }
 
         self._exact_match = None
         self._contains = None
         self._does_not_contain = None
+        self._not_similar_to = None
 
     @property
     def exact_match(self) -> List[str]:
@@ -133,6 +136,30 @@ class Transcripts(object):
         
 
         self._does_not_contain = does_not_contain
+
+    @property
+    def not_similar_to(self) -> List[str]:
+        """
+        Gets the not_similar_to of this Transcripts.
+        List of words or phrases used to filter out transcripts that contain content similar to any item in this list
+
+        :return: The not_similar_to of this Transcripts.
+        :rtype: list[str]
+        """
+        return self._not_similar_to
+
+    @not_similar_to.setter
+    def not_similar_to(self, not_similar_to: List[str]) -> None:
+        """
+        Sets the not_similar_to of this Transcripts.
+        List of words or phrases used to filter out transcripts that contain content similar to any item in this list
+
+        :param not_similar_to: The not_similar_to of this Transcripts.
+        :type: list[str]
+        """
+        
+
+        self._not_similar_to = not_similar_to
 
     def to_dict(self):
         """

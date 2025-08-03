@@ -51,6 +51,7 @@ class SurveyQuestionGroup(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'context_id': 'str',
             'name': 'str',
             'type': 'str',
             'na_enabled': 'bool',
@@ -60,6 +61,7 @@ class SurveyQuestionGroup(object):
 
         self.attribute_map = {
             'id': 'id',
+            'context_id': 'contextId',
             'name': 'name',
             'type': 'type',
             'na_enabled': 'naEnabled',
@@ -68,6 +70,7 @@ class SurveyQuestionGroup(object):
         }
 
         self._id = None
+        self._context_id = None
         self._name = None
         self._type = None
         self._na_enabled = None
@@ -97,6 +100,30 @@ class SurveyQuestionGroup(object):
         
 
         self._id = id
+
+    @property
+    def context_id(self) -> str:
+        """
+        Gets the context_id of this SurveyQuestionGroup.
+        An identifier for this question group that stays the same across versions of the form.
+
+        :return: The context_id of this SurveyQuestionGroup.
+        :rtype: str
+        """
+        return self._context_id
+
+    @context_id.setter
+    def context_id(self, context_id: str) -> None:
+        """
+        Sets the context_id of this SurveyQuestionGroup.
+        An identifier for this question group that stays the same across versions of the form.
+
+        :param context_id: The context_id of this SurveyQuestionGroup.
+        :type: str
+        """
+        
+
+        self._context_id = context_id
 
     @property
     def name(self) -> str:

@@ -55,7 +55,8 @@ class OutboundMessagingEmailCampaignProgressEventCampaignProgress(object):
             'total_number_of_contacts': 'float',
             'percentage': 'int',
             'number_of_contacts_skipped': 'dict(str, int)',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class OutboundMessagingEmailCampaignProgressEventCampaignProgress(object):
             'total_number_of_contacts': 'totalNumberOfContacts',
             'percentage': 'percentage',
             'number_of_contacts_skipped': 'numberOfContactsSkipped',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._campaign = None
@@ -75,6 +77,7 @@ class OutboundMessagingEmailCampaignProgressEventCampaignProgress(object):
         self._percentage = None
         self._number_of_contacts_skipped = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def campaign(self) -> 'OutboundMessagingEmailCampaignProgressEventUriReference':
@@ -243,6 +246,30 @@ class OutboundMessagingEmailCampaignProgressEventCampaignProgress(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this OutboundMessagingEmailCampaignProgressEventCampaignProgress.
+
+
+        :return: The get_additional_properties of this OutboundMessagingEmailCampaignProgressEventCampaignProgress.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this OutboundMessagingEmailCampaignProgressEventCampaignProgress.
+
+
+        :param get_additional_properties: The get_additional_properties of this OutboundMessagingEmailCampaignProgressEventCampaignProgress.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

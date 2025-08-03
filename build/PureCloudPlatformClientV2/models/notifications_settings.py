@@ -63,7 +63,7 @@ class NotificationsSettings(object):
     def enabled(self) -> bool:
         """
         Gets the enabled of this NotificationsSettings.
-        The toggle to enable or disable notifications
+        The toggle to enable or disable notifications. When enabled, PushNotificationTitle and PushNotificationBody localization keys are required.
 
         :return: The enabled of this NotificationsSettings.
         :rtype: bool
@@ -74,7 +74,7 @@ class NotificationsSettings(object):
     def enabled(self, enabled: bool) -> None:
         """
         Sets the enabled of this NotificationsSettings.
-        The toggle to enable or disable notifications
+        The toggle to enable or disable notifications. When enabled, PushNotificationTitle and PushNotificationBody localization keys are required.
 
         :param enabled: The enabled of this NotificationsSettings.
         :type: bool

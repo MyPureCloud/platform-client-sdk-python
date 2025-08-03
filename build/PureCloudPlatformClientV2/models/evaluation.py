@@ -77,6 +77,7 @@ class Evaluation(object):
             'revision_created_date': 'datetime',
             'queue': 'Queue',
             'media_type': 'list[str]',
+            'division_ids': 'list[str]',
             'rescore': 'bool',
             'conversation_date': 'datetime',
             'conversation_end_date': 'datetime',
@@ -116,6 +117,7 @@ class Evaluation(object):
             'revision_created_date': 'revisionCreatedDate',
             'queue': 'queue',
             'media_type': 'mediaType',
+            'division_ids': 'divisionIds',
             'rescore': 'rescore',
             'conversation_date': 'conversationDate',
             'conversation_end_date': 'conversationEndDate',
@@ -154,6 +156,7 @@ class Evaluation(object):
         self._revision_created_date = None
         self._queue = None
         self._media_type = None
+        self._division_ids = None
         self._rescore = None
         self._conversation_date = None
         self._conversation_end_date = None
@@ -655,6 +658,30 @@ class Evaluation(object):
         
 
         self._media_type = media_type
+
+    @property
+    def division_ids(self) -> List[str]:
+        """
+        Gets the division_ids of this Evaluation.
+        Evaluation is assigned in the following division(s).
+
+        :return: The division_ids of this Evaluation.
+        :rtype: list[str]
+        """
+        return self._division_ids
+
+    @division_ids.setter
+    def division_ids(self, division_ids: List[str]) -> None:
+        """
+        Sets the division_ids of this Evaluation.
+        Evaluation is assigned in the following division(s).
+
+        :param division_ids: The division_ids of this Evaluation.
+        :type: list[str]
+        """
+        
+
+        self._division_ids = division_ids
 
     @property
     def rescore(self) -> bool:

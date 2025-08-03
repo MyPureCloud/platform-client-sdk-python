@@ -49,14 +49,23 @@ class JourneyAppEventsNotificationSegmentAssignmentMessage(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'segment': 'JourneyAppEventsNotificationSegment'
+            'segment': 'JourneyAppEventsNotificationSegment',
+            'assignment_state': 'str',
+            'date_assigned': 'datetime',
+            'date_for_unassignment': 'datetime'
         }
 
         self.attribute_map = {
-            'segment': 'segment'
+            'segment': 'segment',
+            'assignment_state': 'assignmentState',
+            'date_assigned': 'dateAssigned',
+            'date_for_unassignment': 'dateForUnassignment'
         }
 
         self._segment = None
+        self._assignment_state = None
+        self._date_assigned = None
+        self._date_for_unassignment = None
 
     @property
     def segment(self) -> 'JourneyAppEventsNotificationSegment':
@@ -81,6 +90,83 @@ class JourneyAppEventsNotificationSegmentAssignmentMessage(object):
         
 
         self._segment = segment
+
+    @property
+    def assignment_state(self) -> str:
+        """
+        Gets the assignment_state of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+
+
+        :return: The assignment_state of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+        :rtype: str
+        """
+        return self._assignment_state
+
+    @assignment_state.setter
+    def assignment_state(self, assignment_state: str) -> None:
+        """
+        Sets the assignment_state of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+
+
+        :param assignment_state: The assignment_state of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+        :type: str
+        """
+        if isinstance(assignment_state, int):
+            assignment_state = str(assignment_state)
+        allowed_values = ["Unknown", "Assigned", "Unassigned"]
+        if assignment_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for assignment_state -> " + assignment_state)
+            self._assignment_state = "outdated_sdk_version"
+        else:
+            self._assignment_state = assignment_state
+
+    @property
+    def date_assigned(self) -> datetime:
+        """
+        Gets the date_assigned of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+
+
+        :return: The date_assigned of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+        :rtype: datetime
+        """
+        return self._date_assigned
+
+    @date_assigned.setter
+    def date_assigned(self, date_assigned: datetime) -> None:
+        """
+        Sets the date_assigned of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+
+
+        :param date_assigned: The date_assigned of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+        :type: datetime
+        """
+        
+
+        self._date_assigned = date_assigned
+
+    @property
+    def date_for_unassignment(self) -> datetime:
+        """
+        Gets the date_for_unassignment of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+
+
+        :return: The date_for_unassignment of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+        :rtype: datetime
+        """
+        return self._date_for_unassignment
+
+    @date_for_unassignment.setter
+    def date_for_unassignment(self, date_for_unassignment: datetime) -> None:
+        """
+        Sets the date_for_unassignment of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+
+
+        :param date_for_unassignment: The date_for_unassignment of this JourneyAppEventsNotificationSegmentAssignmentMessage.
+        :type: datetime
+        """
+        
+
+        self._date_for_unassignment = date_for_unassignment
 
     def to_dict(self):
         """

@@ -53,7 +53,8 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
             'parameters': 'dict(str, str)',
             'action_type': 'str',
             'campaign_rule_action_entities': 'DialerCampaignRuleConfigChangeCampaignRuleActionEntities',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -61,7 +62,8 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
             'parameters': 'parameters',
             'action_type': 'actionType',
             'campaign_rule_action_entities': 'campaignRuleActionEntities',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._id = None
@@ -69,6 +71,7 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         self._action_type = None
         self._campaign_rule_action_entities = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def id(self) -> str:
@@ -194,6 +197,30 @@ class DialerCampaignRuleConfigChangeCampaignRuleAction(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+
+
+        :return: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRuleAction.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

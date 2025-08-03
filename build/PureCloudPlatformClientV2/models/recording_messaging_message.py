@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ButtonResponse
     from . import Card
     from . import ConversationMessageEvent
+    from . import DatePicker
     from . import ExternalContact
     from . import MessageMediaAttachment
     from . import MessageStickerAttachment
@@ -77,6 +78,7 @@ class RecordingMessagingMessage(object):
             'story': 'RecordingContentStory',
             'cards': 'list[Card]',
             'notification_template': 'RecordingNotificationTemplate',
+            'date_picker': 'DatePicker',
             'content_type': 'str',
             'social_visibility': 'str',
             'events': 'list[ConversationMessageEvent]'
@@ -101,6 +103,7 @@ class RecordingMessagingMessage(object):
             'story': 'story',
             'cards': 'cards',
             'notification_template': 'notificationTemplate',
+            'date_picker': 'datePicker',
             'content_type': 'contentType',
             'social_visibility': 'socialVisibility',
             'events': 'events'
@@ -124,6 +127,7 @@ class RecordingMessagingMessage(object):
         self._story = None
         self._cards = None
         self._notification_template = None
+        self._date_picker = None
         self._content_type = None
         self._social_visibility = None
         self._events = None
@@ -561,6 +565,30 @@ class RecordingMessagingMessage(object):
         self._notification_template = notification_template
 
     @property
+    def date_picker(self) -> 'DatePicker':
+        """
+        Gets the date_picker of this RecordingMessagingMessage.
+        DatePicker content object.
+
+        :return: The date_picker of this RecordingMessagingMessage.
+        :rtype: DatePicker
+        """
+        return self._date_picker
+
+    @date_picker.setter
+    def date_picker(self, date_picker: 'DatePicker') -> None:
+        """
+        Sets the date_picker of this RecordingMessagingMessage.
+        DatePicker content object.
+
+        :param date_picker: The date_picker of this RecordingMessagingMessage.
+        :type: DatePicker
+        """
+        
+
+        self._date_picker = date_picker
+
+    @property
     def content_type(self) -> str:
         """
         Gets the content_type of this RecordingMessagingMessage.
@@ -582,7 +610,7 @@ class RecordingMessagingMessage(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["QuickReply", "Story", "Card", "Carousel", "Attachment", "Location", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "DatePicker", "ListPicker", "InteractiveApplication", "PaymentRequest", "PaymentResponse", "Form"]
+        allowed_values = ["QuickReply", "Story", "Card", "Carousel", "Attachment", "Location", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "DatePicker", "ListPicker", "InteractiveApplication", "PaymentRequest", "PaymentResponse", "Form", "RoadsideAssistance"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"

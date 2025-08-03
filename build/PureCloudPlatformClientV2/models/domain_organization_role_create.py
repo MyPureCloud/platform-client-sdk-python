@@ -58,8 +58,11 @@ class DomainOrganizationRoleCreate(object):
             'permission_policies': 'list[DomainPermissionPolicy]',
             'user_count': 'int',
             'role_needs_update': 'bool',
-            'base': 'bool',
+            'base_license': 'str',
+            'addon_licenses': 'list[str]',
+            'date_license_last_updated': 'datetime',
             'default': 'bool',
+            'base': 'bool',
             'self_uri': 'str'
         }
 
@@ -73,8 +76,11 @@ class DomainOrganizationRoleCreate(object):
             'permission_policies': 'permissionPolicies',
             'user_count': 'userCount',
             'role_needs_update': 'roleNeedsUpdate',
-            'base': 'base',
+            'base_license': 'baseLicense',
+            'addon_licenses': 'addonLicenses',
+            'date_license_last_updated': 'dateLicenseLastUpdated',
             'default': 'default',
+            'base': 'base',
             'self_uri': 'selfUri'
         }
 
@@ -87,8 +93,11 @@ class DomainOrganizationRoleCreate(object):
         self._permission_policies = None
         self._user_count = None
         self._role_needs_update = None
-        self._base = None
+        self._base_license = None
+        self._addon_licenses = None
+        self._date_license_last_updated = None
         self._default = None
+        self._base = None
         self._self_uri = None
 
     @property
@@ -308,28 +317,76 @@ class DomainOrganizationRoleCreate(object):
         self._role_needs_update = role_needs_update
 
     @property
-    def base(self) -> bool:
+    def base_license(self) -> str:
         """
-        Gets the base of this DomainOrganizationRoleCreate.
+        Gets the base_license of this DomainOrganizationRoleCreate.
 
 
-        :return: The base of this DomainOrganizationRoleCreate.
-        :rtype: bool
+        :return: The base_license of this DomainOrganizationRoleCreate.
+        :rtype: str
         """
-        return self._base
+        return self._base_license
 
-    @base.setter
-    def base(self, base: bool) -> None:
+    @base_license.setter
+    def base_license(self, base_license: str) -> None:
         """
-        Sets the base of this DomainOrganizationRoleCreate.
+        Sets the base_license of this DomainOrganizationRoleCreate.
 
 
-        :param base: The base of this DomainOrganizationRoleCreate.
-        :type: bool
+        :param base_license: The base_license of this DomainOrganizationRoleCreate.
+        :type: str
         """
         
 
-        self._base = base
+        self._base_license = base_license
+
+    @property
+    def addon_licenses(self) -> List[str]:
+        """
+        Gets the addon_licenses of this DomainOrganizationRoleCreate.
+
+
+        :return: The addon_licenses of this DomainOrganizationRoleCreate.
+        :rtype: list[str]
+        """
+        return self._addon_licenses
+
+    @addon_licenses.setter
+    def addon_licenses(self, addon_licenses: List[str]) -> None:
+        """
+        Sets the addon_licenses of this DomainOrganizationRoleCreate.
+
+
+        :param addon_licenses: The addon_licenses of this DomainOrganizationRoleCreate.
+        :type: list[str]
+        """
+        
+
+        self._addon_licenses = addon_licenses
+
+    @property
+    def date_license_last_updated(self) -> datetime:
+        """
+        Gets the date_license_last_updated of this DomainOrganizationRoleCreate.
+        The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_license_last_updated of this DomainOrganizationRoleCreate.
+        :rtype: datetime
+        """
+        return self._date_license_last_updated
+
+    @date_license_last_updated.setter
+    def date_license_last_updated(self, date_license_last_updated: datetime) -> None:
+        """
+        Sets the date_license_last_updated of this DomainOrganizationRoleCreate.
+        The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_license_last_updated: The date_license_last_updated of this DomainOrganizationRoleCreate.
+        :type: datetime
+        """
+        
+
+        self._date_license_last_updated = date_license_last_updated
 
     @property
     def default(self) -> bool:
@@ -354,6 +411,30 @@ class DomainOrganizationRoleCreate(object):
         
 
         self._default = default
+
+    @property
+    def base(self) -> bool:
+        """
+        Gets the base of this DomainOrganizationRoleCreate.
+
+
+        :return: The base of this DomainOrganizationRoleCreate.
+        :rtype: bool
+        """
+        return self._base
+
+    @base.setter
+    def base(self, base: bool) -> None:
+        """
+        Sets the base of this DomainOrganizationRoleCreate.
+
+
+        :param base: The base of this DomainOrganizationRoleCreate.
+        :type: bool
+        """
+        
+
+        self._base = base
 
     @property
     def self_uri(self) -> str:

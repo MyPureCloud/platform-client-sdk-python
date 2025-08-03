@@ -55,7 +55,9 @@ class BuAgentScheduleShift(object):
             'length_minutes': 'int',
             'activities': 'list[BuAgentScheduleActivity]',
             'manually_edited': 'bool',
-            'schedule': 'BuScheduleReference'
+            'schedule': 'BuScheduleReference',
+            'work_plan_id': 'str',
+            'work_plan_shift_id': 'str'
         }
 
         self.attribute_map = {
@@ -64,7 +66,9 @@ class BuAgentScheduleShift(object):
             'length_minutes': 'lengthMinutes',
             'activities': 'activities',
             'manually_edited': 'manuallyEdited',
-            'schedule': 'schedule'
+            'schedule': 'schedule',
+            'work_plan_id': 'workPlanId',
+            'work_plan_shift_id': 'workPlanShiftId'
         }
 
         self._id = None
@@ -73,6 +77,8 @@ class BuAgentScheduleShift(object):
         self._activities = None
         self._manually_edited = None
         self._schedule = None
+        self._work_plan_id = None
+        self._work_plan_shift_id = None
 
     @property
     def id(self) -> str:
@@ -217,6 +223,54 @@ class BuAgentScheduleShift(object):
         
 
         self._schedule = schedule
+
+    @property
+    def work_plan_id(self) -> str:
+        """
+        Gets the work_plan_id of this BuAgentScheduleShift.
+        The ID of the work plan for which the work plan shift emanates from
+
+        :return: The work_plan_id of this BuAgentScheduleShift.
+        :rtype: str
+        """
+        return self._work_plan_id
+
+    @work_plan_id.setter
+    def work_plan_id(self, work_plan_id: str) -> None:
+        """
+        Sets the work_plan_id of this BuAgentScheduleShift.
+        The ID of the work plan for which the work plan shift emanates from
+
+        :param work_plan_id: The work_plan_id of this BuAgentScheduleShift.
+        :type: str
+        """
+        
+
+        self._work_plan_id = work_plan_id
+
+    @property
+    def work_plan_shift_id(self) -> str:
+        """
+        Gets the work_plan_shift_id of this BuAgentScheduleShift.
+        The ID of the work plan shift that was used in schedule generation
+
+        :return: The work_plan_shift_id of this BuAgentScheduleShift.
+        :rtype: str
+        """
+        return self._work_plan_shift_id
+
+    @work_plan_shift_id.setter
+    def work_plan_shift_id(self, work_plan_shift_id: str) -> None:
+        """
+        Sets the work_plan_shift_id of this BuAgentScheduleShift.
+        The ID of the work plan shift that was used in schedule generation
+
+        :param work_plan_shift_id: The work_plan_shift_id of this BuAgentScheduleShift.
+        :type: str
+        """
+        
+
+        self._work_plan_shift_id = work_plan_shift_id
 
     def to_dict(self):
         """

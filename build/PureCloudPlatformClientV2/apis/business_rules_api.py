@@ -54,7 +54,6 @@ from ..models import ErrorBody
 from ..models import PutDecisionTableRowRequest
 from ..models import SearchDecisionTableRowsRequest
 from ..models import UpdateDecisionTableRequest
-from ..models import UpdateDecisionTableRowRequest
 from ..models import UpdateDecisionTableVersionRequest
 
 class BusinessRulesApi(object):
@@ -775,13 +774,12 @@ class BusinessRulesApi(object):
         :param str table_id: Table ID (required)
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 100.
-        :param list[str] division_ids: One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
         :return: DecisionTableVersionListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['table_id', 'after', 'page_size', 'division_ids']
+        all_params = ['table_id', 'after', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -809,8 +807,6 @@ class BusinessRulesApi(object):
             query_params['after'] = params['after']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
-        if 'division_ids' in params:
-            query_params['divisionIds'] = params['division_ids']
 
         header_params = {}
 
@@ -863,12 +859,13 @@ class BusinessRulesApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 100.
         :param list[str] division_ids: One or more comma separated divisions to filters decision tables by. If nothing is provided, the decision tables associated with the list of divisions that the user has access to will be returned.
+        :param str name: Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name.
         :return: DecisionTableListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['after', 'page_size', 'division_ids']
+        all_params = ['after', 'page_size', 'division_ids', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -893,6 +890,8 @@ class BusinessRulesApi(object):
             query_params['pageSize'] = params['page_size']
         if 'division_ids' in params:
             query_params['divisionIds'] = params['division_ids']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 
@@ -1496,104 +1495,6 @@ class BusinessRulesApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DecisionTableVersion',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    @deprecated("patch_businessrules_decisiontable_version_row is deprecated")
-    def patch_businessrules_decisiontable_version_row(self, table_id: str, table_version: int, row_id: str, body: 'UpdateDecisionTableRowRequest', **kwargs) -> 'DecisionTableRow':
-        """
-        Partially update a decision table row. Will be deprecated, we should use PUT request.
-        
-	    patch_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.patch_businessrules_decisiontable_version_row(table_id, table_version, row_id, body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str table_id: Table ID (required)
-        :param int table_version: Table Version (required)
-        :param str row_id: Row ID (required)
-        :param UpdateDecisionTableRowRequest body: Partially update decision table row request (required)
-        :return: DecisionTableRow
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['table_id', 'table_version', 'row_id', 'body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in params['kwargs'].items():
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method patch_businessrules_decisiontable_version_row" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'table_id' is set
-        if ('table_id' not in params) or (params['table_id'] is None):
-            raise ValueError("Missing the required parameter `table_id` when calling `patch_businessrules_decisiontable_version_row`")
-        # verify the required parameter 'table_version' is set
-        if ('table_version' not in params) or (params['table_version'] is None):
-            raise ValueError("Missing the required parameter `table_version` when calling `patch_businessrules_decisiontable_version_row`")
-        # verify the required parameter 'row_id' is set
-        if ('row_id' not in params) or (params['row_id'] is None):
-            raise ValueError("Missing the required parameter `row_id` when calling `patch_businessrules_decisiontable_version_row`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `patch_businessrules_decisiontable_version_row`")
-
-
-        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'table_id' in params:
-            path_params['tableId'] = params['table_id']
-        if 'table_version' in params:
-            path_params['tableVersion'] = params['table_version']
-        if 'row_id' in params:
-            path_params['rowId'] = params['row_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'PATCH',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='DecisionTableRow',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -65,7 +65,7 @@ class CustomI18nLabels(object):
     def language(self) -> str:
         """
         Gets the language of this CustomI18nLabels.
-        Language of localized labels in homescreen app (eg. en-us, de-de)
+        Language of localized labels in homescreen app (eg. en-us, de-de) and push notification
 
         :return: The language of this CustomI18nLabels.
         :rtype: str
@@ -76,7 +76,7 @@ class CustomI18nLabels(object):
     def language(self, language: str) -> None:
         """
         Sets the language of this CustomI18nLabels.
-        Language of localized labels in homescreen app (eg. en-us, de-de)
+        Language of localized labels in homescreen app (eg. en-us, de-de) and push notification
 
         :param language: The language of this CustomI18nLabels.
         :type: str
@@ -89,7 +89,7 @@ class CustomI18nLabels(object):
     def localized_labels(self) -> List['LocalizedLabels']:
         """
         Gets the localized_labels of this CustomI18nLabels.
-        Contains localized labels used in homescreen app
+        Contains localized labels used in messenger apps and push notification. PushNotificationTitle and PushNotificationBody are required when notifications are enabled.
 
         :return: The localized_labels of this CustomI18nLabels.
         :rtype: list[LocalizedLabels]
@@ -100,7 +100,7 @@ class CustomI18nLabels(object):
     def localized_labels(self, localized_labels: List['LocalizedLabels']) -> None:
         """
         Sets the localized_labels of this CustomI18nLabels.
-        Contains localized labels used in homescreen app
+        Contains localized labels used in messenger apps and push notification. PushNotificationTitle and PushNotificationBody are required when notifications are enabled.
 
         :param localized_labels: The localized_labels of this CustomI18nLabels.
         :type: list[LocalizedLabels]

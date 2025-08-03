@@ -57,7 +57,8 @@ class HistoryEntry(object):
             'client': 'DomainEntityRef',
             'version': 'str',
             'secure': 'bool',
-            'virtual_agent_enabled': 'bool'
+            'virtual_agent_enabled': 'bool',
+            'agentic_virtual_agent_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class HistoryEntry(object):
             'client': 'client',
             'version': 'version',
             'secure': 'secure',
-            'virtual_agent_enabled': 'virtualAgentEnabled'
+            'virtual_agent_enabled': 'virtualAgentEnabled',
+            'agentic_virtual_agent_enabled': 'agenticVirtualAgentEnabled'
         }
 
         self._action = None
@@ -79,6 +81,7 @@ class HistoryEntry(object):
         self._version = None
         self._secure = None
         self._virtual_agent_enabled = None
+        self._agentic_virtual_agent_enabled = None
 
     @property
     def action(self) -> str:
@@ -276,6 +279,30 @@ class HistoryEntry(object):
         
 
         self._virtual_agent_enabled = virtual_agent_enabled
+
+    @property
+    def agentic_virtual_agent_enabled(self) -> bool:
+        """
+        Gets the agentic_virtual_agent_enabled of this HistoryEntry.
+
+
+        :return: The agentic_virtual_agent_enabled of this HistoryEntry.
+        :rtype: bool
+        """
+        return self._agentic_virtual_agent_enabled
+
+    @agentic_virtual_agent_enabled.setter
+    def agentic_virtual_agent_enabled(self, agentic_virtual_agent_enabled: bool) -> None:
+        """
+        Sets the agentic_virtual_agent_enabled of this HistoryEntry.
+
+
+        :param agentic_virtual_agent_enabled: The agentic_virtual_agent_enabled of this HistoryEntry.
+        :type: bool
+        """
+        
+
+        self._agentic_virtual_agent_enabled = agentic_virtual_agent_enabled
 
     def to_dict(self):
         """

@@ -54,8 +54,8 @@ class DivsPermittedEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'all_divs_permitted': 'bool',
-            'previous_uri': 'str',
             'next_uri': 'str',
+            'previous_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
@@ -68,8 +68,8 @@ class DivsPermittedEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'all_divs_permitted': 'allDivsPermitted',
-            'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
+            'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
@@ -81,8 +81,8 @@ class DivsPermittedEntityListing(object):
         self._page_number = None
         self._total = None
         self._all_divs_permitted = None
-        self._previous_uri = None
         self._next_uri = None
+        self._previous_uri = None
         self._last_uri = None
         self._first_uri = None
         self._self_uri = None
@@ -209,30 +209,6 @@ class DivsPermittedEntityListing(object):
         self._all_divs_permitted = all_divs_permitted
 
     @property
-    def previous_uri(self) -> str:
-        """
-        Gets the previous_uri of this DivsPermittedEntityListing.
-
-
-        :return: The previous_uri of this DivsPermittedEntityListing.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri: str) -> None:
-        """
-        Sets the previous_uri of this DivsPermittedEntityListing.
-
-
-        :param previous_uri: The previous_uri of this DivsPermittedEntityListing.
-        :type: str
-        """
-        
-
-        self._previous_uri = previous_uri
-
-    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this DivsPermittedEntityListing.
@@ -255,6 +231,30 @@ class DivsPermittedEntityListing(object):
         
 
         self._next_uri = next_uri
+
+    @property
+    def previous_uri(self) -> str:
+        """
+        Gets the previous_uri of this DivsPermittedEntityListing.
+
+
+        :return: The previous_uri of this DivsPermittedEntityListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri: str) -> None:
+        """
+        Sets the previous_uri of this DivsPermittedEntityListing.
+
+
+        :param previous_uri: The previous_uri of this DivsPermittedEntityListing.
+        :type: str
+        """
+        
+
+        self._previous_uri = previous_uri
 
     @property
     def last_uri(self) -> str:

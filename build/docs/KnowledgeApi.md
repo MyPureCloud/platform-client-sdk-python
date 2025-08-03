@@ -86,6 +86,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_guest_session_documents_search_suggestions**](#post_knowledge_guest_session_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
 |[**post_knowledge_guest_sessions**](#post_knowledge_guest_sessions) | Create guest session|
 |[**post_knowledge_knowledgebase_categories**](#post_knowledge_knowledgebase_categories) | Create new category|
+|[**post_knowledge_knowledgebase_chunks_search**](#post_knowledge_knowledgebase_chunks_search) | Search for chunks in a knowledge base|
 |[**post_knowledge_knowledgebase_document_copies**](#post_knowledge_knowledgebase_document_copies) | Indicate that the document was copied by the user.|
 |[**post_knowledge_knowledgebase_document_feedback**](#post_knowledge_knowledgebase_document_feedback) | Give feedback on a document|
 |[**post_knowledge_knowledgebase_document_variations**](#post_knowledge_knowledgebase_document_variations) | Create a variation for a document.|
@@ -4396,6 +4397,56 @@ except ApiException as e:
 [**CategoryResponse**](CategoryResponse)
 
 
+## post_knowledge_knowledgebase_chunks_search
+
+> [**KnowledgeDocumentChunkResponse**](KnowledgeDocumentChunkResponse) post_knowledge_knowledgebase_chunks_search(knowledge_base_id, body=body)
+
+
+Search for chunks in a knowledge base
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgebase:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge Base ID
+body = PureCloudPlatformClientV2.KnowledgeDocumentChunkRequest() # KnowledgeDocumentChunkRequest |  (optional)
+
+try:
+    # Search for chunks in a knowledge base
+    api_response = api_instance.post_knowledge_knowledgebase_chunks_search(knowledge_base_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_chunks_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge Base ID |  |
+| **body** | [**KnowledgeDocumentChunkRequest**](KnowledgeDocumentChunkRequest)|  | [optional]  |
+
+### Return type
+
+[**KnowledgeDocumentChunkResponse**](KnowledgeDocumentChunkResponse)
+
+
 ## post_knowledge_knowledgebase_document_copies
 
 >  post_knowledge_knowledgebase_document_copies(knowledge_base_id, document_id, body=body)
@@ -4949,7 +5000,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge Base ID |  |
-| **expand** | [**list[str]**](str)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+| **expand** | [**list[str]**](str)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks |
 | **body** | [**KnowledgeDocumentQuery**](KnowledgeDocumentQuery)|  | [optional]  |
 
 ### Return type
@@ -5001,7 +5052,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| The ID of knowledge base containing the documents to query. |  |
-| **expand** | [**list[str]**](str)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+| **expand** | [**list[str]**](str)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode, variationChunks |
 | **body** | [**KnowledgeDocumentSearchRequest**](KnowledgeDocumentSearchRequest)|  | [optional]  |
 
 ### Return type
@@ -6199,4 +6250,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

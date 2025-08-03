@@ -1029,7 +1029,7 @@ class ExternalContact(object):
     def merge_operation(self) -> 'MergeOperation':
         """
         Gets the merge_operation of this ExternalContact.
-        Information about the merge history of this contact. If null, this contact is not a part of any merge.
+        (Deprecated: use mergedTo and mergedFrom instead) Information about the merge history of this contact. If null, this contact is not a part of any merge.
 
         :return: The merge_operation of this ExternalContact.
         :rtype: MergeOperation
@@ -1040,7 +1040,7 @@ class ExternalContact(object):
     def merge_operation(self, merge_operation: 'MergeOperation') -> None:
         """
         Sets the merge_operation of this ExternalContact.
-        Information about the merge history of this contact. If null, this contact is not a part of any merge.
+        (Deprecated: use mergedTo and mergedFrom instead) Information about the merge history of this contact. If null, this contact is not a part of any merge.
 
         :param merge_operation: The merge_operation of this ExternalContact.
         :type: MergeOperation

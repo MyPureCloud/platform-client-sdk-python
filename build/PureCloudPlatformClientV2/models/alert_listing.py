@@ -53,8 +53,8 @@ class AlertListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'previous_uri': 'str',
             'next_uri': 'str',
+            'previous_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
@@ -66,8 +66,8 @@ class AlertListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
+            'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
@@ -78,8 +78,8 @@ class AlertListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._previous_uri = None
         self._next_uri = None
+        self._previous_uri = None
         self._last_uri = None
         self._first_uri = None
         self._self_uri = None
@@ -182,30 +182,6 @@ class AlertListing(object):
         self._total = total
 
     @property
-    def previous_uri(self) -> str:
-        """
-        Gets the previous_uri of this AlertListing.
-
-
-        :return: The previous_uri of this AlertListing.
-        :rtype: str
-        """
-        return self._previous_uri
-
-    @previous_uri.setter
-    def previous_uri(self, previous_uri: str) -> None:
-        """
-        Sets the previous_uri of this AlertListing.
-
-
-        :param previous_uri: The previous_uri of this AlertListing.
-        :type: str
-        """
-        
-
-        self._previous_uri = previous_uri
-
-    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this AlertListing.
@@ -228,6 +204,30 @@ class AlertListing(object):
         
 
         self._next_uri = next_uri
+
+    @property
+    def previous_uri(self) -> str:
+        """
+        Gets the previous_uri of this AlertListing.
+
+
+        :return: The previous_uri of this AlertListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri: str) -> None:
+        """
+        Sets the previous_uri of this AlertListing.
+
+
+        :param previous_uri: The previous_uri of this AlertListing.
+        :type: str
+        """
+        
+
+        self._previous_uri = previous_uri
 
     @property
     def last_uri(self) -> str:

@@ -49,18 +49,21 @@ class CreateStaffingGroupRequest(object):
         self.swagger_types = {
             'name': 'str',
             'user_ids': 'list[str]',
-            'management_unit_id': 'str'
+            'management_unit_id': 'str',
+            'planning_group_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'user_ids': 'userIds',
-            'management_unit_id': 'managementUnitId'
+            'management_unit_id': 'managementUnitId',
+            'planning_group_ids': 'planningGroupIds'
         }
 
         self._name = None
         self._user_ids = None
         self._management_unit_id = None
+        self._planning_group_ids = None
 
     @property
     def name(self) -> str:
@@ -133,6 +136,30 @@ class CreateStaffingGroupRequest(object):
         
 
         self._management_unit_id = management_unit_id
+
+    @property
+    def planning_group_ids(self) -> List[str]:
+        """
+        Gets the planning_group_ids of this CreateStaffingGroupRequest.
+        The set of planning group IDs to associate with the staffing group
+
+        :return: The planning_group_ids of this CreateStaffingGroupRequest.
+        :rtype: list[str]
+        """
+        return self._planning_group_ids
+
+    @planning_group_ids.setter
+    def planning_group_ids(self, planning_group_ids: List[str]) -> None:
+        """
+        Sets the planning_group_ids of this CreateStaffingGroupRequest.
+        The set of planning group IDs to associate with the staffing group
+
+        :param planning_group_ids: The planning_group_ids of this CreateStaffingGroupRequest.
+        :type: list[str]
+        """
+        
+
+        self._planning_group_ids = planning_group_ids
 
     def to_dict(self):
         """

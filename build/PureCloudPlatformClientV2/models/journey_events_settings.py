@@ -61,7 +61,8 @@ class JourneyEventsSettings(object):
             'forms_track_events': 'list[FormsTrackTrigger]',
             'idle_events': 'list[IdleEventTrigger]',
             'in_viewport_events': 'list[SelectorEventTrigger]',
-            'scroll_depth_events': 'list[ScrollPercentageEventTrigger]'
+            'scroll_depth_events': 'list[ScrollPercentageEventTrigger]',
+            'tracking_settings': 'object'
         }
 
         self.attribute_map = {
@@ -74,7 +75,8 @@ class JourneyEventsSettings(object):
             'forms_track_events': 'formsTrackEvents',
             'idle_events': 'idleEvents',
             'in_viewport_events': 'inViewportEvents',
-            'scroll_depth_events': 'scrollDepthEvents'
+            'scroll_depth_events': 'scrollDepthEvents',
+            'tracking_settings': 'trackingSettings'
         }
 
         self._enabled = None
@@ -87,6 +89,7 @@ class JourneyEventsSettings(object):
         self._idle_events = None
         self._in_viewport_events = None
         self._scroll_depth_events = None
+        self._tracking_settings = None
 
     @property
     def enabled(self) -> bool:
@@ -116,7 +119,7 @@ class JourneyEventsSettings(object):
     def excluded_query_parameters(self) -> List[str]:
         """
         Gets the excluded_query_parameters of this JourneyEventsSettings.
-        List of parameters to be excluded from the query string.
+        (deprecated) List of parameters to be excluded from the query string.
 
         :return: The excluded_query_parameters of this JourneyEventsSettings.
         :rtype: list[str]
@@ -127,7 +130,7 @@ class JourneyEventsSettings(object):
     def excluded_query_parameters(self, excluded_query_parameters: List[str]) -> None:
         """
         Sets the excluded_query_parameters of this JourneyEventsSettings.
-        List of parameters to be excluded from the query string.
+        (deprecated) List of parameters to be excluded from the query string.
 
         :param excluded_query_parameters: The excluded_query_parameters of this JourneyEventsSettings.
         :type: list[str]
@@ -140,7 +143,7 @@ class JourneyEventsSettings(object):
     def should_keep_url_fragment(self) -> bool:
         """
         Gets the should_keep_url_fragment of this JourneyEventsSettings.
-        Whether or not to keep the URL fragment.
+        (deprecated) Whether or not to keep the URL fragment.
 
         :return: The should_keep_url_fragment of this JourneyEventsSettings.
         :rtype: bool
@@ -151,7 +154,7 @@ class JourneyEventsSettings(object):
     def should_keep_url_fragment(self, should_keep_url_fragment: bool) -> None:
         """
         Sets the should_keep_url_fragment of this JourneyEventsSettings.
-        Whether or not to keep the URL fragment.
+        (deprecated) Whether or not to keep the URL fragment.
 
         :param should_keep_url_fragment: The should_keep_url_fragment of this JourneyEventsSettings.
         :type: bool
@@ -164,7 +167,7 @@ class JourneyEventsSettings(object):
     def search_query_parameters(self) -> List[str]:
         """
         Gets the search_query_parameters of this JourneyEventsSettings.
-        List of query parameters used for search (e.g. 'q').
+        (deprecated) List of query parameters used for search (e.g. 'q').
 
         :return: The search_query_parameters of this JourneyEventsSettings.
         :rtype: list[str]
@@ -175,7 +178,7 @@ class JourneyEventsSettings(object):
     def search_query_parameters(self, search_query_parameters: List[str]) -> None:
         """
         Sets the search_query_parameters of this JourneyEventsSettings.
-        List of query parameters used for search (e.g. 'q').
+        (deprecated) List of query parameters used for search (e.g. 'q').
 
         :param search_query_parameters: The search_query_parameters of this JourneyEventsSettings.
         :type: list[str]
@@ -332,6 +335,30 @@ class JourneyEventsSettings(object):
         
 
         self._scroll_depth_events = scroll_depth_events
+
+    @property
+    def tracking_settings(self) -> 'object':
+        """
+        Gets the tracking_settings of this JourneyEventsSettings.
+        Configuration settings for tracking behavior and filtering
+
+        :return: The tracking_settings of this JourneyEventsSettings.
+        :rtype: object
+        """
+        return self._tracking_settings
+
+    @tracking_settings.setter
+    def tracking_settings(self, tracking_settings: 'object') -> None:
+        """
+        Sets the tracking_settings of this JourneyEventsSettings.
+        Configuration settings for tracking behavior and filtering
+
+        :param tracking_settings: The tracking_settings of this JourneyEventsSettings.
+        :type: object
+        """
+        
+
+        self._tracking_settings = tracking_settings
 
     def to_dict(self):
         """

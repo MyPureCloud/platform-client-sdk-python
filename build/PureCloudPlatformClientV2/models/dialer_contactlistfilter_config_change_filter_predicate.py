@@ -55,7 +55,8 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
             'value': 'str',
             'range': 'DialerContactlistfilterConfigChangeFilterRange',
             'inverted': 'bool',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
             'value': 'value',
             'range': 'range',
             'inverted': 'inverted',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._column = None
@@ -75,6 +77,7 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
         self._range = None
         self._inverted = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def column(self) -> str:
@@ -253,6 +256,30 @@ class DialerContactlistfilterConfigChangeFilterPredicate(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
+
+
+        :return: The get_additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerContactlistfilterConfigChangeFilterPredicate.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

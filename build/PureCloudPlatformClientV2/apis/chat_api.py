@@ -821,12 +821,13 @@ class ChatApi(object):
         :param str limit: The maximum number of messages to retrieve
         :param str before: The cutoff date for messages to retrieve
         :param str after: The beginning date for messages to retrieve
+        :param bool exclude_metadata: Whether to exclude metadata for messages
         :return: ChatMessageEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['room_jid', 'limit', 'before', 'after']
+        all_params = ['room_jid', 'limit', 'before', 'after', 'exclude_metadata']
         all_params.append('callback')
 
         params = locals()
@@ -856,6 +857,8 @@ class ChatApi(object):
             query_params['before'] = params['before']
         if 'after' in params:
             query_params['after'] = params['after']
+        if 'exclude_metadata' in params:
+            query_params['excludeMetadata'] = params['exclude_metadata']
 
         header_params = {}
 
@@ -1145,12 +1148,13 @@ class ChatApi(object):
         :param str limit: The maximum number of messages to retrieve
         :param str before: The cutoff date for messages to retrieve
         :param str after: The beginning date for messages to retrieve
+        :param bool exclude_metadata: Whether to exclude metadata for messages
         :return: ChatMessageEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['thread_id', 'limit', 'before', 'after']
+        all_params = ['thread_id', 'limit', 'before', 'after', 'exclude_metadata']
         all_params.append('callback')
 
         params = locals()
@@ -1180,6 +1184,8 @@ class ChatApi(object):
             query_params['before'] = params['before']
         if 'after' in params:
             query_params['after'] = params['after']
+        if 'exclude_metadata' in params:
+            query_params['excludeMetadata'] = params['exclude_metadata']
 
         header_params = {}
 
@@ -1394,12 +1400,13 @@ class ChatApi(object):
         :param str limit: The maximum number of messages to retrieve
         :param str before: The cutoff date for messages to retrieve
         :param str after: The beginning date for messages to retrieve
+        :param bool exclude_metadata: Whether to exclude metadata for messages
         :return: ChatMessageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'limit', 'before', 'after']
+        all_params = ['user_id', 'limit', 'before', 'after', 'exclude_metadata']
         all_params.append('callback')
 
         params = locals()
@@ -1429,6 +1436,8 @@ class ChatApi(object):
             query_params['before'] = params['before']
         if 'after' in params:
             query_params['after'] = params['after']
+        if 'exclude_metadata' in params:
+            query_params['excludeMetadata'] = params['exclude_metadata']
 
         header_params = {}
 

@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import NluDomainVersion
+    from . import NluDomainVersionReference
 
 class NluDomain(object):
     """
@@ -52,8 +52,8 @@ class NluDomain(object):
             'id': 'str',
             'name': 'str',
             'language': 'str',
-            'draft_version': 'NluDomainVersion',
-            'last_published_version': 'NluDomainVersion',
+            'draft_version': 'NluDomainVersionReference',
+            'last_published_version': 'NluDomainVersionReference',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'engine_version': 'str',
@@ -155,48 +155,48 @@ class NluDomain(object):
         self._language = language
 
     @property
-    def draft_version(self) -> 'NluDomainVersion':
+    def draft_version(self) -> 'NluDomainVersionReference':
         """
         Gets the draft_version of this NluDomain.
         The draft version of that NLU domain.
 
         :return: The draft_version of this NluDomain.
-        :rtype: NluDomainVersion
+        :rtype: NluDomainVersionReference
         """
         return self._draft_version
 
     @draft_version.setter
-    def draft_version(self, draft_version: 'NluDomainVersion') -> None:
+    def draft_version(self, draft_version: 'NluDomainVersionReference') -> None:
         """
         Sets the draft_version of this NluDomain.
         The draft version of that NLU domain.
 
         :param draft_version: The draft_version of this NluDomain.
-        :type: NluDomainVersion
+        :type: NluDomainVersionReference
         """
         
 
         self._draft_version = draft_version
 
     @property
-    def last_published_version(self) -> 'NluDomainVersion':
+    def last_published_version(self) -> 'NluDomainVersionReference':
         """
         Gets the last_published_version of this NluDomain.
         The last published version of that NLU domain.
 
         :return: The last_published_version of this NluDomain.
-        :rtype: NluDomainVersion
+        :rtype: NluDomainVersionReference
         """
         return self._last_published_version
 
     @last_published_version.setter
-    def last_published_version(self, last_published_version: 'NluDomainVersion') -> None:
+    def last_published_version(self, last_published_version: 'NluDomainVersionReference') -> None:
         """
         Sets the last_published_version of this NluDomain.
         The last published version of that NLU domain.
 
         :param last_published_version: The last_published_version of this NluDomain.
-        :type: NluDomainVersion
+        :type: NluDomainVersionReference
         """
         
 

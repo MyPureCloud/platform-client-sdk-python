@@ -875,7 +875,7 @@ except ApiException as e:
 
 ## get_taskmanagement_workitem_user_wrapups
 
-> [**WorkitemWrapup**](WorkitemWrapup) get_taskmanagement_workitem_user_wrapups(workitem_id, user_id, expands=expands, after=after, page_size=page_size, sort_order=sort_order)
+> [**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing) get_taskmanagement_workitem_user_wrapups(workitem_id, user_id, expands=expands, after=after, page_size=page_size, sort_order=sort_order)
 
 
 Get all wrapup codes added for the given user for a workitem.
@@ -928,7 +928,7 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+[**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing)
 
 
 ## get_taskmanagement_workitem_version
@@ -3864,4 +3864,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

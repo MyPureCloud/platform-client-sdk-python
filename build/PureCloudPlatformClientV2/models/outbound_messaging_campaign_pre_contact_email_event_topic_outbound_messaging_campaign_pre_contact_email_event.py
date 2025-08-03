@@ -131,7 +131,7 @@ class OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaig
         """
         if isinstance(outbound_campaign_type, int):
             outbound_campaign_type = str(outbound_campaign_type)
-        allowed_values = ["UNKNOWN", "EMAIL", "SMS"]
+        allowed_values = ["UNKNOWN", "EMAIL", "SMS", "WHATSAPP"]
         if outbound_campaign_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for outbound_campaign_type -> " + outbound_campaign_type)
             self._outbound_campaign_type = "outdated_sdk_version"
@@ -184,7 +184,7 @@ class OutboundMessagingCampaignPreContactEmailEventTopicOutboundMessagingCampaig
         """
         if isinstance(wrapup_code, int):
             wrapup_code = str(wrapup_code)
-        allowed_values = ["UNKNOWN", "OUTBOUND_EMAILS_INVALID_SKIPPED", "OUTBOUND_INVALID_EMAIL_ADDRESS", "OUTBOUND_MAX_EMAIL_SUBJECT_LENGTH_EXCEEDED", "OUTBOUND_MAX_EMAIL_BODY_LENGTH_EXCEEDED", "OUTBOUND_RULE_ERROR_SKIPPED", "OUTBOUND_RULE_SKIPPED", "OUTBOUND_CONTACT_UNCONTACTABLE_SKIPPED", "OUTBOUND_NUMBER_UNCONTACTABLE_SKIPPED", "OUTBOUND_CONTACT_ADDRESS_UNCONTACTABLE_SKIPPED", "ININ_OUTBOUND_ZONE_BLOCKED_SKIPPED", "ININ_OUTBOUND_DNC_SKIPPED", "ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED", "ININ_OUTBOUND_ON_DO_NOT_CALL_LIST", "ININ_OUTBOUND_NOT_CALLABLE_TIME"]
+        allowed_values = ["UNKNOWN", "OUTBOUND_EMAILS_INVALID_SKIPPED", "OUTBOUND_INVALID_EMAIL_ADDRESS", "OUTBOUND_MAX_EMAIL_SUBJECT_LENGTH_EXCEEDED", "OUTBOUND_MAX_EMAIL_BODY_LENGTH_EXCEEDED", "OUTBOUND_RULE_ERROR_SKIPPED", "OUTBOUND_RULE_SKIPPED", "OUTBOUND_CONTACT_UNCONTACTABLE_SKIPPED", "OUTBOUND_NUMBER_UNCONTACTABLE_SKIPPED", "OUTBOUND_CONTACT_ADDRESS_UNCONTACTABLE_SKIPPED", "ININ_OUTBOUND_ZONE_BLOCKED_SKIPPED", "ININ_OUTBOUND_DNC_SKIPPED", "ININ_OUTBOUND_INTERNAL_ERROR_SKIPPED", "ININ_OUTBOUND_ON_DO_NOT_CALL_LIST", "ININ_OUTBOUND_NOT_CALLABLE_TIME", "OUTBOUND_STUCK_CONTACT"]
         if wrapup_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for wrapup_code -> " + wrapup_code)
             self._wrapup_code = "outdated_sdk_version"

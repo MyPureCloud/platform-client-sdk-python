@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_speechandtextanalytics_category**](#delete_speechandtextanalytics_category) | Delete a Speech &amp; Text Analytics category by ID|
 |[**delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](#delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Delete a Speech &amp; Text Analytics DictionaryFeedback by Id|
 |[**delete_speechandtextanalytics_program**](#delete_speechandtextanalytics_program) | Delete a Speech &amp; Text Analytics program by id|
+|[**delete_speechandtextanalytics_reprocessing_job**](#delete_speechandtextanalytics_reprocessing_job) | Delete a Speech &amp; Text Analytics Reprocessing job by Id|
 |[**delete_speechandtextanalytics_sentimentfeedback**](#delete_speechandtextanalytics_sentimentfeedback) | Delete All Speech &amp; Text Analytics SentimentFeedback|
 |[**delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id**](#delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id) | Delete a Speech &amp; Text Analytics SentimentFeedback by Id|
 |[**delete_speechandtextanalytics_topic**](#delete_speechandtextanalytics_topic) | Delete a Speech &amp; Text Analytics topic by id|
@@ -18,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_conversation_categories**](#get_speechandtextanalytics_conversation_categories) | Get the list of detected Speech and Text Analytics categories of conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturls**](#get_speechandtextanalytics_conversation_communication_transcripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation|
+|[**get_speechandtextanalytics_conversation_sentiments**](#get_speechandtextanalytics_conversation_sentiments) | Get sentiment data|
 |[**get_speechandtextanalytics_conversation_summaries**](#get_speechandtextanalytics_conversation_summaries) | Get conversation summaries by conversation id.|
 |[**get_speechandtextanalytics_dictionaryfeedback**](#get_speechandtextanalytics_dictionaryfeedback) | Get the list of Speech &amp; Text Analytics dictionary feedbacks|
 |[**get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](#get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Get a Speech &amp; Text Analytics dictionary feedback by id|
@@ -32,6 +34,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_programs_settings_insights**](#get_speechandtextanalytics_programs_settings_insights) | Get the list of program AI Insights settings for the organization|
 |[**get_speechandtextanalytics_programs_transcriptionengines_dialects**](#get_speechandtextanalytics_programs_transcriptionengines_dialects) | Get supported dialects for each transcription engine|
 |[**get_speechandtextanalytics_programs_unpublished**](#get_speechandtextanalytics_programs_unpublished) | Get the list of Speech &amp; Text Analytics unpublished programs|
+|[**get_speechandtextanalytics_reprocessing_job**](#get_speechandtextanalytics_reprocessing_job) | Get a Speech &amp; Text Analytics reprocess job by id|
+|[**get_speechandtextanalytics_reprocessing_job_interactions**](#get_speechandtextanalytics_reprocessing_job_interactions) | Get a Speech &amp; Text Analytics Reprocessing interactions statuses by job id|
+|[**get_speechandtextanalytics_reprocessing_jobs**](#get_speechandtextanalytics_reprocessing_jobs) | Get the list of Speech &amp; Text Analytics reprocess jobs|
 |[**get_speechandtextanalytics_sentiment_dialects**](#get_speechandtextanalytics_sentiment_dialects) | Get the list of Speech &amp; Text Analytics sentiment supported dialects|
 |[**get_speechandtextanalytics_sentimentfeedback**](#get_speechandtextanalytics_sentimentfeedback) | Get the list of Speech &amp; Text Analytics SentimentFeedback|
 |[**get_speechandtextanalytics_settings**](#get_speechandtextanalytics_settings) | Get Speech And Text Analytics Settings|
@@ -50,6 +55,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_speechandtextanalytics_programs**](#post_speechandtextanalytics_programs) | Create new Speech &amp; Text Analytics program|
 |[**post_speechandtextanalytics_programs_general_jobs**](#post_speechandtextanalytics_programs_general_jobs) | Create new Speech &amp; Text Analytics general program job|
 |[**post_speechandtextanalytics_programs_publishjobs**](#post_speechandtextanalytics_programs_publishjobs) | Create new Speech &amp; Text Analytics publish programs job|
+|[**post_speechandtextanalytics_reprocessing_jobs**](#post_speechandtextanalytics_reprocessing_jobs) | Create a Speech &amp; Text Analytics reprocess job.|
 |[**post_speechandtextanalytics_sentimentfeedback**](#post_speechandtextanalytics_sentimentfeedback) | Create a Speech &amp; Text Analytics SentimentFeedback|
 |[**post_speechandtextanalytics_topics**](#post_speechandtextanalytics_topics) | Create new Speech &amp; Text Analytics topic|
 |[**post_speechandtextanalytics_topics_publishjobs**](#post_speechandtextanalytics_topics_publishjobs) | Create new Speech &amp; Text Analytics publish topics job|
@@ -208,6 +214,55 @@ except ApiException as e:
 ### Return type
 
 [**DeleteProgramResponse**](DeleteProgramResponse)
+
+
+## delete_speechandtextanalytics_reprocessing_job
+
+>  delete_speechandtextanalytics_reprocessing_job(job_id)
+
+
+Delete a Speech & Text Analytics Reprocessing job by Id
+
+delete_speechandtextanalytics_reprocessing_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+job_id = 'job_id_example' # str | The Id of the Reprocessing job
+
+try:
+    # Delete a Speech & Text Analytics Reprocessing job by Id
+    api_instance.delete_speechandtextanalytics_reprocessing_job(job_id)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->delete_speechandtextanalytics_reprocessing_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The Id of the Reprocessing job |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_speechandtextanalytics_sentimentfeedback
@@ -654,6 +709,57 @@ except ApiException as e:
 ### Return type
 
 [**TranscriptUrls**](TranscriptUrls)
+
+
+## get_speechandtextanalytics_conversation_sentiments
+
+> [**SentimentData**](SentimentData) get_speechandtextanalytics_conversation_sentiments(conversation_id)
+
+
+Get sentiment data
+
+Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:sentimentData:view
+* speechAndTextAnalytics:data:view
+* recording:recording:view
+* recording:recording:viewSensitiveData
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+conversation_id = 'conversation_id_example' # str | The conversation ID of the sentiment data
+
+try:
+    # Get sentiment data
+    api_response = api_instance.get_speechandtextanalytics_conversation_sentiments(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation_sentiments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| The conversation ID of the sentiment data |  |
+
+### Return type
+
+[**SentimentData**](SentimentData)
 
 
 ## get_speechandtextanalytics_conversation_summaries
@@ -1344,6 +1450,162 @@ except ApiException as e:
 ### Return type
 
 [**UnpublishedProgramsEntityListing**](UnpublishedProgramsEntityListing)
+
+
+## get_speechandtextanalytics_reprocessing_job
+
+> [**ReprocessJobResponse**](ReprocessJobResponse) get_speechandtextanalytics_reprocessing_job(job_id)
+
+
+Get a Speech & Text Analytics reprocess job by id
+
+get_speechandtextanalytics_reprocessing_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+job_id = 'job_id_example' # str | The Id of the Reprocessing job
+
+try:
+    # Get a Speech & Text Analytics reprocess job by id
+    api_response = api_instance.get_speechandtextanalytics_reprocessing_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_reprocessing_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The Id of the Reprocessing job |  |
+
+### Return type
+
+[**ReprocessJobResponse**](ReprocessJobResponse)
+
+
+## get_speechandtextanalytics_reprocessing_job_interactions
+
+> [**ReprocessInteractionsByJobIdResponse**](ReprocessInteractionsByJobIdResponse) get_speechandtextanalytics_reprocessing_job_interactions(job_id)
+
+
+Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+
+get_speechandtextanalytics_reprocessing_job_interactions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+job_id = 'job_id_example' # str | The Id of the Reprocessing job
+
+try:
+    # Get a Speech & Text Analytics Reprocessing interactions statuses by job id
+    api_response = api_instance.get_speechandtextanalytics_reprocessing_job_interactions(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_reprocessing_job_interactions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The Id of the Reprocessing job |  |
+
+### Return type
+
+[**ReprocessInteractionsByJobIdResponse**](ReprocessInteractionsByJobIdResponse)
+
+
+## get_speechandtextanalytics_reprocessing_jobs
+
+> [**ReprocessJobEntityListingResponse**](ReprocessJobEntityListingResponse) get_speechandtextanalytics_reprocessing_jobs(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+
+
+Get the list of Speech & Text Analytics reprocess jobs
+
+get_speechandtextanalytics_reprocessing_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/speechandtextanalytics/reprocessing/jobs 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+page_size = 56 # int | The page size for the listing. The max that will be returned is 100. Default is 25. (optional)
+page_number = 56 # int | The page number for the listing. Defaults to 1. (optional)
+sort_order = 'sort_order_example' # str | Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc). (optional)
+name = 'name_example' # str | Case insensitive partial name to filter by. (optional)
+
+try:
+    # Get the list of Speech & Text Analytics reprocess jobs
+    api_response = api_instance.get_speechandtextanalytics_reprocessing_jobs(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_reprocessing_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 100. Default is 25. | [optional]  |
+| **page_number** | **int**| The page number for the listing. Defaults to 1. | [optional]  |
+| **sort_order** | **str**| Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc). | [optional] <br />**Values**: asc, desc |
+| **name** | **str**| Case insensitive partial name to filter by. | [optional]  |
+
+### Return type
+
+[**ReprocessJobEntityListingResponse**](ReprocessJobEntityListingResponse)
 
 
 ## get_speechandtextanalytics_sentiment_dialects
@@ -2215,6 +2477,56 @@ except ApiException as e:
 [**ProgramJob**](ProgramJob)
 
 
+## post_speechandtextanalytics_reprocessing_jobs
+
+> [**ReprocessJobResponse**](ReprocessJobResponse) post_speechandtextanalytics_reprocessing_jobs(body)
+
+
+Create a Speech & Text Analytics reprocess job.
+
+post_speechandtextanalytics_reprocessing_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/speechandtextanalytics/reprocessing/jobs 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:reprocessInteractions:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+body = PureCloudPlatformClientV2.CreateReprocessJobRequest() # CreateReprocessJobRequest | The ReprocessJob to create
+
+try:
+    # Create a Speech & Text Analytics reprocess job.
+    api_response = api_instance.post_speechandtextanalytics_reprocessing_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->post_speechandtextanalytics_reprocessing_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateReprocessJobRequest**](CreateReprocessJobRequest)| The ReprocessJob to create |  |
+
+### Return type
+
+[**ReprocessJobResponse**](ReprocessJobResponse)
+
+
 ## post_speechandtextanalytics_sentimentfeedback
 
 > [**SentimentFeedback**](SentimentFeedback) post_speechandtextanalytics_sentimentfeedback(body)
@@ -2856,4 +3168,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_

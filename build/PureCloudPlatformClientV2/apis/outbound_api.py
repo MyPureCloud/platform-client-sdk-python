@@ -116,6 +116,8 @@ from ..models import RuleSet
 from ..models import RuleSetEntityListing
 from ..models import SequenceSchedule
 from ..models import TimeZoneMappingPreview
+from ..models import WhatsAppCampaignSchedule
+from ..models import WhatsAppCampaignScheduleEntityListing
 from ..models import WrapUpCodeMapping
 from ..models import WritableDialerContact
 
@@ -2464,6 +2466,84 @@ class OutboundApi(object):
         path_params = {}
         if 'sequence_id' in params:
             path_params['sequenceId'] = params['sequence_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_outbound_schedules_whatsappcampaign(self, whats_app_campaign_id: str, **kwargs) -> None:
+        """
+        Delete a WhatsApp campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_schedules_whatsappcampaign(whats_app_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str whats_app_campaign_id: WhatsApp Campaign ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['whats_app_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_schedules_whatsappcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'whats_app_campaign_id' is set
+        if ('whats_app_campaign_id' not in params) or (params['whats_app_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `whats_app_campaign_id` when calling `delete_outbound_schedules_whatsappcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'whats_app_campaign_id' in params:
+            path_params['whatsAppCampaignId'] = params['whats_app_campaign_id']
 
         query_params = {}
 
@@ -8172,6 +8252,156 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_outbound_schedules_whatsappcampaign(self, whats_app_campaign_id: str, **kwargs) -> 'WhatsAppCampaignSchedule':
+        """
+        Get a WhatsApp campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_schedules_whatsappcampaign(whats_app_campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str whats_app_campaign_id: WhatsApp Campaign ID (required)
+        :return: WhatsAppCampaignSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['whats_app_campaign_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_schedules_whatsappcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'whats_app_campaign_id' is set
+        if ('whats_app_campaign_id' not in params) or (params['whats_app_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `whats_app_campaign_id` when calling `get_outbound_schedules_whatsappcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'whats_app_campaign_id' in params:
+            path_params['whatsAppCampaignId'] = params['whats_app_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WhatsAppCampaignSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_schedules_whatsappcampaigns(self, **kwargs) -> 'WhatsAppCampaignScheduleEntityListing':
+        """
+        Query for a list of WhatsApp campaign schedules.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_schedules_whatsappcampaigns(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: WhatsAppCampaignScheduleEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_schedules_whatsappcampaigns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/schedules/whatsappcampaigns'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WhatsAppCampaignScheduleEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_outbound_sequence(self, sequence_id: str, **kwargs) -> 'CampaignSequence':
         """
         Get a dialer campaign sequence.
@@ -13788,6 +14018,90 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='SequenceSchedule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_outbound_schedules_whatsappcampaign(self, whats_app_campaign_id: str, body: 'WhatsAppCampaignSchedule', **kwargs) -> 'WhatsAppCampaignSchedule':
+        """
+        Update a WhatsApp campaign schedule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_outbound_schedules_whatsappcampaign(whats_app_campaign_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str whats_app_campaign_id: WhatsApp Campaign ID (required)
+        :param WhatsAppCampaignSchedule body: WhatsAppCampaignSchedule (required)
+        :return: WhatsAppCampaignSchedule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['whats_app_campaign_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_outbound_schedules_whatsappcampaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'whats_app_campaign_id' is set
+        if ('whats_app_campaign_id' not in params) or (params['whats_app_campaign_id'] is None):
+            raise ValueError("Missing the required parameter `whats_app_campaign_id` when calling `put_outbound_schedules_whatsappcampaign`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_outbound_schedules_whatsappcampaign`")
+
+
+        resource_path = '/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'whats_app_campaign_id' in params:
+            path_params['whatsAppCampaignId'] = params['whats_app_campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WhatsAppCampaignSchedule',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

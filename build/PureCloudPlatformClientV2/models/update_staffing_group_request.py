@@ -52,17 +52,20 @@ class UpdateStaffingGroupRequest(object):
         self.swagger_types = {
             'name': 'str',
             'user_ids': 'SetWrapperString',
+            'planning_group_ids': 'SetWrapperString',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
             'name': 'name',
             'user_ids': 'userIds',
+            'planning_group_ids': 'planningGroupIds',
             'metadata': 'metadata'
         }
 
         self._name = None
         self._user_ids = None
+        self._planning_group_ids = None
         self._metadata = None
 
     @property
@@ -112,6 +115,30 @@ class UpdateStaffingGroupRequest(object):
         
 
         self._user_ids = user_ids
+
+    @property
+    def planning_group_ids(self) -> 'SetWrapperString':
+        """
+        Gets the planning_group_ids of this UpdateStaffingGroupRequest.
+        The set of planning group Ids to associate with the staffing group
+
+        :return: The planning_group_ids of this UpdateStaffingGroupRequest.
+        :rtype: SetWrapperString
+        """
+        return self._planning_group_ids
+
+    @planning_group_ids.setter
+    def planning_group_ids(self, planning_group_ids: 'SetWrapperString') -> None:
+        """
+        Sets the planning_group_ids of this UpdateStaffingGroupRequest.
+        The set of planning group Ids to associate with the staffing group
+
+        :param planning_group_ids: The planning_group_ids of this UpdateStaffingGroupRequest.
+        :type: SetWrapperString
+        """
+        
+
+        self._planning_group_ids = planning_group_ids
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

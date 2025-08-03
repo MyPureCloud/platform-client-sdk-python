@@ -50,20 +50,23 @@ class DialerSequenceScheduleConfigChangeRecurrenceRange(object):
             'type': 'str',
             'end': 'str',
             'number_of_occurrences': 'int',
-            'additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)',
+            'get_additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'type': 'type',
             'end': 'end',
             'number_of_occurrences': 'numberOfOccurrences',
-            'additional_properties': 'additionalProperties'
+            'additional_properties': 'additionalProperties',
+            'get_additional_properties': 'getAdditionalProperties'
         }
 
         self._type = None
         self._end = None
         self._number_of_occurrences = None
         self._additional_properties = None
+        self._get_additional_properties = None
 
     @property
     def type(self) -> str:
@@ -165,6 +168,30 @@ class DialerSequenceScheduleConfigChangeRecurrenceRange(object):
         
 
         self._additional_properties = additional_properties
+
+    @property
+    def get_additional_properties(self) -> Dict[str, object]:
+        """
+        Gets the get_additional_properties of this DialerSequenceScheduleConfigChangeRecurrenceRange.
+
+
+        :return: The get_additional_properties of this DialerSequenceScheduleConfigChangeRecurrenceRange.
+        :rtype: dict(str, object)
+        """
+        return self._get_additional_properties
+
+    @get_additional_properties.setter
+    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
+        """
+        Sets the get_additional_properties of this DialerSequenceScheduleConfigChangeRecurrenceRange.
+
+
+        :param get_additional_properties: The get_additional_properties of this DialerSequenceScheduleConfigChangeRecurrenceRange.
+        :type: dict(str, object)
+        """
+        
+
+        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

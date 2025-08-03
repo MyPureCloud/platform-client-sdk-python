@@ -11,7 +11,6 @@
 | **service_level** | [ServiceLevel](ServiceLevel) | The targeted service level for the media type | [optional] |
 | **auto_answer_alert_tone_seconds** | float | How long to play the alerting tone for an auto-answer interaction | [optional] |
 | **manual_answer_alert_tone_seconds** | float | How long to play the alerting tone for a manual-answer interaction | [optional] |
-| **sub_type_settings** | [dict(str, BaseMediaSettings)](BaseMediaSettings) | Map of media subtype to media subtype specific settings. | [optional] |
 | **mode** | str | The mode callbacks will use on this queue. | [optional] |
 | **enable_auto_dial_and_end** | bool | Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue. | [optional] |
 | **auto_dial_delay_seconds** | int | Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds. | [optional] |
@@ -26,4 +25,4 @@
 
 
 
-_PureCloudPlatformClientV2 233.0.0_
+_PureCloudPlatformClientV2 234.0.0_
