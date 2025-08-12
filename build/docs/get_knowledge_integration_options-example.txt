@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+integration_id = 'integration_id_example' # str | Integration ID
+knowledge_base_ids = ['knowledge_base_ids_example'] # list[str] | Narrowing down filtering option results by knowledge base. (optional)
+
+try:
+    # Get sync options available for a knowledge-connect integration
+    api_response = api_instance.get_knowledge_integration_options(integration_id, knowledge_base_ids=knowledge_base_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_integration_options: %s\n" % e)

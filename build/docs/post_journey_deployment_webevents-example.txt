@@ -1,0 +1,15 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+deployment_id = 'deployment_id_example' # str | The ID of the deployment sending the web event.
+body = PureCloudPlatformClientV2.WebEventRequest() # WebEventRequest |  (optional)
+
+try:
+    # Send a journey web event, used for tracking customer activity on a website.
+    api_response = api_instance.post_journey_deployment_webevents(deployment_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_deployment_webevents: %s\n" % e)

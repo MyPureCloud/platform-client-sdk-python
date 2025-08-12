@@ -1,0 +1,15 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi();
+token_id = 'token_id_example' # str | The token of the webhook to be invoked
+body = NULL # object | Webhook Invocation Payload
+
+try:
+    # Invoke Webhook
+    api_response = api_instance.post_integrations_webhook_events(token_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_webhook_events: %s\n" % e)

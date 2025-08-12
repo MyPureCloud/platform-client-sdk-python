@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi();
+body = PureCloudPlatformClientV2.Campaign() # Campaign | Campaign
+use_max_calls_per_agent_decimal = True # bool | Use maxCallsPerAgent with decimal precision (optional)
+
+try:
+    # Create a campaign.
+    api_response = api_instance.post_outbound_campaigns(body, use_max_calls_per_agent_decimal=use_max_calls_per_agent_decimal)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_campaigns: %s\n" % e)

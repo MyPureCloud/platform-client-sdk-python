@@ -1,0 +1,23 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+state = ''active'' # str | Only list users of this state (optional) (default to 'active')
+
+try:
+    # Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+    api_response = api_instance.get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_query: %s\n" % e)

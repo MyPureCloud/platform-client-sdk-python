@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.EmployeeEngagementApi();
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int |  (optional) (default to 25)
+
+try:
+    # Get all celebrations
+    api_response = api_instance.get_employeeengagement_celebrations(page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EmployeeEngagementApi->get_employeeengagement_celebrations: %s\n" % e)

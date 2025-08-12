@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi();
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.AdditionalMessage() # AdditionalMessage | Message
+use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
+
+try:
+    # Send message
+    api_response = api_instance.post_conversations_message_communication_messages(conversation_id, communication_id, body, use_normalized_message=use_normalized_message)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_communication_messages: %s\n" % e)

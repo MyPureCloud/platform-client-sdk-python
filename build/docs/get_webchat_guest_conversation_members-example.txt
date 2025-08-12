@@ -1,0 +1,23 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Guest Chat JWT
+PureCloudPlatformClientV2.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# PureCloudPlatformClientV2.configuration.api_key_prefix['Authorization'] = 'BEARER'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebChatApi();
+conversation_id = 'conversation_id_example' # str | conversationId
+page_size = 25 # int | The number of entries to return per page, or omitted for the default. (optional) (default to 25)
+page_number = 1 # int | The page number to return, or omitted for the first page. (optional) (default to 1)
+exclude_disconnected_members = False # bool | If true, the results will not contain members who have a DISCONNECTED state. (optional) (default to False)
+
+try:
+    # Get the members of a chat conversation.
+    api_response = api_instance.get_webchat_guest_conversation_members(conversation_id, page_size=page_size, page_number=page_number, exclude_disconnected_members=exclude_disconnected_members)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_members: %s\n" % e)

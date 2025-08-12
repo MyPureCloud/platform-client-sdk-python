@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi();
+contest_id = 'contest_id_example' # str | The ID of the contest
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int |  (optional) (default to 25)
+workday = '2013-10-20' # date | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+returns_view = ''All'' # str | Desired response results (optional) (default to 'All')
+
+try:
+    # Get Contest Scores (Admin)
+    api_response = api_instance.get_gamification_contest_agents_scores(contest_id, page_number=page_number, page_size=page_size, workday=workday, returns_view=returns_view)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_contest_agents_scores: %s\n" % e)

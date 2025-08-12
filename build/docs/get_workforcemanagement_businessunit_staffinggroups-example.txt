@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi();
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit to get management unit specific staffing groups (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Gets a list of staffing groups
+    api_response = api_instance.get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_staffinggroups: %s\n" % e)

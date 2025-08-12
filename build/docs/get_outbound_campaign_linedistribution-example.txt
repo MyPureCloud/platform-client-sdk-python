@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi();
+campaign_id = 'campaign_id_example' # str | Campaign ID
+include_only_active_campaigns = True # bool | If true will return only active Campaigns (optional) (default to True)
+edge_group_id = 'edge_group_id_example' # str | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive. (optional)
+site_id = 'site_id_example' # str | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive. (optional)
+use_weight = True # bool | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations (optional)
+relative_weight = 56 # int | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight (optional)
+outbound_line_count = 56 # int | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count (optional)
+
+try:
+    # Get line distribution information for campaigns using same Edge Group or Site as given campaign
+    api_response = api_instance.get_outbound_campaign_linedistribution(campaign_id, include_only_active_campaigns=include_only_active_campaigns, edge_group_id=edge_group_id, site_id=site_id, use_weight=use_weight, relative_weight=relative_weight, outbound_line_count=outbound_line_count)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_campaign_linedistribution: %s\n" % e)

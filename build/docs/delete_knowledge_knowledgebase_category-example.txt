@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+category_id = 'category_id_example' # str | Category ID
+
+try:
+    # Delete category
+    api_response = api_instance.delete_knowledge_knowledgebase_category(knowledge_base_id, category_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_category: %s\n" % e)

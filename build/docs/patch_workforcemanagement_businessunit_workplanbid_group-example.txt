@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi();
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+bid_group_id = 'bid_group_id_example' # str | Work Plan Bid Group id
+body = PureCloudPlatformClientV2.WorkPlanBidGroupUpdate() # WorkPlanBidGroupUpdate | body
+
+try:
+    # Update a bid group by bid group Id
+    api_response = api_instance.patch_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_workplanbid_group: %s\n" % e)

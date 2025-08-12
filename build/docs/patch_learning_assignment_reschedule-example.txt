@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi();
+assignment_id = 'assignment_id_example' # str | The ID of Learning Assignment
+body = PureCloudPlatformClientV2.LearningAssignmentReschedule() # LearningAssignmentReschedule | The Learning assignment reschedule model (optional)
+
+try:
+    # Reschedule Learning Assignment
+    api_response = api_instance.patch_learning_assignment_reschedule(assignment_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->patch_learning_assignment_reschedule: %s\n" % e)

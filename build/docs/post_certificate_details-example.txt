@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UtilitiesApi();
+body = PureCloudPlatformClientV2.Certificate() # Certificate | Certificate
+
+try:
+    # Returns the information about an X509 PEM encoded certificate or certificate chain.
+    api_response = api_instance.post_certificate_details(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UtilitiesApi->post_certificate_details: %s\n" % e)

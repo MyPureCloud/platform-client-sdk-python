@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.DataPrivacyApi();
+rule_id = 'rule_id_example' # str | ruleId
+body = PureCloudPlatformClientV2.MaskingRule() # MaskingRule |  (optional)
+
+try:
+    # Update information about a masking rule.
+    api_response = api_instance.patch_dataprivacy_maskingrule(rule_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataPrivacyApi->patch_dataprivacy_maskingrule: %s\n" % e)

@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi();
+workitem_id = 'workitem_id_example' # str | Workitem ID
+expands = 'expands_example' # str | Which fields to expand. Comma separated if more than one. (optional)
+
+try:
+    # Get a workitem
+    api_response = api_instance.get_taskmanagement_workitem(workitem_id, expands=expands)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitem: %s\n" % e)

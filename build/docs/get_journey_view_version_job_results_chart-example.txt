@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+view_id = 'view_id_example' # str | Journey View Id
+journey_version_id = 'journey_version_id_example' # str | Journey View Version
+job_id = 'job_id_example' # str | JobId
+chart_id = 'chart_id_example' # str | ChartId
+
+try:
+    # Get the chart result associated with a journey view job.
+    api_response = api_instance.get_journey_view_version_job_results_chart(view_id, journey_version_id, job_id, chart_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version_job_results_chart: %s\n" % e)

@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi();
+topic_id = 'topic_id_example' # str | topicId
+open_id = 'open_id_example' # str | openId
+data_ingestion_rule_version = 'data_ingestion_rule_version_example' # str | version
+include_deleted = True # bool | Determines whether to include soft-deleted item in the result. (optional)
+
+try:
+    # Get a single Open data ingestion rule version.
+    api_response = api_instance.get_socialmedia_topic_dataingestionrules_open_open_id_version(topic_id, open_id, data_ingestion_rule_version, include_deleted=include_deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_topic_dataingestionrules_open_open_id_version: %s\n" % e)

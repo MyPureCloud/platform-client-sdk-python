@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Guest Chat JWT
+PureCloudPlatformClientV2.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# PureCloudPlatformClientV2.configuration.api_key_prefix['Authorization'] = 'BEARER'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebChatApi();
+conversation_id = 'conversation_id_example' # str | conversationId
+after = 'after_example' # str | If available, get the messages chronologically after the id of this message (optional)
+before = 'before_example' # str | If available, get the messages chronologically before the id of this message (optional)
+sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
+max_results = 100 # int | Limit the returned number of messages, up to a maximum of 100 (optional) (default to 100)
+
+try:
+    # Get the messages of a chat conversation.
+    api_response = api_instance.get_webchat_guest_conversation_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebChatApi->get_webchat_guest_conversation_messages: %s\n" % e)

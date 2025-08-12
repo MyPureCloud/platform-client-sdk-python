@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi();
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+queue_ids = 'queue_ids_example' # str | Comma-separated identifiers of the queues that need to be retrieved. (optional)
+expand = 'expand_example' # str | Which fields, if any, to expand. (optional)
+
+try:
+    # Get all queues assigned to any assistant.
+    api_response = api_instance.get_assistants_queues(before=before, after=after, page_size=page_size, queue_ids=queue_ids, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->get_assistants_queues: %s\n" % e)

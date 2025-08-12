@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+user_id = 'user_id_example' # str | User ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
+integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for a user instead of their default. (optional)
+state = ''active'' # str | Search for a user with this state (optional) (default to 'active')
+
+try:
+    # Get user.
+    api_response = api_instance.get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user: %s\n" % e)

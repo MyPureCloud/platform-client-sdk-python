@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BillingApi();
+trustor_org_id = 'trustor_org_id_example' # str | The organization ID of the trustor (customer) organization.
+billing_period_index = 0 # int | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. (optional) (default to 0)
+
+try:
+    # Get the billing overview for an organization that is managed by a partner.
+    api_response = api_instance.get_billing_trusteebillingoverview_trustor_org_id(trustor_org_id, billing_period_index=billing_period_index)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BillingApi->get_billing_trusteebillingoverview_trustor_org_id: %s\n" % e)

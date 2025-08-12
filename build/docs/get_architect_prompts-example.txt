@@ -1,0 +1,27 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi();
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+name = ['name_example'] # list[str] | Name (optional)
+description = 'description_example' # str | Description (optional)
+name_or_description = 'name_or_description_example' # str | Name or description (optional)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+include_media_uris = True # bool | Include the media URIs for each resource (optional) (default to True)
+include_resources = True # bool | Include the resources for each system prompt (optional) (default to True)
+language = ['language_example'] # list[str] | Filter the resources down to the provided languages (optional)
+
+try:
+    # Get a pageable list of user prompts
+    api_response = api_instance.get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_prompts: %s\n" % e)

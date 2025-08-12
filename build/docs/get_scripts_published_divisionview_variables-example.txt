@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ScriptsApi();
+script_id = 'script_id_example' # str | Script ID
+input = 'input_example' # str | input (optional)
+output = 'output_example' # str | output (optional)
+type = 'type_example' # str | type (optional)
+script_data_version = 'script_data_version_example' # str | Advanced usage - controls the data version of the script (optional)
+
+try:
+    # Get the published variables
+    api_response = api_instance.get_scripts_published_divisionview_variables(script_id, input=input, output=output, type=type, script_data_version=script_data_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ScriptsApi->get_scripts_published_divisionview_variables: %s\n" % e)

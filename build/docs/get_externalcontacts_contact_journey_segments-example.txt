@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+contact_id = 'contact_id_example' # str | ExternalContact ID
+include_merged = True # bool | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. (optional)
+limit = 56 # int | Number of entities to return. Default of 25, maximum of 500. (optional)
+
+try:
+    # Retrieve segment assignments by external contact ID.
+    api_response = api_instance.get_externalcontacts_contact_journey_segments(contact_id, include_merged=include_merged, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_externalcontacts_contact_journey_segments: %s\n" % e)

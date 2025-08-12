@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+phone_number_id = 'phone_number_id_example' # str | phone number
+body = PureCloudPlatformClientV2.SmsPhoneNumberPatchRequest() # SmsPhoneNumberPatchRequest | SmsPhoneNumberPatchRequest
+
+try:
+    # Update a phone number provisioned for SMS.
+    api_response = api_instance.patch_routing_sms_phonenumber(phone_number_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_sms_phonenumber: %s\n" % e)

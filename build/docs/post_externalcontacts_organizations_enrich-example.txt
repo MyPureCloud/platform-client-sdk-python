@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi();
+body = PureCloudPlatformClientV2.ExternalOrganizationEnrichRequest() # ExternalOrganizationEnrichRequest | ExternalOrgEnrichRequest
+dry_run = True # bool | If true, the request will not make any modifications, but will show you what the end result *would* be. (optional)
+
+try:
+    # Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+    api_response = api_instance.post_externalcontacts_organizations_enrich(body, dry_run=dry_run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_organizations_enrich: %s\n" % e)
