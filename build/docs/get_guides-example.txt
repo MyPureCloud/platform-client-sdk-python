@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi();
+name = 'name_example' # str | Filter by matching name - case insensitive. (optional)
+name_contains = 'name_contains_example' # str | Filter by name contains - case insensitive. (optional)
+status = 'status_example' # str | Filter by status. (optional)
+sort_by = ''dateModified'' # str | Sort by. Default value dateModified. (optional) (default to 'dateModified')
+sort_order = ''desc'' # str | Sort Order. Default value desc. (optional) (default to 'desc')
+page_number = 1 # int | Page number. (optional) (default to 1)
+page_size = 25 # int | Page size. The maximum page size is 100. (optional) (default to 25)
+
+try:
+    # Get all guides.
+    api_response = api_instance.get_guides(name=name, name_contains=name_contains, status=status, sort_by=sort_by, sort_order=sort_order, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->get_guides: %s\n" % e)

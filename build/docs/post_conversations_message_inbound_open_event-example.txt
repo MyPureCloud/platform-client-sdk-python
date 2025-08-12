@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi();
+integration_id = 'integration_id_example' # str | integrationId
+body = PureCloudPlatformClientV2.OpenInboundNormalizedEvent() # OpenInboundNormalizedEvent | NormalizedMessage
+
+try:
+    # Send an inbound Open Event Message
+    api_response = api_instance.post_conversations_message_inbound_open_event(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_inbound_open_event: %s\n" % e)

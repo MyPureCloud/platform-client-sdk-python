@@ -1,0 +1,25 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi();
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+expand = 'expand_example' # str | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions (optional)
+name = 'name_example' # str | Name (optional)
+sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
+
+try:
+    # Get the list of evaluation forms
+    api_response = api_instance.get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_forms_evaluations: %s\n" % e)

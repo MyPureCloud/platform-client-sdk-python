@@ -1,0 +1,23 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();
+page_size = 25 # int | The page size for the listing. The max that will be returned is 25. (optional) (default to 25)
+page_number = 1 # int | The page number for the listing (optional) (default to 1)
+name = 'name_example' # str | The category name filter applied to the listing (optional)
+sort_order = ''asc'' # str | The sort order for the listing (optional) (default to 'asc')
+sort_by = ''name'' # str | The field to sort by for the listing (optional) (default to 'name')
+ids = ['ids_example'] # list[str] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. (optional)
+
+try:
+    # Get the list of Speech and Text Analytics categories
+    api_response = api_instance.get_speechandtextanalytics_categories(page_size=page_size, page_number=page_number, name=name, sort_order=sort_order, sort_by=sort_by, ids=ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_categories: %s\n" % e)

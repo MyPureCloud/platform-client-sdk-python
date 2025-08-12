@@ -1,5 +1,5 @@
 certifi >= 2025.01.31
 python_dateutil >= 2.9.0.post0
 setuptools >= 60.9.3
-urllib3 >= 1.26.20
+urllib3 >= 2.5.0
 watchdog >= 5.0.0

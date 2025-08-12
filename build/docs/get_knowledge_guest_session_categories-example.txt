@@ -1,0 +1,23 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+session_id = 'session_id_example' # str | Knowledge guest session ID.
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+parent_id = 'parent_id_example' # str | If specified, retrieves the children categories by parent category ID. (optional)
+is_root = True # bool | If specified, retrieves only the root categories. (optional)
+name = 'name_example' # str | Filter to return the categories that starts with the given category name. (optional)
+sort_by = ''Name'' # str | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically (optional) (default to 'Name')
+expand = 'expand_example' # str | The specified entity attribute will be filled. Supported value:\"Ancestors\": every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors. (optional)
+include_document_count = True # bool | If specified, retrieves the number of documents related to category. (optional)
+
+try:
+    # Get categories
+    api_response = api_instance.get_knowledge_guest_session_categories(session_id, before=before, after=after, page_size=page_size, parent_id=parent_id, is_root=is_root, name=name, sort_by=sort_by, expand=expand, include_document_count=include_document_count)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_guest_session_categories: %s\n" % e)

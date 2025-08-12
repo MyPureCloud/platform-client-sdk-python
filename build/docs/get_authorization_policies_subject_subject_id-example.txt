@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi();
+subject_id = 'subject_id_example' # str | The ID of the subject to which policies are applied
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 25 # int | Number of entities to return. Maximum of 200. (optional) (default to 25)
+
+try:
+    # Get a page of access policies for a given subject
+    api_response = api_instance.get_authorization_policies_subject_subject_id(subject_id, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_policies_subject_subject_id: %s\n" % e)

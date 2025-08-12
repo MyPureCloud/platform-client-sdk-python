@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi();
+room_jid = 'room_jid_example' # str | roomJid
+
+try:
+    # Get a room
+    api_response = api_instance.get_chats_room(room_jid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ChatApi->get_chats_room: %s\n" % e)

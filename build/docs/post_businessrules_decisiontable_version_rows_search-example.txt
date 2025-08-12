@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi();
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+body = PureCloudPlatformClientV2.SearchDecisionTableRowsRequest() # SearchDecisionTableRowsRequest | Search decision table rows request
+page_number = 'page_number_example' # str | Page number of the entities to return. Defaults to 1. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. Defaults to 25. (optional)
+
+try:
+    # Search for decision table rows
+    api_response = api_instance.post_businessrules_decisiontable_version_rows_search(table_id, table_version, body, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_version_rows_search: %s\n" % e)

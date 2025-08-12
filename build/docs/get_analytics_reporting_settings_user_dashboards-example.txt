@@ -1,0 +1,25 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi();
+user_id = 'user_id_example' # str | User ID
+sort_by = ''asc'' # str |  (optional) (default to 'asc')
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 50 # int |  (optional) (default to 50)
+public_only = True # bool | If true, retrieve only public dashboards (optional)
+favorite_only = True # bool | If true, retrieve only favorite dashboards (optional)
+deleted_only = True # bool | If true, retrieve only deleted dashboards that are still recoverable (optional)
+name = 'name_example' # str | retrieve dashboards that match with given name (optional)
+
+try:
+    # Get list of dashboards for an user
+    api_response = api_instance.get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, deleted_only=deleted_only, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_settings_user_dashboards: %s\n" % e)

@@ -1,0 +1,29 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+interval = 'interval_example' # str | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+document_id = ['document_id_example'] # list[str] | Retrieves the specified documents, comma separated values expected. (optional)
+category_id = ['category_id_example'] # list[str] | If specified, retrieves documents associated with category ids, comma separated values expected. (optional)
+include_subcategories = True # bool | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. (optional)
+include_drafts = True # bool | If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)
+label_ids = ['label_ids_example'] # list[str] | If specified, retrieves documents associated with label ids, comma separated values expected. (optional)
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
+external_ids = ['external_ids_example'] # list[str] | If specified, retrieves documents associated with external ids, comma separated values expected. (optional)
+
+try:
+    # Get documents.
+    api_response = api_instance.get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand, external_ids=external_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_documents: %s\n" % e)

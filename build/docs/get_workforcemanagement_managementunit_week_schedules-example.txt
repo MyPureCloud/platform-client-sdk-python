@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi();
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format.
+include_only_published = True # bool | Return only published schedules (optional)
+earliest_week_date = 'earliest_week_date_example' # str | The start date of the earliest week to query in yyyy-MM-dd format (optional)
+latest_week_date = 'latest_week_date_example' # str | The start date of the latest week to query in yyyy-MM-dd format (optional)
+
+try:
+    # Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
+    api_response = api_instance.get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id, include_only_published=include_only_published, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_schedules: %s\n" % e)

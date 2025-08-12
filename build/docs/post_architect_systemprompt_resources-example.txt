@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi();
+prompt_id = 'prompt_id_example' # str | Prompt ID
+body = PureCloudPlatformClientV2.SystemPromptAsset() # SystemPromptAsset | 
+
+try:
+    # Create system prompt resource override.
+    api_response = api_instance.post_architect_systemprompt_resources(prompt_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_architect_systemprompt_resources: %s\n" % e)

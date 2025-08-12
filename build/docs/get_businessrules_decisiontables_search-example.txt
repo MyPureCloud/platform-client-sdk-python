@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi();
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
+schema_id = 'schema_id_example' # str | Search for decision tables that use the schema with this ID. Cannot be combined with name search. Search results will not be paginated if used. (optional)
+name = 'name_example' # str | Search for decision tables with a name that contains the given search string. Search is case insensitive and will match any table that contains this string in any part of the name. Cannot be combined with schema search. Search results will not be paginated if used. (optional)
+with_published_version = True # bool | Filters results to only decision tables that have at least one version in Published status (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in response (optional)
+ids = ['ids_example'] # list[str] | Decision table IDs to search for (optional)
+
+try:
+    # Search for decision tables.
+    api_response = api_instance.get_businessrules_decisiontables_search(after=after, page_size=page_size, schema_id=schema_id, name=name, with_published_version=with_published_version, expand=expand, ids=ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->get_businessrules_decisiontables_search: %s\n" % e)

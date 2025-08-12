@@ -1,0 +1,23 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi();
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = ''name'' # str | The field to sort by (optional) (default to 'name')
+sort_order = ''ascending'' # str | The direction to sort (optional) (default to 'ascending')
+name = 'name_example' # str | Name (optional)
+id = ['id_example'] # list[str] | A list of digital rule set ids to bulk fetch (optional)
+
+try:
+    # Query a list of Outbound Digital Rule Sets
+    api_response = api_instance.get_outbound_digitalrulesets(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_digitalrulesets: %s\n" % e)

@@ -1,0 +1,37 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi();
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+conversation_id = 'conversation_id_example' # str | conversationId specified (optional)
+agent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)
+agent_team_id = 'agent_team_id_example' # str | team id of the agent (optional)
+evaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)
+assignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)
+queue_id = 'queue_id_example' # str | queue id (optional)
+start_time = 'start_time_example' # str | start time of the evaluation query (optional)
+end_time = 'end_time_example' # str | end time of the evaluation query (optional)
+form_context_id = 'form_context_id_example' # str | shared id between form versions (optional)
+evaluation_state = ['evaluation_state_example'] # list[str] |  (optional)
+is_released = True # bool | the evaluation has been released (optional)
+agent_has_read = True # bool | agent has the evaluation (optional)
+expand_answer_total_scores = True # bool | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. (optional)
+maximum = 56 # int | the maximum number of results to return (optional)
+sort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)
+include_deleted_users = False # bool | Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (optional) (default to False)
+
+try:
+    # Queries Evaluations and returns a paged list
+    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order, include_deleted_users=include_deleted_users)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_evaluations_query: %s\n" % e)

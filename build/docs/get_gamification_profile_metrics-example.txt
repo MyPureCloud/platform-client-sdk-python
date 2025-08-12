@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi();
+profile_id = 'profile_id_example' # str | Performance Profile Id
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+workday = '2013-10-20' # date | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+metric_ids = 'metric_ids_example' # str | List of metric ids to filter the response (Optional, comma-separated). (optional)
+
+try:
+    # All gamified metrics for a given performance profile
+    api_response = api_instance.get_gamification_profile_metrics(profile_id, expand=expand, workday=workday, metric_ids=metric_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_profile_metrics: %s\n" % e)

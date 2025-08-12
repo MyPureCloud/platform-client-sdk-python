@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Guest Chat JWT
+PureCloudPlatformClientV2.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# PureCloudPlatformClientV2.configuration.api_key_prefix['Authorization'] = 'BEARER'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebChatApi();
+conversation_id = 'conversation_id_example' # str | conversationId
+media_request_id = 'media_request_id_example' # str | mediaRequestId
+body = PureCloudPlatformClientV2.WebChatGuestMediaRequest() # WebChatGuestMediaRequest | Request
+
+try:
+    # Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
+    api_response = api_instance.patch_webchat_guest_conversation_mediarequest(conversation_id, media_request_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebChatApi->patch_webchat_guest_conversation_mediarequest: %s\n" % e)

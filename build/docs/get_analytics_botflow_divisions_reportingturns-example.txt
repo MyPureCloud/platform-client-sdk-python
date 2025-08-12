@@ -1,0 +1,25 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi();
+bot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.
+after = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+page_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')
+interval = '2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z' # str | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
+session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
+language = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)
+ask_action_results = 'ask_action_results_example' # str | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
+
+try:
+    # Get Reporting Turns (division aware).
+    api_response = api_instance.get_analytics_botflow_divisions_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_botflow_divisions_reportingturns: %s\n" % e)

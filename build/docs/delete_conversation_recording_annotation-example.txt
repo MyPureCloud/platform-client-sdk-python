@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi();
+conversation_id = 'conversation_id_example' # str | Conversation ID
+recording_id = 'recording_id_example' # str | Recording ID
+annotation_id = 'annotation_id_example' # str | Annotation ID
+
+try:
+    # Delete annotation
+    api_instance.delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
+except ApiException as e:
+    print("Exception when calling RecordingApi->delete_conversation_recording_annotation: %s\n" % e)

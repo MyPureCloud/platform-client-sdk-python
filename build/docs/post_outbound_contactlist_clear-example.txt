@@ -1,0 +1,17 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi();
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+
+try:
+    # Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+    api_instance.post_outbound_contactlist_clear(contact_list_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlist_clear: %s\n" % e)

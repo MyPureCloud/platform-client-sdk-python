@@ -1,0 +1,26 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+user_id = ['user_id_example'] # list[str] | If specified, retrieves operations associated with user ids, comma separated values expected. (optional)
+type = ['type_example'] # list[str] | If specified, retrieves operations with specified operation type, comma separated values expected. (optional)
+status = ['status_example'] # list[str] | If specified, retrieves operations with specified operation status, comma separated values expected. (optional)
+interval = 'interval_example' # str | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+source_id = ['source_id_example'] # list[str] | If specified, retrieves operations associated with source ids, comma separated values expected. (optional)
+
+try:
+    # Get operations
+    api_response = api_instance.get_knowledge_knowledgebase_operations(knowledge_base_id, before=before, after=after, page_size=page_size, user_id=user_id, type=type, status=status, interval=interval, source_id=source_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_operations: %s\n" % e)

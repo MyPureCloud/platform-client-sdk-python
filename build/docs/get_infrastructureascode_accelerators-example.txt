@@ -1,0 +1,27 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.InfrastructureAsCodeApi();
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+name = 'name_example' # str | Filter by name (optional)
+description = 'description_example' # str | Filter by description (optional)
+origin = 'origin_example' # str | Filter by origin (optional)
+type = 'type_example' # str | Filter by type (optional)
+classification = 'classification_example' # str | Filter by classification (optional)
+tags = 'tags_example' # str | Filter by tags (optional)
+
+try:
+    # Get a list of available accelerators
+    api_response = api_instance.get_infrastructureascode_accelerators(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, description=description, origin=origin, type=type, classification=classification, tags=tags)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InfrastructureAsCodeApi->get_infrastructureascode_accelerators: %s\n" % e)

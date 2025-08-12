@@ -13,7 +13,7 @@ VERSION = "234.0.0"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.26.20", "certifi >= 2025.01.31", "python-dateutil >= 2.9.0.post0", "watchdog >= 5.0.0"]
+REQUIRES = ["urllib3 >= 2.5.0", "certifi >= 2025.01.31", "python-dateutil >= 2.9.0.post0", "watchdog >= 5.0.0"]
 
 setup(
     name="PureCloudPlatformClientV2",
@@ -29,5 +29,5 @@ setup(
     long_description="A Python library to interface with the PureCloud Platform API",
     long_description_content_type="text/plain",
     license="MIT",
-    python_requires=">=3.9"
+    python_requires=">=3.10"
 )

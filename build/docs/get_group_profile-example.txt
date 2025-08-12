@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi();
+group_id = 'group_id_example' # str | groupId
+fields = 'fields_example' # str | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList (optional)
+
+try:
+    # Get group profile
+    api_response = api_instance.get_group_profile(group_id, fields=fields)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GroupsApi->get_group_profile: %s\n" % e)

@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuditApi();
+body = PureCloudPlatformClientV2.AuditRealtimeRelatedRequest() # AuditRealtimeRelatedRequest | query
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+    api_response = api_instance.post_audits_query_realtime_related(body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuditApi->post_audits_query_realtime_related: %s\n" % e)

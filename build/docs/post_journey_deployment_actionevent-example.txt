@@ -1,0 +1,14 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+deployment_id = 'deployment_id_example' # str | The ID of the deployment sending the beacon.
+body = PureCloudPlatformClientV2.ActionEventRequest() # ActionEventRequest | 
+
+try:
+    # Sends an action event, which is used for changing the state of actions that have been offered to the user.
+    api_instance.post_journey_deployment_actionevent(deployment_id, body)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_deployment_actionevent: %s\n" % e)

@@ -1,0 +1,14 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi();
+body = PureCloudPlatformClientV2.GKNDocumentationSearchRequest() # GKNDocumentationSearchRequest | Search request options
+
+try:
+    # Search gkn documentation
+    api_response = api_instance.post_documentation_gkn_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_documentation_gkn_search: %s\n" % e)

@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+exclude_closed = True # bool | Whether or not to exclude closed chats (optional)
+include_presence = True # bool | Whether or not to include user presence (optional)
+after = 'after_example' # str | The key to start after (optional)
+
+try:
+    # Get chats for a user
+    api_response = api_instance.get_users_chats_me(exclude_closed=exclude_closed, include_presence=include_presence, after=after)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_chats_me: %s\n" % e)

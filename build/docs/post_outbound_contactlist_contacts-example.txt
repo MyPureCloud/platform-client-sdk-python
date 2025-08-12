@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi();
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+body = [PureCloudPlatformClientV2.WritableDialerContact()] # list[WritableDialerContact] | Contact
+priority = True # bool | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
+clear_system_data = True # bool | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. (optional)
+do_not_queue = True # bool | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. (optional)
+
+try:
+    # Add contacts to a contact list.
+    api_response = api_instance.post_outbound_contactlist_contacts(contact_list_id, body, priority=priority, clear_system_data=clear_system_data, do_not_queue=do_not_queue)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlist_contacts: %s\n" % e)

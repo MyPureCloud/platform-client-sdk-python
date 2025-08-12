@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi();
+left_role_id = 'left_role_id_example' # str | Left Role ID
+right_role_id = 'right_role_id_example' # str | Right Role id
+body = PureCloudPlatformClientV2.DomainOrganizationRole() # DomainOrganizationRole | Organization role
+
+try:
+    # Get an unsaved org role to default role comparison
+    api_response = api_instance.post_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->post_authorization_role_comparedefault_right_role_id: %s\n" % e)

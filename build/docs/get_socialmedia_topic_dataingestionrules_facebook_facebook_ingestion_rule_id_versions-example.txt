@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi();
+topic_id = 'topic_id_example' # str | topicId
+facebook_ingestion_rule_id = 'facebook_ingestion_rule_id_example' # str | facebookIngestionRuleId
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+include_deleted = True # bool | Determines whether to include soft-deleted items in the result. (optional)
+
+try:
+    # Get the Facebook data ingestion rule versions.
+    api_response = api_instance.get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions(topic_id, facebook_ingestion_rule_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions: %s\n" % e)

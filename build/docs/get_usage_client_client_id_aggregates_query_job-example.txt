@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi();
+client_id = 'client_id_example' # str | clientId
+job_id = 'job_id_example' # str | jobId
+page_size = 100 # int | Page size of the results. Max is 1000. (optional) (default to 100)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+
+try:
+    # Get the status and results of the usage query
+    api_response = api_instance.get_usage_client_client_id_aggregates_query_job(client_id, job_id, page_size=page_size, after=after)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->get_usage_client_client_id_aggregates_query_job: %s\n" % e)

@@ -1,0 +1,25 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();
+next_page = 'next_page_example' # str | The key for listing the next page (optional)
+page_size = 20 # int | The page size for the listing. The max that will be returned is 500. (optional) (default to 20)
+state = 'state_example' # str | Topic state. Defaults to latest (optional)
+name = 'name_example' # str | Case insensitive partial name to filter by (optional)
+ids = ['ids_example'] # list[str] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+dialects = ['dialects_example'] # list[str] | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. (optional)
+sort_by = 'sort_by_example' # str | Sort results by. Defaults to name (optional)
+sort_order = 'sort_order_example' # str | Sort order. Defaults to asc (optional)
+
+try:
+    # Get the list of Speech & Text Analytics topics
+    api_response = api_instance.get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, dialects=dialects, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_topics: %s\n" % e)

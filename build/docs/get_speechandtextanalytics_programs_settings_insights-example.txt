@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();
+page_size = 100 # int | The page size for the listing. The max that will be returned is 100. (optional) (default to 100)
+page_number = 1 # int | The page number for the listing (optional) (default to 1)
+program_ids = ['program_ids_example'] # list[str] | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. (optional)
+
+try:
+    # Get the list of program AI Insights settings for the organization
+    api_response = api_instance.get_speechandtextanalytics_programs_settings_insights(page_size=page_size, page_number=page_number, program_ids=program_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs_settings_insights: %s\n" % e)

@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi();
+topic_id = 'topic_id_example' # str | topicId
+open_id = 'open_id_example' # str | openId
+hard_delete = False # bool | Determines whether a open data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional) (default to False)
+
+try:
+    # Delete a open data ingestion rule.
+    api_instance.delete_socialmedia_topic_dataingestionrules_open_open_id(topic_id, open_id, hard_delete=hard_delete)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->delete_socialmedia_topic_dataingestionrules_open_open_id: %s\n" % e)

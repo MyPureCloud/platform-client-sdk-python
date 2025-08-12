@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi();
+execution_id = 'execution_id_example' # str | ID of the search execution
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned (optional)
+page_size = 56 # int | The max number of entities to be returned per request. Maximum page size of 1000 (optional)
+
+try:
+    # Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
+    api_response = api_instance.get_usage_simplesearch_execution_id_results(execution_id, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->get_usage_simplesearch_execution_id_results: %s\n" % e)

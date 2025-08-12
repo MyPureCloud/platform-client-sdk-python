@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi();
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
+category = 'category_example' # str | Category (optional)
+level = 'level_example' # str | Level (optional)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
+
+try:
+    # Query Event Logs
+    api_response = api_instance.get_outbound_events(page_size=page_size, page_number=page_number, filter_type=filter_type, category=category, level=level, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_events: %s\n" % e)

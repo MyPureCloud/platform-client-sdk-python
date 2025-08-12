@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi();
+conversation_id = 'conversation_id_example' # str | Conversation ID
+summary_id = 'summary_id_example' # str | Summary ID
+body = PureCloudPlatformClientV2.EngagementRequest() # EngagementRequest |  (optional)
+
+try:
+    # Update agent's engagement for the summary.
+    api_instance.patch_conversation_summary_engagements(conversation_id, summary_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_summary_engagements: %s\n" % e)

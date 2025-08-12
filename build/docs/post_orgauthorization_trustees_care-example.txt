@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi();
+assign_default_role = True # bool | Assign Admin role to default pairing with Customer Care (optional)
+auto_expire = True # bool | Automatically expire pairing after 30 days (optional)
+assign_full_access = True # bool | Grant Customer Care full access to the organization (optional)
+allow_trusted_user_access = True # bool | Make Customer Care a Trusted User (optional)
+
+try:
+    # Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+    api_response = api_instance.post_orgauthorization_trustees_care(assign_default_role=assign_default_role, auto_expire=auto_expire, assign_full_access=assign_full_access, allow_trusted_user_access=allow_trusted_user_access)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->post_orgauthorization_trustees_care: %s\n" % e)

@@ -1,0 +1,15 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi();
+deployment_id = 'deployment_id_example' # str | WebMessaging deployment ID
+session_id = 'session_id_example' # str | Cobrowse session id or join code
+
+try:
+    # Retrieves a cobrowse session
+    api_response = api_instance.get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->get_webdeployments_deployment_cobrowse_session_id: %s\n" % e)
