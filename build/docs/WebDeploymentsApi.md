@@ -1039,4 +1039,4 @@ except ApiException as e:
 [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_PureCloudPlatformClientV2 235.0.0_
+_PureCloudPlatformClientV2 235.1.0_

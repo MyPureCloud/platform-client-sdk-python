@@ -4854,4 +4854,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 235.0.0_
+_PureCloudPlatformClientV2 235.1.0_
