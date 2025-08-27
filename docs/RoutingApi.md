@@ -43,7 +43,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_email_domains**](#get_routing_email_domains) | Get domains|
 |[**get_routing_email_outbound_domain**](#get_routing_email_outbound_domain) | Get domain|
 |[**get_routing_email_outbound_domain_activation**](#get_routing_email_outbound_domain_activation) | Get activation status (cname + dkim) of an outbound domain|
-|[**get_routing_email_outbound_domain_search**](#get_routing_email_outbound_domain_search) | Search a domain across organizations|
 |[**get_routing_email_outbound_domains**](#get_routing_email_outbound_domains) | Get outbound domains|
 |[**get_routing_email_setup**](#get_routing_email_setup) | Get email setup|
 |[**get_routing_language**](#get_routing_language) | Get a routing language|
@@ -123,7 +122,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_assessments**](#post_routing_assessments) | Create a benefit assessment.|
 |[**post_routing_assessments_jobs**](#post_routing_assessments_jobs) | Create a benefit assessment job.|
 |[**post_routing_email_domain_routes**](#post_routing_email_domain_routes) | Create a route|
-|[**post_routing_email_domain_testconnection**](#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this domain|
+|[**post_routing_email_domain_testconnection**](#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this ACD domain|
 |[**post_routing_email_domains**](#post_routing_email_domains) | Create a domain|
 |[**post_routing_email_outbound_domains**](#post_routing_email_outbound_domains) | Create a domain|
 |[**post_routing_email_outbound_domains_simulated**](#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
@@ -1951,54 +1950,6 @@ except ApiException as e:
 ### Return type
 
 [**EmailOutboundDomainResult**](EmailOutboundDomainResult)
-
-
-## get_routing_email_outbound_domain_search
-
-> [**OutboundDomain**](OutboundDomain) get_routing_email_outbound_domain_search(domain_id)
-
-
-Search a domain across organizations
-
-Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/search 
-
-Requires ALL permissions: 
-
-* routing:email:manage
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-domain_id = 'domain_id_example' # str | domain ID
-
-try:
-    # Search a domain across organizations
-    api_response = api_instance.get_routing_email_outbound_domain_search(domain_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RoutingApi->get_routing_email_outbound_domain_search: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **domain_id** | **str**| domain ID |  |
-
-### Return type
-
-[**OutboundDomain**](OutboundDomain)
 
 
 ## get_routing_email_outbound_domains
@@ -6108,9 +6059,9 @@ except ApiException as e:
 > [**TestMessage**](TestMessage) post_routing_email_domain_testconnection(domain_id, body=body)
 
 
-Tests the custom SMTP server integration connection set on this domain
+Tests the custom SMTP server integration connection set on this ACD domain
 
-The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
 
 Wraps POST /api/v2/routing/email/domains/{domainId}/testconnection 
 
@@ -6135,7 +6086,7 @@ domain_id = 'domain_id_example' # str | domain ID
 body = PureCloudPlatformClientV2.TestMessage() # TestMessage | TestMessage (optional)
 
 try:
-    # Tests the custom SMTP server integration connection set on this domain
+    # Tests the custom SMTP server integration connection set on this ACD domain
     api_response = api_instance.post_routing_email_domain_testconnection(domain_id, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -8036,4 +7987,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

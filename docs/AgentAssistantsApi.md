@@ -16,6 +16,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_assistants_queues**](#get_assistants_queues) | Get all queues assigned to any assistant.|
 |[**patch_assistant**](#patch_assistant) | Update an assistant.|
 |[**patch_assistant_queues**](#patch_assistant_queues) | Update Queues for an Assistant.|
+|[**post_assistant_queue_users_bulk_add**](#post_assistant_queue_users_bulk_add) | Bulk add users to assistant-queue (requires manual assignment mode).|
+|[**post_assistant_queue_users_bulk_remove**](#post_assistant_queue_users_bulk_remove) | Bulk remove users from assistant-queue (requires manual assignment mode).|
+|[**post_assistant_queue_users_query**](#post_assistant_queue_users_query) | Query for users in the assistant-queue (requires manual assignment mode).|
 |[**post_assistants**](#post_assistants) | Create an Assistant.|
 |[**put_assistant_queue**](#put_assistant_queue) | Create a queue assistant association.|
 
@@ -538,6 +541,164 @@ except ApiException as e:
 [**AssistantQueueListing**](AssistantQueueListing)
 
 
+## post_assistant_queue_users_bulk_add
+
+> [**BulkResponse**](BulkResponse) post_assistant_queue_users_bulk_add(assistant_id, queue_id, body)
+
+
+Bulk add users to assistant-queue (requires manual assignment mode).
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add 
+
+Requires ANY permissions: 
+
+* assistants:queueUserAssignment:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+assistant_id = 'assistant_id_example' # str | Assistant ID
+queue_id = 'queue_id_example' # str | Queue ID
+body = PureCloudPlatformClientV2.AssistantQueueUsersBulkAddRequest() # AssistantQueueUsersBulkAddRequest | 
+
+try:
+    # Bulk add users to assistant-queue (requires manual assignment mode).
+    api_response = api_instance.post_assistant_queue_users_bulk_add(assistant_id, queue_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->post_assistant_queue_users_bulk_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assistant_id** | **str**| Assistant ID |  |
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**AssistantQueueUsersBulkAddRequest**](AssistantQueueUsersBulkAddRequest)|  |  |
+
+### Return type
+
+[**BulkResponse**](BulkResponse)
+
+
+## post_assistant_queue_users_bulk_remove
+
+> [**BulkResponse**](BulkResponse) post_assistant_queue_users_bulk_remove(assistant_id, queue_id, body)
+
+
+Bulk remove users from assistant-queue (requires manual assignment mode).
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove 
+
+Requires ANY permissions: 
+
+* assistants:queueUserAssignment:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+assistant_id = 'assistant_id_example' # str | Assistant ID
+queue_id = 'queue_id_example' # str | Queue ID
+body = PureCloudPlatformClientV2.AssistantQueueUsersBulkRemoveRequest() # AssistantQueueUsersBulkRemoveRequest | 
+
+try:
+    # Bulk remove users from assistant-queue (requires manual assignment mode).
+    api_response = api_instance.post_assistant_queue_users_bulk_remove(assistant_id, queue_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->post_assistant_queue_users_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assistant_id** | **str**| Assistant ID |  |
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**AssistantQueueUsersBulkRemoveRequest**](AssistantQueueUsersBulkRemoveRequest)|  |  |
+
+### Return type
+
+[**BulkResponse**](BulkResponse)
+
+
+## post_assistant_queue_users_query
+
+> [**AssistantQueueUsersQueryResponse**](AssistantQueueUsersQueryResponse) post_assistant_queue_users_query(assistant_id, queue_id, body, expand=expand)
+
+
+Query for users in the assistant-queue (requires manual assignment mode).
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/query 
+
+Requires ANY permissions: 
+
+* assistants:queueUserAssignment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+assistant_id = 'assistant_id_example' # str | Assistant ID
+queue_id = 'queue_id_example' # str | Queue ID
+body = PureCloudPlatformClientV2.AssistantQueueUsersQueryRequest() # AssistantQueueUsersQueryRequest | 
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand with. (optional)
+
+try:
+    # Query for users in the assistant-queue (requires manual assignment mode).
+    api_response = api_instance.post_assistant_queue_users_query(assistant_id, queue_id, body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->post_assistant_queue_users_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assistant_id** | **str**| Assistant ID |  |
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**AssistantQueueUsersQueryRequest**](AssistantQueueUsersQueryRequest)|  |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand with. | [optional] <br />**Values**: assistant, copilot |
+
+### Return type
+
+[**AssistantQueueUsersQueryResponse**](AssistantQueueUsersQueryResponse)
+
+
 ## post_assistants
 
 > [**Assistant**](Assistant) post_assistants(body)
@@ -638,4 +799,4 @@ except ApiException as e:
 [**AssistantQueue**](AssistantQueue)
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

@@ -794,7 +794,7 @@ except ApiException as e:
 
 ## get_authorization_permissions
 
-> [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing) get_authorization_permissions(page_size=page_size, page_number=page_number, query_type=query_type, query=query)
+> [**DomainPermissionEntityListing**](DomainPermissionEntityListing) get_authorization_permissions(page_size=page_size, page_number=page_number, query_type=query_type, query=query)
 
 
 Get all permissions.
@@ -844,7 +844,7 @@ except ApiException as e:
 
 ### Return type
 
-[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing)
+[**DomainPermissionEntityListing**](DomainPermissionEntityListing)
 
 
 ## get_authorization_policies
@@ -3098,4 +3098,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

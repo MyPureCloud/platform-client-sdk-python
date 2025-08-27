@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_analytics_conversations_aggregates_job**](#delete_analytics_conversations_aggregates_job) | Delete/cancel an async request for conversation aggregates|
 |[**delete_analytics_conversations_details_job**](#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
+|[**delete_conversation**](#delete_conversation) | Update a conversation by disconnecting all of the participants|
 |[**delete_conversation_participant_code**](#delete_conversation_participant_code) | Delete a code used to add a communication to this participant|
 |[**delete_conversation_participant_flaggedreason**](#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
 |[**delete_conversations_call_participant_consult**](#delete_conversations_call_participant_consult) | Cancel the transfer|
@@ -123,12 +124,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_videos_meeting**](#get_conversations_videos_meeting) | Gets a record for a given meetingId|
 |[**patch_conversation_participant**](#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversation_recordingstate**](#patch_conversation_recordingstate) | Update a conversation by setting its recording state|
 |[**patch_conversation_secureattributes**](#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
 |[**patch_conversation_summary_engagements**](#patch_conversation_summary_engagements) | Update agent&#39;s engagement for the summary.|
 |[**patch_conversation_summary_feedback**](#patch_conversation_summary_feedback) | Update the feedback for the summary.|
 |[**patch_conversation_utilizationlabel**](#patch_conversation_utilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied|
 |[**patch_conversations_aftercallwork_conversation_id_participant_communication**](#patch_conversations_aftercallwork_conversation_id_participant_communication) | Update after-call work for this conversation communication.|
 |[**patch_conversations_call**](#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
+|[**patch_conversations_call_conference**](#patch_conversations_call_conference) | Update a conversation by merging in other conversations to create a conference|
 |[**patch_conversations_call_participant**](#patch_conversations_call_participant) | Update conversation participant|
 |[**patch_conversations_call_participant_attributes**](#patch_conversations_call_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_call_participant_communication**](#patch_conversations_call_participant_communication) | Update conversation participant&#39;s communication by disconnecting it. This endpoint does not update wrapup.|
@@ -374,6 +377,53 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_conversation
+
+>  delete_conversation(conversation_id)
+
+
+Update a conversation by disconnecting all of the participants
+
+Wraps DELETE /api/v2/conversations/{conversationId} 
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+
+try:
+    # Update a conversation by disconnecting all of the participants
+    api_instance.delete_conversation(conversation_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
 
 ### Return type
 
@@ -6113,6 +6163,55 @@ except ApiException as e:
 void (empty response body)
 
 
+## patch_conversation_recordingstate
+
+>  patch_conversation_recordingstate(conversation_id, body)
+
+
+Update a conversation by setting its recording state
+
+Wraps PATCH /api/v2/conversations/{conversationId}/recordingstate 
+
+Requires ANY permissions: 
+
+* conversation:recording:pauseOthers
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.SetRecordingState() # SetRecordingState | SetRecordingState
+
+try:
+    # Update a conversation by setting its recording state
+    api_instance.patch_conversation_recordingstate(conversation_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_recordingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## patch_conversation_secureattributes
 
 > str** patch_conversation_secureattributes(conversation_id, body)
@@ -6417,6 +6516,55 @@ except ApiException as e:
 ### Return type
 
 [**Conversation**](Conversation)
+
+
+## patch_conversations_call_conference
+
+>  patch_conversations_call_conference(conversation_id, body)
+
+
+Update a conversation by merging in other conversations to create a conference
+
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/conference 
+
+Requires ANY permissions: 
+
+* conversation:conference:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.UpdateConferenceRequest() # UpdateConferenceRequest | UpdateConferenceRequest
+
+try:
+    # Update a conversation by merging in other conversations to create a conference
+    api_instance.patch_conversations_call_conference(conversation_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_call_conference: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**UpdateConferenceRequest**](UpdateConferenceRequest)| UpdateConferenceRequest |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## patch_conversations_call_participant
@@ -14219,4 +14367,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

@@ -6,8 +6,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_webmessaging_deployment_pushdevice**](#delete_webmessaging_deployment_pushdevice) | Delete device information|
 |[**get_webmessaging_messages**](#get_webmessaging_messages) | Get the messages for a web messaging session.|
+|[**patch_webmessaging_deployment_pushdevice**](#patch_webmessaging_deployment_pushdevice) | Edit device information|
+|[**post_webmessaging_deployment_pushdevice**](#post_webmessaging_deployment_pushdevice) | Add a new device information|
 
+
+
+## delete_webmessaging_deployment_pushdevice
+
+>  delete_webmessaging_deployment_pushdevice(deployment_id, token_id)
+
+
+Delete device information
+
+Wraps DELETE /api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebMessagingApi()
+deployment_id = 'deployment_id_example' # str | WebMessaging deployment id
+token_id = 'token_id_example' # str | Device token id or cookie id
+
+try:
+    # Delete device information
+    api_instance.delete_webmessaging_deployment_pushdevice(deployment_id, token_id)
+except ApiException as e:
+    print("Exception when calling WebMessagingApi->delete_webmessaging_deployment_pushdevice: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| WebMessaging deployment id |  |
+| **token_id** | **str**| Device token id or cookie id |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## get_webmessaging_messages
@@ -56,4 +104,98 @@ except ApiException as e:
 [**WebMessagingMessageEntityList**](WebMessagingMessageEntityList)
 
 
-_PureCloudPlatformClientV2 235.1.0_
+## patch_webmessaging_deployment_pushdevice
+
+>  patch_webmessaging_deployment_pushdevice(deployment_id, token_id, body)
+
+
+Edit device information
+
+Wraps PATCH /api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebMessagingApi()
+deployment_id = 'deployment_id_example' # str | WebMessaging deployment id
+token_id = 'token_id_example' # str | Device token id or cookie id
+body = PureCloudPlatformClientV2.PushDeviceUpdateRequest() # PushDeviceUpdateRequest | Request body
+
+try:
+    # Edit device information
+    api_instance.patch_webmessaging_deployment_pushdevice(deployment_id, token_id, body)
+except ApiException as e:
+    print("Exception when calling WebMessagingApi->patch_webmessaging_deployment_pushdevice: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| WebMessaging deployment id |  |
+| **token_id** | **str**| Device token id or cookie id |  |
+| **body** | [**PushDeviceUpdateRequest**](PushDeviceUpdateRequest)| Request body |  |
+
+### Return type
+
+void (empty response body)
+
+
+## post_webmessaging_deployment_pushdevice
+
+>  post_webmessaging_deployment_pushdevice(deployment_id, token_id, body)
+
+
+Add a new device information
+
+Wraps POST /api/v2/webmessaging/deployments/{deploymentId}/pushdevices/{tokenId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebMessagingApi()
+deployment_id = 'deployment_id_example' # str | WebMessaging deployment id
+token_id = 'token_id_example' # str | Device token id or cookie id
+body = PureCloudPlatformClientV2.PushDeviceInsertRequest() # PushDeviceInsertRequest | Request body
+
+try:
+    # Add a new device information
+    api_instance.post_webmessaging_deployment_pushdevice(deployment_id, token_id, body)
+except ApiException as e:
+    print("Exception when calling WebMessagingApi->post_webmessaging_deployment_pushdevice: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| WebMessaging deployment id |  |
+| **token_id** | **str**| Device token id or cookie id |  |
+| **body** | [**PushDeviceInsertRequest**](PushDeviceInsertRequest)| Request body |  |
+
+### Return type
+
+void (empty response body)
+
+
+_PureCloudPlatformClientV2 236.0.0_

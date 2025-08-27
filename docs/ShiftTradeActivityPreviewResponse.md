@@ -11,7 +11,9 @@
 | **activity_code_id** | str | The ID of the activity code for this activity | [optional] |
 | **counts_as_paid_time** | bool | Whether this activity counts as paid time | [optional] |
 | **payable_minutes** | int | Payable minutes for this activity | [optional] |
+| **external_activity_type** | str | The type of the external activity associated with this activity, if applicable | [optional] |
+| **external_activity_id** | str | The ID of the external activity associated with this activity, if applicable | [optional] |
 
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_
