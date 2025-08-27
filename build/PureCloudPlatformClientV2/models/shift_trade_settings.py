@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ShiftTradeActivityRule
+    from . import ShiftTradeExternalActivityRule
 
 class ShiftTradeSettings(object):
     """
@@ -62,6 +63,8 @@ class ShiftTradeSettings(object):
             'requires_matching_skills': 'bool',
             'requires_matching_planning_groups': 'bool',
             'activity_category_rules': 'list[ShiftTradeActivityRule]',
+            'external_activity_rules': 'list[ShiftTradeExternalActivityRule]',
+            'external_activity_rule_ignores_activity_category_rule': 'bool',
             'max_trade_span_weeks': 'int',
             'max_trades_per_agent_per_week': 'int',
             'min_minutes_between_shifts': 'int',
@@ -84,6 +87,8 @@ class ShiftTradeSettings(object):
             'requires_matching_skills': 'requiresMatchingSkills',
             'requires_matching_planning_groups': 'requiresMatchingPlanningGroups',
             'activity_category_rules': 'activityCategoryRules',
+            'external_activity_rules': 'externalActivityRules',
+            'external_activity_rule_ignores_activity_category_rule': 'externalActivityRuleIgnoresActivityCategoryRule',
             'max_trade_span_weeks': 'maxTradeSpanWeeks',
             'max_trades_per_agent_per_week': 'maxTradesPerAgentPerWeek',
             'min_minutes_between_shifts': 'minMinutesBetweenShifts',
@@ -105,6 +110,8 @@ class ShiftTradeSettings(object):
         self._requires_matching_skills = None
         self._requires_matching_planning_groups = None
         self._activity_category_rules = None
+        self._external_activity_rules = None
+        self._external_activity_rule_ignores_activity_category_rule = None
         self._max_trade_span_weeks = None
         self._max_trades_per_agent_per_week = None
         self._min_minutes_between_shifts = None
@@ -443,6 +450,54 @@ class ShiftTradeSettings(object):
         
 
         self._activity_category_rules = activity_category_rules
+
+    @property
+    def external_activity_rules(self) -> List['ShiftTradeExternalActivityRule']:
+        """
+        Gets the external_activity_rules of this ShiftTradeSettings.
+        Rules that specify what to do with external activities that are part of a shift
+
+        :return: The external_activity_rules of this ShiftTradeSettings.
+        :rtype: list[ShiftTradeExternalActivityRule]
+        """
+        return self._external_activity_rules
+
+    @external_activity_rules.setter
+    def external_activity_rules(self, external_activity_rules: List['ShiftTradeExternalActivityRule']) -> None:
+        """
+        Sets the external_activity_rules of this ShiftTradeSettings.
+        Rules that specify what to do with external activities that are part of a shift
+
+        :param external_activity_rules: The external_activity_rules of this ShiftTradeSettings.
+        :type: list[ShiftTradeExternalActivityRule]
+        """
+        
+
+        self._external_activity_rules = external_activity_rules
+
+    @property
+    def external_activity_rule_ignores_activity_category_rule(self) -> bool:
+        """
+        Gets the external_activity_rule_ignores_activity_category_rule of this ShiftTradeSettings.
+        Whether external activity rules ignore activity category rules
+
+        :return: The external_activity_rule_ignores_activity_category_rule of this ShiftTradeSettings.
+        :rtype: bool
+        """
+        return self._external_activity_rule_ignores_activity_category_rule
+
+    @external_activity_rule_ignores_activity_category_rule.setter
+    def external_activity_rule_ignores_activity_category_rule(self, external_activity_rule_ignores_activity_category_rule: bool) -> None:
+        """
+        Sets the external_activity_rule_ignores_activity_category_rule of this ShiftTradeSettings.
+        Whether external activity rules ignore activity category rules
+
+        :param external_activity_rule_ignores_activity_category_rule: The external_activity_rule_ignores_activity_category_rule of this ShiftTradeSettings.
+        :type: bool
+        """
+        
+
+        self._external_activity_rule_ignores_activity_category_rule = external_activity_rule_ignores_activity_category_rule
 
     @property
     def max_trade_span_weeks(self) -> int:

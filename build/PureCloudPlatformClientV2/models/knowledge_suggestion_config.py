@@ -52,18 +52,21 @@ class KnowledgeSuggestionConfig(object):
         self.swagger_types = {
             'vendor_name': 'str',
             'knowledge_base': 'KnowledgeBaseReference',
-            'knowledge_bases': 'list[KnowledgeBaseWithDialectReference]'
+            'knowledge_bases': 'list[KnowledgeBaseWithDialectReference]',
+            'receive_segmented_articles': 'bool'
         }
 
         self.attribute_map = {
             'vendor_name': 'vendorName',
             'knowledge_base': 'knowledgeBase',
-            'knowledge_bases': 'knowledgeBases'
+            'knowledge_bases': 'knowledgeBases',
+            'receive_segmented_articles': 'receiveSegmentedArticles'
         }
 
         self._vendor_name = None
         self._knowledge_base = None
         self._knowledge_bases = None
+        self._receive_segmented_articles = None
 
     @property
     def vendor_name(self) -> str:
@@ -141,6 +144,30 @@ class KnowledgeSuggestionConfig(object):
         
 
         self._knowledge_bases = knowledge_bases
+
+    @property
+    def receive_segmented_articles(self) -> bool:
+        """
+        Gets the receive_segmented_articles of this KnowledgeSuggestionConfig.
+        Include segmented articles in knowledge suggestions.
+
+        :return: The receive_segmented_articles of this KnowledgeSuggestionConfig.
+        :rtype: bool
+        """
+        return self._receive_segmented_articles
+
+    @receive_segmented_articles.setter
+    def receive_segmented_articles(self, receive_segmented_articles: bool) -> None:
+        """
+        Sets the receive_segmented_articles of this KnowledgeSuggestionConfig.
+        Include segmented articles in knowledge suggestions.
+
+        :param receive_segmented_articles: The receive_segmented_articles of this KnowledgeSuggestionConfig.
+        :type: bool
+        """
+        
+
+        self._receive_segmented_articles = receive_segmented_articles
 
     def to_dict(self):
         """

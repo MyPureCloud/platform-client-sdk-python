@@ -53,6 +53,7 @@ class Literal(object):
             'date': 'date',
             'datetime': 'datetime',
             'special': 'str',
+            'strings': 'list[str]',
             'boolean': 'bool'
         }
 
@@ -63,6 +64,7 @@ class Literal(object):
             'date': 'date',
             'datetime': 'datetime',
             'special': 'special',
+            'strings': 'strings',
             'boolean': 'boolean'
         }
 
@@ -72,6 +74,7 @@ class Literal(object):
         self._date = None
         self._datetime = None
         self._special = None
+        self._strings = None
         self._boolean = None
 
     @property
@@ -222,6 +225,30 @@ class Literal(object):
             self._special = "outdated_sdk_version"
         else:
             self._special = special
+
+    @property
+    def strings(self) -> List[str]:
+        """
+        Gets the strings of this Literal.
+        A string list value
+
+        :return: The strings of this Literal.
+        :rtype: list[str]
+        """
+        return self._strings
+
+    @strings.setter
+    def strings(self, strings: List[str]) -> None:
+        """
+        Sets the strings of this Literal.
+        A string list value
+
+        :param strings: The strings of this Literal.
+        :type: list[str]
+        """
+        
+
+        self._strings = strings
 
     @property
     def boolean(self) -> bool:

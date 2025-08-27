@@ -48,15 +48,18 @@ class DecisionTableColumnDefaultRowValue(object):
         """
         self.swagger_types = {
             'value': 'str',
+            'values': 'list[str]',
             'special': 'str'
         }
 
         self.attribute_map = {
             'value': 'value',
+            'values': 'values',
             'special': 'special'
         }
 
         self._value = None
+        self._values = None
         self._special = None
 
     @property
@@ -82,6 +85,30 @@ class DecisionTableColumnDefaultRowValue(object):
         
 
         self._value = value
+
+    @property
+    def values(self) -> List[str]:
+        """
+        Gets the values of this DecisionTableColumnDefaultRowValue.
+        A default list of values for this column, items will be cast to appropriate type according to the relevant contract schema property
+
+        :return: The values of this DecisionTableColumnDefaultRowValue.
+        :rtype: list[str]
+        """
+        return self._values
+
+    @values.setter
+    def values(self, values: List[str]) -> None:
+        """
+        Sets the values of this DecisionTableColumnDefaultRowValue.
+        A default list of values for this column, items will be cast to appropriate type according to the relevant contract schema property
+
+        :param values: The values of this DecisionTableColumnDefaultRowValue.
+        :type: list[str]
+        """
+        
+
+        self._values = values
 
     @property
     def special(self) -> str:

@@ -51,7 +51,9 @@ class ShiftTradeActivityPreviewResponse(object):
             'length_minutes': 'int',
             'activity_code_id': 'str',
             'counts_as_paid_time': 'bool',
-            'payable_minutes': 'int'
+            'payable_minutes': 'int',
+            'external_activity_type': 'str',
+            'external_activity_id': 'str'
         }
 
         self.attribute_map = {
@@ -59,7 +61,9 @@ class ShiftTradeActivityPreviewResponse(object):
             'length_minutes': 'lengthMinutes',
             'activity_code_id': 'activityCodeId',
             'counts_as_paid_time': 'countsAsPaidTime',
-            'payable_minutes': 'payableMinutes'
+            'payable_minutes': 'payableMinutes',
+            'external_activity_type': 'externalActivityType',
+            'external_activity_id': 'externalActivityId'
         }
 
         self._start_date = None
@@ -67,6 +71,8 @@ class ShiftTradeActivityPreviewResponse(object):
         self._activity_code_id = None
         self._counts_as_paid_time = None
         self._payable_minutes = None
+        self._external_activity_type = None
+        self._external_activity_id = None
 
     @property
     def start_date(self) -> datetime:
@@ -187,6 +193,59 @@ class ShiftTradeActivityPreviewResponse(object):
         
 
         self._payable_minutes = payable_minutes
+
+    @property
+    def external_activity_type(self) -> str:
+        """
+        Gets the external_activity_type of this ShiftTradeActivityPreviewResponse.
+        The type of the external activity associated with this activity, if applicable
+
+        :return: The external_activity_type of this ShiftTradeActivityPreviewResponse.
+        :rtype: str
+        """
+        return self._external_activity_type
+
+    @external_activity_type.setter
+    def external_activity_type(self, external_activity_type: str) -> None:
+        """
+        Sets the external_activity_type of this ShiftTradeActivityPreviewResponse.
+        The type of the external activity associated with this activity, if applicable
+
+        :param external_activity_type: The external_activity_type of this ShiftTradeActivityPreviewResponse.
+        :type: str
+        """
+        if isinstance(external_activity_type, int):
+            external_activity_type = str(external_activity_type)
+        allowed_values = ["ActivityPlan", "Coaching", "Learning"]
+        if external_activity_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for external_activity_type -> " + external_activity_type)
+            self._external_activity_type = "outdated_sdk_version"
+        else:
+            self._external_activity_type = external_activity_type
+
+    @property
+    def external_activity_id(self) -> str:
+        """
+        Gets the external_activity_id of this ShiftTradeActivityPreviewResponse.
+        The ID of the external activity associated with this activity, if applicable
+
+        :return: The external_activity_id of this ShiftTradeActivityPreviewResponse.
+        :rtype: str
+        """
+        return self._external_activity_id
+
+    @external_activity_id.setter
+    def external_activity_id(self, external_activity_id: str) -> None:
+        """
+        Sets the external_activity_id of this ShiftTradeActivityPreviewResponse.
+        The ID of the external activity associated with this activity, if applicable
+
+        :param external_activity_id: The external_activity_id of this ShiftTradeActivityPreviewResponse.
+        :type: str
+        """
+        
+
+        self._external_activity_id = external_activity_id
 
     def to_dict(self):
         """

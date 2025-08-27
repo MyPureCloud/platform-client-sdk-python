@@ -298,4 +298,4 @@ except ApiException as e:
 [**InfrastructureascodeJob**](InfrastructureascodeJob)
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

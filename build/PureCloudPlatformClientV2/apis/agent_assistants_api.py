@@ -39,6 +39,11 @@ from ..models import Assistant
 from ..models import AssistantListing
 from ..models import AssistantQueue
 from ..models import AssistantQueueListing
+from ..models import AssistantQueueUsersBulkAddRequest
+from ..models import AssistantQueueUsersBulkRemoveRequest
+from ..models import AssistantQueueUsersQueryRequest
+from ..models import AssistantQueueUsersQueryResponse
+from ..models import BulkResponse
 from ..models import ErrorBody
 
 class AgentAssistantsApi(object):
@@ -899,6 +904,279 @@ class AgentAssistantsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AssistantQueueListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_assistant_queue_users_bulk_add(self, assistant_id: str, queue_id: str, body: 'AssistantQueueUsersBulkAddRequest', **kwargs) -> 'BulkResponse':
+        """
+        Bulk add users to assistant-queue (requires manual assignment mode).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_assistant_queue_users_bulk_add(assistant_id, queue_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assistant_id: Assistant ID (required)
+        :param str queue_id: Queue ID (required)
+        :param AssistantQueueUsersBulkAddRequest body:  (required)
+        :return: BulkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assistant_id', 'queue_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_assistant_queue_users_bulk_add" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assistant_id' is set
+        if ('assistant_id' not in params) or (params['assistant_id'] is None):
+            raise ValueError("Missing the required parameter `assistant_id` when calling `post_assistant_queue_users_bulk_add`")
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `post_assistant_queue_users_bulk_add`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_assistant_queue_users_bulk_add`")
+
+
+        resource_path = '/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/add'.replace('{format}', 'json')
+        path_params = {}
+        if 'assistant_id' in params:
+            path_params['assistantId'] = params['assistant_id']
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_assistant_queue_users_bulk_remove(self, assistant_id: str, queue_id: str, body: 'AssistantQueueUsersBulkRemoveRequest', **kwargs) -> 'BulkResponse':
+        """
+        Bulk remove users from assistant-queue (requires manual assignment mode).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_assistant_queue_users_bulk_remove(assistant_id, queue_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assistant_id: Assistant ID (required)
+        :param str queue_id: Queue ID (required)
+        :param AssistantQueueUsersBulkRemoveRequest body:  (required)
+        :return: BulkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assistant_id', 'queue_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_assistant_queue_users_bulk_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assistant_id' is set
+        if ('assistant_id' not in params) or (params['assistant_id'] is None):
+            raise ValueError("Missing the required parameter `assistant_id` when calling `post_assistant_queue_users_bulk_remove`")
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `post_assistant_queue_users_bulk_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_assistant_queue_users_bulk_remove`")
+
+
+        resource_path = '/api/v2/assistants/{assistantId}/queues/{queueId}/users/bulk/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'assistant_id' in params:
+            path_params['assistantId'] = params['assistant_id']
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_assistant_queue_users_query(self, assistant_id: str, queue_id: str, body: 'AssistantQueueUsersQueryRequest', **kwargs) -> 'AssistantQueueUsersQueryResponse':
+        """
+        Query for users in the assistant-queue (requires manual assignment mode).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_assistant_queue_users_query(assistant_id, queue_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assistant_id: Assistant ID (required)
+        :param str queue_id: Queue ID (required)
+        :param AssistantQueueUsersQueryRequest body:  (required)
+        :param list[str] expand: Which fields, if any, to expand with.
+        :return: AssistantQueueUsersQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assistant_id', 'queue_id', 'body', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_assistant_queue_users_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assistant_id' is set
+        if ('assistant_id' not in params) or (params['assistant_id'] is None):
+            raise ValueError("Missing the required parameter `assistant_id` when calling `post_assistant_queue_users_query`")
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `post_assistant_queue_users_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_assistant_queue_users_query`")
+
+
+        resource_path = '/api/v2/assistants/{assistantId}/queues/{queueId}/users/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'assistant_id' in params:
+            path_params['assistantId'] = params['assistant_id']
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AssistantQueueUsersQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

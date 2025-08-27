@@ -781,7 +781,7 @@ class Recording(object):
     def max_allowed_restorations_for_org(self) -> int:
         """
         Gets the max_allowed_restorations_for_org of this Recording.
-        How many archive restorations the organization is allowed to have.
+        How many archive restorations the organization is allowed to have. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
 
         :return: The max_allowed_restorations_for_org of this Recording.
         :rtype: int
@@ -792,7 +792,7 @@ class Recording(object):
     def max_allowed_restorations_for_org(self, max_allowed_restorations_for_org: int) -> None:
         """
         Sets the max_allowed_restorations_for_org of this Recording.
-        How many archive restorations the organization is allowed to have.
+        How many archive restorations the organization is allowed to have. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
 
         :param max_allowed_restorations_for_org: The max_allowed_restorations_for_org of this Recording.
         :type: int
@@ -805,7 +805,7 @@ class Recording(object):
     def remaining_restorations_allowed_for_org(self) -> int:
         """
         Gets the remaining_restorations_allowed_for_org of this Recording.
-        The remaining archive restorations the organization has.
+        The remaining archive restorations the organization has. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
 
         :return: The remaining_restorations_allowed_for_org of this Recording.
         :rtype: int
@@ -816,7 +816,7 @@ class Recording(object):
     def remaining_restorations_allowed_for_org(self, remaining_restorations_allowed_for_org: int) -> None:
         """
         Sets the remaining_restorations_allowed_for_org of this Recording.
-        The remaining archive restorations the organization has.
+        The remaining archive restorations the organization has. Deprecated - Always returns 10000 since the restoration limit is no longer enforced.
 
         :param remaining_restorations_allowed_for_org: The remaining_restorations_allowed_for_org of this Recording.
         :type: int

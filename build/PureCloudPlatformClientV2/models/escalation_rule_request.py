@@ -241,7 +241,7 @@ class EscalationRuleRequest(object):
     def open_escalation(self) -> 'EscalationTarget':
         """
         Gets the open_escalation of this EscalationRuleRequest.
-        The target integration configuration used for an open social media message if the match criteria returns true.
+        The target integration configuration used for an open message escalation.
 
         :return: The open_escalation of this EscalationRuleRequest.
         :rtype: EscalationTarget
@@ -252,7 +252,7 @@ class EscalationRuleRequest(object):
     def open_escalation(self, open_escalation: 'EscalationTarget') -> None:
         """
         Sets the open_escalation of this EscalationRuleRequest.
-        The target integration configuration used for an open social media message if the match criteria returns true.
+        The target integration configuration used for an open message escalation.
 
         :param open_escalation: The open_escalation of this EscalationRuleRequest.
         :type: EscalationTarget
@@ -265,7 +265,7 @@ class EscalationRuleRequest(object):
     def facebook_escalation(self) -> 'EscalationTarget':
         """
         Gets the facebook_escalation of this EscalationRuleRequest.
-        The target integration configuration used for a Facebook social media message if the match criteria returns true.
+        The target integration configuration used for a Facebook message escalation.
 
         :return: The facebook_escalation of this EscalationRuleRequest.
         :rtype: EscalationTarget
@@ -276,7 +276,7 @@ class EscalationRuleRequest(object):
     def facebook_escalation(self, facebook_escalation: 'EscalationTarget') -> None:
         """
         Sets the facebook_escalation of this EscalationRuleRequest.
-        The target integration configuration used for a Facebook social media message if the match criteria returns true.
+        The target integration configuration used for a Facebook message escalation.
 
         :param facebook_escalation: The facebook_escalation of this EscalationRuleRequest.
         :type: EscalationTarget
@@ -289,7 +289,7 @@ class EscalationRuleRequest(object):
     def instagram_escalation(self) -> 'EscalationTarget':
         """
         Gets the instagram_escalation of this EscalationRuleRequest.
-        The target integration configuration used for an Instagram social media message if the match criteria returns true.
+        The target integration configuration used for an Instagram message escalation.
 
         :return: The instagram_escalation of this EscalationRuleRequest.
         :rtype: EscalationTarget
@@ -300,7 +300,7 @@ class EscalationRuleRequest(object):
     def instagram_escalation(self, instagram_escalation: 'EscalationTarget') -> None:
         """
         Sets the instagram_escalation of this EscalationRuleRequest.
-        The target integration configuration used for an Instagram social media message if the match criteria returns true.
+        The target integration configuration used for an Instagram message escalation.
 
         :param instagram_escalation: The instagram_escalation of this EscalationRuleRequest.
         :type: EscalationTarget
@@ -313,7 +313,7 @@ class EscalationRuleRequest(object):
     def twitter_escalation(self) -> 'EscalationTarget':
         """
         Gets the twitter_escalation of this EscalationRuleRequest.
-        The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true.
+        The target integration configuration used for a X (formerly Twitter) message escalation.
 
         :return: The twitter_escalation of this EscalationRuleRequest.
         :rtype: EscalationTarget
@@ -324,7 +324,7 @@ class EscalationRuleRequest(object):
     def twitter_escalation(self, twitter_escalation: 'EscalationTarget') -> None:
         """
         Sets the twitter_escalation of this EscalationRuleRequest.
-        The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true.
+        The target integration configuration used for a X (formerly Twitter) message escalation.
 
         :param twitter_escalation: The twitter_escalation of this EscalationRuleRequest.
         :type: EscalationTarget

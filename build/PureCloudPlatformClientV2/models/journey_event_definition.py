@@ -52,6 +52,8 @@ class JourneyEventDefinition(object):
             'id': 'str',
             'name': 'str',
             'source': 'str',
+            'rank': 'int',
+            'display_name': 'str',
             'description': 'str',
             'json_schema': 'JsonSchemaDocument',
             'self_uri': 'str'
@@ -61,6 +63,8 @@ class JourneyEventDefinition(object):
             'id': 'id',
             'name': 'name',
             'source': 'source',
+            'rank': 'rank',
+            'display_name': 'displayName',
             'description': 'description',
             'json_schema': 'jsonSchema',
             'self_uri': 'selfUri'
@@ -69,6 +73,8 @@ class JourneyEventDefinition(object):
         self._id = None
         self._name = None
         self._source = None
+        self._rank = None
+        self._display_name = None
         self._description = None
         self._json_schema = None
         self._self_uri = None
@@ -149,6 +155,54 @@ class JourneyEventDefinition(object):
             self._source = "outdated_sdk_version"
         else:
             self._source = source
+
+    @property
+    def rank(self) -> int:
+        """
+        Gets the rank of this JourneyEventDefinition.
+        The rank of the event definition
+
+        :return: The rank of this JourneyEventDefinition.
+        :rtype: int
+        """
+        return self._rank
+
+    @rank.setter
+    def rank(self, rank: int) -> None:
+        """
+        Sets the rank of this JourneyEventDefinition.
+        The rank of the event definition
+
+        :param rank: The rank of this JourneyEventDefinition.
+        :type: int
+        """
+        
+
+        self._rank = rank
+
+    @property
+    def display_name(self) -> str:
+        """
+        Gets the display_name of this JourneyEventDefinition.
+        The display name of the event definition
+
+        :return: The display_name of this JourneyEventDefinition.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name: str) -> None:
+        """
+        Sets the display_name of this JourneyEventDefinition.
+        The display name of the event definition
+
+        :param display_name: The display_name of this JourneyEventDefinition.
+        :type: str
+        """
+        
+
+        self._display_name = display_name
 
     @property
     def description(self) -> str:

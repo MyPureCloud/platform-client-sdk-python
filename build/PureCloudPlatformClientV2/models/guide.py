@@ -192,7 +192,7 @@ class Guide(object):
     def date_created(self) -> datetime:
         """
         Gets the date_created of this Guide.
-        The date and time the guide was created.. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date and time the guide was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this Guide.
         :rtype: datetime
@@ -203,7 +203,7 @@ class Guide(object):
     def date_created(self, date_created: datetime) -> None:
         """
         Sets the date_created of this Guide.
-        The date and time the guide was created.. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date and time the guide was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this Guide.
         :type: datetime

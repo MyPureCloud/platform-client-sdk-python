@@ -186,7 +186,7 @@ class MessagingCommunicationEndedEvent(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["Unknown", "Self", "Peer", "System", "Error", "Transfer", "TransferACD", "TransferUser"]
+        allowed_values = ["Unknown", "Self", "Peer", "System", "Error", "Transfer", "TransferACD", "TransferUser", "SessionExpired"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"

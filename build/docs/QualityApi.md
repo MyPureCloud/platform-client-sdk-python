@@ -3418,4 +3418,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

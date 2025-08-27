@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AppleOpaqueId
     from . import ContactAddress
     from . import ContactAddressableEntityRef
     from . import ContactIdentifier
@@ -83,6 +84,7 @@ class ExternalContact(object):
             'whats_app_id': 'WhatsAppId',
             'facebook_id': 'FacebookId',
             'instagram_id': 'InstagramId',
+            'apple_opaque_ids': 'list[AppleOpaqueId]',
             'external_ids': 'list[ExternalId]',
             'identifiers': 'list[ContactIdentifier]',
             'modify_date': 'datetime',
@@ -123,6 +125,7 @@ class ExternalContact(object):
             'whats_app_id': 'whatsAppId',
             'facebook_id': 'facebookId',
             'instagram_id': 'instagramId',
+            'apple_opaque_ids': 'appleOpaqueIds',
             'external_ids': 'externalIds',
             'identifiers': 'identifiers',
             'modify_date': 'modifyDate',
@@ -162,6 +165,7 @@ class ExternalContact(object):
         self._whats_app_id = None
         self._facebook_id = None
         self._instagram_id = None
+        self._apple_opaque_ids = None
         self._external_ids = None
         self._identifiers = None
         self._modify_date = None
@@ -659,6 +663,30 @@ class ExternalContact(object):
         
 
         self._instagram_id = instagram_id
+
+    @property
+    def apple_opaque_ids(self) -> List['AppleOpaqueId']:
+        """
+        Gets the apple_opaque_ids of this ExternalContact.
+        User information for an Apple account
+
+        :return: The apple_opaque_ids of this ExternalContact.
+        :rtype: list[AppleOpaqueId]
+        """
+        return self._apple_opaque_ids
+
+    @apple_opaque_ids.setter
+    def apple_opaque_ids(self, apple_opaque_ids: List['AppleOpaqueId']) -> None:
+        """
+        Sets the apple_opaque_ids of this ExternalContact.
+        User information for an Apple account
+
+        :param apple_opaque_ids: The apple_opaque_ids of this ExternalContact.
+        :type: list[AppleOpaqueId]
+        """
+        
+
+        self._apple_opaque_ids = apple_opaque_ids
 
     @property
     def external_ids(self) -> List['ExternalId']:

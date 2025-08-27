@@ -19,6 +19,8 @@
 | **requires_matching_skills** | bool | Whether to constrain shift trades to agents with matching skills | [optional] |
 | **requires_matching_planning_groups** | bool | Whether to constrain shift trades to agents with matching planning groups | [optional] |
 | **activity_category_rules** | [list[ShiftTradeActivityRule]](ShiftTradeActivityRule) | Rules that specify what to do with activity categories that are part of a shift defined in a trade | [optional] |
+| **external_activity_rules** | [list[ShiftTradeExternalActivityRule]](ShiftTradeExternalActivityRule) | Rules that specify what to do with external activities that are part of a shift | [optional] |
+| **external_activity_rule_ignores_activity_category_rule** | bool | Whether external activity rules ignore activity category rules | [optional] |
 | **max_trade_span_weeks** | int | The maximum number of weeks a shift trade can span | [optional] |
 | **max_trades_per_agent_per_week** | int | The maximum number of shift trades an agent can submit per week | [optional] |
 | **min_minutes_between_shifts** | int | The minimum number of minutes between shifts | [optional] |
@@ -28,4 +30,4 @@
 
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

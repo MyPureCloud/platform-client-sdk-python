@@ -12,11 +12,11 @@
 | **division_id** | str | The ID of the division the social escalation rule belongs to. | |
 | **description** | str | A description of the social escalation rule. | [optional] |
 | **status** | str | The status of the escalation rule. | [optional] |
-| **open_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for an open social media message if the match criteria returns true. | [optional] |
-| **facebook_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for a Facebook social media message if the match criteria returns true. | [optional] |
-| **instagram_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for an Instagram social media message if the match criteria returns true. | [optional] |
-| **twitter_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for a X (formerly Twitter) social media message if the match criteria returns true. | [optional] |
+| **open_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for an open message escalation. | [optional] |
+| **facebook_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for a Facebook message escalation. | [optional] |
+| **instagram_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for an Instagram message escalation. | [optional] |
+| **twitter_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for a X (formerly Twitter) message escalation. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 235.1.0_
+_PureCloudPlatformClientV2 236.0.0_

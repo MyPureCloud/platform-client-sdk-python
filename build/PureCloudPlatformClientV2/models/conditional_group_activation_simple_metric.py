@@ -83,7 +83,7 @@ class ConditionalGroupActivationSimpleMetric(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["EstimatedWaitTime", "ServiceLevel"]
+        allowed_values = ["EstimatedWaitTime", "IdleAgentCount", "ServiceLevel"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
