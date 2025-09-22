@@ -33,10 +33,10 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DurationCondition
+    from . import PolicyUser
     from . import Queue
     from . import Team
     from . import TimeAllowed
-    from . import User
     from . import WrapupCode
 
 class PolicyConditions(object):
@@ -54,7 +54,7 @@ class PolicyConditions(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'for_users': 'list[User]',
+            'for_users': 'list[PolicyUser]',
             'directions': 'list[str]',
             'date_ranges': 'list[str]',
             'media_types': 'list[str]',
@@ -91,24 +91,24 @@ class PolicyConditions(object):
         self._customer_participation = None
 
     @property
-    def for_users(self) -> List['User']:
+    def for_users(self) -> List['PolicyUser']:
         """
         Gets the for_users of this PolicyConditions.
-
+        List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
 
         :return: The for_users of this PolicyConditions.
-        :rtype: list[User]
+        :rtype: list[PolicyUser]
         """
         return self._for_users
 
     @for_users.setter
-    def for_users(self, for_users: List['User']) -> None:
+    def for_users(self, for_users: List['PolicyUser']) -> None:
         """
         Sets the for_users of this PolicyConditions.
-
+        List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
 
         :param for_users: The for_users of this PolicyConditions.
-        :type: list[User]
+        :type: list[PolicyUser]
         """
         
 

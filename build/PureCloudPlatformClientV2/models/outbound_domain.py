@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import EmailSetting
     from . import VerificationResult
 
 class OutboundDomain(object):
@@ -54,6 +55,7 @@ class OutboundDomain(object):
             'cname_verification_result': 'VerificationResult',
             'dkim_verification_result': 'VerificationResult',
             'sender_type': 'str',
+            'email_setting': 'EmailSetting',
             'self_uri': 'str'
         }
 
@@ -63,6 +65,7 @@ class OutboundDomain(object):
             'cname_verification_result': 'cnameVerificationResult',
             'dkim_verification_result': 'dkimVerificationResult',
             'sender_type': 'senderType',
+            'email_setting': 'emailSetting',
             'self_uri': 'selfUri'
         }
 
@@ -71,6 +74,7 @@ class OutboundDomain(object):
         self._cname_verification_result = None
         self._dkim_verification_result = None
         self._sender_type = None
+        self._email_setting = None
         self._self_uri = None
 
     @property
@@ -197,6 +201,30 @@ class OutboundDomain(object):
             self._sender_type = "outdated_sdk_version"
         else:
             self._sender_type = sender_type
+
+    @property
+    def email_setting(self) -> 'EmailSetting':
+        """
+        Gets the email_setting of this OutboundDomain.
+        The email settings associated with this domain.
+
+        :return: The email_setting of this OutboundDomain.
+        :rtype: EmailSetting
+        """
+        return self._email_setting
+
+    @email_setting.setter
+    def email_setting(self, email_setting: 'EmailSetting') -> None:
+        """
+        Sets the email_setting of this OutboundDomain.
+        The email settings associated with this domain.
+
+        :param email_setting: The email_setting of this OutboundDomain.
+        :type: EmailSetting
+        """
+        
+
+        self._email_setting = email_setting
 
     @property
     def self_uri(self) -> str:

@@ -11,7 +11,8 @@
 | **domain_name** | str |  | [optional] |
 | **sender_status** | str |  | [optional] |
 | **sender_type** | str |  | [optional] |
+| **email_setting** | [EmailSetting](EmailSetting) | The email settings associated with this domain. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

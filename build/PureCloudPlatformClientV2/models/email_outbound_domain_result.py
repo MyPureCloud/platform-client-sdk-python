@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DnsRecordEntry
+    from . import EmailSetting
 
 class EmailOutboundDomainResult(object):
     """
@@ -53,7 +54,8 @@ class EmailOutboundDomainResult(object):
             'dns_txt_sending_record': 'DnsRecordEntry',
             'domain_name': 'str',
             'sender_status': 'str',
-            'sender_type': 'str'
+            'sender_type': 'str',
+            'email_setting': 'EmailSetting'
         }
 
         self.attribute_map = {
@@ -61,7 +63,8 @@ class EmailOutboundDomainResult(object):
             'dns_txt_sending_record': 'dnsTxtSendingRecord',
             'domain_name': 'domainName',
             'sender_status': 'senderStatus',
-            'sender_type': 'senderType'
+            'sender_type': 'senderType',
+            'email_setting': 'emailSetting'
         }
 
         self._dns_cname_bounce_record = None
@@ -69,6 +72,7 @@ class EmailOutboundDomainResult(object):
         self._domain_name = None
         self._sender_status = None
         self._sender_type = None
+        self._email_setting = None
 
     @property
     def dns_cname_bounce_record(self) -> 'DnsRecordEntry':
@@ -199,6 +203,30 @@ class EmailOutboundDomainResult(object):
             self._sender_type = "outdated_sdk_version"
         else:
             self._sender_type = sender_type
+
+    @property
+    def email_setting(self) -> 'EmailSetting':
+        """
+        Gets the email_setting of this EmailOutboundDomainResult.
+        The email settings associated with this domain.
+
+        :return: The email_setting of this EmailOutboundDomainResult.
+        :rtype: EmailSetting
+        """
+        return self._email_setting
+
+    @email_setting.setter
+    def email_setting(self, email_setting: 'EmailSetting') -> None:
+        """
+        Sets the email_setting of this EmailOutboundDomainResult.
+        The email settings associated with this domain.
+
+        :param email_setting: The email_setting of this EmailOutboundDomainResult.
+        :type: EmailSetting
+        """
+        
+
+        self._email_setting = email_setting
 
     def to_dict(self):
         """

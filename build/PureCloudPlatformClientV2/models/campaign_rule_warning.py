@@ -86,7 +86,7 @@ class CampaignRuleWarning(object):
         """
         if isinstance(code, int):
             code = str(code)
-        allowed_values = ["ConditionsNoEntities", "ConditionsNoSequences", "ConditionsNoCampaigns", "ConditionsNoMessagingCampaigns", "ActionNoEntities", "ActionNoSequences", "ActionNoCampaigns", "ActionNoMessagingCampaigns", "NoQueue", "NoContentTemplates", "NoSmsContentTemplate", "NoEmailContentTemplate"]
+        allowed_values = ["ConditionsNoEntities", "ConditionsNoSequences", "ConditionsNoCampaigns", "ConditionsNoMessagingCampaigns", "ActionNoEntities", "ActionNoSequences", "ActionNoCampaigns", "ActionNoMessagingCampaigns", "NoQueue", "NoContentTemplates", "NoSmsContentTemplate", "NoEmailContentTemplate", "ConditionsWaitingForLinesOnlyPreviewOrExternal", "ConditionsWaitingForAgentsOnlyAgentless"]
         if code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for code -> " + code)
             self._code = "outdated_sdk_version"

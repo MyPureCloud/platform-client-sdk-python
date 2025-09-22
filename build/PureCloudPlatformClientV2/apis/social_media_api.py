@@ -46,6 +46,10 @@ from ..models import FacebookDataIngestionRuleRequest
 from ..models import FacebookDataIngestionRuleResponse
 from ..models import FacebookDataIngestionRuleVersionResponse
 from ..models import FacebookDataIngestionRuleVersionResponseEntityListing
+from ..models import InstagramDataIngestionRuleRequest
+from ..models import InstagramDataIngestionRuleResponse
+from ..models import InstagramDataIngestionRuleVersionResponse
+from ..models import InstagramDataIngestionRuleVersionResponseEntityListing
 from ..models import ManualEscalationRequest
 from ..models import ManualEscalationResponse
 from ..models import OpenDataIngestionRuleRequest
@@ -376,6 +380,93 @@ class SocialMediaApi(object):
             path_params['topicId'] = params['topic_id']
         if 'facebook_ingestion_rule_id' in params:
             path_params['facebookIngestionRuleId'] = params['facebook_ingestion_rule_id']
+
+        query_params = {}
+        if 'hard_delete' in params:
+            query_params['hardDelete'] = params['hard_delete']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(self, topic_id: str, instagram_ingestion_rule_id: str, **kwargs) -> None:
+        """
+        Delete a Instagram data ingestion rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str instagram_ingestion_rule_id: instagramIngestionRuleId (required)
+        :param bool hard_delete: Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'instagram_ingestion_rule_id', 'hard_delete']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+        # verify the required parameter 'instagram_ingestion_rule_id' is set
+        if ('instagram_ingestion_rule_id' not in params) or (params['instagram_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `instagram_ingestion_rule_id` when calling `delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'instagram_ingestion_rule_id' in params:
+            path_params['instagramIngestionRuleId'] = params['instagram_ingestion_rule_id']
 
         query_params = {}
         if 'hard_delete' in params:
@@ -1508,6 +1599,279 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(self, topic_id: str, instagram_ingestion_rule_id: str, **kwargs) -> 'InstagramDataIngestionRuleResponse':
+        """
+        Get a single Instagram data ingestion rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str instagram_ingestion_rule_id: instagramIngestionRuleId (required)
+        :param bool include_deleted: Determines whether to include soft-deleted items in the result.
+        :return: InstagramDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'instagram_ingestion_rule_id', 'include_deleted']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+        # verify the required parameter 'instagram_ingestion_rule_id' is set
+        if ('instagram_ingestion_rule_id' not in params) or (params['instagram_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `instagram_ingestion_rule_id` when calling `get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'instagram_ingestion_rule_id' in params:
+            path_params['instagramIngestionRuleId'] = params['instagram_ingestion_rule_id']
+
+        query_params = {}
+        if 'include_deleted' in params:
+            query_params['includeDeleted'] = params['include_deleted']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InstagramDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version(self, topic_id: str, instagram_ingestion_rule_id: str, data_ingestion_rule_version: str, **kwargs) -> 'InstagramDataIngestionRuleVersionResponse':
+        """
+        Get a single Instagram data ingestion rule version.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version(topic_id, instagram_ingestion_rule_id, data_ingestion_rule_version, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str instagram_ingestion_rule_id: instagramIngestionRuleId (required)
+        :param str data_ingestion_rule_version: version (required)
+        :param bool include_deleted: Determines whether to include soft-deleted item in the result.
+        :return: InstagramDataIngestionRuleVersionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'instagram_ingestion_rule_id', 'data_ingestion_rule_version', 'include_deleted']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version`")
+        # verify the required parameter 'instagram_ingestion_rule_id' is set
+        if ('instagram_ingestion_rule_id' not in params) or (params['instagram_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `instagram_ingestion_rule_id` when calling `get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version`")
+        # verify the required parameter 'data_ingestion_rule_version' is set
+        if ('data_ingestion_rule_version' not in params) or (params['data_ingestion_rule_version'] is None):
+            raise ValueError("Missing the required parameter `data_ingestion_rule_version` when calling `get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'instagram_ingestion_rule_id' in params:
+            path_params['instagramIngestionRuleId'] = params['instagram_ingestion_rule_id']
+        if 'data_ingestion_rule_version' in params:
+            path_params['dataIngestionRuleVersion'] = params['data_ingestion_rule_version']
+
+        query_params = {}
+        if 'include_deleted' in params:
+            query_params['includeDeleted'] = params['include_deleted']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InstagramDataIngestionRuleVersionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions(self, topic_id: str, instagram_ingestion_rule_id: str, **kwargs) -> 'InstagramDataIngestionRuleVersionResponseEntityListing':
+        """
+        Get the Instagram data ingestion rule versions.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions(topic_id, instagram_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str instagram_ingestion_rule_id: instagramIngestionRuleId (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param bool include_deleted: Determines whether to include soft-deleted items in the result.
+        :return: InstagramDataIngestionRuleVersionResponseEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'instagram_ingestion_rule_id', 'page_number', 'page_size', 'include_deleted']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions`")
+        # verify the required parameter 'instagram_ingestion_rule_id' is set
+        if ('instagram_ingestion_rule_id' not in params) or (params['instagram_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `instagram_ingestion_rule_id` when calling `get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'instagram_ingestion_rule_id' in params:
+            path_params['instagramIngestionRuleId'] = params['instagram_ingestion_rule_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'include_deleted' in params:
+            query_params['includeDeleted'] = params['include_deleted']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InstagramDataIngestionRuleVersionResponseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_socialmedia_topic_dataingestionrules_open_open_id(self, topic_id: str, open_id: str, **kwargs) -> 'OpenDataIngestionRuleResponse':
         """
         Get a single open data ingestion rule.
@@ -2306,6 +2670,93 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(self, topic_id: str, instagram_ingestion_rule_id: str, **kwargs) -> 'InstagramDataIngestionRuleResponse':
+        """
+        Update the status of a Instagram data ingestion rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str instagram_ingestion_rule_id: instagramIngestionRuleId (required)
+        :param DataIngestionRuleStatusPatchRequest body: 
+        :return: InstagramDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'instagram_ingestion_rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+        # verify the required parameter 'instagram_ingestion_rule_id' is set
+        if ('instagram_ingestion_rule_id' not in params) or (params['instagram_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `instagram_ingestion_rule_id` when calling `patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'instagram_ingestion_rule_id' in params:
+            path_params['instagramIngestionRuleId'] = params['instagram_ingestion_rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InstagramDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_socialmedia_topic_dataingestionrules_open_open_id(self, topic_id: str, open_id: str, **kwargs) -> 'OpenDataIngestionRuleResponse':
         """
         Update the status of a open data ingestion rule.
@@ -2869,6 +3320,87 @@ class SocialMediaApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FacebookDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_socialmedia_topic_dataingestionrules_instagram(self, topic_id: str, **kwargs) -> 'InstagramDataIngestionRuleResponse':
+        """
+        Create an Instagram data ingestion rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_topic_dataingestionrules_instagram(topic_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param InstagramDataIngestionRuleRequest body: 
+        :return: InstagramDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_topic_dataingestionrules_instagram" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `post_socialmedia_topic_dataingestionrules_instagram`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InstagramDataIngestionRuleResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3532,6 +4064,93 @@ class SocialMediaApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FacebookDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(self, topic_id: str, instagram_ingestion_rule_id: str, **kwargs) -> 'InstagramDataIngestionRuleResponse':
+        """
+        Update the Instagram data ingestion rule.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str instagram_ingestion_rule_id: instagramIngestionRuleId (required)
+        :param InstagramDataIngestionRuleRequest body: 
+        :return: InstagramDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'instagram_ingestion_rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+        # verify the required parameter 'instagram_ingestion_rule_id' is set
+        if ('instagram_ingestion_rule_id' not in params) or (params['instagram_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `instagram_ingestion_rule_id` when calling `put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'instagram_ingestion_rule_id' in params:
+            path_params['instagramIngestionRuleId'] = params['instagram_ingestion_rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InstagramDataIngestionRuleResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

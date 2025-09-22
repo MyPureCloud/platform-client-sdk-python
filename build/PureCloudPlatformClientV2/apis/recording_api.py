@@ -4322,7 +4322,7 @@ class RecordingApi(object):
     def put_recording_job(self, job_id: str, body: 'ExecuteRecordingJobsQuery', **kwargs) -> 'RecordingJob':
         """
         Execute the recording bulk job.
-        A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
+        Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4490,7 +4490,7 @@ class RecordingApi(object):
     def put_recording_mediaretentionpolicy(self, policy_id: str, body: 'Policy', **kwargs) -> 'Policy':
         """
         Update a media retention policy
-        Policy does not work retroactively
+        Policy does not work retroactively. In the conditions.forUsers section, each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -55,7 +55,6 @@ class UserRecording(object):
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'content_uri': 'str',
             'workspace': 'DomainEntityRef',
             'created_by': 'DomainEntityRef',
             'conversation': 'Conversation',
@@ -71,7 +70,6 @@ class UserRecording(object):
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'content_uri': 'contentUri',
             'workspace': 'workspace',
             'created_by': 'createdBy',
             'conversation': 'conversation',
@@ -86,7 +84,6 @@ class UserRecording(object):
         self._name = None
         self._date_created = None
         self._date_modified = None
-        self._content_uri = None
         self._workspace = None
         self._created_by = None
         self._conversation = None
@@ -191,30 +188,6 @@ class UserRecording(object):
         
 
         self._date_modified = date_modified
-
-    @property
-    def content_uri(self) -> str:
-        """
-        Gets the content_uri of this UserRecording.
-
-
-        :return: The content_uri of this UserRecording.
-        :rtype: str
-        """
-        return self._content_uri
-
-    @content_uri.setter
-    def content_uri(self, content_uri: str) -> None:
-        """
-        Sets the content_uri of this UserRecording.
-
-
-        :param content_uri: The content_uri of this UserRecording.
-        :type: str
-        """
-        
-
-        self._content_uri = content_uri
 
     @property
     def workspace(self) -> 'DomainEntityRef':

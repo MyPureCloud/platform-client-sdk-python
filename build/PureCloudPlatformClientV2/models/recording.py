@@ -352,7 +352,7 @@ class Recording(object):
         """
         if isinstance(media_subtype, int):
             media_subtype = str(media_subtype)
-        allowed_values = ["Trunk", "Station", "Consult", "Screen"]
+        allowed_values = ["Trunk", "Station", "Consult", "Screen", "Snippet"]
         if media_subtype.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_subtype -> " + media_subtype)
             self._media_subtype = "outdated_sdk_version"

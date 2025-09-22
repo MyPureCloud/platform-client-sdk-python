@@ -66,6 +66,7 @@ class NluDomainVersion(object):
             'intents': 'list[IntentDefinition]',
             'entity_types': 'list[NamedEntityTypeDefinition]',
             'entities': 'list[NamedEntityDefinition]',
+            'language_versions': 'dict(str, str)',
             'self_uri': 'str'
         }
 
@@ -84,6 +85,7 @@ class NluDomainVersion(object):
             'intents': 'intents',
             'entity_types': 'entityTypes',
             'entities': 'entities',
+            'language_versions': 'languageVersions',
             'self_uri': 'selfUri'
         }
 
@@ -101,6 +103,7 @@ class NluDomainVersion(object):
         self._intents = None
         self._entity_types = None
         self._entities = None
+        self._language_versions = None
         self._self_uri = None
 
     @property
@@ -448,6 +451,30 @@ class NluDomainVersion(object):
         
 
         self._entities = entities
+
+    @property
+    def language_versions(self) -> Dict[str, str]:
+        """
+        Gets the language_versions of this NluDomainVersion.
+        Map of language code to NLU domain version UUID for multilingual domains.
+
+        :return: The language_versions of this NluDomainVersion.
+        :rtype: dict(str, str)
+        """
+        return self._language_versions
+
+    @language_versions.setter
+    def language_versions(self, language_versions: Dict[str, str]) -> None:
+        """
+        Sets the language_versions of this NluDomainVersion.
+        Map of language code to NLU domain version UUID for multilingual domains.
+
+        :param language_versions: The language_versions of this NluDomainVersion.
+        :type: dict(str, str)
+        """
+        
+
+        self._language_versions = language_versions
 
     @property
     def self_uri(self) -> str:

@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ContentModeration
     from . import ConversationNormalizedMessage
     from . import SocialMediaMessageEscalationInfo
 
@@ -52,18 +53,21 @@ class SocialMediaDetailMessageContainer(object):
         self.swagger_types = {
             'id': 'str',
             'normalized_message': 'ConversationNormalizedMessage',
-            'escalation_info': 'SocialMediaMessageEscalationInfo'
+            'escalation_info': 'SocialMediaMessageEscalationInfo',
+            'content_moderation': 'ContentModeration'
         }
 
         self.attribute_map = {
             'id': 'id',
             'normalized_message': 'normalizedMessage',
-            'escalation_info': 'escalationInfo'
+            'escalation_info': 'escalationInfo',
+            'content_moderation': 'contentModeration'
         }
 
         self._id = None
         self._normalized_message = None
         self._escalation_info = None
+        self._content_moderation = None
 
     @property
     def id(self) -> str:
@@ -136,6 +140,30 @@ class SocialMediaDetailMessageContainer(object):
         
 
         self._escalation_info = escalation_info
+
+    @property
+    def content_moderation(self) -> 'ContentModeration':
+        """
+        Gets the content_moderation of this SocialMediaDetailMessageContainer.
+
+
+        :return: The content_moderation of this SocialMediaDetailMessageContainer.
+        :rtype: ContentModeration
+        """
+        return self._content_moderation
+
+    @content_moderation.setter
+    def content_moderation(self, content_moderation: 'ContentModeration') -> None:
+        """
+        Sets the content_moderation of this SocialMediaDetailMessageContainer.
+
+
+        :param content_moderation: The content_moderation of this SocialMediaDetailMessageContainer.
+        :type: ContentModeration
+        """
+        
+
+        self._content_moderation = content_moderation
 
     def to_dict(self):
         """

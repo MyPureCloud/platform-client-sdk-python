@@ -46,6 +46,9 @@ from ..models import GuideJob
 from ..models import GuideVersion
 from ..models import GuideVersionPublishJob
 from ..models import GuideVersionPublishJobRequest
+from ..models import SummarySetting
+from ..models import SummarySettingEntityListing
+from ..models import SummarySettingWithTranscript
 from ..models import UpdateGuide
 from ..models import UpdateGuideVersion
 
@@ -64,6 +67,86 @@ class AIStudioApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_conversations_summaries_setting(self, summary_setting_id: str, **kwargs) -> None:
+        """
+        Delete a summary setting.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_conversations_summaries_setting(summary_setting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str summary_setting_id: Summary setting id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['summary_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_conversations_summaries_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'summary_setting_id' is set
+        if ('summary_setting_id' not in params) or (params['summary_setting_id'] is None):
+            raise ValueError("Missing the required parameter `summary_setting_id` when calling `delete_conversations_summaries_setting`")
+
+        if 'summary_setting_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
+            raise ValueError("Invalid value for parameter `summary_setting_id` when calling `delete_conversations_summaries_setting`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/conversations/summaries/settings/{summarySettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'summary_setting_id' in params:
+            path_params['summarySettingId'] = params['summary_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_guide_jobs(self, guide_id: str, **kwargs) -> 'GuideJob':
         """
@@ -140,6 +223,182 @@ class AIStudioApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='GuideJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_summaries_setting(self, summary_setting_id: str, **kwargs) -> 'SummarySetting':
+        """
+        Receive a summary setting.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_summaries_setting(summary_setting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str summary_setting_id: Summary setting id (required)
+        :return: SummarySetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['summary_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_summaries_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'summary_setting_id' is set
+        if ('summary_setting_id' not in params) or (params['summary_setting_id'] is None):
+            raise ValueError("Missing the required parameter `summary_setting_id` when calling `get_conversations_summaries_setting`")
+
+        if 'summary_setting_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
+            raise ValueError("Invalid value for parameter `summary_setting_id` when calling `get_conversations_summaries_setting`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/conversations/summaries/settings/{summarySettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'summary_setting_id' in params:
+            path_params['summarySettingId'] = params['summary_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SummarySetting',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_summaries_settings(self, **kwargs) -> 'SummarySettingEntityListing':
+        """
+        Get all summary settings.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_summaries_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language: Filter by matching language - case insensitive.
+        :param str name: Filter by partially matching name - case insensitive.
+        :param str sort_by: Sort by. Default value dateModified.
+        :param str sort_order: Sort Order. Default value desc.
+        :param int page_number: Page number.
+        :param int page_size: Page size. The maximum page size is 100.
+        :return: SummarySettingEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language', 'name', 'sort_by', 'sort_order', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_summaries_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        if 'page_number' in params and params['page_number'] < 1: 
+            raise ValueError("Invalid value for parameter `page_number` when calling `get_conversations_summaries_settings`, must be a value greater than or equal to `1`")
+        if 'page_size' in params and params['page_size'] > 100: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_conversations_summaries_settings`, must be a value less than or equal to  `100`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_conversations_summaries_settings`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/conversations/summaries/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'language' in params:
+            query_params['language'] = params['language']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SummarySettingEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -833,6 +1092,162 @@ class AIStudioApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_summaries_preview(self, body: 'SummarySettingWithTranscript', **kwargs) -> None:
+        """
+        Trigger summary preview event generation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_summaries_preview(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SummarySettingWithTranscript body:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_summaries_preview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_summaries_preview`")
+
+
+        resource_path = '/api/v2/conversations/summaries/preview'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_summaries_settings(self, body: 'SummarySetting', **kwargs) -> 'SummarySetting':
+        """
+        Create a summary setting.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_summaries_settings(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SummarySetting body:  (required)
+        :return: SummarySetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_summaries_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_summaries_settings`")
+
+
+        resource_path = '/api/v2/conversations/summaries/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SummarySetting',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_guide_version_jobs(self, guide_id: str, version_id: str, body: 'GuideVersionPublishJobRequest', **kwargs) -> 'GuideVersionPublishJob':
         """
         Start the publishing of a guide version.
@@ -1160,6 +1575,92 @@ class AIStudioApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='GuideContentGenerationJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_conversations_summaries_setting(self, summary_setting_id: str, body: 'SummarySetting', **kwargs) -> 'SummarySetting':
+        """
+        Update a summary setting.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversations_summaries_setting(summary_setting_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str summary_setting_id: Summary setting id (required)
+        :param SummarySetting body:  (required)
+        :return: SummarySetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['summary_setting_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversations_summaries_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'summary_setting_id' is set
+        if ('summary_setting_id' not in params) or (params['summary_setting_id'] is None):
+            raise ValueError("Missing the required parameter `summary_setting_id` when calling `put_conversations_summaries_setting`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_conversations_summaries_setting`")
+
+        if 'summary_setting_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
+            raise ValueError("Invalid value for parameter `summary_setting_id` when calling `put_conversations_summaries_setting`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/conversations/summaries/settings/{summarySettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'summary_setting_id' in params:
+            path_params['summarySettingId'] = params['summary_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SummarySetting',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

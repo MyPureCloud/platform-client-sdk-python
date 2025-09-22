@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
+    from . import EmailSetting
     from . import MailFromResult
 
 class InboundDomain(object):
@@ -56,6 +57,7 @@ class InboundDomain(object):
             'sub_domain': 'bool',
             'mail_from_settings': 'MailFromResult',
             'custom_smtp_server': 'DomainEntityRef',
+            'email_setting': 'EmailSetting',
             'self_uri': 'str'
         }
 
@@ -66,6 +68,7 @@ class InboundDomain(object):
             'sub_domain': 'subDomain',
             'mail_from_settings': 'mailFromSettings',
             'custom_smtp_server': 'customSMTPServer',
+            'email_setting': 'emailSetting',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +78,7 @@ class InboundDomain(object):
         self._sub_domain = None
         self._mail_from_settings = None
         self._custom_smtp_server = None
+        self._email_setting = None
         self._self_uri = None
 
     @property
@@ -225,6 +229,30 @@ class InboundDomain(object):
         
 
         self._custom_smtp_server = custom_smtp_server
+
+    @property
+    def email_setting(self) -> 'EmailSetting':
+        """
+        Gets the email_setting of this InboundDomain.
+        The email settings associated with this domain.
+
+        :return: The email_setting of this InboundDomain.
+        :rtype: EmailSetting
+        """
+        return self._email_setting
+
+    @email_setting.setter
+    def email_setting(self, email_setting: 'EmailSetting') -> None:
+        """
+        Sets the email_setting of this InboundDomain.
+        The email settings associated with this domain.
+
+        :param email_setting: The email_setting of this InboundDomain.
+        :type: EmailSetting
+        """
+        
+
+        self._email_setting = email_setting
 
     @property
     def self_uri(self) -> str:

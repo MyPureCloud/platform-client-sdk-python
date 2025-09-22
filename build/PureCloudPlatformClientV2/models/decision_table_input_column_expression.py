@@ -107,7 +107,7 @@ class DecisionTableInputColumnExpression(object):
         """
         if isinstance(comparator, int):
             comparator = str(comparator)
-        allowed_values = ["Equals", "NotEquals", "GreaterThan", "GreaterThanOrEquals", "LessThan", "LessThanOrEquals", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith", "Contains", "NotContains", "ContainsAny", "NotContainsAny", "ContainsAll", "NotContainsAll", "ContainsExactly", "NotContainsExactly"]
+        allowed_values = ["Equals", "NotEquals", "GreaterThan", "GreaterThanOrEquals", "LessThan", "LessThanOrEquals", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith", "Contains", "NotContains", "ContainsAny", "NotContainsAny", "ContainsAll", "NotContainsAll", "ContainsExactly", "NotContainsExactly", "ContainsSequence", "NotContainsSequence", "IsSubset", "NotIsSubset", "IsSubsequence", "NotIsSubsequence"]
         if comparator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for comparator -> " + comparator)
             self._comparator = "outdated_sdk_version"

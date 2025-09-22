@@ -525,4 +525,4 @@ except ApiException as e:
 [**TeamsSearchResponse**](TeamsSearchResponse)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

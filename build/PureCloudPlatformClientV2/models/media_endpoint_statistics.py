@@ -60,7 +60,9 @@ class MediaEndpointStatistics(object):
             'rtp': 'MediaRtpStatistics',
             'reconnect_attempts': 'int',
             'source_type': 'str',
-            'client_info': 'MediaStatisticsClientInfo'
+            'client_info': 'MediaStatisticsClientInfo',
+            'date_created': 'datetime',
+            'date_processed': 'datetime'
         }
 
         self.attribute_map = {
@@ -71,7 +73,9 @@ class MediaEndpointStatistics(object):
             'rtp': 'rtp',
             'reconnect_attempts': 'reconnectAttempts',
             'source_type': 'sourceType',
-            'client_info': 'clientInfo'
+            'client_info': 'clientInfo',
+            'date_created': 'dateCreated',
+            'date_processed': 'dateProcessed'
         }
 
         self._trunk = None
@@ -82,6 +86,8 @@ class MediaEndpointStatistics(object):
         self._reconnect_attempts = None
         self._source_type = None
         self._client_info = None
+        self._date_created = None
+        self._date_processed = None
 
     @property
     def trunk(self) -> 'MediaStatisticsTrunkInfo':
@@ -279,6 +285,54 @@ class MediaEndpointStatistics(object):
         
 
         self._client_info = client_info
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this MediaEndpointStatistics.
+        Media endpoint statistics creation time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this MediaEndpointStatistics.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this MediaEndpointStatistics.
+        Media endpoint statistics creation time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this MediaEndpointStatistics.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
+
+    @property
+    def date_processed(self) -> datetime:
+        """
+        Gets the date_processed of this MediaEndpointStatistics.
+        Media endpoint statistics processed time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_processed of this MediaEndpointStatistics.
+        :rtype: datetime
+        """
+        return self._date_processed
+
+    @date_processed.setter
+    def date_processed(self, date_processed: datetime) -> None:
+        """
+        Sets the date_processed of this MediaEndpointStatistics.
+        Media endpoint statistics processed time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_processed: The date_processed of this MediaEndpointStatistics.
+        :type: datetime
+        """
+        
+
+        self._date_processed = date_processed
 
     def to_dict(self):
         """

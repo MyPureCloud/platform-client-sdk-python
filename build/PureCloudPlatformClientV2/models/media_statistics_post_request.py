@@ -53,20 +53,23 @@ class MediaStatisticsPostRequest(object):
             'source_type': 'str',
             'client_info': 'MediaStatisticsClientInfo',
             'rtp': 'MediaRtpStatistics',
-            'reconnect_attempts': 'int'
+            'reconnect_attempts': 'int',
+            'date_created': 'datetime'
         }
 
         self.attribute_map = {
             'source_type': 'sourceType',
             'client_info': 'clientInfo',
             'rtp': 'rtp',
-            'reconnect_attempts': 'reconnectAttempts'
+            'reconnect_attempts': 'reconnectAttempts',
+            'date_created': 'dateCreated'
         }
 
         self._source_type = None
         self._client_info = None
         self._rtp = None
         self._reconnect_attempts = None
+        self._date_created = None
 
     @property
     def source_type(self) -> str:
@@ -168,6 +171,30 @@ class MediaStatisticsPostRequest(object):
         
 
         self._reconnect_attempts = reconnect_attempts
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this MediaStatisticsPostRequest.
+        Media endpoint statistics creation time. Format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this MediaStatisticsPostRequest.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this MediaStatisticsPostRequest.
+        Media endpoint statistics creation time. Format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this MediaStatisticsPostRequest.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
 
     def to_dict(self):
         """

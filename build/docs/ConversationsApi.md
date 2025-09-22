@@ -205,12 +205,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_call_participant_replace**](#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_call_participant_voice_consult**](#post_conversations_call_participant_voice_consult) | Initiate voice consult transfer|
 |[**post_conversations_call_participants**](#post_conversations_call_participants) | Add participants to a conversation|
+|[**post_conversations_call_participants_user_user_id**](#post_conversations_call_participants_user_user_id) | Add participants to a conversation without a user context|
 |[**post_conversations_callback_participant_communication_wrapup**](#post_conversations_callback_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_callback_participant_replace**](#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_callbacks**](#post_conversations_callbacks) | Create a Callback|
 |[**post_conversations_callbacks_bulk_disconnect**](#post_conversations_callbacks_bulk_disconnect) | Disconnect multiple scheduled callbacks|
 |[**post_conversations_callbacks_bulk_update**](#post_conversations_callbacks_bulk_update) | Update multiple scheduled callbacks|
 |[**post_conversations_calls**](#post_conversations_calls) | Create a call conversation|
+|[**post_conversations_calls_user_user_id**](#post_conversations_calls_user_user_id) | Create a call conversation on behalf of a user|
 |[**post_conversations_chat_communication_messages**](#post_conversations_chat_communication_messages) | Send a message on behalf of a communication in a chat conversation.|
 |[**post_conversations_chat_communication_typing**](#post_conversations_chat_communication_typing) | Send a typing-indicator on behalf of a communication in a chat conversation.|
 |[**post_conversations_chat_participant_communication_wrapup**](#post_conversations_chat_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
@@ -7808,6 +7810,7 @@ Wraps PATCH /api/v2/conversations/messages/{conversationId}
 Requires ANY permissions: 
 
 * conversation:communication:disconnect
+* conversation:message:park
 
 ### Example
 
@@ -10359,6 +10362,58 @@ except ApiException as e:
 [**Conversation**](Conversation)
 
 
+## post_conversations_call_participants_user_user_id
+
+> [**Conversation**](Conversation) post_conversations_call_participants_user_user_id(conversation_id, user_id, body)
+
+
+Add participants to a conversation without a user context
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/user/{userId} 
+
+Requires ANY permissions: 
+
+* conversation:agentlessCall:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+user_id = 'user_id_example' # str | userId
+body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
+
+try:
+    # Add participants to a conversation without a user context
+    api_response = api_instance.post_conversations_call_participants_user_user_id(conversation_id, user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participants_user_user_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **user_id** | **str**| userId |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
+
+### Return type
+
+[**Conversation**](Conversation)
+
+
 ## post_conversations_callback_participant_communication_wrapup
 
 >  post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
@@ -10647,6 +10702,57 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateCallRequest**](CreateCallRequest)| Call request |  |
+
+### Return type
+
+[**CreateCallResponse**](CreateCallResponse)
+
+
+## post_conversations_calls_user_user_id
+
+> [**CreateCallResponse**](CreateCallResponse) post_conversations_calls_user_user_id(user_id, body)
+
+
+Create a call conversation on behalf of a user
+
+Wraps POST /api/v2/conversations/calls/user/{userId} 
+
+Requires ANY permissions: 
+
+* conversation:agentlessCall:add
+* conversation:call:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+user_id = 'user_id_example' # str | userId
+body = PureCloudPlatformClientV2.CreateCallRequest() # CreateCallRequest | Call request
+
+try:
+    # Create a call conversation on behalf of a user
+    api_response = api_instance.post_conversations_calls_user_user_id(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_calls_user_user_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| userId |  |
 | **body** | [**CreateCallRequest**](CreateCallRequest)| Call request |  |
 
 ### Return type
@@ -11303,6 +11409,8 @@ void (empty response body)
 
 
 Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+
+This request is not valid when using the Client Credentials OAuth grant.
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/reconnect 
 
@@ -14367,4 +14475,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

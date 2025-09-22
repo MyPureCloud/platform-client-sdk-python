@@ -17,6 +17,8 @@ class PureCloudRegionHosts(Enum):
     me_central_1 = "https://api.mec1.pure.cloud"
     ap_northeast_3 = "https://api.apne3.pure.cloud"
     eu_central_2 = "https://api.euc2.pure.cloud"
+    mx_central_1 = "https://api.mxc1.pure.cloud"
+    ap_southeast_1 = "https://api.apse1.pure.cloud"
 
     def __init__(self, apihost):
         self.apihost = apihost

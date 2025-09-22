@@ -8,7 +8,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_userrecording**](#delete_userrecording) | Delete a user recording.|
 |[**get_userrecording**](#get_userrecording) | Get a user recording.|
-|[**get_userrecording_media**](#get_userrecording_media) | Download a user recording.|
 |[**get_userrecording_transcoding**](#get_userrecording_transcoding) | Download a user recording.|
 |[**get_userrecordings**](#get_userrecordings) | Get a list of user recordings.|
 |[**get_userrecordings_summary**](#get_userrecordings_summary) | Get user recording summary|
@@ -109,62 +108,6 @@ except ApiException as e:
 ### Return type
 
 [**UserRecording**](UserRecording)
-
-
-## get_userrecording_media
-
-> [**DownloadResponse**](DownloadResponse) get_userrecording_media(recording_id, format_id=format_id, async=async)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Download a user recording.
-
-API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-
-Wraps GET /api/v2/userrecordings/{recordingId}/media 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.UserRecordingsApi()
-recording_id = 'recording_id_example' # str | User Recording ID
-format_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')
-async = True # bool | When set to true, api will return 202 response until the recording is ready for download (optional)
-
-try:
-    # Download a user recording.
-    api_response = api_instance.get_userrecording_media(recording_id, format_id=format_id, async=async)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UserRecordingsApi->get_userrecording_media: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **recording_id** | **str**| User Recording ID |  |
-| **format_id** | **str**| The desired media format. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-| **async** | **bool**| When set to true, api will return 202 response until the recording is ready for download | [optional]  |
-
-### Return type
-
-[**DownloadResponse**](DownloadResponse)
 
 
 ## get_userrecording_transcoding
@@ -362,4 +305,4 @@ except ApiException as e:
 [**UserRecording**](UserRecording)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

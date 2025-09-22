@@ -59,6 +59,7 @@ from ..models import EstimatedWaitTimePredictions
 from ..models import IdentityResolutionConfig
 from ..models import IdentityResolutionQueueConfig
 from ..models import InboundDomain
+from ..models import InboundDomainCreateRequest
 from ..models import InboundDomainEntityListing
 from ..models import InboundDomainPatchRequest
 from ..models import InboundRoute
@@ -67,8 +68,8 @@ from ..models import KeyPerformanceIndicator
 from ..models import Language
 from ..models import LanguageEntityListing
 from ..models import OutboundDomain
+from ..models import OutboundDomainCreateRequest
 from ..models import OutboundDomainEntityListing
-from ..models import OutboundDomainRequest
 from ..models import PatchPredictorRequest
 from ..models import Predictor
 from ..models import PredictorListing
@@ -2527,12 +2528,13 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str domain_id: domain ID (required)
+        :param str expand: Expand options. Valid values: settings
         :return: InboundDomain
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['domain_id']
+        all_params = ['domain_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2556,6 +2558,8 @@ class RoutingApi(object):
             path_params['domainId'] = params['domain_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -2869,12 +2873,13 @@ class RoutingApi(object):
         :param int page_number: Page number
         :param bool exclude_status: Exclude MX record data
         :param str filter: Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+        :param str expand: Expand options. Valid values: settings
         :return: InboundDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'exclude_status', 'filter']
+        all_params = ['page_size', 'page_number', 'exclude_status', 'filter', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2901,6 +2906,8 @@ class RoutingApi(object):
             query_params['excludeStatus'] = params['exclude_status']
         if 'filter' in params:
             query_params['filter'] = params['filter']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -2950,12 +2957,13 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str domain_id: domain ID (required)
+        :param str expand: Expand options. Valid values: settings
         :return: OutboundDomain
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['domain_id']
+        all_params = ['domain_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2979,6 +2987,8 @@ class RoutingApi(object):
             path_params['domainId'] = params['domain_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -3108,12 +3118,13 @@ class RoutingApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str filter: Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+        :param str expand: Expand options. Valid values: settings
         :return: OutboundDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'filter']
+        all_params = ['page_size', 'page_number', 'filter', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -3138,6 +3149,8 @@ class RoutingApi(object):
             query_params['pageNumber'] = params['page_number']
         if 'filter' in params:
             query_params['filter'] = params['filter']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -9771,7 +9784,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_domains(self, body: 'InboundDomain', **kwargs) -> 'InboundDomain':
+    def post_routing_email_domains(self, body: 'InboundDomainCreateRequest', **kwargs) -> 'InboundDomain':
         """
         Create a domain
         
@@ -9786,7 +9799,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param InboundDomain body: Domain (required)
+        :param InboundDomainCreateRequest body: Domain (required)
         :return: InboundDomain
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9849,7 +9862,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_outbound_domains(self, body: 'OutboundDomainRequest', **kwargs) -> 'EmailOutboundDomainResult':
+    def post_routing_email_outbound_domains(self, body: 'OutboundDomainCreateRequest', **kwargs) -> 'EmailOutboundDomainResult':
         """
         Create a domain
         
@@ -9864,7 +9877,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param OutboundDomainRequest body: Domain (required)
+        :param OutboundDomainCreateRequest body: Domain (required)
         :return: EmailOutboundDomainResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9927,7 +9940,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_email_outbound_domains_simulated(self, body: 'OutboundDomainRequest', **kwargs) -> 'EmailOutboundDomainResult':
+    def post_routing_email_outbound_domains_simulated(self, body: 'OutboundDomainCreateRequest', **kwargs) -> 'EmailOutboundDomainResult':
         """
         Create a simulated domain
         
@@ -9942,7 +9955,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param OutboundDomainRequest body: Domain (required)
+        :param OutboundDomainCreateRequest body: Domain (required)
         :return: EmailOutboundDomainResult
                  If the method is called asynchronously,
                  returns the request thread.

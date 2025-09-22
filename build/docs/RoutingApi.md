@@ -1597,7 +1597,7 @@ This endpoint does not need any parameters.
 
 ## get_routing_email_domain
 
-> [**InboundDomain**](InboundDomain) get_routing_email_domain(domain_id)
+> [**InboundDomain**](InboundDomain) get_routing_email_domain(domain_id, expand=expand)
 
 
 Get domain
@@ -1622,10 +1622,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 domain_id = 'domain_id_example' # str | domain ID
+expand = 'expand_example' # str | Expand options. Valid values: settings (optional)
 
 try:
     # Get domain
-    api_response = api_instance.get_routing_email_domain(domain_id)
+    api_response = api_instance.get_routing_email_domain(domain_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_domain: %s\n" % e)
@@ -1637,6 +1638,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
+| **expand** | **str**| Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -1804,7 +1806,7 @@ except ApiException as e:
 
 ## get_routing_email_domains
 
-> [**InboundDomainEntityListing**](InboundDomainEntityListing) get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter)
+> [**InboundDomainEntityListing**](InboundDomainEntityListing) get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter, expand=expand)
 
 
 Get domains
@@ -1832,10 +1834,11 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 exclude_status = False # bool | Exclude MX record data (optional) (default to False)
 filter = 'filter_example' # str | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
+expand = 'expand_example' # str | Expand options. Valid values: settings (optional)
 
 try:
     # Get domains
-    api_response = api_instance.get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter)
+    api_response = api_instance.get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_domains: %s\n" % e)
@@ -1850,6 +1853,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **exclude_status** | **bool**| Exclude MX record data | [optional] [default to False] |
 | **filter** | **str**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
+| **expand** | **str**| Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -1858,7 +1862,7 @@ except ApiException as e:
 
 ## get_routing_email_outbound_domain
 
-> [**OutboundDomain**](OutboundDomain) get_routing_email_outbound_domain(domain_id)
+> [**OutboundDomain**](OutboundDomain) get_routing_email_outbound_domain(domain_id, expand=expand)
 
 
 Get domain
@@ -1883,10 +1887,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 domain_id = 'domain_id_example' # str | domain ID
+expand = 'expand_example' # str | Expand options. Valid values: settings (optional)
 
 try:
     # Get domain
-    api_response = api_instance.get_routing_email_outbound_domain(domain_id)
+    api_response = api_instance.get_routing_email_outbound_domain(domain_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_outbound_domain: %s\n" % e)
@@ -1898,6 +1903,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
+| **expand** | **str**| Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -1954,7 +1960,7 @@ except ApiException as e:
 
 ## get_routing_email_outbound_domains
 
-> [**OutboundDomainEntityListing**](OutboundDomainEntityListing) get_routing_email_outbound_domains(page_size=page_size, page_number=page_number, filter=filter)
+> [**OutboundDomainEntityListing**](OutboundDomainEntityListing) get_routing_email_outbound_domains(page_size=page_size, page_number=page_number, filter=filter, expand=expand)
 
 
 Get outbound domains
@@ -1981,10 +1987,11 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 filter = 'filter_example' # str | Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. (optional)
+expand = 'expand_example' # str | Expand options. Valid values: settings (optional)
 
 try:
     # Get outbound domains
-    api_response = api_instance.get_routing_email_outbound_domains(page_size=page_size, page_number=page_number, filter=filter)
+    api_response = api_instance.get_routing_email_outbound_domains(page_size=page_size, page_number=page_number, filter=filter, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_email_outbound_domains: %s\n" % e)
@@ -1998,6 +2005,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter** | **str**| Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter. | [optional]  |
+| **expand** | **str**| Expand options. Valid values: settings | [optional] <br />**Values**: settings |
 
 ### Return type
 
@@ -6132,7 +6140,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.InboundDomain() # InboundDomain | Domain
+body = PureCloudPlatformClientV2.InboundDomainCreateRequest() # InboundDomainCreateRequest | Domain
 
 try:
     # Create a domain
@@ -6147,7 +6155,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**InboundDomain**](InboundDomain)| Domain |  |
+| **body** | [**InboundDomainCreateRequest**](InboundDomainCreateRequest)| Domain |  |
 
 ### Return type
 
@@ -6180,7 +6188,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.OutboundDomainRequest() # OutboundDomainRequest | Domain
+body = PureCloudPlatformClientV2.OutboundDomainCreateRequest() # OutboundDomainCreateRequest | Domain
 
 try:
     # Create a domain
@@ -6195,7 +6203,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain |  |
+| **body** | [**OutboundDomainCreateRequest**](OutboundDomainCreateRequest)| Domain |  |
 
 ### Return type
 
@@ -6228,7 +6236,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.OutboundDomainRequest() # OutboundDomainRequest | Domain
+body = PureCloudPlatformClientV2.OutboundDomainCreateRequest() # OutboundDomainCreateRequest | Domain
 
 try:
     # Create a simulated domain
@@ -6243,7 +6251,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundDomainRequest**](OutboundDomainRequest)| Domain |  |
+| **body** | [**OutboundDomainCreateRequest**](OutboundDomainCreateRequest)| Domain |  |
 
 ### Return type
 
@@ -7987,4 +7995,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

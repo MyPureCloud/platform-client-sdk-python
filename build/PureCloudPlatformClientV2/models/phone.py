@@ -79,6 +79,7 @@ class Phone(object):
             'properties': 'dict(str, object)',
             'capabilities': 'PhoneCapabilities',
             'web_rtc_user': 'DomainEntityRef',
+            'stand_alone': 'bool',
             'primary_edge': 'Edge',
             'secondary_edge': 'Edge',
             'self_uri': 'str'
@@ -108,6 +109,7 @@ class Phone(object):
             'properties': 'properties',
             'capabilities': 'capabilities',
             'web_rtc_user': 'webRtcUser',
+            'stand_alone': 'standAlone',
             'primary_edge': 'primaryEdge',
             'secondary_edge': 'secondaryEdge',
             'self_uri': 'selfUri'
@@ -136,6 +138,7 @@ class Phone(object):
         self._properties = None
         self._capabilities = None
         self._web_rtc_user = None
+        self._stand_alone = None
         self._primary_edge = None
         self._secondary_edge = None
         self._self_uri = None
@@ -696,6 +699,30 @@ class Phone(object):
         
 
         self._web_rtc_user = web_rtc_user
+
+    @property
+    def stand_alone(self) -> bool:
+        """
+        Gets the stand_alone of this Phone.
+        Boolean indicating whether the phone is standAlone.
+
+        :return: The stand_alone of this Phone.
+        :rtype: bool
+        """
+        return self._stand_alone
+
+    @stand_alone.setter
+    def stand_alone(self, stand_alone: bool) -> None:
+        """
+        Sets the stand_alone of this Phone.
+        Boolean indicating whether the phone is standAlone.
+
+        :param stand_alone: The stand_alone of this Phone.
+        :type: bool
+        """
+        
+
+        self._stand_alone = stand_alone
 
     @property
     def primary_edge(self) -> 'Edge':

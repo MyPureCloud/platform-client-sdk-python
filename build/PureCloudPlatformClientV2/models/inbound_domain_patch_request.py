@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
+    from . import EmailSettingReference
     from . import ImapSettings
     from . import MailFromResult
 
@@ -53,18 +54,21 @@ class InboundDomainPatchRequest(object):
         self.swagger_types = {
             'mail_from_settings': 'MailFromResult',
             'custom_smtp_server': 'DomainEntityRef',
-            'imap_settings': 'ImapSettings'
+            'imap_settings': 'ImapSettings',
+            'email_setting': 'EmailSettingReference'
         }
 
         self.attribute_map = {
             'mail_from_settings': 'mailFromSettings',
             'custom_smtp_server': 'customSMTPServer',
-            'imap_settings': 'imapSettings'
+            'imap_settings': 'imapSettings',
+            'email_setting': 'emailSetting'
         }
 
         self._mail_from_settings = None
         self._custom_smtp_server = None
         self._imap_settings = None
+        self._email_setting = None
 
     @property
     def mail_from_settings(self) -> 'MailFromResult':
@@ -137,6 +141,30 @@ class InboundDomainPatchRequest(object):
         
 
         self._imap_settings = imap_settings
+
+    @property
+    def email_setting(self) -> 'EmailSettingReference':
+        """
+        Gets the email_setting of this InboundDomainPatchRequest.
+        The email settings to associate with this domain.
+
+        :return: The email_setting of this InboundDomainPatchRequest.
+        :rtype: EmailSettingReference
+        """
+        return self._email_setting
+
+    @email_setting.setter
+    def email_setting(self, email_setting: 'EmailSettingReference') -> None:
+        """
+        Sets the email_setting of this InboundDomainPatchRequest.
+        The email settings to associate with this domain.
+
+        :param email_setting: The email_setting of this InboundDomainPatchRequest.
+        :type: EmailSettingReference
+        """
+        
+
+        self._email_setting = email_setting
 
     def to_dict(self):
         """

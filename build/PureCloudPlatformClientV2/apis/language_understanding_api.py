@@ -39,6 +39,12 @@ from ..models import Draft
 from ..models import DraftListing
 from ..models import DraftRequest
 from ..models import ErrorBody
+from ..models import IgnorePhrasesRequest
+from ..models import IgnorePhrasesResponse
+from ..models import IgnoreTopicsRequest
+from ..models import IgnoreTopicsResponse
+from ..models import IgnoredMinedPhraseListing
+from ..models import IgnoredMinedTopicListing
 from ..models import MinedIntentsListing
 from ..models import Miner
 from ..models import MinerExecuteRequest
@@ -59,6 +65,7 @@ from ..models import NluFeedbackListing
 from ..models import NluFeedbackRequest
 from ..models import NluFeedbackResponse
 from ..models import NluOrganization
+from ..models import RemoveEntitiesRequest
 
 class LanguageUnderstandingApi(object):
     """
@@ -1095,6 +1102,192 @@ class LanguageUnderstandingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='NluDomainListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_languageunderstanding_ignorephrase(self, language_code: str, **kwargs) -> 'IgnoredMinedPhraseListing':
+        """
+        Get list of all ignored phrases of the specified language code
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_ignorephrase(language_code, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language_code: Language Code (required)
+        :param int page_size: The page size for the listing. The max that will be returned is 200.
+        :param int page_number: The page number for the listing
+        :param str text: The phrase text filter applied to the listing
+        :param str sort_order: The sort order for the listing
+        :param str sort_by: The field to sort by for the listing
+        :return: IgnoredMinedPhraseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language_code', 'page_size', 'page_number', 'text', 'sort_order', 'sort_by']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_ignorephrase" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `get_languageunderstanding_ignorephrase`")
+
+
+        resource_path = '/api/v2/languageunderstanding/ignorephrases/{languageCode}'.replace('{format}', 'json')
+        path_params = {}
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'text' in params:
+            query_params['text'] = params['text']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IgnoredMinedPhraseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_languageunderstanding_ignoretopic(self, language_code: str, **kwargs) -> 'IgnoredMinedTopicListing':
+        """
+        Get list of all ignored topics of the specified language code
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_languageunderstanding_ignoretopic(language_code, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language_code: Language Code (required)
+        :param int page_size: The page size for the listing. The max that will be returned is 200.
+        :param int page_number: The page number for the listing
+        :param str text: The topic text filter applied to the listing
+        :param str sort_order: The sort order for the listing
+        :param str sort_by: The field to sort by for the listing
+        :return: IgnoredMinedTopicListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language_code', 'page_size', 'page_number', 'text', 'sort_order', 'sort_by']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_languageunderstanding_ignoretopic" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `get_languageunderstanding_ignoretopic`")
+
+
+        resource_path = '/api/v2/languageunderstanding/ignoretopics/{languageCode}'.replace('{format}', 'json')
+        path_params = {}
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'text' in params:
+            query_params['text'] = params['text']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IgnoredMinedTopicListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2589,6 +2782,342 @@ class LanguageUnderstandingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='NluDomain',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_ignorephrase(self, language_code: str, body: 'IgnorePhrasesRequest', **kwargs) -> 'IgnorePhrasesResponse':
+        """
+        Add phrases to the ignored phrases list
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_ignorephrase(language_code, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language_code: Language Code (required)
+        :param IgnorePhrasesRequest body: Request body containing phrases to be ignored (required)
+        :return: IgnorePhrasesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language_code', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_ignorephrase" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_languageunderstanding_ignorephrase`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_ignorephrase`")
+
+
+        resource_path = '/api/v2/languageunderstanding/ignorephrases/{languageCode}'.replace('{format}', 'json')
+        path_params = {}
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IgnorePhrasesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_ignorephrase_remove(self, language_code: str, body: 'RemoveEntitiesRequest', **kwargs) -> None:
+        """
+        Delete ignored phrases
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_ignorephrase_remove(language_code, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language_code: Language Code (required)
+        :param RemoveEntitiesRequest body: Request body containing entities to be removed (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language_code', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_ignorephrase_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_languageunderstanding_ignorephrase_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_ignorephrase_remove`")
+
+
+        resource_path = '/api/v2/languageunderstanding/ignorephrases/{languageCode}/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_ignoretopic(self, language_code: str, body: 'IgnoreTopicsRequest', **kwargs) -> 'IgnoreTopicsResponse':
+        """
+        Add topics to the ignored topics list
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_ignoretopic(language_code, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language_code: Language Code (required)
+        :param IgnoreTopicsRequest body: Request body containing topics to be ignored (required)
+        :return: IgnoreTopicsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language_code', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_ignoretopic" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_languageunderstanding_ignoretopic`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_ignoretopic`")
+
+
+        resource_path = '/api/v2/languageunderstanding/ignoretopics/{languageCode}'.replace('{format}', 'json')
+        path_params = {}
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IgnoreTopicsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_languageunderstanding_ignoretopic_remove(self, language_code: str, body: 'RemoveEntitiesRequest', **kwargs) -> None:
+        """
+        Delete ignored topics
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_languageunderstanding_ignoretopic_remove(language_code, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str language_code: Language Code (required)
+        :param RemoveEntitiesRequest body: Request body containing entities to be removed (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['language_code', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_languageunderstanding_ignoretopic_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_languageunderstanding_ignoretopic_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_languageunderstanding_ignoretopic_remove`")
+
+
+        resource_path = '/api/v2/languageunderstanding/ignoretopics/{languageCode}/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -34,10 +34,10 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DurationCondition
     from . import Language
+    from . import PolicyUser
     from . import Queue
     from . import Team
     from . import TimeAllowed
-    from . import User
     from . import WrapupCode
 
 class CallMediaPolicyConditions(object):
@@ -55,7 +55,7 @@ class CallMediaPolicyConditions(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'for_users': 'list[User]',
+            'for_users': 'list[PolicyUser]',
             'date_ranges': 'list[str]',
             'for_queues': 'list[Queue]',
             'wrapup_codes': 'list[WrapupCode]',
@@ -89,24 +89,24 @@ class CallMediaPolicyConditions(object):
         self._duration = None
 
     @property
-    def for_users(self) -> List['User']:
+    def for_users(self) -> List['PolicyUser']:
         """
         Gets the for_users of this CallMediaPolicyConditions.
-
+        List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
 
         :return: The for_users of this CallMediaPolicyConditions.
-        :rtype: list[User]
+        :rtype: list[PolicyUser]
         """
         return self._for_users
 
     @for_users.setter
-    def for_users(self, for_users: List['User']) -> None:
+    def for_users(self, for_users: List['PolicyUser']) -> None:
         """
         Sets the for_users of this CallMediaPolicyConditions.
-
+        List of users to apply this policy to. Each user object can include the 'id' field containing the user's unique identifier. Example: [{\"id\":\"<userId>\"}].
 
         :param for_users: The for_users of this CallMediaPolicyConditions.
-        :type: list[User]
+        :type: list[PolicyUser]
         """
         
 
