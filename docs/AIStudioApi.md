@@ -6,7 +6,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_conversations_summaries_setting**](#delete_conversations_summaries_setting) | Delete a summary setting.|
 |[**delete_guide_jobs**](#delete_guide_jobs) | Start the deletion of a guide.|
+|[**get_conversations_summaries_setting**](#get_conversations_summaries_setting) | Receive a summary setting.|
+|[**get_conversations_summaries_settings**](#get_conversations_summaries_settings) | Get all summary settings.|
 |[**get_guide**](#get_guide) | Get guide.|
 |[**get_guide_job**](#get_guide_job) | Get the specified guide deletion job.|
 |[**get_guide_version**](#get_guide_version) | Get a guide version.|
@@ -15,11 +18,61 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_guides_job**](#get_guides_job) | Get the status of the guide content generation job.|
 |[**patch_guide**](#patch_guide) | Update a guide.|
 |[**patch_guide_version**](#patch_guide_version) | Update a guide version.|
+|[**post_conversations_summaries_preview**](#post_conversations_summaries_preview) | Trigger summary preview event generation.|
+|[**post_conversations_summaries_settings**](#post_conversations_summaries_settings) | Create a summary setting.|
 |[**post_guide_version_jobs**](#post_guide_version_jobs) | Start the publishing of a guide version.|
 |[**post_guide_versions**](#post_guide_versions) | Create a guide version.|
 |[**post_guides**](#post_guides) | Create a guide.|
 |[**post_guides_jobs**](#post_guides_jobs) | Start a guide content generation job.|
+|[**put_conversations_summaries_setting**](#put_conversations_summaries_setting) | Update a summary setting.|
 
+
+
+## delete_conversations_summaries_setting
+
+>  delete_conversations_summaries_setting(summary_setting_id)
+
+
+Delete a summary setting.
+
+Wraps DELETE /api/v2/conversations/summaries/settings/{summarySettingId} 
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+summary_setting_id = 'summary_setting_id_example' # str | Summary setting id
+
+try:
+    # Delete a summary setting.
+    api_instance.delete_conversations_summaries_setting(summary_setting_id)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->delete_conversations_summaries_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **summary_setting_id** | **str**| Summary setting id |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## delete_guide_jobs
@@ -70,6 +123,112 @@ except ApiException as e:
 ### Return type
 
 [**GuideJob**](GuideJob)
+
+
+## get_conversations_summaries_setting
+
+> [**SummarySetting**](SummarySetting) get_conversations_summaries_setting(summary_setting_id)
+
+
+Receive a summary setting.
+
+Wraps GET /api/v2/conversations/summaries/settings/{summarySettingId} 
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+summary_setting_id = 'summary_setting_id_example' # str | Summary setting id
+
+try:
+    # Receive a summary setting.
+    api_response = api_instance.get_conversations_summaries_setting(summary_setting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->get_conversations_summaries_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **summary_setting_id** | **str**| Summary setting id |  |
+
+### Return type
+
+[**SummarySetting**](SummarySetting)
+
+
+## get_conversations_summaries_settings
+
+> [**SummarySettingEntityListing**](SummarySettingEntityListing) get_conversations_summaries_settings(language=language, name=name, sort_by=sort_by, sort_order=sort_order, page_number=page_number, page_size=page_size)
+
+
+Get all summary settings.
+
+Wraps GET /api/v2/conversations/summaries/settings 
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+language = 'language_example' # str | Filter by matching language - case insensitive. (optional)
+name = 'name_example' # str | Filter by partially matching name - case insensitive. (optional)
+sort_by = ''dateModified'' # str | Sort by. Default value dateModified. (optional) (default to 'dateModified')
+sort_order = ''desc'' # str | Sort Order. Default value desc. (optional) (default to 'desc')
+page_number = 1 # int | Page number. (optional) (default to 1)
+page_size = 25 # int | Page size. The maximum page size is 100. (optional) (default to 25)
+
+try:
+    # Get all summary settings.
+    api_response = api_instance.get_conversations_summaries_settings(language=language, name=name, sort_by=sort_by, sort_order=sort_order, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->get_conversations_summaries_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language** | **str**| Filter by matching language - case insensitive. | [optional]  |
+| **name** | **str**| Filter by partially matching name - case insensitive. | [optional]  |
+| **sort_by** | **str**| Sort by. Default value dateModified. | [optional] [default to &#39;dateModified&#39;]<br />**Values**: dateModified, name |
+| **sort_order** | **str**| Sort Order. Default value desc. | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
+| **page_number** | **int**| Page number. | [optional] [default to 1] |
+| **page_size** | **int**| Page size. The maximum page size is 100. | [optional] [default to 25] |
+
+### Return type
+
+[**SummarySettingEntityListing**](SummarySettingEntityListing)
 
 
 ## get_guide
@@ -498,6 +657,101 @@ except ApiException as e:
 [**GuideVersion**](GuideVersion)
 
 
+## post_conversations_summaries_preview
+
+>  post_conversations_summaries_preview(body)
+
+
+Trigger summary preview event generation.
+
+Wraps POST /api/v2/conversations/summaries/preview 
+
+Requires ALL permissions: 
+
+* aiStudio:summaryPreview:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+body = PureCloudPlatformClientV2.SummarySettingWithTranscript() # SummarySettingWithTranscript | 
+
+try:
+    # Trigger summary preview event generation.
+    api_instance.post_conversations_summaries_preview(body)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->post_conversations_summaries_preview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SummarySettingWithTranscript**](SummarySettingWithTranscript)|  |  |
+
+### Return type
+
+void (empty response body)
+
+
+## post_conversations_summaries_settings
+
+> [**SummarySetting**](SummarySetting) post_conversations_summaries_settings(body)
+
+
+Create a summary setting.
+
+Wraps POST /api/v2/conversations/summaries/settings 
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+body = PureCloudPlatformClientV2.SummarySetting() # SummarySetting | 
+
+try:
+    # Create a summary setting.
+    api_response = api_instance.post_conversations_summaries_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->post_conversations_summaries_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SummarySetting**](SummarySetting)|  |  |
+
+### Return type
+
+[**SummarySetting**](SummarySetting)
+
+
 ## post_guide_version_jobs
 
 > [**GuideVersionPublishJob**](GuideVersionPublishJob) post_guide_version_jobs(guide_id, version_id, body)
@@ -704,4 +958,54 @@ except ApiException as e:
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+## put_conversations_summaries_setting
+
+> [**SummarySetting**](SummarySetting) put_conversations_summaries_setting(summary_setting_id, body)
+
+
+Update a summary setting.
+
+Wraps PUT /api/v2/conversations/summaries/settings/{summarySettingId} 
+
+Requires ALL permissions: 
+
+* aiStudio:summaryConfig:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+summary_setting_id = 'summary_setting_id_example' # str | Summary setting id
+body = PureCloudPlatformClientV2.SummarySetting() # SummarySetting | 
+
+try:
+    # Update a summary setting.
+    api_response = api_instance.put_conversations_summaries_setting(summary_setting_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->put_conversations_summaries_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **summary_setting_id** | **str**| Summary setting id |  |
+| **body** | [**SummarySetting**](SummarySetting)|  |  |
+
+### Return type
+
+[**SummarySetting**](SummarySetting)
+
+
+_PureCloudPlatformClientV2 237.0.0_

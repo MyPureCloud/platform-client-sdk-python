@@ -52,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_views_eventdefinition**](#get_journey_views_eventdefinition) | Get an Event Definition|
 |[**get_journey_views_eventdefinitions**](#get_journey_views_eventdefinitions) | Get a list of Event Definitions|
 |[**get_journey_views_jobs**](#get_journey_views_jobs) | Get the jobs for an organization.|
+|[**get_journey_views_jobs_me**](#get_journey_views_jobs_me) | Get my jobs|
 |[**get_journey_views_schedules**](#get_journey_views_schedules) | Get the journey schedules for an organization.|
 |[**patch_journey_actionmap**](#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Update a single action target.|
@@ -2409,6 +2410,60 @@ except ApiException as e:
 [**JourneyViewJobListing**](JourneyViewJobListing)
 
 
+## get_journey_views_jobs_me
+
+> [**JourneyViewJobListing**](JourneyViewJobListing) get_journey_views_jobs_me(page_number=page_number, page_size=page_size, interval=interval, statuses=statuses)
+
+
+Get my jobs
+
+Wraps GET /api/v2/journey/views/jobs/me 
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+page_number = 1 # int | The number of the page to return (optional) (default to 1)
+page_size = 25 # int | Max number of entities to return (optional) (default to 25)
+interval = '2023-07-17T00:00:00Z/2023-07-18T00:00:00Z' # str | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional)
+statuses = 'statuses=Accepted,Executing,Complete,Failed,Scheduled' # str | Job statuses to filter for (optional)
+
+try:
+    # Get my jobs
+    api_response = api_instance.get_journey_views_jobs_me(page_number=page_number, page_size=page_size, interval=interval, statuses=statuses)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_jobs_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| The number of the page to return | [optional] [default to 1] |
+| **page_size** | **int**| Max number of entities to return | [optional] [default to 25] |
+| **interval** | **str**| An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional]  |
+| **statuses** | **str**| Job statuses to filter for | [optional]  |
+
+### Return type
+
+[**JourneyViewJobListing**](JourneyViewJobListing)
+
+
 ## get_journey_views_schedules
 
 > [**JourneyViewScheduleListing**](JourneyViewScheduleListing) get_journey_views_schedules(page_number=page_number, page_size=page_size)
@@ -3789,4 +3844,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

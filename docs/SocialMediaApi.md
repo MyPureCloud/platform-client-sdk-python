@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_socialmedia_message**](#delete_socialmedia_message) | Delete a social media message.|
 |[**delete_socialmedia_topic**](#delete_socialmedia_topic) | Delete a social topic.|
 |[**delete_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#delete_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Delete a Facebook data ingestion rule.|
+|[**delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id**](#delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id) | Delete a Instagram data ingestion rule.|
 |[**delete_socialmedia_topic_dataingestionrules_open_open_id**](#delete_socialmedia_topic_dataingestionrules_open_open_id) | Delete a open data ingestion rule.|
 |[**delete_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id**](#delete_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id) | Delete a X (formally Twitter) data ingestion rule.|
 |[**get_socialmedia_analytics_aggregates_job**](#get_socialmedia_analytics_aggregates_job) | Get status for async query for social media aggregates|
@@ -23,6 +24,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Get a single Facebook data ingestion rule.|
 |[**get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_version**](#get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_version) | Get a single Facebook data ingestion rule version.|
 |[**get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions**](#get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id_versions) | Get the Facebook data ingestion rule versions.|
+|[**get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id**](#get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id) | Get a single Instagram data ingestion rule.|
+|[**get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version**](#get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version) | Get a single Instagram data ingestion rule version.|
+|[**get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions**](#get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions) | Get the Instagram data ingestion rule versions.|
 |[**get_socialmedia_topic_dataingestionrules_open_open_id**](#get_socialmedia_topic_dataingestionrules_open_open_id) | Get a single open data ingestion rule.|
 |[**get_socialmedia_topic_dataingestionrules_open_open_id_version**](#get_socialmedia_topic_dataingestionrules_open_open_id_version) | Get a single Open data ingestion rule version.|
 |[**get_socialmedia_topic_dataingestionrules_open_open_id_versions**](#get_socialmedia_topic_dataingestionrules_open_open_id_versions) | Get the Open data ingestion rule versions.|
@@ -32,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_socialmedia_topics**](#get_socialmedia_topics) | Retrieve all social topics.|
 |[**patch_socialmedia_topic**](#patch_socialmedia_topic) | Update a social topic.|
 |[**patch_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#patch_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Update the status of a Facebook data ingestion rule.|
+|[**patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id**](#patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id) | Update the status of a Instagram data ingestion rule.|
 |[**patch_socialmedia_topic_dataingestionrules_open_open_id**](#patch_socialmedia_topic_dataingestionrules_open_open_id) | Update the status of a open data ingestion rule.|
 |[**patch_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id**](#patch_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id) | Update the status of a X (formally Twitter) data ingestion rule.|
 |[**post_socialmedia_analytics_aggregates_jobs**](#post_socialmedia_analytics_aggregates_jobs) | Query for social media aggregates asynchronously|
@@ -39,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_socialmedia_escalationrules**](#post_socialmedia_escalationrules) | Create an escalation rule.|
 |[**post_socialmedia_escalations_messages**](#post_socialmedia_escalations_messages) | Escalate message to a conversation manually|
 |[**post_socialmedia_topic_dataingestionrules_facebook**](#post_socialmedia_topic_dataingestionrules_facebook) | Create an Facebook data ingestion rule.|
+|[**post_socialmedia_topic_dataingestionrules_instagram**](#post_socialmedia_topic_dataingestionrules_instagram) | Create an Instagram data ingestion rule.|
 |[**post_socialmedia_topic_dataingestionrules_open**](#post_socialmedia_topic_dataingestionrules_open) | Create an open data ingestion rule.|
 |[**post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk**](#post_socialmedia_topic_dataingestionrules_open_rule_id_messages_bulk) | Ingest a list of Open Social Messages|
 |[**post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk**](#post_socialmedia_topic_dataingestionrules_open_rule_id_reactions_bulk) | Ingest a list of Open Social Reactions|
@@ -47,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_socialmedia_twitter_historical_tweets**](#post_socialmedia_twitter_historical_tweets) | Retrieves historical tweet count for search terms, optional countries list and the current limit and usage for the organization.|
 |[**put_socialmedia_escalationrule**](#put_socialmedia_escalationrule) | Update the escalation rule.|
 |[**put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id**](#put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id) | Update the Facebook data ingestion rule.|
+|[**put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id**](#put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id) | Update the Instagram data ingestion rule.|
 |[**put_socialmedia_topic_dataingestionrules_open_open_id**](#put_socialmedia_topic_dataingestionrules_open_open_id) | Update the open data ingestion rule.|
 |[**put_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id**](#put_socialmedia_topic_dataingestionrules_twitter_twitter_ingestion_rule_id) | Update the X (formally Twitter) data ingestion rule.|
 
@@ -242,6 +249,57 @@ except ApiException as e:
 | **topic_id** | **str**| topicId |  |
 | **facebook_ingestion_rule_id** | **str**| facebookIngestionRuleId |  |
 | **hard_delete** | **bool**| Determines whether a Facebook data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to False] |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id
+
+>  delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, hard_delete=hard_delete)
+
+
+Delete a Instagram data ingestion rule.
+
+Wraps DELETE /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} 
+
+Requires ANY permissions: 
+
+* socialmedia:instagramDataIngestionRule:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+instagram_ingestion_rule_id = 'instagram_ingestion_rule_id_example' # str | instagramIngestionRuleId
+hard_delete = False # bool | Determines whether a Instagram data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. (optional) (default to False)
+
+try:
+    # Delete a Instagram data ingestion rule.
+    api_instance.delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, hard_delete=hard_delete)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->delete_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **instagram_ingestion_rule_id** | **str**| instagramIngestionRuleId |  |
+| **hard_delete** | **bool**| Determines whether a Instagram data ingestion rule should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] [default to False] |
 
 ### Return type
 
@@ -912,6 +970,168 @@ except ApiException as e:
 [**FacebookDataIngestionRuleVersionResponseEntityListing**](FacebookDataIngestionRuleVersionResponseEntityListing)
 
 
+## get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id
+
+> [**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse) get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, include_deleted=include_deleted)
+
+
+Get a single Instagram data ingestion rule.
+
+Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} 
+
+Requires ALL permissions: 
+
+* socialmedia:instagramDataIngestionRule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+instagram_ingestion_rule_id = 'instagram_ingestion_rule_id_example' # str | instagramIngestionRuleId
+include_deleted = True # bool | Determines whether to include soft-deleted items in the result. (optional)
+
+try:
+    # Get a single Instagram data ingestion rule.
+    api_response = api_instance.get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, include_deleted=include_deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **instagram_ingestion_rule_id** | **str**| instagramIngestionRuleId |  |
+| **include_deleted** | **bool**| Determines whether to include soft-deleted items in the result. | [optional]  |
+
+### Return type
+
+[**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse)
+
+
+## get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version
+
+> [**InstagramDataIngestionRuleVersionResponse**](InstagramDataIngestionRuleVersionResponse) get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version(topic_id, instagram_ingestion_rule_id, data_ingestion_rule_version, include_deleted=include_deleted)
+
+
+Get a single Instagram data ingestion rule version.
+
+Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions/{dataIngestionRuleVersion} 
+
+Requires ALL permissions: 
+
+* socialmedia:instagramDataIngestionRule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+instagram_ingestion_rule_id = 'instagram_ingestion_rule_id_example' # str | instagramIngestionRuleId
+data_ingestion_rule_version = 'data_ingestion_rule_version_example' # str | version
+include_deleted = True # bool | Determines whether to include soft-deleted item in the result. (optional)
+
+try:
+    # Get a single Instagram data ingestion rule version.
+    api_response = api_instance.get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version(topic_id, instagram_ingestion_rule_id, data_ingestion_rule_version, include_deleted=include_deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **instagram_ingestion_rule_id** | **str**| instagramIngestionRuleId |  |
+| **data_ingestion_rule_version** | **str**| version |  |
+| **include_deleted** | **bool**| Determines whether to include soft-deleted item in the result. | [optional]  |
+
+### Return type
+
+[**InstagramDataIngestionRuleVersionResponse**](InstagramDataIngestionRuleVersionResponse)
+
+
+## get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions
+
+> [**InstagramDataIngestionRuleVersionResponseEntityListing**](InstagramDataIngestionRuleVersionResponseEntityListing) get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions(topic_id, instagram_ingestion_rule_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)
+
+
+Get the Instagram data ingestion rule versions.
+
+Wraps GET /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId}/versions 
+
+Requires ALL permissions: 
+
+* socialmedia:instagramDataIngestionRule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+instagram_ingestion_rule_id = 'instagram_ingestion_rule_id_example' # str | instagramIngestionRuleId
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+include_deleted = True # bool | Determines whether to include soft-deleted items in the result. (optional)
+
+try:
+    # Get the Instagram data ingestion rule versions.
+    api_response = api_instance.get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions(topic_id, instagram_ingestion_rule_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id_versions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **instagram_ingestion_rule_id** | **str**| instagramIngestionRuleId |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **include_deleted** | **bool**| Determines whether to include soft-deleted items in the result. | [optional]  |
+
+### Return type
+
+[**InstagramDataIngestionRuleVersionResponseEntityListing**](InstagramDataIngestionRuleVersionResponseEntityListing)
+
+
 ## get_socialmedia_topic_dataingestionrules_open_open_id
 
 > [**OpenDataIngestionRuleResponse**](OpenDataIngestionRuleResponse) get_socialmedia_topic_dataingestionrules_open_open_id(topic_id, open_id, include_deleted=include_deleted)
@@ -1392,6 +1612,58 @@ except ApiException as e:
 [**FacebookDataIngestionRuleResponse**](FacebookDataIngestionRuleResponse)
 
 
+## patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id
+
+> [**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse) patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, body=body)
+
+
+Update the status of a Instagram data ingestion rule.
+
+Wraps PATCH /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} 
+
+Requires ALL permissions: 
+
+* socialmedia:instagramDataIngestionRule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+instagram_ingestion_rule_id = 'instagram_ingestion_rule_id_example' # str | instagramIngestionRuleId
+body = PureCloudPlatformClientV2.DataIngestionRuleStatusPatchRequest() # DataIngestionRuleStatusPatchRequest |  (optional)
+
+try:
+    # Update the status of a Instagram data ingestion rule.
+    api_response = api_instance.patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **instagram_ingestion_rule_id** | **str**| instagramIngestionRuleId |  |
+| **body** | [**DataIngestionRuleStatusPatchRequest**](DataIngestionRuleStatusPatchRequest)|  | [optional]  |
+
+### Return type
+
+[**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse)
+
+
 ## patch_socialmedia_topic_dataingestionrules_open_open_id
 
 > [**OpenDataIngestionRuleResponse**](OpenDataIngestionRuleResponse) patch_socialmedia_topic_dataingestionrules_open_open_id(topic_id, open_id, body=body)
@@ -1738,6 +2010,56 @@ except ApiException as e:
 ### Return type
 
 [**FacebookDataIngestionRuleResponse**](FacebookDataIngestionRuleResponse)
+
+
+## post_socialmedia_topic_dataingestionrules_instagram
+
+> [**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse) post_socialmedia_topic_dataingestionrules_instagram(topic_id, body=body)
+
+
+Create an Instagram data ingestion rule.
+
+Wraps POST /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram 
+
+Requires ANY permissions: 
+
+* socialmedia:instagramDataIngestionRule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+body = PureCloudPlatformClientV2.InstagramDataIngestionRuleRequest() # InstagramDataIngestionRuleRequest |  (optional)
+
+try:
+    # Create an Instagram data ingestion rule.
+    api_response = api_instance.post_socialmedia_topic_dataingestionrules_instagram(topic_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->post_socialmedia_topic_dataingestionrules_instagram: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **body** | [**InstagramDataIngestionRuleRequest**](InstagramDataIngestionRuleRequest)|  | [optional]  |
+
+### Return type
+
+[**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse)
 
 
 ## post_socialmedia_topic_dataingestionrules_open
@@ -2146,6 +2468,58 @@ except ApiException as e:
 [**FacebookDataIngestionRuleResponse**](FacebookDataIngestionRuleResponse)
 
 
+## put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id
+
+> [**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse) put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, body=body)
+
+
+Update the Instagram data ingestion rule.
+
+Wraps PUT /api/v2/socialmedia/topics/{topicId}/dataingestionrules/instagram/{instagramIngestionRuleId} 
+
+Requires ALL permissions: 
+
+* socialmedia:instagramDataIngestionRule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SocialMediaApi()
+topic_id = 'topic_id_example' # str | topicId
+instagram_ingestion_rule_id = 'instagram_ingestion_rule_id_example' # str | instagramIngestionRuleId
+body = PureCloudPlatformClientV2.InstagramDataIngestionRuleRequest() # InstagramDataIngestionRuleRequest |  (optional)
+
+try:
+    # Update the Instagram data ingestion rule.
+    api_response = api_instance.put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(topic_id, instagram_ingestion_rule_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SocialMediaApi->put_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **topic_id** | **str**| topicId |  |
+| **instagram_ingestion_rule_id** | **str**| instagramIngestionRuleId |  |
+| **body** | [**InstagramDataIngestionRuleRequest**](InstagramDataIngestionRuleRequest)|  | [optional]  |
+
+### Return type
+
+[**InstagramDataIngestionRuleResponse**](InstagramDataIngestionRuleResponse)
+
+
 ## put_socialmedia_topic_dataingestionrules_open_open_id
 
 > [**OpenDataIngestionRuleResponse**](OpenDataIngestionRuleResponse) put_socialmedia_topic_dataingestionrules_open_open_id(topic_id, open_id, body=body)
@@ -2250,4 +2624,4 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

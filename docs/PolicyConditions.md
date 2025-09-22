@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **for_users** | [list[User]](User) |  | [optional] |
+| **for_users** | [list[PolicyUser]](PolicyUser) | List of users to apply this policy to. Each user object can include the &#39;id&#39; field containing the user&#39;s unique identifier. Example: [{\&quot;id\&quot;:\&quot;&lt;userId&gt;\&quot;}]. | [optional] |
 | **directions** | list[str] |  | [optional] |
 | **date_ranges** | list[str] |  | [optional] |
 | **media_types** | list[str] |  | [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

@@ -18,6 +18,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_languageunderstanding_domain_version_report**](#get_languageunderstanding_domain_version_report) | Retrieved quality report for the specified NLU Domain Version|
 |[**get_languageunderstanding_domain_versions**](#get_languageunderstanding_domain_versions) | Get all NLU Domain Versions for a given Domain.|
 |[**get_languageunderstanding_domains**](#get_languageunderstanding_domains) | Get all NLU Domains.|
+|[**get_languageunderstanding_ignorephrase**](#get_languageunderstanding_ignorephrase) | Get list of all ignored phrases of the specified language code|
+|[**get_languageunderstanding_ignoretopic**](#get_languageunderstanding_ignoretopic) | Get list of all ignored topics of the specified language code|
 |[**get_languageunderstanding_miner**](#get_languageunderstanding_miner) | Get information about a miner.|
 |[**get_languageunderstanding_miner_draft**](#get_languageunderstanding_miner_draft) | Get information about a draft.|
 |[**get_languageunderstanding_miner_drafts**](#get_languageunderstanding_miner_drafts) | Retrieve the list of drafts created.|
@@ -36,6 +38,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_languageunderstanding_domain_version_train**](#post_languageunderstanding_domain_version_train) | Train the draft NLU Domain Version.|
 |[**post_languageunderstanding_domain_versions**](#post_languageunderstanding_domain_versions) | Create an NLU Domain Version.|
 |[**post_languageunderstanding_domains**](#post_languageunderstanding_domains) | Create an NLU Domain.|
+|[**post_languageunderstanding_ignorephrase**](#post_languageunderstanding_ignorephrase) | Add phrases to the ignored phrases list|
+|[**post_languageunderstanding_ignorephrase_remove**](#post_languageunderstanding_ignorephrase_remove) | Delete ignored phrases|
+|[**post_languageunderstanding_ignoretopic**](#post_languageunderstanding_ignoretopic) | Add topics to the ignored topics list|
+|[**post_languageunderstanding_ignoretopic_remove**](#post_languageunderstanding_ignoretopic_remove) | Delete ignored topics|
 |[**post_languageunderstanding_miner_drafts**](#post_languageunderstanding_miner_drafts) | Create a new draft resource.|
 |[**post_languageunderstanding_miner_execute**](#post_languageunderstanding_miner_execute) | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.|
 |[**post_languageunderstanding_miners**](#post_languageunderstanding_miners) | Create a unique miner.|
@@ -670,6 +676,122 @@ except ApiException as e:
 ### Return type
 
 [**NluDomainListing**](NluDomainListing)
+
+
+## get_languageunderstanding_ignorephrase
+
+> [**IgnoredMinedPhraseListing**](IgnoredMinedPhraseListing) get_languageunderstanding_ignorephrase(language_code, page_size=page_size, page_number=page_number, text=text, sort_order=sort_order, sort_by=sort_by)
+
+
+Get list of all ignored phrases of the specified language code
+
+Wraps GET /api/v2/languageunderstanding/ignorephrases/{languageCode} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredPhrase:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+language_code = 'language_code_example' # str | Language Code
+page_size = 25 # int | The page size for the listing. The max that will be returned is 200. (optional) (default to 25)
+page_number = 1 # int | The page number for the listing (optional) (default to 1)
+text = 'text_example' # str | The phrase text filter applied to the listing (optional)
+sort_order = ''desc'' # str | The sort order for the listing (optional) (default to 'desc')
+sort_by = ''dateModified'' # str | The field to sort by for the listing (optional) (default to 'dateModified')
+
+try:
+    # Get list of all ignored phrases of the specified language code
+    api_response = api_instance.get_languageunderstanding_ignorephrase(language_code, page_size=page_size, page_number=page_number, text=text, sort_order=sort_order, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_ignorephrase: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_code** | **str**| Language Code |  |
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 200. | [optional] [default to 25] |
+| **page_number** | **int**| The page number for the listing | [optional] [default to 1] |
+| **text** | **str**| The phrase text filter applied to the listing | [optional]  |
+| **sort_order** | **str**| The sort order for the listing | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
+| **sort_by** | **str**| The field to sort by for the listing | [optional] [default to &#39;dateModified&#39;]<br />**Values**: dateModified, text |
+
+### Return type
+
+[**IgnoredMinedPhraseListing**](IgnoredMinedPhraseListing)
+
+
+## get_languageunderstanding_ignoretopic
+
+> [**IgnoredMinedTopicListing**](IgnoredMinedTopicListing) get_languageunderstanding_ignoretopic(language_code, page_size=page_size, page_number=page_number, text=text, sort_order=sort_order, sort_by=sort_by)
+
+
+Get list of all ignored topics of the specified language code
+
+Wraps GET /api/v2/languageunderstanding/ignoretopics/{languageCode} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredTopic:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+language_code = 'language_code_example' # str | Language Code
+page_size = 25 # int | The page size for the listing. The max that will be returned is 200. (optional) (default to 25)
+page_number = 1 # int | The page number for the listing (optional) (default to 1)
+text = 'text_example' # str | The topic text filter applied to the listing (optional)
+sort_order = ''desc'' # str | The sort order for the listing (optional) (default to 'desc')
+sort_by = ''dateModified'' # str | The field to sort by for the listing (optional) (default to 'dateModified')
+
+try:
+    # Get list of all ignored topics of the specified language code
+    api_response = api_instance.get_languageunderstanding_ignoretopic(language_code, page_size=page_size, page_number=page_number, text=text, sort_order=sort_order, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_ignoretopic: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_code** | **str**| Language Code |  |
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 200. | [optional] [default to 25] |
+| **page_number** | **int**| The page number for the listing | [optional] [default to 1] |
+| **text** | **str**| The topic text filter applied to the listing | [optional]  |
+| **sort_order** | **str**| The sort order for the listing | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
+| **sort_by** | **str**| The field to sort by for the listing | [optional] [default to &#39;dateModified&#39;]<br />**Values**: dateModified, text |
+
+### Return type
+
+[**IgnoredMinedTopicListing**](IgnoredMinedTopicListing)
 
 
 ## get_languageunderstanding_miner
@@ -1579,6 +1701,204 @@ except ApiException as e:
 [**NluDomain**](NluDomain)
 
 
+## post_languageunderstanding_ignorephrase
+
+> [**IgnorePhrasesResponse**](IgnorePhrasesResponse) post_languageunderstanding_ignorephrase(language_code, body)
+
+
+Add phrases to the ignored phrases list
+
+Wraps POST /api/v2/languageunderstanding/ignorephrases/{languageCode} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredPhrase:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+language_code = 'language_code_example' # str | Language Code
+body = PureCloudPlatformClientV2.IgnorePhrasesRequest() # IgnorePhrasesRequest | Request body containing phrases to be ignored
+
+try:
+    # Add phrases to the ignored phrases list
+    api_response = api_instance.post_languageunderstanding_ignorephrase(language_code, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_ignorephrase: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_code** | **str**| Language Code |  |
+| **body** | [**IgnorePhrasesRequest**](IgnorePhrasesRequest)| Request body containing phrases to be ignored |  |
+
+### Return type
+
+[**IgnorePhrasesResponse**](IgnorePhrasesResponse)
+
+
+## post_languageunderstanding_ignorephrase_remove
+
+>  post_languageunderstanding_ignorephrase_remove(language_code, body)
+
+
+Delete ignored phrases
+
+Wraps POST /api/v2/languageunderstanding/ignorephrases/{languageCode}/remove 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredPhrase:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+language_code = 'language_code_example' # str | Language Code
+body = PureCloudPlatformClientV2.RemoveEntitiesRequest() # RemoveEntitiesRequest | Request body containing entities to be removed
+
+try:
+    # Delete ignored phrases
+    api_instance.post_languageunderstanding_ignorephrase_remove(language_code, body)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_ignorephrase_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_code** | **str**| Language Code |  |
+| **body** | [**RemoveEntitiesRequest**](RemoveEntitiesRequest)| Request body containing entities to be removed |  |
+
+### Return type
+
+void (empty response body)
+
+
+## post_languageunderstanding_ignoretopic
+
+> [**IgnoreTopicsResponse**](IgnoreTopicsResponse) post_languageunderstanding_ignoretopic(language_code, body)
+
+
+Add topics to the ignored topics list
+
+Wraps POST /api/v2/languageunderstanding/ignoretopics/{languageCode} 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredTopic:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+language_code = 'language_code_example' # str | Language Code
+body = PureCloudPlatformClientV2.IgnoreTopicsRequest() # IgnoreTopicsRequest | Request body containing topics to be ignored
+
+try:
+    # Add topics to the ignored topics list
+    api_response = api_instance.post_languageunderstanding_ignoretopic(language_code, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_ignoretopic: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_code** | **str**| Language Code |  |
+| **body** | [**IgnoreTopicsRequest**](IgnoreTopicsRequest)| Request body containing topics to be ignored |  |
+
+### Return type
+
+[**IgnoreTopicsResponse**](IgnoreTopicsResponse)
+
+
+## post_languageunderstanding_ignoretopic_remove
+
+>  post_languageunderstanding_ignoretopic_remove(language_code, body)
+
+
+Delete ignored topics
+
+Wraps POST /api/v2/languageunderstanding/ignoretopics/{languageCode}/remove 
+
+Requires ALL permissions: 
+
+* languageUnderstanding:ignoredTopic:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+language_code = 'language_code_example' # str | Language Code
+body = PureCloudPlatformClientV2.RemoveEntitiesRequest() # RemoveEntitiesRequest | Request body containing entities to be removed
+
+try:
+    # Delete ignored topics
+    api_instance.post_languageunderstanding_ignoretopic_remove(language_code, body)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_ignoretopic_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **language_code** | **str**| Language Code |  |
+| **body** | [**RemoveEntitiesRequest**](RemoveEntitiesRequest)| Request body containing entities to be removed |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## post_languageunderstanding_miner_drafts
 
 > [**Draft**](Draft) post_languageunderstanding_miner_drafts(miner_id, body)
@@ -1780,4 +2100,4 @@ except ApiException as e:
 [**NluDomainVersion**](NluDomainVersion)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

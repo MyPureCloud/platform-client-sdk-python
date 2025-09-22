@@ -12,12 +12,12 @@
 | **total** | int |  | [optional] |
 | **truncated_divisions** | bool |  | [optional] |
 | **first_uri** | str |  | [optional] |
-| **next_uri** | str |  | [optional] |
 | **previous_uri** | str |  | [optional] |
+| **next_uri** | str |  | [optional] |
 | **last_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
 | **page_count** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

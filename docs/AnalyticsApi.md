@@ -40,6 +40,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details_job**](#get_analytics_conversations_details_job) | Get status for async query for conversation details|
 |[**get_analytics_conversations_details_job_results**](#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
+|[**get_analytics_dataextraction_download**](#get_analytics_dataextraction_download) | Get analytics data warehouse file download|
+|[**get_analytics_dataextraction_downloads_metadata**](#get_analytics_dataextraction_downloads_metadata) | Get metadata on files available for extraction|
 |[**get_analytics_dataretention_settings**](#get_analytics_dataretention_settings) | Get analytics data retention setting|
 |[**get_analytics_evaluations_aggregates_job**](#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
 |[**get_analytics_evaluations_aggregates_job_results**](#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
@@ -88,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_aggregates_query**](#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](#post_analytics_conversations_details_query) | Query for conversation details|
+|[**post_analytics_dataextraction_downloads_bulk**](#post_analytics_dataextraction_downloads_bulk) | Get download URLs for analytics data warehouse files|
 |[**post_analytics_evaluations_aggregates_jobs**](#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
 |[**post_analytics_evaluations_aggregates_query**](#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
 |[**post_analytics_flowexecutions_aggregates_jobs**](#post_analytics_flowexecutions_aggregates_jobs) | Query for flow execution aggregates asynchronously|
@@ -1850,6 +1853,115 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**DataAvailabilityResponse**](DataAvailabilityResponse)
+
+
+## get_analytics_dataextraction_download
+
+>  get_analytics_dataextraction_download(download_id)
+
+
+Get analytics data warehouse file download
+
+get_analytics_dataextraction_download is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/dataextraction/downloads/{downloadId} 
+
+Requires ANY permissions: 
+
+* analytics:datawarehouse:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+download_id = 'download_id_example' # str | Unique file Id to download
+
+try:
+    # Get analytics data warehouse file download
+    api_instance.get_analytics_dataextraction_download(download_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_dataextraction_download: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **download_id** | **str**| Unique file Id to download |  |
+
+### Return type
+
+void (empty response body)
+
+
+## get_analytics_dataextraction_downloads_metadata
+
+> [**DataExtractionFileSchemaListing**](DataExtractionFileSchemaListing) get_analytics_dataextraction_downloads_metadata(before=before, after=after, page_size=page_size, data_schema=data_schema, date_start=date_start, date_end=date_end)
+
+
+Get metadata on files available for extraction
+
+get_analytics_dataextraction_downloads_metadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/dataextraction/downloads/metadata 
+
+Requires ANY permissions: 
+
+* analytics:datawarehouse:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+data_schema = 'data_schema_example' # str | Data schema like conversations (optional)
+date_start = '2013-10-20T19:20:30+01:00' # datetime | Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+date_end = '2013-10-20T19:20:30+01:00' # datetime | End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+
+try:
+    # Get metadata on files available for extraction
+    api_response = api_instance.get_analytics_dataextraction_downloads_metadata(before=before, after=after, page_size=page_size, data_schema=data_schema, date_start=date_start, date_end=date_end)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_dataextraction_downloads_metadata: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **data_schema** | **str**| Data schema like conversations | [optional]  |
+| **date_start** | **datetime**| Start DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+| **date_end** | **datetime**| End DateTime filter. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+
+### Return type
+
+[**DataExtractionFileSchemaListing**](DataExtractionFileSchemaListing)
 
 
 ## get_analytics_dataretention_settings
@@ -4265,6 +4377,56 @@ except ApiException as e:
 [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse)
 
 
+## post_analytics_dataextraction_downloads_bulk
+
+> [**DataExtractionFileUrlListing**](DataExtractionFileUrlListing) post_analytics_dataextraction_downloads_bulk(body)
+
+
+Get download URLs for analytics data warehouse files
+
+post_analytics_dataextraction_downloads_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/dataextraction/downloads/bulk 
+
+Requires ANY permissions: 
+
+* analytics:datawarehouse:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.DownloadServiceRequest() # DownloadServiceRequest | request
+
+try:
+    # Get download URLs for analytics data warehouse files
+    api_response = api_instance.post_analytics_dataextraction_downloads_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_dataextraction_downloads_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DownloadServiceRequest**](DownloadServiceRequest)| request |  |
+
+### Return type
+
+[**DataExtractionFileUrlListing**](DataExtractionFileUrlListing)
+
+
 ## post_analytics_evaluations_aggregates_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_evaluations_aggregates_jobs(body)
@@ -6082,4 +6244,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_

@@ -42,8 +42,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_publishedforms**](#get_quality_publishedforms) | Get the published evaluation forms.|
 |[**get_quality_publishedforms_evaluation**](#get_quality_publishedforms_evaluation) | Get the most recent published version of an evaluation form.|
 |[**get_quality_publishedforms_evaluations**](#get_quality_publishedforms_evaluations) | Get the published evaluation forms.|
+|[**get_quality_publishedforms_evaluations_divisionview**](#get_quality_publishedforms_evaluations_divisionview) | Get the most recent published version of an evaluation form across any division.|
+|[**get_quality_publishedforms_evaluations_divisionviews**](#get_quality_publishedforms_evaluations_divisionviews) | Get the published evaluation forms across any division.|
 |[**get_quality_publishedforms_survey**](#get_quality_publishedforms_survey) | Get the most recent published version of a survey form.|
 |[**get_quality_publishedforms_surveys**](#get_quality_publishedforms_surveys) | Get the published survey forms.|
+|[**get_quality_publishedforms_surveys_divisionview**](#get_quality_publishedforms_surveys_divisionview) | Get the most recent published version of an enabled survey form across any division.|
+|[**get_quality_publishedforms_surveys_divisionviews**](#get_quality_publishedforms_surveys_divisionviews) | Get the published and enabled survey forms across any division.|
 |[**get_quality_survey**](#get_quality_survey) | Get a survey for a conversation|
 |[**get_quality_surveys_scorable**](#get_quality_surveys_scorable) | Get a survey as an end-customer, for the purposes of scoring it.|
 |[**patch_quality_forms_survey**](#patch_quality_forms_survey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.|
@@ -2036,6 +2040,110 @@ except ApiException as e:
 [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
 
+## get_quality_publishedforms_evaluations_divisionview
+
+> [**EvaluationFormDivisionView**](EvaluationFormDivisionView) get_quality_publishedforms_evaluations_divisionview(evaluation_form_id)
+
+
+Get the most recent published version of an evaluation form across any division.
+
+get_quality_publishedforms_evaluations_divisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId} 
+
+Requires ALL permissions: 
+
+* quality:evaluationForm:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+evaluation_form_id = 'evaluation_form_id_example' # str | Evaluation Form ID
+
+try:
+    # Get the most recent published version of an evaluation form across any division.
+    api_response = api_instance.get_quality_publishedforms_evaluations_divisionview(evaluation_form_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_publishedforms_evaluations_divisionview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **evaluation_form_id** | **str**| Evaluation Form ID |  |
+
+### Return type
+
+[**EvaluationFormDivisionView**](EvaluationFormDivisionView)
+
+
+## get_quality_publishedforms_evaluations_divisionviews
+
+> [**EvaluationFormDivisionViewListing**](EvaluationFormDivisionViewListing) get_quality_publishedforms_evaluations_divisionviews(page_size=page_size, page_number=page_number, name=name)
+
+
+Get the published evaluation forms across any division.
+
+get_quality_publishedforms_evaluations_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/quality/publishedforms/evaluations/divisionviews 
+
+Requires ALL permissions: 
+
+* quality:evaluationForm:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+
+try:
+    # Get the published evaluation forms across any division.
+    api_response = api_instance.get_quality_publishedforms_evaluations_divisionviews(page_size=page_size, page_number=page_number, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_publishedforms_evaluations_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+
+### Return type
+
+[**EvaluationFormDivisionViewListing**](EvaluationFormDivisionViewListing)
+
+
 ## get_quality_publishedforms_survey
 
 > [**SurveyForm**](SurveyForm) get_quality_publishedforms_survey(form_id)
@@ -2136,6 +2244,110 @@ except ApiException as e:
 ### Return type
 
 [**SurveyFormEntityListing**](SurveyFormEntityListing)
+
+
+## get_quality_publishedforms_surveys_divisionview
+
+> [**SurveyFormDivisionView**](SurveyFormDivisionView) get_quality_publishedforms_surveys_divisionview(survey_form_id)
+
+
+Get the most recent published version of an enabled survey form across any division.
+
+get_quality_publishedforms_surveys_divisionview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId} 
+
+Requires ALL permissions: 
+
+* quality:surveyForm:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+survey_form_id = 'survey_form_id_example' # str | Survey Form ID
+
+try:
+    # Get the most recent published version of an enabled survey form across any division.
+    api_response = api_instance.get_quality_publishedforms_surveys_divisionview(survey_form_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_publishedforms_surveys_divisionview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **survey_form_id** | **str**| Survey Form ID |  |
+
+### Return type
+
+[**SurveyFormDivisionView**](SurveyFormDivisionView)
+
+
+## get_quality_publishedforms_surveys_divisionviews
+
+> [**SurveyFormDivisionViewListing**](SurveyFormDivisionViewListing) get_quality_publishedforms_surveys_divisionviews(page_size=page_size, page_number=page_number, name=name)
+
+
+Get the published and enabled survey forms across any division.
+
+get_quality_publishedforms_surveys_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/quality/publishedforms/surveys/divisionviews 
+
+Requires ALL permissions: 
+
+* quality:surveyForm:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (optional)
+
+try:
+    # Get the published and enabled survey forms across any division.
+    api_response = api_instance.get_quality_publishedforms_surveys_divisionviews(page_size=page_size, page_number=page_number, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_publishedforms_surveys_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name | [optional]  |
+
+### Return type
+
+[**SurveyFormDivisionViewListing**](SurveyFormDivisionViewListing)
 
 
 ## get_quality_survey
@@ -3418,4 +3630,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 236.0.0_
+_PureCloudPlatformClientV2 237.0.0_
