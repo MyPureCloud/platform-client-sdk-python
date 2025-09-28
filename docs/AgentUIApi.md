@@ -208,4 +208,4 @@ except ApiException as e:
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

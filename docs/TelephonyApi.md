@@ -519,4 +519,4 @@ except ApiException as e:
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

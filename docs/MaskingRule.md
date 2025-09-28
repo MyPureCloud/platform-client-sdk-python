@@ -13,10 +13,11 @@
 | **definition** | str | Definition of masking rule (a valid regex or builtin AI based mask name). | |
 | **enabled** | bool | True/False | |
 | **type** | str | Masking rule type | |
+| **direction** | str | inbound/outbound | [optional] |
 | **integrations** | list[str] | Associated integration channels | [optional] |
 | **date_created** | datetime | Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **date_modified** | datetime | Date when the rule was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_
