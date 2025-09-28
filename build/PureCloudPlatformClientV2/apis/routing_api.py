@@ -3843,12 +3843,14 @@ class RoutingApi(object):
         :param str limit: Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
         :param str page_size: Number of entities to return. Maximum of 200.
         :param list[str] queue_id: Comma-separated list of queue Ids to filter by.
+        :param str kpi_id: Standard or custom KPI id used to filter predictors.
+        :param str state: The state used to filter predictors.
         :return: PredictorListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'limit', 'page_size', 'queue_id']
+        all_params = ['before', 'after', 'limit', 'page_size', 'queue_id', 'kpi_id', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -3877,6 +3879,10 @@ class RoutingApi(object):
             query_params['pageSize'] = params['page_size']
         if 'queue_id' in params:
             query_params['queueId'] = params['queue_id']
+        if 'kpi_id' in params:
+            query_params['kpiId'] = params['kpi_id']
+        if 'state' in params:
+            query_params['state'] = params['state']
 
         header_params = {}
 
@@ -4085,7 +4091,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
-        :param str expand: Which fields, if any, to expand.
+        :param list[str] expand: Which fields, if any, to expand.
         :return: AssistantQueue
                  If the method is called asynchronously,
                  returns the request thread.

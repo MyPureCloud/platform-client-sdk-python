@@ -54,6 +54,7 @@ class MaskingRule(object):
             'definition': 'str',
             'enabled': 'bool',
             'type': 'str',
+            'direction': 'str',
             'integrations': 'list[str]',
             'date_created': 'datetime',
             'date_modified': 'datetime'
@@ -67,6 +68,7 @@ class MaskingRule(object):
             'definition': 'definition',
             'enabled': 'enabled',
             'type': 'type',
+            'direction': 'direction',
             'integrations': 'integrations',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified'
@@ -79,6 +81,7 @@ class MaskingRule(object):
         self._definition = None
         self._enabled = None
         self._type = None
+        self._direction = None
         self._integrations = None
         self._date_created = None
         self._date_modified = None
@@ -255,6 +258,35 @@ class MaskingRule(object):
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def direction(self) -> str:
+        """
+        Gets the direction of this MaskingRule.
+        inbound/outbound
+
+        :return: The direction of this MaskingRule.
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction: str) -> None:
+        """
+        Sets the direction of this MaskingRule.
+        inbound/outbound
+
+        :param direction: The direction of this MaskingRule.
+        :type: str
+        """
+        if isinstance(direction, int):
+            direction = str(direction)
+        allowed_values = ["inbound", "outbound"]
+        if direction.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for direction -> " + direction)
+            self._direction = "outdated_sdk_version"
+        else:
+            self._direction = direction
 
     @property
     def integrations(self) -> List[str]:

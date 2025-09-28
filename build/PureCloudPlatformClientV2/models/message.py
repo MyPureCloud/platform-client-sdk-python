@@ -85,7 +85,8 @@ class Message(object):
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
             'byo_sms_integration_id': 'str',
-            'queue_media_settings': 'ConversationQueueMediaSettings'
+            'queue_media_settings': 'ConversationQueueMediaSettings',
+            'engagement_source': 'str'
         }
 
         self.attribute_map = {
@@ -118,7 +119,8 @@ class Message(object):
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
             'byo_sms_integration_id': 'byoSmsIntegrationId',
-            'queue_media_settings': 'queueMediaSettings'
+            'queue_media_settings': 'queueMediaSettings',
+            'engagement_source': 'engagementSource'
         }
 
         self._state = None
@@ -151,6 +153,7 @@ class Message(object):
         self._agent_assistant_id = None
         self._byo_sms_integration_id = None
         self._queue_media_settings = None
+        self._engagement_source = None
 
     @property
     def state(self) -> str:
@@ -174,7 +177,7 @@ class Message(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["alerting", "connected", "disconnected"]
+        allowed_values = ["alerting", "connected", "parked", "disconnected"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -203,7 +206,7 @@ class Message(object):
         """
         if isinstance(initial_state, int):
             initial_state = str(initial_state)
-        allowed_values = ["alerting", "connected", "disconnected"]
+        allowed_values = ["alerting", "connected", "parked", "disconnected"]
         if initial_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for initial_state -> " + initial_state)
             self._initial_state = "outdated_sdk_version"
@@ -381,7 +384,7 @@ class Message(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity"]
+        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity", "session.expired"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -896,6 +899,35 @@ class Message(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def engagement_source(self) -> str:
+        """
+        Gets the engagement_source of this Message.
+
+
+        :return: The engagement_source of this Message.
+        :rtype: str
+        """
+        return self._engagement_source
+
+    @engagement_source.setter
+    def engagement_source(self, engagement_source: str) -> None:
+        """
+        Sets the engagement_source of this Message.
+
+
+        :param engagement_source: The engagement_source of this Message.
+        :type: str
+        """
+        if isinstance(engagement_source, int):
+            engagement_source = str(engagement_source)
+        allowed_values = ["AppleMessagesForBusiness", "Discord", "Email", "Facebook", "FacebookMessenger", "Glassdoor", "GoogleBusinessProfile", "Instagram", "KakaoTalk", "Line", "LinkedIn", "MicrosoftTeams", "MobileChat", "Other", "QQ", "Reddit", "ServiceNow", "SFDC", "SMS", "Snapchat", "Telegram", "Threads", "Trustpilot", "Unspecified", "Viber", "WebChat", "WeChat", "Weibo", "WhatsApp", "X", "Yelp", "YouTube", "Zendesk"]
+        if engagement_source.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for engagement_source -> " + engagement_source)
+            self._engagement_source = "outdated_sdk_version"
+        else:
+            self._engagement_source = engagement_source
 
     def to_dict(self):
         """

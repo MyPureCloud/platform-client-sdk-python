@@ -51,18 +51,21 @@ class SearchUpdateRequest(object):
         self.swagger_types = {
             'session_id': 'str',
             'answered': 'bool',
-            'selected_answer': 'SelectedAnswer'
+            'selected_answer': 'SelectedAnswer',
+            'selected_answers': 'list[SelectedAnswer]'
         }
 
         self.attribute_map = {
             'session_id': 'sessionId',
             'answered': 'answered',
-            'selected_answer': 'selectedAnswer'
+            'selected_answer': 'selectedAnswer',
+            'selected_answers': 'selectedAnswers'
         }
 
         self._session_id = None
         self._answered = None
         self._selected_answer = None
+        self._selected_answers = None
 
     @property
     def session_id(self) -> str:
@@ -135,6 +138,30 @@ class SearchUpdateRequest(object):
         
 
         self._selected_answer = selected_answer
+
+    @property
+    def selected_answers(self) -> List['SelectedAnswer']:
+        """
+        Gets the selected_answers of this SearchUpdateRequest.
+        The search results selected as answers
+
+        :return: The selected_answers of this SearchUpdateRequest.
+        :rtype: list[SelectedAnswer]
+        """
+        return self._selected_answers
+
+    @selected_answers.setter
+    def selected_answers(self, selected_answers: List['SelectedAnswer']) -> None:
+        """
+        Sets the selected_answers of this SearchUpdateRequest.
+        The search results selected as answers
+
+        :param selected_answers: The selected_answers of this SearchUpdateRequest.
+        :type: list[SelectedAnswer]
+        """
+        
+
+        self._selected_answers = selected_answers
 
     def to_dict(self):
         """

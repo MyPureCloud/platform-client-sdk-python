@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_call_participant_consult**](#delete_conversations_call_participant_consult) | Cancel the transfer|
 |[**delete_conversations_email_messages_draft_attachment**](#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
 |[**delete_conversations_messages_cachedmedia_cached_media_item_id**](#delete_conversations_messages_cachedmedia_cached_media_item_id) | Remove a cached media item asychronously|
+|[**delete_conversations_messaging_integrations_apple_integration_id**](#delete_conversations_messaging_integrations_apple_integration_id) | Delete an Apple messaging integration|
 |[**delete_conversations_messaging_integrations_facebook_integration_id**](#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
 |[**delete_conversations_messaging_integrations_instagram_integration_id**](#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
 |[**delete_conversations_messaging_integrations_open_integration_id**](#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
@@ -98,6 +99,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id**](#get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id) | Get a whatsApp integration Identity Resolution settings|
 |[**get_conversations_messaging_integration_twitter_oauth_settings**](#get_conversations_messaging_integration_twitter_oauth_settings) | Get twitter oauth settings to patch an integration|
 |[**get_conversations_messaging_integrations**](#get_conversations_messaging_integrations) | Get a list of Integrations|
+|[**get_conversations_messaging_integrations_apple**](#get_conversations_messaging_integrations_apple) | Get a list of Apple Integrations|
+|[**get_conversations_messaging_integrations_apple_integration_id**](#get_conversations_messaging_integrations_apple_integration_id) | Get an Apple messaging integration|
 |[**get_conversations_messaging_integrations_facebook**](#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
 |[**get_conversations_messaging_integrations_facebook_integration_id**](#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
 |[**get_conversations_messaging_integrations_instagram**](#get_conversations_messaging_integrations_instagram) | Get a list of Instagram Integrations|
@@ -109,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations_twitter_oauth_settings**](#get_conversations_messaging_integrations_twitter_oauth_settings) | Get twitter oauth settings|
 |[**get_conversations_messaging_integrations_whatsapp**](#get_conversations_messaging_integrations_whatsapp) | Get a list of WhatsApp Integrations|
 |[**get_conversations_messaging_integrations_whatsapp_integration_id**](#get_conversations_messaging_integrations_whatsapp_integration_id) | Get a WhatsApp messaging integration|
+|[**get_conversations_messaging_oauth_apple_callback**](#get_conversations_messaging_oauth_apple_callback) | Call Authentication provider callback to validate state and code|
 |[**get_conversations_messaging_setting**](#get_conversations_messaging_setting) | Get a messaging setting|
 |[**get_conversations_messaging_settings**](#get_conversations_messaging_settings) | Get a list of messaging settings|
 |[**get_conversations_messaging_settings_default**](#get_conversations_messaging_settings_default) | Get the organization&#39;s default settings that will be used as the default when creating an integration.|
@@ -159,6 +163,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_message_participant**](#patch_conversations_message_participant) | Update conversation participant|
 |[**patch_conversations_message_participant_attributes**](#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_message_participant_communication**](#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it. This endpoint does not update wrapup.|
+|[**patch_conversations_messaging_integrations_apple_integration_id**](#patch_conversations_messaging_integrations_apple_integration_id) | Update an Apple messaging integration|
 |[**patch_conversations_messaging_integrations_facebook_integration_id**](#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
 |[**patch_conversations_messaging_integrations_instagram_integration_id**](#patch_conversations_messaging_integrations_instagram_integration_id) | Update Instagram messaging integration|
 |[**patch_conversations_messaging_integrations_open_integration_id**](#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
@@ -205,7 +210,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_call_participant_replace**](#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_call_participant_voice_consult**](#post_conversations_call_participant_voice_consult) | Initiate voice consult transfer|
 |[**post_conversations_call_participants**](#post_conversations_call_participants) | Add participants to a conversation|
-|[**post_conversations_call_participants_user_user_id**](#post_conversations_call_participants_user_user_id) | Add participants to a conversation without a user context|
+|[**post_conversations_call_participants_user_user_id**](#post_conversations_call_participants_user_user_id) | Add participants to a conversation on behalf of a user|
 |[**post_conversations_callback_participant_communication_wrapup**](#post_conversations_callback_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_callback_participant_replace**](#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_callbacks**](#post_conversations_callbacks) | Create a Callback|
@@ -247,6 +252,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messages**](#post_conversations_messages) | Create an outbound messaging conversation.|
 |[**post_conversations_messages_agentless**](#post_conversations_messages_agentless) | Send an agentless outbound message|
 |[**post_conversations_messages_inbound_open**](#post_conversations_messages_inbound_open) | Send an inbound Open Message|
+|[**post_conversations_messaging_integrations_apple**](#post_conversations_messaging_integrations_apple) | Create Apple Integration|
 |[**post_conversations_messaging_integrations_facebook**](#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
 |[**post_conversations_messaging_integrations_instagram**](#post_conversations_messaging_integrations_instagram) | Create Instagram Integration|
 |[**post_conversations_messaging_integrations_open**](#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
@@ -667,6 +673,53 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **cached_media_item_id** | **str**| cachedMediaItemId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_conversations_messaging_integrations_apple_integration_id
+
+>  delete_conversations_messaging_integrations_apple_integration_id(integration_id)
+
+
+Delete an Apple messaging integration
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/apple/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete an Apple messaging integration
+    api_instance.delete_conversations_messaging_integrations_apple_integration_id(integration_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_apple_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
 
 ### Return type
 
@@ -4447,8 +4500,6 @@ This endpoint does not need any parameters.
 
 Get Apple messaging integration identity resolution settings
 
-get_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} 
 
 Requires ALL permissions: 
@@ -4838,6 +4889,112 @@ except ApiException as e:
 ### Return type
 
 [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing)
+
+
+## get_conversations_messaging_integrations_apple
+
+> [**AppleIntegrationEntityListing**](AppleIntegrationEntityListing) get_conversations_messaging_integrations_apple(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+
+
+Get a list of Apple Integrations
+
+Wraps GET /api/v2/conversations/messaging/integrations/apple 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
+
+try:
+    # Get a list of Apple Integrations
+    api_response = api_instance.get_conversations_messaging_integrations_apple(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_apple: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
+
+### Return type
+
+[**AppleIntegrationEntityListing**](AppleIntegrationEntityListing)
+
+
+## get_conversations_messaging_integrations_apple_integration_id
+
+> [**AppleIntegration**](AppleIntegration) get_conversations_messaging_integrations_apple_integration_id(integration_id, expand=expand)
+
+
+Get an Apple messaging integration
+
+Wraps GET /api/v2/conversations/messaging/integrations/apple/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+
+try:
+    # Get an Apple messaging integration
+    api_response = api_instance.get_conversations_messaging_integrations_apple_integration_id(integration_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_apple_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+
+### Return type
+
+[**AppleIntegration**](AppleIntegration)
 
 
 ## get_conversations_messaging_integrations_facebook
@@ -5416,6 +5573,54 @@ except ApiException as e:
 ### Return type
 
 [**WhatsAppIntegration**](WhatsAppIntegration)
+
+
+## get_conversations_messaging_oauth_apple_callback
+
+> [**OAuthAppleAuthorizationResponse**](OAuthAppleAuthorizationResponse) get_conversations_messaging_oauth_apple_callback(code, state, error=error)
+
+
+Call Authentication provider callback to validate state and code
+
+Wraps GET /api/v2/conversations/messaging/oauth/apple/callback 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+code = 'code_example' # str | The authorization code to be sent to the authentication server during the token request.
+state = 'state_example' # str | The state/nonce value generated by Genesys Auth-Client Service.
+error = 'error_example' # str | Error parameter from OAuth provider (optional)
+
+try:
+    # Call Authentication provider callback to validate state and code
+    api_response = api_instance.get_conversations_messaging_oauth_apple_callback(code, state, error=error)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_oauth_apple_callback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **code** | **str**| The authorization code to be sent to the authentication server during the token request. |  |
+| **state** | **str**| The state/nonce value generated by Genesys Auth-Client Service. |  |
+| **error** | **str**| Error parameter from OAuth provider | [optional]  |
+
+### Return type
+
+[**OAuthAppleAuthorizationResponse**](OAuthAppleAuthorizationResponse)
 
 
 ## get_conversations_messaging_setting
@@ -8006,6 +8211,56 @@ except ApiException as e:
 **object**
 
 
+## patch_conversations_messaging_integrations_apple_integration_id
+
+> [**AppleIntegration**](AppleIntegration) patch_conversations_messaging_integrations_apple_integration_id(integration_id, body)
+
+
+Update an Apple messaging integration
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/apple/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:appleIntegration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.AppleIntegrationUpdateRequest() # AppleIntegrationUpdateRequest | AppleIntegrationUpdateRequest
+
+try:
+    # Update an Apple messaging integration
+    api_response = api_instance.patch_conversations_messaging_integrations_apple_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_integrations_apple_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**AppleIntegrationUpdateRequest**](AppleIntegrationUpdateRequest)| AppleIntegrationUpdateRequest |  |
+
+### Return type
+
+[**AppleIntegration**](AppleIntegration)
+
+
 ## patch_conversations_messaging_integrations_facebook_integration_id
 
 > [**FacebookIntegration**](FacebookIntegration) patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)
@@ -10367,7 +10622,7 @@ except ApiException as e:
 > [**Conversation**](Conversation) post_conversations_call_participants_user_user_id(conversation_id, user_id, body)
 
 
-Add participants to a conversation without a user context
+Add participants to a conversation on behalf of a user
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/user/{userId} 
 
@@ -10393,7 +10648,7 @@ user_id = 'user_id_example' # str | userId
 body = PureCloudPlatformClientV2.Conversation() # Conversation | Conversation
 
 try:
-    # Add participants to a conversation without a user context
+    # Add participants to a conversation on behalf of a user
     api_response = api_instance.post_conversations_call_participants_user_user_id(conversation_id, user_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -12545,6 +12800,54 @@ except ApiException as e:
 [**OpenNormalizedMessage**](OpenNormalizedMessage)
 
 
+## post_conversations_messaging_integrations_apple
+
+> [**AppleIntegration**](AppleIntegration) post_conversations_messaging_integrations_apple(body)
+
+
+Create Apple Integration
+
+Wraps POST /api/v2/conversations/messaging/integrations/apple 
+
+Requires ALL permissions: 
+
+* messaging:appleIntegration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.AppleIntegrationRequest() # AppleIntegrationRequest | AppleIntegrationRequest
+
+try:
+    # Create Apple Integration
+    api_response = api_instance.post_conversations_messaging_integrations_apple(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_apple: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AppleIntegrationRequest**](AppleIntegrationRequest)| AppleIntegrationRequest |  |
+
+### Return type
+
+[**AppleIntegration**](AppleIntegration)
+
+
 ## post_conversations_messaging_integrations_facebook
 
 > [**FacebookIntegration**](FacebookIntegration) post_conversations_messaging_integrations_facebook(body)
@@ -13869,8 +14172,6 @@ except ApiException as e:
 
 Create an identity resolution settings for a Apple messaging integration
 
-put_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} 
 
 Requires ALL permissions: 
@@ -14475,4 +14776,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

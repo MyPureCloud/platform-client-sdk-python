@@ -285,7 +285,8 @@ class ViewFilter(object):
             'virtual_agent_ids': 'list[str]',
             'empathy_score_categories': 'list[str]',
             'sentiment_score_categories': 'list[str]',
-            'sentiment_trend_categories': 'list[str]'
+            'sentiment_trend_categories': 'list[str]',
+            'content_moderation_flags': 'list[str]'
         }
 
         self.attribute_map = {
@@ -520,7 +521,8 @@ class ViewFilter(object):
             'virtual_agent_ids': 'virtualAgentIds',
             'empathy_score_categories': 'empathyScoreCategories',
             'sentiment_score_categories': 'sentimentScoreCategories',
-            'sentiment_trend_categories': 'sentimentTrendCategories'
+            'sentiment_trend_categories': 'sentimentTrendCategories',
+            'content_moderation_flags': 'contentModerationFlags'
         }
 
         self._media_types = None
@@ -755,6 +757,7 @@ class ViewFilter(object):
         self._empathy_score_categories = None
         self._sentiment_score_categories = None
         self._sentiment_trend_categories = None
+        self._content_moderation_flags = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6353,6 +6356,30 @@ class ViewFilter(object):
         
 
         self._sentiment_trend_categories = sentiment_trend_categories
+
+    @property
+    def content_moderation_flags(self) -> List[str]:
+        """
+        Gets the content_moderation_flags of this ViewFilter.
+        A set of Content Moderation Flags for filtering
+
+        :return: The content_moderation_flags of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._content_moderation_flags
+
+    @content_moderation_flags.setter
+    def content_moderation_flags(self, content_moderation_flags: List[str]) -> None:
+        """
+        Sets the content_moderation_flags of this ViewFilter.
+        A set of Content Moderation Flags for filtering
+
+        :param content_moderation_flags: The content_moderation_flags of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._content_moderation_flags = content_moderation_flags
 
     def to_dict(self):
         """

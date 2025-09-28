@@ -7,7 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **flag** | str | The Content Moderation Flag of the message. | |
+| **categories** | list[str] | The Content Moderation Categories of the message. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

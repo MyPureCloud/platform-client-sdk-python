@@ -44,6 +44,10 @@ from ..models import AnalyticsConversationAsyncQueryResponse
 from ..models import AnalyticsConversationQueryResponse
 from ..models import AnalyticsConversationWithoutAttributes
 from ..models import AnalyticsConversationWithoutAttributesMultiGetResponse
+from ..models import AppleIntegration
+from ..models import AppleIntegrationEntityListing
+from ..models import AppleIntegrationRequest
+from ..models import AppleIntegrationUpdateRequest
 from ..models import AssignedWrapupCode
 from ..models import AsyncConversationQuery
 from ..models import AsyncQueryResponse
@@ -154,6 +158,7 @@ from ..models import MessagingSetting
 from ..models import MessagingSettingDefaultRequest
 from ..models import MessagingSettingPatchRequest
 from ..models import MessagingSettingRequest
+from ..models import OAuthAppleAuthorizationResponse
 from ..models import OpenEventNormalizedMessage
 from ..models import OpenInboundNormalizedEvent
 from ..models import OpenInboundNormalizedMessage
@@ -851,6 +856,84 @@ class ConversationsApi(object):
         path_params = {}
         if 'cached_media_item_id' in params:
             path_params['cachedMediaItemId'] = params['cached_media_item_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_conversations_messaging_integrations_apple_integration_id(self, integration_id: str, **kwargs) -> None:
+        """
+        Delete an Apple messaging integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_conversations_messaging_integrations_apple_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_conversations_messaging_integrations_apple_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `delete_conversations_messaging_integrations_apple_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/apple/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
 
         query_params = {}
 
@@ -7074,7 +7157,6 @@ class ConversationsApi(object):
         """
         Get Apple messaging integration identity resolution settings
         
-	    get_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7700,6 +7782,174 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='MessagingIntegrationEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_apple(self, **kwargs) -> 'AppleIntegrationEntityListing':
+        """
+        Get a list of Apple Integrations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_apple(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str expand: Expand instructions for the return value.
+        :param str supported_content_id: Filter integrations returned based on the supported content ID
+        :param str messaging_setting_id: Filter integrations returned based on the setting ID
+        :return: AppleIntegrationEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'expand', 'supported_content_id', 'messaging_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_apple" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/apple'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'supported_content_id' in params:
+            query_params['supportedContent.id'] = params['supported_content_id']
+        if 'messaging_setting_id' in params:
+            query_params['messagingSetting.id'] = params['messaging_setting_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AppleIntegrationEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_apple_integration_id(self, integration_id: str, **kwargs) -> 'AppleIntegration':
+        """
+        Get an Apple messaging integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_apple_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param str expand: Expand instructions for the return value.
+        :return: AppleIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_apple_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_conversations_messaging_integrations_apple_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/apple/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AppleIntegration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8612,6 +8862,93 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WhatsAppIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_oauth_apple_callback(self, code: str, state: str, **kwargs) -> 'OAuthAppleAuthorizationResponse':
+        """
+        Call Authentication provider callback to validate state and code
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_oauth_apple_callback(code, state, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str code: The authorization code to be sent to the authentication server during the token request. (required)
+        :param str state: The state/nonce value generated by Genesys Auth-Client Service. (required)
+        :param str error: Error parameter from OAuth provider
+        :return: OAuthAppleAuthorizationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['code', 'state', 'error']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_oauth_apple_callback" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'code' is set
+        if ('code' not in params) or (params['code'] is None):
+            raise ValueError("Missing the required parameter `code` when calling `get_conversations_messaging_oauth_apple_callback`")
+        # verify the required parameter 'state' is set
+        if ('state' not in params) or (params['state'] is None):
+            raise ValueError("Missing the required parameter `state` when calling `get_conversations_messaging_oauth_apple_callback`")
+
+
+        resource_path = '/api/v2/conversations/messaging/oauth/apple/callback'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'code' in params:
+            query_params['code'] = params['code']
+        if 'state' in params:
+            query_params['state'] = params['state']
+        if 'error' in params:
+            query_params['error'] = params['error']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OAuthAppleAuthorizationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -12941,6 +13278,90 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_conversations_messaging_integrations_apple_integration_id(self, integration_id: str, body: 'AppleIntegrationUpdateRequest', **kwargs) -> 'AppleIntegration':
+        """
+        Update an Apple messaging integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversations_messaging_integrations_apple_integration_id(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param AppleIntegrationUpdateRequest body: AppleIntegrationUpdateRequest (required)
+        :return: AppleIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversations_messaging_integrations_apple_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `patch_conversations_messaging_integrations_apple_integration_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversations_messaging_integrations_apple_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/apple/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AppleIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_conversations_messaging_integrations_facebook_integration_id(self, integration_id: str, body: 'FacebookIntegrationUpdateRequest', **kwargs) -> 'FacebookIntegration':
         """
         Update Facebook messaging integration
@@ -16884,7 +17305,7 @@ class ConversationsApi(object):
 
     def post_conversations_call_participants_user_user_id(self, conversation_id: str, user_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
-        Add participants to a conversation without a user context
+        Add participants to a conversation on behalf of a user
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -20452,6 +20873,84 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_messaging_integrations_apple(self, body: 'AppleIntegrationRequest', **kwargs) -> 'AppleIntegration':
+        """
+        Create Apple Integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_messaging_integrations_apple(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AppleIntegrationRequest body: AppleIntegrationRequest (required)
+        :return: AppleIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_messaging_integrations_apple" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_messaging_integrations_apple`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/apple'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AppleIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_messaging_integrations_facebook(self, body: 'FacebookIntegrationRequest', **kwargs) -> 'FacebookIntegration':
         """
         Create a Facebook Integration
@@ -22625,7 +23124,6 @@ class ConversationsApi(object):
         """
         Create an identity resolution settings for a Apple messaging integration
         
-	    put_conversations_messaging_identityresolution_integrations_apple_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -221,6 +221,11 @@ PureCloudPlatformClientV2/models/agent_integrations_request.py
 PureCloudPlatformClientV2/models/agent_integrations_response.py
 PureCloudPlatformClientV2/models/agent_management_unit_reference.py
 PureCloudPlatformClientV2/models/agent_max_utilization_response.py
+PureCloudPlatformClientV2/models/agent_mu_query_response.py
+PureCloudPlatformClientV2/models/agent_mu_schedule_item.py
+PureCloudPlatformClientV2/models/agent_mu_schedule_query.py
+PureCloudPlatformClientV2/models/agent_mu_schedule_result.py
+PureCloudPlatformClientV2/models/agent_mu_schedule_shift.py
 PureCloudPlatformClientV2/models/agent_owned_mapping_preview.py
 PureCloudPlatformClientV2/models/agent_owned_mapping_preview_listing.py
 PureCloudPlatformClientV2/models/agent_owned_routing.py
@@ -229,6 +234,7 @@ PureCloudPlatformClientV2/models/agent_possible_work_shifts_response.py
 PureCloudPlatformClientV2/models/agent_query_adherence_explanations_request.py
 PureCloudPlatformClientV2/models/agent_query_adherence_explanations_response.py
 PureCloudPlatformClientV2/models/agent_queue_time_request.py
+PureCloudPlatformClientV2/models/agent_schedule_shift_activity.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_clause.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_predicate.py
 PureCloudPlatformClientV2/models/agent_state_counts_request.py
@@ -341,7 +347,14 @@ PureCloudPlatformClientV2/models/app_event_request.py
 PureCloudPlatformClientV2/models/app_event_response.py
 PureCloudPlatformClientV2/models/app_event_response_session.py
 PureCloudPlatformClientV2/models/append_to_dnc_action_settings.py
+PureCloudPlatformClientV2/models/apple_authentication.py
+PureCloudPlatformClientV2/models/apple_i_message_app.py
+PureCloudPlatformClientV2/models/apple_integration.py
+PureCloudPlatformClientV2/models/apple_integration_entity_listing.py
+PureCloudPlatformClientV2/models/apple_integration_request.py
+PureCloudPlatformClientV2/models/apple_integration_update_request.py
 PureCloudPlatformClientV2/models/apple_opaque_id.py
+PureCloudPlatformClientV2/models/apple_pay.py
 PureCloudPlatformClientV2/models/approval_namespace.py
 PureCloudPlatformClientV2/models/architect_dependency_tracking_build_notification_client.py
 PureCloudPlatformClientV2/models/architect_dependency_tracking_build_notification_dependency_tracking_build_notification.py
@@ -1831,7 +1844,9 @@ PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_item.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_reference.py
 PureCloudPlatformClientV2/models/disconnect_reason.py
 PureCloudPlatformClientV2/models/disposition.py
+PureCloudPlatformClientV2/models/disposition_amd_timeout.py
 PureCloudPlatformClientV2/models/disposition_parameters.py
+PureCloudPlatformClientV2/models/disposition_silent_call_timeout.py
 PureCloudPlatformClientV2/models/division.py
 PureCloudPlatformClientV2/models/division_entity_ref.py
 PureCloudPlatformClientV2/models/division_reference.py
@@ -1944,8 +1959,7 @@ PureCloudPlatformClientV2/models/domain_organization_role.py
 PureCloudPlatformClientV2/models/domain_organization_role_create.py
 PureCloudPlatformClientV2/models/domain_organization_role_update.py
 PureCloudPlatformClientV2/models/domain_permission.py
-PureCloudPlatformClientV2/models/domain_permission_collection_domain_permission.py
-PureCloudPlatformClientV2/models/domain_permission_entity_listing.py
+PureCloudPlatformClientV2/models/domain_permission_collection.py
 PureCloudPlatformClientV2/models/domain_permission_policy.py
 PureCloudPlatformClientV2/models/domain_physical_capabilities.py
 PureCloudPlatformClientV2/models/domain_physical_interface.py
@@ -2298,6 +2312,7 @@ PureCloudPlatformClientV2/models/fax_topic_lock_data.py
 PureCloudPlatformClientV2/models/fax_topic_user_data.py
 PureCloudPlatformClientV2/models/fax_topic_workspace_data.py
 PureCloudPlatformClientV2/models/feature_state.py
+PureCloudPlatformClientV2/models/feature_support.py
 PureCloudPlatformClientV2/models/feedback.py
 PureCloudPlatformClientV2/models/feedback_add_request.py
 PureCloudPlatformClientV2/models/feedback_update_request.py
@@ -2989,6 +3004,8 @@ PureCloudPlatformClientV2/models/language.py
 PureCloudPlatformClientV2/models/language_entity_listing.py
 PureCloudPlatformClientV2/models/language_override.py
 PureCloudPlatformClientV2/models/language_reference.py
+PureCloudPlatformClientV2/models/language_support_info_record.py
+PureCloudPlatformClientV2/models/language_support_response.py
 PureCloudPlatformClientV2/models/last_attempt_by_column_condition_settings.py
 PureCloudPlatformClientV2/models/last_attempt_overall_condition_settings.py
 PureCloudPlatformClientV2/models/last_result_by_column_condition_settings.py
@@ -3373,6 +3390,8 @@ PureCloudPlatformClientV2/models/nuance_organization.py
 PureCloudPlatformClientV2/models/number.py
 PureCloudPlatformClientV2/models/number_plan.py
 PureCloudPlatformClientV2/models/numeric_range.py
+PureCloudPlatformClientV2/models/o_auth_apple_authorization_response.py
+PureCloudPlatformClientV2/models/o_auth_apple_authorization_response_error.py
 PureCloudPlatformClientV2/models/o_auth_authorization.py
 PureCloudPlatformClientV2/models/o_auth_authorization_listing.py
 PureCloudPlatformClientV2/models/o_auth_client.py
@@ -3636,6 +3655,7 @@ PureCloudPlatformClientV2/models/performance_prediction_recalculation_upload_res
 PureCloudPlatformClientV2/models/performance_prediction_response.py
 PureCloudPlatformClientV2/models/performance_prediction_upload_schema.py
 PureCloudPlatformClientV2/models/performance_profile.py
+PureCloudPlatformClientV2/models/permission_collection_entity_listing.py
 PureCloudPlatformClientV2/models/permission_details.py
 PureCloudPlatformClientV2/models/permissions.py
 PureCloudPlatformClientV2/models/persistent_connection_change_topic_error_info.py
@@ -5874,6 +5894,11 @@ docs/AgentIntegrationsRequest.md
 docs/AgentIntegrationsResponse.md
 docs/AgentManagementUnitReference.md
 docs/AgentMaxUtilizationResponse.md
+docs/AgentMuQueryResponse.md
+docs/AgentMuScheduleItem.md
+docs/AgentMuScheduleQuery.md
+docs/AgentMuScheduleResult.md
+docs/AgentMuScheduleShift.md
 docs/AgentOwnedMappingPreview.md
 docs/AgentOwnedMappingPreviewListing.md
 docs/AgentOwnedRouting.md
@@ -5882,6 +5907,7 @@ docs/AgentPossibleWorkShiftsResponse.md
 docs/AgentQueryAdherenceExplanationsRequest.md
 docs/AgentQueryAdherenceExplanationsResponse.md
 docs/AgentQueueTimeRequest.md
+docs/AgentScheduleShiftActivity.md
 docs/AgentStateAgentQueryClause.md
 docs/AgentStateAgentQueryPredicate.md
 docs/AgentStateCountsRequest.md
@@ -6000,7 +6026,14 @@ docs/AppEventRequest.md
 docs/AppEventResponse.md
 docs/AppEventResponseSession.md
 docs/AppendToDncActionSettings.md
+docs/AppleAuthentication.md
+docs/AppleIMessageApp.md
+docs/AppleIntegration.md
+docs/AppleIntegrationEntityListing.md
+docs/AppleIntegrationRequest.md
+docs/AppleIntegrationUpdateRequest.md
 docs/AppleOpaqueId.md
+docs/ApplePay.md
 docs/ApprovalNamespace.md
 docs/ArchitectApi.json
 docs/ArchitectApi.md
@@ -7514,7 +7547,9 @@ docs/DisallowedEntityLearningAssignmentItem.md
 docs/DisallowedEntityLearningAssignmentReference.md
 docs/DisconnectReason.md
 docs/Disposition.md
+docs/DispositionAmdTimeout.md
 docs/DispositionParameters.md
+docs/DispositionSilentCallTimeout.md
 docs/Division.md
 docs/DivisionEntityRef.md
 docs/DivisionReference.md
@@ -7627,8 +7662,7 @@ docs/DomainOrganizationRole.md
 docs/DomainOrganizationRoleCreate.md
 docs/DomainOrganizationRoleUpdate.md
 docs/DomainPermission.md
-docs/DomainPermissionCollectionDomainPermission.md
-docs/DomainPermissionEntityListing.md
+docs/DomainPermissionCollection.md
 docs/DomainPermissionPolicy.md
 docs/DomainPhysicalCapabilities.md
 docs/DomainPhysicalInterface.md
@@ -7993,6 +8027,7 @@ docs/FaxTopicLockData.md
 docs/FaxTopicUserData.md
 docs/FaxTopicWorkspaceData.md
 docs/FeatureState.md
+docs/FeatureSupport.md
 docs/Feedback.md
 docs/FeedbackAddRequest.md
 docs/FeedbackUpdateRequest.md
@@ -8706,6 +8741,8 @@ docs/Language.md
 docs/LanguageEntityListing.md
 docs/LanguageOverride.md
 docs/LanguageReference.md
+docs/LanguageSupportInfoRecord.md
+docs/LanguageSupportResponse.md
 docs/LanguageUnderstandingApi.json
 docs/LanguageUnderstandingApi.md
 docs/LanguagesApi.json
@@ -9110,6 +9147,8 @@ docs/NumberPlan.md
 docs/NumericRange.md
 docs/OAuthApi.json
 docs/OAuthApi.md
+docs/OAuthAppleAuthorizationResponse.md
+docs/OAuthAppleAuthorizationResponseError.md
 docs/OAuthAuthorization.md
 docs/OAuthAuthorizationListing.md
 docs/OAuthClient.md
@@ -9384,6 +9423,7 @@ docs/PerformancePredictionRecalculationUploadResponse.md
 docs/PerformancePredictionResponse.md
 docs/PerformancePredictionUploadSchema.md
 docs/PerformanceProfile.md
+docs/PermissionCollectionEntityListing.md
 docs/PermissionDetails.md
 docs/Permissions.md
 docs/PersistentConnectionChangeTopicErrorInfo.md
@@ -11619,6 +11659,7 @@ docs/delete_conversation_recording_annotation-example.txt
 docs/delete_conversations_call_participant_consult-example.txt
 docs/delete_conversations_email_messages_draft_attachment-example.txt
 docs/delete_conversations_messages_cachedmedia_cached_media_item_id-example.txt
+docs/delete_conversations_messaging_integrations_apple_integration_id-example.txt
 docs/delete_conversations_messaging_integrations_facebook_integration_id-example.txt
 docs/delete_conversations_messaging_integrations_instagram_integration_id-example.txt
 docs/delete_conversations_messaging_integrations_open_integration_id-example.txt
@@ -11997,6 +12038,7 @@ docs/get_assistant_copilot-example.txt
 docs/get_assistant_queue-example.txt
 docs/get_assistant_queues-example.txt
 docs/get_assistants-example.txt
+docs/get_assistants_copilot_featuresupport-example.txt
 docs/get_assistants_queues-example.txt
 docs/get_audits_query_realtime_servicemapping-example.txt
 docs/get_audits_query_servicemapping-example.txt
@@ -12177,6 +12219,8 @@ docs/get_conversations_messaging_identityresolution_integrations_twitter_integra
 docs/get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id-example.txt
 docs/get_conversations_messaging_integration_twitter_oauth_settings-example.txt
 docs/get_conversations_messaging_integrations-example.txt
+docs/get_conversations_messaging_integrations_apple-example.txt
+docs/get_conversations_messaging_integrations_apple_integration_id-example.txt
 docs/get_conversations_messaging_integrations_facebook-example.txt
 docs/get_conversations_messaging_integrations_facebook_integration_id-example.txt
 docs/get_conversations_messaging_integrations_instagram-example.txt
@@ -12188,6 +12232,7 @@ docs/get_conversations_messaging_integrations_twitter_integration_id-example.txt
 docs/get_conversations_messaging_integrations_twitter_oauth_settings-example.txt
 docs/get_conversations_messaging_integrations_whatsapp-example.txt
 docs/get_conversations_messaging_integrations_whatsapp_integration_id-example.txt
+docs/get_conversations_messaging_oauth_apple_callback-example.txt
 docs/get_conversations_messaging_setting-example.txt
 docs/get_conversations_messaging_settings-example.txt
 docs/get_conversations_messaging_settings_default-example.txt
@@ -13361,6 +13406,7 @@ docs/patch_conversations_message-example.txt
 docs/patch_conversations_message_participant-example.txt
 docs/patch_conversations_message_participant_attributes-example.txt
 docs/patch_conversations_message_participant_communication-example.txt
+docs/patch_conversations_messaging_integrations_apple_integration_id-example.txt
 docs/patch_conversations_messaging_integrations_facebook_integration_id-example.txt
 docs/patch_conversations_messaging_integrations_instagram_integration_id-example.txt
 docs/patch_conversations_messaging_integrations_open_integration_id-example.txt
@@ -13750,6 +13796,7 @@ docs/post_conversations_message_participant_replace-example.txt
 docs/post_conversations_messages-example.txt
 docs/post_conversations_messages_agentless-example.txt
 docs/post_conversations_messages_inbound_open-example.txt
+docs/post_conversations_messaging_integrations_apple-example.txt
 docs/post_conversations_messaging_integrations_facebook-example.txt
 docs/post_conversations_messaging_integrations_instagram-example.txt
 docs/post_conversations_messaging_integrations_open-example.txt
@@ -14240,6 +14287,7 @@ docs/post_workforcemanagement_agent_adherence_explanations_query-example.txt
 docs/post_workforcemanagement_agents-example.txt
 docs/post_workforcemanagement_agents_integrations_hris_query-example.txt
 docs/post_workforcemanagement_agents_me_possibleworkshifts-example.txt
+docs/post_workforcemanagement_agentschedules_managementunits_mine-example.txt
 docs/post_workforcemanagement_agentschedules_mine-example.txt
 docs/post_workforcemanagement_alternativeshifts_offers_jobs-example.txt
 docs/post_workforcemanagement_alternativeshifts_offers_search_jobs-example.txt

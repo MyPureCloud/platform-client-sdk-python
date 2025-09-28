@@ -40,6 +40,7 @@
 | **dnis** | str | Dialed number identification service (number dialed by the calling party) | [optional] |
 | **edge_id** | str | Unique identifier of the edge device | [optional] |
 | **eligible_agent_counts** | list[int] | Number of eligible agents for each predictive routing attempt | [optional] |
+| **engagement_source** | str | Open Messaging engagement source type | [optional] |
 | **extended_delivery_status** | str | Extended delivery status | [optional] |
 | **flow_in_type** | str | Type of flow in that occurred when entering ACD. | [optional] |
 | **flow_out_type** | str | Type of flow out that occurred when emitting tFlowOut. | [optional] |
@@ -93,4 +94,4 @@
 
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

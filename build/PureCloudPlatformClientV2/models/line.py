@@ -468,7 +468,7 @@ class Line(object):
     def template(self) -> 'DomainEntityRef':
         """
         Gets the template of this Line.
-
+        The station base/template. (Deprecated - Please use the lineBaseSettings field instead, as it contains the same data)
 
         :return: The template of this Line.
         :rtype: DomainEntityRef
@@ -479,7 +479,7 @@ class Line(object):
     def template(self, template: 'DomainEntityRef') -> None:
         """
         Sets the template of this Line.
-
+        The station base/template. (Deprecated - Please use the lineBaseSettings field instead, as it contains the same data)
 
         :param template: The template of this Line.
         :type: DomainEntityRef
@@ -516,7 +516,7 @@ class Line(object):
     def line_base_settings(self) -> 'DomainEntityRef':
         """
         Gets the line_base_settings of this Line.
-
+        The station base/template.
 
         :return: The line_base_settings of this Line.
         :rtype: DomainEntityRef
@@ -527,7 +527,7 @@ class Line(object):
     def line_base_settings(self, line_base_settings: 'DomainEntityRef') -> None:
         """
         Sets the line_base_settings of this Line.
-
+        The station base/template.
 
         :param line_base_settings: The line_base_settings of this Line.
         :type: DomainEntityRef

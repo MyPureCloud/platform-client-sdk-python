@@ -36,7 +36,8 @@
 | **agent_assistant_id** | str | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. | [optional] |
 | **byo_sms_integration_id** | str | The internal id representing the customer supplied sms integration message. | [optional] |
 | **queue_media_settings** | [ConversationQueueMediaSettings](ConversationQueueMediaSettings) | Represents the queue settings for this media type. | [optional] |
+| **engagement_source** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

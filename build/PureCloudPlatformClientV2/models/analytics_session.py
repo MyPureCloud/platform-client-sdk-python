@@ -88,6 +88,7 @@ class AnalyticsSession(object):
             'dnis': 'str',
             'edge_id': 'str',
             'eligible_agent_counts': 'list[int]',
+            'engagement_source': 'str',
             'extended_delivery_status': 'str',
             'flow_in_type': 'str',
             'flow_out_type': 'str',
@@ -175,6 +176,7 @@ class AnalyticsSession(object):
             'dnis': 'dnis',
             'edge_id': 'edgeId',
             'eligible_agent_counts': 'eligibleAgentCounts',
+            'engagement_source': 'engagementSource',
             'extended_delivery_status': 'extendedDeliveryStatus',
             'flow_in_type': 'flowInType',
             'flow_out_type': 'flowOutType',
@@ -261,6 +263,7 @@ class AnalyticsSession(object):
         self._dnis = None
         self._edge_id = None
         self._eligible_agent_counts = None
+        self._engagement_source = None
         self._extended_delivery_status = None
         self._flow_in_type = None
         self._flow_out_type = None
@@ -1137,6 +1140,35 @@ class AnalyticsSession(object):
         
 
         self._eligible_agent_counts = eligible_agent_counts
+
+    @property
+    def engagement_source(self) -> str:
+        """
+        Gets the engagement_source of this AnalyticsSession.
+        Open Messaging engagement source type
+
+        :return: The engagement_source of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._engagement_source
+
+    @engagement_source.setter
+    def engagement_source(self, engagement_source: str) -> None:
+        """
+        Sets the engagement_source of this AnalyticsSession.
+        Open Messaging engagement source type
+
+        :param engagement_source: The engagement_source of this AnalyticsSession.
+        :type: str
+        """
+        if isinstance(engagement_source, int):
+            engagement_source = str(engagement_source)
+        allowed_values = ["AppleMessagesForBusiness", "Discord", "Email", "Facebook", "FacebookMessenger", "Glassdoor", "GoogleBusinessProfile", "Instagram", "KakaoTalk", "Line", "LinkedIn", "MicrosoftTeams", "MobileChat", "Other", "QQ", "Reddit", "ServiceNow", "SFDC", "SMS", "Snapchat", "Telegram", "Threads", "Trustpilot", "Unspecified", "Viber", "WebChat", "WeChat", "Weibo", "WhatsApp", "X", "Yelp", "YouTube", "Zendesk"]
+        if engagement_source.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for engagement_source -> " + engagement_source)
+            self._engagement_source = "outdated_sdk_version"
+        else:
+            self._engagement_source = engagement_source
 
     @property
     def extended_delivery_status(self) -> str:

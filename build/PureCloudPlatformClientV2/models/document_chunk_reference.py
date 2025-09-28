@@ -48,16 +48,19 @@ class DocumentChunkReference(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'title': 'str'
+            'title': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'title': 'title'
+            'title': 'title',
+            'self_uri': 'selfUri'
         }
 
         self._id = None
         self._title = None
+        self._self_uri = None
 
     @property
     def id(self) -> str:
@@ -106,6 +109,30 @@ class DocumentChunkReference(object):
         
 
         self._title = title
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this DocumentChunkReference.
+        The URI for this object
+
+        :return: The self_uri of this DocumentChunkReference.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this DocumentChunkReference.
+        The URI for this object
+
+        :param self_uri: The self_uri of this DocumentChunkReference.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

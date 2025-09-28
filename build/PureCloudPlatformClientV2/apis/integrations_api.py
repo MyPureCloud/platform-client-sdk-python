@@ -630,12 +630,15 @@ class IntegrationsApi(object):
         :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
+        :param list[str] ids: Comma-separated list of integration IDs to filter by (max 100)
+        :param str integration_type: Filter integrations by integration type ID
+        :param str reported_state: Filter integrations by reported state (case-insensitive)
         :return: IntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'ids', 'integration_type', 'reported_state']
         all_params.append('callback')
 
         params = locals()
@@ -666,6 +669,12 @@ class IntegrationsApi(object):
             query_params['nextPage'] = params['next_page']
         if 'previous_page' in params:
             query_params['previousPage'] = params['previous_page']
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
+        if 'integration_type' in params:
+            query_params['integrationType'] = params['integration_type']
+        if 'reported_state' in params:
+            query_params['reportedState'] = params['reported_state']
 
         header_params = {}
 

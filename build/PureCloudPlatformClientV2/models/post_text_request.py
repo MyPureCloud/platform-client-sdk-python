@@ -225,7 +225,7 @@ class PostTextRequest(object):
     def language_code(self) -> str:
         """
         Gets the language_code of this PostTextRequest.
-        The launguage code the bot will run under
+        The language code the bot will run under
 
         :return: The language_code of this PostTextRequest.
         :rtype: str
@@ -236,7 +236,7 @@ class PostTextRequest(object):
     def language_code(self, language_code: str) -> None:
         """
         Sets the language_code of this PostTextRequest.
-        The launguage code the bot will run under
+        The language code the bot will run under
 
         :param language_code: The language_code of this PostTextRequest.
         :type: str

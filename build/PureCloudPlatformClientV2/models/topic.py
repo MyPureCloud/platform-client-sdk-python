@@ -56,6 +56,7 @@ class Topic(object):
             'description': 'str',
             'published': 'bool',
             'strictness': 'str',
+            'matching_type': 'str',
             'programs': 'list[BaseProgramEntity]',
             'tags': 'list[str]',
             'dialect': 'str',
@@ -74,6 +75,7 @@ class Topic(object):
             'description': 'description',
             'published': 'published',
             'strictness': 'strictness',
+            'matching_type': 'matchingType',
             'programs': 'programs',
             'tags': 'tags',
             'dialect': 'dialect',
@@ -91,6 +93,7 @@ class Topic(object):
         self._description = None
         self._published = None
         self._strictness = None
+        self._matching_type = None
         self._programs = None
         self._tags = None
         self._dialect = None
@@ -226,6 +229,35 @@ class Topic(object):
             self._strictness = "outdated_sdk_version"
         else:
             self._strictness = strictness
+
+    @property
+    def matching_type(self) -> str:
+        """
+        Gets the matching_type of this Topic.
+
+
+        :return: The matching_type of this Topic.
+        :rtype: str
+        """
+        return self._matching_type
+
+    @matching_type.setter
+    def matching_type(self, matching_type: str) -> None:
+        """
+        Sets the matching_type of this Topic.
+
+
+        :param matching_type: The matching_type of this Topic.
+        :type: str
+        """
+        if isinstance(matching_type, int):
+            matching_type = str(matching_type)
+        allowed_values = ["Lexical", "Semantic"]
+        if matching_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for matching_type -> " + matching_type)
+            self._matching_type = "outdated_sdk_version"
+        else:
+            self._matching_type = matching_type
 
     @property
     def programs(self) -> List['BaseProgramEntity']:

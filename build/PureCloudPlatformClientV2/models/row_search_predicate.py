@@ -111,7 +111,7 @@ class RowSearchPredicate(object):
         """
         if isinstance(operator, int):
             operator = str(operator)
-        allowed_values = ["Equals", "StartsWith", "GreaterThan", "GreaterThanOrEquals", "LessThan", "LessThanOrEquals"]
+        allowed_values = ["Equals", "StartsWith", "GreaterThan", "GreaterThanOrEquals", "LessThan", "LessThanOrEquals", "ContainsItem"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"

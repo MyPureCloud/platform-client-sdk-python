@@ -48,10 +48,10 @@ from ..models import DomainOrgRoleDifference
 from ..models import DomainOrganizationRole
 from ..models import DomainOrganizationRoleCreate
 from ..models import DomainOrganizationRoleUpdate
-from ..models import DomainPermissionEntityListing
 from ..models import ErrorBody
 from ..models import OrganizationProductEntityListing
 from ..models import OrganizationRoleEntityListing
+from ..models import PermissionCollectionEntityListing
 from ..models import PolicyAttributeSet
 from ..models import PolicyTestPayload
 from ..models import PolicyTestResult
@@ -1244,7 +1244,7 @@ class AuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_authorization_permissions(self, **kwargs) -> 'DomainPermissionEntityListing':
+    def get_authorization_permissions(self, **kwargs) -> 'PermissionCollectionEntityListing':
         """
         Get all permissions.
         Retrieve a list of all permission defined in the system.
@@ -1263,7 +1263,7 @@ class AuthorizationApi(object):
         :param int page_number: Page number
         :param str query_type: Query filter type
         :param str query: Comma-separated list of permissions or domains to query
-        :return: DomainPermissionEntityListing
+        :return: PermissionCollectionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1323,7 +1323,7 @@ class AuthorizationApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DomainPermissionEntityListing',
+                                            response_type='PermissionCollectionEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -217,7 +217,7 @@ class MessageDetails(object):
     def media(self) -> List['MessageMedia']:
         """
         Gets the media of this MessageDetails.
-        The media (images, files, etc) associated with this message, if any
+        Deprecated: Use the API /api/v2/conversations/messages/{conversationId}/messages/{messageId} to get the associated media.
 
         :return: The media of this MessageDetails.
         :rtype: list[MessageMedia]
@@ -228,7 +228,7 @@ class MessageDetails(object):
     def media(self, media: List['MessageMedia']) -> None:
         """
         Sets the media of this MessageDetails.
-        The media (images, files, etc) associated with this message, if any
+        Deprecated: Use the API /api/v2/conversations/messages/{conversationId}/messages/{messageId} to get the associated media.
 
         :param media: The media of this MessageDetails.
         :type: list[MessageMedia]
@@ -241,7 +241,7 @@ class MessageDetails(object):
     def stickers(self) -> List['MessageSticker']:
         """
         Gets the stickers of this MessageDetails.
-        One or more stickers associated with this message, if any
+        Deprecated: This attribute is no longer used. Messages have not included associated stickers for a long time.
 
         :return: The stickers of this MessageDetails.
         :rtype: list[MessageSticker]
@@ -252,7 +252,7 @@ class MessageDetails(object):
     def stickers(self, stickers: List['MessageSticker']) -> None:
         """
         Sets the stickers of this MessageDetails.
-        One or more stickers associated with this message, if any
+        Deprecated: This attribute is no longer used. Messages have not included associated stickers for a long time.
 
         :param stickers: The stickers of this MessageDetails.
         :type: list[MessageSticker]

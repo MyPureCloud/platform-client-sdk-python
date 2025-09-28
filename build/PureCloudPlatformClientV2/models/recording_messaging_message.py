@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import ConversationMessageEvent
     from . import DatePicker
     from . import ExternalContact
+    from . import InteractiveApplication
     from . import MessageMediaAttachment
     from . import MessageStickerAttachment
     from . import QuickReply
@@ -81,7 +82,8 @@ class RecordingMessagingMessage(object):
             'date_picker': 'DatePicker',
             'content_type': 'str',
             'social_visibility': 'str',
-            'events': 'list[ConversationMessageEvent]'
+            'events': 'list[ConversationMessageEvent]',
+            'interactive_application': 'InteractiveApplication'
         }
 
         self.attribute_map = {
@@ -106,7 +108,8 @@ class RecordingMessagingMessage(object):
             'date_picker': 'datePicker',
             'content_type': 'contentType',
             'social_visibility': 'socialVisibility',
-            'events': 'events'
+            'events': 'events',
+            'interactive_application': 'interactiveApplication'
         }
 
         self._pcFrom = None
@@ -131,6 +134,7 @@ class RecordingMessagingMessage(object):
         self._content_type = None
         self._social_visibility = None
         self._events = None
+        self._interactive_application = None
 
     @property
     def pcFrom(self) -> str:
@@ -669,6 +673,30 @@ class RecordingMessagingMessage(object):
         
 
         self._events = events
+
+    @property
+    def interactive_application(self) -> 'InteractiveApplication':
+        """
+        Gets the interactive_application of this RecordingMessagingMessage.
+        InteractiveApplication content.
+
+        :return: The interactive_application of this RecordingMessagingMessage.
+        :rtype: InteractiveApplication
+        """
+        return self._interactive_application
+
+    @interactive_application.setter
+    def interactive_application(self, interactive_application: 'InteractiveApplication') -> None:
+        """
+        Sets the interactive_application of this RecordingMessagingMessage.
+        InteractiveApplication content.
+
+        :param interactive_application: The interactive_application of this RecordingMessagingMessage.
+        :type: InteractiveApplication
+        """
+        
+
+        self._interactive_application = interactive_application
 
     def to_dict(self):
         """

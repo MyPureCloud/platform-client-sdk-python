@@ -1749,7 +1749,7 @@ class QualityApi(object):
 
     def get_quality_evaluators_activity(self, **kwargs) -> 'EvaluatorActivityEntityListing':
         """
-        Get an evaluator activity
+        Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
         
 
         This method makes a synchronous HTTP request by default. To make an

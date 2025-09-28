@@ -230,10 +230,11 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_webchat_settings is deprecated")
     def delete_webchat_settings(self, **kwargs) -> None:
         """
         Remove WebChat deployment settings
-        
+        This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -967,10 +968,11 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_webchat_settings is deprecated")
     def get_webchat_settings(self, **kwargs) -> 'WebChatSettings':
         """
         Get WebChat deployment settings
-        
+        This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1549,10 +1551,11 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_webchat_settings is deprecated")
     def put_webchat_settings(self, body: 'WebChatSettings', **kwargs) -> 'WebChatSettings':
         """
         Update WebChat deployment settings
-        
+        This endpoint is deprecated. Please see the article https://community.genesys.com/discussion/deprecation-acd-chat-v20-and-resulting-impact-to-apiv2webchatsettings.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

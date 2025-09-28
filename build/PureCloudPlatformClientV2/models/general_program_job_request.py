@@ -81,7 +81,7 @@ class GeneralProgramJobRequest(object):
         """
         if isinstance(dialect, int):
             dialect = str(dialect)
-        allowed_values = ["ar-001", "ar-AE", "ar-BH", "ar-EG", "ar-IL", "ar-SA", "ar-TN", "da-DK", "de-CH", "de-DE", "en-AU", "en-GB", "en-HK", "en-IE", "en-IN", "en-NZ", "en-SG", "en-US", "en-ZA", "es-ES", "es-US", "fi-FI", "fr-CA", "fr-FR", "he-IL", "hi-IN", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "sv-SE"]
+        allowed_values = ["ar-001", "ar-AE", "ar-BH", "ar-EG", "ar-IL", "ar-SA", "ar-TN", "da-DK", "de-CH", "de-DE", "en-AU", "en-GB", "en-HK", "en-IE", "en-IN", "en-NZ", "en-SG", "en-US", "en-ZA", "es-ES", "es-US", "fi-FI", "fr-CA", "fr-FR", "he-IL", "hi-IN", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "sv-SE", "zh-CN", "zh-HK", "zh-TW"]
         if dialect.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dialect -> " + dialect)
             self._dialect = "outdated_sdk_version"

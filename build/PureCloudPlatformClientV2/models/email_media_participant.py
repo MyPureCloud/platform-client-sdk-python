@@ -488,7 +488,7 @@ class EmailMediaParticipant(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "endpoint.donotdisturb", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.donotdisturb", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "inactivity"]
+        allowed_values = ["endpoint", "endpoint.donotdisturb", "client", "system", "transfer", "transfer.conference", "transfer.consult", "transfer.donotdisturb", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "inactivity", "session.expired"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"

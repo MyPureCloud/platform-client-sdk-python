@@ -1829,7 +1829,7 @@ except ApiException as e:
 
 ## put_learning_module_rule
 
-> [**LearningModuleRule**](LearningModuleRule) put_learning_module_rule(module_id, body)
+> [**LearningModuleRule**](LearningModuleRule) put_learning_module_rule(module_id, body, assign=assign)
 
 
 Update a learning module rule
@@ -1857,10 +1857,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.LearningApi()
 module_id = 'module_id_example' # str | The ID of the learning module
 body = PureCloudPlatformClientV2.LearningModuleRule() # LearningModuleRule | The learning module rule to be updated
+assign = True # bool | Whether to assign the module to users or not (optional) (default to True)
 
 try:
     # Update a learning module rule
-    api_response = api_instance.put_learning_module_rule(module_id, body)
+    api_response = api_instance.put_learning_module_rule(module_id, body, assign=assign)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->put_learning_module_rule: %s\n" % e)
@@ -1873,10 +1874,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
 | **body** | [**LearningModuleRule**](LearningModuleRule)| The learning module rule to be updated |  |
+| **assign** | **bool**| Whether to assign the module to users or not | [optional] [default to True] |
 
 ### Return type
 
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

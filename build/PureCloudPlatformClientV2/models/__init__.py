@@ -134,6 +134,11 @@ from .agent_integrations_request import AgentIntegrationsRequest
 from .agent_integrations_response import AgentIntegrationsResponse
 from .agent_management_unit_reference import AgentManagementUnitReference
 from .agent_max_utilization_response import AgentMaxUtilizationResponse
+from .agent_mu_query_response import AgentMuQueryResponse
+from .agent_mu_schedule_item import AgentMuScheduleItem
+from .agent_mu_schedule_query import AgentMuScheduleQuery
+from .agent_mu_schedule_result import AgentMuScheduleResult
+from .agent_mu_schedule_shift import AgentMuScheduleShift
 from .agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .agent_owned_routing import AgentOwnedRouting
@@ -142,6 +147,7 @@ from .agent_possible_work_shifts_response import AgentPossibleWorkShiftsResponse
 from .agent_query_adherence_explanations_request import AgentQueryAdherenceExplanationsRequest
 from .agent_query_adherence_explanations_response import AgentQueryAdherenceExplanationsResponse
 from .agent_queue_time_request import AgentQueueTimeRequest
+from .agent_schedule_shift_activity import AgentScheduleShiftActivity
 from .agent_state_agent_query_clause import AgentStateAgentQueryClause
 from .agent_state_agent_query_predicate import AgentStateAgentQueryPredicate
 from .agent_state_counts_request import AgentStateCountsRequest
@@ -254,7 +260,14 @@ from .app_event_request import AppEventRequest
 from .app_event_response import AppEventResponse
 from .app_event_response_session import AppEventResponseSession
 from .append_to_dnc_action_settings import AppendToDncActionSettings
+from .apple_authentication import AppleAuthentication
+from .apple_i_message_app import AppleIMessageApp
+from .apple_integration import AppleIntegration
+from .apple_integration_entity_listing import AppleIntegrationEntityListing
+from .apple_integration_request import AppleIntegrationRequest
+from .apple_integration_update_request import AppleIntegrationUpdateRequest
 from .apple_opaque_id import AppleOpaqueId
+from .apple_pay import ApplePay
 from .approval_namespace import ApprovalNamespace
 from .architect_dependency_tracking_build_notification_client import ArchitectDependencyTrackingBuildNotificationClient
 from .architect_dependency_tracking_build_notification_dependency_tracking_build_notification import ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification
@@ -1744,7 +1757,9 @@ from .disallowed_entity_learning_assignment_item import DisallowedEntityLearning
 from .disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .disconnect_reason import DisconnectReason
 from .disposition import Disposition
+from .disposition_amd_timeout import DispositionAmdTimeout
 from .disposition_parameters import DispositionParameters
+from .disposition_silent_call_timeout import DispositionSilentCallTimeout
 from .division import Division
 from .division_entity_ref import DivisionEntityRef
 from .division_reference import DivisionReference
@@ -1857,8 +1872,7 @@ from .domain_organization_role import DomainOrganizationRole
 from .domain_organization_role_create import DomainOrganizationRoleCreate
 from .domain_organization_role_update import DomainOrganizationRoleUpdate
 from .domain_permission import DomainPermission
-from .domain_permission_collection_domain_permission import DomainPermissionCollectionDomainPermission
-from .domain_permission_entity_listing import DomainPermissionEntityListing
+from .domain_permission_collection import DomainPermissionCollection
 from .domain_permission_policy import DomainPermissionPolicy
 from .domain_physical_capabilities import DomainPhysicalCapabilities
 from .domain_physical_interface import DomainPhysicalInterface
@@ -2211,6 +2225,7 @@ from .fax_topic_lock_data import FaxTopicLockData
 from .fax_topic_user_data import FaxTopicUserData
 from .fax_topic_workspace_data import FaxTopicWorkspaceData
 from .feature_state import FeatureState
+from .feature_support import FeatureSupport
 from .feedback import Feedback
 from .feedback_add_request import FeedbackAddRequest
 from .feedback_update_request import FeedbackUpdateRequest
@@ -2902,6 +2917,8 @@ from .language import Language
 from .language_entity_listing import LanguageEntityListing
 from .language_override import LanguageOverride
 from .language_reference import LanguageReference
+from .language_support_info_record import LanguageSupportInfoRecord
+from .language_support_response import LanguageSupportResponse
 from .last_attempt_by_column_condition_settings import LastAttemptByColumnConditionSettings
 from .last_attempt_overall_condition_settings import LastAttemptOverallConditionSettings
 from .last_result_by_column_condition_settings import LastResultByColumnConditionSettings
@@ -3286,6 +3303,8 @@ from .nuance_organization import NuanceOrganization
 from .number import Number
 from .number_plan import NumberPlan
 from .numeric_range import NumericRange
+from .o_auth_apple_authorization_response import OAuthAppleAuthorizationResponse
+from .o_auth_apple_authorization_response_error import OAuthAppleAuthorizationResponseError
 from .o_auth_authorization import OAuthAuthorization
 from .o_auth_authorization_listing import OAuthAuthorizationListing
 from .o_auth_client import OAuthClient
@@ -3550,6 +3569,7 @@ from .performance_prediction_recalculation_upload_response import PerformancePre
 from .performance_prediction_response import PerformancePredictionResponse
 from .performance_prediction_upload_schema import PerformancePredictionUploadSchema
 from .performance_profile import PerformanceProfile
+from .permission_collection_entity_listing import PermissionCollectionEntityListing
 from .permission_details import PermissionDetails
 from .permissions import Permissions
 from .persistent_connection_change_topic_error_info import PersistentConnectionChangeTopicErrorInfo

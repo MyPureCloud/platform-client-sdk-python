@@ -178,6 +178,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_agents**](#post_workforcemanagement_agents) | Move agents in and out of management unit|
 |[**post_workforcemanagement_agents_integrations_hris_query**](#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
 |[**post_workforcemanagement_agents_me_possibleworkshifts**](#post_workforcemanagement_agents_me_possibleworkshifts) | Get agent possible work shifts for requested time frame|
+|[**post_workforcemanagement_agentschedules_managementunits_mine**](#post_workforcemanagement_agentschedules_managementunits_mine) | Fetch agent schedules for the logged in user&#39;s management unit|
 |[**post_workforcemanagement_agentschedules_mine**](#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
 |[**post_workforcemanagement_alternativeshifts_offers_jobs**](#post_workforcemanagement_alternativeshifts_offers_jobs) | Request a list of alternative shift offers for a given schedule|
 |[**post_workforcemanagement_alternativeshifts_offers_search_jobs**](#post_workforcemanagement_alternativeshifts_offers_search_jobs) | Request a search of alternative shift offers for a given shift|
@@ -9247,6 +9248,58 @@ except ApiException as e:
 [**AgentPossibleWorkShiftsResponse**](AgentPossibleWorkShiftsResponse)
 
 
+## post_workforcemanagement_agentschedules_managementunits_mine
+
+> [**AgentMuQueryResponse**](AgentMuQueryResponse) post_workforcemanagement_agentschedules_managementunits_mine(body, force_async=force_async, force_download_service=force_download_service)
+
+
+Fetch agent schedules for the logged in user's management unit
+
+Wraps POST /api/v2/workforcemanagement/agentschedules/managementunits/mine 
+
+Requires ANY permissions: 
+
+* wfm:agentManagementUnitSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AgentMuScheduleQuery() # AgentMuScheduleQuery | body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Fetch agent schedules for the logged in user's management unit
+    api_response = api_instance.post_workforcemanagement_agentschedules_managementunits_mine(body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agentschedules_managementunits_mine: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentMuScheduleQuery**](AgentMuScheduleQuery)| body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**AgentMuQueryResponse**](AgentMuQueryResponse)
+
+
 ## post_workforcemanagement_agentschedules_mine
 
 > [**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse) post_workforcemanagement_agentschedules_mine(body)
@@ -13736,4 +13789,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

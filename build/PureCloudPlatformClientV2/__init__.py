@@ -134,6 +134,11 @@ from .models.agent_integrations_request import AgentIntegrationsRequest
 from .models.agent_integrations_response import AgentIntegrationsResponse
 from .models.agent_management_unit_reference import AgentManagementUnitReference
 from .models.agent_max_utilization_response import AgentMaxUtilizationResponse
+from .models.agent_mu_query_response import AgentMuQueryResponse
+from .models.agent_mu_schedule_item import AgentMuScheduleItem
+from .models.agent_mu_schedule_query import AgentMuScheduleQuery
+from .models.agent_mu_schedule_result import AgentMuScheduleResult
+from .models.agent_mu_schedule_shift import AgentMuScheduleShift
 from .models.agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .models.agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .models.agent_owned_routing import AgentOwnedRouting
@@ -142,6 +147,7 @@ from .models.agent_possible_work_shifts_response import AgentPossibleWorkShiftsR
 from .models.agent_query_adherence_explanations_request import AgentQueryAdherenceExplanationsRequest
 from .models.agent_query_adherence_explanations_response import AgentQueryAdherenceExplanationsResponse
 from .models.agent_queue_time_request import AgentQueueTimeRequest
+from .models.agent_schedule_shift_activity import AgentScheduleShiftActivity
 from .models.agent_state_agent_query_clause import AgentStateAgentQueryClause
 from .models.agent_state_agent_query_predicate import AgentStateAgentQueryPredicate
 from .models.agent_state_counts_request import AgentStateCountsRequest
@@ -254,7 +260,14 @@ from .models.app_event_request import AppEventRequest
 from .models.app_event_response import AppEventResponse
 from .models.app_event_response_session import AppEventResponseSession
 from .models.append_to_dnc_action_settings import AppendToDncActionSettings
+from .models.apple_authentication import AppleAuthentication
+from .models.apple_i_message_app import AppleIMessageApp
+from .models.apple_integration import AppleIntegration
+from .models.apple_integration_entity_listing import AppleIntegrationEntityListing
+from .models.apple_integration_request import AppleIntegrationRequest
+from .models.apple_integration_update_request import AppleIntegrationUpdateRequest
 from .models.apple_opaque_id import AppleOpaqueId
+from .models.apple_pay import ApplePay
 from .models.approval_namespace import ApprovalNamespace
 from .models.architect_dependency_tracking_build_notification_client import ArchitectDependencyTrackingBuildNotificationClient
 from .models.architect_dependency_tracking_build_notification_dependency_tracking_build_notification import ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification
@@ -1744,7 +1757,9 @@ from .models.disallowed_entity_learning_assignment_item import DisallowedEntityL
 from .models.disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .models.disconnect_reason import DisconnectReason
 from .models.disposition import Disposition
+from .models.disposition_amd_timeout import DispositionAmdTimeout
 from .models.disposition_parameters import DispositionParameters
+from .models.disposition_silent_call_timeout import DispositionSilentCallTimeout
 from .models.division import Division
 from .models.division_entity_ref import DivisionEntityRef
 from .models.division_reference import DivisionReference
@@ -1857,8 +1872,7 @@ from .models.domain_organization_role import DomainOrganizationRole
 from .models.domain_organization_role_create import DomainOrganizationRoleCreate
 from .models.domain_organization_role_update import DomainOrganizationRoleUpdate
 from .models.domain_permission import DomainPermission
-from .models.domain_permission_collection_domain_permission import DomainPermissionCollectionDomainPermission
-from .models.domain_permission_entity_listing import DomainPermissionEntityListing
+from .models.domain_permission_collection import DomainPermissionCollection
 from .models.domain_permission_policy import DomainPermissionPolicy
 from .models.domain_physical_capabilities import DomainPhysicalCapabilities
 from .models.domain_physical_interface import DomainPhysicalInterface
@@ -2211,6 +2225,7 @@ from .models.fax_topic_lock_data import FaxTopicLockData
 from .models.fax_topic_user_data import FaxTopicUserData
 from .models.fax_topic_workspace_data import FaxTopicWorkspaceData
 from .models.feature_state import FeatureState
+from .models.feature_support import FeatureSupport
 from .models.feedback import Feedback
 from .models.feedback_add_request import FeedbackAddRequest
 from .models.feedback_update_request import FeedbackUpdateRequest
@@ -2902,6 +2917,8 @@ from .models.language import Language
 from .models.language_entity_listing import LanguageEntityListing
 from .models.language_override import LanguageOverride
 from .models.language_reference import LanguageReference
+from .models.language_support_info_record import LanguageSupportInfoRecord
+from .models.language_support_response import LanguageSupportResponse
 from .models.last_attempt_by_column_condition_settings import LastAttemptByColumnConditionSettings
 from .models.last_attempt_overall_condition_settings import LastAttemptOverallConditionSettings
 from .models.last_result_by_column_condition_settings import LastResultByColumnConditionSettings
@@ -3286,6 +3303,8 @@ from .models.nuance_organization import NuanceOrganization
 from .models.number import Number
 from .models.number_plan import NumberPlan
 from .models.numeric_range import NumericRange
+from .models.o_auth_apple_authorization_response import OAuthAppleAuthorizationResponse
+from .models.o_auth_apple_authorization_response_error import OAuthAppleAuthorizationResponseError
 from .models.o_auth_authorization import OAuthAuthorization
 from .models.o_auth_authorization_listing import OAuthAuthorizationListing
 from .models.o_auth_client import OAuthClient
@@ -3550,6 +3569,7 @@ from .models.performance_prediction_recalculation_upload_response import Perform
 from .models.performance_prediction_response import PerformancePredictionResponse
 from .models.performance_prediction_upload_schema import PerformancePredictionUploadSchema
 from .models.performance_profile import PerformanceProfile
+from .models.permission_collection_entity_listing import PermissionCollectionEntityListing
 from .models.permission_details import PermissionDetails
 from .models.permissions import Permissions
 from .models.persistent_connection_change_topic_error_info import PersistentConnectionChangeTopicErrorInfo

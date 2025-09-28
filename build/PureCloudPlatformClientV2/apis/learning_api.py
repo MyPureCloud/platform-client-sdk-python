@@ -2960,12 +2960,13 @@ class LearningApi(object):
             for asynchronous request. (optional)
         :param str module_id: The ID of the learning module (required)
         :param LearningModuleRule body: The learning module rule to be updated (required)
+        :param bool assign: Whether to assign the module to users or not
         :return: LearningModuleRule
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['module_id', 'body']
+        all_params = ['module_id', 'body', 'assign']
         all_params.append('callback')
 
         params = locals()
@@ -2992,6 +2993,8 @@ class LearningApi(object):
             path_params['moduleId'] = params['module_id']
 
         query_params = {}
+        if 'assign' in params:
+            query_params['assign'] = params['assign']
 
         header_params = {}
 

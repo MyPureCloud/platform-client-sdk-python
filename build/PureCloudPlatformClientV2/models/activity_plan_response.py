@@ -712,7 +712,7 @@ class ActivityPlanResponse(object):
     def last_run_date(self) -> datetime:
         """
         Gets the last_run_date of this ActivityPlanResponse.
-        The date the activity plan was last run, in ISO-8601 format
+        The date on which the activity plan was last manually run, in ISO-8601 format
 
         :return: The last_run_date of this ActivityPlanResponse.
         :rtype: datetime
@@ -723,7 +723,7 @@ class ActivityPlanResponse(object):
     def last_run_date(self, last_run_date: datetime) -> None:
         """
         Sets the last_run_date of this ActivityPlanResponse.
-        The date the activity plan was last run, in ISO-8601 format
+        The date on which the activity plan was last manually run, in ISO-8601 format
 
         :param last_run_date: The last_run_date of this ActivityPlanResponse.
         :type: datetime

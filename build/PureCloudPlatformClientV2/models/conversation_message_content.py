@@ -36,8 +36,14 @@ if TYPE_CHECKING:
     from . import ConversationContentButtonResponse
     from . import ConversationContentCard
     from . import ConversationContentCarousel
+    from . import ConversationContentDatePicker
+    from . import ConversationContentForm
+    from . import ConversationContentInteractiveApplication
+    from . import ConversationContentListPicker
     from . import ConversationContentLocation
     from . import ConversationContentNotificationTemplate
+    from . import ConversationContentPaymentRequest
+    from . import ConversationContentPaymentResponse
     from . import ConversationContentPush
     from . import ConversationContentQuickReply
     from . import ConversationContentQuickReplyV2
@@ -72,7 +78,13 @@ class ConversationMessageContent(object):
             'text': 'ConversationContentText',
             'quick_reply_v2': 'ConversationContentQuickReplyV2',
             'reactions': 'list[ConversationContentReaction]',
-            'push': 'ConversationContentPush'
+            'date_picker': 'ConversationContentDatePicker',
+            'interactive_application': 'ConversationContentInteractiveApplication',
+            'list_picker': 'ConversationContentListPicker',
+            'payment_request': 'ConversationContentPaymentRequest',
+            'payment_response': 'ConversationContentPaymentResponse',
+            'push': 'ConversationContentPush',
+            'form': 'ConversationContentForm'
         }
 
         self.attribute_map = {
@@ -88,7 +100,13 @@ class ConversationMessageContent(object):
             'text': 'text',
             'quick_reply_v2': 'quickReplyV2',
             'reactions': 'reactions',
-            'push': 'push'
+            'date_picker': 'datePicker',
+            'interactive_application': 'interactiveApplication',
+            'list_picker': 'listPicker',
+            'payment_request': 'paymentRequest',
+            'payment_response': 'paymentResponse',
+            'push': 'push',
+            'form': 'form'
         }
 
         self._content_type = None
@@ -103,7 +121,13 @@ class ConversationMessageContent(object):
         self._text = None
         self._quick_reply_v2 = None
         self._reactions = None
+        self._date_picker = None
+        self._interactive_application = None
+        self._list_picker = None
+        self._payment_request = None
+        self._payment_response = None
         self._push = None
+        self._form = None
 
     @property
     def content_type(self) -> str:
@@ -399,6 +423,126 @@ class ConversationMessageContent(object):
         self._reactions = reactions
 
     @property
+    def date_picker(self) -> 'ConversationContentDatePicker':
+        """
+        Gets the date_picker of this ConversationMessageContent.
+        Date picker content.
+
+        :return: The date_picker of this ConversationMessageContent.
+        :rtype: ConversationContentDatePicker
+        """
+        return self._date_picker
+
+    @date_picker.setter
+    def date_picker(self, date_picker: 'ConversationContentDatePicker') -> None:
+        """
+        Sets the date_picker of this ConversationMessageContent.
+        Date picker content.
+
+        :param date_picker: The date_picker of this ConversationMessageContent.
+        :type: ConversationContentDatePicker
+        """
+        
+
+        self._date_picker = date_picker
+
+    @property
+    def interactive_application(self) -> 'ConversationContentInteractiveApplication':
+        """
+        Gets the interactive_application of this ConversationMessageContent.
+        InteractiveApplication content.
+
+        :return: The interactive_application of this ConversationMessageContent.
+        :rtype: ConversationContentInteractiveApplication
+        """
+        return self._interactive_application
+
+    @interactive_application.setter
+    def interactive_application(self, interactive_application: 'ConversationContentInteractiveApplication') -> None:
+        """
+        Sets the interactive_application of this ConversationMessageContent.
+        InteractiveApplication content.
+
+        :param interactive_application: The interactive_application of this ConversationMessageContent.
+        :type: ConversationContentInteractiveApplication
+        """
+        
+
+        self._interactive_application = interactive_application
+
+    @property
+    def list_picker(self) -> 'ConversationContentListPicker':
+        """
+        Gets the list_picker of this ConversationMessageContent.
+        List picker content.
+
+        :return: The list_picker of this ConversationMessageContent.
+        :rtype: ConversationContentListPicker
+        """
+        return self._list_picker
+
+    @list_picker.setter
+    def list_picker(self, list_picker: 'ConversationContentListPicker') -> None:
+        """
+        Sets the list_picker of this ConversationMessageContent.
+        List picker content.
+
+        :param list_picker: The list_picker of this ConversationMessageContent.
+        :type: ConversationContentListPicker
+        """
+        
+
+        self._list_picker = list_picker
+
+    @property
+    def payment_request(self) -> 'ConversationContentPaymentRequest':
+        """
+        Gets the payment_request of this ConversationMessageContent.
+        Payment request content.
+
+        :return: The payment_request of this ConversationMessageContent.
+        :rtype: ConversationContentPaymentRequest
+        """
+        return self._payment_request
+
+    @payment_request.setter
+    def payment_request(self, payment_request: 'ConversationContentPaymentRequest') -> None:
+        """
+        Sets the payment_request of this ConversationMessageContent.
+        Payment request content.
+
+        :param payment_request: The payment_request of this ConversationMessageContent.
+        :type: ConversationContentPaymentRequest
+        """
+        
+
+        self._payment_request = payment_request
+
+    @property
+    def payment_response(self) -> 'ConversationContentPaymentResponse':
+        """
+        Gets the payment_response of this ConversationMessageContent.
+        Payment response content.
+
+        :return: The payment_response of this ConversationMessageContent.
+        :rtype: ConversationContentPaymentResponse
+        """
+        return self._payment_response
+
+    @payment_response.setter
+    def payment_response(self, payment_response: 'ConversationContentPaymentResponse') -> None:
+        """
+        Sets the payment_response of this ConversationMessageContent.
+        Payment response content.
+
+        :param payment_response: The payment_response of this ConversationMessageContent.
+        :type: ConversationContentPaymentResponse
+        """
+        
+
+        self._payment_response = payment_response
+
+    @property
     def push(self) -> 'ConversationContentPush':
         """
         Gets the push of this ConversationMessageContent.
@@ -421,6 +565,30 @@ class ConversationMessageContent(object):
         
 
         self._push = push
+
+    @property
+    def form(self) -> 'ConversationContentForm':
+        """
+        Gets the form of this ConversationMessageContent.
+        Form content.
+
+        :return: The form of this ConversationMessageContent.
+        :rtype: ConversationContentForm
+        """
+        return self._form
+
+    @form.setter
+    def form(self, form: 'ConversationContentForm') -> None:
+        """
+        Sets the form of this ConversationMessageContent.
+        Form content.
+
+        :param form: The form of this ConversationMessageContent.
+        :type: ConversationContentForm
+        """
+        
+
+        self._form = form
 
     def to_dict(self):
         """

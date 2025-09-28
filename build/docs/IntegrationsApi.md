@@ -400,7 +400,7 @@ except ApiException as e:
 
 ## get_integrations
 
-> [**IntegrationEntityListing**](IntegrationEntityListing) get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+> [**IntegrationEntityListing**](IntegrationEntityListing) get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, ids=ids, integration_type=integration_type, reported_state=reported_state)
 
 
 List integrations
@@ -430,10 +430,13 @@ sort_by = 'sort_by_example' # str | variable name requested to sort by (optional
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
+ids = ['7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376'] # list[str] | Comma-separated list of integration IDs to filter by (max 100) (optional)
+integration_type = 'webhook' # str | Filter integrations by integration type ID (optional)
+reported_state = 'ACTIVE' # str | Filter integrations by reported state (case-insensitive) (optional)
 
 try:
     # List integrations
-    api_response = api_instance.get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+    api_response = api_instance.get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, ids=ids, integration_type=integration_type, reported_state=reported_state)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations: %s\n" % e)
@@ -450,6 +453,9 @@ except ApiException as e:
 | **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
+| **ids** | [**list[str]**](str)| Comma-separated list of integration IDs to filter by (max 100) | [optional]  |
+| **integration_type** | **str**| Filter integrations by integration type ID | [optional]  |
+| **reported_state** | **str**| Filter integrations by reported state (case-insensitive) | [optional] <br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR |
 
 ### Return type
 
@@ -4854,4 +4860,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

@@ -18,8 +18,14 @@
 | **text** | [ConversationContentText](ConversationContentText) | Text content. | [optional] |
 | **quick_reply_v2** | [ConversationContentQuickReplyV2](ConversationContentQuickReplyV2) | Quick reply V2 content. | [optional] |
 | **reactions** | [list[ConversationContentReaction]](ConversationContentReaction) | A set of reactions to a message. | [optional] |
+| **date_picker** | [ConversationContentDatePicker](ConversationContentDatePicker) | Date picker content. | [optional] |
+| **interactive_application** | [ConversationContentInteractiveApplication](ConversationContentInteractiveApplication) | InteractiveApplication content. | [optional] |
+| **list_picker** | [ConversationContentListPicker](ConversationContentListPicker) | List picker content. | [optional] |
+| **payment_request** | [ConversationContentPaymentRequest](ConversationContentPaymentRequest) | Payment request content. | [optional] |
+| **payment_response** | [ConversationContentPaymentResponse](ConversationContentPaymentResponse) | Payment response content. | [optional] |
 | **push** | [ConversationContentPush](ConversationContentPush) | Push content. | [optional] |
+| **form** | [ConversationContentForm](ConversationContentForm) | Form content. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

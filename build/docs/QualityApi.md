@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_conversations_audits_query_transaction_id**](#get_quality_conversations_audits_query_transaction_id) | Get status of audit query execution|
 |[**get_quality_conversations_audits_query_transaction_id_results**](#get_quality_conversations_audits_query_transaction_id_results) | Get results of audit query|
 |[**get_quality_evaluations_query**](#get_quality_evaluations_query) | Queries Evaluations and returns a paged list|
-|[**get_quality_evaluators_activity**](#get_quality_evaluators_activity) | Get an evaluator activity|
+|[**get_quality_evaluators_activity**](#get_quality_evaluators_activity) | Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.|
 |[**get_quality_form**](#get_quality_form) | Get an evaluation form|
 |[**get_quality_form_versions**](#get_quality_form_versions) | Gets all the revisions for a specific evaluation.|
 |[**get_quality_forms**](#get_quality_forms) | Get the list of evaluation forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding evaluation form.|
@@ -1120,7 +1120,7 @@ except ApiException as e:
 > [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing) get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group, agent_team_id=agent_team_id)
 
 
-Get an evaluator activity
+Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
 
 Wraps GET /api/v2/quality/evaluators/activity 
 
@@ -1155,7 +1155,7 @@ group = 'group_example' # str | group id (optional)
 agent_team_id = 'agent_team_id_example' # str | team id of agents to be considered (optional)
 
 try:
-    # Get an evaluator activity
+    # Get an evaluator activity. To ensure optimal performance and prevent timeouts when processing large datasets, startTime and endTime fields are highly recommended for all requests.
     api_response = api_instance.get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group, agent_team_id=agent_team_id)
     pprint(api_response)
 except ApiException as e:
@@ -3630,4 +3630,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

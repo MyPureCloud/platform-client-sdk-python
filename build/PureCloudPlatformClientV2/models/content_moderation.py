@@ -47,14 +47,17 @@ class ContentModeration(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'flag': 'str'
+            'flag': 'str',
+            'categories': 'list[str]'
         }
 
         self.attribute_map = {
-            'flag': 'flag'
+            'flag': 'flag',
+            'categories': 'categories'
         }
 
         self._flag = None
+        self._categories = None
 
     @property
     def flag(self) -> str:
@@ -84,6 +87,30 @@ class ContentModeration(object):
             self._flag = "outdated_sdk_version"
         else:
             self._flag = flag
+
+    @property
+    def categories(self) -> List[str]:
+        """
+        Gets the categories of this ContentModeration.
+        The Content Moderation Categories of the message.
+
+        :return: The categories of this ContentModeration.
+        :rtype: list[str]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories: List[str]) -> None:
+        """
+        Sets the categories of this ContentModeration.
+        The Content Moderation Categories of the message.
+
+        :param categories: The categories of this ContentModeration.
+        :type: list[str]
+        """
+        
+
+        self._categories = categories
 
     def to_dict(self):
         """

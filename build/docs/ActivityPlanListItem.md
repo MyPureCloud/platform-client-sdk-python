@@ -15,7 +15,7 @@
 | **optimization_objective** | str | The optimization objective of this activity plan | |
 | **recurrence_settings** | [RecurrenceSettings](RecurrenceSettings) | Recurrence settings for this activity plan | [optional] |
 | **state** | str | The state of this activity plan | |
-| **last_run_date** | datetime | The date the activity plan was last run, in ISO-8601 format | [optional] |
+| **last_run_date** | datetime | The date on which the activity plan was last manually run, in ISO-8601 format | [optional] |
 | **last_run_by** | [UserReference](UserReference) | The last user to run this activity plan | [optional] |
 | **created_date** | datetime | The date the activity plan was created, in ISO-8601 format | |
 | **created_by** | [UserReference](UserReference) | The user who created this activity plan | |
@@ -25,4 +25,4 @@
 
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_

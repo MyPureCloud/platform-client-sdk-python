@@ -32,7 +32,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DispositionAmdTimeout
     from . import DispositionParameters
+    from . import DispositionSilentCallTimeout
 
 class Disposition(object):
     """
@@ -53,7 +55,9 @@ class Disposition(object):
             'analyzer': 'str',
             'disposition_parameters': 'DispositionParameters',
             'detected_speech_start': 'datetime',
-            'detected_speech_end': 'datetime'
+            'detected_speech_end': 'datetime',
+            'amd_timeout': 'DispositionAmdTimeout',
+            'silent_call_timeout': 'DispositionSilentCallTimeout'
         }
 
         self.attribute_map = {
@@ -61,7 +65,9 @@ class Disposition(object):
             'analyzer': 'analyzer',
             'disposition_parameters': 'dispositionParameters',
             'detected_speech_start': 'detectedSpeechStart',
-            'detected_speech_end': 'detectedSpeechEnd'
+            'detected_speech_end': 'detectedSpeechEnd',
+            'amd_timeout': 'amdTimeout',
+            'silent_call_timeout': 'silentCallTimeout'
         }
 
         self._name = None
@@ -69,6 +75,8 @@ class Disposition(object):
         self._disposition_parameters = None
         self._detected_speech_start = None
         self._detected_speech_end = None
+        self._amd_timeout = None
+        self._silent_call_timeout = None
 
     @property
     def name(self) -> str:
@@ -189,6 +197,54 @@ class Disposition(object):
         
 
         self._detected_speech_end = detected_speech_end
+
+    @property
+    def amd_timeout(self) -> 'DispositionAmdTimeout':
+        """
+        Gets the amd_timeout of this Disposition.
+        Answering Machine Detection timeout configuration.
+
+        :return: The amd_timeout of this Disposition.
+        :rtype: DispositionAmdTimeout
+        """
+        return self._amd_timeout
+
+    @amd_timeout.setter
+    def amd_timeout(self, amd_timeout: 'DispositionAmdTimeout') -> None:
+        """
+        Sets the amd_timeout of this Disposition.
+        Answering Machine Detection timeout configuration.
+
+        :param amd_timeout: The amd_timeout of this Disposition.
+        :type: DispositionAmdTimeout
+        """
+        
+
+        self._amd_timeout = amd_timeout
+
+    @property
+    def silent_call_timeout(self) -> 'DispositionSilentCallTimeout':
+        """
+        Gets the silent_call_timeout of this Disposition.
+        Silent Call timeout configuration.
+
+        :return: The silent_call_timeout of this Disposition.
+        :rtype: DispositionSilentCallTimeout
+        """
+        return self._silent_call_timeout
+
+    @silent_call_timeout.setter
+    def silent_call_timeout(self, silent_call_timeout: 'DispositionSilentCallTimeout') -> None:
+        """
+        Sets the silent_call_timeout of this Disposition.
+        Silent Call timeout configuration.
+
+        :param silent_call_timeout: The silent_call_timeout of this Disposition.
+        :type: DispositionSilentCallTimeout
+        """
+        
+
+        self._silent_call_timeout = silent_call_timeout
 
     def to_dict(self):
         """

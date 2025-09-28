@@ -1604,9 +1604,10 @@ Get domain
 
 Wraps GET /api/v2/routing/email/domains/{domainId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:email:manage
+* routing:email:view
 
 ### Example
 
@@ -1709,7 +1710,7 @@ Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityre
 Requires ALL permissions: 
 
 * routing:email:manage
-* routing:identityResolution:view
+* routing:identityResolutionEmail:view
 
 ### Example
 
@@ -1869,9 +1870,10 @@ Get domain
 
 Wraps GET /api/v2/routing/email/outbound/domains/{domainId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:email:manage
+* routing:email:view
 
 ### Example
 
@@ -2408,7 +2410,7 @@ except ApiException as e:
 
 ## get_routing_predictors
 
-> [**PredictorListing**](PredictorListing) get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+> [**PredictorListing**](PredictorListing) get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id, kpi_id=kpi_id, state=state)
 
 
 Retrieve all predictors.
@@ -2438,10 +2440,12 @@ after = 'after_example' # str | The cursor that points to the end of the set of 
 limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 queue_id = ['queue_id_example'] # list[str] | Comma-separated list of queue Ids to filter by. (optional)
+kpi_id = 'kpi_id_example' # str | Standard or custom KPI id used to filter predictors. (optional)
+state = 'state_example' # str | The state used to filter predictors. (optional)
 
 try:
     # Retrieve all predictors.
-    api_response = api_instance.get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+    api_response = api_instance.get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id, kpi_id=kpi_id, state=state)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_predictors: %s\n" % e)
@@ -2457,6 +2461,8 @@ except ApiException as e:
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **queue_id** | [**list[str]**](str)| Comma-separated list of queue Ids to filter by. | [optional]  |
+| **kpi_id** | **str**| Standard or custom KPI id used to filter predictors. | [optional]  |
+| **state** | **str**| The state used to filter predictors. | [optional] <br />**Values**: Created, Error, Active |
 
 ### Return type
 
@@ -2590,7 +2596,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
-expand = 'expand_example' # str | Which fields, if any, to expand. (optional)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 
 try:
     # Get an assistant associated with a queue.
@@ -2606,7 +2612,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: assistant, copilot |
 
 ### Return type
 
@@ -2775,7 +2781,7 @@ Wraps GET /api/v2/routing/queues/{queueId}/identityresolution
 Requires ALL permissions: 
 
 * routing:queue:view
-* routing:identityResolution:view
+* queue:identityResolution:view
 
 ### Example
 
@@ -3908,7 +3914,7 @@ Wraps GET /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
 Requires ALL permissions: 
 
 * sms:phoneNumber:view
-* routing:identityResolution:view
+* sms:identityResolution:view
 
 ### Example
 
@@ -7258,7 +7264,7 @@ Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityre
 Requires ALL permissions: 
 
 * routing:email:manage
-* routing:identityResolution:edit
+* routing:identityResolutionEmail:edit
 
 ### Example
 
@@ -7459,7 +7465,7 @@ Wraps PUT /api/v2/routing/queues/{queueId}/identityresolution
 Requires ALL permissions: 
 
 * routing:queue:edit
-* routing:identityResolution:edit
+* queue:identityResolution:edit
 
 ### Example
 
@@ -7606,7 +7612,7 @@ Wraps PUT /api/v2/routing/sms/identityresolution/phonenumbers/{addressId}
 Requires ALL permissions: 
 
 * sms:phoneNumber:edit
-* routing:identityResolution:edit
+* sms:identityResolution:edit
 
 ### Example
 
@@ -7995,4 +8001,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 237.0.0_
+_PureCloudPlatformClientV2 238.0.0_
