@@ -10,7 +10,8 @@
 | **queue_id** | str |  | [optional] |
 | **division_id** | str |  | [optional] |
 | **purpose** | str |  | [optional] |
+| **flow_id** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 238.0.0_
+_PureCloudPlatformClientV2 239.0.0_

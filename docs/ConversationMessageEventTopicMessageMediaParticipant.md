@@ -51,8 +51,9 @@
 | **recipient_country** | str |  | [optional] |
 | **recipient_type** | str |  | [optional] |
 | **byo_sms_integration_id** | str |  | [optional] |
+| **engagement_source** | str |  | [optional] |
 | **monitored_participant_id** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 238.0.0_
+_PureCloudPlatformClientV2 239.0.0_

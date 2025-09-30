@@ -799,4 +799,4 @@ except ApiException as e:
 [**AssistantQueue**](AssistantQueue)
 
 
-_PureCloudPlatformClientV2 238.0.0_
+_PureCloudPlatformClientV2 239.0.0_
