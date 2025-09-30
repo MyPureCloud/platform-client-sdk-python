@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationCallEventTopicConversationRoutingData
+    from . import ConversationCallEventTopicDisposition
     from . import ConversationCallEventTopicErrorBody
     from . import ConversationCallEventTopicFaxStatus
     from . import ConversationCallEventTopicJourneyContext
@@ -101,6 +102,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'recording': 'bool',
             'recording_state': 'str',
             'recorders_state': 'ConversationCallEventTopicRecordersState',
+            'disposition': 'ConversationCallEventTopicDisposition',
             'secure_pause': 'bool',
             'group': 'ConversationCallEventTopicUriReference',
             'ani': 'str',
@@ -160,6 +162,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'recording': 'recording',
             'recording_state': 'recordingState',
             'recorders_state': 'recordersState',
+            'disposition': 'disposition',
             'secure_pause': 'securePause',
             'group': 'group',
             'ani': 'ani',
@@ -218,6 +221,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         self._recording = None
         self._recording_state = None
         self._recorders_state = None
+        self._disposition = None
         self._secure_pause = None
         self._group = None
         self._ani = None
@@ -531,7 +535,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity"]
+        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity", "session.expired"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -1339,6 +1343,30 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         
 
         self._recorders_state = recorders_state
+
+    @property
+    def disposition(self) -> 'ConversationCallEventTopicDisposition':
+        """
+        Gets the disposition of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The disposition of this ConversationCallEventTopicCallMediaParticipant.
+        :rtype: ConversationCallEventTopicDisposition
+        """
+        return self._disposition
+
+    @disposition.setter
+    def disposition(self, disposition: 'ConversationCallEventTopicDisposition') -> None:
+        """
+        Sets the disposition of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :param disposition: The disposition of this ConversationCallEventTopicCallMediaParticipant.
+        :type: ConversationCallEventTopicDisposition
+        """
+        
+
+        self._disposition = disposition
 
     @property
     def secure_pause(self) -> bool:

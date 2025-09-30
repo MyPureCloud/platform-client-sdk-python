@@ -31,9 +31,10 @@
 | **after_call_work** | [QueueConversationVideoEventTopicAfterCallWork](QueueConversationVideoEventTopicAfterCallWork) | A communication&#39;s after-call work data. | [optional] |
 | **after_call_work_required** | bool | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
 | **agent_assistant_id** | str | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. | [optional] |
+| **engagement_source** | str | Provide more visibility into what integrations customers are creating with Open Messaging. String values are defined in the Constants.java named ENGAGEMENT_SOURCE_* | [optional] |
 | **byo_sms_integration_id** | str |  | [optional] |
 | **queue_media_settings** | [QueueConversationVideoEventTopicQueueMediaSettings](QueueConversationVideoEventTopicQueueMediaSettings) | Represents the queue setting for this media. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 238.0.0_
+_PureCloudPlatformClientV2 239.0.0_

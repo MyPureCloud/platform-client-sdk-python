@@ -52,6 +52,7 @@ class V2StaEmpathyOverallTopicOverallEmpathyMessage(object):
             'conversation_id': 'str',
             'queue_ids': 'list[str]',
             'division_ids': 'list[str]',
+            'flow_ids': 'list[str]',
             'agents': 'list[V2StaEmpathyOverallTopicAgentEmpathyScore]'
         }
 
@@ -59,12 +60,14 @@ class V2StaEmpathyOverallTopicOverallEmpathyMessage(object):
             'conversation_id': 'conversationId',
             'queue_ids': 'queueIds',
             'division_ids': 'divisionIds',
+            'flow_ids': 'flowIds',
             'agents': 'agents'
         }
 
         self._conversation_id = None
         self._queue_ids = None
         self._division_ids = None
+        self._flow_ids = None
         self._agents = None
 
     @property
@@ -138,6 +141,30 @@ class V2StaEmpathyOverallTopicOverallEmpathyMessage(object):
         
 
         self._division_ids = division_ids
+
+    @property
+    def flow_ids(self) -> List[str]:
+        """
+        Gets the flow_ids of this V2StaEmpathyOverallTopicOverallEmpathyMessage.
+
+
+        :return: The flow_ids of this V2StaEmpathyOverallTopicOverallEmpathyMessage.
+        :rtype: list[str]
+        """
+        return self._flow_ids
+
+    @flow_ids.setter
+    def flow_ids(self, flow_ids: List[str]) -> None:
+        """
+        Sets the flow_ids of this V2StaEmpathyOverallTopicOverallEmpathyMessage.
+
+
+        :param flow_ids: The flow_ids of this V2StaEmpathyOverallTopicOverallEmpathyMessage.
+        :type: list[str]
+        """
+        
+
+        self._flow_ids = flow_ids
 
     @property
     def agents(self) -> List['V2StaEmpathyOverallTopicAgentEmpathyScore']:

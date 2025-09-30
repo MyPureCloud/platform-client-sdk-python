@@ -11,7 +11,8 @@
 | **sentiment_trend_score** | float |  | [optional] |
 | **queue_ids** | list[str] |  | [optional] |
 | **division_ids** | list[str] |  | [optional] |
+| **flow_ids** | list[str] |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 238.0.0_
+_PureCloudPlatformClientV2 239.0.0_

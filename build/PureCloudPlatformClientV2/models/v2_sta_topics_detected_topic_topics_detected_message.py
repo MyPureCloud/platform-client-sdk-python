@@ -55,6 +55,7 @@ class V2StaTopicsDetectedTopicTopicsDetectedMessage(object):
             'recording_id': 'str',
             'transcript_id': 'str',
             'media_type': 'str',
+            'program_id': 'str',
             'topics': 'list[V2StaTopicsDetectedTopicTopicDetected]',
             'participants': 'list[V2StaTopicsDetectedTopicParticipant]'
         }
@@ -65,6 +66,7 @@ class V2StaTopicsDetectedTopicTopicsDetectedMessage(object):
             'recording_id': 'recordingId',
             'transcript_id': 'transcriptId',
             'media_type': 'mediaType',
+            'program_id': 'programId',
             'topics': 'topics',
             'participants': 'participants'
         }
@@ -74,6 +76,7 @@ class V2StaTopicsDetectedTopicTopicsDetectedMessage(object):
         self._recording_id = None
         self._transcript_id = None
         self._media_type = None
+        self._program_id = None
         self._topics = None
         self._participants = None
 
@@ -196,6 +199,30 @@ class V2StaTopicsDetectedTopicTopicsDetectedMessage(object):
         
 
         self._media_type = media_type
+
+    @property
+    def program_id(self) -> str:
+        """
+        Gets the program_id of this V2StaTopicsDetectedTopicTopicsDetectedMessage.
+
+
+        :return: The program_id of this V2StaTopicsDetectedTopicTopicsDetectedMessage.
+        :rtype: str
+        """
+        return self._program_id
+
+    @program_id.setter
+    def program_id(self, program_id: str) -> None:
+        """
+        Sets the program_id of this V2StaTopicsDetectedTopicTopicsDetectedMessage.
+
+
+        :param program_id: The program_id of this V2StaTopicsDetectedTopicTopicsDetectedMessage.
+        :type: str
+        """
+        
+
+        self._program_id = program_id
 
     @property
     def topics(self) -> List['V2StaTopicsDetectedTopicTopicDetected']:

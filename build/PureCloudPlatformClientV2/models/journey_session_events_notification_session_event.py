@@ -1041,7 +1041,7 @@ class JourneySessionEventsNotificationSessionEvent(object):
         """
         if isinstance(last_user_disconnect_type, int):
             last_user_disconnect_type = str(last_user_disconnect_type)
-        allowed_values = ["Unknown", "Endpoint", "Client", "System", "Transfer", "Error", "Peer", "Other", "Spam", "Timeout", "TransportFailure", "ConferenceTransfer", "ConsultTransfer", "ForwardTransfer", "NoAnswerTransfer", "NotAvailableTransfer", "Uncallable", "DoNotDisturbEndpoint", "DoNotDisturbTransfer"]
+        allowed_values = ["Unknown", "Endpoint", "Client", "System", "Transfer", "Error", "Peer", "Other", "Spam", "Timeout", "TransportFailure", "ConferenceTransfer", "ConsultTransfer", "ForwardTransfer", "NoAnswerTransfer", "NotAvailableTransfer", "Uncallable", "DoNotDisturbEndpoint", "DoNotDisturbTransfer", "SessionExpired"]
         if last_user_disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for last_user_disconnect_type -> " + last_user_disconnect_type)
             self._last_user_disconnect_type = "outdated_sdk_version"

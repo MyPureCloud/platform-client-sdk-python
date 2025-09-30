@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import QueueConversationSocialExpressionEventTopicAddress
     from . import QueueConversationSocialExpressionEventTopicAfterCallWork
     from . import QueueConversationSocialExpressionEventTopicDisconnectReason
+    from . import QueueConversationSocialExpressionEventTopicDisposition
     from . import QueueConversationSocialExpressionEventTopicErrorDetails
     from . import QueueConversationSocialExpressionEventTopicFaxStatus
     from . import QueueConversationSocialExpressionEventTopicQueueMediaSettings
@@ -86,7 +87,8 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
-            'queue_media_settings': 'QueueConversationSocialExpressionEventTopicQueueMediaSettings'
+            'queue_media_settings': 'QueueConversationSocialExpressionEventTopicQueueMediaSettings',
+            'disposition': 'QueueConversationSocialExpressionEventTopicDisposition'
         }
 
         self.attribute_map = {
@@ -120,7 +122,8 @@ class QueueConversationSocialExpressionEventTopicCall(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
-            'queue_media_settings': 'queueMediaSettings'
+            'queue_media_settings': 'queueMediaSettings',
+            'disposition': 'disposition'
         }
 
         self._id = None
@@ -154,6 +157,7 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         self._after_call_work_required = None
         self._agent_assistant_id = None
         self._queue_media_settings = None
+        self._disposition = None
 
     @property
     def id(self) -> str:
@@ -923,6 +927,30 @@ class QueueConversationSocialExpressionEventTopicCall(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def disposition(self) -> 'QueueConversationSocialExpressionEventTopicDisposition':
+        """
+        Gets the disposition of this QueueConversationSocialExpressionEventTopicCall.
+
+
+        :return: The disposition of this QueueConversationSocialExpressionEventTopicCall.
+        :rtype: QueueConversationSocialExpressionEventTopicDisposition
+        """
+        return self._disposition
+
+    @disposition.setter
+    def disposition(self, disposition: 'QueueConversationSocialExpressionEventTopicDisposition') -> None:
+        """
+        Sets the disposition of this QueueConversationSocialExpressionEventTopicCall.
+
+
+        :param disposition: The disposition of this QueueConversationSocialExpressionEventTopicCall.
+        :type: QueueConversationSocialExpressionEventTopicDisposition
+        """
+        
+
+        self._disposition = disposition
 
     def to_dict(self):
         """

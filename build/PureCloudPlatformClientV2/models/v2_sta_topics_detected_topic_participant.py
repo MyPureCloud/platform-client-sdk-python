@@ -50,20 +50,23 @@ class V2StaTopicsDetectedTopicParticipant(object):
             'user_id': 'str',
             'queue_id': 'str',
             'division_id': 'str',
-            'purpose': 'str'
+            'purpose': 'str',
+            'flow_id': 'str'
         }
 
         self.attribute_map = {
             'user_id': 'userId',
             'queue_id': 'queueId',
             'division_id': 'divisionId',
-            'purpose': 'purpose'
+            'purpose': 'purpose',
+            'flow_id': 'flowId'
         }
 
         self._user_id = None
         self._queue_id = None
         self._division_id = None
         self._purpose = None
+        self._flow_id = None
 
     @property
     def user_id(self) -> str:
@@ -160,6 +163,30 @@ class V2StaTopicsDetectedTopicParticipant(object):
         
 
         self._purpose = purpose
+
+    @property
+    def flow_id(self) -> str:
+        """
+        Gets the flow_id of this V2StaTopicsDetectedTopicParticipant.
+
+
+        :return: The flow_id of this V2StaTopicsDetectedTopicParticipant.
+        :rtype: str
+        """
+        return self._flow_id
+
+    @flow_id.setter
+    def flow_id(self, flow_id: str) -> None:
+        """
+        Sets the flow_id of this V2StaTopicsDetectedTopicParticipant.
+
+
+        :param flow_id: The flow_id of this V2StaTopicsDetectedTopicParticipant.
+        :type: str
+        """
+        
+
+        self._flow_id = flow_id
 
     def to_dict(self):
         """

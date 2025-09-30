@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationCallEventTopicConversationRoutingData
+    from . import QueueConversationCallEventTopicDisposition
     from . import QueueConversationCallEventTopicErrorBody
     from . import QueueConversationCallEventTopicFaxStatus
     from . import QueueConversationCallEventTopicJourneyContext
@@ -101,6 +102,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'recording': 'bool',
             'recording_state': 'str',
             'recorders_state': 'QueueConversationCallEventTopicRecordersState',
+            'disposition': 'QueueConversationCallEventTopicDisposition',
             'secure_pause': 'bool',
             'group': 'QueueConversationCallEventTopicUriReference',
             'ani': 'str',
@@ -160,6 +162,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'recording': 'recording',
             'recording_state': 'recordingState',
             'recorders_state': 'recordersState',
+            'disposition': 'disposition',
             'secure_pause': 'securePause',
             'group': 'group',
             'ani': 'ani',
@@ -218,6 +221,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         self._recording = None
         self._recording_state = None
         self._recorders_state = None
+        self._disposition = None
         self._secure_pause = None
         self._group = None
         self._ani = None
@@ -531,7 +535,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity"]
+        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity", "session.expired"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -1339,6 +1343,30 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         
 
         self._recorders_state = recorders_state
+
+    @property
+    def disposition(self) -> 'QueueConversationCallEventTopicDisposition':
+        """
+        Gets the disposition of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The disposition of this QueueConversationCallEventTopicCallMediaParticipant.
+        :rtype: QueueConversationCallEventTopicDisposition
+        """
+        return self._disposition
+
+    @disposition.setter
+    def disposition(self, disposition: 'QueueConversationCallEventTopicDisposition') -> None:
+        """
+        Sets the disposition of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :param disposition: The disposition of this QueueConversationCallEventTopicCallMediaParticipant.
+        :type: QueueConversationCallEventTopicDisposition
+        """
+        
+
+        self._disposition = disposition
 
     @property
     def secure_pause(self) -> bool:

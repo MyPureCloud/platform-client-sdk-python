@@ -51,7 +51,8 @@ class V2StaSentimentOverallTopicOverallSentimentMessage(object):
             'sentiment_overall_score': 'float',
             'sentiment_trend_score': 'float',
             'queue_ids': 'list[str]',
-            'division_ids': 'list[str]'
+            'division_ids': 'list[str]',
+            'flow_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -59,7 +60,8 @@ class V2StaSentimentOverallTopicOverallSentimentMessage(object):
             'sentiment_overall_score': 'sentimentOverallScore',
             'sentiment_trend_score': 'sentimentTrendScore',
             'queue_ids': 'queueIds',
-            'division_ids': 'divisionIds'
+            'division_ids': 'divisionIds',
+            'flow_ids': 'flowIds'
         }
 
         self._conversation_id = None
@@ -67,6 +69,7 @@ class V2StaSentimentOverallTopicOverallSentimentMessage(object):
         self._sentiment_trend_score = None
         self._queue_ids = None
         self._division_ids = None
+        self._flow_ids = None
 
     @property
     def conversation_id(self) -> str:
@@ -187,6 +190,30 @@ class V2StaSentimentOverallTopicOverallSentimentMessage(object):
         
 
         self._division_ids = division_ids
+
+    @property
+    def flow_ids(self) -> List[str]:
+        """
+        Gets the flow_ids of this V2StaSentimentOverallTopicOverallSentimentMessage.
+
+
+        :return: The flow_ids of this V2StaSentimentOverallTopicOverallSentimentMessage.
+        :rtype: list[str]
+        """
+        return self._flow_ids
+
+    @flow_ids.setter
+    def flow_ids(self, flow_ids: List[str]) -> None:
+        """
+        Sets the flow_ids of this V2StaSentimentOverallTopicOverallSentimentMessage.
+
+
+        :param flow_ids: The flow_ids of this V2StaSentimentOverallTopicOverallSentimentMessage.
+        :type: list[str]
+        """
+        
+
+        self._flow_ids = flow_ids
 
     def to_dict(self):
         """

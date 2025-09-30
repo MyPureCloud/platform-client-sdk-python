@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ConversationEventTopicAddress
     from . import ConversationEventTopicAfterCallWork
     from . import ConversationEventTopicDisconnectReason
+    from . import ConversationEventTopicDisposition
     from . import ConversationEventTopicErrorDetails
     from . import ConversationEventTopicFaxStatus
     from . import ConversationEventTopicQueueMediaSettings
@@ -86,7 +87,8 @@ class ConversationEventTopicCall(object):
             'after_call_work': 'ConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
-            'queue_media_settings': 'ConversationEventTopicQueueMediaSettings'
+            'queue_media_settings': 'ConversationEventTopicQueueMediaSettings',
+            'disposition': 'ConversationEventTopicDisposition'
         }
 
         self.attribute_map = {
@@ -120,7 +122,8 @@ class ConversationEventTopicCall(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
-            'queue_media_settings': 'queueMediaSettings'
+            'queue_media_settings': 'queueMediaSettings',
+            'disposition': 'disposition'
         }
 
         self._id = None
@@ -154,6 +157,7 @@ class ConversationEventTopicCall(object):
         self._after_call_work_required = None
         self._agent_assistant_id = None
         self._queue_media_settings = None
+        self._disposition = None
 
     @property
     def id(self) -> str:
@@ -923,6 +927,30 @@ class ConversationEventTopicCall(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def disposition(self) -> 'ConversationEventTopicDisposition':
+        """
+        Gets the disposition of this ConversationEventTopicCall.
+
+
+        :return: The disposition of this ConversationEventTopicCall.
+        :rtype: ConversationEventTopicDisposition
+        """
+        return self._disposition
+
+    @disposition.setter
+    def disposition(self, disposition: 'ConversationEventTopicDisposition') -> None:
+        """
+        Sets the disposition of this ConversationEventTopicCall.
+
+
+        :param disposition: The disposition of this ConversationEventTopicCall.
+        :type: ConversationEventTopicDisposition
+        """
+        
+
+        self._disposition = disposition
 
     def to_dict(self):
         """

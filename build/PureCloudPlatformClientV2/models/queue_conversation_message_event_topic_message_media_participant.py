@@ -100,6 +100,7 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
             'recipient_country': 'str',
             'recipient_type': 'str',
             'byo_sms_integration_id': 'str',
+            'engagement_source': 'str',
             'monitored_participant_id': 'str'
         }
 
@@ -149,6 +150,7 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
             'byo_sms_integration_id': 'byoSmsIntegrationId',
+            'engagement_source': 'engagementSource',
             'monitored_participant_id': 'monitoredParticipantId'
         }
 
@@ -197,6 +199,7 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         self._recipient_country = None
         self._recipient_type = None
         self._byo_sms_integration_id = None
+        self._engagement_source = None
         self._monitored_participant_id = None
 
     @property
@@ -500,7 +503,7 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity"]
+        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity", "session.expired"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -1308,6 +1311,30 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         
 
         self._byo_sms_integration_id = byo_sms_integration_id
+
+    @property
+    def engagement_source(self) -> str:
+        """
+        Gets the engagement_source of this QueueConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :return: The engagement_source of this QueueConversationMessageEventTopicMessageMediaParticipant.
+        :rtype: str
+        """
+        return self._engagement_source
+
+    @engagement_source.setter
+    def engagement_source(self, engagement_source: str) -> None:
+        """
+        Sets the engagement_source of this QueueConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :param engagement_source: The engagement_source of this QueueConversationMessageEventTopicMessageMediaParticipant.
+        :type: str
+        """
+        
+
+        self._engagement_source = engagement_source
 
     @property
     def monitored_participant_id(self) -> str:

@@ -80,6 +80,7 @@ class QueueConversationEventTopicMessage(object):
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
+            'engagement_source': 'str',
             'byo_sms_integration_id': 'str',
             'queue_media_settings': 'QueueConversationEventTopicQueueMediaSettings'
         }
@@ -110,6 +111,7 @@ class QueueConversationEventTopicMessage(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
+            'engagement_source': 'engagementSource',
             'byo_sms_integration_id': 'byoSmsIntegrationId',
             'queue_media_settings': 'queueMediaSettings'
         }
@@ -139,6 +141,7 @@ class QueueConversationEventTopicMessage(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._engagement_source = None
         self._byo_sms_integration_id = None
         self._queue_media_settings = None
 
@@ -395,7 +398,7 @@ class QueueConversationEventTopicMessage(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity"]
+        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable", "inactivity", "session.expired"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -766,6 +769,30 @@ class QueueConversationEventTopicMessage(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def engagement_source(self) -> str:
+        """
+        Gets the engagement_source of this QueueConversationEventTopicMessage.
+        Provide more visibility into what integrations customers are creating with Open Messaging. String values are defined in the Constants.java named ENGAGEMENT_SOURCE_*
+
+        :return: The engagement_source of this QueueConversationEventTopicMessage.
+        :rtype: str
+        """
+        return self._engagement_source
+
+    @engagement_source.setter
+    def engagement_source(self, engagement_source: str) -> None:
+        """
+        Sets the engagement_source of this QueueConversationEventTopicMessage.
+        Provide more visibility into what integrations customers are creating with Open Messaging. String values are defined in the Constants.java named ENGAGEMENT_SOURCE_*
+
+        :param engagement_source: The engagement_source of this QueueConversationEventTopicMessage.
+        :type: str
+        """
+        
+
+        self._engagement_source = engagement_source
 
     @property
     def byo_sms_integration_id(self) -> str:
