@@ -13789,4 +13789,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 239.0.0_
+_PureCloudPlatformClientV2 240.0.0_

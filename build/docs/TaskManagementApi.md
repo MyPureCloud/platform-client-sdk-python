@@ -796,7 +796,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TaskManagementApi()
 workitem_id = 'workitem_id_example' # str | Workitem ID
-expands = 'expands_example' # str | Which fields to expand. Comma separated if more than one. (optional)
+expands = ['expands_example'] # list[str] | Which fields to expand. Comma separated if more than one. (optional)
 
 try:
     # Get a workitem
@@ -812,7 +812,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| Workitem ID |  |
-| **expands** | **str**| Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
+| **expands** | [**list[str]**](str)| Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
 
 ### Return type
 
@@ -3864,4 +3864,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 239.0.0_
+_PureCloudPlatformClientV2 240.0.0_

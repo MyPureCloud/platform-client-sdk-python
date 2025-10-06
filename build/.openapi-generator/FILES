@@ -716,6 +716,10 @@ PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_response.py
 PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_result.py
 PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_result_item.py
 PureCloudPlatformClientV2/models/bullseye.py
+PureCloudPlatformClientV2/models/business_rules_data_schema.py
+PureCloudPlatformClientV2/models/business_rules_data_schema_listing.py
+PureCloudPlatformClientV2/models/business_rules_schema_create_request.py
+PureCloudPlatformClientV2/models/business_rules_schema_update_request.py
 PureCloudPlatformClientV2/models/business_unit_activity_code.py
 PureCloudPlatformClientV2/models/business_unit_activity_code_listing.py
 PureCloudPlatformClientV2/models/business_unit_list_item.py
@@ -1091,6 +1095,10 @@ PureCloudPlatformClientV2/models/context_pattern.py
 PureCloudPlatformClientV2/models/continuous_forecast_get_session_response.py
 PureCloudPlatformClientV2/models/continuous_forecast_session_response.py
 PureCloudPlatformClientV2/models/continuous_forecast_snapshot_response.py
+PureCloudPlatformClientV2/models/contract_definition.py
+PureCloudPlatformClientV2/models/contract_items.py
+PureCloudPlatformClientV2/models/contract_json_schema.py
+PureCloudPlatformClientV2/models/contract_property_definition.py
 PureCloudPlatformClientV2/models/contractual.py
 PureCloudPlatformClientV2/models/conversation.py
 PureCloudPlatformClientV2/models/conversation_activity_data.py
@@ -6432,6 +6440,10 @@ docs/BulkUpdateShiftTradeStateResultItem.md
 docs/Bullseye.md
 docs/BusinessRulesApi.json
 docs/BusinessRulesApi.md
+docs/BusinessRulesDataSchema.md
+docs/BusinessRulesDataSchemaListing.md
+docs/BusinessRulesSchemaCreateRequest.md
+docs/BusinessRulesSchemaUpdateRequest.md
 docs/BusinessUnitActivityCode.md
 docs/BusinessUnitActivityCodeListing.md
 docs/BusinessUnitListItem.md
@@ -6815,6 +6827,10 @@ docs/ContextPattern.md
 docs/ContinuousForecastGetSessionResponse.md
 docs/ContinuousForecastSessionResponse.md
 docs/ContinuousForecastSnapshotResponse.md
+docs/ContractDefinition.md
+docs/ContractItems.md
+docs/ContractJsonSchema.md
+docs/ContractPropertyDefinition.md
 docs/Contractual.md
 docs/Conversation.md
 docs/ConversationActivityData.md

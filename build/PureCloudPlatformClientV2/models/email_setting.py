@@ -95,7 +95,7 @@ class EmailSetting(object):
     def name(self) -> str:
         """
         Gets the name of this EmailSetting.
-
+        The name of the email setting.
 
         :return: The name of this EmailSetting.
         :rtype: str
@@ -106,7 +106,7 @@ class EmailSetting(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this EmailSetting.
-
+        The name of the email setting.
 
         :param name: The name of this EmailSetting.
         :type: str

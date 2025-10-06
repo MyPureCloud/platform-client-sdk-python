@@ -39,8 +39,11 @@ if TYPE_CHECKING:
     from . import DatePicker
     from . import ExternalContact
     from . import InteractiveApplication
+    from . import ListPicker
     from . import MessageMediaAttachment
     from . import MessageStickerAttachment
+    from . import PaymentRequest
+    from . import PaymentResponse
     from . import QuickReply
     from . import RecordingContentStory
     from . import RecordingNotificationTemplate
@@ -76,14 +79,18 @@ class RecordingMessagingMessage(object):
             'message_sticker_attachments': 'list[MessageStickerAttachment]',
             'quick_replies': 'list[QuickReply]',
             'button_response': 'ButtonResponse',
+            'button_responses': 'list[ButtonResponse]',
             'story': 'RecordingContentStory',
             'cards': 'list[Card]',
             'notification_template': 'RecordingNotificationTemplate',
             'date_picker': 'DatePicker',
+            'list_picker': 'ListPicker',
             'content_type': 'str',
             'social_visibility': 'str',
             'events': 'list[ConversationMessageEvent]',
-            'interactive_application': 'InteractiveApplication'
+            'interactive_application': 'InteractiveApplication',
+            'payment_request': 'PaymentRequest',
+            'payment_response': 'PaymentResponse'
         }
 
         self.attribute_map = {
@@ -102,14 +109,18 @@ class RecordingMessagingMessage(object):
             'message_sticker_attachments': 'messageStickerAttachments',
             'quick_replies': 'quickReplies',
             'button_response': 'buttonResponse',
+            'button_responses': 'buttonResponses',
             'story': 'story',
             'cards': 'cards',
             'notification_template': 'notificationTemplate',
             'date_picker': 'datePicker',
+            'list_picker': 'listPicker',
             'content_type': 'contentType',
             'social_visibility': 'socialVisibility',
             'events': 'events',
-            'interactive_application': 'interactiveApplication'
+            'interactive_application': 'interactiveApplication',
+            'payment_request': 'paymentRequest',
+            'payment_response': 'paymentResponse'
         }
 
         self._pcFrom = None
@@ -127,14 +138,18 @@ class RecordingMessagingMessage(object):
         self._message_sticker_attachments = None
         self._quick_replies = None
         self._button_response = None
+        self._button_responses = None
         self._story = None
         self._cards = None
         self._notification_template = None
         self._date_picker = None
+        self._list_picker = None
         self._content_type = None
         self._social_visibility = None
         self._events = None
         self._interactive_application = None
+        self._payment_request = None
+        self._payment_response = None
 
     @property
     def pcFrom(self) -> str:
@@ -497,6 +512,30 @@ class RecordingMessagingMessage(object):
         self._button_response = button_response
 
     @property
+    def button_responses(self) -> List['ButtonResponse']:
+        """
+        Gets the button_responses of this RecordingMessagingMessage.
+        List of Button Response selected by user for this message.
+
+        :return: The button_responses of this RecordingMessagingMessage.
+        :rtype: list[ButtonResponse]
+        """
+        return self._button_responses
+
+    @button_responses.setter
+    def button_responses(self, button_responses: List['ButtonResponse']) -> None:
+        """
+        Sets the button_responses of this RecordingMessagingMessage.
+        List of Button Response selected by user for this message.
+
+        :param button_responses: The button_responses of this RecordingMessagingMessage.
+        :type: list[ButtonResponse]
+        """
+        
+
+        self._button_responses = button_responses
+
+    @property
     def story(self) -> 'RecordingContentStory':
         """
         Gets the story of this RecordingMessagingMessage.
@@ -591,6 +630,30 @@ class RecordingMessagingMessage(object):
         
 
         self._date_picker = date_picker
+
+    @property
+    def list_picker(self) -> 'ListPicker':
+        """
+        Gets the list_picker of this RecordingMessagingMessage.
+        ListPicker content object.
+
+        :return: The list_picker of this RecordingMessagingMessage.
+        :rtype: ListPicker
+        """
+        return self._list_picker
+
+    @list_picker.setter
+    def list_picker(self, list_picker: 'ListPicker') -> None:
+        """
+        Sets the list_picker of this RecordingMessagingMessage.
+        ListPicker content object.
+
+        :param list_picker: The list_picker of this RecordingMessagingMessage.
+        :type: ListPicker
+        """
+        
+
+        self._list_picker = list_picker
 
     @property
     def content_type(self) -> str:
@@ -697,6 +760,54 @@ class RecordingMessagingMessage(object):
         
 
         self._interactive_application = interactive_application
+
+    @property
+    def payment_request(self) -> 'PaymentRequest':
+        """
+        Gets the payment_request of this RecordingMessagingMessage.
+        Payment request content.
+
+        :return: The payment_request of this RecordingMessagingMessage.
+        :rtype: PaymentRequest
+        """
+        return self._payment_request
+
+    @payment_request.setter
+    def payment_request(self, payment_request: 'PaymentRequest') -> None:
+        """
+        Sets the payment_request of this RecordingMessagingMessage.
+        Payment request content.
+
+        :param payment_request: The payment_request of this RecordingMessagingMessage.
+        :type: PaymentRequest
+        """
+        
+
+        self._payment_request = payment_request
+
+    @property
+    def payment_response(self) -> 'PaymentResponse':
+        """
+        Gets the payment_response of this RecordingMessagingMessage.
+        Payment response content.
+
+        :return: The payment_response of this RecordingMessagingMessage.
+        :rtype: PaymentResponse
+        """
+        return self._payment_response
+
+    @payment_response.setter
+    def payment_response(self, payment_response: 'PaymentResponse') -> None:
+        """
+        Sets the payment_response of this RecordingMessagingMessage.
+        Payment response content.
+
+        :param payment_response: The payment_response of this RecordingMessagingMessage.
+        :type: PaymentResponse
+        """
+        
+
+        self._payment_response = payment_response
 
     def to_dict(self):
         """

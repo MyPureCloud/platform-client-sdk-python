@@ -1131,12 +1131,13 @@ class GamificationApi(object):
         :param str sort_metric_id: Sort Metric Id
         :param str sort_order: Sort order
         :param str user_ids: A list of up to 100 comma-separated user Ids
+        :param str reports_to: The reportsTo used by ABAC policies.
         :return: InsightsSummary
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday', 'page_size', 'page_number', 'sort_key', 'sort_metric_id', 'sort_order', 'user_ids']
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday', 'page_size', 'page_number', 'sort_key', 'sort_metric_id', 'sort_order', 'user_ids', 'reports_to']
         all_params.append('callback')
 
         params = locals()
@@ -1192,6 +1193,8 @@ class GamificationApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'user_ids' in params:
             query_params['userIds'] = params['user_ids']
+        if 'reports_to' in params:
+            query_params['reportsTo'] = params['reports_to']
 
         header_params = {}
 
@@ -1574,12 +1577,13 @@ class GamificationApi(object):
         :param str filter_id: ID for the filter type. (required)
         :param str granularity: Granularity (required)
         :param date start_workday: The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param str reports_to: The reportsTo used by ABAC policies.
         :return: InsightsAgents
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter_type', 'filter_id', 'granularity', 'start_workday']
+        all_params = ['filter_type', 'filter_id', 'granularity', 'start_workday', 'reports_to']
         all_params.append('callback')
 
         params = locals()
@@ -1618,6 +1622,8 @@ class GamificationApi(object):
             query_params['granularity'] = params['granularity']
         if 'start_workday' in params:
             query_params['startWorkday'] = params['start_workday']
+        if 'reports_to' in params:
+            query_params['reportsTo'] = params['reports_to']
 
         header_params = {}
 
@@ -1675,12 +1681,13 @@ class GamificationApi(object):
         :param str sort_metric_id: Sort Metric Id
         :param int section_size: The number of top and bottom users to return before ties
         :param str user_ids: A list of up to 100 comma-separated user Ids
+        :param str reports_to: The reportsTo used by ABAC policies.
         :return: InsightsRankings
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday', 'sort_key', 'sort_metric_id', 'section_size', 'user_ids']
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday', 'sort_key', 'sort_metric_id', 'section_size', 'user_ids', 'reports_to']
         all_params.append('callback')
 
         params = locals()
@@ -1735,6 +1742,8 @@ class GamificationApi(object):
             query_params['sectionSize'] = params['section_size']
         if 'user_ids' in params:
             query_params['userIds'] = params['user_ids']
+        if 'reports_to' in params:
+            query_params['reportsTo'] = params['reports_to']
 
         header_params = {}
 

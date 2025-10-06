@@ -35,13 +35,15 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import BusinessRulesDataSchema
+from ..models import BusinessRulesDataSchemaListing
+from ..models import BusinessRulesSchemaCreateRequest
+from ..models import BusinessRulesSchemaUpdateRequest
 from ..models import CopyDecisionTableRequest
 from ..models import Coretype
 from ..models import CoretypeListing
 from ..models import CreateDecisionTableRequest
 from ..models import CreateDecisionTableRowRequest
-from ..models import DataSchema
-from ..models import DataSchemaListing
 from ..models import DecisionTable
 from ..models import DecisionTableExecutionRequest
 from ..models import DecisionTableExecutionResponse
@@ -1019,7 +1021,7 @@ class BusinessRulesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_businessrules_schema(self, schema_id: str, **kwargs) -> 'DataSchema':
+    def get_businessrules_schema(self, schema_id: str, **kwargs) -> 'BusinessRulesDataSchema':
         """
         Get a schema
         
@@ -1036,7 +1038,7 @@ class BusinessRulesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str schema_id: Schema ID (required)
-        :return: DataSchema
+        :return: BusinessRulesDataSchema
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1093,12 +1095,12 @@ class BusinessRulesApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataSchema',
+                                            response_type='BusinessRulesDataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_businessrules_schemas(self, **kwargs) -> 'DataSchemaListing':
+    def get_businessrules_schemas(self, **kwargs) -> 'BusinessRulesDataSchemaListing':
         """
         Get a list of schemas.
         
@@ -1114,7 +1116,7 @@ class BusinessRulesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: DataSchemaListing
+        :return: BusinessRulesDataSchemaListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1166,7 +1168,7 @@ class BusinessRulesApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataSchemaListing',
+                                            response_type='BusinessRulesDataSchemaListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2197,7 +2199,7 @@ class BusinessRulesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_businessrules_schemas(self, body: 'DataSchema', **kwargs) -> 'DataSchema':
+    def post_businessrules_schemas(self, body: 'BusinessRulesSchemaCreateRequest', **kwargs) -> 'BusinessRulesDataSchema':
         """
         Create a schema
         
@@ -2213,8 +2215,8 @@ class BusinessRulesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param DataSchema body: Schema (required)
-        :return: DataSchema
+        :param BusinessRulesSchemaCreateRequest body: Business Rules Schema Create Request (required)
+        :return: BusinessRulesDataSchema
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2271,7 +2273,7 @@ class BusinessRulesApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataSchema',
+                                            response_type='BusinessRulesDataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2458,7 +2460,7 @@ class BusinessRulesApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_businessrules_schema(self, schema_id: str, body: 'DataSchema', **kwargs) -> 'DataSchema':
+    def put_businessrules_schema(self, schema_id: str, body: 'BusinessRulesSchemaUpdateRequest', **kwargs) -> 'BusinessRulesDataSchema':
         """
         Update a schema
         
@@ -2475,8 +2477,8 @@ class BusinessRulesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str schema_id: Schema ID (required)
-        :param DataSchema body: Data Schema (required)
-        :return: DataSchema
+        :param BusinessRulesSchemaUpdateRequest body: Business Rules Schema Update Request (required)
+        :return: BusinessRulesDataSchema
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2538,7 +2540,7 @@ class BusinessRulesApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataSchema',
+                                            response_type='BusinessRulesDataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -2877,6 +2877,7 @@ class SpeechTextAnalyticsApi(object):
             for asynchronous request. (optional)
         :param str next_page: The key for listing the next page
         :param int page_size: The page size for the listing. The max that will be returned is 500.
+        :param int page_number: The page number for the listing
         :param str state: Topic state. Defaults to latest
         :param str name: Case insensitive partial name to filter by
         :param list[str] ids: Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
@@ -2888,7 +2889,7 @@ class SpeechTextAnalyticsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['next_page', 'page_size', 'state', 'name', 'ids', 'dialects', 'sort_by', 'sort_order']
+        all_params = ['next_page', 'page_size', 'page_number', 'state', 'name', 'ids', 'dialects', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -2911,6 +2912,8 @@ class SpeechTextAnalyticsApi(object):
             query_params['nextPage'] = params['next_page']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
         if 'state' in params:
             query_params['state'] = params['state']
         if 'name' in params:

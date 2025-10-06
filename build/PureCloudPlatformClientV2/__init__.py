@@ -629,6 +629,10 @@ from .models.bulk_update_shift_trade_state_response import BulkUpdateShiftTradeS
 from .models.bulk_update_shift_trade_state_result import BulkUpdateShiftTradeStateResult
 from .models.bulk_update_shift_trade_state_result_item import BulkUpdateShiftTradeStateResultItem
 from .models.bullseye import Bullseye
+from .models.business_rules_data_schema import BusinessRulesDataSchema
+from .models.business_rules_data_schema_listing import BusinessRulesDataSchemaListing
+from .models.business_rules_schema_create_request import BusinessRulesSchemaCreateRequest
+from .models.business_rules_schema_update_request import BusinessRulesSchemaUpdateRequest
 from .models.business_unit_activity_code import BusinessUnitActivityCode
 from .models.business_unit_activity_code_listing import BusinessUnitActivityCodeListing
 from .models.business_unit_list_item import BusinessUnitListItem
@@ -1004,6 +1008,10 @@ from .models.context_pattern import ContextPattern
 from .models.continuous_forecast_get_session_response import ContinuousForecastGetSessionResponse
 from .models.continuous_forecast_session_response import ContinuousForecastSessionResponse
 from .models.continuous_forecast_snapshot_response import ContinuousForecastSnapshotResponse
+from .models.contract_definition import ContractDefinition
+from .models.contract_items import ContractItems
+from .models.contract_json_schema import ContractJsonSchema
+from .models.contract_property_definition import ContractPropertyDefinition
 from .models.contractual import Contractual
 from .models.conversation import Conversation
 from .models.conversation_activity_data import ConversationActivityData

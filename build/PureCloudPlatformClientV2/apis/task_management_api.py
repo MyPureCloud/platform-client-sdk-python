@@ -1271,7 +1271,7 @@ class TaskManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str workitem_id: Workitem ID (required)
-        :param str expands: Which fields to expand. Comma separated if more than one.
+        :param list[str] expands: Which fields to expand. Comma separated if more than one.
         :return: Workitem
                  If the method is called asynchronously,
                  returns the request thread.
