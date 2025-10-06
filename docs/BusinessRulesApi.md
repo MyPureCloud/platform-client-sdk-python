@@ -629,7 +629,7 @@ except ApiException as e:
 
 ## get_businessrules_schema
 
-> [**DataSchema**](DataSchema) get_businessrules_schema(schema_id)
+> [**BusinessRulesDataSchema**](BusinessRulesDataSchema) get_businessrules_schema(schema_id)
 
 
 Get a schema
@@ -674,12 +674,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
 ## get_businessrules_schemas
 
-> [**DataSchemaListing**](DataSchemaListing) get_businessrules_schemas()
+> [**BusinessRulesDataSchemaListing**](BusinessRulesDataSchemaListing) get_businessrules_schemas()
 
 
 Get a list of schemas.
@@ -720,7 +720,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**DataSchemaListing**](DataSchemaListing)
+[**BusinessRulesDataSchemaListing**](BusinessRulesDataSchemaListing)
 
 
 ## get_businessrules_schemas_coretype
@@ -1356,7 +1356,7 @@ except ApiException as e:
 
 ## post_businessrules_schemas
 
-> [**DataSchema**](DataSchema) post_businessrules_schemas(body)
+> [**BusinessRulesDataSchema**](BusinessRulesDataSchema) post_businessrules_schemas(body)
 
 
 Create a schema
@@ -1382,7 +1382,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
-body = PureCloudPlatformClientV2.DataSchema() # DataSchema | Schema
+body = PureCloudPlatformClientV2.BusinessRulesSchemaCreateRequest() # BusinessRulesSchemaCreateRequest | Business Rules Schema Create Request
 
 try:
     # Create a schema
@@ -1397,11 +1397,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DataSchema**](DataSchema)| Schema |  |
+| **body** | [**BusinessRulesSchemaCreateRequest**](BusinessRulesSchemaCreateRequest)| Business Rules Schema Create Request |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
 ## put_businessrules_decisiontable_version_publish
@@ -1515,7 +1515,7 @@ except ApiException as e:
 
 ## put_businessrules_schema
 
-> [**DataSchema**](DataSchema) put_businessrules_schema(schema_id, body)
+> [**BusinessRulesDataSchema**](BusinessRulesDataSchema) put_businessrules_schema(schema_id, body)
 
 
 Update a schema
@@ -1542,7 +1542,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 schema_id = 'schema_id_example' # str | Schema ID
-body = PureCloudPlatformClientV2.DataSchema() # DataSchema | Data Schema
+body = PureCloudPlatformClientV2.BusinessRulesSchemaUpdateRequest() # BusinessRulesSchemaUpdateRequest | Business Rules Schema Update Request
 
 try:
     # Update a schema
@@ -1558,11 +1558,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-| **body** | [**DataSchema**](DataSchema)| Data Schema |  |
+| **body** | [**BusinessRulesSchemaUpdateRequest**](BusinessRulesSchemaUpdateRequest)| Business Rules Schema Update Request |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema)
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_PureCloudPlatformClientV2 239.0.0_
+_PureCloudPlatformClientV2 240.0.0_

@@ -710,7 +710,7 @@ except ApiException as e:
 
 ## get_gamification_insights
 
-> [**InsightsSummary**](InsightsSummary) get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids)
+> [**InsightsSummary**](InsightsSummary) get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids, reports_to=reports_to)
 
 
 Get insights summary
@@ -745,10 +745,11 @@ sort_key = 'sort_key_example' # str | Sort key (optional)
 sort_metric_id = 'sort_metric_id_example' # str | Sort Metric Id (optional)
 sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 user_ids = 'user_ids_example' # str | A list of up to 100 comma-separated user Ids (optional)
+reports_to = 'reports_to_example' # str | The reportsTo used by ABAC policies. (optional)
 
 try:
     # Get insights summary
-    api_response = api_instance.get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids)
+    api_response = api_instance.get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids, reports_to=reports_to)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_insights: %s\n" % e)
@@ -770,6 +771,7 @@ except ApiException as e:
 | **sort_metric_id** | **str**| Sort Metric Id | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **user_ids** | **str**| A list of up to 100 comma-separated user Ids | [optional]  |
+| **reports_to** | **str**| The reportsTo used by ABAC policies. | [optional]  |
 
 ### Return type
 
@@ -954,7 +956,7 @@ except ApiException as e:
 
 ## get_gamification_insights_members
 
-> [**InsightsAgents**](InsightsAgents) get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)
+> [**InsightsAgents**](InsightsAgents) get_gamification_insights_members(filter_type, filter_id, granularity, start_workday, reports_to=reports_to)
 
 
 Query users in a profile during a period of time
@@ -982,10 +984,11 @@ filter_type = 'filter_type_example' # str | Filter type for the query request.
 filter_id = 'filter_id_example' # str | ID for the filter type.
 granularity = 'granularity_example' # str | Granularity
 start_workday = '2013-10-20' # date | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+reports_to = 'reports_to_example' # str | The reportsTo used by ABAC policies. (optional)
 
 try:
     # Query users in a profile during a period of time
-    api_response = api_instance.get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)
+    api_response = api_instance.get_gamification_insights_members(filter_type, filter_id, granularity, start_workday, reports_to=reports_to)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_insights_members: %s\n" % e)
@@ -1000,6 +1003,7 @@ except ApiException as e:
 | **filter_id** | **str**| ID for the filter type. |  |
 | **granularity** | **str**| Granularity | <br />**Values**: Weekly, Monthly |
 | **start_workday** | **date**| The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **reports_to** | **str**| The reportsTo used by ABAC policies. | [optional]  |
 
 ### Return type
 
@@ -1008,7 +1012,7 @@ except ApiException as e:
 
 ## get_gamification_insights_rankings
 
-> [**InsightsRankings**](InsightsRankings) get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id=sort_metric_id, section_size=section_size, user_ids=user_ids)
+> [**InsightsRankings**](InsightsRankings) get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id=sort_metric_id, section_size=section_size, user_ids=user_ids, reports_to=reports_to)
 
 
 Get insights rankings
@@ -1041,10 +1045,11 @@ sort_key = 'sort_key_example' # str | Sort key
 sort_metric_id = 'sort_metric_id_example' # str | Sort Metric Id (optional)
 section_size = 56 # int | The number of top and bottom users to return before ties (optional)
 user_ids = 'user_ids_example' # str | A list of up to 100 comma-separated user Ids (optional)
+reports_to = 'reports_to_example' # str | The reportsTo used by ABAC policies. (optional)
 
 try:
     # Get insights rankings
-    api_response = api_instance.get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id=sort_metric_id, section_size=section_size, user_ids=user_ids)
+    api_response = api_instance.get_gamification_insights_rankings(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, sort_key, sort_metric_id=sort_metric_id, section_size=section_size, user_ids=user_ids, reports_to=reports_to)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GamificationApi->get_gamification_insights_rankings: %s\n" % e)
@@ -1064,6 +1069,7 @@ except ApiException as e:
 | **sort_metric_id** | **str**| Sort Metric Id | [optional]  |
 | **section_size** | **int**| The number of top and bottom users to return before ties | [optional]  |
 | **user_ids** | **str**| A list of up to 100 comma-separated user Ids | [optional]  |
+| **reports_to** | **str**| The reportsTo used by ABAC policies. | [optional]  |
 
 ### Return type
 
@@ -4080,4 +4086,4 @@ except ApiException as e:
 [**GamificationStatus**](GamificationStatus)
 
 
-_PureCloudPlatformClientV2 239.0.0_
+_PureCloudPlatformClientV2 240.0.0_
