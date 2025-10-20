@@ -99,7 +99,7 @@ class OpenMessagingIdentityResolutionConfig(object):
     def division(self) -> 'WritableStarrableDivision':
         """
         Gets the division of this OpenMessagingIdentityResolutionConfig.
-        The division to which this entity belongs.
+        The division to use when performing identity resolution.
 
         :return: The division of this OpenMessagingIdentityResolutionConfig.
         :rtype: WritableStarrableDivision
@@ -110,7 +110,7 @@ class OpenMessagingIdentityResolutionConfig(object):
     def division(self, division: 'WritableStarrableDivision') -> None:
         """
         Sets the division of this OpenMessagingIdentityResolutionConfig.
-        The division to which this entity belongs.
+        The division to use when performing identity resolution.
 
         :param division: The division of this OpenMessagingIdentityResolutionConfig.
         :type: WritableStarrableDivision

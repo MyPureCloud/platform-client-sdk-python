@@ -18,6 +18,7 @@ from .action_aggregate_query_filter import ActionAggregateQueryFilter
 from .action_aggregate_query_predicate import ActionAggregateQueryPredicate
 from .action_aggregate_query_response import ActionAggregateQueryResponse
 from .action_aggregation_query import ActionAggregationQuery
+from .action_aggregation_sort import ActionAggregationSort
 from .action_aggregation_view import ActionAggregationView
 from .action_async_aggregate_query_response import ActionAsyncAggregateQueryResponse
 from .action_async_aggregation_query import ActionAsyncAggregationQuery
@@ -121,6 +122,7 @@ from .agent_copilot_aggregate_query_filter import AgentCopilotAggregateQueryFilt
 from .agent_copilot_aggregate_query_predicate import AgentCopilotAggregateQueryPredicate
 from .agent_copilot_aggregate_query_response import AgentCopilotAggregateQueryResponse
 from .agent_copilot_aggregation_query import AgentCopilotAggregationQuery
+from .agent_copilot_aggregation_sort import AgentCopilotAggregationSort
 from .agent_copilot_aggregation_view import AgentCopilotAggregationView
 from .agent_copilot_async_aggregate_query_response import AgentCopilotAsyncAggregateQueryResponse
 from .agent_copilot_async_aggregation_query import AgentCopilotAsyncAggregationQuery
@@ -262,6 +264,7 @@ from .app_event_response_session import AppEventResponseSession
 from .append_to_dnc_action_settings import AppendToDncActionSettings
 from .apple_authentication import AppleAuthentication
 from .apple_i_message_app import AppleIMessageApp
+from .apple_identity_resolution_config import AppleIdentityResolutionConfig
 from .apple_integration import AppleIntegration
 from .apple_integration_entity_listing import AppleIntegrationEntityListing
 from .apple_integration_request import AppleIntegrationRequest
@@ -305,8 +308,6 @@ from .architect_system_prompt_resource_notification_system_prompt_resource_notif
 from .archive_retention import ArchiveRetention
 from .array_node import ArrayNode
 from .article import Article
-from .article_content import ArticleContent
-from .article_content_body import ArticleContentBody
 from .articles_filter import ArticlesFilter
 from .assessment_form import AssessmentForm
 from .assessment_form_question import AssessmentFormQuestion
@@ -447,6 +448,7 @@ from .bot_aggregate_query_filter import BotAggregateQueryFilter
 from .bot_aggregate_query_predicate import BotAggregateQueryPredicate
 from .bot_aggregate_query_response import BotAggregateQueryResponse
 from .bot_aggregation_query import BotAggregationQuery
+from .bot_aggregation_sort import BotAggregationSort
 from .bot_aggregation_view import BotAggregationView
 from .bot_async_aggregate_query_response import BotAsyncAggregateQueryResponse
 from .bot_async_aggregation_query import BotAsyncAggregationQuery
@@ -698,6 +700,10 @@ from .campaign_outbound_lines_allocation import CampaignOutboundLinesAllocation
 from .campaign_outbound_lines_distribution import CampaignOutboundLinesDistribution
 from .campaign_outbound_lines_reservation import CampaignOutboundLinesReservation
 from .campaign_patch_request import CampaignPatchRequest
+from .campaign_performance_data import CampaignPerformanceData
+from .campaign_performance_data_contact_rate import CampaignPerformanceDataContactRate
+from .campaign_performance_data_listing import CampaignPerformanceDataListing
+from .campaign_performance_data_progress import CampaignPerformanceDataProgress
 from .campaign_progress import CampaignProgress
 from .campaign_rule import CampaignRule
 from .campaign_rule_action import CampaignRuleAction
@@ -753,7 +759,6 @@ from .category import Category
 from .category_create_request import CategoryCreateRequest
 from .category_entity import CategoryEntity
 from .category_entity_listing import CategoryEntityListing
-from .category_listing import CategoryListing
 from .category_reference import CategoryReference
 from .category_request import CategoryRequest
 from .category_response import CategoryResponse
@@ -1030,6 +1035,7 @@ from .conversation_aggregate_query_filter import ConversationAggregateQueryFilte
 from .conversation_aggregate_query_predicate import ConversationAggregateQueryPredicate
 from .conversation_aggregate_query_response import ConversationAggregateQueryResponse
 from .conversation_aggregation_query import ConversationAggregationQuery
+from .conversation_aggregation_sort import ConversationAggregationSort
 from .conversation_aggregation_view import ConversationAggregationView
 from .conversation_app_settings import ConversationAppSettings
 from .conversation_association import ConversationAssociation
@@ -1795,7 +1801,6 @@ from .dnclist_import_status_object import DnclistImportStatusObject
 from .dns_record_entry import DnsRecordEntry
 from .do_not_send_action_settings import DoNotSendActionSettings
 from .document import Document
-from .document_article import DocumentArticle
 from .document_attribute import DocumentAttribute
 from .document_body import DocumentBody
 from .document_body_block import DocumentBodyBlock
@@ -1827,7 +1832,6 @@ from .document_body_table_with_highlight import DocumentBodyTableWithHighlight
 from .document_body_video import DocumentBodyVideo
 from .document_body_video_properties import DocumentBodyVideoProperties
 from .document_body_with_highlight import DocumentBodyWithHighlight
-from .document_category_input import DocumentCategoryInput
 from .document_chunk_block import DocumentChunkBlock
 from .document_chunk_reference import DocumentChunkReference
 from .document_content_block import DocumentContentBlock
@@ -1835,10 +1839,8 @@ from .document_content_block_with_highlight import DocumentContentBlockWithHighl
 from .document_content_highlight_index import DocumentContentHighlightIndex
 from .document_element_length import DocumentElementLength
 from .document_entity_listing import DocumentEntityListing
-from .document_faq import DocumentFaq
 from .document_list_content_block import DocumentListContentBlock
 from .document_list_content_block_with_highlight import DocumentListContentBlockWithHighlight
-from .document_listing import DocumentListing
 from .document_query import DocumentQuery
 from .document_query_clause import DocumentQueryClause
 from .document_query_interval import DocumentQueryInterval
@@ -2211,6 +2213,7 @@ from .facebook_data_ingestion_rule_response import FacebookDataIngestionRuleResp
 from .facebook_data_ingestion_rule_version_response import FacebookDataIngestionRuleVersionResponse
 from .facebook_data_ingestion_rule_version_response_entity_listing import FacebookDataIngestionRuleVersionResponseEntityListing
 from .facebook_id import FacebookId
+from .facebook_identity_resolution_config import FacebookIdentityResolutionConfig
 from .facebook_integration import FacebookIntegration
 from .facebook_integration_entity_listing import FacebookIntegrationEntityListing
 from .facebook_integration_request import FacebookIntegrationRequest
@@ -2271,6 +2274,7 @@ from .flow_aggregate_query_filter import FlowAggregateQueryFilter
 from .flow_aggregate_query_predicate import FlowAggregateQueryPredicate
 from .flow_aggregate_query_response import FlowAggregateQueryResponse
 from .flow_aggregation_query import FlowAggregationQuery
+from .flow_aggregation_sort import FlowAggregationSort
 from .flow_aggregation_view import FlowAggregationView
 from .flow_async_aggregate_query_response import FlowAsyncAggregateQueryResponse
 from .flow_async_aggregation_query import FlowAsyncAggregationQuery
@@ -2286,6 +2290,7 @@ from .flow_execution_aggregate_query_filter import FlowExecutionAggregateQueryFi
 from .flow_execution_aggregate_query_predicate import FlowExecutionAggregateQueryPredicate
 from .flow_execution_aggregate_query_response import FlowExecutionAggregateQueryResponse
 from .flow_execution_aggregation_query import FlowExecutionAggregationQuery
+from .flow_execution_aggregation_sort import FlowExecutionAggregationSort
 from .flow_execution_aggregation_view import FlowExecutionAggregationView
 from .flow_execution_async_aggregate_query_response import FlowExecutionAsyncAggregateQueryResponse
 from .flow_execution_async_aggregation_query import FlowExecutionAsyncAggregationQuery
@@ -2499,12 +2504,12 @@ from .ivr import IVR
 from .ivr_division_view import IVRDivisionView
 from .ivr_division_view_entity_listing import IVRDivisionViewEntityListing
 from .ivr_entity_listing import IVREntityListing
+from .ivr_identity_resolution_config import IVRIdentityResolutionConfig
 from .identifier_claim_request import IdentifierClaimRequest
 from .identity_now import IdentityNow
 from .identity_provider import IdentityProvider
 from .identity_provider_entity_listing import IdentityProviderEntityListing
 from .identity_resolution_automerge_config import IdentityResolutionAutomergeConfig
-from .identity_resolution_config import IdentityResolutionConfig
 from .identity_resolution_external_source import IdentityResolutionExternalSource
 from .identity_resolution_queue_config import IdentityResolutionQueueConfig
 from .idle_event_trigger import IdleEventTrigger
@@ -2522,10 +2527,8 @@ from .ignored_mined_phrase_listing import IgnoredMinedPhraseListing
 from .ignored_mined_topic_listing import IgnoredMinedTopicListing
 from .image import Image
 from .imap_settings import ImapSettings
-from .import_error import ImportError
 from .import_forecast_response import ImportForecastResponse
 from .import_forecast_upload_response import ImportForecastUploadResponse
-from .import_report import ImportReport
 from .import_schedule_upload_response import ImportScheduleUploadResponse
 from .import_schedule_upload_schema import ImportScheduleUploadSchema
 from .import_script_status_response import ImportScriptStatusResponse
@@ -2578,6 +2581,7 @@ from .instagram_data_ingestion_rule_response import InstagramDataIngestionRuleRe
 from .instagram_data_ingestion_rule_version_response import InstagramDataIngestionRuleVersionResponse
 from .instagram_data_ingestion_rule_version_response_entity_listing import InstagramDataIngestionRuleVersionResponseEntityListing
 from .instagram_id import InstagramId
+from .instagram_identity_resolution_config import InstagramIdentityResolutionConfig
 from .instagram_integration import InstagramIntegration
 from .instagram_integration_entity_listing import InstagramIntegrationEntityListing
 from .instagram_integration_request import InstagramIntegrationRequest
@@ -2626,6 +2630,7 @@ from .journey_aggregate_query_filter import JourneyAggregateQueryFilter
 from .journey_aggregate_query_predicate import JourneyAggregateQueryPredicate
 from .journey_aggregate_query_response import JourneyAggregateQueryResponse
 from .journey_aggregation_query import JourneyAggregationQuery
+from .journey_aggregation_sort import JourneyAggregationSort
 from .journey_aggregation_view import JourneyAggregationView
 from .journey_app import JourneyApp
 from .journey_app_events_notification_action_map import JourneyAppEventsNotificationActionMap
@@ -2796,6 +2801,7 @@ from .knowledge_aggregate_query_filter import KnowledgeAggregateQueryFilter
 from .knowledge_aggregate_query_predicate import KnowledgeAggregateQueryPredicate
 from .knowledge_aggregate_query_response import KnowledgeAggregateQueryResponse
 from .knowledge_aggregation_query import KnowledgeAggregationQuery
+from .knowledge_aggregation_sort import KnowledgeAggregationSort
 from .knowledge_aggregation_view import KnowledgeAggregationView
 from .knowledge_answer_config import KnowledgeAnswerConfig
 from .knowledge_answer_document_response import KnowledgeAnswerDocumentResponse
@@ -2809,23 +2815,18 @@ from .knowledge_base_listing import KnowledgeBaseListing
 from .knowledge_base_reference import KnowledgeBaseReference
 from .knowledge_base_update_request import KnowledgeBaseUpdateRequest
 from .knowledge_base_with_dialect_reference import KnowledgeBaseWithDialectReference
-from .knowledge_category import KnowledgeCategory
-from .knowledge_category_request import KnowledgeCategoryRequest
 from .knowledge_context_reference import KnowledgeContextReference
 from .knowledge_context_value_reference import KnowledgeContextValueReference
 from .knowledge_conversation_context import KnowledgeConversationContext
 from .knowledge_conversation_context_response import KnowledgeConversationContextResponse
-from .knowledge_document import KnowledgeDocument
 from .knowledge_document_alternative import KnowledgeDocumentAlternative
 from .knowledge_document_bulk_remove_request import KnowledgeDocumentBulkRemoveRequest
-from .knowledge_document_bulk_request import KnowledgeDocumentBulkRequest
 from .knowledge_document_bulk_update_entity import KnowledgeDocumentBulkUpdateEntity
 from .knowledge_document_bulk_update_request import KnowledgeDocumentBulkUpdateRequest
 from .knowledge_document_bulk_version_add_entity import KnowledgeDocumentBulkVersionAddEntity
 from .knowledge_document_bulk_version_add_request import KnowledgeDocumentBulkVersionAddRequest
 from .knowledge_document_chunk_request import KnowledgeDocumentChunkRequest
 from .knowledge_document_chunk_response import KnowledgeDocumentChunkResponse
-from .knowledge_document_content_upload import KnowledgeDocumentContentUpload
 from .knowledge_document_copy import KnowledgeDocumentCopy
 from .knowledge_document_create_request import KnowledgeDocumentCreateRequest
 from .knowledge_document_descriptor import KnowledgeDocumentDescriptor
@@ -2843,7 +2844,6 @@ from .knowledge_document_query_result import KnowledgeDocumentQueryResult
 from .knowledge_document_query_variation import KnowledgeDocumentQueryVariation
 from .knowledge_document_reference import KnowledgeDocumentReference
 from .knowledge_document_req import KnowledgeDocumentReq
-from .knowledge_document_request import KnowledgeDocumentRequest
 from .knowledge_document_response import KnowledgeDocumentResponse
 from .knowledge_document_response_listing import KnowledgeDocumentResponseListing
 from .knowledge_document_search import KnowledgeDocumentSearch
@@ -2865,7 +2865,6 @@ from .knowledge_export_job_documents_filter import KnowledgeExportJobDocumentsFi
 from .knowledge_export_job_filter import KnowledgeExportJobFilter
 from .knowledge_export_job_request import KnowledgeExportJobRequest
 from .knowledge_export_job_response import KnowledgeExportJobResponse
-from .knowledge_extended_category import KnowledgeExtendedCategory
 from .knowledge_group_statistics import KnowledgeGroupStatistics
 from .knowledge_guest_answer_document_response import KnowledgeGuestAnswerDocumentResponse
 from .knowledge_guest_answer_documents_response import KnowledgeGuestAnswerDocumentsResponse
@@ -2887,7 +2886,6 @@ from .knowledge_guest_search_document_response import KnowledgeGuestSearchDocume
 from .knowledge_guest_session import KnowledgeGuestSession
 from .knowledge_guest_session_app import KnowledgeGuestSessionApp
 from .knowledge_guest_session_context import KnowledgeGuestSessionContext
-from .knowledge_import import KnowledgeImport
 from .knowledge_import_job_error import KnowledgeImportJobError
 from .knowledge_import_job_report import KnowledgeImportJobReport
 from .knowledge_import_job_request import KnowledgeImportJobRequest
@@ -2908,16 +2906,12 @@ from .knowledge_parse_job_response import KnowledgeParseJobResponse
 from .knowledge_parse_record import KnowledgeParseRecord
 from .knowledge_search_client_application import KnowledgeSearchClientApplication
 from .knowledge_search_document_response import KnowledgeSearchDocumentResponse
-from .knowledge_search_document_v1 import KnowledgeSearchDocumentV1
-from .knowledge_search_request import KnowledgeSearchRequest
-from .knowledge_search_response import KnowledgeSearchResponse
 from .knowledge_suggestion_config import KnowledgeSuggestionConfig
 from .knowledge_sync_job_report import KnowledgeSyncJobReport
 from .knowledge_sync_job_request import KnowledgeSyncJobRequest
 from .knowledge_sync_job_response import KnowledgeSyncJobResponse
 from .knowledge_sync_job_statistics import KnowledgeSyncJobStatistics
 from .knowledge_sync_request import KnowledgeSyncRequest
-from .knowledge_training import KnowledgeTraining
 from .kpi_result import KpiResult
 from .label import Label
 from .label_create_request import LabelCreateRequest
@@ -3201,6 +3195,7 @@ from .messaging_end_transfer_event import MessagingEndTransferEvent
 from .messaging_external_established_event import MessagingExternalEstablishedEvent
 from .messaging_flow_established_event import MessagingFlowEstablishedEvent
 from .messaging_hold_updated_event import MessagingHoldUpdatedEvent
+from .messaging_identity_resolution_config import MessagingIdentityResolutionConfig
 from .messaging_initial_configuration import MessagingInitialConfiguration
 from .messaging_integration import MessagingIntegration
 from .messaging_integration_entity_listing import MessagingIntegrationEntityListing
@@ -3486,6 +3481,7 @@ from .outbound_preview_campaign_post_contact_outbound_preview_campaign_post_cont
 from .outbound_preview_campaign_post_contact_voice_attributes import OutboundPreviewCampaignPostContactVoiceAttributes
 from .outbound_preview_campaign_pre_contact_outbound_preview_campaign_pre_contact_event import OutboundPreviewCampaignPreContactOutboundPreviewCampaignPreContactEvent
 from .outbound_preview_campaign_pre_contact_voice_attributes import OutboundPreviewCampaignPreContactVoiceAttributes
+from .outbound_queue_identity_resolution_config import OutboundQueueIdentityResolutionConfig
 from .outbound_route import OutboundRoute
 from .outbound_route_base import OutboundRouteBase
 from .outbound_route_base_entity_listing import OutboundRouteBaseEntityListing
@@ -4081,6 +4077,7 @@ from .rate_limit_aggregate_query_filter import RateLimitAggregateQueryFilter
 from .rate_limit_aggregate_query_predicate import RateLimitAggregateQueryPredicate
 from .rate_limit_aggregate_query_response import RateLimitAggregateQueryResponse
 from .rate_limit_aggregation_query import RateLimitAggregationQuery
+from .rate_limit_aggregation_sort import RateLimitAggregationSort
 from .rate_limit_aggregation_view import RateLimitAggregationView
 from .reaction import Reaction
 from .real_time_adherence_explanation import RealTimeAdherenceExplanation
@@ -4200,6 +4197,7 @@ from .resolution_aggregate_query_filter import ResolutionAggregateQueryFilter
 from .resolution_aggregate_query_predicate import ResolutionAggregateQueryPredicate
 from .resolution_aggregate_query_response import ResolutionAggregateQueryResponse
 from .resolution_aggregation_query import ResolutionAggregationQuery
+from .resolution_aggregation_sort import ResolutionAggregationSort
 from .resolution_aggregation_view import ResolutionAggregationView
 from .resolution_async_aggregate_query_response import ResolutionAsyncAggregateQueryResponse
 from .resolution_async_aggregation_query import ResolutionAsyncAggregationQuery
@@ -4229,7 +4227,6 @@ from .response_substitution import ResponseSubstitution
 from .response_text import ResponseText
 from .rest_error_detail import RestErrorDetail
 from .restore_presence_settings import RestorePresenceSettings
-from .result_counters import ResultCounters
 from .retention_duration import RetentionDuration
 from .reverse_whitepages_lookup_result import ReverseWhitepagesLookupResult
 from .review_assessment_results import ReviewAssessmentResults
@@ -4243,6 +4240,7 @@ from .room_participant import RoomParticipant
 from .room_participant_response import RoomParticipantResponse
 from .room_participants_response import RoomParticipantsResponse
 from .room_update_request import RoomUpdateRequest
+from .route_identity_resolution_config import RouteIdentityResolutionConfig
 from .route_path_request import RoutePathRequest
 from .route_path_response import RoutePathResponse
 from .routing_activity_data import RoutingActivityData
@@ -4483,6 +4481,7 @@ from .sms_address_provision import SmsAddressProvision
 from .sms_alphanumeric_provision import SmsAlphanumericProvision
 from .sms_available_phone_number import SmsAvailablePhoneNumber
 from .sms_config import SmsConfig
+from .sms_identity_resolution_config import SmsIdentityResolutionConfig
 from .sms_phone_number import SmsPhoneNumber
 from .sms_phone_number_entity_listing import SmsPhoneNumberEntityListing
 from .sms_phone_number_import import SmsPhoneNumberImport
@@ -4596,6 +4595,7 @@ from .summary_aggregate_query_filter import SummaryAggregateQueryFilter
 from .summary_aggregate_query_predicate import SummaryAggregateQueryPredicate
 from .summary_aggregate_query_response import SummaryAggregateQueryResponse
 from .summary_aggregation_query import SummaryAggregationQuery
+from .summary_aggregation_sort import SummaryAggregationSort
 from .summary_aggregation_view import SummaryAggregationView
 from .summary_async_aggregate_query_response import SummaryAsyncAggregateQueryResponse
 from .summary_async_aggregation_query import SummaryAsyncAggregationQuery
@@ -4637,6 +4637,7 @@ from .survey_aggregate_query_filter import SurveyAggregateQueryFilter
 from .survey_aggregate_query_predicate import SurveyAggregateQueryPredicate
 from .survey_aggregate_query_response import SurveyAggregateQueryResponse
 from .survey_aggregation_query import SurveyAggregationQuery
+from .survey_aggregation_sort import SurveyAggregationSort
 from .survey_aggregation_view import SurveyAggregationView
 from .survey_assignment import SurveyAssignment
 from .survey_async_aggregate_query_response import SurveyAsyncAggregateQueryResponse
@@ -4675,6 +4676,7 @@ from .task_management_aggregate_query_filter import TaskManagementAggregateQuery
 from .task_management_aggregate_query_predicate import TaskManagementAggregateQueryPredicate
 from .task_management_aggregate_query_response import TaskManagementAggregateQueryResponse
 from .task_management_aggregation_query import TaskManagementAggregationQuery
+from .task_management_aggregation_sort import TaskManagementAggregationSort
 from .task_management_aggregation_view import TaskManagementAggregationView
 from .task_management_async_aggregate_query_response import TaskManagementAsyncAggregateQueryResponse
 from .task_management_async_aggregation_query import TaskManagementAsyncAggregationQuery
@@ -4794,13 +4796,13 @@ from .topics_entity_listing import TopicsEntityListing
 from .touchpoint import Touchpoint
 from .touchpoint_response import TouchpointResponse
 from .tracking_settings import TrackingSettings
-from .training_listing import TrainingListing
 from .transcript_aggregate_data_container import TranscriptAggregateDataContainer
 from .transcript_aggregate_query_clause import TranscriptAggregateQueryClause
 from .transcript_aggregate_query_filter import TranscriptAggregateQueryFilter
 from .transcript_aggregate_query_predicate import TranscriptAggregateQueryPredicate
 from .transcript_aggregate_query_response import TranscriptAggregateQueryResponse
 from .transcript_aggregation_query import TranscriptAggregationQuery
+from .transcript_aggregation_sort import TranscriptAggregationSort
 from .transcript_aggregation_view import TranscriptAggregationView
 from .transcript_async_aggregate_query_response import TranscriptAsyncAggregateQueryResponse
 from .transcript_async_aggregation_query import TranscriptAsyncAggregationQuery
@@ -4898,6 +4900,7 @@ from .twitter_data_ingestion_rule_response import TwitterDataIngestionRuleRespon
 from .twitter_data_ingestion_rule_version_response import TwitterDataIngestionRuleVersionResponse
 from .twitter_data_ingestion_rule_version_response_entity_listing import TwitterDataIngestionRuleVersionResponseEntityListing
 from .twitter_id import TwitterId
+from .twitter_identity_resolution_config import TwitterIdentityResolutionConfig
 from .twitter_integration import TwitterIntegration
 from .twitter_integration_entity_listing import TwitterIntegrationEntityListing
 from .twitter_integration_request import TwitterIntegrationRequest
@@ -5507,6 +5510,7 @@ from .whats_app_definition import WhatsAppDefinition
 from .whats_app_embedded_signup_integration_activation_request import WhatsAppEmbeddedSignupIntegrationActivationRequest
 from .whats_app_embedded_signup_integration_request import WhatsAppEmbeddedSignupIntegrationRequest
 from .whats_app_id import WhatsAppId
+from .whats_app_identity_resolution_config import WhatsAppIdentityResolutionConfig
 from .whats_app_integration import WhatsAppIntegration
 from .whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
 from .whats_app_integration_request import WhatsAppIntegrationRequest

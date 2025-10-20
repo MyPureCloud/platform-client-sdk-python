@@ -51,6 +51,7 @@ class AgentVideoSettings(object):
         self.swagger_types = {
             'allow_camera': 'bool',
             'allow_screen_share': 'bool',
+            'allow_microphone': 'bool',
             'background': 'str',
             'background_image': 'BackgroundImageSettings'
         }
@@ -58,12 +59,14 @@ class AgentVideoSettings(object):
         self.attribute_map = {
             'allow_camera': 'allowCamera',
             'allow_screen_share': 'allowScreenShare',
+            'allow_microphone': 'allowMicrophone',
             'background': 'background',
             'background_image': 'backgroundImage'
         }
 
         self._allow_camera = None
         self._allow_screen_share = None
+        self._allow_microphone = None
         self._background = None
         self._background_image = None
 
@@ -114,6 +117,30 @@ class AgentVideoSettings(object):
         
 
         self._allow_screen_share = allow_screen_share
+
+    @property
+    def allow_microphone(self) -> bool:
+        """
+        Gets the allow_microphone of this AgentVideoSettings.
+        whether or not agent microphone is allowed
+
+        :return: The allow_microphone of this AgentVideoSettings.
+        :rtype: bool
+        """
+        return self._allow_microphone
+
+    @allow_microphone.setter
+    def allow_microphone(self, allow_microphone: bool) -> None:
+        """
+        Sets the allow_microphone of this AgentVideoSettings.
+        whether or not agent microphone is allowed
+
+        :param allow_microphone: The allow_microphone of this AgentVideoSettings.
+        :type: bool
+        """
+        
+
+        self._allow_microphone = allow_microphone
 
     @property
     def background(self) -> str:

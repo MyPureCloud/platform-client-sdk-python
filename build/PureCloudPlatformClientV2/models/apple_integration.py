@@ -32,9 +32,12 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AppleAuthentication
+    from . import AppleIMessageApp
+    from . import AppleIdentityResolutionConfig
+    from . import ApplePay
     from . import DomainEntityRef
     from . import ErrorBody
-    from . import IdentityResolutionConfig
     from . import MessagingSettingReference
     from . import SupportedContentReference
 
@@ -68,7 +71,10 @@ class AppleIntegration(object):
             'modified_by': 'DomainEntityRef',
             'create_status': 'str',
             'create_error': 'ErrorBody',
-            'identity_resolution': 'IdentityResolutionConfig',
+            'apple_i_message_app': 'AppleIMessageApp',
+            'apple_authentication': 'AppleAuthentication',
+            'apple_pay': 'ApplePay',
+            'identity_resolution': 'AppleIdentityResolutionConfig',
             'self_uri': 'str'
         }
 
@@ -88,6 +94,9 @@ class AppleIntegration(object):
             'modified_by': 'modifiedBy',
             'create_status': 'createStatus',
             'create_error': 'createError',
+            'apple_i_message_app': 'appleIMessageApp',
+            'apple_authentication': 'appleAuthentication',
+            'apple_pay': 'applePay',
             'identity_resolution': 'identityResolution',
             'self_uri': 'selfUri'
         }
@@ -107,6 +116,9 @@ class AppleIntegration(object):
         self._modified_by = None
         self._create_status = None
         self._create_error = None
+        self._apple_i_message_app = None
+        self._apple_authentication = None
+        self._apple_pay = None
         self._identity_resolution = None
         self._self_uri = None
 
@@ -476,24 +488,96 @@ class AppleIntegration(object):
         self._create_error = create_error
 
     @property
-    def identity_resolution(self) -> 'IdentityResolutionConfig':
+    def apple_i_message_app(self) -> 'AppleIMessageApp':
+        """
+        Gets the apple_i_message_app of this AppleIntegration.
+        Interactive Application (iMessage App) Settings.
+
+        :return: The apple_i_message_app of this AppleIntegration.
+        :rtype: AppleIMessageApp
+        """
+        return self._apple_i_message_app
+
+    @apple_i_message_app.setter
+    def apple_i_message_app(self, apple_i_message_app: 'AppleIMessageApp') -> None:
+        """
+        Sets the apple_i_message_app of this AppleIntegration.
+        Interactive Application (iMessage App) Settings.
+
+        :param apple_i_message_app: The apple_i_message_app of this AppleIntegration.
+        :type: AppleIMessageApp
+        """
+        
+
+        self._apple_i_message_app = apple_i_message_app
+
+    @property
+    def apple_authentication(self) -> 'AppleAuthentication':
+        """
+        Gets the apple_authentication of this AppleIntegration.
+        The Apple Messages for Business authentication setting.
+
+        :return: The apple_authentication of this AppleIntegration.
+        :rtype: AppleAuthentication
+        """
+        return self._apple_authentication
+
+    @apple_authentication.setter
+    def apple_authentication(self, apple_authentication: 'AppleAuthentication') -> None:
+        """
+        Sets the apple_authentication of this AppleIntegration.
+        The Apple Messages for Business authentication setting.
+
+        :param apple_authentication: The apple_authentication of this AppleIntegration.
+        :type: AppleAuthentication
+        """
+        
+
+        self._apple_authentication = apple_authentication
+
+    @property
+    def apple_pay(self) -> 'ApplePay':
+        """
+        Gets the apple_pay of this AppleIntegration.
+        Apple Pay settings.
+
+        :return: The apple_pay of this AppleIntegration.
+        :rtype: ApplePay
+        """
+        return self._apple_pay
+
+    @apple_pay.setter
+    def apple_pay(self, apple_pay: 'ApplePay') -> None:
+        """
+        Sets the apple_pay of this AppleIntegration.
+        Apple Pay settings.
+
+        :param apple_pay: The apple_pay of this AppleIntegration.
+        :type: ApplePay
+        """
+        
+
+        self._apple_pay = apple_pay
+
+    @property
+    def identity_resolution(self) -> 'AppleIdentityResolutionConfig':
         """
         Gets the identity_resolution of this AppleIntegration.
         The configuration to control identity resolution.
 
         :return: The identity_resolution of this AppleIntegration.
-        :rtype: IdentityResolutionConfig
+        :rtype: AppleIdentityResolutionConfig
         """
         return self._identity_resolution
 
     @identity_resolution.setter
-    def identity_resolution(self, identity_resolution: 'IdentityResolutionConfig') -> None:
+    def identity_resolution(self, identity_resolution: 'AppleIdentityResolutionConfig') -> None:
         """
         Sets the identity_resolution of this AppleIntegration.
         The configuration to control identity resolution.
 
         :param identity_resolution: The identity_resolution of this AppleIntegration.
-        :type: IdentityResolutionConfig
+        :type: AppleIdentityResolutionConfig
         """
         
 

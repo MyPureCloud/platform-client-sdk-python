@@ -10,6 +10,8 @@
 | **activity_code_ids** | [SetWrapperString](SetWrapperString) | The IDs of activity codes to associate with this time-off plan | [optional] |
 | **auto_approval_rule** | str | Auto approval rule for this time-off plan | [optional] |
 | **days_before_start_to_expire_from_waitlist** | int | The number of days before the time-off request start date for when the request will be expired from the waitlist | [optional] |
+| **auto_publish_approved_time_off_requests** | bool | Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule | [optional] |
+| **restricted_activity_code_ids** | [SetWrapperString](SetWrapperString) | The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved | [optional] |
 | **hris_time_off_type** | [ValueWrapperHrisTimeOffType](ValueWrapperHrisTimeOffType) | Time-off type, if this time-off plan is associated with the integration | [optional] |
 | **enabled** | bool | Whether this time-off plan should be used by agents | [optional] |
 | **count_against_time_off_limits** | bool | Whether this time-off plan should count against time-off limits | [optional] |
@@ -19,4 +21,4 @@
 
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

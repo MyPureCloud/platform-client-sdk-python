@@ -111,7 +111,8 @@ class CallMediaParticipant(object):
             'uui_data': 'str',
             'barged_time': 'datetime',
             'secure_pause': 'bool',
-            'disposition': 'Disposition'
+            'disposition': 'Disposition',
+            'transfer_source': 'str'
         }
 
         self.attribute_map = {
@@ -170,7 +171,8 @@ class CallMediaParticipant(object):
             'uui_data': 'uuiData',
             'barged_time': 'bargedTime',
             'secure_pause': 'securePause',
-            'disposition': 'disposition'
+            'disposition': 'disposition',
+            'transfer_source': 'transferSource'
         }
 
         self._id = None
@@ -229,6 +231,7 @@ class CallMediaParticipant(object):
         self._barged_time = None
         self._secure_pause = None
         self._disposition = None
+        self._transfer_source = None
 
     @property
     def id(self) -> str:
@@ -1598,6 +1601,30 @@ class CallMediaParticipant(object):
         
 
         self._disposition = disposition
+
+    @property
+    def transfer_source(self) -> str:
+        """
+        Gets the transfer_source of this CallMediaParticipant.
+        Indicates how call reaches the agent.
+
+        :return: The transfer_source of this CallMediaParticipant.
+        :rtype: str
+        """
+        return self._transfer_source
+
+    @transfer_source.setter
+    def transfer_source(self, transfer_source: str) -> None:
+        """
+        Sets the transfer_source of this CallMediaParticipant.
+        Indicates how call reaches the agent.
+
+        :param transfer_source: The transfer_source of this CallMediaParticipant.
+        :type: str
+        """
+        
+
+        self._transfer_source = transfer_source
 
     def to_dict(self):
         """

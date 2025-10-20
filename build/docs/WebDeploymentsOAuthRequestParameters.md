@@ -6,7 +6,8 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **code** | str | The authorization code to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest | |
+| **code** | str | The authorization code to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest | [optional] |
+| **id_token** | str | The implicit id_token to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest | [optional] |
 | **redirect_uri** | str | Redirect URI sent in the \&quot;Authentication Request\&quot;Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest | |
 | **nonce** | str | Required if provided in the \&quot;Authentication Request\&quot;. Otherwise should be empty.String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token. Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest | [optional] |
 | **max_age** | int | Required if provided in the  \&quot;Authentication Request\&quot;. Otherwise should be empty.Specifies the allowable elapsed time in seconds since the last time the End-User was actively authenticated.Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest | [optional] |
@@ -15,4 +16,4 @@
 
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

@@ -54,10 +54,10 @@ class SystemPromptEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'first_uri': 'str',
-            'last_uri': 'str',
-            'self_uri': 'str',
             'previous_uri': 'str',
             'next_uri': 'str',
+            'last_uri': 'str',
+            'self_uri': 'str',
             'page_count': 'int'
         }
 
@@ -67,10 +67,10 @@ class SystemPromptEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'first_uri': 'firstUri',
-            'last_uri': 'lastUri',
-            'self_uri': 'selfUri',
             'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
+            'last_uri': 'lastUri',
+            'self_uri': 'selfUri',
             'page_count': 'pageCount'
         }
 
@@ -79,10 +79,10 @@ class SystemPromptEntityListing(object):
         self._page_number = None
         self._total = None
         self._first_uri = None
-        self._last_uri = None
-        self._self_uri = None
         self._previous_uri = None
         self._next_uri = None
+        self._last_uri = None
+        self._self_uri = None
         self._page_count = None
 
     @property
@@ -206,54 +206,6 @@ class SystemPromptEntityListing(object):
         self._first_uri = first_uri
 
     @property
-    def last_uri(self) -> str:
-        """
-        Gets the last_uri of this SystemPromptEntityListing.
-
-
-        :return: The last_uri of this SystemPromptEntityListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
-        """
-        Sets the last_uri of this SystemPromptEntityListing.
-
-
-        :param last_uri: The last_uri of this SystemPromptEntityListing.
-        :type: str
-        """
-        
-
-        self._last_uri = last_uri
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this SystemPromptEntityListing.
-
-
-        :return: The self_uri of this SystemPromptEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this SystemPromptEntityListing.
-
-
-        :param self_uri: The self_uri of this SystemPromptEntityListing.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this SystemPromptEntityListing.
@@ -300,6 +252,54 @@ class SystemPromptEntityListing(object):
         
 
         self._next_uri = next_uri
+
+    @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this SystemPromptEntityListing.
+
+
+        :return: The last_uri of this SystemPromptEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this SystemPromptEntityListing.
+
+
+        :param last_uri: The last_uri of this SystemPromptEntityListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this SystemPromptEntityListing.
+
+
+        :return: The self_uri of this SystemPromptEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this SystemPromptEntityListing.
+
+
+        :param self_uri: The self_uri of this SystemPromptEntityListing.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     @property
     def page_count(self) -> int:

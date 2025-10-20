@@ -47,13 +47,119 @@ class AppleAuthentication(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'oauth_client_id': 'str',
+            'oauth_client_secret': 'str',
+            'oauth_token_url': 'str',
+            'oauth_scope': 'str'
         }
 
         self.attribute_map = {
-            
+            'oauth_client_id': 'oauthClientId',
+            'oauth_client_secret': 'oauthClientSecret',
+            'oauth_token_url': 'oauthTokenUrl',
+            'oauth_scope': 'oauthScope'
         }
 
+        self._oauth_client_id = None
+        self._oauth_client_secret = None
+        self._oauth_token_url = None
+        self._oauth_scope = None
+
+    @property
+    def oauth_client_id(self) -> str:
+        """
+        Gets the oauth_client_id of this AppleAuthentication.
+        The Apple Messages for Business OAuth client id.
+
+        :return: The oauth_client_id of this AppleAuthentication.
+        :rtype: str
+        """
+        return self._oauth_client_id
+
+    @oauth_client_id.setter
+    def oauth_client_id(self, oauth_client_id: str) -> None:
+        """
+        Sets the oauth_client_id of this AppleAuthentication.
+        The Apple Messages for Business OAuth client id.
+
+        :param oauth_client_id: The oauth_client_id of this AppleAuthentication.
+        :type: str
+        """
+        
+
+        self._oauth_client_id = oauth_client_id
+
+    @property
+    def oauth_client_secret(self) -> str:
+        """
+        Gets the oauth_client_secret of this AppleAuthentication.
+        The Apple Messages for Business OAuth client secret.
+
+        :return: The oauth_client_secret of this AppleAuthentication.
+        :rtype: str
+        """
+        return self._oauth_client_secret
+
+    @oauth_client_secret.setter
+    def oauth_client_secret(self, oauth_client_secret: str) -> None:
+        """
+        Sets the oauth_client_secret of this AppleAuthentication.
+        The Apple Messages for Business OAuth client secret.
+
+        :param oauth_client_secret: The oauth_client_secret of this AppleAuthentication.
+        :type: str
+        """
+        
+
+        self._oauth_client_secret = oauth_client_secret
+
+    @property
+    def oauth_token_url(self) -> str:
+        """
+        Gets the oauth_token_url of this AppleAuthentication.
+        The Apple Messages for Business token URL.
+
+        :return: The oauth_token_url of this AppleAuthentication.
+        :rtype: str
+        """
+        return self._oauth_token_url
+
+    @oauth_token_url.setter
+    def oauth_token_url(self, oauth_token_url: str) -> None:
+        """
+        Sets the oauth_token_url of this AppleAuthentication.
+        The Apple Messages for Business token URL.
+
+        :param oauth_token_url: The oauth_token_url of this AppleAuthentication.
+        :type: str
+        """
+        
+
+        self._oauth_token_url = oauth_token_url
+
+    @property
+    def oauth_scope(self) -> str:
+        """
+        Gets the oauth_scope of this AppleAuthentication.
+        The Apple Messages for Business OAuth scope.
+
+        :return: The oauth_scope of this AppleAuthentication.
+        :rtype: str
+        """
+        return self._oauth_scope
+
+    @oauth_scope.setter
+    def oauth_scope(self, oauth_scope: str) -> None:
+        """
+        Sets the oauth_scope of this AppleAuthentication.
+        The Apple Messages for Business OAuth scope.
+
+        :param oauth_scope: The oauth_scope of this AppleAuthentication.
+        :type: str
+        """
+        
+
+        self._oauth_scope = oauth_scope
 
     def to_dict(self):
         """

@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AgentCopilotAggregateQueryFilter
+    from . import AgentCopilotAggregationSort
     from . import AgentCopilotAggregationView
 
 class AgentCopilotAggregationQuery(object):
@@ -60,6 +61,7 @@ class AgentCopilotAggregationQuery(object):
             'views': 'list[AgentCopilotAggregationView]',
             'alternate_time_dimension': 'str',
             'query_type': 'str',
+            'sort_metric': 'AgentCopilotAggregationSort',
             'limit': 'int'
         }
 
@@ -74,6 +76,7 @@ class AgentCopilotAggregationQuery(object):
             'views': 'views',
             'alternate_time_dimension': 'alternateTimeDimension',
             'query_type': 'queryType',
+            'sort_metric': 'sortMetric',
             'limit': 'limit'
         }
 
@@ -87,6 +90,7 @@ class AgentCopilotAggregationQuery(object):
         self._views = None
         self._alternate_time_dimension = None
         self._query_type = None
+        self._sort_metric = None
         self._limit = None
 
     @property
@@ -314,7 +318,7 @@ class AgentCopilotAggregationQuery(object):
     def query_type(self) -> str:
         """
         Gets the query_type of this AgentCopilotAggregationQuery.
-        Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
 
         :return: The query_type of this AgentCopilotAggregationQuery.
         :rtype: str
@@ -325,14 +329,14 @@ class AgentCopilotAggregationQuery(object):
     def query_type(self, query_type: str) -> None:
         """
         Sets the query_type of this AgentCopilotAggregationQuery.
-        Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
 
         :param query_type: The query_type of this AgentCopilotAggregationQuery.
         :type: str
         """
         if isinstance(query_type, int):
             query_type = str(query_type)
-        allowed_values = ["groupBy", "topN"]
+        allowed_values = ["bottomN", "groupBy", "topN"]
         if query_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_type -> " + query_type)
             self._query_type = "outdated_sdk_version"
@@ -340,10 +344,34 @@ class AgentCopilotAggregationQuery(object):
             self._query_type = query_type
 
     @property
+    def sort_metric(self) -> 'AgentCopilotAggregationSort':
+        """
+        Gets the sort_metric of this AgentCopilotAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :return: The sort_metric of this AgentCopilotAggregationQuery.
+        :rtype: AgentCopilotAggregationSort
+        """
+        return self._sort_metric
+
+    @sort_metric.setter
+    def sort_metric(self, sort_metric: 'AgentCopilotAggregationSort') -> None:
+        """
+        Sets the sort_metric of this AgentCopilotAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :param sort_metric: The sort_metric of this AgentCopilotAggregationQuery.
+        :type: AgentCopilotAggregationSort
+        """
+        
+
+        self._sort_metric = sort_metric
+
+    @property
     def limit(self) -> int:
         """
         Gets the limit of this AgentCopilotAggregationQuery.
-        How many results you want in the topN list. Only applicable for topN query type.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
 
         :return: The limit of this AgentCopilotAggregationQuery.
         :rtype: int
@@ -354,7 +382,7 @@ class AgentCopilotAggregationQuery(object):
     def limit(self, limit: int) -> None:
         """
         Sets the limit of this AgentCopilotAggregationQuery.
-        How many results you want in the topN list. Only applicable for topN query type.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
 
         :param limit: The limit of this AgentCopilotAggregationQuery.
         :type: int

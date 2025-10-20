@@ -2013,7 +2013,7 @@ except ApiException as e:
 
 ## get_architect_ivr_identityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_architect_ivr_identityresolution(ivr_id)
+> [**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig) get_architect_ivr_identityresolution(ivr_id)
 
 
 Get an IVR IdentityResolutionConfig.
@@ -2057,7 +2057,7 @@ except ApiException as e:
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig)
 
 
 ## get_architect_ivrs
@@ -7235,7 +7235,7 @@ except ApiException as e:
 
 ## put_architect_ivr_identityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_architect_ivr_identityresolution(ivr_id, body)
+> [**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig) put_architect_ivr_identityresolution(ivr_id, body)
 
 
 Update an IVR IdentityResolutionConfig.
@@ -7261,7 +7261,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 ivr_id = 'ivr_id_example' # str | IVR id
-body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+body = PureCloudPlatformClientV2.IVRIdentityResolutionConfig() # IVRIdentityResolutionConfig | 
 
 try:
     # Update an IVR IdentityResolutionConfig.
@@ -7277,11 +7277,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ivr_id** | **str**| IVR id |  |
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+| **body** | [**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig)|  |  |
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**IVRIdentityResolutionConfig**](IVRIdentityResolutionConfig)
 
 
 ## put_architect_prompt
@@ -7905,4 +7905,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

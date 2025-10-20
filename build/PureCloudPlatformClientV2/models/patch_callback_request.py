@@ -50,20 +50,29 @@ class PatchCallbackRequest(object):
             'conversation_id': 'str',
             'queue_id': 'str',
             'agent_id': 'str',
-            'callback_scheduled_time': 'datetime'
+            'callback_scheduled_time': 'datetime',
+            'country_code': 'str',
+            'callback_numbers': 'list[str]',
+            'validate_callback_numbers': 'bool'
         }
 
         self.attribute_map = {
             'conversation_id': 'conversationId',
             'queue_id': 'queueId',
             'agent_id': 'agentId',
-            'callback_scheduled_time': 'callbackScheduledTime'
+            'callback_scheduled_time': 'callbackScheduledTime',
+            'country_code': 'countryCode',
+            'callback_numbers': 'callbackNumbers',
+            'validate_callback_numbers': 'validateCallbackNumbers'
         }
 
         self._conversation_id = None
         self._queue_id = None
         self._agent_id = None
         self._callback_scheduled_time = None
+        self._country_code = None
+        self._callback_numbers = None
+        self._validate_callback_numbers = None
 
     @property
     def conversation_id(self) -> str:
@@ -160,6 +169,78 @@ class PatchCallbackRequest(object):
         
 
         self._callback_scheduled_time = callback_scheduled_time
+
+    @property
+    def country_code(self) -> str:
+        """
+        Gets the country_code of this PatchCallbackRequest.
+        The countryCode
+
+        :return: The country_code of this PatchCallbackRequest.
+        :rtype: str
+        """
+        return self._country_code
+
+    @country_code.setter
+    def country_code(self, country_code: str) -> None:
+        """
+        Sets the country_code of this PatchCallbackRequest.
+        The countryCode
+
+        :param country_code: The country_code of this PatchCallbackRequest.
+        :type: str
+        """
+        
+
+        self._country_code = country_code
+
+    @property
+    def callback_numbers(self) -> List[str]:
+        """
+        Gets the callback_numbers of this PatchCallbackRequest.
+        The callbackNumbers
+
+        :return: The callback_numbers of this PatchCallbackRequest.
+        :rtype: list[str]
+        """
+        return self._callback_numbers
+
+    @callback_numbers.setter
+    def callback_numbers(self, callback_numbers: List[str]) -> None:
+        """
+        Sets the callback_numbers of this PatchCallbackRequest.
+        The callbackNumbers
+
+        :param callback_numbers: The callback_numbers of this PatchCallbackRequest.
+        :type: list[str]
+        """
+        
+
+        self._callback_numbers = callback_numbers
+
+    @property
+    def validate_callback_numbers(self) -> bool:
+        """
+        Gets the validate_callback_numbers of this PatchCallbackRequest.
+        validateCallbackNumbers
+
+        :return: The validate_callback_numbers of this PatchCallbackRequest.
+        :rtype: bool
+        """
+        return self._validate_callback_numbers
+
+    @validate_callback_numbers.setter
+    def validate_callback_numbers(self, validate_callback_numbers: bool) -> None:
+        """
+        Sets the validate_callback_numbers of this PatchCallbackRequest.
+        validateCallbackNumbers
+
+        :param validate_callback_numbers: The validate_callback_numbers of this PatchCallbackRequest.
+        :type: bool
+        """
+        
+
+        self._validate_callback_numbers = validate_callback_numbers
 
     def to_dict(self):
         """

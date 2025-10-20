@@ -32,6 +32,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AppleAuthentication
+    from . import AppleIMessageApp
+    from . import ApplePay
     from . import MessagingSettingRequestReference
     from . import SupportedContentReference
 
@@ -57,6 +60,9 @@ class AppleIntegrationRequest(object):
             'messages_for_business_id': 'str',
             'business_name': 'str',
             'logo_url': 'str',
+            'apple_i_message_app': 'AppleIMessageApp',
+            'apple_authentication': 'AppleAuthentication',
+            'apple_pay': 'ApplePay',
             'self_uri': 'str'
         }
 
@@ -68,6 +74,9 @@ class AppleIntegrationRequest(object):
             'messages_for_business_id': 'messagesForBusinessId',
             'business_name': 'businessName',
             'logo_url': 'logoUrl',
+            'apple_i_message_app': 'appleIMessageApp',
+            'apple_authentication': 'appleAuthentication',
+            'apple_pay': 'applePay',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +87,9 @@ class AppleIntegrationRequest(object):
         self._messages_for_business_id = None
         self._business_name = None
         self._logo_url = None
+        self._apple_i_message_app = None
+        self._apple_authentication = None
+        self._apple_pay = None
         self._self_uri = None
 
     @property
@@ -247,6 +259,78 @@ class AppleIntegrationRequest(object):
         
 
         self._logo_url = logo_url
+
+    @property
+    def apple_i_message_app(self) -> 'AppleIMessageApp':
+        """
+        Gets the apple_i_message_app of this AppleIntegrationRequest.
+        Interactive Application (iMessage App) Settings.
+
+        :return: The apple_i_message_app of this AppleIntegrationRequest.
+        :rtype: AppleIMessageApp
+        """
+        return self._apple_i_message_app
+
+    @apple_i_message_app.setter
+    def apple_i_message_app(self, apple_i_message_app: 'AppleIMessageApp') -> None:
+        """
+        Sets the apple_i_message_app of this AppleIntegrationRequest.
+        Interactive Application (iMessage App) Settings.
+
+        :param apple_i_message_app: The apple_i_message_app of this AppleIntegrationRequest.
+        :type: AppleIMessageApp
+        """
+        
+
+        self._apple_i_message_app = apple_i_message_app
+
+    @property
+    def apple_authentication(self) -> 'AppleAuthentication':
+        """
+        Gets the apple_authentication of this AppleIntegrationRequest.
+        The Apple Messages for Business authentication setting.
+
+        :return: The apple_authentication of this AppleIntegrationRequest.
+        :rtype: AppleAuthentication
+        """
+        return self._apple_authentication
+
+    @apple_authentication.setter
+    def apple_authentication(self, apple_authentication: 'AppleAuthentication') -> None:
+        """
+        Sets the apple_authentication of this AppleIntegrationRequest.
+        The Apple Messages for Business authentication setting.
+
+        :param apple_authentication: The apple_authentication of this AppleIntegrationRequest.
+        :type: AppleAuthentication
+        """
+        
+
+        self._apple_authentication = apple_authentication
+
+    @property
+    def apple_pay(self) -> 'ApplePay':
+        """
+        Gets the apple_pay of this AppleIntegrationRequest.
+        Apple Pay settings.
+
+        :return: The apple_pay of this AppleIntegrationRequest.
+        :rtype: ApplePay
+        """
+        return self._apple_pay
+
+    @apple_pay.setter
+    def apple_pay(self, apple_pay: 'ApplePay') -> None:
+        """
+        Sets the apple_pay of this AppleIntegrationRequest.
+        Apple Pay settings.
+
+        :param apple_pay: The apple_pay of this AppleIntegrationRequest.
+        :type: ApplePay
+        """
+        
+
+        self._apple_pay = apple_pay
 
     @property
     def self_uri(self) -> str:

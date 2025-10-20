@@ -38,9 +38,10 @@
 | **after_call_work** | [AfterCallWork](AfterCallWork) | After-call work for the communication. | [optional] |
 | **after_call_work_required** | bool | Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
 | **agent_assistant_id** | str | UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation. | [optional] |
+| **transfer_source** | str | Indicates how call reaches the agent. | [optional] |
 | **queue_media_settings** | [ConversationQueueMediaSettings](ConversationQueueMediaSettings) | Represents the queue settings for this media type. | [optional] |
 | **disposition** | [Disposition](Disposition) | Call resolution data for Dialer bulk make calls commands. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

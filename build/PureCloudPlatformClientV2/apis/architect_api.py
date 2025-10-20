@@ -91,7 +91,7 @@ from ..models import HistoryListing
 from ..models import IVR
 from ..models import IVRDivisionViewEntityListing
 from ..models import IVREntityListing
-from ..models import IdentityResolutionConfig
+from ..models import IVRIdentityResolutionConfig
 from ..models import Operation
 from ..models import Prompt
 from ..models import PromptAsset
@@ -3139,7 +3139,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_architect_ivr_identityresolution(self, ivr_id: str, **kwargs) -> 'IdentityResolutionConfig':
+    def get_architect_ivr_identityresolution(self, ivr_id: str, **kwargs) -> 'IVRIdentityResolutionConfig':
         """
         Get an IVR IdentityResolutionConfig.
         
@@ -3155,7 +3155,7 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str ivr_id: IVR id (required)
-        :return: IdentityResolutionConfig
+        :return: IVRIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3212,7 +3212,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='IVRIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11448,7 +11448,7 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_architect_ivr_identityresolution(self, ivr_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+    def put_architect_ivr_identityresolution(self, ivr_id: str, body: 'IVRIdentityResolutionConfig', **kwargs) -> 'IVRIdentityResolutionConfig':
         """
         Update an IVR IdentityResolutionConfig.
         
@@ -11464,8 +11464,8 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str ivr_id: IVR id (required)
-        :param IdentityResolutionConfig body:  (required)
-        :return: IdentityResolutionConfig
+        :param IVRIdentityResolutionConfig body:  (required)
+        :return: IVRIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -11527,7 +11527,7 @@ class ArchitectApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='IVRIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

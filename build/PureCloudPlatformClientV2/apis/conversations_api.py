@@ -44,6 +44,7 @@ from ..models import AnalyticsConversationAsyncQueryResponse
 from ..models import AnalyticsConversationQueryResponse
 from ..models import AnalyticsConversationWithoutAttributes
 from ..models import AnalyticsConversationWithoutAttributesMultiGetResponse
+from ..models import AppleIdentityResolutionConfig
 from ..models import AppleIntegration
 from ..models import AppleIntegrationEntityListing
 from ..models import AppleIntegrationRequest
@@ -118,6 +119,7 @@ from ..models import EmailsSettings
 from ..models import EngagementRequest
 from ..models import ErrorBody
 from ..models import FacebookAppCredentials
+from ..models import FacebookIdentityResolutionConfig
 from ..models import FacebookIntegration
 from ..models import FacebookIntegrationEntityListing
 from ..models import FacebookIntegrationRequest
@@ -129,8 +131,8 @@ from ..models import Feedback
 from ..models import FeedbackAddRequest
 from ..models import FeedbackUpdateRequest
 from ..models import GenerateMeetingIdRequest
-from ..models import IdentityResolutionConfig
 from ..models import InboundMessageRequest
+from ..models import InstagramIdentityResolutionConfig
 from ..models import InstagramIntegration
 from ..models import InstagramIntegrationEntityListing
 from ..models import InstagramIntegrationRequest
@@ -199,6 +201,7 @@ from ..models import TransferToAgentRequest
 from ..models import TransferToExternalContactRequest
 from ..models import TransferToExternalRequest
 from ..models import TransferToQueueRequest
+from ..models import TwitterIdentityResolutionConfig
 from ..models import TwitterIntegration
 from ..models import TwitterIntegrationEntityListing
 from ..models import TwitterIntegrationRequest
@@ -213,6 +216,7 @@ from ..models import WebChatMessageEntityList
 from ..models import WebChatTyping
 from ..models import WhatsAppEmbeddedSignupIntegrationActivationRequest
 from ..models import WhatsAppEmbeddedSignupIntegrationRequest
+from ..models import WhatsAppIdentityResolutionConfig
 from ..models import WhatsAppIntegration
 from ..models import WhatsAppIntegrationEntityListing
 from ..models import WhatsAppIntegrationRequest
@@ -7153,7 +7157,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_messaging_identityresolution_integrations_apple_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
+    def get_conversations_messaging_identityresolution_integrations_apple_integration_id(self, integration_id: str, **kwargs) -> 'AppleIdentityResolutionConfig':
         """
         Get Apple messaging integration identity resolution settings
         
@@ -7169,7 +7173,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :return: IdentityResolutionConfig
+        :return: AppleIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7226,12 +7230,12 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='AppleIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_messaging_identityresolution_integrations_facebook_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
+    def get_conversations_messaging_identityresolution_integrations_facebook_integration_id(self, integration_id: str, **kwargs) -> 'FacebookIdentityResolutionConfig':
         """
         Get Facebook messaging integration identity resolution settings
         
@@ -7247,7 +7251,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :return: IdentityResolutionConfig
+        :return: FacebookIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7304,12 +7308,12 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='FacebookIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_messaging_identityresolution_integrations_instagram_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
+    def get_conversations_messaging_identityresolution_integrations_instagram_integration_id(self, integration_id: str, **kwargs) -> 'InstagramIdentityResolutionConfig':
         """
         Get an Instagram integration identity resolution settings
         
@@ -7325,7 +7329,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :return: IdentityResolutionConfig
+        :return: InstagramIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7382,7 +7386,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='InstagramIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -7465,7 +7469,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_messaging_identityresolution_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
+    def get_conversations_messaging_identityresolution_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> 'TwitterIdentityResolutionConfig':
         """
         Get X (Formally Twitter) messaging integration identity resolution settings
         
@@ -7481,7 +7485,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration Id (required)
-        :return: IdentityResolutionConfig
+        :return: TwitterIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7538,12 +7542,12 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='TwitterIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id(self, integration_id: str, **kwargs) -> 'IdentityResolutionConfig':
+    def get_conversations_messaging_identityresolution_integrations_whatsapp_integration_id(self, integration_id: str, **kwargs) -> 'WhatsAppIdentityResolutionConfig':
         """
         Get a whatsApp integration Identity Resolution settings
         
@@ -7559,7 +7563,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :return: IdentityResolutionConfig
+        :return: WhatsAppIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7616,7 +7620,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='WhatsAppIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11223,6 +11227,102 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ConsultTransferResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_conversations_call_participant_user_user_id(self, conversation_id: str, participant_id: str, user_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
+        """
+        Update conversation participant on behalf of a user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversations_call_participant_user_user_id(conversation_id, participant_id, user_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversationId (required)
+        :param str participant_id: participantId (required)
+        :param str user_id: userId (required)
+        :param MediaParticipantRequest body: Participant request (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversations_call_participant_user_user_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_call_participant_user_user_id`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_call_participant_user_user_id`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_conversations_call_participant_user_user_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversations_call_participant_user_user_id`")
+
+
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -23120,7 +23220,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_conversations_messaging_identityresolution_integrations_apple_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+    def put_conversations_messaging_identityresolution_integrations_apple_integration_id(self, integration_id: str, body: 'AppleIdentityResolutionConfig', **kwargs) -> 'AppleIdentityResolutionConfig':
         """
         Create an identity resolution settings for a Apple messaging integration
         
@@ -23136,8 +23236,8 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :param IdentityResolutionConfig body: IdentityResolutionConfig (required)
-        :return: IdentityResolutionConfig
+        :param AppleIdentityResolutionConfig body: IdentityResolutionConfig (required)
+        :return: AppleIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -23199,12 +23299,12 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='AppleIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_conversations_messaging_identityresolution_integrations_facebook_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+    def put_conversations_messaging_identityresolution_integrations_facebook_integration_id(self, integration_id: str, body: 'FacebookIdentityResolutionConfig', **kwargs) -> 'FacebookIdentityResolutionConfig':
         """
         Create an identity resolution settings for a Facebook messaging integration
         
@@ -23220,8 +23320,8 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :param IdentityResolutionConfig body: IdentityResolutionConfig (required)
-        :return: IdentityResolutionConfig
+        :param FacebookIdentityResolutionConfig body: IdentityResolutionConfig (required)
+        :return: FacebookIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -23283,12 +23383,12 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='FacebookIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_conversations_messaging_identityresolution_integrations_instagram_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+    def put_conversations_messaging_identityresolution_integrations_instagram_integration_id(self, integration_id: str, body: 'InstagramIdentityResolutionConfig', **kwargs) -> 'InstagramIdentityResolutionConfig':
         """
         Create identity resolution settings for an Instagram messaging integration
         
@@ -23304,8 +23404,8 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :param IdentityResolutionConfig body: IdentityResolutionConfig (required)
-        :return: IdentityResolutionConfig
+        :param InstagramIdentityResolutionConfig body: IdentityResolutionConfig (required)
+        :return: InstagramIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -23367,7 +23467,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='InstagramIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -23456,7 +23556,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_conversations_messaging_identityresolution_integrations_twitter_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+    def put_conversations_messaging_identityresolution_integrations_twitter_integration_id(self, integration_id: str, body: 'TwitterIdentityResolutionConfig', **kwargs) -> 'TwitterIdentityResolutionConfig':
         """
         Create an identity resolution settings for an X (Formally Twitter) messaging integration
         
@@ -23472,8 +23572,8 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration Id (required)
-        :param IdentityResolutionConfig body: IdentityResolutionConfig (required)
-        :return: IdentityResolutionConfig
+        :param TwitterIdentityResolutionConfig body: IdentityResolutionConfig (required)
+        :return: TwitterIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -23535,12 +23635,12 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='TwitterIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id(self, integration_id: str, body: 'IdentityResolutionConfig', **kwargs) -> 'IdentityResolutionConfig':
+    def put_conversations_messaging_identityresolution_integrations_whatsapp_integration_id(self, integration_id: str, body: 'WhatsAppIdentityResolutionConfig', **kwargs) -> 'WhatsAppIdentityResolutionConfig':
         """
         Update a whatsApp integration Identity Resolution settings
         
@@ -23556,8 +23656,8 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str integration_id: Integration ID (required)
-        :param IdentityResolutionConfig body:  (required)
-        :return: IdentityResolutionConfig
+        :param WhatsAppIdentityResolutionConfig body:  (required)
+        :return: WhatsAppIdentityResolutionConfig
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -23619,7 +23719,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='IdentityResolutionConfig',
+                                            response_type='WhatsAppIdentityResolutionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -606,7 +606,7 @@ except ApiException as e:
 
 ## get_socialmedia_escalationrule
 
-> [**EscalationRuleResponse**](EscalationRuleResponse) get_socialmedia_escalationrule(escalation_rule_id)
+> [**EscalationRuleResponse**](EscalationRuleResponse) get_socialmedia_escalationrule(escalation_rule_id, expand=expand)
 
 
 Get a single escalation rule.
@@ -631,10 +631,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SocialMediaApi()
 escalation_rule_id = 'escalation_rule_id_example' # str | escalationRuleId
+expand = 'expand_example' # str | which fields, if any, to expand (optional)
 
 try:
     # Get a single escalation rule.
-    api_response = api_instance.get_socialmedia_escalationrule(escalation_rule_id)
+    api_response = api_instance.get_socialmedia_escalationrule(escalation_rule_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SocialMediaApi->get_socialmedia_escalationrule: %s\n" % e)
@@ -646,6 +647,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **escalation_rule_id** | **str**| escalationRuleId |  |
+| **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: dataIngestionRule |
 
 ### Return type
 
@@ -2624,4 +2626,4 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

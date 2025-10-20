@@ -58,7 +58,8 @@ class CreateActivityCodeRequest(object):
             'counts_toward_shrinkage': 'bool',
             'planned_shrinkage': 'bool',
             'interruptible': 'bool',
-            'secondary_presences': 'list[SecondaryPresence]'
+            'secondary_presences': 'list[SecondaryPresence]',
+            'planning_group_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -71,7 +72,8 @@ class CreateActivityCodeRequest(object):
             'counts_toward_shrinkage': 'countsTowardShrinkage',
             'planned_shrinkage': 'plannedShrinkage',
             'interruptible': 'interruptible',
-            'secondary_presences': 'secondaryPresences'
+            'secondary_presences': 'secondaryPresences',
+            'planning_group_ids': 'planningGroupIds'
         }
 
         self._name = None
@@ -84,6 +86,7 @@ class CreateActivityCodeRequest(object):
         self._planned_shrinkage = None
         self._interruptible = None
         self._secondary_presences = None
+        self._planning_group_ids = None
 
     @property
     def name(self) -> str:
@@ -329,6 +332,30 @@ class CreateActivityCodeRequest(object):
         
 
         self._secondary_presences = secondary_presences
+
+    @property
+    def planning_group_ids(self) -> List[str]:
+        """
+        Gets the planning_group_ids of this CreateActivityCodeRequest.
+        The planning group IDs associated with this activity code
+
+        :return: The planning_group_ids of this CreateActivityCodeRequest.
+        :rtype: list[str]
+        """
+        return self._planning_group_ids
+
+    @planning_group_ids.setter
+    def planning_group_ids(self, planning_group_ids: List[str]) -> None:
+        """
+        Sets the planning_group_ids of this CreateActivityCodeRequest.
+        The planning group IDs associated with this activity code
+
+        :param planning_group_ids: The planning_group_ids of this CreateActivityCodeRequest.
+        :type: list[str]
+        """
+        
+
+        self._planning_group_ids = planning_group_ids
 
     def to_dict(self):
         """

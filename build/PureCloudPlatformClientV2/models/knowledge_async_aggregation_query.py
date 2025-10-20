@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import KnowledgeAggregateQueryFilter
+    from . import KnowledgeAggregationSort
     from . import KnowledgeAggregationView
 
 class KnowledgeAsyncAggregationQuery(object):
@@ -60,6 +61,7 @@ class KnowledgeAsyncAggregationQuery(object):
             'views': 'list[KnowledgeAggregationView]',
             'alternate_time_dimension': 'str',
             'query_type': 'str',
+            'sort_metric': 'KnowledgeAggregationSort',
             'limit': 'int',
             'page_size': 'int'
         }
@@ -75,6 +77,7 @@ class KnowledgeAsyncAggregationQuery(object):
             'views': 'views',
             'alternate_time_dimension': 'alternateTimeDimension',
             'query_type': 'queryType',
+            'sort_metric': 'sortMetric',
             'limit': 'limit',
             'page_size': 'pageSize'
         }
@@ -89,6 +92,7 @@ class KnowledgeAsyncAggregationQuery(object):
         self._views = None
         self._alternate_time_dimension = None
         self._query_type = None
+        self._sort_metric = None
         self._limit = None
         self._page_size = None
 
@@ -317,7 +321,7 @@ class KnowledgeAsyncAggregationQuery(object):
     def query_type(self) -> str:
         """
         Gets the query_type of this KnowledgeAsyncAggregationQuery.
-        Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
 
         :return: The query_type of this KnowledgeAsyncAggregationQuery.
         :rtype: str
@@ -328,14 +332,14 @@ class KnowledgeAsyncAggregationQuery(object):
     def query_type(self, query_type: str) -> None:
         """
         Sets the query_type of this KnowledgeAsyncAggregationQuery.
-        Query type to use. Use groupBy for all matching results, and topN for just top N results for the requested metric (group by exactly 1 dimension)
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
 
         :param query_type: The query_type of this KnowledgeAsyncAggregationQuery.
         :type: str
         """
         if isinstance(query_type, int):
             query_type = str(query_type)
-        allowed_values = ["groupBy", "topN"]
+        allowed_values = ["bottomN", "groupBy", "topN"]
         if query_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for query_type -> " + query_type)
             self._query_type = "outdated_sdk_version"
@@ -343,10 +347,34 @@ class KnowledgeAsyncAggregationQuery(object):
             self._query_type = query_type
 
     @property
+    def sort_metric(self) -> 'KnowledgeAggregationSort':
+        """
+        Gets the sort_metric of this KnowledgeAsyncAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :return: The sort_metric of this KnowledgeAsyncAggregationQuery.
+        :rtype: KnowledgeAggregationSort
+        """
+        return self._sort_metric
+
+    @sort_metric.setter
+    def sort_metric(self, sort_metric: 'KnowledgeAggregationSort') -> None:
+        """
+        Sets the sort_metric of this KnowledgeAsyncAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :param sort_metric: The sort_metric of this KnowledgeAsyncAggregationQuery.
+        :type: KnowledgeAggregationSort
+        """
+        
+
+        self._sort_metric = sort_metric
+
+    @property
     def limit(self) -> int:
         """
         Gets the limit of this KnowledgeAsyncAggregationQuery.
-        How many results you want in the topN list. Only applicable for topN query type.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
 
         :return: The limit of this KnowledgeAsyncAggregationQuery.
         :rtype: int
@@ -357,7 +385,7 @@ class KnowledgeAsyncAggregationQuery(object):
     def limit(self, limit: int) -> None:
         """
         Sets the limit of this KnowledgeAsyncAggregationQuery.
-        How many results you want in the topN list. Only applicable for topN query type.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
 
         :param limit: The limit of this KnowledgeAsyncAggregationQuery.
         :type: int

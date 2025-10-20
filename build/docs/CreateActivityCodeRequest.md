@@ -16,7 +16,8 @@
 | **planned_shrinkage** | bool | Whether this activity code is considered planned or unplanned shrinkage | [optional] |
 | **interruptible** | bool | Whether this activity code is considered interruptible | [optional] |
 | **secondary_presences** | [list[SecondaryPresence]](SecondaryPresence) | The secondary presences of this activity code | [optional] |
+| **planning_group_ids** | list[str] | The planning group IDs associated with this activity code | [optional] |
 
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

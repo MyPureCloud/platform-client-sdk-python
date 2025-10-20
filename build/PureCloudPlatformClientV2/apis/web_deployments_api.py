@@ -1335,7 +1335,7 @@ class WebDeploymentsApi(object):
 
     def post_webdeployments_token_oauthcodegrantjwtexchange(self, body: 'WebDeploymentsOAuthExchangeRequest', **kwargs) -> 'WebDeploymentsAuthorizationResponse':
         """
-        Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+        Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
         
 
         This method makes a synchronous HTTP request by default. To make an

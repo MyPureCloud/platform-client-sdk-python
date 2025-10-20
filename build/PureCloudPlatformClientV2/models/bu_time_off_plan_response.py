@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ActivityCodesReference
     from . import BuTimeOffLimitReference
     from . import HrisTimeOffType
     from . import TimeOffPlanBusinessUnitAssociation
@@ -59,6 +60,8 @@ class BuTimeOffPlanResponse(object):
             'time_off_limits': 'list[BuTimeOffLimitReference]',
             'auto_approval_rule': 'str',
             'days_before_start_to_expire_from_waitlist': 'int',
+            'auto_publish_approved_time_off_requests': 'bool',
+            'restricted_activity_codes': 'ActivityCodesReference',
             'hris_time_off_type': 'HrisTimeOffType',
             'enabled': 'bool',
             'count_against_time_off_limits': 'bool',
@@ -75,6 +78,8 @@ class BuTimeOffPlanResponse(object):
             'time_off_limits': 'timeOffLimits',
             'auto_approval_rule': 'autoApprovalRule',
             'days_before_start_to_expire_from_waitlist': 'daysBeforeStartToExpireFromWaitlist',
+            'auto_publish_approved_time_off_requests': 'autoPublishApprovedTimeOffRequests',
+            'restricted_activity_codes': 'restrictedActivityCodes',
             'hris_time_off_type': 'hrisTimeOffType',
             'enabled': 'enabled',
             'count_against_time_off_limits': 'countAgainstTimeOffLimits',
@@ -90,6 +95,8 @@ class BuTimeOffPlanResponse(object):
         self._time_off_limits = None
         self._auto_approval_rule = None
         self._days_before_start_to_expire_from_waitlist = None
+        self._auto_publish_approved_time_off_requests = None
+        self._restricted_activity_codes = None
         self._hris_time_off_type = None
         self._enabled = None
         self._count_against_time_off_limits = None
@@ -246,6 +253,54 @@ class BuTimeOffPlanResponse(object):
         
 
         self._days_before_start_to_expire_from_waitlist = days_before_start_to_expire_from_waitlist
+
+    @property
+    def auto_publish_approved_time_off_requests(self) -> bool:
+        """
+        Gets the auto_publish_approved_time_off_requests of this BuTimeOffPlanResponse.
+        Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule
+
+        :return: The auto_publish_approved_time_off_requests of this BuTimeOffPlanResponse.
+        :rtype: bool
+        """
+        return self._auto_publish_approved_time_off_requests
+
+    @auto_publish_approved_time_off_requests.setter
+    def auto_publish_approved_time_off_requests(self, auto_publish_approved_time_off_requests: bool) -> None:
+        """
+        Sets the auto_publish_approved_time_off_requests of this BuTimeOffPlanResponse.
+        Whether newly approved time-off requests with activity codes associated with this time-off plan should be automatically published to the schedule
+
+        :param auto_publish_approved_time_off_requests: The auto_publish_approved_time_off_requests of this BuTimeOffPlanResponse.
+        :type: bool
+        """
+        
+
+        self._auto_publish_approved_time_off_requests = auto_publish_approved_time_off_requests
+
+    @property
+    def restricted_activity_codes(self) -> 'ActivityCodesReference':
+        """
+        Gets the restricted_activity_codes of this BuTimeOffPlanResponse.
+        The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
+
+        :return: The restricted_activity_codes of this BuTimeOffPlanResponse.
+        :rtype: ActivityCodesReference
+        """
+        return self._restricted_activity_codes
+
+    @restricted_activity_codes.setter
+    def restricted_activity_codes(self, restricted_activity_codes: 'ActivityCodesReference') -> None:
+        """
+        Sets the restricted_activity_codes of this BuTimeOffPlanResponse.
+        The IDs of non time-off activity codes to check for conflicts in case the auto approval rule specifies checking activity codes. If these activity codes are present in schedule and overlap with the time-off request duration, the request will not be auto approved
+
+        :param restricted_activity_codes: The restricted_activity_codes of this BuTimeOffPlanResponse.
+        :type: ActivityCodesReference
+        """
+        
+
+        self._restricted_activity_codes = restricted_activity_codes
 
     @property
     def hris_time_off_type(self) -> 'HrisTimeOffType':

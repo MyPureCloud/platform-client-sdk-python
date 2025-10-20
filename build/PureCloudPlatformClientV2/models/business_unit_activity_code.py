@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import PlanningGroupReference
     from . import SecondaryPresence
     from . import WfmVersionedEntityMetadata
 
@@ -63,6 +64,7 @@ class BusinessUnitActivityCode(object):
             'planned_shrinkage': 'bool',
             'interruptible': 'bool',
             'secondary_presences': 'list[SecondaryPresence]',
+            'planning_groups': 'list[PlanningGroupReference]',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
@@ -81,6 +83,7 @@ class BusinessUnitActivityCode(object):
             'planned_shrinkage': 'plannedShrinkage',
             'interruptible': 'interruptible',
             'secondary_presences': 'secondaryPresences',
+            'planning_groups': 'planningGroups',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
@@ -98,6 +101,7 @@ class BusinessUnitActivityCode(object):
         self._planned_shrinkage = None
         self._interruptible = None
         self._secondary_presences = None
+        self._planning_groups = None
         self._metadata = None
         self._self_uri = None
 
@@ -417,6 +421,30 @@ class BusinessUnitActivityCode(object):
         
 
         self._secondary_presences = secondary_presences
+
+    @property
+    def planning_groups(self) -> List['PlanningGroupReference']:
+        """
+        Gets the planning_groups of this BusinessUnitActivityCode.
+        Planning groups associated with this activity code
+
+        :return: The planning_groups of this BusinessUnitActivityCode.
+        :rtype: list[PlanningGroupReference]
+        """
+        return self._planning_groups
+
+    @planning_groups.setter
+    def planning_groups(self, planning_groups: List['PlanningGroupReference']) -> None:
+        """
+        Sets the planning_groups of this BusinessUnitActivityCode.
+        Planning groups associated with this activity code
+
+        :param planning_groups: The planning_groups of this BusinessUnitActivityCode.
+        :type: list[PlanningGroupReference]
+        """
+        
+
+        self._planning_groups = planning_groups
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

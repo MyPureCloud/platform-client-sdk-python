@@ -104,6 +104,7 @@ PureCloudPlatformClientV2/models/action_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/action_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/action_aggregate_query_response.py
 PureCloudPlatformClientV2/models/action_aggregation_query.py
+PureCloudPlatformClientV2/models/action_aggregation_sort.py
 PureCloudPlatformClientV2/models/action_aggregation_view.py
 PureCloudPlatformClientV2/models/action_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/action_async_aggregation_query.py
@@ -208,6 +209,7 @@ PureCloudPlatformClientV2/models/agent_copilot_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/agent_copilot_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/agent_copilot_aggregate_query_response.py
 PureCloudPlatformClientV2/models/agent_copilot_aggregation_query.py
+PureCloudPlatformClientV2/models/agent_copilot_aggregation_sort.py
 PureCloudPlatformClientV2/models/agent_copilot_aggregation_view.py
 PureCloudPlatformClientV2/models/agent_copilot_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/agent_copilot_async_aggregation_query.py
@@ -349,6 +351,7 @@ PureCloudPlatformClientV2/models/app_event_response_session.py
 PureCloudPlatformClientV2/models/append_to_dnc_action_settings.py
 PureCloudPlatformClientV2/models/apple_authentication.py
 PureCloudPlatformClientV2/models/apple_i_message_app.py
+PureCloudPlatformClientV2/models/apple_identity_resolution_config.py
 PureCloudPlatformClientV2/models/apple_integration.py
 PureCloudPlatformClientV2/models/apple_integration_entity_listing.py
 PureCloudPlatformClientV2/models/apple_integration_request.py
@@ -392,8 +395,6 @@ PureCloudPlatformClientV2/models/architect_system_prompt_resource_notification_s
 PureCloudPlatformClientV2/models/archive_retention.py
 PureCloudPlatformClientV2/models/array_node.py
 PureCloudPlatformClientV2/models/article.py
-PureCloudPlatformClientV2/models/article_content.py
-PureCloudPlatformClientV2/models/article_content_body.py
 PureCloudPlatformClientV2/models/articles_filter.py
 PureCloudPlatformClientV2/models/assessment_form.py
 PureCloudPlatformClientV2/models/assessment_form_question.py
@@ -534,6 +535,7 @@ PureCloudPlatformClientV2/models/bot_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/bot_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/bot_aggregate_query_response.py
 PureCloudPlatformClientV2/models/bot_aggregation_query.py
+PureCloudPlatformClientV2/models/bot_aggregation_sort.py
 PureCloudPlatformClientV2/models/bot_aggregation_view.py
 PureCloudPlatformClientV2/models/bot_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/bot_async_aggregation_query.py
@@ -785,6 +787,10 @@ PureCloudPlatformClientV2/models/campaign_outbound_lines_allocation.py
 PureCloudPlatformClientV2/models/campaign_outbound_lines_distribution.py
 PureCloudPlatformClientV2/models/campaign_outbound_lines_reservation.py
 PureCloudPlatformClientV2/models/campaign_patch_request.py
+PureCloudPlatformClientV2/models/campaign_performance_data.py
+PureCloudPlatformClientV2/models/campaign_performance_data_contact_rate.py
+PureCloudPlatformClientV2/models/campaign_performance_data_listing.py
+PureCloudPlatformClientV2/models/campaign_performance_data_progress.py
 PureCloudPlatformClientV2/models/campaign_progress.py
 PureCloudPlatformClientV2/models/campaign_rule.py
 PureCloudPlatformClientV2/models/campaign_rule_action.py
@@ -840,7 +846,6 @@ PureCloudPlatformClientV2/models/category.py
 PureCloudPlatformClientV2/models/category_create_request.py
 PureCloudPlatformClientV2/models/category_entity.py
 PureCloudPlatformClientV2/models/category_entity_listing.py
-PureCloudPlatformClientV2/models/category_listing.py
 PureCloudPlatformClientV2/models/category_reference.py
 PureCloudPlatformClientV2/models/category_request.py
 PureCloudPlatformClientV2/models/category_response.py
@@ -1117,6 +1122,7 @@ PureCloudPlatformClientV2/models/conversation_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/conversation_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/conversation_aggregate_query_response.py
 PureCloudPlatformClientV2/models/conversation_aggregation_query.py
+PureCloudPlatformClientV2/models/conversation_aggregation_sort.py
 PureCloudPlatformClientV2/models/conversation_aggregation_view.py
 PureCloudPlatformClientV2/models/conversation_app_settings.py
 PureCloudPlatformClientV2/models/conversation_association.py
@@ -1882,7 +1888,6 @@ PureCloudPlatformClientV2/models/dnclist_import_status_object.py
 PureCloudPlatformClientV2/models/dns_record_entry.py
 PureCloudPlatformClientV2/models/do_not_send_action_settings.py
 PureCloudPlatformClientV2/models/document.py
-PureCloudPlatformClientV2/models/document_article.py
 PureCloudPlatformClientV2/models/document_attribute.py
 PureCloudPlatformClientV2/models/document_body.py
 PureCloudPlatformClientV2/models/document_body_block.py
@@ -1914,7 +1919,6 @@ PureCloudPlatformClientV2/models/document_body_table_with_highlight.py
 PureCloudPlatformClientV2/models/document_body_video.py
 PureCloudPlatformClientV2/models/document_body_video_properties.py
 PureCloudPlatformClientV2/models/document_body_with_highlight.py
-PureCloudPlatformClientV2/models/document_category_input.py
 PureCloudPlatformClientV2/models/document_chunk_block.py
 PureCloudPlatformClientV2/models/document_chunk_reference.py
 PureCloudPlatformClientV2/models/document_content_block.py
@@ -1922,10 +1926,8 @@ PureCloudPlatformClientV2/models/document_content_block_with_highlight.py
 PureCloudPlatformClientV2/models/document_content_highlight_index.py
 PureCloudPlatformClientV2/models/document_element_length.py
 PureCloudPlatformClientV2/models/document_entity_listing.py
-PureCloudPlatformClientV2/models/document_faq.py
 PureCloudPlatformClientV2/models/document_list_content_block.py
 PureCloudPlatformClientV2/models/document_list_content_block_with_highlight.py
-PureCloudPlatformClientV2/models/document_listing.py
 PureCloudPlatformClientV2/models/document_query.py
 PureCloudPlatformClientV2/models/document_query_clause.py
 PureCloudPlatformClientV2/models/document_query_interval.py
@@ -2298,6 +2300,7 @@ PureCloudPlatformClientV2/models/facebook_data_ingestion_rule_response.py
 PureCloudPlatformClientV2/models/facebook_data_ingestion_rule_version_response.py
 PureCloudPlatformClientV2/models/facebook_data_ingestion_rule_version_response_entity_listing.py
 PureCloudPlatformClientV2/models/facebook_id.py
+PureCloudPlatformClientV2/models/facebook_identity_resolution_config.py
 PureCloudPlatformClientV2/models/facebook_integration.py
 PureCloudPlatformClientV2/models/facebook_integration_entity_listing.py
 PureCloudPlatformClientV2/models/facebook_integration_request.py
@@ -2358,6 +2361,7 @@ PureCloudPlatformClientV2/models/flow_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/flow_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/flow_aggregate_query_response.py
 PureCloudPlatformClientV2/models/flow_aggregation_query.py
+PureCloudPlatformClientV2/models/flow_aggregation_sort.py
 PureCloudPlatformClientV2/models/flow_aggregation_view.py
 PureCloudPlatformClientV2/models/flow_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/flow_async_aggregation_query.py
@@ -2373,6 +2377,7 @@ PureCloudPlatformClientV2/models/flow_execution_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/flow_execution_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/flow_execution_aggregate_query_response.py
 PureCloudPlatformClientV2/models/flow_execution_aggregation_query.py
+PureCloudPlatformClientV2/models/flow_execution_aggregation_sort.py
 PureCloudPlatformClientV2/models/flow_execution_aggregation_view.py
 PureCloudPlatformClientV2/models/flow_execution_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/flow_execution_async_aggregation_query.py
@@ -2587,7 +2592,6 @@ PureCloudPlatformClientV2/models/identity_now.py
 PureCloudPlatformClientV2/models/identity_provider.py
 PureCloudPlatformClientV2/models/identity_provider_entity_listing.py
 PureCloudPlatformClientV2/models/identity_resolution_automerge_config.py
-PureCloudPlatformClientV2/models/identity_resolution_config.py
 PureCloudPlatformClientV2/models/identity_resolution_external_source.py
 PureCloudPlatformClientV2/models/identity_resolution_queue_config.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
@@ -2605,10 +2609,8 @@ PureCloudPlatformClientV2/models/ignored_mined_phrase_listing.py
 PureCloudPlatformClientV2/models/ignored_mined_topic_listing.py
 PureCloudPlatformClientV2/models/image.py
 PureCloudPlatformClientV2/models/imap_settings.py
-PureCloudPlatformClientV2/models/import_error.py
 PureCloudPlatformClientV2/models/import_forecast_response.py
 PureCloudPlatformClientV2/models/import_forecast_upload_response.py
-PureCloudPlatformClientV2/models/import_report.py
 PureCloudPlatformClientV2/models/import_schedule_upload_response.py
 PureCloudPlatformClientV2/models/import_schedule_upload_schema.py
 PureCloudPlatformClientV2/models/import_script_status_response.py
@@ -2661,6 +2663,7 @@ PureCloudPlatformClientV2/models/instagram_data_ingestion_rule_response.py
 PureCloudPlatformClientV2/models/instagram_data_ingestion_rule_version_response.py
 PureCloudPlatformClientV2/models/instagram_data_ingestion_rule_version_response_entity_listing.py
 PureCloudPlatformClientV2/models/instagram_id.py
+PureCloudPlatformClientV2/models/instagram_identity_resolution_config.py
 PureCloudPlatformClientV2/models/instagram_integration.py
 PureCloudPlatformClientV2/models/instagram_integration_entity_listing.py
 PureCloudPlatformClientV2/models/instagram_integration_request.py
@@ -2704,6 +2707,7 @@ PureCloudPlatformClientV2/models/ivr_division_view.py
 PureCloudPlatformClientV2/models/ivr_division_view_entity_listing.py
 PureCloudPlatformClientV2/models/ivr_entity_listing.py
 PureCloudPlatformClientV2/models/ivr_established_event.py
+PureCloudPlatformClientV2/models/ivr_identity_resolution_config.py
 PureCloudPlatformClientV2/models/journey.py
 PureCloudPlatformClientV2/models/journey_action.py
 PureCloudPlatformClientV2/models/journey_action_map.py
@@ -2713,6 +2717,7 @@ PureCloudPlatformClientV2/models/journey_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/journey_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/journey_aggregate_query_response.py
 PureCloudPlatformClientV2/models/journey_aggregation_query.py
+PureCloudPlatformClientV2/models/journey_aggregation_sort.py
 PureCloudPlatformClientV2/models/journey_aggregation_view.py
 PureCloudPlatformClientV2/models/journey_app.py
 PureCloudPlatformClientV2/models/journey_app_events_notification_action_map.py
@@ -2883,6 +2888,7 @@ PureCloudPlatformClientV2/models/knowledge_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/knowledge_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/knowledge_aggregate_query_response.py
 PureCloudPlatformClientV2/models/knowledge_aggregation_query.py
+PureCloudPlatformClientV2/models/knowledge_aggregation_sort.py
 PureCloudPlatformClientV2/models/knowledge_aggregation_view.py
 PureCloudPlatformClientV2/models/knowledge_answer_config.py
 PureCloudPlatformClientV2/models/knowledge_answer_document_response.py
@@ -2896,23 +2902,18 @@ PureCloudPlatformClientV2/models/knowledge_base_listing.py
 PureCloudPlatformClientV2/models/knowledge_base_reference.py
 PureCloudPlatformClientV2/models/knowledge_base_update_request.py
 PureCloudPlatformClientV2/models/knowledge_base_with_dialect_reference.py
-PureCloudPlatformClientV2/models/knowledge_category.py
-PureCloudPlatformClientV2/models/knowledge_category_request.py
 PureCloudPlatformClientV2/models/knowledge_context_reference.py
 PureCloudPlatformClientV2/models/knowledge_context_value_reference.py
 PureCloudPlatformClientV2/models/knowledge_conversation_context.py
 PureCloudPlatformClientV2/models/knowledge_conversation_context_response.py
-PureCloudPlatformClientV2/models/knowledge_document.py
 PureCloudPlatformClientV2/models/knowledge_document_alternative.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_remove_request.py
-PureCloudPlatformClientV2/models/knowledge_document_bulk_request.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_update_entity.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_update_request.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_version_add_entity.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_version_add_request.py
 PureCloudPlatformClientV2/models/knowledge_document_chunk_request.py
 PureCloudPlatformClientV2/models/knowledge_document_chunk_response.py
-PureCloudPlatformClientV2/models/knowledge_document_content_upload.py
 PureCloudPlatformClientV2/models/knowledge_document_copy.py
 PureCloudPlatformClientV2/models/knowledge_document_create_request.py
 PureCloudPlatformClientV2/models/knowledge_document_descriptor.py
@@ -2930,7 +2931,6 @@ PureCloudPlatformClientV2/models/knowledge_document_query_result.py
 PureCloudPlatformClientV2/models/knowledge_document_query_variation.py
 PureCloudPlatformClientV2/models/knowledge_document_reference.py
 PureCloudPlatformClientV2/models/knowledge_document_req.py
-PureCloudPlatformClientV2/models/knowledge_document_request.py
 PureCloudPlatformClientV2/models/knowledge_document_response.py
 PureCloudPlatformClientV2/models/knowledge_document_response_listing.py
 PureCloudPlatformClientV2/models/knowledge_document_search.py
@@ -2952,7 +2952,6 @@ PureCloudPlatformClientV2/models/knowledge_export_job_documents_filter.py
 PureCloudPlatformClientV2/models/knowledge_export_job_filter.py
 PureCloudPlatformClientV2/models/knowledge_export_job_request.py
 PureCloudPlatformClientV2/models/knowledge_export_job_response.py
-PureCloudPlatformClientV2/models/knowledge_extended_category.py
 PureCloudPlatformClientV2/models/knowledge_group_statistics.py
 PureCloudPlatformClientV2/models/knowledge_guest_answer_document_response.py
 PureCloudPlatformClientV2/models/knowledge_guest_answer_documents_response.py
@@ -2974,7 +2973,6 @@ PureCloudPlatformClientV2/models/knowledge_guest_search_document_response.py
 PureCloudPlatformClientV2/models/knowledge_guest_session.py
 PureCloudPlatformClientV2/models/knowledge_guest_session_app.py
 PureCloudPlatformClientV2/models/knowledge_guest_session_context.py
-PureCloudPlatformClientV2/models/knowledge_import.py
 PureCloudPlatformClientV2/models/knowledge_import_job_error.py
 PureCloudPlatformClientV2/models/knowledge_import_job_report.py
 PureCloudPlatformClientV2/models/knowledge_import_job_request.py
@@ -2995,16 +2993,12 @@ PureCloudPlatformClientV2/models/knowledge_parse_job_response.py
 PureCloudPlatformClientV2/models/knowledge_parse_record.py
 PureCloudPlatformClientV2/models/knowledge_search_client_application.py
 PureCloudPlatformClientV2/models/knowledge_search_document_response.py
-PureCloudPlatformClientV2/models/knowledge_search_document_v1.py
-PureCloudPlatformClientV2/models/knowledge_search_request.py
-PureCloudPlatformClientV2/models/knowledge_search_response.py
 PureCloudPlatformClientV2/models/knowledge_suggestion_config.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_report.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_request.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_response.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_statistics.py
 PureCloudPlatformClientV2/models/knowledge_sync_request.py
-PureCloudPlatformClientV2/models/knowledge_training.py
 PureCloudPlatformClientV2/models/kpi_result.py
 PureCloudPlatformClientV2/models/label.py
 PureCloudPlatformClientV2/models/label_create_request.py
@@ -3288,6 +3282,7 @@ PureCloudPlatformClientV2/models/messaging_end_transfer_event.py
 PureCloudPlatformClientV2/models/messaging_external_established_event.py
 PureCloudPlatformClientV2/models/messaging_flow_established_event.py
 PureCloudPlatformClientV2/models/messaging_hold_updated_event.py
+PureCloudPlatformClientV2/models/messaging_identity_resolution_config.py
 PureCloudPlatformClientV2/models/messaging_initial_configuration.py
 PureCloudPlatformClientV2/models/messaging_integration.py
 PureCloudPlatformClientV2/models/messaging_integration_entity_listing.py
@@ -3573,6 +3568,7 @@ PureCloudPlatformClientV2/models/outbound_preview_campaign_post_contact_outbound
 PureCloudPlatformClientV2/models/outbound_preview_campaign_post_contact_voice_attributes.py
 PureCloudPlatformClientV2/models/outbound_preview_campaign_pre_contact_outbound_preview_campaign_pre_contact_event.py
 PureCloudPlatformClientV2/models/outbound_preview_campaign_pre_contact_voice_attributes.py
+PureCloudPlatformClientV2/models/outbound_queue_identity_resolution_config.py
 PureCloudPlatformClientV2/models/outbound_route.py
 PureCloudPlatformClientV2/models/outbound_route_base.py
 PureCloudPlatformClientV2/models/outbound_route_base_entity_listing.py
@@ -4168,6 +4164,7 @@ PureCloudPlatformClientV2/models/rate_limit_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/rate_limit_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/rate_limit_aggregate_query_response.py
 PureCloudPlatformClientV2/models/rate_limit_aggregation_query.py
+PureCloudPlatformClientV2/models/rate_limit_aggregation_sort.py
 PureCloudPlatformClientV2/models/rate_limit_aggregation_view.py
 PureCloudPlatformClientV2/models/reaction.py
 PureCloudPlatformClientV2/models/real_time_adherence_explanation.py
@@ -4287,6 +4284,7 @@ PureCloudPlatformClientV2/models/resolution_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/resolution_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/resolution_aggregate_query_response.py
 PureCloudPlatformClientV2/models/resolution_aggregation_query.py
+PureCloudPlatformClientV2/models/resolution_aggregation_sort.py
 PureCloudPlatformClientV2/models/resolution_aggregation_view.py
 PureCloudPlatformClientV2/models/resolution_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/resolution_async_aggregation_query.py
@@ -4316,7 +4314,6 @@ PureCloudPlatformClientV2/models/response_substitution.py
 PureCloudPlatformClientV2/models/response_text.py
 PureCloudPlatformClientV2/models/rest_error_detail.py
 PureCloudPlatformClientV2/models/restore_presence_settings.py
-PureCloudPlatformClientV2/models/result_counters.py
 PureCloudPlatformClientV2/models/retention_duration.py
 PureCloudPlatformClientV2/models/reverse_whitepages_lookup_result.py
 PureCloudPlatformClientV2/models/review_assessment_results.py
@@ -4330,6 +4327,7 @@ PureCloudPlatformClientV2/models/room_participant.py
 PureCloudPlatformClientV2/models/room_participant_response.py
 PureCloudPlatformClientV2/models/room_participants_response.py
 PureCloudPlatformClientV2/models/room_update_request.py
+PureCloudPlatformClientV2/models/route_identity_resolution_config.py
 PureCloudPlatformClientV2/models/route_path_request.py
 PureCloudPlatformClientV2/models/route_path_response.py
 PureCloudPlatformClientV2/models/routing_activity_data.py
@@ -4570,6 +4568,7 @@ PureCloudPlatformClientV2/models/sms_alphanumeric_provision.py
 PureCloudPlatformClientV2/models/sms_available_phone_number.py
 PureCloudPlatformClientV2/models/sms_available_phone_number_entity_listing.py
 PureCloudPlatformClientV2/models/sms_config.py
+PureCloudPlatformClientV2/models/sms_identity_resolution_config.py
 PureCloudPlatformClientV2/models/sms_phone_number.py
 PureCloudPlatformClientV2/models/sms_phone_number_entity_listing.py
 PureCloudPlatformClientV2/models/sms_phone_number_import.py
@@ -4683,6 +4682,7 @@ PureCloudPlatformClientV2/models/summary_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/summary_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/summary_aggregate_query_response.py
 PureCloudPlatformClientV2/models/summary_aggregation_query.py
+PureCloudPlatformClientV2/models/summary_aggregation_sort.py
 PureCloudPlatformClientV2/models/summary_aggregation_view.py
 PureCloudPlatformClientV2/models/summary_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/summary_async_aggregation_query.py
@@ -4724,6 +4724,7 @@ PureCloudPlatformClientV2/models/survey_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/survey_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/survey_aggregate_query_response.py
 PureCloudPlatformClientV2/models/survey_aggregation_query.py
+PureCloudPlatformClientV2/models/survey_aggregation_sort.py
 PureCloudPlatformClientV2/models/survey_aggregation_view.py
 PureCloudPlatformClientV2/models/survey_assignment.py
 PureCloudPlatformClientV2/models/survey_async_aggregate_query_response.py
@@ -4762,6 +4763,7 @@ PureCloudPlatformClientV2/models/task_management_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/task_management_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/task_management_aggregate_query_response.py
 PureCloudPlatformClientV2/models/task_management_aggregation_query.py
+PureCloudPlatformClientV2/models/task_management_aggregation_sort.py
 PureCloudPlatformClientV2/models/task_management_aggregation_view.py
 PureCloudPlatformClientV2/models/task_management_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/task_management_async_aggregation_query.py
@@ -4881,13 +4883,13 @@ PureCloudPlatformClientV2/models/topics_entity_listing.py
 PureCloudPlatformClientV2/models/touchpoint.py
 PureCloudPlatformClientV2/models/touchpoint_response.py
 PureCloudPlatformClientV2/models/tracking_settings.py
-PureCloudPlatformClientV2/models/training_listing.py
 PureCloudPlatformClientV2/models/transcript_aggregate_data_container.py
 PureCloudPlatformClientV2/models/transcript_aggregate_query_clause.py
 PureCloudPlatformClientV2/models/transcript_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/transcript_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/transcript_aggregate_query_response.py
 PureCloudPlatformClientV2/models/transcript_aggregation_query.py
+PureCloudPlatformClientV2/models/transcript_aggregation_sort.py
 PureCloudPlatformClientV2/models/transcript_aggregation_view.py
 PureCloudPlatformClientV2/models/transcript_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/transcript_async_aggregation_query.py
@@ -4985,6 +4987,7 @@ PureCloudPlatformClientV2/models/twitter_data_ingestion_rule_response.py
 PureCloudPlatformClientV2/models/twitter_data_ingestion_rule_version_response.py
 PureCloudPlatformClientV2/models/twitter_data_ingestion_rule_version_response_entity_listing.py
 PureCloudPlatformClientV2/models/twitter_id.py
+PureCloudPlatformClientV2/models/twitter_identity_resolution_config.py
 PureCloudPlatformClientV2/models/twitter_integration.py
 PureCloudPlatformClientV2/models/twitter_integration_entity_listing.py
 PureCloudPlatformClientV2/models/twitter_integration_request.py
@@ -5594,6 +5597,7 @@ PureCloudPlatformClientV2/models/whats_app_definition.py
 PureCloudPlatformClientV2/models/whats_app_embedded_signup_integration_activation_request.py
 PureCloudPlatformClientV2/models/whats_app_embedded_signup_integration_request.py
 PureCloudPlatformClientV2/models/whats_app_id.py
+PureCloudPlatformClientV2/models/whats_app_identity_resolution_config.py
 PureCloudPlatformClientV2/models/whats_app_integration.py
 PureCloudPlatformClientV2/models/whats_app_integration_entity_listing.py
 PureCloudPlatformClientV2/models/whats_app_integration_request.py
@@ -5809,6 +5813,7 @@ docs/ActionAggregateQueryFilter.md
 docs/ActionAggregateQueryPredicate.md
 docs/ActionAggregateQueryResponse.md
 docs/ActionAggregationQuery.md
+docs/ActionAggregationSort.md
 docs/ActionAggregationView.md
 docs/ActionAsyncAggregateQueryResponse.md
 docs/ActionAsyncAggregationQuery.md
@@ -5914,6 +5919,7 @@ docs/AgentCopilotAggregateQueryFilter.md
 docs/AgentCopilotAggregateQueryPredicate.md
 docs/AgentCopilotAggregateQueryResponse.md
 docs/AgentCopilotAggregationQuery.md
+docs/AgentCopilotAggregationSort.md
 docs/AgentCopilotAggregationView.md
 docs/AgentCopilotApi.json
 docs/AgentCopilotApi.md
@@ -6063,6 +6069,7 @@ docs/AppEventResponseSession.md
 docs/AppendToDncActionSettings.md
 docs/AppleAuthentication.md
 docs/AppleIMessageApp.md
+docs/AppleIdentityResolutionConfig.md
 docs/AppleIntegration.md
 docs/AppleIntegrationEntityListing.md
 docs/AppleIntegrationRequest.md
@@ -6108,8 +6115,6 @@ docs/ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.m
 docs/ArchiveRetention.md
 docs/ArrayNode.md
 docs/Article.md
-docs/ArticleContent.md
-docs/ArticleContentBody.md
 docs/ArticlesFilter.md
 docs/AssessmentForm.md
 docs/AssessmentFormQuestion.md
@@ -6256,6 +6261,7 @@ docs/BotAggregateQueryFilter.md
 docs/BotAggregateQueryPredicate.md
 docs/BotAggregateQueryResponse.md
 docs/BotAggregationQuery.md
+docs/BotAggregationSort.md
 docs/BotAggregationView.md
 docs/BotAsyncAggregateQueryResponse.md
 docs/BotAsyncAggregationQuery.md
@@ -6509,6 +6515,10 @@ docs/CampaignOutboundLinesAllocation.md
 docs/CampaignOutboundLinesDistribution.md
 docs/CampaignOutboundLinesReservation.md
 docs/CampaignPatchRequest.md
+docs/CampaignPerformanceData.md
+docs/CampaignPerformanceDataContactRate.md
+docs/CampaignPerformanceDataListing.md
+docs/CampaignPerformanceDataProgress.md
 docs/CampaignProgress.md
 docs/CampaignRule.md
 docs/CampaignRuleAction.md
@@ -6566,7 +6576,6 @@ docs/Category.md
 docs/CategoryCreateRequest.md
 docs/CategoryEntity.md
 docs/CategoryEntityListing.md
-docs/CategoryListing.md
 docs/CategoryReference.md
 docs/CategoryRequest.md
 docs/CategoryResponse.md
@@ -6849,6 +6858,7 @@ docs/ConversationAggregateQueryFilter.md
 docs/ConversationAggregateQueryPredicate.md
 docs/ConversationAggregateQueryResponse.md
 docs/ConversationAggregationQuery.md
+docs/ConversationAggregationSort.md
 docs/ConversationAggregationView.md
 docs/ConversationAppSettings.md
 docs/ConversationAssociation.md
@@ -7620,7 +7630,6 @@ docs/DnclistImportStatusObject.md
 docs/DnsRecordEntry.md
 docs/DoNotSendActionSettings.md
 docs/Document.md
-docs/DocumentArticle.md
 docs/DocumentAttribute.md
 docs/DocumentBody.md
 docs/DocumentBodyBlock.md
@@ -7652,7 +7661,6 @@ docs/DocumentBodyTableWithHighlight.md
 docs/DocumentBodyVideo.md
 docs/DocumentBodyVideoProperties.md
 docs/DocumentBodyWithHighlight.md
-docs/DocumentCategoryInput.md
 docs/DocumentChunkBlock.md
 docs/DocumentChunkReference.md
 docs/DocumentContentBlock.md
@@ -7660,10 +7668,8 @@ docs/DocumentContentBlockWithHighlight.md
 docs/DocumentContentHighlightIndex.md
 docs/DocumentElementLength.md
 docs/DocumentEntityListing.md
-docs/DocumentFaq.md
 docs/DocumentListContentBlock.md
 docs/DocumentListContentBlockWithHighlight.md
-docs/DocumentListing.md
 docs/DocumentQuery.md
 docs/DocumentQueryClause.md
 docs/DocumentQueryInterval.md
@@ -8046,6 +8052,7 @@ docs/FacebookDataIngestionRuleResponse.md
 docs/FacebookDataIngestionRuleVersionResponse.md
 docs/FacebookDataIngestionRuleVersionResponseEntityListing.md
 docs/FacebookId.md
+docs/FacebookIdentityResolutionConfig.md
 docs/FacebookIntegration.md
 docs/FacebookIntegrationEntityListing.md
 docs/FacebookIntegrationRequest.md
@@ -8108,6 +8115,7 @@ docs/FlowAggregateQueryFilter.md
 docs/FlowAggregateQueryPredicate.md
 docs/FlowAggregateQueryResponse.md
 docs/FlowAggregationQuery.md
+docs/FlowAggregationSort.md
 docs/FlowAggregationView.md
 docs/FlowAsyncAggregateQueryResponse.md
 docs/FlowAsyncAggregationQuery.md
@@ -8123,6 +8131,7 @@ docs/FlowExecutionAggregateQueryFilter.md
 docs/FlowExecutionAggregateQueryPredicate.md
 docs/FlowExecutionAggregateQueryResponse.md
 docs/FlowExecutionAggregationQuery.md
+docs/FlowExecutionAggregationSort.md
 docs/FlowExecutionAggregationView.md
 docs/FlowExecutionAsyncAggregateQueryResponse.md
 docs/FlowExecutionAsyncAggregationQuery.md
@@ -8348,6 +8357,7 @@ docs/IVR.md
 docs/IVRDivisionView.md
 docs/IVRDivisionViewEntityListing.md
 docs/IVREntityListing.md
+docs/IVRIdentityResolutionConfig.md
 docs/IdentifierClaimRequest.md
 docs/IdentityNow.md
 docs/IdentityProvider.md
@@ -8355,7 +8365,6 @@ docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
 docs/IdentityProviderEntityListing.md
 docs/IdentityResolutionAutomergeConfig.md
-docs/IdentityResolutionConfig.md
 docs/IdentityResolutionExternalSource.md
 docs/IdentityResolutionQueueConfig.md
 docs/IdleEventTrigger.md
@@ -8373,10 +8382,8 @@ docs/IgnoredMinedPhraseListing.md
 docs/IgnoredMinedTopicListing.md
 docs/Image.md
 docs/ImapSettings.md
-docs/ImportError.md
 docs/ImportForecastResponse.md
 docs/ImportForecastUploadResponse.md
-docs/ImportReport.md
 docs/ImportScheduleUploadResponse.md
 docs/ImportScheduleUploadSchema.md
 docs/ImportScriptStatusResponse.md
@@ -8431,6 +8438,7 @@ docs/InstagramDataIngestionRuleResponse.md
 docs/InstagramDataIngestionRuleVersionResponse.md
 docs/InstagramDataIngestionRuleVersionResponseEntityListing.md
 docs/InstagramId.md
+docs/InstagramIdentityResolutionConfig.md
 docs/InstagramIntegration.md
 docs/InstagramIntegrationEntityListing.md
 docs/InstagramIntegrationRequest.md
@@ -8481,6 +8489,7 @@ docs/JourneyAggregateQueryFilter.md
 docs/JourneyAggregateQueryPredicate.md
 docs/JourneyAggregateQueryResponse.md
 docs/JourneyAggregationQuery.md
+docs/JourneyAggregationSort.md
 docs/JourneyAggregationView.md
 docs/JourneyApi.json
 docs/JourneyApi.md
@@ -8653,6 +8662,7 @@ docs/KnowledgeAggregateQueryFilter.md
 docs/KnowledgeAggregateQueryPredicate.md
 docs/KnowledgeAggregateQueryResponse.md
 docs/KnowledgeAggregationQuery.md
+docs/KnowledgeAggregationSort.md
 docs/KnowledgeAggregationView.md
 docs/KnowledgeAnswerConfig.md
 docs/KnowledgeAnswerDocumentResponse.md
@@ -8668,23 +8678,18 @@ docs/KnowledgeBaseListing.md
 docs/KnowledgeBaseReference.md
 docs/KnowledgeBaseUpdateRequest.md
 docs/KnowledgeBaseWithDialectReference.md
-docs/KnowledgeCategory.md
-docs/KnowledgeCategoryRequest.md
 docs/KnowledgeContextReference.md
 docs/KnowledgeContextValueReference.md
 docs/KnowledgeConversationContext.md
 docs/KnowledgeConversationContextResponse.md
-docs/KnowledgeDocument.md
 docs/KnowledgeDocumentAlternative.md
 docs/KnowledgeDocumentBulkRemoveRequest.md
-docs/KnowledgeDocumentBulkRequest.md
 docs/KnowledgeDocumentBulkUpdateEntity.md
 docs/KnowledgeDocumentBulkUpdateRequest.md
 docs/KnowledgeDocumentBulkVersionAddEntity.md
 docs/KnowledgeDocumentBulkVersionAddRequest.md
 docs/KnowledgeDocumentChunkRequest.md
 docs/KnowledgeDocumentChunkResponse.md
-docs/KnowledgeDocumentContentUpload.md
 docs/KnowledgeDocumentCopy.md
 docs/KnowledgeDocumentCreateRequest.md
 docs/KnowledgeDocumentDescriptor.md
@@ -8702,7 +8707,6 @@ docs/KnowledgeDocumentQueryResult.md
 docs/KnowledgeDocumentQueryVariation.md
 docs/KnowledgeDocumentReference.md
 docs/KnowledgeDocumentReq.md
-docs/KnowledgeDocumentRequest.md
 docs/KnowledgeDocumentResponse.md
 docs/KnowledgeDocumentResponseListing.md
 docs/KnowledgeDocumentSearch.md
@@ -8724,7 +8728,6 @@ docs/KnowledgeExportJobDocumentsFilter.md
 docs/KnowledgeExportJobFilter.md
 docs/KnowledgeExportJobRequest.md
 docs/KnowledgeExportJobResponse.md
-docs/KnowledgeExtendedCategory.md
 docs/KnowledgeGroupStatistics.md
 docs/KnowledgeGuestAnswerDocumentResponse.md
 docs/KnowledgeGuestAnswerDocumentsResponse.md
@@ -8746,7 +8749,6 @@ docs/KnowledgeGuestSearchDocumentResponse.md
 docs/KnowledgeGuestSession.md
 docs/KnowledgeGuestSessionApp.md
 docs/KnowledgeGuestSessionContext.md
-docs/KnowledgeImport.md
 docs/KnowledgeImportJobError.md
 docs/KnowledgeImportJobReport.md
 docs/KnowledgeImportJobRequest.md
@@ -8767,16 +8769,12 @@ docs/KnowledgeParseJobResponse.md
 docs/KnowledgeParseRecord.md
 docs/KnowledgeSearchClientApplication.md
 docs/KnowledgeSearchDocumentResponse.md
-docs/KnowledgeSearchDocumentV1.md
-docs/KnowledgeSearchRequest.md
-docs/KnowledgeSearchResponse.md
 docs/KnowledgeSuggestionConfig.md
 docs/KnowledgeSyncJobReport.md
 docs/KnowledgeSyncJobRequest.md
 docs/KnowledgeSyncJobResponse.md
 docs/KnowledgeSyncJobStatistics.md
 docs/KnowledgeSyncRequest.md
-docs/KnowledgeTraining.md
 docs/KpiResult.md
 docs/Label.md
 docs/LabelCreateRequest.md
@@ -9074,6 +9072,7 @@ docs/MessagingEndTransferEvent.md
 docs/MessagingExternalEstablishedEvent.md
 docs/MessagingFlowEstablishedEvent.md
 docs/MessagingHoldUpdatedEvent.md
+docs/MessagingIdentityResolutionConfig.md
 docs/MessagingInitialConfiguration.md
 docs/MessagingIntegration.md
 docs/MessagingIntegrationEntityListing.md
@@ -9375,6 +9374,7 @@ docs/OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.m
 docs/OutboundPreviewCampaignPostContactVoiceAttributes.md
 docs/OutboundPreviewCampaignPreContactOutboundPreviewCampaignPreContactEvent.md
 docs/OutboundPreviewCampaignPreContactVoiceAttributes.md
+docs/OutboundQueueIdentityResolutionConfig.md
 docs/OutboundRoute.md
 docs/OutboundRouteBase.md
 docs/OutboundRouteBaseEntityListing.md
@@ -9976,6 +9976,7 @@ docs/RateLimitAggregateQueryFilter.md
 docs/RateLimitAggregateQueryPredicate.md
 docs/RateLimitAggregateQueryResponse.md
 docs/RateLimitAggregationQuery.md
+docs/RateLimitAggregationSort.md
 docs/RateLimitAggregationView.md
 docs/Reaction.md
 docs/RealTimeAdherenceExplanation.md
@@ -10097,6 +10098,7 @@ docs/ResolutionAggregateQueryFilter.md
 docs/ResolutionAggregateQueryPredicate.md
 docs/ResolutionAggregateQueryResponse.md
 docs/ResolutionAggregationQuery.md
+docs/ResolutionAggregationSort.md
 docs/ResolutionAggregationView.md
 docs/ResolutionAsyncAggregateQueryResponse.md
 docs/ResolutionAsyncAggregationQuery.md
@@ -10128,7 +10130,6 @@ docs/ResponseSubstitution.md
 docs/ResponseText.md
 docs/RestErrorDetail.md
 docs/RestorePresenceSettings.md
-docs/ResultCounters.md
 docs/RetentionDuration.md
 docs/ReverseWhitepagesLookupResult.md
 docs/ReviewAssessmentResults.md
@@ -10142,6 +10143,7 @@ docs/RoomParticipant.md
 docs/RoomParticipantResponse.md
 docs/RoomParticipantsResponse.md
 docs/RoomUpdateRequest.md
+docs/RouteIdentityResolutionConfig.md
 docs/RoutePathRequest.md
 docs/RoutePathResponse.md
 docs/RoutingActivityData.md
@@ -10394,6 +10396,7 @@ docs/SmsAddressProvision.md
 docs/SmsAlphanumericProvision.md
 docs/SmsAvailablePhoneNumber.md
 docs/SmsConfig.md
+docs/SmsIdentityResolutionConfig.md
 docs/SmsPhoneNumber.md
 docs/SmsPhoneNumberEntityListing.md
 docs/SmsPhoneNumberImport.md
@@ -10515,6 +10518,7 @@ docs/SummaryAggregateQueryFilter.md
 docs/SummaryAggregateQueryPredicate.md
 docs/SummaryAggregateQueryResponse.md
 docs/SummaryAggregationQuery.md
+docs/SummaryAggregationSort.md
 docs/SummaryAggregationView.md
 docs/SummaryAsyncAggregateQueryResponse.md
 docs/SummaryAsyncAggregationQuery.md
@@ -10556,6 +10560,7 @@ docs/SurveyAggregateQueryFilter.md
 docs/SurveyAggregateQueryPredicate.md
 docs/SurveyAggregateQueryResponse.md
 docs/SurveyAggregationQuery.md
+docs/SurveyAggregationSort.md
 docs/SurveyAggregationView.md
 docs/SurveyAssignment.md
 docs/SurveyAsyncAggregateQueryResponse.md
@@ -10594,6 +10599,7 @@ docs/TaskManagementAggregateQueryFilter.md
 docs/TaskManagementAggregateQueryPredicate.md
 docs/TaskManagementAggregateQueryResponse.md
 docs/TaskManagementAggregationQuery.md
+docs/TaskManagementAggregationSort.md
 docs/TaskManagementAggregationView.md
 docs/TaskManagementApi.json
 docs/TaskManagementApi.md
@@ -10725,13 +10731,13 @@ docs/TopicsEntityListing.md
 docs/Touchpoint.md
 docs/TouchpointResponse.md
 docs/TrackingSettings.md
-docs/TrainingListing.md
 docs/TranscriptAggregateDataContainer.md
 docs/TranscriptAggregateQueryClause.md
 docs/TranscriptAggregateQueryFilter.md
 docs/TranscriptAggregateQueryPredicate.md
 docs/TranscriptAggregateQueryResponse.md
 docs/TranscriptAggregationQuery.md
+docs/TranscriptAggregationSort.md
 docs/TranscriptAggregationView.md
 docs/TranscriptAsyncAggregateQueryResponse.md
 docs/TranscriptAsyncAggregationQuery.md
@@ -10829,6 +10835,7 @@ docs/TwitterDataIngestionRuleResponse.md
 docs/TwitterDataIngestionRuleVersionResponse.md
 docs/TwitterDataIngestionRuleVersionResponseEntityListing.md
 docs/TwitterId.md
+docs/TwitterIdentityResolutionConfig.md
 docs/TwitterIntegration.md
 docs/TwitterIntegrationEntityListing.md
 docs/TwitterIntegrationRequest.md
@@ -11456,6 +11463,7 @@ docs/WhatsAppDefinition.md
 docs/WhatsAppEmbeddedSignupIntegrationActivationRequest.md
 docs/WhatsAppEmbeddedSignupIntegrationRequest.md
 docs/WhatsAppId.md
+docs/WhatsAppIdentityResolutionConfig.md
 docs/WhatsAppIntegration.md
 docs/WhatsAppIntegrationEntityListing.md
 docs/WhatsAppIntegrationRequest.md
@@ -11800,9 +11808,6 @@ docs/delete_knowledge_knowledgebase_document_variation-example.txt
 docs/delete_knowledge_knowledgebase_export_job-example.txt
 docs/delete_knowledge_knowledgebase_import_job-example.txt
 docs/delete_knowledge_knowledgebase_label-example.txt
-docs/delete_knowledge_knowledgebase_language_category-example.txt
-docs/delete_knowledge_knowledgebase_language_document-example.txt
-docs/delete_knowledge_knowledgebase_language_documents_import-example.txt
 docs/delete_knowledge_knowledgebase_sources_salesforce_source_id-example.txt
 docs/delete_knowledge_knowledgebase_sources_servicenow_source_id-example.txt
 docs/delete_knowledge_knowledgebase_synchronize_job-example.txt
@@ -12655,14 +12660,6 @@ docs/get_knowledge_knowledgebase_export_job-example.txt
 docs/get_knowledge_knowledgebase_import_job-example.txt
 docs/get_knowledge_knowledgebase_label-example.txt
 docs/get_knowledge_knowledgebase_labels-example.txt
-docs/get_knowledge_knowledgebase_language_categories-example.txt
-docs/get_knowledge_knowledgebase_language_category-example.txt
-docs/get_knowledge_knowledgebase_language_document-example.txt
-docs/get_knowledge_knowledgebase_language_document_upload-example.txt
-docs/get_knowledge_knowledgebase_language_documents-example.txt
-docs/get_knowledge_knowledgebase_language_documents_import-example.txt
-docs/get_knowledge_knowledgebase_language_training-example.txt
-docs/get_knowledge_knowledgebase_language_trainings-example.txt
 docs/get_knowledge_knowledgebase_operations-example.txt
 docs/get_knowledge_knowledgebase_operations_users_query-example.txt
 docs/get_knowledge_knowledgebase_parse_job-example.txt
@@ -12927,9 +12924,12 @@ docs/get_routing_availablemediatypes-example.txt
 docs/get_routing_directroutingbackup_settings_me-example.txt
 docs/get_routing_directroutingbackup_settings_me-example.txt
 docs/get_routing_email_domain-example.txt
+docs/get_routing_email_domain_dkim-example.txt
+docs/get_routing_email_domain_mailfrom-example.txt
 docs/get_routing_email_domain_route-example.txt
 docs/get_routing_email_domain_route_identityresolution-example.txt
 docs/get_routing_email_domain_routes-example.txt
+docs/get_routing_email_domain_verification-example.txt
 docs/get_routing_email_domains-example.txt
 docs/get_routing_email_outbound_domain-example.txt
 docs/get_routing_email_outbound_domain_activation-example.txt
@@ -13453,6 +13453,7 @@ docs/patch_conversations_call_participant-example.txt
 docs/patch_conversations_call_participant_attributes-example.txt
 docs/patch_conversations_call_participant_communication-example.txt
 docs/patch_conversations_call_participant_consult-example.txt
+docs/patch_conversations_call_participant_user_user_id-example.txt
 docs/patch_conversations_callback-example.txt
 docs/patch_conversations_callback_participant-example.txt
 docs/patch_conversations_callback_participant_attributes-example.txt
@@ -13518,10 +13519,6 @@ docs/patch_knowledge_knowledgebase_document_variation-example.txt
 docs/patch_knowledge_knowledgebase_documents_search_search_id-example.txt
 docs/patch_knowledge_knowledgebase_import_job-example.txt
 docs/patch_knowledge_knowledgebase_label-example.txt
-docs/patch_knowledge_knowledgebase_language_category-example.txt
-docs/patch_knowledge_knowledgebase_language_document-example.txt
-docs/patch_knowledge_knowledgebase_language_documents-example.txt
-docs/patch_knowledge_knowledgebase_language_documents_import-example.txt
 docs/patch_knowledge_knowledgebase_parse_job-example.txt
 docs/patch_knowledge_knowledgebase_synchronize_job-example.txt
 docs/patch_knowledge_knowledgebase_unanswered_group_phrasegroup-example.txt
@@ -14052,16 +14049,8 @@ docs/post_knowledge_knowledgebase_documents_versions_bulk_add-example.txt
 docs/post_knowledge_knowledgebase_export_jobs-example.txt
 docs/post_knowledge_knowledgebase_import_jobs-example.txt
 docs/post_knowledge_knowledgebase_labels-example.txt
-docs/post_knowledge_knowledgebase_language_categories-example.txt
-docs/post_knowledge_knowledgebase_language_document_uploads-example.txt
-docs/post_knowledge_knowledgebase_language_documents-example.txt
-docs/post_knowledge_knowledgebase_language_documents_imports-example.txt
-docs/post_knowledge_knowledgebase_language_training_promote-example.txt
-docs/post_knowledge_knowledgebase_language_trainings-example.txt
 docs/post_knowledge_knowledgebase_parse_job_import-example.txt
 docs/post_knowledge_knowledgebase_parse_jobs-example.txt
-docs/post_knowledge_knowledgebase_search-example.txt
-docs/post_knowledge_knowledgebase_search-example.txt
 docs/post_knowledge_knowledgebase_sources_salesforce-example.txt
 docs/post_knowledge_knowledgebase_sources_salesforce_source_id_sync-example.txt
 docs/post_knowledge_knowledgebase_sources_servicenow-example.txt
@@ -14131,6 +14120,7 @@ docs/post_outbound_campaign_start-example.txt
 docs/post_outbound_campaign_stop-example.txt
 docs/post_outbound_campaignrules-example.txt
 docs/post_outbound_campaigns-example.txt
+docs/post_outbound_campaigns_performance_query-example.txt
 docs/post_outbound_campaigns_progress-example.txt
 docs/post_outbound_contactlist_clear-example.txt
 docs/post_outbound_contactlist_contacts-example.txt
@@ -14199,8 +14189,11 @@ docs/post_responsemanagement_responses-example.txt
 docs/post_responsemanagement_responses_query-example.txt
 docs/post_routing_assessments-example.txt
 docs/post_routing_assessments_jobs-example.txt
+docs/post_routing_email_domain_dkim-example.txt
+docs/post_routing_email_domain_mailfrom-example.txt
 docs/post_routing_email_domain_routes-example.txt
 docs/post_routing_email_domain_testconnection-example.txt
+docs/post_routing_email_domain_verification-example.txt
 docs/post_routing_email_domains-example.txt
 docs/post_routing_email_outbound_domains-example.txt
 docs/post_routing_email_outbound_domains_simulated-example.txt

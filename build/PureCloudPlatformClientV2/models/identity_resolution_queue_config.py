@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import IdentityResolutionConfig
+    from . import OutboundQueueIdentityResolutionConfig
 
 class IdentityResolutionQueueConfig(object):
     """
@@ -49,7 +49,7 @@ class IdentityResolutionQueueConfig(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'call_on_behalf_of_queue': 'IdentityResolutionConfig'
+            'call_on_behalf_of_queue': 'OutboundQueueIdentityResolutionConfig'
         }
 
         self.attribute_map = {
@@ -59,24 +59,24 @@ class IdentityResolutionQueueConfig(object):
         self._call_on_behalf_of_queue = None
 
     @property
-    def call_on_behalf_of_queue(self) -> 'IdentityResolutionConfig':
+    def call_on_behalf_of_queue(self) -> 'OutboundQueueIdentityResolutionConfig':
         """
         Gets the call_on_behalf_of_queue of this IdentityResolutionQueueConfig.
 
 
         :return: The call_on_behalf_of_queue of this IdentityResolutionQueueConfig.
-        :rtype: IdentityResolutionConfig
+        :rtype: OutboundQueueIdentityResolutionConfig
         """
         return self._call_on_behalf_of_queue
 
     @call_on_behalf_of_queue.setter
-    def call_on_behalf_of_queue(self, call_on_behalf_of_queue: 'IdentityResolutionConfig') -> None:
+    def call_on_behalf_of_queue(self, call_on_behalf_of_queue: 'OutboundQueueIdentityResolutionConfig') -> None:
         """
         Sets the call_on_behalf_of_queue of this IdentityResolutionQueueConfig.
 
 
         :param call_on_behalf_of_queue: The call_on_behalf_of_queue of this IdentityResolutionQueueConfig.
-        :type: IdentityResolutionConfig
+        :type: OutboundQueueIdentityResolutionConfig
         """
         
 

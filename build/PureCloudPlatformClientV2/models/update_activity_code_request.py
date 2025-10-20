@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ListWrapperSecondaryPresence
+    from . import ListWrapperString
     from . import WfmVersionedEntityMetadata
 
 class UpdateActivityCodeRequest(object):
@@ -60,6 +61,7 @@ class UpdateActivityCodeRequest(object):
             'planned_shrinkage': 'bool',
             'interruptible': 'bool',
             'secondary_presences': 'ListWrapperSecondaryPresence',
+            'planning_group_ids': 'ListWrapperString',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -74,6 +76,7 @@ class UpdateActivityCodeRequest(object):
             'planned_shrinkage': 'plannedShrinkage',
             'interruptible': 'interruptible',
             'secondary_presences': 'secondaryPresences',
+            'planning_group_ids': 'planningGroupIds',
             'metadata': 'metadata'
         }
 
@@ -87,6 +90,7 @@ class UpdateActivityCodeRequest(object):
         self._planned_shrinkage = None
         self._interruptible = None
         self._secondary_presences = None
+        self._planning_group_ids = None
         self._metadata = None
 
     @property
@@ -333,6 +337,30 @@ class UpdateActivityCodeRequest(object):
         
 
         self._secondary_presences = secondary_presences
+
+    @property
+    def planning_group_ids(self) -> 'ListWrapperString':
+        """
+        Gets the planning_group_ids of this UpdateActivityCodeRequest.
+        The planning group IDs associated with this activity code
+
+        :return: The planning_group_ids of this UpdateActivityCodeRequest.
+        :rtype: ListWrapperString
+        """
+        return self._planning_group_ids
+
+    @planning_group_ids.setter
+    def planning_group_ids(self, planning_group_ids: 'ListWrapperString') -> None:
+        """
+        Sets the planning_group_ids of this UpdateActivityCodeRequest.
+        The planning group IDs associated with this activity code
+
+        :param planning_group_ids: The planning_group_ids of this UpdateActivityCodeRequest.
+        :type: ListWrapperString
+        """
+        
+
+        self._planning_group_ids = planning_group_ids
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

@@ -48,16 +48,19 @@ class UserVideoSettings(object):
         """
         self.swagger_types = {
             'allow_camera': 'bool',
-            'allow_screen_share': 'bool'
+            'allow_screen_share': 'bool',
+            'allow_microphone': 'bool'
         }
 
         self.attribute_map = {
             'allow_camera': 'allowCamera',
-            'allow_screen_share': 'allowScreenShare'
+            'allow_screen_share': 'allowScreenShare',
+            'allow_microphone': 'allowMicrophone'
         }
 
         self._allow_camera = None
         self._allow_screen_share = None
+        self._allow_microphone = None
 
     @property
     def allow_camera(self) -> bool:
@@ -106,6 +109,30 @@ class UserVideoSettings(object):
         
 
         self._allow_screen_share = allow_screen_share
+
+    @property
+    def allow_microphone(self) -> bool:
+        """
+        Gets the allow_microphone of this UserVideoSettings.
+        whether or not user microphone is allowed
+
+        :return: The allow_microphone of this UserVideoSettings.
+        :rtype: bool
+        """
+        return self._allow_microphone
+
+    @allow_microphone.setter
+    def allow_microphone(self, allow_microphone: bool) -> None:
+        """
+        Sets the allow_microphone of this UserVideoSettings.
+        whether or not user microphone is allowed
+
+        :param allow_microphone: The allow_microphone of this UserVideoSettings.
+        :type: bool
+        """
+        
+
+        self._allow_microphone = allow_microphone
 
     def to_dict(self):
         """

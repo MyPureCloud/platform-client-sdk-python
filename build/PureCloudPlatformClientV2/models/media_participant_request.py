@@ -133,7 +133,7 @@ class MediaParticipantRequest(object):
     def recording(self) -> bool:
         """
         Gets the recording of this MediaParticipantRequest.
-        True to enable recording of this participant, otherwise false to disable recording.
+        True to enable ad-hoc recording of this participant, otherwise false to disable recording.
 
         :return: The recording of this MediaParticipantRequest.
         :rtype: bool
@@ -144,7 +144,7 @@ class MediaParticipantRequest(object):
     def recording(self, recording: bool) -> None:
         """
         Sets the recording of this MediaParticipantRequest.
-        True to enable recording of this participant, otherwise false to disable recording.
+        True to enable ad-hoc recording of this participant, otherwise false to disable recording.
 
         :param recording: The recording of this MediaParticipantRequest.
         :type: bool

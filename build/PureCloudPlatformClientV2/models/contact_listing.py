@@ -55,10 +55,10 @@ class ContactListing(object):
             'total': 'int',
             'partial_results': 'bool',
             'first_uri': 'str',
-            'self_uri': 'str',
             'next_uri': 'str',
-            'last_uri': 'str',
+            'self_uri': 'str',
             'previous_uri': 'str',
+            'last_uri': 'str',
             'page_count': 'int'
         }
 
@@ -69,10 +69,10 @@ class ContactListing(object):
             'total': 'total',
             'partial_results': 'partialResults',
             'first_uri': 'firstUri',
-            'self_uri': 'selfUri',
             'next_uri': 'nextUri',
-            'last_uri': 'lastUri',
+            'self_uri': 'selfUri',
             'previous_uri': 'previousUri',
+            'last_uri': 'lastUri',
             'page_count': 'pageCount'
         }
 
@@ -82,10 +82,10 @@ class ContactListing(object):
         self._total = None
         self._partial_results = None
         self._first_uri = None
-        self._self_uri = None
         self._next_uri = None
-        self._last_uri = None
+        self._self_uri = None
         self._previous_uri = None
+        self._last_uri = None
         self._page_count = None
 
     @property
@@ -233,30 +233,6 @@ class ContactListing(object):
         self._first_uri = first_uri
 
     @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this ContactListing.
-
-
-        :return: The self_uri of this ContactListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this ContactListing.
-
-
-        :param self_uri: The self_uri of this ContactListing.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
     def next_uri(self) -> str:
         """
         Gets the next_uri of this ContactListing.
@@ -281,28 +257,28 @@ class ContactListing(object):
         self._next_uri = next_uri
 
     @property
-    def last_uri(self) -> str:
+    def self_uri(self) -> str:
         """
-        Gets the last_uri of this ContactListing.
+        Gets the self_uri of this ContactListing.
 
 
-        :return: The last_uri of this ContactListing.
+        :return: The self_uri of this ContactListing.
         :rtype: str
         """
-        return self._last_uri
+        return self._self_uri
 
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
         """
-        Sets the last_uri of this ContactListing.
+        Sets the self_uri of this ContactListing.
 
 
-        :param last_uri: The last_uri of this ContactListing.
+        :param self_uri: The self_uri of this ContactListing.
         :type: str
         """
         
 
-        self._last_uri = last_uri
+        self._self_uri = self_uri
 
     @property
     def previous_uri(self) -> str:
@@ -327,6 +303,30 @@ class ContactListing(object):
         
 
         self._previous_uri = previous_uri
+
+    @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this ContactListing.
+
+
+        :return: The last_uri of this ContactListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this ContactListing.
+
+
+        :param last_uri: The last_uri of this ContactListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
 
     @property
     def page_count(self) -> int:

@@ -48,16 +48,19 @@ class DataIngestionRuleCriteria(object):
         """
         self.swagger_types = {
             'effective_platform': 'str',
-            'id': 'str'
+            'id': 'str',
+            'name': 'str'
         }
 
         self.attribute_map = {
             'effective_platform': 'effectivePlatform',
-            'id': 'id'
+            'id': 'id',
+            'name': 'name'
         }
 
         self._effective_platform = None
         self._id = None
+        self._name = None
 
     @property
     def effective_platform(self) -> str:
@@ -111,6 +114,30 @@ class DataIngestionRuleCriteria(object):
         
 
         self._id = id
+
+    @property
+    def name(self) -> str:
+        """
+        Gets the name of this DataIngestionRuleCriteria.
+        The name of the data ingestion rule. Only populated when expanded.
+
+        :return: The name of this DataIngestionRuleCriteria.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: str) -> None:
+        """
+        Sets the name of this DataIngestionRuleCriteria.
+        The name of the data ingestion rule. Only populated when expanded.
+
+        :param name: The name of this DataIngestionRuleCriteria.
+        :type: str
+        """
+        
+
+        self._name = name
 
     def to_dict(self):
         """

@@ -57,7 +57,8 @@ class ContentOffer(object):
             'headline': 'str',
             'body': 'str',
             'call_to_action': 'CallToAction',
-            'style': 'ContentOfferStylingConfiguration'
+            'style': 'ContentOfferStylingConfiguration',
+            'image_alt_text': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class ContentOffer(object):
             'headline': 'headline',
             'body': 'body',
             'call_to_action': 'callToAction',
-            'style': 'style'
+            'style': 'style',
+            'image_alt_text': 'imageAltText'
         }
 
         self._image_url = None
@@ -79,6 +81,7 @@ class ContentOffer(object):
         self._body = None
         self._call_to_action = None
         self._style = None
+        self._image_alt_text = None
 
     @property
     def image_url(self) -> str:
@@ -281,6 +284,30 @@ class ContentOffer(object):
         
 
         self._style = style
+
+    @property
+    def image_alt_text(self) -> str:
+        """
+        Gets the image_alt_text of this ContentOffer.
+        Image description text for accessibility compliance and assistive technology support.
+
+        :return: The image_alt_text of this ContentOffer.
+        :rtype: str
+        """
+        return self._image_alt_text
+
+    @image_alt_text.setter
+    def image_alt_text(self, image_alt_text: str) -> None:
+        """
+        Sets the image_alt_text of this ContentOffer.
+        Image description text for accessibility compliance and assistive technology support.
+
+        :param image_alt_text: The image_alt_text of this ContentOffer.
+        :type: str
+        """
+        
+
+        self._image_alt_text = image_alt_text
 
     def to_dict(self):
         """

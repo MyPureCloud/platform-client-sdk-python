@@ -48,6 +48,7 @@ class WebDeploymentsOAuthRequestParameters(object):
         """
         self.swagger_types = {
             'code': 'str',
+            'id_token': 'str',
             'redirect_uri': 'str',
             'nonce': 'str',
             'max_age': 'int',
@@ -57,6 +58,7 @@ class WebDeploymentsOAuthRequestParameters(object):
 
         self.attribute_map = {
             'code': 'code',
+            'id_token': 'idToken',
             'redirect_uri': 'redirectUri',
             'nonce': 'nonce',
             'max_age': 'maxAge',
@@ -65,6 +67,7 @@ class WebDeploymentsOAuthRequestParameters(object):
         }
 
         self._code = None
+        self._id_token = None
         self._redirect_uri = None
         self._nonce = None
         self._max_age = None
@@ -94,6 +97,30 @@ class WebDeploymentsOAuthRequestParameters(object):
         
 
         self._code = code
+
+    @property
+    def id_token(self) -> str:
+        """
+        Gets the id_token of this WebDeploymentsOAuthRequestParameters.
+        The implicit id_token to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
+
+        :return: The id_token of this WebDeploymentsOAuthRequestParameters.
+        :rtype: str
+        """
+        return self._id_token
+
+    @id_token.setter
+    def id_token(self, id_token: str) -> None:
+        """
+        Sets the id_token of this WebDeploymentsOAuthRequestParameters.
+        The implicit id_token to be sent to the authentication server during the token request.  Refer to https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest
+
+        :param id_token: The id_token of this WebDeploymentsOAuthRequestParameters.
+        :type: str
+        """
+        
+
+        self._id_token = id_token
 
     @property
     def redirect_uri(self) -> str:

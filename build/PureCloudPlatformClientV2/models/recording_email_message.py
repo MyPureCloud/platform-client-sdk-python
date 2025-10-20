@@ -57,6 +57,7 @@ class RecordingEmailMessage(object):
             'cc': 'list[EmailAddress]',
             'bcc': 'list[EmailAddress]',
             'pcFrom': 'EmailAddress',
+            'reply_to': 'EmailAddress',
             'subject': 'str',
             'attachments': 'list[EmailAttachment]',
             'time': 'datetime'
@@ -70,6 +71,7 @@ class RecordingEmailMessage(object):
             'cc': 'cc',
             'bcc': 'bcc',
             'pcFrom': 'from',
+            'reply_to': 'replyTo',
             'subject': 'subject',
             'attachments': 'attachments',
             'time': 'time'
@@ -82,6 +84,7 @@ class RecordingEmailMessage(object):
         self._cc = None
         self._bcc = None
         self._pcFrom = None
+        self._reply_to = None
         self._subject = None
         self._attachments = None
         self._time = None
@@ -253,6 +256,30 @@ class RecordingEmailMessage(object):
         
 
         self._pcFrom = pcFrom
+
+    @property
+    def reply_to(self) -> 'EmailAddress':
+        """
+        Gets the reply_to of this RecordingEmailMessage.
+
+
+        :return: The reply_to of this RecordingEmailMessage.
+        :rtype: EmailAddress
+        """
+        return self._reply_to
+
+    @reply_to.setter
+    def reply_to(self, reply_to: 'EmailAddress') -> None:
+        """
+        Sets the reply_to of this RecordingEmailMessage.
+
+
+        :param reply_to: The reply_to of this RecordingEmailMessage.
+        :type: EmailAddress
+        """
+        
+
+        self._reply_to = reply_to
 
     @property
     def subject(self) -> str:

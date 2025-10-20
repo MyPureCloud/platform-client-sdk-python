@@ -22,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_webdeployments_configuration_versions_draft_publish**](#post_webdeployments_configuration_versions_draft_publish) | Publish the configuration draft and create a new version|
 |[**post_webdeployments_configurations**](#post_webdeployments_configurations) | Create a configuration draft|
 |[**post_webdeployments_deployments**](#post_webdeployments_deployments) | Create a deployment|
-|[**post_webdeployments_token_oauthcodegrantjwtexchange**](#post_webdeployments_token_oauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.|
+|[**post_webdeployments_token_oauthcodegrantjwtexchange**](#post_webdeployments_token_oauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.|
 |[**post_webdeployments_token_refresh**](#post_webdeployments_token_refresh) | Refresh a JWT.|
 |[**put_webdeployments_configuration_versions_draft**](#put_webdeployments_configuration_versions_draft) | Update the configuration draft|
 |[**put_webdeployments_deployment**](#put_webdeployments_deployment) | Update a deployment|
@@ -805,7 +805,7 @@ except ApiException as e:
 > [**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse) post_webdeployments_token_oauthcodegrantjwtexchange(body)
 
 
-Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
 
 Wraps POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange 
 
@@ -825,7 +825,7 @@ api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
 body = PureCloudPlatformClientV2.WebDeploymentsOAuthExchangeRequest() # WebDeploymentsOAuthExchangeRequest | webDeploymentsOAuthExchangeRequest
 
 try:
-    # Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+    # Exchange an oAuth code (obtained using the Authorization Code Flow or Implicit flow) for a JWT that can be used by webdeployments.
     api_response = api_instance.post_webdeployments_token_oauthcodegrantjwtexchange(body)
     pprint(api_response)
 except ApiException as e:
@@ -1039,4 +1039,4 @@ except ApiException as e:
 [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

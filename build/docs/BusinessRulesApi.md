@@ -45,8 +45,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a decision table
 
-delete_businessrules_decisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId} 
 
 Requires ANY permissions: 
@@ -96,8 +94,6 @@ void (empty response body)
 
 Delete a decision table version
 
-delete_businessrules_decisiontable_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} 
 
 Requires ANY permissions: 
@@ -146,8 +142,6 @@ void (empty response body)
 
 
 Delete a decision table row
-
-delete_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} 
 
@@ -201,8 +195,6 @@ void (empty response body)
 
 Delete a schema
 
-delete_businessrules_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/businessrules/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -249,8 +241,6 @@ void (empty response body)
 
 
 Get a decision table
-
-get_businessrules_decisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId} 
 
@@ -299,8 +289,6 @@ except ApiException as e:
 
 
 Get a decision table version
-
-get_businessrules_decisiontable_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} 
 
@@ -351,8 +339,6 @@ except ApiException as e:
 
 
 Get a decision table row
-
-get_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} 
 
@@ -405,8 +391,6 @@ except ApiException as e:
 
 
 Get a list of decision table rows.
-
-get_businessrules_decisiontable_version_rows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows 
 
@@ -462,8 +446,6 @@ except ApiException as e:
 
 Get a list of decision table versions
 
-get_businessrules_decisiontable_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/decisiontables/{tableId}/versions 
 
 Requires ANY permissions: 
@@ -515,8 +497,6 @@ except ApiException as e:
 
 
 Get a list of decision tables.
-
-get_businessrules_decisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables 
 
@@ -571,8 +551,6 @@ except ApiException as e:
 
 
 Search for decision tables.
-
-get_businessrules_decisiontables_search is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/decisiontables/search 
 
@@ -634,8 +612,6 @@ except ApiException as e:
 
 Get a schema
 
-get_businessrules_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -684,8 +660,6 @@ except ApiException as e:
 
 Get a list of schemas.
 
-get_businessrules_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/schemas 
 
 Requires ANY permissions: 
@@ -729,8 +703,6 @@ This endpoint does not need any parameters.
 
 
 Get a specific named core type.
-
-get_businessrules_schemas_coretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/businessrules/schemas/coretypes/{coreTypeName} 
 
@@ -780,8 +752,6 @@ except ApiException as e:
 
 Get the core types from which all schemas are built.
 
-get_businessrules_schemas_coretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/businessrules/schemas/coretypes 
 
 Requires ANY permissions: 
@@ -825,8 +795,6 @@ This endpoint does not need any parameters.
 
 
 Update a decision table
-
-patch_businessrules_decisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/businessrules/decisiontables/{tableId} 
 
@@ -880,8 +848,6 @@ except ApiException as e:
 
 Update a decision table version
 
-patch_businessrules_decisiontable_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion} 
 
 Requires ANY permissions: 
@@ -934,8 +900,6 @@ except ApiException as e:
 
 Execute a published decision table
 
-post_businessrules_decisiontable_execute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/execute 
 
 Requires ANY permissions: 
@@ -985,8 +949,6 @@ except ApiException as e:
 
 
 Copy a decision table version
-
-post_businessrules_decisiontable_version_copy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/copy 
 
@@ -1040,8 +1002,6 @@ except ApiException as e:
 
 Execute a decision table version
 
-post_businessrules_decisiontable_version_execute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute 
 
 Requires ANY permissions: 
@@ -1093,8 +1053,6 @@ except ApiException as e:
 
 
 Create a decision table row
-
-post_businessrules_decisiontable_version_rows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows 
 
@@ -1148,8 +1106,6 @@ except ApiException as e:
 
 
 Search for decision table rows
-
-post_businessrules_decisiontable_version_rows_search is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/search 
 
@@ -1207,8 +1163,6 @@ except ApiException as e:
 
 Update the Business Rules Schema to the latest version for a given decision table version
 
-post_businessrules_decisiontable_version_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/sync 
 
 Requires ANY permissions: 
@@ -1259,8 +1213,6 @@ except ApiException as e:
 
 Create a new decision table version
 
-post_businessrules_decisiontable_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions 
 
 Requires ANY permissions: 
@@ -1308,8 +1260,6 @@ except ApiException as e:
 
 
 Create a decision table
-
-post_businessrules_decisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/businessrules/decisiontables 
 
@@ -1361,8 +1311,6 @@ except ApiException as e:
 
 Create a schema
 
-post_businessrules_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/businessrules/schemas 
 
 Requires ANY permissions: 
@@ -1410,8 +1358,6 @@ except ApiException as e:
 
 
 Publish a decision table version
-
-put_businessrules_decisiontable_version_publish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/publish 
 
@@ -1462,8 +1408,6 @@ except ApiException as e:
 
 
 Full update a decision table row
-
-put_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/{rowId} 
 
@@ -1520,8 +1464,6 @@ except ApiException as e:
 
 Update a schema
 
-put_businessrules_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/businessrules/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -1565,4 +1507,4 @@ except ApiException as e:
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

@@ -1012,12 +1012,13 @@ class SocialMediaApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str escalation_rule_id: escalationRuleId (required)
+        :param str expand: which fields, if any, to expand
         :return: EscalationRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['escalation_rule_id']
+        all_params = ['escalation_rule_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -1041,6 +1042,8 @@ class SocialMediaApi(object):
             path_params['escalationRuleId'] = params['escalation_rule_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

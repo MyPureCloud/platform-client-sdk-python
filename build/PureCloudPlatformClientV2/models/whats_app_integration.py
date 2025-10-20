@@ -70,6 +70,7 @@ class WhatsAppIntegration(object):
             'activation_error_info': 'ErrorBody',
             'create_status': 'str',
             'create_error': 'ErrorBody',
+            'whats_app_business_account_id': 'str',
             'self_uri': 'str'
         }
 
@@ -91,6 +92,7 @@ class WhatsAppIntegration(object):
             'activation_error_info': 'activationErrorInfo',
             'create_status': 'createStatus',
             'create_error': 'createError',
+            'whats_app_business_account_id': 'whatsAppBusinessAccountId',
             'self_uri': 'selfUri'
         }
 
@@ -111,6 +113,7 @@ class WhatsAppIntegration(object):
         self._activation_error_info = None
         self._create_status = None
         self._create_error = None
+        self._whats_app_business_account_id = None
         self._self_uri = None
 
     @property
@@ -535,6 +538,30 @@ class WhatsAppIntegration(object):
         
 
         self._create_error = create_error
+
+    @property
+    def whats_app_business_account_id(self) -> str:
+        """
+        Gets the whats_app_business_account_id of this WhatsAppIntegration.
+        The WhatsApp Business Account Id (WABA Id)
+
+        :return: The whats_app_business_account_id of this WhatsAppIntegration.
+        :rtype: str
+        """
+        return self._whats_app_business_account_id
+
+    @whats_app_business_account_id.setter
+    def whats_app_business_account_id(self, whats_app_business_account_id: str) -> None:
+        """
+        Sets the whats_app_business_account_id of this WhatsAppIntegration.
+        The WhatsApp Business Account Id (WABA Id)
+
+        :param whats_app_business_account_id: The whats_app_business_account_id of this WhatsAppIntegration.
+        :type: str
+        """
+        
+
+        self._whats_app_business_account_id = whats_app_business_account_id
 
     @property
     def self_uri(self) -> str:

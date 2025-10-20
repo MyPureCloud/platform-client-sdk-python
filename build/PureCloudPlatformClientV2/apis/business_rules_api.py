@@ -78,7 +78,6 @@ class BusinessRulesApi(object):
         """
         Delete a decision table
         
-	    delete_businessrules_decisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -160,7 +159,6 @@ class BusinessRulesApi(object):
         """
         Delete a decision table version
         
-	    delete_businessrules_decisiontable_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -245,7 +243,6 @@ class BusinessRulesApi(object):
         """
         Delete a decision table row
         
-	    delete_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -336,7 +333,6 @@ class BusinessRulesApi(object):
         """
         Delete a schema
         
-	    delete_businessrules_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -415,7 +411,6 @@ class BusinessRulesApi(object):
         """
         Get a decision table
         
-	    get_businessrules_decisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -494,7 +489,6 @@ class BusinessRulesApi(object):
         """
         Get a decision table version
         
-	    get_businessrules_decisiontable_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -579,7 +573,6 @@ class BusinessRulesApi(object):
         """
         Get a decision table row
         
-	    get_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -670,7 +663,6 @@ class BusinessRulesApi(object):
         """
         Get a list of decision table rows.
         
-	    get_businessrules_decisiontable_version_rows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -761,7 +753,6 @@ class BusinessRulesApi(object):
         """
         Get a list of decision table versions
         
-	    get_businessrules_decisiontable_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -846,7 +837,6 @@ class BusinessRulesApi(object):
         """
         Get a list of decision tables.
         
-	    get_businessrules_decisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -931,7 +921,6 @@ class BusinessRulesApi(object):
         """
         Search for decision tables.
         
-	    get_businessrules_decisiontables_search is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1025,7 +1014,6 @@ class BusinessRulesApi(object):
         """
         Get a schema
         
-	    get_businessrules_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1104,7 +1092,6 @@ class BusinessRulesApi(object):
         """
         Get a list of schemas.
         
-	    get_businessrules_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1177,7 +1164,6 @@ class BusinessRulesApi(object):
         """
         Get a specific named core type.
         
-	    get_businessrules_schemas_coretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1256,7 +1242,6 @@ class BusinessRulesApi(object):
         """
         Get the core types from which all schemas are built.
         
-	    get_businessrules_schemas_coretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1329,7 +1314,6 @@ class BusinessRulesApi(object):
         """
         Update a decision table
         
-	    patch_businessrules_decisiontable is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1414,7 +1398,6 @@ class BusinessRulesApi(object):
         """
         Update a decision table version
         
-	    patch_businessrules_decisiontable_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1505,7 +1488,6 @@ class BusinessRulesApi(object):
         """
         Execute a published decision table
         
-	    post_businessrules_decisiontable_execute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1590,7 +1572,6 @@ class BusinessRulesApi(object):
         """
         Copy a decision table version
         
-	    post_businessrules_decisiontable_version_copy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1681,7 +1662,6 @@ class BusinessRulesApi(object):
         """
         Execute a decision table version
         
-	    post_businessrules_decisiontable_version_execute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1772,7 +1752,6 @@ class BusinessRulesApi(object):
         """
         Create a decision table row
         
-	    post_businessrules_decisiontable_version_rows is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1863,7 +1842,6 @@ class BusinessRulesApi(object):
         """
         Search for decision table rows
         
-	    post_businessrules_decisiontable_version_rows_search is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1960,7 +1938,6 @@ class BusinessRulesApi(object):
         """
         Update the Business Rules Schema to the latest version for a given decision table version
         
-	    post_businessrules_decisiontable_version_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2045,7 +2022,6 @@ class BusinessRulesApi(object):
         """
         Create a new decision table version
         
-	    post_businessrules_decisiontable_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2124,7 +2100,6 @@ class BusinessRulesApi(object):
         """
         Create a decision table
         
-	    post_businessrules_decisiontables is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2203,7 +2178,6 @@ class BusinessRulesApi(object):
         """
         Create a schema
         
-	    post_businessrules_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2282,7 +2256,6 @@ class BusinessRulesApi(object):
         """
         Publish a decision table version
         
-	    put_businessrules_decisiontable_version_publish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2367,7 +2340,6 @@ class BusinessRulesApi(object):
         """
         Full update a decision table row
         
-	    put_businessrules_decisiontable_version_row is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2464,7 +2436,6 @@ class BusinessRulesApi(object):
         """
         Update a schema
         
-	    put_businessrules_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

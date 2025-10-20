@@ -95,7 +95,7 @@ class DeploymentIdentityResolutionConfig(object):
     def division(self) -> 'WritableStarrableDivision':
         """
         Gets the division of this DeploymentIdentityResolutionConfig.
-        The division to which this entity belongs.
+        The division to use when performing identity resolution.
 
         :return: The division of this DeploymentIdentityResolutionConfig.
         :rtype: WritableStarrableDivision
@@ -106,7 +106,7 @@ class DeploymentIdentityResolutionConfig(object):
     def division(self, division: 'WritableStarrableDivision') -> None:
         """
         Sets the division of this DeploymentIdentityResolutionConfig.
-        The division to which this entity belongs.
+        The division to use when performing identity resolution.
 
         :param division: The division of this DeploymentIdentityResolutionConfig.
         :type: WritableStarrableDivision

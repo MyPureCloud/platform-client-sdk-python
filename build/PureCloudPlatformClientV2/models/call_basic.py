@@ -90,6 +90,7 @@ class CallBasic(object):
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
+            'transfer_source': 'str',
             'queue_media_settings': 'ConversationQueueMediaSettings',
             'disposition': 'Disposition'
         }
@@ -127,6 +128,7 @@ class CallBasic(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
+            'transfer_source': 'transferSource',
             'queue_media_settings': 'queueMediaSettings',
             'disposition': 'disposition'
         }
@@ -163,6 +165,7 @@ class CallBasic(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._transfer_source = None
         self._queue_media_settings = None
         self._disposition = None
 
@@ -958,6 +961,30 @@ class CallBasic(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def transfer_source(self) -> str:
+        """
+        Gets the transfer_source of this CallBasic.
+        Indicates how call reaches the agent.
+
+        :return: The transfer_source of this CallBasic.
+        :rtype: str
+        """
+        return self._transfer_source
+
+    @transfer_source.setter
+    def transfer_source(self, transfer_source: str) -> None:
+        """
+        Sets the transfer_source of this CallBasic.
+        Indicates how call reaches the agent.
+
+        :param transfer_source: The transfer_source of this CallBasic.
+        :type: str
+        """
+        
+
+        self._transfer_source = transfer_source
 
     @property
     def queue_media_settings(self) -> 'ConversationQueueMediaSettings':
