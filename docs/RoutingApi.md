@@ -37,9 +37,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_availablemediatypes**](#get_routing_availablemediatypes) | Get available media types|
 |[**get_routing_directroutingbackup_settings_me**](#get_routing_directroutingbackup_settings_me) | Get the user&#39;s Direct Routing Backup settings.|
 |[**get_routing_email_domain**](#get_routing_email_domain) | Get domain|
+|[**get_routing_email_domain_dkim**](#get_routing_email_domain_dkim) | Get domain dkim settings|
+|[**get_routing_email_domain_mailfrom**](#get_routing_email_domain_mailfrom) | Get domain mail from settings|
 |[**get_routing_email_domain_route**](#get_routing_email_domain_route) | Get a route|
 |[**get_routing_email_domain_route_identityresolution**](#get_routing_email_domain_route_identityresolution) | Get a route identity resolution setting.|
 |[**get_routing_email_domain_routes**](#get_routing_email_domain_routes) | Get routes|
+|[**get_routing_email_domain_verification**](#get_routing_email_domain_verification) | Get domain verification settings|
 |[**get_routing_email_domains**](#get_routing_email_domains) | Get domains|
 |[**get_routing_email_outbound_domain**](#get_routing_email_outbound_domain) | Get domain|
 |[**get_routing_email_outbound_domain_activation**](#get_routing_email_outbound_domain_activation) | Get activation status (cname + dkim) of an outbound domain|
@@ -121,8 +124,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_routing_activity_query**](#post_analytics_routing_activity_query) | Query for user activity observations|
 |[**post_routing_assessments**](#post_routing_assessments) | Create a benefit assessment.|
 |[**post_routing_assessments_jobs**](#post_routing_assessments_jobs) | Create a benefit assessment job.|
+|[**post_routing_email_domain_dkim**](#post_routing_email_domain_dkim) | Restart domain dkim|
+|[**post_routing_email_domain_mailfrom**](#post_routing_email_domain_mailfrom) | Set domain mail from settings|
 |[**post_routing_email_domain_routes**](#post_routing_email_domain_routes) | Create a route|
 |[**post_routing_email_domain_testconnection**](#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this ACD domain|
+|[**post_routing_email_domain_verification**](#post_routing_email_domain_verification) | Restart domain verification|
 |[**post_routing_email_domains**](#post_routing_email_domains) | Create a domain|
 |[**post_routing_email_outbound_domains**](#post_routing_email_outbound_domains) | Create a domain|
 |[**post_routing_email_outbound_domains_simulated**](#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
@@ -1646,6 +1652,102 @@ except ApiException as e:
 [**InboundDomain**](InboundDomain)
 
 
+## get_routing_email_domain_dkim
+
+> [**VerificationResult**](VerificationResult) get_routing_email_domain_dkim(domain_id)
+
+
+Get domain dkim settings
+
+Wraps GET /api/v2/routing/email/domains/{domainId}/dkim 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Get domain dkim settings
+    api_response = api_instance.get_routing_email_domain_dkim(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_domain_dkim: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
+
+
+## get_routing_email_domain_mailfrom
+
+> [**MailFromResult**](MailFromResult) get_routing_email_domain_mailfrom(domain_id)
+
+
+Get domain mail from settings
+
+Wraps GET /api/v2/routing/email/domains/{domainId}/mailfrom 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Get domain mail from settings
+    api_response = api_instance.get_routing_email_domain_mailfrom(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_domain_mailfrom: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+
+### Return type
+
+[**MailFromResult**](MailFromResult)
+
+
 ## get_routing_email_domain_route
 
 > [**InboundRoute**](InboundRoute) get_routing_email_domain_route(domain_name, route_id, expand=expand)
@@ -1700,7 +1802,7 @@ except ApiException as e:
 
 ## get_routing_email_domain_route_identityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_routing_email_domain_route_identityresolution(domain_name, route_id)
+> [**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig) get_routing_email_domain_route_identityresolution(domain_name, route_id)
 
 
 Get a route identity resolution setting.
@@ -1746,7 +1848,7 @@ except ApiException as e:
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig)
 
 
 ## get_routing_email_domain_routes
@@ -1803,6 +1905,54 @@ except ApiException as e:
 ### Return type
 
 [**InboundRouteEntityListing**](InboundRouteEntityListing)
+
+
+## get_routing_email_domain_verification
+
+> [**VerificationResult**](VerificationResult) get_routing_email_domain_verification(domain_id)
+
+
+Get domain verification settings
+
+Wraps GET /api/v2/routing/email/domains/{domainId}/verification 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Get domain verification settings
+    api_response = api_instance.get_routing_email_domain_verification(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_domain_verification: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
 
 
 ## get_routing_email_domains
@@ -3904,7 +4054,7 @@ except ApiException as e:
 
 ## get_routing_sms_identityresolution_phonenumber
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) get_routing_sms_identityresolution_phonenumber(address_id)
+> [**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig) get_routing_sms_identityresolution_phonenumber(address_id)
 
 
 Get a SMS identity resolution settings.
@@ -3948,7 +4098,7 @@ except ApiException as e:
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig)
 
 
 ## get_routing_sms_phonenumber
@@ -6018,6 +6168,104 @@ except ApiException as e:
 [**BenefitAssessmentJob**](BenefitAssessmentJob)
 
 
+## post_routing_email_domain_dkim
+
+> [**VerificationResult**](VerificationResult) post_routing_email_domain_dkim(domain_id)
+
+
+Restart domain dkim
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/dkim 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Restart domain dkim
+    api_response = api_instance.post_routing_email_domain_dkim(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_email_domain_dkim: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
+
+
+## post_routing_email_domain_mailfrom
+
+> [**MailFromResult**](MailFromResult) post_routing_email_domain_mailfrom(domain_id, body)
+
+
+Set domain mail from settings
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/mailfrom 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+body = PureCloudPlatformClientV2.MailFromResult() # MailFromResult | Mail From Settings
+
+try:
+    # Set domain mail from settings
+    api_response = api_instance.post_routing_email_domain_mailfrom(domain_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_email_domain_mailfrom: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+| **body** | [**MailFromResult**](MailFromResult)| Mail From Settings |  |
+
+### Return type
+
+[**MailFromResult**](MailFromResult)
+
+
 ## post_routing_email_domain_routes
 
 > [**InboundRoute**](InboundRoute) post_routing_email_domain_routes(domain_name, body)
@@ -6118,6 +6366,54 @@ except ApiException as e:
 ### Return type
 
 [**TestMessage**](TestMessage)
+
+
+## post_routing_email_domain_verification
+
+> [**VerificationResult**](VerificationResult) post_routing_email_domain_verification(domain_id)
+
+
+Restart domain verification
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/verification 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+
+try:
+    # Restart domain verification
+    api_response = api_instance.post_routing_email_domain_verification(domain_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_email_domain_verification: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+
+### Return type
+
+[**VerificationResult**](VerificationResult)
 
 
 ## post_routing_email_domains
@@ -7254,7 +7550,7 @@ except ApiException as e:
 
 ## put_routing_email_domain_route_identityresolution
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_routing_email_domain_route_identityresolution(domain_name, route_id, body)
+> [**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig) put_routing_email_domain_route_identityresolution(domain_name, route_id, body)
 
 
 Update identity resolution settings for a route.
@@ -7281,7 +7577,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 domain_name = 'domain_name_example' # str | email domain
 route_id = 'route_id_example' # str | route ID
-body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+body = PureCloudPlatformClientV2.RouteIdentityResolutionConfig() # RouteIdentityResolutionConfig | 
 
 try:
     # Update identity resolution settings for a route.
@@ -7298,11 +7594,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
 | **route_id** | **str**| route ID |  |
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+| **body** | [**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig)|  |  |
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**RouteIdentityResolutionConfig**](RouteIdentityResolutionConfig)
 
 
 ## put_routing_email_outbound_domain_activation
@@ -7602,7 +7898,7 @@ except ApiException as e:
 
 ## put_routing_sms_identityresolution_phonenumber
 
-> [**IdentityResolutionConfig**](IdentityResolutionConfig) put_routing_sms_identityresolution_phonenumber(address_id, body)
+> [**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig) put_routing_sms_identityresolution_phonenumber(address_id, body)
 
 
 Update an SMS identity resolution settings.
@@ -7628,7 +7924,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 address_id = 'address_id_example' # str | Address ID
-body = PureCloudPlatformClientV2.IdentityResolutionConfig() # IdentityResolutionConfig | 
+body = PureCloudPlatformClientV2.SmsIdentityResolutionConfig() # SmsIdentityResolutionConfig | 
 
 try:
     # Update an SMS identity resolution settings.
@@ -7644,11 +7940,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
-| **body** | [**IdentityResolutionConfig**](IdentityResolutionConfig)|  |  |
+| **body** | [**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig)|  |  |
 
 ### Return type
 
-[**IdentityResolutionConfig**](IdentityResolutionConfig)
+[**SmsIdentityResolutionConfig**](SmsIdentityResolutionConfig)
 
 
 ## put_routing_user_directroutingbackup_settings
@@ -8001,4 +8297,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

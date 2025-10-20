@@ -125,6 +125,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_campaign_stop**](#post_outbound_campaign_stop) | Stop the campaign|
 |[**post_outbound_campaignrules**](#post_outbound_campaignrules) | Create Campaign Rule|
 |[**post_outbound_campaigns**](#post_outbound_campaigns) | Create a campaign.|
+|[**post_outbound_campaigns_performance_query**](#post_outbound_campaigns_performance_query) | Get performance data for a list of campaigns|
 |[**post_outbound_campaigns_progress**](#post_outbound_campaigns_progress) | Get progress for a list of campaigns|
 |[**post_outbound_contactlist_clear**](#post_outbound_contactlist_clear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.|
 |[**post_outbound_contactlist_contacts**](#post_outbound_contactlist_contacts) | Add contacts to a contact list.|
@@ -6304,6 +6305,55 @@ except ApiException as e:
 [**Campaign**](Campaign)
 
 
+## post_outbound_campaigns_performance_query
+
+> [**CampaignPerformanceDataListing**](CampaignPerformanceDataListing) post_outbound_campaigns_performance_query(body)
+
+
+Get performance data for a list of campaigns
+
+Wraps POST /api/v2/outbound/campaigns/performance/query 
+
+Requires ANY permissions: 
+
+* outbound:performance:view
+* outbound:campaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = ['body_example'] # list[str] | Campaign IDs. Maximum of 50 IDs allowed.
+
+try:
+    # Get performance data for a list of campaigns
+    api_response = api_instance.post_outbound_campaigns_performance_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_campaigns_performance_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[str]**](str)| Campaign IDs. Maximum of 50 IDs allowed. |  |
+
+### Return type
+
+[**CampaignPerformanceDataListing**](CampaignPerformanceDataListing)
+
+
 ## post_outbound_campaigns_progress
 
 > [**list[CampaignProgress]**](CampaignProgress) post_outbound_campaigns_progress(body)
@@ -8946,4 +8996,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_

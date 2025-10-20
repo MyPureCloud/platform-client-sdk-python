@@ -8,7 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **allow_camera** | bool | whether or not user camera is allowed | [optional] |
 | **allow_screen_share** | bool | whether or not user screen share is allowed | [optional] |
+| **allow_microphone** | bool | whether or not user microphone is allowed | [optional] |
 
 
 
-_PureCloudPlatformClientV2 240.0.0_
+_PureCloudPlatformClientV2 241.0.0_
