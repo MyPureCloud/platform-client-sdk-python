@@ -53,10 +53,10 @@ class BillingCharge(object):
             'id': 'str',
             'product': 'BillingProduct',
             'organizations': 'list[NamedEntity]',
-            'getprepaid_quantity': 'int',
-            'getfairuse_quantity': 'int',
-            'getactual_quantity': 'int',
-            'getoverage_quantity': 'int',
+            'prepaid_quantity': 'int',
+            'fairuse_quantity': 'int',
+            'actual_quantity': 'int',
+            'overage_quantity': 'int',
             'overage_rate': 'float',
             'overage_charge': 'float',
             'overage_currency': 'str'
@@ -66,10 +66,10 @@ class BillingCharge(object):
             'id': 'id',
             'product': 'product',
             'organizations': 'organizations',
-            'getprepaid_quantity': 'getprepaidQuantity',
-            'getfairuse_quantity': 'getfairuseQuantity',
-            'getactual_quantity': 'getactualQuantity',
-            'getoverage_quantity': 'getoverageQuantity',
+            'prepaid_quantity': 'prepaidQuantity',
+            'fairuse_quantity': 'fairuseQuantity',
+            'actual_quantity': 'actualQuantity',
+            'overage_quantity': 'overageQuantity',
             'overage_rate': 'overageRate',
             'overage_charge': 'overageCharge',
             'overage_currency': 'overageCurrency'
@@ -78,10 +78,10 @@ class BillingCharge(object):
         self._id = None
         self._product = None
         self._organizations = None
-        self._getprepaid_quantity = None
-        self._getfairuse_quantity = None
-        self._getactual_quantity = None
-        self._getoverage_quantity = None
+        self._prepaid_quantity = None
+        self._fairuse_quantity = None
+        self._actual_quantity = None
+        self._overage_quantity = None
         self._overage_rate = None
         self._overage_charge = None
         self._overage_currency = None
@@ -159,100 +159,100 @@ class BillingCharge(object):
         self._organizations = organizations
 
     @property
-    def getprepaid_quantity(self) -> int:
+    def prepaid_quantity(self) -> int:
         """
-        Gets the getprepaid_quantity of this BillingCharge.
+        Gets the prepaid_quantity of this BillingCharge.
         The quantity of usage that is prepaid.
 
-        :return: The getprepaid_quantity of this BillingCharge.
+        :return: The prepaid_quantity of this BillingCharge.
         :rtype: int
         """
-        return self._getprepaid_quantity
+        return self._prepaid_quantity
 
-    @getprepaid_quantity.setter
-    def getprepaid_quantity(self, getprepaid_quantity: int) -> None:
+    @prepaid_quantity.setter
+    def prepaid_quantity(self, prepaid_quantity: int) -> None:
         """
-        Sets the getprepaid_quantity of this BillingCharge.
+        Sets the prepaid_quantity of this BillingCharge.
         The quantity of usage that is prepaid.
 
-        :param getprepaid_quantity: The getprepaid_quantity of this BillingCharge.
+        :param prepaid_quantity: The prepaid_quantity of this BillingCharge.
         :type: int
         """
         
 
-        self._getprepaid_quantity = getprepaid_quantity
+        self._prepaid_quantity = prepaid_quantity
 
     @property
-    def getfairuse_quantity(self) -> int:
+    def fairuse_quantity(self) -> int:
         """
-        Gets the getfairuse_quantity of this BillingCharge.
+        Gets the fairuse_quantity of this BillingCharge.
         The quantity of usage allowed under fair use policies.
 
-        :return: The getfairuse_quantity of this BillingCharge.
+        :return: The fairuse_quantity of this BillingCharge.
         :rtype: int
         """
-        return self._getfairuse_quantity
+        return self._fairuse_quantity
 
-    @getfairuse_quantity.setter
-    def getfairuse_quantity(self, getfairuse_quantity: int) -> None:
+    @fairuse_quantity.setter
+    def fairuse_quantity(self, fairuse_quantity: int) -> None:
         """
-        Sets the getfairuse_quantity of this BillingCharge.
+        Sets the fairuse_quantity of this BillingCharge.
         The quantity of usage allowed under fair use policies.
 
-        :param getfairuse_quantity: The getfairuse_quantity of this BillingCharge.
+        :param fairuse_quantity: The fairuse_quantity of this BillingCharge.
         :type: int
         """
         
 
-        self._getfairuse_quantity = getfairuse_quantity
+        self._fairuse_quantity = fairuse_quantity
 
     @property
-    def getactual_quantity(self) -> int:
+    def actual_quantity(self) -> int:
         """
-        Gets the getactual_quantity of this BillingCharge.
+        Gets the actual_quantity of this BillingCharge.
         The actual quantity of usage.
 
-        :return: The getactual_quantity of this BillingCharge.
+        :return: The actual_quantity of this BillingCharge.
         :rtype: int
         """
-        return self._getactual_quantity
+        return self._actual_quantity
 
-    @getactual_quantity.setter
-    def getactual_quantity(self, getactual_quantity: int) -> None:
+    @actual_quantity.setter
+    def actual_quantity(self, actual_quantity: int) -> None:
         """
-        Sets the getactual_quantity of this BillingCharge.
+        Sets the actual_quantity of this BillingCharge.
         The actual quantity of usage.
 
-        :param getactual_quantity: The getactual_quantity of this BillingCharge.
+        :param actual_quantity: The actual_quantity of this BillingCharge.
         :type: int
         """
         
 
-        self._getactual_quantity = getactual_quantity
+        self._actual_quantity = actual_quantity
 
     @property
-    def getoverage_quantity(self) -> int:
+    def overage_quantity(self) -> int:
         """
-        Gets the getoverage_quantity of this BillingCharge.
+        Gets the overage_quantity of this BillingCharge.
         The quantity of usage that exceeds prepaid or fair use limits.
 
-        :return: The getoverage_quantity of this BillingCharge.
+        :return: The overage_quantity of this BillingCharge.
         :rtype: int
         """
-        return self._getoverage_quantity
+        return self._overage_quantity
 
-    @getoverage_quantity.setter
-    def getoverage_quantity(self, getoverage_quantity: int) -> None:
+    @overage_quantity.setter
+    def overage_quantity(self, overage_quantity: int) -> None:
         """
-        Sets the getoverage_quantity of this BillingCharge.
+        Sets the overage_quantity of this BillingCharge.
         The quantity of usage that exceeds prepaid or fair use limits.
 
-        :param getoverage_quantity: The getoverage_quantity of this BillingCharge.
+        :param overage_quantity: The overage_quantity of this BillingCharge.
         :type: int
         """
         
 
-        self._getoverage_quantity = getoverage_quantity
+        self._overage_quantity = overage_quantity
 
     @property
     def overage_rate(self) -> float:

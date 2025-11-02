@@ -177,7 +177,7 @@ class CapacityPlanStaffingGroupMetricChangeResponse(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["StartingWeeklyFullTimeEquivalentCount", "NewHiresFullTimeEquivalentCount", "AttritionPercentage", "ShrinkagePercentage"]
+        allowed_values = ["StartingWeeklyFullTimeEquivalentCount", "NewHiresFullTimeEquivalentCount", "AttritionPercentage", "ShrinkagePercentage", "TransfersFullTimeEquivalentCount", "ExtraTimeUnderTimeFullTimeEquivalentCount"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"

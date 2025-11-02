@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DefaultAnswersTo
     from . import EvaluationQuestion
     from . import VisibilityCondition
 
@@ -60,7 +61,8 @@ class EvaluationQuestionGroup(object):
             'weight': 'float',
             'manual_weight': 'bool',
             'questions': 'list[EvaluationQuestion]',
-            'visibility_condition': 'VisibilityCondition'
+            'visibility_condition': 'VisibilityCondition',
+            'default_answers_to': 'DefaultAnswersTo'
         }
 
         self.attribute_map = {
@@ -74,7 +76,8 @@ class EvaluationQuestionGroup(object):
             'weight': 'weight',
             'manual_weight': 'manualWeight',
             'questions': 'questions',
-            'visibility_condition': 'visibilityCondition'
+            'visibility_condition': 'visibilityCondition',
+            'default_answers_to': 'defaultAnswersTo'
         }
 
         self._id = None
@@ -88,6 +91,7 @@ class EvaluationQuestionGroup(object):
         self._manual_weight = None
         self._questions = None
         self._visibility_condition = None
+        self._default_answers_to = None
 
     @property
     def id(self) -> str:
@@ -352,6 +356,30 @@ class EvaluationQuestionGroup(object):
         
 
         self._visibility_condition = visibility_condition
+
+    @property
+    def default_answers_to(self) -> 'DefaultAnswersTo':
+        """
+        Gets the default_answers_to of this EvaluationQuestionGroup.
+        Default scoring settings for the questions within this question group.
+
+        :return: The default_answers_to of this EvaluationQuestionGroup.
+        :rtype: DefaultAnswersTo
+        """
+        return self._default_answers_to
+
+    @default_answers_to.setter
+    def default_answers_to(self, default_answers_to: 'DefaultAnswersTo') -> None:
+        """
+        Sets the default_answers_to of this EvaluationQuestionGroup.
+        Default scoring settings for the questions within this question group.
+
+        :param default_answers_to: The default_answers_to of this EvaluationQuestionGroup.
+        :type: DefaultAnswersTo
+        """
+        
+
+        self._default_answers_to = default_answers_to
 
     def to_dict(self):
         """

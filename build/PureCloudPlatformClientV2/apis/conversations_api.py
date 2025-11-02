@@ -2221,7 +2221,6 @@ class ConversationsApi(object):
         """
         Get message
         
-	    get_conversation_communication_internalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2312,7 +2311,6 @@ class ConversationsApi(object):
         """
         Get messages for communication
         
-	    get_conversation_communication_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5884,7 +5882,6 @@ class ConversationsApi(object):
         """
         Get internal message conversation
         
-	    get_conversations_internalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5963,7 +5960,6 @@ class ConversationsApi(object):
         """
         Get active internal message conversations for the logged in user
         
-	    get_conversations_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -14937,7 +14933,6 @@ class ConversationsApi(object):
         """
         Send internal message
         Send a new internal message for an existing communication.
-	    post_conversation_communication_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15280,7 +15275,6 @@ class ConversationsApi(object):
         """
         Setup internal message communication with user
         The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-	    post_conversation_participant_internalmessages_users_communications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -20387,7 +20381,7 @@ class ConversationsApi(object):
     def post_conversations_message_messages_bulk(self, conversation_id: str, **kwargs) -> 'TextMessageListing':
         """
         Get messages in batch
-        The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+        The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

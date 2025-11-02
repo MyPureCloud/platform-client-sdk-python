@@ -48,19 +48,25 @@ class TimeOffSettingsResponse(object):
         """
         self.swagger_types = {
             'submission_range_enforced': 'bool',
+            'submission_range_type': 'str',
             'submission_earliest_days_from_now': 'int',
-            'submission_latest_days_from_now': 'int'
+            'submission_latest_days_from_now': 'int',
+            'submission_latest_date': 'date'
         }
 
         self.attribute_map = {
             'submission_range_enforced': 'submissionRangeEnforced',
+            'submission_range_type': 'submissionRangeType',
             'submission_earliest_days_from_now': 'submissionEarliestDaysFromNow',
-            'submission_latest_days_from_now': 'submissionLatestDaysFromNow'
+            'submission_latest_days_from_now': 'submissionLatestDaysFromNow',
+            'submission_latest_date': 'submissionLatestDate'
         }
 
         self._submission_range_enforced = None
+        self._submission_range_type = None
         self._submission_earliest_days_from_now = None
         self._submission_latest_days_from_now = None
+        self._submission_latest_date = None
 
     @property
     def submission_range_enforced(self) -> bool:
@@ -85,6 +91,35 @@ class TimeOffSettingsResponse(object):
         
 
         self._submission_range_enforced = submission_range_enforced
+
+    @property
+    def submission_range_type(self) -> str:
+        """
+        Gets the submission_range_type of this TimeOffSettingsResponse.
+        The type of the submission range
+
+        :return: The submission_range_type of this TimeOffSettingsResponse.
+        :rtype: str
+        """
+        return self._submission_range_type
+
+    @submission_range_type.setter
+    def submission_range_type(self, submission_range_type: str) -> None:
+        """
+        Sets the submission_range_type of this TimeOffSettingsResponse.
+        The type of the submission range
+
+        :param submission_range_type: The submission_range_type of this TimeOffSettingsResponse.
+        :type: str
+        """
+        if isinstance(submission_range_type, int):
+            submission_range_type = str(submission_range_type)
+        allowed_values = ["Relative", "FixedEnd"]
+        if submission_range_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for submission_range_type -> " + submission_range_type)
+            self._submission_range_type = "outdated_sdk_version"
+        else:
+            self._submission_range_type = submission_range_type
 
     @property
     def submission_earliest_days_from_now(self) -> int:
@@ -133,6 +168,30 @@ class TimeOffSettingsResponse(object):
         
 
         self._submission_latest_days_from_now = submission_latest_days_from_now
+
+    @property
+    def submission_latest_date(self) -> date:
+        """
+        Gets the submission_latest_date of this TimeOffSettingsResponse.
+        The latest date for the time off request submission interpreted in the business unit time zone in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The submission_latest_date of this TimeOffSettingsResponse.
+        :rtype: date
+        """
+        return self._submission_latest_date
+
+    @submission_latest_date.setter
+    def submission_latest_date(self, submission_latest_date: date) -> None:
+        """
+        Sets the submission_latest_date of this TimeOffSettingsResponse.
+        The latest date for the time off request submission interpreted in the business unit time zone in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param submission_latest_date: The submission_latest_date of this TimeOffSettingsResponse.
+        :type: date
+        """
+        
+
+        self._submission_latest_date = submission_latest_date
 
     def to_dict(self):
         """

@@ -66,7 +66,7 @@ class EnrichFieldRule(object):
     def field(self) -> str:
         """
         Gets the field of this EnrichFieldRule.
-        A restricted JSONPath naming the specific field this combining behavior should apply to. You may use dot-notation for named fields, and array indexing for lists, but nothing more sophisticated (e.g. wildcards, sublists, filter expressions, etc). For example, to target the `firstName` field of a Contact, this should be \"$.firstName\".
+        A restricted JSONPath naming the specific field this combining behavior should apply to. Only dot notation with alphanumeric characters and underscores (e.g., $.address.address1, $.externalOrganization, $.tickers) are allowed. Bracket notation, array indexing, wildcards, sublists, and filter expressions are not permitted.
 
         :return: The field of this EnrichFieldRule.
         :rtype: str
@@ -77,7 +77,7 @@ class EnrichFieldRule(object):
     def field(self, field: str) -> None:
         """
         Sets the field of this EnrichFieldRule.
-        A restricted JSONPath naming the specific field this combining behavior should apply to. You may use dot-notation for named fields, and array indexing for lists, but nothing more sophisticated (e.g. wildcards, sublists, filter expressions, etc). For example, to target the `firstName` field of a Contact, this should be \"$.firstName\".
+        A restricted JSONPath naming the specific field this combining behavior should apply to. Only dot notation with alphanumeric characters and underscores (e.g., $.address.address1, $.externalOrganization, $.tickers) are allowed. Bracket notation, array indexing, wildcards, sublists, and filter expressions are not permitted.
 
         :param field: The field of this EnrichFieldRule.
         :type: str

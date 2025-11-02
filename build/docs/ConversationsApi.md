@@ -1505,8 +1505,6 @@ except ApiException as e:
 
 Get message
 
-get_conversation_communication_internalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} 
 
 Requires ANY permissions: 
@@ -1558,8 +1556,6 @@ except ApiException as e:
 
 
 Get messages for communication
-
-get_conversation_communication_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages 
 
@@ -1956,7 +1952,7 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **type** | **str**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
+| **type** | **str**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer |
 | **state** | **str**| Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
 
 ### Return type
@@ -3721,8 +3717,6 @@ This endpoint does not need any parameters.
 
 Get internal message conversation
 
-get_conversations_internalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/internalmessages/{conversationId} 
 
 Requires ANY permissions: 
@@ -3770,8 +3764,6 @@ except ApiException as e:
 
 
 Get active internal message conversations for the logged in user
-
-get_conversations_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/internalmessages 
 
@@ -9231,8 +9223,6 @@ Send internal message
 
 Send a new internal message for an existing communication.
 
-post_conversation_communication_internalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages 
 
 Requires ANY permissions: 
@@ -9435,8 +9425,6 @@ void (empty response body)
 Setup internal message communication with user
 
 The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-
-post_conversation_participant_internalmessages_users_communications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications 
 
@@ -12501,7 +12489,7 @@ except ApiException as e:
 
 Get messages in batch
 
-The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
+The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk 
 
@@ -14833,4 +14821,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 241.0.0_
+_PureCloudPlatformClientV2 242.0.0_

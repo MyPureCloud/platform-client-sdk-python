@@ -103,6 +103,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'recording_state': 'str',
             'recorders_state': 'ConversationCallEventTopicRecordersState',
             'disposition': 'ConversationCallEventTopicDisposition',
+            'transfer_source': 'str',
             'secure_pause': 'bool',
             'group': 'ConversationCallEventTopicUriReference',
             'ani': 'str',
@@ -163,6 +164,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'recording_state': 'recordingState',
             'recorders_state': 'recordersState',
             'disposition': 'disposition',
+            'transfer_source': 'transferSource',
             'secure_pause': 'securePause',
             'group': 'group',
             'ani': 'ani',
@@ -222,6 +224,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         self._recording_state = None
         self._recorders_state = None
         self._disposition = None
+        self._transfer_source = None
         self._secure_pause = None
         self._group = None
         self._ani = None
@@ -1367,6 +1370,30 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         
 
         self._disposition = disposition
+
+    @property
+    def transfer_source(self) -> str:
+        """
+        Gets the transfer_source of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The transfer_source of this ConversationCallEventTopicCallMediaParticipant.
+        :rtype: str
+        """
+        return self._transfer_source
+
+    @transfer_source.setter
+    def transfer_source(self, transfer_source: str) -> None:
+        """
+        Sets the transfer_source of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :param transfer_source: The transfer_source of this ConversationCallEventTopicCallMediaParticipant.
+        :type: str
+        """
+        
+
+        self._transfer_source = transfer_source
 
     @property
     def secure_pause(self) -> bool:

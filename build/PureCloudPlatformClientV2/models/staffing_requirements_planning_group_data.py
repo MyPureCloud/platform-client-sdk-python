@@ -48,16 +48,22 @@ class StaffingRequirementsPlanningGroupData(object):
         """
         self.swagger_types = {
             'planning_group_id': 'str',
-            'staffing_requirements_per_interval': 'list[float]'
+            'staffing_requirements_per_interval': 'list[float]',
+            'minimum_staff_per_interval': 'list[float]',
+            'effective_staff_per_interval': 'list[float]'
         }
 
         self.attribute_map = {
             'planning_group_id': 'planningGroupId',
-            'staffing_requirements_per_interval': 'staffingRequirementsPerInterval'
+            'staffing_requirements_per_interval': 'staffingRequirementsPerInterval',
+            'minimum_staff_per_interval': 'minimumStaffPerInterval',
+            'effective_staff_per_interval': 'effectiveStaffPerInterval'
         }
 
         self._planning_group_id = None
         self._staffing_requirements_per_interval = None
+        self._minimum_staff_per_interval = None
+        self._effective_staff_per_interval = None
 
     @property
     def planning_group_id(self) -> str:
@@ -106,6 +112,54 @@ class StaffingRequirementsPlanningGroupData(object):
         
 
         self._staffing_requirements_per_interval = staffing_requirements_per_interval
+
+    @property
+    def minimum_staff_per_interval(self) -> List[float]:
+        """
+        Gets the minimum_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        Minimum Staff per interval for this week forecast
+
+        :return: The minimum_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        :rtype: list[float]
+        """
+        return self._minimum_staff_per_interval
+
+    @minimum_staff_per_interval.setter
+    def minimum_staff_per_interval(self, minimum_staff_per_interval: List[float]) -> None:
+        """
+        Sets the minimum_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        Minimum Staff per interval for this week forecast
+
+        :param minimum_staff_per_interval: The minimum_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        :type: list[float]
+        """
+        
+
+        self._minimum_staff_per_interval = minimum_staff_per_interval
+
+    @property
+    def effective_staff_per_interval(self) -> List[float]:
+        """
+        Gets the effective_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        Effective Staff per interval for this week forecast
+
+        :return: The effective_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        :rtype: list[float]
+        """
+        return self._effective_staff_per_interval
+
+    @effective_staff_per_interval.setter
+    def effective_staff_per_interval(self, effective_staff_per_interval: List[float]) -> None:
+        """
+        Sets the effective_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        Effective Staff per interval for this week forecast
+
+        :param effective_staff_per_interval: The effective_staff_per_interval of this StaffingRequirementsPlanningGroupData.
+        :type: list[float]
+        """
+        
+
+        self._effective_staff_per_interval = effective_staff_per_interval
 
     def to_dict(self):
         """

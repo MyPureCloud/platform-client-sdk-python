@@ -53,6 +53,8 @@ class AgentGreeting(object):
             'name': 'str',
             'inbound_prompt': 'Prompt',
             'outbound_prompt': 'Prompt',
+            'inbound_prompt_default_language': 'str',
+            'outbound_prompt_default_language': 'str',
             'self_uri': 'str'
         }
 
@@ -61,6 +63,8 @@ class AgentGreeting(object):
             'name': 'name',
             'inbound_prompt': 'inboundPrompt',
             'outbound_prompt': 'outboundPrompt',
+            'inbound_prompt_default_language': 'inboundPromptDefaultLanguage',
+            'outbound_prompt_default_language': 'outboundPromptDefaultLanguage',
             'self_uri': 'selfUri'
         }
 
@@ -68,6 +72,8 @@ class AgentGreeting(object):
         self._name = None
         self._inbound_prompt = None
         self._outbound_prompt = None
+        self._inbound_prompt_default_language = None
+        self._outbound_prompt_default_language = None
         self._self_uri = None
 
     @property
@@ -122,7 +128,7 @@ class AgentGreeting(object):
     def inbound_prompt(self) -> 'Prompt':
         """
         Gets the inbound_prompt of this AgentGreeting.
-        The agent greeting prompt to use when the call is connected
+        The agent greeting prompt to use when inbound calls are connected
 
         :return: The inbound_prompt of this AgentGreeting.
         :rtype: Prompt
@@ -133,7 +139,7 @@ class AgentGreeting(object):
     def inbound_prompt(self, inbound_prompt: 'Prompt') -> None:
         """
         Sets the inbound_prompt of this AgentGreeting.
-        The agent greeting prompt to use when the call is connected
+        The agent greeting prompt to use when inbound calls are connected
 
         :param inbound_prompt: The inbound_prompt of this AgentGreeting.
         :type: Prompt
@@ -146,7 +152,7 @@ class AgentGreeting(object):
     def outbound_prompt(self) -> 'Prompt':
         """
         Gets the outbound_prompt of this AgentGreeting.
-        The agent greeting prompt to use when the call is about to be disconnected
+        The agent greeting prompt to use when outbound calls are connected
 
         :return: The outbound_prompt of this AgentGreeting.
         :rtype: Prompt
@@ -157,7 +163,7 @@ class AgentGreeting(object):
     def outbound_prompt(self, outbound_prompt: 'Prompt') -> None:
         """
         Sets the outbound_prompt of this AgentGreeting.
-        The agent greeting prompt to use when the call is about to be disconnected
+        The agent greeting prompt to use when outbound calls are connected
 
         :param outbound_prompt: The outbound_prompt of this AgentGreeting.
         :type: Prompt
@@ -165,6 +171,54 @@ class AgentGreeting(object):
         
 
         self._outbound_prompt = outbound_prompt
+
+    @property
+    def inbound_prompt_default_language(self) -> str:
+        """
+        Gets the inbound_prompt_default_language of this AgentGreeting.
+        The default language to use for the agent greeting inbound prompt
+
+        :return: The inbound_prompt_default_language of this AgentGreeting.
+        :rtype: str
+        """
+        return self._inbound_prompt_default_language
+
+    @inbound_prompt_default_language.setter
+    def inbound_prompt_default_language(self, inbound_prompt_default_language: str) -> None:
+        """
+        Sets the inbound_prompt_default_language of this AgentGreeting.
+        The default language to use for the agent greeting inbound prompt
+
+        :param inbound_prompt_default_language: The inbound_prompt_default_language of this AgentGreeting.
+        :type: str
+        """
+        
+
+        self._inbound_prompt_default_language = inbound_prompt_default_language
+
+    @property
+    def outbound_prompt_default_language(self) -> str:
+        """
+        Gets the outbound_prompt_default_language of this AgentGreeting.
+        The default language to use for the agent greeting outbound prompt
+
+        :return: The outbound_prompt_default_language of this AgentGreeting.
+        :rtype: str
+        """
+        return self._outbound_prompt_default_language
+
+    @outbound_prompt_default_language.setter
+    def outbound_prompt_default_language(self, outbound_prompt_default_language: str) -> None:
+        """
+        Sets the outbound_prompt_default_language of this AgentGreeting.
+        The default language to use for the agent greeting outbound prompt
+
+        :param outbound_prompt_default_language: The outbound_prompt_default_language of this AgentGreeting.
+        :type: str
+        """
+        
+
+        self._outbound_prompt_default_language = outbound_prompt_default_language
 
     @property
     def self_uri(self) -> str:

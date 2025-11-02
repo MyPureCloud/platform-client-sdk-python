@@ -82,7 +82,9 @@ class QueueConversationEventTopicMessage(object):
             'agent_assistant_id': 'str',
             'engagement_source': 'str',
             'byo_sms_integration_id': 'str',
-            'queue_media_settings': 'QueueConversationEventTopicQueueMediaSettings'
+            'queue_media_settings': 'QueueConversationEventTopicQueueMediaSettings',
+            'resume_time': 'datetime',
+            'park_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -113,7 +115,9 @@ class QueueConversationEventTopicMessage(object):
             'agent_assistant_id': 'agentAssistantId',
             'engagement_source': 'engagementSource',
             'byo_sms_integration_id': 'byoSmsIntegrationId',
-            'queue_media_settings': 'queueMediaSettings'
+            'queue_media_settings': 'queueMediaSettings',
+            'resume_time': 'resumeTime',
+            'park_time': 'parkTime'
         }
 
         self._id = None
@@ -144,6 +148,8 @@ class QueueConversationEventTopicMessage(object):
         self._engagement_source = None
         self._byo_sms_integration_id = None
         self._queue_media_settings = None
+        self._resume_time = None
+        self._park_time = None
 
     @property
     def id(self) -> str:
@@ -191,7 +197,7 @@ class QueueConversationEventTopicMessage(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["alerting", "connected", "disconnected"]
+        allowed_values = ["alerting", "connected", "disconnected", "parked"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -220,7 +226,7 @@ class QueueConversationEventTopicMessage(object):
         """
         if isinstance(initial_state, int):
             initial_state = str(initial_state)
-        allowed_values = ["alerting", "connected", "disconnected"]
+        allowed_values = ["alerting", "connected", "disconnected", "parked"]
         if initial_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for initial_state -> " + initial_state)
             self._initial_state = "outdated_sdk_version"
@@ -841,6 +847,54 @@ class QueueConversationEventTopicMessage(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this QueueConversationEventTopicMessage.
+        The time when a parked message should resume.
+
+        :return: The resume_time of this QueueConversationEventTopicMessage.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this QueueConversationEventTopicMessage.
+        The time when a parked message should resume.
+
+        :param resume_time: The resume_time of this QueueConversationEventTopicMessage.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this QueueConversationEventTopicMessage.
+        The time when an  parked message was parked.
+
+        :return: The park_time of this QueueConversationEventTopicMessage.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this QueueConversationEventTopicMessage.
+        The time when an  parked message was parked.
+
+        :param park_time: The park_time of this QueueConversationEventTopicMessage.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     def to_dict(self):
         """

@@ -6952,12 +6952,13 @@ class WorkforceManagementApi(object):
         :param date week_date_id: The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str forecast_id: The ID of the forecast (required)
         :param list[str] week_numbers: The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+        :param list[str] expand: Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values)
         :return: BuForecastStaffingRequirementsResultResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'week_date_id', 'forecast_id', 'week_numbers']
+        all_params = ['business_unit_id', 'week_date_id', 'forecast_id', 'week_numbers', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -6993,6 +6994,8 @@ class WorkforceManagementApi(object):
         query_params = {}
         if 'week_numbers' in params:
             query_params['weekNumbers'] = params['week_numbers']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

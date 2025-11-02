@@ -57,7 +57,8 @@ class TranscriptionTopicTranscriptionMessage(object):
             'session_start_time_ms': 'int',
             'transcription_start_time_ms': 'int',
             'transcripts': 'list[TranscriptionTopicTranscriptResult]',
-            'status': 'TranscriptionTopicTranscriptionRequestStatus'
+            'status': 'TranscriptionTopicTranscriptionRequestStatus',
+            'speech_text_analytics_program_id': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class TranscriptionTopicTranscriptionMessage(object):
             'session_start_time_ms': 'sessionStartTimeMs',
             'transcription_start_time_ms': 'transcriptionStartTimeMs',
             'transcripts': 'transcripts',
-            'status': 'status'
+            'status': 'status',
+            'speech_text_analytics_program_id': 'speechTextAnalyticsProgramId'
         }
 
         self._event_time = None
@@ -79,6 +81,7 @@ class TranscriptionTopicTranscriptionMessage(object):
         self._transcription_start_time_ms = None
         self._transcripts = None
         self._status = None
+        self._speech_text_analytics_program_id = None
 
     @property
     def event_time(self) -> datetime:
@@ -271,6 +274,30 @@ class TranscriptionTopicTranscriptionMessage(object):
         
 
         self._status = status
+
+    @property
+    def speech_text_analytics_program_id(self) -> str:
+        """
+        Gets the speech_text_analytics_program_id of this TranscriptionTopicTranscriptionMessage.
+
+
+        :return: The speech_text_analytics_program_id of this TranscriptionTopicTranscriptionMessage.
+        :rtype: str
+        """
+        return self._speech_text_analytics_program_id
+
+    @speech_text_analytics_program_id.setter
+    def speech_text_analytics_program_id(self, speech_text_analytics_program_id: str) -> None:
+        """
+        Sets the speech_text_analytics_program_id of this TranscriptionTopicTranscriptionMessage.
+
+
+        :param speech_text_analytics_program_id: The speech_text_analytics_program_id of this TranscriptionTopicTranscriptionMessage.
+        :type: str
+        """
+        
+
+        self._speech_text_analytics_program_id = speech_text_analytics_program_id
 
     def to_dict(self):
         """

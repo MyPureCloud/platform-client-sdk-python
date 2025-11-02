@@ -55,7 +55,7 @@ class BillingContract(object):
             'external_number': 'str',
             'status': 'str',
             'commercial_model': 'str',
-            'getpurchase_order_numbers': 'list[str]',
+            'purchase_order_numbers': 'list[str]',
             'bill_to_customer': 'Customer',
             'sold_to_customer': 'Customer',
             'end_customer': 'Customer',
@@ -72,7 +72,7 @@ class BillingContract(object):
             'external_number': 'externalNumber',
             'status': 'status',
             'commercial_model': 'commercialModel',
-            'getpurchase_order_numbers': 'getpurchaseOrderNumbers',
+            'purchase_order_numbers': 'purchaseOrderNumbers',
             'bill_to_customer': 'billToCustomer',
             'sold_to_customer': 'soldToCustomer',
             'end_customer': 'endCustomer',
@@ -88,7 +88,7 @@ class BillingContract(object):
         self._external_number = None
         self._status = None
         self._commercial_model = None
-        self._getpurchase_order_numbers = None
+        self._purchase_order_numbers = None
         self._bill_to_customer = None
         self._sold_to_customer = None
         self._end_customer = None
@@ -201,28 +201,28 @@ class BillingContract(object):
         self._commercial_model = commercial_model
 
     @property
-    def getpurchase_order_numbers(self) -> List[str]:
+    def purchase_order_numbers(self) -> List[str]:
         """
-        Gets the getpurchase_order_numbers of this BillingContract.
+        Gets the purchase_order_numbers of this BillingContract.
         List of po numbers periods for this contract.
 
-        :return: The getpurchase_order_numbers of this BillingContract.
+        :return: The purchase_order_numbers of this BillingContract.
         :rtype: list[str]
         """
-        return self._getpurchase_order_numbers
+        return self._purchase_order_numbers
 
-    @getpurchase_order_numbers.setter
-    def getpurchase_order_numbers(self, getpurchase_order_numbers: List[str]) -> None:
+    @purchase_order_numbers.setter
+    def purchase_order_numbers(self, purchase_order_numbers: List[str]) -> None:
         """
-        Sets the getpurchase_order_numbers of this BillingContract.
+        Sets the purchase_order_numbers of this BillingContract.
         List of po numbers periods for this contract.
 
-        :param getpurchase_order_numbers: The getpurchase_order_numbers of this BillingContract.
+        :param purchase_order_numbers: The purchase_order_numbers of this BillingContract.
         :type: list[str]
         """
         
 
-        self._getpurchase_order_numbers = getpurchase_order_numbers
+        self._purchase_order_numbers = purchase_order_numbers
 
     @property
     def bill_to_customer(self) -> 'Customer':

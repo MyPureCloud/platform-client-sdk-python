@@ -50,6 +50,8 @@ from ..models import CoachingAppointmentStatusResponse
 from ..models import CoachingAppointmentStatusResponseList
 from ..models import CoachingNotification
 from ..models import CoachingNotificationList
+from ..models import CoachingScheduleSlotsJobRequest
+from ..models import CoachingScheduleSlotsJobResponse
 from ..models import CoachingSlotsRequest
 from ..models import CoachingSlotsResponse
 from ..models import CreateCoachingAppointmentRequest
@@ -936,6 +938,84 @@ class CoachingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_coaching_scheduleslots_job(self, job_id: str, **kwargs) -> 'CoachingScheduleSlotsJobResponse':
+        """
+        Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_coaching_scheduleslots_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of job (required)
+        :return: CoachingScheduleSlotsJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_coaching_scheduleslots_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_coaching_scheduleslots_job`")
+
+
+        resource_path = '/api/v2/coaching/scheduleslots/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CoachingScheduleSlotsJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_coaching_appointment(self, appointment_id: str, body: 'UpdateCoachingAppointmentRequest', **kwargs) -> 'CoachingAppointmentResponse':
         """
         Update an existing appointment
@@ -1598,6 +1678,84 @@ class CoachingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CoachingAppointmentAggregateResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_coaching_scheduleslots_jobs(self, body: 'CoachingScheduleSlotsJobRequest', **kwargs) -> 'CoachingScheduleSlotsJobResponse':
+        """
+        Start job to retrieve the slots where a coaching appointment can be scheduled.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_coaching_scheduleslots_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CoachingScheduleSlotsJobRequest body: The slots search request (required)
+        :return: CoachingScheduleSlotsJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_coaching_scheduleslots_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_coaching_scheduleslots_jobs`")
+
+
+        resource_path = '/api/v2/coaching/scheduleslots/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CoachingScheduleSlotsJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

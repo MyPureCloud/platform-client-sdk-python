@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import IdleEventTrigger
     from . import ScrollPercentageEventTrigger
     from . import SelectorEventTrigger
+    from . import TrackingSettings
 
 class JourneyEventsSettings(object):
     """
@@ -62,7 +63,7 @@ class JourneyEventsSettings(object):
             'idle_events': 'list[IdleEventTrigger]',
             'in_viewport_events': 'list[SelectorEventTrigger]',
             'scroll_depth_events': 'list[ScrollPercentageEventTrigger]',
-            'tracking_settings': 'object'
+            'tracking_settings': 'TrackingSettings'
         }
 
         self.attribute_map = {
@@ -337,24 +338,24 @@ class JourneyEventsSettings(object):
         self._scroll_depth_events = scroll_depth_events
 
     @property
-    def tracking_settings(self) -> 'object':
+    def tracking_settings(self) -> 'TrackingSettings':
         """
         Gets the tracking_settings of this JourneyEventsSettings.
         Configuration settings for tracking behavior and filtering
 
         :return: The tracking_settings of this JourneyEventsSettings.
-        :rtype: object
+        :rtype: TrackingSettings
         """
         return self._tracking_settings
 
     @tracking_settings.setter
-    def tracking_settings(self, tracking_settings: 'object') -> None:
+    def tracking_settings(self, tracking_settings: 'TrackingSettings') -> None:
         """
         Sets the tracking_settings of this JourneyEventsSettings.
         Configuration settings for tracking behavior and filtering
 
         :param tracking_settings: The tracking_settings of this JourneyEventsSettings.
-        :type: object
+        :type: TrackingSettings
         """
         
 

@@ -47,13 +47,65 @@ class IpFilter(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'ip_address': 'str',
+            'name': 'str'
         }
 
         self.attribute_map = {
-            
+            'ip_address': 'ipAddress',
+            'name': 'name'
         }
 
+        self._ip_address = None
+        self._name = None
+
+    @property
+    def ip_address(self) -> str:
+        """
+        Gets the ip_address of this IpFilter.
+        IP address or CIDR range to filter (e.g. '192.168.1.0/24').
+
+        :return: The ip_address of this IpFilter.
+        :rtype: str
+        """
+        return self._ip_address
+
+    @ip_address.setter
+    def ip_address(self, ip_address: str) -> None:
+        """
+        Sets the ip_address of this IpFilter.
+        IP address or CIDR range to filter (e.g. '192.168.1.0/24').
+
+        :param ip_address: The ip_address of this IpFilter.
+        :type: str
+        """
+        
+
+        self._ip_address = ip_address
+
+    @property
+    def name(self) -> str:
+        """
+        Gets the name of this IpFilter.
+        Descriptive name for the IP address filter.
+
+        :return: The name of this IpFilter.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: str) -> None:
+        """
+        Sets the name of this IpFilter.
+        Descriptive name for the IP address filter.
+
+        :param name: The name of this IpFilter.
+        :type: str
+        """
+        
+
+        self._name = name
 
     def to_dict(self):
         """

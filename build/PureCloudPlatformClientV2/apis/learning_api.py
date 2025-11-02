@@ -65,6 +65,8 @@ from ..models import LearningModulePublishResponse
 from ..models import LearningModuleRequest
 from ..models import LearningModuleRule
 from ..models import LearningModulesDomainEntityListing
+from ..models import LearningScheduleSlotsJobRequest
+from ..models import LearningScheduleSlotsJobResponse
 from ..models import LearningScheduleSlotsQueryRequest
 from ..models import LearningScheduleSlotsQueryResponse
 from ..models import LearningScormResponse
@@ -1331,6 +1333,84 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningModuleCoverArtResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_learning_scheduleslots_job(self, job_id: str, **kwargs) -> 'LearningScheduleSlotsJobResponse':
+        """
+        Retrieve the status of the job for the slots where a learning activity can be scheduled.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_learning_scheduleslots_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: LearningScheduleSlotsJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_learning_scheduleslots_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_learning_scheduleslots_job`")
+
+
+        resource_path = '/api/v2/learning/scheduleslots/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningScheduleSlotsJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2618,6 +2698,84 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningAssignmentUserListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_learning_scheduleslots_jobs(self, body: 'LearningScheduleSlotsJobRequest', **kwargs) -> 'LearningScheduleSlotsJobResponse':
+        """
+        Start job to retrieve slots where a learning activity can be scheduled.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_scheduleslots_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param LearningScheduleSlotsJobRequest body: The slots search request (required)
+        :return: LearningScheduleSlotsJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_scheduleslots_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_learning_scheduleslots_jobs`")
+
+
+        resource_path = '/api/v2/learning/scheduleslots/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningScheduleSlotsJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

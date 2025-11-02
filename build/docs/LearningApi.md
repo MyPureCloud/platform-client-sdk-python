@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_modules**](#get_learning_modules) | Get all learning modules of an organization|
 |[**get_learning_modules_assignments**](#get_learning_modules_assignments) | Get all learning modules of an organization including assignments for a specific user|
 |[**get_learning_modules_coverart_cover_art_id**](#get_learning_modules_coverart_cover_art_id) | Get a specific Learning Module cover art using ID|
+|[**get_learning_scheduleslots_job**](#get_learning_scheduleslots_job) | Retrieve the status of the job for the slots where a learning activity can be scheduled.|
 |[**get_learning_scorm_scorm_id**](#get_learning_scorm_scorm_id) | Get Learning SCORM Result|
 |[**patch_learning_assignment**](#patch_learning_assignment) | Update Learning Assignment|
 |[**patch_learning_assignment_reschedule**](#patch_learning_assignment_reschedule) | Reschedule Learning Assignment|
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_learning_module_publish**](#post_learning_module_publish) | Publish a Learning module|
 |[**post_learning_modules**](#post_learning_modules) | Create a new learning module|
 |[**post_learning_rules_query**](#post_learning_rules_query) | Get users for learning module rule|
+|[**post_learning_scheduleslots_jobs**](#post_learning_scheduleslots_jobs) | Start job to retrieve slots where a learning activity can be scheduled.|
 |[**post_learning_scheduleslots_query**](#post_learning_scheduleslots_query) | Get list of possible slots where a learning activity can be scheduled.|
 |[**post_learning_scorm**](#post_learning_scorm) | Create a SCORM package upload request|
 |[**put_learning_module**](#put_learning_module) | Update a learning module|
@@ -824,6 +826,54 @@ except ApiException as e:
 ### Return type
 
 [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse)
+
+
+## get_learning_scheduleslots_job
+
+> [**LearningScheduleSlotsJobResponse**](LearningScheduleSlotsJobResponse) get_learning_scheduleslots_job(job_id)
+
+
+Retrieve the status of the job for the slots where a learning activity can be scheduled.
+
+Wraps GET /api/v2/learning/scheduleslots/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* learning:scheduleSlotJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Retrieve the status of the job for the slots where a learning activity can be scheduled.
+    api_response = api_instance.get_learning_scheduleslots_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_scheduleslots_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**LearningScheduleSlotsJobResponse**](LearningScheduleSlotsJobResponse)
 
 
 ## get_learning_scorm_scorm_id
@@ -1627,6 +1677,54 @@ except ApiException as e:
 [**LearningAssignmentUserListing**](LearningAssignmentUserListing)
 
 
+## post_learning_scheduleslots_jobs
+
+> [**LearningScheduleSlotsJobResponse**](LearningScheduleSlotsJobResponse) post_learning_scheduleslots_jobs(body)
+
+
+Start job to retrieve slots where a learning activity can be scheduled.
+
+Wraps POST /api/v2/learning/scheduleslots/jobs 
+
+Requires ANY permissions: 
+
+* learning:scheduleSlotJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+body = PureCloudPlatformClientV2.LearningScheduleSlotsJobRequest() # LearningScheduleSlotsJobRequest | The slots search request
+
+try:
+    # Start job to retrieve slots where a learning activity can be scheduled.
+    api_response = api_instance.post_learning_scheduleslots_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_scheduleslots_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**LearningScheduleSlotsJobRequest**](LearningScheduleSlotsJobRequest)| The slots search request |  |
+
+### Return type
+
+[**LearningScheduleSlotsJobResponse**](LearningScheduleSlotsJobResponse)
+
+
 ## post_learning_scheduleslots_query
 
 > [**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse) post_learning_scheduleslots_query(body)
@@ -1881,4 +1979,4 @@ except ApiException as e:
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_PureCloudPlatformClientV2 241.0.0_
+_PureCloudPlatformClientV2 242.0.0_

@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import IpFilter
 
 class TrackingSettings(object):
     """
@@ -47,13 +49,119 @@ class TrackingSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'excluded_query_parameters': 'list[str]',
+            'should_keep_url_fragment': 'bool',
+            'search_query_parameters': 'list[str]',
+            'ip_filters': 'list[IpFilter]'
         }
 
         self.attribute_map = {
-            
+            'excluded_query_parameters': 'excludedQueryParameters',
+            'should_keep_url_fragment': 'shouldKeepUrlFragment',
+            'search_query_parameters': 'searchQueryParameters',
+            'ip_filters': 'ipFilters'
         }
 
+        self._excluded_query_parameters = None
+        self._should_keep_url_fragment = None
+        self._search_query_parameters = None
+        self._ip_filters = None
+
+    @property
+    def excluded_query_parameters(self) -> List[str]:
+        """
+        Gets the excluded_query_parameters of this TrackingSettings.
+        List of parameters to be excluded from the query string.
+
+        :return: The excluded_query_parameters of this TrackingSettings.
+        :rtype: list[str]
+        """
+        return self._excluded_query_parameters
+
+    @excluded_query_parameters.setter
+    def excluded_query_parameters(self, excluded_query_parameters: List[str]) -> None:
+        """
+        Sets the excluded_query_parameters of this TrackingSettings.
+        List of parameters to be excluded from the query string.
+
+        :param excluded_query_parameters: The excluded_query_parameters of this TrackingSettings.
+        :type: list[str]
+        """
+        
+
+        self._excluded_query_parameters = excluded_query_parameters
+
+    @property
+    def should_keep_url_fragment(self) -> bool:
+        """
+        Gets the should_keep_url_fragment of this TrackingSettings.
+        Whether or not to keep the URL fragment.
+
+        :return: The should_keep_url_fragment of this TrackingSettings.
+        :rtype: bool
+        """
+        return self._should_keep_url_fragment
+
+    @should_keep_url_fragment.setter
+    def should_keep_url_fragment(self, should_keep_url_fragment: bool) -> None:
+        """
+        Sets the should_keep_url_fragment of this TrackingSettings.
+        Whether or not to keep the URL fragment.
+
+        :param should_keep_url_fragment: The should_keep_url_fragment of this TrackingSettings.
+        :type: bool
+        """
+        
+
+        self._should_keep_url_fragment = should_keep_url_fragment
+
+    @property
+    def search_query_parameters(self) -> List[str]:
+        """
+        Gets the search_query_parameters of this TrackingSettings.
+        List of query parameters used for search (e.g. 'query').
+
+        :return: The search_query_parameters of this TrackingSettings.
+        :rtype: list[str]
+        """
+        return self._search_query_parameters
+
+    @search_query_parameters.setter
+    def search_query_parameters(self, search_query_parameters: List[str]) -> None:
+        """
+        Sets the search_query_parameters of this TrackingSettings.
+        List of query parameters used for search (e.g. 'query').
+
+        :param search_query_parameters: The search_query_parameters of this TrackingSettings.
+        :type: list[str]
+        """
+        
+
+        self._search_query_parameters = search_query_parameters
+
+    @property
+    def ip_filters(self) -> List['IpFilter']:
+        """
+        Gets the ip_filters of this TrackingSettings.
+        IP address filtering configuration for tracking restrictions.
+
+        :return: The ip_filters of this TrackingSettings.
+        :rtype: list[IpFilter]
+        """
+        return self._ip_filters
+
+    @ip_filters.setter
+    def ip_filters(self, ip_filters: List['IpFilter']) -> None:
+        """
+        Sets the ip_filters of this TrackingSettings.
+        IP address filtering configuration for tracking restrictions.
+
+        :param ip_filters: The ip_filters of this TrackingSettings.
+        :type: list[IpFilter]
+        """
+        
+
+        self._ip_filters = ip_filters
 
     def to_dict(self):
         """

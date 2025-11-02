@@ -18,10 +18,10 @@
 | **base_license** | str |  | [optional] |
 | **addon_licenses** | list[str] |  | [optional] |
 | **date_license_last_updated** | datetime | The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
-| **default** | bool |  | [optional] |
 | **base** | bool |  | [optional] |
+| **default** | bool |  | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 241.0.0_
+_PureCloudPlatformClientV2 242.0.0_

@@ -32,6 +32,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import IdentityResolutionAutomergeConfig
+    from . import IdentityResolutionExternalSource
     from . import WritableStarrableDivision
 
 class DeploymentIdentityResolutionConfig(object):
@@ -52,6 +54,8 @@ class DeploymentIdentityResolutionConfig(object):
             'id': 'str',
             'division': 'WritableStarrableDivision',
             'resolve_identities': 'bool',
+            'external_source': 'IdentityResolutionExternalSource',
+            'automerge': 'IdentityResolutionAutomergeConfig',
             'self_uri': 'str'
         }
 
@@ -59,12 +63,16 @@ class DeploymentIdentityResolutionConfig(object):
             'id': 'id',
             'division': 'division',
             'resolve_identities': 'resolveIdentities',
+            'external_source': 'externalSource',
+            'automerge': 'automerge',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._division = None
         self._resolve_identities = None
+        self._external_source = None
+        self._automerge = None
         self._self_uri = None
 
     @property
@@ -138,6 +146,54 @@ class DeploymentIdentityResolutionConfig(object):
         
 
         self._resolve_identities = resolve_identities
+
+    @property
+    def external_source(self) -> 'IdentityResolutionExternalSource':
+        """
+        Gets the external_source of this DeploymentIdentityResolutionConfig.
+        The external source used for stitching this channel.
+
+        :return: The external_source of this DeploymentIdentityResolutionConfig.
+        :rtype: IdentityResolutionExternalSource
+        """
+        return self._external_source
+
+    @external_source.setter
+    def external_source(self, external_source: 'IdentityResolutionExternalSource') -> None:
+        """
+        Sets the external_source of this DeploymentIdentityResolutionConfig.
+        The external source used for stitching this channel.
+
+        :param external_source: The external_source of this DeploymentIdentityResolutionConfig.
+        :type: IdentityResolutionExternalSource
+        """
+        
+
+        self._external_source = external_source
+
+    @property
+    def automerge(self) -> 'IdentityResolutionAutomergeConfig':
+        """
+        Gets the automerge of this DeploymentIdentityResolutionConfig.
+        Whether automerging of contacts should be enabled for each channel.
+
+        :return: The automerge of this DeploymentIdentityResolutionConfig.
+        :rtype: IdentityResolutionAutomergeConfig
+        """
+        return self._automerge
+
+    @automerge.setter
+    def automerge(self, automerge: 'IdentityResolutionAutomergeConfig') -> None:
+        """
+        Sets the automerge of this DeploymentIdentityResolutionConfig.
+        Whether automerging of contacts should be enabled for each channel.
+
+        :param automerge: The automerge of this DeploymentIdentityResolutionConfig.
+        :type: IdentityResolutionAutomergeConfig
+        """
+        
+
+        self._automerge = automerge
 
     @property
     def self_uri(self) -> str:

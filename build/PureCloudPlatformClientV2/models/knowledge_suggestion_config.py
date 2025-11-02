@@ -90,7 +90,7 @@ class KnowledgeSuggestionConfig(object):
         """
         if isinstance(vendor_name, int):
             vendor_name = str(vendor_name)
-        allowed_values = ["GoogleDialogflow", "GenesysKnowledge", "Unknown"]
+        allowed_values = ["GoogleDialogflow", "GenesysKnowledge", "GenesysKnowledgeV3", "Unknown"]
         if vendor_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for vendor_name -> " + vendor_name)
             self._vendor_name = "outdated_sdk_version"

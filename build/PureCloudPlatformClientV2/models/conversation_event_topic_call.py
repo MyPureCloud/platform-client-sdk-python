@@ -88,7 +88,8 @@ class ConversationEventTopicCall(object):
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
             'queue_media_settings': 'ConversationEventTopicQueueMediaSettings',
-            'disposition': 'ConversationEventTopicDisposition'
+            'disposition': 'ConversationEventTopicDisposition',
+            'transfer_source': 'str'
         }
 
         self.attribute_map = {
@@ -123,7 +124,8 @@ class ConversationEventTopicCall(object):
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
             'queue_media_settings': 'queueMediaSettings',
-            'disposition': 'disposition'
+            'disposition': 'disposition',
+            'transfer_source': 'transferSource'
         }
 
         self._id = None
@@ -158,6 +160,7 @@ class ConversationEventTopicCall(object):
         self._agent_assistant_id = None
         self._queue_media_settings = None
         self._disposition = None
+        self._transfer_source = None
 
     @property
     def id(self) -> str:
@@ -951,6 +954,30 @@ class ConversationEventTopicCall(object):
         
 
         self._disposition = disposition
+
+    @property
+    def transfer_source(self) -> str:
+        """
+        Gets the transfer_source of this ConversationEventTopicCall.
+        Indicates how call reaches the agent.
+
+        :return: The transfer_source of this ConversationEventTopicCall.
+        :rtype: str
+        """
+        return self._transfer_source
+
+    @transfer_source.setter
+    def transfer_source(self, transfer_source: str) -> None:
+        """
+        Sets the transfer_source of this ConversationEventTopicCall.
+        Indicates how call reaches the agent.
+
+        :param transfer_source: The transfer_source of this ConversationEventTopicCall.
+        :type: str
+        """
+        
+
+        self._transfer_source = transfer_source
 
     def to_dict(self):
         """

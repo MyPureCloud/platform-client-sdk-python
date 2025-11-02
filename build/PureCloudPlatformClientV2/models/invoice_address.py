@@ -47,7 +47,7 @@ class InvoiceAddress(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'getdate_effective': 'date',
+            'date_effective': 'date',
             'address_type': 'str',
             'currency_iso_code': 'str',
             'line1': 'str',
@@ -57,14 +57,14 @@ class InvoiceAddress(object):
             'postal_code': 'str',
             'state_code': 'str',
             'country_code': 'str',
-            'getcity_subdivision1': 'str',
+            'city_subdivision1': 'str',
             'region_subdivision1': 'str',
             'region_subdivision2': 'str',
             'country': 'str'
         }
 
         self.attribute_map = {
-            'getdate_effective': 'getdateEffective',
+            'date_effective': 'dateEffective',
             'address_type': 'addressType',
             'currency_iso_code': 'currencyIsoCode',
             'line1': 'line1',
@@ -74,13 +74,13 @@ class InvoiceAddress(object):
             'postal_code': 'postalCode',
             'state_code': 'stateCode',
             'country_code': 'countryCode',
-            'getcity_subdivision1': 'getcitySubdivision1',
+            'city_subdivision1': 'citySubdivision1',
             'region_subdivision1': 'regionSubdivision1',
             'region_subdivision2': 'regionSubdivision2',
             'country': 'country'
         }
 
-        self._getdate_effective = None
+        self._date_effective = None
         self._address_type = None
         self._currency_iso_code = None
         self._line1 = None
@@ -90,34 +90,34 @@ class InvoiceAddress(object):
         self._postal_code = None
         self._state_code = None
         self._country_code = None
-        self._getcity_subdivision1 = None
+        self._city_subdivision1 = None
         self._region_subdivision1 = None
         self._region_subdivision2 = None
         self._country = None
 
     @property
-    def getdate_effective(self) -> date:
+    def date_effective(self) -> date:
         """
-        Gets the getdate_effective of this InvoiceAddress.
+        Gets the date_effective of this InvoiceAddress.
         The date when the Address became effective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
-        :return: The getdate_effective of this InvoiceAddress.
+        :return: The date_effective of this InvoiceAddress.
         :rtype: date
         """
-        return self._getdate_effective
+        return self._date_effective
 
-    @getdate_effective.setter
-    def getdate_effective(self, getdate_effective: date) -> None:
+    @date_effective.setter
+    def date_effective(self, date_effective: date) -> None:
         """
-        Sets the getdate_effective of this InvoiceAddress.
+        Sets the date_effective of this InvoiceAddress.
         The date when the Address became effective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
-        :param getdate_effective: The getdate_effective of this InvoiceAddress.
+        :param date_effective: The date_effective of this InvoiceAddress.
         :type: date
         """
         
 
-        self._getdate_effective = getdate_effective
+        self._date_effective = date_effective
 
     @property
     def address_type(self) -> str:
@@ -341,28 +341,28 @@ class InvoiceAddress(object):
         self._country_code = country_code
 
     @property
-    def getcity_subdivision1(self) -> str:
+    def city_subdivision1(self) -> str:
         """
-        Gets the getcity_subdivision1 of this InvoiceAddress.
+        Gets the city_subdivision1 of this InvoiceAddress.
         The primary subdivision within a city (e.g., district, neighborhood).
 
-        :return: The getcity_subdivision1 of this InvoiceAddress.
+        :return: The city_subdivision1 of this InvoiceAddress.
         :rtype: str
         """
-        return self._getcity_subdivision1
+        return self._city_subdivision1
 
-    @getcity_subdivision1.setter
-    def getcity_subdivision1(self, getcity_subdivision1: str) -> None:
+    @city_subdivision1.setter
+    def city_subdivision1(self, city_subdivision1: str) -> None:
         """
-        Sets the getcity_subdivision1 of this InvoiceAddress.
+        Sets the city_subdivision1 of this InvoiceAddress.
         The primary subdivision within a city (e.g., district, neighborhood).
 
-        :param getcity_subdivision1: The getcity_subdivision1 of this InvoiceAddress.
+        :param city_subdivision1: The city_subdivision1 of this InvoiceAddress.
         :type: str
         """
         
 
-        self._getcity_subdivision1 = getcity_subdivision1
+        self._city_subdivision1 = city_subdivision1
 
     @property
     def region_subdivision1(self) -> str:

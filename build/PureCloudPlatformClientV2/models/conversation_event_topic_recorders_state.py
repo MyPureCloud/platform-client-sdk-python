@@ -49,18 +49,21 @@ class ConversationEventTopicRecordersState(object):
         self.swagger_types = {
             'adhoc_state': 'str',
             'customer_experience_state': 'str',
-            'agent_experience_state': 'str'
+            'agent_experience_state': 'str',
+            'snippet_state': 'str'
         }
 
         self.attribute_map = {
             'adhoc_state': 'adhocState',
             'customer_experience_state': 'customerExperienceState',
-            'agent_experience_state': 'agentExperienceState'
+            'agent_experience_state': 'agentExperienceState',
+            'snippet_state': 'snippetState'
         }
 
         self._adhoc_state = None
         self._customer_experience_state = None
         self._agent_experience_state = None
+        self._snippet_state = None
 
     @property
     def adhoc_state(self) -> str:
@@ -133,6 +136,30 @@ class ConversationEventTopicRecordersState(object):
         
 
         self._agent_experience_state = agent_experience_state
+
+    @property
+    def snippet_state(self) -> str:
+        """
+        Gets the snippet_state of this ConversationEventTopicRecordersState.
+        State of the snippet recording for this session. Note that snippets may never be paused. Valid values are in Constants.java with a prefix of RECORDER_STATE_*.
+
+        :return: The snippet_state of this ConversationEventTopicRecordersState.
+        :rtype: str
+        """
+        return self._snippet_state
+
+    @snippet_state.setter
+    def snippet_state(self, snippet_state: str) -> None:
+        """
+        Sets the snippet_state of this ConversationEventTopicRecordersState.
+        State of the snippet recording for this session. Note that snippets may never be paused. Valid values are in Constants.java with a prefix of RECORDER_STATE_*.
+
+        :param snippet_state: The snippet_state of this ConversationEventTopicRecordersState.
+        :type: str
+        """
+        
+
+        self._snippet_state = snippet_state
 
     def to_dict(self):
         """

@@ -63,7 +63,7 @@ class SetContentTemplateActionSettings(object):
     def sms_content_template_id(self) -> str:
         """
         Gets the sms_content_template_id of this SetContentTemplateActionSettings.
-        A string of sms contentTemplateId.
+        A String containing the SMS contentTemplateId.
 
         :return: The sms_content_template_id of this SetContentTemplateActionSettings.
         :rtype: str
@@ -74,7 +74,7 @@ class SetContentTemplateActionSettings(object):
     def sms_content_template_id(self, sms_content_template_id: str) -> None:
         """
         Sets the sms_content_template_id of this SetContentTemplateActionSettings.
-        A string of sms contentTemplateId.
+        A String containing the SMS contentTemplateId.
 
         :param sms_content_template_id: The sms_content_template_id of this SetContentTemplateActionSettings.
         :type: str
@@ -87,7 +87,7 @@ class SetContentTemplateActionSettings(object):
     def email_content_template_id(self) -> str:
         """
         Gets the email_content_template_id of this SetContentTemplateActionSettings.
-        A string of email contentTemplateId.
+        A String containing the Email contentTemplateId.
 
         :return: The email_content_template_id of this SetContentTemplateActionSettings.
         :rtype: str
@@ -98,7 +98,7 @@ class SetContentTemplateActionSettings(object):
     def email_content_template_id(self, email_content_template_id: str) -> None:
         """
         Sets the email_content_template_id of this SetContentTemplateActionSettings.
-        A string of email contentTemplateId.
+        A String containing the Email contentTemplateId.
 
         :param email_content_template_id: The email_content_template_id of this SetContentTemplateActionSettings.
         :type: str
