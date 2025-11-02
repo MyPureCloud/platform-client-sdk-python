@@ -1,0 +1,14 @@
+# CoachingScheduleSlotsJobSlot
+
+## CoachingScheduleSlotsJobSlot
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **date_start** | datetime | Start date and time of the slot. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **schedule** | [CoachingScheduleSlotsJobSchedule](CoachingScheduleSlotsJobSchedule) | The schedule information of the slot | [optional] |
+
+
+
+_PureCloudPlatformClientV2 242.0.0_

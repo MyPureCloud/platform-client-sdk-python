@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_coaching_appointments_me**](#get_coaching_appointments_me) | Get my appointments for a given date range|
 |[**get_coaching_notification**](#get_coaching_notification) | Get an existing notification|
 |[**get_coaching_notifications**](#get_coaching_notifications) | Retrieve the list of your notifications.|
+|[**get_coaching_scheduleslots_job**](#get_coaching_scheduleslots_job) | Retrieve the status of the job for the slots where a coaching appointment can be scheduled.|
 |[**patch_coaching_appointment**](#patch_coaching_appointment) | Update an existing appointment|
 |[**patch_coaching_appointment_annotation**](#patch_coaching_appointment_annotation) | Update an existing annotation.|
 |[**patch_coaching_appointment_status**](#patch_coaching_appointment_status) | Update the status of a coaching appointment|
@@ -24,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_coaching_appointment_conversations**](#post_coaching_appointment_conversations) | Add a conversation to an appointment|
 |[**post_coaching_appointments**](#post_coaching_appointments) | Create a new appointment|
 |[**post_coaching_appointments_aggregates_query**](#post_coaching_appointments_aggregates_query) | Retrieve aggregated appointment data|
+|[**post_coaching_scheduleslots_jobs**](#post_coaching_scheduleslots_jobs) | Start job to retrieve the slots where a coaching appointment can be scheduled.|
 |[**post_coaching_scheduleslots_query**](#post_coaching_scheduleslots_query) | Get list of possible slots where a coaching appointment can be scheduled.|
 
 
@@ -578,6 +580,54 @@ except ApiException as e:
 [**CoachingNotificationList**](CoachingNotificationList)
 
 
+## get_coaching_scheduleslots_job
+
+> [**CoachingScheduleSlotsJobResponse**](CoachingScheduleSlotsJobResponse) get_coaching_scheduleslots_job(job_id)
+
+
+Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+
+Wraps GET /api/v2/coaching/scheduleslots/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* coaching:scheduleSlotJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CoachingApi()
+job_id = 'job_id_example' # str | The ID of job
+
+try:
+    # Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+    api_response = api_instance.get_coaching_scheduleslots_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CoachingApi->get_coaching_scheduleslots_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of job |  |
+
+### Return type
+
+[**CoachingScheduleSlotsJobResponse**](CoachingScheduleSlotsJobResponse)
+
+
 ## patch_coaching_appointment
 
 > [**CoachingAppointmentResponse**](CoachingAppointmentResponse) patch_coaching_appointment(appointment_id, body)
@@ -990,6 +1040,54 @@ except ApiException as e:
 [**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse)
 
 
+## post_coaching_scheduleslots_jobs
+
+> [**CoachingScheduleSlotsJobResponse**](CoachingScheduleSlotsJobResponse) post_coaching_scheduleslots_jobs(body)
+
+
+Start job to retrieve the slots where a coaching appointment can be scheduled.
+
+Wraps POST /api/v2/coaching/scheduleslots/jobs 
+
+Requires ANY permissions: 
+
+* coaching:scheduleSlotJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CoachingApi()
+body = PureCloudPlatformClientV2.CoachingScheduleSlotsJobRequest() # CoachingScheduleSlotsJobRequest | The slots search request
+
+try:
+    # Start job to retrieve the slots where a coaching appointment can be scheduled.
+    api_response = api_instance.post_coaching_scheduleslots_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CoachingApi->post_coaching_scheduleslots_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CoachingScheduleSlotsJobRequest**](CoachingScheduleSlotsJobRequest)| The slots search request |  |
+
+### Return type
+
+[**CoachingScheduleSlotsJobResponse**](CoachingScheduleSlotsJobResponse)
+
+
 ## post_coaching_scheduleslots_query
 
 > [**CoachingSlotsResponse**](CoachingSlotsResponse) post_coaching_scheduleslots_query(body)
@@ -1038,4 +1136,4 @@ except ApiException as e:
 [**CoachingSlotsResponse**](CoachingSlotsResponse)
 
 
-_PureCloudPlatformClientV2 241.0.0_
+_PureCloudPlatformClientV2 242.0.0_

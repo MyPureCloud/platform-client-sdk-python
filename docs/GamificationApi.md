@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_gamification_insights_details**](#get_gamification_insights_details) | Get insights details for the current user|
 |[**get_gamification_insights_groups_trends**](#get_gamification_insights_groups_trends) | Get insights overall trend for the current user|
 |[**get_gamification_insights_groups_trends_all**](#get_gamification_insights_groups_trends_all) | Get insights overall trend|
+|[**get_gamification_insights_managers**](#get_gamification_insights_managers) | Query managers in a profile during a period of time|
 |[**get_gamification_insights_members**](#get_gamification_insights_members) | Query users in a profile during a period of time|
 |[**get_gamification_insights_rankings**](#get_gamification_insights_rankings) | Get insights rankings|
 |[**get_gamification_insights_trends**](#get_gamification_insights_trends) | Get insights user trend for the current user|
@@ -952,6 +953,64 @@ except ApiException as e:
 ### Return type
 
 [**InsightsTrend**](InsightsTrend)
+
+
+## get_gamification_insights_managers
+
+> [**InsightsAgents**](InsightsAgents) get_gamification_insights_managers(filter_type, filter_id, granularity, start_workday, page_size=page_size, page_number=page_number)
+
+
+Query managers in a profile during a period of time
+
+Wraps GET /api/v2/gamification/insights/managers 
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+start_workday = '2013-10-20' # date | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+page_size = 100 # int | Page size (optional) (default to 100)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Query managers in a profile during a period of time
+    api_response = api_instance.get_gamification_insights_managers(filter_type, filter_id, granularity, start_workday, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_managers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Weekly, Monthly |
+| **start_workday** | **date**| The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **page_size** | **int**| Page size | [optional] [default to 100] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**InsightsAgents**](InsightsAgents)
 
 
 ## get_gamification_insights_members
@@ -4086,4 +4145,4 @@ except ApiException as e:
 [**GamificationStatus**](GamificationStatus)
 
 
-_PureCloudPlatformClientV2 241.0.0_
+_PureCloudPlatformClientV2 242.0.0_

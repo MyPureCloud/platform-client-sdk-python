@@ -13,11 +13,10 @@
 | **cc** | [list[EmailAddress]](EmailAddress) |  | [optional] |
 | **bcc** | [list[EmailAddress]](EmailAddress) |  | [optional] |
 | **pcFrom** | [EmailAddress](EmailAddress) |  | [optional] |
-| **reply_to** | [EmailAddress](EmailAddress) |  | [optional] |
 | **subject** | str |  | [optional] |
 | **attachments** | [list[EmailAttachment]](EmailAttachment) |  | [optional] |
 | **time** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 
 
 
-_PureCloudPlatformClientV2 241.0.0_
+_PureCloudPlatformClientV2 242.0.0_

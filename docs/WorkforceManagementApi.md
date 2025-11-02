@@ -4459,7 +4459,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement
 
-> [**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse) get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement(business_unit_id, week_date_id, forecast_id, week_numbers=week_numbers)
+> [**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse) get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement(business_unit_id, week_date_id, forecast_id, week_numbers=week_numbers, expand=expand)
 
 
 Get the staffing requirement by planning group for a forecast
@@ -4487,10 +4487,11 @@ business_unit_id = 'business_unit_id_example' # str | The ID of the business uni
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
 week_numbers = ['week_numbers_example'] # list[str] | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified (optional)
+expand = ['expand_example'] # list[str] | Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) (optional)
 
 try:
     # Get the staffing requirement by planning group for a forecast
-    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement(business_unit_id, week_date_id, forecast_id, week_numbers=week_numbers)
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement(business_unit_id, week_date_id, forecast_id, week_numbers=week_numbers, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement: %s\n" % e)
@@ -4505,6 +4506,7 @@ except ApiException as e:
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
 | **week_numbers** | [**list[str]**](str)| The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional]  |
+| **expand** | [**list[str]**](str)| Expand to include minimum staffing values in (staffing requirement response or applied to base staffing requirement values) | [optional] <br />**Values**: results.planningGroupStaffingRequirements.minimumStaffPerInterval, results.planningGroupStaffingRequirements.effectiveStaffPerInterval |
 
 ### Return type
 
@@ -13789,4 +13791,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 241.0.0_
+_PureCloudPlatformClientV2 242.0.0_
