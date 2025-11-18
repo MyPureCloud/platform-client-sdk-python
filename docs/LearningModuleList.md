@@ -1,6 +1,6 @@
-# LearningModulesDomainEntityListing
+# LearningModuleList
 
-## LearningModulesDomainEntityListing
+## LearningModuleList
 
 ## Properties
 
@@ -10,13 +10,14 @@
 | **page_size** | int |  | [optional] |
 | **page_number** | int |  | [optional] |
 | **total** | int |  | [optional] |
-| **first_uri** | str |  | [optional] |
-| **last_uri** | str |  | [optional] |
-| **self_uri** | str |  | [optional] |
+| **total_legacy_rules** | int | The total number of unmigrated rules | [optional] |
 | **previous_uri** | str |  | [optional] |
 | **next_uri** | str |  | [optional] |
+| **last_uri** | str |  | [optional] |
+| **first_uri** | str |  | [optional] |
+| **self_uri** | str |  | [optional] |
 | **page_count** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_

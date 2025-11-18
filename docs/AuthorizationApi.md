@@ -601,7 +601,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+page_size = ''25'' # str | Page size (max 200, default 25) (optional) (default to '25')
 id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
 name = 'name_example' # str | Optionally request specific divisions by division name (optional)
 
@@ -620,7 +620,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **page_size** | **str**| Page size (max 200, default 25) | [optional] [default to &#39;25&#39;] |
 | **id** | [**list[str]**](str)| Optionally request specific divisions by their IDs | [optional]  |
 | **name** | **str**| Optionally request specific divisions by division name | [optional]  |
 
@@ -3098,4 +3098,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_

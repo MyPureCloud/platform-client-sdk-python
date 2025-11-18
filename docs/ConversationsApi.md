@@ -80,6 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_keyconfiguration**](#get_conversations_keyconfiguration) | Get the encryption key configurations|
 |[**get_conversations_keyconfigurations**](#get_conversations_keyconfigurations) | Get a list of key configurations data|
 |[**get_conversations_message**](#get_conversations_message) | Get message conversation|
+|[**get_conversations_message_communication_messages_media**](#get_conversations_message_communication_messages_media) | Get message media list by status|
 |[**get_conversations_message_communication_messages_media_media_id**](#get_conversations_message_communication_messages_media_media_id) | Get media|
 |[**get_conversations_message_details**](#get_conversations_message_details) | Get message|
 |[**get_conversations_message_message**](#get_conversations_message_message) | Get conversation message|
@@ -3939,6 +3940,62 @@ except ApiException as e:
 ### Return type
 
 [**MessageConversation**](MessageConversation)
+
+
+## get_conversations_message_communication_messages_media
+
+> [**MessageMediaListing**](MessageMediaListing) get_conversations_message_communication_messages_media(conversation_id, communication_id, status=status, page_number=page_number, page_size=page_size)
+
+
+Get message media list by status
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media 
+
+Requires ANY permissions: 
+
+* conversation:messageMedia:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+communication_id = 'communication_id_example' # str | communicationId
+status = 'status_example' # str | The status on which to filter the response. (optional)
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get message media list by status
+    api_response = api_instance.get_conversations_message_communication_messages_media(conversation_id, communication_id, status=status, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_message_communication_messages_media: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **communication_id** | **str**| communicationId |  |
+| **status** | **str**| The status on which to filter the response. | [optional] <br />**Values**: uploading, valid, invalid |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**MessageMediaListing**](MessageMediaListing)
 
 
 ## get_conversations_message_communication_messages_media_media_id
@@ -14821,4 +14878,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_

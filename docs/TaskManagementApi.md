@@ -2526,7 +2526,7 @@ void (empty response body)
 
 ## patch_taskmanagement_workitem_user_wrapups
 
-> [**WorkitemWrapup**](WorkitemWrapup) patch_taskmanagement_workitem_user_wrapups(workitem_id, user_id, body)
+>  patch_taskmanagement_workitem_user_wrapups(workitem_id, user_id, body)
 
 
 Add/Remove a wrapup code for a given user in a workitem.
@@ -2556,8 +2556,7 @@ body = PureCloudPlatformClientV2.WorkitemWrapupUpdate() # WorkitemWrapupUpdate |
 
 try:
     # Add/Remove a wrapup code for a given user in a workitem.
-    api_response = api_instance.patch_taskmanagement_workitem_user_wrapups(workitem_id, user_id, body)
-    pprint(api_response)
+    api_instance.patch_taskmanagement_workitem_user_wrapups(workitem_id, user_id, body)
 except ApiException as e:
     print("Exception when calling TaskManagementApi->patch_taskmanagement_workitem_user_wrapups: %s\n" % e)
 ```
@@ -2573,12 +2572,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+void (empty response body)
 
 
 ## patch_taskmanagement_workitem_users_me_wrapups
 
-> [**WorkitemWrapup**](WorkitemWrapup) patch_taskmanagement_workitem_users_me_wrapups(workitem_id, body)
+>  patch_taskmanagement_workitem_users_me_wrapups(workitem_id, body)
 
 
 Add/Remove a wrapup code for the current user in a workitem.
@@ -2607,8 +2606,7 @@ body = PureCloudPlatformClientV2.WorkitemWrapupUpdate() # WorkitemWrapupUpdate |
 
 try:
     # Add/Remove a wrapup code for the current user in a workitem.
-    api_response = api_instance.patch_taskmanagement_workitem_users_me_wrapups(workitem_id, body)
-    pprint(api_response)
+    api_instance.patch_taskmanagement_workitem_users_me_wrapups(workitem_id, body)
 except ApiException as e:
     print("Exception when calling TaskManagementApi->patch_taskmanagement_workitem_users_me_wrapups: %s\n" % e)
 ```
@@ -2623,7 +2621,7 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup)
+void (empty response body)
 
 
 ## patch_taskmanagement_workitems_bulk_add_job
@@ -3864,4 +3862,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_

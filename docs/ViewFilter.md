@@ -239,7 +239,9 @@
 | **sentiment_score_categories** | list[str] | A set of Sentiment Score Categories  for filtering | [optional] |
 | **sentiment_trend_categories** | list[str] | A set of Sentiment Trend Categories for filtering | [optional] |
 | **content_moderation_flags** | list[str] | A set of Content Moderation Flags for filtering | [optional] |
+| **session_expired** | bool | Filter to indicate for if session is expired | [optional] |
+| **engagement_source** | list[str] | The engagement sources used to filter the view | [optional] |
 
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_
