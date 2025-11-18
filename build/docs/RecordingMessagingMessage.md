@@ -33,7 +33,9 @@
 | **interactive_application** | [InteractiveApplication](InteractiveApplication) | InteractiveApplication content. | [optional] |
 | **payment_request** | [PaymentRequest](PaymentRequest) | Payment request content. | [optional] |
 | **payment_response** | [PaymentResponse](PaymentResponse) | Payment response content. | [optional] |
+| **form** | [RecordingForm](RecordingForm) | Form content. | [optional] |
+| **roadside_assistance** | [RecordingRoadsideAssistance](RecordingRoadsideAssistance) | Roadside Assistance content. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_

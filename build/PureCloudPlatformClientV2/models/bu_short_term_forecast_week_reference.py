@@ -72,7 +72,7 @@ class BuShortTermForecastWeekReference(object):
     def id(self) -> str:
         """
         Gets the id of this BuShortTermForecastWeekReference.
-        Forecast id used in this work plan bid
+        The ID of the forecast
 
         :return: The id of this BuShortTermForecastWeekReference.
         :rtype: str
@@ -83,7 +83,7 @@ class BuShortTermForecastWeekReference(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this BuShortTermForecastWeekReference.
-        Forecast id used in this work plan bid
+        The ID of the forecast
 
         :param id: The id of this BuShortTermForecastWeekReference.
         :type: str
@@ -144,7 +144,7 @@ class BuShortTermForecastWeekReference(object):
     def week_number(self) -> int:
         """
         Gets the week_number of this BuShortTermForecastWeekReference.
-        The week number used for this bid. First week starts with number 1
+        The week number to be used from the selected forecast. First week starts with number 1
 
         :return: The week_number of this BuShortTermForecastWeekReference.
         :rtype: int
@@ -155,7 +155,7 @@ class BuShortTermForecastWeekReference(object):
     def week_number(self, week_number: int) -> None:
         """
         Sets the week_number of this BuShortTermForecastWeekReference.
-        The week number used for this bid. First week starts with number 1
+        The week number to be used from the selected forecast. First week starts with number 1
 
         :param week_number: The week_number of this BuShortTermForecastWeekReference.
         :type: int

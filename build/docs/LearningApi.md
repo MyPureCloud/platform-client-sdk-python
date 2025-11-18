@@ -653,7 +653,7 @@ except ApiException as e:
 
 ## get_learning_modules
 
-> [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)
+> [**LearningModuleList**](LearningModuleList) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)
 
 
 Get all learning modules of an organization
@@ -716,7 +716,7 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing)
+[**LearningModuleList**](LearningModuleList)
 
 
 ## get_learning_modules_assignments
@@ -1979,4 +1979,4 @@ except ApiException as e:
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_

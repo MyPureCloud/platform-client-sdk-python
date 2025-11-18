@@ -46,7 +46,9 @@ if TYPE_CHECKING:
     from . import PaymentResponse
     from . import QuickReply
     from . import RecordingContentStory
+    from . import RecordingForm
     from . import RecordingNotificationTemplate
+    from . import RecordingRoadsideAssistance
     from . import User
 
 class RecordingMessagingMessage(object):
@@ -90,7 +92,9 @@ class RecordingMessagingMessage(object):
             'events': 'list[ConversationMessageEvent]',
             'interactive_application': 'InteractiveApplication',
             'payment_request': 'PaymentRequest',
-            'payment_response': 'PaymentResponse'
+            'payment_response': 'PaymentResponse',
+            'form': 'RecordingForm',
+            'roadside_assistance': 'RecordingRoadsideAssistance'
         }
 
         self.attribute_map = {
@@ -120,7 +124,9 @@ class RecordingMessagingMessage(object):
             'events': 'events',
             'interactive_application': 'interactiveApplication',
             'payment_request': 'paymentRequest',
-            'payment_response': 'paymentResponse'
+            'payment_response': 'paymentResponse',
+            'form': 'form',
+            'roadside_assistance': 'roadsideAssistance'
         }
 
         self._pcFrom = None
@@ -150,6 +156,8 @@ class RecordingMessagingMessage(object):
         self._interactive_application = None
         self._payment_request = None
         self._payment_response = None
+        self._form = None
+        self._roadside_assistance = None
 
     @property
     def pcFrom(self) -> str:
@@ -808,6 +816,54 @@ class RecordingMessagingMessage(object):
         
 
         self._payment_response = payment_response
+
+    @property
+    def form(self) -> 'RecordingForm':
+        """
+        Gets the form of this RecordingMessagingMessage.
+        Form content.
+
+        :return: The form of this RecordingMessagingMessage.
+        :rtype: RecordingForm
+        """
+        return self._form
+
+    @form.setter
+    def form(self, form: 'RecordingForm') -> None:
+        """
+        Sets the form of this RecordingMessagingMessage.
+        Form content.
+
+        :param form: The form of this RecordingMessagingMessage.
+        :type: RecordingForm
+        """
+        
+
+        self._form = form
+
+    @property
+    def roadside_assistance(self) -> 'RecordingRoadsideAssistance':
+        """
+        Gets the roadside_assistance of this RecordingMessagingMessage.
+        Roadside Assistance content.
+
+        :return: The roadside_assistance of this RecordingMessagingMessage.
+        :rtype: RecordingRoadsideAssistance
+        """
+        return self._roadside_assistance
+
+    @roadside_assistance.setter
+    def roadside_assistance(self, roadside_assistance: 'RecordingRoadsideAssistance') -> None:
+        """
+        Sets the roadside_assistance of this RecordingMessagingMessage.
+        Roadside Assistance content.
+
+        :param roadside_assistance: The roadside_assistance of this RecordingMessagingMessage.
+        :type: RecordingRoadsideAssistance
+        """
+        
+
+        self._roadside_assistance = roadside_assistance
 
     def to_dict(self):
         """

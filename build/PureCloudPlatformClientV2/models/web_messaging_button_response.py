@@ -50,20 +50,23 @@ class WebMessagingButtonResponse(object):
             'id': 'str',
             'type': 'str',
             'text': 'str',
-            'payload': 'str'
+            'payload': 'str',
+            'originating_message_id': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
             'text': 'text',
-            'payload': 'payload'
+            'payload': 'payload',
+            'originating_message_id': 'originatingMessageId'
         }
 
         self._id = None
         self._type = None
         self._text = None
         self._payload = None
+        self._originating_message_id = None
 
     @property
     def id(self) -> str:
@@ -165,6 +168,30 @@ class WebMessagingButtonResponse(object):
         
 
         self._payload = payload
+
+    @property
+    def originating_message_id(self) -> str:
+        """
+        Gets the originating_message_id of this WebMessagingButtonResponse.
+        Id of original structured message that this message responds to.
+
+        :return: The originating_message_id of this WebMessagingButtonResponse.
+        :rtype: str
+        """
+        return self._originating_message_id
+
+    @originating_message_id.setter
+    def originating_message_id(self, originating_message_id: str) -> None:
+        """
+        Sets the originating_message_id of this WebMessagingButtonResponse.
+        Id of original structured message that this message responds to.
+
+        :param originating_message_id: The originating_message_id of this WebMessagingButtonResponse.
+        :type: str
+        """
+        
+
+        self._originating_message_id = originating_message_id
 
     def to_dict(self):
         """

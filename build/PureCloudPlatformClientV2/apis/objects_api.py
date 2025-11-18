@@ -556,7 +556,7 @@ class ObjectsApi(object):
             for asynchronous request. (optional)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str page_size: Page size (max 200, default 25)
         :param list[str] id: Optionally request specific divisions by their IDs
         :param str name: Optionally request specific divisions by division name
         :return: AuthzDivisionCursorListing

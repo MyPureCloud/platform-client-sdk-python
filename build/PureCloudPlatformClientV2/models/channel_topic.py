@@ -50,6 +50,7 @@ class ChannelTopic(object):
             'id': 'str',
             'state': 'str',
             'rejection_reason': 'str',
+            'missing_permissions': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -57,12 +58,14 @@ class ChannelTopic(object):
             'id': 'id',
             'state': 'state',
             'rejection_reason': 'rejectionReason',
+            'missing_permissions': 'missingPermissions',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._state = None
         self._rejection_reason = None
+        self._missing_permissions = None
         self._self_uri = None
 
     @property
@@ -141,6 +144,30 @@ class ChannelTopic(object):
         
 
         self._rejection_reason = rejection_reason
+
+    @property
+    def missing_permissions(self) -> List[str]:
+        """
+        Gets the missing_permissions of this ChannelTopic.
+
+
+        :return: The missing_permissions of this ChannelTopic.
+        :rtype: list[str]
+        """
+        return self._missing_permissions
+
+    @missing_permissions.setter
+    def missing_permissions(self, missing_permissions: List[str]) -> None:
+        """
+        Sets the missing_permissions of this ChannelTopic.
+
+
+        :param missing_permissions: The missing_permissions of this ChannelTopic.
+        :type: list[str]
+        """
+        
+
+        self._missing_permissions = missing_permissions
 
     @property
     def self_uri(self) -> str:

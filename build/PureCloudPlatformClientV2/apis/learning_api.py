@@ -57,6 +57,7 @@ from ..models import LearningModule
 from ..models import LearningModuleCoverArtResponse
 from ..models import LearningModuleJobRequest
 from ..models import LearningModuleJobResponse
+from ..models import LearningModuleList
 from ..models import LearningModulePreviewGetResponse
 from ..models import LearningModulePreviewUpdateRequest
 from ..models import LearningModulePreviewUpdateResponse
@@ -64,7 +65,6 @@ from ..models import LearningModulePublishRequest
 from ..models import LearningModulePublishResponse
 from ..models import LearningModuleRequest
 from ..models import LearningModuleRule
-from ..models import LearningModulesDomainEntityListing
 from ..models import LearningScheduleSlotsJobRequest
 from ..models import LearningScheduleSlotsJobResponse
 from ..models import LearningScheduleSlotsQueryRequest
@@ -1058,7 +1058,7 @@ class LearningApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_learning_modules(self, **kwargs) -> 'LearningModulesDomainEntityListing':
+    def get_learning_modules(self, **kwargs) -> 'LearningModuleList':
         """
         Get all learning modules of an organization
         
@@ -1084,7 +1084,7 @@ class LearningApi(object):
         :param str is_published: Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
         :param list[str] statuses: Specifies the module statuses to filter by
         :param list[str] external_ids: Specifies the module external IDs to filter by. Only one ID is allowed
-        :return: LearningModulesDomainEntityListing
+        :return: LearningModuleList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1158,7 +1158,7 @@ class LearningApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='LearningModulesDomainEntityListing',
+                                            response_type='LearningModuleList',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

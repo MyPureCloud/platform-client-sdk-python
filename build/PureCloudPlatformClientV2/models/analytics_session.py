@@ -1163,7 +1163,7 @@ class AnalyticsSession(object):
         """
         if isinstance(engagement_source, int):
             engagement_source = str(engagement_source)
-        allowed_values = ["AppleMessagesForBusiness", "Discord", "Email", "Facebook", "FacebookMessenger", "Glassdoor", "GoogleBusinessProfile", "Instagram", "KakaoTalk", "Line", "LinkedIn", "MicrosoftTeams", "MobileChat", "Other", "QQ", "Reddit", "ServiceNow", "SFDC", "SMS", "Snapchat", "Telegram", "Threads", "Trustpilot", "Unspecified", "Viber", "WebChat", "WeChat", "Weibo", "WhatsApp", "X", "Yelp", "YouTube", "Zendesk"]
+        allowed_values = ["AppleMessagesForBusiness", "Discord", "Email", "Facebook", "FacebookMessenger", "Glassdoor", "GoogleBusinessProfile", "Instagram", "KakaoTalk", "Line", "LinkedIn", "MicrosoftTeams", "MobileChat", "Other", "QQ", "Reddit", "ServiceNow", "SFDC", "SMS", "Snapchat", "Telegram", "Threads", "Trustpilot", "Unspecified", "Viber", "WebChat", "WeChat", "Weibo", "WhatsApp", "X", "Yelp", "YouTube", "Zendesk", "OpenMessaging"]
         if engagement_source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for engagement_source -> " + engagement_source)
             self._engagement_source = "outdated_sdk_version"

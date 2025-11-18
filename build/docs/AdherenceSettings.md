@@ -12,7 +12,8 @@
 | **non_on_queue_activities_equivalent** | bool | Whether to treat all non-on-queue activities as equivalent for adherence purposes | [optional] |
 | **track_on_queue_activity** | bool | Whether to track on-queue activities | [optional] |
 | **ignored_activity_categories** | [IgnoredActivityCategories](IgnoredActivityCategories) | Activity categories that should be ignored for adherence purposes | [optional] |
+| **ignored_activity_code_ids** | [IgnoredActivityCodeIds](IgnoredActivityCodeIds) | Activity code IDs that should be ignored for adherence purposes | [optional] |
 
 
 
-_PureCloudPlatformClientV2 242.0.0_
+_PureCloudPlatformClientV2 243.0.0_

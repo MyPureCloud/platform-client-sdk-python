@@ -47,20 +47,50 @@ class ConversationContentReceivedReplyMessage(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'header': 'str',
             'title': 'str',
             'subtitle': 'str',
+            'button_label': 'str',
             'image_url': 'str'
         }
 
         self.attribute_map = {
+            'header': 'header',
             'title': 'title',
             'subtitle': 'subtitle',
+            'button_label': 'buttonLabel',
             'image_url': 'imageUrl'
         }
 
+        self._header = None
         self._title = None
         self._subtitle = None
+        self._button_label = None
         self._image_url = None
+
+    @property
+    def header(self) -> str:
+        """
+        Gets the header of this ConversationContentReceivedReplyMessage.
+        Text to show in the header.
+
+        :return: The header of this ConversationContentReceivedReplyMessage.
+        :rtype: str
+        """
+        return self._header
+
+    @header.setter
+    def header(self, header: str) -> None:
+        """
+        Sets the header of this ConversationContentReceivedReplyMessage.
+        Text to show in the header.
+
+        :param header: The header of this ConversationContentReceivedReplyMessage.
+        :type: str
+        """
+        
+
+        self._header = header
 
     @property
     def title(self) -> str:
@@ -109,6 +139,30 @@ class ConversationContentReceivedReplyMessage(object):
         
 
         self._subtitle = subtitle
+
+    @property
+    def button_label(self) -> str:
+        """
+        Gets the button_label of this ConversationContentReceivedReplyMessage.
+        Text to show on the button label.
+
+        :return: The button_label of this ConversationContentReceivedReplyMessage.
+        :rtype: str
+        """
+        return self._button_label
+
+    @button_label.setter
+    def button_label(self, button_label: str) -> None:
+        """
+        Sets the button_label of this ConversationContentReceivedReplyMessage.
+        Text to show on the button label.
+
+        :param button_label: The button_label of this ConversationContentReceivedReplyMessage.
+        :type: str
+        """
+        
+
+        self._button_label = button_label
 
     @property
     def image_url(self) -> str:

@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import IgnoredActivityCategories
+    from . import IgnoredActivityCodeIds
 
 class AdherenceSettings(object):
     """
@@ -54,7 +55,8 @@ class AdherenceSettings(object):
             'adherence_exception_threshold_seconds': 'int',
             'non_on_queue_activities_equivalent': 'bool',
             'track_on_queue_activity': 'bool',
-            'ignored_activity_categories': 'IgnoredActivityCategories'
+            'ignored_activity_categories': 'IgnoredActivityCategories',
+            'ignored_activity_code_ids': 'IgnoredActivityCodeIds'
         }
 
         self.attribute_map = {
@@ -63,7 +65,8 @@ class AdherenceSettings(object):
             'adherence_exception_threshold_seconds': 'adherenceExceptionThresholdSeconds',
             'non_on_queue_activities_equivalent': 'nonOnQueueActivitiesEquivalent',
             'track_on_queue_activity': 'trackOnQueueActivity',
-            'ignored_activity_categories': 'ignoredActivityCategories'
+            'ignored_activity_categories': 'ignoredActivityCategories',
+            'ignored_activity_code_ids': 'ignoredActivityCodeIds'
         }
 
         self._severe_alert_threshold_minutes = None
@@ -72,6 +75,7 @@ class AdherenceSettings(object):
         self._non_on_queue_activities_equivalent = None
         self._track_on_queue_activity = None
         self._ignored_activity_categories = None
+        self._ignored_activity_code_ids = None
 
     @property
     def severe_alert_threshold_minutes(self) -> int:
@@ -216,6 +220,30 @@ class AdherenceSettings(object):
         
 
         self._ignored_activity_categories = ignored_activity_categories
+
+    @property
+    def ignored_activity_code_ids(self) -> 'IgnoredActivityCodeIds':
+        """
+        Gets the ignored_activity_code_ids of this AdherenceSettings.
+        Activity code IDs that should be ignored for adherence purposes
+
+        :return: The ignored_activity_code_ids of this AdherenceSettings.
+        :rtype: IgnoredActivityCodeIds
+        """
+        return self._ignored_activity_code_ids
+
+    @ignored_activity_code_ids.setter
+    def ignored_activity_code_ids(self, ignored_activity_code_ids: 'IgnoredActivityCodeIds') -> None:
+        """
+        Sets the ignored_activity_code_ids of this AdherenceSettings.
+        Activity code IDs that should be ignored for adherence purposes
+
+        :param ignored_activity_code_ids: The ignored_activity_code_ids of this AdherenceSettings.
+        :type: IgnoredActivityCodeIds
+        """
+        
+
+        self._ignored_activity_code_ids = ignored_activity_code_ids
 
     def to_dict(self):
         """

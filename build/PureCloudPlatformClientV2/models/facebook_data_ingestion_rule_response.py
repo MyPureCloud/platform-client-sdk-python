@@ -311,7 +311,7 @@ class FacebookDataIngestionRuleResponse(object):
     def integration_id(self) -> str:
         """
         Gets the integration_id of this FacebookDataIngestionRuleResponse.
-        The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource
+        Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages.
 
         :return: The integration_id of this FacebookDataIngestionRuleResponse.
         :rtype: str
@@ -322,7 +322,7 @@ class FacebookDataIngestionRuleResponse(object):
     def integration_id(self, integration_id: str) -> None:
         """
         Sets the integration_id of this FacebookDataIngestionRuleResponse.
-        The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/facebook resource
+        Id of the Integration when source is owned (Authenticated). This entity is created using the /conversations/messaging/integrations/facebook resource. Optional when configuring non-owned pages.
 
         :param integration_id: The integration_id of this FacebookDataIngestionRuleResponse.
         :type: str

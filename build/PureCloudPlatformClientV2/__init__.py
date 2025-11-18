@@ -153,6 +153,7 @@ from .models.agent_schedule_shift_activity import AgentScheduleShiftActivity
 from .models.agent_state_agent_query_clause import AgentStateAgentQueryClause
 from .models.agent_state_agent_query_predicate import AgentStateAgentQueryPredicate
 from .models.agent_state_counts_request import AgentStateCountsRequest
+from .models.agent_state_event_topic_agent_state_event_notification import AgentStateEventTopicAgentStateEventNotification
 from .models.agent_state_is_out_of_office_count import AgentStateIsOutOfOfficeCount
 from .models.agent_state_presence_count import AgentStatePresenceCount
 from .models.agent_state_query_request import AgentStateQueryRequest
@@ -1164,6 +1165,8 @@ from .models.conversation_content_quick_reply_v2 import ConversationContentQuick
 from .models.conversation_content_reaction import ConversationContentReaction
 from .models.conversation_content_received_reply_message import ConversationContentReceivedReplyMessage
 from .models.conversation_content_required_contact_field import ConversationContentRequiredContactField
+from .models.conversation_content_rich_link import ConversationContentRichLink
+from .models.conversation_content_rich_link_header import ConversationContentRichLinkHeader
 from .models.conversation_content_roadside_assistance import ConversationContentRoadsideAssistance
 from .models.conversation_content_story import ConversationContentStory
 from .models.conversation_content_text import ConversationContentText
@@ -2212,6 +2215,7 @@ from .models.external_organization_identifier_claim_request import ExternalOrgan
 from .models.external_organization_identifier_listing import ExternalOrganizationIdentifierListing
 from .models.external_organization_listing import ExternalOrganizationListing
 from .models.external_organization_trustor_link import ExternalOrganizationTrustorLink
+from .models.external_page_metadata import ExternalPageMetadata
 from .models.external_segment import ExternalSegment
 from .models.external_source import ExternalSource
 from .models.facebook_app_credentials import FacebookAppCredentials
@@ -2665,6 +2669,7 @@ from .models.journey_app_events_notification_web_action_message import JourneyAp
 from .models.journey_async_aggregate_query_response import JourneyAsyncAggregateQueryResponse
 from .models.journey_async_aggregation_query import JourneyAsyncAggregationQuery
 from .models.journey_campaign import JourneyCampaign
+from .models.journey_case_association import JourneyCaseAssociation
 from .models.journey_context import JourneyContext
 from .models.journey_customer import JourneyCustomer
 from .models.journey_customer_session import JourneyCustomerSession
@@ -2737,6 +2742,8 @@ from .models.journey_view_element_filter_range import JourneyViewElementFilterRa
 from .models.journey_view_element_filter_range_data import JourneyViewElementFilterRangeData
 from .models.journey_view_job import JourneyViewJob
 from .models.journey_view_job_listing import JourneyViewJobListing
+from .models.journey_view_job_notification_topic_journey_view import JourneyViewJobNotificationTopicJourneyView
+from .models.journey_view_job_notification_topic_journey_view_job_notification_event_v2 import JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2
 from .models.journey_view_link import JourneyViewLink
 from .models.journey_view_link_time_constraint import JourneyViewLinkTimeConstraint
 from .models.journey_view_listing import JourneyViewListing
@@ -2989,6 +2996,7 @@ from .models.learning_module_inform_step import LearningModuleInformStep
 from .models.learning_module_inform_step_request import LearningModuleInformStepRequest
 from .models.learning_module_job_request import LearningModuleJobRequest
 from .models.learning_module_job_response import LearningModuleJobResponse
+from .models.learning_module_list import LearningModuleList
 from .models.learning_module_preview_get_response import LearningModulePreviewGetResponse
 from .models.learning_module_preview_get_response_assignment import LearningModulePreviewGetResponseAssignment
 from .models.learning_module_preview_get_response_step import LearningModulePreviewGetResponseStep
@@ -3007,7 +3015,6 @@ from .models.learning_module_request import LearningModuleRequest
 from .models.learning_module_rule import LearningModuleRule
 from .models.learning_module_rule_parts import LearningModuleRuleParts
 from .models.learning_module_summary import LearningModuleSummary
-from .models.learning_modules_domain_entity_listing import LearningModulesDomainEntityListing
 from .models.learning_schedule_slots_job_request import LearningScheduleSlotsJobRequest
 from .models.learning_schedule_slots_job_response import LearningScheduleSlotsJobResponse
 from .models.learning_schedule_slots_job_result import LearningScheduleSlotsJobResult
@@ -3182,6 +3189,7 @@ from .models.message_info import MessageInfo
 from .models.message_media import MessageMedia
 from .models.message_media_attachment import MessageMediaAttachment
 from .models.message_media_data import MessageMediaData
+from .models.message_media_listing import MessageMediaListing
 from .models.message_media_participant import MessageMediaParticipant
 from .models.message_media_policy import MessageMediaPolicy
 from .models.message_media_policy_conditions import MessageMediaPolicyConditions
@@ -4434,6 +4442,7 @@ from .models.set_sms_phone_number_action_settings import SetSmsPhoneNumberAction
 from .models.set_time_off_integration_status_request import SetTimeOffIntegrationStatusRequest
 from .models.set_time_off_limit_values_request import SetTimeOffLimitValuesRequest
 from .models.set_uui_data_request import SetUuiDataRequest
+from .models.set_whats_app_integration_action_settings import SetWhatsAppIntegrationActionSettings
 from .models.set_wrapper_day_of_week import SetWrapperDayOfWeek
 from .models.set_wrapper_route_path_request import SetWrapperRoutePathRequest
 from .models.set_wrapper_string import SetWrapperString

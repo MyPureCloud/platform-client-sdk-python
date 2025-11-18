@@ -90,7 +90,7 @@ class TimeOffLimitRange(object):
     def granularity(self) -> str:
         """
         Gets the granularity of this TimeOffLimitRange.
-        Granularity choice for the time off limit
+        Granularity choice for the time-off limit
 
         :return: The granularity of this TimeOffLimitRange.
         :rtype: str
@@ -101,14 +101,14 @@ class TimeOffLimitRange(object):
     def granularity(self, granularity: str) -> None:
         """
         Sets the granularity of this TimeOffLimitRange.
-        Granularity choice for the time off limit
+        Granularity choice for the time-off limit
 
         :param granularity: The granularity of this TimeOffLimitRange.
         :type: str
         """
         if isinstance(granularity, int):
             granularity = str(granularity)
-        allowed_values = ["Daily"]
+        allowed_values = ["Daily", "FifteenMinutes"]
         if granularity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for granularity -> " + granularity)
             self._granularity = "outdated_sdk_version"

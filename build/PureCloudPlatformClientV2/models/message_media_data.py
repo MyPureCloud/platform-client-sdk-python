@@ -54,6 +54,8 @@ class MessageMediaData(object):
             'content_length_bytes': 'int',
             'upload_url': 'str',
             'status': 'str',
+            'conversation_id': 'str',
+            'communication_id': 'str',
             'self_uri': 'str'
         }
 
@@ -65,6 +67,8 @@ class MessageMediaData(object):
             'content_length_bytes': 'contentLengthBytes',
             'upload_url': 'uploadUrl',
             'status': 'status',
+            'conversation_id': 'conversationId',
+            'communication_id': 'communicationId',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +79,8 @@ class MessageMediaData(object):
         self._content_length_bytes = None
         self._upload_url = None
         self._status = None
+        self._conversation_id = None
+        self._communication_id = None
         self._self_uri = None
 
     @property
@@ -249,6 +255,54 @@ class MessageMediaData(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def conversation_id(self) -> str:
+        """
+        Gets the conversation_id of this MessageMediaData.
+
+
+        :return: The conversation_id of this MessageMediaData.
+        :rtype: str
+        """
+        return self._conversation_id
+
+    @conversation_id.setter
+    def conversation_id(self, conversation_id: str) -> None:
+        """
+        Sets the conversation_id of this MessageMediaData.
+
+
+        :param conversation_id: The conversation_id of this MessageMediaData.
+        :type: str
+        """
+        
+
+        self._conversation_id = conversation_id
+
+    @property
+    def communication_id(self) -> str:
+        """
+        Gets the communication_id of this MessageMediaData.
+
+
+        :return: The communication_id of this MessageMediaData.
+        :rtype: str
+        """
+        return self._communication_id
+
+    @communication_id.setter
+    def communication_id(self, communication_id: str) -> None:
+        """
+        Sets the communication_id of this MessageMediaData.
+
+
+        :param communication_id: The communication_id of this MessageMediaData.
+        :type: str
+        """
+        
+
+        self._communication_id = communication_id
 
     @property
     def self_uri(self) -> str:

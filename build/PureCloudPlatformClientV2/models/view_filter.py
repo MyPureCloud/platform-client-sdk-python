@@ -286,7 +286,9 @@ class ViewFilter(object):
             'empathy_score_categories': 'list[str]',
             'sentiment_score_categories': 'list[str]',
             'sentiment_trend_categories': 'list[str]',
-            'content_moderation_flags': 'list[str]'
+            'content_moderation_flags': 'list[str]',
+            'session_expired': 'bool',
+            'engagement_source': 'list[str]'
         }
 
         self.attribute_map = {
@@ -522,7 +524,9 @@ class ViewFilter(object):
             'empathy_score_categories': 'empathyScoreCategories',
             'sentiment_score_categories': 'sentimentScoreCategories',
             'sentiment_trend_categories': 'sentimentTrendCategories',
-            'content_moderation_flags': 'contentModerationFlags'
+            'content_moderation_flags': 'contentModerationFlags',
+            'session_expired': 'sessionExpired',
+            'engagement_source': 'engagementSource'
         }
 
         self._media_types = None
@@ -758,6 +762,8 @@ class ViewFilter(object):
         self._sentiment_score_categories = None
         self._sentiment_trend_categories = None
         self._content_moderation_flags = None
+        self._session_expired = None
+        self._engagement_source = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6380,6 +6386,54 @@ class ViewFilter(object):
         
 
         self._content_moderation_flags = content_moderation_flags
+
+    @property
+    def session_expired(self) -> bool:
+        """
+        Gets the session_expired of this ViewFilter.
+        Filter to indicate for if session is expired
+
+        :return: The session_expired of this ViewFilter.
+        :rtype: bool
+        """
+        return self._session_expired
+
+    @session_expired.setter
+    def session_expired(self, session_expired: bool) -> None:
+        """
+        Sets the session_expired of this ViewFilter.
+        Filter to indicate for if session is expired
+
+        :param session_expired: The session_expired of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._session_expired = session_expired
+
+    @property
+    def engagement_source(self) -> List[str]:
+        """
+        Gets the engagement_source of this ViewFilter.
+        The engagement sources used to filter the view
+
+        :return: The engagement_source of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._engagement_source
+
+    @engagement_source.setter
+    def engagement_source(self, engagement_source: List[str]) -> None:
+        """
+        Sets the engagement_source of this ViewFilter.
+        The engagement sources used to filter the view
+
+        :param engagement_source: The engagement_source of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._engagement_source = engagement_source
 
     def to_dict(self):
         """

@@ -1,0 +1,14 @@
+# JourneyViewJobNotificationTopicJourneyView
+
+## JourneyViewJobNotificationTopicJourneyView
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **id** | str |  | [optional] |
+| **version** | int |  | [optional] |
+
+
+
+_PureCloudPlatformClientV2 243.0.0_

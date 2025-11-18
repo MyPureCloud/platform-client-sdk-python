@@ -85,7 +85,6 @@ from ..models import WorkitemTerminate
 from ..models import WorkitemUpdate
 from ..models import WorkitemVersion
 from ..models import WorkitemVersionListing
-from ..models import WorkitemWrapup
 from ..models import WorkitemWrapupEntityListing
 from ..models import WorkitemWrapupUpdate
 from ..models import Worktype
@@ -4130,7 +4129,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_taskmanagement_workitem_user_wrapups(self, workitem_id: str, user_id: str, body: 'WorkitemWrapupUpdate', **kwargs) -> 'WorkitemWrapup':
+    def patch_taskmanagement_workitem_user_wrapups(self, workitem_id: str, user_id: str, body: 'WorkitemWrapupUpdate', **kwargs) -> None:
         """
         Add/Remove a wrapup code for a given user in a workitem.
         
@@ -4148,7 +4147,7 @@ class TaskManagementApi(object):
         :param str workitem_id: The ID of the Workitem. (required)
         :param str user_id: The ID of the user (required)
         :param WorkitemWrapupUpdate body: Request body to add/remove a wrapup code for a workitem (required)
-        :return: WorkitemWrapup
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4215,12 +4214,12 @@ class TaskManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='WorkitemWrapup',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def patch_taskmanagement_workitem_users_me_wrapups(self, workitem_id: str, body: 'WorkitemWrapupUpdate', **kwargs) -> 'WorkitemWrapup':
+    def patch_taskmanagement_workitem_users_me_wrapups(self, workitem_id: str, body: 'WorkitemWrapupUpdate', **kwargs) -> None:
         """
         Add/Remove a wrapup code for the current user in a workitem.
         
@@ -4237,7 +4236,7 @@ class TaskManagementApi(object):
             for asynchronous request. (optional)
         :param str workitem_id: The ID of the Workitem. (required)
         :param WorkitemWrapupUpdate body: Request body to add/remove the wrapup code for workitem (required)
-        :return: WorkitemWrapup
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4299,7 +4298,7 @@ class TaskManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='WorkitemWrapup',
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -240,6 +240,7 @@ PureCloudPlatformClientV2/models/agent_schedule_shift_activity.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_clause.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_predicate.py
 PureCloudPlatformClientV2/models/agent_state_counts_request.py
+PureCloudPlatformClientV2/models/agent_state_event_topic_agent_state_event_notification.py
 PureCloudPlatformClientV2/models/agent_state_is_out_of_office_count.py
 PureCloudPlatformClientV2/models/agent_state_presence_count.py
 PureCloudPlatformClientV2/models/agent_state_query_request.py
@@ -1251,6 +1252,8 @@ PureCloudPlatformClientV2/models/conversation_content_quick_reply_v2.py
 PureCloudPlatformClientV2/models/conversation_content_reaction.py
 PureCloudPlatformClientV2/models/conversation_content_received_reply_message.py
 PureCloudPlatformClientV2/models/conversation_content_required_contact_field.py
+PureCloudPlatformClientV2/models/conversation_content_rich_link.py
+PureCloudPlatformClientV2/models/conversation_content_rich_link_header.py
 PureCloudPlatformClientV2/models/conversation_content_roadside_assistance.py
 PureCloudPlatformClientV2/models/conversation_content_story.py
 PureCloudPlatformClientV2/models/conversation_content_text.py
@@ -2299,6 +2302,7 @@ PureCloudPlatformClientV2/models/external_organization_identifier_claim_request.
 PureCloudPlatformClientV2/models/external_organization_identifier_listing.py
 PureCloudPlatformClientV2/models/external_organization_listing.py
 PureCloudPlatformClientV2/models/external_organization_trustor_link.py
+PureCloudPlatformClientV2/models/external_page_metadata.py
 PureCloudPlatformClientV2/models/external_segment.py
 PureCloudPlatformClientV2/models/external_source.py
 PureCloudPlatformClientV2/models/facebook_app_credentials.py
@@ -2752,6 +2756,7 @@ PureCloudPlatformClientV2/models/journey_app_events_notification_web_action_mess
 PureCloudPlatformClientV2/models/journey_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/journey_async_aggregation_query.py
 PureCloudPlatformClientV2/models/journey_campaign.py
+PureCloudPlatformClientV2/models/journey_case_association.py
 PureCloudPlatformClientV2/models/journey_context.py
 PureCloudPlatformClientV2/models/journey_customer.py
 PureCloudPlatformClientV2/models/journey_customer_session.py
@@ -2824,6 +2829,8 @@ PureCloudPlatformClientV2/models/journey_view_element_filter_range.py
 PureCloudPlatformClientV2/models/journey_view_element_filter_range_data.py
 PureCloudPlatformClientV2/models/journey_view_job.py
 PureCloudPlatformClientV2/models/journey_view_job_listing.py
+PureCloudPlatformClientV2/models/journey_view_job_notification_topic_journey_view.py
+PureCloudPlatformClientV2/models/journey_view_job_notification_topic_journey_view_job_notification_event_v2.py
 PureCloudPlatformClientV2/models/journey_view_link.py
 PureCloudPlatformClientV2/models/journey_view_link_time_constraint.py
 PureCloudPlatformClientV2/models/journey_view_listing.py
@@ -3076,6 +3083,7 @@ PureCloudPlatformClientV2/models/learning_module_inform_step.py
 PureCloudPlatformClientV2/models/learning_module_inform_step_request.py
 PureCloudPlatformClientV2/models/learning_module_job_request.py
 PureCloudPlatformClientV2/models/learning_module_job_response.py
+PureCloudPlatformClientV2/models/learning_module_list.py
 PureCloudPlatformClientV2/models/learning_module_preview_get_response.py
 PureCloudPlatformClientV2/models/learning_module_preview_get_response_assignment.py
 PureCloudPlatformClientV2/models/learning_module_preview_get_response_step.py
@@ -3094,7 +3102,6 @@ PureCloudPlatformClientV2/models/learning_module_request.py
 PureCloudPlatformClientV2/models/learning_module_rule.py
 PureCloudPlatformClientV2/models/learning_module_rule_parts.py
 PureCloudPlatformClientV2/models/learning_module_summary.py
-PureCloudPlatformClientV2/models/learning_modules_domain_entity_listing.py
 PureCloudPlatformClientV2/models/learning_schedule_slots_job_request.py
 PureCloudPlatformClientV2/models/learning_schedule_slots_job_response.py
 PureCloudPlatformClientV2/models/learning_schedule_slots_job_result.py
@@ -3269,6 +3276,7 @@ PureCloudPlatformClientV2/models/message_info.py
 PureCloudPlatformClientV2/models/message_media.py
 PureCloudPlatformClientV2/models/message_media_attachment.py
 PureCloudPlatformClientV2/models/message_media_data.py
+PureCloudPlatformClientV2/models/message_media_listing.py
 PureCloudPlatformClientV2/models/message_media_participant.py
 PureCloudPlatformClientV2/models/message_media_policy.py
 PureCloudPlatformClientV2/models/message_media_policy_conditions.py
@@ -4519,6 +4527,7 @@ PureCloudPlatformClientV2/models/set_sms_phone_number_action_settings.py
 PureCloudPlatformClientV2/models/set_time_off_integration_status_request.py
 PureCloudPlatformClientV2/models/set_time_off_limit_values_request.py
 PureCloudPlatformClientV2/models/set_uui_data_request.py
+PureCloudPlatformClientV2/models/set_whats_app_integration_action_settings.py
 PureCloudPlatformClientV2/models/set_wrapper_day_of_week.py
 PureCloudPlatformClientV2/models/set_wrapper_route_path_request.py
 PureCloudPlatformClientV2/models/set_wrapper_string.py
@@ -5969,6 +5978,7 @@ docs/AgentScheduleShiftActivity.md
 docs/AgentStateAgentQueryClause.md
 docs/AgentStateAgentQueryPredicate.md
 docs/AgentStateCountsRequest.md
+docs/AgentStateEventTopicAgentStateEventNotification.md
 docs/AgentStateIsOutOfOfficeCount.md
 docs/AgentStatePresenceCount.md
 docs/AgentStateQueryRequest.md
@@ -7004,6 +7014,8 @@ docs/ConversationContentQuickReplyV2.md
 docs/ConversationContentReaction.md
 docs/ConversationContentReceivedReplyMessage.md
 docs/ConversationContentRequiredContactField.md
+docs/ConversationContentRichLink.md
+docs/ConversationContentRichLinkHeader.md
 docs/ConversationContentRoadsideAssistance.md
 docs/ConversationContentStory.md
 docs/ConversationContentText.md
@@ -8068,6 +8080,7 @@ docs/ExternalOrganizationIdentifierClaimRequest.md
 docs/ExternalOrganizationIdentifierListing.md
 docs/ExternalOrganizationListing.md
 docs/ExternalOrganizationTrustorLink.md
+docs/ExternalPageMetadata.md
 docs/ExternalSegment.md
 docs/ExternalSource.md
 docs/FacebookAppCredentials.md
@@ -8543,6 +8556,7 @@ docs/JourneyAppEventsNotificationWebActionMessage.md
 docs/JourneyAsyncAggregateQueryResponse.md
 docs/JourneyAsyncAggregationQuery.md
 docs/JourneyCampaign.md
+docs/JourneyCaseAssociation.md
 docs/JourneyContext.md
 docs/JourneyCustomer.md
 docs/JourneyCustomerSession.md
@@ -8615,6 +8629,8 @@ docs/JourneyViewElementFilterRange.md
 docs/JourneyViewElementFilterRangeData.md
 docs/JourneyViewJob.md
 docs/JourneyViewJobListing.md
+docs/JourneyViewJobNotificationTopicJourneyView.md
+docs/JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2.md
 docs/JourneyViewLink.md
 docs/JourneyViewLinkTimeConstraint.md
 docs/JourneyViewListing.md
@@ -8875,6 +8891,7 @@ docs/LearningModuleInformStep.md
 docs/LearningModuleInformStepRequest.md
 docs/LearningModuleJobRequest.md
 docs/LearningModuleJobResponse.md
+docs/LearningModuleList.md
 docs/LearningModulePreviewGetResponse.md
 docs/LearningModulePreviewGetResponseAssignment.md
 docs/LearningModulePreviewGetResponseStep.md
@@ -8893,7 +8910,6 @@ docs/LearningModuleRequest.md
 docs/LearningModuleRule.md
 docs/LearningModuleRuleParts.md
 docs/LearningModuleSummary.md
-docs/LearningModulesDomainEntityListing.md
 docs/LearningScheduleSlotsJobRequest.md
 docs/LearningScheduleSlotsJobResponse.md
 docs/LearningScheduleSlotsJobResult.md
@@ -9074,6 +9090,7 @@ docs/MessageInfo.md
 docs/MessageMedia.md
 docs/MessageMediaAttachment.md
 docs/MessageMediaData.md
+docs/MessageMediaListing.md
 docs/MessageMediaParticipant.md
 docs/MessageMediaPolicy.md
 docs/MessageMediaPolicyConditions.md
@@ -10364,6 +10381,7 @@ docs/SetSmsPhoneNumberActionSettings.md
 docs/SetTimeOffIntegrationStatusRequest.md
 docs/SetTimeOffLimitValuesRequest.md
 docs/SetUuiDataRequest.md
+docs/SetWhatsAppIntegrationActionSettings.md
 docs/SetWrapperDayOfWeek.md
 docs/SetWrapperRoutePathRequest.md
 docs/SetWrapperString.md
@@ -12310,6 +12328,7 @@ docs/get_conversations_internalmessages-example.txt
 docs/get_conversations_keyconfiguration-example.txt
 docs/get_conversations_keyconfigurations-example.txt
 docs/get_conversations_message-example.txt
+docs/get_conversations_message_communication_messages_media-example.txt
 docs/get_conversations_message_communication_messages_media_media_id-example.txt
 docs/get_conversations_message_details-example.txt
 docs/get_conversations_message_message-example.txt
