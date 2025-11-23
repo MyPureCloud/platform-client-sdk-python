@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_learning_assignments_bulkremove**](#post_learning_assignments_bulkremove) | Remove multiple Learning Assignments|
 |[**post_learning_module_jobs**](#post_learning_module_jobs) | Starts a specified operation on learning module|
 |[**post_learning_module_publish**](#post_learning_module_publish) | Publish a Learning module|
+|[**post_learning_module_rule_migrate**](#post_learning_module_rule_migrate) | Migrate a legacy learning module rule to a users rule.|
 |[**post_learning_modules**](#post_learning_modules) | Create a new learning module|
 |[**post_learning_rules_query**](#post_learning_rules_query) | Get users for learning module rule|
 |[**post_learning_scheduleslots_jobs**](#post_learning_scheduleslots_jobs) | Start job to retrieve slots where a learning activity can be scheduled.|
@@ -1573,6 +1574,56 @@ except ApiException as e:
 [**LearningModulePublishResponse**](LearningModulePublishResponse)
 
 
+## post_learning_module_rule_migrate
+
+> [**LearningModuleMigrateResponse**](LearningModuleMigrateResponse) post_learning_module_rule_migrate(module_id)
+
+
+Migrate a legacy learning module rule to a users rule.
+
+post_learning_module_rule_migrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/learning/modules/{moduleId}/rule/migrate 
+
+Requires ANY permissions: 
+
+* learning:module:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+module_id = 'module_id_example' # str | The ID of the learning module
+
+try:
+    # Migrate a legacy learning module rule to a users rule.
+    api_response = api_instance.post_learning_module_rule_migrate(module_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_module_rule_migrate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **module_id** | **str**| The ID of the learning module |  |
+
+### Return type
+
+[**LearningModuleMigrateResponse**](LearningModuleMigrateResponse)
+
+
 ## post_learning_modules
 
 > [**LearningModule**](LearningModule) post_learning_modules(body)
@@ -1979,4 +2030,4 @@ except ApiException as e:
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_PureCloudPlatformClientV2 243.0.0_
+_PureCloudPlatformClientV2 244.0.0_

@@ -6,8 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The globally unique identifier for the object. | [optional] |
-| **name** | str |  | [optional] |
+| **id** | str | The ID of the associated user. | [optional] |
 | **inbound_prompt** | [Prompt](Prompt) | The agent greeting prompt to use when inbound calls are connected | [optional] |
 | **outbound_prompt** | [Prompt](Prompt) | The agent greeting prompt to use when outbound calls are connected | [optional] |
 | **inbound_prompt_default_language** | str | The default language to use for the agent greeting inbound prompt | [optional] |
@@ -16,4 +15,4 @@
 
 
 
-_PureCloudPlatformClientV2 243.0.0_
+_PureCloudPlatformClientV2 244.0.0_
