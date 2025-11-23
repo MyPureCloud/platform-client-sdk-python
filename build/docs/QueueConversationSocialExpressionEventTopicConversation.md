@@ -16,8 +16,10 @@
 | **utilization_label_id** | str |  | [optional] |
 | **secure_pause** | bool |  | [optional] |
 | **inactivity_timeout** | datetime |  | [optional] |
+| **associated_conversation** | [QueueConversationSocialExpressionEventTopicDomainEntityRef](QueueConversationSocialExpressionEventTopicDomainEntityRef) |  | [optional] |
+| **consultation_conversations** | [list[QueueConversationSocialExpressionEventTopicDomainEntityRef]](QueueConversationSocialExpressionEventTopicDomainEntityRef) |  | [optional] |
 | **divisions** | [list[QueueConversationSocialExpressionEventTopicConversationDivisionMembership]](QueueConversationSocialExpressionEventTopicConversationDivisionMembership) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 243.0.0_
+_PureCloudPlatformClientV2 244.0.0_

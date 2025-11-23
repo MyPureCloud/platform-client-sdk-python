@@ -61,8 +61,8 @@ class DomainOrganizationRoleUpdate(object):
             'base_license': 'str',
             'addon_licenses': 'list[str]',
             'date_license_last_updated': 'datetime',
-            'base': 'bool',
             'default': 'bool',
+            'base': 'bool',
             'self_uri': 'str'
         }
 
@@ -79,8 +79,8 @@ class DomainOrganizationRoleUpdate(object):
             'base_license': 'baseLicense',
             'addon_licenses': 'addonLicenses',
             'date_license_last_updated': 'dateLicenseLastUpdated',
-            'base': 'base',
             'default': 'default',
+            'base': 'base',
             'self_uri': 'selfUri'
         }
 
@@ -96,8 +96,8 @@ class DomainOrganizationRoleUpdate(object):
         self._base_license = None
         self._addon_licenses = None
         self._date_license_last_updated = None
-        self._base = None
         self._default = None
+        self._base = None
         self._self_uri = None
 
     @property
@@ -389,30 +389,6 @@ class DomainOrganizationRoleUpdate(object):
         self._date_license_last_updated = date_license_last_updated
 
     @property
-    def base(self) -> bool:
-        """
-        Gets the base of this DomainOrganizationRoleUpdate.
-
-
-        :return: The base of this DomainOrganizationRoleUpdate.
-        :rtype: bool
-        """
-        return self._base
-
-    @base.setter
-    def base(self, base: bool) -> None:
-        """
-        Sets the base of this DomainOrganizationRoleUpdate.
-
-
-        :param base: The base of this DomainOrganizationRoleUpdate.
-        :type: bool
-        """
-        
-
-        self._base = base
-
-    @property
     def default(self) -> bool:
         """
         Gets the default of this DomainOrganizationRoleUpdate.
@@ -435,6 +411,30 @@ class DomainOrganizationRoleUpdate(object):
         
 
         self._default = default
+
+    @property
+    def base(self) -> bool:
+        """
+        Gets the base of this DomainOrganizationRoleUpdate.
+
+
+        :return: The base of this DomainOrganizationRoleUpdate.
+        :rtype: bool
+        """
+        return self._base
+
+    @base.setter
+    def base(self, base: bool) -> None:
+        """
+        Sets the base of this DomainOrganizationRoleUpdate.
+
+
+        :param base: The base of this DomainOrganizationRoleUpdate.
+        :type: bool
+        """
+        
+
+        self._base = base
 
     @property
     def self_uri(self) -> str:

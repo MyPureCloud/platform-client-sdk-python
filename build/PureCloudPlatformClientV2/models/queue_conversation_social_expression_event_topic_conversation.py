@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import QueueConversationSocialExpressionEventTopicConversationDivisionMembership
+    from . import QueueConversationSocialExpressionEventTopicDomainEntityRef
     from . import QueueConversationSocialExpressionEventTopicParticipant
     from . import QueueConversationSocialExpressionEventTopicTransferResponse
 
@@ -61,6 +62,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'utilization_label_id': 'str',
             'secure_pause': 'bool',
             'inactivity_timeout': 'datetime',
+            'associated_conversation': 'QueueConversationSocialExpressionEventTopicDomainEntityRef',
+            'consultation_conversations': 'list[QueueConversationSocialExpressionEventTopicDomainEntityRef]',
             'divisions': 'list[QueueConversationSocialExpressionEventTopicConversationDivisionMembership]'
         }
 
@@ -75,6 +78,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'utilization_label_id': 'utilizationLabelId',
             'secure_pause': 'securePause',
             'inactivity_timeout': 'inactivityTimeout',
+            'associated_conversation': 'associatedConversation',
+            'consultation_conversations': 'consultationConversations',
             'divisions': 'divisions'
         }
 
@@ -88,6 +93,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         self._utilization_label_id = None
         self._secure_pause = None
         self._inactivity_timeout = None
+        self._associated_conversation = None
+        self._consultation_conversations = None
         self._divisions = None
 
     @property
@@ -329,6 +336,54 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         
 
         self._inactivity_timeout = inactivity_timeout
+
+    @property
+    def associated_conversation(self) -> 'QueueConversationSocialExpressionEventTopicDomainEntityRef':
+        """
+        Gets the associated_conversation of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :return: The associated_conversation of this QueueConversationSocialExpressionEventTopicConversation.
+        :rtype: QueueConversationSocialExpressionEventTopicDomainEntityRef
+        """
+        return self._associated_conversation
+
+    @associated_conversation.setter
+    def associated_conversation(self, associated_conversation: 'QueueConversationSocialExpressionEventTopicDomainEntityRef') -> None:
+        """
+        Sets the associated_conversation of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :param associated_conversation: The associated_conversation of this QueueConversationSocialExpressionEventTopicConversation.
+        :type: QueueConversationSocialExpressionEventTopicDomainEntityRef
+        """
+        
+
+        self._associated_conversation = associated_conversation
+
+    @property
+    def consultation_conversations(self) -> List['QueueConversationSocialExpressionEventTopicDomainEntityRef']:
+        """
+        Gets the consultation_conversations of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :return: The consultation_conversations of this QueueConversationSocialExpressionEventTopicConversation.
+        :rtype: list[QueueConversationSocialExpressionEventTopicDomainEntityRef]
+        """
+        return self._consultation_conversations
+
+    @consultation_conversations.setter
+    def consultation_conversations(self, consultation_conversations: List['QueueConversationSocialExpressionEventTopicDomainEntityRef']) -> None:
+        """
+        Sets the consultation_conversations of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :param consultation_conversations: The consultation_conversations of this QueueConversationSocialExpressionEventTopicConversation.
+        :type: list[QueueConversationSocialExpressionEventTopicDomainEntityRef]
+        """
+        
+
+        self._consultation_conversations = consultation_conversations
 
     @property
     def divisions(self) -> List['QueueConversationSocialExpressionEventTopicConversationDivisionMembership']:

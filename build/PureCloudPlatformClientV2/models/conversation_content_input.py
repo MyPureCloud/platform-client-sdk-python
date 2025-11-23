@@ -272,7 +272,7 @@ class ConversationContentInput(object):
         """
         if isinstance(auto_complete_type, int):
             auto_complete_type = str(auto_complete_type)
-        allowed_values = ["Prefix", "Name", "GivenName", "MiddleName", "FamilyName", "Suffix", "Nickname", "Title", "Organization", "Location", "StreetAddress", "Addressline1", "Addressline2", "City", "State", "Country", "PostalCode", "Username", "OneTimeCode", "Email", "Phone", "PaymentCardNumber", "PaymentCardExpiration", "PaymentCardExpirationMonth", "PaymentCardExpirationYear", "PaymentCardSecurityCode", "PaymentCardType", "PaymentCardName", "PaymentCardGivenName", "PaymentCardMiddleName", "PaymentCardFamilyName", "Birthdate", "BirthdateDay", "BirthdateMonth", "BirthdateYear", "DateTime", "FlightNumber"]
+        allowed_values = ["Prefix", "Name", "GivenName", "MiddleName", "FamilyName", "Suffix", "Nickname", "Title", "Organization", "Location", "StreetAddress", "Addressline1", "Addressline2", "City", "State", "Country", "PostalCode", "Username", "OneTimeCode", "Email", "Phone", "PaymentCardNumber", "PaymentCardExpiration", "PaymentCardExpirationMonth", "PaymentCardExpirationYear", "PaymentCardSecurityCode", "PaymentCardType", "PaymentCardName", "PaymentCardGivenName", "PaymentCardMiddleName", "PaymentCardFamilyName", "Birthdate", "BirthdateDay", "BirthdateMonth", "BirthdateYear", "DateTime", "FlightNumber", "Url"]
         if auto_complete_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for auto_complete_type -> " + auto_complete_type)
             self._auto_complete_type = "outdated_sdk_version"

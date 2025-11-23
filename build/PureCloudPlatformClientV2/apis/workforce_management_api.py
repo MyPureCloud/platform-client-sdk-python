@@ -267,9 +267,11 @@ from ..models import WeekScheduleListResponse
 from ..models import WeekScheduleResponse
 from ..models import WeekShiftTradeListResponse
 from ..models import WfmAgent
+from ..models import WfmAgentHistoricalAdherenceResponse
 from ..models import WfmHistoricalAdherenceBulkQuery
 from ..models import WfmHistoricalAdherenceBulkResponse
 from ..models import WfmHistoricalAdherenceQuery
+from ..models import WfmHistoricalAdherenceQueryForAgent
 from ..models import WfmHistoricalAdherenceQueryForTeams
 from ..models import WfmHistoricalAdherenceQueryForUsers
 from ..models import WfmHistoricalAdherenceResponse
@@ -2450,6 +2452,84 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AgentManagementUnitReference',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_agents_me_adherence_historical_job(self, job_id: str, **kwargs) -> 'WfmAgentHistoricalAdherenceResponse':
+        """
+        Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_agents_me_adherence_historical_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: ID of the job to get (required)
+        :return: WfmAgentHistoricalAdherenceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_agents_me_adherence_historical_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_agents_me_adherence_historical_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WfmAgentHistoricalAdherenceResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -14601,6 +14681,84 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AgentsIntegrationsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agents_me_adherence_historical_jobs(self, **kwargs) -> 'WfmAgentHistoricalAdherenceResponse':
+        """
+        Request an agent historical adherence report
+        The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agents_me_adherence_historical_jobs(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] expand: Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities.
+        :param WfmHistoricalAdherenceQueryForAgent body: body
+        :return: WfmAgentHistoricalAdherenceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expand', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agents_me_adherence_historical_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/me/adherence/historical/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WfmAgentHistoricalAdherenceResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

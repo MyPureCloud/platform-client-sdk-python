@@ -62,8 +62,8 @@ class EvaluationQuestion(object):
             'answer_options': 'list[AnswerOption]',
             'multiple_select_option_questions': 'list[EvaluationQuestion]',
             'default_answer': 'DefaultAnswer',
-            'is_critical': 'bool',
-            'is_kill': 'bool'
+            'is_kill': 'bool',
+            'is_critical': 'bool'
         }
 
         self.attribute_map = {
@@ -78,8 +78,8 @@ class EvaluationQuestion(object):
             'answer_options': 'answerOptions',
             'multiple_select_option_questions': 'multipleSelectOptionQuestions',
             'default_answer': 'defaultAnswer',
-            'is_critical': 'isCritical',
-            'is_kill': 'isKill'
+            'is_kill': 'isKill',
+            'is_critical': 'isCritical'
         }
 
         self._id = None
@@ -93,8 +93,8 @@ class EvaluationQuestion(object):
         self._answer_options = None
         self._multiple_select_option_questions = None
         self._default_answer = None
-        self._is_critical = None
         self._is_kill = None
+        self._is_critical = None
 
     @property
     def id(self) -> str:
@@ -366,30 +366,6 @@ class EvaluationQuestion(object):
         self._default_answer = default_answer
 
     @property
-    def is_critical(self) -> bool:
-        """
-        Gets the is_critical of this EvaluationQuestion.
-
-
-        :return: The is_critical of this EvaluationQuestion.
-        :rtype: bool
-        """
-        return self._is_critical
-
-    @is_critical.setter
-    def is_critical(self, is_critical: bool) -> None:
-        """
-        Sets the is_critical of this EvaluationQuestion.
-
-
-        :param is_critical: The is_critical of this EvaluationQuestion.
-        :type: bool
-        """
-        
-
-        self._is_critical = is_critical
-
-    @property
     def is_kill(self) -> bool:
         """
         Gets the is_kill of this EvaluationQuestion.
@@ -412,6 +388,30 @@ class EvaluationQuestion(object):
         
 
         self._is_kill = is_kill
+
+    @property
+    def is_critical(self) -> bool:
+        """
+        Gets the is_critical of this EvaluationQuestion.
+
+
+        :return: The is_critical of this EvaluationQuestion.
+        :rtype: bool
+        """
+        return self._is_critical
+
+    @is_critical.setter
+    def is_critical(self, is_critical: bool) -> None:
+        """
+        Sets the is_critical of this EvaluationQuestion.
+
+
+        :param is_critical: The is_critical of this EvaluationQuestion.
+        :type: bool
+        """
+        
+
+        self._is_critical = is_critical
 
     def to_dict(self):
         """

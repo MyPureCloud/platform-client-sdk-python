@@ -72,7 +72,7 @@ class LogCaptureUserConfiguration(object):
     def id(self) -> str:
         """
         Gets the id of this LogCaptureUserConfiguration.
-        The globally unique identifier for the object.
+        The ID of the user for which log capture is configured.
 
         :return: The id of this LogCaptureUserConfiguration.
         :rtype: str
@@ -83,7 +83,7 @@ class LogCaptureUserConfiguration(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this LogCaptureUserConfiguration.
-        The globally unique identifier for the object.
+        The ID of the user for which log capture is configured.
 
         :param id: The id of this LogCaptureUserConfiguration.
         :type: str

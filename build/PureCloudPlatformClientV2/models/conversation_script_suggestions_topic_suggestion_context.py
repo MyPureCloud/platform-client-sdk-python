@@ -54,7 +54,8 @@ class ConversationScriptSuggestionsTopicSuggestionContext(object):
             'assistant_id': 'str',
             'utterance_id': 'str',
             'message_id': 'str',
-            'query_statement': 'str'
+            'query_statement': 'str',
+            'language': 'str'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class ConversationScriptSuggestionsTopicSuggestionContext(object):
             'assistant_id': 'assistantId',
             'utterance_id': 'utteranceId',
             'message_id': 'messageId',
-            'query_statement': 'queryStatement'
+            'query_statement': 'queryStatement',
+            'language': 'language'
         }
 
         self._queue_id = None
@@ -76,6 +78,7 @@ class ConversationScriptSuggestionsTopicSuggestionContext(object):
         self._utterance_id = None
         self._message_id = None
         self._query_statement = None
+        self._language = None
 
     @property
     def queue_id(self) -> str:
@@ -273,6 +276,30 @@ class ConversationScriptSuggestionsTopicSuggestionContext(object):
         
 
         self._query_statement = query_statement
+
+    @property
+    def language(self) -> str:
+        """
+        Gets the language of this ConversationScriptSuggestionsTopicSuggestionContext.
+
+
+        :return: The language of this ConversationScriptSuggestionsTopicSuggestionContext.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language: str) -> None:
+        """
+        Sets the language of this ConversationScriptSuggestionsTopicSuggestionContext.
+
+
+        :param language: The language of this ConversationScriptSuggestionsTopicSuggestionContext.
+        :type: str
+        """
+        
+
+        self._language = language
 
     def to_dict(self):
         """

@@ -54,10 +54,10 @@ class ContactListingResponse(object):
             'page_number': 'int',
             'total': 'int',
             'contacts_count': 'int',
+            'first_uri': 'str',
             'previous_uri': 'str',
             'next_uri': 'str',
             'last_uri': 'str',
-            'first_uri': 'str',
             'self_uri': 'str',
             'page_count': 'int'
         }
@@ -68,10 +68,10 @@ class ContactListingResponse(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'contacts_count': 'contactsCount',
+            'first_uri': 'firstUri',
             'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
             'last_uri': 'lastUri',
-            'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'page_count': 'pageCount'
         }
@@ -81,10 +81,10 @@ class ContactListingResponse(object):
         self._page_number = None
         self._total = None
         self._contacts_count = None
+        self._first_uri = None
         self._previous_uri = None
         self._next_uri = None
         self._last_uri = None
-        self._first_uri = None
         self._self_uri = None
         self._page_count = None
 
@@ -209,6 +209,30 @@ class ContactListingResponse(object):
         self._contacts_count = contacts_count
 
     @property
+    def first_uri(self) -> str:
+        """
+        Gets the first_uri of this ContactListingResponse.
+
+
+        :return: The first_uri of this ContactListingResponse.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri: str) -> None:
+        """
+        Sets the first_uri of this ContactListingResponse.
+
+
+        :param first_uri: The first_uri of this ContactListingResponse.
+        :type: str
+        """
+        
+
+        self._first_uri = first_uri
+
+    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this ContactListingResponse.
@@ -279,30 +303,6 @@ class ContactListingResponse(object):
         
 
         self._last_uri = last_uri
-
-    @property
-    def first_uri(self) -> str:
-        """
-        Gets the first_uri of this ContactListingResponse.
-
-
-        :return: The first_uri of this ContactListingResponse.
-        :rtype: str
-        """
-        return self._first_uri
-
-    @first_uri.setter
-    def first_uri(self, first_uri: str) -> None:
-        """
-        Sets the first_uri of this ContactListingResponse.
-
-
-        :param first_uri: The first_uri of this ContactListingResponse.
-        :type: str
-        """
-        
-
-        self._first_uri = first_uri
 
     @property
     def self_uri(self) -> str:

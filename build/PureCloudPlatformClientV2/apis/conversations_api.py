@@ -10010,7 +10010,6 @@ class ConversationsApi(object):
         """
         Gets a record for a given meetingId
         
-	    get_conversations_videos_meeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -22211,7 +22210,6 @@ class ConversationsApi(object):
         """
         Generate a meetingId for a given conferenceId
         
-	    post_conversations_videos_meetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

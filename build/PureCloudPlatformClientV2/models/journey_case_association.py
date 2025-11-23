@@ -50,25 +50,25 @@ class JourneyCaseAssociation(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'associated_case': 'AddressableEntityRef',
             'case_reference': 'str',
             'date_associated': 'datetime',
-            'self_uri': 'str',
-            'case': 'AddressableEntityRef'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'associated_case': 'associatedCase',
             'case_reference': 'caseReference',
             'date_associated': 'dateAssociated',
-            'self_uri': 'selfUri',
-            'case': 'case'
+            'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._associated_case = None
         self._case_reference = None
         self._date_associated = None
         self._self_uri = None
-        self._case = None
 
     @property
     def id(self) -> str:
@@ -93,6 +93,30 @@ class JourneyCaseAssociation(object):
         
 
         self._id = id
+
+    @property
+    def associated_case(self) -> 'AddressableEntityRef':
+        """
+        Gets the associated_case of this JourneyCaseAssociation.
+        The case that was associated with the journey session.
+
+        :return: The associated_case of this JourneyCaseAssociation.
+        :rtype: AddressableEntityRef
+        """
+        return self._associated_case
+
+    @associated_case.setter
+    def associated_case(self, associated_case: 'AddressableEntityRef') -> None:
+        """
+        Sets the associated_case of this JourneyCaseAssociation.
+        The case that was associated with the journey session.
+
+        :param associated_case: The associated_case of this JourneyCaseAssociation.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._associated_case = associated_case
 
     @property
     def case_reference(self) -> str:
@@ -165,30 +189,6 @@ class JourneyCaseAssociation(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def case(self) -> 'AddressableEntityRef':
-        """
-        Gets the case of this JourneyCaseAssociation.
-        The case that was associated with the journey session.
-
-        :return: The case of this JourneyCaseAssociation.
-        :rtype: AddressableEntityRef
-        """
-        return self._case
-
-    @case.setter
-    def case(self, case: 'AddressableEntityRef') -> None:
-        """
-        Sets the case of this JourneyCaseAssociation.
-        The case that was associated with the journey session.
-
-        :param case: The case of this JourneyCaseAssociation.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._case = case
 
     def to_dict(self):
         """

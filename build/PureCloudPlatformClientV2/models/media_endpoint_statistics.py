@@ -255,7 +255,7 @@ class MediaEndpointStatistics(object):
         """
         if isinstance(source_type, int):
             source_type = str(source_type)
-        allowed_values = ["Client"]
+        allowed_values = ["Client", "Server"]
         if source_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for source_type -> " + source_type)
             self._source_type = "outdated_sdk_version"

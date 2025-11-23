@@ -76,6 +76,7 @@ from .uploads_api import UploadsApi
 from .usage_api import UsageApi
 from .user_recordings_api import UserRecordingsApi
 from .users_api import UsersApi
+from .users_rules_api import UsersRulesApi
 from .utilities_api import UtilitiesApi
 from .voicemail_api import VoicemailApi
 from .web_chat_api import WebChatApi
@@ -158,6 +159,7 @@ from .uploads_api import UploadsApi
 from .usage_api import UsageApi
 from .user_recordings_api import UserRecordingsApi
 from .users_api import UsersApi
+from .users_rules_api import UsersRulesApi
 from .utilities_api import UtilitiesApi
 from .voicemail_api import VoicemailApi
 from .web_chat_api import WebChatApi

@@ -14,7 +14,8 @@
 | **utterance_id** | str |  | [optional] |
 | **message_id** | str |  | [optional] |
 | **query_statement** | str |  | [optional] |
+| **language** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 243.0.0_
+_PureCloudPlatformClientV2 244.0.0_

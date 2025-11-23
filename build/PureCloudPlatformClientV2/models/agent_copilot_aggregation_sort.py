@@ -81,7 +81,7 @@ class AgentCopilotAggregationSort(object):
         """
         if isinstance(name, int):
             name = str(name)
-        allowed_values = ["nCannedResponseSuggestions", "nDistinctSuggestions", "nKnowledgeArticleSuggestions", "nKnowledgeSearchSuggestions", "nScriptSuggestions"]
+        allowed_values = ["nCannedResponseSuggestions", "nDistinctSuggestions", "nKnowledgeAnswerSuggestions", "nKnowledgeArticleSuggestions", "nKnowledgeSearchSuggestions", "nScriptSuggestions"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"
@@ -110,7 +110,7 @@ class AgentCopilotAggregationSort(object):
         """
         if isinstance(function, int):
             function = str(function)
-        allowed_values = ["count", "max", "min", "sum"]
+        allowed_values = ["average", "count", "max", "min", "sum"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)
             self._function = "outdated_sdk_version"

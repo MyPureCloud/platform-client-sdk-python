@@ -66,7 +66,7 @@ class QueueConversationSocialExpressionEventTopicConversationDivisionMembership(
     def division(self) -> 'QueueConversationSocialExpressionEventTopicDomainEntityRef':
         """
         Gets the division of this QueueConversationSocialExpressionEventTopicConversationDivisionMembership.
-
+        A reference to another domain entity.
 
         :return: The division of this QueueConversationSocialExpressionEventTopicConversationDivisionMembership.
         :rtype: QueueConversationSocialExpressionEventTopicDomainEntityRef
@@ -77,7 +77,7 @@ class QueueConversationSocialExpressionEventTopicConversationDivisionMembership(
     def division(self, division: 'QueueConversationSocialExpressionEventTopicDomainEntityRef') -> None:
         """
         Sets the division of this QueueConversationSocialExpressionEventTopicConversationDivisionMembership.
-
+        A reference to another domain entity.
 
         :param division: The division of this QueueConversationSocialExpressionEventTopicConversationDivisionMembership.
         :type: QueueConversationSocialExpressionEventTopicDomainEntityRef

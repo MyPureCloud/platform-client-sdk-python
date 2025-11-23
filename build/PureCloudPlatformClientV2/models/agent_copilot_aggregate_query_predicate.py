@@ -121,7 +121,7 @@ class AgentCopilotAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["agentAssistantId", "cannedResponseId", "cannedResponseLibraryId", "conversationId", "engagementType", "externalContactId", "feedbackRating", "hasAnswerHighlight", "knowledgeBaseDocumentId", "knowledgeBaseDocumentVersionId", "mediaType", "messageId", "queueId", "scriptId", "scriptPageId", "searchId", "state", "suggestionId", "suggestionType", "triggerType", "userId", "utteranceId"]
+        allowed_values = ["agentAssistantId", "cannedResponseId", "cannedResponseLibraryId", "chunkCount", "conversationId", "engagementType", "externalContactId", "feedbackRating", "hasAnswerHighlight", "hasGeneratedAnswer", "knowledgeBaseDocumentId", "knowledgeBaseDocumentVersionId", "mediaType", "messageId", "queueId", "scriptId", "scriptPageId", "searchId", "state", "suggestionId", "suggestionType", "triggerType", "userId", "utteranceId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

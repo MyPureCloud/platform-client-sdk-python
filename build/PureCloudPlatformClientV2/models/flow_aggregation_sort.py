@@ -110,7 +110,7 @@ class FlowAggregationSort(object):
         """
         if isinstance(function, int):
             function = str(function)
-        allowed_values = ["count", "max", "min", "sum"]
+        allowed_values = ["average", "count", "max", "min", "sum"]
         if function.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for function -> " + function)
             self._function = "outdated_sdk_version"

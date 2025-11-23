@@ -412,7 +412,7 @@ class Metabase(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["EXTERNAL", "EXTERNAL_PCV", "EXTERNAL_PCV_AWS", "EXTERNAL_BYOC_CARRIER", "EXTERNAL_BYOC_PBX", "STATION_CDM", "STATION_CDM_WEBRTC", "STATION", "TIE", "TIE_DIRECT", "TIE_INDIRECT", "TIE_CLOUD_PROXY"]
+        allowed_values = ["EXTERNAL", "EXTERNAL_PCV", "EXTERNAL_PCV_AWS", "EXTERNAL_BYOC_CARRIER", "EXTERNAL_BYOC_PBX", "STATION_CDM", "STATION_CDM_WEBRTC", "STATION", "TIE", "TIE_DIRECT", "TIE_INDIRECT", "TIE_CLOUD_PROXY", "TIE_CLOUD_PROXY_CALLSESSION"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

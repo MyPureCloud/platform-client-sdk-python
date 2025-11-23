@@ -182,7 +182,7 @@ class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["Unknown", "Suggested", "Accepted", "Dismissed", "Failed", "Rated"]
+        allowed_values = ["Unknown", "Suggested", "Accepted", "Dismissed", "Failed", "Rated", "Triggered"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"

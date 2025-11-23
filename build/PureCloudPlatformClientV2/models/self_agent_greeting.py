@@ -50,7 +50,6 @@ class SelfAgentGreeting(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'inbound_prompt': 'Prompt',
             'outbound_prompt': 'Prompt',
             'inbound_prompt_default_language': 'str',
@@ -60,7 +59,6 @@ class SelfAgentGreeting(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'inbound_prompt': 'inboundPrompt',
             'outbound_prompt': 'outboundPrompt',
             'inbound_prompt_default_language': 'inboundPromptDefaultLanguage',
@@ -69,7 +67,6 @@ class SelfAgentGreeting(object):
         }
 
         self._id = None
-        self._name = None
         self._inbound_prompt = None
         self._outbound_prompt = None
         self._inbound_prompt_default_language = None
@@ -80,7 +77,7 @@ class SelfAgentGreeting(object):
     def id(self) -> str:
         """
         Gets the id of this SelfAgentGreeting.
-        The globally unique identifier for the object.
+        The ID of the associated user.
 
         :return: The id of this SelfAgentGreeting.
         :rtype: str
@@ -91,7 +88,7 @@ class SelfAgentGreeting(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this SelfAgentGreeting.
-        The globally unique identifier for the object.
+        The ID of the associated user.
 
         :param id: The id of this SelfAgentGreeting.
         :type: str
@@ -99,30 +96,6 @@ class SelfAgentGreeting(object):
         
 
         self._id = id
-
-    @property
-    def name(self) -> str:
-        """
-        Gets the name of this SelfAgentGreeting.
-
-
-        :return: The name of this SelfAgentGreeting.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: str) -> None:
-        """
-        Sets the name of this SelfAgentGreeting.
-
-
-        :param name: The name of this SelfAgentGreeting.
-        :type: str
-        """
-        
-
-        self._name = name
 
     @property
     def inbound_prompt(self) -> 'Prompt':

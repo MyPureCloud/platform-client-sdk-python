@@ -54,10 +54,10 @@ class LearningModuleList(object):
             'page_number': 'int',
             'total': 'int',
             'total_legacy_rules': 'int',
+            'first_uri': 'str',
             'previous_uri': 'str',
             'next_uri': 'str',
             'last_uri': 'str',
-            'first_uri': 'str',
             'self_uri': 'str',
             'page_count': 'int'
         }
@@ -68,10 +68,10 @@ class LearningModuleList(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'total_legacy_rules': 'totalLegacyRules',
+            'first_uri': 'firstUri',
             'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
             'last_uri': 'lastUri',
-            'first_uri': 'firstUri',
             'self_uri': 'selfUri',
             'page_count': 'pageCount'
         }
@@ -81,10 +81,10 @@ class LearningModuleList(object):
         self._page_number = None
         self._total = None
         self._total_legacy_rules = None
+        self._first_uri = None
         self._previous_uri = None
         self._next_uri = None
         self._last_uri = None
-        self._first_uri = None
         self._self_uri = None
         self._page_count = None
 
@@ -209,6 +209,30 @@ class LearningModuleList(object):
         self._total_legacy_rules = total_legacy_rules
 
     @property
+    def first_uri(self) -> str:
+        """
+        Gets the first_uri of this LearningModuleList.
+
+
+        :return: The first_uri of this LearningModuleList.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri: str) -> None:
+        """
+        Sets the first_uri of this LearningModuleList.
+
+
+        :param first_uri: The first_uri of this LearningModuleList.
+        :type: str
+        """
+        
+
+        self._first_uri = first_uri
+
+    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this LearningModuleList.
@@ -279,30 +303,6 @@ class LearningModuleList(object):
         
 
         self._last_uri = last_uri
-
-    @property
-    def first_uri(self) -> str:
-        """
-        Gets the first_uri of this LearningModuleList.
-
-
-        :return: The first_uri of this LearningModuleList.
-        :rtype: str
-        """
-        return self._first_uri
-
-    @first_uri.setter
-    def first_uri(self, first_uri: str) -> None:
-        """
-        Sets the first_uri of this LearningModuleList.
-
-
-        :param first_uri: The first_uri of this LearningModuleList.
-        :type: str
-        """
-        
-
-        self._first_uri = first_uri
 
     @property
     def self_uri(self) -> str:

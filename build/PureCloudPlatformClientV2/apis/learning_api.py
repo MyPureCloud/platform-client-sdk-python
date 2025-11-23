@@ -58,6 +58,7 @@ from ..models import LearningModuleCoverArtResponse
 from ..models import LearningModuleJobRequest
 from ..models import LearningModuleJobResponse
 from ..models import LearningModuleList
+from ..models import LearningModuleMigrateResponse
 from ..models import LearningModulePreviewGetResponse
 from ..models import LearningModulePreviewUpdateRequest
 from ..models import LearningModulePreviewUpdateResponse
@@ -2530,6 +2531,85 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningModulePublishResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_learning_module_rule_migrate(self, module_id: str, **kwargs) -> 'LearningModuleMigrateResponse':
+        """
+        Migrate a legacy learning module rule to a users rule.
+        
+	    post_learning_module_rule_migrate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_module_rule_migrate(module_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str module_id: The ID of the learning module (required)
+        :return: LearningModuleMigrateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['module_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_module_rule_migrate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'module_id' is set
+        if ('module_id' not in params) or (params['module_id'] is None):
+            raise ValueError("Missing the required parameter `module_id` when calling `post_learning_module_rule_migrate`")
+
+
+        resource_path = '/api/v2/learning/modules/{moduleId}/rule/migrate'.replace('{format}', 'json')
+        path_params = {}
+        if 'module_id' in params:
+            path_params['moduleId'] = params['module_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningModuleMigrateResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

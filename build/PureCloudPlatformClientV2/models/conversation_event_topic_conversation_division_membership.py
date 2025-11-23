@@ -66,7 +66,7 @@ class ConversationEventTopicConversationDivisionMembership(object):
     def division(self) -> 'ConversationEventTopicDomainEntityRef':
         """
         Gets the division of this ConversationEventTopicConversationDivisionMembership.
-
+        A reference to another domain entity.
 
         :return: The division of this ConversationEventTopicConversationDivisionMembership.
         :rtype: ConversationEventTopicDomainEntityRef
@@ -77,7 +77,7 @@ class ConversationEventTopicConversationDivisionMembership(object):
     def division(self, division: 'ConversationEventTopicDomainEntityRef') -> None:
         """
         Sets the division of this ConversationEventTopicConversationDivisionMembership.
-
+        A reference to another domain entity.
 
         :param division: The division of this ConversationEventTopicConversationDivisionMembership.
         :type: ConversationEventTopicDomainEntityRef

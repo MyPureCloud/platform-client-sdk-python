@@ -132,7 +132,7 @@ class MediaStatisticsTrunkInfo(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["external", "external.pcv", "external.pcv.aws", "external.pcv.byoc.carrier", "external.pcv.byoc.pbx", "tie", "tie.direct", "tie.indirect", "tie.cloud.proxy", "station", "station.cdm", "station.cdm.webrtc"]
+        allowed_values = ["external", "external.pcv", "external.pcv.aws", "external.pcv.byoc.carrier", "external.pcv.byoc.pbx", "tie", "tie.direct", "tie.indirect", "tie.cloud.proxy", "tie.cloud.proxy.callsession", "station", "station.cdm", "station.cdm.webrtc"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

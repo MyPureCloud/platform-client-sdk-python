@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationEventTopicConversationDivisionMembership
+    from . import ConversationEventTopicDomainEntityRef
     from . import ConversationEventTopicParticipant
     from . import ConversationEventTopicTransferResponse
 
@@ -61,6 +62,8 @@ class ConversationEventTopicConversation(object):
             'utilization_label_id': 'str',
             'secure_pause': 'bool',
             'inactivity_timeout': 'datetime',
+            'associated_conversation': 'ConversationEventTopicDomainEntityRef',
+            'consultation_conversations': 'list[ConversationEventTopicDomainEntityRef]',
             'divisions': 'list[ConversationEventTopicConversationDivisionMembership]'
         }
 
@@ -75,6 +78,8 @@ class ConversationEventTopicConversation(object):
             'utilization_label_id': 'utilizationLabelId',
             'secure_pause': 'securePause',
             'inactivity_timeout': 'inactivityTimeout',
+            'associated_conversation': 'associatedConversation',
+            'consultation_conversations': 'consultationConversations',
             'divisions': 'divisions'
         }
 
@@ -88,6 +93,8 @@ class ConversationEventTopicConversation(object):
         self._utilization_label_id = None
         self._secure_pause = None
         self._inactivity_timeout = None
+        self._associated_conversation = None
+        self._consultation_conversations = None
         self._divisions = None
 
     @property
@@ -329,6 +336,54 @@ class ConversationEventTopicConversation(object):
         
 
         self._inactivity_timeout = inactivity_timeout
+
+    @property
+    def associated_conversation(self) -> 'ConversationEventTopicDomainEntityRef':
+        """
+        Gets the associated_conversation of this ConversationEventTopicConversation.
+
+
+        :return: The associated_conversation of this ConversationEventTopicConversation.
+        :rtype: ConversationEventTopicDomainEntityRef
+        """
+        return self._associated_conversation
+
+    @associated_conversation.setter
+    def associated_conversation(self, associated_conversation: 'ConversationEventTopicDomainEntityRef') -> None:
+        """
+        Sets the associated_conversation of this ConversationEventTopicConversation.
+
+
+        :param associated_conversation: The associated_conversation of this ConversationEventTopicConversation.
+        :type: ConversationEventTopicDomainEntityRef
+        """
+        
+
+        self._associated_conversation = associated_conversation
+
+    @property
+    def consultation_conversations(self) -> List['ConversationEventTopicDomainEntityRef']:
+        """
+        Gets the consultation_conversations of this ConversationEventTopicConversation.
+
+
+        :return: The consultation_conversations of this ConversationEventTopicConversation.
+        :rtype: list[ConversationEventTopicDomainEntityRef]
+        """
+        return self._consultation_conversations
+
+    @consultation_conversations.setter
+    def consultation_conversations(self, consultation_conversations: List['ConversationEventTopicDomainEntityRef']) -> None:
+        """
+        Sets the consultation_conversations of this ConversationEventTopicConversation.
+
+
+        :param consultation_conversations: The consultation_conversations of this ConversationEventTopicConversation.
+        :type: list[ConversationEventTopicDomainEntityRef]
+        """
+        
+
+        self._consultation_conversations = consultation_conversations
 
     @property
     def divisions(self) -> List['ConversationEventTopicConversationDivisionMembership']:

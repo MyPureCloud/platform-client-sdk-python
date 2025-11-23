@@ -211,7 +211,7 @@ class OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampai
         """
         if isinstance(wrapup_code, int):
             wrapup_code = str(wrapup_code)
-        allowed_values = ["UNKNOWN", "OUTBOUND_MESSAGE_SENT", "OUTBOUND_MESSAGE_FAILED", "OUTBOUND_MESSAGE_THROTTLED", "OUTBOUND_MESSAGE_AMBIGUOUS"]
+        allowed_values = ["UNKNOWN", "OUTBOUND_MESSAGE_SENT", "OUTBOUND_MESSAGE_FAILED", "OUTBOUND_MESSAGE_THROTTLED", "OUTBOUND_MESSAGE_AMBIGUOUS", "ININ_OUTBOUND_CAMPAIGN_FORCED_OFF"]
         if wrapup_code.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for wrapup_code -> " + wrapup_code)
             self._wrapup_code = "outdated_sdk_version"

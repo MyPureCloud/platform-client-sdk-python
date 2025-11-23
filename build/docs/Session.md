@@ -7,6 +7,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The ID of the session. | |
+| **external_contact** | [AddressableEntityRef](AddressableEntityRef) | The external contact associated with this session. | [optional] |
 | **customer_id** | str | Primary identifier of the customer in the source where the events for the session originate from. | [optional] |
 | **customer_id_type** | str | Type of source customer identifier (e.g. cookie, email, phone). | [optional] |
 | **type** | str | Session types indicate the type or category of sessions (e.g. web, app). | |
@@ -35,6 +36,7 @@
 | **pageview_count** | int | The count of all pageviews performed during the session. | [optional] |
 | **screenview_count** | int | The count of all screenviews performed during the session. | [optional] |
 | **last_event** | [SessionLastEvent](SessionLastEvent) | Information about the most recent event in this session. | |
+| **conversation** | [AddressableEntityRef](AddressableEntityRef) | The conversation for this session. | [optional] |
 | **last_connected_queue** | [ConnectedQueue](ConnectedQueue) | The last queue connected to this session. | [optional] |
 | **last_connected_user** | [ConnectedUser](ConnectedUser) | The last user connected to this session. | [optional] |
 | **last_user_disposition** | [ConversationUserDisposition](ConversationUserDisposition) | The last user disposition connected to this session. | [optional] |
@@ -49,11 +51,9 @@
 | **self_uri** | str | The URI for this object | [optional] |
 | **created_date** | datetime | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **ended_date** | datetime | Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
-| **external_contact** | [AddressableEntityRef](AddressableEntityRef) | The external contact associated with this session. | [optional] |
 | **away_date** | datetime | Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **idle_date** | datetime | Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
-| **conversation** | [AddressableEntityRef](AddressableEntityRef) | The conversation for this session. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 243.0.0_
+_PureCloudPlatformClientV2 244.0.0_

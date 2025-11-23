@@ -81,7 +81,7 @@ class WorkitemDateBasedCondition(object):
         """
         if isinstance(attribute, int):
             attribute = str(attribute)
-        allowed_values = ["dateDue", "dateExpires", "ttl"]
+        allowed_values = ["dateDue", "dateExpires", "ttl", "dateCreated"]
         if attribute.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for attribute -> " + attribute)
             self._attribute = "outdated_sdk_version"

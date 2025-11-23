@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_adherence_historical_job**](#get_workforcemanagement_adherence_historical_job) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_agent_adherence_explanation**](#get_workforcemanagement_agent_adherence_explanation) | Get an adherence explanation|
 |[**get_workforcemanagement_agent_managementunit**](#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
+|[**get_workforcemanagement_agents_me_adherence_historical_job**](#get_workforcemanagement_agents_me_adherence_historical_job) | Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_agents_me_managementunit**](#get_workforcemanagement_agents_me_managementunit) | Get the management unit to which the currently logged in agent belongs|
 |[**get_workforcemanagement_alternativeshifts_offers_job**](#get_workforcemanagement_alternativeshifts_offers_job) | Query the status of an alternative shift offers operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_alternativeshifts_offers_search_job**](#get_workforcemanagement_alternativeshifts_offers_search_job) | Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status|
@@ -177,6 +178,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_agent_adherence_explanations_query**](#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
 |[**post_workforcemanagement_agents**](#post_workforcemanagement_agents) | Move agents in and out of management unit|
 |[**post_workforcemanagement_agents_integrations_hris_query**](#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
+|[**post_workforcemanagement_agents_me_adherence_historical_jobs**](#post_workforcemanagement_agents_me_adherence_historical_jobs) | Request an agent historical adherence report|
 |[**post_workforcemanagement_agents_me_possibleworkshifts**](#post_workforcemanagement_agents_me_possibleworkshifts) | Get agent possible work shifts for requested time frame|
 |[**post_workforcemanagement_agentschedules_managementunits_mine**](#post_workforcemanagement_agentschedules_managementunits_mine) | Fetch agent schedules for the logged in user&#39;s management unit|
 |[**post_workforcemanagement_agentschedules_mine**](#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
@@ -1549,6 +1551,55 @@ except ApiException as e:
 ### Return type
 
 [**AgentManagementUnitReference**](AgentManagementUnitReference)
+
+
+## get_workforcemanagement_agents_me_adherence_historical_job
+
+> [**WfmAgentHistoricalAdherenceResponse**](WfmAgentHistoricalAdherenceResponse) get_workforcemanagement_agents_me_adherence_historical_job(job_id)
+
+
+Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/agents/me/adherence/historical/jobs/{jobId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | ID of the job to get
+
+try:
+    # Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_agents_me_adherence_historical_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_agents_me_adherence_historical_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| ID of the job to get |  |
+
+### Return type
+
+[**WfmAgentHistoricalAdherenceResponse**](WfmAgentHistoricalAdherenceResponse)
 
 
 ## get_workforcemanagement_agents_me_managementunit
@@ -9202,6 +9253,59 @@ except ApiException as e:
 [**AgentsIntegrationsListing**](AgentsIntegrationsListing)
 
 
+## post_workforcemanagement_agents_me_adherence_historical_jobs
+
+> [**WfmAgentHistoricalAdherenceResponse**](WfmAgentHistoricalAdherenceResponse) post_workforcemanagement_agents_me_adherence_historical_jobs(expand=expand, body=body)
+
+
+Request an agent historical adherence report
+
+The maximum supported range for historical adherence queries is 31 days, or 7 days when the expand query parameter includes any of the following: exceptionInfo, actuals, scheduledActivities
+
+Wraps POST /api/v2/workforcemanagement/agents/me/adherence/historical/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentHistoricalAdherence:view
+* wfm:agentHistoricalAdherenceConformance:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities. (optional)
+body = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForAgent() # WfmHistoricalAdherenceQueryForAgent | body (optional)
+
+try:
+    # Request an agent historical adherence report
+    api_response = api_instance.post_workforcemanagement_agents_me_adherence_historical_jobs(expand=expand, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agents_me_adherence_historical_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand with. wfm:AgentHistoricalAdherenceConformance:view permission is required for conformance, and wfm:agentSchedule:view permission is required for scheduledActivities. | [optional] <br />**Values**: exceptionInfo, actuals, scheduledActivities, conformance |
+| **body** | [**WfmHistoricalAdherenceQueryForAgent**](WfmHistoricalAdherenceQueryForAgent)| body | [optional]  |
+
+### Return type
+
+[**WfmAgentHistoricalAdherenceResponse**](WfmAgentHistoricalAdherenceResponse)
+
+
 ## post_workforcemanagement_agents_me_possibleworkshifts
 
 > [**AgentPossibleWorkShiftsResponse**](AgentPossibleWorkShiftsResponse) post_workforcemanagement_agents_me_possibleworkshifts(body)
@@ -13791,4 +13895,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 243.0.0_
+_PureCloudPlatformClientV2 244.0.0_

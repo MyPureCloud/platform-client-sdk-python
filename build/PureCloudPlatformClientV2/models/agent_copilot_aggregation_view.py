@@ -89,7 +89,7 @@ class AgentCopilotAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nCannedResponseSuggestions", "nDistinctSuggestions", "nKnowledgeArticleSuggestions", "nKnowledgeSearchSuggestions", "nScriptSuggestions"]
+        allowed_values = ["nCannedResponseSuggestions", "nDistinctSuggestions", "nKnowledgeAnswerSuggestions", "nKnowledgeArticleSuggestions", "nKnowledgeSearchSuggestions", "nScriptSuggestions"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

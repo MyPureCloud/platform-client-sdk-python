@@ -6272,8 +6272,6 @@ except ApiException as e:
 
 Gets a record for a given meetingId
 
-get_conversations_videos_meeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/conversations/videos/meetings/{meetingId} 
 
 Requires ANY permissions: 
@@ -13614,8 +13612,6 @@ void (empty response body)
 
 Generate a meetingId for a given conferenceId
 
-post_conversations_videos_meetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/videos/meetings 
 
 Requires ANY permissions: 
@@ -14878,4 +14874,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 243.0.0_
+_PureCloudPlatformClientV2 244.0.0_

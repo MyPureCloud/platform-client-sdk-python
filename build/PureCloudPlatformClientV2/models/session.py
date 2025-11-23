@@ -68,6 +68,7 @@ class Session(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'external_contact': 'AddressableEntityRef',
             'customer_id': 'str',
             'customer_id_type': 'str',
             'type': 'str',
@@ -96,6 +97,7 @@ class Session(object):
             'pageview_count': 'int',
             'screenview_count': 'int',
             'last_event': 'SessionLastEvent',
+            'conversation': 'AddressableEntityRef',
             'last_connected_queue': 'ConnectedQueue',
             'last_connected_user': 'ConnectedUser',
             'last_user_disposition': 'ConversationUserDisposition',
@@ -110,14 +112,13 @@ class Session(object):
             'self_uri': 'str',
             'created_date': 'datetime',
             'ended_date': 'datetime',
-            'external_contact': 'AddressableEntityRef',
             'away_date': 'datetime',
-            'idle_date': 'datetime',
-            'conversation': 'AddressableEntityRef'
+            'idle_date': 'datetime'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'external_contact': 'externalContact',
             'customer_id': 'customerId',
             'customer_id_type': 'customerIdType',
             'type': 'type',
@@ -146,6 +147,7 @@ class Session(object):
             'pageview_count': 'pageviewCount',
             'screenview_count': 'screenviewCount',
             'last_event': 'lastEvent',
+            'conversation': 'conversation',
             'last_connected_queue': 'lastConnectedQueue',
             'last_connected_user': 'lastConnectedUser',
             'last_user_disposition': 'lastUserDisposition',
@@ -160,13 +162,12 @@ class Session(object):
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
             'ended_date': 'endedDate',
-            'external_contact': 'externalContact',
             'away_date': 'awayDate',
-            'idle_date': 'idleDate',
-            'conversation': 'conversation'
+            'idle_date': 'idleDate'
         }
 
         self._id = None
+        self._external_contact = None
         self._customer_id = None
         self._customer_id_type = None
         self._type = None
@@ -195,6 +196,7 @@ class Session(object):
         self._pageview_count = None
         self._screenview_count = None
         self._last_event = None
+        self._conversation = None
         self._last_connected_queue = None
         self._last_connected_user = None
         self._last_user_disposition = None
@@ -209,10 +211,8 @@ class Session(object):
         self._self_uri = None
         self._created_date = None
         self._ended_date = None
-        self._external_contact = None
         self._away_date = None
         self._idle_date = None
-        self._conversation = None
 
     @property
     def id(self) -> str:
@@ -237,6 +237,30 @@ class Session(object):
         
 
         self._id = id
+
+    @property
+    def external_contact(self) -> 'AddressableEntityRef':
+        """
+        Gets the external_contact of this Session.
+        The external contact associated with this session.
+
+        :return: The external_contact of this Session.
+        :rtype: AddressableEntityRef
+        """
+        return self._external_contact
+
+    @external_contact.setter
+    def external_contact(self, external_contact: 'AddressableEntityRef') -> None:
+        """
+        Sets the external_contact of this Session.
+        The external contact associated with this session.
+
+        :param external_contact: The external_contact of this Session.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._external_contact = external_contact
 
     @property
     def customer_id(self) -> str:
@@ -911,6 +935,30 @@ class Session(object):
         self._last_event = last_event
 
     @property
+    def conversation(self) -> 'AddressableEntityRef':
+        """
+        Gets the conversation of this Session.
+        The conversation for this session.
+
+        :return: The conversation of this Session.
+        :rtype: AddressableEntityRef
+        """
+        return self._conversation
+
+    @conversation.setter
+    def conversation(self, conversation: 'AddressableEntityRef') -> None:
+        """
+        Sets the conversation of this Session.
+        The conversation for this session.
+
+        :param conversation: The conversation of this Session.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._conversation = conversation
+
+    @property
     def last_connected_queue(self) -> 'ConnectedQueue':
         """
         Gets the last_connected_queue of this Session.
@@ -1262,30 +1310,6 @@ class Session(object):
         self._ended_date = ended_date
 
     @property
-    def external_contact(self) -> 'AddressableEntityRef':
-        """
-        Gets the external_contact of this Session.
-        The external contact associated with this session.
-
-        :return: The external_contact of this Session.
-        :rtype: AddressableEntityRef
-        """
-        return self._external_contact
-
-    @external_contact.setter
-    def external_contact(self, external_contact: 'AddressableEntityRef') -> None:
-        """
-        Sets the external_contact of this Session.
-        The external contact associated with this session.
-
-        :param external_contact: The external_contact of this Session.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._external_contact = external_contact
-
-    @property
     def away_date(self) -> datetime:
         """
         Gets the away_date of this Session.
@@ -1332,30 +1356,6 @@ class Session(object):
         
 
         self._idle_date = idle_date
-
-    @property
-    def conversation(self) -> 'AddressableEntityRef':
-        """
-        Gets the conversation of this Session.
-        The conversation for this session.
-
-        :return: The conversation of this Session.
-        :rtype: AddressableEntityRef
-        """
-        return self._conversation
-
-    @conversation.setter
-    def conversation(self, conversation: 'AddressableEntityRef') -> None:
-        """
-        Sets the conversation of this Session.
-        The conversation for this session.
-
-        :param conversation: The conversation of this Session.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._conversation = conversation
 
     def to_dict(self):
         """
