@@ -61,8 +61,8 @@ class DomainOrganizationRole(object):
             'base_license': 'str',
             'addon_licenses': 'list[str]',
             'date_license_last_updated': 'datetime',
-            'default': 'bool',
             'base': 'bool',
+            'default': 'bool',
             'self_uri': 'str'
         }
 
@@ -79,8 +79,8 @@ class DomainOrganizationRole(object):
             'base_license': 'baseLicense',
             'addon_licenses': 'addonLicenses',
             'date_license_last_updated': 'dateLicenseLastUpdated',
-            'default': 'default',
             'base': 'base',
+            'default': 'default',
             'self_uri': 'selfUri'
         }
 
@@ -96,8 +96,8 @@ class DomainOrganizationRole(object):
         self._base_license = None
         self._addon_licenses = None
         self._date_license_last_updated = None
-        self._default = None
         self._base = None
+        self._default = None
         self._self_uri = None
 
     @property
@@ -389,30 +389,6 @@ class DomainOrganizationRole(object):
         self._date_license_last_updated = date_license_last_updated
 
     @property
-    def default(self) -> bool:
-        """
-        Gets the default of this DomainOrganizationRole.
-
-
-        :return: The default of this DomainOrganizationRole.
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default: bool) -> None:
-        """
-        Sets the default of this DomainOrganizationRole.
-
-
-        :param default: The default of this DomainOrganizationRole.
-        :type: bool
-        """
-        
-
-        self._default = default
-
-    @property
     def base(self) -> bool:
         """
         Gets the base of this DomainOrganizationRole.
@@ -435,6 +411,30 @@ class DomainOrganizationRole(object):
         
 
         self._base = base
+
+    @property
+    def default(self) -> bool:
+        """
+        Gets the default of this DomainOrganizationRole.
+
+
+        :return: The default of this DomainOrganizationRole.
+        :rtype: bool
+        """
+        return self._default
+
+    @default.setter
+    def default(self, default: bool) -> None:
+        """
+        Sets the default of this DomainOrganizationRole.
+
+
+        :param default: The default of this DomainOrganizationRole.
+        :type: bool
+        """
+        
+
+        self._default = default
 
     @property
     def self_uri(self) -> str:

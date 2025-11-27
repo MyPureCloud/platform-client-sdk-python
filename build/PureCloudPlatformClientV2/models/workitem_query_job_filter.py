@@ -66,7 +66,7 @@ class WorkitemQueryJobFilter(object):
     def name(self) -> str:
         """
         Gets the name of this WorkitemQueryJobFilter.
-        Attribute name.
+        Attribute name. Valid filter names are: 'workbinId', 'id', 'typeId', 'priority', 'dateCreated', 'dateDue', 'statusId', 'dateClosed', 'externalContactId', 'assigneeId', 'assignmentState', 'queueId', 'externalTag', 'divisionId'
 
         :return: The name of this WorkitemQueryJobFilter.
         :rtype: str
@@ -77,7 +77,7 @@ class WorkitemQueryJobFilter(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this WorkitemQueryJobFilter.
-        Attribute name.
+        Attribute name. Valid filter names are: 'workbinId', 'id', 'typeId', 'priority', 'dateCreated', 'dateDue', 'statusId', 'dateClosed', 'externalContactId', 'assigneeId', 'assignmentState', 'queueId', 'externalTag', 'divisionId'
 
         :param name: The name of this WorkitemQueryJobFilter.
         :type: str

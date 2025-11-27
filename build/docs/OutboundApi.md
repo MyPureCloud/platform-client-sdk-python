@@ -4599,7 +4599,7 @@ except ApiException as e:
 
 ## get_outbound_messagingcampaigns
 
-> [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing) get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id, content_template_id=content_template_id, campaign_status=campaign_status)
+> [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing) get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id, content_template_id=content_template_id, campaign_status=campaign_status, rule_set_ids=rule_set_ids)
 
 
 Query a list of Messaging Campaigns
@@ -4637,10 +4637,11 @@ sender_sms_phone_number = 'sender_sms_phone_number_example' # str | Sender SMS P
 id = ['id_example'] # list[str] | A list of messaging campaign ids to bulk fetch (optional)
 content_template_id = 'content_template_id_example' # str | Content template ID (optional)
 campaign_status = 'campaign_status_example' # str | Campaign Status (optional)
+rule_set_ids = ['rule_set_ids_example'] # list[str] | Ruleset ID(s) (optional)
 
 try:
     # Query a list of Messaging Campaigns
-    api_response = api_instance.get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id, content_template_id=content_template_id, campaign_status=campaign_status)
+    api_response = api_instance.get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id, content_template_id=content_template_id, campaign_status=campaign_status, rule_set_ids=rule_set_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_messagingcampaigns: %s\n" % e)
@@ -4663,6 +4664,7 @@ except ApiException as e:
 | **id** | [**list[str]**](str)| A list of messaging campaign ids to bulk fetch | [optional]  |
 | **content_template_id** | **str**| Content template ID | [optional]  |
 | **campaign_status** | **str**| Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
+| **rule_set_ids** | [**list[str]**](str)| Ruleset ID(s) | [optional]  |
 
 ### Return type
 
@@ -8996,4 +8998,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 244.0.0_
+_PureCloudPlatformClientV2 245.0.0_

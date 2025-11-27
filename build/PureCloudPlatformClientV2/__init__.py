@@ -4113,6 +4113,7 @@ from .models.recipient_listing import RecipientListing
 from .models.recipient_request import RecipientRequest
 from .models.recognition import Recognition
 from .models.recognition_base import RecognitionBase
+from .models.recognitions import Recognitions
 from .models.record import Record
 from .models.recorders_state import RecordersState
 from .models.recording import Recording
@@ -4141,6 +4142,8 @@ from .models.recording_job_entity_listing import RecordingJobEntityListing
 from .models.recording_job_failed_recording import RecordingJobFailedRecording
 from .models.recording_jobs_query import RecordingJobsQuery
 from .models.recording_location import RecordingLocation
+from .models.recording_message_receipt import RecordingMessageReceipt
+from .models.recording_message_receipt_reason import RecordingMessageReceiptReason
 from .models.recording_messaging_message import RecordingMessagingMessage
 from .models.recording_metadata import RecordingMetadata
 from .models.recording_notification_template import RecordingNotificationTemplate

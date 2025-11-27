@@ -4201,6 +4201,7 @@ PureCloudPlatformClientV2/models/recipient_listing.py
 PureCloudPlatformClientV2/models/recipient_request.py
 PureCloudPlatformClientV2/models/recognition.py
 PureCloudPlatformClientV2/models/recognition_base.py
+PureCloudPlatformClientV2/models/recognitions.py
 PureCloudPlatformClientV2/models/record.py
 PureCloudPlatformClientV2/models/recorders_state.py
 PureCloudPlatformClientV2/models/recording.py
@@ -4229,6 +4230,8 @@ PureCloudPlatformClientV2/models/recording_job_entity_listing.py
 PureCloudPlatformClientV2/models/recording_job_failed_recording.py
 PureCloudPlatformClientV2/models/recording_jobs_query.py
 PureCloudPlatformClientV2/models/recording_location.py
+PureCloudPlatformClientV2/models/recording_message_receipt.py
+PureCloudPlatformClientV2/models/recording_message_receipt_reason.py
 PureCloudPlatformClientV2/models/recording_messaging_message.py
 PureCloudPlatformClientV2/models/recording_metadata.py
 PureCloudPlatformClientV2/models/recording_notification_template.py
@@ -10060,6 +10063,7 @@ docs/RecipientListing.md
 docs/RecipientRequest.md
 docs/Recognition.md
 docs/RecognitionBase.md
+docs/Recognitions.md
 docs/Record.md
 docs/RecordersState.md
 docs/Recording.md
@@ -10090,6 +10094,8 @@ docs/RecordingJobEntityListing.md
 docs/RecordingJobFailedRecording.md
 docs/RecordingJobsQuery.md
 docs/RecordingLocation.md
+docs/RecordingMessageReceipt.md
+docs/RecordingMessageReceiptReason.md
 docs/RecordingMessagingMessage.md
 docs/RecordingMetadata.md
 docs/RecordingNotificationTemplate.md
@@ -12441,6 +12447,7 @@ docs/get_emails_settings_threading-example.txt
 docs/get_emails_settings_threading-example.txt
 docs/get_employeeengagement_celebrations-example.txt
 docs/get_employeeengagement_recognition-example.txt
+docs/get_employeeengagement_recognitions-example.txt
 docs/get_employeeperformance_externalmetrics_definition-example.txt
 docs/get_employeeperformance_externalmetrics_definitions-example.txt
 docs/get_externalcontacts_contact-example.txt

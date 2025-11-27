@@ -131,7 +131,7 @@ class WorktypeQueryRequest(object):
     def filters(self) -> List['WorkitemFilter']:
         """
         Gets the filters of this WorktypeQueryRequest.
-        List of filter objects to be used in the search.
+        List of filter objects to be used in the search. Valid filter names are: 'divisionId', 'id', 'name', 'description', 'defaultWorkbinId', 'defaultDurationSeconds', 'defaultExpirationSeconds', 'defaultDueDurationSeconds', 'defaultPriority', 'defaultLanguageId', 'defaultTtlSeconds', 'assignmentEnabled', 'defaultQueueId', 'schemaId', 'schemaVersion', 'dateCreated', 'dateModified', 'modifiedBy'
 
         :return: The filters of this WorktypeQueryRequest.
         :rtype: list[WorkitemFilter]
@@ -142,7 +142,7 @@ class WorktypeQueryRequest(object):
     def filters(self, filters: List['WorkitemFilter']) -> None:
         """
         Sets the filters of this WorktypeQueryRequest.
-        List of filter objects to be used in the search.
+        List of filter objects to be used in the search. Valid filter names are: 'divisionId', 'id', 'name', 'description', 'defaultWorkbinId', 'defaultDurationSeconds', 'defaultExpirationSeconds', 'defaultDueDurationSeconds', 'defaultPriority', 'defaultLanguageId', 'defaultTtlSeconds', 'assignmentEnabled', 'defaultQueueId', 'schemaId', 'schemaVersion', 'dateCreated', 'dateModified', 'modifiedBy'
 
         :param filters: The filters of this WorktypeQueryRequest.
         :type: list[WorkitemFilter]

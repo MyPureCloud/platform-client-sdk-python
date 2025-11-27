@@ -134,7 +134,7 @@ class WorkitemQueryPostRequest(object):
     def filters(self) -> List['WorkitemFilter']:
         """
         Gets the filters of this WorkitemQueryPostRequest.
-        List of filter objects to be used in the search.
+        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'customFields.<custom field name>'
 
         :return: The filters of this WorkitemQueryPostRequest.
         :rtype: list[WorkitemFilter]
@@ -145,7 +145,7 @@ class WorkitemQueryPostRequest(object):
     def filters(self, filters: List['WorkitemFilter']) -> None:
         """
         Sets the filters of this WorkitemQueryPostRequest.
-        List of filter objects to be used in the search.
+        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'description', 'languageId', 'priority', 'dateCreated', 'dateModified', 'dateDue', 'dateExpires', 'durationInSeconds', 'ttl', 'statusId', 'statusCategory', 'dateClosed', 'externalContactId', 'reporterId', 'queueId', 'externalTag', 'modifiedBy', 'assignmentState', 'divisionId', 'customFields.<custom field name>'
 
         :param filters: The filters of this WorkitemQueryPostRequest.
         :type: list[WorkitemFilter]

@@ -7224,12 +7224,13 @@ class OutboundApi(object):
         :param list[str] id: A list of messaging campaign ids to bulk fetch
         :param str content_template_id: Content template ID
         :param str campaign_status: Campaign Status
+        :param list[str] rule_set_ids: Ruleset ID(s)
         :return: MessagingCampaignEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'contact_list_id', 'division_id', 'type', 'sender_sms_phone_number', 'id', 'content_template_id', 'campaign_status']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'contact_list_id', 'division_id', 'type', 'sender_sms_phone_number', 'id', 'content_template_id', 'campaign_status', 'rule_set_ids']
         all_params.append('callback')
 
         params = locals()
@@ -7272,6 +7273,8 @@ class OutboundApi(object):
             query_params['contentTemplateId'] = params['content_template_id']
         if 'campaign_status' in params:
             query_params['campaignStatus'] = params['campaign_status']
+        if 'rule_set_ids' in params:
+            query_params['ruleSetIds'] = params['rule_set_ids']
 
         header_params = {}
 

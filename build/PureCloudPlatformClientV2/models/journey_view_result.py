@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import JourneyViewChartResult
     from . import JourneyViewResultElement
 
 class JourneyViewResult(object):
@@ -49,14 +50,17 @@ class JourneyViewResult(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'elements': 'list[JourneyViewResultElement]'
+            'elements': 'list[JourneyViewResultElement]',
+            'charts': 'list[JourneyViewChartResult]'
         }
 
         self.attribute_map = {
-            'elements': 'elements'
+            'elements': 'elements',
+            'charts': 'charts'
         }
 
         self._elements = None
+        self._charts = None
 
     @property
     def elements(self) -> List['JourneyViewResultElement']:
@@ -81,6 +85,30 @@ class JourneyViewResult(object):
         
 
         self._elements = elements
+
+    @property
+    def charts(self) -> List['JourneyViewChartResult']:
+        """
+        Gets the charts of this JourneyViewResult.
+        The chart results within the journey view result
+
+        :return: The charts of this JourneyViewResult.
+        :rtype: list[JourneyViewChartResult]
+        """
+        return self._charts
+
+    @charts.setter
+    def charts(self, charts: List['JourneyViewChartResult']) -> None:
+        """
+        Sets the charts of this JourneyViewResult.
+        The chart results within the journey view result
+
+        :param charts: The charts of this JourneyViewResult.
+        :type: list[JourneyViewChartResult]
+        """
+        
+
+        self._charts = charts
 
     def to_dict(self):
         """

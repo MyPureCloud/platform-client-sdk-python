@@ -41,6 +41,7 @@ from ..models import ErrorBody
 from ..models import GetCelebrationListing
 from ..models import Recognition
 from ..models import RecognitionBase
+from ..models import Recognitions
 
 class EmployeeEngagementApi(object):
     """
@@ -288,6 +289,96 @@ class EmployeeEngagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Recognition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_employeeengagement_recognitions(self, **kwargs) -> 'Recognitions':
+        """
+        Gets sent recognitions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_employeeengagement_recognitions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str direction: The direction of the recognitions.
+        :param str recipient: The ID of the recipient (when direction is sent).
+        :param datetime date_start: The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        :param datetime date_end: The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: Recognitions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['direction', 'recipient', 'date_start', 'date_end', 'page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_employeeengagement_recognitions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/employeeengagement/recognitions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'direction' in params:
+            query_params['direction'] = params['direction']
+        if 'recipient' in params:
+            query_params['recipient'] = params['recipient']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Recognitions',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
