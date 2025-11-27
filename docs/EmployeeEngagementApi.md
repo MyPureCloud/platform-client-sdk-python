@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_employeeengagement_celebration**](#delete_employeeengagement_celebration) | Deletes a celebration|
 |[**get_employeeengagement_celebrations**](#get_employeeengagement_celebrations) | Get all celebrations|
 |[**get_employeeengagement_recognition**](#get_employeeengagement_recognition) | Gets a single recognition|
+|[**get_employeeengagement_recognitions**](#get_employeeengagement_recognitions) | Gets sent recognitions|
 |[**patch_employeeengagement_celebration**](#patch_employeeengagement_celebration) | Set a state for a celebration|
 |[**post_employeeengagement_recognitions**](#post_employeeengagement_recognitions) | Creates a recognition|
 
@@ -159,6 +160,64 @@ except ApiException as e:
 [**Recognition**](Recognition)
 
 
+## get_employeeengagement_recognitions
+
+> [**Recognitions**](Recognitions) get_employeeengagement_recognitions(direction=direction, recipient=recipient, date_start=date_start, date_end=date_end, page_size=page_size, page_number=page_number)
+
+
+Gets sent recognitions
+
+Wraps GET /api/v2/employeeengagement/recognitions 
+
+Requires ANY permissions: 
+
+* engagement:recognition:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.EmployeeEngagementApi()
+direction = ''received'' # str | The direction of the recognitions. (optional) (default to 'received')
+recipient = 'recipient_example' # str | The ID of the recipient (when direction is sent). (optional)
+date_start = '2013-10-20T19:20:30+01:00' # datetime | The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+date_end = '2013-10-20T19:20:30+01:00' # datetime | The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+page_size = 100 # int | Page size (optional) (default to 100)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Gets sent recognitions
+    api_response = api_instance.get_employeeengagement_recognitions(direction=direction, recipient=recipient, date_start=date_start, date_end=date_end, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EmployeeEngagementApi->get_employeeengagement_recognitions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **direction** | **str**| The direction of the recognitions. | [optional] [default to &#39;received&#39;]<br />**Values**: sent, received |
+| **recipient** | **str**| The ID of the recipient (when direction is sent). | [optional]  |
+| **date_start** | **datetime**| The start date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+| **date_end** | **datetime**| The end date of the search range. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+| **page_size** | **int**| Page size | [optional] [default to 100] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**Recognitions**](Recognitions)
+
+
 ## patch_employeeengagement_celebration
 
 >  patch_employeeengagement_celebration(celebration_id, body)
@@ -256,4 +315,4 @@ except ApiException as e:
 [**RecognitionBase**](RecognitionBase)
 
 
-_PureCloudPlatformClientV2 244.0.0_
+_PureCloudPlatformClientV2 245.0.0_

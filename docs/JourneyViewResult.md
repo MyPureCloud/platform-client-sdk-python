@@ -7,7 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **elements** | [list[JourneyViewResultElement]](JourneyViewResultElement) | The elements within the journey view result | [optional] |
+| **charts** | [list[JourneyViewChartResult]](JourneyViewChartResult) | The chart results within the journey view result | [optional] |
 
 
 
-_PureCloudPlatformClientV2 244.0.0_
+_PureCloudPlatformClientV2 245.0.0_
