@@ -6,7 +6,10 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **timeout_seconds** | int | Timeout in seconds for inactivity on the interaction | [optional] |
+| **action_type** | str | Action to take when timeout occurs | [optional] |
+| **flow_id** | [DomainEntityRef](DomainEntityRef) | Flow ID for architect flow action | [optional] |
 
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

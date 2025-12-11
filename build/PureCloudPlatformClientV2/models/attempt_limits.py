@@ -302,7 +302,7 @@ class AttemptLimits(object):
         """
         if isinstance(reset_period, int):
             reset_period = str(reset_period)
-        allowed_values = ["NEVER", "TODAY"]
+        allowed_values = ["NEVER", "TODAY", "DAYS_2", "DAYS_3", "DAYS_4", "DAYS_5", "DAYS_6", "DAYS_7", "DAYS_8", "DAYS_9", "DAYS_10", "DAYS_11", "DAYS_12", "DAYS_13", "DAYS_14", "DAYS_15", "DAYS_16", "DAYS_17", "DAYS_18", "DAYS_19", "DAYS_20", "DAYS_21", "DAYS_22", "DAYS_23", "DAYS_24", "DAYS_25", "DAYS_26", "DAYS_27", "DAYS_28", "DAYS_29", "DAYS_30"]
         if reset_period.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for reset_period -> " + reset_period)
             self._reset_period = "outdated_sdk_version"

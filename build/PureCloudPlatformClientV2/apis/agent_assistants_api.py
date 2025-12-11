@@ -35,6 +35,8 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import AgentChecklist
+from ..models import AgentChecklistListing
 from ..models import Assistant
 from ..models import AssistantListing
 from ..models import AssistantQueue
@@ -44,6 +46,7 @@ from ..models import AssistantQueueUsersBulkRemoveRequest
 from ..models import AssistantQueueUsersQueryRequest
 from ..models import AssistantQueueUsersQueryResponse
 from ..models import BulkResponse
+from ..models import EntityListing
 from ..models import ErrorBody
 
 class AgentAssistantsApi(object):
@@ -272,6 +275,84 @@ class AgentAssistantsApi(object):
         query_params = {}
         if 'queue_ids' in params:
             query_params['queueIds'] = params['queue_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_assistants_agentchecklist(self, agent_checklist_id: str, **kwargs) -> None:
+        """
+        Delete an agent checklist
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_assistants_agentchecklist(agent_checklist_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_checklist_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_assistants_agentchecklist" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `delete_assistants_agentchecklist`")
+
+
+        resource_path = '/api/v2/assistants/agentchecklists/{agentChecklistId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+
+        query_params = {}
 
         header_params = {}
 
@@ -649,6 +730,253 @@ class AgentAssistantsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AssistantListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_assistants_agentchecklist(self, agent_checklist_id: str, **kwargs) -> 'AgentChecklist':
+        """
+        Get an agent checklist
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_assistants_agentchecklist(agent_checklist_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :return: AgentChecklist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_checklist_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_assistants_agentchecklist" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `get_assistants_agentchecklist`")
+
+
+        resource_path = '/api/v2/assistants/agentchecklists/{agentChecklistId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklist',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_assistants_agentchecklists(self, **kwargs) -> 'AgentChecklistListing':
+        """
+        Get the list of agent checklists
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_assistants_agentchecklists(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: The page size for the listing. The max that will be returned is 100.
+        :param str name_prefix: The agent checklist name prefix filter applied to the listing.
+        :param str language: The agent checklist language filter applied to the listing.
+        :param str sort_order: The sort order for the listing
+        :param str sort_by: The field to sort by for the listing.
+        :return: AgentChecklistListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size', 'name_prefix', 'language', 'sort_order', 'sort_by']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_assistants_agentchecklists" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        if 'page_size' in params and params['page_size'] > 100: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_assistants_agentchecklists`, must be a value less than or equal to  `100`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_assistants_agentchecklists`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/assistants/agentchecklists'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'name_prefix' in params:
+            query_params['namePrefix'] = params['name_prefix']
+        if 'language' in params:
+            query_params['language'] = params['language']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklistListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_assistants_agentchecklists_languages(self, **kwargs) -> 'EntityListing':
+        """
+        Get the list of supported languages
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_assistants_agentchecklists_languages(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: EntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_assistants_agentchecklists_languages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/assistants/agentchecklists/languages'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1259,6 +1587,84 @@ class AgentAssistantsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_assistants_agentchecklists(self, body: 'AgentChecklist', **kwargs) -> 'AgentChecklist':
+        """
+        Create an agent checklist
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_assistants_agentchecklists(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AgentChecklist body: Request body containing details of checklist to be added (required)
+        :return: AgentChecklist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_assistants_agentchecklists" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_assistants_agentchecklists`")
+
+
+        resource_path = '/api/v2/assistants/agentchecklists'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklist',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_assistant_queue(self, assistant_id: str, queue_id: str, body: 'AssistantQueue', **kwargs) -> 'AssistantQueue':
         """
         Create a queue assistant association.
@@ -1345,6 +1751,90 @@ class AgentAssistantsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AssistantQueue',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_assistants_agentchecklist(self, agent_checklist_id: str, body: 'AgentChecklist', **kwargs) -> 'AgentChecklist':
+        """
+        Update an agent checklist
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_assistants_agentchecklist(agent_checklist_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :param AgentChecklist body: Request body containing details of checklist to be updated (required)
+        :return: AgentChecklist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_checklist_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_assistants_agentchecklist" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `put_assistants_agentchecklist`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_assistants_agentchecklist`")
+
+
+        resource_path = '/api/v2/assistants/agentchecklists/{agentChecklistId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklist',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

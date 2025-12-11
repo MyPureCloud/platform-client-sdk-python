@@ -51,18 +51,21 @@ class PublishProgramTopicsDefinitionsJob(object):
         self.swagger_types = {
             'id': 'str',
             'state': 'str',
-            'test_topic_phrase_results': 'list[PublishProgramTestTopicPhraseResults]'
+            'test_topic_phrase_results': 'list[PublishProgramTestTopicPhraseResults]',
+            'gen_ai_phrases_results': 'list[str]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'state': 'state',
-            'test_topic_phrase_results': 'testTopicPhraseResults'
+            'test_topic_phrase_results': 'testTopicPhraseResults',
+            'gen_ai_phrases_results': 'genAIPhrasesResults'
         }
 
         self._id = None
         self._state = None
         self._test_topic_phrase_results = None
+        self._gen_ai_phrases_results = None
 
     @property
     def id(self) -> str:
@@ -140,6 +143,30 @@ class PublishProgramTopicsDefinitionsJob(object):
         
 
         self._test_topic_phrase_results = test_topic_phrase_results
+
+    @property
+    def gen_ai_phrases_results(self) -> List[str]:
+        """
+        Gets the gen_ai_phrases_results of this PublishProgramTopicsDefinitionsJob.
+
+
+        :return: The gen_ai_phrases_results of this PublishProgramTopicsDefinitionsJob.
+        :rtype: list[str]
+        """
+        return self._gen_ai_phrases_results
+
+    @gen_ai_phrases_results.setter
+    def gen_ai_phrases_results(self, gen_ai_phrases_results: List[str]) -> None:
+        """
+        Sets the gen_ai_phrases_results of this PublishProgramTopicsDefinitionsJob.
+
+
+        :param gen_ai_phrases_results: The gen_ai_phrases_results of this PublishProgramTopicsDefinitionsJob.
+        :type: list[str]
+        """
+        
+
+        self._gen_ai_phrases_results = gen_ai_phrases_results
 
     def to_dict(self):
         """

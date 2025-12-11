@@ -48,6 +48,7 @@ from ..models import ComparisonPeriodListing
 from ..models import ContactCenterSettings
 from ..models import CreateBenefitAssessmentJobRequest
 from ..models import CreateBenefitAssessmentRequest
+from ..models import CreateKpiRequest
 from ..models import CreatePredictorRequest
 from ..models import CreateQueueRequest
 from ..models import CreateUtilizationLabelRequest
@@ -64,6 +65,7 @@ from ..models import InboundDomainPatchRequest
 from ..models import InboundRoute
 from ..models import InboundRouteEntityListing
 from ..models import KeyPerformanceIndicator
+from ..models import KeyPerformanceIndicatorType
 from ..models import Language
 from ..models import LanguageEntityListing
 from ..models import MailFromResult
@@ -113,6 +115,7 @@ from ..models import SmsPhoneNumberPatchRequest
 from ..models import SmsPhoneNumberProvision
 from ..models import TestMessage
 from ..models import TranscriptionSettings
+from ..models import UpdateKpiRequest
 from ..models import UpdateUtilizationLabelRequest
 from ..models import UserLanguageEntityListing
 from ..models import UserQueue
@@ -663,6 +666,85 @@ class RoutingApi(object):
         path_params = {}
         if 'predictor_id' in params:
             path_params['predictorId'] = params['predictor_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_routing_predictors_keyperformanceindicator(self, kpi_id: str, **kwargs) -> None:
+        """
+        Delete a custom Key Performance Indicator.
+        
+	    delete_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_predictors_keyperformanceindicator(kpi_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str kpi_id: Key Performance Indicator ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['kpi_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_predictors_keyperformanceindicator" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'kpi_id' is set
+        if ('kpi_id' not in params) or (params['kpi_id'] is None):
+            raise ValueError("Missing the required parameter `kpi_id` when calling `delete_routing_predictors_keyperformanceindicator`")
+
+
+        resource_path = '/api/v2/routing/predictors/keyperformanceindicators/{kpiId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'kpi_id' in params:
+            path_params['kpiId'] = params['kpi_id']
 
         query_params = {}
 
@@ -4153,6 +4235,88 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_predictors_keyperformanceindicator(self, kpi_id: str, **kwargs) -> 'KeyPerformanceIndicator':
+        """
+        Retrieve a single Key Performance Indicator.
+        
+	    get_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_predictors_keyperformanceindicator(kpi_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str kpi_id: Key Performance Indicator ID (required)
+        :param list[str] expand: Parameter to request additional data to return in KPI payload
+        :return: KeyPerformanceIndicator
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['kpi_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_predictors_keyperformanceindicator" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'kpi_id' is set
+        if ('kpi_id' not in params) or (params['kpi_id'] is None):
+            raise ValueError("Missing the required parameter `kpi_id` when calling `get_routing_predictors_keyperformanceindicator`")
+
+
+        resource_path = '/api/v2/routing/predictors/keyperformanceindicators/{kpiId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'kpi_id' in params:
+            path_params['kpiId'] = params['kpi_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KeyPerformanceIndicator',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_routing_predictors_keyperformanceindicators(self, **kwargs) -> List['KeyPerformanceIndicator']:
         """
         Get a list of Key Performance Indicators
@@ -4227,6 +4391,79 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[KeyPerformanceIndicator]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_predictors_keyperformanceindicatortypes(self, **kwargs) -> List['KeyPerformanceIndicatorType']:
+        """
+        Get a list of Key Performance Indicators Types available.
+        
+	    get_routing_predictors_keyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_predictors_keyperformanceindicatortypes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: list[KeyPerformanceIndicatorType]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_predictors_keyperformanceindicatortypes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/predictors/keyperformanceindicatortypes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[KeyPerformanceIndicatorType]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8441,6 +8678,88 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_routing_predictors_keyperformanceindicator(self, kpi_id: str, **kwargs) -> 'KeyPerformanceIndicator':
+        """
+        Update a custom Key Performance Indicator.
+        
+	    patch_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_predictors_keyperformanceindicator(kpi_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str kpi_id: Key Performance Indicator ID (required)
+        :param UpdateKpiRequest body: 
+        :return: KeyPerformanceIndicator
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['kpi_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_predictors_keyperformanceindicator" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'kpi_id' is set
+        if ('kpi_id' not in params) or (params['kpi_id'] is None):
+            raise ValueError("Missing the required parameter `kpi_id` when calling `patch_routing_predictors_keyperformanceindicator`")
+
+
+        resource_path = '/api/v2/routing/predictors/keyperformanceindicators/{kpiId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'kpi_id' in params:
+            path_params['kpiId'] = params['kpi_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KeyPerformanceIndicator',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_routing_queue_member(self, queue_id: str, member_id: str, body: 'QueueMember', **kwargs) -> None:
         """
         Update the ring number OR joined status for a queue member.
@@ -10650,6 +10969,85 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Predictor',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_predictors_keyperformanceindicators(self, body: 'CreateKpiRequest', **kwargs) -> 'KeyPerformanceIndicator':
+        """
+        Create a custom Key Performance Indicator.
+        
+	    post_routing_predictors_keyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_predictors_keyperformanceindicators(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateKpiRequest body: request (required)
+        :return: KeyPerformanceIndicator
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_predictors_keyperformanceindicators" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_predictors_keyperformanceindicators`")
+
+
+        resource_path = '/api/v2/routing/predictors/keyperformanceindicators'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KeyPerformanceIndicator',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -756,7 +756,7 @@ filter_field = 'filter_field_example' # str | Field to filter by (e.g. filterFie
 filter_value = 'filter_value_example' # str | Value to filter by. Requires 'filterValue' to also be set. (optional)
 action_map_ids = ['action_map_ids_example'] # list[str] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
 query_fields = ['query_fields_example'] # list[str] | Action Map field(s) to query on. Requires 'queryValue' to also be set. (optional)
-query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all action maps.
@@ -778,7 +778,7 @@ except ApiException as e:
 | **filter_value** | **str**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional]  |
 | **action_map_ids** | [**list[str]**](str)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
 | **query_fields** | [**list[str]**](str)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
-| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 
 ### Return type
 
@@ -1059,7 +1059,7 @@ sort_by = 'sort_by_example' # str | Field(s) to sort by. Prefix with '-' for des
 media_type = 'media_type_example' # str | Media type (optional)
 state = 'state_example' # str | Action template state. (optional)
 query_fields = ['query_fields_example'] # list[str] | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. (optional)
-query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all action templates.
@@ -1080,7 +1080,7 @@ except ApiException as e:
 | **media_type** | **str**| Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
 | **state** | **str**| Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
 | **query_fields** | [**list[str]**](str)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
-| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 
 ### Return type
 
@@ -1222,7 +1222,7 @@ page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
 outcome_ids = ['outcome_ids_example'] # list[str] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
 query_fields = ['query_fields_example'] # list[str] | Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)
-query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all outcomes.
@@ -1242,7 +1242,7 @@ except ApiException as e:
 | **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional]  |
 | **outcome_ids** | [**list[str]**](str)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
 | **query_fields** | [**list[str]**](str)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
-| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 
 ### Return type
 
@@ -1521,7 +1521,7 @@ page_number = 1 # int | Page number (optional) (default to 1)
 is_active = True # bool | Determines whether or not to show only active segments. (optional)
 segment_ids = ['segment_ids_example'] # list[str] | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
 query_fields = ['query_fields_example'] # list[str] | Segment field(s) to query on. Requires 'queryValue' to also be set. (optional)
-query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
 
 try:
     # Retrieve all segments.
@@ -1542,7 +1542,7 @@ except ApiException as e:
 | **is_active** | **bool**| Determines whether or not to show only active segments. | [optional]  |
 | **segment_ids** | [**list[str]**](str)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
 | **query_fields** | [**list[str]**](str)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
-| **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+| **query_value** | **str**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 
 ### Return type
 
@@ -3844,4 +3844,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

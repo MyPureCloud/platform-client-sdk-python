@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DomainEntityRef
 
 class InactivityTimeoutSettings(object):
     """
@@ -47,13 +49,97 @@ class InactivityTimeoutSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'timeout_seconds': 'int',
+            'action_type': 'str',
+            'flow_id': 'DomainEntityRef'
         }
 
         self.attribute_map = {
-            
+            'timeout_seconds': 'timeoutSeconds',
+            'action_type': 'actionType',
+            'flow_id': 'flowId'
         }
 
+        self._timeout_seconds = None
+        self._action_type = None
+        self._flow_id = None
+
+    @property
+    def timeout_seconds(self) -> int:
+        """
+        Gets the timeout_seconds of this InactivityTimeoutSettings.
+        Timeout in seconds for inactivity on the interaction
+
+        :return: The timeout_seconds of this InactivityTimeoutSettings.
+        :rtype: int
+        """
+        return self._timeout_seconds
+
+    @timeout_seconds.setter
+    def timeout_seconds(self, timeout_seconds: int) -> None:
+        """
+        Sets the timeout_seconds of this InactivityTimeoutSettings.
+        Timeout in seconds for inactivity on the interaction
+
+        :param timeout_seconds: The timeout_seconds of this InactivityTimeoutSettings.
+        :type: int
+        """
+        
+
+        self._timeout_seconds = timeout_seconds
+
+    @property
+    def action_type(self) -> str:
+        """
+        Gets the action_type of this InactivityTimeoutSettings.
+        Action to take when timeout occurs
+
+        :return: The action_type of this InactivityTimeoutSettings.
+        :rtype: str
+        """
+        return self._action_type
+
+    @action_type.setter
+    def action_type(self, action_type: str) -> None:
+        """
+        Sets the action_type of this InactivityTimeoutSettings.
+        Action to take when timeout occurs
+
+        :param action_type: The action_type of this InactivityTimeoutSettings.
+        :type: str
+        """
+        if isinstance(action_type, int):
+            action_type = str(action_type)
+        allowed_values = ["DISCONNECT", "SEND_TO_ARCHITECT_FLOW"]
+        if action_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for action_type -> " + action_type)
+            self._action_type = "outdated_sdk_version"
+        else:
+            self._action_type = action_type
+
+    @property
+    def flow_id(self) -> 'DomainEntityRef':
+        """
+        Gets the flow_id of this InactivityTimeoutSettings.
+        Flow ID for architect flow action
+
+        :return: The flow_id of this InactivityTimeoutSettings.
+        :rtype: DomainEntityRef
+        """
+        return self._flow_id
+
+    @flow_id.setter
+    def flow_id(self, flow_id: 'DomainEntityRef') -> None:
+        """
+        Sets the flow_id of this InactivityTimeoutSettings.
+        Flow ID for architect flow action
+
+        :param flow_id: The flow_id of this InactivityTimeoutSettings.
+        :type: DomainEntityRef
+        """
+        
+
+        self._flow_id = flow_id
 
     def to_dict(self):
         """

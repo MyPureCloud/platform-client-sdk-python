@@ -31,8 +31,6 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
-if TYPE_CHECKING:
-    from . import DataIngestionRulesMetadata
 
 class SocialTopicResponse(object):
     """
@@ -56,7 +54,6 @@ class SocialTopicResponse(object):
             'date_modified': 'datetime',
             'division_id': 'str',
             'status': 'str',
-            'data_ingestion_rules_metadata': 'list[DataIngestionRulesMetadata]',
             'self_uri': 'str'
         }
 
@@ -68,7 +65,6 @@ class SocialTopicResponse(object):
             'date_modified': 'dateModified',
             'division_id': 'divisionId',
             'status': 'status',
-            'data_ingestion_rules_metadata': 'dataIngestionRulesMetadata',
             'self_uri': 'selfUri'
         }
 
@@ -79,7 +75,6 @@ class SocialTopicResponse(object):
         self._date_modified = None
         self._division_id = None
         self._status = None
-        self._data_ingestion_rules_metadata = None
         self._self_uri = None
 
     @property
@@ -254,30 +249,6 @@ class SocialTopicResponse(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
-
-    @property
-    def data_ingestion_rules_metadata(self) -> List['DataIngestionRulesMetadata']:
-        """
-        Gets the data_ingestion_rules_metadata of this SocialTopicResponse.
-        The data ingestion rule metadata.
-
-        :return: The data_ingestion_rules_metadata of this SocialTopicResponse.
-        :rtype: list[DataIngestionRulesMetadata]
-        """
-        return self._data_ingestion_rules_metadata
-
-    @data_ingestion_rules_metadata.setter
-    def data_ingestion_rules_metadata(self, data_ingestion_rules_metadata: List['DataIngestionRulesMetadata']) -> None:
-        """
-        Sets the data_ingestion_rules_metadata of this SocialTopicResponse.
-        The data ingestion rule metadata.
-
-        :param data_ingestion_rules_metadata: The data_ingestion_rules_metadata of this SocialTopicResponse.
-        :type: list[DataIngestionRulesMetadata]
-        """
-        
-
-        self._data_ingestion_rules_metadata = data_ingestion_rules_metadata
 
     @property
     def self_uri(self) -> str:

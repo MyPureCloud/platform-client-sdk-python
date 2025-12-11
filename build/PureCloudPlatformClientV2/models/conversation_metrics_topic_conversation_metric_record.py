@@ -330,7 +330,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["nBlindTransferred", "nBotInteractions", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nConversations", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oAudioMessageCount", "oExternalAudioMessageCount", "oExternalMediaCount", "oMediaCount", "oMessageCount", "oMessageSegmentCount", "oMessageTurn", "tAbandon", "tAcd", "tActiveCallback", "tActiveCallbackComplete", "tAcw", "tAgentResponseTime", "tAgentVideoConnected", "tAlert", "tAnswered", "tAverageAgentResponseTime", "tAverageCustomerResponseTime", "tBarging", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFirstEngagement", "tFirstResponse", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tPark", "tParkComplete", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
+        allowed_values = ["nBlindTransferred", "nBotInteractions", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nConversations", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oAudioMessageCount", "oExternalAudioMessageCount", "oExternalMediaCount", "oMediaCount", "oMessageCount", "oMessageSegmentCount", "oMessageTurn", "tAbandon", "tAcd", "tActiveCallback", "tActiveCallbackComplete", "tAcw", "tAgentResponseTime", "tAgentVideoConnected", "tAlert", "tAnswered", "tAverageAgentResponseTime", "tAverageCustomerResponseTime", "tBarging", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFirstEngagement", "tFirstResponse", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tPark", "tParkComplete", "tScreenMonitoring", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
@@ -1517,7 +1517,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenshare", "unknown", "video", "voice"]
+        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenmonitoring", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

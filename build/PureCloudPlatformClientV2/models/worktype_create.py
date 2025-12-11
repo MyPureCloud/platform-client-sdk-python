@@ -60,6 +60,7 @@ class WorktypeCreate(object):
             'schema_id': 'str',
             'service_level_target': 'int',
             'rule_settings': 'WorkitemRuleSettings',
+            'unassigned_division_contacts_enabled': 'bool',
             'description': 'str',
             'division_id': 'str',
             'disable_default_status_creation': 'bool',
@@ -82,6 +83,7 @@ class WorktypeCreate(object):
             'schema_id': 'schemaId',
             'service_level_target': 'serviceLevelTarget',
             'rule_settings': 'ruleSettings',
+            'unassigned_division_contacts_enabled': 'unassignedDivisionContactsEnabled',
             'description': 'description',
             'division_id': 'divisionId',
             'disable_default_status_creation': 'disableDefaultStatusCreation',
@@ -103,6 +105,7 @@ class WorktypeCreate(object):
         self._schema_id = None
         self._service_level_target = None
         self._rule_settings = None
+        self._unassigned_division_contacts_enabled = None
         self._description = None
         self._division_id = None
         self._disable_default_status_creation = None
@@ -414,6 +417,30 @@ class WorktypeCreate(object):
         
 
         self._rule_settings = rule_settings
+
+    @property
+    def unassigned_division_contacts_enabled(self) -> bool:
+        """
+        Gets the unassigned_division_contacts_enabled of this WorktypeCreate.
+        When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+
+        :return: The unassigned_division_contacts_enabled of this WorktypeCreate.
+        :rtype: bool
+        """
+        return self._unassigned_division_contacts_enabled
+
+    @unassigned_division_contacts_enabled.setter
+    def unassigned_division_contacts_enabled(self, unassigned_division_contacts_enabled: bool) -> None:
+        """
+        Sets the unassigned_division_contacts_enabled of this WorktypeCreate.
+        When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+
+        :param unassigned_division_contacts_enabled: The unassigned_division_contacts_enabled of this WorktypeCreate.
+        :type: bool
+        """
+        
+
+        self._unassigned_division_contacts_enabled = unassigned_division_contacts_enabled
 
     @property
     def description(self) -> str:

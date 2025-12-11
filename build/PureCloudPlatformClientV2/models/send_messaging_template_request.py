@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import CarouselParameters
     from . import TemplateParameter
 
 class SendMessagingTemplateRequest(object):
@@ -53,7 +54,8 @@ class SendMessagingTemplateRequest(object):
             'parameters': 'list[TemplateParameter]',
             'header_parameters': 'list[TemplateParameter]',
             'body_parameters': 'list[TemplateParameter]',
-            'button_url_parameters': 'list[TemplateParameter]'
+            'button_url_parameters': 'list[TemplateParameter]',
+            'carousel_parameters': 'CarouselParameters'
         }
 
         self.attribute_map = {
@@ -61,7 +63,8 @@ class SendMessagingTemplateRequest(object):
             'parameters': 'parameters',
             'header_parameters': 'headerParameters',
             'body_parameters': 'bodyParameters',
-            'button_url_parameters': 'buttonUrlParameters'
+            'button_url_parameters': 'buttonUrlParameters',
+            'carousel_parameters': 'carouselParameters'
         }
 
         self._response_id = None
@@ -69,6 +72,7 @@ class SendMessagingTemplateRequest(object):
         self._header_parameters = None
         self._body_parameters = None
         self._button_url_parameters = None
+        self._carousel_parameters = None
 
     @property
     def response_id(self) -> str:
@@ -189,6 +193,30 @@ class SendMessagingTemplateRequest(object):
         
 
         self._button_url_parameters = button_url_parameters
+
+    @property
+    def carousel_parameters(self) -> 'CarouselParameters':
+        """
+        Gets the carousel_parameters of this SendMessagingTemplateRequest.
+        Template parameters for carousel card components
+
+        :return: The carousel_parameters of this SendMessagingTemplateRequest.
+        :rtype: CarouselParameters
+        """
+        return self._carousel_parameters
+
+    @carousel_parameters.setter
+    def carousel_parameters(self, carousel_parameters: 'CarouselParameters') -> None:
+        """
+        Sets the carousel_parameters of this SendMessagingTemplateRequest.
+        Template parameters for carousel card components
+
+        :param carousel_parameters: The carousel_parameters of this SendMessagingTemplateRequest.
+        :type: CarouselParameters
+        """
+        
+
+        self._carousel_parameters = carousel_parameters
 
     def to_dict(self):
         """

@@ -119,6 +119,7 @@ class AnalyticsSession(object):
             'routing_ring': 'int',
             'routing_rule': 'str',
             'routing_rule_type': 'str',
+            'screen_monitored_user_id': 'str',
             'screen_share_address_self': 'str',
             'screen_share_room_id': 'str',
             'script_id': 'str',
@@ -207,6 +208,7 @@ class AnalyticsSession(object):
             'routing_ring': 'routingRing',
             'routing_rule': 'routingRule',
             'routing_rule_type': 'routingRuleType',
+            'screen_monitored_user_id': 'screenMonitoredUserId',
             'screen_share_address_self': 'screenShareAddressSelf',
             'screen_share_room_id': 'screenShareRoomId',
             'script_id': 'scriptId',
@@ -294,6 +296,7 @@ class AnalyticsSession(object):
         self._routing_ring = None
         self._routing_rule = None
         self._routing_rule_type = None
+        self._screen_monitored_user_id = None
         self._screen_share_address_self = None
         self._screen_share_room_id = None
         self._script_id = None
@@ -1480,7 +1483,7 @@ class AnalyticsSession(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenshare", "unknown", "video", "voice"]
+        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenmonitoring", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
@@ -1899,6 +1902,30 @@ class AnalyticsSession(object):
             self._routing_rule_type = "outdated_sdk_version"
         else:
             self._routing_rule_type = routing_rule_type
+
+    @property
+    def screen_monitored_user_id(self) -> str:
+        """
+        Gets the screen_monitored_user_id of this AnalyticsSession.
+        The user ID for the participant who is being screen monitored.
+
+        :return: The screen_monitored_user_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._screen_monitored_user_id
+
+    @screen_monitored_user_id.setter
+    def screen_monitored_user_id(self, screen_monitored_user_id: str) -> None:
+        """
+        Sets the screen_monitored_user_id of this AnalyticsSession.
+        The user ID for the participant who is being screen monitored.
+
+        :param screen_monitored_user_id: The screen_monitored_user_id of this AnalyticsSession.
+        :type: str
+        """
+        
+
+        self._screen_monitored_user_id = screen_monitored_user_id
 
     @property
     def screen_share_address_self(self) -> str:

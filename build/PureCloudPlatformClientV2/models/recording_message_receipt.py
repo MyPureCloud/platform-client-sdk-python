@@ -50,17 +50,20 @@ class RecordingMessageReceipt(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'receipt_time': 'datetime',
             'status': 'str',
             'reasons': 'list[RecordingMessageReceiptReason]'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'receipt_time': 'receiptTime',
             'status': 'status',
             'reasons': 'reasons'
         }
 
         self._id = None
+        self._receipt_time = None
         self._status = None
         self._reasons = None
 
@@ -87,6 +90,30 @@ class RecordingMessageReceipt(object):
         
 
         self._id = id
+
+    @property
+    def receipt_time(self) -> datetime:
+        """
+        Gets the receipt_time of this RecordingMessageReceipt.
+        Original time of the event (receipt). Example: delivery receipt time, read receipt time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The receipt_time of this RecordingMessageReceipt.
+        :rtype: datetime
+        """
+        return self._receipt_time
+
+    @receipt_time.setter
+    def receipt_time(self, receipt_time: datetime) -> None:
+        """
+        Sets the receipt_time of this RecordingMessageReceipt.
+        Original time of the event (receipt). Example: delivery receipt time, read receipt time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param receipt_time: The receipt_time of this RecordingMessageReceipt.
+        :type: datetime
+        """
+        
+
+        self._receipt_time = receipt_time
 
     @property
     def status(self) -> str:

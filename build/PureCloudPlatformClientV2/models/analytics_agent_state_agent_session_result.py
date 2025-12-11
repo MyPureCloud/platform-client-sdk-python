@@ -201,7 +201,7 @@ class AnalyticsAgentStateAgentSessionResult(object):
         """
         if isinstance(segment_type, int):
             segment_type = str(segment_type)
-        allowed_values = ["alert", "barging", "callback", "coaching", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "monitoring", "parked", "scheduled", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
+        allowed_values = ["alert", "barging", "callback", "coaching", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "monitoring", "parked", "scheduled", "screenmonitoring", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
         if segment_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for segment_type -> " + segment_type)
             self._segment_type = "outdated_sdk_version"
@@ -331,7 +331,7 @@ class AnalyticsAgentStateAgentSessionResult(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenshare", "unknown", "video", "voice"]
+        allowed_values = ["callback", "chat", "cobrowse", "email", "internalmessage", "message", "screenmonitoring", "screenshare", "unknown", "video", "voice"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

@@ -53,8 +53,8 @@ class UsersRulesQueryResponse(object):
             'page_size': 'int',
             'page_number': 'int',
             'next_uri': 'str',
-            'self_uri': 'str',
-            'previous_uri': 'str'
+            'previous_uri': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
@@ -62,16 +62,16 @@ class UsersRulesQueryResponse(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'next_uri': 'nextUri',
-            'self_uri': 'selfUri',
-            'previous_uri': 'previousUri'
+            'previous_uri': 'previousUri',
+            'self_uri': 'selfUri'
         }
 
         self._entities = None
         self._page_size = None
         self._page_number = None
         self._next_uri = None
-        self._self_uri = None
         self._previous_uri = None
+        self._self_uri = None
 
     @property
     def entities(self) -> List['UserReference']:
@@ -170,30 +170,6 @@ class UsersRulesQueryResponse(object):
         self._next_uri = next_uri
 
     @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this UsersRulesQueryResponse.
-
-
-        :return: The self_uri of this UsersRulesQueryResponse.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this UsersRulesQueryResponse.
-
-
-        :param self_uri: The self_uri of this UsersRulesQueryResponse.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this UsersRulesQueryResponse.
@@ -216,6 +192,30 @@ class UsersRulesQueryResponse(object):
         
 
         self._previous_uri = previous_uri
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this UsersRulesQueryResponse.
+
+
+        :return: The self_uri of this UsersRulesQueryResponse.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this UsersRulesQueryResponse.
+
+
+        :param self_uri: The self_uri of this UsersRulesQueryResponse.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

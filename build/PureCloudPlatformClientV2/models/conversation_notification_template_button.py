@@ -54,6 +54,7 @@ class ConversationNotificationTemplateButton(object):
             'index': 'int',
             'phone_number': 'str',
             'url': 'str',
+            'payload': 'str',
             'parameters': 'list[ConversationNotificationTemplateParameter]'
         }
 
@@ -63,6 +64,7 @@ class ConversationNotificationTemplateButton(object):
             'index': 'index',
             'phone_number': 'phoneNumber',
             'url': 'url',
+            'payload': 'payload',
             'parameters': 'parameters'
         }
 
@@ -71,6 +73,7 @@ class ConversationNotificationTemplateButton(object):
         self._index = None
         self._phone_number = None
         self._url = None
+        self._payload = None
         self._parameters = None
 
     @property
@@ -197,6 +200,30 @@ class ConversationNotificationTemplateButton(object):
         
 
         self._url = url
+
+    @property
+    def payload(self) -> str:
+        """
+        Gets the payload of this ConversationNotificationTemplateButton.
+        Content of the payload to be included in the quick reply response when the button is pressed.
+
+        :return: The payload of this ConversationNotificationTemplateButton.
+        :rtype: str
+        """
+        return self._payload
+
+    @payload.setter
+    def payload(self, payload: str) -> None:
+        """
+        Sets the payload of this ConversationNotificationTemplateButton.
+        Content of the payload to be included in the quick reply response when the button is pressed.
+
+        :param payload: The payload of this ConversationNotificationTemplateButton.
+        :type: str
+        """
+        
+
+        self._payload = payload
 
     @property
     def parameters(self) -> List['ConversationNotificationTemplateParameter']:

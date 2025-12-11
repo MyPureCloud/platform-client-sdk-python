@@ -313,7 +313,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self) -> 'AsyncConversationQuery':
         """
         Gets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.
 
         :return: The conversation_query of this RecordingJobsQuery.
         :rtype: AsyncConversationQuery
@@ -324,7 +324,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self, conversation_query: 'AsyncConversationQuery') -> None:
         """
         Sets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.
 
         :param conversation_query: The conversation_query of this RecordingJobsQuery.
         :type: AsyncConversationQuery

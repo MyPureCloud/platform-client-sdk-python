@@ -84,6 +84,7 @@ class WorktypeVersion(object):
             'rule_settings': 'WorkitemRuleSettings',
             'flow': 'WorkitemFlowReference',
             'default_script': 'WorkitemScriptReference',
+            'unassigned_division_contacts_enabled': 'bool',
             'version': 'int',
             'self_uri': 'str'
         }
@@ -113,6 +114,7 @@ class WorktypeVersion(object):
             'rule_settings': 'ruleSettings',
             'flow': 'flow',
             'default_script': 'defaultScript',
+            'unassigned_division_contacts_enabled': 'unassignedDivisionContactsEnabled',
             'version': 'version',
             'self_uri': 'selfUri'
         }
@@ -141,6 +143,7 @@ class WorktypeVersion(object):
         self._rule_settings = None
         self._flow = None
         self._default_script = None
+        self._unassigned_division_contacts_enabled = None
         self._version = None
         self._self_uri = None
 
@@ -719,6 +722,30 @@ class WorktypeVersion(object):
         
 
         self._default_script = default_script
+
+    @property
+    def unassigned_division_contacts_enabled(self) -> bool:
+        """
+        Gets the unassigned_division_contacts_enabled of this WorktypeVersion.
+        When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+
+        :return: The unassigned_division_contacts_enabled of this WorktypeVersion.
+        :rtype: bool
+        """
+        return self._unassigned_division_contacts_enabled
+
+    @unassigned_division_contacts_enabled.setter
+    def unassigned_division_contacts_enabled(self, unassigned_division_contacts_enabled: bool) -> None:
+        """
+        Sets the unassigned_division_contacts_enabled of this WorktypeVersion.
+        When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+
+        :param unassigned_division_contacts_enabled: The unassigned_division_contacts_enabled of this WorktypeVersion.
+        :type: bool
+        """
+        
+
+        self._unassigned_division_contacts_enabled = unassigned_division_contacts_enabled
 
     @property
     def version(self) -> int:

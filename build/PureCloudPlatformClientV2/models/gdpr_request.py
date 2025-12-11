@@ -60,6 +60,7 @@ class GDPRRequest(object):
             'status': 'str',
             'subject': 'GDPRSubject',
             'results_url': 'str',
+            'results_urls': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -73,6 +74,7 @@ class GDPRRequest(object):
             'status': 'status',
             'subject': 'subject',
             'results_url': 'resultsUrl',
+            'results_urls': 'resultsUrls',
             'self_uri': 'selfUri'
         }
 
@@ -85,6 +87,7 @@ class GDPRRequest(object):
         self._status = None
         self._subject = None
         self._results_url = None
+        self._results_urls = None
         self._self_uri = None
 
     @property
@@ -312,6 +315,30 @@ class GDPRRequest(object):
         
 
         self._results_url = results_url
+
+    @property
+    def results_urls(self) -> List[str]:
+        """
+        Gets the results_urls of this GDPRRequest.
+        The locations where the results of the request can be retrieved if multiple archive files created
+
+        :return: The results_urls of this GDPRRequest.
+        :rtype: list[str]
+        """
+        return self._results_urls
+
+    @results_urls.setter
+    def results_urls(self, results_urls: List[str]) -> None:
+        """
+        Sets the results_urls of this GDPRRequest.
+        The locations where the results of the request can be retrieved if multiple archive files created
+
+        :param results_urls: The results_urls of this GDPRRequest.
+        :type: list[str]
+        """
+        
+
+        self._results_urls = results_urls
 
     @property
     def self_uri(self) -> str:

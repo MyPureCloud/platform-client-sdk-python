@@ -38,6 +38,9 @@ from ..models import Empty
 from ..models import AdditionalMessage
 from ..models import AdditionalSocialMediaMessage
 from ..models import AfterCallWorkUpdate
+from ..models import AgentActionPayload
+from ..models import AgentChecklistResponse
+from ..models import AgentChecklistResponseList
 from ..models import AgentlessEmailSendRequestDto
 from ..models import AgentlessEmailSendResponseDto
 from ..models import AnalyticsConversationAsyncQueryResponse
@@ -66,6 +69,11 @@ from ..models import CallbackConversation
 from ..models import CallbackConversationEntityListing
 from ..models import ChatConversation
 from ..models import ChatConversationEntityListing
+from ..models import ChecklistActivationPayload
+from ..models import ChecklistFinalizePayload
+from ..models import ChecklistInferenceJobCreationResponse
+from ..models import ChecklistInferenceJobPayload
+from ..models import ChecklistInferenceJobResponse
 from ..models import CobrowseConversation
 from ..models import CobrowseConversationEntityListing
 from ..models import CobrowseWebMessagingSession
@@ -2214,6 +2222,276 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Conversation',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversation_communication_agentchecklist(self, conversation_id: str, communication_id: str, agent_checklist_id: str, **kwargs) -> 'AgentChecklistResponse':
+        """
+        Get checklist info for a single checklist.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_communication_agentchecklist(conversation_id, communication_id, agent_checklist_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str communication_id: Communication ID (required)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :return: AgentChecklistResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id', 'agent_checklist_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_communication_agentchecklist" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_communication_agentchecklist`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `get_conversation_communication_agentchecklist`")
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `get_conversation_communication_agentchecklist`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklistResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversation_communication_agentchecklist_job(self, conversation_id: str, communication_id: str, agent_checklist_id: str, job_id: str, **kwargs) -> 'ChecklistInferenceJobResponse':
+        """
+        Get inference job status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_communication_agentchecklist_job(conversation_id, communication_id, agent_checklist_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str communication_id: Communication ID (required)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :param str job_id: Inference Job ID (required)
+        :return: ChecklistInferenceJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id', 'agent_checklist_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_communication_agentchecklist_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_communication_agentchecklist_job`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `get_conversation_communication_agentchecklist_job`")
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `get_conversation_communication_agentchecklist_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_conversation_communication_agentchecklist_job`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChecklistInferenceJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversation_communication_agentchecklists(self, conversation_id: str, communication_id: str, **kwargs) -> 'AgentChecklistResponseList':
+        """
+        Get information of all checklists associated with a conversation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_communication_agentchecklists(conversation_id, communication_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str communication_id: Communication ID (required)
+        :return: AgentChecklistResponseList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_communication_agentchecklists" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_communication_agentchecklists`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `get_conversation_communication_agentchecklists`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklistResponseList',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -15022,6 +15300,384 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversation_communication_agentchecklist(self, conversation_id: str, communication_id: str, agent_checklist_id: str, body: 'ChecklistActivationPayload', **kwargs) -> 'AgentChecklistResponse':
+        """
+        Agent Checklist activation API
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversation_communication_agentchecklist(conversation_id, communication_id, agent_checklist_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str communication_id: Communication ID (required)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :param ChecklistActivationPayload body: Agent checklist activation payload (required)
+        :return: AgentChecklistResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id', 'agent_checklist_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversation_communication_agentchecklist" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversation_communication_agentchecklist`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversation_communication_agentchecklist`")
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `post_conversation_communication_agentchecklist`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversation_communication_agentchecklist`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklistResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversation_communication_agentchecklist_agentaction(self, conversation_id: str, communication_id: str, agent_checklist_id: str, body: 'AgentActionPayload', **kwargs) -> 'AgentChecklistResponse':
+        """
+        API invoked to capture an agent action.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversation_communication_agentchecklist_agentaction(conversation_id, communication_id, agent_checklist_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str communication_id: Communication ID (required)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :param AgentActionPayload body: Agent action payload (required)
+        :return: AgentChecklistResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id', 'agent_checklist_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversation_communication_agentchecklist_agentaction" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversation_communication_agentchecklist_agentaction`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversation_communication_agentchecklist_agentaction`")
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `post_conversation_communication_agentchecklist_agentaction`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversation_communication_agentchecklist_agentaction`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklistResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversation_communication_agentchecklist_jobs(self, conversation_id: str, communication_id: str, agent_checklist_id: str, body: 'ChecklistInferenceJobPayload', **kwargs) -> 'ChecklistInferenceJobCreationResponse':
+        """
+        Create inference job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversation_communication_agentchecklist_jobs(conversation_id, communication_id, agent_checklist_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str communication_id: Communication ID (required)
+        :param str agent_checklist_id: Agent Checklist ID (required)
+        :param ChecklistInferenceJobPayload body: Agent checklist inference job payload (required)
+        :return: ChecklistInferenceJobCreationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id', 'agent_checklist_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversation_communication_agentchecklist_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversation_communication_agentchecklist_jobs`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversation_communication_agentchecklist_jobs`")
+        # verify the required parameter 'agent_checklist_id' is set
+        if ('agent_checklist_id' not in params) or (params['agent_checklist_id'] is None):
+            raise ValueError("Missing the required parameter `agent_checklist_id` when calling `post_conversation_communication_agentchecklist_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversation_communication_agentchecklist_jobs`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+        if 'agent_checklist_id' in params:
+            path_params['agentChecklistId'] = params['agent_checklist_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChecklistInferenceJobCreationResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversation_communication_agentchecklists_finalize(self, conversation_id: str, communication_id: str, body: 'ChecklistFinalizePayload', **kwargs) -> 'AgentChecklistResponseList':
+        """
+        API invoked to finalize agent checklist evaluation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversation_communication_agentchecklists_finalize(conversation_id, communication_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str communication_id: Communication ID (required)
+        :param ChecklistFinalizePayload body: Agent checklist finalize payload (required)
+        :return: AgentChecklistResponseList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'communication_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversation_communication_agentchecklists_finalize" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversation_communication_agentchecklists_finalize`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversation_communication_agentchecklists_finalize`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversation_communication_agentchecklists_finalize`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentChecklistResponseList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversation_communication_internalmessages(self, conversation_id: str, communication_id: str, body: 'InternalMessageRequest', **kwargs) -> 'InternalMessageData':
         """
         Send internal message
@@ -15454,10 +16110,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversation_participant_replace is deprecated")
     def post_conversation_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
-        Replace this participant with the specified user and/or address
-        
+        Replace this participant (Deprecated)
+        This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15638,7 +16295,6 @@ class ConversationsApi(object):
         """
         Replace this participant with the an external contact
         
-	    post_conversation_participant_replace_contact_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15725,10 +16381,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversation_participant_replace_external is deprecated")
     def post_conversation_participant_replace_external(self, conversation_id: str, participant_id: str, body: 'TransferToExternalRequest', **kwargs) -> None:
         """
-        Replace this participant with the an external contact
-        
+        Replace this participant with the an external contact (Deprecated)
+        This endpoint is deprecated. Use /replace/contact/external endpoint instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15996,7 +16653,6 @@ class ConversationsApi(object):
         """
         Replace this participant by another one using the address of the destination.
         
-	    post_conversation_participant_transfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -16690,10 +17346,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_call_participant_consult is deprecated")
     def post_conversations_call_participant_consult(self, conversation_id: str, participant_id: str, body: 'ConsultTransfer', **kwargs) -> 'ConsultTransferResponse':
         """
-        Initiate and update consult transfer
-        
+        Initiate and update consult transfer (Deprecated)
+        This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -16874,7 +17531,6 @@ class ConversationsApi(object):
         """
         Initiate a consult transfer to an external contact
         
-	    post_conversations_call_participant_consult_contact_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -16961,10 +17617,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_call_participant_consult_external is deprecated")
     def post_conversations_call_participant_consult_external(self, conversation_id: str, participant_id: str, body: 'ConsultTransferToExternal', **kwargs) -> 'ConsultTransferResponse':
         """
-        Initiate a consult transfer to an external contact
-        
+        Initiate a consult transfer to an external contact (Deprecated)
+        This endpoint is deprecated. Use /consult/contact/external endpoints instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17319,7 +17976,6 @@ class ConversationsApi(object):
         """
         Initiate voice consult transfer
         
-	    post_conversations_call_participant_voice_consult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -53,20 +53,23 @@ class BulkResponseResultExternalOrganizationExternalOrganizationBulkEntityErrorE
             'id': 'str',
             'success': 'bool',
             'entity': 'ExternalOrganization',
-            'error': 'BulkEntityErrorExternalOrganization'
+            'error': 'BulkEntityErrorExternalOrganization',
+            'status': 'int'
         }
 
         self.attribute_map = {
             'id': 'id',
             'success': 'success',
             'entity': 'entity',
-            'error': 'error'
+            'error': 'error',
+            'status': 'status'
         }
 
         self._id = None
         self._success = None
         self._entity = None
         self._error = None
+        self._status = None
 
     @property
     def id(self) -> str:
@@ -163,6 +166,30 @@ class BulkResponseResultExternalOrganizationExternalOrganizationBulkEntityErrorE
         
 
         self._error = error
+
+    @property
+    def status(self) -> int:
+        """
+        Gets the status of this BulkResponseResultExternalOrganizationExternalOrganizationBulkEntityErrorExternalOrganization.
+        Status Code for the requested operation.
+
+        :return: The status of this BulkResponseResultExternalOrganizationExternalOrganizationBulkEntityErrorExternalOrganization.
+        :rtype: int
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: int) -> None:
+        """
+        Sets the status of this BulkResponseResultExternalOrganizationExternalOrganizationBulkEntityErrorExternalOrganization.
+        Status Code for the requested operation.
+
+        :param status: The status of this BulkResponseResultExternalOrganizationExternalOrganizationBulkEntityErrorExternalOrganization.
+        :type: int
+        """
+        
+
+        self._status = status
 
     def to_dict(self):
         """

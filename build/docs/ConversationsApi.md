@@ -31,6 +31,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details_job_results**](#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_conversation**](#get_conversation) | Get conversation|
+|[**get_conversation_communication_agentchecklist**](#get_conversation_communication_agentchecklist) | Get checklist info for a single checklist.|
+|[**get_conversation_communication_agentchecklist_job**](#get_conversation_communication_agentchecklist_job) | Get inference job status|
+|[**get_conversation_communication_agentchecklists**](#get_conversation_communication_agentchecklists) | Get information of all checklists associated with a conversation.|
 |[**get_conversation_communication_internalmessage**](#get_conversation_communication_internalmessage) | Get message|
 |[**get_conversation_communication_internalmessages**](#get_conversation_communication_internalmessages) | Get messages for communication|
 |[**get_conversation_participant_secureivrsession**](#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
@@ -184,15 +187,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_assign**](#post_conversation_assign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.|
 |[**post_conversation_barge**](#post_conversation_barge) | Barge a conversation creating a barged in conference of connected participants.|
 |[**post_conversation_cobrowse**](#post_conversation_cobrowse) | Creates a cobrowse session. Requires \&quot;conversation:cobrowse:add\&quot; (for web messaging) or \&quot;conversation:cobrowsevoice:add\&quot; permission.|
+|[**post_conversation_communication_agentchecklist**](#post_conversation_communication_agentchecklist) | Agent Checklist activation API|
+|[**post_conversation_communication_agentchecklist_agentaction**](#post_conversation_communication_agentchecklist_agentaction) | API invoked to capture an agent action.|
+|[**post_conversation_communication_agentchecklist_jobs**](#post_conversation_communication_agentchecklist_jobs) | Create inference job|
+|[**post_conversation_communication_agentchecklists_finalize**](#post_conversation_communication_agentchecklists_finalize) | API invoked to finalize agent checklist evaluation.|
 |[**post_conversation_communication_internalmessages**](#post_conversation_communication_internalmessages) | Send internal message|
 |[**post_conversation_disconnect**](#post_conversation_disconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.|
 |[**post_conversation_participant_callbacks**](#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
 |[**post_conversation_participant_digits**](#post_conversation_participant_digits) | Sends DTMF to the participant|
 |[**post_conversation_participant_internalmessages_users_communications**](#post_conversation_participant_internalmessages_users_communications) | Setup internal message communication with user|
-|[**post_conversation_participant_replace**](#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversation_participant_replace**](#post_conversation_participant_replace) | Replace this participant (Deprecated)|
 |[**post_conversation_participant_replace_agent**](#post_conversation_participant_replace_agent) | Replace this participant with the specified agent|
 |[**post_conversation_participant_replace_contact_external**](#post_conversation_participant_replace_contact_external) | Replace this participant with the an external contact|
-|[**post_conversation_participant_replace_external**](#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
+|[**post_conversation_participant_replace_external**](#post_conversation_participant_replace_external) | Replace this participant with the an external contact (Deprecated)|
 |[**post_conversation_participant_replace_queue**](#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
 |[**post_conversation_participant_secureivrsessions**](#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
 |[**post_conversation_participant_transfer**](#post_conversation_participant_transfer) | Replace this participant by another one using the address of the destination.|
@@ -203,10 +210,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_call_participant_barge**](#post_conversations_call_participant_barge) | Barge a given participant&#39;s call creating a barged in conference of connected participants.|
 |[**post_conversations_call_participant_coach**](#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
 |[**post_conversations_call_participant_communication_wrapup**](#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_call_participant_consult**](#post_conversations_call_participant_consult) | Initiate and update consult transfer|
+|[**post_conversations_call_participant_consult**](#post_conversations_call_participant_consult) | Initiate and update consult transfer (Deprecated)|
 |[**post_conversations_call_participant_consult_agent**](#post_conversations_call_participant_consult_agent) | Initiate a consult transfer to an agent|
 |[**post_conversations_call_participant_consult_contact_external**](#post_conversations_call_participant_consult_contact_external) | Initiate a consult transfer to an external contact|
-|[**post_conversations_call_participant_consult_external**](#post_conversations_call_participant_consult_external) | Initiate a consult transfer to an external contact|
+|[**post_conversations_call_participant_consult_external**](#post_conversations_call_participant_consult_external) | Initiate a consult transfer to an external contact (Deprecated)|
 |[**post_conversations_call_participant_consult_queue**](#post_conversations_call_participant_consult_queue) | Initiate a consult transfer to a queue|
 |[**post_conversations_call_participant_monitor**](#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_call_participant_replace**](#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
@@ -1497,6 +1504,162 @@ except ApiException as e:
 ### Return type
 
 [**Conversation**](Conversation)
+
+
+## get_conversation_communication_agentchecklist
+
+> [**AgentChecklistResponse**](AgentChecklistResponse) get_conversation_communication_agentchecklist(conversation_id, communication_id, agent_checklist_id)
+
+
+Get checklist info for a single checklist.
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} 
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+communication_id = 'communication_id_example' # str | Communication ID
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+
+try:
+    # Get checklist info for a single checklist.
+    api_response = api_instance.get_conversation_communication_agentchecklist(conversation_id, communication_id, agent_checklist_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_communication_agentchecklist: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
+
+### Return type
+
+[**AgentChecklistResponse**](AgentChecklistResponse)
+
+
+## get_conversation_communication_agentchecklist_job
+
+> [**ChecklistInferenceJobResponse**](ChecklistInferenceJobResponse) get_conversation_communication_agentchecklist_job(conversation_id, communication_id, agent_checklist_id, job_id)
+
+
+Get inference job status
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+communication_id = 'communication_id_example' # str | Communication ID
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+job_id = 'job_id_example' # str | Inference Job ID
+
+try:
+    # Get inference job status
+    api_response = api_instance.get_conversation_communication_agentchecklist_job(conversation_id, communication_id, agent_checklist_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_communication_agentchecklist_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
+| **job_id** | **str**| Inference Job ID |  |
+
+### Return type
+
+[**ChecklistInferenceJobResponse**](ChecklistInferenceJobResponse)
+
+
+## get_conversation_communication_agentchecklists
+
+> [**AgentChecklistResponseList**](AgentChecklistResponseList) get_conversation_communication_agentchecklists(conversation_id, communication_id)
+
+
+Get information of all checklists associated with a conversation.
+
+Wraps GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists 
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+communication_id = 'communication_id_example' # str | Communication ID
+
+try:
+    # Get information of all checklists associated with a conversation.
+    api_response = api_instance.get_conversation_communication_agentchecklists(conversation_id, communication_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_communication_agentchecklists: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **communication_id** | **str**| Communication ID |  |
+
+### Return type
+
+[**AgentChecklistResponseList**](AgentChecklistResponseList)
 
 
 ## get_conversation_communication_internalmessage
@@ -9269,6 +9432,220 @@ except ApiException as e:
 [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
 
+## post_conversation_communication_agentchecklist
+
+> [**AgentChecklistResponse**](AgentChecklistResponse) post_conversation_communication_agentchecklist(conversation_id, communication_id, agent_checklist_id, body)
+
+
+Agent Checklist activation API
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} 
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+communication_id = 'communication_id_example' # str | Communication ID
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+body = PureCloudPlatformClientV2.ChecklistActivationPayload() # ChecklistActivationPayload | Agent checklist activation payload
+
+try:
+    # Agent Checklist activation API
+    api_response = api_instance.post_conversation_communication_agentchecklist(conversation_id, communication_id, agent_checklist_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_communication_agentchecklist: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
+| **body** | [**ChecklistActivationPayload**](ChecklistActivationPayload)| Agent checklist activation payload |  |
+
+### Return type
+
+[**AgentChecklistResponse**](AgentChecklistResponse)
+
+
+## post_conversation_communication_agentchecklist_agentaction
+
+> [**AgentChecklistResponse**](AgentChecklistResponse) post_conversation_communication_agentchecklist_agentaction(conversation_id, communication_id, agent_checklist_id, body)
+
+
+API invoked to capture an agent action.
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction 
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+communication_id = 'communication_id_example' # str | Communication ID
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+body = PureCloudPlatformClientV2.AgentActionPayload() # AgentActionPayload | Agent action payload
+
+try:
+    # API invoked to capture an agent action.
+    api_response = api_instance.post_conversation_communication_agentchecklist_agentaction(conversation_id, communication_id, agent_checklist_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_communication_agentchecklist_agentaction: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
+| **body** | [**AgentActionPayload**](AgentActionPayload)| Agent action payload |  |
+
+### Return type
+
+[**AgentChecklistResponse**](AgentChecklistResponse)
+
+
+## post_conversation_communication_agentchecklist_jobs
+
+> [**ChecklistInferenceJobCreationResponse**](ChecklistInferenceJobCreationResponse) post_conversation_communication_agentchecklist_jobs(conversation_id, communication_id, agent_checklist_id, body)
+
+
+Create inference job
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs 
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+communication_id = 'communication_id_example' # str | Communication ID
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+body = PureCloudPlatformClientV2.ChecklistInferenceJobPayload() # ChecklistInferenceJobPayload | Agent checklist inference job payload
+
+try:
+    # Create inference job
+    api_response = api_instance.post_conversation_communication_agentchecklist_jobs(conversation_id, communication_id, agent_checklist_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_communication_agentchecklist_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
+| **body** | [**ChecklistInferenceJobPayload**](ChecklistInferenceJobPayload)| Agent checklist inference job payload |  |
+
+### Return type
+
+[**ChecklistInferenceJobCreationResponse**](ChecklistInferenceJobCreationResponse)
+
+
+## post_conversation_communication_agentchecklists_finalize
+
+> [**AgentChecklistResponseList**](AgentChecklistResponseList) post_conversation_communication_agentchecklists_finalize(conversation_id, communication_id, body)
+
+
+API invoked to finalize agent checklist evaluation.
+
+Wraps POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize 
+
+Requires ALL permissions: 
+
+* conversation:agentchecklist:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+communication_id = 'communication_id_example' # str | Communication ID
+body = PureCloudPlatformClientV2.ChecklistFinalizePayload() # ChecklistFinalizePayload | Agent checklist finalize payload
+
+try:
+    # API invoked to finalize agent checklist evaluation.
+    api_response = api_instance.post_conversation_communication_agentchecklists_finalize(conversation_id, communication_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_communication_agentchecklists_finalize: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **body** | [**ChecklistFinalizePayload**](ChecklistFinalizePayload)| Agent checklist finalize payload |  |
+
+### Return type
+
+[**AgentChecklistResponseList**](AgentChecklistResponseList)
+
+
 ## post_conversation_communication_internalmessages
 
 > [**InternalMessageData**](InternalMessageData) post_conversation_communication_internalmessages(conversation_id, communication_id, body)
@@ -9530,8 +9907,13 @@ except ApiException as e:
 
 >  post_conversation_participant_replace(conversation_id, participant_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Replace this participant with the specified user and/or address
+Replace this participant (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace 
 
@@ -9557,7 +9939,7 @@ participant_id = 'participant_id_example' # str | participant ID
 body = PureCloudPlatformClientV2.TransferRequest() # TransferRequest | Transfer request
 
 try:
-    # Replace this participant with the specified user and/or address
+    # Replace this participant (Deprecated)
     api_instance.post_conversation_participant_replace(conversation_id, participant_id, body)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversation_participant_replace: %s\n" % e)
@@ -9636,8 +10018,6 @@ void (empty response body)
 
 Replace this participant with the an external contact
 
-post_conversation_participant_replace_contact_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external 
 
 Requires ANY permissions: 
@@ -9687,8 +10067,13 @@ void (empty response body)
 
 >  post_conversation_participant_replace_external(conversation_id, participant_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Replace this participant with the an external contact
+Replace this participant with the an external contact (Deprecated)
+
+This endpoint is deprecated. Use /replace/contact/external endpoint instead.
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external 
 
@@ -9715,7 +10100,7 @@ participant_id = 'participant_id_example' # str | participant ID
 body = PureCloudPlatformClientV2.TransferToExternalRequest() # TransferToExternalRequest | Transfer request
 
 try:
-    # Replace this participant with the an external contact
+    # Replace this participant with the an external contact (Deprecated)
     api_instance.post_conversation_participant_replace_external(conversation_id, participant_id, body)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversation_participant_replace_external: %s\n" % e)
@@ -9844,8 +10229,6 @@ except ApiException as e:
 
 
 Replace this participant by another one using the address of the destination.
-
-post_conversation_participant_transfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer 
 
@@ -10252,8 +10635,13 @@ void (empty response body)
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult(conversation_id, participant_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Initiate and update consult transfer
+Initiate and update consult transfer (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
@@ -10279,7 +10667,7 @@ participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ConsultTransfer() # ConsultTransfer | Destination address & initial speak to
 
 try:
-    # Initiate and update consult transfer
+    # Initiate and update consult transfer (Deprecated)
     api_response = api_instance.post_conversations_call_participant_consult(conversation_id, participant_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -10360,8 +10748,6 @@ except ApiException as e:
 
 Initiate a consult transfer to an external contact
 
-post_conversations_call_participant_consult_contact_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external 
 
 Requires ANY permissions: 
@@ -10412,8 +10798,13 @@ except ApiException as e:
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Initiate a consult transfer to an external contact
+Initiate a consult transfer to an external contact (Deprecated)
+
+This endpoint is deprecated. Use /consult/contact/external endpoints instead.
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external 
 
@@ -10440,7 +10831,7 @@ participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ConsultTransferToExternal() # ConsultTransferToExternal | Destination address & initial speak to
 
 try:
-    # Initiate a consult transfer to an external contact
+    # Initiate a consult transfer to an external contact (Deprecated)
     api_response = api_instance.post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -10620,8 +11011,6 @@ void (empty response body)
 
 
 Initiate voice consult transfer
-
-post_conversations_call_participant_voice_consult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult 
 
@@ -14874,4 +15263,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

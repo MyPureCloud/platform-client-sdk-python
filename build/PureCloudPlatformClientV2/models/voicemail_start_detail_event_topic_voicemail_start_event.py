@@ -213,7 +213,7 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE", "INTERNALMESSAGE"]
+        allowed_values = ["UNKNOWN", "VOICE", "CHAT", "EMAIL", "CALLBACK", "COBROWSE", "VIDEO", "SCREENSHARE", "MESSAGE", "INTERNALMESSAGE", "SCREENMONITORING"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

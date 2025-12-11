@@ -1175,7 +1175,7 @@ class JourneyApi(object):
         :param str filter_value: Value to filter by. Requires 'filterValue' to also be set.
         :param list[str] action_map_ids: IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
         :param list[str] query_fields: Action Map field(s) to query on. Requires 'queryValue' to also be set.
-        :param str query_value: Value to query on. Requires 'queryFields' to also be set.
+        :param str query_value: Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
         :return: ActionMapListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1660,7 +1660,7 @@ class JourneyApi(object):
         :param str media_type: Media type
         :param str state: Action template state.
         :param list[str] query_fields: ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
-        :param str query_value: Value to query on. Requires 'queryFields' to also be set.
+        :param str query_value: Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
         :return: ActionTemplateListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1929,7 +1929,7 @@ class JourneyApi(object):
         :param str sort_by: Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
         :param list[str] outcome_ids: IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
         :param list[str] query_fields: Outcome field(s) to query on. Requires 'queryValue' to also be set.
-        :param str query_value: Value to query on. Requires 'queryFields' to also be set.
+        :param str query_value: Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
         :return: OutcomeListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2406,7 +2406,7 @@ class JourneyApi(object):
         :param bool is_active: Determines whether or not to show only active segments.
         :param list[str] segment_ids: IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
         :param list[str] query_fields: Segment field(s) to query on. Requires 'queryValue' to also be set.
-        :param str query_value: Value to query on. Requires 'queryFields' to also be set.
+        :param str query_value: Value to query on using fuzzy matching. Requires 'queryFields' to also be set.
         :return: SegmentListing
                  If the method is called asynchronously,
                  returns the request thread.

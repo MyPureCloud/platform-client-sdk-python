@@ -60,6 +60,7 @@ class WorktypeUpdate(object):
             'schema_id': 'str',
             'service_level_target': 'int',
             'rule_settings': 'WorkitemRuleSettings',
+            'unassigned_division_contacts_enabled': 'bool',
             'description': 'str',
             'default_status_id': 'str',
             'schema_version': 'int',
@@ -81,6 +82,7 @@ class WorktypeUpdate(object):
             'schema_id': 'schemaId',
             'service_level_target': 'serviceLevelTarget',
             'rule_settings': 'ruleSettings',
+            'unassigned_division_contacts_enabled': 'unassignedDivisionContactsEnabled',
             'description': 'description',
             'default_status_id': 'defaultStatusId',
             'schema_version': 'schemaVersion',
@@ -101,6 +103,7 @@ class WorktypeUpdate(object):
         self._schema_id = None
         self._service_level_target = None
         self._rule_settings = None
+        self._unassigned_division_contacts_enabled = None
         self._description = None
         self._default_status_id = None
         self._schema_version = None
@@ -420,6 +423,30 @@ class WorktypeUpdate(object):
         
 
         self._rule_settings = rule_settings
+
+    @property
+    def unassigned_division_contacts_enabled(self) -> bool:
+        """
+        Gets the unassigned_division_contacts_enabled of this WorktypeUpdate.
+        When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+
+        :return: The unassigned_division_contacts_enabled of this WorktypeUpdate.
+        :rtype: bool
+        """
+        return self._unassigned_division_contacts_enabled
+
+    @unassigned_division_contacts_enabled.setter
+    def unassigned_division_contacts_enabled(self, unassigned_division_contacts_enabled: bool) -> None:
+        """
+        Sets the unassigned_division_contacts_enabled of this WorktypeUpdate.
+        When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true.
+
+        :param unassigned_division_contacts_enabled: The unassigned_division_contacts_enabled of this WorktypeUpdate.
+        :type: bool
+        """
+        
+
+        self._unassigned_division_contacts_enabled = unassigned_division_contacts_enabled
 
     @property
     def description(self) -> str:

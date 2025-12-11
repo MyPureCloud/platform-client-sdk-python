@@ -53,11 +53,11 @@ class CoachingAnnotationList(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'last_uri': 'str',
             'first_uri': 'str',
-            'self_uri': 'str',
-            'next_uri': 'str',
             'previous_uri': 'str',
+            'next_uri': 'str',
+            'last_uri': 'str',
+            'self_uri': 'str',
             'page_count': 'int'
         }
 
@@ -66,11 +66,11 @@ class CoachingAnnotationList(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'last_uri': 'lastUri',
             'first_uri': 'firstUri',
-            'self_uri': 'selfUri',
-            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
+            'last_uri': 'lastUri',
+            'self_uri': 'selfUri',
             'page_count': 'pageCount'
         }
 
@@ -78,11 +78,11 @@ class CoachingAnnotationList(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._last_uri = None
         self._first_uri = None
-        self._self_uri = None
-        self._next_uri = None
         self._previous_uri = None
+        self._next_uri = None
+        self._last_uri = None
+        self._self_uri = None
         self._page_count = None
 
     @property
@@ -182,30 +182,6 @@ class CoachingAnnotationList(object):
         self._total = total
 
     @property
-    def last_uri(self) -> str:
-        """
-        Gets the last_uri of this CoachingAnnotationList.
-
-
-        :return: The last_uri of this CoachingAnnotationList.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
-        """
-        Sets the last_uri of this CoachingAnnotationList.
-
-
-        :param last_uri: The last_uri of this CoachingAnnotationList.
-        :type: str
-        """
-        
-
-        self._last_uri = last_uri
-
-    @property
     def first_uri(self) -> str:
         """
         Gets the first_uri of this CoachingAnnotationList.
@@ -230,28 +206,28 @@ class CoachingAnnotationList(object):
         self._first_uri = first_uri
 
     @property
-    def self_uri(self) -> str:
+    def previous_uri(self) -> str:
         """
-        Gets the self_uri of this CoachingAnnotationList.
+        Gets the previous_uri of this CoachingAnnotationList.
 
 
-        :return: The self_uri of this CoachingAnnotationList.
+        :return: The previous_uri of this CoachingAnnotationList.
         :rtype: str
         """
-        return self._self_uri
+        return self._previous_uri
 
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
+    @previous_uri.setter
+    def previous_uri(self, previous_uri: str) -> None:
         """
-        Sets the self_uri of this CoachingAnnotationList.
+        Sets the previous_uri of this CoachingAnnotationList.
 
 
-        :param self_uri: The self_uri of this CoachingAnnotationList.
+        :param previous_uri: The previous_uri of this CoachingAnnotationList.
         :type: str
         """
         
 
-        self._self_uri = self_uri
+        self._previous_uri = previous_uri
 
     @property
     def next_uri(self) -> str:
@@ -278,28 +254,52 @@ class CoachingAnnotationList(object):
         self._next_uri = next_uri
 
     @property
-    def previous_uri(self) -> str:
+    def last_uri(self) -> str:
         """
-        Gets the previous_uri of this CoachingAnnotationList.
+        Gets the last_uri of this CoachingAnnotationList.
 
 
-        :return: The previous_uri of this CoachingAnnotationList.
+        :return: The last_uri of this CoachingAnnotationList.
         :rtype: str
         """
-        return self._previous_uri
+        return self._last_uri
 
-    @previous_uri.setter
-    def previous_uri(self, previous_uri: str) -> None:
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
         """
-        Sets the previous_uri of this CoachingAnnotationList.
+        Sets the last_uri of this CoachingAnnotationList.
 
 
-        :param previous_uri: The previous_uri of this CoachingAnnotationList.
+        :param last_uri: The last_uri of this CoachingAnnotationList.
         :type: str
         """
         
 
-        self._previous_uri = previous_uri
+        self._last_uri = last_uri
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this CoachingAnnotationList.
+
+
+        :return: The self_uri of this CoachingAnnotationList.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this CoachingAnnotationList.
+
+
+        :param self_uri: The self_uri of this CoachingAnnotationList.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     @property
     def page_count(self) -> int:

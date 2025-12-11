@@ -494,7 +494,7 @@ class AnalyticsConversationSegment(object):
         """
         if isinstance(segment_type, int):
             segment_type = str(segment_type)
-        allowed_values = ["alert", "barging", "callback", "coaching", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "monitoring", "parked", "scheduled", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
+        allowed_values = ["alert", "barging", "callback", "coaching", "contacting", "converting", "delay", "dialing", "hold", "interact", "ivr", "monitoring", "parked", "scheduled", "screenmonitoring", "sharing", "system", "transmitting", "unknown", "uploading", "voicemail", "wrapup"]
         if segment_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for segment_type -> " + segment_type)
             self._segment_type = "outdated_sdk_version"

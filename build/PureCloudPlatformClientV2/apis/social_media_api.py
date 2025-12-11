@@ -69,6 +69,7 @@ from ..models import SocialTopicPatchRequest
 from ..models import SocialTopicRequest
 from ..models import SocialTopicResponse
 from ..models import SocialTopicResponseEntityListing
+from ..models import SocialTopicWithDataIngestionRuleMetadataResponse
 from ..models import TwitterDataHistoricalTweetRequest
 from ..models import TwitterDataHistoricalTweetResponse
 from ..models import TwitterDataIngestionRuleRequest
@@ -1161,7 +1162,7 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_socialmedia_topic(self, topic_id: str, **kwargs) -> 'SocialTopicResponse':
+    def get_socialmedia_topic(self, topic_id: str, **kwargs) -> 'SocialTopicWithDataIngestionRuleMetadataResponse':
         """
         Get a single social topic.
         
@@ -1178,7 +1179,7 @@ class SocialMediaApi(object):
             for asynchronous request. (optional)
         :param str topic_id: topicId (required)
         :param bool include_deleted: Determines whether to include soft-deleted items in the result.
-        :return: SocialTopicResponse
+        :return: SocialTopicWithDataIngestionRuleMetadataResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1237,7 +1238,7 @@ class SocialMediaApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='SocialTopicResponse',
+                                            response_type='SocialTopicWithDataIngestionRuleMetadataResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2440,12 +2441,13 @@ class SocialMediaApi(object):
         :param int page_size: Page size
         :param list[str] division_ids: One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
         :param bool include_deleted: Determines whether to include soft-deleted items in the result.
+        :param str name: Search for topic by name that contains the given search string, search is case insensitive
         :return: SocialTopicResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'division_ids', 'include_deleted']
+        all_params = ['page_number', 'page_size', 'division_ids', 'include_deleted', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -2472,6 +2474,8 @@ class SocialMediaApi(object):
             query_params['divisionIds'] = params['division_ids']
         if 'include_deleted' in params:
             query_params['includeDeleted'] = params['include_deleted']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 

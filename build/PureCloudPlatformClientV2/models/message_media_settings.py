@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import InactivityTimeoutSettings
     from . import MessageSubtypeSettings
     from . import ServiceLevel
 
@@ -55,7 +56,9 @@ class MessageMediaSettings(object):
             'service_level': 'ServiceLevel',
             'auto_answer_alert_tone_seconds': 'float',
             'manual_answer_alert_tone_seconds': 'float',
-            'sub_type_settings': 'dict(str, MessageSubtypeSettings)'
+            'sub_type_settings': 'dict(str, MessageSubtypeSettings)',
+            'enable_inactivity_timeout': 'bool',
+            'inactivity_timeout_settings': 'InactivityTimeoutSettings'
         }
 
         self.attribute_map = {
@@ -64,7 +67,9 @@ class MessageMediaSettings(object):
             'service_level': 'serviceLevel',
             'auto_answer_alert_tone_seconds': 'autoAnswerAlertToneSeconds',
             'manual_answer_alert_tone_seconds': 'manualAnswerAlertToneSeconds',
-            'sub_type_settings': 'subTypeSettings'
+            'sub_type_settings': 'subTypeSettings',
+            'enable_inactivity_timeout': 'enableInactivityTimeout',
+            'inactivity_timeout_settings': 'inactivityTimeoutSettings'
         }
 
         self._enable_auto_answer = None
@@ -73,6 +78,8 @@ class MessageMediaSettings(object):
         self._auto_answer_alert_tone_seconds = None
         self._manual_answer_alert_tone_seconds = None
         self._sub_type_settings = None
+        self._enable_inactivity_timeout = None
+        self._inactivity_timeout_settings = None
 
     @property
     def enable_auto_answer(self) -> bool:
@@ -217,6 +224,54 @@ class MessageMediaSettings(object):
         
 
         self._sub_type_settings = sub_type_settings
+
+    @property
+    def enable_inactivity_timeout(self) -> bool:
+        """
+        Gets the enable_inactivity_timeout of this MessageMediaSettings.
+        Indicates if inactivity timeout is enabled for all subtypes.
+
+        :return: The enable_inactivity_timeout of this MessageMediaSettings.
+        :rtype: bool
+        """
+        return self._enable_inactivity_timeout
+
+    @enable_inactivity_timeout.setter
+    def enable_inactivity_timeout(self, enable_inactivity_timeout: bool) -> None:
+        """
+        Sets the enable_inactivity_timeout of this MessageMediaSettings.
+        Indicates if inactivity timeout is enabled for all subtypes.
+
+        :param enable_inactivity_timeout: The enable_inactivity_timeout of this MessageMediaSettings.
+        :type: bool
+        """
+        
+
+        self._enable_inactivity_timeout = enable_inactivity_timeout
+
+    @property
+    def inactivity_timeout_settings(self) -> 'InactivityTimeoutSettings':
+        """
+        Gets the inactivity_timeout_settings of this MessageMediaSettings.
+        Inactivity timeout settings for messages
+
+        :return: The inactivity_timeout_settings of this MessageMediaSettings.
+        :rtype: InactivityTimeoutSettings
+        """
+        return self._inactivity_timeout_settings
+
+    @inactivity_timeout_settings.setter
+    def inactivity_timeout_settings(self, inactivity_timeout_settings: 'InactivityTimeoutSettings') -> None:
+        """
+        Sets the inactivity_timeout_settings of this MessageMediaSettings.
+        Inactivity timeout settings for messages
+
+        :param inactivity_timeout_settings: The inactivity_timeout_settings of this MessageMediaSettings.
+        :type: InactivityTimeoutSettings
+        """
+        
+
+        self._inactivity_timeout_settings = inactivity_timeout_settings
 
     def to_dict(self):
         """

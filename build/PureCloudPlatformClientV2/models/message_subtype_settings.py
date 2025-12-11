@@ -47,14 +47,17 @@ class MessageSubtypeSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enable_auto_answer': 'bool'
+            'enable_auto_answer': 'bool',
+            'enable_inactivity_timeout': 'bool'
         }
 
         self.attribute_map = {
-            'enable_auto_answer': 'enableAutoAnswer'
+            'enable_auto_answer': 'enableAutoAnswer',
+            'enable_inactivity_timeout': 'enableInactivityTimeout'
         }
 
         self._enable_auto_answer = None
+        self._enable_inactivity_timeout = None
 
     @property
     def enable_auto_answer(self) -> bool:
@@ -79,6 +82,30 @@ class MessageSubtypeSettings(object):
         
 
         self._enable_auto_answer = enable_auto_answer
+
+    @property
+    def enable_inactivity_timeout(self) -> bool:
+        """
+        Gets the enable_inactivity_timeout of this MessageSubtypeSettings.
+        Indicates if inactivity timeout is enabled for the given subtype.
+
+        :return: The enable_inactivity_timeout of this MessageSubtypeSettings.
+        :rtype: bool
+        """
+        return self._enable_inactivity_timeout
+
+    @enable_inactivity_timeout.setter
+    def enable_inactivity_timeout(self, enable_inactivity_timeout: bool) -> None:
+        """
+        Sets the enable_inactivity_timeout of this MessageSubtypeSettings.
+        Indicates if inactivity timeout is enabled for the given subtype.
+
+        :param enable_inactivity_timeout: The enable_inactivity_timeout of this MessageSubtypeSettings.
+        :type: bool
+        """
+        
+
+        self._enable_inactivity_timeout = enable_inactivity_timeout
 
     def to_dict(self):
         """
