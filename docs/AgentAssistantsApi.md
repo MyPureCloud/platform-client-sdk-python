@@ -9,10 +9,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_assistant**](#delete_assistant) | Delete an assistant.|
 |[**delete_assistant_queue**](#delete_assistant_queue) | Disassociate a queue from an assistant.|
 |[**delete_assistant_queues**](#delete_assistant_queues) | Disassociate the queues from an assistant for the given assistant ID and queue IDs.|
+|[**delete_assistants_agentchecklist**](#delete_assistants_agentchecklist) | Delete an agent checklist|
 |[**get_assistant**](#get_assistant) | Get an assistant.|
 |[**get_assistant_queue**](#get_assistant_queue) | Get queue Information for an assistant.|
 |[**get_assistant_queues**](#get_assistant_queues) | Get all the queues associated with an assistant.|
 |[**get_assistants**](#get_assistants) | Get all assistants.|
+|[**get_assistants_agentchecklist**](#get_assistants_agentchecklist) | Get an agent checklist|
+|[**get_assistants_agentchecklists**](#get_assistants_agentchecklists) | Get the list of agent checklists|
+|[**get_assistants_agentchecklists_languages**](#get_assistants_agentchecklists_languages) | Get the list of supported languages|
 |[**get_assistants_queues**](#get_assistants_queues) | Get all queues assigned to any assistant.|
 |[**patch_assistant**](#patch_assistant) | Update an assistant.|
 |[**patch_assistant_queues**](#patch_assistant_queues) | Update Queues for an Assistant.|
@@ -20,7 +24,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_assistant_queue_users_bulk_remove**](#post_assistant_queue_users_bulk_remove) | Bulk remove users from assistant-queue (requires manual assignment mode).|
 |[**post_assistant_queue_users_query**](#post_assistant_queue_users_query) | Query for users in the assistant-queue (requires manual assignment mode).|
 |[**post_assistants**](#post_assistants) | Create an Assistant.|
+|[**post_assistants_agentchecklists**](#post_assistants_agentchecklists) | Create an agent checklist|
 |[**put_assistant_queue**](#put_assistant_queue) | Create a queue assistant association.|
+|[**put_assistants_agentchecklist**](#put_assistants_agentchecklist) | Update an agent checklist|
 
 
 
@@ -163,6 +169,53 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
 | **queue_ids** | **str**| Comma-separated identifiers of the queues that need to be deleted. | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_assistants_agentchecklist
+
+>  delete_assistants_agentchecklist(agent_checklist_id)
+
+
+Delete an agent checklist
+
+Wraps DELETE /api/v2/assistants/agentchecklists/{agentChecklistId} 
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+
+try:
+    # Delete an agent checklist
+    api_instance.delete_assistants_agentchecklist(agent_checklist_id)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->delete_assistants_agentchecklist: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
 
 ### Return type
 
@@ -383,6 +436,158 @@ except ApiException as e:
 ### Return type
 
 [**AssistantListing**](AssistantListing)
+
+
+## get_assistants_agentchecklist
+
+> [**AgentChecklist**](AgentChecklist) get_assistants_agentchecklist(agent_checklist_id)
+
+
+Get an agent checklist
+
+Wraps GET /api/v2/assistants/agentchecklists/{agentChecklistId} 
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+
+try:
+    # Get an agent checklist
+    api_response = api_instance.get_assistants_agentchecklist(agent_checklist_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->get_assistants_agentchecklist: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
+
+### Return type
+
+[**AgentChecklist**](AgentChecklist)
+
+
+## get_assistants_agentchecklists
+
+> [**AgentChecklistListing**](AgentChecklistListing) get_assistants_agentchecklists(before=before, after=after, page_size=page_size, name_prefix=name_prefix, language=language, sort_order=sort_order, sort_by=sort_by)
+
+
+Get the list of agent checklists
+
+Wraps GET /api/v2/assistants/agentchecklists 
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = ''25'' # str | The page size for the listing. The max that will be returned is 100. (optional) (default to '25')
+name_prefix = 'name_prefix_example' # str | The agent checklist name prefix filter applied to the listing. (optional)
+language = 'language_example' # str | The agent checklist language filter applied to the listing. (optional)
+sort_order = 'sort_order_example' # str | The sort order for the listing (optional)
+sort_by = 'sort_by_example' # str | The field to sort by for the listing. (optional)
+
+try:
+    # Get the list of agent checklists
+    api_response = api_instance.get_assistants_agentchecklists(before=before, after=after, page_size=page_size, name_prefix=name_prefix, language=language, sort_order=sort_order, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->get_assistants_agentchecklists: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| The page size for the listing. The max that will be returned is 100. | [optional] [default to &#39;25&#39;] |
+| **name_prefix** | **str**| The agent checklist name prefix filter applied to the listing. | [optional]  |
+| **language** | **str**| The agent checklist language filter applied to the listing. | [optional]  |
+| **sort_order** | **str**| The sort order for the listing | [optional] <br />**Values**: asc, desc |
+| **sort_by** | **str**| The field to sort by for the listing. | [optional] <br />**Values**: dateModified, language, name |
+
+### Return type
+
+[**AgentChecklistListing**](AgentChecklistListing)
+
+
+## get_assistants_agentchecklists_languages
+
+> [**EntityListing**](EntityListing) get_assistants_agentchecklists_languages()
+
+
+Get the list of supported languages
+
+Wraps GET /api/v2/assistants/agentchecklists/languages 
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+
+try:
+    # Get the list of supported languages
+    api_response = api_instance.get_assistants_agentchecklists_languages()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->get_assistants_agentchecklists_languages: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**EntityListing**](EntityListing)
 
 
 ## get_assistants_queues
@@ -747,6 +952,54 @@ except ApiException as e:
 [**Assistant**](Assistant)
 
 
+## post_assistants_agentchecklists
+
+> [**AgentChecklist**](AgentChecklist) post_assistants_agentchecklists(body)
+
+
+Create an agent checklist
+
+Wraps POST /api/v2/assistants/agentchecklists 
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+body = PureCloudPlatformClientV2.AgentChecklist() # AgentChecklist | Request body containing details of checklist to be added
+
+try:
+    # Create an agent checklist
+    api_response = api_instance.post_assistants_agentchecklists(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->post_assistants_agentchecklists: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentChecklist**](AgentChecklist)| Request body containing details of checklist to be added |  |
+
+### Return type
+
+[**AgentChecklist**](AgentChecklist)
+
+
 ## put_assistant_queue
 
 > [**AssistantQueue**](AssistantQueue) put_assistant_queue(assistant_id, queue_id, body)
@@ -799,4 +1052,54 @@ except ApiException as e:
 [**AssistantQueue**](AssistantQueue)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+## put_assistants_agentchecklist
+
+> [**AgentChecklist**](AgentChecklist) put_assistants_agentchecklist(agent_checklist_id, body)
+
+
+Update an agent checklist
+
+Wraps PUT /api/v2/assistants/agentchecklists/{agentChecklistId} 
+
+Requires ALL permissions: 
+
+* assistants:agentchecklist:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+agent_checklist_id = 'agent_checklist_id_example' # str | Agent Checklist ID
+body = PureCloudPlatformClientV2.AgentChecklist() # AgentChecklist | Request body containing details of checklist to be updated
+
+try:
+    # Update an agent checklist
+    api_response = api_instance.put_assistants_agentchecklist(agent_checklist_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->put_assistants_agentchecklist: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_checklist_id** | **str**| Agent Checklist ID |  |
+| **body** | [**AgentChecklist**](AgentChecklist)| Request body containing details of checklist to be updated |  |
+
+### Return type
+
+[**AgentChecklist**](AgentChecklist)
+
+
+_PureCloudPlatformClientV2 246.0.0_

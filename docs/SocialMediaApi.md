@@ -708,7 +708,7 @@ except ApiException as e:
 
 ## get_socialmedia_topic
 
-> [**SocialTopicResponse**](SocialTopicResponse) get_socialmedia_topic(topic_id, include_deleted=include_deleted)
+> [**SocialTopicWithDataIngestionRuleMetadataResponse**](SocialTopicWithDataIngestionRuleMetadataResponse) get_socialmedia_topic(topic_id, include_deleted=include_deleted)
 
 
 Get a single social topic.
@@ -753,7 +753,7 @@ except ApiException as e:
 
 ### Return type
 
-[**SocialTopicResponse**](SocialTopicResponse)
+[**SocialTopicWithDataIngestionRuleMetadataResponse**](SocialTopicWithDataIngestionRuleMetadataResponse)
 
 
 ## get_socialmedia_topic_dataingestionrules
@@ -1460,7 +1460,7 @@ except ApiException as e:
 
 ## get_socialmedia_topics
 
-> [**SocialTopicResponseEntityListing**](SocialTopicResponseEntityListing) get_socialmedia_topics(page_number=page_number, page_size=page_size, division_ids=division_ids, include_deleted=include_deleted)
+> [**SocialTopicResponseEntityListing**](SocialTopicResponseEntityListing) get_socialmedia_topics(page_number=page_number, page_size=page_size, division_ids=division_ids, include_deleted=include_deleted, name=name)
 
 
 Retrieve all social topics.
@@ -1488,10 +1488,11 @@ page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 division_ids = ['division_ids_example'] # list[str] | One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. (optional)
 include_deleted = True # bool | Determines whether to include soft-deleted items in the result. (optional)
+name = 'name_example' # str | Search for topic by name that contains the given search string, search is case insensitive (optional)
 
 try:
     # Retrieve all social topics.
-    api_response = api_instance.get_socialmedia_topics(page_number=page_number, page_size=page_size, division_ids=division_ids, include_deleted=include_deleted)
+    api_response = api_instance.get_socialmedia_topics(page_number=page_number, page_size=page_size, division_ids=division_ids, include_deleted=include_deleted, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SocialMediaApi->get_socialmedia_topics: %s\n" % e)
@@ -1506,6 +1507,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **division_ids** | [**list[str]**](str)| One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned. | [optional]  |
 | **include_deleted** | **bool**| Determines whether to include soft-deleted items in the result. | [optional]  |
+| **name** | **str**| Search for topic by name that contains the given search string, search is case insensitive | [optional]  |
 
 ### Return type
 
@@ -2626,4 +2628,4 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

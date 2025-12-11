@@ -10,7 +10,8 @@
 | **success** | bool | Whether the requested operation completed successfully. | [optional] |
 | **entity** | object | The entity which was affected by this Bulk operation. Only returned on success. | [optional] |
 | **error** | [BulkEntityErrorEntity](BulkEntityErrorEntity) | An error describing why this Bulk operation failed. Only returned on failure. | [optional] |
+| **status** | int | Status Code for the requested operation. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_analytics_actions_aggregates_job**](#delete_analytics_actions_aggregates_job) | Delete/cancel an async request for action aggregates|
 |[**delete_analytics_agentcopilots_aggregates_job**](#delete_analytics_agentcopilots_aggregates_job) | Delete/cancel an async request for agent copilot aggregates|
 |[**delete_analytics_bots_aggregates_job**](#delete_analytics_bots_aggregates_job) | Delete/cancel an async request for bot aggregates|
+|[**delete_analytics_casemanagement_aggregates_job**](#delete_analytics_casemanagement_aggregates_job) | Delete/cancel an async request for case management aggregates|
 |[**delete_analytics_conversations_aggregates_job**](#delete_analytics_conversations_aggregates_job) | Delete/cancel an async request for conversation aggregates|
 |[**delete_analytics_conversations_details_job**](#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
 |[**delete_analytics_evaluations_aggregates_job**](#delete_analytics_evaluations_aggregates_job) | Delete/cancel an async request for evaluation aggregates|
@@ -33,6 +34,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_botflow_sessions**](#get_analytics_botflow_sessions) | Get Bot Flow Sessions.|
 |[**get_analytics_bots_aggregates_job**](#get_analytics_bots_aggregates_job) | Get status for async query for bot aggregates|
 |[**get_analytics_bots_aggregates_job_results**](#get_analytics_bots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_casemanagement_aggregates_job**](#get_analytics_casemanagement_aggregates_job) | Get status for async query for case management aggregates|
+|[**get_analytics_casemanagement_aggregates_job_results**](#get_analytics_casemanagement_aggregates_job_results) | Fetch a page of results for an async case management query|
 |[**get_analytics_conversation_details**](#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_analytics_conversations_aggregates_job**](#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
 |[**get_analytics_conversations_aggregates_job_results**](#get_analytics_conversations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
@@ -84,6 +87,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_agents_status_query**](#post_analytics_agents_status_query) | Retrieve the top 50 agents matching the query filters|
 |[**post_analytics_bots_aggregates_jobs**](#post_analytics_bots_aggregates_jobs) | Query for bot aggregates asynchronously|
 |[**post_analytics_bots_aggregates_query**](#post_analytics_bots_aggregates_query) | Query for bot aggregates|
+|[**post_analytics_casemanagement_aggregates_jobs**](#post_analytics_casemanagement_aggregates_jobs) | Query for case management aggregates asynchronously|
+|[**post_analytics_casemanagement_aggregates_query**](#post_analytics_casemanagement_aggregates_query) | Query for case management aggregates|
 |[**post_analytics_conversation_details_properties**](#post_analytics_conversation_details_properties) | Index conversation properties|
 |[**post_analytics_conversations_activity_query**](#post_analytics_conversations_activity_query) | Query for conversation activity observations|
 |[**post_analytics_conversations_aggregates_jobs**](#post_analytics_conversations_aggregates_jobs) | Query for conversation aggregates asynchronously|
@@ -265,6 +270,55 @@ try:
     api_instance.delete_analytics_bots_aggregates_job(job_id)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->delete_analytics_bots_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_analytics_casemanagement_aggregates_job
+
+>  delete_analytics_casemanagement_aggregates_job(job_id)
+
+
+Delete/cancel an async request for case management aggregates
+
+delete_analytics_casemanagement_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/analytics/casemanagement/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Delete/cancel an async request for case management aggregates
+    api_instance.delete_analytics_casemanagement_aggregates_job(job_id)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->delete_analytics_casemanagement_aggregates_job: %s\n" % e)
 ```
 
 ### Parameters
@@ -1507,6 +1561,108 @@ except ApiException as e:
 ### Return type
 
 [**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse)
+
+
+## get_analytics_casemanagement_aggregates_job
+
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_casemanagement_aggregates_job(job_id)
+
+
+Get status for async query for case management aggregates
+
+get_analytics_casemanagement_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/casemanagement/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for case management aggregates
+    api_response = api_instance.get_analytics_casemanagement_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_casemanagement_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus)
+
+
+## get_analytics_casemanagement_aggregates_job_results
+
+> [**CaseManagementAsyncAggregateQueryResponse**](CaseManagementAsyncAggregateQueryResponse) get_analytics_casemanagement_aggregates_job_results(job_id, cursor=cursor)
+
+
+Fetch a page of results for an async case management query
+
+get_analytics_casemanagement_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/casemanagement/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async case management query
+    api_response = api_instance.get_analytics_casemanagement_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_casemanagement_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+[**CaseManagementAsyncAggregateQueryResponse**](CaseManagementAsyncAggregateQueryResponse)
 
 
 ## get_analytics_conversation_details
@@ -4079,6 +4235,106 @@ except ApiException as e:
 [**BotAggregateQueryResponse**](BotAggregateQueryResponse)
 
 
+## post_analytics_casemanagement_aggregates_jobs
+
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_casemanagement_aggregates_jobs(body)
+
+
+Query for case management aggregates asynchronously
+
+post_analytics_casemanagement_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/casemanagement/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.CaseManagementAsyncAggregationQuery() # CaseManagementAsyncAggregationQuery | query
+
+try:
+    # Query for case management aggregates asynchronously
+    api_response = api_instance.post_analytics_casemanagement_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_casemanagement_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CaseManagementAsyncAggregationQuery**](CaseManagementAsyncAggregationQuery)| query |  |
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse)
+
+
+## post_analytics_casemanagement_aggregates_query
+
+> [**CaseManagementAggregateQueryResponse**](CaseManagementAggregateQueryResponse) post_analytics_casemanagement_aggregates_query(body)
+
+
+Query for case management aggregates
+
+post_analytics_casemanagement_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/casemanagement/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:caseManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.CaseManagementAggregationQuery() # CaseManagementAggregationQuery | query
+
+try:
+    # Query for case management aggregates
+    api_response = api_instance.post_analytics_casemanagement_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_casemanagement_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CaseManagementAggregationQuery**](CaseManagementAggregationQuery)| query |  |
+
+### Return type
+
+[**CaseManagementAggregateQueryResponse**](CaseManagementAggregateQueryResponse)
+
+
 ## post_analytics_conversation_details_properties
 
 > [**PropertyIndexRequest**](PropertyIndexRequest) post_analytics_conversation_details_properties(conversation_id, body)
@@ -6244,4 +6500,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

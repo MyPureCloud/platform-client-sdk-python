@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_email_outbound_domain**](#delete_routing_email_outbound_domain) | Delete an outbound domain|
 |[**delete_routing_language**](#delete_routing_language) | Delete a routing language|
 |[**delete_routing_predictor**](#delete_routing_predictor) | Delete single predictor.|
+|[**delete_routing_predictors_keyperformanceindicator**](#delete_routing_predictors_keyperformanceindicator) | Delete a custom Key Performance Indicator.|
 |[**delete_routing_queue**](#delete_routing_queue) | Delete a queue|
 |[**delete_routing_queue_member**](#delete_routing_queue_member) | Delete a queue member.|
 |[**delete_routing_queue_user**](#delete_routing_queue_user) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.|
@@ -56,7 +57,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_predictor_model_features**](#get_routing_predictor_model_features) | Retrieve Predictor Model Features.|
 |[**get_routing_predictor_models**](#get_routing_predictor_models) | Retrieve Predictor Models and Top Features.|
 |[**get_routing_predictors**](#get_routing_predictors) | Retrieve all predictors.|
+|[**get_routing_predictors_keyperformanceindicator**](#get_routing_predictors_keyperformanceindicator) | Retrieve a single Key Performance Indicator.|
 |[**get_routing_predictors_keyperformanceindicators**](#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators|
+|[**get_routing_predictors_keyperformanceindicatortypes**](#get_routing_predictors_keyperformanceindicatortypes) | Get a list of Key Performance Indicators Types available.|
 |[**get_routing_queue**](#get_routing_queue) | Get details about this queue.|
 |[**get_routing_queue_assistant**](#get_routing_queue_assistant) | Get an assistant associated with a queue.|
 |[**get_routing_queue_comparisonperiod**](#get_routing_queue_comparisonperiod) | Get a Comparison Period.|
@@ -107,6 +110,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_email_domain**](#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](#patch_routing_email_domain_validate) | Validate domain settings|
 |[**patch_routing_predictor**](#patch_routing_predictor) | Update single predictor.|
+|[**patch_routing_predictors_keyperformanceindicator**](#patch_routing_predictors_keyperformanceindicator) | Update a custom Key Performance Indicator.|
 |[**patch_routing_queue_member**](#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
 |[**patch_routing_queue_members**](#patch_routing_queue_members) | Join or unjoin a set of up to 100 users for a queue|
 |[**patch_routing_queue_user**](#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
@@ -134,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_email_outbound_domains_simulated**](#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
 |[**post_routing_languages**](#post_routing_languages) | Create Language|
 |[**post_routing_predictors**](#post_routing_predictors) | Create a predictor.|
+|[**post_routing_predictors_keyperformanceindicators**](#post_routing_predictors_keyperformanceindicators) | Create a custom Key Performance Indicator.|
 |[**post_routing_queue_members**](#post_routing_queue_members) | Bulk add or delete up to 100 queue members|
 |[**post_routing_queue_users**](#post_routing_queue_users) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.|
 |[**post_routing_queue_wrapupcodes**](#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
@@ -492,6 +497,55 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| Predictor ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_routing_predictors_keyperformanceindicator
+
+>  delete_routing_predictors_keyperformanceindicator(kpi_id)
+
+
+Delete a custom Key Performance Indicator.
+
+delete_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId} 
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+kpi_id = 'kpi_id_example' # str | Key Performance Indicator ID
+
+try:
+    # Delete a custom Key Performance Indicator.
+    api_instance.delete_routing_predictors_keyperformanceindicator(kpi_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_predictors_keyperformanceindicator: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **kpi_id** | **str**| Key Performance Indicator ID |  |
 
 ### Return type
 
@@ -2619,6 +2673,58 @@ except ApiException as e:
 [**PredictorListing**](PredictorListing)
 
 
+## get_routing_predictors_keyperformanceindicator
+
+> [**KeyPerformanceIndicator**](KeyPerformanceIndicator) get_routing_predictors_keyperformanceindicator(kpi_id, expand=expand)
+
+
+Retrieve a single Key Performance Indicator.
+
+get_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/predictors/keyperformanceindicators/{kpiId} 
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+kpi_id = 'kpi_id_example' # str | Key Performance Indicator ID
+expand = ['expand_example'] # list[str] | Parameter to request additional data to return in KPI payload (optional)
+
+try:
+    # Retrieve a single Key Performance Indicator.
+    api_response = api_instance.get_routing_predictors_keyperformanceindicator(kpi_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_predictors_keyperformanceindicator: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **kpi_id** | **str**| Key Performance Indicator ID |  |
+| **expand** | [**list[str]**](str)| Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
+
+### Return type
+
+[**KeyPerformanceIndicator**](KeyPerformanceIndicator)
+
+
 ## get_routing_predictors_keyperformanceindicators
 
 > [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)
@@ -2667,6 +2773,52 @@ except ApiException as e:
 ### Return type
 
 [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator)
+
+
+## get_routing_predictors_keyperformanceindicatortypes
+
+> [**list[KeyPerformanceIndicatorType]**](KeyPerformanceIndicatorType) get_routing_predictors_keyperformanceindicatortypes()
+
+
+Get a list of Key Performance Indicators Types available.
+
+get_routing_predictors_keyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/predictors/keyperformanceindicatortypes 
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get a list of Key Performance Indicators Types available.
+    api_response = api_instance.get_routing_predictors_keyperformanceindicatortypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_predictors_keyperformanceindicatortypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**list[KeyPerformanceIndicatorType]**](KeyPerformanceIndicatorType)
 
 
 ## get_routing_queue
@@ -5304,6 +5456,58 @@ except ApiException as e:
 [**Predictor**](Predictor)
 
 
+## patch_routing_predictors_keyperformanceindicator
+
+> [**KeyPerformanceIndicator**](KeyPerformanceIndicator) patch_routing_predictors_keyperformanceindicator(kpi_id, body=body)
+
+
+Update a custom Key Performance Indicator.
+
+patch_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/routing/predictors/keyperformanceindicators/{kpiId} 
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+kpi_id = 'kpi_id_example' # str | Key Performance Indicator ID
+body = PureCloudPlatformClientV2.UpdateKpiRequest() # UpdateKpiRequest |  (optional)
+
+try:
+    # Update a custom Key Performance Indicator.
+    api_response = api_instance.patch_routing_predictors_keyperformanceindicator(kpi_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_predictors_keyperformanceindicator: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **kpi_id** | **str**| Key Performance Indicator ID |  |
+| **body** | [**UpdateKpiRequest**](UpdateKpiRequest)|  | [optional]  |
+
+### Return type
+
+[**KeyPerformanceIndicator**](KeyPerformanceIndicator)
+
+
 ## patch_routing_queue_member
 
 >  patch_routing_queue_member(queue_id, member_id, body)
@@ -6655,6 +6859,56 @@ except ApiException as e:
 ### Return type
 
 [**Predictor**](Predictor)
+
+
+## post_routing_predictors_keyperformanceindicators
+
+> [**KeyPerformanceIndicator**](KeyPerformanceIndicator) post_routing_predictors_keyperformanceindicators(body)
+
+
+Create a custom Key Performance Indicator.
+
+post_routing_predictors_keyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/routing/predictors/keyperformanceindicators 
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.CreateKpiRequest() # CreateKpiRequest | request
+
+try:
+    # Create a custom Key Performance Indicator.
+    api_response = api_instance.post_routing_predictors_keyperformanceindicators(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_predictors_keyperformanceindicators: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateKpiRequest**](CreateKpiRequest)| request |  |
+
+### Return type
+
+[**KeyPerformanceIndicator**](KeyPerformanceIndicator)
 
 
 ## post_routing_queue_members
@@ -8297,4 +8551,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

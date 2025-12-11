@@ -1527,7 +1527,7 @@ Retrieve a list of the latest published evaluation form versions by context ids
 
 Wraps GET /api/v2/quality/forms/evaluations/bulk/contexts 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * quality:evaluationForm:view
 
@@ -1737,7 +1737,7 @@ Retrieve a list of survey forms by their ids
 
 Wraps GET /api/v2/quality/forms/surveys/bulk 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * quality:surveyForm:view
 
@@ -1785,7 +1785,7 @@ Retrieve a list of the latest form versions by context ids
 
 Wraps GET /api/v2/quality/forms/surveys/bulk/contexts 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * quality:surveyForm:view
 
@@ -3418,4 +3418,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

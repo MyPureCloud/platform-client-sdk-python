@@ -124,8 +124,6 @@ void (empty response body)
 
 Delete an access control policy
 
-delete_authorization_policies_target_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} 
 
 Requires ANY permissions: 
@@ -854,8 +852,6 @@ except ApiException as e:
 
 Get a page of access policies for an organization
 
-get_authorization_policies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies 
 
 Requires ANY permissions: 
@@ -905,8 +901,6 @@ except ApiException as e:
 
 
 Get a page of access policies for a given subject
-
-get_authorization_policies_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/authorization/policies/subject/{subjectId} 
 
@@ -960,8 +954,6 @@ except ApiException as e:
 
 Get a page of access policies for a given policy target
 
-get_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies/targets/{targetName} 
 
 Requires ANY permissions: 
@@ -1014,8 +1006,6 @@ except ApiException as e:
 
 Get an access control policy for a specified resource target and subject
 
-get_authorization_policies_target_subject_subject_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} 
 
 Requires ANY permissions: 
@@ -1066,8 +1056,6 @@ except ApiException as e:
 
 Get a map of policy targets to valid attributes for those targets
 
-get_authorization_policies_targets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/authorization/policies/targets 
 
 Requires ANY permissions: 
@@ -1111,8 +1099,6 @@ This endpoint does not need any parameters.
 
 
 Get an access control policy with the specified policy ID
-
-get_authorization_policy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/authorization/policies/{policyId} 
 
@@ -1161,8 +1147,6 @@ except ApiException as e:
 
 
 Get the list of attributes used to evaluate an access control policy with the specified policy ID
-
-get_authorization_policy_attributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/authorization/policies/{policyId}/attributes 
 
@@ -2083,8 +2067,6 @@ except ApiException as e:
 
 Add an access control policy for a specified resource target and subject
 
-post_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/authorization/policies/targets/{targetName} 
 
 Requires ANY permissions: 
@@ -2135,8 +2117,6 @@ except ApiException as e:
 
 Validate the conditions and attributes of an access control policy for a specified resource target
 
-post_authorization_policies_target_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/authorization/policies/targets/{targetName}/validate 
 
 Requires ANY permissions: 
@@ -2186,8 +2166,6 @@ except ApiException as e:
 
 
 Simulate a request and evaluate the specified policy ID against the provided values
-
-post_authorization_policy_simulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/authorization/policies/{policyId}/simulate 
 
@@ -2699,8 +2677,6 @@ except ApiException as e:
 
 Add an access control policy for a specified resource target and subject, overwriting any existing policy
 
-put_authorization_policies_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/authorization/policies/targets/{targetName} 
 
 Requires ANY permissions: 
@@ -2751,8 +2727,6 @@ except ApiException as e:
 
 
 Update an access control policy with a given ID
-
-put_authorization_policy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/authorization/policies/{policyId} 
 
@@ -3098,4 +3072,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

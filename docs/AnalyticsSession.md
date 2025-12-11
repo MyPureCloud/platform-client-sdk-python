@@ -71,6 +71,7 @@
 | **routing_ring** | int | Routing ring for bullseye or preferred agent routing | [optional] |
 | **routing_rule** | str | Routing rule for preferred, conditional and predictive routing type | [optional] |
 | **routing_rule_type** | str | Routing rule type | [optional] |
+| **screen_monitored_user_id** | str | The user ID for the participant who is being screen monitored. | [optional] |
 | **screen_share_address_self** | str | Direct screen share address | [optional] |
 | **screen_share_room_id** | str | A unique identifier for a Genesys Cloud screen share room | [optional] |
 | **script_id** | str | A unique identifier for a script | [optional] |
@@ -94,4 +95,4 @@
 
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

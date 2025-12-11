@@ -11,7 +11,8 @@
 | **header_parameters** | [list[TemplateParameter]](TemplateParameter) | A list of Response Management header parameter substitutions for the response&#39;s messaging template | [optional] |
 | **body_parameters** | [list[TemplateParameter]](TemplateParameter) | A list of Response Management body parameter substitutions for the response&#39;s messaging template | [optional] |
 | **button_url_parameters** | [list[TemplateParameter]](TemplateParameter) | A list of Response Management button url parameter substitutions for the response&#39;s messaging template | [optional] |
+| **carousel_parameters** | [CarouselParameters](CarouselParameters) | Template parameters for carousel card components | [optional] |
 
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

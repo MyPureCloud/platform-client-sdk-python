@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_guide_version**](#patch_guide_version) | Update a guide version.|
 |[**post_conversations_summaries_preview**](#post_conversations_summaries_preview) | Trigger summary preview event generation.|
 |[**post_conversations_summaries_settings**](#post_conversations_summaries_settings) | Create a summary setting.|
+|[**post_guide_session_turns**](#post_guide_session_turns) | Add a turn to a guide session.|
 |[**post_guide_version_jobs**](#post_guide_version_jobs) | Start the publishing of a guide version.|
 |[**post_guide_versions**](#post_guide_versions) | Create a guide version.|
 |[**post_guides**](#post_guides) | Create a guide.|
@@ -752,6 +753,60 @@ except ApiException as e:
 [**SummarySetting**](SummarySetting)
 
 
+## post_guide_session_turns
+
+> [**GuideSessionTurnResponse**](GuideSessionTurnResponse) post_guide_session_turns(guide_id, guide_session_id, body)
+
+
+Add a turn to a guide session.
+
+Creates a new turn in the specified guide session with the provided request data. If the session ID doesn't exist, a new session will be created automatically.
+
+Wraps POST /api/v2/guides/{guideId}/sessions/{guideSessionId}/turns 
+
+Requires ALL permissions: 
+
+* aiStudio:guideSessionTurn:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+guide_id = 'guide_id_example' # str | Guide ID
+guide_session_id = 'guide_session_id_example' # str | Guide Session ID
+body = PureCloudPlatformClientV2.GuideSessionTurnRequest() # GuideSessionTurnRequest | 
+
+try:
+    # Add a turn to a guide session.
+    api_response = api_instance.post_guide_session_turns(guide_id, guide_session_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->post_guide_session_turns: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **guide_id** | **str**| Guide ID |  |
+| **guide_session_id** | **str**| Guide Session ID |  |
+| **body** | [**GuideSessionTurnRequest**](GuideSessionTurnRequest)|  |  |
+
+### Return type
+
+[**GuideSessionTurnResponse**](GuideSessionTurnResponse)
+
+
 ## post_guide_version_jobs
 
 > [**GuideVersionPublishJob**](GuideVersionPublishJob) post_guide_version_jobs(guide_id, version_id, body)
@@ -1008,4 +1063,4 @@ except ApiException as e:
 [**SummarySetting**](SummarySetting)
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_

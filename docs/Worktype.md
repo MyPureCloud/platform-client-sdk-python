@@ -30,8 +30,9 @@
 | **rule_settings** | [WorkitemRuleSettings](WorkitemRuleSettings) | Settings for the worktypes rules. | [optional] |
 | **flow** | [WorkitemFlowReference](WorkitemFlowReference) | The flow associated with the Worktype. | [optional] |
 | **default_script** | [WorkitemScriptReference](WorkitemScriptReference) | The default script for Workitems created from the Worktype. | [optional] |
+| **unassigned_division_contacts_enabled** | bool | When set to true, will allow Workitems to be associated with External Contacts that are not assigned to any division. Default value is true. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 245.0.0_
+_PureCloudPlatformClientV2 246.0.0_
