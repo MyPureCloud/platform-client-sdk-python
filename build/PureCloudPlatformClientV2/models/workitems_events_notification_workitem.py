@@ -94,7 +94,8 @@ class WorkitemsEventsNotificationWorkitem(object):
             'preferred_agent_ids': 'list[str]',
             'division_id': 'str',
             'scored_agents': 'list[WorkitemsEventsNotificationScoredAgent]',
-            'utilization_label_id': 'str'
+            'utilization_label_id': 'str',
+            'case_id': 'str'
         }
 
         self.attribute_map = {
@@ -138,7 +139,8 @@ class WorkitemsEventsNotificationWorkitem(object):
             'preferred_agent_ids': 'preferredAgentIds',
             'division_id': 'divisionId',
             'scored_agents': 'scoredAgents',
-            'utilization_label_id': 'utilizationLabelId'
+            'utilization_label_id': 'utilizationLabelId',
+            'case_id': 'caseId'
         }
 
         self._id = None
@@ -182,6 +184,7 @@ class WorkitemsEventsNotificationWorkitem(object):
         self._division_id = None
         self._scored_agents = None
         self._utilization_label_id = None
+        self._case_id = None
 
     @property
     def id(self) -> str:
@@ -1181,6 +1184,30 @@ class WorkitemsEventsNotificationWorkitem(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def case_id(self) -> str:
+        """
+        Gets the case_id of this WorkitemsEventsNotificationWorkitem.
+
+
+        :return: The case_id of this WorkitemsEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._case_id
+
+    @case_id.setter
+    def case_id(self, case_id: str) -> None:
+        """
+        Sets the case_id of this WorkitemsEventsNotificationWorkitem.
+
+
+        :param case_id: The case_id of this WorkitemsEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._case_id = case_id
 
     def to_dict(self):
         """

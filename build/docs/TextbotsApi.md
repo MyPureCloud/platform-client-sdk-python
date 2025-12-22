@@ -223,4 +223,4 @@ except ApiException as e:
 [**PostTextResponse**](PostTextResponse)
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_

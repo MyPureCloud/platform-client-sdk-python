@@ -206,4 +206,4 @@ except ApiException as e:
 [**Geolocation**](Geolocation)
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_

@@ -28,7 +28,8 @@
 | **is_right_party_contact** | bool |  | [optional] |
 | **call_analysis_disposition** | str |  | [optional] |
 | **agent_id** | str |  | [optional] |
+| **is_preview_auto_ended** | bool |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_

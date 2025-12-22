@@ -8551,4 +8551,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_

@@ -70,7 +70,8 @@ class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent(
             'conversation_id': 'str',
             'is_right_party_contact': 'bool',
             'call_analysis_disposition': 'str',
-            'agent_id': 'str'
+            'agent_id': 'str',
+            'is_preview_auto_ended': 'bool'
         }
 
         self.attribute_map = {
@@ -95,7 +96,8 @@ class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent(
             'conversation_id': 'conversationId',
             'is_right_party_contact': 'isRightPartyContact',
             'call_analysis_disposition': 'callAnalysisDisposition',
-            'agent_id': 'agentId'
+            'agent_id': 'agentId',
+            'is_preview_auto_ended': 'isPreviewAutoEnded'
         }
 
         self._event_time = None
@@ -120,6 +122,7 @@ class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent(
         self._is_right_party_contact = None
         self._call_analysis_disposition = None
         self._agent_id = None
+        self._is_preview_auto_ended = None
 
     @property
     def event_time(self) -> int:
@@ -653,6 +656,30 @@ class OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent(
         
 
         self._agent_id = agent_id
+
+    @property
+    def is_preview_auto_ended(self) -> bool:
+        """
+        Gets the is_preview_auto_ended of this OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.
+
+
+        :return: The is_preview_auto_ended of this OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.
+        :rtype: bool
+        """
+        return self._is_preview_auto_ended
+
+    @is_preview_auto_ended.setter
+    def is_preview_auto_ended(self, is_preview_auto_ended: bool) -> None:
+        """
+        Sets the is_preview_auto_ended of this OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.
+
+
+        :param is_preview_auto_ended: The is_preview_auto_ended of this OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent.
+        :type: bool
+        """
+        
+
+        self._is_preview_auto_ended = is_preview_auto_ended
 
     def to_dict(self):
         """

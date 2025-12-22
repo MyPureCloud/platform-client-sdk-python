@@ -450,4 +450,4 @@ except ApiException as e:
 **dict(str, object)**
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_

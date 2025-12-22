@@ -47,7 +47,8 @@
 | **division_id** | str |  | [optional] |
 | **scored_agents** | [list[WorkitemsUserEventsNotificationScoredAgent]](WorkitemsUserEventsNotificationScoredAgent) |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
+| **case_id** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_

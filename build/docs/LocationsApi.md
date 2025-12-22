@@ -407,4 +407,4 @@ except ApiException as e:
 [**LocationsSearchResponse**](LocationsSearchResponse)
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_

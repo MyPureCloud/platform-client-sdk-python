@@ -57,4 +57,4 @@ except ApiException as e:
 [**SignedData**](SignedData)
 
 
-_PureCloudPlatformClientV2 246.0.0_
+_PureCloudPlatformClientV2 246.1.0_
