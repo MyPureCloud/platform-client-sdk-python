@@ -47,6 +47,7 @@
 | **division_id** | str |  | [optional] |
 | **scored_agents** | [list[WorkitemsEventsNotificationScoredAgent]](WorkitemsEventsNotificationScoredAgent) |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
+| **case_id** | str |  | [optional] |
 
 
 
