@@ -9,7 +9,8 @@
 | **name** | str | The name of the rule | [optional] |
 | **description** | str | The description of the rule | [optional] |
 | **criteria** | [list[UsersRulesCriteria]](UsersRulesCriteria) | The criteria of the rule | [optional] |
+| **locked_criteria** | [list[UsersRulesCriteria]](UsersRulesCriteria) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

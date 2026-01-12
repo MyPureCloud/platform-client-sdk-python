@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_assistants_agentchecklist**](#delete_assistants_agentchecklist) | Delete an agent checklist|
 |[**get_assistant**](#get_assistant) | Get an assistant.|
 |[**get_assistant_queue**](#get_assistant_queue) | Get queue Information for an assistant.|
+|[**get_assistant_queue_users_job**](#get_assistant_queue_users_job) | Get job details.|
 |[**get_assistant_queues**](#get_assistant_queues) | Get all the queues associated with an assistant.|
 |[**get_assistants**](#get_assistants) | Get all assistants.|
 |[**get_assistants_agentchecklist**](#get_assistants_agentchecklist) | Get an agent checklist|
@@ -22,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_assistant_queues**](#patch_assistant_queues) | Update Queues for an Assistant.|
 |[**post_assistant_queue_users_bulk_add**](#post_assistant_queue_users_bulk_add) | Bulk add users to assistant-queue (requires manual assignment mode).|
 |[**post_assistant_queue_users_bulk_remove**](#post_assistant_queue_users_bulk_remove) | Bulk remove users from assistant-queue (requires manual assignment mode).|
+|[**post_assistant_queue_users_jobs**](#post_assistant_queue_users_jobs) | Start a new job to assistant-queue.|
 |[**post_assistant_queue_users_query**](#post_assistant_queue_users_query) | Query for users in the assistant-queue (requires manual assignment mode).|
 |[**post_assistants**](#post_assistants) | Create an Assistant.|
 |[**post_assistants_agentchecklists**](#post_assistants_agentchecklists) | Create an agent checklist|
@@ -322,6 +324,58 @@ except ApiException as e:
 ### Return type
 
 [**AssistantQueue**](AssistantQueue)
+
+
+## get_assistant_queue_users_job
+
+> [**AssistantQueueUsersJobsResponse**](AssistantQueueUsersJobsResponse) get_assistant_queue_users_job(assistant_id, queue_id, job_id)
+
+
+Get job details.
+
+Wraps GET /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* assistants:queueUserJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+assistant_id = 'assistant_id_example' # str | Assistant ID
+queue_id = 'queue_id_example' # str | Queue ID
+job_id = 'job_id_example' # str | Job ID
+
+try:
+    # Get job details.
+    api_response = api_instance.get_assistant_queue_users_job(assistant_id, queue_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->get_assistant_queue_users_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assistant_id** | **str**| Assistant ID |  |
+| **queue_id** | **str**| Queue ID |  |
+| **job_id** | **str**| Job ID |  |
+
+### Return type
+
+[**AssistantQueueUsersJobsResponse**](AssistantQueueUsersJobsResponse)
 
 
 ## get_assistant_queues
@@ -850,6 +904,58 @@ except ApiException as e:
 [**BulkResponse**](BulkResponse)
 
 
+## post_assistant_queue_users_jobs
+
+> [**AssistantQueueUsersJobsResponse**](AssistantQueueUsersJobsResponse) post_assistant_queue_users_jobs(assistant_id, queue_id, body)
+
+
+Start a new job to assistant-queue.
+
+Wraps POST /api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs 
+
+Requires ANY permissions: 
+
+* assistants:queueUserJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
+assistant_id = 'assistant_id_example' # str | Assistant ID
+queue_id = 'queue_id_example' # str | Queue ID
+body = PureCloudPlatformClientV2.AssistantQueueUsersJobsRequest() # AssistantQueueUsersJobsRequest | 
+
+try:
+    # Start a new job to assistant-queue.
+    api_response = api_instance.post_assistant_queue_users_jobs(assistant_id, queue_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AgentAssistantsApi->post_assistant_queue_users_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assistant_id** | **str**| Assistant ID |  |
+| **queue_id** | **str**| Queue ID |  |
+| **body** | [**AssistantQueueUsersJobsRequest**](AssistantQueueUsersJobsRequest)|  |  |
+
+### Return type
+
+[**AssistantQueueUsersJobsResponse**](AssistantQueueUsersJobsResponse)
+
+
 ## post_assistant_queue_users_query
 
 > [**AssistantQueueUsersQueryResponse**](AssistantQueueUsersQueryResponse) post_assistant_queue_users_query(assistant_id, queue_id, body, expand=expand)
@@ -1102,4 +1208,4 @@ except ApiException as e:
 [**AgentChecklist**](AgentChecklist)
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

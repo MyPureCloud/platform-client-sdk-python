@@ -4043,7 +4043,7 @@ except ApiException as e:
 
 ## post_analytics_agents_status_counts
 
-> [**AnalyticsAgentStateCountsResponse**](AnalyticsAgentStateCountsResponse) post_analytics_agents_status_counts(body)
+> [**AnalyticsAgentStateCountsResponse**](AnalyticsAgentStateCountsResponse) post_analytics_agents_status_counts(body, group_by=group_by)
 
 
 Count agents by different groupings
@@ -4068,10 +4068,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 body = PureCloudPlatformClientV2.AgentStateCountsRequest() # AgentStateCountsRequest | query
+group_by = ['group_by_example'] # list[str] | Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType (optional)
 
 try:
     # Count agents by different groupings
-    api_response = api_instance.post_analytics_agents_status_counts(body)
+    api_response = api_instance.post_analytics_agents_status_counts(body, group_by=group_by)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->post_analytics_agents_status_counts: %s\n" % e)
@@ -4083,6 +4084,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**AgentStateCountsRequest**](AgentStateCountsRequest)| query |  |
+| **group_by** | [**list[str]**](str)| Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType | [optional] <br />**Values**: segmentType, presence, routingStatus, isOutOfOffice |
 
 ### Return type
 
@@ -6500,4 +6502,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

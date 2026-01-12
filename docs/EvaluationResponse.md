@@ -12,6 +12,7 @@
 | **evaluation_form** | [EvaluationFormResponse](EvaluationFormResponse) | Evaluation form used for evaluation. | [optional] |
 | **evaluator** | [User](User) |  | [optional] |
 | **agent** | [User](User) |  | [optional] |
+| **calibration** | [AddressableEntityRef](AddressableEntityRef) |  | [optional] |
 | **status** | str |  | [optional] |
 | **answers** | [EvaluationScoringSet](EvaluationScoringSet) |  | [optional] |
 | **agent_has_read** | bool |  | [optional] |
@@ -38,8 +39,7 @@
 | **evaluation_source** | [EvaluationSource](EvaluationSource) | The source that created the evaluation. | [optional] |
 | **ai_scoring** | [AiScoring](AiScoring) | AI scoring details for the evaluation. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
-| **calibration** | [AddressableEntityRef](AddressableEntityRef) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

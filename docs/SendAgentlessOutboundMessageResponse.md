@@ -16,9 +16,9 @@
 | **use_existing_active_conversation** | bool | Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false | [optional] |
 | **message** | [MessageData](MessageData) | Sent agentless outbound message in normalized format | [optional] |
 | **timestamp** | datetime | The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
-| **self_uri** | str | The URI for this object | [optional] |
 | **user** | [AddressableEntityRef](AddressableEntityRef) | Details of the user created the job | [optional] |
+| **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_
