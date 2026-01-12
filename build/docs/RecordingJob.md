@@ -7,6 +7,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
+| **user** | [AddressableEntityRef](AddressableEntityRef) | Details of the user created the job | [optional] |
 | **state** | str | The current state of the job. | |
 | **recording_jobs_query** | [RecordingJobsQuery](RecordingJobsQuery) | Original query of the job. | [optional] |
 | **date_created** | datetime | Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -19,8 +20,7 @@
 | **error_message** | str | Error occurred during the job execution | [optional] |
 | **failed_recordings** | str | Get IDs of recordings that the bulk job failed for | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
-| **user** | [AddressableEntityRef](AddressableEntityRef) | Details of the user created the job | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

@@ -57,6 +57,8 @@ class Suggestion(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'conversation': 'AddressableEntityRef',
+            'assistant': 'AddressableEntityRef',
             'type': 'str',
             'faq': 'Faq',
             'article': 'Article',
@@ -69,13 +71,13 @@ class Suggestion(object):
             'knowledge_article': 'SuggestionKnowledgeArticle',
             'canned_response': 'SuggestionCannedResponse',
             'script': 'SuggestionScript',
-            'self_uri': 'str',
-            'conversation': 'AddressableEntityRef',
-            'assistant': 'AddressableEntityRef'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'conversation': 'conversation',
+            'assistant': 'assistant',
             'type': 'type',
             'faq': 'faq',
             'article': 'article',
@@ -88,12 +90,12 @@ class Suggestion(object):
             'knowledge_article': 'knowledgeArticle',
             'canned_response': 'cannedResponse',
             'script': 'script',
-            'self_uri': 'selfUri',
-            'conversation': 'conversation',
-            'assistant': 'assistant'
+            'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._conversation = None
+        self._assistant = None
         self._type = None
         self._faq = None
         self._article = None
@@ -107,8 +109,6 @@ class Suggestion(object):
         self._canned_response = None
         self._script = None
         self._self_uri = None
-        self._conversation = None
-        self._assistant = None
 
     @property
     def id(self) -> str:
@@ -133,6 +133,54 @@ class Suggestion(object):
         
 
         self._id = id
+
+    @property
+    def conversation(self) -> 'AddressableEntityRef':
+        """
+        Gets the conversation of this Suggestion.
+        The conversation that the suggestions correspond to.
+
+        :return: The conversation of this Suggestion.
+        :rtype: AddressableEntityRef
+        """
+        return self._conversation
+
+    @conversation.setter
+    def conversation(self, conversation: 'AddressableEntityRef') -> None:
+        """
+        Sets the conversation of this Suggestion.
+        The conversation that the suggestions correspond to.
+
+        :param conversation: The conversation of this Suggestion.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._conversation = conversation
+
+    @property
+    def assistant(self) -> 'AddressableEntityRef':
+        """
+        Gets the assistant of this Suggestion.
+        The assistant that was used to provide the suggestions.
+
+        :return: The assistant of this Suggestion.
+        :rtype: AddressableEntityRef
+        """
+        return self._assistant
+
+    @assistant.setter
+    def assistant(self, assistant: 'AddressableEntityRef') -> None:
+        """
+        Sets the assistant of this Suggestion.
+        The assistant that was used to provide the suggestions.
+
+        :param assistant: The assistant of this Suggestion.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._assistant = assistant
 
     @property
     def type(self) -> str:
@@ -460,54 +508,6 @@ class Suggestion(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def conversation(self) -> 'AddressableEntityRef':
-        """
-        Gets the conversation of this Suggestion.
-        The conversation that the suggestions correspond to.
-
-        :return: The conversation of this Suggestion.
-        :rtype: AddressableEntityRef
-        """
-        return self._conversation
-
-    @conversation.setter
-    def conversation(self, conversation: 'AddressableEntityRef') -> None:
-        """
-        Sets the conversation of this Suggestion.
-        The conversation that the suggestions correspond to.
-
-        :param conversation: The conversation of this Suggestion.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._conversation = conversation
-
-    @property
-    def assistant(self) -> 'AddressableEntityRef':
-        """
-        Gets the assistant of this Suggestion.
-        The assistant that was used to provide the suggestions.
-
-        :return: The assistant of this Suggestion.
-        :rtype: AddressableEntityRef
-        """
-        return self._assistant
-
-    @assistant.setter
-    def assistant(self, assistant: 'AddressableEntityRef') -> None:
-        """
-        Sets the assistant of this Suggestion.
-        The assistant that was used to provide the suggestions.
-
-        :param assistant: The assistant of this Suggestion.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._assistant = assistant
 
     def to_dict(self):
         """

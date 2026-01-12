@@ -47,26 +47,50 @@ class ConversationSummaryWrapupCode(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'name': 'str',
             'description': 'str',
-            'self_uri': 'str',
-            'id': 'str',
-            'confidence': 'float'
+            'confidence': 'float',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'name': 'name',
             'description': 'description',
-            'self_uri': 'selfUri',
-            'id': 'id',
-            'confidence': 'confidence'
+            'confidence': 'confidence',
+            'self_uri': 'selfUri'
         }
 
+        self._id = None
         self._name = None
         self._description = None
-        self._self_uri = None
-        self._id = None
         self._confidence = None
+        self._self_uri = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ConversationSummaryWrapupCode.
+        The id of the wrapup code.
+
+        :return: The id of this ConversationSummaryWrapupCode.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ConversationSummaryWrapupCode.
+        The id of the wrapup code.
+
+        :param id: The id of this ConversationSummaryWrapupCode.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def name(self) -> str:
@@ -117,54 +141,6 @@ class ConversationSummaryWrapupCode(object):
         self._description = description
 
     @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this ConversationSummaryWrapupCode.
-        The URI for this object
-
-        :return: The self_uri of this ConversationSummaryWrapupCode.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this ConversationSummaryWrapupCode.
-        The URI for this object
-
-        :param self_uri: The self_uri of this ConversationSummaryWrapupCode.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this ConversationSummaryWrapupCode.
-        The id of the wrapup code.
-
-        :return: The id of this ConversationSummaryWrapupCode.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this ConversationSummaryWrapupCode.
-        The id of the wrapup code.
-
-        :param id: The id of this ConversationSummaryWrapupCode.
-        :type: str
-        """
-        
-
-        self._id = id
-
-    @property
     def confidence(self) -> float:
         """
         Gets the confidence of this ConversationSummaryWrapupCode.
@@ -187,6 +163,30 @@ class ConversationSummaryWrapupCode(object):
         
 
         self._confidence = confidence
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this ConversationSummaryWrapupCode.
+        The URI for this object
+
+        :return: The self_uri of this ConversationSummaryWrapupCode.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this ConversationSummaryWrapupCode.
+        The URI for this object
+
+        :param self_uri: The self_uri of this ConversationSummaryWrapupCode.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

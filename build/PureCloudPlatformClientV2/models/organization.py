@@ -54,14 +54,14 @@ class Organization(object):
             'third_party_org_name': 'str',
             'third_party_uri': 'str',
             'domain': 'str',
+            'features': 'dict(str, bool)',
             'version': 'int',
             'state': 'str',
             'default_site_id': 'str',
             'support_uri': 'str',
             'voicemail_enabled': 'bool',
             'product_platform': 'str',
-            'self_uri': 'str',
-            'features': 'dict(str, bool)'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
@@ -72,14 +72,14 @@ class Organization(object):
             'third_party_org_name': 'thirdPartyOrgName',
             'third_party_uri': 'thirdPartyURI',
             'domain': 'domain',
+            'features': 'features',
             'version': 'version',
             'state': 'state',
             'default_site_id': 'defaultSiteId',
             'support_uri': 'supportURI',
             'voicemail_enabled': 'voicemailEnabled',
             'product_platform': 'productPlatform',
-            'self_uri': 'selfUri',
-            'features': 'features'
+            'self_uri': 'selfUri'
         }
 
         self._id = None
@@ -89,6 +89,7 @@ class Organization(object):
         self._third_party_org_name = None
         self._third_party_uri = None
         self._domain = None
+        self._features = None
         self._version = None
         self._state = None
         self._default_site_id = None
@@ -96,7 +97,6 @@ class Organization(object):
         self._voicemail_enabled = None
         self._product_platform = None
         self._self_uri = None
-        self._features = None
 
     @property
     def id(self) -> str:
@@ -265,6 +265,30 @@ class Organization(object):
         
 
         self._domain = domain
+
+    @property
+    def features(self) -> Dict[str, bool]:
+        """
+        Gets the features of this Organization.
+        The state of features available for the organization.
+
+        :return: The features of this Organization.
+        :rtype: dict(str, bool)
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features: Dict[str, bool]) -> None:
+        """
+        Sets the features of this Organization.
+        The state of features available for the organization.
+
+        :param features: The features of this Organization.
+        :type: dict(str, bool)
+        """
+        
+
+        self._features = features
 
     @property
     def version(self) -> int:
@@ -443,30 +467,6 @@ class Organization(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def features(self) -> Dict[str, bool]:
-        """
-        Gets the features of this Organization.
-        The state of features available for the organization.
-
-        :return: The features of this Organization.
-        :rtype: dict(str, bool)
-        """
-        return self._features
-
-    @features.setter
-    def features(self, features: Dict[str, bool]) -> None:
-        """
-        Sets the features of this Organization.
-        The state of features available for the organization.
-
-        :param features: The features of this Organization.
-        :type: dict(str, bool)
-        """
-        
-
-        self._features = features
 
     def to_dict(self):
         """

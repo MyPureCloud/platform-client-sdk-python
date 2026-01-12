@@ -47,20 +47,44 @@ class ConversationSummaryReason(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'confidence': 'float',
             'text': 'str',
-            'description': 'str',
-            'confidence': 'float'
+            'description': 'str'
         }
 
         self.attribute_map = {
+            'confidence': 'confidence',
             'text': 'text',
-            'description': 'description',
-            'confidence': 'confidence'
+            'description': 'description'
         }
 
+        self._confidence = None
         self._text = None
         self._description = None
-        self._confidence = None
+
+    @property
+    def confidence(self) -> float:
+        """
+        Gets the confidence of this ConversationSummaryReason.
+        The AI confidence value.
+
+        :return: The confidence of this ConversationSummaryReason.
+        :rtype: float
+        """
+        return self._confidence
+
+    @confidence.setter
+    def confidence(self, confidence: float) -> None:
+        """
+        Sets the confidence of this ConversationSummaryReason.
+        The AI confidence value.
+
+        :param confidence: The confidence of this ConversationSummaryReason.
+        :type: float
+        """
+        
+
+        self._confidence = confidence
 
     @property
     def text(self) -> str:
@@ -109,30 +133,6 @@ class ConversationSummaryReason(object):
         
 
         self._description = description
-
-    @property
-    def confidence(self) -> float:
-        """
-        Gets the confidence of this ConversationSummaryReason.
-        The AI confidence value.
-
-        :return: The confidence of this ConversationSummaryReason.
-        :rtype: float
-        """
-        return self._confidence
-
-    @confidence.setter
-    def confidence(self, confidence: float) -> None:
-        """
-        Sets the confidence of this ConversationSummaryReason.
-        The AI confidence value.
-
-        :param confidence: The confidence of this ConversationSummaryReason.
-        :type: float
-        """
-        
-
-        self._confidence = confidence
 
     def to_dict(self):
         """

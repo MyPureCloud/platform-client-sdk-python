@@ -66,7 +66,6 @@ class TelephonyApi(object):
         """
         Get an agent's greetings.
         
-	    get_telephony_agent_greetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -145,7 +144,6 @@ class TelephonyApi(object):
         """
         Get the agent's own greetings.
         
-	    get_telephony_agents_greetings_me is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -701,7 +699,6 @@ class TelephonyApi(object):
         """
         Updates an agent's greetings.
         
-	    put_telephony_agent_greetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -786,7 +783,6 @@ class TelephonyApi(object):
         """
         Updates the agent's own greetings.
         
-	    put_telephony_agents_greetings_me is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

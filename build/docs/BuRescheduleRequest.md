@@ -17,7 +17,8 @@
 | **do_not_change_manually_edited_shifts** | bool | Instructs the scheduler whether it is allowed to change manually edited shifts | |
 | **activity_smoothing_type** | str | Overrides the default BU level activity smoothing type for this reschedule run | [optional] |
 | **induce_schedule_variability** | bool | Overrides the default BU level induce schedule variability setting for this reschedule run | [optional] |
+| **use_unavailable_times_snapshot** | bool | Whether to use original unavailable times from schedule generation or latest saved unavailable times for this reschedule run | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

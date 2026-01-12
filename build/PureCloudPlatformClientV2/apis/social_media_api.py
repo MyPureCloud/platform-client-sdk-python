@@ -2442,12 +2442,13 @@ class SocialMediaApi(object):
         :param list[str] division_ids: One or more division IDs. If nothing is provided, the social topics associated withthe list of divisions that the user has access to will be returned.
         :param bool include_deleted: Determines whether to include soft-deleted items in the result.
         :param str name: Search for topic by name that contains the given search string, search is case insensitive
+        :param list[str] ids: One or more topic IDs to search through the topics.
         :return: SocialTopicResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'division_ids', 'include_deleted', 'name']
+        all_params = ['page_number', 'page_size', 'division_ids', 'include_deleted', 'name', 'ids']
         all_params.append('callback')
 
         params = locals()
@@ -2476,6 +2477,8 @@ class SocialMediaApi(object):
             query_params['includeDeleted'] = params['include_deleted']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
 
         header_params = {}
 

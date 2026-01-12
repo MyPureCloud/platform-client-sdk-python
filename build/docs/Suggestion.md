@@ -7,6 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
+| **conversation** | [AddressableEntityRef](AddressableEntityRef) | The conversation that the suggestions correspond to. | [optional] |
+| **assistant** | [AddressableEntityRef](AddressableEntityRef) | The assistant that was used to provide the suggestions. | [optional] |
 | **type** | str | The type of the documents for which the suggestion is. | [optional] |
 | **faq** | [Faq](Faq) | The Faq from the knowledgebase that was provided as the suggestion. | [optional] |
 | **article** | [Article](Article) | The article from the knowledgebase that was provided as the suggestion. | [optional] |
@@ -20,9 +22,7 @@
 | **canned_response** | [SuggestionCannedResponse](SuggestionCannedResponse) | The suggested canned response that was provided as the suggestion. | [optional] |
 | **script** | [SuggestionScript](SuggestionScript) | The suggested script that was provided as the suggestion. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
-| **conversation** | [AddressableEntityRef](AddressableEntityRef) | The conversation that the suggestions correspond to. | [optional] |
-| **assistant** | [AddressableEntityRef](AddressableEntityRef) | The assistant that was used to provide the suggestions. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

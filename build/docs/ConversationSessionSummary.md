@@ -6,7 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **id** | str | The id of the summary. | [optional] |
 | **text** | str | The text of the summary. | [optional] |
+| **confidence** | float | The AI confidence value. | [optional] |
 | **status** | str | The status of the conversation summary. | [optional] |
 | **media_type** | str | The media type of the conversation. | [optional] |
 | **language** | str | The language of the conversation. | [optional] |
@@ -16,11 +18,9 @@
 | **followup** | [ConversationSummaryFollowup](ConversationSummaryFollowup) | The followup of the conversation summary. | [optional] |
 | **resolution** | [ConversationSummaryResolution](ConversationSummaryResolution) | The resolution of the conversation summary. | [optional] |
 | **date_created** | datetime | The created date of the summary. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
-| **id** | str | The id of the summary. | [optional] |
-| **confidence** | float | The AI confidence value. | [optional] |
-| **participants** | [list[AddressableEntityRef]](AddressableEntityRef) | The list of participants. | [optional] |
 | **communication** | [Entity](Entity) | The communication object of the summary. | [optional] |
+| **participants** | [list[AddressableEntityRef]](AddressableEntityRef) | The list of participants. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

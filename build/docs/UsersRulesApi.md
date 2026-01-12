@@ -275,7 +275,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **types** | [**list[str]**](str)| The types of the rule | <br />**Values**: Learning |
+| **types** | [**list[str]**](str)| The types of the rule | <br />**Values**: Learning, ActivityPlan |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Number of results per page | [optional] [default to 25] |
 | **expand** | [**list[str]**](str)| Fields to expand in response | [optional] <br />**Values**: criteria |
@@ -330,7 +330,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **rule_type** | **str**| The type of the rule | <br />**Values**: Learning |
+| **rule_type** | **str**| The type of the rule | <br />**Values**: Learning, ActivityPlan |
 
 ### Return type
 
@@ -499,4 +499,4 @@ except ApiException as e:
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

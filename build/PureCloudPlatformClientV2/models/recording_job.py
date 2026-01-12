@@ -51,6 +51,7 @@ class RecordingJob(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'user': 'AddressableEntityRef',
             'state': 'str',
             'recording_jobs_query': 'RecordingJobsQuery',
             'date_created': 'datetime',
@@ -62,12 +63,12 @@ class RecordingJob(object):
             'percent_progress': 'int',
             'error_message': 'str',
             'failed_recordings': 'str',
-            'self_uri': 'str',
-            'user': 'AddressableEntityRef'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'user': 'user',
             'state': 'state',
             'recording_jobs_query': 'recordingJobsQuery',
             'date_created': 'dateCreated',
@@ -79,11 +80,11 @@ class RecordingJob(object):
             'percent_progress': 'percentProgress',
             'error_message': 'errorMessage',
             'failed_recordings': 'failedRecordings',
-            'self_uri': 'selfUri',
-            'user': 'user'
+            'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._user = None
         self._state = None
         self._recording_jobs_query = None
         self._date_created = None
@@ -96,7 +97,6 @@ class RecordingJob(object):
         self._error_message = None
         self._failed_recordings = None
         self._self_uri = None
-        self._user = None
 
     @property
     def id(self) -> str:
@@ -121,6 +121,30 @@ class RecordingJob(object):
         
 
         self._id = id
+
+    @property
+    def user(self) -> 'AddressableEntityRef':
+        """
+        Gets the user of this RecordingJob.
+        Details of the user created the job
+
+        :return: The user of this RecordingJob.
+        :rtype: AddressableEntityRef
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user: 'AddressableEntityRef') -> None:
+        """
+        Sets the user of this RecordingJob.
+        Details of the user created the job
+
+        :param user: The user of this RecordingJob.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._user = user
 
     @property
     def state(self) -> str:
@@ -414,30 +438,6 @@ class RecordingJob(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def user(self) -> 'AddressableEntityRef':
-        """
-        Gets the user of this RecordingJob.
-        Details of the user created the job
-
-        :return: The user of this RecordingJob.
-        :rtype: AddressableEntityRef
-        """
-        return self._user
-
-    @user.setter
-    def user(self, user: 'AddressableEntityRef') -> None:
-        """
-        Sets the user of this RecordingJob.
-        Details of the user created the job
-
-        :param user: The user of this RecordingJob.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._user = user
 
     def to_dict(self):
         """

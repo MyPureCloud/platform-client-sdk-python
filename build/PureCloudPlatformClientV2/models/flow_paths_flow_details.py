@@ -49,23 +49,47 @@ class FlowPathsFlowDetails(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'flow': 'AddressableEntityRef',
             'version': 'str',
             'type': 'str',
-            'count': 'int',
-            'flow': 'AddressableEntityRef'
+            'count': 'int'
         }
 
         self.attribute_map = {
+            'flow': 'flow',
             'version': 'version',
             'type': 'type',
-            'count': 'count',
-            'flow': 'flow'
+            'count': 'count'
         }
 
+        self._flow = None
         self._version = None
         self._type = None
         self._count = None
-        self._flow = None
+
+    @property
+    def flow(self) -> 'AddressableEntityRef':
+        """
+        Gets the flow of this FlowPathsFlowDetails.
+        The identifier of the flow.
+
+        :return: The flow of this FlowPathsFlowDetails.
+        :rtype: AddressableEntityRef
+        """
+        return self._flow
+
+    @flow.setter
+    def flow(self, flow: 'AddressableEntityRef') -> None:
+        """
+        Sets the flow of this FlowPathsFlowDetails.
+        The identifier of the flow.
+
+        :param flow: The flow of this FlowPathsFlowDetails.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._flow = flow
 
     @property
     def version(self) -> str:
@@ -143,30 +167,6 @@ class FlowPathsFlowDetails(object):
         
 
         self._count = count
-
-    @property
-    def flow(self) -> 'AddressableEntityRef':
-        """
-        Gets the flow of this FlowPathsFlowDetails.
-        The identifier of the flow.
-
-        :return: The flow of this FlowPathsFlowDetails.
-        :rtype: AddressableEntityRef
-        """
-        return self._flow
-
-    @flow.setter
-    def flow(self, flow: 'AddressableEntityRef') -> None:
-        """
-        Sets the flow of this FlowPathsFlowDetails.
-        The identifier of the flow.
-
-        :param flow: The flow of this FlowPathsFlowDetails.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._flow = flow
 
     def to_dict(self):
         """

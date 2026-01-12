@@ -129,6 +129,7 @@ class AnalyticsSession(object):
             'session_id': 'str',
             'sharing_screen': 'bool',
             'skip_enabled': 'bool',
+            'snippet_recording': 'bool',
             'timeout_seconds': 'int',
             'used_routing': 'str',
             'video_address_self': 'str',
@@ -218,6 +219,7 @@ class AnalyticsSession(object):
             'session_id': 'sessionId',
             'sharing_screen': 'sharingScreen',
             'skip_enabled': 'skipEnabled',
+            'snippet_recording': 'snippetRecording',
             'timeout_seconds': 'timeoutSeconds',
             'used_routing': 'usedRouting',
             'video_address_self': 'videoAddressSelf',
@@ -306,6 +308,7 @@ class AnalyticsSession(object):
         self._session_id = None
         self._sharing_screen = None
         self._skip_enabled = None
+        self._snippet_recording = None
         self._timeout_seconds = None
         self._used_routing = None
         self._video_address_self = None
@@ -2142,6 +2145,30 @@ class AnalyticsSession(object):
         
 
         self._skip_enabled = skip_enabled
+
+    @property
+    def snippet_recording(self) -> bool:
+        """
+        Gets the snippet_recording of this AnalyticsSession.
+        Whether or not the conversation included a snippet being recorded.
+
+        :return: The snippet_recording of this AnalyticsSession.
+        :rtype: bool
+        """
+        return self._snippet_recording
+
+    @snippet_recording.setter
+    def snippet_recording(self, snippet_recording: bool) -> None:
+        """
+        Sets the snippet_recording of this AnalyticsSession.
+        Whether or not the conversation included a snippet being recorded.
+
+        :param snippet_recording: The snippet_recording of this AnalyticsSession.
+        :type: bool
+        """
+        
+
+        self._snippet_recording = snippet_recording
 
     @property
     def timeout_seconds(self) -> int:

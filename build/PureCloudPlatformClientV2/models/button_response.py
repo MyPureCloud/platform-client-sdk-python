@@ -149,7 +149,7 @@ class ButtonResponse(object):
     def message_type(self) -> str:
         """
         Gets the message_type of this ButtonResponse.
-        Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+        Button response message type that captures QuickReply , Cards and Carousel.This is used  as label for Card selection
 
         :return: The message_type of this ButtonResponse.
         :rtype: str
@@ -160,7 +160,7 @@ class ButtonResponse(object):
     def message_type(self, message_type: str) -> None:
         """
         Sets the message_type of this ButtonResponse.
-        Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+        Button response message type that captures QuickReply , Cards and Carousel.This is used  as label for Card selection
 
         :param message_type: The message_type of this ButtonResponse.
         :type: str

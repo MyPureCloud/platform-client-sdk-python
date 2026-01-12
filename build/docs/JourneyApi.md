@@ -3844,4 +3844,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

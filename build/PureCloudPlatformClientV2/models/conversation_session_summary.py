@@ -55,7 +55,9 @@ class ConversationSessionSummary(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'text': 'str',
+            'confidence': 'float',
             'status': 'str',
             'media_type': 'str',
             'language': 'str',
@@ -65,14 +67,14 @@ class ConversationSessionSummary(object):
             'followup': 'ConversationSummaryFollowup',
             'resolution': 'ConversationSummaryResolution',
             'date_created': 'datetime',
-            'id': 'str',
-            'confidence': 'float',
-            'participants': 'list[AddressableEntityRef]',
-            'communication': 'Entity'
+            'communication': 'Entity',
+            'participants': 'list[AddressableEntityRef]'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'text': 'text',
+            'confidence': 'confidence',
             'status': 'status',
             'media_type': 'mediaType',
             'language': 'language',
@@ -82,13 +84,13 @@ class ConversationSessionSummary(object):
             'followup': 'followup',
             'resolution': 'resolution',
             'date_created': 'dateCreated',
-            'id': 'id',
-            'confidence': 'confidence',
-            'participants': 'participants',
-            'communication': 'communication'
+            'communication': 'communication',
+            'participants': 'participants'
         }
 
+        self._id = None
         self._text = None
+        self._confidence = None
         self._status = None
         self._media_type = None
         self._language = None
@@ -98,10 +100,32 @@ class ConversationSessionSummary(object):
         self._followup = None
         self._resolution = None
         self._date_created = None
-        self._id = None
-        self._confidence = None
-        self._participants = None
         self._communication = None
+        self._participants = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ConversationSessionSummary.
+        The id of the summary.
+
+        :return: The id of this ConversationSessionSummary.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ConversationSessionSummary.
+        The id of the summary.
+
+        :param id: The id of this ConversationSessionSummary.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def text(self) -> str:
@@ -126,6 +150,30 @@ class ConversationSessionSummary(object):
         
 
         self._text = text
+
+    @property
+    def confidence(self) -> float:
+        """
+        Gets the confidence of this ConversationSessionSummary.
+        The AI confidence value.
+
+        :return: The confidence of this ConversationSessionSummary.
+        :rtype: float
+        """
+        return self._confidence
+
+    @confidence.setter
+    def confidence(self, confidence: float) -> None:
+        """
+        Sets the confidence of this ConversationSessionSummary.
+        The AI confidence value.
+
+        :param confidence: The confidence of this ConversationSessionSummary.
+        :type: float
+        """
+        
+
+        self._confidence = confidence
 
     @property
     def status(self) -> str:
@@ -354,52 +402,28 @@ class ConversationSessionSummary(object):
         self._date_created = date_created
 
     @property
-    def id(self) -> str:
+    def communication(self) -> 'Entity':
         """
-        Gets the id of this ConversationSessionSummary.
-        The id of the summary.
+        Gets the communication of this ConversationSessionSummary.
+        The communication object of the summary.
 
-        :return: The id of this ConversationSessionSummary.
-        :rtype: str
+        :return: The communication of this ConversationSessionSummary.
+        :rtype: Entity
         """
-        return self._id
+        return self._communication
 
-    @id.setter
-    def id(self, id: str) -> None:
+    @communication.setter
+    def communication(self, communication: 'Entity') -> None:
         """
-        Sets the id of this ConversationSessionSummary.
-        The id of the summary.
+        Sets the communication of this ConversationSessionSummary.
+        The communication object of the summary.
 
-        :param id: The id of this ConversationSessionSummary.
-        :type: str
-        """
-        
-
-        self._id = id
-
-    @property
-    def confidence(self) -> float:
-        """
-        Gets the confidence of this ConversationSessionSummary.
-        The AI confidence value.
-
-        :return: The confidence of this ConversationSessionSummary.
-        :rtype: float
-        """
-        return self._confidence
-
-    @confidence.setter
-    def confidence(self, confidence: float) -> None:
-        """
-        Sets the confidence of this ConversationSessionSummary.
-        The AI confidence value.
-
-        :param confidence: The confidence of this ConversationSessionSummary.
-        :type: float
+        :param communication: The communication of this ConversationSessionSummary.
+        :type: Entity
         """
         
 
-        self._confidence = confidence
+        self._communication = communication
 
     @property
     def participants(self) -> List['AddressableEntityRef']:
@@ -424,30 +448,6 @@ class ConversationSessionSummary(object):
         
 
         self._participants = participants
-
-    @property
-    def communication(self) -> 'Entity':
-        """
-        Gets the communication of this ConversationSessionSummary.
-        The communication object of the summary.
-
-        :return: The communication of this ConversationSessionSummary.
-        :rtype: Entity
-        """
-        return self._communication
-
-    @communication.setter
-    def communication(self, communication: 'Entity') -> None:
-        """
-        Sets the communication of this ConversationSessionSummary.
-        The communication object of the summary.
-
-        :param communication: The communication of this ConversationSessionSummary.
-        :type: Entity
-        """
-        
-
-        self._communication = communication
 
     def to_dict(self):
         """

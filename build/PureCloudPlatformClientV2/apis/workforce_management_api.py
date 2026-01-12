@@ -177,6 +177,7 @@ from ..models import ListAlternativeShiftTradesResponse
 from ..models import LongTermForecastResultResponse
 from ..models import LongTermRequirementsResponse
 from ..models import ManagementUnit
+from ..models import ManagementUnitAvailabilitySettingsResponse
 from ..models import ManagementUnitListing
 from ..models import MatchShiftTradeRequest
 from ..models import MatchShiftTradeResponse
@@ -195,7 +196,13 @@ from ..models import PlanningGroupList
 from ..models import PlanningGroupToStaffingGroupsListing
 from ..models import ProcessScheduleUpdateUploadRequest
 from ..models import QueryAdherenceExplanationsResponse
+from ..models import QueryAgentScheduleUnavailableTimesRequest
+from ..models import QueryAgentScheduleUnavailableTimesResponse
+from ..models import QueryAgentUnavailableTimesRequest
+from ..models import QueryAgentUnavailableTimesValidationJobResponse
 from ..models import QueryAgentsIntegrationsRequest
+from ..models import QueryAvailabilityManagementUnitsSettingsRequest
+from ..models import QueryAvailabilityManagementUnitsSettingsResponse
 from ..models import QueryCapacityPlanStaffingGroupMetricChangeHistory
 from ..models import QueryPlanningGroupToStaffingGroupsRequest
 from ..models import QueryTimeOffIntegrationStatusRequest
@@ -230,6 +237,7 @@ from ..models import TimeOffRequestList
 from ..models import TimeOffRequestListing
 from ..models import TimeOffRequestQueryBody
 from ..models import TimeOffRequestResponse
+from ..models import UnavailableTimeListing
 from ..models import UpdateActivityCodeRequest
 from ..models import UpdateActivityPlanRequest
 from ..models import UpdateAdherenceExplanationStatusRequest
@@ -238,6 +246,7 @@ from ..models import UpdateAlternativeShiftBuSettingsRequest
 from ..models import UpdateBusinessUnitRequest
 from ..models import UpdateCapacityPlanRequest
 from ..models import UpdateManagementUnitRequest
+from ..models import UpdateManagementUnitsSettingsRequest
 from ..models import UpdateMuAgentWorkPlansBatchRequest
 from ..models import UpdateMuAgentWorkPlansBatchResponse
 from ..models import UpdateMuAgentsRequest
@@ -249,6 +258,7 @@ from ..models import UpdateServiceGoalTemplate
 from ..models import UpdateStaffingGroupRequest
 from ..models import UpdateTimeOffLimitRequest
 from ..models import UpdateTimeOffPlanRequest
+from ..models import UpdateUnavailableTimesRequest
 from ..models import UpdateWorkPlanBid
 from ..models import UpdateWorkPlanRotationRequest
 from ..models import UploadUrlRequestBody
@@ -259,6 +269,8 @@ from ..models import UserScheduleContainer
 from ..models import UserStaffingGroupListing
 from ..models import UserTimeOffIntegrationStatusResponse
 from ..models import UserTimeOffIntegrationStatusResponseListing
+from ..models import ValidateAgentUnavailableTimesRequest
+from ..models import ValidateAgentUnavailableTimesResponse
 from ..models import ValidateWorkPlanResponse
 from ..models import ValidationServiceAsyncResponse
 from ..models import ValidationServiceRequest
@@ -11075,6 +11087,156 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_unavailabletimes_settings(self, **kwargs) -> 'ManagementUnitAvailabilitySettingsResponse':
+        """
+        Get availability management unit's settings for agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_unavailabletimes_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ManagementUnitAvailabilitySettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_unavailabletimes_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/unavailabletimes/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ManagementUnitAvailabilitySettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_unavailabletimes_validation_job(self, job_id: str, **kwargs) -> 'QueryAgentUnavailableTimesValidationJobResponse':
+        """
+        Query agent unavailable times validation job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_unavailabletimes_validation_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: QueryAgentUnavailableTimesValidationJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_unavailabletimes_validation_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_unavailabletimes_validation_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/unavailabletimes/validation/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueryAgentUnavailableTimesValidationJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_user_workplanbidranks(self, user_id: str, **kwargs) -> 'WorkPlanBidRanks':
         """
         Get work plan bid ranks for a user
@@ -13334,6 +13496,90 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_managementunit_unavailabletimes_settings(self, management_unit_id: str, body: 'UpdateManagementUnitsSettingsRequest', **kwargs) -> 'ManagementUnitAvailabilitySettingsResponse':
+        """
+        Update management unit availability settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_managementunit_unavailabletimes_settings(management_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit (required)
+        :param UpdateManagementUnitsSettingsRequest body: body (required)
+        :return: ManagementUnitAvailabilitySettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_managementunit_unavailabletimes_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit_unavailabletimes_settings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_unavailabletimes_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ManagementUnitAvailabilitySettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id: str, user_id: str, time_off_request_id: str, body: 'AdminTimeOffRequestPatch', **kwargs) -> 'TimeOffRequestResponse':
         """
         Update a time off request
@@ -13789,6 +14035,84 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TimeOffRequestResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_unavailabletimes(self, body: 'UpdateUnavailableTimesRequest', **kwargs) -> 'UnavailableTimeListing':
+        """
+        Update agent unavailable times
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_unavailabletimes(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UpdateUnavailableTimesRequest body: body (required)
+        :return: UnavailableTimeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_unavailabletimes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_unavailabletimes`")
+
+
+        resource_path = '/api/v2/workforcemanagement/unavailabletimes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnavailableTimeListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -14525,6 +14849,90 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AgentQueryAdherenceExplanationsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agent_unavailabletimes_query(self, agent_id: str, body: 'QueryAgentUnavailableTimesRequest', **kwargs) -> 'UnavailableTimeListing':
+        """
+        Get agent unavailable times
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agent_unavailabletimes_query(agent_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The ID of the agent (required)
+        :param QueryAgentUnavailableTimesRequest body: body (required)
+        :return: UnavailableTimeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agent_unavailabletimes_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `post_workforcemanagement_agent_unavailabletimes_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agent_unavailabletimes_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnavailableTimeListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -17126,6 +17534,174 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BuTimeOffPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_unavailabletimes_schedules_query(self, business_unit_id: str, body: 'QueryAgentScheduleUnavailableTimesRequest', **kwargs) -> 'QueryAgentScheduleUnavailableTimesResponse':
+        """
+        Get agent schedule generation unavailable times
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_unavailabletimes_schedules_query(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param QueryAgentScheduleUnavailableTimesRequest body: body (required)
+        :return: QueryAgentScheduleUnavailableTimesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_unavailabletimes_schedules_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_unavailabletimes_schedules_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_unavailabletimes_schedules_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueryAgentScheduleUnavailableTimesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_unavailabletimes_settings_query(self, business_unit_id: str, body: 'QueryAvailabilityManagementUnitsSettingsRequest', **kwargs) -> 'QueryAvailabilityManagementUnitsSettingsResponse':
+        """
+        Query availability management units settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_unavailabletimes_settings_query(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param QueryAvailabilityManagementUnitsSettingsRequest body: body (required)
+        :return: QueryAvailabilityManagementUnitsSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_unavailabletimes_settings_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_unavailabletimes_settings_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_unavailabletimes_settings_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueryAvailabilityManagementUnitsSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -22171,6 +22747,162 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TimeOffIntegrationStatusResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_unavailabletimes_query(self, body: 'QueryAgentUnavailableTimesRequest', **kwargs) -> 'UnavailableTimeListing':
+        """
+        Get agent unavailable times
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_unavailabletimes_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param QueryAgentUnavailableTimesRequest body: body (required)
+        :return: UnavailableTimeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_unavailabletimes_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_unavailabletimes_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/unavailabletimes/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnavailableTimeListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_unavailabletimes_validation_jobs(self, body: 'ValidateAgentUnavailableTimesRequest', **kwargs) -> 'ValidateAgentUnavailableTimesResponse':
+        """
+        Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_unavailabletimes_validation_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ValidateAgentUnavailableTimesRequest body: body (required)
+        :return: ValidateAgentUnavailableTimesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_unavailabletimes_validation_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_unavailabletimes_validation_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/unavailabletimes/validation/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ValidateAgentUnavailableTimesResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

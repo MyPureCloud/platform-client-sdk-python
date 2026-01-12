@@ -231,7 +231,7 @@ class BusinessRulesDataSchema(object):
     def date_created(self) -> datetime:
         """
         Gets the date_created of this BusinessRulesDataSchema.
-        The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date and time this schema version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this BusinessRulesDataSchema.
         :rtype: datetime
@@ -242,7 +242,7 @@ class BusinessRulesDataSchema(object):
     def date_created(self, date_created: datetime) -> None:
         """
         Sets the date_created of this BusinessRulesDataSchema.
-        The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date and time this schema version was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this BusinessRulesDataSchema.
         :type: datetime

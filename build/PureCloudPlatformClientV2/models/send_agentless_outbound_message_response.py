@@ -61,8 +61,8 @@ class SendAgentlessOutboundMessageResponse(object):
             'use_existing_active_conversation': 'bool',
             'message': 'MessageData',
             'timestamp': 'datetime',
-            'self_uri': 'str',
-            'user': 'AddressableEntityRef'
+            'user': 'AddressableEntityRef',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
@@ -76,8 +76,8 @@ class SendAgentlessOutboundMessageResponse(object):
             'use_existing_active_conversation': 'useExistingActiveConversation',
             'message': 'message',
             'timestamp': 'timestamp',
-            'self_uri': 'selfUri',
-            'user': 'user'
+            'user': 'user',
+            'self_uri': 'selfUri'
         }
 
         self._id = None
@@ -90,8 +90,8 @@ class SendAgentlessOutboundMessageResponse(object):
         self._use_existing_active_conversation = None
         self._message = None
         self._timestamp = None
-        self._self_uri = None
         self._user = None
+        self._self_uri = None
 
     @property
     def id(self) -> str:
@@ -339,30 +339,6 @@ class SendAgentlessOutboundMessageResponse(object):
         self._timestamp = timestamp
 
     @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this SendAgentlessOutboundMessageResponse.
-        The URI for this object
-
-        :return: The self_uri of this SendAgentlessOutboundMessageResponse.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this SendAgentlessOutboundMessageResponse.
-        The URI for this object
-
-        :param self_uri: The self_uri of this SendAgentlessOutboundMessageResponse.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
     def user(self) -> 'AddressableEntityRef':
         """
         Gets the user of this SendAgentlessOutboundMessageResponse.
@@ -385,6 +361,30 @@ class SendAgentlessOutboundMessageResponse(object):
         
 
         self._user = user
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this SendAgentlessOutboundMessageResponse.
+        The URI for this object
+
+        :return: The self_uri of this SendAgentlessOutboundMessageResponse.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this SendAgentlessOutboundMessageResponse.
+        The URI for this object
+
+        :param self_uri: The self_uri of this SendAgentlessOutboundMessageResponse.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

@@ -49,21 +49,18 @@ class Phrase(object):
         self.swagger_types = {
             'text': 'str',
             'strictness': 'str',
-            'sentiment': 'str',
-            'is_ai_generated': 'bool'
+            'sentiment': 'str'
         }
 
         self.attribute_map = {
             'text': 'text',
             'strictness': 'strictness',
-            'sentiment': 'sentiment',
-            'is_ai_generated': 'isAIGenerated'
+            'sentiment': 'sentiment'
         }
 
         self._text = None
         self._strictness = None
         self._sentiment = None
-        self._is_ai_generated = None
 
     @property
     def text(self) -> str:
@@ -146,30 +143,6 @@ class Phrase(object):
             self._sentiment = "outdated_sdk_version"
         else:
             self._sentiment = sentiment
-
-    @property
-    def is_ai_generated(self) -> bool:
-        """
-        Gets the is_ai_generated of this Phrase.
-        Indicates whether the phrase is AI generated
-
-        :return: The is_ai_generated of this Phrase.
-        :rtype: bool
-        """
-        return self._is_ai_generated
-
-    @is_ai_generated.setter
-    def is_ai_generated(self, is_ai_generated: bool) -> None:
-        """
-        Sets the is_ai_generated of this Phrase.
-        Indicates whether the phrase is AI generated
-
-        :param is_ai_generated: The is_ai_generated of this Phrase.
-        :type: bool
-        """
-        
-
-        self._is_ai_generated = is_ai_generated
 
     def to_dict(self):
         """

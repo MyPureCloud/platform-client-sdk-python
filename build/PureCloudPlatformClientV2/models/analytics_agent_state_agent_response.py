@@ -54,7 +54,13 @@ class AnalyticsAgentStateAgentResponse(object):
             'user_name': 'str',
             'manager_id': 'str',
             'session_count': 'int',
-            'sessions': 'list[AnalyticsAgentStateAgentSessionResult]'
+            'sessions': 'list[AnalyticsAgentStateAgentSessionResult]',
+            'system_presence': 'str',
+            'organization_presence_id': 'str',
+            'presence_date': 'datetime',
+            'routing_status': 'str',
+            'routing_status_date': 'datetime',
+            'is_out_of_office': 'bool'
         }
 
         self.attribute_map = {
@@ -63,7 +69,13 @@ class AnalyticsAgentStateAgentResponse(object):
             'user_name': 'userName',
             'manager_id': 'managerId',
             'session_count': 'sessionCount',
-            'sessions': 'sessions'
+            'sessions': 'sessions',
+            'system_presence': 'systemPresence',
+            'organization_presence_id': 'organizationPresenceId',
+            'presence_date': 'presenceDate',
+            'routing_status': 'routingStatus',
+            'routing_status_date': 'routingStatusDate',
+            'is_out_of_office': 'isOutOfOffice'
         }
 
         self._user_id = None
@@ -72,6 +84,12 @@ class AnalyticsAgentStateAgentResponse(object):
         self._manager_id = None
         self._session_count = None
         self._sessions = None
+        self._system_presence = None
+        self._organization_presence_id = None
+        self._presence_date = None
+        self._routing_status = None
+        self._routing_status_date = None
+        self._is_out_of_office = None
 
     @property
     def user_id(self) -> str:
@@ -216,6 +234,160 @@ class AnalyticsAgentStateAgentResponse(object):
         
 
         self._sessions = sessions
+
+    @property
+    def system_presence(self) -> str:
+        """
+        Gets the system_presence of this AnalyticsAgentStateAgentResponse.
+        The user's system presence
+
+        :return: The system_presence of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._system_presence
+
+    @system_presence.setter
+    def system_presence(self, system_presence: str) -> None:
+        """
+        Sets the system_presence of this AnalyticsAgentStateAgentResponse.
+        The user's system presence
+
+        :param system_presence: The system_presence of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        if isinstance(system_presence, int):
+            system_presence = str(system_presence)
+        allowed_values = ["UNKNOWN", "AVAILABLE", "AWAY", "BUSY", "OFFLINE", "IDLE", "ON_QUEUE", "MEAL", "TRAINING", "MEETING", "BREAK"]
+        if system_presence.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for system_presence -> " + system_presence)
+            self._system_presence = "outdated_sdk_version"
+        else:
+            self._system_presence = system_presence
+
+    @property
+    def organization_presence_id(self) -> str:
+        """
+        Gets the organization_presence_id of this AnalyticsAgentStateAgentResponse.
+        The identifier for the user's organization presence
+
+        :return: The organization_presence_id of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._organization_presence_id
+
+    @organization_presence_id.setter
+    def organization_presence_id(self, organization_presence_id: str) -> None:
+        """
+        Sets the organization_presence_id of this AnalyticsAgentStateAgentResponse.
+        The identifier for the user's organization presence
+
+        :param organization_presence_id: The organization_presence_id of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        
+
+        self._organization_presence_id = organization_presence_id
+
+    @property
+    def presence_date(self) -> datetime:
+        """
+        Gets the presence_date of this AnalyticsAgentStateAgentResponse.
+        The timestamp for when the user's presence began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The presence_date of this AnalyticsAgentStateAgentResponse.
+        :rtype: datetime
+        """
+        return self._presence_date
+
+    @presence_date.setter
+    def presence_date(self, presence_date: datetime) -> None:
+        """
+        Sets the presence_date of this AnalyticsAgentStateAgentResponse.
+        The timestamp for when the user's presence began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param presence_date: The presence_date of this AnalyticsAgentStateAgentResponse.
+        :type: datetime
+        """
+        
+
+        self._presence_date = presence_date
+
+    @property
+    def routing_status(self) -> str:
+        """
+        Gets the routing_status of this AnalyticsAgentStateAgentResponse.
+        The user's routing status
+
+        :return: The routing_status of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._routing_status
+
+    @routing_status.setter
+    def routing_status(self, routing_status: str) -> None:
+        """
+        Sets the routing_status of this AnalyticsAgentStateAgentResponse.
+        The user's routing status
+
+        :param routing_status: The routing_status of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        if isinstance(routing_status, int):
+            routing_status = str(routing_status)
+        allowed_values = ["UNKNOWN", "OFF_QUEUE", "IDLE", "INTERACTING", "NOT_RESPONDING", "COMMUNICATING"]
+        if routing_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for routing_status -> " + routing_status)
+            self._routing_status = "outdated_sdk_version"
+        else:
+            self._routing_status = routing_status
+
+    @property
+    def routing_status_date(self) -> datetime:
+        """
+        Gets the routing_status_date of this AnalyticsAgentStateAgentResponse.
+        The timestamp for when the user's routing status began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The routing_status_date of this AnalyticsAgentStateAgentResponse.
+        :rtype: datetime
+        """
+        return self._routing_status_date
+
+    @routing_status_date.setter
+    def routing_status_date(self, routing_status_date: datetime) -> None:
+        """
+        Sets the routing_status_date of this AnalyticsAgentStateAgentResponse.
+        The timestamp for when the user's routing status began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param routing_status_date: The routing_status_date of this AnalyticsAgentStateAgentResponse.
+        :type: datetime
+        """
+        
+
+        self._routing_status_date = routing_status_date
+
+    @property
+    def is_out_of_office(self) -> bool:
+        """
+        Gets the is_out_of_office of this AnalyticsAgentStateAgentResponse.
+        Whether the user is out of office
+
+        :return: The is_out_of_office of this AnalyticsAgentStateAgentResponse.
+        :rtype: bool
+        """
+        return self._is_out_of_office
+
+    @is_out_of_office.setter
+    def is_out_of_office(self, is_out_of_office: bool) -> None:
+        """
+        Sets the is_out_of_office of this AnalyticsAgentStateAgentResponse.
+        Whether the user is out of office
+
+        :param is_out_of_office: The is_out_of_office of this AnalyticsAgentStateAgentResponse.
+        :type: bool
+        """
+        
+
+        self._is_out_of_office = is_out_of_office
 
     def to_dict(self):
         """

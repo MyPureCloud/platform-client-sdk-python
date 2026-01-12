@@ -50,28 +50,28 @@ class LogCaptureDownloadExecutionResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'user': 'AddressableEntityRef',
             'state': 'str',
             'date_start': 'datetime',
             'file_url': 'str',
-            'self_uri': 'str',
-            'user': 'AddressableEntityRef'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'user': 'user',
             'state': 'state',
             'date_start': 'dateStart',
             'file_url': 'fileUrl',
-            'self_uri': 'selfUri',
-            'user': 'user'
+            'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._user = None
         self._state = None
         self._date_start = None
         self._file_url = None
         self._self_uri = None
-        self._user = None
 
     @property
     def id(self) -> str:
@@ -96,6 +96,30 @@ class LogCaptureDownloadExecutionResponse(object):
         
 
         self._id = id
+
+    @property
+    def user(self) -> 'AddressableEntityRef':
+        """
+        Gets the user of this LogCaptureDownloadExecutionResponse.
+        Details of the user that created the job
+
+        :return: The user of this LogCaptureDownloadExecutionResponse.
+        :rtype: AddressableEntityRef
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user: 'AddressableEntityRef') -> None:
+        """
+        Sets the user of this LogCaptureDownloadExecutionResponse.
+        Details of the user that created the job
+
+        :param user: The user of this LogCaptureDownloadExecutionResponse.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._user = user
 
     @property
     def state(self) -> str:
@@ -197,30 +221,6 @@ class LogCaptureDownloadExecutionResponse(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def user(self) -> 'AddressableEntityRef':
-        """
-        Gets the user of this LogCaptureDownloadExecutionResponse.
-        Details of the user that created the job
-
-        :return: The user of this LogCaptureDownloadExecutionResponse.
-        :rtype: AddressableEntityRef
-        """
-        return self._user
-
-    @user.setter
-    def user(self, user: 'AddressableEntityRef') -> None:
-        """
-        Sets the user of this LogCaptureDownloadExecutionResponse.
-        Details of the user that created the job
-
-        :param user: The user of this LogCaptureDownloadExecutionResponse.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._user = user
 
     def to_dict(self):
         """

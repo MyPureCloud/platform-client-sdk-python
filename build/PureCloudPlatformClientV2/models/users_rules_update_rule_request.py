@@ -51,18 +51,21 @@ class UsersRulesUpdateRuleRequest(object):
         self.swagger_types = {
             'name': 'str',
             'description': 'str',
-            'criteria': 'list[UsersRulesCriteria]'
+            'criteria': 'list[UsersRulesCriteria]',
+            'locked_criteria': 'list[UsersRulesCriteria]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
-            'criteria': 'criteria'
+            'criteria': 'criteria',
+            'locked_criteria': 'lockedCriteria'
         }
 
         self._name = None
         self._description = None
         self._criteria = None
+        self._locked_criteria = None
 
     @property
     def name(self) -> str:
@@ -135,6 +138,30 @@ class UsersRulesUpdateRuleRequest(object):
         
 
         self._criteria = criteria
+
+    @property
+    def locked_criteria(self) -> List['UsersRulesCriteria']:
+        """
+        Gets the locked_criteria of this UsersRulesUpdateRuleRequest.
+
+
+        :return: The locked_criteria of this UsersRulesUpdateRuleRequest.
+        :rtype: list[UsersRulesCriteria]
+        """
+        return self._locked_criteria
+
+    @locked_criteria.setter
+    def locked_criteria(self, locked_criteria: List['UsersRulesCriteria']) -> None:
+        """
+        Sets the locked_criteria of this UsersRulesUpdateRuleRequest.
+
+
+        :param locked_criteria: The locked_criteria of this UsersRulesUpdateRuleRequest.
+        :type: list[UsersRulesCriteria]
+        """
+        
+
+        self._locked_criteria = locked_criteria
 
     def to_dict(self):
         """

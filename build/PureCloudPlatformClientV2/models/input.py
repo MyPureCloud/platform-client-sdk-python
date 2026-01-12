@@ -52,7 +52,9 @@ class Input(object):
             'subtitle': 'str',
             'placeholder_text': 'str',
             'is_multiple_line': 'bool',
-            'is_required': 'bool'
+            'is_required': 'bool',
+            'keyboard_type': 'str',
+            'auto_complete_type': 'str'
         }
 
         self.attribute_map = {
@@ -61,7 +63,9 @@ class Input(object):
             'subtitle': 'subtitle',
             'placeholder_text': 'placeholderText',
             'is_multiple_line': 'isMultipleLine',
-            'is_required': 'isRequired'
+            'is_required': 'isRequired',
+            'keyboard_type': 'keyboardType',
+            'auto_complete_type': 'autoCompleteType'
         }
 
         self._id = None
@@ -70,6 +74,8 @@ class Input(object):
         self._placeholder_text = None
         self._is_multiple_line = None
         self._is_required = None
+        self._keyboard_type = None
+        self._auto_complete_type = None
 
     @property
     def id(self) -> str:
@@ -214,6 +220,64 @@ class Input(object):
         
 
         self._is_required = is_required
+
+    @property
+    def keyboard_type(self) -> str:
+        """
+        Gets the keyboard_type of this Input.
+        Type of keyboard to be shown
+
+        :return: The keyboard_type of this Input.
+        :rtype: str
+        """
+        return self._keyboard_type
+
+    @keyboard_type.setter
+    def keyboard_type(self, keyboard_type: str) -> None:
+        """
+        Sets the keyboard_type of this Input.
+        Type of keyboard to be shown
+
+        :param keyboard_type: The keyboard_type of this Input.
+        :type: str
+        """
+        if isinstance(keyboard_type, int):
+            keyboard_type = str(keyboard_type)
+        allowed_values = ["Default", "NumberPunctuation", "Number", "Phone", "Email", "Decimal", "Websearch", "URL"]
+        if keyboard_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for keyboard_type -> " + keyboard_type)
+            self._keyboard_type = "outdated_sdk_version"
+        else:
+            self._keyboard_type = keyboard_type
+
+    @property
+    def auto_complete_type(self) -> str:
+        """
+        Gets the auto_complete_type of this Input.
+        A string value representing the keyboard and system information about the expected semantic meaning for the content that users enter
+
+        :return: The auto_complete_type of this Input.
+        :rtype: str
+        """
+        return self._auto_complete_type
+
+    @auto_complete_type.setter
+    def auto_complete_type(self, auto_complete_type: str) -> None:
+        """
+        Sets the auto_complete_type of this Input.
+        A string value representing the keyboard and system information about the expected semantic meaning for the content that users enter
+
+        :param auto_complete_type: The auto_complete_type of this Input.
+        :type: str
+        """
+        if isinstance(auto_complete_type, int):
+            auto_complete_type = str(auto_complete_type)
+        allowed_values = ["Prefix", "Name", "GivenName", "MiddleName", "FamilyName", "Suffix", "Nickname", "Title", "Organization", "Location", "StreetAddress", "Addressline1", "Addressline2", "City", "State", "Country", "PostalCode", "Username", "OneTimeCode", "Email", "Phone", "PaymentCardNumber", "PaymentCardExpiration", "PaymentCardExpirationMonth", "PaymentCardExpirationYear", "PaymentCardSecurityCode", "PaymentCardType", "PaymentCardName", "PaymentCardGivenName", "PaymentCardMiddleName", "PaymentCardFamilyName", "Birthdate", "BirthdateDay", "BirthdateMonth", "BirthdateYear", "DateTime", "FlightNumber", "Url"]
+        if auto_complete_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for auto_complete_type -> " + auto_complete_type)
+            self._auto_complete_type = "outdated_sdk_version"
+        else:
+            self._auto_complete_type = auto_complete_type
 
     def to_dict(self):
         """

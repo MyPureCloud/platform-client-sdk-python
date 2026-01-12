@@ -32,6 +32,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AgentStateIsOutOfOfficeCount
+    from . import AgentStatePresenceCount
+    from . import AgentStateRoutingStatusCount
     from . import AgentStateSegmentTypeCount
 
 class AnalyticsAgentStateCountsResponse(object):
@@ -49,14 +52,23 @@ class AnalyticsAgentStateCountsResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'segment_counts': 'list[AgentStateSegmentTypeCount]'
+            'segment_counts': 'list[AgentStateSegmentTypeCount]',
+            'presence_counts': 'list[AgentStatePresenceCount]',
+            'routing_status_counts': 'list[AgentStateRoutingStatusCount]',
+            'is_out_of_office_counts': 'list[AgentStateIsOutOfOfficeCount]'
         }
 
         self.attribute_map = {
-            'segment_counts': 'segmentCounts'
+            'segment_counts': 'segmentCounts',
+            'presence_counts': 'presenceCounts',
+            'routing_status_counts': 'routingStatusCounts',
+            'is_out_of_office_counts': 'isOutOfOfficeCounts'
         }
 
         self._segment_counts = None
+        self._presence_counts = None
+        self._routing_status_counts = None
+        self._is_out_of_office_counts = None
 
     @property
     def segment_counts(self) -> List['AgentStateSegmentTypeCount']:
@@ -81,6 +93,78 @@ class AnalyticsAgentStateCountsResponse(object):
         
 
         self._segment_counts = segment_counts
+
+    @property
+    def presence_counts(self) -> List['AgentStatePresenceCount']:
+        """
+        Gets the presence_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by presences
+
+        :return: The presence_counts of this AnalyticsAgentStateCountsResponse.
+        :rtype: list[AgentStatePresenceCount]
+        """
+        return self._presence_counts
+
+    @presence_counts.setter
+    def presence_counts(self, presence_counts: List['AgentStatePresenceCount']) -> None:
+        """
+        Sets the presence_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by presences
+
+        :param presence_counts: The presence_counts of this AnalyticsAgentStateCountsResponse.
+        :type: list[AgentStatePresenceCount]
+        """
+        
+
+        self._presence_counts = presence_counts
+
+    @property
+    def routing_status_counts(self) -> List['AgentStateRoutingStatusCount']:
+        """
+        Gets the routing_status_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by routing statuses
+
+        :return: The routing_status_counts of this AnalyticsAgentStateCountsResponse.
+        :rtype: list[AgentStateRoutingStatusCount]
+        """
+        return self._routing_status_counts
+
+    @routing_status_counts.setter
+    def routing_status_counts(self, routing_status_counts: List['AgentStateRoutingStatusCount']) -> None:
+        """
+        Sets the routing_status_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by routing statuses
+
+        :param routing_status_counts: The routing_status_counts of this AnalyticsAgentStateCountsResponse.
+        :type: list[AgentStateRoutingStatusCount]
+        """
+        
+
+        self._routing_status_counts = routing_status_counts
+
+    @property
+    def is_out_of_office_counts(self) -> List['AgentStateIsOutOfOfficeCount']:
+        """
+        Gets the is_out_of_office_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by out of office states
+
+        :return: The is_out_of_office_counts of this AnalyticsAgentStateCountsResponse.
+        :rtype: list[AgentStateIsOutOfOfficeCount]
+        """
+        return self._is_out_of_office_counts
+
+    @is_out_of_office_counts.setter
+    def is_out_of_office_counts(self, is_out_of_office_counts: List['AgentStateIsOutOfOfficeCount']) -> None:
+        """
+        Sets the is_out_of_office_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by out of office states
+
+        :param is_out_of_office_counts: The is_out_of_office_counts of this AnalyticsAgentStateCountsResponse.
+        :type: list[AgentStateIsOutOfOfficeCount]
+        """
+        
+
+        self._is_out_of_office_counts = is_out_of_office_counts
 
     def to_dict(self):
         """

@@ -6,11 +6,11 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **flow** | [AddressableEntityRef](AddressableEntityRef) | The identifier of the flow. | |
 | **version** | str | The version of the flow. | |
 | **type** | str | The type of the flow. | |
 | **count** | int | Count of all journeys that include this element in the given flow. | |
-| **flow** | [AddressableEntityRef](AddressableEntityRef) | The identifier of the flow. | |
 
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

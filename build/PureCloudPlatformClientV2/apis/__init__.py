@@ -34,6 +34,7 @@ from .groups_api import GroupsApi
 from .identity_provider_api import IdentityProviderApi
 from .infrastructure_as_code_api import InfrastructureAsCodeApi
 from .integrations_api import IntegrationsApi
+from .intents_api import IntentsApi
 from .journey_api import JourneyApi
 from .knowledge_api import KnowledgeApi
 from .language_understanding_api import LanguageUnderstandingApi
@@ -117,6 +118,7 @@ from .groups_api import GroupsApi
 from .identity_provider_api import IdentityProviderApi
 from .infrastructure_as_code_api import InfrastructureAsCodeApi
 from .integrations_api import IntegrationsApi
+from .intents_api import IntentsApi
 from .journey_api import JourneyApi
 from .knowledge_api import KnowledgeApi
 from .language_understanding_api import LanguageUnderstandingApi

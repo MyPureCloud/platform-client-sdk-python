@@ -217,4 +217,4 @@ except ApiException as e:
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

@@ -41,6 +41,7 @@ if TYPE_CHECKING:
     from . import Evaluation
     from . import InternalMessage
     from . import Message
+    from . import ScreenMonitoring
     from . import Screenshare
     from . import SocialExpression
     from . import Video
@@ -100,6 +101,8 @@ class Participant(object):
             'cobrowsesessions': 'list[Cobrowsesession]',
             'emails': 'list[Email]',
             'messages': 'list[Message]',
+            'internal_messages': 'list[InternalMessage]',
+            'screen_monitorings': 'list[ScreenMonitoring]',
             'screenshares': 'list[Screenshare]',
             'social_expressions': 'list[SocialExpression]',
             'videos': 'list[Video]',
@@ -108,7 +111,6 @@ class Participant(object):
             'flagged_reason': 'str',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
-            'internal_messages': 'list[InternalMessage]',
             'barged_participant_id': 'str'
         }
 
@@ -152,6 +154,8 @@ class Participant(object):
             'cobrowsesessions': 'cobrowsesessions',
             'emails': 'emails',
             'messages': 'messages',
+            'internal_messages': 'internalMessages',
+            'screen_monitorings': 'screenMonitorings',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
@@ -160,7 +164,6 @@ class Participant(object):
             'flagged_reason': 'flaggedReason',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
-            'internal_messages': 'internalMessages',
             'barged_participant_id': 'bargedParticipantId'
         }
 
@@ -203,6 +206,8 @@ class Participant(object):
         self._cobrowsesessions = None
         self._emails = None
         self._messages = None
+        self._internal_messages = None
+        self._screen_monitorings = None
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
@@ -211,7 +216,6 @@ class Participant(object):
         self._flagged_reason = None
         self._start_acw_time = None
         self._end_acw_time = None
-        self._internal_messages = None
         self._barged_participant_id = None
 
     @property
@@ -1156,6 +1160,54 @@ class Participant(object):
         self._messages = messages
 
     @property
+    def internal_messages(self) -> List['InternalMessage']:
+        """
+        Gets the internal_messages of this Participant.
+
+
+        :return: The internal_messages of this Participant.
+        :rtype: list[InternalMessage]
+        """
+        return self._internal_messages
+
+    @internal_messages.setter
+    def internal_messages(self, internal_messages: List['InternalMessage']) -> None:
+        """
+        Sets the internal_messages of this Participant.
+
+
+        :param internal_messages: The internal_messages of this Participant.
+        :type: list[InternalMessage]
+        """
+        
+
+        self._internal_messages = internal_messages
+
+    @property
+    def screen_monitorings(self) -> List['ScreenMonitoring']:
+        """
+        Gets the screen_monitorings of this Participant.
+
+
+        :return: The screen_monitorings of this Participant.
+        :rtype: list[ScreenMonitoring]
+        """
+        return self._screen_monitorings
+
+    @screen_monitorings.setter
+    def screen_monitorings(self, screen_monitorings: List['ScreenMonitoring']) -> None:
+        """
+        Sets the screen_monitorings of this Participant.
+
+
+        :param screen_monitorings: The screen_monitorings of this Participant.
+        :type: list[ScreenMonitoring]
+        """
+        
+
+        self._screen_monitorings = screen_monitorings
+
+    @property
     def screenshares(self) -> List['Screenshare']:
         """
         Gets the screenshares of this Participant.
@@ -1356,30 +1408,6 @@ class Participant(object):
         
 
         self._end_acw_time = end_acw_time
-
-    @property
-    def internal_messages(self) -> List['InternalMessage']:
-        """
-        Gets the internal_messages of this Participant.
-
-
-        :return: The internal_messages of this Participant.
-        :rtype: list[InternalMessage]
-        """
-        return self._internal_messages
-
-    @internal_messages.setter
-    def internal_messages(self, internal_messages: List['InternalMessage']) -> None:
-        """
-        Sets the internal_messages of this Participant.
-
-
-        :param internal_messages: The internal_messages of this Participant.
-        :type: list[InternalMessage]
-        """
-        
-
-        self._internal_messages = internal_messages
 
     @property
     def barged_participant_id(self) -> str:

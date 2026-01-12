@@ -54,9 +54,9 @@ class FlowPathsElement(object):
             'type': 'str',
             'count': 'int',
             'flows': 'list[FlowPathsFlowDetails]',
-            'flow_outcome_value': 'str',
             'flow_milestone': 'AddressableEntityRef',
-            'flow_outcome': 'AddressableEntityRef'
+            'flow_outcome': 'AddressableEntityRef',
+            'flow_outcome_value': 'str'
         }
 
         self.attribute_map = {
@@ -64,18 +64,18 @@ class FlowPathsElement(object):
             'type': 'type',
             'count': 'count',
             'flows': 'flows',
-            'flow_outcome_value': 'flowOutcomeValue',
             'flow_milestone': 'flowMilestone',
-            'flow_outcome': 'flowOutcome'
+            'flow_outcome': 'flowOutcome',
+            'flow_outcome_value': 'flowOutcomeValue'
         }
 
         self._parent_id = None
         self._type = None
         self._count = None
         self._flows = None
-        self._flow_outcome_value = None
         self._flow_milestone = None
         self._flow_outcome = None
+        self._flow_outcome_value = None
 
     @property
     def parent_id(self) -> str:
@@ -179,35 +179,6 @@ class FlowPathsElement(object):
         self._flows = flows
 
     @property
-    def flow_outcome_value(self) -> str:
-        """
-        Gets the flow_outcome_value of this FlowPathsElement.
-        The value of the flow outcome, if the element type is Outcome.
-
-        :return: The flow_outcome_value of this FlowPathsElement.
-        :rtype: str
-        """
-        return self._flow_outcome_value
-
-    @flow_outcome_value.setter
-    def flow_outcome_value(self, flow_outcome_value: str) -> None:
-        """
-        Sets the flow_outcome_value of this FlowPathsElement.
-        The value of the flow outcome, if the element type is Outcome.
-
-        :param flow_outcome_value: The flow_outcome_value of this FlowPathsElement.
-        :type: str
-        """
-        if isinstance(flow_outcome_value, int):
-            flow_outcome_value = str(flow_outcome_value)
-        allowed_values = ["FAILURE", "SUCCESS", "UNKNOWN"]
-        if flow_outcome_value.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for flow_outcome_value -> " + flow_outcome_value)
-            self._flow_outcome_value = "outdated_sdk_version"
-        else:
-            self._flow_outcome_value = flow_outcome_value
-
-    @property
     def flow_milestone(self) -> 'AddressableEntityRef':
         """
         Gets the flow_milestone of this FlowPathsElement.
@@ -254,6 +225,35 @@ class FlowPathsElement(object):
         
 
         self._flow_outcome = flow_outcome
+
+    @property
+    def flow_outcome_value(self) -> str:
+        """
+        Gets the flow_outcome_value of this FlowPathsElement.
+        The value of the flow outcome, if the element type is Outcome.
+
+        :return: The flow_outcome_value of this FlowPathsElement.
+        :rtype: str
+        """
+        return self._flow_outcome_value
+
+    @flow_outcome_value.setter
+    def flow_outcome_value(self, flow_outcome_value: str) -> None:
+        """
+        Sets the flow_outcome_value of this FlowPathsElement.
+        The value of the flow outcome, if the element type is Outcome.
+
+        :param flow_outcome_value: The flow_outcome_value of this FlowPathsElement.
+        :type: str
+        """
+        if isinstance(flow_outcome_value, int):
+            flow_outcome_value = str(flow_outcome_value)
+        allowed_values = ["FAILURE", "SUCCESS", "UNKNOWN"]
+        if flow_outcome_value.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for flow_outcome_value -> " + flow_outcome_value)
+            self._flow_outcome_value = "outdated_sdk_version"
+        else:
+            self._flow_outcome_value = flow_outcome_value
 
     def to_dict(self):
         """

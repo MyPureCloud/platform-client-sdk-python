@@ -57,7 +57,8 @@ class BuRescheduleRequest(object):
             'do_not_change_shift_start_times': 'bool',
             'do_not_change_manually_edited_shifts': 'bool',
             'activity_smoothing_type': 'str',
-            'induce_schedule_variability': 'bool'
+            'induce_schedule_variability': 'bool',
+            'use_unavailable_times_snapshot': 'bool'
         }
 
         self.attribute_map = {
@@ -71,7 +72,8 @@ class BuRescheduleRequest(object):
             'do_not_change_shift_start_times': 'doNotChangeShiftStartTimes',
             'do_not_change_manually_edited_shifts': 'doNotChangeManuallyEditedShifts',
             'activity_smoothing_type': 'activitySmoothingType',
-            'induce_schedule_variability': 'induceScheduleVariability'
+            'induce_schedule_variability': 'induceScheduleVariability',
+            'use_unavailable_times_snapshot': 'useUnavailableTimesSnapshot'
         }
 
         self._start_date = None
@@ -85,6 +87,7 @@ class BuRescheduleRequest(object):
         self._do_not_change_manually_edited_shifts = None
         self._activity_smoothing_type = None
         self._induce_schedule_variability = None
+        self._use_unavailable_times_snapshot = None
 
     @property
     def start_date(self) -> datetime:
@@ -354,6 +357,30 @@ class BuRescheduleRequest(object):
         
 
         self._induce_schedule_variability = induce_schedule_variability
+
+    @property
+    def use_unavailable_times_snapshot(self) -> bool:
+        """
+        Gets the use_unavailable_times_snapshot of this BuRescheduleRequest.
+        Whether to use original unavailable times from schedule generation or latest saved unavailable times for this reschedule run
+
+        :return: The use_unavailable_times_snapshot of this BuRescheduleRequest.
+        :rtype: bool
+        """
+        return self._use_unavailable_times_snapshot
+
+    @use_unavailable_times_snapshot.setter
+    def use_unavailable_times_snapshot(self, use_unavailable_times_snapshot: bool) -> None:
+        """
+        Sets the use_unavailable_times_snapshot of this BuRescheduleRequest.
+        Whether to use original unavailable times from schedule generation or latest saved unavailable times for this reschedule run
+
+        :param use_unavailable_times_snapshot: The use_unavailable_times_snapshot of this BuRescheduleRequest.
+        :type: bool
+        """
+        
+
+        self._use_unavailable_times_snapshot = use_unavailable_times_snapshot
 
     def to_dict(self):
         """

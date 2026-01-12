@@ -6396,12 +6396,13 @@ class AnalyticsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param AgentStateCountsRequest body: query (required)
+        :param list[str] group_by: Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType
         :return: AnalyticsAgentStateCountsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'group_by']
         all_params.append('callback')
 
         params = locals()
@@ -6423,6 +6424,8 @@ class AnalyticsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'group_by' in params:
+            query_params['groupBy'] = params['group_by']
 
         header_params = {}
 

@@ -53,31 +53,32 @@ class BotFlowSession(object):
         self.swagger_types = {
             'id': 'str',
             'flow': 'Entity',
+            'conversation': 'AddressableEntityRef',
             'channel': 'BotChannel',
             'language': 'str',
             'end_language': 'str',
             'bot_result': 'str',
             'bot_result_category': 'str',
             'date_created': 'datetime',
-            'date_completed': 'datetime',
-            'conversation': 'AddressableEntityRef'
+            'date_completed': 'datetime'
         }
 
         self.attribute_map = {
             'id': 'id',
             'flow': 'flow',
+            'conversation': 'conversation',
             'channel': 'channel',
             'language': 'language',
             'end_language': 'endLanguage',
             'bot_result': 'botResult',
             'bot_result_category': 'botResultCategory',
             'date_created': 'dateCreated',
-            'date_completed': 'dateCompleted',
-            'conversation': 'conversation'
+            'date_completed': 'dateCompleted'
         }
 
         self._id = None
         self._flow = None
+        self._conversation = None
         self._channel = None
         self._language = None
         self._end_language = None
@@ -85,7 +86,6 @@ class BotFlowSession(object):
         self._bot_result_category = None
         self._date_created = None
         self._date_completed = None
-        self._conversation = None
 
     @property
     def id(self) -> str:
@@ -134,6 +134,30 @@ class BotFlowSession(object):
         
 
         self._flow = flow
+
+    @property
+    def conversation(self) -> 'AddressableEntityRef':
+        """
+        Gets the conversation of this BotFlowSession.
+        The conversation details, across potentially multiple Bot Flow sessions.
+
+        :return: The conversation of this BotFlowSession.
+        :rtype: AddressableEntityRef
+        """
+        return self._conversation
+
+    @conversation.setter
+    def conversation(self, conversation: 'AddressableEntityRef') -> None:
+        """
+        Sets the conversation of this BotFlowSession.
+        The conversation details, across potentially multiple Bot Flow sessions.
+
+        :param conversation: The conversation of this BotFlowSession.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._conversation = conversation
 
     @property
     def channel(self) -> 'BotChannel':
@@ -312,30 +336,6 @@ class BotFlowSession(object):
         
 
         self._date_completed = date_completed
-
-    @property
-    def conversation(self) -> 'AddressableEntityRef':
-        """
-        Gets the conversation of this BotFlowSession.
-        The conversation details, across potentially multiple Bot Flow sessions.
-
-        :return: The conversation of this BotFlowSession.
-        :rtype: AddressableEntityRef
-        """
-        return self._conversation
-
-    @conversation.setter
-    def conversation(self, conversation: 'AddressableEntityRef') -> None:
-        """
-        Sets the conversation of this BotFlowSession.
-        The conversation details, across potentially multiple Bot Flow sessions.
-
-        :param conversation: The conversation of this BotFlowSession.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._conversation = conversation
 
     def to_dict(self):
         """

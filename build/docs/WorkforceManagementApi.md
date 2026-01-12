@@ -136,6 +136,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_timeoffrequest**](#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequest_waitlistpositions**](#get_workforcemanagement_timeoffrequest_waitlistpositions) | Get the daily waitlist positions of a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequests**](#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
+|[**get_workforcemanagement_unavailabletimes_settings**](#get_workforcemanagement_unavailabletimes_settings) | Get availability management unit&#39;s settings for agent|
+|[**get_workforcemanagement_unavailabletimes_validation_job**](#get_workforcemanagement_unavailabletimes_validation_job) | Query agent unavailable times validation job|
 |[**get_workforcemanagement_user_workplanbidranks**](#get_workforcemanagement_user_workplanbidranks) | Get work plan bid ranks for a user|
 |[**get_workforcemanagement_workplanbid_preferences**](#get_workforcemanagement_workplanbid_preferences) | Gets an agent&#39;s work plan bidding preference|
 |[**get_workforcemanagement_workplanbid_workplans**](#get_workforcemanagement_workplanbid_workplans) | Gets an agent&#39;s work plans for a bid|
@@ -162,11 +164,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit_timeofflimit**](#patch_workforcemanagement_managementunit_timeofflimit) | Updates a time off limit object.|
 |[**patch_workforcemanagement_managementunit_timeoffplan**](#patch_workforcemanagement_managementunit_timeoffplan) | Updates a time off plan|
 |[**patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus**](#patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus) | Set integration status for a time off request.|
+|[**patch_workforcemanagement_managementunit_unavailabletimes_settings**](#patch_workforcemanagement_managementunit_unavailabletimes_settings) | Update management unit availability settings|
 |[**patch_workforcemanagement_managementunit_user_timeoffrequest**](#patch_workforcemanagement_managementunit_user_timeoffrequest) | Update a time off request|
 |[**patch_workforcemanagement_managementunit_week_shifttrade**](#patch_workforcemanagement_managementunit_week_shifttrade) | Updates a shift trade. This route can only be called by the initiating agent|
 |[**patch_workforcemanagement_managementunit_workplan**](#patch_workforcemanagement_managementunit_workplan) | Update a work plan|
 |[**patch_workforcemanagement_managementunit_workplanrotation**](#patch_workforcemanagement_managementunit_workplanrotation) | Update a work plan rotation|
 |[**patch_workforcemanagement_timeoffrequest**](#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
+|[**patch_workforcemanagement_unavailabletimes**](#patch_workforcemanagement_unavailabletimes) | Update agent unavailable times|
 |[**patch_workforcemanagement_user_workplanbidranks**](#patch_workforcemanagement_user_workplanbidranks) | Update work plan bid ranks for a user|
 |[**patch_workforcemanagement_users_workplanbidranks_bulk**](#patch_workforcemanagement_users_workplanbidranks_bulk) | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.|
 |[**patch_workforcemanagement_workplanbid_preferences**](#patch_workforcemanagement_workplanbid_preferences) | Update an agent&#39;s work plan bidding preference|
@@ -176,6 +180,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_adherence_historical_bulk**](#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
 |[**post_workforcemanagement_agent_adherence_explanations**](#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
+|[**post_workforcemanagement_agent_unavailabletimes_query**](#post_workforcemanagement_agent_unavailabletimes_query) | Get agent unavailable times|
 |[**post_workforcemanagement_agents**](#post_workforcemanagement_agents) | Move agents in and out of management unit|
 |[**post_workforcemanagement_agents_integrations_hris_query**](#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
 |[**post_workforcemanagement_agents_me_adherence_historical_jobs**](#post_workforcemanagement_agents_me_adherence_historical_jobs) | Request an agent historical adherence report|
@@ -207,6 +212,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_timeofflimits**](#post_workforcemanagement_businessunit_timeofflimits) | Creates a new time-off limit object|
 |[**post_workforcemanagement_businessunit_timeofflimits_values_query**](#post_workforcemanagement_businessunit_timeofflimits_values_query) | Retrieves time-off limit related values based on a given set of filters.|
 |[**post_workforcemanagement_businessunit_timeoffplans**](#post_workforcemanagement_businessunit_timeoffplans) | Creates a new time-off plan|
+|[**post_workforcemanagement_businessunit_unavailabletimes_schedules_query**](#post_workforcemanagement_businessunit_unavailabletimes_schedules_query) | Get agent schedule generation unavailable times|
+|[**post_workforcemanagement_businessunit_unavailabletimes_settings_query**](#post_workforcemanagement_businessunit_unavailabletimes_settings_query) | Query availability management units settings|
 |[**post_workforcemanagement_businessunit_week_schedule_agentschedules_query**](#post_workforcemanagement_businessunit_week_schedule_agentschedules_query) | Loads agent schedule data from the schedule. Used in combination with the metadata route|
 |[**post_workforcemanagement_businessunit_week_schedule_copy**](#post_workforcemanagement_businessunit_week_schedule_copy) | Copy a schedule|
 |[**post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations**](#post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations) | Request a daily recalculation of the performance prediction for the associated schedule|
@@ -265,6 +272,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_timeoffrequests**](#post_workforcemanagement_timeoffrequests) | Create a time off request for the current user|
 |[**post_workforcemanagement_timeoffrequests_estimate**](#post_workforcemanagement_timeoffrequests_estimate) | Estimates available time off for current user|
 |[**post_workforcemanagement_timeoffrequests_integrationstatus_query**](#post_workforcemanagement_timeoffrequests_integrationstatus_query) | Retrieves integration statuses for a list of current user time off requests|
+|[**post_workforcemanagement_unavailabletimes_query**](#post_workforcemanagement_unavailabletimes_query) | Get agent unavailable times|
+|[**post_workforcemanagement_unavailabletimes_validation_jobs**](#post_workforcemanagement_unavailabletimes_validation_jobs) | Validates proposed changes to an agent&#39;s unavailable time spans against scheduling rules and constraints for a specific week|
 |[**put_workforcemanagement_agent_integrations_hris**](#put_workforcemanagement_agent_integrations_hris) | Update integrations for agent|
 |[**put_workforcemanagement_businessunit_timeofflimit_values**](#put_workforcemanagement_businessunit_timeofflimit_values) | Sets daily values for a date range of time-off limit object|
 |[**put_workforcemanagement_managementunit_timeofflimit_values**](#put_workforcemanagement_managementunit_timeofflimit_values) | Sets daily values for a date range of time off limit object|
@@ -7116,6 +7125,98 @@ This endpoint does not need any parameters.
 [**TimeOffRequestList**](TimeOffRequestList)
 
 
+## get_workforcemanagement_unavailabletimes_settings
+
+> [**ManagementUnitAvailabilitySettingsResponse**](ManagementUnitAvailabilitySettingsResponse) get_workforcemanagement_unavailabletimes_settings()
+
+
+Get availability management unit's settings for agent
+
+Wraps GET /api/v2/workforcemanagement/unavailabletimes/settings 
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Get availability management unit's settings for agent
+    api_response = api_instance.get_workforcemanagement_unavailabletimes_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_unavailabletimes_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**ManagementUnitAvailabilitySettingsResponse**](ManagementUnitAvailabilitySettingsResponse)
+
+
+## get_workforcemanagement_unavailabletimes_validation_job
+
+> [**QueryAgentUnavailableTimesValidationJobResponse**](QueryAgentUnavailableTimesValidationJobResponse) get_workforcemanagement_unavailabletimes_validation_job(job_id)
+
+
+Query agent unavailable times validation job
+
+Wraps GET /api/v2/workforcemanagement/unavailabletimes/validation/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Query agent unavailable times validation job
+    api_response = api_instance.get_workforcemanagement_unavailabletimes_validation_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_unavailabletimes_validation_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**QueryAgentUnavailableTimesValidationJobResponse**](QueryAgentUnavailableTimesValidationJobResponse)
+
+
 ## get_workforcemanagement_user_workplanbidranks
 
 > [**WorkPlanBidRanks**](WorkPlanBidRanks) get_workforcemanagement_user_workplanbidranks(user_id)
@@ -8442,6 +8543,56 @@ except ApiException as e:
 [**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse)
 
 
+## patch_workforcemanagement_managementunit_unavailabletimes_settings
+
+> [**ManagementUnitAvailabilitySettingsResponse**](ManagementUnitAvailabilitySettingsResponse) patch_workforcemanagement_managementunit_unavailabletimes_settings(management_unit_id, body)
+
+
+Update management unit availability settings
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/unavailabletimes/settings 
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
+body = PureCloudPlatformClientV2.UpdateManagementUnitsSettingsRequest() # UpdateManagementUnitsSettingsRequest | body
+
+try:
+    # Update management unit availability settings
+    api_response = api_instance.patch_workforcemanagement_managementunit_unavailabletimes_settings(management_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_unavailabletimes_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit |  |
+| **body** | [**UpdateManagementUnitsSettingsRequest**](UpdateManagementUnitsSettingsRequest)| body |  |
+
+### Return type
+
+[**ManagementUnitAvailabilitySettingsResponse**](ManagementUnitAvailabilitySettingsResponse)
+
+
 ## patch_workforcemanagement_managementunit_user_timeoffrequest
 
 > [**TimeOffRequestResponse**](TimeOffRequestResponse) patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, body)
@@ -8704,6 +8855,54 @@ except ApiException as e:
 ### Return type
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse)
+
+
+## patch_workforcemanagement_unavailabletimes
+
+> [**UnavailableTimeListing**](UnavailableTimeListing) patch_workforcemanagement_unavailabletimes(body)
+
+
+Update agent unavailable times
+
+Wraps PATCH /api/v2/workforcemanagement/unavailabletimes 
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.UpdateUnavailableTimesRequest() # UpdateUnavailableTimesRequest | body
+
+try:
+    # Update agent unavailable times
+    api_response = api_instance.patch_workforcemanagement_unavailabletimes(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_unavailabletimes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UpdateUnavailableTimesRequest**](UpdateUnavailableTimesRequest)| body |  |
+
+### Return type
+
+[**UnavailableTimeListing**](UnavailableTimeListing)
 
 
 ## patch_workforcemanagement_user_workplanbidranks
@@ -9155,6 +9354,56 @@ except ApiException as e:
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse)
+
+
+## post_workforcemanagement_agent_unavailabletimes_query
+
+> [**UnavailableTimeListing**](UnavailableTimeListing) post_workforcemanagement_agent_unavailabletimes_query(agent_id, body)
+
+
+Get agent unavailable times
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes/query 
+
+Requires ANY permissions: 
+
+* wfm:unavailableTimes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent
+body = PureCloudPlatformClientV2.QueryAgentUnavailableTimesRequest() # QueryAgentUnavailableTimesRequest | body
+
+try:
+    # Get agent unavailable times
+    api_response = api_instance.post_workforcemanagement_agent_unavailabletimes_query(agent_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agent_unavailabletimes_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent |  |
+| **body** | [**QueryAgentUnavailableTimesRequest**](QueryAgentUnavailableTimesRequest)| body |  |
+
+### Return type
+
+[**UnavailableTimeListing**](UnavailableTimeListing)
 
 
 ## post_workforcemanagement_agents
@@ -10720,6 +10969,106 @@ except ApiException as e:
 ### Return type
 
 [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse)
+
+
+## post_workforcemanagement_businessunit_unavailabletimes_schedules_query
+
+> [**QueryAgentScheduleUnavailableTimesResponse**](QueryAgentScheduleUnavailableTimesResponse) post_workforcemanagement_businessunit_unavailabletimes_schedules_query(business_unit_id, body)
+
+
+Get agent schedule generation unavailable times
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/schedules/query 
+
+Requires ANY permissions: 
+
+* wfm:unavailableTimes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryAgentScheduleUnavailableTimesRequest() # QueryAgentScheduleUnavailableTimesRequest | body
+
+try:
+    # Get agent schedule generation unavailable times
+    api_response = api_instance.post_workforcemanagement_businessunit_unavailabletimes_schedules_query(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_unavailabletimes_schedules_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryAgentScheduleUnavailableTimesRequest**](QueryAgentScheduleUnavailableTimesRequest)| body |  |
+
+### Return type
+
+[**QueryAgentScheduleUnavailableTimesResponse**](QueryAgentScheduleUnavailableTimesResponse)
+
+
+## post_workforcemanagement_businessunit_unavailabletimes_settings_query
+
+> [**QueryAvailabilityManagementUnitsSettingsResponse**](QueryAvailabilityManagementUnitsSettingsResponse) post_workforcemanagement_businessunit_unavailabletimes_settings_query(business_unit_id, body)
+
+
+Query availability management units settings
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/unavailabletimes/settings/query 
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryAvailabilityManagementUnitsSettingsRequest() # QueryAvailabilityManagementUnitsSettingsRequest | body
+
+try:
+    # Query availability management units settings
+    api_response = api_instance.post_workforcemanagement_businessunit_unavailabletimes_settings_query(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_unavailabletimes_settings_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryAvailabilityManagementUnitsSettingsRequest**](QueryAvailabilityManagementUnitsSettingsRequest)| body |  |
+
+### Return type
+
+[**QueryAvailabilityManagementUnitsSettingsResponse**](QueryAvailabilityManagementUnitsSettingsResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_agentschedules_query
@@ -13737,6 +14086,102 @@ except ApiException as e:
 [**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing)
 
 
+## post_workforcemanagement_unavailabletimes_query
+
+> [**UnavailableTimeListing**](UnavailableTimeListing) post_workforcemanagement_unavailabletimes_query(body)
+
+
+Get agent unavailable times
+
+Wraps POST /api/v2/workforcemanagement/unavailabletimes/query 
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.QueryAgentUnavailableTimesRequest() # QueryAgentUnavailableTimesRequest | body
+
+try:
+    # Get agent unavailable times
+    api_response = api_instance.post_workforcemanagement_unavailabletimes_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_unavailabletimes_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QueryAgentUnavailableTimesRequest**](QueryAgentUnavailableTimesRequest)| body |  |
+
+### Return type
+
+[**UnavailableTimeListing**](UnavailableTimeListing)
+
+
+## post_workforcemanagement_unavailabletimes_validation_jobs
+
+> [**ValidateAgentUnavailableTimesResponse**](ValidateAgentUnavailableTimesResponse) post_workforcemanagement_unavailabletimes_validation_jobs(body)
+
+
+Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+
+Wraps POST /api/v2/workforcemanagement/unavailabletimes/validation/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentUnavailableTimes:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.ValidateAgentUnavailableTimesRequest() # ValidateAgentUnavailableTimesRequest | body
+
+try:
+    # Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week
+    api_response = api_instance.post_workforcemanagement_unavailabletimes_validation_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_unavailabletimes_validation_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ValidateAgentUnavailableTimesRequest**](ValidateAgentUnavailableTimesRequest)| body |  |
+
+### Return type
+
+[**ValidateAgentUnavailableTimesResponse**](ValidateAgentUnavailableTimesResponse)
+
+
 ## put_workforcemanagement_agent_integrations_hris
 
 > [**AgentIntegrationsResponse**](AgentIntegrationsResponse) put_workforcemanagement_agent_integrations_hris(agent_id, body)
@@ -13895,4 +14340,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_

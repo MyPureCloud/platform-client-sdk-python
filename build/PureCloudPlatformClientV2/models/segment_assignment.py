@@ -54,23 +54,23 @@ class SegmentAssignment(object):
             'date_assigned': 'datetime',
             'date_for_unassignment': 'datetime',
             'segment': 'SegmentAssignmentSegment',
-            'session': 'SegmentAssignmentSession',
-            'external_contact': 'AddressableEntityRef'
+            'external_contact': 'AddressableEntityRef',
+            'session': 'SegmentAssignmentSession'
         }
 
         self.attribute_map = {
             'date_assigned': 'dateAssigned',
             'date_for_unassignment': 'dateForUnassignment',
             'segment': 'segment',
-            'session': 'session',
-            'external_contact': 'externalContact'
+            'external_contact': 'externalContact',
+            'session': 'session'
         }
 
         self._date_assigned = None
         self._date_for_unassignment = None
         self._segment = None
-        self._session = None
         self._external_contact = None
+        self._session = None
 
     @property
     def date_assigned(self) -> datetime:
@@ -145,30 +145,6 @@ class SegmentAssignment(object):
         self._segment = segment
 
     @property
-    def session(self) -> 'SegmentAssignmentSession':
-        """
-        Gets the session of this SegmentAssignment.
-        For session-scoped segments, the session for which the segment was assigned.
-
-        :return: The session of this SegmentAssignment.
-        :rtype: SegmentAssignmentSession
-        """
-        return self._session
-
-    @session.setter
-    def session(self, session: 'SegmentAssignmentSession') -> None:
-        """
-        Sets the session of this SegmentAssignment.
-        For session-scoped segments, the session for which the segment was assigned.
-
-        :param session: The session of this SegmentAssignment.
-        :type: SegmentAssignmentSession
-        """
-        
-
-        self._session = session
-
-    @property
     def external_contact(self) -> 'AddressableEntityRef':
         """
         Gets the external_contact of this SegmentAssignment.
@@ -191,6 +167,30 @@ class SegmentAssignment(object):
         
 
         self._external_contact = external_contact
+
+    @property
+    def session(self) -> 'SegmentAssignmentSession':
+        """
+        Gets the session of this SegmentAssignment.
+        For session-scoped segments, the session for which the segment was assigned.
+
+        :return: The session of this SegmentAssignment.
+        :rtype: SegmentAssignmentSession
+        """
+        return self._session
+
+    @session.setter
+    def session(self, session: 'SegmentAssignmentSession') -> None:
+        """
+        Sets the session of this SegmentAssignment.
+        For session-scoped segments, the session for which the segment was assigned.
+
+        :param session: The session of this SegmentAssignment.
+        :type: SegmentAssignmentSession
+        """
+        
+
+        self._session = session
 
     def to_dict(self):
         """

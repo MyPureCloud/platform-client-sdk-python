@@ -57,6 +57,7 @@ class ReportingTurn(object):
             'user_input': 'str',
             'bot_prompts': 'list[str]',
             'session_id': 'str',
+            'conversation': 'AddressableEntityRef',
             'ask_action': 'ReportingTurnAction',
             'intent': 'ReportingTurnIntent',
             'knowledge': 'ReportingTurnKnowledge',
@@ -64,14 +65,14 @@ class ReportingTurn(object):
             'date_created': 'datetime',
             'date_completed': 'datetime',
             'ask_action_result': 'str',
-            'session_end_details': 'SessionEndDetails',
-            'conversation': 'AddressableEntityRef'
+            'session_end_details': 'SessionEndDetails'
         }
 
         self.attribute_map = {
             'user_input': 'userInput',
             'bot_prompts': 'botPrompts',
             'session_id': 'sessionId',
+            'conversation': 'conversation',
             'ask_action': 'askAction',
             'intent': 'intent',
             'knowledge': 'knowledge',
@@ -79,13 +80,13 @@ class ReportingTurn(object):
             'date_created': 'dateCreated',
             'date_completed': 'dateCompleted',
             'ask_action_result': 'askActionResult',
-            'session_end_details': 'sessionEndDetails',
-            'conversation': 'conversation'
+            'session_end_details': 'sessionEndDetails'
         }
 
         self._user_input = None
         self._bot_prompts = None
         self._session_id = None
+        self._conversation = None
         self._ask_action = None
         self._intent = None
         self._knowledge = None
@@ -94,7 +95,6 @@ class ReportingTurn(object):
         self._date_completed = None
         self._ask_action_result = None
         self._session_end_details = None
-        self._conversation = None
 
     @property
     def user_input(self) -> str:
@@ -167,6 +167,30 @@ class ReportingTurn(object):
         
 
         self._session_id = session_id
+
+    @property
+    def conversation(self) -> 'AddressableEntityRef':
+        """
+        Gets the conversation of this ReportingTurn.
+        The conversation details, across potentially multiple Bot Flow sessions.
+
+        :return: The conversation of this ReportingTurn.
+        :rtype: AddressableEntityRef
+        """
+        return self._conversation
+
+    @conversation.setter
+    def conversation(self, conversation: 'AddressableEntityRef') -> None:
+        """
+        Sets the conversation of this ReportingTurn.
+        The conversation details, across potentially multiple Bot Flow sessions.
+
+        :param conversation: The conversation of this ReportingTurn.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._conversation = conversation
 
     @property
     def ask_action(self) -> 'ReportingTurnAction':
@@ -364,30 +388,6 @@ class ReportingTurn(object):
         
 
         self._session_end_details = session_end_details
-
-    @property
-    def conversation(self) -> 'AddressableEntityRef':
-        """
-        Gets the conversation of this ReportingTurn.
-        The conversation details, across potentially multiple Bot Flow sessions.
-
-        :return: The conversation of this ReportingTurn.
-        :rtype: AddressableEntityRef
-        """
-        return self._conversation
-
-    @conversation.setter
-    def conversation(self, conversation: 'AddressableEntityRef') -> None:
-        """
-        Sets the conversation of this ReportingTurn.
-        The conversation details, across potentially multiple Bot Flow sessions.
-
-        :param conversation: The conversation of this ReportingTurn.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._conversation = conversation
 
     def to_dict(self):
         """

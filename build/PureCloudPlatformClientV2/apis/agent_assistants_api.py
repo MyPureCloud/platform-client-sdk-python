@@ -43,6 +43,8 @@ from ..models import AssistantQueue
 from ..models import AssistantQueueListing
 from ..models import AssistantQueueUsersBulkAddRequest
 from ..models import AssistantQueueUsersBulkRemoveRequest
+from ..models import AssistantQueueUsersJobsRequest
+from ..models import AssistantQueueUsersJobsResponse
 from ..models import AssistantQueueUsersQueryRequest
 from ..models import AssistantQueueUsersQueryResponse
 from ..models import BulkResponse
@@ -550,6 +552,96 @@ class AgentAssistantsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AssistantQueue',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_assistant_queue_users_job(self, assistant_id: str, queue_id: str, job_id: str, **kwargs) -> 'AssistantQueueUsersJobsResponse':
+        """
+        Get job details.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_assistant_queue_users_job(assistant_id, queue_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assistant_id: Assistant ID (required)
+        :param str queue_id: Queue ID (required)
+        :param str job_id: Job ID (required)
+        :return: AssistantQueueUsersJobsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assistant_id', 'queue_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_assistant_queue_users_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assistant_id' is set
+        if ('assistant_id' not in params) or (params['assistant_id'] is None):
+            raise ValueError("Missing the required parameter `assistant_id` when calling `get_assistant_queue_users_job`")
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `get_assistant_queue_users_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_assistant_queue_users_job`")
+
+
+        resource_path = '/api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'assistant_id' in params:
+            path_params['assistantId'] = params['assistant_id']
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AssistantQueueUsersJobsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1412,6 +1504,96 @@ class AgentAssistantsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BulkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_assistant_queue_users_jobs(self, assistant_id: str, queue_id: str, body: 'AssistantQueueUsersJobsRequest', **kwargs) -> 'AssistantQueueUsersJobsResponse':
+        """
+        Start a new job to assistant-queue.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_assistant_queue_users_jobs(assistant_id, queue_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assistant_id: Assistant ID (required)
+        :param str queue_id: Queue ID (required)
+        :param AssistantQueueUsersJobsRequest body:  (required)
+        :return: AssistantQueueUsersJobsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assistant_id', 'queue_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_assistant_queue_users_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assistant_id' is set
+        if ('assistant_id' not in params) or (params['assistant_id'] is None):
+            raise ValueError("Missing the required parameter `assistant_id` when calling `post_assistant_queue_users_jobs`")
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `post_assistant_queue_users_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_assistant_queue_users_jobs`")
+
+
+        resource_path = '/api/v2/assistants/{assistantId}/queues/{queueId}/users/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'assistant_id' in params:
+            path_params['assistantId'] = params['assistant_id']
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AssistantQueueUsersJobsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

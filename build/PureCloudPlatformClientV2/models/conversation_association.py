@@ -159,7 +159,7 @@ class ConversationAssociation(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["CALL", "CALLBACK", "CHAT", "COBROWSE", "EMAIL", "MESSAGE", "INTERNAL_MESSAGE", "SOCIAL_EXPRESSION", "VIDEO", "SCREENSHARE"]
+        allowed_values = ["CALL", "CALLBACK", "CHAT", "COBROWSE", "EMAIL", "MESSAGE", "INTERNAL_MESSAGE", "SCREEN_MONITORING", "SOCIAL_EXPRESSION", "VIDEO", "SCREENSHARE"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

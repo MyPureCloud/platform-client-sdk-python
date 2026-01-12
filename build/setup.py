@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "PureCloudPlatformClientV2"
-VERSION = "246.1.0"
+VERSION = "247.0.0"
 
 # To install the library, run the following
 #
@@ -17,7 +17,7 @@ REQUIRES = ["urllib3 >= 2.5.0", "certifi >= 2025.01.31", "python-dateutil >= 2.9
 
 setup(
     name="PureCloudPlatformClientV2",
-    version="246.1.0",
+    version="247.0.0",
     description="PureCloud Platform API SDK",
     author="Genesys Developer Evangelists",
     author_email="DeveloperEvangelists@Genesys.com",

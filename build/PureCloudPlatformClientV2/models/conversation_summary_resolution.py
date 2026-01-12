@@ -47,23 +47,47 @@ class ConversationSummaryResolution(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'confidence': 'float',
             'text': 'str',
             'description': 'str',
-            'confidence': 'float',
             'outcome': 'str'
         }
 
         self.attribute_map = {
+            'confidence': 'confidence',
             'text': 'text',
             'description': 'description',
-            'confidence': 'confidence',
             'outcome': 'outcome'
         }
 
+        self._confidence = None
         self._text = None
         self._description = None
-        self._confidence = None
         self._outcome = None
+
+    @property
+    def confidence(self) -> float:
+        """
+        Gets the confidence of this ConversationSummaryResolution.
+        The AI confidence value.
+
+        :return: The confidence of this ConversationSummaryResolution.
+        :rtype: float
+        """
+        return self._confidence
+
+    @confidence.setter
+    def confidence(self, confidence: float) -> None:
+        """
+        Sets the confidence of this ConversationSummaryResolution.
+        The AI confidence value.
+
+        :param confidence: The confidence of this ConversationSummaryResolution.
+        :type: float
+        """
+        
+
+        self._confidence = confidence
 
     @property
     def text(self) -> str:
@@ -112,30 +136,6 @@ class ConversationSummaryResolution(object):
         
 
         self._description = description
-
-    @property
-    def confidence(self) -> float:
-        """
-        Gets the confidence of this ConversationSummaryResolution.
-        The AI confidence value.
-
-        :return: The confidence of this ConversationSummaryResolution.
-        :rtype: float
-        """
-        return self._confidence
-
-    @confidence.setter
-    def confidence(self, confidence: float) -> None:
-        """
-        Sets the confidence of this ConversationSummaryResolution.
-        The AI confidence value.
-
-        :param confidence: The confidence of this ConversationSummaryResolution.
-        :type: float
-        """
-        
-
-        self._confidence = confidence
 
     @property
     def outcome(self) -> str:

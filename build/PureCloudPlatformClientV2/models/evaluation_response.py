@@ -62,6 +62,7 @@ class EvaluationResponse(object):
             'evaluation_form': 'EvaluationFormResponse',
             'evaluator': 'User',
             'agent': 'User',
+            'calibration': 'AddressableEntityRef',
             'status': 'str',
             'answers': 'EvaluationScoringSet',
             'agent_has_read': 'bool',
@@ -87,8 +88,7 @@ class EvaluationResponse(object):
             'has_assistance_failed': 'bool',
             'evaluation_source': 'EvaluationSource',
             'ai_scoring': 'AiScoring',
-            'self_uri': 'str',
-            'calibration': 'AddressableEntityRef'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
@@ -98,6 +98,7 @@ class EvaluationResponse(object):
             'evaluation_form': 'evaluationForm',
             'evaluator': 'evaluator',
             'agent': 'agent',
+            'calibration': 'calibration',
             'status': 'status',
             'answers': 'answers',
             'agent_has_read': 'agentHasRead',
@@ -123,8 +124,7 @@ class EvaluationResponse(object):
             'has_assistance_failed': 'hasAssistanceFailed',
             'evaluation_source': 'evaluationSource',
             'ai_scoring': 'aiScoring',
-            'self_uri': 'selfUri',
-            'calibration': 'calibration'
+            'self_uri': 'selfUri'
         }
 
         self._id = None
@@ -133,6 +133,7 @@ class EvaluationResponse(object):
         self._evaluation_form = None
         self._evaluator = None
         self._agent = None
+        self._calibration = None
         self._status = None
         self._answers = None
         self._agent_has_read = None
@@ -159,7 +160,6 @@ class EvaluationResponse(object):
         self._evaluation_source = None
         self._ai_scoring = None
         self._self_uri = None
-        self._calibration = None
 
     @property
     def id(self) -> str:
@@ -304,6 +304,30 @@ class EvaluationResponse(object):
         
 
         self._agent = agent
+
+    @property
+    def calibration(self) -> 'AddressableEntityRef':
+        """
+        Gets the calibration of this EvaluationResponse.
+
+
+        :return: The calibration of this EvaluationResponse.
+        :rtype: AddressableEntityRef
+        """
+        return self._calibration
+
+    @calibration.setter
+    def calibration(self, calibration: 'AddressableEntityRef') -> None:
+        """
+        Sets the calibration of this EvaluationResponse.
+
+
+        :param calibration: The calibration of this EvaluationResponse.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._calibration = calibration
 
     @property
     def status(self) -> str:
@@ -938,30 +962,6 @@ class EvaluationResponse(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def calibration(self) -> 'AddressableEntityRef':
-        """
-        Gets the calibration of this EvaluationResponse.
-
-
-        :return: The calibration of this EvaluationResponse.
-        :rtype: AddressableEntityRef
-        """
-        return self._calibration
-
-    @calibration.setter
-    def calibration(self, calibration: 'AddressableEntityRef') -> None:
-        """
-        Sets the calibration of this EvaluationResponse.
-
-
-        :param calibration: The calibration of this EvaluationResponse.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._calibration = calibration
 
     def to_dict(self):
         """

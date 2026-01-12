@@ -36,6 +36,8 @@ from typing import Any
 
 from ..models import Empty
 from ..models import AgentActivityEntityListing
+from ..models import AgentScoringRule
+from ..models import AgentScoringRuleEntityListing
 from ..models import AiScoringSettings
 from ..models import AsyncQueryResponse
 from ..models import AsyncQueryStatus
@@ -618,6 +620,90 @@ class QualityApi(object):
         path_params = {}
         if 'form_id' in params:
             path_params['formId'] = params['form_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_quality_program_agentscoringrule(self, program_id: str, rule_id: str, **kwargs) -> None:
+        """
+        Delete an Agent Scoring Rule
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_quality_program_agentscoringrule(program_id, rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: Program ID from Speech and Text Analytics (required)
+        :param str rule_id: Agent Scoring Rule ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id', 'rule_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_quality_program_agentscoringrule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `delete_quality_program_agentscoringrule`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `delete_quality_program_agentscoringrule`")
+
+
+        resource_path = '/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
 
         query_params = {}
 
@@ -1949,12 +2035,13 @@ class QualityApi(object):
         :param str form_id: Form ID (required)
         :param int page_size: Page size
         :param int page_number: Page number
+        :param str sort_order: Sort order
         :return: EvaluationFormResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['form_id', 'page_size', 'page_number']
+        all_params = ['form_id', 'page_size', 'page_number', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1982,6 +2069,8 @@ class QualityApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 
@@ -2864,6 +2953,168 @@ class QualityApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[SurveyForm]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_program_agentscoringrule(self, program_id: str, rule_id: str, **kwargs) -> 'AgentScoringRule':
+        """
+        Get an Agent Scoring Rule
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_program_agentscoringrule(program_id, rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: Program ID from Speech and Text Analytics (required)
+        :param str rule_id: Agent Scoring Rule ID (required)
+        :return: AgentScoringRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id', 'rule_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_program_agentscoringrule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `get_quality_program_agentscoringrule`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `get_quality_program_agentscoringrule`")
+
+
+        resource_path = '/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentScoringRule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_program_agentscoringrules(self, program_id: str, **kwargs) -> 'AgentScoringRuleEntityListing':
+        """
+        Get Agent Scoring Rules for a program
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_program_agentscoringrules(program_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: Program ID from Speech and Text Analytics (required)
+        :return: AgentScoringRuleEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_program_agentscoringrules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `get_quality_program_agentscoringrules`")
+
+
+        resource_path = '/api/v2/quality/programs/{programId}/agentscoringrules'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentScoringRuleEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4547,6 +4798,90 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_quality_program_agentscoringrules(self, program_id: str, body: 'AgentScoringRule', **kwargs) -> 'AgentScoringRule':
+        """
+        Create an Agent Scoring Rule
+        Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_quality_program_agentscoringrules(program_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: Program ID from Speech and Text Analytics (required)
+        :param AgentScoringRule body: Agent Scoring Rule (required)
+        :return: AgentScoringRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_quality_program_agentscoringrules" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `post_quality_program_agentscoringrules`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_quality_program_agentscoringrules`")
+
+
+        resource_path = '/api/v2/quality/programs/{programId}/agentscoringrules'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentScoringRule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("post_quality_publishedforms is deprecated")
     def post_quality_publishedforms(self, body: 'PublishForm', **kwargs) -> 'EvaluationFormResponse':
         """
@@ -5370,6 +5705,96 @@ class QualityApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='SurveyForm',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_quality_program_agentscoringrule(self, program_id: str, rule_id: str, body: 'AgentScoringRule', **kwargs) -> 'AgentScoringRule':
+        """
+        Update an Agent Scoring Rule
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_quality_program_agentscoringrule(program_id, rule_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: Program ID from Speech and Text Analytics (required)
+        :param str rule_id: Agent Scoring Rule ID (required)
+        :param AgentScoringRule body: Agent Scoring Rule (required)
+        :return: AgentScoringRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id', 'rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_quality_program_agentscoringrule" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `put_quality_program_agentscoringrule`")
+        # verify the required parameter 'rule_id' is set
+        if ('rule_id' not in params) or (params['rule_id'] is None):
+            raise ValueError("Missing the required parameter `rule_id` when calling `put_quality_program_agentscoringrule`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_quality_program_agentscoringrule`")
+
+
+        resource_path = '/api/v2/quality/programs/{programId}/agentscoringrules/{ruleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+        if 'rule_id' in params:
+            path_params['ruleId'] = params['rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentScoringRule',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

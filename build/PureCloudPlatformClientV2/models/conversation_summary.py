@@ -54,7 +54,9 @@ class ConversationSummary(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'text': 'str',
+            'confidence': 'float',
             'status': 'str',
             'media_type': 'str',
             'language': 'str',
@@ -64,13 +66,13 @@ class ConversationSummary(object):
             'followup': 'ConversationSummaryFollowup',
             'resolution': 'ConversationSummaryResolution',
             'date_created': 'datetime',
-            'id': 'str',
-            'confidence': 'float',
             'participants': 'list[AddressableEntityRef]'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'text': 'text',
+            'confidence': 'confidence',
             'status': 'status',
             'media_type': 'mediaType',
             'language': 'language',
@@ -80,12 +82,12 @@ class ConversationSummary(object):
             'followup': 'followup',
             'resolution': 'resolution',
             'date_created': 'dateCreated',
-            'id': 'id',
-            'confidence': 'confidence',
             'participants': 'participants'
         }
 
+        self._id = None
         self._text = None
+        self._confidence = None
         self._status = None
         self._media_type = None
         self._language = None
@@ -95,9 +97,31 @@ class ConversationSummary(object):
         self._followup = None
         self._resolution = None
         self._date_created = None
-        self._id = None
-        self._confidence = None
         self._participants = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ConversationSummary.
+        The id of the summary.
+
+        :return: The id of this ConversationSummary.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ConversationSummary.
+        The id of the summary.
+
+        :param id: The id of this ConversationSummary.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def text(self) -> str:
@@ -122,6 +146,30 @@ class ConversationSummary(object):
         
 
         self._text = text
+
+    @property
+    def confidence(self) -> float:
+        """
+        Gets the confidence of this ConversationSummary.
+        The AI confidence value.
+
+        :return: The confidence of this ConversationSummary.
+        :rtype: float
+        """
+        return self._confidence
+
+    @confidence.setter
+    def confidence(self, confidence: float) -> None:
+        """
+        Sets the confidence of this ConversationSummary.
+        The AI confidence value.
+
+        :param confidence: The confidence of this ConversationSummary.
+        :type: float
+        """
+        
+
+        self._confidence = confidence
 
     @property
     def status(self) -> str:
@@ -348,54 +396,6 @@ class ConversationSummary(object):
         
 
         self._date_created = date_created
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this ConversationSummary.
-        The id of the summary.
-
-        :return: The id of this ConversationSummary.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this ConversationSummary.
-        The id of the summary.
-
-        :param id: The id of this ConversationSummary.
-        :type: str
-        """
-        
-
-        self._id = id
-
-    @property
-    def confidence(self) -> float:
-        """
-        Gets the confidence of this ConversationSummary.
-        The AI confidence value.
-
-        :return: The confidence of this ConversationSummary.
-        :rtype: float
-        """
-        return self._confidence
-
-    @confidence.setter
-    def confidence(self, confidence: float) -> None:
-        """
-        Sets the confidence of this ConversationSummary.
-        The AI confidence value.
-
-        :param confidence: The confidence of this ConversationSummary.
-        :type: float
-        """
-        
-
-        self._confidence = confidence
 
     @property
     def participants(self) -> List['AddressableEntityRef']:

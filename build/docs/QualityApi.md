@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_quality_form**](#delete_quality_form) | Delete an evaluation form.|
 |[**delete_quality_forms_evaluation**](#delete_quality_forms_evaluation) | Delete an evaluation form.|
 |[**delete_quality_forms_survey**](#delete_quality_forms_survey) | Delete a survey form.|
+|[**delete_quality_program_agentscoringrule**](#delete_quality_program_agentscoringrule) | Delete an Agent Scoring Rule|
 |[**get_analytics_evaluations_aggregates_job**](#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
 |[**get_analytics_evaluations_aggregates_job_results**](#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_surveys_aggregates_job**](#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
@@ -38,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_forms_surveys**](#get_quality_forms_surveys) | Get the list of survey forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding survey form.|
 |[**get_quality_forms_surveys_bulk**](#get_quality_forms_surveys_bulk) | Retrieve a list of survey forms by their ids|
 |[**get_quality_forms_surveys_bulk_contexts**](#get_quality_forms_surveys_bulk_contexts) | Retrieve a list of the latest form versions by context ids|
+|[**get_quality_program_agentscoringrule**](#get_quality_program_agentscoringrule) | Get an Agent Scoring Rule|
+|[**get_quality_program_agentscoringrules**](#get_quality_program_agentscoringrules) | Get Agent Scoring Rules for a program|
 |[**get_quality_publishedform**](#get_quality_publishedform) | Get the published evaluation forms.|
 |[**get_quality_publishedforms**](#get_quality_publishedforms) | Get the published evaluation forms.|
 |[**get_quality_publishedforms_evaluation**](#get_quality_publishedforms_evaluation) | Get the most recent published version of an evaluation form.|
@@ -59,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_quality_forms**](#post_quality_forms) | Create an evaluation form.|
 |[**post_quality_forms_evaluations**](#post_quality_forms_evaluations) | Create an evaluation form.|
 |[**post_quality_forms_surveys**](#post_quality_forms_surveys) | Create a survey form.|
+|[**post_quality_program_agentscoringrules**](#post_quality_program_agentscoringrules) | Create an Agent Scoring Rule|
 |[**post_quality_publishedforms**](#post_quality_publishedforms) | Publish an evaluation form.|
 |[**post_quality_publishedforms_evaluations**](#post_quality_publishedforms_evaluations) | Publish an evaluation form.|
 |[**post_quality_publishedforms_surveys**](#post_quality_publishedforms_surveys) | Publish a survey form.|
@@ -69,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_quality_forms_evaluation**](#put_quality_forms_evaluation) | Update an evaluation form.|
 |[**put_quality_forms_evaluation_aiscoring_settings**](#put_quality_forms_evaluation_aiscoring_settings) | Update the AI Scoring settings of an evaluation form.|
 |[**put_quality_forms_survey**](#put_quality_forms_survey) | Update a survey form.|
+|[**put_quality_program_agentscoringrule**](#put_quality_program_agentscoringrule) | Update an Agent Scoring Rule|
 |[**put_quality_surveys_scorable**](#put_quality_surveys_scorable) | Update a survey as an end-customer, for the purposes of scoring it.|
 
 
@@ -411,6 +416,55 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_quality_program_agentscoringrule
+
+>  delete_quality_program_agentscoringrule(program_id, rule_id)
+
+
+Delete an Agent Scoring Rule
+
+Wraps DELETE /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId} 
+
+Requires ANY permissions: 
+
+* quality:scoringRule:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+program_id = 'program_id_example' # str | Program ID from Speech and Text Analytics
+rule_id = 'rule_id_example' # str | Agent Scoring Rule ID
+
+try:
+    # Delete an Agent Scoring Rule
+    api_instance.delete_quality_program_agentscoringrule(program_id, rule_id)
+except ApiException as e:
+    print("Exception when calling QualityApi->delete_quality_program_agentscoringrule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| Program ID from Speech and Text Analytics |  |
+| **rule_id** | **str**| Agent Scoring Rule ID |  |
 
 ### Return type
 
@@ -1234,7 +1288,7 @@ except ApiException as e:
 
 ## get_quality_form_versions
 
-> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -1264,10 +1318,11 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 form_id = 'form_id_example' # str | Form ID
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 
 try:
     # Gets all the revisions for a specific evaluation.
-    api_response = api_instance.get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_quality_form_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_form_versions: %s\n" % e)
@@ -1281,6 +1336,7 @@ except ApiException as e:
 | **form_id** | **str**| Form ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
 
 ### Return type
 
@@ -1824,6 +1880,104 @@ except ApiException as e:
 ### Return type
 
 [**list[SurveyForm]**](SurveyForm)
+
+
+## get_quality_program_agentscoringrule
+
+> [**AgentScoringRule**](AgentScoringRule) get_quality_program_agentscoringrule(program_id, rule_id)
+
+
+Get an Agent Scoring Rule
+
+Wraps GET /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId} 
+
+Requires ANY permissions: 
+
+* quality:scoringRule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+program_id = 'program_id_example' # str | Program ID from Speech and Text Analytics
+rule_id = 'rule_id_example' # str | Agent Scoring Rule ID
+
+try:
+    # Get an Agent Scoring Rule
+    api_response = api_instance.get_quality_program_agentscoringrule(program_id, rule_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_program_agentscoringrule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| Program ID from Speech and Text Analytics |  |
+| **rule_id** | **str**| Agent Scoring Rule ID |  |
+
+### Return type
+
+[**AgentScoringRule**](AgentScoringRule)
+
+
+## get_quality_program_agentscoringrules
+
+> [**AgentScoringRuleEntityListing**](AgentScoringRuleEntityListing) get_quality_program_agentscoringrules(program_id)
+
+
+Get Agent Scoring Rules for a program
+
+Wraps GET /api/v2/quality/programs/{programId}/agentscoringrules 
+
+Requires ANY permissions: 
+
+* quality:scoringRule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+program_id = 'program_id_example' # str | Program ID from Speech and Text Analytics
+
+try:
+    # Get Agent Scoring Rules for a program
+    api_response = api_instance.get_quality_program_agentscoringrules(program_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_program_agentscoringrules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| Program ID from Speech and Text Analytics |  |
+
+### Return type
+
+[**AgentScoringRuleEntityListing**](AgentScoringRuleEntityListing)
 
 
 ## get_quality_publishedform
@@ -2867,6 +3021,58 @@ except ApiException as e:
 [**SurveyForm**](SurveyForm)
 
 
+## post_quality_program_agentscoringrules
+
+> [**AgentScoringRule**](AgentScoringRule) post_quality_program_agentscoringrules(program_id, body)
+
+
+Create an Agent Scoring Rule
+
+Creates a new Agent Scoring Rule for AI-powered automated evaluation of agent interactions. The rule defines how interactions should be selected and evaluated using the specified evaluation form.
+
+Wraps POST /api/v2/quality/programs/{programId}/agentscoringrules 
+
+Requires ANY permissions: 
+
+* quality:scoringRule:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+program_id = 'program_id_example' # str | Program ID from Speech and Text Analytics
+body = PureCloudPlatformClientV2.AgentScoringRule() # AgentScoringRule | Agent Scoring Rule
+
+try:
+    # Create an Agent Scoring Rule
+    api_response = api_instance.post_quality_program_agentscoringrules(program_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_quality_program_agentscoringrules: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| Program ID from Speech and Text Analytics |  |
+| **body** | [**AgentScoringRule**](AgentScoringRule)| Agent Scoring Rule |  |
+
+### Return type
+
+[**AgentScoringRule**](AgentScoringRule)
+
+
 ## post_quality_publishedforms
 
 > [**EvaluationFormResponse**](EvaluationFormResponse) post_quality_publishedforms(body)
@@ -3372,6 +3578,58 @@ except ApiException as e:
 [**SurveyForm**](SurveyForm)
 
 
+## put_quality_program_agentscoringrule
+
+> [**AgentScoringRule**](AgentScoringRule) put_quality_program_agentscoringrule(program_id, rule_id, body)
+
+
+Update an Agent Scoring Rule
+
+Wraps PUT /api/v2/quality/programs/{programId}/agentscoringrules/{ruleId} 
+
+Requires ANY permissions: 
+
+* quality:scoringRule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+program_id = 'program_id_example' # str | Program ID from Speech and Text Analytics
+rule_id = 'rule_id_example' # str | Agent Scoring Rule ID
+body = PureCloudPlatformClientV2.AgentScoringRule() # AgentScoringRule | Agent Scoring Rule
+
+try:
+    # Update an Agent Scoring Rule
+    api_response = api_instance.put_quality_program_agentscoringrule(program_id, rule_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->put_quality_program_agentscoringrule: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **program_id** | **str**| Program ID from Speech and Text Analytics |  |
+| **rule_id** | **str**| Agent Scoring Rule ID |  |
+| **body** | [**AgentScoringRule**](AgentScoringRule)| Agent Scoring Rule |  |
+
+### Return type
+
+[**AgentScoringRule**](AgentScoringRule)
+
+
 ## put_quality_surveys_scorable
 
 > [**ScorableSurvey**](ScorableSurvey) put_quality_surveys_scorable(customer_survey_url, body)
@@ -3418,4 +3676,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 246.1.0_
+_PureCloudPlatformClientV2 247.0.0_
