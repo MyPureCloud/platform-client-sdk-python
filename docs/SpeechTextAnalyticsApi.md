@@ -962,7 +962,7 @@ except ApiException as e:
 
 ## get_speechandtextanalytics_program_mappings
 
-> [**ProgramMappings**](ProgramMappings) get_speechandtextanalytics_program_mappings(program_id)
+> [**TopicsDefinitionsProgramMappings**](TopicsDefinitionsProgramMappings) get_speechandtextanalytics_program_mappings(program_id)
 
 
 Get Speech & Text Analytics program mappings to queues and flows by id
@@ -1005,7 +1005,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramMappings**](ProgramMappings)
+[**TopicsDefinitionsProgramMappings**](TopicsDefinitionsProgramMappings)
 
 
 ## get_speechandtextanalytics_program_settings_insights
@@ -1210,7 +1210,7 @@ except ApiException as e:
 
 ## get_speechandtextanalytics_programs_mappings
 
-> [**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing) get_speechandtextanalytics_programs_mappings(next_page=next_page, page_size=page_size)
+> [**TopicsDefinitionsProgramsMappingsEntityListing**](TopicsDefinitionsProgramsMappingsEntityListing) get_speechandtextanalytics_programs_mappings(next_page=next_page, page_size=page_size)
 
 
 Get the list of Speech & Text Analytics programs mappings to queues and flows
@@ -1255,7 +1255,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing)
+[**TopicsDefinitionsProgramsMappingsEntityListing**](TopicsDefinitionsProgramsMappingsEntityListing)
 
 
 ## get_speechandtextanalytics_programs_publishjob
@@ -2923,7 +2923,7 @@ except ApiException as e:
 
 ## put_speechandtextanalytics_program_mappings
 
-> [**ProgramMappings**](ProgramMappings) put_speechandtextanalytics_program_mappings(program_id, body)
+> [**TopicsDefinitionsProgramMappings**](TopicsDefinitionsProgramMappings) put_speechandtextanalytics_program_mappings(program_id, body)
 
 
 Set Speech & Text Analytics program mappings to queues and flows
@@ -2968,7 +2968,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramMappings**](ProgramMappings)
+[**TopicsDefinitionsProgramMappings**](TopicsDefinitionsProgramMappings)
 
 
 ## put_speechandtextanalytics_program_settings_insights
@@ -3170,4 +3170,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

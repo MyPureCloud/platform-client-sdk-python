@@ -19,10 +19,11 @@
 | **counts_as_contiguous_work_time** | bool | Whether the activity duration is counted towards contiguous work time | [optional] |
 | **minimum_length_from_shift_start_minutes** | int | The minimum duration between shift start and shift item (e.g., break or meal) start in minutes | [optional] |
 | **minimum_length_from_shift_end_minutes** | int | The minimum duration between shift item (e.g., break or meal) end and shift end in minutes | [optional] |
+| **maximum_length_from_shift_end_minutes** | int | The maximum duration between shift item (e.g., break or meal) end and shift end in minutes | [optional] |
 | **id** | str | ID of the activity. This is required only for the case of updating an existing activity | [optional] |
 | **delete** | bool | If marked true for updating an existing activity, the activity will be permanently deleted | [optional] |
 | **validation_id** | str | ID of the activity in the context of work plan validation | [optional] |
 
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

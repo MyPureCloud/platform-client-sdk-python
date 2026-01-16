@@ -531,7 +531,7 @@ Get response libraries.
 
 Wraps POST /api/v2/responsemanagement/libraries/bulk 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * responses:library:view
 
@@ -777,7 +777,7 @@ Fields that can be updated: name. The most recent version is required for update
 
 Wraps PUT /api/v2/responsemanagement/libraries/{libraryId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * responses:library:edit
 
@@ -922,4 +922,4 @@ except ApiException as e:
 [**ResponseAsset**](ResponseAsset)
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

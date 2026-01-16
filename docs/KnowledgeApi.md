@@ -52,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_guest_session_documents_search_search_id**](#patch_knowledge_guest_session_documents_search_search_id) | Update search result.|
 |[**patch_knowledge_knowledgebase**](#patch_knowledge_knowledgebase) | Update knowledge base|
 |[**patch_knowledge_knowledgebase_category**](#patch_knowledge_knowledgebase_category) | Update category|
+|[**patch_knowledge_knowledgebase_chunks_search_search_id**](#patch_knowledge_knowledgebase_chunks_search_search_id) | Register chunk search result.|
 |[**patch_knowledge_knowledgebase_document**](#patch_knowledge_knowledgebase_document) | Update document.|
 |[**patch_knowledge_knowledgebase_document_feedback_feedback_id**](#patch_knowledge_knowledgebase_document_feedback_feedback_id) | Update feedback on a document|
 |[**patch_knowledge_knowledgebase_document_variation**](#patch_knowledge_knowledgebase_document_variation) | Update a variation for a document.|
@@ -2568,6 +2569,57 @@ except ApiException as e:
 [**CategoryResponse**](CategoryResponse)
 
 
+## patch_knowledge_knowledgebase_chunks_search_search_id
+
+>  patch_knowledge_knowledgebase_chunks_search_search_id(knowledge_base_id, search_id, body=body)
+
+
+Register chunk search result.
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId} 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgebase:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge Base ID
+search_id = 'search_id_example' # str | Unique identifier of search request
+body = PureCloudPlatformClientV2.ChunkSearchRegisterRequest() # ChunkSearchRegisterRequest |  (optional)
+
+try:
+    # Register chunk search result.
+    api_instance.patch_knowledge_knowledgebase_chunks_search_search_id(knowledge_base_id, search_id, body=body)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_chunks_search_search_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge Base ID |  |
+| **search_id** | **str**| Unique identifier of search request |  |
+| **body** | [**ChunkSearchRegisterRequest**](ChunkSearchRegisterRequest)|  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
 ## patch_knowledge_knowledgebase_document
 
 > [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse) patch_knowledge_knowledgebase_document(knowledge_base_id, document_id, body)
@@ -4980,4 +5032,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

@@ -1,12 +1,12 @@
-# ProgramsMappingsEntityListing
+# TopicsDefinitionsProgramsMappingsEntityListing
 
-## ProgramsMappingsEntityListing
+## TopicsDefinitionsProgramsMappingsEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [list[ProgramMappings]](ProgramMappings) |  | [optional] |
+| **entities** | [list[TopicsDefinitionsProgramMappings]](TopicsDefinitionsProgramMappings) |  | [optional] |
 | **page_size** | int |  | [optional] |
 | **next_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
@@ -14,4 +14,4 @@
 
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_
