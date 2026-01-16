@@ -60,7 +60,7 @@ class LinkConfiguration(object):
     def uri_template(self) -> str:
         """
         Gets the uri_template of this LinkConfiguration.
-
+        Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 400 characters.
 
         :return: The uri_template of this LinkConfiguration.
         :rtype: str
@@ -71,7 +71,7 @@ class LinkConfiguration(object):
     def uri_template(self, uri_template: str) -> None:
         """
         Sets the uri_template of this LinkConfiguration.
-
+        Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 400 characters.
 
         :param uri_template: The uri_template of this LinkConfiguration.
         :type: str

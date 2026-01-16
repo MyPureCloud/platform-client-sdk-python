@@ -60,7 +60,7 @@ class FacebookScopedId(object):
     def scoped_id(self) -> str:
         """
         Gets the scoped_id of this FacebookScopedId.
-        The unique page/app-specific scopedId for the user
+        The unique page/app-specific scopedId for the user. Max: 255 characters.
 
         :return: The scoped_id of this FacebookScopedId.
         :rtype: str
@@ -71,7 +71,7 @@ class FacebookScopedId(object):
     def scoped_id(self, scoped_id: str) -> None:
         """
         Sets the scoped_id of this FacebookScopedId.
-        The unique page/app-specific scopedId for the user
+        The unique page/app-specific scopedId for the user. Max: 255 characters.
 
         :param scoped_id: The scoped_id of this FacebookScopedId.
         :type: str

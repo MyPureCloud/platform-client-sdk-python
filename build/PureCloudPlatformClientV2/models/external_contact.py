@@ -236,7 +236,7 @@ class ExternalContact(object):
     def first_name(self) -> str:
         """
         Gets the first_name of this ExternalContact.
-        The first name of the contact.
+        The first name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :return: The first_name of this ExternalContact.
         :rtype: str
@@ -247,7 +247,7 @@ class ExternalContact(object):
     def first_name(self, first_name: str) -> None:
         """
         Sets the first_name of this ExternalContact.
-        The first name of the contact.
+        The first name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :param first_name: The first_name of this ExternalContact.
         :type: str
@@ -260,7 +260,7 @@ class ExternalContact(object):
     def middle_name(self) -> str:
         """
         Gets the middle_name of this ExternalContact.
-
+        The middle name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :return: The middle_name of this ExternalContact.
         :rtype: str
@@ -271,7 +271,7 @@ class ExternalContact(object):
     def middle_name(self, middle_name: str) -> None:
         """
         Sets the middle_name of this ExternalContact.
-
+        The middle name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :param middle_name: The middle_name of this ExternalContact.
         :type: str
@@ -284,7 +284,7 @@ class ExternalContact(object):
     def last_name(self) -> str:
         """
         Gets the last_name of this ExternalContact.
-        The last name of the contact.
+        The last name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :return: The last_name of this ExternalContact.
         :rtype: str
@@ -295,7 +295,7 @@ class ExternalContact(object):
     def last_name(self, last_name: str) -> None:
         """
         Sets the last_name of this ExternalContact.
-        The last name of the contact.
+        The last name of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :param last_name: The last_name of this ExternalContact.
         :type: str
@@ -308,7 +308,7 @@ class ExternalContact(object):
     def salutation(self) -> str:
         """
         Gets the salutation of this ExternalContact.
-
+        The salutation of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :return: The salutation of this ExternalContact.
         :rtype: str
@@ -319,7 +319,7 @@ class ExternalContact(object):
     def salutation(self, salutation: str) -> None:
         """
         Sets the salutation of this ExternalContact.
-
+        The salutation of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :param salutation: The salutation of this ExternalContact.
         :type: str
@@ -332,7 +332,7 @@ class ExternalContact(object):
     def title(self) -> str:
         """
         Gets the title of this ExternalContact.
-
+        The title of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :return: The title of this ExternalContact.
         :rtype: str
@@ -343,7 +343,7 @@ class ExternalContact(object):
     def title(self, title: str) -> None:
         """
         Sets the title of this ExternalContact.
-
+        The title of the contact. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :param title: The title of this ExternalContact.
         :type: str
@@ -452,7 +452,7 @@ class ExternalContact(object):
     def work_email(self) -> str:
         """
         Gets the work_email of this ExternalContact.
-
+        The work email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
 
         :return: The work_email of this ExternalContact.
         :rtype: str
@@ -463,7 +463,7 @@ class ExternalContact(object):
     def work_email(self, work_email: str) -> None:
         """
         Sets the work_email of this ExternalContact.
-
+        The work email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
 
         :param work_email: The work_email of this ExternalContact.
         :type: str
@@ -476,7 +476,7 @@ class ExternalContact(object):
     def personal_email(self) -> str:
         """
         Gets the personal_email of this ExternalContact.
-
+        The personal email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
 
         :return: The personal_email of this ExternalContact.
         :rtype: str
@@ -487,7 +487,7 @@ class ExternalContact(object):
     def personal_email(self, personal_email: str) -> None:
         """
         Sets the personal_email of this ExternalContact.
-
+        The personal email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
 
         :param personal_email: The personal_email of this ExternalContact.
         :type: str
@@ -500,7 +500,7 @@ class ExternalContact(object):
     def other_email(self) -> str:
         """
         Gets the other_email of this ExternalContact.
-
+        The other email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
 
         :return: The other_email of this ExternalContact.
         :rtype: str
@@ -511,7 +511,7 @@ class ExternalContact(object):
     def other_email(self, other_email: str) -> None:
         """
         Sets the other_email of this ExternalContact.
-
+        The other email of the contact. Max: 256 characters. Leading and trailing whitespace stripped. Valid email format
 
         :param other_email: The other_email of this ExternalContact.
         :type: str
@@ -548,7 +548,7 @@ class ExternalContact(object):
     def twitter_id(self) -> 'TwitterId':
         """
         Gets the twitter_id of this ExternalContact.
-
+        User information for a Twitter account
 
         :return: The twitter_id of this ExternalContact.
         :rtype: TwitterId
@@ -559,7 +559,7 @@ class ExternalContact(object):
     def twitter_id(self, twitter_id: 'TwitterId') -> None:
         """
         Sets the twitter_id of this ExternalContact.
-
+        User information for a Twitter account
 
         :param twitter_id: The twitter_id of this ExternalContact.
         :type: TwitterId
@@ -596,7 +596,7 @@ class ExternalContact(object):
     def whats_app_id(self) -> 'WhatsAppId':
         """
         Gets the whats_app_id of this ExternalContact.
-
+        User information for a WhatsApp account
 
         :return: The whats_app_id of this ExternalContact.
         :rtype: WhatsAppId
@@ -607,7 +607,7 @@ class ExternalContact(object):
     def whats_app_id(self, whats_app_id: 'WhatsAppId') -> None:
         """
         Sets the whats_app_id of this ExternalContact.
-
+        User information for a WhatsApp account
 
         :param whats_app_id: The whats_app_id of this ExternalContact.
         :type: WhatsAppId
@@ -620,7 +620,7 @@ class ExternalContact(object):
     def facebook_id(self) -> 'FacebookId':
         """
         Gets the facebook_id of this ExternalContact.
-
+        User information for a Facebook account
 
         :return: The facebook_id of this ExternalContact.
         :rtype: FacebookId
@@ -631,7 +631,7 @@ class ExternalContact(object):
     def facebook_id(self, facebook_id: 'FacebookId') -> None:
         """
         Sets the facebook_id of this ExternalContact.
-
+        User information for a Facebook account
 
         :param facebook_id: The facebook_id of this ExternalContact.
         :type: FacebookId
@@ -668,7 +668,7 @@ class ExternalContact(object):
     def apple_opaque_ids(self) -> List['AppleOpaqueId']:
         """
         Gets the apple_opaque_ids of this ExternalContact.
-        User information for an Apple account
+        User information for an Apple account. Max: 10 ids
 
         :return: The apple_opaque_ids of this ExternalContact.
         :rtype: list[AppleOpaqueId]
@@ -679,7 +679,7 @@ class ExternalContact(object):
     def apple_opaque_ids(self, apple_opaque_ids: List['AppleOpaqueId']) -> None:
         """
         Sets the apple_opaque_ids of this ExternalContact.
-        User information for an Apple account
+        User information for an Apple account. Max: 10 ids
 
         :param apple_opaque_ids: The apple_opaque_ids of this ExternalContact.
         :type: list[AppleOpaqueId]
@@ -692,7 +692,7 @@ class ExternalContact(object):
     def external_ids(self) -> List['ExternalId']:
         """
         Gets the external_ids of this ExternalContact.
-        A list of external identifiers that identify this contact in an external system
+        A list of external identifiers that identify this contact in an external system. Max: 10 ids
 
         :return: The external_ids of this ExternalContact.
         :rtype: list[ExternalId]
@@ -703,7 +703,7 @@ class ExternalContact(object):
     def external_ids(self, external_ids: List['ExternalId']) -> None:
         """
         Sets the external_ids of this ExternalContact.
-        A list of external identifiers that identify this contact in an external system
+        A list of external identifiers that identify this contact in an external system. Max: 10 ids
 
         :param external_ids: The external_ids of this ExternalContact.
         :type: list[ExternalId]
@@ -836,7 +836,7 @@ class ExternalContact(object):
     def external_system_url(self) -> str:
         """
         Gets the external_system_url of this ExternalContact.
-        A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+        A string that identifies an external system-of-record resource that may have more detailed information on the contact. Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 1000 characters.
 
         :return: The external_system_url of this ExternalContact.
         :rtype: str
@@ -847,7 +847,7 @@ class ExternalContact(object):
     def external_system_url(self, external_system_url: str) -> None:
         """
         Sets the external_system_url of this ExternalContact.
-        A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+        A string that identifies an external system-of-record resource that may have more detailed information on the contact. Should be a valid URL (including the http/https protocol, port, and path [if any]). Leading and trailing whitespace stripped. Max 1000 characters.
 
         :param external_system_url: The external_system_url of this ExternalContact.
         :type: str

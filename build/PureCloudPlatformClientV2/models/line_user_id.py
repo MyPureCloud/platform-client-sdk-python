@@ -60,7 +60,7 @@ class LineUserId(object):
     def user_id(self) -> str:
         """
         Gets the user_id of this LineUserId.
-        The unique channel-specific userId for the user
+        The unique channel-specific userId for the user. Max: 255 characters.
 
         :return: The user_id of this LineUserId.
         :rtype: str
@@ -71,7 +71,7 @@ class LineUserId(object):
     def user_id(self, user_id: str) -> None:
         """
         Sets the user_id of this LineUserId.
-        The unique channel-specific userId for the user
+        The unique channel-specific userId for the user. Max: 255 characters.
 
         :param user_id: The user_id of this LineUserId.
         :type: str

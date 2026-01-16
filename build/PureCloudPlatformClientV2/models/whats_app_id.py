@@ -65,7 +65,7 @@ class WhatsAppId(object):
     def phone_number(self) -> 'PhoneNumber':
         """
         Gets the phone_number of this WhatsAppId.
-        The phone number associated with this WhatsApp account
+        The phone number associated with this WhatsApp account. Requires 'E164 without a leading plus' phone number.
 
         :return: The phone_number of this WhatsAppId.
         :rtype: PhoneNumber
@@ -76,7 +76,7 @@ class WhatsAppId(object):
     def phone_number(self, phone_number: 'PhoneNumber') -> None:
         """
         Sets the phone_number of this WhatsAppId.
-        The phone number associated with this WhatsApp account
+        The phone number associated with this WhatsApp account. Requires 'E164 without a leading plus' phone number.
 
         :param phone_number: The phone_number of this WhatsAppId.
         :type: PhoneNumber
@@ -89,7 +89,7 @@ class WhatsAppId(object):
     def display_name(self) -> str:
         """
         Gets the display_name of this WhatsAppId.
-        The displayName of this person's account in WhatsApp
+        The displayName of this person's account in WhatsApp. Max: 100 characters.
 
         :return: The display_name of this WhatsAppId.
         :rtype: str
@@ -100,7 +100,7 @@ class WhatsAppId(object):
     def display_name(self, display_name: str) -> None:
         """
         Sets the display_name of this WhatsAppId.
-        The displayName of this person's account in WhatsApp
+        The displayName of this person's account in WhatsApp. Max: 100 characters.
 
         :param display_name: The display_name of this WhatsAppId.
         :type: str

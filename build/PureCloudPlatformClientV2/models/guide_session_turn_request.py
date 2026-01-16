@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import GuideSessionInputEvent
     from . import GuideSessionVariable
+    from . import KnowledgeSettings
 
 class GuideSessionTurnRequest(object):
     """
@@ -53,20 +54,23 @@ class GuideSessionTurnRequest(object):
             'input_event': 'GuideSessionInputEvent',
             'language_code': 'str',
             'version': 'str',
-            'input_variables': 'list[GuideSessionVariable]'
+            'input_variables': 'list[GuideSessionVariable]',
+            'knowledge_settings': 'KnowledgeSettings'
         }
 
         self.attribute_map = {
             'input_event': 'inputEvent',
             'language_code': 'languageCode',
             'version': 'version',
-            'input_variables': 'inputVariables'
+            'input_variables': 'inputVariables',
+            'knowledge_settings': 'knowledgeSettings'
         }
 
         self._input_event = None
         self._language_code = None
         self._version = None
         self._input_variables = None
+        self._knowledge_settings = None
 
     @property
     def input_event(self) -> 'GuideSessionInputEvent':
@@ -163,6 +167,30 @@ class GuideSessionTurnRequest(object):
         
 
         self._input_variables = input_variables
+
+    @property
+    def knowledge_settings(self) -> 'KnowledgeSettings':
+        """
+        Gets the knowledge_settings of this GuideSessionTurnRequest.
+        The knowledge settings for this turn.
+
+        :return: The knowledge_settings of this GuideSessionTurnRequest.
+        :rtype: KnowledgeSettings
+        """
+        return self._knowledge_settings
+
+    @knowledge_settings.setter
+    def knowledge_settings(self, knowledge_settings: 'KnowledgeSettings') -> None:
+        """
+        Sets the knowledge_settings of this GuideSessionTurnRequest.
+        The knowledge settings for this turn.
+
+        :param knowledge_settings: The knowledge_settings of this GuideSessionTurnRequest.
+        :type: KnowledgeSettings
+        """
+        
+
+        self._knowledge_settings = knowledge_settings
 
     def to_dict(self):
         """

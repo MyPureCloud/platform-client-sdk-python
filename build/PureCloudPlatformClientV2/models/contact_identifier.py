@@ -158,7 +158,7 @@ class ContactIdentifier(object):
     def value(self) -> str:
         """
         Gets the value of this ContactIdentifier.
-        The string value of the identifier. Will vary in syntax by type.
+        The string value of the identifier. Will vary in syntax by type. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :return: The value of this ContactIdentifier.
         :rtype: str
@@ -169,7 +169,7 @@ class ContactIdentifier(object):
     def value(self, value: str) -> None:
         """
         Sets the value of this ContactIdentifier.
-        The string value of the identifier. Will vary in syntax by type.
+        The string value of the identifier. Will vary in syntax by type. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :param value: The value of this ContactIdentifier.
         :type: str

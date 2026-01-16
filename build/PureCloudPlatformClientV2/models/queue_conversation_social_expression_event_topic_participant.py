@@ -40,7 +40,6 @@ if TYPE_CHECKING:
     from . import QueueConversationSocialExpressionEventTopicEmail
     from . import QueueConversationSocialExpressionEventTopicInternalMessage
     from . import QueueConversationSocialExpressionEventTopicMessage
-    from . import QueueConversationSocialExpressionEventTopicScreenMonitoring
     from . import QueueConversationSocialExpressionEventTopicScreenShare
     from . import QueueConversationSocialExpressionEventTopicSocialExpression
     from . import QueueConversationSocialExpressionEventTopicVideo
@@ -99,7 +98,6 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'emails': 'list[QueueConversationSocialExpressionEventTopicEmail]',
             'messages': 'list[QueueConversationSocialExpressionEventTopicMessage]',
             'internal_messages': 'list[QueueConversationSocialExpressionEventTopicInternalMessage]',
-            'screen_monitorings': 'list[QueueConversationSocialExpressionEventTopicScreenMonitoring]',
             'screenshares': 'list[QueueConversationSocialExpressionEventTopicScreenShare]',
             'social_expressions': 'list[QueueConversationSocialExpressionEventTopicSocialExpression]',
             'videos': 'list[QueueConversationSocialExpressionEventTopicVideo]',
@@ -144,7 +142,6 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
             'emails': 'emails',
             'messages': 'messages',
             'internal_messages': 'internalMessages',
-            'screen_monitorings': 'screenMonitorings',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
@@ -188,7 +185,6 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         self._emails = None
         self._messages = None
         self._internal_messages = None
-        self._screen_monitorings = None
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
@@ -1086,30 +1082,6 @@ class QueueConversationSocialExpressionEventTopicParticipant(object):
         
 
         self._internal_messages = internal_messages
-
-    @property
-    def screen_monitorings(self) -> List['QueueConversationSocialExpressionEventTopicScreenMonitoring']:
-        """
-        Gets the screen_monitorings of this QueueConversationSocialExpressionEventTopicParticipant.
-
-
-        :return: The screen_monitorings of this QueueConversationSocialExpressionEventTopicParticipant.
-        :rtype: list[QueueConversationSocialExpressionEventTopicScreenMonitoring]
-        """
-        return self._screen_monitorings
-
-    @screen_monitorings.setter
-    def screen_monitorings(self, screen_monitorings: List['QueueConversationSocialExpressionEventTopicScreenMonitoring']) -> None:
-        """
-        Sets the screen_monitorings of this QueueConversationSocialExpressionEventTopicParticipant.
-
-
-        :param screen_monitorings: The screen_monitorings of this QueueConversationSocialExpressionEventTopicParticipant.
-        :type: list[QueueConversationSocialExpressionEventTopicScreenMonitoring]
-        """
-        
-
-        self._screen_monitorings = screen_monitorings
 
     @property
     def screenshares(self) -> List['QueueConversationSocialExpressionEventTopicScreenShare']:

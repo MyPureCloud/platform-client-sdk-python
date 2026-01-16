@@ -81,6 +81,7 @@ class WorkPlanValidationRequest(object):
             'maximum_working_weekends_per_planning_period': 'int',
             'optional_days': 'SetWrapperDayOfWeek',
             'shift_start_variance_type': 'str',
+            'shift_start_variance_period': 'str',
             'shift_start_variances': 'ListWrapperShiftStartVariance',
             'shifts': 'list[WorkPlanShift]',
             'agents': 'list[DeletableUserReference]',
@@ -118,6 +119,7 @@ class WorkPlanValidationRequest(object):
             'maximum_working_weekends_per_planning_period': 'maximumWorkingWeekendsPerPlanningPeriod',
             'optional_days': 'optionalDays',
             'shift_start_variance_type': 'shiftStartVarianceType',
+            'shift_start_variance_period': 'shiftStartVariancePeriod',
             'shift_start_variances': 'shiftStartVariances',
             'shifts': 'shifts',
             'agents': 'agents',
@@ -154,6 +156,7 @@ class WorkPlanValidationRequest(object):
         self._maximum_working_weekends_per_planning_period = None
         self._optional_days = None
         self._shift_start_variance_type = None
+        self._shift_start_variance_period = None
         self._shift_start_variances = None
         self._shifts = None
         self._agents = None
@@ -860,6 +863,35 @@ class WorkPlanValidationRequest(object):
             self._shift_start_variance_type = "outdated_sdk_version"
         else:
             self._shift_start_variance_type = shift_start_variance_type
+
+    @property
+    def shift_start_variance_period(self) -> str:
+        """
+        Gets the shift_start_variance_period of this WorkPlanValidationRequest.
+        The length of the period over which the maximum shift start time variance is applied
+
+        :return: The shift_start_variance_period of this WorkPlanValidationRequest.
+        :rtype: str
+        """
+        return self._shift_start_variance_period
+
+    @shift_start_variance_period.setter
+    def shift_start_variance_period(self, shift_start_variance_period: str) -> None:
+        """
+        Sets the shift_start_variance_period of this WorkPlanValidationRequest.
+        The length of the period over which the maximum shift start time variance is applied
+
+        :param shift_start_variance_period: The shift_start_variance_period of this WorkPlanValidationRequest.
+        :type: str
+        """
+        if isinstance(shift_start_variance_period, int):
+            shift_start_variance_period = str(shift_start_variance_period)
+        allowed_values = ["Weekly", "PlanningPeriod"]
+        if shift_start_variance_period.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for shift_start_variance_period -> " + shift_start_variance_period)
+            self._shift_start_variance_period = "outdated_sdk_version"
+        else:
+            self._shift_start_variance_period = shift_start_variance_period
 
     @property
     def shift_start_variances(self) -> 'ListWrapperShiftStartVariance':

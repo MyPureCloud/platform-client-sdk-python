@@ -98,7 +98,7 @@ class ExternalSource(object):
     def name(self) -> str:
         """
         Gets the name of this ExternalSource.
-        The name of the external source.
+        The name of the external source. Must be unique. Max: 200 characters. Leading and trailing whitespace stripped.
 
         :return: The name of this ExternalSource.
         :rtype: str
@@ -109,7 +109,7 @@ class ExternalSource(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this ExternalSource.
-        The name of the external source.
+        The name of the external source. Must be unique. Max: 200 characters. Leading and trailing whitespace stripped.
 
         :param name: The name of this ExternalSource.
         :type: str

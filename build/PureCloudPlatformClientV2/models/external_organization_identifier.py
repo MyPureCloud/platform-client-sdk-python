@@ -158,7 +158,7 @@ class ExternalOrganizationIdentifier(object):
     def value(self) -> str:
         """
         Gets the value of this ExternalOrganizationIdentifier.
-        The string value of the identifier. Will vary in syntax by type.
+        The string value of the identifier. Will vary in syntax by type. Max: 255 characters.
 
         :return: The value of this ExternalOrganizationIdentifier.
         :rtype: str
@@ -169,7 +169,7 @@ class ExternalOrganizationIdentifier(object):
     def value(self, value: str) -> None:
         """
         Sets the value of this ExternalOrganizationIdentifier.
-        The string value of the identifier. Will vary in syntax by type.
+        The string value of the identifier. Will vary in syntax by type. Max: 255 characters.
 
         :param value: The value of this ExternalOrganizationIdentifier.
         :type: str

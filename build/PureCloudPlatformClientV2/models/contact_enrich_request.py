@@ -132,7 +132,7 @@ class ContactEnrichRequest(object):
     def matching_identifiers(self) -> List['ContactIdentifier']:
         """
         Gets the matching_identifiers of this ContactEnrichRequest.
-        An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here.
+        An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here. Between 1 and 25.
 
         :return: The matching_identifiers of this ContactEnrichRequest.
         :rtype: list[ContactIdentifier]
@@ -143,7 +143,7 @@ class ContactEnrichRequest(object):
     def matching_identifiers(self, matching_identifiers: List['ContactIdentifier']) -> None:
         """
         Sets the matching_identifiers of this ContactEnrichRequest.
-        An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here.
+        An ordered list of one or more Identifiers which might each be claimed by a Contact. `action` describes what to do with any possibly matching Contacts. Identifier lookups will occur in the order specified here. Between 1 and 25.
 
         :param matching_identifiers: The matching_identifiers of this ContactEnrichRequest.
         :type: list[ContactIdentifier]

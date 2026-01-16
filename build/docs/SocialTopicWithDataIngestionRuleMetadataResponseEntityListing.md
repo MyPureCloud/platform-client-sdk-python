@@ -1,12 +1,12 @@
-# SocialTopicResponseEntityListing
+# SocialTopicWithDataIngestionRuleMetadataResponseEntityListing
 
-## SocialTopicResponseEntityListing
+## SocialTopicWithDataIngestionRuleMetadataResponseEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [list[SocialTopicResponse]](SocialTopicResponse) |  | [optional] |
+| **entities** | [list[SocialTopicWithDataIngestionRuleMetadataResponse]](SocialTopicWithDataIngestionRuleMetadataResponse) |  | [optional] |
 | **page_size** | int |  | [optional] |
 | **page_number** | int |  | [optional] |
 | **total** | int |  | [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AuthoringKnowledgeSettings
     from . import GuideVersionResources
     from . import Variable
 
@@ -52,18 +53,21 @@ class CreateGuideVersion(object):
         self.swagger_types = {
             'instruction': 'str',
             'variables': 'list[Variable]',
-            'resources': 'GuideVersionResources'
+            'resources': 'GuideVersionResources',
+            'knowledge_settings': 'AuthoringKnowledgeSettings'
         }
 
         self.attribute_map = {
             'instruction': 'instruction',
             'variables': 'variables',
-            'resources': 'resources'
+            'resources': 'resources',
+            'knowledge_settings': 'knowledgeSettings'
         }
 
         self._instruction = None
         self._variables = None
         self._resources = None
+        self._knowledge_settings = None
 
     @property
     def instruction(self) -> str:
@@ -136,6 +140,30 @@ class CreateGuideVersion(object):
         
 
         self._resources = resources
+
+    @property
+    def knowledge_settings(self) -> 'AuthoringKnowledgeSettings':
+        """
+        Gets the knowledge_settings of this CreateGuideVersion.
+        The knowledge settings associated with this version of the guide.
+
+        :return: The knowledge_settings of this CreateGuideVersion.
+        :rtype: AuthoringKnowledgeSettings
+        """
+        return self._knowledge_settings
+
+    @knowledge_settings.setter
+    def knowledge_settings(self, knowledge_settings: 'AuthoringKnowledgeSettings') -> None:
+        """
+        Sets the knowledge_settings of this CreateGuideVersion.
+        The knowledge settings associated with this version of the guide.
+
+        :param knowledge_settings: The knowledge_settings of this CreateGuideVersion.
+        :type: AuthoringKnowledgeSettings
+        """
+        
+
+        self._knowledge_settings = knowledge_settings
 
     def to_dict(self):
         """

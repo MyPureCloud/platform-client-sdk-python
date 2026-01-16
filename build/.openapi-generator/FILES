@@ -486,6 +486,7 @@ PureCloudPlatformClientV2/models/audit_topic_domain_entity_ref.py
 PureCloudPlatformClientV2/models/audit_topic_message_info.py
 PureCloudPlatformClientV2/models/audit_topic_property_change.py
 PureCloudPlatformClientV2/models/authentication_settings.py
+PureCloudPlatformClientV2/models/authoring_knowledge_settings.py
 PureCloudPlatformClientV2/models/authorization_policy.py
 PureCloudPlatformClientV2/models/authorization_policy_entity_listing.py
 PureCloudPlatformClientV2/models/authorization_settings.py
@@ -866,7 +867,10 @@ PureCloudPlatformClientV2/models/capacity_planning_requirements_result_topic_sta
 PureCloudPlatformClientV2/models/capacity_plans_list_response.py
 PureCloudPlatformClientV2/models/card.py
 PureCloudPlatformClientV2/models/card_action.py
+PureCloudPlatformClientV2/models/card_body_text.py
 PureCloudPlatformClientV2/models/card_parameters.py
+PureCloudPlatformClientV2/models/carousel.py
+PureCloudPlatformClientV2/models/carousel_card.py
 PureCloudPlatformClientV2/models/carousel_parameters.py
 PureCloudPlatformClientV2/models/case_management_aggregate_data_container.py
 PureCloudPlatformClientV2/models/case_management_aggregate_query_clause.py
@@ -931,6 +935,7 @@ PureCloudPlatformClientV2/models/checklist_inference_job_creation_response.py
 PureCloudPlatformClientV2/models/checklist_inference_job_payload.py
 PureCloudPlatformClientV2/models/checklist_inference_job_response.py
 PureCloudPlatformClientV2/models/checklist_item.py
+PureCloudPlatformClientV2/models/chunk_search_register_request.py
 PureCloudPlatformClientV2/models/client_app.py
 PureCloudPlatformClientV2/models/client_app_configuration_info.py
 PureCloudPlatformClientV2/models/client_app_entity_listing.py
@@ -1374,7 +1379,6 @@ PureCloudPlatformClientV2/models/conversation_event_topic_phone_number_column.py
 PureCloudPlatformClientV2/models/conversation_event_topic_queue_media_settings.py
 PureCloudPlatformClientV2/models/conversation_event_topic_recorders_state.py
 PureCloudPlatformClientV2/models/conversation_event_topic_scored_agent.py
-PureCloudPlatformClientV2/models/conversation_event_topic_screen_monitoring.py
 PureCloudPlatformClientV2/models/conversation_event_topic_screen_share.py
 PureCloudPlatformClientV2/models/conversation_event_topic_social_expression.py
 PureCloudPlatformClientV2/models/conversation_event_topic_transfer_destination.py
@@ -3075,6 +3079,7 @@ PureCloudPlatformClientV2/models/knowledge_parse_record.py
 PureCloudPlatformClientV2/models/knowledge_search_client_application.py
 PureCloudPlatformClientV2/models/knowledge_search_document_response.py
 PureCloudPlatformClientV2/models/knowledge_setting.py
+PureCloudPlatformClientV2/models/knowledge_settings.py
 PureCloudPlatformClientV2/models/knowledge_suggestion_config.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_report.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_request.py
@@ -3862,7 +3867,6 @@ PureCloudPlatformClientV2/models/program_insights_settings.py
 PureCloudPlatformClientV2/models/program_insights_settings_entity_listing.py
 PureCloudPlatformClientV2/models/program_job.py
 PureCloudPlatformClientV2/models/program_job_request.py
-PureCloudPlatformClientV2/models/program_mappings.py
 PureCloudPlatformClientV2/models/program_mappings_request.py
 PureCloudPlatformClientV2/models/program_request.py
 PureCloudPlatformClientV2/models/program_topic_links_test_phrase_detected_phrase.py
@@ -3872,7 +3876,6 @@ PureCloudPlatformClientV2/models/program_topic_links_topics_definitions_job.py
 PureCloudPlatformClientV2/models/program_transcription_engine.py
 PureCloudPlatformClientV2/models/program_transcription_engines.py
 PureCloudPlatformClientV2/models/programs_entity_listing.py
-PureCloudPlatformClientV2/models/programs_mappings_entity_listing.py
 PureCloudPlatformClientV2/models/progress_consult_transfer_event.py
 PureCloudPlatformClientV2/models/progress_transfer_event.py
 PureCloudPlatformClientV2/models/prompt.py
@@ -4080,7 +4083,6 @@ PureCloudPlatformClientV2/models/queue_conversation_event_topic_phone_number_col
 PureCloudPlatformClientV2/models/queue_conversation_event_topic_queue_media_settings.py
 PureCloudPlatformClientV2/models/queue_conversation_event_topic_recorders_state.py
 PureCloudPlatformClientV2/models/queue_conversation_event_topic_scored_agent.py
-PureCloudPlatformClientV2/models/queue_conversation_event_topic_screen_monitoring.py
 PureCloudPlatformClientV2/models/queue_conversation_event_topic_screen_share.py
 PureCloudPlatformClientV2/models/queue_conversation_event_topic_social_expression.py
 PureCloudPlatformClientV2/models/queue_conversation_event_topic_transfer_destination.py
@@ -4174,7 +4176,6 @@ PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topi
 PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topic_queue_media_settings.py
 PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topic_recorders_state.py
 PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topic_scored_agent.py
-PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topic_screen_monitoring.py
 PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topic_screen_share.py
 PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topic_social_expression.py
 PureCloudPlatformClientV2/models/queue_conversation_social_expression_event_topic_transfer_destination.py
@@ -4225,7 +4226,6 @@ PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_phone_numb
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_queue_media_settings.py
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_recorders_state.py
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_scored_agent.py
-PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_screen_monitoring.py
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_screen_share.py
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_social_expression.py
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_transfer_destination.py
@@ -4714,8 +4714,8 @@ PureCloudPlatformClientV2/models/social_media_statistical_summary.py
 PureCloudPlatformClientV2/models/social_topic_patch_request.py
 PureCloudPlatformClientV2/models/social_topic_request.py
 PureCloudPlatformClientV2/models/social_topic_response.py
-PureCloudPlatformClientV2/models/social_topic_response_entity_listing.py
 PureCloudPlatformClientV2/models/social_topic_with_data_ingestion_rule_metadata_response.py
+PureCloudPlatformClientV2/models/social_topic_with_data_ingestion_rule_metadata_response_entity_listing.py
 PureCloudPlatformClientV2/models/sort_item.py
 PureCloudPlatformClientV2/models/source.py
 PureCloudPlatformClientV2/models/source_base_response.py
@@ -4765,6 +4765,7 @@ PureCloudPlatformClientV2/models/station_entity_listing.py
 PureCloudPlatformClientV2/models/statistical_response.py
 PureCloudPlatformClientV2/models/statistical_summary.py
 PureCloudPlatformClientV2/models/status_change.py
+PureCloudPlatformClientV2/models/status_info.py
 PureCloudPlatformClientV2/models/stop_settings.py
 PureCloudPlatformClientV2/models/story_setting.py
 PureCloudPlatformClientV2/models/street_address.py
@@ -4996,6 +4997,8 @@ PureCloudPlatformClientV2/models/topic_job_request.py
 PureCloudPlatformClientV2/models/topic_offset.py
 PureCloudPlatformClientV2/models/topic_phrase.py
 PureCloudPlatformClientV2/models/topic_request.py
+PureCloudPlatformClientV2/models/topics_definitions_program_mappings.py
+PureCloudPlatformClientV2/models/topics_definitions_programs_mappings_entity_listing.py
 PureCloudPlatformClientV2/models/topics_entity_listing.py
 PureCloudPlatformClientV2/models/touchpoint.py
 PureCloudPlatformClientV2/models/touchpoint_response.py
@@ -5951,7 +5954,6 @@ PureCloudPlatformClientV2/models/writable_dialer_contact.py
 PureCloudPlatformClientV2/models/writable_division.py
 PureCloudPlatformClientV2/models/writable_entity.py
 PureCloudPlatformClientV2/models/writable_starrable_division.py
-PureCloudPlatformClientV2/models/year_month.py
 PureCloudPlatformClientV2/rest.py
 README.md
 docs/ADFS.md
@@ -6366,6 +6368,7 @@ docs/AuditTopicDomainEntityRef.md
 docs/AuditTopicMessageInfo.md
 docs/AuditTopicPropertyChange.md
 docs/AuthenticationSettings.md
+docs/AuthoringKnowledgeSettings.md
 docs/AuthorizationApi.json
 docs/AuthorizationApi.md
 docs/AuthorizationPolicy.md
@@ -6752,7 +6755,10 @@ docs/CapacityPlanningRequirementsResultTopicStaffingRequirementsNotification.md
 docs/CapacityPlansListResponse.md
 docs/Card.md
 docs/CardAction.md
+docs/CardBodyText.md
 docs/CardParameters.md
+docs/Carousel.md
+docs/CarouselCard.md
 docs/CarouselParameters.md
 docs/CarrierServicesApi.json
 docs/CarrierServicesApi.md
@@ -6821,6 +6827,7 @@ docs/ChecklistInferenceJobCreationResponse.md
 docs/ChecklistInferenceJobPayload.md
 docs/ChecklistInferenceJobResponse.md
 docs/ChecklistItem.md
+docs/ChunkSearchRegisterRequest.md
 docs/ClientApp.md
 docs/ClientAppConfigurationInfo.md
 docs/ClientAppEntityListing.md
@@ -7268,7 +7275,6 @@ docs/ConversationEventTopicPhoneNumberColumn.md
 docs/ConversationEventTopicQueueMediaSettings.md
 docs/ConversationEventTopicRecordersState.md
 docs/ConversationEventTopicScoredAgent.md
-docs/ConversationEventTopicScreenMonitoring.md
 docs/ConversationEventTopicScreenShare.md
 docs/ConversationEventTopicSocialExpression.md
 docs/ConversationEventTopicTransferDestination.md
@@ -9011,6 +9017,7 @@ docs/KnowledgeParseRecord.md
 docs/KnowledgeSearchClientApplication.md
 docs/KnowledgeSearchDocumentResponse.md
 docs/KnowledgeSetting.md
+docs/KnowledgeSettings.md
 docs/KnowledgeSuggestionConfig.md
 docs/KnowledgeSyncJobReport.md
 docs/KnowledgeSyncJobRequest.md
@@ -9832,7 +9839,6 @@ docs/ProgramInsightsSettings.md
 docs/ProgramInsightsSettingsEntityListing.md
 docs/ProgramJob.md
 docs/ProgramJobRequest.md
-docs/ProgramMappings.md
 docs/ProgramMappingsRequest.md
 docs/ProgramRequest.md
 docs/ProgramTopicLinksTestPhraseDetectedPhrase.md
@@ -9842,7 +9848,6 @@ docs/ProgramTopicLinksTopicsDefinitionsJob.md
 docs/ProgramTranscriptionEngine.md
 docs/ProgramTranscriptionEngines.md
 docs/ProgramsEntityListing.md
-docs/ProgramsMappingsEntityListing.md
 docs/ProgressConsultTransferEvent.md
 docs/ProgressTransferEvent.md
 docs/Prompt.md
@@ -10052,7 +10057,6 @@ docs/QueueConversationEventTopicPhoneNumberColumn.md
 docs/QueueConversationEventTopicQueueMediaSettings.md
 docs/QueueConversationEventTopicRecordersState.md
 docs/QueueConversationEventTopicScoredAgent.md
-docs/QueueConversationEventTopicScreenMonitoring.md
 docs/QueueConversationEventTopicScreenShare.md
 docs/QueueConversationEventTopicSocialExpression.md
 docs/QueueConversationEventTopicTransferDestination.md
@@ -10146,7 +10150,6 @@ docs/QueueConversationSocialExpressionEventTopicPhoneNumberColumn.md
 docs/QueueConversationSocialExpressionEventTopicQueueMediaSettings.md
 docs/QueueConversationSocialExpressionEventTopicRecordersState.md
 docs/QueueConversationSocialExpressionEventTopicScoredAgent.md
-docs/QueueConversationSocialExpressionEventTopicScreenMonitoring.md
 docs/QueueConversationSocialExpressionEventTopicScreenShare.md
 docs/QueueConversationSocialExpressionEventTopicSocialExpression.md
 docs/QueueConversationSocialExpressionEventTopicTransferDestination.md
@@ -10197,7 +10200,6 @@ docs/QueueConversationVideoEventTopicPhoneNumberColumn.md
 docs/QueueConversationVideoEventTopicQueueMediaSettings.md
 docs/QueueConversationVideoEventTopicRecordersState.md
 docs/QueueConversationVideoEventTopicScoredAgent.md
-docs/QueueConversationVideoEventTopicScreenMonitoring.md
 docs/QueueConversationVideoEventTopicScreenShare.md
 docs/QueueConversationVideoEventTopicSocialExpression.md
 docs/QueueConversationVideoEventTopicTransferDestination.md
@@ -10704,8 +10706,8 @@ docs/SocialMediaStatisticalSummary.md
 docs/SocialTopicPatchRequest.md
 docs/SocialTopicRequest.md
 docs/SocialTopicResponse.md
-docs/SocialTopicResponseEntityListing.md
 docs/SocialTopicWithDataIngestionRuleMetadataResponse.md
+docs/SocialTopicWithDataIngestionRuleMetadataResponseEntityListing.md
 docs/SortItem.md
 docs/Source.md
 docs/SourceBaseResponse.md
@@ -10759,6 +10761,7 @@ docs/StationsApi.md
 docs/StatisticalResponse.md
 docs/StatisticalSummary.md
 docs/StatusChange.md
+docs/StatusInfo.md
 docs/StopSettings.md
 docs/StorySetting.md
 docs/StreetAddress.md
@@ -11004,6 +11007,8 @@ docs/TopicJobRequest.md
 docs/TopicOffset.md
 docs/TopicPhrase.md
 docs/TopicRequest.md
+docs/TopicsDefinitionsProgramMappings.md
+docs/TopicsDefinitionsProgramsMappingsEntityListing.md
 docs/TopicsEntityListing.md
 docs/Touchpoint.md
 docs/TouchpointResponse.md
@@ -11983,7 +11988,6 @@ docs/WritableDialerContact.md
 docs/WritableDivision.md
 docs/WritableEntity.md
 docs/WritableStarrableDivision.md
-docs/YearMonth.md
 docs/delete_alerting_alert-example.txt
 docs/delete_alerting_alerts_all-example.txt
 docs/delete_alerting_rule-example.txt
@@ -13873,6 +13877,7 @@ docs/patch_journey_view_version_job-example.txt
 docs/patch_knowledge_guest_session_documents_search_search_id-example.txt
 docs/patch_knowledge_knowledgebase-example.txt
 docs/patch_knowledge_knowledgebase_category-example.txt
+docs/patch_knowledge_knowledgebase_chunks_search_search_id-example.txt
 docs/patch_knowledge_knowledgebase_document-example.txt
 docs/patch_knowledge_knowledgebase_document_feedback_feedback_id-example.txt
 docs/patch_knowledge_knowledgebase_document_variation-example.txt
@@ -14359,6 +14364,8 @@ docs/post_guide_version_jobs-example.txt
 docs/post_guide_versions-example.txt
 docs/post_guides-example.txt
 docs/post_guides_jobs-example.txt
+docs/post_guides_uploads-example.txt
+docs/post_guides_uploads-example.txt
 docs/post_identityproviders-example.txt
 docs/post_infrastructureascode_jobs-example.txt
 docs/post_integrations-example.txt

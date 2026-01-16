@@ -60,6 +60,7 @@ class WorkPlanActivity(object):
             'counts_as_contiguous_work_time': 'bool',
             'minimum_length_from_shift_start_minutes': 'int',
             'minimum_length_from_shift_end_minutes': 'int',
+            'maximum_length_from_shift_end_minutes': 'int',
             'id': 'str',
             'delete': 'bool',
             'validation_id': 'str'
@@ -79,6 +80,7 @@ class WorkPlanActivity(object):
             'counts_as_contiguous_work_time': 'countsAsContiguousWorkTime',
             'minimum_length_from_shift_start_minutes': 'minimumLengthFromShiftStartMinutes',
             'minimum_length_from_shift_end_minutes': 'minimumLengthFromShiftEndMinutes',
+            'maximum_length_from_shift_end_minutes': 'maximumLengthFromShiftEndMinutes',
             'id': 'id',
             'delete': 'delete',
             'validation_id': 'validationId'
@@ -97,6 +99,7 @@ class WorkPlanActivity(object):
         self._counts_as_contiguous_work_time = None
         self._minimum_length_from_shift_start_minutes = None
         self._minimum_length_from_shift_end_minutes = None
+        self._maximum_length_from_shift_end_minutes = None
         self._id = None
         self._delete = None
         self._validation_id = None
@@ -412,6 +415,30 @@ class WorkPlanActivity(object):
         
 
         self._minimum_length_from_shift_end_minutes = minimum_length_from_shift_end_minutes
+
+    @property
+    def maximum_length_from_shift_end_minutes(self) -> int:
+        """
+        Gets the maximum_length_from_shift_end_minutes of this WorkPlanActivity.
+        The maximum duration between shift item (e.g., break or meal) end and shift end in minutes
+
+        :return: The maximum_length_from_shift_end_minutes of this WorkPlanActivity.
+        :rtype: int
+        """
+        return self._maximum_length_from_shift_end_minutes
+
+    @maximum_length_from_shift_end_minutes.setter
+    def maximum_length_from_shift_end_minutes(self, maximum_length_from_shift_end_minutes: int) -> None:
+        """
+        Sets the maximum_length_from_shift_end_minutes of this WorkPlanActivity.
+        The maximum duration between shift item (e.g., break or meal) end and shift end in minutes
+
+        :param maximum_length_from_shift_end_minutes: The maximum_length_from_shift_end_minutes of this WorkPlanActivity.
+        :type: int
+        """
+        
+
+        self._maximum_length_from_shift_end_minutes = maximum_length_from_shift_end_minutes
 
     @property
     def id(self) -> str:

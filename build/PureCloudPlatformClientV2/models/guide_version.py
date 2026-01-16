@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
+    from . import AuthoringKnowledgeSettings
     from . import GuideVersionResources
     from . import Variable
 
@@ -59,7 +60,8 @@ class GuideVersion(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'variables': 'list[Variable]',
-            'resources': 'GuideVersionResources'
+            'resources': 'GuideVersionResources',
+            'knowledge_settings': 'AuthoringKnowledgeSettings'
         }
 
         self.attribute_map = {
@@ -71,7 +73,8 @@ class GuideVersion(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'variables': 'variables',
-            'resources': 'resources'
+            'resources': 'resources',
+            'knowledge_settings': 'knowledgeSettings'
         }
 
         self._self_uri = None
@@ -83,6 +86,7 @@ class GuideVersion(object):
         self._date_modified = None
         self._variables = None
         self._resources = None
+        self._knowledge_settings = None
 
     @property
     def self_uri(self) -> str:
@@ -304,6 +308,30 @@ class GuideVersion(object):
         
 
         self._resources = resources
+
+    @property
+    def knowledge_settings(self) -> 'AuthoringKnowledgeSettings':
+        """
+        Gets the knowledge_settings of this GuideVersion.
+        The knowledge settings associated with this version of the guide.
+
+        :return: The knowledge_settings of this GuideVersion.
+        :rtype: AuthoringKnowledgeSettings
+        """
+        return self._knowledge_settings
+
+    @knowledge_settings.setter
+    def knowledge_settings(self, knowledge_settings: 'AuthoringKnowledgeSettings') -> None:
+        """
+        Sets the knowledge_settings of this GuideVersion.
+        The knowledge settings associated with this version of the guide.
+
+        :param knowledge_settings: The knowledge_settings of this GuideVersion.
+        :type: AuthoringKnowledgeSettings
+        """
+        
+
+        self._knowledge_settings = knowledge_settings
 
     def to_dict(self):
         """

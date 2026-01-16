@@ -65,7 +65,7 @@ class LineId(object):
     def ids(self) -> List['LineUserId']:
         """
         Gets the ids of this LineId.
-        The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with.
+        The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with. Max 1 Id.
 
         :return: The ids of this LineId.
         :rtype: list[LineUserId]
@@ -76,7 +76,7 @@ class LineId(object):
     def ids(self, ids: List['LineUserId']) -> None:
         """
         Sets the ids of this LineId.
-        The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with.
+        The set of Line userIds that this person has. Each userId is specific to the Line channel that the user interacts with. Max 1 Id.
 
         :param ids: The ids of this LineId.
         :type: list[LineUserId]
@@ -89,7 +89,7 @@ class LineId(object):
     def display_name(self) -> str:
         """
         Gets the display_name of this LineId.
-        The displayName of this person's account in Line
+        The displayName of this person's account in Line. Max: 100 characters.
 
         :return: The display_name of this LineId.
         :rtype: str
@@ -100,7 +100,7 @@ class LineId(object):
     def display_name(self, display_name: str) -> None:
         """
         Sets the display_name of this LineId.
-        The displayName of this person's account in Line
+        The displayName of this person's account in Line. Max: 100 characters.
 
         :param display_name: The display_name of this LineId.
         :type: str

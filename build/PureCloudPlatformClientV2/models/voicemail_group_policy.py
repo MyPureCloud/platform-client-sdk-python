@@ -63,7 +63,8 @@ class VoicemailGroupPolicy(object):
             'overflow_group_id': 'str',
             'group_alert_type': 'str',
             'interactive_response_prompt_id': 'str',
-            'interactive_response_required': 'bool'
+            'interactive_response_required': 'bool',
+            'include_group_number_in_user_caller_id_lists': 'bool'
         }
 
         self.attribute_map = {
@@ -80,7 +81,8 @@ class VoicemailGroupPolicy(object):
             'overflow_group_id': 'overflowGroupId',
             'group_alert_type': 'groupAlertType',
             'interactive_response_prompt_id': 'interactiveResponsePromptId',
-            'interactive_response_required': 'interactiveResponseRequired'
+            'interactive_response_required': 'interactiveResponseRequired',
+            'include_group_number_in_user_caller_id_lists': 'includeGroupNumberInUserCallerIdLists'
         }
 
         self._name = None
@@ -97,6 +99,7 @@ class VoicemailGroupPolicy(object):
         self._group_alert_type = None
         self._interactive_response_prompt_id = None
         self._interactive_response_required = None
+        self._include_group_number_in_user_caller_id_lists = None
 
     @property
     def name(self) -> str:
@@ -438,6 +441,30 @@ class VoicemailGroupPolicy(object):
         
 
         self._interactive_response_required = interactive_response_required
+
+    @property
+    def include_group_number_in_user_caller_id_lists(self) -> bool:
+        """
+        Gets the include_group_number_in_user_caller_id_lists of this VoicemailGroupPolicy.
+        Whether the group phone number should be included in users' caller id lists
+
+        :return: The include_group_number_in_user_caller_id_lists of this VoicemailGroupPolicy.
+        :rtype: bool
+        """
+        return self._include_group_number_in_user_caller_id_lists
+
+    @include_group_number_in_user_caller_id_lists.setter
+    def include_group_number_in_user_caller_id_lists(self, include_group_number_in_user_caller_id_lists: bool) -> None:
+        """
+        Sets the include_group_number_in_user_caller_id_lists of this VoicemailGroupPolicy.
+        Whether the group phone number should be included in users' caller id lists
+
+        :param include_group_number_in_user_caller_id_lists: The include_group_number_in_user_caller_id_lists of this VoicemailGroupPolicy.
+        :type: bool
+        """
+        
+
+        self._include_group_number_in_user_caller_id_lists = include_group_number_in_user_caller_id_lists
 
     def to_dict(self):
         """

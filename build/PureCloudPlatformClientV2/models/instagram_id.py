@@ -68,7 +68,7 @@ class InstagramId(object):
     def ids(self) -> List['InstagramScopedId']:
         """
         Gets the ids of this InstagramId.
-        The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with.
+        The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with. Max 1 id.
 
         :return: The ids of this InstagramId.
         :rtype: list[InstagramScopedId]
@@ -79,7 +79,7 @@ class InstagramId(object):
     def ids(self, ids: List['InstagramScopedId']) -> None:
         """
         Sets the ids of this InstagramId.
-        The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with.
+        The set of scopedIds that this person has. Each scopedId is specific to an Instagram page or app that the user interacts with. Max 1 id.
 
         :param ids: The ids of this InstagramId.
         :type: list[InstagramScopedId]
@@ -92,7 +92,7 @@ class InstagramId(object):
     def display_name(self) -> str:
         """
         Gets the display_name of this InstagramId.
-        The displayName of the person who owns this Instagram account
+        The displayName of the person who owns this Instagram account. Max: 100 characters.
 
         :return: The display_name of this InstagramId.
         :rtype: str
@@ -103,7 +103,7 @@ class InstagramId(object):
     def display_name(self, display_name: str) -> None:
         """
         Sets the display_name of this InstagramId.
-        The displayName of the person who owns this Instagram account
+        The displayName of the person who owns this Instagram account. Max: 100 characters.
 
         :param display_name: The display_name of this InstagramId.
         :type: str
@@ -116,7 +116,7 @@ class InstagramId(object):
     def handle(self) -> str:
         """
         Gets the handle of this InstagramId.
-        The handle of the person who owns this Instagram account
+        The handle of the person who owns this Instagram account. Max: 100 characters.
 
         :return: The handle of this InstagramId.
         :rtype: str
@@ -127,7 +127,7 @@ class InstagramId(object):
     def handle(self, handle: str) -> None:
         """
         Sets the handle of this InstagramId.
-        The handle of the person who owns this Instagram account
+        The handle of the person who owns this Instagram account. Max: 100 characters.
 
         :param handle: The handle of this InstagramId.
         :type: str

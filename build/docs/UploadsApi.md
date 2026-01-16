@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_knowledge_knowledgebase_uploads_urls_job**](#get_knowledge_knowledgebase_uploads_urls_job) | Get content upload from URL job status|
 |[**post_gamification_contests_uploads_prizeimages**](#post_gamification_contests_uploads_prizeimages) | Generates pre-signed URL to upload a prize image for gamification contests|
+|[**post_guides_uploads**](#post_guides_uploads) | Generate presigned URL for uploading a file content to generate guide|
 |[**post_integrations_action_draft_function_upload**](#post_integrations_action_draft_function_upload) | Create upload presigned URL for draft function package file.|
 |[**post_knowledge_documentuploads**](#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
 |[**post_knowledge_knowledgebase_uploads_urls_jobs**](#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
@@ -111,6 +112,54 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**GamificationContestPrizeImageUploadUrlRequest**](GamificationContestPrizeImageUploadUrlRequest)| query |  |
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
+
+
+## post_guides_uploads
+
+> [**UploadUrlResponse**](UploadUrlResponse) post_guides_uploads(body)
+
+
+Generate presigned URL for uploading a file content to generate guide
+
+Wraps POST /api/v2/guides/uploads 
+
+Requires ALL permissions: 
+
+* aiStudio:guide:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UploadsApi()
+body = PureCloudPlatformClientV2.UploadUrlRequest() # UploadUrlRequest | query
+
+try:
+    # Generate presigned URL for uploading a file content to generate guide
+    api_response = api_instance.post_guides_uploads(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UploadsApi->post_guides_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query |  |
 
 ### Return type
 
@@ -507,4 +556,4 @@ except ApiException as e:
 [**UploadUrlResponse**](UploadUrlResponse)
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

@@ -75,7 +75,7 @@ class ContactAddress(object):
     def address1(self) -> str:
         """
         Gets the address1 of this ContactAddress.
-
+        Max: 200 characters. Leading and trailing whitespace stripped.
 
         :return: The address1 of this ContactAddress.
         :rtype: str
@@ -86,7 +86,7 @@ class ContactAddress(object):
     def address1(self, address1: str) -> None:
         """
         Sets the address1 of this ContactAddress.
-
+        Max: 200 characters. Leading and trailing whitespace stripped.
 
         :param address1: The address1 of this ContactAddress.
         :type: str
@@ -99,7 +99,7 @@ class ContactAddress(object):
     def address2(self) -> str:
         """
         Gets the address2 of this ContactAddress.
-
+        Max: 200 characters. Leading and trailing whitespace stripped.
 
         :return: The address2 of this ContactAddress.
         :rtype: str
@@ -110,7 +110,7 @@ class ContactAddress(object):
     def address2(self, address2: str) -> None:
         """
         Sets the address2 of this ContactAddress.
-
+        Max: 200 characters. Leading and trailing whitespace stripped.
 
         :param address2: The address2 of this ContactAddress.
         :type: str
@@ -123,7 +123,7 @@ class ContactAddress(object):
     def city(self) -> str:
         """
         Gets the city of this ContactAddress.
-
+        Max: 100 characters. Leading and trailing whitespace stripped.
 
         :return: The city of this ContactAddress.
         :rtype: str
@@ -134,7 +134,7 @@ class ContactAddress(object):
     def city(self, city: str) -> None:
         """
         Sets the city of this ContactAddress.
-
+        Max: 100 characters. Leading and trailing whitespace stripped.
 
         :param city: The city of this ContactAddress.
         :type: str
@@ -147,7 +147,7 @@ class ContactAddress(object):
     def state(self) -> str:
         """
         Gets the state of this ContactAddress.
-
+        Max: 50 characters. Leading and trailing whitespace stripped.
 
         :return: The state of this ContactAddress.
         :rtype: str
@@ -158,7 +158,7 @@ class ContactAddress(object):
     def state(self, state: str) -> None:
         """
         Sets the state of this ContactAddress.
-
+        Max: 50 characters. Leading and trailing whitespace stripped.
 
         :param state: The state of this ContactAddress.
         :type: str
@@ -171,7 +171,7 @@ class ContactAddress(object):
     def postal_code(self) -> str:
         """
         Gets the postal_code of this ContactAddress.
-
+        Max: 25 characters. Leading and trailing whitespace stripped.
 
         :return: The postal_code of this ContactAddress.
         :rtype: str
@@ -182,7 +182,7 @@ class ContactAddress(object):
     def postal_code(self, postal_code: str) -> None:
         """
         Sets the postal_code of this ContactAddress.
-
+        Max: 25 characters. Leading and trailing whitespace stripped.
 
         :param postal_code: The postal_code of this ContactAddress.
         :type: str
@@ -195,7 +195,7 @@ class ContactAddress(object):
     def country_code(self) -> str:
         """
         Gets the country_code of this ContactAddress.
-
+        Max: 25 characters. Leading and trailing whitespace stripped.
 
         :return: The country_code of this ContactAddress.
         :rtype: str
@@ -206,7 +206,7 @@ class ContactAddress(object):
     def country_code(self, country_code: str) -> None:
         """
         Sets the country_code of this ContactAddress.
-
+        Max: 25 characters. Leading and trailing whitespace stripped.
 
         :param country_code: The country_code of this ContactAddress.
         :type: str

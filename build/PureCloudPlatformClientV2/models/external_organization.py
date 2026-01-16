@@ -164,7 +164,7 @@ class ExternalOrganization(object):
     def name(self) -> str:
         """
         Gets the name of this ExternalOrganization.
-        The name of the company.
+        The name of the company. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :return: The name of this ExternalOrganization.
         :rtype: str
@@ -175,7 +175,7 @@ class ExternalOrganization(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this ExternalOrganization.
-        The name of the company.
+        The name of the company. Max: 1000 characters. Leading and trailing whitespace stripped.
 
         :param name: The name of this ExternalOrganization.
         :type: str
@@ -644,7 +644,7 @@ class ExternalOrganization(object):
     def external_ids(self) -> List['ExternalId']:
         """
         Gets the external_ids of this ExternalOrganization.
-        A list of external identifiers that identify this External Organization in an external system
+        A list of external identifiers that identify this External Organization in an external system. Max 10 items.
 
         :return: The external_ids of this ExternalOrganization.
         :rtype: list[ExternalId]
@@ -655,7 +655,7 @@ class ExternalOrganization(object):
     def external_ids(self, external_ids: List['ExternalId']) -> None:
         """
         Sets the external_ids of this ExternalOrganization.
-        A list of external identifiers that identify this External Organization in an external system
+        A list of external identifiers that identify this External Organization in an external system. Max 10 items.
 
         :param external_ids: The external_ids of this ExternalOrganization.
         :type: list[ExternalId]

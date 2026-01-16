@@ -40,6 +40,7 @@ from ..models import CategoryCreateRequest
 from ..models import CategoryResponse
 from ..models import CategoryResponseListing
 from ..models import CategoryUpdateRequest
+from ..models import ChunkSearchRegisterRequest
 from ..models import CreateUploadSourceUrlJobRequest
 from ..models import CreateUploadSourceUrlJobResponse
 from ..models import DocumentVariationRequest
@@ -4272,6 +4273,93 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CategoryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_knowledgebase_chunks_search_search_id(self, knowledge_base_id: str, search_id: str, **kwargs) -> None:
+        """
+        Register chunk search result.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_knowledgebase_chunks_search_search_id(knowledge_base_id, search_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge Base ID (required)
+        :param str search_id: Unique identifier of search request (required)
+        :param ChunkSearchRegisterRequest body: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'search_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_knowledgebase_chunks_search_search_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `patch_knowledge_knowledgebase_chunks_search_search_id`")
+        # verify the required parameter 'search_id' is set
+        if ('search_id' not in params) or (params['search_id'] is None):
+            raise ValueError("Missing the required parameter `search_id` when calling `patch_knowledge_knowledgebase_chunks_search_search_id`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search/{searchId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'search_id' in params:
+            path_params['searchId'] = params['search_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

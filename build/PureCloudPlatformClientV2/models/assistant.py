@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AddressableEntityRef
     from . import Copilot
     from . import GoogleDialogflowConfig
     from . import KnowledgeSuggestionConfig
@@ -64,7 +65,8 @@ class Assistant(object):
             'knowledge_suggestion_config': 'KnowledgeSuggestionConfig',
             'state': 'str',
             'copilot': 'Copilot',
-            'self_uri': 'str'
+            'self_uri': 'str',
+            'variation_parent': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
@@ -79,7 +81,8 @@ class Assistant(object):
             'knowledge_suggestion_config': 'knowledgeSuggestionConfig',
             'state': 'state',
             'copilot': 'copilot',
-            'self_uri': 'selfUri'
+            'self_uri': 'selfUri',
+            'variation_parent': 'variationParent'
         }
 
         self._id = None
@@ -94,6 +97,7 @@ class Assistant(object):
         self._state = None
         self._copilot = None
         self._self_uri = None
+        self._variation_parent = None
 
     @property
     def id(self) -> str:
@@ -387,6 +391,30 @@ class Assistant(object):
         
 
         self._self_uri = self_uri
+
+    @property
+    def variation_parent(self) -> 'AddressableEntityRef':
+        """
+        Gets the variation_parent of this Assistant.
+        The parent assistant if this assistant is a variation of an assistant
+
+        :return: The variation_parent of this Assistant.
+        :rtype: AddressableEntityRef
+        """
+        return self._variation_parent
+
+    @variation_parent.setter
+    def variation_parent(self, variation_parent: 'AddressableEntityRef') -> None:
+        """
+        Sets the variation_parent of this Assistant.
+        The parent assistant if this assistant is a variation of an assistant
+
+        :param variation_parent: The variation_parent of this Assistant.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._variation_parent = variation_parent
 
     def to_dict(self):
         """

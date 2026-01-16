@@ -56,12 +56,10 @@ from ..models import ProgramInsightsSettings
 from ..models import ProgramInsightsSettingsEntityListing
 from ..models import ProgramJob
 from ..models import ProgramJobRequest
-from ..models import ProgramMappings
 from ..models import ProgramMappingsRequest
 from ..models import ProgramRequest
 from ..models import ProgramTranscriptionEngines
 from ..models import ProgramsEntityListing
-from ..models import ProgramsMappingsEntityListing
 from ..models import ReprocessInteractionsByJobIdResponse
 from ..models import ReprocessJobEntityListingResponse
 from ..models import ReprocessJobResponse
@@ -80,6 +78,8 @@ from ..models import Topic
 from ..models import TopicJob
 from ..models import TopicJobRequest
 from ..models import TopicRequest
+from ..models import TopicsDefinitionsProgramMappings
+from ..models import TopicsDefinitionsProgramsMappingsEntityListing
 from ..models import TopicsEntityListing
 from ..models import TranscriptSearchRequest
 from ..models import TranscriptUrl
@@ -1540,7 +1540,7 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_speechandtextanalytics_program_mappings(self, program_id: str, **kwargs) -> 'ProgramMappings':
+    def get_speechandtextanalytics_program_mappings(self, program_id: str, **kwargs) -> 'TopicsDefinitionsProgramMappings':
         """
         Get Speech & Text Analytics program mappings to queues and flows by id
         
@@ -1556,7 +1556,7 @@ class SpeechTextAnalyticsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str program_id: The id of the program (required)
-        :return: ProgramMappings
+        :return: TopicsDefinitionsProgramMappings
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1613,7 +1613,7 @@ class SpeechTextAnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ProgramMappings',
+                                            response_type='TopicsDefinitionsProgramMappings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1933,7 +1933,7 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_speechandtextanalytics_programs_mappings(self, **kwargs) -> 'ProgramsMappingsEntityListing':
+    def get_speechandtextanalytics_programs_mappings(self, **kwargs) -> 'TopicsDefinitionsProgramsMappingsEntityListing':
         """
         Get the list of Speech & Text Analytics programs mappings to queues and flows
         
@@ -1950,7 +1950,7 @@ class SpeechTextAnalyticsApi(object):
             for asynchronous request. (optional)
         :param str next_page: The key for listing the next page
         :param int page_size: The page size for the listing
-        :return: ProgramsMappingsEntityListing
+        :return: TopicsDefinitionsProgramsMappingsEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2006,7 +2006,7 @@ class SpeechTextAnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ProgramsMappingsEntityListing',
+                                            response_type='TopicsDefinitionsProgramsMappingsEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4685,7 +4685,7 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_speechandtextanalytics_program_mappings(self, program_id: str, body: 'ProgramMappingsRequest', **kwargs) -> 'ProgramMappings':
+    def put_speechandtextanalytics_program_mappings(self, program_id: str, body: 'ProgramMappingsRequest', **kwargs) -> 'TopicsDefinitionsProgramMappings':
         """
         Set Speech & Text Analytics program mappings to queues and flows
         
@@ -4702,7 +4702,7 @@ class SpeechTextAnalyticsApi(object):
             for asynchronous request. (optional)
         :param str program_id: The id of the program (required)
         :param ProgramMappingsRequest body: The program to set mappings for (required)
-        :return: ProgramMappings
+        :return: TopicsDefinitionsProgramMappings
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4764,7 +4764,7 @@ class SpeechTextAnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ProgramMappings',
+                                            response_type='TopicsDefinitionsProgramMappings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

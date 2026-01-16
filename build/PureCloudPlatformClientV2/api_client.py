@@ -54,6 +54,7 @@ except ImportError:
 
 from .gateway_configuration import GatewayConfiguration
 from .configuration import Configuration
+from .year_month import YearMonth
 
 
 class ApiClient(object):
@@ -419,7 +420,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '247.0.0'
+        header_params['purecloud-sdk'] = '248.0.0'
 
         # path parameters
         if path_params:
@@ -539,6 +540,8 @@ class ApiClient(object):
         elif isinstance(obj, list):
             return [self.sanitize_for_serialization(sub_obj)
                     for sub_obj in obj]
+        elif isinstance(obj, (YearMonth)):
+            return "%04d" % (obj.year,) + "-" + "%02d" % (obj.month,)
         elif isinstance(obj, (datetime, date)):
             return obj.isoformat()
         else:
@@ -617,6 +620,9 @@ class ApiClient(object):
             # for LocalDateTime special case, use datetime in Python
             elif klass == 'LocalDateTime':
                 klass = eval('datetime')
+            # for YearMonth special case, use custom YearMonth class
+            elif klass == 'YearMonth':
+                klass = eval('YearMonth')
             # for model types
             else:
                 klass = eval('models.' + klass)
@@ -625,6 +631,8 @@ class ApiClient(object):
             return self.__deserialize_primitive(data, klass)
         elif klass == object:
             return self.__deserialize_object(data)
+        elif klass == YearMonth:
+            return self.__deserialize_yearmonth(data)
         elif klass == date:
             return self.__deserialize_date(data)
         elif klass == datetime:
@@ -845,6 +853,36 @@ class ApiClient(object):
                 )
         except ImportError:
             return string
+
+    def __deserialize_yearmonth(self, string):
+        """
+        Deserializes string (YYYY-MM) to YearMonth.
+
+        :param string: str.
+        :return: YearMonth.
+        """
+        try:
+            from dateutil.parser import isoparse
+            parsed_date = isoparse(string).date()
+            return YearMonth(parsed_date.year, parsed_date.month)
+        except ValueError:
+            # Try parsing independent of ISO if we get a ValueError
+            try:
+                from dateutil.parser import parse
+                parsed_date = isoparse(string).date()
+                return YearMonth(parsed_date.year, parsed_date.month)
+            except ImportError:
+                raise ValueError("YearMonth Deserialize - Import Error")
+                return string
+            # Not much we can do if `parse` returns a ValueError
+            except ValueError:
+                raise ApiException(
+                    status=0,
+                    reason="Failed to parse `{0}` into a YearMonth object"
+                    .format(string)
+                )
+        except ImportError:
+            raise ValueError("YearMonth Deserialize - Import Error")
 
     def __deserialize_datetime(self, string):
         """

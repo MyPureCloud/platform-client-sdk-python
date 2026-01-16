@@ -25,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_guide_versions**](#post_guide_versions) | Create a guide version.|
 |[**post_guides**](#post_guides) | Create a guide.|
 |[**post_guides_jobs**](#post_guides_jobs) | Start a guide content generation job.|
+|[**post_guides_uploads**](#post_guides_uploads) | Generate presigned URL for uploading a file content to generate guide|
 |[**put_conversations_summaries_setting**](#put_conversations_summaries_setting) | Update a summary setting.|
 
 
@@ -82,8 +83,6 @@ void (empty response body)
 
 
 Start the deletion of a guide.
-
-delete_guide_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/guides/{guideId}/jobs 
 
@@ -239,8 +238,6 @@ except ApiException as e:
 
 Get guide.
 
-get_guide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/guides/{guideId} 
 
 Requires ALL permissions: 
@@ -288,8 +285,6 @@ except ApiException as e:
 
 
 Get the specified guide deletion job.
-
-get_guide_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/guides/{guideId}/jobs/{jobId} 
 
@@ -341,8 +336,6 @@ except ApiException as e:
 
 Get a guide version.
 
-get_guide_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/guides/{guideId}/versions/{versionId} 
 
 Requires ALL permissions: 
@@ -392,8 +385,6 @@ except ApiException as e:
 
 
 Get the status of the publishing job for this guide version.
-
-get_guide_version_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/guides/{guideId}/versions/{versionId}/jobs/{jobId} 
 
@@ -446,8 +437,6 @@ except ApiException as e:
 
 
 Get all guides.
-
-get_guides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/guides 
 
@@ -509,8 +498,6 @@ except ApiException as e:
 
 Get the status of the guide content generation job.
 
-get_guides_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/guides/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -558,8 +545,6 @@ except ApiException as e:
 
 
 Update a guide.
-
-patch_guide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/guides/{guideId} 
 
@@ -610,8 +595,6 @@ except ApiException as e:
 
 
 Update a guide version.
-
-patch_guide_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/guides/{guideId}/versions/{versionId} 
 
@@ -814,8 +797,6 @@ except ApiException as e:
 
 Start the publishing of a guide version.
 
-post_guide_version_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides/{guideId}/versions/{versionId}/jobs 
 
 Requires ALL permissions: 
@@ -868,8 +849,6 @@ except ApiException as e:
 
 Create a guide version.
 
-post_guide_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides/{guideId}/versions 
 
 Requires ALL permissions: 
@@ -920,8 +899,6 @@ except ApiException as e:
 
 Create a guide.
 
-post_guides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides 
 
 Requires ALL permissions: 
@@ -970,8 +947,6 @@ except ApiException as e:
 
 Start a guide content generation job.
 
-post_guides_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/guides/jobs 
 
 Requires ALL permissions: 
@@ -1011,6 +986,54 @@ except ApiException as e:
 ### Return type
 
 [**GuideContentGenerationJob**](GuideContentGenerationJob)
+
+
+## post_guides_uploads
+
+> [**UploadUrlResponse**](UploadUrlResponse) post_guides_uploads(body)
+
+
+Generate presigned URL for uploading a file content to generate guide
+
+Wraps POST /api/v2/guides/uploads 
+
+Requires ALL permissions: 
+
+* aiStudio:guide:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AIStudioApi()
+body = PureCloudPlatformClientV2.UploadUrlRequest() # UploadUrlRequest | query
+
+try:
+    # Generate presigned URL for uploading a file content to generate guide
+    api_response = api_instance.post_guides_uploads(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AIStudioApi->post_guides_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query |  |
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## put_conversations_summaries_setting
@@ -1063,4 +1086,4 @@ except ApiException as e:
 [**SummarySetting**](SummarySetting)
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

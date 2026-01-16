@@ -397,6 +397,7 @@ from .models.audit_topic_domain_entity_ref import AuditTopicDomainEntityRef
 from .models.audit_topic_message_info import AuditTopicMessageInfo
 from .models.audit_topic_property_change import AuditTopicPropertyChange
 from .models.authentication_settings import AuthenticationSettings
+from .models.authoring_knowledge_settings import AuthoringKnowledgeSettings
 from .models.authorization_policy import AuthorizationPolicy
 from .models.authorization_policy_entity_listing import AuthorizationPolicyEntityListing
 from .models.authorization_settings import AuthorizationSettings
@@ -777,7 +778,10 @@ from .models.capacity_planning_requirements_result_topic_staffing_requirements_n
 from .models.capacity_plans_list_response import CapacityPlansListResponse
 from .models.card import Card
 from .models.card_action import CardAction
+from .models.card_body_text import CardBodyText
 from .models.card_parameters import CardParameters
+from .models.carousel import Carousel
+from .models.carousel_card import CarouselCard
 from .models.carousel_parameters import CarouselParameters
 from .models.case_management_aggregate_data_container import CaseManagementAggregateDataContainer
 from .models.case_management_aggregate_query_clause import CaseManagementAggregateQueryClause
@@ -842,6 +846,7 @@ from .models.checklist_inference_job_creation_response import ChecklistInference
 from .models.checklist_inference_job_payload import ChecklistInferenceJobPayload
 from .models.checklist_inference_job_response import ChecklistInferenceJobResponse
 from .models.checklist_item import ChecklistItem
+from .models.chunk_search_register_request import ChunkSearchRegisterRequest
 from .models.client_app import ClientApp
 from .models.client_app_configuration_info import ClientAppConfigurationInfo
 from .models.client_app_entity_listing import ClientAppEntityListing
@@ -1285,7 +1290,6 @@ from .models.conversation_event_topic_phone_number_column import ConversationEve
 from .models.conversation_event_topic_queue_media_settings import ConversationEventTopicQueueMediaSettings
 from .models.conversation_event_topic_recorders_state import ConversationEventTopicRecordersState
 from .models.conversation_event_topic_scored_agent import ConversationEventTopicScoredAgent
-from .models.conversation_event_topic_screen_monitoring import ConversationEventTopicScreenMonitoring
 from .models.conversation_event_topic_screen_share import ConversationEventTopicScreenShare
 from .models.conversation_event_topic_social_expression import ConversationEventTopicSocialExpression
 from .models.conversation_event_topic_transfer_destination import ConversationEventTopicTransferDestination
@@ -2986,6 +2990,7 @@ from .models.knowledge_parse_record import KnowledgeParseRecord
 from .models.knowledge_search_client_application import KnowledgeSearchClientApplication
 from .models.knowledge_search_document_response import KnowledgeSearchDocumentResponse
 from .models.knowledge_setting import KnowledgeSetting
+from .models.knowledge_settings import KnowledgeSettings
 from .models.knowledge_suggestion_config import KnowledgeSuggestionConfig
 from .models.knowledge_sync_job_report import KnowledgeSyncJobReport
 from .models.knowledge_sync_job_request import KnowledgeSyncJobRequest
@@ -3773,7 +3778,6 @@ from .models.program_insights_settings import ProgramInsightsSettings
 from .models.program_insights_settings_entity_listing import ProgramInsightsSettingsEntityListing
 from .models.program_job import ProgramJob
 from .models.program_job_request import ProgramJobRequest
-from .models.program_mappings import ProgramMappings
 from .models.program_mappings_request import ProgramMappingsRequest
 from .models.program_request import ProgramRequest
 from .models.program_topic_links_test_phrase_detected_phrase import ProgramTopicLinksTestPhraseDetectedPhrase
@@ -3783,7 +3787,6 @@ from .models.program_topic_links_topics_definitions_job import ProgramTopicLinks
 from .models.program_transcription_engine import ProgramTranscriptionEngine
 from .models.program_transcription_engines import ProgramTranscriptionEngines
 from .models.programs_entity_listing import ProgramsEntityListing
-from .models.programs_mappings_entity_listing import ProgramsMappingsEntityListing
 from .models.progress_consult_transfer_event import ProgressConsultTransferEvent
 from .models.progress_transfer_event import ProgressTransferEvent
 from .models.prompt import Prompt
@@ -3991,7 +3994,6 @@ from .models.queue_conversation_event_topic_phone_number_column import QueueConv
 from .models.queue_conversation_event_topic_queue_media_settings import QueueConversationEventTopicQueueMediaSettings
 from .models.queue_conversation_event_topic_recorders_state import QueueConversationEventTopicRecordersState
 from .models.queue_conversation_event_topic_scored_agent import QueueConversationEventTopicScoredAgent
-from .models.queue_conversation_event_topic_screen_monitoring import QueueConversationEventTopicScreenMonitoring
 from .models.queue_conversation_event_topic_screen_share import QueueConversationEventTopicScreenShare
 from .models.queue_conversation_event_topic_social_expression import QueueConversationEventTopicSocialExpression
 from .models.queue_conversation_event_topic_transfer_destination import QueueConversationEventTopicTransferDestination
@@ -4085,7 +4087,6 @@ from .models.queue_conversation_social_expression_event_topic_phone_number_colum
 from .models.queue_conversation_social_expression_event_topic_queue_media_settings import QueueConversationSocialExpressionEventTopicQueueMediaSettings
 from .models.queue_conversation_social_expression_event_topic_recorders_state import QueueConversationSocialExpressionEventTopicRecordersState
 from .models.queue_conversation_social_expression_event_topic_scored_agent import QueueConversationSocialExpressionEventTopicScoredAgent
-from .models.queue_conversation_social_expression_event_topic_screen_monitoring import QueueConversationSocialExpressionEventTopicScreenMonitoring
 from .models.queue_conversation_social_expression_event_topic_screen_share import QueueConversationSocialExpressionEventTopicScreenShare
 from .models.queue_conversation_social_expression_event_topic_social_expression import QueueConversationSocialExpressionEventTopicSocialExpression
 from .models.queue_conversation_social_expression_event_topic_transfer_destination import QueueConversationSocialExpressionEventTopicTransferDestination
@@ -4136,7 +4137,6 @@ from .models.queue_conversation_video_event_topic_phone_number_column import Que
 from .models.queue_conversation_video_event_topic_queue_media_settings import QueueConversationVideoEventTopicQueueMediaSettings
 from .models.queue_conversation_video_event_topic_recorders_state import QueueConversationVideoEventTopicRecordersState
 from .models.queue_conversation_video_event_topic_scored_agent import QueueConversationVideoEventTopicScoredAgent
-from .models.queue_conversation_video_event_topic_screen_monitoring import QueueConversationVideoEventTopicScreenMonitoring
 from .models.queue_conversation_video_event_topic_screen_share import QueueConversationVideoEventTopicScreenShare
 from .models.queue_conversation_video_event_topic_social_expression import QueueConversationVideoEventTopicSocialExpression
 from .models.queue_conversation_video_event_topic_transfer_destination import QueueConversationVideoEventTopicTransferDestination
@@ -4625,8 +4625,8 @@ from .models.social_media_statistical_summary import SocialMediaStatisticalSumma
 from .models.social_topic_patch_request import SocialTopicPatchRequest
 from .models.social_topic_request import SocialTopicRequest
 from .models.social_topic_response import SocialTopicResponse
-from .models.social_topic_response_entity_listing import SocialTopicResponseEntityListing
 from .models.social_topic_with_data_ingestion_rule_metadata_response import SocialTopicWithDataIngestionRuleMetadataResponse
+from .models.social_topic_with_data_ingestion_rule_metadata_response_entity_listing import SocialTopicWithDataIngestionRuleMetadataResponseEntityListing
 from .models.sort_item import SortItem
 from .models.source import Source
 from .models.source_base_response import SourceBaseResponse
@@ -4676,6 +4676,7 @@ from .models.station_entity_listing import StationEntityListing
 from .models.statistical_response import StatisticalResponse
 from .models.statistical_summary import StatisticalSummary
 from .models.status_change import StatusChange
+from .models.status_info import StatusInfo
 from .models.stop_settings import StopSettings
 from .models.story_setting import StorySetting
 from .models.street_address import StreetAddress
@@ -4907,6 +4908,8 @@ from .models.topic_job_request import TopicJobRequest
 from .models.topic_offset import TopicOffset
 from .models.topic_phrase import TopicPhrase
 from .models.topic_request import TopicRequest
+from .models.topics_definitions_program_mappings import TopicsDefinitionsProgramMappings
+from .models.topics_definitions_programs_mappings_entity_listing import TopicsDefinitionsProgramsMappingsEntityListing
 from .models.topics_entity_listing import TopicsEntityListing
 from .models.touchpoint import Touchpoint
 from .models.touchpoint_response import TouchpointResponse
@@ -5862,7 +5865,6 @@ from .models.writable_dialer_contact import WritableDialerContact
 from .models.writable_division import WritableDivision
 from .models.writable_entity import WritableEntity
 from .models.writable_starrable_division import WritableStarrableDivision
-from .models.year_month import YearMonth
 
 # import apis into sdk package
 from .apis.ai_studio_api import AIStudioApi
@@ -6036,6 +6038,9 @@ from .apis.workforce_management_api import WorkforceManagementApi
 
 # import ApiClient
 from .api_client import ApiClient
+
+# import YearMonth custom class
+from .year_month import YearMonth
 
 from .configuration import Configuration
 

@@ -65,7 +65,7 @@ class ExternalId(object):
     def external_source(self) -> 'ExternalSource':
         """
         Gets the external_source of this ExternalId.
-
+        The external source of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :return: The external_source of this ExternalId.
         :rtype: ExternalSource
@@ -76,7 +76,7 @@ class ExternalId(object):
     def external_source(self, external_source: 'ExternalSource') -> None:
         """
         Sets the external_source of this ExternalId.
-
+        The external source of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :param external_source: The external_source of this ExternalId.
         :type: ExternalSource
@@ -89,7 +89,7 @@ class ExternalId(object):
     def value(self) -> str:
         """
         Gets the value of this ExternalId.
-
+        The string value of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :return: The value of this ExternalId.
         :rtype: str
@@ -100,7 +100,7 @@ class ExternalId(object):
     def value(self, value: str) -> None:
         """
         Sets the value of this ExternalId.
-
+        The string value of the identifier. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :param value: The value of this ExternalId.
         :type: str

@@ -40,7 +40,6 @@ if TYPE_CHECKING:
     from . import QueueConversationEventTopicEmail
     from . import QueueConversationEventTopicInternalMessage
     from . import QueueConversationEventTopicMessage
-    from . import QueueConversationEventTopicScreenMonitoring
     from . import QueueConversationEventTopicScreenShare
     from . import QueueConversationEventTopicSocialExpression
     from . import QueueConversationEventTopicVideo
@@ -99,7 +98,6 @@ class QueueConversationEventTopicParticipant(object):
             'emails': 'list[QueueConversationEventTopicEmail]',
             'messages': 'list[QueueConversationEventTopicMessage]',
             'internal_messages': 'list[QueueConversationEventTopicInternalMessage]',
-            'screen_monitorings': 'list[QueueConversationEventTopicScreenMonitoring]',
             'screenshares': 'list[QueueConversationEventTopicScreenShare]',
             'social_expressions': 'list[QueueConversationEventTopicSocialExpression]',
             'videos': 'list[QueueConversationEventTopicVideo]',
@@ -144,7 +142,6 @@ class QueueConversationEventTopicParticipant(object):
             'emails': 'emails',
             'messages': 'messages',
             'internal_messages': 'internalMessages',
-            'screen_monitorings': 'screenMonitorings',
             'screenshares': 'screenshares',
             'social_expressions': 'socialExpressions',
             'videos': 'videos',
@@ -188,7 +185,6 @@ class QueueConversationEventTopicParticipant(object):
         self._emails = None
         self._messages = None
         self._internal_messages = None
-        self._screen_monitorings = None
         self._screenshares = None
         self._social_expressions = None
         self._videos = None
@@ -1086,30 +1082,6 @@ class QueueConversationEventTopicParticipant(object):
         
 
         self._internal_messages = internal_messages
-
-    @property
-    def screen_monitorings(self) -> List['QueueConversationEventTopicScreenMonitoring']:
-        """
-        Gets the screen_monitorings of this QueueConversationEventTopicParticipant.
-
-
-        :return: The screen_monitorings of this QueueConversationEventTopicParticipant.
-        :rtype: list[QueueConversationEventTopicScreenMonitoring]
-        """
-        return self._screen_monitorings
-
-    @screen_monitorings.setter
-    def screen_monitorings(self, screen_monitorings: List['QueueConversationEventTopicScreenMonitoring']) -> None:
-        """
-        Sets the screen_monitorings of this QueueConversationEventTopicParticipant.
-
-
-        :param screen_monitorings: The screen_monitorings of this QueueConversationEventTopicParticipant.
-        :type: list[QueueConversationEventTopicScreenMonitoring]
-        """
-        
-
-        self._screen_monitorings = screen_monitorings
 
     @property
     def screenshares(self) -> List['QueueConversationEventTopicScreenShare']:

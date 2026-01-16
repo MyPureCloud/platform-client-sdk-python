@@ -18,7 +18,8 @@
 | **state** | str | State of the assistant. | [optional] |
 | **copilot** | [Copilot](Copilot) | Agent copilot configuration. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
+| **variation_parent** | [AddressableEntityRef](AddressableEntityRef) | The parent assistant if this assistant is a variation of an assistant | [optional] |
 
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

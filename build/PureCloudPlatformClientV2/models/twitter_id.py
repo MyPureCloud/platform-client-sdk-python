@@ -72,7 +72,7 @@ class TwitterId(object):
     def id(self) -> str:
         """
         Gets the id of this TwitterId.
-        twitter user.id_str
+        twitter user.id_str. Max: 255 characters
 
         :return: The id of this TwitterId.
         :rtype: str
@@ -83,7 +83,7 @@ class TwitterId(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this TwitterId.
-        twitter user.id_str
+        twitter user.id_str. Max: 255 characters
 
         :param id: The id of this TwitterId.
         :type: str
@@ -96,7 +96,7 @@ class TwitterId(object):
     def name(self) -> str:
         """
         Gets the name of this TwitterId.
-        twitter user.name
+        twitter user.name. Max: 255 characters
 
         :return: The name of this TwitterId.
         :rtype: str
@@ -107,7 +107,7 @@ class TwitterId(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this TwitterId.
-        twitter user.name
+        twitter user.name. Max: 255 characters
 
         :param name: The name of this TwitterId.
         :type: str
@@ -120,7 +120,7 @@ class TwitterId(object):
     def screen_name(self) -> str:
         """
         Gets the screen_name of this TwitterId.
-        twitter user.screen_name
+        twitter user.screen_name. Max: 255 characters. Must match pattern: ^@?[A-Za-z0-9_]+$
 
         :return: The screen_name of this TwitterId.
         :rtype: str
@@ -131,7 +131,7 @@ class TwitterId(object):
     def screen_name(self, screen_name: str) -> None:
         """
         Sets the screen_name of this TwitterId.
-        twitter user.screen_name
+        twitter user.screen_name. Max: 255 characters. Must match pattern: ^@?[A-Za-z0-9_]+$
 
         :param screen_name: The screen_name of this TwitterId.
         :type: str

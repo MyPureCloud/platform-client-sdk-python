@@ -1460,7 +1460,7 @@ except ApiException as e:
 
 ## get_socialmedia_topics
 
-> [**SocialTopicResponseEntityListing**](SocialTopicResponseEntityListing) get_socialmedia_topics(page_number=page_number, page_size=page_size, division_ids=division_ids, include_deleted=include_deleted, name=name, ids=ids)
+> [**SocialTopicWithDataIngestionRuleMetadataResponseEntityListing**](SocialTopicWithDataIngestionRuleMetadataResponseEntityListing) get_socialmedia_topics(page_number=page_number, page_size=page_size, division_ids=division_ids, include_deleted=include_deleted, name=name, ids=ids)
 
 
 Retrieve all social topics.
@@ -1513,7 +1513,7 @@ except ApiException as e:
 
 ### Return type
 
-[**SocialTopicResponseEntityListing**](SocialTopicResponseEntityListing)
+[**SocialTopicWithDataIngestionRuleMetadataResponseEntityListing**](SocialTopicWithDataIngestionRuleMetadataResponseEntityListing)
 
 
 ## patch_socialmedia_topic
@@ -2630,4 +2630,4 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

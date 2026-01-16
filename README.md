@@ -5,7 +5,7 @@
 
 Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-Documentation version PureCloudPlatformClientV2 247.0.0
+Documentation version PureCloudPlatformClientV2 248.0.0
 
 ## Preview APIs
 
@@ -378,6 +378,26 @@ worktype_update.default_queue_id = PureCloudPlatformClientV2.ApiNullValue()
 ...
 task_api.patch_taskmanagement_worktype(worktype_id, worktype_update)
 ```
+
+### SDK Specific Types and Classes
+
+The Platform API Client SDK for Python defines some types and classes specific to the SDK.
+
+#### LocalDateTime
+
+`LocalDateTime` is defined as an alias of `datetime` class.
+
+#### YearMonth
+
+Some API Endpoints of the Platform API (REST API) contain properties defined as string with a "year-month" format (e.g. value equal to "2026-01").  
+If part of an API Response, these properties will be deserialized to the SDK's YearMonth class.  
+YearMonth class instance will be serialized to "year-month" string format if part of an API Request (REST API).
+
+You can import the YearMonth class in your python code using: `from PureCloudPlatformClientV2 import YearMonth`
+
+The YearMonth class contains two properties of integer type: **year** (allowing value from 0 to 9999) and **month** (allowing value from 1 to 12).  
+An instance of the class can be created using the class constructor `YearMonth(year: int, month: int)` or parsing a `date` with `YearMonth.from_date(d: date)`.  
+A YearMonth instance can also be transformed into a date (with day being forced to 1) with `my_year_month.to_date()`.
 
 ### Managing updates in Platform API Enumerations
 

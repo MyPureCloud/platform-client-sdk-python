@@ -60,7 +60,7 @@ class InstagramScopedId(object):
     def scoped_id(self) -> str:
         """
         Gets the scoped_id of this InstagramScopedId.
-        The unique page/app-specific scopedId for the user
+        The unique page/app-specific scopedId for the user. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :return: The scoped_id of this InstagramScopedId.
         :rtype: str
@@ -71,7 +71,7 @@ class InstagramScopedId(object):
     def scoped_id(self, scoped_id: str) -> None:
         """
         Sets the scoped_id of this InstagramScopedId.
-        The unique page/app-specific scopedId for the user
+        The unique page/app-specific scopedId for the user. Max: 255 characters. Leading and trailing whitespace stripped.
 
         :param scoped_id: The scoped_id of this InstagramScopedId.
         :type: str

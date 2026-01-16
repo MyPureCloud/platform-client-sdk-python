@@ -68,8 +68,8 @@ from ..models import SocialMediaAsyncDetailQueryResponse
 from ..models import SocialTopicPatchRequest
 from ..models import SocialTopicRequest
 from ..models import SocialTopicResponse
-from ..models import SocialTopicResponseEntityListing
 from ..models import SocialTopicWithDataIngestionRuleMetadataResponse
+from ..models import SocialTopicWithDataIngestionRuleMetadataResponseEntityListing
 from ..models import TwitterDataHistoricalTweetRequest
 from ..models import TwitterDataHistoricalTweetResponse
 from ..models import TwitterDataIngestionRuleRequest
@@ -2422,7 +2422,7 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_socialmedia_topics(self, **kwargs) -> 'SocialTopicResponseEntityListing':
+    def get_socialmedia_topics(self, **kwargs) -> 'SocialTopicWithDataIngestionRuleMetadataResponseEntityListing':
         """
         Retrieve all social topics.
         
@@ -2443,7 +2443,7 @@ class SocialMediaApi(object):
         :param bool include_deleted: Determines whether to include soft-deleted items in the result.
         :param str name: Search for topic by name that contains the given search string, search is case insensitive
         :param list[str] ids: One or more topic IDs to search through the topics.
-        :return: SocialTopicResponseEntityListing
+        :return: SocialTopicWithDataIngestionRuleMetadataResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2507,7 +2507,7 @@ class SocialMediaApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='SocialTopicResponseEntityListing',
+                                            response_type='SocialTopicWithDataIngestionRuleMetadataResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

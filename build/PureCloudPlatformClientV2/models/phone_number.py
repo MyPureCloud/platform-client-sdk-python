@@ -78,7 +78,7 @@ class PhoneNumber(object):
     def display(self) -> str:
         """
         Gets the display of this PhoneNumber.
-        The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.
+        The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field. Max: 512 characters.
 
         :return: The display of this PhoneNumber.
         :rtype: str
@@ -89,7 +89,7 @@ class PhoneNumber(object):
     def display(self, display: str) -> None:
         """
         Sets the display of this PhoneNumber.
-        The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.
+        The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field. Max: 512 characters.
 
         :param display: The display of this PhoneNumber.
         :type: str
@@ -222,7 +222,7 @@ class PhoneNumber(object):
     def country_code(self) -> str:
         """
         Gets the country_code of this PhoneNumber.
-        The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
+        The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164. Max: 4 characters.
 
         :return: The country_code of this PhoneNumber.
         :rtype: str
@@ -233,7 +233,7 @@ class PhoneNumber(object):
     def country_code(self, country_code: str) -> None:
         """
         Sets the country_code of this PhoneNumber.
-        The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
+        The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164. Max: 4 characters.
 
         :param country_code: The country_code of this PhoneNumber.
         :type: str

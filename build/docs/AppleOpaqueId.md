@@ -6,8 +6,8 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **value** | str |  | [optional] |
+| **value** | str | Max: 255 characters. Leading and trailing whitespace stripped. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

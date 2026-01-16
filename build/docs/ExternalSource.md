@@ -7,11 +7,11 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
-| **name** | str | The name of the external source. | |
+| **name** | str | The name of the external source. Must be unique. Max: 200 characters. Leading and trailing whitespace stripped. | |
 | **active** | bool |  | [optional] |
 | **link_configuration** | [LinkConfiguration](LinkConfiguration) |  | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 247.0.0_
+_PureCloudPlatformClientV2 248.0.0_

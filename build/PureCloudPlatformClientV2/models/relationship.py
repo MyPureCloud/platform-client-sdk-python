@@ -179,7 +179,7 @@ class Relationship(object):
     def relationship(self) -> str:
         """
         Gets the relationship of this Relationship.
-        The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant
+        The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant. Between 1 and 100 characters.
 
         :return: The relationship of this Relationship.
         :rtype: str
@@ -190,7 +190,7 @@ class Relationship(object):
     def relationship(self, relationship: str) -> None:
         """
         Sets the relationship of this Relationship.
-        The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant
+        The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant. Between 1 and 100 characters.
 
         :param relationship: The relationship of this Relationship.
         :type: str

@@ -192,7 +192,7 @@ class Note(object):
     def note_text(self) -> str:
         """
         Gets the note_text of this Note.
-
+        Between 1 and 32,000 characters.
 
         :return: The note_text of this Note.
         :rtype: str
@@ -203,7 +203,7 @@ class Note(object):
     def note_text(self, note_text: str) -> None:
         """
         Sets the note_text of this Note.
-
+        Between 1 and 32,000 characters.
 
         :param note_text: The note_text of this Note.
         :type: str
