@@ -805,9 +805,10 @@ Delete Routing Skill
 
 Wraps DELETE /api/v2/routing/skills/{skillId} 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:skill:manage
+* routing:skill:delete
 
 ### Example
 
@@ -7225,6 +7226,7 @@ Wraps POST /api/v2/routing/skills
 Requires ANY permissions: 
 
 * routing:skill:manage
+* routing:skill:create
 
 ### Example
 
@@ -7239,7 +7241,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.RoutingSkill() # RoutingSkill | Skill
+body = PureCloudPlatformClientV2.CreateRoutingSkill() # CreateRoutingSkill | Skill
 
 try:
     # Create Skill
@@ -7254,7 +7256,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingSkill**](RoutingSkill)| Skill |  |
+| **body** | [**CreateRoutingSkill**](CreateRoutingSkill)| Skill |  |
 
 ### Return type
 
@@ -8551,4 +8553,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

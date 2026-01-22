@@ -229,7 +229,7 @@ except ApiException as e:
 
 ## get_users_rules
 
-> [**UsersRulesRuleList**](UsersRulesRuleList) get_users_rules(types, page_number=page_number, page_size=page_size, expand=expand, search_term=search_term, sort_order=sort_order)
+> [**UsersRulesRuleList**](UsersRulesRuleList) get_users_rules(types, page_number=page_number, page_size=page_size, expand=expand, enabled=enabled, search_term=search_term, sort_order=sort_order)
 
 
 Get the list of users rules
@@ -259,12 +259,13 @@ types = ['types_example'] # list[str] | The types of the rule
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Number of results per page (optional) (default to 25)
 expand = ['expand_example'] # list[str] | Fields to expand in response (optional)
+enabled = True # bool | Whether to list enabled or disabled rules (optional)
 search_term = 'search_term_example' # str | a search term for finding a rule by name (optional)
 sort_order = ''ascending'' # str | sort rules by name, ascending, descending (optional) (default to 'ascending')
 
 try:
     # Get the list of users rules
-    api_response = api_instance.get_users_rules(types, page_number=page_number, page_size=page_size, expand=expand, search_term=search_term, sort_order=sort_order)
+    api_response = api_instance.get_users_rules(types, page_number=page_number, page_size=page_size, expand=expand, enabled=enabled, search_term=search_term, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersRulesApi->get_users_rules: %s\n" % e)
@@ -279,6 +280,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Number of results per page | [optional] [default to 25] |
 | **expand** | [**list[str]**](str)| Fields to expand in response | [optional] <br />**Values**: criteria |
+| **enabled** | **bool**| Whether to list enabled or disabled rules | [optional]  |
 | **search_term** | **str**| a search term for finding a rule by name | [optional]  |
 | **sort_order** | **str**| sort rules by name, ascending, descending | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 
@@ -499,4 +501,4 @@ except ApiException as e:
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

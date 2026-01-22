@@ -814,7 +814,7 @@ except ApiException as e:
 
 ## get_speechandtextanalytics_dictionaryfeedback
 
-> [**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing) get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, next_page=next_page, page_size=page_size)
+> [**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing) get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, transcription_engine=transcription_engine, next_page=next_page, page_size=page_size)
 
 
 Get the list of Speech & Text Analytics dictionary feedbacks
@@ -839,12 +839,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 dialect = 'en-US' # str | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+transcription_engine = 'transcription_engine_example' # str | Filter by transcription engine (optional)
 next_page = 'next_page_example' # str | The key for listing the next page (optional)
 page_size = 500 # int | The page size for the listing (optional) (default to 500)
 
 try:
     # Get the list of Speech & Text Analytics dictionary feedbacks
-    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, next_page=next_page, page_size=page_size)
+    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, transcription_engine=transcription_engine, next_page=next_page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dictionaryfeedback: %s\n" % e)
@@ -856,6 +857,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dialect** | **str**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
+| **transcription_engine** | **str**| Filter by transcription engine | [optional] <br />**Values**: Genesys, GenesysExtended |
 | **next_page** | **str**| The key for listing the next page | [optional]  |
 | **page_size** | **int**| The page size for the listing | [optional] [default to 500] |
 
@@ -1107,7 +1109,7 @@ except ApiException as e:
 
 ## get_speechandtextanalytics_programs
 
-> [**ProgramsEntityListing**](ProgramsEntityListing) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state)
+> [**ProgramsEntityListing**](ProgramsEntityListing) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state, name=name, sort_by=sort_by, sort_order=sort_order)
 
 
 Get the list of Speech & Text Analytics programs
@@ -1134,10 +1136,13 @@ api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 next_page = 'next_page_example' # str | The key for listing the next page (optional)
 page_size = 20 # int | The page size for the listing (optional) (default to 20)
 state = 'state_example' # str | Program state. Defaults to Latest (optional)
+name = 'name_example' # str | Case insensitive partial name to filter by (optional)
+sort_by = 'sort_by_example' # str | Sort results by. Defaults to name (optional)
+sort_order = 'sort_order_example' # str | Sort order. Defaults to asc (optional)
 
 try:
     # Get the list of Speech & Text Analytics programs
-    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state)
+    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state, name=name, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs: %s\n" % e)
@@ -1151,6 +1156,9 @@ except ApiException as e:
 | **next_page** | **str**| The key for listing the next page | [optional]  |
 | **page_size** | **int**| The page size for the listing | [optional] [default to 20] |
 | **state** | **str**| Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
+| **name** | **str**| Case insensitive partial name to filter by | [optional]  |
+| **sort_by** | **str**| Sort results by. Defaults to name | [optional] <br />**Values**: name |
+| **sort_order** | **str**| Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 
 ### Return type
 
@@ -3170,4 +3178,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_forms_evaluation**](#get_quality_forms_evaluation) | Get an evaluation form|
 |[**get_quality_forms_evaluation_versions**](#get_quality_forms_evaluation_versions) | Gets all the revisions for a specific evaluation.|
 |[**get_quality_forms_evaluations**](#get_quality_forms_evaluations) | Get the list of evaluation forms|
+|[**get_quality_forms_evaluations_bulk**](#get_quality_forms_evaluations_bulk) | Retrieve a list of evaluation forms by their ids|
 |[**get_quality_forms_evaluations_bulk_contexts**](#get_quality_forms_evaluations_bulk_contexts) | Retrieve a list of the latest published evaluation form versions by context ids|
 |[**get_quality_forms_survey**](#get_quality_forms_survey) | Get a survey form|
 |[**get_quality_forms_survey_versions**](#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
@@ -59,6 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_quality_conversations_audits_query**](#post_quality_conversations_audits_query) | Create audit query execution|
 |[**post_quality_evaluations_aggregates_query_me**](#post_quality_evaluations_aggregates_query_me) | Query for evaluation aggregates for the current user|
 |[**post_quality_evaluations_scoring**](#post_quality_evaluations_scoring) | Score evaluation|
+|[**post_quality_evaluations_search**](#post_quality_evaluations_search) | Search evaluations based along specified criteria|
 |[**post_quality_forms**](#post_quality_forms) | Create an evaluation form.|
 |[**post_quality_forms_evaluations**](#post_quality_forms_evaluations) | Create an evaluation form.|
 |[**post_quality_forms_surveys**](#post_quality_forms_surveys) | Create a survey form.|
@@ -66,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_quality_publishedforms**](#post_quality_publishedforms) | Publish an evaluation form.|
 |[**post_quality_publishedforms_evaluations**](#post_quality_publishedforms_evaluations) | Publish an evaluation form.|
 |[**post_quality_publishedforms_surveys**](#post_quality_publishedforms_surveys) | Publish a survey form.|
+|[**post_quality_surveys**](#post_quality_surveys) | Create a survey for a conversation|
 |[**post_quality_surveys_scoring**](#post_quality_surveys_scoring) | Score survey|
 |[**put_quality_calibration**](#put_quality_calibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex|
 |[**put_quality_conversation_evaluation**](#put_quality_conversation_evaluation) | Update an evaluation|
@@ -1574,6 +1577,56 @@ except ApiException as e:
 [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
 
+## get_quality_forms_evaluations_bulk
+
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_forms_evaluations_bulk(id, include_latest_version_form_name=include_latest_version_form_name)
+
+
+Retrieve a list of evaluation forms by their ids
+
+Wraps GET /api/v2/quality/forms/evaluations/bulk 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+id = ['id_example'] # list[str] | A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100
+include_latest_version_form_name = False # bool | Whether to include the name of the form's most recently published version (optional) (default to False)
+
+try:
+    # Retrieve a list of evaluation forms by their ids
+    api_response = api_instance.get_quality_forms_evaluations_bulk(id, include_latest_version_form_name=include_latest_version_form_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_quality_forms_evaluations_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str)| A comma-delimited list of valid evaluation form ids. The maximum number of ids allowed in this list is 100 |  |
+| **include_latest_version_form_name** | **bool**| Whether to include the name of the form&#39;s most recently published version | [optional] [default to False] |
+
+### Return type
+
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
+
+
 ## get_quality_forms_evaluations_bulk_contexts
 
 > [**list[EvaluationFormResponse]**](EvaluationFormResponse) get_quality_forms_evaluations_bulk_contexts(context_id)
@@ -2874,6 +2927,56 @@ except ApiException as e:
 [**EvaluationScoringSet**](EvaluationScoringSet)
 
 
+## post_quality_evaluations_search
+
+> [**EvaluationSearchResponse**](EvaluationSearchResponse) post_quality_evaluations_search(body)
+
+
+Search evaluations based along specified criteria
+
+Search Rules: 1. Time Range    - Time Range: Max 3 months (required) 2. Question Group Level Query: Use at least one field containing 'questionGroup' in name + exactly one questionGroupId 3. Question Level Query: Use at least one field containing 'question' in name + exactly one questionId 4. Mixed Queries: questionId alone is sufficient 5. Search Logic:    - Multiple criteria: AND operation    - Multiple values per criterion: OR operation    EXAMPLE: (agentId₁ OR agentId₂) AND (evaluatorId₁ OR evaluatorId₂) 5. Aggregations:    - Omit or set pageSize = 0    - Choose: multiple aggregations OR single aggregation with multiple sub-aggregations    - To aggregate against question fields, one must query by either a questionId OR a single top level TERM questionId aggregation AND query by a single formID or questionGroupId, or list of questionIds    - To aggregate against question group fields, one must query either a questionId/questionGroupId OR a single top level TERM questionGroupId aggregation AND query by a single formID or list of questionGroupIds 
+
+Wraps POST /api/v2/quality/evaluations/search 
+
+Requires ANY permissions: 
+
+* quality:evaluation:searchAny
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.EvaluationSearchRequestDTO() # EvaluationSearchRequestDTO | Evaluation search request
+
+try:
+    # Search evaluations based along specified criteria
+    api_response = api_instance.post_quality_evaluations_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_quality_evaluations_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EvaluationSearchRequestDTO**](EvaluationSearchRequestDTO)| Evaluation search request |  |
+
+### Return type
+
+[**EvaluationSearchResponse**](EvaluationSearchResponse)
+
+
 ## post_quality_forms
 
 > [**EvaluationFormResponse**](EvaluationFormResponse) post_quality_forms(body)
@@ -3218,6 +3321,54 @@ except ApiException as e:
 ### Return type
 
 [**SurveyForm**](SurveyForm)
+
+
+## post_quality_surveys
+
+> [**Survey**](Survey) post_quality_surveys(body)
+
+
+Create a survey for a conversation
+
+Wraps POST /api/v2/quality/surveys 
+
+Requires ANY permissions: 
+
+* quality:survey:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.CreateSurveyRequest() # CreateSurveyRequest | Survey creation request
+
+try:
+    # Create a survey for a conversation
+    api_response = api_instance.post_quality_surveys(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_quality_surveys: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateSurveyRequest**](CreateSurveyRequest)| Survey creation request |  |
+
+### Return type
+
+[**Survey**](Survey)
 
 
 ## post_quality_surveys_scoring
@@ -3676,4 +3827,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

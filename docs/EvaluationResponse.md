@@ -20,10 +20,13 @@
 | **assignee_applicable** | bool | Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable. | [optional] |
 | **release_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **assigned_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **created_date** | datetime | Date the first version of this evaluation was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **changed_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **submitted_date** | datetime | Date the evaluation was last submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **revision_created_date** | datetime | Date of when evaluation revision is created. Null if there is no revision. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **queue** | [Queue](Queue) |  | [optional] |
 | **media_type** | list[str] | List of different communication types used in conversation. | [optional] |
+| **division_ids** | list[str] | Evaluation is assigned in the following division(s). | [optional] |
 | **rescore** | bool | Is only true when evaluation is re-scored. | [optional] |
 | **conversation_date** | datetime | Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **conversation_end_date** | datetime | End date of conversation if it had completed before evaluation creation. Null if created before the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -42,4 +45,4 @@
 
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

@@ -18,7 +18,8 @@
 | **external_links** | list[str] | The list of external links related to the appointment | [optional] |
 | **location** | str | The location of the appointment | [optional] |
 | **share_insights_data** | bool | Whether to share the insight data | [optional] |
+| **add_to_schedule** | bool | If True, adds the appointment to their schedule | [optional] |
 
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

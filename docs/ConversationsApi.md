@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversation**](#delete_conversation) | Update a conversation by disconnecting all of the participants|
 |[**delete_conversation_participant_code**](#delete_conversation_participant_code) | Delete a code used to add a communication to this participant|
 |[**delete_conversation_participant_flaggedreason**](#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
+|[**delete_conversations_call_participant_communication_postflowaction**](#delete_conversations_call_participant_communication_postflowaction) | Remove mandatory post call actions.|
 |[**delete_conversations_call_participant_consult**](#delete_conversations_call_participant_consult) | Cancel the transfer|
 |[**delete_conversations_email_messages_draft_attachment**](#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
 |[**delete_conversations_messages_cachedmedia_cached_media_item_id**](#delete_conversations_messages_cachedmedia_cached_media_item_id) | Remove a cached media item asychronously|
@@ -143,6 +144,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_call_participant**](#patch_conversations_call_participant) | Update conversation participant|
 |[**patch_conversations_call_participant_attributes**](#patch_conversations_call_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_call_participant_communication**](#patch_conversations_call_participant_communication) | Update conversation participant&#39;s communication by disconnecting it. This endpoint does not update wrapup.|
+|[**patch_conversations_call_participant_communication_postflowaction**](#patch_conversations_call_participant_communication_postflowaction) | Set mandatory post call actions.  If both values are null or blank error will occur.|
 |[**patch_conversations_call_participant_consult**](#patch_conversations_call_participant_consult) | Change who can speak|
 |[**patch_conversations_call_participant_user_user_id**](#patch_conversations_call_participant_user_user_id) | Update conversation participant on behalf of a user|
 |[**patch_conversations_callback**](#patch_conversations_callback) | Update a conversation by disconnecting all of the participants|
@@ -539,6 +541,57 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_conversations_call_participant_communication_postflowaction
+
+>  delete_conversations_call_participant_communication_postflowaction(conversation_id, participant_id, communication_id)
+
+
+Remove mandatory post call actions.
+
+Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction 
+
+Requires ANY permissions: 
+
+* conversation:call:deleteMandatoryPostFlowAction
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+
+try:
+    # Remove mandatory post call actions.
+    api_instance.delete_conversations_call_participant_communication_postflowaction(conversation_id, participant_id, communication_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_call_participant_communication_postflowaction: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
 
 ### Return type
 
@@ -7140,6 +7193,59 @@ except ApiException as e:
 ### Return type
 
 **object**
+
+
+## patch_conversations_call_participant_communication_postflowaction
+
+>  patch_conversations_call_participant_communication_postflowaction(conversation_id, participant_id, communication_id, body=body)
+
+
+Set mandatory post call actions.  If both values are null or blank error will occur.
+
+Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction 
+
+Requires ANY permissions: 
+
+* conversation:call:setMandatoryPostFlowAction
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+communication_id = 'communication_id_example' # str | communicationId
+body = PureCloudPlatformClientV2.MandatoryPostCallActionInput() # MandatoryPostCallActionInput | Action (optional)
+
+try:
+    # Set mandatory post call actions.  If both values are null or blank error will occur.
+    api_instance.patch_conversations_call_participant_communication_postflowaction(conversation_id, participant_id, communication_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_call_participant_communication_postflowaction: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **communication_id** | **str**| communicationId |  |
+| **body** | [**MandatoryPostCallActionInput**](MandatoryPostCallActionInput)| Action | [optional]  |
+
+### Return type
+
+void (empty response body)
 
 
 ## patch_conversations_call_participant_consult
@@ -15263,4 +15369,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_
