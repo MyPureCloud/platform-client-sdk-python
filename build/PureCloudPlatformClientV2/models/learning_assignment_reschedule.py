@@ -48,16 +48,19 @@ class LearningAssignmentReschedule(object):
         """
         self.swagger_types = {
             'date_recommended_for_completion': 'datetime',
-            'length_in_minutes': 'int'
+            'length_in_minutes': 'int',
+            'add_to_schedule': 'bool'
         }
 
         self.attribute_map = {
             'date_recommended_for_completion': 'dateRecommendedForCompletion',
-            'length_in_minutes': 'lengthInMinutes'
+            'length_in_minutes': 'lengthInMinutes',
+            'add_to_schedule': 'addToSchedule'
         }
 
         self._date_recommended_for_completion = None
         self._length_in_minutes = None
+        self._add_to_schedule = None
 
     @property
     def date_recommended_for_completion(self) -> datetime:
@@ -106,6 +109,30 @@ class LearningAssignmentReschedule(object):
         
 
         self._length_in_minutes = length_in_minutes
+
+    @property
+    def add_to_schedule(self) -> bool:
+        """
+        Gets the add_to_schedule of this LearningAssignmentReschedule.
+        If True, adds the assignment to their schedule
+
+        :return: The add_to_schedule of this LearningAssignmentReschedule.
+        :rtype: bool
+        """
+        return self._add_to_schedule
+
+    @add_to_schedule.setter
+    def add_to_schedule(self, add_to_schedule: bool) -> None:
+        """
+        Sets the add_to_schedule of this LearningAssignmentReschedule.
+        If True, adds the assignment to their schedule
+
+        :param add_to_schedule: The add_to_schedule of this LearningAssignmentReschedule.
+        :type: bool
+        """
+        
+
+        self._add_to_schedule = add_to_schedule
 
     def to_dict(self):
         """

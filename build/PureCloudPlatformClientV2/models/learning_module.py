@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AssessmentForm
+    from . import LearningModuleAutoAssignResponse
     from . import LearningModuleCoverArtResponse
     from . import LearningModuleInformStep
     from . import LearningModuleReassignSummary
@@ -69,6 +70,7 @@ class LearningModule(object):
             'rule': 'LearningModuleRule',
             'enforce_content_order': 'bool',
             'review_assessment_results': 'ReviewAssessmentResults',
+            'auto_assign': 'LearningModuleAutoAssignResponse',
             'self_uri': 'str',
             'is_archived': 'bool',
             'is_published': 'bool',
@@ -98,6 +100,7 @@ class LearningModule(object):
             'rule': 'rule',
             'enforce_content_order': 'enforceContentOrder',
             'review_assessment_results': 'reviewAssessmentResults',
+            'auto_assign': 'autoAssign',
             'self_uri': 'selfUri',
             'is_archived': 'isArchived',
             'is_published': 'isPublished',
@@ -126,6 +129,7 @@ class LearningModule(object):
         self._rule = None
         self._enforce_content_order = None
         self._review_assessment_results = None
+        self._auto_assign = None
         self._self_uri = None
         self._is_archived = None
         self._is_published = None
@@ -456,6 +460,30 @@ class LearningModule(object):
         
 
         self._review_assessment_results = review_assessment_results
+
+    @property
+    def auto_assign(self) -> 'LearningModuleAutoAssignResponse':
+        """
+        Gets the auto_assign of this LearningModule.
+        The auto assignment settings for this module
+
+        :return: The auto_assign of this LearningModule.
+        :rtype: LearningModuleAutoAssignResponse
+        """
+        return self._auto_assign
+
+    @auto_assign.setter
+    def auto_assign(self, auto_assign: 'LearningModuleAutoAssignResponse') -> None:
+        """
+        Sets the auto_assign of this LearningModule.
+        The auto assignment settings for this module
+
+        :param auto_assign: The auto_assign of this LearningModule.
+        :type: LearningModuleAutoAssignResponse
+        """
+        
+
+        self._auto_assign = auto_assign
 
     @property
     def self_uri(self) -> str:

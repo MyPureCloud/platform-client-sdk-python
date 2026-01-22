@@ -48,16 +48,19 @@ class BuCopyScheduleRequest(object):
         """
         self.swagger_types = {
             'description': 'str',
-            'week_date': 'date'
+            'week_date': 'date',
+            'include_forecast': 'bool'
         }
 
         self.attribute_map = {
             'description': 'description',
-            'week_date': 'weekDate'
+            'week_date': 'weekDate',
+            'include_forecast': 'includeForecast'
         }
 
         self._description = None
         self._week_date = None
+        self._include_forecast = None
 
     @property
     def description(self) -> str:
@@ -106,6 +109,30 @@ class BuCopyScheduleRequest(object):
         
 
         self._week_date = week_date
+
+    @property
+    def include_forecast(self) -> bool:
+        """
+        Gets the include_forecast of this BuCopyScheduleRequest.
+        Whether to include the forecast while copying the schedule
+
+        :return: The include_forecast of this BuCopyScheduleRequest.
+        :rtype: bool
+        """
+        return self._include_forecast
+
+    @include_forecast.setter
+    def include_forecast(self, include_forecast: bool) -> None:
+        """
+        Sets the include_forecast of this BuCopyScheduleRequest.
+        Whether to include the forecast while copying the schedule
+
+        :param include_forecast: The include_forecast of this BuCopyScheduleRequest.
+        :type: bool
+        """
+        
+
+        self._include_forecast = include_forecast
 
     def to_dict(self):
         """

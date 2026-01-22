@@ -48,16 +48,19 @@ class LearningAssignmentReassign(object):
         """
         self.swagger_types = {
             'recommended_completion_date': 'datetime',
-            'length_in_minutes': 'int'
+            'length_in_minutes': 'int',
+            'add_to_schedule': 'bool'
         }
 
         self.attribute_map = {
             'recommended_completion_date': 'recommendedCompletionDate',
-            'length_in_minutes': 'lengthInMinutes'
+            'length_in_minutes': 'lengthInMinutes',
+            'add_to_schedule': 'addToSchedule'
         }
 
         self._recommended_completion_date = None
         self._length_in_minutes = None
+        self._add_to_schedule = None
 
     @property
     def recommended_completion_date(self) -> datetime:
@@ -106,6 +109,30 @@ class LearningAssignmentReassign(object):
         
 
         self._length_in_minutes = length_in_minutes
+
+    @property
+    def add_to_schedule(self) -> bool:
+        """
+        Gets the add_to_schedule of this LearningAssignmentReassign.
+        If True, adds the assignment to their schedule
+
+        :return: The add_to_schedule of this LearningAssignmentReassign.
+        :rtype: bool
+        """
+        return self._add_to_schedule
+
+    @add_to_schedule.setter
+    def add_to_schedule(self, add_to_schedule: bool) -> None:
+        """
+        Sets the add_to_schedule of this LearningAssignmentReassign.
+        If True, adds the assignment to their schedule
+
+        :param add_to_schedule: The add_to_schedule of this LearningAssignmentReassign.
+        :type: bool
+        """
+        
+
+        self._add_to_schedule = add_to_schedule
 
     def to_dict(self):
         """

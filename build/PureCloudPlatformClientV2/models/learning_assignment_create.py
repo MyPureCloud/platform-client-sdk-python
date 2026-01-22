@@ -47,6 +47,7 @@ class LearningAssignmentCreate(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'add_to_schedule': 'bool',
             'module_id': 'str',
             'user_id': 'str',
             'recommended_completion_date': 'datetime',
@@ -54,16 +55,42 @@ class LearningAssignmentCreate(object):
         }
 
         self.attribute_map = {
+            'add_to_schedule': 'addToSchedule',
             'module_id': 'moduleId',
             'user_id': 'userId',
             'recommended_completion_date': 'recommendedCompletionDate',
             'length_in_minutes': 'lengthInMinutes'
         }
 
+        self._add_to_schedule = None
         self._module_id = None
         self._user_id = None
         self._recommended_completion_date = None
         self._length_in_minutes = None
+
+    @property
+    def add_to_schedule(self) -> bool:
+        """
+        Gets the add_to_schedule of this LearningAssignmentCreate.
+        If True, adds the assignment to their schedule
+
+        :return: The add_to_schedule of this LearningAssignmentCreate.
+        :rtype: bool
+        """
+        return self._add_to_schedule
+
+    @add_to_schedule.setter
+    def add_to_schedule(self, add_to_schedule: bool) -> None:
+        """
+        Sets the add_to_schedule of this LearningAssignmentCreate.
+        If True, adds the assignment to their schedule
+
+        :param add_to_schedule: The add_to_schedule of this LearningAssignmentCreate.
+        :type: bool
+        """
+        
+
+        self._add_to_schedule = add_to_schedule
 
     @property
     def module_id(self) -> str:

@@ -53,12 +53,12 @@ class ResponseEntityList(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
+            'page_count': 'int',
             'first_uri': 'str',
             'previous_uri': 'str',
             'next_uri': 'str',
             'last_uri': 'str',
-            'self_uri': 'str',
-            'page_count': 'int'
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
@@ -66,24 +66,24 @@ class ResponseEntityList(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
+            'page_count': 'pageCount',
             'first_uri': 'firstUri',
             'previous_uri': 'previousUri',
             'next_uri': 'nextUri',
             'last_uri': 'lastUri',
-            'self_uri': 'selfUri',
-            'page_count': 'pageCount'
+            'self_uri': 'selfUri'
         }
 
         self._entities = None
         self._page_size = None
         self._page_number = None
         self._total = None
+        self._page_count = None
         self._first_uri = None
         self._previous_uri = None
         self._next_uri = None
         self._last_uri = None
         self._self_uri = None
-        self._page_count = None
 
     @property
     def entities(self) -> List['Response']:
@@ -180,6 +180,30 @@ class ResponseEntityList(object):
         
 
         self._total = total
+
+    @property
+    def page_count(self) -> int:
+        """
+        Gets the page_count of this ResponseEntityList.
+        Total number of pages
+
+        :return: The page_count of this ResponseEntityList.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count: int) -> None:
+        """
+        Sets the page_count of this ResponseEntityList.
+        Total number of pages
+
+        :param page_count: The page_count of this ResponseEntityList.
+        :type: int
+        """
+        
+
+        self._page_count = page_count
 
     @property
     def first_uri(self) -> str:
@@ -300,30 +324,6 @@ class ResponseEntityList(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def page_count(self) -> int:
-        """
-        Gets the page_count of this ResponseEntityList.
-
-
-        :return: The page_count of this ResponseEntityList.
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count: int) -> None:
-        """
-        Sets the page_count of this ResponseEntityList.
-
-
-        :param page_count: The page_count of this ResponseEntityList.
-        :type: int
-        """
-        
-
-        self._page_count = page_count
 
     def to_dict(self):
         """

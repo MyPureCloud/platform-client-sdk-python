@@ -58,6 +58,9 @@ class ListedDictionaryFeedback(object):
             'created_by': 'UserReference',
             'date_modified': 'datetime',
             'modified_by': 'UserReference',
+            'transcription_engine': 'str',
+            'status': 'str',
+            'display_as': 'str',
             'self_uri': 'str'
         }
 
@@ -71,6 +74,9 @@ class ListedDictionaryFeedback(object):
             'created_by': 'createdBy',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
+            'transcription_engine': 'transcriptionEngine',
+            'status': 'status',
+            'display_as': 'displayAs',
             'self_uri': 'selfUri'
         }
 
@@ -83,6 +89,9 @@ class ListedDictionaryFeedback(object):
         self._created_by = None
         self._date_modified = None
         self._modified_by = None
+        self._transcription_engine = None
+        self._status = None
+        self._display_as = None
         self._self_uri = None
 
     @property
@@ -305,6 +314,88 @@ class ListedDictionaryFeedback(object):
         
 
         self._modified_by = modified_by
+
+    @property
+    def transcription_engine(self) -> str:
+        """
+        Gets the transcription_engine of this ListedDictionaryFeedback.
+        The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :return: The transcription_engine of this ListedDictionaryFeedback.
+        :rtype: str
+        """
+        return self._transcription_engine
+
+    @transcription_engine.setter
+    def transcription_engine(self, transcription_engine: str) -> None:
+        """
+        Sets the transcription_engine of this ListedDictionaryFeedback.
+        The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :param transcription_engine: The transcription_engine of this ListedDictionaryFeedback.
+        :type: str
+        """
+        if isinstance(transcription_engine, int):
+            transcription_engine = str(transcription_engine)
+        allowed_values = ["Genesys", "GenesysExtended"]
+        if transcription_engine.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for transcription_engine -> " + transcription_engine)
+            self._transcription_engine = "outdated_sdk_version"
+        else:
+            self._transcription_engine = transcription_engine
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this ListedDictionaryFeedback.
+        The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :return: The status of this ListedDictionaryFeedback.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this ListedDictionaryFeedback.
+        The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :param status: The status of this ListedDictionaryFeedback.
+        :type: str
+        """
+        if isinstance(status, int):
+            status = str(status)
+        allowed_values = ["Active", "Pending", "Failed"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
+
+    @property
+    def display_as(self) -> str:
+        """
+        Gets the display_as of this ListedDictionaryFeedback.
+        The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+
+        :return: The display_as of this ListedDictionaryFeedback.
+        :rtype: str
+        """
+        return self._display_as
+
+    @display_as.setter
+    def display_as(self, display_as: str) -> None:
+        """
+        Sets the display_as of this ListedDictionaryFeedback.
+        The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+
+        :param display_as: The display_as of this ListedDictionaryFeedback.
+        :type: str
+        """
+        
+
+        self._display_as = display_as
 
     @property
     def self_uri(self) -> str:

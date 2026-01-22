@@ -60,7 +60,8 @@ class CreateCoachingAppointmentRequest(object):
             'wfm_schedule': 'WfmScheduleReference',
             'external_links': 'list[str]',
             'location': 'str',
-            'share_insights_data': 'bool'
+            'share_insights_data': 'bool',
+            'add_to_schedule': 'bool'
         }
 
         self.attribute_map = {
@@ -75,7 +76,8 @@ class CreateCoachingAppointmentRequest(object):
             'wfm_schedule': 'wfmSchedule',
             'external_links': 'externalLinks',
             'location': 'location',
-            'share_insights_data': 'shareInsightsData'
+            'share_insights_data': 'shareInsightsData',
+            'add_to_schedule': 'addToSchedule'
         }
 
         self._name = None
@@ -90,6 +92,7 @@ class CreateCoachingAppointmentRequest(object):
         self._external_links = None
         self._location = None
         self._share_insights_data = None
+        self._add_to_schedule = None
 
     @property
     def name(self) -> str:
@@ -378,6 +381,30 @@ class CreateCoachingAppointmentRequest(object):
         
 
         self._share_insights_data = share_insights_data
+
+    @property
+    def add_to_schedule(self) -> bool:
+        """
+        Gets the add_to_schedule of this CreateCoachingAppointmentRequest.
+        If True, adds the appointment to their schedule
+
+        :return: The add_to_schedule of this CreateCoachingAppointmentRequest.
+        :rtype: bool
+        """
+        return self._add_to_schedule
+
+    @add_to_schedule.setter
+    def add_to_schedule(self, add_to_schedule: bool) -> None:
+        """
+        Sets the add_to_schedule of this CreateCoachingAppointmentRequest.
+        If True, adds the appointment to their schedule
+
+        :param add_to_schedule: The add_to_schedule of this CreateCoachingAppointmentRequest.
+        :type: bool
+        """
+        
+
+        self._add_to_schedule = add_to_schedule
 
     def to_dict(self):
         """

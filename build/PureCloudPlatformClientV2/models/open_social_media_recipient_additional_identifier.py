@@ -81,7 +81,7 @@ class OpenSocialMediaRecipientAdditionalIdentifier(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Topic", "IngestionRule", "IngestionRuleVersion"]
+        allowed_values = ["Topic", "IngestionRule", "IngestionRuleVersion", "PhoneNumber"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

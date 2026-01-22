@@ -1353,7 +1353,7 @@ class ExternalContactsApi(object):
         :param int page_size: Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000)
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str sort_order: The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\"
-        :param list[str] expand: which fields, if any, to expand
+        :param list[str] expand: which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one.
         :return: NoteListing
                  If the method is called asynchronously,
                  returns the request thread.

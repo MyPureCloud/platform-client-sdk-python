@@ -60,6 +60,7 @@ class EvaluationForm(object):
             'question_groups': 'list[EvaluationQuestionGroup]',
             'published_versions': 'DomainEntityListingEvaluationForm',
             'evaluation_settings': 'EvaluationSettings',
+            'latest_version_form_name': 'str',
             'ai_scoring': 'AiScoringSettings',
             'self_uri': 'str'
         }
@@ -73,6 +74,7 @@ class EvaluationForm(object):
             'question_groups': 'questionGroups',
             'published_versions': 'publishedVersions',
             'evaluation_settings': 'evaluationSettings',
+            'latest_version_form_name': 'latestVersionFormName',
             'ai_scoring': 'aiScoring',
             'self_uri': 'selfUri'
         }
@@ -85,6 +87,7 @@ class EvaluationForm(object):
         self._question_groups = None
         self._published_versions = None
         self._evaluation_settings = None
+        self._latest_version_form_name = None
         self._ai_scoring = None
         self._self_uri = None
 
@@ -279,6 +282,30 @@ class EvaluationForm(object):
         
 
         self._evaluation_settings = evaluation_settings
+
+    @property
+    def latest_version_form_name(self) -> str:
+        """
+        Gets the latest_version_form_name of this EvaluationForm.
+        The name of the form's most recently published version
+
+        :return: The latest_version_form_name of this EvaluationForm.
+        :rtype: str
+        """
+        return self._latest_version_form_name
+
+    @latest_version_form_name.setter
+    def latest_version_form_name(self, latest_version_form_name: str) -> None:
+        """
+        Sets the latest_version_form_name of this EvaluationForm.
+        The name of the form's most recently published version
+
+        :param latest_version_form_name: The latest_version_form_name of this EvaluationForm.
+        :type: str
+        """
+        
+
+        self._latest_version_form_name = latest_version_form_name
 
     @property
     def ai_scoring(self) -> 'AiScoringSettings':

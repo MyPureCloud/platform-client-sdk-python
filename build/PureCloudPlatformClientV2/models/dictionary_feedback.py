@@ -59,6 +59,9 @@ class DictionaryFeedback(object):
             'created_by': 'UserReference',
             'date_modified': 'datetime',
             'modified_by': 'UserReference',
+            'transcription_engine': 'str',
+            'status': 'str',
+            'display_as': 'str',
             'example_phrases': 'list[DictionaryFeedbackExamplePhrase]',
             'sounds_like': 'list[str]',
             'self_uri': 'str'
@@ -74,6 +77,9 @@ class DictionaryFeedback(object):
             'created_by': 'createdBy',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
+            'transcription_engine': 'transcriptionEngine',
+            'status': 'status',
+            'display_as': 'displayAs',
             'example_phrases': 'examplePhrases',
             'sounds_like': 'soundsLike',
             'self_uri': 'selfUri'
@@ -88,6 +94,9 @@ class DictionaryFeedback(object):
         self._created_by = None
         self._date_modified = None
         self._modified_by = None
+        self._transcription_engine = None
+        self._status = None
+        self._display_as = None
         self._example_phrases = None
         self._sounds_like = None
         self._self_uri = None
@@ -314,10 +323,92 @@ class DictionaryFeedback(object):
         self._modified_by = modified_by
 
     @property
+    def transcription_engine(self) -> str:
+        """
+        Gets the transcription_engine of this DictionaryFeedback.
+        The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :return: The transcription_engine of this DictionaryFeedback.
+        :rtype: str
+        """
+        return self._transcription_engine
+
+    @transcription_engine.setter
+    def transcription_engine(self, transcription_engine: str) -> None:
+        """
+        Sets the transcription_engine of this DictionaryFeedback.
+        The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :param transcription_engine: The transcription_engine of this DictionaryFeedback.
+        :type: str
+        """
+        if isinstance(transcription_engine, int):
+            transcription_engine = str(transcription_engine)
+        allowed_values = ["Genesys", "GenesysExtended"]
+        if transcription_engine.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for transcription_engine -> " + transcription_engine)
+            self._transcription_engine = "outdated_sdk_version"
+        else:
+            self._transcription_engine = transcription_engine
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this DictionaryFeedback.
+        The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :return: The status of this DictionaryFeedback.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this DictionaryFeedback.
+        The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+
+        :param status: The status of this DictionaryFeedback.
+        :type: str
+        """
+        if isinstance(status, int):
+            status = str(status)
+        allowed_values = ["Active", "Pending", "Failed"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
+
+    @property
+    def display_as(self) -> str:
+        """
+        Gets the display_as of this DictionaryFeedback.
+        The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+
+        :return: The display_as of this DictionaryFeedback.
+        :rtype: str
+        """
+        return self._display_as
+
+    @display_as.setter
+    def display_as(self, display_as: str) -> None:
+        """
+        Sets the display_as of this DictionaryFeedback.
+        The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+
+        :param display_as: The display_as of this DictionaryFeedback.
+        :type: str
+        """
+        
+
+        self._display_as = display_as
+
+    @property
     def example_phrases(self) -> List['DictionaryFeedbackExamplePhrase']:
         """
         Gets the example_phrases of this DictionaryFeedback.
-        A list of at least 3 and up to 20 unique phrases that are example usage of the term
+        A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
 
         :return: The example_phrases of this DictionaryFeedback.
         :rtype: list[DictionaryFeedbackExamplePhrase]
@@ -328,7 +419,7 @@ class DictionaryFeedback(object):
     def example_phrases(self, example_phrases: List['DictionaryFeedbackExamplePhrase']) -> None:
         """
         Sets the example_phrases of this DictionaryFeedback.
-        A list of at least 3 and up to 20 unique phrases that are example usage of the term
+        A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
 
         :param example_phrases: The example_phrases of this DictionaryFeedback.
         :type: list[DictionaryFeedbackExamplePhrase]
@@ -341,7 +432,7 @@ class DictionaryFeedback(object):
     def sounds_like(self) -> List[str]:
         """
         Gets the sounds_like of this DictionaryFeedback.
-        A list of up to 10 terms that give examples of how the term sounds
+        A list of up to 10 terms that give examples of how the term sounds. This field is only valid for Genesys transcription engine.
 
         :return: The sounds_like of this DictionaryFeedback.
         :rtype: list[str]
@@ -352,7 +443,7 @@ class DictionaryFeedback(object):
     def sounds_like(self, sounds_like: List[str]) -> None:
         """
         Sets the sounds_like of this DictionaryFeedback.
-        A list of up to 10 terms that give examples of how the term sounds
+        A list of up to 10 terms that give examples of how the term sounds. This field is only valid for Genesys transcription engine.
 
         :param sounds_like: The sounds_like of this DictionaryFeedback.
         :type: list[str]

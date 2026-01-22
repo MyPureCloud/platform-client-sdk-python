@@ -19,6 +19,7 @@
 | **rule** | [LearningModuleRule](LearningModuleRule) | The rule for learning module; read-only, and only populated when requested via expand param. | [optional] |
 | **enforce_content_order** | bool | If true, learning module content should be viewed one by one in order | [optional] |
 | **review_assessment_results** | [ReviewAssessmentResults](ReviewAssessmentResults) | Allows to view Assessment results in detail | [optional] |
+| **auto_assign** | [LearningModuleAutoAssignResponse](LearningModuleAutoAssignResponse) | The auto assignment settings for this module | [optional] |
 | **current_assignments** | [list[LearningAssignment]](LearningAssignment) | The current assignments for the requested users | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 | **is_archived** | bool | If true, learning module is archived | [optional] |
@@ -36,4 +37,4 @@
 
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

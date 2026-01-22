@@ -61,6 +61,7 @@ class EvaluationFormResponse(object):
             'weight_mode': 'str',
             'evaluation_settings': 'EvaluationSettings',
             'published_versions': 'DomainEntityListingEvaluationForm',
+            'latest_version_form_name': 'str',
             'ai_scoring': 'AiScoringSettings',
             'self_uri': 'str'
         }
@@ -75,6 +76,7 @@ class EvaluationFormResponse(object):
             'weight_mode': 'weightMode',
             'evaluation_settings': 'evaluationSettings',
             'published_versions': 'publishedVersions',
+            'latest_version_form_name': 'latestVersionFormName',
             'ai_scoring': 'aiScoring',
             'self_uri': 'selfUri'
         }
@@ -88,6 +90,7 @@ class EvaluationFormResponse(object):
         self._weight_mode = None
         self._evaluation_settings = None
         self._published_versions = None
+        self._latest_version_form_name = None
         self._ai_scoring = None
         self._self_uri = None
 
@@ -311,6 +314,30 @@ class EvaluationFormResponse(object):
         
 
         self._published_versions = published_versions
+
+    @property
+    def latest_version_form_name(self) -> str:
+        """
+        Gets the latest_version_form_name of this EvaluationFormResponse.
+        The name of the form's most recently published version
+
+        :return: The latest_version_form_name of this EvaluationFormResponse.
+        :rtype: str
+        """
+        return self._latest_version_form_name
+
+    @latest_version_form_name.setter
+    def latest_version_form_name(self, latest_version_form_name: str) -> None:
+        """
+        Sets the latest_version_form_name of this EvaluationFormResponse.
+        The name of the form's most recently published version
+
+        :param latest_version_form_name: The latest_version_form_name of this EvaluationFormResponse.
+        :type: str
+        """
+        
+
+        self._latest_version_form_name = latest_version_form_name
 
     @property
     def ai_scoring(self) -> 'AiScoringSettings':

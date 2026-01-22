@@ -1587,4 +1587,4 @@ except ApiException as e:
 [**ScimV2User**](ScimV2User)
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

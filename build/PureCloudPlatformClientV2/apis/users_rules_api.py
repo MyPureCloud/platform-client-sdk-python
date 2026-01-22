@@ -419,6 +419,7 @@ class UsersRulesApi(object):
         :param int page_number: Page number
         :param int page_size: Number of results per page
         :param list[str] expand: Fields to expand in response
+        :param bool enabled: Whether to list enabled or disabled rules
         :param str search_term: a search term for finding a rule by name
         :param str sort_order: sort rules by name, ascending, descending
         :return: UsersRulesRuleList
@@ -426,7 +427,7 @@ class UsersRulesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['types', 'page_number', 'page_size', 'expand', 'search_term', 'sort_order']
+        all_params = ['types', 'page_number', 'page_size', 'expand', 'enabled', 'search_term', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -456,6 +457,8 @@ class UsersRulesApi(object):
             query_params['types'] = params['types']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'enabled' in params:
+            query_params['enabled'] = params['enabled']
         if 'search_term' in params:
             query_params['searchTerm'] = params['search_term']
         if 'sort_order' in params:

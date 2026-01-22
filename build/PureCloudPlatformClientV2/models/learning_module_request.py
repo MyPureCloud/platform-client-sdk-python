@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AssessmentForm
+    from . import LearningModuleAutoAssignRequest
     from . import LearningModuleCoverArtRequest
     from . import LearningModuleInformStepRequest
     from . import ReviewAssessmentResults
@@ -63,7 +64,8 @@ class LearningModuleRequest(object):
             'excluded_from_catalog': 'bool',
             'external_id': 'str',
             'enforce_content_order': 'bool',
-            'review_assessment_results': 'ReviewAssessmentResults'
+            'review_assessment_results': 'ReviewAssessmentResults',
+            'auto_assign': 'LearningModuleAutoAssignRequest'
         }
 
         self.attribute_map = {
@@ -78,7 +80,8 @@ class LearningModuleRequest(object):
             'excluded_from_catalog': 'excludedFromCatalog',
             'external_id': 'externalId',
             'enforce_content_order': 'enforceContentOrder',
-            'review_assessment_results': 'reviewAssessmentResults'
+            'review_assessment_results': 'reviewAssessmentResults',
+            'auto_assign': 'autoAssign'
         }
 
         self._name = None
@@ -93,6 +96,7 @@ class LearningModuleRequest(object):
         self._external_id = None
         self._enforce_content_order = None
         self._review_assessment_results = None
+        self._auto_assign = None
 
     @property
     def name(self) -> str:
@@ -392,6 +396,30 @@ class LearningModuleRequest(object):
         
 
         self._review_assessment_results = review_assessment_results
+
+    @property
+    def auto_assign(self) -> 'LearningModuleAutoAssignRequest':
+        """
+        Gets the auto_assign of this LearningModuleRequest.
+        The configuration for linking a module to a rule
+
+        :return: The auto_assign of this LearningModuleRequest.
+        :rtype: LearningModuleAutoAssignRequest
+        """
+        return self._auto_assign
+
+    @auto_assign.setter
+    def auto_assign(self, auto_assign: 'LearningModuleAutoAssignRequest') -> None:
+        """
+        Sets the auto_assign of this LearningModuleRequest.
+        The configuration for linking a module to a rule
+
+        :param auto_assign: The auto_assign of this LearningModuleRequest.
+        :type: LearningModuleAutoAssignRequest
+        """
+        
+
+        self._auto_assign = auto_assign
 
     def to_dict(self):
         """

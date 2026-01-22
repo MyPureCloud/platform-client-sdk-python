@@ -15,8 +15,11 @@
 | **created_by** | [UserReference](UserReference) | The Id of the user who created the dictionary feedback | [optional] |
 | **date_modified** | datetime | The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **modified_by** | [UserReference](UserReference) | The Id of the user who modified the dictionary feedback | [optional] |
+| **transcription_engine** | str | The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled. | [optional] |
+| **status** | str | The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled. | [optional] |
+| **display_as** | str | The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 248.0.0_
+_PureCloudPlatformClientV2 249.0.0_

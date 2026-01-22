@@ -51,6 +51,7 @@ from ..models import CreateBenefitAssessmentRequest
 from ..models import CreateKpiRequest
 from ..models import CreatePredictorRequest
 from ..models import CreateQueueRequest
+from ..models import CreateRoutingSkill
 from ..models import CreateUtilizationLabelRequest
 from ..models import CreateUtilizationTagRequest
 from ..models import EmailOutboundDomainResult
@@ -11548,7 +11549,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_skills(self, body: 'RoutingSkill', **kwargs) -> 'RoutingSkill':
+    def post_routing_skills(self, body: 'CreateRoutingSkill', **kwargs) -> 'RoutingSkill':
         """
         Create Skill
         
@@ -11563,7 +11564,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param RoutingSkill body: Skill (required)
+        :param CreateRoutingSkill body: Skill (required)
         :return: RoutingSkill
                  If the method is called asynchronously,
                  returns the request thread.

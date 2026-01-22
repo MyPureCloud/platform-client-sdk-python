@@ -1319,6 +1319,7 @@ class SpeechTextAnalyticsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str dialect: The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+        :param str transcription_engine: Filter by transcription engine
         :param str next_page: The key for listing the next page
         :param int page_size: The page size for the listing
         :return: DictionaryFeedbackEntityListing
@@ -1326,7 +1327,7 @@ class SpeechTextAnalyticsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['dialect', 'next_page', 'page_size']
+        all_params = ['dialect', 'transcription_engine', 'next_page', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -1347,6 +1348,8 @@ class SpeechTextAnalyticsApi(object):
         query_params = {}
         if 'dialect' in params:
             query_params['dialect'] = params['dialect']
+        if 'transcription_engine' in params:
+            query_params['transcriptionEngine'] = params['transcription_engine']
         if 'next_page' in params:
             query_params['nextPage'] = params['next_page']
         if 'page_size' in params:
@@ -1792,12 +1795,15 @@ class SpeechTextAnalyticsApi(object):
         :param str next_page: The key for listing the next page
         :param int page_size: The page size for the listing
         :param str state: Program state. Defaults to Latest
+        :param str name: Case insensitive partial name to filter by
+        :param str sort_by: Sort results by. Defaults to name
+        :param str sort_order: Sort order. Defaults to asc
         :return: ProgramsEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['next_page', 'page_size', 'state']
+        all_params = ['next_page', 'page_size', 'state', 'name', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1822,6 +1828,12 @@ class SpeechTextAnalyticsApi(object):
             query_params['pageSize'] = params['page_size']
         if 'state' in params:
             query_params['state'] = params['state']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
 
         header_params = {}
 
