@@ -9,6 +9,7 @@
 | **id** | str |  | [optional] |
 | **bu_id** | str |  | [optional] |
 | **status** | str |  | [optional] |
+| **bid_type** | str |  | [optional] |
 | **bid_window_start_date** | str |  | [optional] |
 | **bid_window_end_date** | str |  | [optional] |
 | **effective_date** | str |  | [optional] |

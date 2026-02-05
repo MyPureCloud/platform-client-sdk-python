@@ -30,6 +30,7 @@
 | **requested_routings** | list[str] |  | [optional] |
 | **used_routing** | str |  | [optional] |
 | **requested_routing_skill_ids** | list[str] |  | [optional] |
+| **requested_skill_expression_ids** | list[str] |  | [optional] |
 | **requested_language_id** | str |  | [optional] |
 | **requested_routing_user_ids** | list[str] |  | [optional] |
 | **routing_priority** | int |  | [optional] |

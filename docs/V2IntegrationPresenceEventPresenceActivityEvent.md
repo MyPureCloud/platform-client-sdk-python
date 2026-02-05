@@ -14,6 +14,7 @@
 | **message** | str |  | [optional] |
 | **current_display_source_id** | str |  | [optional] |
 | **previous_display_source_id** | str |  | [optional] |
+| **future_presence_definition** | [V2IntegrationPresenceEventOrganizationPresence](V2IntegrationPresenceEventOrganizationPresence) |  | [optional] |
 
 
 

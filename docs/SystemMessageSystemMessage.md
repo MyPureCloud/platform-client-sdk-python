@@ -12,6 +12,7 @@
 | **organization_id** | str |  | [optional] |
 | **user_id** | str |  | [optional] |
 | **oauth_client_id** | str |  | [optional] |
+| **oauth_client_org_id** | str |  | [optional] |
 | **reason** | str |  | [optional] |
 | **message** | str |  | [optional] |
 | **data** | dict(str, object) |  | [optional] |

@@ -29,6 +29,7 @@
 | **utilization_label** | str |  | [optional] |
 | **routing_priority** | int |  | [optional] |
 | **requested_routing_skill_ids** | list[str] |  | [optional] |
+| **skill_expression_applied** | bool |  | [optional] |
 
 
 
