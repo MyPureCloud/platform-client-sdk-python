@@ -16,8 +16,9 @@
 | **evaluation_settings** | [EvaluationSettings](EvaluationSettings) | Settings for evaluations associated with this form | [optional] |
 | **latest_version_form_name** | str | The name of the form&#39;s most recently published version | [optional] |
 | **ai_scoring** | [AiScoringSettings](AiScoringSettings) | AI scoring settings for the evaluation form. | [optional] |
+| **dialect** | str | The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

@@ -2917,6 +2917,7 @@ Requires ANY permissions:
 * recording:settings:editScreenRecordings
 * recording:settings:editRegionalStorage
 * recording:settings:editUrlExpiration
+* recording:settings:editConferenceRecording
 
 ### Example
 
@@ -3003,4 +3004,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

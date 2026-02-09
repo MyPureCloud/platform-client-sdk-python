@@ -163,7 +163,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **rule_id** | **str**| The ID of the rule for which to retrieve dependents |  |
-| **rule_type** | **str**| The type of the dependent | <br />**Values**: learning |
+| **rule_type** | **str**| The type of the dependent | <br />**Values**: learning, activityplan |
 | **type_id** | **str**| The type ID of the dependent |  |
 
 ### Return type
@@ -501,4 +501,4 @@ except ApiException as e:
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

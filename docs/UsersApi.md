@@ -13,12 +13,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_user_directroutingbackup_settings**](#delete_routing_user_directroutingbackup_settings) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
 |[**delete_routing_user_utilization**](#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_user**](#delete_user) | Delete user|
+|[**delete_user_customattribute**](#delete_user_customattribute) | Delete a custom attributes record.|
 |[**delete_user_externalid_authority_name_external_key**](#delete_user_externalid_authority_name_external_key) | Delete the external identifier for user.|
 |[**delete_user_routinglanguage**](#delete_user_routinglanguage) | Remove a routing language from a user|
 |[**delete_user_routingskill**](#delete_user_routingskill) | Remove a routing skill from a user|
 |[**delete_user_station_associatedstation**](#delete_user_station_associatedstation) | Clear associated station|
 |[**delete_user_station_defaultstation**](#delete_user_station_defaultstation) | Clear default station|
 |[**delete_user_verifier**](#delete_user_verifier) | Delete a verifier|
+|[**delete_users_customattributes_schema**](#delete_users_customattributes_schema) | Delete a schema|
 |[**get_analytics_users_aggregates_job**](#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
 |[**get_analytics_users_aggregates_job_results**](#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_users_details_job**](#get_analytics_users_details_job) | Get status for async query for user details|
@@ -37,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user**](#get_user) | Get user.|
 |[**get_user_adjacents**](#get_user_adjacents) | Get adjacents|
 |[**get_user_callforwarding**](#get_user_callforwarding) | Get a user&#39;s CallForwarding|
+|[**get_user_customattribute**](#get_user_customattribute) | Get custom attributes by schema id|
+|[**get_user_customattributes_bulk**](#get_user_customattributes_bulk) | Get multiple custom attributes records by schema ids|
 |[**get_user_directreports**](#get_user_directreports) | Get direct reports|
 |[**get_user_externalid**](#get_user_externalid) | Get the external identifiers for a user.|
 |[**get_user_externalid_authority_name**](#get_user_externalid_authority_name) | Get the external identifier of user for an authority.|
@@ -58,6 +62,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_verifiers**](#get_user_verifiers) | Get a list of verifiers|
 |[**get_users**](#get_users) | Get the list of available users.|
 |[**get_users_chats_me**](#get_users_chats_me) | Get chats for a user|
+|[**get_users_customattributes_schema**](#get_users_customattributes_schema) | Get a schema|
+|[**get_users_customattributes_schema_version**](#get_users_customattributes_schema_version) | Get a specific version of a schema|
+|[**get_users_customattributes_schema_versions**](#get_users_customattributes_schema_versions) | Get all versions of a user schema|
+|[**get_users_customattributes_schemas**](#get_users_customattributes_schemas) | Get a list of schemas.|
+|[**get_users_customattributes_schemas_coretype**](#get_users_customattributes_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_users_customattributes_schemas_coretypes**](#get_users_customattributes_schemas_coretypes) | Get the list of core types enabled for a specific namespace.|
+|[**get_users_customattributes_schemas_limits**](#get_users_customattributes_schemas_limits) | Get quantitative limits on schemas|
 |[**get_users_development_activities**](#get_users_development_activities) | Get list of Development Activities|
 |[**get_users_development_activities_me**](#get_users_development_activities_me) | Get list of Development Activities for current user|
 |[**get_users_development_activity**](#get_users_development_activity) | Get a Development Activity|
@@ -67,6 +78,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**patch_user**](#patch_user) | Update user|
 |[**patch_user_callforwarding**](#patch_user_callforwarding) | Patch a user&#39;s CallForwarding|
+|[**patch_user_customattributes**](#patch_user_customattributes) | Update a single custom attributes record by amending the data with only the provided fields.|
+|[**patch_user_customattributes_bulk**](#patch_user_customattributes_bulk) | Update multiple custom attributes records by amending the data with only the provided fields.|
 |[**patch_user_geolocation**](#patch_user_geolocation) | Patch a user&#39;s Geolocation|
 |[**patch_user_queue**](#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](#patch_user_queues) | Join or unjoin a set of queues for a user|
@@ -90,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_user_routinglanguages**](#post_user_routinglanguages) | Assign a routing language to a user|
 |[**post_user_routingskills**](#post_user_routingskills) | Assign a routing skill to a user|
 |[**post_users**](#post_users) | Create user|
+|[**post_users_customattributes_schemas**](#post_users_customattributes_schemas) | Create a schema|
 |[**post_users_development_activities_aggregates_query**](#post_users_development_activities_aggregates_query) | Retrieve aggregated development activity data|
 |[**post_users_me_password**](#post_users_me_password) | Change your password|
 |[**post_users_search**](#post_users_search) | Search users|
@@ -100,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_user_directroutingbackup_settings**](#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_user_callforwarding**](#put_user_callforwarding) | Update a user&#39;s CallForwarding|
+|[**put_user_customattributes**](#put_user_customattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields.|
 |[**put_user_outofoffice**](#put_user_outofoffice) | Update an OutOfOffice|
 |[**put_user_profileskills**](#put_user_profileskills) | Update profile skills for a user|
 |[**put_user_roles**](#put_user_roles) | Sets the user&#39;s roles|
@@ -110,6 +125,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_station_associatedstation_station_id**](#put_user_station_associatedstation_station_id) | Set associated station|
 |[**put_user_station_defaultstation_station_id**](#put_user_station_defaultstation_station_id) | Set default station|
 |[**put_user_verifier**](#put_user_verifier) | Update a verifier|
+|[**put_users_customattributes_schema**](#put_users_customattributes_schema) | Update a schema|
 
 
 
@@ -447,6 +463,57 @@ except ApiException as e:
 **object**
 
 
+## delete_user_customattribute
+
+>  delete_user_customattribute(user_id, schema_id)
+
+
+Delete a custom attributes record.
+
+delete_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/users/{userId}/customattributes/{schemaId} 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | user ID
+schema_id = 'schema_id_example' # str | schemaId
+
+try:
+    # Delete a custom attributes record.
+    api_instance.delete_user_customattribute(user_id, schema_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_user_customattribute: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+| **schema_id** | **str**| schemaId |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## delete_user_externalid_authority_name_external_key
 
 >  delete_user_externalid_authority_name_external_key(user_id, authority_name, external_key)
@@ -734,6 +801,55 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **verifier_id** | **str**| Verifier ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_users_customattributes_schema
+
+>  delete_users_customattributes_schema(schema_id)
+
+
+Delete a schema
+
+delete_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/users/customattributes/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Delete a schema
+    api_instance.delete_users_customattributes_schema(schema_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_users_customattributes_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
 
 ### Return type
 
@@ -1648,6 +1764,110 @@ except ApiException as e:
 ### Return type
 
 [**CallForwarding**](CallForwarding)
+
+
+## get_user_customattribute
+
+> [**UserCustomAttributes**](UserCustomAttributes) get_user_customattribute(user_id, schema_id)
+
+
+Get custom attributes by schema id
+
+get_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/{userId}/customattributes/{schemaId} 
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | user ID
+schema_id = 'schema_id_example' # str | schemaId
+
+try:
+    # Get custom attributes by schema id
+    api_response = api_instance.get_user_customattribute(user_id, schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_customattribute: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+| **schema_id** | **str**| schemaId |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
+## get_user_customattributes_bulk
+
+> list[object]** get_user_customattributes_bulk(user_id, schema_ids)
+
+
+Get multiple custom attributes records by schema ids
+
+get_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/{userId}/customattributes/bulk 
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | user ID
+schema_ids = ['schema_ids_example'] # list[str] | 
+
+try:
+    # Get multiple custom attributes records by schema ids
+    api_response = api_instance.get_user_customattributes_bulk(user_id, schema_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_customattributes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+| **schema_ids** | [**list[str]**](str)|  |  |
+
+### Return type
+
+**list[object]**
 
 
 ## get_user_directreports
@@ -2724,6 +2944,346 @@ except ApiException as e:
 [**ChatItemCursorListing**](ChatItemCursorListing)
 
 
+## get_users_customattributes_schema
+
+> [**DataSchema**](DataSchema) get_users_customattributes_schema(schema_id)
+
+
+Get a schema
+
+get_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Get a schema
+    api_response = api_instance.get_users_customattributes_schema(schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_customattributes_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+## get_users_customattributes_schema_version
+
+> [**DataSchema**](DataSchema) get_users_customattributes_schema_version(schema_id, version_id)
+
+
+Get a specific version of a schema
+
+get_users_customattributes_schema_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId} 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+schema_id = 'schema_id_example' # str | Schema ID
+version_id = 'version_id_example' # str | Schema version
+
+try:
+    # Get a specific version of a schema
+    api_response = api_instance.get_users_customattributes_schema_version(schema_id, version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_customattributes_schema_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **version_id** | **str**| Schema version |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+## get_users_customattributes_schema_versions
+
+> [**DataSchemaListing**](DataSchemaListing) get_users_customattributes_schema_versions(schema_id)
+
+
+Get all versions of a user schema
+
+get_users_customattributes_schema_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/{schemaId}/versions 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Get all versions of a user schema
+    api_response = api_instance.get_users_customattributes_schema_versions(schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_customattributes_schema_versions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing)
+
+
+## get_users_customattributes_schemas
+
+> [**DataSchemaListing**](DataSchemaListing) get_users_customattributes_schemas()
+
+
+Get a list of schemas.
+
+get_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Get a list of schemas.
+    api_response = api_instance.get_users_customattributes_schemas()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_customattributes_schemas: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing)
+
+
+## get_users_customattributes_schemas_coretype
+
+> [**Coretype**](Coretype) get_users_customattributes_schemas_coretype(core_type_name)
+
+
+Get the core types from which all schemas are built.
+
+get_users_customattributes_schemas_coretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/coretypes/{coreTypeName} 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+core_type_name = 'core_type_name_example' # str | Name of the core type
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_users_customattributes_schemas_coretype(core_type_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_customattributes_schemas_coretype: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **core_type_name** | **str**| Name of the core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_users_customattributes_schemas_coretypes
+
+> [**CoretypeListing**](CoretypeListing) get_users_customattributes_schemas_coretypes()
+
+
+Get the list of core types enabled for a specific namespace.
+
+get_users_customattributes_schemas_coretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/coretypes 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Get the list of core types enabled for a specific namespace.
+    api_response = api_instance.get_users_customattributes_schemas_coretypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_customattributes_schemas_coretypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+## get_users_customattributes_schemas_limits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) get_users_customattributes_schemas_limits()
+
+
+Get quantitative limits on schemas
+
+get_users_customattributes_schemas_limits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/users/customattributes/schemas/limits 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Get quantitative limits on schemas
+    api_response = api_instance.get_users_customattributes_schemas_limits()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_customattributes_schemas_limits: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 ## get_users_development_activities
 
 > [**DevelopmentActivityListing**](DevelopmentActivityListing) get_users_development_activities(user_id=user_id, module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, pcPass=pcPass, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)
@@ -3237,6 +3797,110 @@ except ApiException as e:
 [**CallForwarding**](CallForwarding)
 
 
+## patch_user_customattributes
+
+> [**UserCustomAttributes**](UserCustomAttributes) patch_user_customattributes(user_id, user_custom_attributes)
+
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+patch_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/users/{userId}/customattributes 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | user ID
+user_custom_attributes = PureCloudPlatformClientV2.UserCustomAttributesUpdateRequest() # UserCustomAttributesUpdateRequest | 
+
+try:
+    # Update a single custom attributes record by amending the data with only the provided fields.
+    api_response = api_instance.patch_user_customattributes(user_id, user_custom_attributes)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->patch_user_customattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+| **user_custom_attributes** | [**UserCustomAttributesUpdateRequest**](UserCustomAttributesUpdateRequest)|  |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
+## patch_user_customattributes_bulk
+
+> [**UserCustomAttributes**](UserCustomAttributes) patch_user_customattributes_bulk(user_id, user_custom_attributes_list)
+
+
+Update multiple custom attributes records by amending the data with only the provided fields.
+
+patch_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/users/{userId}/customattributes/bulk 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | user ID
+user_custom_attributes_list = [PureCloudPlatformClientV2.UserCustomAttributesUpdateRequest()] # list[UserCustomAttributesUpdateRequest] | 
+
+try:
+    # Update multiple custom attributes records by amending the data with only the provided fields.
+    api_response = api_instance.patch_user_customattributes_bulk(user_id, user_custom_attributes_list)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->patch_user_customattributes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+| **user_custom_attributes_list** | [**list[UserCustomAttributesUpdateRequest]**](UserCustomAttributesUpdateRequest)|  |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
+
+
 ## patch_user_geolocation
 
 > [**Geolocation**](Geolocation) patch_user_geolocation(user_id, client_id, body)
@@ -3349,6 +4013,8 @@ except ApiException as e:
 
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Wraps PATCH /api/v2/users/{userId}/queues 
 
@@ -4403,6 +5069,56 @@ except ApiException as e:
 [**User**](User)
 
 
+## post_users_customattributes_schemas
+
+> [**DataSchema**](DataSchema) post_users_customattributes_schemas(body)
+
+
+Create a schema
+
+post_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/users/customattributes/schemas 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.DataSchema() # DataSchema | Schema
+
+try:
+    # Create a schema
+    api_response = api_instance.post_users_customattributes_schemas(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_customattributes_schemas: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DataSchema**](DataSchema)| Schema |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
 ## post_users_development_activities_aggregates_query
 
 > [**DevelopmentActivityAggregateResponse**](DevelopmentActivityAggregateResponse) post_users_development_activities_aggregates_query(body)
@@ -4893,6 +5609,58 @@ except ApiException as e:
 ### Return type
 
 [**CallForwarding**](CallForwarding)
+
+
+## put_user_customattributes
+
+> [**UserCustomAttributes**](UserCustomAttributes) put_user_customattributes(user_id, user_custom_attributes)
+
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+put_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/users/{userId}/customattributes 
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | user ID
+user_custom_attributes = PureCloudPlatformClientV2.UserCustomAttributesUpdateRequest() # UserCustomAttributesUpdateRequest | 
+
+try:
+    # Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+    api_response = api_instance.put_user_customattributes(user_id, user_custom_attributes)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_user_customattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| user ID |  |
+| **user_custom_attributes** | [**UserCustomAttributesUpdateRequest**](UserCustomAttributesUpdateRequest)|  |  |
+
+### Return type
+
+[**UserCustomAttributes**](UserCustomAttributes)
 
 
 ## put_user_outofoffice
@@ -5395,4 +6163,56 @@ except ApiException as e:
 [**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+## put_users_customattributes_schema
+
+> [**DataSchema**](DataSchema) put_users_customattributes_schema(schema_id, body)
+
+
+Update a schema
+
+put_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/users/customattributes/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* users:customAttributesSchema:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+schema_id = 'schema_id_example' # str | Schema ID
+body = PureCloudPlatformClientV2.DataSchema() # DataSchema | Data Schema
+
+try:
+    # Update a schema
+    api_response = api_instance.put_users_customattributes_schema(schema_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_users_customattributes_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **body** | [**DataSchema**](DataSchema)| Data Schema |  |
+
+### Return type
+
+[**DataSchema**](DataSchema)
+
+
+_PureCloudPlatformClientV2 250.0.0_
