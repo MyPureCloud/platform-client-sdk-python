@@ -1953,7 +1953,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
+| **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT, LIBRARY |
 | **body** | [**list[str]**](str)| Object Id List |  |
 
 ### Return type
@@ -2062,7 +2062,7 @@ except ApiException as e:
 
 ## post_authorization_policies_target
 
-> [**AuthorizationPolicy**](AuthorizationPolicy) post_authorization_policies_target(target_name, body)
+> [**AuthorizationPolicy**](AuthorizationPolicy) post_authorization_policies_target(target_name, body, skip_lockout_check=skip_lockout_check)
 
 
 Add an access control policy for a specified resource target and subject
@@ -2088,10 +2088,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 target_name = 'target_name_example' # str | The domain:entity:action target to which the policy will be applied
 body = PureCloudPlatformClientV2.AuthorizationPolicy() # AuthorizationPolicy | Access control policy
+skip_lockout_check = False # bool | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional) (default to False)
 
 try:
     # Add an access control policy for a specified resource target and subject
-    api_response = api_instance.post_authorization_policies_target(target_name, body)
+    api_response = api_instance.post_authorization_policies_target(target_name, body, skip_lockout_check=skip_lockout_check)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthorizationApi->post_authorization_policies_target: %s\n" % e)
@@ -2104,6 +2105,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **target_name** | **str**| The domain:entity:action target to which the policy will be applied |  |
 | **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy |  |
+| **skip_lockout_check** | **bool**| Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to False] |
 
 ### Return type
 
@@ -2672,7 +2674,7 @@ except ApiException as e:
 
 ## put_authorization_policies_target
 
-> [**AuthorizationPolicy**](AuthorizationPolicy) put_authorization_policies_target(target_name, body)
+> [**AuthorizationPolicy**](AuthorizationPolicy) put_authorization_policies_target(target_name, body, skip_lockout_check=skip_lockout_check)
 
 
 Add an access control policy for a specified resource target and subject, overwriting any existing policy
@@ -2699,10 +2701,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 target_name = 'target_name_example' # str | The domain:entity:action target to which the policy will be applied
 body = PureCloudPlatformClientV2.AuthorizationPolicy() # AuthorizationPolicy | Access control policy
+skip_lockout_check = False # bool | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional) (default to False)
 
 try:
     # Add an access control policy for a specified resource target and subject, overwriting any existing policy
-    api_response = api_instance.put_authorization_policies_target(target_name, body)
+    api_response = api_instance.put_authorization_policies_target(target_name, body, skip_lockout_check=skip_lockout_check)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthorizationApi->put_authorization_policies_target: %s\n" % e)
@@ -2715,6 +2718,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **target_name** | **str**| The domain:entity:action target to which the policy will be applied |  |
 | **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy |  |
+| **skip_lockout_check** | **bool**| Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to False] |
 
 ### Return type
 
@@ -2723,7 +2727,7 @@ except ApiException as e:
 
 ## put_authorization_policy
 
-> [**AuthorizationPolicy**](AuthorizationPolicy) put_authorization_policy(policy_id, body)
+> [**AuthorizationPolicy**](AuthorizationPolicy) put_authorization_policy(policy_id, body, skip_lockout_check=skip_lockout_check)
 
 
 Update an access control policy with a given ID
@@ -2749,10 +2753,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 policy_id = 'policy_id_example' # str | The ID of the policy to update
 body = PureCloudPlatformClientV2.AuthorizationPolicy() # AuthorizationPolicy | Access control policy
+skip_lockout_check = False # bool | Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (optional) (default to False)
 
 try:
     # Update an access control policy with a given ID
-    api_response = api_instance.put_authorization_policy(policy_id, body)
+    api_response = api_instance.put_authorization_policy(policy_id, body, skip_lockout_check=skip_lockout_check)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthorizationApi->put_authorization_policy: %s\n" % e)
@@ -2765,6 +2770,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| The ID of the policy to update |  |
 | **body** | [**AuthorizationPolicy**](AuthorizationPolicy)| Access control policy |  |
+| **skip_lockout_check** | **bool**| Skip lockout check; if true, policy will not be evaluated against current context for lockout risk | [optional] [default to False] |
 
 ### Return type
 
@@ -3072,4 +3078,4 @@ except ApiException as e:
 [**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

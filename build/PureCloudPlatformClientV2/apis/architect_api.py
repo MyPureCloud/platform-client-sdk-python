@@ -1921,7 +1921,7 @@ class ArchitectApi(object):
         :param str id: Consuming object ID (required)
         :param str version: Consuming object version (required)
         :param str object_type: Consuming object type.  Only versioned types are allowed here. (required)
-        :param list[str] resource_type: Types of consumed resources to show
+        :param list[str] resource_type: Types of consumed resources to show.
         :param int page_number: Page number
         :param int page_size: Page size
         :return: ConsumedResourcesEntityListing

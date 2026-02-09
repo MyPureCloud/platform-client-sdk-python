@@ -52,6 +52,8 @@ class PresenceSettings(object):
             'id': 'str',
             'name': 'str',
             'restore_presence_settings': 'RestorePresenceSettings',
+            'requesting_off_queue_enabled': 'bool',
+            'default_primary_presence_registered_source_id': 'str',
             'self_uri': 'str'
         }
 
@@ -59,12 +61,16 @@ class PresenceSettings(object):
             'id': 'id',
             'name': 'name',
             'restore_presence_settings': 'restorePresenceSettings',
+            'requesting_off_queue_enabled': 'requestingOffQueueEnabled',
+            'default_primary_presence_registered_source_id': 'defaultPrimaryPresenceRegisteredSourceId',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._restore_presence_settings = None
+        self._requesting_off_queue_enabled = None
+        self._default_primary_presence_registered_source_id = None
         self._self_uri = None
 
     @property
@@ -138,6 +144,54 @@ class PresenceSettings(object):
         
 
         self._restore_presence_settings = restore_presence_settings
+
+    @property
+    def requesting_off_queue_enabled(self) -> bool:
+        """
+        Gets the requesting_off_queue_enabled of this PresenceSettings.
+        Whether requesting off queue is enabled for the organization
+
+        :return: The requesting_off_queue_enabled of this PresenceSettings.
+        :rtype: bool
+        """
+        return self._requesting_off_queue_enabled
+
+    @requesting_off_queue_enabled.setter
+    def requesting_off_queue_enabled(self, requesting_off_queue_enabled: bool) -> None:
+        """
+        Sets the requesting_off_queue_enabled of this PresenceSettings.
+        Whether requesting off queue is enabled for the organization
+
+        :param requesting_off_queue_enabled: The requesting_off_queue_enabled of this PresenceSettings.
+        :type: bool
+        """
+        
+
+        self._requesting_off_queue_enabled = requesting_off_queue_enabled
+
+    @property
+    def default_primary_presence_registered_source_id(self) -> str:
+        """
+        Gets the default_primary_presence_registered_source_id of this PresenceSettings.
+        The default primary presence registered source ID for the organization
+
+        :return: The default_primary_presence_registered_source_id of this PresenceSettings.
+        :rtype: str
+        """
+        return self._default_primary_presence_registered_source_id
+
+    @default_primary_presence_registered_source_id.setter
+    def default_primary_presence_registered_source_id(self, default_primary_presence_registered_source_id: str) -> None:
+        """
+        Sets the default_primary_presence_registered_source_id of this PresenceSettings.
+        The default primary presence registered source ID for the organization
+
+        :param default_primary_presence_registered_source_id: The default_primary_presence_registered_source_id of this PresenceSettings.
+        :type: str
+        """
+        
+
+        self._default_primary_presence_registered_source_id = default_primary_presence_registered_source_id
 
     @property
     def self_uri(self) -> str:

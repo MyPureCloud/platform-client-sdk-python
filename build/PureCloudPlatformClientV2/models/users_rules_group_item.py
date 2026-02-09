@@ -142,7 +142,7 @@ class UsersRulesGroupItem(object):
         """
         if isinstance(container, int):
             container = str(container)
-        allowed_values = ["AcdSkill", "BusinessUnit", "DirectoryGroup", "Division", "Language", "Location", "ManagementUnit", "Queue", "ReportsTo", "StaffingGroup", "Team", "User"]
+        allowed_values = ["AcdSkill", "BusinessUnit", "DirectoryGroup", "Division", "Language", "Location", "ManagementUnit", "Queue", "ReportsTo", "Team", "User"]
         if container.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for container -> " + container)
             self._container = "outdated_sdk_version"

@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_programs_mappings**](#get_speechandtextanalytics_programs_mappings) | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows|
 |[**get_speechandtextanalytics_programs_publishjob**](#get_speechandtextanalytics_programs_publishjob) | Get a Speech &amp; Text Analytics publish programs job by id|
 |[**get_speechandtextanalytics_programs_settings_insights**](#get_speechandtextanalytics_programs_settings_insights) | Get the list of program AI Insights settings for the organization|
+|[**get_speechandtextanalytics_programs_topiclinks_job**](#get_speechandtextanalytics_programs_topiclinks_job) | Get a Speech &amp; Text Analytics program-topic links job by id|
 |[**get_speechandtextanalytics_programs_transcriptionengines_dialects**](#get_speechandtextanalytics_programs_transcriptionengines_dialects) | Get supported dialects for each transcription engine|
 |[**get_speechandtextanalytics_programs_unpublished**](#get_speechandtextanalytics_programs_unpublished) | Get the list of Speech &amp; Text Analytics unpublished programs|
 |[**get_speechandtextanalytics_reprocessing_job**](#get_speechandtextanalytics_reprocessing_job) | Get a Speech &amp; Text Analytics reprocess job by id|
@@ -839,7 +840,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 dialect = 'en-US' # str | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
-transcription_engine = 'transcription_engine_example' # str | Filter by transcription engine (optional)
+transcription_engine = 'transcription_engine_example' # str | Filter by transcription engine, If not provided, all transcription engines will be considered (optional)
 next_page = 'next_page_example' # str | The key for listing the next page (optional)
 page_size = 500 # int | The page size for the listing (optional) (default to 500)
 
@@ -857,7 +858,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dialect** | **str**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
-| **transcription_engine** | **str**| Filter by transcription engine | [optional] <br />**Values**: Genesys, GenesysExtended |
+| **transcription_engine** | **str**| Filter by transcription engine, If not provided, all transcription engines will be considered | [optional] <br />**Values**: Genesys, GenesysExtended |
 | **next_page** | **str**| The key for listing the next page | [optional]  |
 | **page_size** | **int**| The page size for the listing | [optional] [default to 500] |
 
@@ -1365,6 +1366,54 @@ except ApiException as e:
 ### Return type
 
 [**ProgramInsightsSettingsEntityListing**](ProgramInsightsSettingsEntityListing)
+
+
+## get_speechandtextanalytics_programs_topiclinks_job
+
+> [**ProgramTopicLinksJob**](ProgramTopicLinksJob) get_speechandtextanalytics_programs_topiclinks_job(job_id)
+
+
+Get a Speech & Text Analytics program-topic links job by id
+
+Wraps GET /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+job_id = 'job_id_example' # str | The id of the program-topic links job
+
+try:
+    # Get a Speech & Text Analytics program-topic links job by id
+    api_response = api_instance.get_speechandtextanalytics_programs_topiclinks_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs_topiclinks_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The id of the program-topic links job |  |
+
+### Return type
+
+[**ProgramTopicLinksJob**](ProgramTopicLinksJob)
 
 
 ## get_speechandtextanalytics_programs_transcriptionengines_dialects
@@ -3178,4 +3227,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

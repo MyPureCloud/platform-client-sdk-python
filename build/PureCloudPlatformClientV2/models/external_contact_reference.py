@@ -48,15 +48,21 @@ class ExternalContactReference(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'first_name': 'str',
+            'last_name': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'first_name': 'firstName',
+            'last_name': 'lastName',
             'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._first_name = None
+        self._last_name = None
         self._self_uri = None
 
     @property
@@ -82,6 +88,54 @@ class ExternalContactReference(object):
         
 
         self._id = id
+
+    @property
+    def first_name(self) -> str:
+        """
+        Gets the first_name of this ExternalContactReference.
+        The first name of the contact.
+
+        :return: The first_name of this ExternalContactReference.
+        :rtype: str
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, first_name: str) -> None:
+        """
+        Sets the first_name of this ExternalContactReference.
+        The first name of the contact.
+
+        :param first_name: The first_name of this ExternalContactReference.
+        :type: str
+        """
+        
+
+        self._first_name = first_name
+
+    @property
+    def last_name(self) -> str:
+        """
+        Gets the last_name of this ExternalContactReference.
+        The last name of the contact.
+
+        :return: The last_name of this ExternalContactReference.
+        :rtype: str
+        """
+        return self._last_name
+
+    @last_name.setter
+    def last_name(self, last_name: str) -> None:
+        """
+        Sets the last_name of this ExternalContactReference.
+        The last name of the contact.
+
+        :param last_name: The last_name of this ExternalContactReference.
+        :type: str
+        """
+        
+
+        self._last_name = last_name
 
     @property
     def self_uri(self) -> str:

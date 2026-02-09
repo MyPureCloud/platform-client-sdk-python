@@ -72,11 +72,13 @@ from ..models import ContactListFilterEntityListing
 from ..models import ContactListTemplate
 from ..models import ContactListTemplateBulkRetrieveBody
 from ..models import ContactListTemplateEntityListing
+from ..models import ContactListUploadUrlRequest
 from ..models import ContactListingRequest
 from ..models import ContactListingResponse
 from ..models import ContactsBulkOperationJob
 from ..models import ContactsBulkOperationJobListing
 from ..models import ContactsExportRequest
+from ..models import DNCListUploadUrlRequest
 from ..models import DialerContact
 from ..models import DialerEventEntityListing
 from ..models import DigitalRuleSet
@@ -117,6 +119,7 @@ from ..models import RuleSet
 from ..models import RuleSetEntityListing
 from ..models import SequenceSchedule
 from ..models import TimeZoneMappingPreview
+from ..models import UploadUrlResponse
 from ..models import WhatsAppCampaignSchedule
 from ..models import WhatsAppCampaignScheduleEntityListing
 from ..models import WrapUpCodeMapping
@@ -10990,6 +10993,84 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_outbound_contactlists_uploads(self, body: 'ContactListUploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
+        """
+        Generate presigned upload URL for contact list.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_contactlists_uploads(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactListUploadUrlRequest body: contactListUploadUrlRequest (required)
+        :return: UploadUrlResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_contactlists_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_contactlists_uploads`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/uploads'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UploadUrlResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_outbound_contactlisttemplates(self, body: 'ContactListTemplate', **kwargs) -> 'ContactListTemplate':
         """
         Create Contact List Template
@@ -11703,6 +11784,84 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DncList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_dnclists_uploads(self, body: 'DNCListUploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
+        """
+        Generate presigned upload URL for dnc list.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_dnclists_uploads(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DNCListUploadUrlRequest body: dncListUploadUrlRequest (required)
+        :return: UploadUrlResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_dnclists_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_dnclists_uploads`")
+
+
+        resource_path = '/api/v2/outbound/dnclists/uploads'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UploadUrlResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

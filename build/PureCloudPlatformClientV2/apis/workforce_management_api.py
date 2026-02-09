@@ -20707,7 +20707,7 @@ class WorkforceManagementApi(object):
     def post_workforcemanagement_managementunit_timeoffrequests_query(self, management_unit_id: str, body: 'TimeOffRequestQueryBody', **kwargs) -> 'TimeOffRequestListing':
         """
         Fetches time off requests matching the conditions specified in the request body
-        Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
+        Request body requires one of the following: statuses == [Pending] or date range to be specified and less than or equal to 33 days. All other fields are filters
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

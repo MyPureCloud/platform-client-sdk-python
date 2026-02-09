@@ -73,6 +73,7 @@ from ..models import MailFromResult
 from ..models import OutboundDomain
 from ..models import OutboundDomainCreateRequest
 from ..models import OutboundDomainEntityListing
+from ..models import OutboundDomainPatchRequest
 from ..models import PatchPredictorRequest
 from ..models import Predictor
 from ..models import PredictorListing
@@ -4567,12 +4568,14 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
         :param list[str] expand: Which fields, if any, to expand.
+        :param str language_variation: Language variation
+        :param bool fallback_to_primary_assistant: Fall back to primary assistant if specified variation is not found
         :return: AssistantQueue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queue_id', 'expand']
+        all_params = ['queue_id', 'expand', 'language_variation', 'fallback_to_primary_assistant']
         all_params.append('callback')
 
         params = locals()
@@ -4598,6 +4601,10 @@ class RoutingApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'language_variation' in params:
+            query_params['languageVariation'] = params['language_variation']
+        if 'fallback_to_primary_assistant' in params:
+            query_params['fallbackToPrimaryAssistant'] = params['fallback_to_primary_assistant']
 
         header_params = {}
 
@@ -8349,7 +8356,7 @@ class RoutingApi(object):
     def patch_routing_conversation(self, conversation_id: str, body: 'RoutingConversationAttributesRequest', **kwargs) -> 'RoutingConversationAttributesResponse':
         """
         Update attributes of an in-queue conversation
-        Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+        Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8594,6 +8601,90 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InboundDomain',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_routing_email_outbound_domain(self, domain_id: str, body: 'OutboundDomainPatchRequest', **kwargs) -> 'OutboundDomain':
+        """
+        Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_email_outbound_domain(domain_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str domain_id: domain ID (required)
+        :param OutboundDomainPatchRequest body: Domain settings (required)
+        :return: OutboundDomain
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['domain_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_email_outbound_domain" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'domain_id' is set
+        if ('domain_id' not in params) or (params['domain_id'] is None):
+            raise ValueError("Missing the required parameter `domain_id` when calling `patch_routing_email_outbound_domain`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_routing_email_outbound_domain`")
+
+
+        resource_path = '/api/v2/routing/email/outbound/domains/{domainId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'domain_id' in params:
+            path_params['domainId'] = params['domain_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OutboundDomain',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8854,7 +8945,7 @@ class RoutingApi(object):
     def patch_routing_queue_members(self, queue_id: str, body: List['QueueMember'], **kwargs) -> 'QueueMemberEntityListing':
         """
         Join or unjoin a set of up to 100 users for a queue
-        
+        Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9528,7 +9619,7 @@ class RoutingApi(object):
     def patch_user_queues(self, user_id: str, body: List['UserQueue'], **kwargs) -> 'UserQueueEntityListing':
         """
         Join or unjoin a set of queues for a user
-        
+        Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10661,6 +10752,87 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InboundDomain',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_email_outbound_domain_testconnection(self, domain_id: str, **kwargs) -> 'TestMessage':
+        """
+        Tests the custom SMTP server integration connection set on this outbound domain
+        The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_email_outbound_domain_testconnection(domain_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str domain_id: domain ID (required)
+        :param TestMessage body: TestMessage
+        :return: TestMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['domain_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_email_outbound_domain_testconnection" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'domain_id' is set
+        if ('domain_id' not in params) or (params['domain_id'] is None):
+            raise ValueError("Missing the required parameter `domain_id` when calling `post_routing_email_outbound_domain_testconnection`")
+
+
+        resource_path = '/api/v2/routing/email/outbound/domains/{domainId}/testconnection'.replace('{format}', 'json')
+        path_params = {}
+        if 'domain_id' in params:
+            path_params['domainId'] = params['domain_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TestMessage',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

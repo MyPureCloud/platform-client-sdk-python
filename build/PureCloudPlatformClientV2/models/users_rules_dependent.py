@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import UserReference
+    from . import UsersRulesDependentRule
     from . import UsersRulesLastRunMetadata
 
 class UsersRulesDependent(object):
@@ -50,7 +51,7 @@ class UsersRulesDependent(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'rule_id': 'str',
+            'rule': 'UsersRulesDependentRule',
             'type_id': 'str',
             'type': 'str',
             'created_date': 'datetime',
@@ -61,7 +62,7 @@ class UsersRulesDependent(object):
         }
 
         self.attribute_map = {
-            'rule_id': 'ruleId',
+            'rule': 'rule',
             'type_id': 'typeId',
             'type': 'type',
             'created_date': 'createdDate',
@@ -71,7 +72,7 @@ class UsersRulesDependent(object):
             'self_uri': 'selfUri'
         }
 
-        self._rule_id = None
+        self._rule = None
         self._type_id = None
         self._type = None
         self._created_date = None
@@ -81,28 +82,28 @@ class UsersRulesDependent(object):
         self._self_uri = None
 
     @property
-    def rule_id(self) -> str:
+    def rule(self) -> 'UsersRulesDependentRule':
         """
-        Gets the rule_id of this UsersRulesDependent.
-        The id of the rule
+        Gets the rule of this UsersRulesDependent.
+        The rule associated with this dependent
 
-        :return: The rule_id of this UsersRulesDependent.
-        :rtype: str
+        :return: The rule of this UsersRulesDependent.
+        :rtype: UsersRulesDependentRule
         """
-        return self._rule_id
+        return self._rule
 
-    @rule_id.setter
-    def rule_id(self, rule_id: str) -> None:
+    @rule.setter
+    def rule(self, rule: 'UsersRulesDependentRule') -> None:
         """
-        Sets the rule_id of this UsersRulesDependent.
-        The id of the rule
+        Sets the rule of this UsersRulesDependent.
+        The rule associated with this dependent
 
-        :param rule_id: The rule_id of this UsersRulesDependent.
-        :type: str
+        :param rule: The rule of this UsersRulesDependent.
+        :type: UsersRulesDependentRule
         """
         
 
-        self._rule_id = rule_id
+        self._rule = rule
 
     @property
     def type_id(self) -> str:

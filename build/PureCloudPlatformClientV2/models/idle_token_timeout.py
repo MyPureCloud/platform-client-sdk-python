@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import InactivityTimeoutGroupBundle
 
 class IdleTokenTimeout(object):
     """
@@ -48,16 +50,25 @@ class IdleTokenTimeout(object):
         """
         self.swagger_types = {
             'idle_token_timeout_seconds': 'int',
-            'enable_idle_token_timeout': 'bool'
+            'enable_idle_token_timeout': 'bool',
+            'inactivity_timeout_unit': 'str',
+            'inactivity_timeout_groups_enabled': 'bool',
+            'inactivity_timeout_group_bundles': 'list[InactivityTimeoutGroupBundle]'
         }
 
         self.attribute_map = {
             'idle_token_timeout_seconds': 'idleTokenTimeoutSeconds',
-            'enable_idle_token_timeout': 'enableIdleTokenTimeout'
+            'enable_idle_token_timeout': 'enableIdleTokenTimeout',
+            'inactivity_timeout_unit': 'inactivityTimeoutUnit',
+            'inactivity_timeout_groups_enabled': 'inactivityTimeoutGroupsEnabled',
+            'inactivity_timeout_group_bundles': 'inactivityTimeoutGroupBundles'
         }
 
         self._idle_token_timeout_seconds = None
         self._enable_idle_token_timeout = None
+        self._inactivity_timeout_unit = None
+        self._inactivity_timeout_groups_enabled = None
+        self._inactivity_timeout_group_bundles = None
 
     @property
     def idle_token_timeout_seconds(self) -> int:
@@ -109,6 +120,83 @@ class IdleTokenTimeout(object):
         
 
         self._enable_idle_token_timeout = enable_idle_token_timeout
+
+    @property
+    def inactivity_timeout_unit(self) -> str:
+        """
+        Gets the inactivity_timeout_unit of this IdleTokenTimeout.
+        The unit for the inactivity timeout (MINUTES or HOURS).
+
+        :return: The inactivity_timeout_unit of this IdleTokenTimeout.
+        :rtype: str
+        """
+        return self._inactivity_timeout_unit
+
+    @inactivity_timeout_unit.setter
+    def inactivity_timeout_unit(self, inactivity_timeout_unit: str) -> None:
+        """
+        Sets the inactivity_timeout_unit of this IdleTokenTimeout.
+        The unit for the inactivity timeout (MINUTES or HOURS).
+
+        :param inactivity_timeout_unit: The inactivity_timeout_unit of this IdleTokenTimeout.
+        :type: str
+        """
+        if isinstance(inactivity_timeout_unit, int):
+            inactivity_timeout_unit = str(inactivity_timeout_unit)
+        allowed_values = ["Minutes", "Hours"]
+        if inactivity_timeout_unit.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for inactivity_timeout_unit -> " + inactivity_timeout_unit)
+            self._inactivity_timeout_unit = "outdated_sdk_version"
+        else:
+            self._inactivity_timeout_unit = inactivity_timeout_unit
+
+    @property
+    def inactivity_timeout_groups_enabled(self) -> bool:
+        """
+        Gets the inactivity_timeout_groups_enabled of this IdleTokenTimeout.
+        Indicates whether inactivity timeout groups are enabled.
+
+        :return: The inactivity_timeout_groups_enabled of this IdleTokenTimeout.
+        :rtype: bool
+        """
+        return self._inactivity_timeout_groups_enabled
+
+    @inactivity_timeout_groups_enabled.setter
+    def inactivity_timeout_groups_enabled(self, inactivity_timeout_groups_enabled: bool) -> None:
+        """
+        Sets the inactivity_timeout_groups_enabled of this IdleTokenTimeout.
+        Indicates whether inactivity timeout groups are enabled.
+
+        :param inactivity_timeout_groups_enabled: The inactivity_timeout_groups_enabled of this IdleTokenTimeout.
+        :type: bool
+        """
+        
+
+        self._inactivity_timeout_groups_enabled = inactivity_timeout_groups_enabled
+
+    @property
+    def inactivity_timeout_group_bundles(self) -> List['InactivityTimeoutGroupBundle']:
+        """
+        Gets the inactivity_timeout_group_bundles of this IdleTokenTimeout.
+        Group bundle configuration for inactivity timeout.
+
+        :return: The inactivity_timeout_group_bundles of this IdleTokenTimeout.
+        :rtype: list[InactivityTimeoutGroupBundle]
+        """
+        return self._inactivity_timeout_group_bundles
+
+    @inactivity_timeout_group_bundles.setter
+    def inactivity_timeout_group_bundles(self, inactivity_timeout_group_bundles: List['InactivityTimeoutGroupBundle']) -> None:
+        """
+        Sets the inactivity_timeout_group_bundles of this IdleTokenTimeout.
+        Group bundle configuration for inactivity timeout.
+
+        :param inactivity_timeout_group_bundles: The inactivity_timeout_group_bundles of this IdleTokenTimeout.
+        :type: list[InactivityTimeoutGroupBundle]
+        """
+        
+
+        self._inactivity_timeout_group_bundles = inactivity_timeout_group_bundles
 
     def to_dict(self):
         """

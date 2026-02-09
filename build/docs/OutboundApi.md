@@ -138,6 +138,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlistfilters_bulk_retrieve**](#post_outbound_contactlistfilters_bulk_retrieve) | Retrieve multiple contact list filters|
 |[**post_outbound_contactlistfilters_preview**](#post_outbound_contactlistfilters_preview) | Get a preview of the output of a contact list filter|
 |[**post_outbound_contactlists**](#post_outbound_contactlists) | Create a contact List.|
+|[**post_outbound_contactlists_uploads**](#post_outbound_contactlists_uploads) | Generate presigned upload URL for contact list.|
 |[**post_outbound_contactlisttemplates**](#post_outbound_contactlisttemplates) | Create Contact List Template|
 |[**post_outbound_contactlisttemplates_bulk_add**](#post_outbound_contactlisttemplates_bulk_add) | Add multiple contact list templates|
 |[**post_outbound_contactlisttemplates_bulk_retrieve**](#post_outbound_contactlisttemplates_bulk_retrieve) | Get multiple contact list templates|
@@ -147,6 +148,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_dnclist_export**](#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
 |[**post_outbound_dnclist_phonenumbers**](#post_outbound_dnclist_phonenumbers) | Add phone numbers to a DNC list.|
 |[**post_outbound_dnclists**](#post_outbound_dnclists) | Create dialer DNC list|
+|[**post_outbound_dnclists_uploads**](#post_outbound_dnclists_uploads) | Generate presigned upload URL for dnc list.|
 |[**post_outbound_filespecificationtemplates**](#post_outbound_filespecificationtemplates) | Create File Specification Template|
 |[**post_outbound_importtemplates**](#post_outbound_importtemplates) | Create Import Template|
 |[**post_outbound_importtemplates_bulk_add**](#post_outbound_importtemplates_bulk_add) | Add multiple import templates|
@@ -6952,6 +6954,54 @@ except ApiException as e:
 [**ContactList**](ContactList)
 
 
+## post_outbound_contactlists_uploads
+
+> [**UploadUrlResponse**](UploadUrlResponse) post_outbound_contactlists_uploads(body)
+
+
+Generate presigned upload URL for contact list.
+
+Wraps POST /api/v2/outbound/contactlists/uploads 
+
+Requires ANY permissions: 
+
+* outbound:contactList:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ContactListUploadUrlRequest() # ContactListUploadUrlRequest | contactListUploadUrlRequest
+
+try:
+    # Generate presigned upload URL for contact list.
+    api_response = api_instance.post_outbound_contactlists_uploads(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlists_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactListUploadUrlRequest**](ContactListUploadUrlRequest)| contactListUploadUrlRequest |  |
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
+
+
 ## post_outbound_contactlisttemplates
 
 > [**ContactListTemplate**](ContactListTemplate) post_outbound_contactlisttemplates(body)
@@ -7392,6 +7442,54 @@ except ApiException as e:
 ### Return type
 
 [**DncList**](DncList)
+
+
+## post_outbound_dnclists_uploads
+
+> [**UploadUrlResponse**](UploadUrlResponse) post_outbound_dnclists_uploads(body)
+
+
+Generate presigned upload URL for dnc list.
+
+Wraps POST /api/v2/outbound/dnclists/uploads 
+
+Requires ANY permissions: 
+
+* outbound:dncList:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.DNCListUploadUrlRequest() # DNCListUploadUrlRequest | dncListUploadUrlRequest
+
+try:
+    # Generate presigned upload URL for dnc list.
+    api_response = api_instance.post_outbound_dnclists_uploads(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_dnclists_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DNCListUploadUrlRequest**](DNCListUploadUrlRequest)| dncListUploadUrlRequest |  |
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_outbound_filespecificationtemplates
@@ -8998,4 +9096,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

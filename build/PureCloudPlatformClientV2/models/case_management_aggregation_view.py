@@ -89,7 +89,7 @@ class CaseManagementAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nCasesOpened", "nCasesTerminated"]
+        allowed_values = ["nCasesOpened", "nCasesOverSla", "nCasesPurged", "nCasesStatusChanged", "nCasesTerminated", "oCasesServiceLevel", "tCasesResolved", "tCasesStatus"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

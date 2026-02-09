@@ -81,7 +81,7 @@ class CaseManagementAggregationSort(object):
         """
         if isinstance(name, int):
             name = str(name)
-        allowed_values = ["nCasesOpened", "nCasesTerminated"]
+        allowed_values = ["nCasesOpened", "nCasesOverSla", "nCasesPurged", "nCasesStatusChanged", "nCasesTerminated", "tCasesResolved", "tCasesStatus"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"

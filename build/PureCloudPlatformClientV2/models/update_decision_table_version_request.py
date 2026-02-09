@@ -62,7 +62,7 @@ class UpdateDecisionTableVersionRequest(object):
     def row_index_update(self) -> 'UpdateRowIndexRequest':
         """
         Gets the row_index_update of this UpdateDecisionTableVersionRequest.
-        An update to a decision table version row index, which moves the row to a new position in the table. Execution output is returned based on the first matching row.
+        An update to a decision table version row index, which moves the row to a new position in the table.
 
         :return: The row_index_update of this UpdateDecisionTableVersionRequest.
         :rtype: UpdateRowIndexRequest
@@ -73,7 +73,7 @@ class UpdateDecisionTableVersionRequest(object):
     def row_index_update(self, row_index_update: 'UpdateRowIndexRequest') -> None:
         """
         Sets the row_index_update of this UpdateDecisionTableVersionRequest.
-        An update to a decision table version row index, which moves the row to a new position in the table. Execution output is returned based on the first matching row.
+        An update to a decision table version row index, which moves the row to a new position in the table.
 
         :param row_index_update: The row_index_update of this UpdateDecisionTableVersionRequest.
         :type: UpdateRowIndexRequest

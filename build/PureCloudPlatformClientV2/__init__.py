@@ -342,6 +342,8 @@ from .models.assignment_error import AssignmentError
 from .models.assignment_validation import AssignmentValidation
 from .models.assistance_condition import AssistanceCondition
 from .models.assistant import Assistant
+from .models.assistant_copilot_variation import AssistantCopilotVariation
+from .models.assistant_copilot_variation_listing import AssistantCopilotVariationListing
 from .models.assistant_listing import AssistantListing
 from .models.assistant_queue import AssistantQueue
 from .models.assistant_queue_listing import AssistantQueueListing
@@ -427,6 +429,7 @@ from .models.available_time_off_response import AvailableTimeOffResponse
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
+from .models.background_assistant_user_authenticated_info import BackgroundAssistantUserAuthenticatedInfo
 from .models.background_image_settings import BackgroundImageSettings
 from .models.base_program_entity import BaseProgramEntity
 from .models.base_topic_entitiy import BaseTopicEntitiy
@@ -667,6 +670,7 @@ from .models.business_unit_response import BusinessUnitResponse
 from .models.business_unit_settings_response import BusinessUnitSettingsResponse
 from .models.button import Button
 from .models.button_component import ButtonComponent
+from .models.button_quick_reply_payload import ButtonQuickReplyPayload
 from .models.button_response import ButtonResponse
 from .models.cached_media_item import CachedMediaItem
 from .models.cached_media_item_entity_listing import CachedMediaItemEntityListing
@@ -793,7 +797,6 @@ from .models.case_management_aggregation_sort import CaseManagementAggregationSo
 from .models.case_management_aggregation_view import CaseManagementAggregationView
 from .models.case_management_async_aggregate_query_response import CaseManagementAsyncAggregateQueryResponse
 from .models.case_management_async_aggregation_query import CaseManagementAsyncAggregationQuery
-from .models.case_reference import CaseReference
 from .models.categories_entity_listing import CategoriesEntityListing
 from .models.categories_filter import CategoriesFilter
 from .models.category import Category
@@ -988,6 +991,7 @@ from .models.contact_list_filter_range import ContactListFilterRange
 from .models.contact_list_template import ContactListTemplate
 from .models.contact_list_template_bulk_retrieve_body import ContactListTemplateBulkRetrieveBody
 from .models.contact_list_template_entity_listing import ContactListTemplateEntityListing
+from .models.contact_list_upload_url_request import ContactListUploadUrlRequest
 from .models.contact_listing import ContactListing
 from .models.contact_listing_request import ContactListingRequest
 from .models.contact_listing_response import ContactListingResponse
@@ -1653,6 +1657,7 @@ from .models.did_number import DIDNumber
 from .models.did_number_entity_listing import DIDNumberEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
+from .models.dnc_list_upload_url_request import DNCListUploadUrlRequest
 from .models.daily import Daily
 from .models.daily_possible_shift import DailyPossibleShift
 from .models.dashboard_configuration import DashboardConfiguration
@@ -2632,6 +2637,7 @@ from .models.import_template import ImportTemplate
 from .models.import_template_entity_listing import ImportTemplateEntityListing
 from .models.import_template_import_status_import_status import ImportTemplateImportStatusImportStatus
 from .models.import_template_import_status_object import ImportTemplateImportStatusObject
+from .models.inactivity_timeout_group_bundle import InactivityTimeoutGroupBundle
 from .models.inactivity_timeout_settings import InactivityTimeoutSettings
 from .models.inbound_domain import InboundDomain
 from .models.inbound_domain_create_request import InboundDomainCreateRequest
@@ -3423,7 +3429,6 @@ from .models.o_auth_authorization import OAuthAuthorization
 from .models.o_auth_authorization_listing import OAuthAuthorizationListing
 from .models.o_auth_client import OAuthClient
 from .models.o_auth_client_entity_listing import OAuthClientEntityListing
-from .models.o_auth_client_listing import OAuthClientListing
 from .models.o_auth_client_request import OAuthClientRequest
 from .models.o_auth_last_token_issued import OAuthLastTokenIssued
 from .models.o_auth_scope import OAuthScope
@@ -3520,6 +3525,7 @@ from .models.outbound_detail_event_topic_outbound_init_event import OutboundDeta
 from .models.outbound_domain import OutboundDomain
 from .models.outbound_domain_create_request import OutboundDomainCreateRequest
 from .models.outbound_domain_entity_listing import OutboundDomainEntityListing
+from .models.outbound_domain_patch_request import OutboundDomainPatchRequest
 from .models.outbound_messaging_campaign_post_contact_email_event_topic_email_attributes import OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes
 from .models.outbound_messaging_campaign_post_contact_email_event_topic_outbound_messaging_campaign_post_contact_email_event import OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent
 from .models.outbound_messaging_campaign_post_contact_sms_event_topic_outbound_messaging_campaign_post_contact_sms_event import OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent
@@ -3791,6 +3797,7 @@ from .models.program_job import ProgramJob
 from .models.program_job_request import ProgramJobRequest
 from .models.program_mappings_request import ProgramMappingsRequest
 from .models.program_request import ProgramRequest
+from .models.program_topic_links_job import ProgramTopicLinksJob
 from .models.program_topic_links_test_phrase_detected_phrase import ProgramTopicLinksTestPhraseDetectedPhrase
 from .models.program_topic_links_test_phrase_matched_transcript import ProgramTopicLinksTestPhraseMatchedTranscript
 from .models.program_topic_links_test_topic_phrase_results import ProgramTopicLinksTestTopicPhraseResults
@@ -4463,7 +4470,6 @@ from .models.screen_monitoring import ScreenMonitoring
 from .models.screen_recording_active_sessions import ScreenRecordingActiveSessions
 from .models.screen_recording_meta_data import ScreenRecordingMetaData
 from .models.screen_recording_meta_data_request import ScreenRecordingMetaDataRequest
-from .models.screen_recording_user_authenticated_info import ScreenRecordingUserAuthenticatedInfo
 from .models.screenshare import Screenshare
 from .models.script import Script
 from .models.script_entity_listing import ScriptEntityListing
@@ -4783,6 +4789,7 @@ from .models.survey_question_group import SurveyQuestionGroup
 from .models.survey_question_group_score import SurveyQuestionGroupScore
 from .models.survey_question_score import SurveyQuestionScore
 from .models.survey_scoring_set import SurveyScoringSet
+from .models.swap_row_index_request import SwapRowIndexRequest
 from .models.sync_status_request import SyncStatusRequest
 from .models.system_message_object import SystemMessageObject
 from .models.system_message_system_message import SystemMessageSystemMessage
@@ -4808,6 +4815,16 @@ from .models.task_management_aggregation_view import TaskManagementAggregationVi
 from .models.task_management_async_aggregate_query_response import TaskManagementAsyncAggregateQueryResponse
 from .models.task_management_async_aggregation_query import TaskManagementAsyncAggregationQuery
 from .models.task_management_error_details import TaskManagementErrorDetails
+from .models.task_management_observation_data_container import TaskManagementObservationDataContainer
+from .models.task_management_observation_detail_container import TaskManagementObservationDetailContainer
+from .models.task_management_observation_group_result import TaskManagementObservationGroupResult
+from .models.task_management_observation_metric_stats import TaskManagementObservationMetricStats
+from .models.task_management_observation_predicate import TaskManagementObservationPredicate
+from .models.task_management_observation_query import TaskManagementObservationQuery
+from .models.task_management_observation_query_filter import TaskManagementObservationQueryFilter
+from .models.task_management_observation_query_response import TaskManagementObservationQueryResponse
+from .models.task_management_observation_result import TaskManagementObservationResult
+from .models.task_management_query_metric import TaskManagementQueryMetric
 from .models.team import Team
 from .models.team_activity_data import TeamActivityData
 from .models.team_activity_entity_data import TeamActivityEntityData
@@ -5169,6 +5186,7 @@ from .models.user_conversations_event_media_summary_detail import UserConversati
 from .models.user_conversations_event_user_conversation_summary import UserConversationsEventUserConversationSummary
 from .models.user_cursor_entity_listing import UserCursorEntityListing
 from .models.user_custom_attributes import UserCustomAttributes
+from .models.user_custom_attributes_update_request import UserCustomAttributesUpdateRequest
 from .models.user_detail_query_clause import UserDetailQueryClause
 from .models.user_detail_query_filter import UserDetailQueryFilter
 from .models.user_detail_query_predicate import UserDetailQueryPredicate
@@ -5255,10 +5273,12 @@ from .models.user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .models.user_transfer_event import UserTransferEvent
 from .models.user_trend_data import UserTrendData
 from .models.user_video_settings import UserVideoSettings
+from .models.users_rule_reference import UsersRuleReference
 from .models.users_rules_create_rule_request import UsersRulesCreateRuleRequest
 from .models.users_rules_criteria import UsersRulesCriteria
 from .models.users_rules_dependent import UsersRulesDependent
 from .models.users_rules_dependent_list import UsersRulesDependentList
+from .models.users_rules_dependent_rule import UsersRulesDependentRule
 from .models.users_rules_group_item import UsersRulesGroupItem
 from .models.users_rules_last_run_metadata import UsersRulesLastRunMetadata
 from .models.users_rules_locked_criteria_settings_criteria import UsersRulesLockedCriteriaSettingsCriteria
@@ -5352,6 +5372,12 @@ from .models.v2_wem_engagement_celebration_updates_topic_contest_winners_users i
 from .models.v2_wem_engagement_celebration_updates_topic_engagement_celebration import V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
 from .models.v2_wem_engagement_celebration_updates_topic_source_entity import V2WemEngagementCelebrationUpdatesTopicSourceEntity
 from .models.v2_wem_engagement_celebration_updates_topic_user_id import V2WemEngagementCelebrationUpdatesTopicUserId
+from .models.v2_wfm_main_forecast_export_forecast_event_main_forecast_error_body import V2WfmMainForecastExportForecastEventMainForecastErrorBody
+from .models.v2_wfm_main_forecast_export_forecast_event_main_forecast_export_notification import V2WfmMainForecastExportForecastEventMainForecastExportNotification
+from .models.v2_wfm_main_forecast_export_historical_event_main_forecast_error_body import V2WfmMainForecastExportHistoricalEventMainForecastErrorBody
+from .models.v2_wfm_main_forecast_export_historical_event_main_forecast_export_notification import V2WfmMainForecastExportHistoricalEventMainForecastExportNotification
+from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body import V2WfmMainForecastExportSnapshotEventMainForecastErrorBody
+from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification import V2WfmMainForecastExportSnapshotEventMainForecastExportNotification
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse
 from .models.validate_agent_unavailable_times_request import ValidateAgentUnavailableTimesRequest
@@ -5752,6 +5778,7 @@ from .models.workday_values_trend import WorkdayValuesTrend
 from .models.workday_values_trend_item import WorkdayValuesTrendItem
 from .models.workflow_target_settings import WorkflowTargetSettings
 from .models.workitem import Workitem
+from .models.workitem_case_reference import WorkitemCaseReference
 from .models.workitem_change_listing import WorkitemChangeListing
 from .models.workitem_common_create import WorkitemCommonCreate
 from .models.workitem_create import WorkitemCreate
@@ -5889,8 +5916,10 @@ from .apis.agent_ui_api import AgentUIApi
 from .apis.alerting_api import AlertingApi
 from .apis.analytics_api import AnalyticsApi
 from .apis.architect_api import ArchitectApi
+from .apis.assistant_copilot_variations_api import AssistantCopilotVariationsApi
 from .apis.audit_api import AuditApi
 from .apis.authorization_api import AuthorizationApi
+from .apis.background_assistant_api import BackgroundAssistantApi
 from .apis.billing_api import BillingApi
 from .apis.business_rules_api import BusinessRulesApi
 from .apis.carrier_services_api import CarrierServicesApi
@@ -5940,7 +5969,6 @@ from .apis.recording_api import RecordingApi
 from .apis.response_management_api import ResponseManagementApi
 from .apis.routing_api import RoutingApi
 from .apis.scim_api import SCIMApi
-from .apis.screen_recording_api import ScreenRecordingApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
 from .apis.settings_api import SettingsApi
@@ -5973,8 +6001,10 @@ from .apis.agent_ui_api import AgentUIApi
 from .apis.alerting_api import AlertingApi
 from .apis.analytics_api import AnalyticsApi
 from .apis.architect_api import ArchitectApi
+from .apis.assistant_copilot_variations_api import AssistantCopilotVariationsApi
 from .apis.audit_api import AuditApi
 from .apis.authorization_api import AuthorizationApi
+from .apis.background_assistant_api import BackgroundAssistantApi
 from .apis.billing_api import BillingApi
 from .apis.business_rules_api import BusinessRulesApi
 from .apis.carrier_services_api import CarrierServicesApi
@@ -6024,7 +6054,6 @@ from .apis.recording_api import RecordingApi
 from .apis.response_management_api import ResponseManagementApi
 from .apis.routing_api import RoutingApi
 from .apis.scim_api import SCIMApi
-from .apis.screen_recording_api import ScreenRecordingApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
 from .apis.settings_api import SettingsApi

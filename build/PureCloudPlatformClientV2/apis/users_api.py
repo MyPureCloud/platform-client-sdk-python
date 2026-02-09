@@ -49,8 +49,12 @@ from ..models import CallForwarding
 from ..models import ChangeMyPasswordRequest
 from ..models import ChangePasswordRequest
 from ..models import ChatItemCursorListing
+from ..models import Coretype
+from ..models import CoretypeListing
 from ..models import CreateUser
 from ..models import DataAvailabilityResponse
+from ..models import DataSchema
+from ..models import DataSchemaListing
 from ..models import DevelopmentActivity
 from ..models import DevelopmentActivityAggregateParam
 from ..models import DevelopmentActivityAggregateResponse
@@ -63,6 +67,7 @@ from ..models import OutOfOffice
 from ..models import PatchUser
 from ..models import RoleDivisionGrants
 from ..models import RoutingStatus
+from ..models import SchemaQuantityLimits
 from ..models import TrustorEntityListing
 from ..models import UpdateUser
 from ..models import UpdateVerifierRequest
@@ -75,6 +80,8 @@ from ..models import UserAsyncAggregateQueryResponse
 from ..models import UserAsyncAggregationQuery
 from ..models import UserAuthorization
 from ..models import UserCursorEntityListing
+from ..models import UserCustomAttributes
+from ..models import UserCustomAttributesUpdateRequest
 from ..models import UserDetailsQuery
 from ..models import UserEntityListing
 from ..models import UserExternalIdentifier
@@ -669,6 +676,91 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_user_customattribute(self, user_id: str, schema_id: str, **kwargs) -> None:
+        """
+        Delete a custom attributes record.
+        
+	    delete_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_user_customattribute(user_id, schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: user ID (required)
+        :param str schema_id: schemaId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_user_customattribute" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_user_customattribute`")
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `delete_user_customattribute`")
+
+
+        resource_path = '/api/v2/users/{userId}/customattributes/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_user_externalid_authority_name_external_key(self, user_id: str, authority_name: str, external_key: str, **kwargs) -> None:
         """
         Delete the external identifier for user.
@@ -1132,6 +1224,85 @@ class UsersApi(object):
             path_params['userId'] = params['user_id']
         if 'verifier_id' in params:
             path_params['verifierId'] = params['verifier_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_users_customattributes_schema(self, schema_id: str, **kwargs) -> None:
+        """
+        Delete a schema
+        
+	    delete_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_users_customattributes_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_users_customattributes_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `delete_users_customattributes_schema`")
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
 
         query_params = {}
 
@@ -2618,6 +2789,176 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CallForwarding',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_user_customattribute(self, user_id: str, schema_id: str, **kwargs) -> 'UserCustomAttributes':
+        """
+        Get custom attributes by schema id
+        
+	    get_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_user_customattribute(user_id, schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: user ID (required)
+        :param str schema_id: schemaId (required)
+        :return: UserCustomAttributes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_customattribute" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_user_customattribute`")
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_user_customattribute`")
+
+
+        resource_path = '/api/v2/users/{userId}/customattributes/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserCustomAttributes',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_user_customattributes_bulk(self, user_id: str, schema_ids: List['str'], **kwargs) -> List[object]:
+        """
+        Get multiple custom attributes records by schema ids
+        
+	    get_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_user_customattributes_bulk(user_id, schema_ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: user ID (required)
+        :param list[str] schema_ids:  (required)
+        :return: list[object]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'schema_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_customattributes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_user_customattributes_bulk`")
+        # verify the required parameter 'schema_ids' is set
+        if ('schema_ids' not in params) or (params['schema_ids'] is None):
+            raise ValueError("Missing the required parameter `schema_ids` when calling `get_user_customattributes_bulk`")
+
+
+        resource_path = '/api/v2/users/{userId}/customattributes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+        if 'schema_ids' in params:
+            query_params['schemaIds'] = params['schema_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[object]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4364,6 +4705,547 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_users_customattributes_schema(self, schema_id: str, **kwargs) -> 'DataSchema':
+        """
+        Get a schema
+        
+	    get_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_customattributes_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_customattributes_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_users_customattributes_schema`")
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_customattributes_schema_version(self, schema_id: str, version_id: str, **kwargs) -> 'DataSchema':
+        """
+        Get a specific version of a schema
+        
+	    get_users_customattributes_schema_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_customattributes_schema_version(schema_id, version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param str version_id: Schema version (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'version_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_customattributes_schema_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_users_customattributes_schema_version`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_users_customattributes_schema_version`")
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_customattributes_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchemaListing':
+        """
+        Get all versions of a user schema
+        
+	    get_users_customattributes_schema_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_customattributes_schema_versions(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: DataSchemaListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_customattributes_schema_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_users_customattributes_schema_versions`")
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/{schemaId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_customattributes_schemas(self, **kwargs) -> 'DataSchemaListing':
+        """
+        Get a list of schemas.
+        
+	    get_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_customattributes_schemas(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: DataSchemaListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_customattributes_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/users/customattributes/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_customattributes_schemas_coretype(self, core_type_name: str, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+	    get_users_customattributes_schemas_coretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_customattributes_schemas_coretype(core_type_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str core_type_name: Name of the core type (required)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['core_type_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_customattributes_schemas_coretype" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'core_type_name' is set
+        if ('core_type_name' not in params) or (params['core_type_name'] is None):
+            raise ValueError("Missing the required parameter `core_type_name` when calling `get_users_customattributes_schemas_coretype`")
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/coretypes/{coreTypeName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'core_type_name' in params:
+            path_params['coreTypeName'] = params['core_type_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_customattributes_schemas_coretypes(self, **kwargs) -> 'CoretypeListing':
+        """
+        Get the list of core types enabled for a specific namespace.
+        
+	    get_users_customattributes_schemas_coretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_customattributes_schemas_coretypes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: CoretypeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_customattributes_schemas_coretypes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/coretypes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CoretypeListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_customattributes_schemas_limits(self, **kwargs) -> 'SchemaQuantityLimits':
+        """
+        Get quantitative limits on schemas
+        
+	    get_users_customattributes_schemas_limits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_customattributes_schemas_limits(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SchemaQuantityLimits
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_customattributes_schemas_limits" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/limits'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SchemaQuantityLimits',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_users_development_activities(self, **kwargs) -> 'DevelopmentActivityListing':
         """
         Get list of Development Activities
@@ -5169,6 +6051,176 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_user_customattributes(self, user_id: str, user_custom_attributes: 'UserCustomAttributesUpdateRequest', **kwargs) -> 'UserCustomAttributes':
+        """
+        Update a single custom attributes record by amending the data with only the provided fields.
+        
+	    patch_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_user_customattributes(user_id, user_custom_attributes, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: user ID (required)
+        :param UserCustomAttributesUpdateRequest user_custom_attributes:  (required)
+        :return: UserCustomAttributes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'user_custom_attributes']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_user_customattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_user_customattributes`")
+        # verify the required parameter 'user_custom_attributes' is set
+        if ('user_custom_attributes' not in params) or (params['user_custom_attributes'] is None):
+            raise ValueError("Missing the required parameter `user_custom_attributes` when calling `patch_user_customattributes`")
+
+
+        resource_path = '/api/v2/users/{userId}/customattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'user_custom_attributes' in params:
+            body_params = params['user_custom_attributes']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserCustomAttributes',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_user_customattributes_bulk(self, user_id: str, user_custom_attributes_list: List['UserCustomAttributesUpdateRequest'], **kwargs) -> 'UserCustomAttributes':
+        """
+        Update multiple custom attributes records by amending the data with only the provided fields.
+        
+	    patch_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_user_customattributes_bulk(user_id, user_custom_attributes_list, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: user ID (required)
+        :param list[UserCustomAttributesUpdateRequest] user_custom_attributes_list:  (required)
+        :return: UserCustomAttributes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'user_custom_attributes_list']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_user_customattributes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_user_customattributes_bulk`")
+        # verify the required parameter 'user_custom_attributes_list' is set
+        if ('user_custom_attributes_list' not in params) or (params['user_custom_attributes_list'] is None):
+            raise ValueError("Missing the required parameter `user_custom_attributes_list` when calling `patch_user_customattributes_bulk`")
+
+
+        resource_path = '/api/v2/users/{userId}/customattributes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'user_custom_attributes_list' in params:
+            body_params = params['user_custom_attributes_list']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserCustomAttributes',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_user_geolocation(self, user_id: str, client_id: str, body: 'Geolocation', **kwargs) -> 'Geolocation':
         """
         Patch a user's Geolocation
@@ -5352,7 +6404,7 @@ class UsersApi(object):
     def patch_user_queues(self, user_id: str, body: List['UserQueue'], **kwargs) -> 'UserQueueEntityListing':
         """
         Join or unjoin a set of queues for a user
-        
+        Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7093,6 +8145,85 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_users_customattributes_schemas(self, body: 'DataSchema', **kwargs) -> 'DataSchema':
+        """
+        Create a schema
+        
+	    post_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_users_customattributes_schemas(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DataSchema body: Schema (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_users_customattributes_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_users_customattributes_schemas`")
+
+
+        resource_path = '/api/v2/users/customattributes/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_users_development_activities_aggregates_query(self, body: 'DevelopmentActivityAggregateParam', **kwargs) -> 'DevelopmentActivityAggregateResponse':
         """
         Retrieve aggregated development activity data
@@ -7889,6 +9020,91 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CallForwarding',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_user_customattributes(self, user_id: str, user_custom_attributes: 'UserCustomAttributesUpdateRequest', **kwargs) -> 'UserCustomAttributes':
+        """
+        Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+        
+	    put_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_user_customattributes(user_id, user_custom_attributes, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: user ID (required)
+        :param UserCustomAttributesUpdateRequest user_custom_attributes:  (required)
+        :return: UserCustomAttributes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'user_custom_attributes']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_user_customattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `put_user_customattributes`")
+        # verify the required parameter 'user_custom_attributes' is set
+        if ('user_custom_attributes' not in params) or (params['user_custom_attributes'] is None):
+            raise ValueError("Missing the required parameter `user_custom_attributes` when calling `put_user_customattributes`")
+
+
+        resource_path = '/api/v2/users/{userId}/customattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'user_custom_attributes' in params:
+            body_params = params['user_custom_attributes']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserCustomAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8741,6 +9957,91 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Verifier',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_users_customattributes_schema(self, schema_id: str, body: 'DataSchema', **kwargs) -> 'DataSchema':
+        """
+        Update a schema
+        
+	    put_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_users_customattributes_schema(schema_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param DataSchema body: Data Schema (required)
+        :return: DataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_users_customattributes_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `put_users_customattributes_schema`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_users_customattributes_schema`")
+
+
+        resource_path = '/api/v2/users/customattributes/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

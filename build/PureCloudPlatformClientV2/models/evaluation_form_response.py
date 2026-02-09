@@ -63,6 +63,7 @@ class EvaluationFormResponse(object):
             'published_versions': 'DomainEntityListingEvaluationForm',
             'latest_version_form_name': 'str',
             'ai_scoring': 'AiScoringSettings',
+            'dialect': 'str',
             'self_uri': 'str'
         }
 
@@ -78,6 +79,7 @@ class EvaluationFormResponse(object):
             'published_versions': 'publishedVersions',
             'latest_version_form_name': 'latestVersionFormName',
             'ai_scoring': 'aiScoring',
+            'dialect': 'dialect',
             'self_uri': 'selfUri'
         }
 
@@ -92,6 +94,7 @@ class EvaluationFormResponse(object):
         self._published_versions = None
         self._latest_version_form_name = None
         self._ai_scoring = None
+        self._dialect = None
         self._self_uri = None
 
     @property
@@ -362,6 +365,30 @@ class EvaluationFormResponse(object):
         
 
         self._ai_scoring = ai_scoring
+
+    @property
+    def dialect(self) -> str:
+        """
+        Gets the dialect of this EvaluationFormResponse.
+        The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW
+
+        :return: The dialect of this EvaluationFormResponse.
+        :rtype: str
+        """
+        return self._dialect
+
+    @dialect.setter
+    def dialect(self, dialect: str) -> None:
+        """
+        Sets the dialect of this EvaluationFormResponse.
+        The language dialect for this evaluation form. Supported dialects: ar, cs, da, de, en-US, es, fi, fr, fr-CA, he, hi, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ru, sv, th, tr, uk, zh-CN, zh-TW
+
+        :param dialect: The dialect of this EvaluationFormResponse.
+        :type: str
+        """
+        
+
+        self._dialect = dialect
 
     @property
     def self_uri(self) -> str:

@@ -226,7 +226,7 @@ void (empty response body)
 
 ## get_assistant
 
-> [**Assistant**](Assistant) get_assistant(assistant_id, expand=expand)
+> [**Assistant**](Assistant) get_assistant(assistant_id, expand=expand, language_variation=language_variation, fallback_to_primary_assistant=fallback_to_primary_assistant)
 
 
 Get an assistant.
@@ -252,10 +252,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AgentAssistantsApi()
 assistant_id = 'assistant_id_example' # str | Assistant ID
 expand = 'expand_example' # str | Which fields, if any, to expand. (optional)
+language_variation = 'language_variation_example' # str | Language variation (optional)
+fallback_to_primary_assistant = True # bool | Fall back to primary assistant if specified variation is not found (optional)
 
 try:
     # Get an assistant.
-    api_response = api_instance.get_assistant(assistant_id, expand=expand)
+    api_response = api_instance.get_assistant(assistant_id, expand=expand, language_variation=language_variation, fallback_to_primary_assistant=fallback_to_primary_assistant)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentAssistantsApi->get_assistant: %s\n" % e)
@@ -268,6 +270,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
 | **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: copilot |
+| **language_variation** | **str**| Language variation | [optional]  |
+| **fallback_to_primary_assistant** | **bool**| Fall back to primary assistant if specified variation is not found | [optional]  |
 
 ### Return type
 
@@ -1208,4 +1212,4 @@ except ApiException as e:
 [**AgentChecklist**](AgentChecklist)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

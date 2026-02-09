@@ -62,6 +62,9 @@ class SummarySetting(object):
             'custom_entities': 'list[SummarySettingCustomEntity]',
             'setting_type': 'str',
             'prompt': 'str',
+            'service_type': 'str',
+            'integration_id': 'str',
+            'timeout_duration': 'int',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'self_uri': 'str'
@@ -79,6 +82,9 @@ class SummarySetting(object):
             'custom_entities': 'customEntities',
             'setting_type': 'settingType',
             'prompt': 'prompt',
+            'service_type': 'serviceType',
+            'integration_id': 'integrationId',
+            'timeout_duration': 'timeoutDuration',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'self_uri': 'selfUri'
@@ -95,6 +101,9 @@ class SummarySetting(object):
         self._custom_entities = None
         self._setting_type = None
         self._prompt = None
+        self._service_type = None
+        self._integration_id = None
+        self._timeout_duration = None
         self._date_created = None
         self._date_modified = None
         self._self_uri = None
@@ -377,6 +386,83 @@ class SummarySetting(object):
         
 
         self._prompt = prompt
+
+    @property
+    def service_type(self) -> str:
+        """
+        Gets the service_type of this SummarySetting.
+        Service type for summarization. Can be 'Native' for Genesys native summarization engine or 'External' for external service. If specified as 'External', integrationId must be provided.
+
+        :return: The service_type of this SummarySetting.
+        :rtype: str
+        """
+        return self._service_type
+
+    @service_type.setter
+    def service_type(self, service_type: str) -> None:
+        """
+        Sets the service_type of this SummarySetting.
+        Service type for summarization. Can be 'Native' for Genesys native summarization engine or 'External' for external service. If specified as 'External', integrationId must be provided.
+
+        :param service_type: The service_type of this SummarySetting.
+        :type: str
+        """
+        if isinstance(service_type, int):
+            service_type = str(service_type)
+        allowed_values = ["Native", "External"]
+        if service_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for service_type -> " + service_type)
+            self._service_type = "outdated_sdk_version"
+        else:
+            self._service_type = service_type
+
+    @property
+    def integration_id(self) -> str:
+        """
+        Gets the integration_id of this SummarySetting.
+        Integration ID for the external summarization service. Required when serviceType is External.
+
+        :return: The integration_id of this SummarySetting.
+        :rtype: str
+        """
+        return self._integration_id
+
+    @integration_id.setter
+    def integration_id(self, integration_id: str) -> None:
+        """
+        Sets the integration_id of this SummarySetting.
+        Integration ID for the external summarization service. Required when serviceType is External.
+
+        :param integration_id: The integration_id of this SummarySetting.
+        :type: str
+        """
+        
+
+        self._integration_id = integration_id
+
+    @property
+    def timeout_duration(self) -> int:
+        """
+        Gets the timeout_duration of this SummarySetting.
+        Timeout duration in seconds for the external summarization service request.
+
+        :return: The timeout_duration of this SummarySetting.
+        :rtype: int
+        """
+        return self._timeout_duration
+
+    @timeout_duration.setter
+    def timeout_duration(self, timeout_duration: int) -> None:
+        """
+        Sets the timeout_duration of this SummarySetting.
+        Timeout duration in seconds for the external summarization service request.
+
+        :param timeout_duration: The timeout_duration of this SummarySetting.
+        :type: int
+        """
+        
+
+        self._timeout_duration = timeout_duration
 
     @property
     def date_created(self) -> datetime:

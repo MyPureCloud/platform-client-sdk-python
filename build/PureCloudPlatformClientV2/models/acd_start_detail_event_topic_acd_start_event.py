@@ -69,7 +69,8 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
             'conversation_external_organization_ids': 'list[str]',
             'utilization_label': 'str',
             'routing_priority': 'int',
-            'requested_routing_skill_ids': 'list[str]'
+            'requested_routing_skill_ids': 'list[str]',
+            'skill_expression_applied': 'bool'
         }
 
         self.attribute_map = {
@@ -95,7 +96,8 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
             'utilization_label': 'utilizationLabel',
             'routing_priority': 'routingPriority',
-            'requested_routing_skill_ids': 'requestedRoutingSkillIds'
+            'requested_routing_skill_ids': 'requestedRoutingSkillIds',
+            'skill_expression_applied': 'skillExpressionApplied'
         }
 
         self._event_time = None
@@ -121,6 +123,7 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
         self._utilization_label = None
         self._routing_priority = None
         self._requested_routing_skill_ids = None
+        self._skill_expression_applied = None
 
     @property
     def event_time(self) -> int:
@@ -688,6 +691,30 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
         
 
         self._requested_routing_skill_ids = requested_routing_skill_ids
+
+    @property
+    def skill_expression_applied(self) -> bool:
+        """
+        Gets the skill_expression_applied of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The skill_expression_applied of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: bool
+        """
+        return self._skill_expression_applied
+
+    @skill_expression_applied.setter
+    def skill_expression_applied(self, skill_expression_applied: bool) -> None:
+        """
+        Sets the skill_expression_applied of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param skill_expression_applied: The skill_expression_applied of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: bool
+        """
+        
+
+        self._skill_expression_applied = skill_expression_applied
 
     def to_dict(self):
         """

@@ -3294,12 +3294,13 @@ class AuthorizationApi(object):
             for asynchronous request. (optional)
         :param str target_name: The domain:entity:action target to which the policy will be applied (required)
         :param AuthorizationPolicy body: Access control policy (required)
+        :param bool skip_lockout_check: Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
         :return: AuthorizationPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['target_name', 'body']
+        all_params = ['target_name', 'body', 'skip_lockout_check']
         all_params.append('callback')
 
         params = locals()
@@ -3326,6 +3327,8 @@ class AuthorizationApi(object):
             path_params['targetName'] = params['target_name']
 
         query_params = {}
+        if 'skip_lockout_check' in params:
+            query_params['skipLockoutCheck'] = params['skip_lockout_check']
 
         header_params = {}
 
@@ -4311,12 +4314,13 @@ class AuthorizationApi(object):
             for asynchronous request. (optional)
         :param str target_name: The domain:entity:action target to which the policy will be applied (required)
         :param AuthorizationPolicy body: Access control policy (required)
+        :param bool skip_lockout_check: Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
         :return: AuthorizationPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['target_name', 'body']
+        all_params = ['target_name', 'body', 'skip_lockout_check']
         all_params.append('callback')
 
         params = locals()
@@ -4343,6 +4347,8 @@ class AuthorizationApi(object):
             path_params['targetName'] = params['target_name']
 
         query_params = {}
+        if 'skip_lockout_check' in params:
+            query_params['skipLockoutCheck'] = params['skip_lockout_check']
 
         header_params = {}
 
@@ -4395,12 +4401,13 @@ class AuthorizationApi(object):
             for asynchronous request. (optional)
         :param str policy_id: The ID of the policy to update (required)
         :param AuthorizationPolicy body: Access control policy (required)
+        :param bool skip_lockout_check: Skip lockout check; if true, policy will not be evaluated against current context for lockout risk
         :return: AuthorizationPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'body']
+        all_params = ['policy_id', 'body', 'skip_lockout_check']
         all_params.append('callback')
 
         params = locals()
@@ -4427,6 +4434,8 @@ class AuthorizationApi(object):
             path_params['policyId'] = params['policy_id']
 
         query_params = {}
+        if 'skip_lockout_check' in params:
+            query_params['skipLockoutCheck'] = params['skip_lockout_check']
 
         header_params = {}
 

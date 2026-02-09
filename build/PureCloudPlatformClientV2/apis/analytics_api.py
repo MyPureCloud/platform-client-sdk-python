@@ -138,6 +138,8 @@ from ..models import TaskManagementAggregateQueryResponse
 from ..models import TaskManagementAggregationQuery
 from ..models import TaskManagementAsyncAggregateQueryResponse
 from ..models import TaskManagementAsyncAggregationQuery
+from ..models import TaskManagementObservationQuery
+from ..models import TaskManagementObservationQueryResponse
 from ..models import TeamActivityQuery
 from ..models import TeamActivityResponse
 from ..models import TranscriptAggregateQueryResponse
@@ -9537,6 +9539,95 @@ class AnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TaskManagementAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_analytics_taskmanagement_metrics_query(self, body: 'TaskManagementObservationQuery', **kwargs) -> 'TaskManagementObservationQueryResponse':
+        """
+        Query for task management observations
+        
+	    post_analytics_taskmanagement_metrics_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_taskmanagement_metrics_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TaskManagementObservationQuery body: query (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned. Used for pagination.
+        :param int page_size: Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
+        :return: TaskManagementObservationQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_taskmanagement_metrics_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_taskmanagement_metrics_query`")
+
+        if 'page_size' in params and params['page_size'] > 200: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_analytics_taskmanagement_metrics_query`, must be a value less than or equal to  `200`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_analytics_taskmanagement_metrics_query`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/analytics/taskmanagement/metrics/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TaskManagementObservationQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

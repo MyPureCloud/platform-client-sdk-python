@@ -123,6 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_surveys_aggregates_query**](#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
 |[**post_analytics_taskmanagement_aggregates_jobs**](#post_analytics_taskmanagement_aggregates_jobs) | Query for task management aggregates asynchronously|
 |[**post_analytics_taskmanagement_aggregates_query**](#post_analytics_taskmanagement_aggregates_query) | Query for task management aggregates|
+|[**post_analytics_taskmanagement_metrics_query**](#post_analytics_taskmanagement_metrics_query) | Query for task management observations|
 |[**post_analytics_teams_activity_query**](#post_analytics_teams_activity_query) | Query for team activity observations|
 |[**post_analytics_transcripts_aggregates_jobs**](#post_analytics_transcripts_aggregates_jobs) | Query for transcript aggregates asynchronously|
 |[**post_analytics_transcripts_aggregates_query**](#post_analytics_transcripts_aggregates_query) | Query for transcript aggregates|
@@ -6010,6 +6011,60 @@ except ApiException as e:
 [**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse)
 
 
+## post_analytics_taskmanagement_metrics_query
+
+> [**TaskManagementObservationQueryResponse**](TaskManagementObservationQueryResponse) post_analytics_taskmanagement_metrics_query(body, after=after, page_size=page_size)
+
+
+Query for task management observations
+
+post_analytics_taskmanagement_metrics_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/taskmanagement/metrics/query 
+
+Requires ALL permissions: 
+
+* analytics:taskManagementObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.TaskManagementObservationQuery() # TaskManagementObservationQuery | query
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. Used for pagination. (optional)
+page_size = 56 # int | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional)
+
+try:
+    # Query for task management observations
+    api_response = api_instance.post_analytics_taskmanagement_metrics_query(body, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_taskmanagement_metrics_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TaskManagementObservationQuery**](TaskManagementObservationQuery)| query |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. Used for pagination. | [optional]  |
+| **page_size** | **int**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**TaskManagementObservationQueryResponse**](TaskManagementObservationQueryResponse)
+
+
 ## post_analytics_teams_activity_query
 
 > [**TeamActivityResponse**](TeamActivityResponse) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
@@ -6502,4 +6557,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

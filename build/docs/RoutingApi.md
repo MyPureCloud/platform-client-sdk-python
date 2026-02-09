@@ -109,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_conversation**](#patch_routing_conversation) | Update attributes of an in-queue conversation|
 |[**patch_routing_email_domain**](#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](#patch_routing_email_domain_validate) | Validate domain settings|
+|[**patch_routing_email_outbound_domain**](#patch_routing_email_outbound_domain) | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).|
 |[**patch_routing_predictor**](#patch_routing_predictor) | Update single predictor.|
 |[**patch_routing_predictors_keyperformanceindicator**](#patch_routing_predictors_keyperformanceindicator) | Update a custom Key Performance Indicator.|
 |[**patch_routing_queue_member**](#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
@@ -134,6 +135,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_email_domain_testconnection**](#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this ACD domain|
 |[**post_routing_email_domain_verification**](#post_routing_email_domain_verification) | Restart domain verification|
 |[**post_routing_email_domains**](#post_routing_email_domains) | Create a domain|
+|[**post_routing_email_outbound_domain_testconnection**](#post_routing_email_outbound_domain_testconnection) | Tests the custom SMTP server integration connection set on this outbound domain|
 |[**post_routing_email_outbound_domains**](#post_routing_email_outbound_domains) | Create a domain|
 |[**post_routing_email_outbound_domains_simulated**](#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
 |[**post_routing_languages**](#post_routing_languages) | Create Language|
@@ -2874,7 +2876,7 @@ except ApiException as e:
 
 ## get_routing_queue_assistant
 
-> [**AssistantQueue**](AssistantQueue) get_routing_queue_assistant(queue_id, expand=expand)
+> [**AssistantQueue**](AssistantQueue) get_routing_queue_assistant(queue_id, expand=expand, language_variation=language_variation, fallback_to_primary_assistant=fallback_to_primary_assistant)
 
 
 Get an assistant associated with a queue.
@@ -2900,10 +2902,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+language_variation = 'language_variation_example' # str | Language variation (optional)
+fallback_to_primary_assistant = True # bool | Fall back to primary assistant if specified variation is not found (optional)
 
 try:
     # Get an assistant associated with a queue.
-    api_response = api_instance.get_routing_queue_assistant(queue_id, expand=expand)
+    api_response = api_instance.get_routing_queue_assistant(queue_id, expand=expand, language_variation=language_variation, fallback_to_primary_assistant=fallback_to_primary_assistant)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queue_assistant: %s\n" % e)
@@ -2916,6 +2920,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: assistant, copilot |
+| **language_variation** | **str**| Language variation | [optional]  |
+| **fallback_to_primary_assistant** | **bool**| Fall back to primary assistant if specified variation is not found | [optional]  |
 
 ### Return type
 
@@ -5261,7 +5267,7 @@ except ApiException as e:
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
 
 Wraps PATCH /api/v2/routing/conversations/{conversationId} 
 
@@ -5404,6 +5410,56 @@ except ApiException as e:
 ### Return type
 
 [**InboundDomain**](InboundDomain)
+
+
+## patch_routing_email_outbound_domain
+
+> [**OutboundDomain**](OutboundDomain) patch_routing_email_outbound_domain(domain_id, body)
+
+
+Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+
+Wraps PATCH /api/v2/routing/email/outbound/domains/{domainId} 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+body = PureCloudPlatformClientV2.OutboundDomainPatchRequest() # OutboundDomainPatchRequest | Domain settings
+
+try:
+    # Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+    api_response = api_instance.patch_routing_email_outbound_domain(domain_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_email_outbound_domain: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+| **body** | [**OutboundDomainPatchRequest**](OutboundDomainPatchRequest)| Domain settings |  |
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain)
 
 
 ## patch_routing_predictor
@@ -5567,6 +5623,8 @@ void (empty response body)
 
 
 Join or unjoin a set of up to 100 users for a queue
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/members 
 
@@ -5975,6 +6033,8 @@ except ApiException as e:
 
 
 Join or unjoin a set of queues for a user
+
+Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 
 Wraps PATCH /api/v2/users/{userId}/queues 
 
@@ -6667,6 +6727,58 @@ except ApiException as e:
 ### Return type
 
 [**InboundDomain**](InboundDomain)
+
+
+## post_routing_email_outbound_domain_testconnection
+
+> [**TestMessage**](TestMessage) post_routing_email_outbound_domain_testconnection(domain_id, body=body)
+
+
+Tests the custom SMTP server integration connection set on this outbound domain
+
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+
+Wraps POST /api/v2/routing/email/outbound/domains/{domainId}/testconnection 
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+domain_id = 'domain_id_example' # str | domain ID
+body = PureCloudPlatformClientV2.TestMessage() # TestMessage | TestMessage (optional)
+
+try:
+    # Tests the custom SMTP server integration connection set on this outbound domain
+    api_response = api_instance.post_routing_email_outbound_domain_testconnection(domain_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_email_outbound_domain_testconnection: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain_id** | **str**| domain ID |  |
+| **body** | [**TestMessage**](TestMessage)| TestMessage | [optional]  |
+
+### Return type
+
+[**TestMessage**](TestMessage)
 
 
 ## post_routing_email_outbound_domains
@@ -8553,4 +8665,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

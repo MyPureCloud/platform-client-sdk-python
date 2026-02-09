@@ -47,6 +47,7 @@ if TYPE_CHECKING:
     from . import QuickReply
     from . import RecordingContentStory
     from . import RecordingForm
+    from . import RecordingMessageReceipt
     from . import RecordingNotificationTemplate
     from . import RecordingRoadsideAssistance
     from . import User
@@ -72,6 +73,7 @@ class RecordingMessagingMessage(object):
             'to': 'str',
             'timestamp': 'datetime',
             'id': 'str',
+            'status': 'str',
             'purpose': 'str',
             'participant_id': 'str',
             'queue': 'AddressableEntityRef',
@@ -94,7 +96,8 @@ class RecordingMessagingMessage(object):
             'payment_request': 'PaymentRequest',
             'payment_response': 'PaymentResponse',
             'form': 'RecordingForm',
-            'roadside_assistance': 'RecordingRoadsideAssistance'
+            'roadside_assistance': 'RecordingRoadsideAssistance',
+            'message_receipts': 'list[RecordingMessageReceipt]'
         }
 
         self.attribute_map = {
@@ -104,6 +107,7 @@ class RecordingMessagingMessage(object):
             'to': 'to',
             'timestamp': 'timestamp',
             'id': 'id',
+            'status': 'status',
             'purpose': 'purpose',
             'participant_id': 'participantId',
             'queue': 'queue',
@@ -126,7 +130,8 @@ class RecordingMessagingMessage(object):
             'payment_request': 'paymentRequest',
             'payment_response': 'paymentResponse',
             'form': 'form',
-            'roadside_assistance': 'roadsideAssistance'
+            'roadside_assistance': 'roadsideAssistance',
+            'message_receipts': 'messageReceipts'
         }
 
         self._pcFrom = None
@@ -135,6 +140,7 @@ class RecordingMessagingMessage(object):
         self._to = None
         self._timestamp = None
         self._id = None
+        self._status = None
         self._purpose = None
         self._participant_id = None
         self._queue = None
@@ -158,6 +164,7 @@ class RecordingMessagingMessage(object):
         self._payment_response = None
         self._form = None
         self._roadside_assistance = None
+        self._message_receipts = None
 
     @property
     def pcFrom(self) -> str:
@@ -302,6 +309,30 @@ class RecordingMessagingMessage(object):
         
 
         self._id = id
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this RecordingMessagingMessage.
+        Status of the message
+
+        :return: The status of this RecordingMessagingMessage.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this RecordingMessagingMessage.
+        Status of the message
+
+        :param status: The status of this RecordingMessagingMessage.
+        :type: str
+        """
+        
+
+        self._status = status
 
     @property
     def purpose(self) -> str:
@@ -864,6 +895,30 @@ class RecordingMessagingMessage(object):
         
 
         self._roadside_assistance = roadside_assistance
+
+    @property
+    def message_receipts(self) -> List['RecordingMessageReceipt']:
+        """
+        Gets the message_receipts of this RecordingMessagingMessage.
+        List of message receipts
+
+        :return: The message_receipts of this RecordingMessagingMessage.
+        :rtype: list[RecordingMessageReceipt]
+        """
+        return self._message_receipts
+
+    @message_receipts.setter
+    def message_receipts(self, message_receipts: List['RecordingMessageReceipt']) -> None:
+        """
+        Sets the message_receipts of this RecordingMessagingMessage.
+        List of message receipts
+
+        :param message_receipts: The message_receipts of this RecordingMessagingMessage.
+        :type: list[RecordingMessageReceipt]
+        """
+        
+
+        self._message_receipts = message_receipts
 
     def to_dict(self):
         """

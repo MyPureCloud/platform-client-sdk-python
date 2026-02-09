@@ -53,6 +53,7 @@ class UpdatedTopicSystemMessage(object):
             'organization_id': 'str',
             'user_id': 'str',
             'oauth_client_id': 'str',
+            'oauth_client_org_id': 'str',
             'reason': 'str',
             'message': 'str',
             'data': 'dict(str, object)'
@@ -65,6 +66,7 @@ class UpdatedTopicSystemMessage(object):
             'organization_id': 'organizationId',
             'user_id': 'userId',
             'oauth_client_id': 'oauthClientId',
+            'oauth_client_org_id': 'oauthClientOrgId',
             'reason': 'reason',
             'message': 'message',
             'data': 'data'
@@ -76,6 +78,7 @@ class UpdatedTopicSystemMessage(object):
         self._organization_id = None
         self._user_id = None
         self._oauth_client_id = None
+        self._oauth_client_org_id = None
         self._reason = None
         self._message = None
         self._data = None
@@ -228,6 +231,30 @@ class UpdatedTopicSystemMessage(object):
         
 
         self._oauth_client_id = oauth_client_id
+
+    @property
+    def oauth_client_org_id(self) -> str:
+        """
+        Gets the oauth_client_org_id of this UpdatedTopicSystemMessage.
+
+
+        :return: The oauth_client_org_id of this UpdatedTopicSystemMessage.
+        :rtype: str
+        """
+        return self._oauth_client_org_id
+
+    @oauth_client_org_id.setter
+    def oauth_client_org_id(self, oauth_client_org_id: str) -> None:
+        """
+        Sets the oauth_client_org_id of this UpdatedTopicSystemMessage.
+
+
+        :param oauth_client_org_id: The oauth_client_org_id of this UpdatedTopicSystemMessage.
+        :type: str
+        """
+        
+
+        self._oauth_client_org_id = oauth_client_org_id
 
     @property
     def reason(self) -> str:

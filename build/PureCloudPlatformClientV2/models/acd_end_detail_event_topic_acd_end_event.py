@@ -71,6 +71,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
             'requested_routings': 'list[str]',
             'used_routing': 'str',
             'requested_routing_skill_ids': 'list[str]',
+            'requested_skill_expression_ids': 'list[str]',
             'requested_language_id': 'str',
             'requested_routing_user_ids': 'list[str]',
             'routing_priority': 'int',
@@ -106,6 +107,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
             'requested_routings': 'requestedRoutings',
             'used_routing': 'usedRouting',
             'requested_routing_skill_ids': 'requestedRoutingSkillIds',
+            'requested_skill_expression_ids': 'requestedSkillExpressionIds',
             'requested_language_id': 'requestedLanguageId',
             'requested_routing_user_ids': 'requestedRoutingUserIds',
             'routing_priority': 'routingPriority',
@@ -140,6 +142,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         self._requested_routings = None
         self._used_routing = None
         self._requested_routing_skill_ids = None
+        self._requested_skill_expression_ids = None
         self._requested_language_id = None
         self._requested_routing_user_ids = None
         self._routing_priority = None
@@ -267,7 +270,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["UNKNOWN", "ENDPOINT", "CLIENT", "SYSTEM", "TRANSFER", "ERROR", "PEER", "OTHER", "SPAM", "TIMEOUT", "TRANSPORT_FAILURE", "CONFERENCE_TRANSFER", "CONSULT_TRANSFER", "FORWARD_TRANSFER", "NO_ANSWER_TRANSFER", "NOT_AVAILABLE_TRANSFER", "UNCALLABLE", "DND_ENDPOINT", "DND_TRANSFER", "INACTIVITY", "SESSION_EXPIRED"]
+        allowed_values = ["UNKNOWN", "ENDPOINT", "CLIENT", "SYSTEM", "TRANSFER", "ERROR", "PEER", "OTHER", "SPAM", "TIMEOUT", "TRANSPORT_FAILURE", "CONFERENCE_TRANSFER", "CONSULT_TRANSFER", "FORWARD_TRANSFER", "NO_ANSWER_TRANSFER", "NOT_AVAILABLE_TRANSFER", "UNCALLABLE", "DND_ENDPOINT", "DND_TRANSFER", "INACTIVITY", "SESSION_EXPIRED", "TAKEOVER"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -754,6 +757,30 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         
 
         self._requested_routing_skill_ids = requested_routing_skill_ids
+
+    @property
+    def requested_skill_expression_ids(self) -> List[str]:
+        """
+        Gets the requested_skill_expression_ids of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :return: The requested_skill_expression_ids of this AcdEndDetailEventTopicAcdEndEvent.
+        :rtype: list[str]
+        """
+        return self._requested_skill_expression_ids
+
+    @requested_skill_expression_ids.setter
+    def requested_skill_expression_ids(self, requested_skill_expression_ids: List[str]) -> None:
+        """
+        Sets the requested_skill_expression_ids of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :param requested_skill_expression_ids: The requested_skill_expression_ids of this AcdEndDetailEventTopicAcdEndEvent.
+        :type: list[str]
+        """
+        
+
+        self._requested_skill_expression_ids = requested_skill_expression_ids
 
     @property
     def requested_language_id(self) -> str:

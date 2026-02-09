@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **rule_id** | str | The id of the rule | [optional] |
+| **rule** | [UsersRulesDependentRule](UsersRulesDependentRule) | The rule associated with this dependent | [optional] |
 | **type_id** | str | The type id of the dependent | [optional] |
 | **type** | str | The type of the dependent | [optional] |
 | **created_date** | datetime | The date/time the dependent was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -17,4 +17,4 @@
 
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

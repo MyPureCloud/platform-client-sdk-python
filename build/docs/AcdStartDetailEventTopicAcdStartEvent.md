@@ -29,7 +29,8 @@
 | **utilization_label** | str |  | [optional] |
 | **routing_priority** | int |  | [optional] |
 | **requested_routing_skill_ids** | list[str] |  | [optional] |
+| **skill_expression_applied** | bool |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

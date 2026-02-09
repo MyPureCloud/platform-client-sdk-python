@@ -405,12 +405,14 @@ class AgentAssistantsApi(object):
             for asynchronous request. (optional)
         :param str assistant_id: Assistant ID (required)
         :param str expand: Which fields, if any, to expand.
+        :param str language_variation: Language variation
+        :param bool fallback_to_primary_assistant: Fall back to primary assistant if specified variation is not found
         :return: Assistant
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['assistant_id', 'expand']
+        all_params = ['assistant_id', 'expand', 'language_variation', 'fallback_to_primary_assistant']
         all_params.append('callback')
 
         params = locals()
@@ -436,6 +438,10 @@ class AgentAssistantsApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'language_variation' in params:
+            query_params['languageVariation'] = params['language_variation']
+        if 'fallback_to_primary_assistant' in params:
+            query_params['fallbackToPrimaryAssistant'] = params['fallback_to_primary_assistant']
 
         header_params = {}
 

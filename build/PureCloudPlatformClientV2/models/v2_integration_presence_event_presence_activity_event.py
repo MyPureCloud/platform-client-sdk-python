@@ -56,7 +56,8 @@ class V2IntegrationPresenceEventPresenceActivityEvent(object):
             'presence_definition': 'V2IntegrationPresenceEventOrganizationPresence',
             'message': 'str',
             'current_display_source_id': 'str',
-            'previous_display_source_id': 'str'
+            'previous_display_source_id': 'str',
+            'future_presence_definition': 'V2IntegrationPresenceEventOrganizationPresence'
         }
 
         self.attribute_map = {
@@ -67,7 +68,8 @@ class V2IntegrationPresenceEventPresenceActivityEvent(object):
             'presence_definition': 'presenceDefinition',
             'message': 'message',
             'current_display_source_id': 'currentDisplaySourceId',
-            'previous_display_source_id': 'previousDisplaySourceId'
+            'previous_display_source_id': 'previousDisplaySourceId',
+            'future_presence_definition': 'futurePresenceDefinition'
         }
 
         self._user_id = None
@@ -78,6 +80,7 @@ class V2IntegrationPresenceEventPresenceActivityEvent(object):
         self._message = None
         self._current_display_source_id = None
         self._previous_display_source_id = None
+        self._future_presence_definition = None
 
     @property
     def user_id(self) -> str:
@@ -275,6 +278,30 @@ class V2IntegrationPresenceEventPresenceActivityEvent(object):
         
 
         self._previous_display_source_id = previous_display_source_id
+
+    @property
+    def future_presence_definition(self) -> 'V2IntegrationPresenceEventOrganizationPresence':
+        """
+        Gets the future_presence_definition of this V2IntegrationPresenceEventPresenceActivityEvent.
+
+
+        :return: The future_presence_definition of this V2IntegrationPresenceEventPresenceActivityEvent.
+        :rtype: V2IntegrationPresenceEventOrganizationPresence
+        """
+        return self._future_presence_definition
+
+    @future_presence_definition.setter
+    def future_presence_definition(self, future_presence_definition: 'V2IntegrationPresenceEventOrganizationPresence') -> None:
+        """
+        Sets the future_presence_definition of this V2IntegrationPresenceEventPresenceActivityEvent.
+
+
+        :param future_presence_definition: The future_presence_definition of this V2IntegrationPresenceEventPresenceActivityEvent.
+        :type: V2IntegrationPresenceEventOrganizationPresence
+        """
+        
+
+        self._future_presence_definition = future_presence_definition
 
     def to_dict(self):
         """

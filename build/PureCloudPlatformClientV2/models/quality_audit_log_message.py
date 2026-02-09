@@ -272,7 +272,7 @@ class QualityAuditLogMessage(object):
         """
         if isinstance(service_name, int):
             service_name = str(service_name)
-        allowed_values = ["RecordingService", "RecordingPlaybackService", "QualityService"]
+        allowed_values = ["RecordingService", "RecordingPlaybackService", "QualityService", "HorusService"]
         if service_name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for service_name -> " + service_name)
             self._service_name = "outdated_sdk_version"
@@ -407,7 +407,7 @@ class QualityAuditLogMessage(object):
         """
         if isinstance(action, int):
             action = str(action)
-        allowed_values = ["Read", "Create", "Update", "Delete", "Abandon", "Archive", "Export", "Download", "RestoreRequest", "RestoreComplete", "ApplyProtection", "RevokeProtection", "UpdateRetention"]
+        allowed_values = ["Read", "Create", "Update", "Delete", "Abandon", "Archive", "Export", "Download", "RestoreRequest", "RestoreComplete", "ApplyProtection", "RevokeProtection", "UpdateRetention", "Start", "Stop"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"

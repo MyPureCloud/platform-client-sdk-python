@@ -65,7 +65,9 @@ class CallbackMediaSettings(object):
             'live_voice_reaction_type': 'str',
             'live_voice_flow': 'DomainEntityRef',
             'answering_machine_reaction_type': 'str',
-            'answering_machine_flow': 'DomainEntityRef'
+            'answering_machine_flow': 'DomainEntityRef',
+            'edge_group': 'DomainEntityRef',
+            'site': 'DomainEntityRef'
         }
 
         self.attribute_map = {
@@ -84,7 +86,9 @@ class CallbackMediaSettings(object):
             'live_voice_reaction_type': 'liveVoiceReactionType',
             'live_voice_flow': 'liveVoiceFlow',
             'answering_machine_reaction_type': 'answeringMachineReactionType',
-            'answering_machine_flow': 'answeringMachineFlow'
+            'answering_machine_flow': 'answeringMachineFlow',
+            'edge_group': 'edgeGroup',
+            'site': 'site'
         }
 
         self._enable_auto_answer = None
@@ -103,6 +107,8 @@ class CallbackMediaSettings(object):
         self._live_voice_flow = None
         self._answering_machine_reaction_type = None
         self._answering_machine_flow = None
+        self._edge_group = None
+        self._site = None
 
     @property
     def enable_auto_answer(self) -> bool:
@@ -502,6 +508,54 @@ class CallbackMediaSettings(object):
         
 
         self._answering_machine_flow = answering_machine_flow
+
+    @property
+    def edge_group(self) -> 'DomainEntityRef':
+        """
+        Gets the edge_group of this CallbackMediaSettings.
+        The identifier of the edge group that will place the calls. Can be set to specify custom edge group instead of default one.
+
+        :return: The edge_group of this CallbackMediaSettings.
+        :rtype: DomainEntityRef
+        """
+        return self._edge_group
+
+    @edge_group.setter
+    def edge_group(self, edge_group: 'DomainEntityRef') -> None:
+        """
+        Sets the edge_group of this CallbackMediaSettings.
+        The identifier of the edge group that will place the calls. Can be set to specify custom edge group instead of default one.
+
+        :param edge_group: The edge_group of this CallbackMediaSettings.
+        :type: DomainEntityRef
+        """
+        
+
+        self._edge_group = edge_group
+
+    @property
+    def site(self) -> 'DomainEntityRef':
+        """
+        Gets the site of this CallbackMediaSettings.
+        The identifier of the site to be used for dialing; can be set in place of an edge group.
+
+        :return: The site of this CallbackMediaSettings.
+        :rtype: DomainEntityRef
+        """
+        return self._site
+
+    @site.setter
+    def site(self, site: 'DomainEntityRef') -> None:
+        """
+        Sets the site of this CallbackMediaSettings.
+        The identifier of the site to be used for dialing; can be set in place of an edge group.
+
+        :param site: The site of this CallbackMediaSettings.
+        :type: DomainEntityRef
+        """
+        
+
+        self._site = site
 
     def to_dict(self):
         """

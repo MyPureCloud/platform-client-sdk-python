@@ -8,8 +8,10 @@ from .agent_ui_api import AgentUIApi
 from .alerting_api import AlertingApi
 from .analytics_api import AnalyticsApi
 from .architect_api import ArchitectApi
+from .assistant_copilot_variations_api import AssistantCopilotVariationsApi
 from .audit_api import AuditApi
 from .authorization_api import AuthorizationApi
+from .background_assistant_api import BackgroundAssistantApi
 from .billing_api import BillingApi
 from .business_rules_api import BusinessRulesApi
 from .carrier_services_api import CarrierServicesApi
@@ -59,7 +61,6 @@ from .recording_api import RecordingApi
 from .response_management_api import ResponseManagementApi
 from .routing_api import RoutingApi
 from .scim_api import SCIMApi
-from .screen_recording_api import ScreenRecordingApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
 from .settings_api import SettingsApi
@@ -92,8 +93,10 @@ from .agent_ui_api import AgentUIApi
 from .alerting_api import AlertingApi
 from .analytics_api import AnalyticsApi
 from .architect_api import ArchitectApi
+from .assistant_copilot_variations_api import AssistantCopilotVariationsApi
 from .audit_api import AuditApi
 from .authorization_api import AuthorizationApi
+from .background_assistant_api import BackgroundAssistantApi
 from .billing_api import BillingApi
 from .business_rules_api import BusinessRulesApi
 from .carrier_services_api import CarrierServicesApi
@@ -143,7 +146,6 @@ from .recording_api import RecordingApi
 from .response_management_api import ResponseManagementApi
 from .routing_api import RoutingApi
 from .scim_api import SCIMApi
-from .screen_recording_api import ScreenRecordingApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
 from .settings_api import SettingsApi

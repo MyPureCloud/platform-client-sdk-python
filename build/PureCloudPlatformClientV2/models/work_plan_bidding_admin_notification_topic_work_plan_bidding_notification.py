@@ -50,6 +50,7 @@ class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification(object):
             'id': 'str',
             'bu_id': 'str',
             'status': 'str',
+            'bid_type': 'str',
             'bid_window_start_date': 'str',
             'bid_window_end_date': 'str',
             'effective_date': 'str',
@@ -62,6 +63,7 @@ class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification(object):
             'id': 'id',
             'bu_id': 'buId',
             'status': 'status',
+            'bid_type': 'bidType',
             'bid_window_start_date': 'bidWindowStartDate',
             'bid_window_end_date': 'bidWindowEndDate',
             'effective_date': 'effectiveDate',
@@ -73,6 +75,7 @@ class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification(object):
         self._id = None
         self._bu_id = None
         self._status = None
+        self._bid_type = None
         self._bid_window_start_date = None
         self._bid_window_end_date = None
         self._effective_date = None
@@ -156,6 +159,35 @@ class WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def bid_type(self) -> str:
+        """
+        Gets the bid_type of this WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.
+
+
+        :return: The bid_type of this WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.
+        :rtype: str
+        """
+        return self._bid_type
+
+    @bid_type.setter
+    def bid_type(self, bid_type: str) -> None:
+        """
+        Sets the bid_type of this WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.
+
+
+        :param bid_type: The bid_type of this WorkPlanBiddingAdminNotificationTopicWorkPlanBiddingNotification.
+        :type: str
+        """
+        if isinstance(bid_type, int):
+            bid_type = str(bid_type)
+        allowed_values = ["Unknown", "WorkPlanBid", "ScheduleBid"]
+        if bid_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for bid_type -> " + bid_type)
+            self._bid_type = "outdated_sdk_version"
+        else:
+            self._bid_type = bid_type
 
     @property
     def bid_window_start_date(self) -> str:

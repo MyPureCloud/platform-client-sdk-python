@@ -366,7 +366,7 @@ class ListedDictionaryFeedback(object):
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["Active", "Pending", "Failed"]
+        allowed_values = ["Active", "Pending", "Failed", "Saved"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"

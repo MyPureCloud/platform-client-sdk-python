@@ -89,7 +89,7 @@ class KnowledgeAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nDistinctKnowledgeSessions", "nKnowledgeDocumentCopied", "nKnowledgeDocumentFeedback", "nKnowledgeDocumentPresented", "nKnowledgeDocumentSurfaced", "nKnowledgeDocumentViewed", "nKnowledgeSearch", "nKnowledgeSearchAnswered", "nKnowledgeSearchFeedback", "nKnowledgeSearchUnanswered", "nKnowledgeSessions", "oKnowledgeDocumentQuery", "oKnowledgeDocumentQuerySelfServed", "oKnowledgeSearch"]
+        allowed_values = ["nDistinctKnowledgeSessions", "nKnowledgeDocumentCopied", "nKnowledgeDocumentFeedback", "nKnowledgeDocumentPresented", "nKnowledgeDocumentSurfaced", "nKnowledgeDocumentViewed", "nKnowledgeSearch", "nKnowledgeSearchAnswered", "nKnowledgeSearchFeedback", "nKnowledgeSearchUnanswered", "nKnowledgeSessions", "nKnowledgeV3Search", "oKnowledgeDocumentQuery", "oKnowledgeDocumentQuerySelfServed", "oKnowledgeSearch"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

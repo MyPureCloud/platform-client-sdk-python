@@ -53,7 +53,8 @@ class PresenceEventUserPresence(object):
             'presence_definition': 'PresenceEventOrganizationPresence',
             'primary': 'bool',
             'message': 'str',
-            'modified_date': 'datetime'
+            'modified_date': 'datetime',
+            'future_presence_definition': 'PresenceEventOrganizationPresence'
         }
 
         self.attribute_map = {
@@ -61,7 +62,8 @@ class PresenceEventUserPresence(object):
             'presence_definition': 'presenceDefinition',
             'primary': 'primary',
             'message': 'message',
-            'modified_date': 'modifiedDate'
+            'modified_date': 'modifiedDate',
+            'future_presence_definition': 'futurePresenceDefinition'
         }
 
         self._source = None
@@ -69,6 +71,7 @@ class PresenceEventUserPresence(object):
         self._primary = None
         self._message = None
         self._modified_date = None
+        self._future_presence_definition = None
 
     @property
     def source(self) -> str:
@@ -189,6 +192,30 @@ class PresenceEventUserPresence(object):
         
 
         self._modified_date = modified_date
+
+    @property
+    def future_presence_definition(self) -> 'PresenceEventOrganizationPresence':
+        """
+        Gets the future_presence_definition of this PresenceEventUserPresence.
+
+
+        :return: The future_presence_definition of this PresenceEventUserPresence.
+        :rtype: PresenceEventOrganizationPresence
+        """
+        return self._future_presence_definition
+
+    @future_presence_definition.setter
+    def future_presence_definition(self, future_presence_definition: 'PresenceEventOrganizationPresence') -> None:
+        """
+        Sets the future_presence_definition of this PresenceEventUserPresence.
+
+
+        :param future_presence_definition: The future_presence_definition of this PresenceEventUserPresence.
+        :type: PresenceEventOrganizationPresence
+        """
+        
+
+        self._future_presence_definition = future_presence_definition
 
     def to_dict(self):
         """

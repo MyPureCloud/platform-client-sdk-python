@@ -926,7 +926,7 @@ except ApiException as e:
 
 ## get_integrations_actions
 
-> [**ActionEntityListing**](ActionEntityListing) get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
+> [**ActionEntityListing**](ActionEntityListing) get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions, include_config=include_config)
 
 
 Retrieves all actions associated with filters passed in via query param.
@@ -962,10 +962,11 @@ name = 'name_example' # str | Filter by partial or complete action name. (option
 ids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
 secure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
 include_auth_actions = ''false'' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to 'false')
+include_config = False # bool | Return config in response. (optional) (default to False)
 
 try:
     # Retrieves all actions associated with filters passed in via query param.
-    api_response = api_instance.get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
+    api_response = api_instance.get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions, include_config=include_config)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_actions: %s\n" % e)
@@ -987,6 +988,7 @@ except ApiException as e:
 | **ids** | **str**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
 | **secure** | **str**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 | **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to &#39;false&#39;]<br />**Values**: true, false |
+| **include_config** | **bool**| Return config in response. | [optional] [default to False]<br />**Values**: true, false |
 
 ### Return type
 
@@ -1150,7 +1152,7 @@ This endpoint does not need any parameters.
 
 ## get_integrations_actions_drafts
 
-> [**ActionEntityListing**](ActionEntityListing) get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
+> [**ActionEntityListing**](ActionEntityListing) get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions, include_config=include_config)
 
 
 Retrieves all action drafts associated with the filters passed in via query param.
@@ -1186,10 +1188,11 @@ name = 'name_example' # str | Filter by partial or complete action name. (option
 ids = 'ids_example' # str | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. (optional)
 secure = 'secure_example' # str | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. (optional)
 include_auth_actions = ''false'' # str | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (optional) (default to 'false')
+include_config = False # bool | Return config in response. (optional) (default to False)
 
 try:
     # Retrieves all action drafts associated with the filters passed in via query param.
-    api_response = api_instance.get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
+    api_response = api_instance.get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions, include_config=include_config)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations_actions_drafts: %s\n" % e)
@@ -1211,6 +1214,7 @@ except ApiException as e:
 | **ids** | **str**| Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
 | **secure** | **str**| Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 | **include_auth_actions** | **str**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to &#39;false&#39;]<br />**Values**: true, false |
+| **include_config** | **bool**| Return config in response. | [optional] [default to False]<br />**Values**: true, false |
 
 ### Return type
 
@@ -4860,4 +4864,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 249.0.0_
+_PureCloudPlatformClientV2 250.0.0_

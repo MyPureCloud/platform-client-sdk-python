@@ -58,6 +58,7 @@ from ..models import ProgramJob
 from ..models import ProgramJobRequest
 from ..models import ProgramMappingsRequest
 from ..models import ProgramRequest
+from ..models import ProgramTopicLinksJob
 from ..models import ProgramTranscriptionEngines
 from ..models import ProgramsEntityListing
 from ..models import ReprocessInteractionsByJobIdResponse
@@ -1319,7 +1320,7 @@ class SpeechTextAnalyticsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str dialect: The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
-        :param str transcription_engine: Filter by transcription engine
+        :param str transcription_engine: Filter by transcription engine, If not provided, all transcription engines will be considered
         :param str next_page: The key for listing the next page
         :param int page_size: The page size for the listing
         :return: DictionaryFeedbackEntityListing
@@ -2178,6 +2179,84 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ProgramInsightsSettingsEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_programs_topiclinks_job(self, job_id: str, **kwargs) -> 'ProgramTopicLinksJob':
+        """
+        Get a Speech & Text Analytics program-topic links job by id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_programs_topiclinks_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The id of the program-topic links job (required)
+        :return: ProgramTopicLinksJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_programs_topiclinks_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_speechandtextanalytics_programs_topiclinks_job`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramTopicLinksJob',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

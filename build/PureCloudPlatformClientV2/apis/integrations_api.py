@@ -1484,12 +1484,13 @@ class IntegrationsApi(object):
         :param str ids: Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
         :param str secure: Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
         :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
+        :param bool include_config: Return config in response.
         :return: ActionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'ids', 'secure', 'include_auth_actions']
+        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'ids', 'secure', 'include_auth_actions', 'include_config']
         all_params.append('callback')
 
         params = locals()
@@ -1530,6 +1531,8 @@ class IntegrationsApi(object):
             query_params['secure'] = params['secure']
         if 'include_auth_actions' in params:
             query_params['includeAuthActions'] = params['include_auth_actions']
+        if 'include_config' in params:
+            query_params['includeConfig'] = params['include_config']
 
         header_params = {}
 
@@ -1832,12 +1835,13 @@ class IntegrationsApi(object):
         :param str ids: Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
         :param str secure: Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
         :param str include_auth_actions: Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
+        :param bool include_config: Return config in response.
         :return: ActionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'ids', 'secure', 'include_auth_actions']
+        all_params = ['page_size', 'page_number', 'next_page', 'previous_page', 'sort_by', 'sort_order', 'category', 'name', 'ids', 'secure', 'include_auth_actions', 'include_config']
         all_params.append('callback')
 
         params = locals()
@@ -1878,6 +1882,8 @@ class IntegrationsApi(object):
             query_params['secure'] = params['secure']
         if 'include_auth_actions' in params:
             query_params['includeAuthActions'] = params['include_auth_actions']
+        if 'include_config' in params:
+            query_params['includeConfig'] = params['include_config']
 
         header_params = {}
 
