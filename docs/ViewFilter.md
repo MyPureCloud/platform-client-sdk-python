@@ -240,8 +240,9 @@
 | **sentiment_trend_categories** | list[str] | A set of Sentiment Trend Categories for filtering | [optional] |
 | **content_moderation_flags** | list[str] | A set of Content Moderation Flags for filtering | [optional] |
 | **session_expired** | bool | Filter to indicate for if session is expired | [optional] |
-| **engagement_source** | list[str] | The engagement sources used to filter the view | [optional] |
+| **engagement_sources** | list[str] | The engagement sources used to filter the view | [optional] |
+| **is_snippet_recorded** | bool | Indicates filtering for snippet recorded | [optional] |
 
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

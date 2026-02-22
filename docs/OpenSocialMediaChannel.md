@@ -13,9 +13,9 @@
 | **to** | [OpenSocialMediaRecipient](OpenSocialMediaRecipient) | Information about the recipient the message is sent to. | [optional] |
 | **pcFrom** | [OpenSocialMediaRecipient](OpenSocialMediaRecipient) | Information about the recipient the message is received from. | |
 | **time** | datetime | Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
-| **metadata** | object | Information about the channel. | [optional] |
+| **metadata** | [ConversationChannelMetadata](ConversationChannelMetadata) | Information about the channel. | [optional] |
 | **public_metadata** | [OpenSocialMediaPublicMetadata](OpenSocialMediaPublicMetadata) | Meta data of this public post. For example, used to define where in the thread the post exists. | |
 
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

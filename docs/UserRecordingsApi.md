@@ -305,4 +305,4 @@ except ApiException as e:
 [**UserRecording**](UserRecording)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

@@ -263,4 +263,4 @@ except ApiException as e:
 [**AssistantCopilotVariation**](AssistantCopilotVariation)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

@@ -12,12 +12,12 @@
 | **total** | int |  | [optional] |
 | **total_legacy_rules** | int | The total number of unmigrated rules | [optional] |
 | **first_uri** | str |  | [optional] |
-| **next_uri** | str |  | [optional] |
 | **previous_uri** | str |  | [optional] |
+| **next_uri** | str |  | [optional] |
 | **last_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
 | **page_count** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

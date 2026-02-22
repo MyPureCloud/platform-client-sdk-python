@@ -16,7 +16,8 @@
 | **facebook_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for a Facebook message escalation. | [optional] |
 | **instagram_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for an Instagram message escalation. | [optional] |
 | **twitter_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for a X (formerly Twitter) message escalation. | [optional] |
+| **google_business_profile_escalation** | [EscalationTarget](EscalationTarget) | The target integration configuration used for a Google Business Profile message escalation. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

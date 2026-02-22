@@ -267,12 +267,10 @@ except ApiException as e:
 
 ## get_webdeployments_configuration_versions
 
-> [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing) get_webdeployments_configuration_versions(configuration_id)
+> [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing) get_webdeployments_configuration_versions(configuration_id, page_size=page_size, before=before, after=after)
 
 
 Get the versions of a configuration
-
-This returns the 50 most recent versions for this configuration
 
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions 
 
@@ -294,10 +292,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
 configuration_id = 'configuration_id_example' # str | The configuration version ID
+page_size = 'page_size_example' # str | Number of entities to return. Defaults to 300. (optional)
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 
 try:
     # Get the versions of a configuration
-    api_response = api_instance.get_webdeployments_configuration_versions(configuration_id)
+    api_response = api_instance.get_webdeployments_configuration_versions(configuration_id, page_size=page_size, before=before, after=after)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebDeploymentsApi->get_webdeployments_configuration_versions: %s\n" % e)
@@ -309,6 +310,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **configuration_id** | **str**| The configuration version ID |  |
+| **page_size** | **str**| Number of entities to return. Defaults to 300. | [optional]  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 
 ### Return type
 
@@ -365,7 +369,7 @@ except ApiException as e:
 
 ## get_webdeployments_configurations
 
-> [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing) get_webdeployments_configurations(show_only_published=show_only_published)
+> [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing) get_webdeployments_configurations(page_size=page_size, before=before, after=after, show_only_published=show_only_published)
 
 
 View configuration drafts
@@ -389,11 +393,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+page_size = 'page_size_example' # str | Number of entities to return. Defaults to 300. (optional)
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 show_only_published = True # bool | Filter by published status. (optional)
 
 try:
     # View configuration drafts
-    api_response = api_instance.get_webdeployments_configurations(show_only_published=show_only_published)
+    api_response = api_instance.get_webdeployments_configurations(page_size=page_size, before=before, after=after, show_only_published=show_only_published)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebDeploymentsApi->get_webdeployments_configurations: %s\n" % e)
@@ -404,6 +411,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **page_size** | **str**| Number of entities to return. Defaults to 300. | [optional]  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **show_only_published** | **bool**| Filter by published status. | [optional]  |
 
 ### Return type
@@ -609,7 +619,7 @@ except ApiException as e:
 
 ## get_webdeployments_deployments
 
-> [**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing) get_webdeployments_deployments(expand=expand)
+> [**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing) get_webdeployments_deployments(page_size=page_size, before=before, after=after, expand=expand)
 
 
 Get deployments
@@ -633,11 +643,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
+page_size = 'page_size_example' # str | Number of entities to return. Defaults to 300. (optional)
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected.  (optional)
 
 try:
     # Get deployments
-    api_response = api_instance.get_webdeployments_deployments(expand=expand)
+    api_response = api_instance.get_webdeployments_deployments(page_size=page_size, before=before, after=after, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebDeploymentsApi->get_webdeployments_deployments: %s\n" % e)
@@ -648,6 +661,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **page_size** | **str**| Number of entities to return. Defaults to 300. | [optional]  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: Configuration, SupportedContent, identityresolution |
 
 ### Return type
@@ -1039,4 +1055,4 @@ except ApiException as e:
 [**DeploymentIdentityResolutionConfig**](DeploymentIdentityResolutionConfig)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

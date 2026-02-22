@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_analytics_conversations_aggregates_job**](#delete_analytics_conversations_aggregates_job) | Delete/cancel an async request for conversation aggregates|
 |[**delete_analytics_conversations_details_job**](#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
 |[**delete_conversation**](#delete_conversation) | Update a conversation by disconnecting all of the participants|
+|[**delete_conversation_customattribute**](#delete_conversation_customattribute) | Delete a custom attributes record.|
 |[**delete_conversation_participant_code**](#delete_conversation_participant_code) | Delete a code used to add a communication to this participant|
 |[**delete_conversation_participant_flaggedreason**](#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
 |[**delete_conversations_call_participant_communication_postflowaction**](#delete_conversations_call_participant_communication_postflowaction) | Remove mandatory post call actions.|
@@ -18,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_messaging_integrations_apple_integration_id**](#delete_conversations_messaging_integrations_apple_integration_id) | Delete an Apple messaging integration|
 |[**delete_conversations_messaging_integrations_facebook_integration_id**](#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
 |[**delete_conversations_messaging_integrations_instagram_integration_id**](#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
+|[**delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id**](#delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id) | Delete an Open messaging integration with the Google Business Profile extension|
 |[**delete_conversations_messaging_integrations_open_integration_id**](#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
 |[**delete_conversations_messaging_integrations_twitter_integration_id**](#delete_conversations_messaging_integrations_twitter_integration_id) | Delete Twitter messaging integration|
 |[**delete_conversations_messaging_integrations_whatsapp_integration_id**](#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
@@ -37,6 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_communication_agentchecklists**](#get_conversation_communication_agentchecklists) | Get information of all checklists associated with a conversation.|
 |[**get_conversation_communication_internalmessage**](#get_conversation_communication_internalmessage) | Get message|
 |[**get_conversation_communication_internalmessages**](#get_conversation_communication_internalmessages) | Get messages for communication|
+|[**get_conversation_customattribute**](#get_conversation_customattribute) | Get custom attributes by id|
+|[**get_conversation_customattributes**](#get_conversation_customattributes) | Get a list of custom attributes for a conversation.|
 |[**get_conversation_participant_secureivrsession**](#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
 |[**get_conversation_participant_secureivrsessions**](#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
 |[**get_conversation_participant_wrapup**](#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
@@ -70,6 +74,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_cobrowsesession_participant_wrapup**](#get_conversations_cobrowsesession_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_cobrowsesession_participant_wrapupcodes**](#get_conversations_cobrowsesession_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_cobrowsesessions**](#get_conversations_cobrowsesessions) | Get active cobrowse conversations for the logged in user|
+|[**get_conversations_customattributes_schema**](#get_conversations_customattributes_schema) | Get a schema|
+|[**get_conversations_customattributes_schema_version**](#get_conversations_customattributes_schema_version) | Get a specific version of a schema|
+|[**get_conversations_customattributes_schema_versions**](#get_conversations_customattributes_schema_versions) | Get all versions of a CCA schema|
+|[**get_conversations_customattributes_schemas**](#get_conversations_customattributes_schemas) | Get a list of schemas.|
+|[**get_conversations_customattributes_schemas_coretype**](#get_conversations_customattributes_schemas_coretype) | Get the core types from which all schemas are built.|
+|[**get_conversations_customattributes_schemas_coretypes**](#get_conversations_customattributes_schemas_coretypes) | Get the list of core types enabled for a specific namespace.|
+|[**get_conversations_customattributes_schemas_limits**](#get_conversations_customattributes_schemas_limits) | Get quantitative limits on schemas|
 |[**get_conversations_email**](#get_conversations_email) | Get email conversation|
 |[**get_conversations_email_message**](#get_conversations_email_message) | Get conversation message|
 |[**get_conversations_email_messages**](#get_conversations_email_messages) | Get conversation messages|
@@ -111,6 +122,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations_instagram**](#get_conversations_messaging_integrations_instagram) | Get a list of Instagram Integrations|
 |[**get_conversations_messaging_integrations_instagram_integration_id**](#get_conversations_messaging_integrations_instagram_integration_id) | Get Instagram messaging integration|
 |[**get_conversations_messaging_integrations_open**](#get_conversations_messaging_integrations_open) | Get a list of Open messaging integrations|
+|[**get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id**](#get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id) | Get an Open messaging integration with the Google Business Profile extension|
+|[**get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings**](#get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings) | Get Google Business Profile OAuth 2 settings|
+|[**get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token**](#get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token) | Get a Google Auth Token|
+|[**get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts**](#get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts) | Get Google Business Profile accounts|
 |[**get_conversations_messaging_integrations_open_integration_id**](#get_conversations_messaging_integrations_open_integration_id) | Get an Open messaging integration|
 |[**get_conversations_messaging_integrations_twitter**](#get_conversations_messaging_integrations_twitter) | Get a list of Twitter Integrations|
 |[**get_conversations_messaging_integrations_twitter_integration_id**](#get_conversations_messaging_integrations_twitter_integration_id) | Get Twitter messaging integration|
@@ -131,6 +146,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_video_details**](#get_conversations_video_details) | Get video conference details (e.g. the current number of active participants).|
 |[**get_conversations_video_participant_communication_wrapup**](#get_conversations_video_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_videos_meeting**](#get_conversations_videos_meeting) | Gets a record for a given meetingId|
+|[**patch_conversation_customattributes**](#patch_conversation_customattributes) | Update a single custom attributes record by amending the data with only the provided fields.|
+|[**patch_conversation_customattributes_bulk**](#patch_conversation_customattributes_bulk) | Update a list of custom attributes record by amending the data with only the provided fields.|
 |[**patch_conversation_participant**](#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_recordingstate**](#patch_conversation_recordingstate) | Update a conversation by setting its recording state|
@@ -173,6 +190,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_integrations_apple_integration_id**](#patch_conversations_messaging_integrations_apple_integration_id) | Update an Apple messaging integration|
 |[**patch_conversations_messaging_integrations_facebook_integration_id**](#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
 |[**patch_conversations_messaging_integrations_instagram_integration_id**](#patch_conversations_messaging_integrations_instagram_integration_id) | Update Instagram messaging integration|
+|[**patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id**](#patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id) | Update an Open messaging integration with the Google Business Profile extension|
 |[**patch_conversations_messaging_integrations_open_integration_id**](#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](#patch_conversations_messaging_integrations_twitter_integration_id) | Update a Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id**](#patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow|
@@ -236,6 +254,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_chats**](#post_conversations_chats) | Create a web chat conversation|
 |[**post_conversations_cobrowsesession_participant_communication_wrapup**](#post_conversations_cobrowsesession_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_cobrowsesession_participant_replace**](#post_conversations_cobrowsesession_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_customattributes_schemas**](#post_conversations_customattributes_schemas) | Create a schema|
+|[**post_conversations_customattributes_search**](#post_conversations_customattributes_search) | Search resources.|
 |[**post_conversations_email_inboundmessages**](#post_conversations_email_inboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.|
 |[**post_conversations_email_messages**](#post_conversations_email_messages) | Send an email reply|
 |[**post_conversations_email_messages_draft_attachments_copy**](#post_conversations_email_messages_draft_attachments_copy) | Copy attachments from an email message to the current draft.|
@@ -267,6 +287,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_facebook**](#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
 |[**post_conversations_messaging_integrations_instagram**](#post_conversations_messaging_integrations_instagram) | Create Instagram Integration|
 |[**post_conversations_messaging_integrations_open**](#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
+|[**post_conversations_messaging_integrations_open_extensions_googlebusinessprofile**](#post_conversations_messaging_integrations_open_extensions_googlebusinessprofile) | Create an Open messaging integration with the Google Business Profile extension|
+|[**post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens**](#post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens) | Create a Google Auth Token by exchanging the one-time auth code retrieved from Google|
 |[**post_conversations_messaging_integrations_twitter**](#post_conversations_messaging_integrations_twitter) | Create Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](#post_conversations_messaging_integrations_whatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration|
 |[**post_conversations_messaging_integrations_whatsapp_embeddedsignup**](#post_conversations_messaging_integrations_whatsapp_embeddedsignup) | Create a WhatsApp Integration using the WhatsApp embedded signup flow|
@@ -278,6 +300,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_video_agentconference_communication**](#post_conversations_video_agentconference_communication) | Create an Agent-Type video conference and assign an agent to it|
 |[**post_conversations_video_participant_communication_wrapup**](#post_conversations_video_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_videos_meetings**](#post_conversations_videos_meetings) | Generate a meetingId for a given conferenceId|
+|[**put_conversation_customattributes**](#put_conversation_customattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields.|
+|[**put_conversation_customattributes_bulk**](#put_conversation_customattributes_bulk) | Create or update a list of custom attributes records. Updating replaces all data with the provided fields.|
 |[**put_conversation_participant_flaggedreason**](#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversation_secureattributes**](#put_conversation_secureattributes) | Set the secure attributes on a conversation.|
 |[**put_conversation_tags**](#put_conversation_tags) | Update the tags on a conversation.|
@@ -286,6 +310,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversations_callback_recordingstate**](#put_conversations_callback_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_chat_recordingstate**](#put_conversations_chat_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_cobrowsesession_recordingstate**](#put_conversations_cobrowsesession_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_customattributes_schema**](#put_conversations_customattributes_schema) | Update a schema|
 |[**put_conversations_email_messages_draft**](#put_conversations_email_messages_draft) | Update conversation draft reply|
 |[**put_conversations_email_recordingstate**](#put_conversations_email_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_keyconfiguration**](#put_conversations_keyconfiguration) | Update the encryption key configurations|
@@ -443,6 +468,55 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_conversation_customattribute
+
+>  delete_conversation_customattribute(conversation_id, attributes_id)
+
+
+Delete a custom attributes record.
+
+Wraps DELETE /api/v2/conversations/{conversationId}/customattributes/{attributesId} 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+attributes_id = 'attributes_id_example' # str | attributesId
+
+try:
+    # Delete a custom attributes record.
+    api_instance.delete_conversation_customattribute(conversation_id, attributes_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversation_customattribute: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **attributes_id** | **str**| attributesId |  |
 
 ### Return type
 
@@ -868,6 +942,57 @@ try:
     api_instance.delete_conversations_messaging_integrations_instagram_integration_id(integration_id)
 except ApiException as e:
     print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_instagram_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id
+
+>  delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id)
+
+
+Delete an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete an Open messaging integration with the Google Business Profile extension
+    api_instance.delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -1819,6 +1944,104 @@ except ApiException as e:
 ### Return type
 
 [**InternalMessageDataEntityListing**](InternalMessageDataEntityListing)
+
+
+## get_conversation_customattribute
+
+> [**CustomAttributes**](CustomAttributes) get_conversation_customattribute(conversation_id, attributes_id)
+
+
+Get custom attributes by id
+
+Wraps GET /api/v2/conversations/{conversationId}/customattributes/{attributesId} 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+attributes_id = 'attributes_id_example' # str | attributesId
+
+try:
+    # Get custom attributes by id
+    api_response = api_instance.get_conversation_customattribute(conversation_id, attributes_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_customattribute: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **attributes_id** | **str**| attributesId |  |
+
+### Return type
+
+[**CustomAttributes**](CustomAttributes)
+
+
+## get_conversation_customattributes
+
+> [**CustomAttributesListing**](CustomAttributesListing) get_conversation_customattributes(conversation_id)
+
+
+Get a list of custom attributes for a conversation.
+
+Wraps GET /api/v2/conversations/{conversationId}/customattributes 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+
+try:
+    # Get a list of custom attributes for a conversation.
+    api_response = api_instance.get_conversation_customattributes(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_customattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+
+### Return type
+
+[**CustomAttributesListing**](CustomAttributesListing)
 
 
 ## get_conversation_participant_secureivrsession
@@ -3494,6 +3717,332 @@ This endpoint does not need any parameters.
 [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing)
 
 
+## get_conversations_customattributes_schema
+
+> [**ConversationDataSchema**](ConversationDataSchema) get_conversations_customattributes_schema(schema_id)
+
+
+Get a schema
+
+Wraps GET /api/v2/conversations/customattributes/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Get a schema
+    api_response = api_instance.get_conversations_customattributes_schema(schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_customattributes_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+## get_conversations_customattributes_schema_version
+
+> [**ConversationDataSchema**](ConversationDataSchema) get_conversations_customattributes_schema_version(schema_id, version_id)
+
+
+Get a specific version of a schema
+
+Wraps GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId} 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+version_id = 'version_id_example' # str | Schema version
+
+try:
+    # Get a specific version of a schema
+    api_response = api_instance.get_conversations_customattributes_schema_version(schema_id, version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_customattributes_schema_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **version_id** | **str**| Schema version |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+## get_conversations_customattributes_schema_versions
+
+> [**ConversationDataSchemaListing**](ConversationDataSchemaListing) get_conversations_customattributes_schema_versions(schema_id)
+
+
+Get all versions of a CCA schema
+
+Wraps GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Get all versions of a CCA schema
+    api_response = api_instance.get_conversations_customattributes_schema_versions(schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_customattributes_schema_versions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+[**ConversationDataSchemaListing**](ConversationDataSchemaListing)
+
+
+## get_conversations_customattributes_schemas
+
+> [**ConversationDataSchemaListing**](ConversationDataSchemaListing) get_conversations_customattributes_schemas()
+
+
+Get a list of schemas.
+
+Wraps GET /api/v2/conversations/customattributes/schemas 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get a list of schemas.
+    api_response = api_instance.get_conversations_customattributes_schemas()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_customattributes_schemas: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**ConversationDataSchemaListing**](ConversationDataSchemaListing)
+
+
+## get_conversations_customattributes_schemas_coretype
+
+> [**Coretype**](Coretype) get_conversations_customattributes_schemas_coretype(core_type_name)
+
+
+Get the core types from which all schemas are built.
+
+Wraps GET /api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName} 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+core_type_name = 'core_type_name_example' # str | Name of the core type
+
+try:
+    # Get the core types from which all schemas are built.
+    api_response = api_instance.get_conversations_customattributes_schemas_coretype(core_type_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_customattributes_schemas_coretype: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **core_type_name** | **str**| Name of the core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_conversations_customattributes_schemas_coretypes
+
+> [**CoretypeListing**](CoretypeListing) get_conversations_customattributes_schemas_coretypes()
+
+
+Get the list of core types enabled for a specific namespace.
+
+Wraps GET /api/v2/conversations/customattributes/schemas/coretypes 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get the list of core types enabled for a specific namespace.
+    api_response = api_instance.get_conversations_customattributes_schemas_coretypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_customattributes_schemas_coretypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+## get_conversations_customattributes_schemas_limits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) get_conversations_customattributes_schemas_limits()
+
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/conversations/customattributes/schemas/limits 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get quantitative limits on schemas
+    api_response = api_instance.get_conversations_customattributes_schemas_limits()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_customattributes_schemas_limits: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
+
+
 ## get_conversations_email
 
 > [**EmailConversation**](EmailConversation) get_conversations_email(conversation_id)
@@ -4221,7 +4770,7 @@ except ApiException as e:
 
 Get media
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} 
 
@@ -5533,6 +6082,212 @@ except ApiException as e:
 [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing)
 
 
+## get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id
+
+> [**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration) get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id, expand=expand)
+
+
+Get an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+
+try:
+    # Get an Open messaging integration with the Google Business Profile extension
+    api_response = api_instance.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
+
+
+## get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings
+
+> [**GoogleOAuthSettingsResponse**](GoogleOAuthSettingsResponse) get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings()
+
+
+Get Google Business Profile OAuth 2 settings
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings 
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileOAuthSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get Google Business Profile OAuth 2 settings
+    api_response = api_instance.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**GoogleOAuthSettingsResponse**](GoogleOAuthSettingsResponse)
+
+
+## get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token
+
+> [**GoogleAuthToken**](GoogleAuthToken) get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token(token_id)
+
+
+Get a Google Auth Token
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId} 
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileToken:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+token_id = 'token_id_example' # str | Token ID
+
+try:
+    # Get a Google Auth Token
+    api_response = api_instance.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token(token_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **token_id** | **str**| Token ID |  |
+
+### Return type
+
+[**GoogleAuthToken**](GoogleAuthToken)
+
+
+## get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts
+
+> [**GoogleBusinessProfileAccountListing**](GoogleBusinessProfileAccountListing) get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts(token_id)
+
+
+Get Google Business Profile accounts
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts 
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileAccount:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+token_id = 'token_id_example' # str | Token ID
+
+try:
+    # Get Google Business Profile accounts
+    api_response = api_instance.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts(token_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **token_id** | **str**| Token ID |  |
+
+### Return type
+
+[**GoogleBusinessProfileAccountListing**](GoogleBusinessProfileAccountListing)
+
+
 ## get_conversations_messaging_integrations_open_integration_id
 
 > [**OpenIntegration**](OpenIntegration) get_conversations_messaging_integrations_open_integration_id(integration_id, expand=expand)
@@ -6527,6 +7282,105 @@ except ApiException as e:
 ### Return type
 
 [**MeetingIdRecord**](MeetingIdRecord)
+
+
+## patch_conversation_customattributes
+
+>  patch_conversation_customattributes(conversation_id, body=body)
+
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/customattributes 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.CustomAttributesPatchRequest() # CustomAttributesPatchRequest |  (optional)
+
+try:
+    # Update a single custom attributes record by amending the data with only the provided fields.
+    api_instance.patch_conversation_customattributes(conversation_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_customattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**CustomAttributesPatchRequest**](CustomAttributesPatchRequest)|  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
+## patch_conversation_customattributes_bulk
+
+> [**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap) patch_conversation_customattributes_bulk(conversation_id, body=body)
+
+
+Update a list of custom attributes record by amending the data with only the provided fields.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/customattributes/bulk 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = [PureCloudPlatformClientV2.CustomAttributesPatchRequest()] # list[CustomAttributesPatchRequest] |  (optional)
+
+try:
+    # Update a list of custom attributes record by amending the data with only the provided fields.
+    api_response = api_instance.patch_conversation_customattributes_bulk(conversation_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_customattributes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**list[CustomAttributesPatchRequest]**](CustomAttributesPatchRequest)|  | [optional]  |
+
+### Return type
+
+[**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap)
 
 
 ## patch_conversation_participant
@@ -8732,6 +9586,60 @@ except ApiException as e:
 ### Return type
 
 [**InstagramIntegration**](InstagramIntegration)
+
+
+## patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id
+
+> [**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration) patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id, body)
+
+
+Update an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:googleBusinessProfileIntegration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.GoogleBusinessProfileOpenIntegrationUpdateRequest() # GoogleBusinessProfileOpenIntegrationUpdateRequest | GoogleBusinessProfileOpenIntegrationUpdateRequest
+
+try:
+    # Update an Open messaging integration with the Google Business Profile extension
+    api_response = api_instance.patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**GoogleBusinessProfileOpenIntegrationUpdateRequest**](GoogleBusinessProfileOpenIntegrationUpdateRequest)| GoogleBusinessProfileOpenIntegrationUpdateRequest |  |
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
 
 
 ## patch_conversations_messaging_integrations_open_integration_id
@@ -12001,6 +12909,102 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_conversations_customattributes_schemas
+
+> [**ConversationDataSchema**](ConversationDataSchema) post_conversations_customattributes_schemas(body)
+
+
+Create a schema
+
+Wraps POST /api/v2/conversations/customattributes/schemas 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaAdd
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationJsonSchemaRequest() # ConversationJsonSchemaRequest | Schema create request body
+
+try:
+    # Create a schema
+    api_response = api_instance.post_conversations_customattributes_schemas(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_customattributes_schemas: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationJsonSchemaRequest**](ConversationJsonSchemaRequest)| Schema create request body |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
+
+
+## post_conversations_customattributes_search
+
+> [**JsonSearchResponse**](JsonSearchResponse) post_conversations_customattributes_search(body)
+
+
+Search resources.
+
+Wraps POST /api/v2/conversations/customattributes/search 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationCustomAttributesSearchRequest() # ConversationCustomAttributesSearchRequest | Search request options
+
+try:
+    # Search resources.
+    api_response = api_instance.post_conversations_customattributes_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_customattributes_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationCustomAttributesSearchRequest**](ConversationCustomAttributesSearchRequest)| Search request options |  |
+
+### Return type
+
+[**JsonSearchResponse**](JsonSearchResponse)
+
+
 ## post_conversations_email_inboundmessages
 
 > [**EmailConversation**](EmailConversation) post_conversations_email_inboundmessages(conversation_id, body)
@@ -12665,7 +13669,7 @@ except ApiException as e:
 
 Create a URL to upload a message media file
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads 
 
@@ -13589,6 +14593,110 @@ except ApiException as e:
 [**OpenIntegration**](OpenIntegration)
 
 
+## post_conversations_messaging_integrations_open_extensions_googlebusinessprofile
+
+> [**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration) post_conversations_messaging_integrations_open_extensions_googlebusinessprofile(body)
+
+
+Create an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+post_conversations_messaging_integrations_open_extensions_googlebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile 
+
+Requires ALL permissions: 
+
+* messaging:googleBusinessProfileIntegration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.GoogleBusinessProfileOpenIntegrationRequest() # GoogleBusinessProfileOpenIntegrationRequest | GoogleBusinessProfileOpenIntegrationRequest
+
+try:
+    # Create an Open messaging integration with the Google Business Profile extension
+    api_response = api_instance.post_conversations_messaging_integrations_open_extensions_googlebusinessprofile(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_open_extensions_googlebusinessprofile: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GoogleBusinessProfileOpenIntegrationRequest**](GoogleBusinessProfileOpenIntegrationRequest)| GoogleBusinessProfileOpenIntegrationRequest |  |
+
+### Return type
+
+[**GoogleBusinessProfileOpenIntegration**](GoogleBusinessProfileOpenIntegration)
+
+
+## post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens
+
+> [**GoogleAuthToken**](GoogleAuthToken) post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens(body)
+
+
+Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens 
+
+Requires ANY permissions: 
+
+* messaging:googleBusinessProfileToken:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.GoogleAuthTokenRequest() # GoogleAuthTokenRequest | GoogleAuthTokenRequest
+
+try:
+    # Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+    api_response = api_instance.post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GoogleAuthTokenRequest**](GoogleAuthTokenRequest)| GoogleAuthTokenRequest |  |
+
+### Return type
+
+[**GoogleAuthToken**](GoogleAuthToken)
+
+
 ## post_conversations_messaging_integrations_twitter
 
 > [**TwitterIntegration**](TwitterIntegration) post_conversations_messaging_integrations_twitter(body)
@@ -14148,6 +15256,106 @@ except ApiException as e:
 [**MeetingIdRecord**](MeetingIdRecord)
 
 
+## put_conversation_customattributes
+
+> [**CustomAttributesIdResponse**](CustomAttributesIdResponse) put_conversation_customattributes(conversation_id, body=body)
+
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+Wraps PUT /api/v2/conversations/{conversationId}/customattributes 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.CustomAttributesUpdateRequest() # CustomAttributesUpdateRequest |  (optional)
+
+try:
+    # Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+    api_response = api_instance.put_conversation_customattributes(conversation_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversation_customattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**CustomAttributesUpdateRequest**](CustomAttributesUpdateRequest)|  | [optional]  |
+
+### Return type
+
+[**CustomAttributesIdResponse**](CustomAttributesIdResponse)
+
+
+## put_conversation_customattributes_bulk
+
+> [**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap) put_conversation_customattributes_bulk(conversation_id, body=body)
+
+
+Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+
+Wraps PUT /api/v2/conversations/{conversationId}/customattributes/bulk 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = [PureCloudPlatformClientV2.CustomAttributesUpdateRequest()] # list[CustomAttributesUpdateRequest] |  (optional)
+
+try:
+    # Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+    api_response = api_instance.put_conversation_customattributes_bulk(conversation_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversation_customattributes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**list[CustomAttributesUpdateRequest]**](CustomAttributesUpdateRequest)|  | [optional]  |
+
+### Return type
+
+[**CustomAttributesBulkUpdateResponseMap**](CustomAttributesBulkUpdateResponseMap)
+
+
 ## put_conversation_participant_flaggedreason
 
 >  put_conversation_participant_flaggedreason(conversation_id, participant_id)
@@ -14557,6 +15765,56 @@ except ApiException as e:
 ### Return type
 
 **str**
+
+
+## put_conversations_customattributes_schema
+
+> [**ConversationDataSchema**](ConversationDataSchema) put_conversations_customattributes_schema(schema_id, body)
+
+
+Update a schema
+
+Wraps PUT /api/v2/conversations/customattributes/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:schemaEdit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+schema_id = 'schema_id_example' # str | Schema ID
+body = PureCloudPlatformClientV2.ConversationSchemaUpdateRequest() # ConversationSchemaUpdateRequest | Schema update request body
+
+try:
+    # Update a schema
+    api_response = api_instance.put_conversations_customattributes_schema(schema_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_customattributes_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **body** | [**ConversationSchemaUpdateRequest**](ConversationSchemaUpdateRequest)| Schema update request body |  |
+
+### Return type
+
+[**ConversationDataSchema**](ConversationDataSchema)
 
 
 ## put_conversations_email_messages_draft
@@ -15369,4 +16627,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

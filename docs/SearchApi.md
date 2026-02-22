@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_sites_search**](#get_telephony_providers_edges_sites_search) | Search sites using the q64 value returned from a previous search|
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**get_voicemail_search**](#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
+|[**post_conversations_customattributes_search**](#post_conversations_customattributes_search) | Search resources.|
 |[**post_conversations_participants_attributes_search**](#post_conversations_participants_attributes_search) | Search conversations|
 |[**post_documentation_all_search**](#post_documentation_all_search) | Search all documents|
 |[**post_documentation_gkn_search**](#post_documentation_gkn_search) | Search gkn documentation|
@@ -474,6 +475,54 @@ except ApiException as e:
 ### Return type
 
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
+
+
+## post_conversations_customattributes_search
+
+> [**JsonSearchResponse**](JsonSearchResponse) post_conversations_customattributes_search(body)
+
+
+Search resources.
+
+Wraps POST /api/v2/conversations/customattributes/search 
+
+Requires ANY permissions: 
+
+* conversation:customAttributes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.ConversationCustomAttributesSearchRequest() # ConversationCustomAttributesSearchRequest | Search request options
+
+try:
+    # Search resources.
+    api_response = api_instance.post_conversations_customattributes_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_conversations_customattributes_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationCustomAttributesSearchRequest**](ConversationCustomAttributesSearchRequest)| Search request options |  |
+
+### Return type
+
+[**JsonSearchResponse**](JsonSearchResponse)
 
 
 ## post_conversations_participants_attributes_search
@@ -1243,4 +1292,4 @@ except ApiException as e:
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

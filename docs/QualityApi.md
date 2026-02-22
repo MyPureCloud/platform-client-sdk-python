@@ -3325,7 +3325,7 @@ except ApiException as e:
 
 ## post_quality_surveys
 
-> [**Survey**](Survey) post_quality_surveys(body)
+> [**CreateSurveyResponse**](CreateSurveyResponse) post_quality_surveys(body)
 
 
 Create a survey for a conversation
@@ -3368,7 +3368,7 @@ except ApiException as e:
 
 ### Return type
 
-[**Survey**](Survey)
+[**CreateSurveyResponse**](CreateSurveyResponse)
 
 
 ## post_quality_surveys_scoring
@@ -3827,4 +3827,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_
