@@ -33,7 +33,9 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AnswerGenerationConfig
+    from . import AutoSearchConfig
     from . import KnowledgeAnswerConfig
+    from . import ManualSearchConfig
     from . import NluConfig
     from . import RuleEngineConfig
     from . import SummaryGenerationConfig
@@ -64,6 +66,8 @@ class Copilot(object):
             'nlu_engine_type': 'str',
             'nlu_config': 'NluConfig',
             'rule_engine_config': 'RuleEngineConfig',
+            'auto_search_config': 'AutoSearchConfig',
+            'manual_search_config': 'ManualSearchConfig',
             'self_uri': 'str'
         }
 
@@ -78,6 +82,8 @@ class Copilot(object):
             'nlu_engine_type': 'nluEngineType',
             'nlu_config': 'nluConfig',
             'rule_engine_config': 'ruleEngineConfig',
+            'auto_search_config': 'autoSearchConfig',
+            'manual_search_config': 'manualSearchConfig',
             'self_uri': 'selfUri'
         }
 
@@ -91,6 +97,8 @@ class Copilot(object):
         self._nlu_engine_type = None
         self._nlu_config = None
         self._rule_engine_config = None
+        self._auto_search_config = None
+        self._manual_search_config = None
         self._self_uri = None
 
     @property
@@ -169,7 +177,7 @@ class Copilot(object):
     def knowledge_answer_config(self) -> 'KnowledgeAnswerConfig':
         """
         Gets the knowledge_answer_config of this Copilot.
-        Knowledge answer configuration.
+        Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
 
         :return: The knowledge_answer_config of this Copilot.
         :rtype: KnowledgeAnswerConfig
@@ -180,7 +188,7 @@ class Copilot(object):
     def knowledge_answer_config(self, knowledge_answer_config: 'KnowledgeAnswerConfig') -> None:
         """
         Sets the knowledge_answer_config of this Copilot.
-        Knowledge answer configuration.
+        Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
 
         :param knowledge_answer_config: The knowledge_answer_config of this Copilot.
         :type: KnowledgeAnswerConfig
@@ -241,7 +249,7 @@ class Copilot(object):
     def answer_generation_config(self) -> 'AnswerGenerationConfig':
         """
         Gets the answer_generation_config of this Copilot.
-        Answer generation configuration.
+        Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
 
         :return: The answer_generation_config of this Copilot.
         :rtype: AnswerGenerationConfig
@@ -252,7 +260,7 @@ class Copilot(object):
     def answer_generation_config(self, answer_generation_config: 'AnswerGenerationConfig') -> None:
         """
         Sets the answer_generation_config of this Copilot.
-        Answer generation configuration.
+        Deprecated: Please use AutoSearchConfig and ManualSearchConfig fields instead.
 
         :param answer_generation_config: The answer_generation_config of this Copilot.
         :type: AnswerGenerationConfig
@@ -337,6 +345,54 @@ class Copilot(object):
         
 
         self._rule_engine_config = rule_engine_config
+
+    @property
+    def auto_search_config(self) -> 'AutoSearchConfig':
+        """
+        Gets the auto_search_config of this Copilot.
+        Auto search configuration.
+
+        :return: The auto_search_config of this Copilot.
+        :rtype: AutoSearchConfig
+        """
+        return self._auto_search_config
+
+    @auto_search_config.setter
+    def auto_search_config(self, auto_search_config: 'AutoSearchConfig') -> None:
+        """
+        Sets the auto_search_config of this Copilot.
+        Auto search configuration.
+
+        :param auto_search_config: The auto_search_config of this Copilot.
+        :type: AutoSearchConfig
+        """
+        
+
+        self._auto_search_config = auto_search_config
+
+    @property
+    def manual_search_config(self) -> 'ManualSearchConfig':
+        """
+        Gets the manual_search_config of this Copilot.
+        Manual Search configuration.
+
+        :return: The manual_search_config of this Copilot.
+        :rtype: ManualSearchConfig
+        """
+        return self._manual_search_config
+
+    @manual_search_config.setter
+    def manual_search_config(self, manual_search_config: 'ManualSearchConfig') -> None:
+        """
+        Sets the manual_search_config of this Copilot.
+        Manual Search configuration.
+
+        :param manual_search_config: The manual_search_config of this Copilot.
+        :type: ManualSearchConfig
+        """
+        
+
+        self._manual_search_config = manual_search_config
 
     @property
     def self_uri(self) -> str:

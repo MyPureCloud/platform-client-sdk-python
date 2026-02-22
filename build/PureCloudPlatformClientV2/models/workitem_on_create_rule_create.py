@@ -77,6 +77,12 @@ class WorkitemOnCreateRuleCreate(object):
         :type: str
         """
         
+        if len(name) > 256:
+            raise ValueError("Invalid value for `name`, length must be less than `256`")
+
+        if len(name) < 3:
+            raise ValueError("Invalid value for `name`, length must be greater than or equal to `3`")
+
 
         self._name = name
 

@@ -66,7 +66,6 @@ class UsersRulesApi(object):
         """
         Delete an existing users rule
         
-	    delete_users_rule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -145,7 +144,6 @@ class UsersRulesApi(object):
         """
         Get a users rule
         
-	    get_users_rule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -224,7 +222,6 @@ class UsersRulesApi(object):
         """
         Get dependent of a users rule
         
-	    get_users_rule_dependent_type_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -315,7 +312,6 @@ class UsersRulesApi(object):
         """
         Get dependents for a users rule
         
-	    get_users_rule_dependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -403,7 +399,6 @@ class UsersRulesApi(object):
         """
         Get the list of users rules
         
-	    get_users_rules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -500,7 +495,6 @@ class UsersRulesApi(object):
         """
         Get the settings for a specific users rule type
         
-	    get_users_rules_setting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -579,7 +573,6 @@ class UsersRulesApi(object):
         """
         Update an existing users rule
         This will update an existing users rule with the specified fields.
-	    patch_users_rule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -664,7 +657,6 @@ class UsersRulesApi(object):
         """
         Create a new rule
         This will create a new rule with the specified fields.
-	    post_users_rules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -743,7 +735,6 @@ class UsersRulesApi(object):
         """
         Query the result of a users rule
         This will query the result of a rule.
-	    post_users_rules_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

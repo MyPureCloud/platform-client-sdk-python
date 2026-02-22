@@ -25,8 +25,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an existing users rule
 
-delete_users_rule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/users/rules/{ruleId} 
 
 Requires ANY permissions: 
@@ -73,8 +71,6 @@ void (empty response body)
 
 
 Get a users rule
-
-get_users_rule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules/{ruleId} 
 
@@ -123,8 +119,6 @@ except ApiException as e:
 
 
 Get dependent of a users rule
-
-get_users_rule_dependent_type_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules/{ruleId}/dependents/{ruleType}/{typeId} 
 
@@ -177,8 +171,6 @@ except ApiException as e:
 
 
 Get dependents for a users rule
-
-get_users_rule_dependents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules/{ruleId}/dependents 
 
@@ -233,8 +225,6 @@ except ApiException as e:
 
 
 Get the list of users rules
-
-get_users_rules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/rules 
 
@@ -296,8 +286,6 @@ except ApiException as e:
 
 Get the settings for a specific users rule type
 
-get_users_rules_setting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/rules/settings/{ruleType} 
 
 Requires ANY permissions: 
@@ -347,8 +335,6 @@ except ApiException as e:
 Update an existing users rule
 
 This will update an existing users rule with the specified fields.
-
-patch_users_rule is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/users/rules/{ruleId} 
 
@@ -402,8 +388,6 @@ Create a new rule
 
 This will create a new rule with the specified fields.
 
-post_users_rules is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/users/rules 
 
 Requires ANY permissions: 
@@ -454,8 +438,6 @@ Query the result of a users rule
 
 This will query the result of a rule.
 
-post_users_rules_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/users/rules/query 
 
 Requires ANY permissions: 
@@ -501,4 +483,4 @@ except ApiException as e:
 [**UsersRulesQueryResponse**](UsersRulesQueryResponse)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

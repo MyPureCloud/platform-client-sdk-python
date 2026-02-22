@@ -92,11 +92,16 @@ from ..models import ConversationAggregateQueryResponse
 from ..models import ConversationAggregationQuery
 from ..models import ConversationAsyncAggregateQueryResponse
 from ..models import ConversationAsyncAggregationQuery
+from ..models import ConversationCustomAttributesSearchRequest
+from ..models import ConversationDataSchema
+from ..models import ConversationDataSchemaListing
 from ..models import ConversationEncryptionConfiguration
 from ..models import ConversationEncryptionConfigurationListing
 from ..models import ConversationEntityListing
+from ..models import ConversationJsonSchemaRequest
 from ..models import ConversationParticipantSearchRequest
 from ..models import ConversationQuery
+from ..models import ConversationSchemaUpdateRequest
 from ..models import ConversationSecureAttributes
 from ..models import ConversationSummariesGetResponse
 from ..models import ConversationTagsUpdate
@@ -104,6 +109,8 @@ from ..models import ConversationThreadingWindow
 from ..models import ConversationUser
 from ..models import ConversationUtilizationLabelUpdate
 from ..models import CopyAttachmentsRequest
+from ..models import Coretype
+from ..models import CoretypeListing
 from ..models import CreateCallRequest
 from ..models import CreateCallResponse
 from ..models import CreateCallbackCommand
@@ -115,6 +122,12 @@ from ..models import CreateOutboundMessagingConversationResponse
 from ..models import CreateSecureSession
 from ..models import CreateWebChatMessageRequest
 from ..models import CreateWebChatRequest
+from ..models import CustomAttributes
+from ..models import CustomAttributesBulkUpdateResponseMap
+from ..models import CustomAttributesIdResponse
+from ..models import CustomAttributesListing
+from ..models import CustomAttributesPatchRequest
+from ..models import CustomAttributesUpdateRequest
 from ..models import DataAvailabilityResponse
 from ..models import Digits
 from ..models import DraftManipulationRequest
@@ -139,6 +152,13 @@ from ..models import Feedback
 from ..models import FeedbackAddRequest
 from ..models import FeedbackUpdateRequest
 from ..models import GenerateMeetingIdRequest
+from ..models import GoogleAuthToken
+from ..models import GoogleAuthTokenRequest
+from ..models import GoogleBusinessProfileAccountListing
+from ..models import GoogleBusinessProfileOpenIntegration
+from ..models import GoogleBusinessProfileOpenIntegrationRequest
+from ..models import GoogleBusinessProfileOpenIntegrationUpdateRequest
+from ..models import GoogleOAuthSettingsResponse
 from ..models import InboundMessageRequest
 from ..models import InstagramIdentityResolutionConfig
 from ..models import InstagramIntegration
@@ -151,6 +171,7 @@ from ..models import InternalMessageData
 from ..models import InternalMessageDataEntityListing
 from ..models import InternalMessageRequest
 from ..models import JsonCursorSearchResponse
+from ..models import JsonSearchResponse
 from ..models import MandatoryPostCallActionInput
 from ..models import MaxParticipants
 from ..models import MediaParticipantRequest
@@ -190,6 +211,7 @@ from ..models import ParticipantAttributes
 from ..models import PatchCallbackRequest
 from ..models import PatchCallbackResponse
 from ..models import PropertyIndexRequest
+from ..models import SchemaQuantityLimits
 from ..models import SecureSession
 from ..models import SecureSessionEntityListing
 from ..models import SendAgentlessOutboundMessageRequest
@@ -450,6 +472,90 @@ class ConversationsApi(object):
         path_params = {}
         if 'conversation_id' in params:
             path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_conversation_customattribute(self, conversation_id: str, attributes_id: str, **kwargs) -> None:
+        """
+        Delete a custom attributes record.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_conversation_customattribute(conversation_id, attributes_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param str attributes_id: attributesId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'attributes_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_conversation_customattribute" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `delete_conversation_customattribute`")
+        # verify the required parameter 'attributes_id' is set
+        if ('attributes_id' not in params) or (params['attributes_id'] is None):
+            raise ValueError("Missing the required parameter `attributes_id` when calling `delete_conversation_customattribute`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/customattributes/{attributesId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'attributes_id' in params:
+            path_params['attributesId'] = params['attributes_id']
 
         query_params = {}
 
@@ -1191,6 +1297,85 @@ class ConversationsApi(object):
 
 
         resource_path = '/api/v2/conversations/messaging/integrations/instagram/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(self, integration_id: str, **kwargs) -> None:
+        """
+        Delete an Open messaging integration with the Google Business Profile extension
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `delete_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}'.replace('{format}', 'json')
         path_params = {}
         if 'integration_id' in params:
             path_params['integrationId'] = params['integration_id']
@@ -2763,6 +2948,168 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InternalMessageDataEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversation_customattribute(self, conversation_id: str, attributes_id: str, **kwargs) -> 'CustomAttributes':
+        """
+        Get custom attributes by id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_customattribute(conversation_id, attributes_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param str attributes_id: attributesId (required)
+        :return: CustomAttributes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'attributes_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_customattribute" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_customattribute`")
+        # verify the required parameter 'attributes_id' is set
+        if ('attributes_id' not in params) or (params['attributes_id'] is None):
+            raise ValueError("Missing the required parameter `attributes_id` when calling `get_conversation_customattribute`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/customattributes/{attributesId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'attributes_id' in params:
+            path_params['attributesId'] = params['attributes_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomAttributes',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversation_customattributes(self, conversation_id: str, **kwargs) -> 'CustomAttributesListing':
+        """
+        Get a list of custom attributes for a conversation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversation_customattributes(conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :return: CustomAttributesListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversation_customattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_conversation_customattributes`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/customattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomAttributesListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5516,6 +5863,540 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversations_customattributes_schema(self, schema_id: str, **kwargs) -> 'ConversationDataSchema':
+        """
+        Get a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_customattributes_schema(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: ConversationDataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_customattributes_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_conversations_customattributes_schema`")
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationDataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_customattributes_schema_version(self, schema_id: str, version_id: str, **kwargs) -> 'ConversationDataSchema':
+        """
+        Get a specific version of a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_customattributes_schema_version(schema_id, version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param str version_id: Schema version (required)
+        :return: ConversationDataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'version_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_customattributes_schema_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_conversations_customattributes_schema_version`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_conversations_customattributes_schema_version`")
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationDataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_customattributes_schema_versions(self, schema_id: str, **kwargs) -> 'ConversationDataSchemaListing':
+        """
+        Get all versions of a CCA schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_customattributes_schema_versions(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :return: ConversationDataSchemaListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_customattributes_schema_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_conversations_customattributes_schema_versions`")
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas/{schemaId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationDataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_customattributes_schemas(self, **kwargs) -> 'ConversationDataSchemaListing':
+        """
+        Get a list of schemas.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_customattributes_schemas(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ConversationDataSchemaListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_customattributes_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationDataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_customattributes_schemas_coretype(self, core_type_name: str, **kwargs) -> 'Coretype':
+        """
+        Get the core types from which all schemas are built.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_customattributes_schemas_coretype(core_type_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str core_type_name: Name of the core type (required)
+        :return: Coretype
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['core_type_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_customattributes_schemas_coretype" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'core_type_name' is set
+        if ('core_type_name' not in params) or (params['core_type_name'] is None):
+            raise ValueError("Missing the required parameter `core_type_name` when calling `get_conversations_customattributes_schemas_coretype`")
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'core_type_name' in params:
+            path_params['coreTypeName'] = params['core_type_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coretype',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_customattributes_schemas_coretypes(self, **kwargs) -> 'CoretypeListing':
+        """
+        Get the list of core types enabled for a specific namespace.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_customattributes_schemas_coretypes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: CoretypeListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_customattributes_schemas_coretypes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas/coretypes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CoretypeListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_customattributes_schemas_limits(self, **kwargs) -> 'SchemaQuantityLimits':
+        """
+        Get quantitative limits on schemas
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_customattributes_schemas_limits(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SchemaQuantityLimits
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_customattributes_schemas_limits" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas/limits'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SchemaQuantityLimits',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations_email(self, conversation_id: str, **kwargs) -> 'EmailConversation':
         """
         Get email conversation
@@ -6722,7 +7603,7 @@ class ConversationsApi(object):
     def get_conversations_message_communication_messages_media_media_id(self, conversation_id: str, communication_id: str, media_id: str, **kwargs) -> 'MessageMediaData':
         """
         Get media
-        See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+        See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8840,6 +9721,319 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(self, integration_id: str, **kwargs) -> 'GoogleBusinessProfileOpenIntegration':
+        """
+        Get an Open messaging integration with the Google Business Profile extension
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param str expand: Expand instructions for the return value.
+        :return: GoogleBusinessProfileOpenIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileOpenIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings(self, **kwargs) -> 'GoogleOAuthSettingsResponse':
+        """
+        Get Google Business Profile OAuth 2 settings
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: GoogleOAuthSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_oauth_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleOAuthSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token(self, token_id: str, **kwargs) -> 'GoogleAuthToken':
+        """
+        Get a Google Auth Token
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token(token_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str token_id: Token ID (required)
+        :return: GoogleAuthToken
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['token_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'token_id' is set
+        if ('token_id' not in params) or (params['token_id'] is None):
+            raise ValueError("Missing the required parameter `token_id` when calling `get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'token_id' in params:
+            path_params['tokenId'] = params['token_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleAuthToken',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts(self, token_id: str, **kwargs) -> 'GoogleBusinessProfileAccountListing':
+        """
+        Get Google Business Profile accounts
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts(token_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str token_id: Token ID (required)
+        :return: GoogleBusinessProfileAccountListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['token_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'token_id' is set
+        if ('token_id' not in params) or (params['token_id'] is None):
+            raise ValueError("Missing the required parameter `token_id` when calling `get_conversations_messaging_integrations_open_extensions_googlebusinessprofile_token_accounts`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts'.replace('{format}', 'json')
+        path_params = {}
+        if 'token_id' in params:
+            path_params['tokenId'] = params['token_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileAccountListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations_messaging_integrations_open_integration_id(self, integration_id: str, **kwargs) -> 'OpenIntegration':
         """
         Get an Open messaging integration
@@ -10449,6 +11643,168 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='MeetingIdRecord',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_conversation_customattributes(self, conversation_id: str, **kwargs) -> None:
+        """
+        Update a single custom attributes record by amending the data with only the provided fields.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversation_customattributes(conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param CustomAttributesPatchRequest body: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversation_customattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversation_customattributes`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/customattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_conversation_customattributes_bulk(self, conversation_id: str, **kwargs) -> 'CustomAttributesBulkUpdateResponseMap':
+        """
+        Update a list of custom attributes record by amending the data with only the provided fields.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversation_customattributes_bulk(conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param list[CustomAttributesPatchRequest] body: 
+        :return: CustomAttributesBulkUpdateResponseMap
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversation_customattributes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversation_customattributes_bulk`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/customattributes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomAttributesBulkUpdateResponseMap',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -14177,6 +15533,91 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='InstagramIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(self, integration_id: str, body: 'GoogleBusinessProfileOpenIntegrationUpdateRequest', **kwargs) -> 'GoogleBusinessProfileOpenIntegration':
+        """
+        Update an Open messaging integration with the Google Business Profile extension
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: Integration ID (required)
+        :param GoogleBusinessProfileOpenIntegrationUpdateRequest body: GoogleBusinessProfileOpenIntegrationUpdateRequest (required)
+        :return: GoogleBusinessProfileOpenIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversations_messaging_integrations_open_extensions_googlebusinessprofile_integration_id`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileOpenIntegration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -19621,6 +21062,162 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_customattributes_schemas(self, body: 'ConversationJsonSchemaRequest', **kwargs) -> 'ConversationDataSchema':
+        """
+        Create a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_customattributes_schemas(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ConversationJsonSchemaRequest body: Schema create request body (required)
+        :return: ConversationDataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_customattributes_schemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_customattributes_schemas`")
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationDataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_customattributes_search(self, body: 'ConversationCustomAttributesSearchRequest', **kwargs) -> 'JsonSearchResponse':
+        """
+        Search resources.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_customattributes_search(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ConversationCustomAttributesSearchRequest body: Search request options (required)
+        :return: JsonSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_customattributes_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_customattributes_search`")
+
+
+        resource_path = '/api/v2/conversations/customattributes/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_email_inboundmessages(self, conversation_id: str, body: 'InboundMessageRequest', **kwargs) -> 'EmailConversation':
         """
         Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
@@ -20705,7 +22302,7 @@ class ConversationsApi(object):
     def post_conversations_message_communication_messages_media_uploads(self, conversation_id: str, communication_id: str, body: 'UploadMediaRequest', **kwargs) -> 'MessageMediaUploadData':
         """
         Create a URL to upload a message media file
-        See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+        See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -22212,6 +23809,164 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_messaging_integrations_open_extensions_googlebusinessprofile(self, body: 'GoogleBusinessProfileOpenIntegrationRequest', **kwargs) -> 'GoogleBusinessProfileOpenIntegration':
+        """
+        Create an Open messaging integration with the Google Business Profile extension
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    post_conversations_messaging_integrations_open_extensions_googlebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_messaging_integrations_open_extensions_googlebusinessprofile(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param GoogleBusinessProfileOpenIntegrationRequest body: GoogleBusinessProfileOpenIntegrationRequest (required)
+        :return: GoogleBusinessProfileOpenIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_messaging_integrations_open_extensions_googlebusinessprofile" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_messaging_integrations_open_extensions_googlebusinessprofile`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileOpenIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens(self, body: 'GoogleAuthTokenRequest', **kwargs) -> 'GoogleAuthToken':
+        """
+        Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+        See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	    post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param GoogleAuthTokenRequest body: GoogleAuthTokenRequest (required)
+        :return: GoogleAuthToken
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_messaging_integrations_open_extensions_googlebusinessprofile_tokens`")
+
+
+        resource_path = '/api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleAuthToken',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_messaging_integrations_twitter(self, body: 'TwitterIntegrationRequest', **kwargs) -> 'TwitterIntegration':
         """
         Create Twitter Integration
@@ -23124,6 +24879,168 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_conversation_customattributes(self, conversation_id: str, **kwargs) -> 'CustomAttributesIdResponse':
+        """
+        Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversation_customattributes(conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param CustomAttributesUpdateRequest body: 
+        :return: CustomAttributesIdResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversation_customattributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `put_conversation_customattributes`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/customattributes'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomAttributesIdResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_conversation_customattributes_bulk(self, conversation_id: str, **kwargs) -> 'CustomAttributesBulkUpdateResponseMap':
+        """
+        Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversation_customattributes_bulk(conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversation ID (required)
+        :param list[CustomAttributesUpdateRequest] body: 
+        :return: CustomAttributesBulkUpdateResponseMap
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversation_customattributes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `put_conversation_customattributes_bulk`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/customattributes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomAttributesBulkUpdateResponseMap',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_conversation_participant_flaggedreason(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Set flagged reason on conversation participant to indicate bad conversation quality.
@@ -23806,6 +25723,90 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='str',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_conversations_customattributes_schema(self, schema_id: str, body: 'ConversationSchemaUpdateRequest', **kwargs) -> 'ConversationDataSchema':
+        """
+        Update a schema
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_conversations_customattributes_schema(schema_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param ConversationSchemaUpdateRequest body: Schema update request body (required)
+        :return: ConversationDataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_conversations_customattributes_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `put_conversations_customattributes_schema`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_conversations_customattributes_schema`")
+
+
+        resource_path = '/api/v2/conversations/customattributes/schemas/{schemaId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationDataSchema',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

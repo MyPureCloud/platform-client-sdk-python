@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationChannelMetadata
     from . import OpenSocialMediaPublicMetadata
     from . import OpenSocialMediaRecipient
 
@@ -57,7 +58,7 @@ class OpenSocialMediaChannel(object):
             'to': 'OpenSocialMediaRecipient',
             'pcFrom': 'OpenSocialMediaRecipient',
             'time': 'datetime',
-            'metadata': 'object',
+            'metadata': 'ConversationChannelMetadata',
             'public_metadata': 'OpenSocialMediaPublicMetadata'
         }
 
@@ -262,24 +263,24 @@ class OpenSocialMediaChannel(object):
         self._time = time
 
     @property
-    def metadata(self) -> 'object':
+    def metadata(self) -> 'ConversationChannelMetadata':
         """
         Gets the metadata of this OpenSocialMediaChannel.
         Information about the channel.
 
         :return: The metadata of this OpenSocialMediaChannel.
-        :rtype: object
+        :rtype: ConversationChannelMetadata
         """
         return self._metadata
 
     @metadata.setter
-    def metadata(self, metadata: 'object') -> None:
+    def metadata(self, metadata: 'ConversationChannelMetadata') -> None:
         """
         Sets the metadata of this OpenSocialMediaChannel.
         Information about the channel.
 
         :param metadata: The metadata of this OpenSocialMediaChannel.
-        :type: object
+        :type: ConversationChannelMetadata
         """
         
 

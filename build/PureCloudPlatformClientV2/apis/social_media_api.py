@@ -46,6 +46,10 @@ from ..models import FacebookDataIngestionRuleRequest
 from ..models import FacebookDataIngestionRuleResponse
 from ..models import FacebookDataIngestionRuleVersionResponse
 from ..models import FacebookDataIngestionRuleVersionResponseEntityListing
+from ..models import GoogleBusinessProfileDataIngestionRuleRequest
+from ..models import GoogleBusinessProfileDataIngestionRuleResponse
+from ..models import GoogleBusinessProfileDataIngestionRuleVersionResponse
+from ..models import GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing
 from ..models import InstagramDataIngestionRuleRequest
 from ..models import InstagramDataIngestionRuleResponse
 from ..models import InstagramDataIngestionRuleVersionResponse
@@ -381,6 +385,94 @@ class SocialMediaApi(object):
             path_params['topicId'] = params['topic_id']
         if 'facebook_ingestion_rule_id' in params:
             path_params['facebookIngestionRuleId'] = params['facebook_ingestion_rule_id']
+
+        query_params = {}
+        if 'hard_delete' in params:
+            query_params['hardDelete'] = params['hard_delete']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(self, topic_id: str, google_business_profile_ingestion_rule_id: str, **kwargs) -> None:
+        """
+        Delete a Google Business Profile data ingestion rule.
+        
+	    delete_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(topic_id, google_business_profile_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str google_business_profile_ingestion_rule_id: googleBusinessProfileIngestionRuleId (required)
+        :param bool hard_delete: Determines whether a Google Business Profile data ingestion rule should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'google_business_profile_ingestion_rule_id', 'hard_delete']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `delete_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+        # verify the required parameter 'google_business_profile_ingestion_rule_id' is set
+        if ('google_business_profile_ingestion_rule_id' not in params) or (params['google_business_profile_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `google_business_profile_ingestion_rule_id` when calling `delete_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'google_business_profile_ingestion_rule_id' in params:
+            path_params['googleBusinessProfileIngestionRuleId'] = params['google_business_profile_ingestion_rule_id']
 
         query_params = {}
         if 'hard_delete' in params:
@@ -1603,6 +1695,282 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(self, topic_id: str, google_business_profile_ingestion_rule_id: str, **kwargs) -> 'GoogleBusinessProfileDataIngestionRuleResponse':
+        """
+        Get a single Google Business Profile data ingestion rule.
+        
+	    get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(topic_id, google_business_profile_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str google_business_profile_ingestion_rule_id: googleBusinessProfileIngestionRuleId (required)
+        :param bool include_deleted: Determines whether to include soft-deleted items in the result.
+        :return: GoogleBusinessProfileDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'google_business_profile_ingestion_rule_id', 'include_deleted']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+        # verify the required parameter 'google_business_profile_ingestion_rule_id' is set
+        if ('google_business_profile_ingestion_rule_id' not in params) or (params['google_business_profile_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `google_business_profile_ingestion_rule_id` when calling `get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'google_business_profile_ingestion_rule_id' in params:
+            path_params['googleBusinessProfileIngestionRuleId'] = params['google_business_profile_ingestion_rule_id']
+
+        query_params = {}
+        if 'include_deleted' in params:
+            query_params['includeDeleted'] = params['include_deleted']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_version(self, topic_id: str, google_business_profile_ingestion_rule_id: str, data_ingestion_rule_version: str, **kwargs) -> 'GoogleBusinessProfileDataIngestionRuleVersionResponse':
+        """
+        Get a single Google Business Profile data ingestion rule version.
+        
+	    get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_version(topic_id, google_business_profile_ingestion_rule_id, data_ingestion_rule_version, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str google_business_profile_ingestion_rule_id: googleBusinessProfileIngestionRuleId (required)
+        :param str data_ingestion_rule_version: version (required)
+        :param bool include_deleted: Determines whether to include soft-deleted item in the result.
+        :return: GoogleBusinessProfileDataIngestionRuleVersionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'google_business_profile_ingestion_rule_id', 'data_ingestion_rule_version', 'include_deleted']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_version`")
+        # verify the required parameter 'google_business_profile_ingestion_rule_id' is set
+        if ('google_business_profile_ingestion_rule_id' not in params) or (params['google_business_profile_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `google_business_profile_ingestion_rule_id` when calling `get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_version`")
+        # verify the required parameter 'data_ingestion_rule_version' is set
+        if ('data_ingestion_rule_version' not in params) or (params['data_ingestion_rule_version'] is None):
+            raise ValueError("Missing the required parameter `data_ingestion_rule_version` when calling `get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_version`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions/{dataIngestionRuleVersion}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'google_business_profile_ingestion_rule_id' in params:
+            path_params['googleBusinessProfileIngestionRuleId'] = params['google_business_profile_ingestion_rule_id']
+        if 'data_ingestion_rule_version' in params:
+            path_params['dataIngestionRuleVersion'] = params['data_ingestion_rule_version']
+
+        query_params = {}
+        if 'include_deleted' in params:
+            query_params['includeDeleted'] = params['include_deleted']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileDataIngestionRuleVersionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_versions(self, topic_id: str, google_business_profile_ingestion_rule_id: str, **kwargs) -> 'GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing':
+        """
+        Get the Google Business Profile data ingestion rule versions.
+        
+	    get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_versions(topic_id, google_business_profile_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str google_business_profile_ingestion_rule_id: googleBusinessProfileIngestionRuleId (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param bool include_deleted: Determines whether to include soft-deleted items in the result.
+        :return: GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'google_business_profile_ingestion_rule_id', 'page_number', 'page_size', 'include_deleted']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_versions`")
+        # verify the required parameter 'google_business_profile_ingestion_rule_id' is set
+        if ('google_business_profile_ingestion_rule_id' not in params) or (params['google_business_profile_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `google_business_profile_ingestion_rule_id` when calling `get_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id_versions`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'google_business_profile_ingestion_rule_id' in params:
+            path_params['googleBusinessProfileIngestionRuleId'] = params['google_business_profile_ingestion_rule_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'include_deleted' in params:
+            query_params['includeDeleted'] = params['include_deleted']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileDataIngestionRuleVersionResponseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(self, topic_id: str, instagram_ingestion_rule_id: str, **kwargs) -> 'InstagramDataIngestionRuleResponse':
         """
         Get a single Instagram data ingestion rule.
@@ -2680,6 +3048,94 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(self, topic_id: str, google_business_profile_ingestion_rule_id: str, **kwargs) -> 'GoogleBusinessProfileDataIngestionRuleResponse':
+        """
+        Update the status of a Google Business Profile data ingestion rule.
+        
+	    patch_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(topic_id, google_business_profile_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str google_business_profile_ingestion_rule_id: googleBusinessProfileIngestionRuleId (required)
+        :param DataIngestionRuleStatusPatchRequest body: 
+        :return: GoogleBusinessProfileDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'google_business_profile_ingestion_rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `patch_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+        # verify the required parameter 'google_business_profile_ingestion_rule_id' is set
+        if ('google_business_profile_ingestion_rule_id' not in params) or (params['google_business_profile_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `google_business_profile_ingestion_rule_id` when calling `patch_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'google_business_profile_ingestion_rule_id' in params:
+            path_params['googleBusinessProfileIngestionRuleId'] = params['google_business_profile_ingestion_rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_socialmedia_topic_dataingestionrules_instagram_instagram_ingestion_rule_id(self, topic_id: str, instagram_ingestion_rule_id: str, **kwargs) -> 'InstagramDataIngestionRuleResponse':
         """
         Update the status of a Instagram data ingestion rule.
@@ -3330,6 +3786,88 @@ class SocialMediaApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FacebookDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_socialmedia_topic_dataingestionrules_googlebusinessprofile(self, topic_id: str, **kwargs) -> 'GoogleBusinessProfileDataIngestionRuleResponse':
+        """
+        Create a Google Business Profile data ingestion rule.
+        
+	    post_socialmedia_topic_dataingestionrules_googlebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_socialmedia_topic_dataingestionrules_googlebusinessprofile(topic_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param GoogleBusinessProfileDataIngestionRuleRequest body: 
+        :return: GoogleBusinessProfileDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_socialmedia_topic_dataingestionrules_googlebusinessprofile" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `post_socialmedia_topic_dataingestionrules_googlebusinessprofile`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileDataIngestionRuleResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4074,6 +4612,94 @@ class SocialMediaApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FacebookDataIngestionRuleResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(self, topic_id: str, google_business_profile_ingestion_rule_id: str, **kwargs) -> 'GoogleBusinessProfileDataIngestionRuleResponse':
+        """
+        Update the Google Business Profile data ingestion rule.
+        
+	    put_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id(topic_id, google_business_profile_ingestion_rule_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str topic_id: topicId (required)
+        :param str google_business_profile_ingestion_rule_id: googleBusinessProfileIngestionRuleId (required)
+        :param GoogleBusinessProfileDataIngestionRuleRequest body: 
+        :return: GoogleBusinessProfileDataIngestionRuleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['topic_id', 'google_business_profile_ingestion_rule_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'topic_id' is set
+        if ('topic_id' not in params) or (params['topic_id'] is None):
+            raise ValueError("Missing the required parameter `topic_id` when calling `put_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+        # verify the required parameter 'google_business_profile_ingestion_rule_id' is set
+        if ('google_business_profile_ingestion_rule_id' not in params) or (params['google_business_profile_ingestion_rule_id'] is None):
+            raise ValueError("Missing the required parameter `google_business_profile_ingestion_rule_id` when calling `put_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id`")
+
+
+        resource_path = '/api/v2/socialmedia/topics/{topicId}/dataingestionrules/googlebusinessprofile/{googleBusinessProfileIngestionRuleId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'topic_id' in params:
+            path_params['topicId'] = params['topic_id']
+        if 'google_business_profile_ingestion_rule_id' in params:
+            path_params['googleBusinessProfileIngestionRuleId'] = params['google_business_profile_ingestion_rule_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GoogleBusinessProfileDataIngestionRuleResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

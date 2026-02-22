@@ -32,7 +32,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import ButtonQuickReplyPayload
     from . import TemplateParameter
 
 class CardParameters(object):
@@ -52,21 +51,18 @@ class CardParameters(object):
         self.swagger_types = {
             'index': 'int',
             'body_parameters': 'list[TemplateParameter]',
-            'button_url_parameters': 'list[TemplateParameter]',
-            'button_quick_reply_payloads': 'list[ButtonQuickReplyPayload]'
+            'button_url_parameters': 'list[TemplateParameter]'
         }
 
         self.attribute_map = {
             'index': 'index',
             'body_parameters': 'bodyParameters',
-            'button_url_parameters': 'buttonUrlParameters',
-            'button_quick_reply_payloads': 'buttonQuickReplyPayloads'
+            'button_url_parameters': 'buttonUrlParameters'
         }
 
         self._index = None
         self._body_parameters = None
         self._button_url_parameters = None
-        self._button_quick_reply_payloads = None
 
     @property
     def index(self) -> int:
@@ -139,30 +135,6 @@ class CardParameters(object):
         
 
         self._button_url_parameters = button_url_parameters
-
-    @property
-    def button_quick_reply_payloads(self) -> List['ButtonQuickReplyPayload']:
-        """
-        Gets the button_quick_reply_payloads of this CardParameters.
-        A list of quick reply button payloads for the carousel card
-
-        :return: The button_quick_reply_payloads of this CardParameters.
-        :rtype: list[ButtonQuickReplyPayload]
-        """
-        return self._button_quick_reply_payloads
-
-    @button_quick_reply_payloads.setter
-    def button_quick_reply_payloads(self, button_quick_reply_payloads: List['ButtonQuickReplyPayload']) -> None:
-        """
-        Sets the button_quick_reply_payloads of this CardParameters.
-        A list of quick reply button payloads for the carousel card
-
-        :param button_quick_reply_payloads: The button_quick_reply_payloads of this CardParameters.
-        :type: list[ButtonQuickReplyPayload]
-        """
-        
-
-        self._button_quick_reply_payloads = button_quick_reply_payloads
 
     def to_dict(self):
         """

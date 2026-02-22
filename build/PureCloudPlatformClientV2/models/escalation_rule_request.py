@@ -58,7 +58,8 @@ class EscalationRuleRequest(object):
             'open_escalation': 'EscalationTarget',
             'facebook_escalation': 'EscalationTarget',
             'instagram_escalation': 'EscalationTarget',
-            'twitter_escalation': 'EscalationTarget'
+            'twitter_escalation': 'EscalationTarget',
+            'google_business_profile_escalation': 'EscalationTarget'
         }
 
         self.attribute_map = {
@@ -71,7 +72,8 @@ class EscalationRuleRequest(object):
             'open_escalation': 'openEscalation',
             'facebook_escalation': 'facebookEscalation',
             'instagram_escalation': 'instagramEscalation',
-            'twitter_escalation': 'twitterEscalation'
+            'twitter_escalation': 'twitterEscalation',
+            'google_business_profile_escalation': 'googleBusinessProfileEscalation'
         }
 
         self._name = None
@@ -84,6 +86,7 @@ class EscalationRuleRequest(object):
         self._facebook_escalation = None
         self._instagram_escalation = None
         self._twitter_escalation = None
+        self._google_business_profile_escalation = None
 
     @property
     def name(self) -> str:
@@ -332,6 +335,30 @@ class EscalationRuleRequest(object):
         
 
         self._twitter_escalation = twitter_escalation
+
+    @property
+    def google_business_profile_escalation(self) -> 'EscalationTarget':
+        """
+        Gets the google_business_profile_escalation of this EscalationRuleRequest.
+        The target integration configuration used for a Google Business Profile message escalation.
+
+        :return: The google_business_profile_escalation of this EscalationRuleRequest.
+        :rtype: EscalationTarget
+        """
+        return self._google_business_profile_escalation
+
+    @google_business_profile_escalation.setter
+    def google_business_profile_escalation(self, google_business_profile_escalation: 'EscalationTarget') -> None:
+        """
+        Sets the google_business_profile_escalation of this EscalationRuleRequest.
+        The target integration configuration used for a Google Business Profile message escalation.
+
+        :param google_business_profile_escalation: The google_business_profile_escalation of this EscalationRuleRequest.
+        :type: EscalationTarget
+        """
+        
+
+        self._google_business_profile_escalation = google_business_profile_escalation
 
     def to_dict(self):
         """

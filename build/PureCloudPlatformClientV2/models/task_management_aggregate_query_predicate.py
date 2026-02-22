@@ -121,7 +121,7 @@ class TaskManagementAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["assigneeId", "divisionId", "externalTag", "queueId", "reporterId", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "statusCategory", "statusId", "typeId", "usedRouting", "userId", "workbinId", "workitemId", "wrapUpCode"]
+        allowed_values = ["assigneeId", "caseId", "divisionId", "externalTag", "queueId", "reporterId", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "statusCategory", "statusId", "typeId", "usedRouting", "userId", "workbinId", "workitemId", "wrapUpCode"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

@@ -118,6 +118,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_queue_users**](#patch_routing_queue_users) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.|
 |[**patch_routing_settings_contactcenter**](#patch_routing_settings_contactcenter) | Update Contact Center Settings|
 |[**patch_routing_settings_transcription**](#patch_routing_settings_transcription) | Patch Transcription Settings|
+|[**patch_routing_skill**](#patch_routing_skill) | Update Routing Skill Division|
 |[**patch_routing_skillgroup**](#patch_routing_skillgroup) | Update skill group definition|
 |[**patch_routing_sms_phonenumber**](#patch_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
 |[**patch_user_queue**](#patch_user_queue) | Join or unjoin a queue for a user|
@@ -5874,6 +5875,56 @@ except ApiException as e:
 [**TranscriptionSettings**](TranscriptionSettings)
 
 
+## patch_routing_skill
+
+> [**RoutingSkill**](RoutingSkill) patch_routing_skill(skill_id, body)
+
+
+Update Routing Skill Division
+
+Wraps PATCH /api/v2/routing/skills/{skillId} 
+
+Requires ANY permissions: 
+
+* routing:skill:update
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+skill_id = 'skill_id_example' # str | Skill ID
+body = PureCloudPlatformClientV2.UpdateSkillDivisionRequest() # UpdateSkillDivisionRequest | updateSkillDivisionRequest
+
+try:
+    # Update Routing Skill Division
+    api_response = api_instance.patch_routing_skill(skill_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_skill: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **skill_id** | **str**| Skill ID |  |
+| **body** | [**UpdateSkillDivisionRequest**](UpdateSkillDivisionRequest)| updateSkillDivisionRequest |  |
+
+### Return type
+
+[**RoutingSkill**](RoutingSkill)
+
+
 ## patch_routing_skillgroup
 
 > [**SkillGroup**](SkillGroup) patch_routing_skillgroup(skill_group_id, body)
@@ -8665,4 +8716,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

@@ -57,6 +57,7 @@ class MessagingIntegration(object):
             'messaging_setting': 'MessagingSettingReference',
             'status': 'str',
             'messenger_type': 'str',
+            'open_extension_type': 'str',
             'recipient': 'DomainEntityRef',
             'date_created': 'datetime',
             'date_modified': 'datetime',
@@ -73,6 +74,7 @@ class MessagingIntegration(object):
             'messaging_setting': 'messagingSetting',
             'status': 'status',
             'messenger_type': 'messengerType',
+            'open_extension_type': 'openExtensionType',
             'recipient': 'recipient',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
@@ -88,6 +90,7 @@ class MessagingIntegration(object):
         self._messaging_setting = None
         self._status = None
         self._messenger_type = None
+        self._open_extension_type = None
         self._recipient = None
         self._date_created = None
         self._date_modified = None
@@ -249,6 +252,35 @@ class MessagingIntegration(object):
             self._messenger_type = "outdated_sdk_version"
         else:
             self._messenger_type = messenger_type
+
+    @property
+    def open_extension_type(self) -> str:
+        """
+        Gets the open_extension_type of this MessagingIntegration.
+        The type of Open Messaging Integration Extension. Only present when 'messengerType' is 'open' and the Open Integration has an extension
+
+        :return: The open_extension_type of this MessagingIntegration.
+        :rtype: str
+        """
+        return self._open_extension_type
+
+    @open_extension_type.setter
+    def open_extension_type(self, open_extension_type: str) -> None:
+        """
+        Sets the open_extension_type of this MessagingIntegration.
+        The type of Open Messaging Integration Extension. Only present when 'messengerType' is 'open' and the Open Integration has an extension
+
+        :param open_extension_type: The open_extension_type of this MessagingIntegration.
+        :type: str
+        """
+        if isinstance(open_extension_type, int):
+            open_extension_type = str(open_extension_type)
+        allowed_values = ["None", "GoogleBusinessProfile", "YouTube"]
+        if open_extension_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for open_extension_type -> " + open_extension_type)
+            self._open_extension_type = "outdated_sdk_version"
+        else:
+            self._open_extension_type = open_extension_type
 
     @property
     def recipient(self) -> 'DomainEntityRef':

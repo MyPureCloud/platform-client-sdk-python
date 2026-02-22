@@ -469,7 +469,7 @@ class WebDeploymentsApi(object):
     def get_webdeployments_configuration_versions(self, configuration_id: str, **kwargs) -> 'WebDeploymentConfigurationVersionEntityListing':
         """
         Get the versions of a configuration
-        This returns the 50 most recent versions for this configuration
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -482,12 +482,15 @@ class WebDeploymentsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str configuration_id: The configuration version ID (required)
+        :param str page_size: Number of entities to return. Defaults to 300.
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
         :return: WebDeploymentConfigurationVersionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['configuration_id']
+        all_params = ['configuration_id', 'page_size', 'before', 'after']
         all_params.append('callback')
 
         params = locals()
@@ -511,6 +514,12 @@ class WebDeploymentsApi(object):
             path_params['configurationId'] = params['configuration_id']
 
         query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
 
         header_params = {}
 
@@ -637,13 +646,16 @@ class WebDeploymentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str page_size: Number of entities to return. Defaults to 300.
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param bool show_only_published: Filter by published status.
         :return: WebDeploymentConfigurationVersionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['show_only_published']
+        all_params = ['page_size', 'before', 'after', 'show_only_published']
         all_params.append('callback')
 
         params = locals()
@@ -662,6 +674,12 @@ class WebDeploymentsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
         if 'show_only_published' in params:
             query_params['showOnlyPublished'] = params['show_only_published']
 
@@ -1039,13 +1057,16 @@ class WebDeploymentsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str page_size: Number of entities to return. Defaults to 300.
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected. 
         :return: ExpandableWebDeploymentEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['expand']
+        all_params = ['page_size', 'before', 'after', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -1064,6 +1085,12 @@ class WebDeploymentsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
         if 'expand' in params:
             query_params['expand'] = params['expand']
 

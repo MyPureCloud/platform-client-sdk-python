@@ -288,7 +288,8 @@ class ViewFilter(object):
             'sentiment_trend_categories': 'list[str]',
             'content_moderation_flags': 'list[str]',
             'session_expired': 'bool',
-            'engagement_source': 'list[str]'
+            'engagement_sources': 'list[str]',
+            'is_snippet_recorded': 'bool'
         }
 
         self.attribute_map = {
@@ -526,7 +527,8 @@ class ViewFilter(object):
             'sentiment_trend_categories': 'sentimentTrendCategories',
             'content_moderation_flags': 'contentModerationFlags',
             'session_expired': 'sessionExpired',
-            'engagement_source': 'engagementSource'
+            'engagement_sources': 'engagementSources',
+            'is_snippet_recorded': 'isSnippetRecorded'
         }
 
         self._media_types = None
@@ -763,7 +765,8 @@ class ViewFilter(object):
         self._sentiment_trend_categories = None
         self._content_moderation_flags = None
         self._session_expired = None
-        self._engagement_source = None
+        self._engagement_sources = None
+        self._is_snippet_recorded = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6412,28 +6415,52 @@ class ViewFilter(object):
         self._session_expired = session_expired
 
     @property
-    def engagement_source(self) -> List[str]:
+    def engagement_sources(self) -> List[str]:
         """
-        Gets the engagement_source of this ViewFilter.
+        Gets the engagement_sources of this ViewFilter.
         The engagement sources used to filter the view
 
-        :return: The engagement_source of this ViewFilter.
+        :return: The engagement_sources of this ViewFilter.
         :rtype: list[str]
         """
-        return self._engagement_source
+        return self._engagement_sources
 
-    @engagement_source.setter
-    def engagement_source(self, engagement_source: List[str]) -> None:
+    @engagement_sources.setter
+    def engagement_sources(self, engagement_sources: List[str]) -> None:
         """
-        Sets the engagement_source of this ViewFilter.
+        Sets the engagement_sources of this ViewFilter.
         The engagement sources used to filter the view
 
-        :param engagement_source: The engagement_source of this ViewFilter.
+        :param engagement_sources: The engagement_sources of this ViewFilter.
         :type: list[str]
         """
         
 
-        self._engagement_source = engagement_source
+        self._engagement_sources = engagement_sources
+
+    @property
+    def is_snippet_recorded(self) -> bool:
+        """
+        Gets the is_snippet_recorded of this ViewFilter.
+        Indicates filtering for snippet recorded
+
+        :return: The is_snippet_recorded of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_snippet_recorded
+
+    @is_snippet_recorded.setter
+    def is_snippet_recorded(self, is_snippet_recorded: bool) -> None:
+        """
+        Sets the is_snippet_recorded of this ViewFilter.
+        Indicates filtering for snippet recorded
+
+        :param is_snippet_recorded: The is_snippet_recorded of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._is_snippet_recorded = is_snippet_recorded
 
     def to_dict(self):
         """

@@ -54,8 +54,8 @@ class MessageConversationEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'first_uri': 'str',
-            'next_uri': 'str',
             'previous_uri': 'str',
+            'next_uri': 'str',
             'last_uri': 'str',
             'self_uri': 'str',
             'page_count': 'int'
@@ -67,8 +67,8 @@ class MessageConversationEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'first_uri': 'firstUri',
-            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'self_uri': 'selfUri',
             'page_count': 'pageCount'
@@ -79,8 +79,8 @@ class MessageConversationEntityListing(object):
         self._page_number = None
         self._total = None
         self._first_uri = None
-        self._next_uri = None
         self._previous_uri = None
+        self._next_uri = None
         self._last_uri = None
         self._self_uri = None
         self._page_count = None
@@ -206,30 +206,6 @@ class MessageConversationEntityListing(object):
         self._first_uri = first_uri
 
     @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this MessageConversationEntityListing.
-
-
-        :return: The next_uri of this MessageConversationEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this MessageConversationEntityListing.
-
-
-        :param next_uri: The next_uri of this MessageConversationEntityListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
-
-    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this MessageConversationEntityListing.
@@ -252,6 +228,30 @@ class MessageConversationEntityListing(object):
         
 
         self._previous_uri = previous_uri
+
+    @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this MessageConversationEntityListing.
+
+
+        :return: The next_uri of this MessageConversationEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this MessageConversationEntityListing.
+
+
+        :param next_uri: The next_uri of this MessageConversationEntityListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
 
     @property
     def last_uri(self) -> str:

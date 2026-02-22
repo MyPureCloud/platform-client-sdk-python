@@ -47,13 +47,43 @@ class ConversationChannelMetadata(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'sub_type': 'str'
         }
 
         self.attribute_map = {
-            
+            'sub_type': 'subType'
         }
 
+        self._sub_type = None
+
+    @property
+    def sub_type(self) -> str:
+        """
+        Gets the sub_type of this ConversationChannelMetadata.
+        Channel subtype
+
+        :return: The sub_type of this ConversationChannelMetadata.
+        :rtype: str
+        """
+        return self._sub_type
+
+    @sub_type.setter
+    def sub_type(self, sub_type: str) -> None:
+        """
+        Sets the sub_type of this ConversationChannelMetadata.
+        Channel subtype
+
+        :param sub_type: The sub_type of this ConversationChannelMetadata.
+        :type: str
+        """
+        if isinstance(sub_type, int):
+            sub_type = str(sub_type)
+        allowed_values = ["None", "GoogleBusinessProfile", "RoadsideAssistance", "YouTube"]
+        if sub_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sub_type -> " + sub_type)
+            self._sub_type = "outdated_sdk_version"
+        else:
+            self._sub_type = sub_type
 
     def to_dict(self):
         """

@@ -62,6 +62,7 @@ class EscalationRuleResponse(object):
             'facebook_escalation': 'EscalationTarget',
             'instagram_escalation': 'EscalationTarget',
             'twitter_escalation': 'EscalationTarget',
+            'google_business_profile_escalation': 'EscalationTarget',
             'self_uri': 'str'
         }
 
@@ -79,6 +80,7 @@ class EscalationRuleResponse(object):
             'facebook_escalation': 'facebookEscalation',
             'instagram_escalation': 'instagramEscalation',
             'twitter_escalation': 'twitterEscalation',
+            'google_business_profile_escalation': 'googleBusinessProfileEscalation',
             'self_uri': 'selfUri'
         }
 
@@ -95,6 +97,7 @@ class EscalationRuleResponse(object):
         self._facebook_escalation = None
         self._instagram_escalation = None
         self._twitter_escalation = None
+        self._google_business_profile_escalation = None
         self._self_uri = None
 
     @property
@@ -413,6 +416,30 @@ class EscalationRuleResponse(object):
         
 
         self._twitter_escalation = twitter_escalation
+
+    @property
+    def google_business_profile_escalation(self) -> 'EscalationTarget':
+        """
+        Gets the google_business_profile_escalation of this EscalationRuleResponse.
+        The target integration configuration used for a Google Business Profile message escalation.
+
+        :return: The google_business_profile_escalation of this EscalationRuleResponse.
+        :rtype: EscalationTarget
+        """
+        return self._google_business_profile_escalation
+
+    @google_business_profile_escalation.setter
+    def google_business_profile_escalation(self, google_business_profile_escalation: 'EscalationTarget') -> None:
+        """
+        Sets the google_business_profile_escalation of this EscalationRuleResponse.
+        The target integration configuration used for a Google Business Profile message escalation.
+
+        :param google_business_profile_escalation: The google_business_profile_escalation of this EscalationRuleResponse.
+        :type: EscalationTarget
+        """
+        
+
+        self._google_business_profile_escalation = google_business_profile_escalation
 
     @property
     def self_uri(self) -> str:

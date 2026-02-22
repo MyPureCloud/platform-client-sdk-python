@@ -55,8 +55,8 @@ class LearningAssignmentUserListing(object):
             'total': 'int',
             'unfiltered_total': 'int',
             'first_uri': 'str',
-            'next_uri': 'str',
             'previous_uri': 'str',
+            'next_uri': 'str',
             'last_uri': 'str',
             'self_uri': 'str',
             'page_count': 'int'
@@ -69,8 +69,8 @@ class LearningAssignmentUserListing(object):
             'total': 'total',
             'unfiltered_total': 'unfilteredTotal',
             'first_uri': 'firstUri',
-            'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'last_uri': 'lastUri',
             'self_uri': 'selfUri',
             'page_count': 'pageCount'
@@ -82,8 +82,8 @@ class LearningAssignmentUserListing(object):
         self._total = None
         self._unfiltered_total = None
         self._first_uri = None
-        self._next_uri = None
         self._previous_uri = None
+        self._next_uri = None
         self._last_uri = None
         self._self_uri = None
         self._page_count = None
@@ -233,30 +233,6 @@ class LearningAssignmentUserListing(object):
         self._first_uri = first_uri
 
     @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this LearningAssignmentUserListing.
-
-
-        :return: The next_uri of this LearningAssignmentUserListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this LearningAssignmentUserListing.
-
-
-        :param next_uri: The next_uri of this LearningAssignmentUserListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
-
-    @property
     def previous_uri(self) -> str:
         """
         Gets the previous_uri of this LearningAssignmentUserListing.
@@ -279,6 +255,30 @@ class LearningAssignmentUserListing(object):
         
 
         self._previous_uri = previous_uri
+
+    @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this LearningAssignmentUserListing.
+
+
+        :return: The next_uri of this LearningAssignmentUserListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this LearningAssignmentUserListing.
+
+
+        :param next_uri: The next_uri of this LearningAssignmentUserListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
 
     @property
     def last_uri(self) -> str:

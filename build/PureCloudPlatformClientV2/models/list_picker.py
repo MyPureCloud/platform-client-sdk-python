@@ -52,6 +52,7 @@ class ListPicker(object):
             'id': 'str',
             'title': 'str',
             'subtitle': 'str',
+            'header': 'str',
             'sections': 'list[ListPickerSection]'
         }
 
@@ -59,12 +60,14 @@ class ListPicker(object):
             'id': 'id',
             'title': 'title',
             'subtitle': 'subtitle',
+            'header': 'header',
             'sections': 'sections'
         }
 
         self._id = None
         self._title = None
         self._subtitle = None
+        self._header = None
         self._sections = None
 
     @property
@@ -138,6 +141,30 @@ class ListPicker(object):
         
 
         self._subtitle = subtitle
+
+    @property
+    def header(self) -> str:
+        """
+        Gets the header of this ListPicker.
+        Text to show in the header.
+
+        :return: The header of this ListPicker.
+        :rtype: str
+        """
+        return self._header
+
+    @header.setter
+    def header(self, header: str) -> None:
+        """
+        Sets the header of this ListPicker.
+        Text to show in the header.
+
+        :param header: The header of this ListPicker.
+        :type: str
+        """
+        
+
+        self._header = header
 
     @property
     def sections(self) -> List['ListPickerSection']:

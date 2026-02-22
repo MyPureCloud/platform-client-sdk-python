@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationChannelMetadata
     from . import OpenMessagingFromRecipient
 
 class OpenInboundMessageMessagingChannel(object):
@@ -52,7 +53,7 @@ class OpenInboundMessageMessagingChannel(object):
             'pcFrom': 'OpenMessagingFromRecipient',
             'time': 'datetime',
             'message_id': 'str',
-            'metadata': 'object'
+            'metadata': 'ConversationChannelMetadata'
         }
 
         self.attribute_map = {
@@ -140,24 +141,24 @@ class OpenInboundMessageMessagingChannel(object):
         self._message_id = message_id
 
     @property
-    def metadata(self) -> 'object':
+    def metadata(self) -> 'ConversationChannelMetadata':
         """
         Gets the metadata of this OpenInboundMessageMessagingChannel.
         Additional Custom Information about the channel.
 
         :return: The metadata of this OpenInboundMessageMessagingChannel.
-        :rtype: object
+        :rtype: ConversationChannelMetadata
         """
         return self._metadata
 
     @metadata.setter
-    def metadata(self, metadata: 'object') -> None:
+    def metadata(self, metadata: 'ConversationChannelMetadata') -> None:
         """
         Sets the metadata of this OpenInboundMessageMessagingChannel.
         Additional Custom Information about the channel.
 
         :param metadata: The metadata of this OpenInboundMessageMessagingChannel.
-        :type: object
+        :type: ConversationChannelMetadata
         """
         
 

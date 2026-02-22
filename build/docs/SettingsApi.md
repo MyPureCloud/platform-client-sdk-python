@@ -677,4 +677,4 @@ except ApiException as e:
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_PureCloudPlatformClientV2 250.0.0_
+_PureCloudPlatformClientV2 251.0.0_

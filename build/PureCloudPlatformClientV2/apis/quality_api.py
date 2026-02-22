@@ -45,6 +45,7 @@ from ..models import Calibration
 from ..models import CalibrationCreate
 from ..models import CalibrationEntityListing
 from ..models import CreateSurveyRequest
+from ..models import CreateSurveyResponse
 from ..models import ErrorBody
 from ..models import Evaluation
 from ..models import EvaluationAggregateQueryResponse
@@ -5279,7 +5280,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_surveys(self, body: 'CreateSurveyRequest', **kwargs) -> 'Survey':
+    def post_quality_surveys(self, body: 'CreateSurveyRequest', **kwargs) -> 'CreateSurveyResponse':
         """
         Create a survey for a conversation
         
@@ -5295,7 +5296,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param CreateSurveyRequest body: Survey creation request (required)
-        :return: Survey
+        :return: CreateSurveyResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5352,7 +5353,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Survey',
+                                            response_type='CreateSurveyResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
