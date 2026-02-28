@@ -1212,4 +1212,4 @@ except ApiException as e:
 [**AgentChecklist**](AgentChecklist)
 
 
-_PureCloudPlatformClientV2 251.0.0_
+_PureCloudPlatformClientV2 252.0.0_

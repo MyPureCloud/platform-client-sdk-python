@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_knowledge_knowledgebase_sources_salesforce_source_id**](#delete_knowledge_knowledgebase_sources_salesforce_source_id) | Delete Salesforce Knowledge integration source|
 |[**delete_knowledge_knowledgebase_sources_servicenow_source_id**](#delete_knowledge_knowledgebase_sources_servicenow_source_id) | Delete ServiceNow Knowledge integration source|
 |[**delete_knowledge_knowledgebase_synchronize_job**](#delete_knowledge_knowledgebase_synchronize_job) | Delete synchronization job|
+|[**delete_knowledge_setting**](#delete_knowledge_setting) | Delete Knowledge setting.|
 |[**get_knowledge_guest_session_categories**](#get_knowledge_guest_session_categories) | Get categories|
 |[**get_knowledge_guest_session_document**](#get_knowledge_guest_session_document) | Get a knowledge document by ID.|
 |[**get_knowledge_guest_session_documents**](#get_knowledge_guest_session_documents) | Get documents.|
@@ -49,6 +50,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_unanswered_groups**](#get_knowledge_knowledgebase_unanswered_groups) | Get knowledge base unanswered groups|
 |[**get_knowledge_knowledgebase_uploads_urls_job**](#get_knowledge_knowledgebase_uploads_urls_job) | Get content upload from URL job status|
 |[**get_knowledge_knowledgebases**](#get_knowledge_knowledgebases) | Get knowledge bases|
+|[**get_knowledge_setting**](#get_knowledge_setting) | Get Knowledge setting.|
+|[**get_knowledge_settings**](#get_knowledge_settings) | Get Knowledge settings.|
 |[**patch_knowledge_guest_session_documents_search_search_id**](#patch_knowledge_guest_session_documents_search_search_id) | Update search result.|
 |[**patch_knowledge_knowledgebase**](#patch_knowledge_knowledgebase) | Update knowledge base|
 |[**patch_knowledge_knowledgebase_category**](#patch_knowledge_knowledgebase_category) | Update category|
@@ -62,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_knowledgebase_parse_job**](#patch_knowledge_knowledgebase_parse_job) | Send update to the parse operation|
 |[**patch_knowledge_knowledgebase_synchronize_job**](#patch_knowledge_knowledgebase_synchronize_job) | Update synchronization job|
 |[**patch_knowledge_knowledgebase_unanswered_group_phrasegroup**](#patch_knowledge_knowledgebase_unanswered_group_phrasegroup) | Update a Knowledge base unanswered phrase group|
+|[**patch_knowledge_setting**](#patch_knowledge_setting) | Update Knowledge setting.|
 |[**post_knowledge_documentuploads**](#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
 |[**post_knowledge_guest_session_document_copies**](#post_knowledge_guest_session_document_copies) | Indicate that the document was copied by the user.|
 |[**post_knowledge_guest_session_document_feedback**](#post_knowledge_guest_session_document_feedback) | Give feedback on a document|
@@ -99,6 +103,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_knowledgebase_synchronize_jobs**](#post_knowledge_knowledgebase_synchronize_jobs) | Create synchronization job|
 |[**post_knowledge_knowledgebase_uploads_urls_jobs**](#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
 |[**post_knowledge_knowledgebases**](#post_knowledge_knowledgebases) | Create new knowledge base|
+|[**post_knowledge_search_preview**](#post_knowledge_search_preview) | Get Knowledge Search Preview|
+|[**post_knowledge_settings**](#post_knowledge_settings) | Create Knowledge setting.|
 |[**put_knowledge_knowledgebase_sources_salesforce_source_id**](#put_knowledge_knowledgebase_sources_salesforce_source_id) | Update Salesforce Knowledge integration source|
 |[**put_knowledge_knowledgebase_sources_servicenow_source_id**](#put_knowledge_knowledgebase_sources_servicenow_source_id) | Update ServiceNow Knowledge integration source|
 
@@ -592,6 +598,53 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **sync_job_id** | **str**| Synchronization job ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_knowledge_setting
+
+>  delete_knowledge_setting(knowledge_setting_id)
+
+
+Delete Knowledge setting.
+
+Wraps DELETE /api/v2/knowledge/settings/{knowledgeSettingId} 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_setting_id = 'knowledge_setting_id_example' # str | Knowledge Setting ID.
+
+try:
+    # Delete Knowledge setting.
+    api_instance.delete_knowledge_setting(knowledge_setting_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_setting_id** | **str**| Knowledge Setting ID. |  |
 
 ### Return type
 
@@ -2420,6 +2473,114 @@ except ApiException as e:
 [**KnowledgeBaseListing**](KnowledgeBaseListing)
 
 
+## get_knowledge_setting
+
+> [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse) get_knowledge_setting(knowledge_setting_id)
+
+
+Get Knowledge setting.
+
+Wraps GET /api/v2/knowledge/settings/{knowledgeSettingId} 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_setting_id = 'knowledge_setting_id_example' # str | Knowledge Setting ID.
+
+try:
+    # Get Knowledge setting.
+    api_response = api_instance.get_knowledge_setting(knowledge_setting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_setting_id** | **str**| Knowledge Setting ID. |  |
+
+### Return type
+
+[**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
+
+
+## get_knowledge_settings
+
+> [**KnowledgeSettingListing**](KnowledgeSettingListing) get_knowledge_settings(before=before, after=after, page_size=page_size, name=name, source_id=source_id, sort_by=sort_by, sort_order=sort_order)
+
+
+Get Knowledge settings.
+
+Wraps GET /api/v2/knowledge/settings 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+name = 'name_example' # str | Knowledge setting name to search upon. (optional)
+source_id = 'source_id_example' # str | Source ID to filter knowledge settings by. (optional)
+sort_by = 'sort_by_example' # str | Field to sort the knowledge settings on. (optional)
+sort_order = 'sort_order_example' # str | Sorting order for knowledge settings. (optional)
+
+try:
+    # Get Knowledge settings.
+    api_response = api_instance.get_knowledge_settings(before=before, after=after, page_size=page_size, name=name, source_id=source_id, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **name** | **str**| Knowledge setting name to search upon. | [optional]  |
+| **source_id** | **str**| Source ID to filter knowledge settings by. | [optional]  |
+| **sort_by** | **str**| Field to sort the knowledge settings on. | [optional] <br />**Values**: dateModified, name |
+| **sort_order** | **str**| Sorting order for knowledge settings. | [optional] <br />**Values**: Asc, Desc |
+
+### Return type
+
+[**KnowledgeSettingListing**](KnowledgeSettingListing)
+
+
 ## patch_knowledge_guest_session_documents_search_search_id
 
 >  patch_knowledge_guest_session_documents_search_search_id(session_id, search_id, body)
@@ -3091,6 +3252,56 @@ except ApiException as e:
 ### Return type
 
 [**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse)
+
+
+## patch_knowledge_setting
+
+> [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse) patch_knowledge_setting(knowledge_setting_id, body)
+
+
+Update Knowledge setting.
+
+Wraps PATCH /api/v2/knowledge/settings/{knowledgeSettingId} 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_setting_id = 'knowledge_setting_id_example' # str | Knowledge Setting ID.
+body = PureCloudPlatformClientV2.KnowledgeSettingsRequest() # KnowledgeSettingsRequest | 
+
+try:
+    # Update Knowledge setting.
+    api_response = api_instance.patch_knowledge_setting(knowledge_setting_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_setting_id** | **str**| Knowledge Setting ID. |  |
+| **body** | [**KnowledgeSettingsRequest**](KnowledgeSettingsRequest)|  |  |
+
+### Return type
+
+[**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
 
 
 ## post_knowledge_documentuploads
@@ -4928,6 +5139,102 @@ except ApiException as e:
 [**KnowledgeBase**](KnowledgeBase)
 
 
+## post_knowledge_search_preview
+
+> [**KnowledgeSearchPreviewResponse**](KnowledgeSearchPreviewResponse) post_knowledge_search_preview(body=body)
+
+
+Get Knowledge Search Preview
+
+Wraps POST /api/v2/knowledge/search/preview 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:searchPreview
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+body = PureCloudPlatformClientV2.KnowledgeSearchPreviewRequest() # KnowledgeSearchPreviewRequest |  (optional)
+
+try:
+    # Get Knowledge Search Preview
+    api_response = api_instance.post_knowledge_search_preview(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_search_preview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**KnowledgeSearchPreviewRequest**](KnowledgeSearchPreviewRequest)|  | [optional]  |
+
+### Return type
+
+[**KnowledgeSearchPreviewResponse**](KnowledgeSearchPreviewResponse)
+
+
+## post_knowledge_settings
+
+> [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse) post_knowledge_settings(body=body)
+
+
+Create Knowledge setting.
+
+Wraps POST /api/v2/knowledge/settings 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+body = PureCloudPlatformClientV2.KnowledgeSettingsRequest() # KnowledgeSettingsRequest |  (optional)
+
+try:
+    # Create Knowledge setting.
+    api_response = api_instance.post_knowledge_settings(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**KnowledgeSettingsRequest**](KnowledgeSettingsRequest)|  | [optional]  |
+
+### Return type
+
+[**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
+
+
 ## put_knowledge_knowledgebase_sources_salesforce_source_id
 
 > [**SalesforceSourceResponse**](SalesforceSourceResponse) put_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id, body)
@@ -5032,4 +5339,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 251.0.0_
+_PureCloudPlatformClientV2 252.0.0_
