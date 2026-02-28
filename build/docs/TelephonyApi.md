@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_telephony_agent_greetings**](#get_telephony_agent_greetings) | Get an agent&#39;s greetings.|
 |[**get_telephony_agents_greetings_me**](#get_telephony_agents_greetings_me) | Get the agent&#39;s own greetings.|
+|[**get_telephony_calls_metrics**](#get_telephony_calls_metrics) | Get the concurrent call metrics for a given organization.|
 |[**get_telephony_mediaregions**](#get_telephony_mediaregions) | Retrieve the list of AWS regions media can stream through.|
 |[**get_telephony_sipmessages_conversation**](#get_telephony_sipmessages_conversation) | Get a SIP message.|
 |[**get_telephony_sipmessages_conversation_headers**](#get_telephony_sipmessages_conversation_headers) | Get SIP headers.|
@@ -109,6 +110,54 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**SelfAgentGreeting**](SelfAgentGreeting)
+
+
+## get_telephony_calls_metrics
+
+> [**OrganizationCallMetrics**](OrganizationCallMetrics) get_telephony_calls_metrics(metric_type=metric_type)
+
+
+Get the concurrent call metrics for a given organization.
+
+Wraps GET /api/v2/telephony/calls/metrics 
+
+Requires ANY permissions: 
+
+* telephony:callMetrics:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+metric_type = ''cloud'' # str | Flag to indicate metric type to fetch. (optional) (default to 'cloud')
+
+try:
+    # Get the concurrent call metrics for a given organization.
+    api_response = api_instance.get_telephony_calls_metrics(metric_type=metric_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_calls_metrics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **metric_type** | **str**| Flag to indicate metric type to fetch. | [optional] [default to &#39;cloud&#39;]<br />**Values**: cloud, premises |
+
+### Return type
+
+[**OrganizationCallMetrics**](OrganizationCallMetrics)
 
 
 ## get_telephony_mediaregions
@@ -511,4 +560,4 @@ except ApiException as e:
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
-_PureCloudPlatformClientV2 251.0.0_
+_PureCloudPlatformClientV2 252.0.0_

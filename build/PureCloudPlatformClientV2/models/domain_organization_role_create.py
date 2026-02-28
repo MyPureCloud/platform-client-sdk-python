@@ -320,7 +320,7 @@ class DomainOrganizationRoleCreate(object):
     def base_license(self) -> str:
         """
         Gets the base_license of this DomainOrganizationRoleCreate.
-
+        Set baseLicense only while updating license using PUT /license endpoint
 
         :return: The base_license of this DomainOrganizationRoleCreate.
         :rtype: str
@@ -331,7 +331,7 @@ class DomainOrganizationRoleCreate(object):
     def base_license(self, base_license: str) -> None:
         """
         Sets the base_license of this DomainOrganizationRoleCreate.
-
+        Set baseLicense only while updating license using PUT /license endpoint
 
         :param base_license: The base_license of this DomainOrganizationRoleCreate.
         :type: str
@@ -344,7 +344,7 @@ class DomainOrganizationRoleCreate(object):
     def addon_licenses(self) -> List[str]:
         """
         Gets the addon_licenses of this DomainOrganizationRoleCreate.
-
+        Set addonLicenses only while updating license using PUT /license endpoint
 
         :return: The addon_licenses of this DomainOrganizationRoleCreate.
         :rtype: list[str]
@@ -355,7 +355,7 @@ class DomainOrganizationRoleCreate(object):
     def addon_licenses(self, addon_licenses: List[str]) -> None:
         """
         Sets the addon_licenses of this DomainOrganizationRoleCreate.
-
+        Set addonLicenses only while updating license using PUT /license endpoint
 
         :param addon_licenses: The addon_licenses of this DomainOrganizationRoleCreate.
         :type: list[str]
@@ -368,7 +368,7 @@ class DomainOrganizationRoleCreate(object):
     def date_license_last_updated(self) -> datetime:
         """
         Gets the date_license_last_updated of this DomainOrganizationRoleCreate.
-        The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The time that this role licenses were most recently updated using the PUT /license endpoint. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_license_last_updated of this DomainOrganizationRoleCreate.
         :rtype: datetime
@@ -379,7 +379,7 @@ class DomainOrganizationRoleCreate(object):
     def date_license_last_updated(self, date_license_last_updated: datetime) -> None:
         """
         Sets the date_license_last_updated of this DomainOrganizationRoleCreate.
-        The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The time that this role licenses were most recently updated using the PUT /license endpoint. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_license_last_updated: The date_license_last_updated of this DomainOrganizationRoleCreate.
         :type: datetime

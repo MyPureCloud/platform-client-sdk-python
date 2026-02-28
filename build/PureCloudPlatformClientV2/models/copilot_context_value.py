@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationAttributeProperties
     from . import ParticipantDataProperties
 
 class CopilotContextValue(object):
@@ -51,18 +52,21 @@ class CopilotContextValue(object):
         self.swagger_types = {
             'name': 'str',
             'type': 'str',
-            'participant_data_properties': 'ParticipantDataProperties'
+            'participant_data_properties': 'ParticipantDataProperties',
+            'conversation_attribute_properties': 'ConversationAttributeProperties'
         }
 
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
-            'participant_data_properties': 'participantDataProperties'
+            'participant_data_properties': 'participantDataProperties',
+            'conversation_attribute_properties': 'conversationAttributeProperties'
         }
 
         self._name = None
         self._type = None
         self._participant_data_properties = None
+        self._conversation_attribute_properties = None
 
     @property
     def name(self) -> str:
@@ -110,7 +114,7 @@ class CopilotContextValue(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["ParticipantData"]
+        allowed_values = ["ActiveIntent", "ConversationAttribute", "ParticipantData"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -140,6 +144,30 @@ class CopilotContextValue(object):
         
 
         self._participant_data_properties = participant_data_properties
+
+    @property
+    def conversation_attribute_properties(self) -> 'ConversationAttributeProperties':
+        """
+        Gets the conversation_attribute_properties of this CopilotContextValue.
+        Conversation attribute properties.
+
+        :return: The conversation_attribute_properties of this CopilotContextValue.
+        :rtype: ConversationAttributeProperties
+        """
+        return self._conversation_attribute_properties
+
+    @conversation_attribute_properties.setter
+    def conversation_attribute_properties(self, conversation_attribute_properties: 'ConversationAttributeProperties') -> None:
+        """
+        Sets the conversation_attribute_properties of this CopilotContextValue.
+        Conversation attribute properties.
+
+        :param conversation_attribute_properties: The conversation_attribute_properties of this CopilotContextValue.
+        :type: ConversationAttributeProperties
+        """
+        
+
+        self._conversation_attribute_properties = conversation_attribute_properties
 
     def to_dict(self):
         """

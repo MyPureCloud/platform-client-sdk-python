@@ -40,6 +40,7 @@ from ..models import Callheader
 from ..models import Callmessage
 from ..models import ErrorBody
 from ..models import MediaRegions
+from ..models import OrganizationCallMetrics
 from ..models import SIPSearchPublicRequest
 from ..models import SelfAgentGreeting
 from ..models import SignedUrlResponse
@@ -208,6 +209,81 @@ class TelephonyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='SelfAgentGreeting',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_telephony_calls_metrics(self, **kwargs) -> 'OrganizationCallMetrics':
+        """
+        Get the concurrent call metrics for a given organization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_calls_metrics(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str metric_type: Flag to indicate metric type to fetch.
+        :return: OrganizationCallMetrics
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['metric_type']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_calls_metrics" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/telephony/calls/metrics'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'metric_type' in params:
+            query_params['metricType'] = params['metric_type']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrganizationCallMetrics',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

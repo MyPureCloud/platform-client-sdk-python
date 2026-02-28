@@ -50,6 +50,7 @@ if TYPE_CHECKING:
     from . import RecordingMessageReceipt
     from . import RecordingNotificationTemplate
     from . import RecordingRoadsideAssistance
+    from . import RichLink
     from . import User
 
 class RecordingMessagingMessage(object):
@@ -97,6 +98,7 @@ class RecordingMessagingMessage(object):
             'payment_response': 'PaymentResponse',
             'form': 'RecordingForm',
             'roadside_assistance': 'RecordingRoadsideAssistance',
+            'rich_link': 'RichLink',
             'message_receipts': 'list[RecordingMessageReceipt]'
         }
 
@@ -131,6 +133,7 @@ class RecordingMessagingMessage(object):
             'payment_response': 'paymentResponse',
             'form': 'form',
             'roadside_assistance': 'roadsideAssistance',
+            'rich_link': 'richLink',
             'message_receipts': 'messageReceipts'
         }
 
@@ -164,6 +167,7 @@ class RecordingMessagingMessage(object):
         self._payment_response = None
         self._form = None
         self._roadside_assistance = None
+        self._rich_link = None
         self._message_receipts = None
 
     @property
@@ -895,6 +899,30 @@ class RecordingMessagingMessage(object):
         
 
         self._roadside_assistance = roadside_assistance
+
+    @property
+    def rich_link(self) -> 'RichLink':
+        """
+        Gets the rich_link of this RecordingMessagingMessage.
+        Rich Link content.
+
+        :return: The rich_link of this RecordingMessagingMessage.
+        :rtype: RichLink
+        """
+        return self._rich_link
+
+    @rich_link.setter
+    def rich_link(self, rich_link: 'RichLink') -> None:
+        """
+        Sets the rich_link of this RecordingMessagingMessage.
+        Rich Link content.
+
+        :param rich_link: The rich_link of this RecordingMessagingMessage.
+        :type: RichLink
+        """
+        
+
+        self._rich_link = rich_link
 
     @property
     def message_receipts(self) -> List['RecordingMessageReceipt']:

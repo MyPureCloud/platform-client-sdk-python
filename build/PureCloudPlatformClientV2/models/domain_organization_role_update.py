@@ -52,17 +52,8 @@ class DomainOrganizationRoleUpdate(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
-            'default_role_id': 'str',
             'permissions': 'list[str]',
-            'unused_permissions': 'list[str]',
             'permission_policies': 'list[DomainPermissionPolicy]',
-            'user_count': 'int',
-            'role_needs_update': 'bool',
-            'base_license': 'str',
-            'addon_licenses': 'list[str]',
-            'date_license_last_updated': 'datetime',
-            'base': 'bool',
-            'default': 'bool',
             'self_uri': 'str'
         }
 
@@ -70,34 +61,16 @@ class DomainOrganizationRoleUpdate(object):
             'id': 'id',
             'name': 'name',
             'description': 'description',
-            'default_role_id': 'defaultRoleId',
             'permissions': 'permissions',
-            'unused_permissions': 'unusedPermissions',
             'permission_policies': 'permissionPolicies',
-            'user_count': 'userCount',
-            'role_needs_update': 'roleNeedsUpdate',
-            'base_license': 'baseLicense',
-            'addon_licenses': 'addonLicenses',
-            'date_license_last_updated': 'dateLicenseLastUpdated',
-            'base': 'base',
-            'default': 'default',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._description = None
-        self._default_role_id = None
         self._permissions = None
-        self._unused_permissions = None
         self._permission_policies = None
-        self._user_count = None
-        self._role_needs_update = None
-        self._base_license = None
-        self._addon_licenses = None
-        self._date_license_last_updated = None
-        self._base = None
-        self._default = None
         self._self_uri = None
 
     @property
@@ -173,30 +146,6 @@ class DomainOrganizationRoleUpdate(object):
         self._description = description
 
     @property
-    def default_role_id(self) -> str:
-        """
-        Gets the default_role_id of this DomainOrganizationRoleUpdate.
-
-
-        :return: The default_role_id of this DomainOrganizationRoleUpdate.
-        :rtype: str
-        """
-        return self._default_role_id
-
-    @default_role_id.setter
-    def default_role_id(self, default_role_id: str) -> None:
-        """
-        Sets the default_role_id of this DomainOrganizationRoleUpdate.
-
-
-        :param default_role_id: The default_role_id of this DomainOrganizationRoleUpdate.
-        :type: str
-        """
-        
-
-        self._default_role_id = default_role_id
-
-    @property
     def permissions(self) -> List[str]:
         """
         Gets the permissions of this DomainOrganizationRoleUpdate.
@@ -221,30 +170,6 @@ class DomainOrganizationRoleUpdate(object):
         self._permissions = permissions
 
     @property
-    def unused_permissions(self) -> List[str]:
-        """
-        Gets the unused_permissions of this DomainOrganizationRoleUpdate.
-        A collection of the permissions the role is not using
-
-        :return: The unused_permissions of this DomainOrganizationRoleUpdate.
-        :rtype: list[str]
-        """
-        return self._unused_permissions
-
-    @unused_permissions.setter
-    def unused_permissions(self, unused_permissions: List[str]) -> None:
-        """
-        Sets the unused_permissions of this DomainOrganizationRoleUpdate.
-        A collection of the permissions the role is not using
-
-        :param unused_permissions: The unused_permissions of this DomainOrganizationRoleUpdate.
-        :type: list[str]
-        """
-        
-
-        self._unused_permissions = unused_permissions
-
-    @property
     def permission_policies(self) -> List['DomainPermissionPolicy']:
         """
         Gets the permission_policies of this DomainOrganizationRoleUpdate.
@@ -267,174 +192,6 @@ class DomainOrganizationRoleUpdate(object):
         
 
         self._permission_policies = permission_policies
-
-    @property
-    def user_count(self) -> int:
-        """
-        Gets the user_count of this DomainOrganizationRoleUpdate.
-
-
-        :return: The user_count of this DomainOrganizationRoleUpdate.
-        :rtype: int
-        """
-        return self._user_count
-
-    @user_count.setter
-    def user_count(self, user_count: int) -> None:
-        """
-        Sets the user_count of this DomainOrganizationRoleUpdate.
-
-
-        :param user_count: The user_count of this DomainOrganizationRoleUpdate.
-        :type: int
-        """
-        
-
-        self._user_count = user_count
-
-    @property
-    def role_needs_update(self) -> bool:
-        """
-        Gets the role_needs_update of this DomainOrganizationRoleUpdate.
-        Optional unless patch operation.
-
-        :return: The role_needs_update of this DomainOrganizationRoleUpdate.
-        :rtype: bool
-        """
-        return self._role_needs_update
-
-    @role_needs_update.setter
-    def role_needs_update(self, role_needs_update: bool) -> None:
-        """
-        Sets the role_needs_update of this DomainOrganizationRoleUpdate.
-        Optional unless patch operation.
-
-        :param role_needs_update: The role_needs_update of this DomainOrganizationRoleUpdate.
-        :type: bool
-        """
-        
-
-        self._role_needs_update = role_needs_update
-
-    @property
-    def base_license(self) -> str:
-        """
-        Gets the base_license of this DomainOrganizationRoleUpdate.
-
-
-        :return: The base_license of this DomainOrganizationRoleUpdate.
-        :rtype: str
-        """
-        return self._base_license
-
-    @base_license.setter
-    def base_license(self, base_license: str) -> None:
-        """
-        Sets the base_license of this DomainOrganizationRoleUpdate.
-
-
-        :param base_license: The base_license of this DomainOrganizationRoleUpdate.
-        :type: str
-        """
-        
-
-        self._base_license = base_license
-
-    @property
-    def addon_licenses(self) -> List[str]:
-        """
-        Gets the addon_licenses of this DomainOrganizationRoleUpdate.
-
-
-        :return: The addon_licenses of this DomainOrganizationRoleUpdate.
-        :rtype: list[str]
-        """
-        return self._addon_licenses
-
-    @addon_licenses.setter
-    def addon_licenses(self, addon_licenses: List[str]) -> None:
-        """
-        Sets the addon_licenses of this DomainOrganizationRoleUpdate.
-
-
-        :param addon_licenses: The addon_licenses of this DomainOrganizationRoleUpdate.
-        :type: list[str]
-        """
-        
-
-        self._addon_licenses = addon_licenses
-
-    @property
-    def date_license_last_updated(self) -> datetime:
-        """
-        Gets the date_license_last_updated of this DomainOrganizationRoleUpdate.
-        The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_license_last_updated of this DomainOrganizationRoleUpdate.
-        :rtype: datetime
-        """
-        return self._date_license_last_updated
-
-    @date_license_last_updated.setter
-    def date_license_last_updated(self, date_license_last_updated: datetime) -> None:
-        """
-        Sets the date_license_last_updated of this DomainOrganizationRoleUpdate.
-        The time that this role licenses were most recently updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_license_last_updated: The date_license_last_updated of this DomainOrganizationRoleUpdate.
-        :type: datetime
-        """
-        
-
-        self._date_license_last_updated = date_license_last_updated
-
-    @property
-    def base(self) -> bool:
-        """
-        Gets the base of this DomainOrganizationRoleUpdate.
-
-
-        :return: The base of this DomainOrganizationRoleUpdate.
-        :rtype: bool
-        """
-        return self._base
-
-    @base.setter
-    def base(self, base: bool) -> None:
-        """
-        Sets the base of this DomainOrganizationRoleUpdate.
-
-
-        :param base: The base of this DomainOrganizationRoleUpdate.
-        :type: bool
-        """
-        
-
-        self._base = base
-
-    @property
-    def default(self) -> bool:
-        """
-        Gets the default of this DomainOrganizationRoleUpdate.
-
-
-        :return: The default of this DomainOrganizationRoleUpdate.
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default: bool) -> None:
-        """
-        Sets the default of this DomainOrganizationRoleUpdate.
-
-
-        :param default: The default of this DomainOrganizationRoleUpdate.
-        :type: bool
-        """
-        
-
-        self._default = default
 
     @property
     def self_uri(self) -> str:

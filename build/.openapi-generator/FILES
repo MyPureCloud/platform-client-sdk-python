@@ -1183,7 +1183,7 @@ PureCloudPlatformClientV2/models/conversation_app_settings.py
 PureCloudPlatformClientV2/models/conversation_association.py
 PureCloudPlatformClientV2/models/conversation_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/conversation_async_aggregation_query.py
-PureCloudPlatformClientV2/models/conversation_attribute_filter.py
+PureCloudPlatformClientV2/models/conversation_attribute_properties.py
 PureCloudPlatformClientV2/models/conversation_basic.py
 PureCloudPlatformClientV2/models/conversation_call_event_topic_call_conversation.py
 PureCloudPlatformClientV2/models/conversation_call_event_topic_call_media_participant.py
@@ -1492,8 +1492,6 @@ PureCloudPlatformClientV2/models/conversation_response_suggestions_topic_suggest
 PureCloudPlatformClientV2/models/conversation_response_suggestions_topic_suggestion_context.py
 PureCloudPlatformClientV2/models/conversation_response_suggestions_topic_suggestion_feedback.py
 PureCloudPlatformClientV2/models/conversation_routing_data.py
-PureCloudPlatformClientV2/models/conversation_schema_attribute.py
-PureCloudPlatformClientV2/models/conversation_schema_data.py
 PureCloudPlatformClientV2/models/conversation_schema_reference.py
 PureCloudPlatformClientV2/models/conversation_schema_update_request.py
 PureCloudPlatformClientV2/models/conversation_screen_share_event_topic_conversation_division_membership.py
@@ -3040,6 +3038,7 @@ PureCloudPlatformClientV2/models/knowledge_context_reference.py
 PureCloudPlatformClientV2/models/knowledge_context_value_reference.py
 PureCloudPlatformClientV2/models/knowledge_conversation_context.py
 PureCloudPlatformClientV2/models/knowledge_conversation_context_response.py
+PureCloudPlatformClientV2/models/knowledge_conversation_turn.py
 PureCloudPlatformClientV2/models/knowledge_document_alternative.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_remove_request.py
 PureCloudPlatformClientV2/models/knowledge_document_bulk_update_entity.py
@@ -3086,6 +3085,7 @@ PureCloudPlatformClientV2/models/knowledge_export_job_documents_filter.py
 PureCloudPlatformClientV2/models/knowledge_export_job_filter.py
 PureCloudPlatformClientV2/models/knowledge_export_job_request.py
 PureCloudPlatformClientV2/models/knowledge_export_job_response.py
+PureCloudPlatformClientV2/models/knowledge_generation_setting.py
 PureCloudPlatformClientV2/models/knowledge_group_statistics.py
 PureCloudPlatformClientV2/models/knowledge_guest_answer_document_response.py
 PureCloudPlatformClientV2/models/knowledge_guest_answer_documents_response.py
@@ -3125,10 +3125,17 @@ PureCloudPlatformClientV2/models/knowledge_parse_job_request_import.py
 PureCloudPlatformClientV2/models/knowledge_parse_job_request_patch.py
 PureCloudPlatformClientV2/models/knowledge_parse_job_response.py
 PureCloudPlatformClientV2/models/knowledge_parse_record.py
+PureCloudPlatformClientV2/models/knowledge_retrieved_reference.py
 PureCloudPlatformClientV2/models/knowledge_search_client_application.py
 PureCloudPlatformClientV2/models/knowledge_search_document_response.py
+PureCloudPlatformClientV2/models/knowledge_search_preview_request.py
+PureCloudPlatformClientV2/models/knowledge_search_preview_response.py
+PureCloudPlatformClientV2/models/knowledge_search_result.py
 PureCloudPlatformClientV2/models/knowledge_setting.py
+PureCloudPlatformClientV2/models/knowledge_setting_listing.py
 PureCloudPlatformClientV2/models/knowledge_settings.py
+PureCloudPlatformClientV2/models/knowledge_settings_request.py
+PureCloudPlatformClientV2/models/knowledge_settings_response.py
 PureCloudPlatformClientV2/models/knowledge_suggestion_config.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_report.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_request.py
@@ -3625,6 +3632,7 @@ PureCloudPlatformClientV2/models/org_o_auth_client.py
 PureCloudPlatformClientV2/models/org_user.py
 PureCloudPlatformClientV2/models/org_whitelist_settings.py
 PureCloudPlatformClientV2/models/organization.py
+PureCloudPlatformClientV2/models/organization_call_metrics.py
 PureCloudPlatformClientV2/models/organization_features.py
 PureCloudPlatformClientV2/models/organization_presence.py
 PureCloudPlatformClientV2/models/organization_presence_definition.py
@@ -5501,6 +5509,7 @@ PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_historical_event_ma
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_historical_event_main_forecast_export_notification.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification.py
+PureCloudPlatformClientV2/models/v3_source_ref.py
 PureCloudPlatformClientV2/models/validate_address_request.py
 PureCloudPlatformClientV2/models/validate_address_response.py
 PureCloudPlatformClientV2/models/validate_agent_unavailable_times_request.py
@@ -7158,7 +7167,7 @@ docs/ConversationAppSettings.md
 docs/ConversationAssociation.md
 docs/ConversationAsyncAggregateQueryResponse.md
 docs/ConversationAsyncAggregationQuery.md
-docs/ConversationAttributeFilter.md
+docs/ConversationAttributeProperties.md
 docs/ConversationBasic.md
 docs/ConversationCallEventTopicCallConversation.md
 docs/ConversationCallEventTopicCallMediaParticipant.md
@@ -7467,8 +7476,6 @@ docs/ConversationResponseSuggestionsTopicSuggestedIntentSlot.md
 docs/ConversationResponseSuggestionsTopicSuggestionContext.md
 docs/ConversationResponseSuggestionsTopicSuggestionFeedback.md
 docs/ConversationRoutingData.md
-docs/ConversationSchemaAttribute.md
-docs/ConversationSchemaData.md
 docs/ConversationSchemaReference.md
 docs/ConversationSchemaUpdateRequest.md
 docs/ConversationScreenShareEventTopicConversationDivisionMembership.md
@@ -9057,6 +9064,7 @@ docs/KnowledgeContextReference.md
 docs/KnowledgeContextValueReference.md
 docs/KnowledgeConversationContext.md
 docs/KnowledgeConversationContextResponse.md
+docs/KnowledgeConversationTurn.md
 docs/KnowledgeDocumentAlternative.md
 docs/KnowledgeDocumentBulkRemoveRequest.md
 docs/KnowledgeDocumentBulkUpdateEntity.md
@@ -9103,6 +9111,7 @@ docs/KnowledgeExportJobDocumentsFilter.md
 docs/KnowledgeExportJobFilter.md
 docs/KnowledgeExportJobRequest.md
 docs/KnowledgeExportJobResponse.md
+docs/KnowledgeGenerationSetting.md
 docs/KnowledgeGroupStatistics.md
 docs/KnowledgeGuestAnswerDocumentResponse.md
 docs/KnowledgeGuestAnswerDocumentsResponse.md
@@ -9142,10 +9151,17 @@ docs/KnowledgeParseJobRequestImport.md
 docs/KnowledgeParseJobRequestPatch.md
 docs/KnowledgeParseJobResponse.md
 docs/KnowledgeParseRecord.md
+docs/KnowledgeRetrievedReference.md
 docs/KnowledgeSearchClientApplication.md
 docs/KnowledgeSearchDocumentResponse.md
+docs/KnowledgeSearchPreviewRequest.md
+docs/KnowledgeSearchPreviewResponse.md
+docs/KnowledgeSearchResult.md
 docs/KnowledgeSetting.md
+docs/KnowledgeSettingListing.md
 docs/KnowledgeSettings.md
+docs/KnowledgeSettingsRequest.md
+docs/KnowledgeSettingsResponse.md
 docs/KnowledgeSuggestionConfig.md
 docs/KnowledgeSyncJobReport.md
 docs/KnowledgeSyncJobRequest.md
@@ -9670,6 +9686,7 @@ docs/OrganizationApi.json
 docs/OrganizationApi.md
 docs/OrganizationAuthorizationApi.json
 docs/OrganizationAuthorizationApi.md
+docs/OrganizationCallMetrics.md
 docs/OrganizationFeatures.md
 docs/OrganizationPresence.md
 docs/OrganizationPresenceDefinition.md
@@ -11600,6 +11617,7 @@ docs/V2WfmMainForecastExportHistoricalEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportHistoricalEventMainForecastExportNotification.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastExportNotification.md
+docs/V3SourceRef.md
 docs/ValidateAddressRequest.md
 docs/ValidateAddressResponse.md
 docs/ValidateAgentUnavailableTimesRequest.md
@@ -12298,6 +12316,7 @@ docs/delete_knowledge_knowledgebase_label-example.txt
 docs/delete_knowledge_knowledgebase_sources_salesforce_source_id-example.txt
 docs/delete_knowledge_knowledgebase_sources_servicenow_source_id-example.txt
 docs/delete_knowledge_knowledgebase_synchronize_job-example.txt
+docs/delete_knowledge_setting-example.txt
 docs/delete_language-example.txt
 docs/delete_languageunderstanding_domain-example.txt
 docs/delete_languageunderstanding_domain_feedback_feedback_id-example.txt
@@ -13201,6 +13220,8 @@ docs/get_knowledge_knowledgebase_unanswered_groups-example.txt
 docs/get_knowledge_knowledgebase_uploads_urls_job-example.txt
 docs/get_knowledge_knowledgebase_uploads_urls_job-example.txt
 docs/get_knowledge_knowledgebases-example.txt
+docs/get_knowledge_setting-example.txt
+docs/get_knowledge_settings-example.txt
 docs/get_language-example.txt
 docs/get_languages-example.txt
 docs/get_languages_translations-example.txt
@@ -13659,6 +13680,7 @@ docs/get_team_members-example.txt
 docs/get_teams-example.txt
 docs/get_telephony_agent_greetings-example.txt
 docs/get_telephony_agents_greetings_me-example.txt
+docs/get_telephony_calls_metrics-example.txt
 docs/get_telephony_mediaregions-example.txt
 docs/get_telephony_providers_edge-example.txt
 docs/get_telephony_providers_edge_diagnostic_nslookup-example.txt
@@ -14080,6 +14102,7 @@ docs/patch_knowledge_knowledgebase_label-example.txt
 docs/patch_knowledge_knowledgebase_parse_job-example.txt
 docs/patch_knowledge_knowledgebase_synchronize_job-example.txt
 docs/patch_knowledge_knowledgebase_unanswered_group_phrasegroup-example.txt
+docs/patch_knowledge_setting-example.txt
 docs/patch_languageunderstanding_domain-example.txt
 docs/patch_languageunderstanding_miner_draft-example.txt
 docs/patch_learning_assignment-example.txt
@@ -14651,6 +14674,8 @@ docs/post_knowledge_knowledgebase_synchronize_jobs-example.txt
 docs/post_knowledge_knowledgebase_uploads_urls_jobs-example.txt
 docs/post_knowledge_knowledgebase_uploads_urls_jobs-example.txt
 docs/post_knowledge_knowledgebases-example.txt
+docs/post_knowledge_search_preview-example.txt
+docs/post_knowledge_settings-example.txt
 docs/post_languages-example.txt
 docs/post_languageunderstanding_domain_feedback-example.txt
 docs/post_languageunderstanding_domain_version_detect-example.txt

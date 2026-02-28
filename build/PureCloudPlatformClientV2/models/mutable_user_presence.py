@@ -55,6 +55,7 @@ class MutableUserPresence(object):
             'source_id': 'str',
             'primary': 'bool',
             'presence_definition': 'PresenceDefinition',
+            'future_presence_definition': 'PresenceDefinition',
             'message': 'str',
             'modified_date': 'datetime',
             'self_uri': 'str'
@@ -67,6 +68,7 @@ class MutableUserPresence(object):
             'source_id': 'sourceId',
             'primary': 'primary',
             'presence_definition': 'presenceDefinition',
+            'future_presence_definition': 'futurePresenceDefinition',
             'message': 'message',
             'modified_date': 'modifiedDate',
             'self_uri': 'selfUri'
@@ -78,6 +80,7 @@ class MutableUserPresence(object):
         self._source_id = None
         self._primary = None
         self._presence_definition = None
+        self._future_presence_definition = None
         self._message = None
         self._modified_date = None
         self._self_uri = None
@@ -225,6 +228,30 @@ class MutableUserPresence(object):
         
 
         self._presence_definition = presence_definition
+
+    @property
+    def future_presence_definition(self) -> 'PresenceDefinition':
+        """
+        Gets the future_presence_definition of this MutableUserPresence.
+        The definition of the user's desired future presence
+
+        :return: The future_presence_definition of this MutableUserPresence.
+        :rtype: PresenceDefinition
+        """
+        return self._future_presence_definition
+
+    @future_presence_definition.setter
+    def future_presence_definition(self, future_presence_definition: 'PresenceDefinition') -> None:
+        """
+        Sets the future_presence_definition of this MutableUserPresence.
+        The definition of the user's desired future presence
+
+        :param future_presence_definition: The future_presence_definition of this MutableUserPresence.
+        :type: PresenceDefinition
+        """
+        
+
+        self._future_presence_definition = future_presence_definition
 
     @property
     def message(self) -> str:

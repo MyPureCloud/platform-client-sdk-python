@@ -531,7 +531,7 @@ Get response libraries.
 
 Wraps POST /api/v2/responsemanagement/libraries/bulk 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * responses:library:view
 
@@ -922,4 +922,4 @@ except ApiException as e:
 [**ResponseAsset**](ResponseAsset)
 
 
-_PureCloudPlatformClientV2 251.0.0_
+_PureCloudPlatformClientV2 252.0.0_

@@ -105,7 +105,7 @@ class CreateGuide(object):
         """
         if isinstance(source, int):
             source = str(source)
-        allowed_values = ["Manual", "Prompt", "Document"]
+        allowed_values = ["Manual", "Prompt", "Document", "Transcripts"]
         if source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for source -> " + source)
             self._source = "outdated_sdk_version"

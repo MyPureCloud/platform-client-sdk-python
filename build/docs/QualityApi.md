@@ -2735,7 +2735,7 @@ except ApiException as e:
 
 ## post_quality_conversation_evaluations
 
-> [**Evaluation**](Evaluation) post_quality_conversation_evaluations(conversation_id, body, expand=expand)
+> [**Evaluation**](Evaluation) post_quality_conversation_evaluations(conversation_id, body, idempotency_key=idempotency_key, expand=expand)
 
 
 Create an evaluation
@@ -2761,11 +2761,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.QualityApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 body = PureCloudPlatformClientV2.EvaluationCreateBody() # EvaluationCreateBody | evaluation
+idempotency_key = 'idempotency_key_example' # str | Idempotency key for request deduplication (optional)
 expand = 'expand_example' # str | evaluatorId (optional)
 
 try:
     # Create an evaluation
-    api_response = api_instance.post_quality_conversation_evaluations(conversation_id, body, expand=expand)
+    api_response = api_instance.post_quality_conversation_evaluations(conversation_id, body, idempotency_key=idempotency_key, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->post_quality_conversation_evaluations: %s\n" % e)
@@ -2778,6 +2779,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **body** | [**EvaluationCreateBody**](EvaluationCreateBody)| evaluation |  |
+| **idempotency_key** | **str**| Idempotency key for request deduplication | [optional]  |
 | **expand** | **str**| evaluatorId | [optional]  |
 
 ### Return type
@@ -3827,4 +3829,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 251.0.0_
+_PureCloudPlatformClientV2 252.0.0_

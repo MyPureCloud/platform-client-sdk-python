@@ -4344,13 +4344,14 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param EvaluationCreateBody body: evaluation (required)
+        :param str idempotency_key: Idempotency key for request deduplication
         :param str expand: evaluatorId
         :return: Evaluation
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'body', 'expand']
+        all_params = ['conversation_id', 'body', 'idempotency_key', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -4370,6 +4371,8 @@ class QualityApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `post_quality_conversation_evaluations`")
 
+        if 'idempotency_key' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['idempotency_key']): 
+            raise ValueError("Invalid value for parameter `idempotency_key` when calling `post_quality_conversation_evaluations`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/quality/conversations/{conversationId}/evaluations'.replace('{format}', 'json')
         path_params = {}
@@ -4381,6 +4384,8 @@ class QualityApi(object):
             query_params['expand'] = params['expand']
 
         header_params = {}
+        if 'idempotency_key' in params:
+            header_params['Idempotency-Key'] = params['idempotency_key']
 
         form_params = []
         local_var_files = {}
