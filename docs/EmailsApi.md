@@ -241,4 +241,4 @@ except ApiException as e:
 [**EmailThreadingSettings**](EmailThreadingSettings)
 
 
-_PureCloudPlatformClientV2 252.0.0_
+_PureCloudPlatformClientV2 252.1.0_

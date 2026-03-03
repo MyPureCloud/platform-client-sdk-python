@@ -254,4 +254,4 @@ except ApiException as e:
 [**UserDevice**](UserDevice)
 
 
-_PureCloudPlatformClientV2 252.0.0_
+_PureCloudPlatformClientV2 252.1.0_
