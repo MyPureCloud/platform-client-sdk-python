@@ -419,12 +419,12 @@ class ApiClient(object):
         if self.cookie:
             header_params['Cookie'] = self.cookie
         if header_params:
-            header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '252.0.0'
+            header_params = self.sanitize_params_for_serialization(header_params)
+        header_params['purecloud-sdk'] = '252.1.0'
 
         # path parameters
         if path_params:
-            path_params = self.sanitize_for_serialization(path_params)
+            path_params = self.sanitize_params_for_serialization(path_params)
             for k, v in path_params.items():
                 replacement = quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
@@ -432,7 +432,7 @@ class ApiClient(object):
 
         # query parameters
         if query_params:
-            query_params = self.sanitize_for_serialization(query_params)
+            query_params = self.sanitize_params_for_serialization(query_params)
             query_params = {k: self.to_path_value(v)
                             for k, v in query_params.items()}
 
@@ -512,6 +512,57 @@ class ApiClient(object):
             return str(obj).lower()
         else:
             return str(obj)
+
+    def sanitize_params_for_serialization(self, obj):
+        """
+        Sanitizes request parameters - path, query, header.
+        Ignores parameters with a value equal to None.
+
+        If obj is None, return None.
+        If obj is str, int, float, bool, return directly.
+        If obj is datetime.datetime, datetime.date
+            convert to string in iso8601 format.
+        If obj is list, sanitize each element in the list.
+        If obj is dict, return the dict, ignoring entries with a value equal to None.
+        If obj is swagger model, return the properties dict.
+
+        :param obj: The data to serialize.
+        :return: The serialized form of data.
+        """
+        types = (str, int, float, bool, tuple)
+        if sys.version_info < (3,0):
+            types = types + (unicode,)
+        if isinstance(obj, type(None)):
+            return None
+        elif isinstance(obj, type(ApiNullValue())):
+            return None
+        elif isinstance(obj, types):
+            return obj
+        elif isinstance(obj, list):
+            return [self.sanitize_params_for_serialization(sub_obj)
+                    for sub_obj in obj]
+        elif isinstance(obj, (YearMonth)):
+            return "%04d" % (obj.year,) + "-" + "%02d" % (obj.month,)
+        elif isinstance(obj, (datetime, date)):
+            return obj.isoformat()
+        else:
+            if isinstance(obj, dict):
+                obj_dict = {}
+                for key, value in obj.items():
+                    if obj.get(key, None) is not None:
+                        obj_dict[key] = value
+            else:
+                # Convert model obj to dict except
+                # attributes `swagger_types`, `attribute_map`
+                # and attributes which value is not None.
+                # Convert attribute name to json key in
+                # model definition for request.
+                obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
+                            for attr, _ in obj.swagger_types.items()
+                            if getattr(obj, attr) is not None or isinstance(getattr(obj, attr), type(ApiNullValue()))}
+
+            return {key: self.sanitize_params_for_serialization(val)
+                    for key, val in obj_dict.items()}
 
     def sanitize_for_serialization(self, obj):
         """
