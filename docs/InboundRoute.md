@@ -22,8 +22,10 @@
 | **signature** | [Signature](Signature) | The configuration for the canned response signature that will be appended to outbound emails sent via this route | [optional] |
 | **history_inclusion** | str | The configuration to indicate how the history of a conversation has to be included in a draft | [optional] |
 | **allow_multiple_actions** | bool | Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action | [optional] |
+| **mailbox_folders** | list[str] | Integration Folder routed to this route | [optional] |
+| **status** | str | The status of the route. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

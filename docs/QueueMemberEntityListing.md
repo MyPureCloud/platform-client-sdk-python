@@ -10,10 +10,10 @@
 | **page_number** | int |  | [optional] |
 | **page_size** | int |  | [optional] |
 | **first_uri** | str |  | [optional] |
-| **previous_uri** | str |  | [optional] |
 | **next_uri** | str |  | [optional] |
+| **previous_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

@@ -103,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_knowledgebase_synchronize_jobs**](#post_knowledge_knowledgebase_synchronize_jobs) | Create synchronization job|
 |[**post_knowledge_knowledgebase_uploads_urls_jobs**](#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
 |[**post_knowledge_knowledgebases**](#post_knowledge_knowledgebases) | Create new knowledge base|
+|[**post_knowledge_search**](#post_knowledge_search) | Get Knowledge Search|
 |[**post_knowledge_search_preview**](#post_knowledge_search_preview) | Get Knowledge Search Preview|
 |[**post_knowledge_settings**](#post_knowledge_settings) | Create Knowledge setting.|
 |[**put_knowledge_knowledgebase_sources_salesforce_source_id**](#put_knowledge_knowledgebase_sources_salesforce_source_id) | Update Salesforce Knowledge integration source|
@@ -5139,6 +5140,54 @@ except ApiException as e:
 [**KnowledgeBase**](KnowledgeBase)
 
 
+## post_knowledge_search
+
+> [**KnowledgeSourcesSearchResponse**](KnowledgeSourcesSearchResponse) post_knowledge_search(body=body)
+
+
+Get Knowledge Search
+
+Wraps POST /api/v2/knowledge/search 
+
+Requires ALL permissions: 
+
+* knowledge:knowledgeSetting:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+body = PureCloudPlatformClientV2.KnowledgeSourcesSearchRequest() # KnowledgeSourcesSearchRequest |  (optional)
+
+try:
+    # Get Knowledge Search
+    api_response = api_instance.post_knowledge_search(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**KnowledgeSourcesSearchRequest**](KnowledgeSourcesSearchRequest)|  | [optional]  |
+
+### Return type
+
+[**KnowledgeSourcesSearchResponse**](KnowledgeSourcesSearchResponse)
+
+
 ## post_knowledge_search_preview
 
 > [**KnowledgeSearchPreviewResponse**](KnowledgeSearchPreviewResponse) post_knowledge_search_preview(body=body)
@@ -5339,4 +5388,4 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

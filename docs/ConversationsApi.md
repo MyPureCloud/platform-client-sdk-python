@@ -58,8 +58,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_callback_participant_communication_wrapup**](#get_conversations_callback_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_callback_participant_wrapup**](#get_conversations_callback_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_callback_participant_wrapupcodes**](#get_conversations_callback_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_callbacks**](#get_conversations_callbacks) | Get active callback conversations for the logged in user|
-|[**get_conversations_calls**](#get_conversations_calls) | Get active call conversations for the logged in user|
+|[**get_conversations_callbacks**](#get_conversations_callbacks) | Get the logged-in user&#39;s active conversations and their Callback participants state.|
+|[**get_conversations_calls**](#get_conversations_calls) | Get the logged-in user&#39;s active conversations and their Call participants state.|
 |[**get_conversations_calls_history**](#get_conversations_calls_history) | Get call history|
 |[**get_conversations_calls_maximumconferenceparties**](#get_conversations_calls_maximumconferenceparties) | Get the maximum number of participants that this user can have on a conference|
 |[**get_conversations_chat**](#get_conversations_chat) | Get chat conversation|
@@ -89,9 +89,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_email_participant_wrapup**](#get_conversations_email_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_email_participant_wrapupcodes**](#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_email_settings**](#get_conversations_email_settings) | Get emails settings for a given conversation|
-|[**get_conversations_emails**](#get_conversations_emails) | Get active email conversations for the logged in user|
+|[**get_conversations_emails**](#get_conversations_emails) | Get the logged-in user&#39;s active conversations and their Email participants state.|
 |[**get_conversations_internalmessage**](#get_conversations_internalmessage) | Get internal message conversation|
-|[**get_conversations_internalmessages**](#get_conversations_internalmessages) | Get active internal message conversations for the logged in user|
+|[**get_conversations_internalmessages**](#get_conversations_internalmessages) | Get the logged-in user&#39;s active conversations and their InternalMessage participants state.|
 |[**get_conversations_keyconfiguration**](#get_conversations_keyconfiguration) | Get the encryption key configurations|
 |[**get_conversations_keyconfigurations**](#get_conversations_keyconfigurations) | Get a list of key configurations data|
 |[**get_conversations_message**](#get_conversations_message) | Get message conversation|
@@ -102,7 +102,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_message_participant_communication_wrapup**](#get_conversations_message_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_message_participant_wrapup**](#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_message_participant_wrapupcodes**](#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_messages**](#get_conversations_messages) | Get active message conversations for the logged in user|
+|[**get_conversations_messages**](#get_conversations_messages) | Get the logged-in user&#39;s active conversations and their Message participants state.|
 |[**get_conversations_messages_cachedmedia**](#get_conversations_messages_cachedmedia) | Get a list of cached media items|
 |[**get_conversations_messages_cachedmedia_cached_media_item_id**](#get_conversations_messages_cachedmedia_cached_media_item_id) | Get a cached media item|
 |[**get_conversations_messaging_facebook_app**](#get_conversations_messaging_facebook_app) | Get Genesys Facebook App Id|
@@ -2900,7 +2900,9 @@ except ApiException as e:
 > [**CallbackConversationEntityListing**](CallbackConversationEntityListing) get_conversations_callbacks()
 
 
-Get active callback conversations for the logged in user
+Get the logged-in user's active conversations and their Callback participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
 
 Wraps GET /api/v2/conversations/callbacks 
 
@@ -2922,7 +2924,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get active callback conversations for the logged in user
+    # Get the logged-in user's active conversations and their Callback participants state.
     api_response = api_instance.get_conversations_callbacks()
     pprint(api_response)
 except ApiException as e:
@@ -2943,7 +2945,9 @@ This endpoint does not need any parameters.
 > [**CallConversationEntityListing**](CallConversationEntityListing) get_conversations_calls()
 
 
-Get active call conversations for the logged in user
+Get the logged-in user's active conversations and their Call participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
 
 Wraps GET /api/v2/conversations/calls 
 
@@ -2965,7 +2969,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get active call conversations for the logged in user
+    # Get the logged-in user's active conversations and their Call participants state.
     api_response = api_instance.get_conversations_calls()
     pprint(api_response)
 except ApiException as e:
@@ -4438,7 +4442,9 @@ except ApiException as e:
 > [**EmailConversationEntityListing**](EmailConversationEntityListing) get_conversations_emails()
 
 
-Get active email conversations for the logged in user
+Get the logged-in user's active conversations and their Email participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
 
 Wraps GET /api/v2/conversations/emails 
 
@@ -4460,7 +4466,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get active email conversations for the logged in user
+    # Get the logged-in user's active conversations and their Email participants state.
     api_response = api_instance.get_conversations_emails()
     pprint(api_response)
 except ApiException as e:
@@ -4529,7 +4535,9 @@ except ApiException as e:
 > [**InternalMessageConversationEntityListing**](InternalMessageConversationEntityListing) get_conversations_internalmessages()
 
 
-Get active internal message conversations for the logged in user
+Get the logged-in user's active conversations and their InternalMessage participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
 
 Wraps GET /api/v2/conversations/internalmessages 
 
@@ -4552,7 +4560,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get active internal message conversations for the logged in user
+    # Get the logged-in user's active conversations and their InternalMessage participants state.
     api_response = api_instance.get_conversations_internalmessages()
     pprint(api_response)
 except ApiException as e:
@@ -5080,7 +5088,9 @@ except ApiException as e:
 > [**MessageConversationEntityListing**](MessageConversationEntityListing) get_conversations_messages()
 
 
-Get active message conversations for the logged in user
+Get the logged-in user's active conversations and their Message participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
 
 Wraps GET /api/v2/conversations/messages 
 
@@ -5102,7 +5112,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 
 try:
-    # Get active message conversations for the logged in user
+    # Get the logged-in user's active conversations and their Message participants state.
     api_response = api_instance.get_conversations_messages()
     pprint(api_response)
 except ApiException as e:
@@ -16627,4 +16637,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

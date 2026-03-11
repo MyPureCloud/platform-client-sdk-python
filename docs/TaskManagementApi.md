@@ -3375,9 +3375,7 @@ except ApiException as e:
 
 Query for workitems
 
-This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-
-post_taskmanagement_workitems_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
 
 Wraps POST /api/v2/taskmanagement/workitems/query 
 
@@ -3862,4 +3860,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_
