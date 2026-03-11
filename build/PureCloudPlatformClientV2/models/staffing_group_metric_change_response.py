@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import StaffingGroupReference
+    from . import TransfersFullTimeEquivalent
     from . import UserReference
 
 class StaffingGroupMetricChangeResponse(object):
@@ -55,6 +56,7 @@ class StaffingGroupMetricChangeResponse(object):
             'value': 'float',
             'metric': 'str',
             'notes': 'str',
+            'transfers_full_time_equivalent': 'TransfersFullTimeEquivalent',
             'staffing_groups': 'list[StaffingGroupReference]',
             'created_by': 'UserReference',
             'created_date': 'datetime'
@@ -66,6 +68,7 @@ class StaffingGroupMetricChangeResponse(object):
             'value': 'value',
             'metric': 'metric',
             'notes': 'notes',
+            'transfers_full_time_equivalent': 'transfersFullTimeEquivalent',
             'staffing_groups': 'staffingGroups',
             'created_by': 'createdBy',
             'created_date': 'createdDate'
@@ -76,6 +79,7 @@ class StaffingGroupMetricChangeResponse(object):
         self._value = None
         self._metric = None
         self._notes = None
+        self._transfers_full_time_equivalent = None
         self._staffing_groups = None
         self._created_by = None
         self._created_date = None
@@ -204,6 +208,30 @@ class StaffingGroupMetricChangeResponse(object):
         
 
         self._notes = notes
+
+    @property
+    def transfers_full_time_equivalent(self) -> 'TransfersFullTimeEquivalent':
+        """
+        Gets the transfers_full_time_equivalent of this StaffingGroupMetricChangeResponse.
+        Full time equivalent transfer from one staffing group to another
+
+        :return: The transfers_full_time_equivalent of this StaffingGroupMetricChangeResponse.
+        :rtype: TransfersFullTimeEquivalent
+        """
+        return self._transfers_full_time_equivalent
+
+    @transfers_full_time_equivalent.setter
+    def transfers_full_time_equivalent(self, transfers_full_time_equivalent: 'TransfersFullTimeEquivalent') -> None:
+        """
+        Sets the transfers_full_time_equivalent of this StaffingGroupMetricChangeResponse.
+        Full time equivalent transfer from one staffing group to another
+
+        :param transfers_full_time_equivalent: The transfers_full_time_equivalent of this StaffingGroupMetricChangeResponse.
+        :type: TransfersFullTimeEquivalent
+        """
+        
+
+        self._transfers_full_time_equivalent = transfers_full_time_equivalent
 
     @property
     def staffing_groups(self) -> List['StaffingGroupReference']:

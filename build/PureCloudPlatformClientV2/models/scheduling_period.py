@@ -47,41 +47,17 @@ class SchedulingPeriod(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'earliest_start_date': 'date',
-            'latest_end_date': 'date'
+            'latest_end_date': 'date',
+            'earliest_start_date': 'date'
         }
 
         self.attribute_map = {
-            'earliest_start_date': 'earliestStartDate',
-            'latest_end_date': 'latestEndDate'
+            'latest_end_date': 'latestEndDate',
+            'earliest_start_date': 'earliestStartDate'
         }
 
-        self._earliest_start_date = None
         self._latest_end_date = None
-
-    @property
-    def earliest_start_date(self) -> date:
-        """
-        Gets the earliest_start_date of this SchedulingPeriod.
-        The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-
-        :return: The earliest_start_date of this SchedulingPeriod.
-        :rtype: date
-        """
-        return self._earliest_start_date
-
-    @earliest_start_date.setter
-    def earliest_start_date(self, earliest_start_date: date) -> None:
-        """
-        Sets the earliest_start_date of this SchedulingPeriod.
-        The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-
-        :param earliest_start_date: The earliest_start_date of this SchedulingPeriod.
-        :type: date
-        """
-        
-
-        self._earliest_start_date = earliest_start_date
+        self._earliest_start_date = None
 
     @property
     def latest_end_date(self) -> date:
@@ -106,6 +82,30 @@ class SchedulingPeriod(object):
         
 
         self._latest_end_date = latest_end_date
+
+    @property
+    def earliest_start_date(self) -> date:
+        """
+        Gets the earliest_start_date of this SchedulingPeriod.
+        The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The earliest_start_date of this SchedulingPeriod.
+        :rtype: date
+        """
+        return self._earliest_start_date
+
+    @earliest_start_date.setter
+    def earliest_start_date(self, earliest_start_date: date) -> None:
+        """
+        Sets the earliest_start_date of this SchedulingPeriod.
+        The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param earliest_start_date: The earliest_start_date of this SchedulingPeriod.
+        :type: date
+        """
+        
+
+        self._earliest_start_date = earliest_start_date
 
     def to_dict(self):
         """

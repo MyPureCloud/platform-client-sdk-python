@@ -151,7 +151,7 @@ class WhatsAppDefinition(object):
     def buttons(self) -> List['Button']:
         """
         Gets the buttons of this WhatsAppDefinition.
-        List of buttons to be included in the WhatsApp messages channel
+        List of buttons to be included in the standard WhatsApp messages channel
 
         :return: The buttons of this WhatsAppDefinition.
         :rtype: list[Button]
@@ -162,7 +162,7 @@ class WhatsAppDefinition(object):
     def buttons(self, buttons: List['Button']) -> None:
         """
         Sets the buttons of this WhatsAppDefinition.
-        List of buttons to be included in the WhatsApp messages channel
+        List of buttons to be included in the standard WhatsApp messages channel
 
         :param buttons: The buttons of this WhatsAppDefinition.
         :type: list[Button]
@@ -175,7 +175,7 @@ class WhatsAppDefinition(object):
     def message_footer(self) -> 'MessageFooter':
         """
         Gets the message_footer of this WhatsAppDefinition.
-        Footer for the message in the WhatsApp messages channel
+        Footer for the message in the standard WhatsApp messages channel
 
         :return: The message_footer of this WhatsAppDefinition.
         :rtype: MessageFooter
@@ -186,7 +186,7 @@ class WhatsAppDefinition(object):
     def message_footer(self, message_footer: 'MessageFooter') -> None:
         """
         Sets the message_footer of this WhatsAppDefinition.
-        Footer for the message in the WhatsApp messages channel
+        Footer for the message in the standard WhatsApp messages channel
 
         :param message_footer: The message_footer of this WhatsAppDefinition.
         :type: MessageFooter
@@ -199,7 +199,7 @@ class WhatsAppDefinition(object):
     def header(self) -> 'MessageHeader':
         """
         Gets the header of this WhatsAppDefinition.
-        Header for the message in the WhatsApp messages channel
+        Header for the message in the standard WhatsApp messages channel
 
         :return: The header of this WhatsAppDefinition.
         :rtype: MessageHeader
@@ -210,7 +210,7 @@ class WhatsAppDefinition(object):
     def header(self, header: 'MessageHeader') -> None:
         """
         Sets the header of this WhatsAppDefinition.
-        Header for the message in the WhatsApp messages channel
+        Header for the message in the standard WhatsApp messages channel
 
         :param header: The header of this WhatsAppDefinition.
         :type: MessageHeader

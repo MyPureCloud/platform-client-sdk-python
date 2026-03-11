@@ -4553,8 +4553,8 @@ class ConversationsApi(object):
 
     def get_conversations_callbacks(self, **kwargs) -> 'CallbackConversationEntityListing':
         """
-        Get active callback conversations for the logged in user
-        
+        Get the logged-in user's active conversations and their Callback participants state.
+        This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4625,8 +4625,8 @@ class ConversationsApi(object):
 
     def get_conversations_calls(self, **kwargs) -> 'CallConversationEntityListing':
         """
-        Get active call conversations for the logged in user
-        
+        Get the logged-in user's active conversations and their Call participants state.
+        This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7059,8 +7059,8 @@ class ConversationsApi(object):
 
     def get_conversations_emails(self, **kwargs) -> 'EmailConversationEntityListing':
         """
-        Get active email conversations for the logged in user
-        
+        Get the logged-in user's active conversations and their Email participants state.
+        This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7209,8 +7209,8 @@ class ConversationsApi(object):
 
     def get_conversations_internalmessages(self, **kwargs) -> 'InternalMessageConversationEntityListing':
         """
-        Get active internal message conversations for the logged in user
-        
+        Get the logged-in user's active conversations and their InternalMessage participants state.
+        This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8124,8 +8124,8 @@ class ConversationsApi(object):
 
     def get_conversations_messages(self, **kwargs) -> 'MessageConversationEntityListing':
         """
-        Get active message conversations for the logged in user
-        
+        Get the logged-in user's active conversations and their Message participants state.
+        This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -235,8 +235,7 @@ Wraps GET /api/v2/voicemail/groups/{groupId}/policy
 
 Requires ANY permissions: 
 
-* directory:group:add
-* directory:group:edit
+* voicemail:groupPolicy:view
 
 ### Example
 
@@ -905,8 +904,7 @@ Wraps PATCH /api/v2/voicemail/groups/{groupId}/policy
 
 Requires ANY permissions: 
 
-* directory:group:add
-* directory:group:edit
+* voicemail:groupPolicy:edit
 
 ### Example
 
@@ -1338,4 +1336,4 @@ except ApiException as e:
 [**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

@@ -2016,6 +2016,7 @@ from .models.dynamic_group_skill_condition import DynamicGroupSkillCondition
 from .models.dynamic_line_balancing_settings import DynamicLineBalancingSettings
 from .models.dynamic_line_balancing_settings_patch_request import DynamicLineBalancingSettingsPatchRequest
 from .models.dynamic_utilization import DynamicUtilization
+from .models.dynamic_utilization_rule import DynamicUtilizationRule
 from .models.edge import Edge
 from .models.edge_auto_update_config import EdgeAutoUpdateConfig
 from .models.edge_change_topic_edge import EdgeChangeTopicEdge
@@ -3054,12 +3055,16 @@ from .models.knowledge_setting_listing import KnowledgeSettingListing
 from .models.knowledge_settings import KnowledgeSettings
 from .models.knowledge_settings_request import KnowledgeSettingsRequest
 from .models.knowledge_settings_response import KnowledgeSettingsResponse
+from .models.knowledge_sources_search_request import KnowledgeSourcesSearchRequest
+from .models.knowledge_sources_search_response import KnowledgeSourcesSearchResponse
 from .models.knowledge_suggestion_config import KnowledgeSuggestionConfig
 from .models.knowledge_sync_job_report import KnowledgeSyncJobReport
 from .models.knowledge_sync_job_request import KnowledgeSyncJobRequest
 from .models.knowledge_sync_job_response import KnowledgeSyncJobResponse
 from .models.knowledge_sync_job_statistics import KnowledgeSyncJobStatistics
 from .models.knowledge_sync_request import KnowledgeSyncRequest
+from .models.knowledge_v3_conversation_context import KnowledgeV3ConversationContext
+from .models.knowledge_v3_conversation_context_response import KnowledgeV3ConversationContextResponse
 from .models.kpi_result import KpiResult
 from .models.label import Label
 from .models.label_create_request import LabelCreateRequest
@@ -4320,6 +4325,7 @@ from .models.recording_wheel_picker_item import RecordingWheelPickerItem
 from .models.recurrence_end_settings import RecurrenceEndSettings
 from .models.recurrence_period import RecurrencePeriod
 from .models.recurrence_settings import RecurrenceSettings
+from .models.recurrence_settings_base import RecurrenceSettingsBase
 from .models.referrer import Referrer
 from .models.region_time_zone import RegionTimeZone
 from .models.register_architect_export_job import RegisterArchitectExportJob
@@ -4483,6 +4489,7 @@ from .models.schedules_division_view import SchedulesDivisionView
 from .models.scheduling_no_forecast_options_request import SchedulingNoForecastOptionsRequest
 from .models.scheduling_options_request import SchedulingOptionsRequest
 from .models.scheduling_period import SchedulingPeriod
+from .models.scheduling_period_base import SchedulingPeriodBase
 from .models.scheduling_processing_error import SchedulingProcessingError
 from .models.scheduling_settings_request import SchedulingSettingsRequest
 from .models.scheduling_settings_response import SchedulingSettingsResponse
@@ -5435,6 +5442,7 @@ from .models.v2_wfm_main_forecast_export_historical_event_main_forecast_error_bo
 from .models.v2_wfm_main_forecast_export_historical_event_main_forecast_export_notification import V2WfmMainForecastExportHistoricalEventMainForecastExportNotification
 from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body import V2WfmMainForecastExportSnapshotEventMainForecastErrorBody
 from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification import V2WfmMainForecastExportSnapshotEventMainForecastExportNotification
+from .models.v3_knowledge_search_client_application import V3KnowledgeSearchClientApplication
 from .models.v3_source_ref import V3SourceRef
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse

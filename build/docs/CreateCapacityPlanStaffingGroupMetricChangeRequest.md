@@ -11,9 +11,10 @@
 | **value** | float | The value of the metric | |
 | **metric** | str | The metric which is going to be modified for the selected staffing groups | |
 | **notes** | str | Notes about the staffing groups metric changes | [optional] |
+| **transfers_full_time_equivalent** | [TransfersFullTimeEquivalent](TransfersFullTimeEquivalent) | Full time equivalent transfer from one staffing group to another | [optional] |
 | **staffing_group_ids** | list[str] | The IDs of the staffing groups affected by the metric change | |
 | **version** | int | The version of the capacity plan | |
 
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

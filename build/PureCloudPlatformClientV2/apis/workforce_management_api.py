@@ -4084,12 +4084,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str capacity_plan_id: The ID of the capacity plan (required)
+        :param str granularity: Granularity to access staffing group data, defaults to weekly
         :return: CapacityPlanStaffingGroupAllocationsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'capacity_plan_id']
+        all_params = ['business_unit_id', 'capacity_plan_id', 'granularity']
         all_params.append('callback')
 
         params = locals()
@@ -4118,6 +4119,8 @@ class WorkforceManagementApi(object):
             path_params['capacityPlanId'] = params['capacity_plan_id']
 
         query_params = {}
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
 
         header_params = {}
 
@@ -4253,12 +4256,13 @@ class WorkforceManagementApi(object):
         :param str business_unit_id:  (required)
         :param date week_date_id: weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str forecast_id: forecastId of forecast (required)
+        :param str granularity: Granularity to access staffing requirements data, defaults to weekly
         :return: LongTermRequirementsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'week_date_id', 'forecast_id']
+        all_params = ['business_unit_id', 'week_date_id', 'forecast_id', 'granularity']
         all_params.append('callback')
 
         params = locals()
@@ -4292,6 +4296,8 @@ class WorkforceManagementApi(object):
             path_params['forecastId'] = params['forecast_id']
 
         query_params = {}
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
 
         header_params = {}
 

@@ -2736,7 +2736,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations
 
-> [**CapacityPlanStaffingGroupAllocationsResponse**](CapacityPlanStaffingGroupAllocationsResponse) get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id)
+> [**CapacityPlanStaffingGroupAllocationsResponse**](CapacityPlanStaffingGroupAllocationsResponse) get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id, granularity=granularity)
 
 
 Get a capacity plan's staffing group allocations
@@ -2762,10 +2762,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+granularity = 'granularity_example' # str | Granularity to access staffing group data, defaults to weekly (optional)
 
 try:
     # Get a capacity plan's staffing group allocations
-    api_response = api_instance.get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations(business_unit_id, capacity_plan_id, granularity=granularity)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations: %s\n" % e)
@@ -2778,6 +2779,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+| **granularity** | **str**| Granularity to access staffing group data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
 
 ### Return type
 
@@ -2836,7 +2838,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast
 
-> [**LongTermRequirementsResponse**](LongTermRequirementsResponse) get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(business_unit_id, week_date_id, forecast_id)
+> [**LongTermRequirementsResponse**](LongTermRequirementsResponse) get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(business_unit_id, week_date_id, forecast_id, granularity=granularity)
 
 
 Get the latest long term staffing requirements for a business unit
@@ -2863,10 +2865,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | 
 week_date_id = '2013-10-20' # date | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | forecastId of forecast
+granularity = 'granularity_example' # str | Granularity to access staffing requirements data, defaults to weekly (optional)
 
 try:
     # Get the latest long term staffing requirements for a business unit
-    api_response = api_instance.get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(business_unit_id, week_date_id, forecast_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast(business_unit_id, week_date_id, forecast_id, granularity=granularity)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast: %s\n" % e)
@@ -2880,6 +2883,7 @@ except ApiException as e:
 | **business_unit_id** | **str**|  |  |
 | **week_date_id** | **date**| weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| forecastId of forecast |  |
+| **granularity** | **str**| Granularity to access staffing requirements data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
 
 ### Return type
 
@@ -14340,4 +14344,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import TransfersFullTimeEquivalent
 
 class CreateCapacityPlanStaffingGroupMetricChangeRequest(object):
     """
@@ -52,6 +54,7 @@ class CreateCapacityPlanStaffingGroupMetricChangeRequest(object):
             'value': 'float',
             'metric': 'str',
             'notes': 'str',
+            'transfers_full_time_equivalent': 'TransfersFullTimeEquivalent',
             'staffing_group_ids': 'list[str]',
             'version': 'int'
         }
@@ -62,6 +65,7 @@ class CreateCapacityPlanStaffingGroupMetricChangeRequest(object):
             'value': 'value',
             'metric': 'metric',
             'notes': 'notes',
+            'transfers_full_time_equivalent': 'transfersFullTimeEquivalent',
             'staffing_group_ids': 'staffingGroupIds',
             'version': 'version'
         }
@@ -71,6 +75,7 @@ class CreateCapacityPlanStaffingGroupMetricChangeRequest(object):
         self._value = None
         self._metric = None
         self._notes = None
+        self._transfers_full_time_equivalent = None
         self._staffing_group_ids = None
         self._version = None
 
@@ -198,6 +203,30 @@ class CreateCapacityPlanStaffingGroupMetricChangeRequest(object):
         
 
         self._notes = notes
+
+    @property
+    def transfers_full_time_equivalent(self) -> 'TransfersFullTimeEquivalent':
+        """
+        Gets the transfers_full_time_equivalent of this CreateCapacityPlanStaffingGroupMetricChangeRequest.
+        Full time equivalent transfer from one staffing group to another
+
+        :return: The transfers_full_time_equivalent of this CreateCapacityPlanStaffingGroupMetricChangeRequest.
+        :rtype: TransfersFullTimeEquivalent
+        """
+        return self._transfers_full_time_equivalent
+
+    @transfers_full_time_equivalent.setter
+    def transfers_full_time_equivalent(self, transfers_full_time_equivalent: 'TransfersFullTimeEquivalent') -> None:
+        """
+        Sets the transfers_full_time_equivalent of this CreateCapacityPlanStaffingGroupMetricChangeRequest.
+        Full time equivalent transfer from one staffing group to another
+
+        :param transfers_full_time_equivalent: The transfers_full_time_equivalent of this CreateCapacityPlanStaffingGroupMetricChangeRequest.
+        :type: TransfersFullTimeEquivalent
+        """
+        
+
+        self._transfers_full_time_equivalent = transfers_full_time_equivalent
 
     @property
     def staffing_group_ids(self) -> List[str]:

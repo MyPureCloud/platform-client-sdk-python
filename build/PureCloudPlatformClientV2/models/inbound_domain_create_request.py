@@ -34,6 +34,8 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DomainEntityRef
     from . import EmailSettingReference
+    from . import GraphApiSettings
+    from . import ImapSettings
     from . import MailFromResult
 
 class InboundDomainCreateRequest(object):
@@ -55,6 +57,8 @@ class InboundDomainCreateRequest(object):
             'sub_domain': 'bool',
             'mail_from_settings': 'MailFromResult',
             'custom_smtp_server': 'DomainEntityRef',
+            'imap_settings': 'ImapSettings',
+            'graph_api_settings': 'GraphApiSettings',
             'email_setting': 'EmailSettingReference'
         }
 
@@ -63,6 +67,8 @@ class InboundDomainCreateRequest(object):
             'sub_domain': 'subDomain',
             'mail_from_settings': 'mailFromSettings',
             'custom_smtp_server': 'customSMTPServer',
+            'imap_settings': 'imapSettings',
+            'graph_api_settings': 'graphApiSettings',
             'email_setting': 'emailSetting'
         }
 
@@ -70,6 +76,8 @@ class InboundDomainCreateRequest(object):
         self._sub_domain = None
         self._mail_from_settings = None
         self._custom_smtp_server = None
+        self._imap_settings = None
+        self._graph_api_settings = None
         self._email_setting = None
 
     @property
@@ -167,6 +175,54 @@ class InboundDomainCreateRequest(object):
         
 
         self._custom_smtp_server = custom_smtp_server
+
+    @property
+    def imap_settings(self) -> 'ImapSettings':
+        """
+        Gets the imap_settings of this InboundDomainCreateRequest.
+        The IMAP server integration and settings to use for processing inbound emails.
+
+        :return: The imap_settings of this InboundDomainCreateRequest.
+        :rtype: ImapSettings
+        """
+        return self._imap_settings
+
+    @imap_settings.setter
+    def imap_settings(self, imap_settings: 'ImapSettings') -> None:
+        """
+        Sets the imap_settings of this InboundDomainCreateRequest.
+        The IMAP server integration and settings to use for processing inbound emails.
+
+        :param imap_settings: The imap_settings of this InboundDomainCreateRequest.
+        :type: ImapSettings
+        """
+        
+
+        self._imap_settings = imap_settings
+
+    @property
+    def graph_api_settings(self) -> 'GraphApiSettings':
+        """
+        Gets the graph_api_settings of this InboundDomainCreateRequest.
+        The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+
+        :return: The graph_api_settings of this InboundDomainCreateRequest.
+        :rtype: GraphApiSettings
+        """
+        return self._graph_api_settings
+
+    @graph_api_settings.setter
+    def graph_api_settings(self, graph_api_settings: 'GraphApiSettings') -> None:
+        """
+        Sets the graph_api_settings of this InboundDomainCreateRequest.
+        The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+
+        :param graph_api_settings: The graph_api_settings of this InboundDomainCreateRequest.
+        :type: GraphApiSettings
+        """
+        
+
+        self._graph_api_settings = graph_api_settings
 
     @property
     def email_setting(self) -> 'EmailSettingReference':

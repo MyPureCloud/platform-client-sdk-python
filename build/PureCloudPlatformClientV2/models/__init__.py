@@ -2016,6 +2016,7 @@ from .dynamic_group_skill_condition import DynamicGroupSkillCondition
 from .dynamic_line_balancing_settings import DynamicLineBalancingSettings
 from .dynamic_line_balancing_settings_patch_request import DynamicLineBalancingSettingsPatchRequest
 from .dynamic_utilization import DynamicUtilization
+from .dynamic_utilization_rule import DynamicUtilizationRule
 from .edge import Edge
 from .edge_auto_update_config import EdgeAutoUpdateConfig
 from .edge_change_topic_edge import EdgeChangeTopicEdge
@@ -3054,12 +3055,16 @@ from .knowledge_setting_listing import KnowledgeSettingListing
 from .knowledge_settings import KnowledgeSettings
 from .knowledge_settings_request import KnowledgeSettingsRequest
 from .knowledge_settings_response import KnowledgeSettingsResponse
+from .knowledge_sources_search_request import KnowledgeSourcesSearchRequest
+from .knowledge_sources_search_response import KnowledgeSourcesSearchResponse
 from .knowledge_suggestion_config import KnowledgeSuggestionConfig
 from .knowledge_sync_job_report import KnowledgeSyncJobReport
 from .knowledge_sync_job_request import KnowledgeSyncJobRequest
 from .knowledge_sync_job_response import KnowledgeSyncJobResponse
 from .knowledge_sync_job_statistics import KnowledgeSyncJobStatistics
 from .knowledge_sync_request import KnowledgeSyncRequest
+from .knowledge_v3_conversation_context import KnowledgeV3ConversationContext
+from .knowledge_v3_conversation_context_response import KnowledgeV3ConversationContextResponse
 from .kpi_result import KpiResult
 from .label import Label
 from .label_create_request import LabelCreateRequest
@@ -4320,6 +4325,7 @@ from .recording_wheel_picker_item import RecordingWheelPickerItem
 from .recurrence_end_settings import RecurrenceEndSettings
 from .recurrence_period import RecurrencePeriod
 from .recurrence_settings import RecurrenceSettings
+from .recurrence_settings_base import RecurrenceSettingsBase
 from .referrer import Referrer
 from .region_time_zone import RegionTimeZone
 from .register_architect_export_job import RegisterArchitectExportJob
@@ -4483,6 +4489,7 @@ from .schedules_division_view import SchedulesDivisionView
 from .scheduling_no_forecast_options_request import SchedulingNoForecastOptionsRequest
 from .scheduling_options_request import SchedulingOptionsRequest
 from .scheduling_period import SchedulingPeriod
+from .scheduling_period_base import SchedulingPeriodBase
 from .scheduling_processing_error import SchedulingProcessingError
 from .scheduling_settings_request import SchedulingSettingsRequest
 from .scheduling_settings_response import SchedulingSettingsResponse
@@ -5435,6 +5442,7 @@ from .v2_wfm_main_forecast_export_historical_event_main_forecast_error_body impo
 from .v2_wfm_main_forecast_export_historical_event_main_forecast_export_notification import V2WfmMainForecastExportHistoricalEventMainForecastExportNotification
 from .v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body import V2WfmMainForecastExportSnapshotEventMainForecastErrorBody
 from .v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification import V2WfmMainForecastExportSnapshotEventMainForecastExportNotification
+from .v3_knowledge_search_client_application import V3KnowledgeSearchClientApplication
 from .v3_source_ref import V3SourceRef
 from .validate_address_request import ValidateAddressRequest
 from .validate_address_response import ValidateAddressResponse

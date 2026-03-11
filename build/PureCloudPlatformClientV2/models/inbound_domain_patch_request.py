@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DomainEntityRef
     from . import EmailSettingReference
+    from . import GraphApiSettings
     from . import ImapSettings
     from . import MailFromResult
 
@@ -55,6 +56,7 @@ class InboundDomainPatchRequest(object):
             'mail_from_settings': 'MailFromResult',
             'custom_smtp_server': 'DomainEntityRef',
             'imap_settings': 'ImapSettings',
+            'graph_api_settings': 'GraphApiSettings',
             'email_setting': 'EmailSettingReference'
         }
 
@@ -62,12 +64,14 @@ class InboundDomainPatchRequest(object):
             'mail_from_settings': 'mailFromSettings',
             'custom_smtp_server': 'customSMTPServer',
             'imap_settings': 'imapSettings',
+            'graph_api_settings': 'graphApiSettings',
             'email_setting': 'emailSetting'
         }
 
         self._mail_from_settings = None
         self._custom_smtp_server = None
         self._imap_settings = None
+        self._graph_api_settings = None
         self._email_setting = None
 
     @property
@@ -141,6 +145,30 @@ class InboundDomainPatchRequest(object):
         
 
         self._imap_settings = imap_settings
+
+    @property
+    def graph_api_settings(self) -> 'GraphApiSettings':
+        """
+        Gets the graph_api_settings of this InboundDomainPatchRequest.
+        The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+
+        :return: The graph_api_settings of this InboundDomainPatchRequest.
+        :rtype: GraphApiSettings
+        """
+        return self._graph_api_settings
+
+    @graph_api_settings.setter
+    def graph_api_settings(self, graph_api_settings: 'GraphApiSettings') -> None:
+        """
+        Sets the graph_api_settings of this InboundDomainPatchRequest.
+        The GraphAPI server integration and settings to use for processing inbound and outbound emails.
+
+        :param graph_api_settings: The graph_api_settings of this InboundDomainPatchRequest.
+        :type: GraphApiSettings
+        """
+        
+
+        self._graph_api_settings = graph_api_settings
 
     @property
     def email_setting(self) -> 'EmailSettingReference':

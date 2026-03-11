@@ -2106,6 +2106,7 @@ PureCloudPlatformClientV2/models/dynamic_group_skill_condition.py
 PureCloudPlatformClientV2/models/dynamic_line_balancing_settings.py
 PureCloudPlatformClientV2/models/dynamic_line_balancing_settings_patch_request.py
 PureCloudPlatformClientV2/models/dynamic_utilization.py
+PureCloudPlatformClientV2/models/dynamic_utilization_rule.py
 PureCloudPlatformClientV2/models/edge.py
 PureCloudPlatformClientV2/models/edge_auto_update_config.py
 PureCloudPlatformClientV2/models/edge_change_topic_edge.py
@@ -3144,12 +3145,16 @@ PureCloudPlatformClientV2/models/knowledge_setting_listing.py
 PureCloudPlatformClientV2/models/knowledge_settings.py
 PureCloudPlatformClientV2/models/knowledge_settings_request.py
 PureCloudPlatformClientV2/models/knowledge_settings_response.py
+PureCloudPlatformClientV2/models/knowledge_sources_search_request.py
+PureCloudPlatformClientV2/models/knowledge_sources_search_response.py
 PureCloudPlatformClientV2/models/knowledge_suggestion_config.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_report.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_request.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_response.py
 PureCloudPlatformClientV2/models/knowledge_sync_job_statistics.py
 PureCloudPlatformClientV2/models/knowledge_sync_request.py
+PureCloudPlatformClientV2/models/knowledge_v3_conversation_context.py
+PureCloudPlatformClientV2/models/knowledge_v3_conversation_context_response.py
 PureCloudPlatformClientV2/models/kpi_result.py
 PureCloudPlatformClientV2/models/label.py
 PureCloudPlatformClientV2/models/label_create_request.py
@@ -4410,6 +4415,7 @@ PureCloudPlatformClientV2/models/recording_wheel_picker_item.py
 PureCloudPlatformClientV2/models/recurrence_end_settings.py
 PureCloudPlatformClientV2/models/recurrence_period.py
 PureCloudPlatformClientV2/models/recurrence_settings.py
+PureCloudPlatformClientV2/models/recurrence_settings_base.py
 PureCloudPlatformClientV2/models/referrer.py
 PureCloudPlatformClientV2/models/region_time_zone.py
 PureCloudPlatformClientV2/models/register_architect_export_job.py
@@ -4571,6 +4577,7 @@ PureCloudPlatformClientV2/models/schedules_division_view.py
 PureCloudPlatformClientV2/models/scheduling_no_forecast_options_request.py
 PureCloudPlatformClientV2/models/scheduling_options_request.py
 PureCloudPlatformClientV2/models/scheduling_period.py
+PureCloudPlatformClientV2/models/scheduling_period_base.py
 PureCloudPlatformClientV2/models/scheduling_processing_error.py
 PureCloudPlatformClientV2/models/scheduling_settings_request.py
 PureCloudPlatformClientV2/models/scheduling_settings_response.py
@@ -5525,6 +5532,7 @@ PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_historical_event_ma
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_historical_event_main_forecast_export_notification.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification.py
+PureCloudPlatformClientV2/models/v3_knowledge_search_client_application.py
 PureCloudPlatformClientV2/models/v3_source_ref.py
 PureCloudPlatformClientV2/models/validate_address_request.py
 PureCloudPlatformClientV2/models/validate_address_response.py
@@ -8122,6 +8130,7 @@ docs/DynamicGroupSkillCondition.md
 docs/DynamicLineBalancingSettings.md
 docs/DynamicLineBalancingSettingsPatchRequest.md
 docs/DynamicUtilization.md
+docs/DynamicUtilizationRule.md
 docs/Edge.md
 docs/EdgeAutoUpdateConfig.md
 docs/EdgeChangeTopicEdge.md
@@ -9194,12 +9203,16 @@ docs/KnowledgeSettingListing.md
 docs/KnowledgeSettings.md
 docs/KnowledgeSettingsRequest.md
 docs/KnowledgeSettingsResponse.md
+docs/KnowledgeSourcesSearchRequest.md
+docs/KnowledgeSourcesSearchResponse.md
 docs/KnowledgeSuggestionConfig.md
 docs/KnowledgeSyncJobReport.md
 docs/KnowledgeSyncJobRequest.md
 docs/KnowledgeSyncJobResponse.md
 docs/KnowledgeSyncJobStatistics.md
 docs/KnowledgeSyncRequest.md
+docs/KnowledgeV3ConversationContext.md
+docs/KnowledgeV3ConversationContextResponse.md
 docs/KpiResult.md
 docs/Label.md
 docs/LabelCreateRequest.md
@@ -10498,6 +10511,7 @@ docs/RecordingWheelPickerItem.md
 docs/RecurrenceEndSettings.md
 docs/RecurrencePeriod.md
 docs/RecurrenceSettings.md
+docs/RecurrenceSettingsBase.md
 docs/Referrer.md
 docs/RegionTimeZone.md
 docs/RegisterArchitectExportJob.md
@@ -10667,6 +10681,7 @@ docs/SchedulesDivisionView.md
 docs/SchedulingNoForecastOptionsRequest.md
 docs/SchedulingOptionsRequest.md
 docs/SchedulingPeriod.md
+docs/SchedulingPeriodBase.md
 docs/SchedulingProcessingError.md
 docs/SchedulingSettingsRequest.md
 docs/SchedulingSettingsResponse.md
@@ -11657,6 +11672,7 @@ docs/V2WfmMainForecastExportHistoricalEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportHistoricalEventMainForecastExportNotification.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastExportNotification.md
+docs/V3KnowledgeSearchClientApplication.md
 docs/V3SourceRef.md
 docs/ValidateAddressRequest.md
 docs/ValidateAddressResponse.md
@@ -14722,6 +14738,7 @@ docs/post_knowledge_knowledgebase_synchronize_jobs-example.txt
 docs/post_knowledge_knowledgebase_uploads_urls_jobs-example.txt
 docs/post_knowledge_knowledgebase_uploads_urls_jobs-example.txt
 docs/post_knowledge_knowledgebases-example.txt
+docs/post_knowledge_search-example.txt
 docs/post_knowledge_search_preview-example.txt
 docs/post_knowledge_settings-example.txt
 docs/post_languages-example.txt

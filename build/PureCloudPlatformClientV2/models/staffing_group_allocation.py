@@ -52,7 +52,15 @@ class StaffingGroupAllocation(object):
             'attrition_percentages': 'list[float]',
             'new_hires_full_time_equivalent_count': 'list[float]',
             'starting_weekly_full_time_equivalent_count': 'float',
-            'planning_group_ids': 'list[str]'
+            'planning_group_ids': 'list[str]',
+            'base_starting_full_time_equivalent_count': 'list[float]',
+            'attrition_full_time_equivalent_count': 'list[float]',
+            'staffing_group_planned_full_time_equivalent_count': 'list[float]',
+            'end_of_month_planned_full_time_equivalent_count': 'list[float]',
+            'shrinkage_full_time_equivalent_count': 'list[float]',
+            'net_full_time_equivalent_count': 'list[float]',
+            'extra_time_under_time_full_time_equivalent_count': 'list[float]',
+            'transfers_full_time_equivalent_count': 'list[float]'
         }
 
         self.attribute_map = {
@@ -61,7 +69,15 @@ class StaffingGroupAllocation(object):
             'attrition_percentages': 'attritionPercentages',
             'new_hires_full_time_equivalent_count': 'newHiresFullTimeEquivalentCount',
             'starting_weekly_full_time_equivalent_count': 'startingWeeklyFullTimeEquivalentCount',
-            'planning_group_ids': 'planningGroupIds'
+            'planning_group_ids': 'planningGroupIds',
+            'base_starting_full_time_equivalent_count': 'baseStartingFullTimeEquivalentCount',
+            'attrition_full_time_equivalent_count': 'attritionFullTimeEquivalentCount',
+            'staffing_group_planned_full_time_equivalent_count': 'staffingGroupPlannedFullTimeEquivalentCount',
+            'end_of_month_planned_full_time_equivalent_count': 'endOfMonthPlannedFullTimeEquivalentCount',
+            'shrinkage_full_time_equivalent_count': 'shrinkageFullTimeEquivalentCount',
+            'net_full_time_equivalent_count': 'netFullTimeEquivalentCount',
+            'extra_time_under_time_full_time_equivalent_count': 'extraTimeUnderTimeFullTimeEquivalentCount',
+            'transfers_full_time_equivalent_count': 'transfersFullTimeEquivalentCount'
         }
 
         self._staffing_group_id = None
@@ -70,6 +86,14 @@ class StaffingGroupAllocation(object):
         self._new_hires_full_time_equivalent_count = None
         self._starting_weekly_full_time_equivalent_count = None
         self._planning_group_ids = None
+        self._base_starting_full_time_equivalent_count = None
+        self._attrition_full_time_equivalent_count = None
+        self._staffing_group_planned_full_time_equivalent_count = None
+        self._end_of_month_planned_full_time_equivalent_count = None
+        self._shrinkage_full_time_equivalent_count = None
+        self._net_full_time_equivalent_count = None
+        self._extra_time_under_time_full_time_equivalent_count = None
+        self._transfers_full_time_equivalent_count = None
 
     @property
     def staffing_group_id(self) -> str:
@@ -214,6 +238,198 @@ class StaffingGroupAllocation(object):
         
 
         self._planning_group_ids = planning_group_ids
+
+    @property
+    def base_starting_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the base_starting_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly calculated starting full time equivalent count
+
+        :return: The base_starting_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._base_starting_full_time_equivalent_count
+
+    @base_starting_full_time_equivalent_count.setter
+    def base_starting_full_time_equivalent_count(self, base_starting_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the base_starting_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly calculated starting full time equivalent count
+
+        :param base_starting_full_time_equivalent_count: The base_starting_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._base_starting_full_time_equivalent_count = base_starting_full_time_equivalent_count
+
+    @property
+    def attrition_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the attrition_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected attrition full time equivalent count
+
+        :return: The attrition_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._attrition_full_time_equivalent_count
+
+    @attrition_full_time_equivalent_count.setter
+    def attrition_full_time_equivalent_count(self, attrition_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the attrition_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected attrition full time equivalent count
+
+        :param attrition_full_time_equivalent_count: The attrition_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._attrition_full_time_equivalent_count = attrition_full_time_equivalent_count
+
+    @property
+    def staffing_group_planned_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the staffing_group_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly calculated staffing group full time equivalent count
+
+        :return: The staffing_group_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._staffing_group_planned_full_time_equivalent_count
+
+    @staffing_group_planned_full_time_equivalent_count.setter
+    def staffing_group_planned_full_time_equivalent_count(self, staffing_group_planned_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the staffing_group_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly calculated staffing group full time equivalent count
+
+        :param staffing_group_planned_full_time_equivalent_count: The staffing_group_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._staffing_group_planned_full_time_equivalent_count = staffing_group_planned_full_time_equivalent_count
+
+    @property
+    def end_of_month_planned_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the end_of_month_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        The end of month planned full time equivalent count of this staffing group
+
+        :return: The end_of_month_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._end_of_month_planned_full_time_equivalent_count
+
+    @end_of_month_planned_full_time_equivalent_count.setter
+    def end_of_month_planned_full_time_equivalent_count(self, end_of_month_planned_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the end_of_month_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        The end of month planned full time equivalent count of this staffing group
+
+        :param end_of_month_planned_full_time_equivalent_count: The end_of_month_planned_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._end_of_month_planned_full_time_equivalent_count = end_of_month_planned_full_time_equivalent_count
+
+    @property
+    def shrinkage_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the shrinkage_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected shrinkage full time equivalent count of this staffing group
+
+        :return: The shrinkage_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._shrinkage_full_time_equivalent_count
+
+    @shrinkage_full_time_equivalent_count.setter
+    def shrinkage_full_time_equivalent_count(self, shrinkage_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the shrinkage_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected shrinkage full time equivalent count of this staffing group
+
+        :param shrinkage_full_time_equivalent_count: The shrinkage_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._shrinkage_full_time_equivalent_count = shrinkage_full_time_equivalent_count
+
+    @property
+    def net_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the net_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly net full time equivalent count of this staffing group
+
+        :return: The net_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._net_full_time_equivalent_count
+
+    @net_full_time_equivalent_count.setter
+    def net_full_time_equivalent_count(self, net_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the net_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly net full time equivalent count of this staffing group
+
+        :param net_full_time_equivalent_count: The net_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._net_full_time_equivalent_count = net_full_time_equivalent_count
+
+    @property
+    def extra_time_under_time_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the extra_time_under_time_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected extra or under full time equivalent to the staffing group
+
+        :return: The extra_time_under_time_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._extra_time_under_time_full_time_equivalent_count
+
+    @extra_time_under_time_full_time_equivalent_count.setter
+    def extra_time_under_time_full_time_equivalent_count(self, extra_time_under_time_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the extra_time_under_time_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected extra or under full time equivalent to the staffing group
+
+        :param extra_time_under_time_full_time_equivalent_count: The extra_time_under_time_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._extra_time_under_time_full_time_equivalent_count = extra_time_under_time_full_time_equivalent_count
+
+    @property
+    def transfers_full_time_equivalent_count(self) -> List[float]:
+        """
+        Gets the transfers_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected full time equivalent transfers of agents into or out of this staffing group
+
+        :return: The transfers_full_time_equivalent_count of this StaffingGroupAllocation.
+        :rtype: list[float]
+        """
+        return self._transfers_full_time_equivalent_count
+
+    @transfers_full_time_equivalent_count.setter
+    def transfers_full_time_equivalent_count(self, transfers_full_time_equivalent_count: List[float]) -> None:
+        """
+        Sets the transfers_full_time_equivalent_count of this StaffingGroupAllocation.
+        The weekly projected full time equivalent transfers of agents into or out of this staffing group
+
+        :param transfers_full_time_equivalent_count: The transfers_full_time_equivalent_count of this StaffingGroupAllocation.
+        :type: list[float]
+        """
+        
+
+        self._transfers_full_time_equivalent_count = transfers_full_time_equivalent_count
 
     def to_dict(self):
         """

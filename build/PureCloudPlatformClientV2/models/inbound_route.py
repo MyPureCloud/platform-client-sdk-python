@@ -68,6 +68,8 @@ class InboundRoute(object):
             'signature': 'Signature',
             'history_inclusion': 'str',
             'allow_multiple_actions': 'bool',
+            'mailbox_folders': 'list[str]',
+            'status': 'str',
             'self_uri': 'str'
         }
 
@@ -88,6 +90,8 @@ class InboundRoute(object):
             'signature': 'signature',
             'history_inclusion': 'historyInclusion',
             'allow_multiple_actions': 'allowMultipleActions',
+            'mailbox_folders': 'mailboxFolders',
+            'status': 'status',
             'self_uri': 'selfUri'
         }
 
@@ -107,6 +111,8 @@ class InboundRoute(object):
         self._signature = None
         self._history_inclusion = None
         self._allow_multiple_actions = None
+        self._mailbox_folders = None
+        self._status = None
         self._self_uri = None
 
     @property
@@ -497,6 +503,59 @@ class InboundRoute(object):
         
 
         self._allow_multiple_actions = allow_multiple_actions
+
+    @property
+    def mailbox_folders(self) -> List[str]:
+        """
+        Gets the mailbox_folders of this InboundRoute.
+        Integration Folder routed to this route
+
+        :return: The mailbox_folders of this InboundRoute.
+        :rtype: list[str]
+        """
+        return self._mailbox_folders
+
+    @mailbox_folders.setter
+    def mailbox_folders(self, mailbox_folders: List[str]) -> None:
+        """
+        Sets the mailbox_folders of this InboundRoute.
+        Integration Folder routed to this route
+
+        :param mailbox_folders: The mailbox_folders of this InboundRoute.
+        :type: list[str]
+        """
+        
+
+        self._mailbox_folders = mailbox_folders
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this InboundRoute.
+        The status of the route.
+
+        :return: The status of this InboundRoute.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this InboundRoute.
+        The status of the route.
+
+        :param status: The status of this InboundRoute.
+        :type: str
+        """
+        if isinstance(status, int):
+            status = str(status)
+        allowed_values = ["Pending", "Active", "Removing", "Error"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
 
     @property
     def self_uri(self) -> str:

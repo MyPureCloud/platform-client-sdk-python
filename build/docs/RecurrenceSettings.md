@@ -6,10 +6,10 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **end_after** | [RecurrenceEndSettings](RecurrenceEndSettings) | Settings controlling when to end the recurrence for the activity plan | |
 | **recurrence_period** | [RecurrencePeriod](RecurrencePeriod) | The recurrence period of the activity plan | |
 | **minimum_time_between_occurrences** | [RecurrencePeriod](RecurrencePeriod) | Constraint indicating the minimum time in hours between recurrences of the activity plan | |
-| **end_after** | [RecurrenceEndSettings](RecurrenceEndSettings) | Settings controlling when to end the recurrence for the activity plan | |
 
 
 
-_PureCloudPlatformClientV2 252.1.0_
+_PureCloudPlatformClientV2 253.0.0_

@@ -81,7 +81,7 @@ class KnowledgeAggregationSort(object):
         """
         if isinstance(name, int):
             name = str(name)
-        allowed_values = ["nDistinctKnowledgeSessions", "nKnowledgeDocumentCopied", "nKnowledgeDocumentFeedback", "nKnowledgeDocumentPresented", "nKnowledgeDocumentSurfaced", "nKnowledgeDocumentViewed", "nKnowledgeSearch", "nKnowledgeSearchAnswered", "nKnowledgeSearchFeedback", "nKnowledgeSearchUnanswered", "nKnowledgeSessions", "oKnowledgeDocumentQuery", "oKnowledgeDocumentQuerySelfServed", "oKnowledgeSearch"]
+        allowed_values = ["nDistinctKnowledgeSessions", "nKnowledgeDocumentCopied", "nKnowledgeDocumentFeedback", "nKnowledgeDocumentPresented", "nKnowledgeDocumentSurfaced", "nKnowledgeDocumentViewed", "nKnowledgeSearch", "nKnowledgeSearchAnswered", "nKnowledgeSearchFeedback", "nKnowledgeSearchUnanswered", "nKnowledgeSessions", "nKnowledgeV3Search", "oKnowledgeDocumentQuery", "oKnowledgeDocumentQuerySelfServed", "oKnowledgeSearch"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"

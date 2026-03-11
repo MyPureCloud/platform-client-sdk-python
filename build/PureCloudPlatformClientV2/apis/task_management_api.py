@@ -5545,8 +5545,7 @@ class TaskManagementApi(object):
     def post_taskmanagement_workitems_query(self, body: 'WorkitemQueryPostRequest', **kwargs) -> 'WorkitemPostQueryEntityListing':
         """
         Query for workitems
-        This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
-	    post_taskmanagement_workitems_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+        This query requires at least one EQ filter on the workbinId, assigneeId, queueId or typeId attributes. A maximum of three filters are allowed.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -140,7 +140,7 @@ class Variable(object):
         """
         if isinstance(scope, int):
             scope = str(scope)
-        allowed_values = ["Input", "Output", "InputAndOutput"]
+        allowed_values = ["Input", "Output", "InputAndOutput", "GuideOnly"]
         if scope.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for scope -> " + scope)
             self._scope = "outdated_sdk_version"

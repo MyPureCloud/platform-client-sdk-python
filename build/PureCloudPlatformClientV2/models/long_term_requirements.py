@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ForecastMetadata
     from . import PlanningGroupRequirementOutput
+    from . import YearMonth
 
 class LongTermRequirements(object):
     """
@@ -52,17 +53,20 @@ class LongTermRequirements(object):
         self.swagger_types = {
             'forecast_metadata': 'ForecastMetadata',
             'date_generation_started': 'datetime',
+            'months': 'list[YearMonth]',
             'requirement_results': 'list[PlanningGroupRequirementOutput]'
         }
 
         self.attribute_map = {
             'forecast_metadata': 'forecastMetadata',
             'date_generation_started': 'dateGenerationStarted',
+            'months': 'months',
             'requirement_results': 'requirementResults'
         }
 
         self._forecast_metadata = None
         self._date_generation_started = None
+        self._months = None
         self._requirement_results = None
 
     @property
@@ -112,6 +116,30 @@ class LongTermRequirements(object):
         
 
         self._date_generation_started = date_generation_started
+
+    @property
+    def months(self) -> List['YearMonth']:
+        """
+        Gets the months of this LongTermRequirements.
+        The list of months covered by the long-term staffing requirements, formatted as yyyy-MM
+
+        :return: The months of this LongTermRequirements.
+        :rtype: list[YearMonth]
+        """
+        return self._months
+
+    @months.setter
+    def months(self, months: List['YearMonth']) -> None:
+        """
+        Sets the months of this LongTermRequirements.
+        The list of months covered by the long-term staffing requirements, formatted as yyyy-MM
+
+        :param months: The months of this LongTermRequirements.
+        :type: list[YearMonth]
+        """
+        
+
+        self._months = months
 
     @property
     def requirement_results(self) -> List['PlanningGroupRequirementOutput']:

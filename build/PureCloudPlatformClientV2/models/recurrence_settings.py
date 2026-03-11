@@ -50,20 +50,44 @@ class RecurrenceSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'end_after': 'RecurrenceEndSettings',
             'recurrence_period': 'RecurrencePeriod',
-            'minimum_time_between_occurrences': 'RecurrencePeriod',
-            'end_after': 'RecurrenceEndSettings'
+            'minimum_time_between_occurrences': 'RecurrencePeriod'
         }
 
         self.attribute_map = {
+            'end_after': 'endAfter',
             'recurrence_period': 'recurrencePeriod',
-            'minimum_time_between_occurrences': 'minimumTimeBetweenOccurrences',
-            'end_after': 'endAfter'
+            'minimum_time_between_occurrences': 'minimumTimeBetweenOccurrences'
         }
 
+        self._end_after = None
         self._recurrence_period = None
         self._minimum_time_between_occurrences = None
-        self._end_after = None
+
+    @property
+    def end_after(self) -> 'RecurrenceEndSettings':
+        """
+        Gets the end_after of this RecurrenceSettings.
+        Settings controlling when to end the recurrence for the activity plan
+
+        :return: The end_after of this RecurrenceSettings.
+        :rtype: RecurrenceEndSettings
+        """
+        return self._end_after
+
+    @end_after.setter
+    def end_after(self, end_after: 'RecurrenceEndSettings') -> None:
+        """
+        Sets the end_after of this RecurrenceSettings.
+        Settings controlling when to end the recurrence for the activity plan
+
+        :param end_after: The end_after of this RecurrenceSettings.
+        :type: RecurrenceEndSettings
+        """
+        
+
+        self._end_after = end_after
 
     @property
     def recurrence_period(self) -> 'RecurrencePeriod':
@@ -112,30 +136,6 @@ class RecurrenceSettings(object):
         
 
         self._minimum_time_between_occurrences = minimum_time_between_occurrences
-
-    @property
-    def end_after(self) -> 'RecurrenceEndSettings':
-        """
-        Gets the end_after of this RecurrenceSettings.
-        Settings controlling when to end the recurrence for the activity plan
-
-        :return: The end_after of this RecurrenceSettings.
-        :rtype: RecurrenceEndSettings
-        """
-        return self._end_after
-
-    @end_after.setter
-    def end_after(self, end_after: 'RecurrenceEndSettings') -> None:
-        """
-        Sets the end_after of this RecurrenceSettings.
-        Settings controlling when to end the recurrence for the activity plan
-
-        :param end_after: The end_after of this RecurrenceSettings.
-        :type: RecurrenceEndSettings
-        """
-        
-
-        self._end_after = end_after
 
     def to_dict(self):
         """

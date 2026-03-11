@@ -32,7 +32,10 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import CapacityPlanMetricsSummary
+    from . import CapacityPlanningPlanningGroupAllocation
     from . import StaffingGroupAllocation
+    from . import YearMonth
 
 class StaffingGroupAllocationsResponseTemplate(object):
     """
@@ -49,14 +52,23 @@ class StaffingGroupAllocationsResponseTemplate(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'staffing_group_allocations': 'list[StaffingGroupAllocation]'
+            'staffing_group_allocations': 'list[StaffingGroupAllocation]',
+            'months': 'list[YearMonth]',
+            'planning_group_allocations': 'list[CapacityPlanningPlanningGroupAllocation]',
+            'capacity_plan_metrics_summary': 'CapacityPlanMetricsSummary'
         }
 
         self.attribute_map = {
-            'staffing_group_allocations': 'staffingGroupAllocations'
+            'staffing_group_allocations': 'staffingGroupAllocations',
+            'months': 'months',
+            'planning_group_allocations': 'planningGroupAllocations',
+            'capacity_plan_metrics_summary': 'capacityPlanMetricsSummary'
         }
 
         self._staffing_group_allocations = None
+        self._months = None
+        self._planning_group_allocations = None
+        self._capacity_plan_metrics_summary = None
 
     @property
     def staffing_group_allocations(self) -> List['StaffingGroupAllocation']:
@@ -81,6 +93,78 @@ class StaffingGroupAllocationsResponseTemplate(object):
         
 
         self._staffing_group_allocations = staffing_group_allocations
+
+    @property
+    def months(self) -> List['YearMonth']:
+        """
+        Gets the months of this StaffingGroupAllocationsResponseTemplate.
+        The list of months covered by this capacity plan, formatted as yyyy-MM
+
+        :return: The months of this StaffingGroupAllocationsResponseTemplate.
+        :rtype: list[YearMonth]
+        """
+        return self._months
+
+    @months.setter
+    def months(self, months: List['YearMonth']) -> None:
+        """
+        Sets the months of this StaffingGroupAllocationsResponseTemplate.
+        The list of months covered by this capacity plan, formatted as yyyy-MM
+
+        :param months: The months of this StaffingGroupAllocationsResponseTemplate.
+        :type: list[YearMonth]
+        """
+        
+
+        self._months = months
+
+    @property
+    def planning_group_allocations(self) -> List['CapacityPlanningPlanningGroupAllocation']:
+        """
+        Gets the planning_group_allocations of this StaffingGroupAllocationsResponseTemplate.
+        The planning group allocations
+
+        :return: The planning_group_allocations of this StaffingGroupAllocationsResponseTemplate.
+        :rtype: list[CapacityPlanningPlanningGroupAllocation]
+        """
+        return self._planning_group_allocations
+
+    @planning_group_allocations.setter
+    def planning_group_allocations(self, planning_group_allocations: List['CapacityPlanningPlanningGroupAllocation']) -> None:
+        """
+        Sets the planning_group_allocations of this StaffingGroupAllocationsResponseTemplate.
+        The planning group allocations
+
+        :param planning_group_allocations: The planning_group_allocations of this StaffingGroupAllocationsResponseTemplate.
+        :type: list[CapacityPlanningPlanningGroupAllocation]
+        """
+        
+
+        self._planning_group_allocations = planning_group_allocations
+
+    @property
+    def capacity_plan_metrics_summary(self) -> 'CapacityPlanMetricsSummary':
+        """
+        Gets the capacity_plan_metrics_summary of this StaffingGroupAllocationsResponseTemplate.
+        The total summary of staffing allocation metrics for this capacity plan, for the selected granularity
+
+        :return: The capacity_plan_metrics_summary of this StaffingGroupAllocationsResponseTemplate.
+        :rtype: CapacityPlanMetricsSummary
+        """
+        return self._capacity_plan_metrics_summary
+
+    @capacity_plan_metrics_summary.setter
+    def capacity_plan_metrics_summary(self, capacity_plan_metrics_summary: 'CapacityPlanMetricsSummary') -> None:
+        """
+        Sets the capacity_plan_metrics_summary of this StaffingGroupAllocationsResponseTemplate.
+        The total summary of staffing allocation metrics for this capacity plan, for the selected granularity
+
+        :param capacity_plan_metrics_summary: The capacity_plan_metrics_summary of this StaffingGroupAllocationsResponseTemplate.
+        :type: CapacityPlanMetricsSummary
+        """
+        
+
+        self._capacity_plan_metrics_summary = capacity_plan_metrics_summary
 
     def to_dict(self):
         """
