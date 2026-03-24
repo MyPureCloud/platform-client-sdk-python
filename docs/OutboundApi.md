@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_campaignrule**](#delete_outbound_campaignrule) | Delete Campaign Rule|
 |[**delete_outbound_contactlist**](#delete_outbound_contactlist) | Delete a contact list.|
 |[**delete_outbound_contactlist_contact**](#delete_outbound_contactlist_contact) | Delete a contact.|
-|[**delete_outbound_contactlist_contacts**](#delete_outbound_contactlist_contacts) | Delete contacts from a contact list.|
+|[**delete_outbound_contactlist_contacts**](#delete_outbound_contactlist_contacts) | Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted|
 |[**delete_outbound_contactlistfilter**](#delete_outbound_contactlistfilter) | Delete Contact List Filter|
 |[**delete_outbound_contactlists**](#delete_outbound_contactlists) | Delete multiple contact lists.|
 |[**delete_outbound_contactlisttemplate**](#delete_outbound_contactlisttemplate) | Delete Contact List Template|
@@ -73,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_contactlists_divisionviews**](#get_outbound_contactlists_divisionviews) | Query a list of simplified contact list objects.|
 |[**get_outbound_contactlisttemplate**](#get_outbound_contactlisttemplate) | Get Contact List Template|
 |[**get_outbound_contactlisttemplates**](#get_outbound_contactlisttemplates) | Query a list of contact list templates|
+|[**get_outbound_diagnostics_campaign_summary**](#get_outbound_diagnostics_campaign_summary) | Get diagnostic summary for a single campaign|
 |[**get_outbound_digitalruleset**](#get_outbound_digitalruleset) | Get an Outbound Digital Rule Set|
 |[**get_outbound_digitalrulesets**](#get_outbound_digitalrulesets) | Query a list of Outbound Digital Rule Sets|
 |[**get_outbound_dnclist**](#get_outbound_dnclist) | Get dialer DNC list|
@@ -569,7 +570,7 @@ void (empty response body)
 >  delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
 
 
-Delete contacts from a contact list.
+Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts 
 
@@ -594,7 +595,7 @@ contact_list_id = 'contact_list_id_example' # str | Contact List ID
 contact_ids = ['contact_ids_example'] # list[str] | ContactIds to delete.
 
 try:
-    # Delete contacts from a contact list.
+    # Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
     api_instance.delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
 except ApiException as e:
     print("Exception when calling OutboundApi->delete_outbound_contactlist_contacts: %s\n" % e)
@@ -3620,6 +3621,58 @@ except ApiException as e:
 ### Return type
 
 [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
+
+
+## get_outbound_diagnostics_campaign_summary
+
+> [**CampaignDiagnosticSummary**](CampaignDiagnosticSummary) get_outbound_diagnostics_campaign_summary(campaign_id, start, end)
+
+
+Get diagnostic summary for a single campaign
+
+Wraps GET /api/v2/outbound/diagnostics/campaigns/{campaignId}/summary 
+
+Requires ANY permissions: 
+
+* outbound:campaignDiagnostic:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+start = 'start_example' # str | Start datetime (ISO 8601 or Unix epoch)
+end = 'end_example' # str | End datetime (ISO 8601 or Unix epoch)
+
+try:
+    # Get diagnostic summary for a single campaign
+    api_response = api_instance.get_outbound_diagnostics_campaign_summary(campaign_id, start, end)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_diagnostics_campaign_summary: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+| **start** | **str**| Start datetime (ISO 8601 or Unix epoch) |  |
+| **end** | **str**| End datetime (ISO 8601 or Unix epoch) |  |
+
+### Return type
+
+[**CampaignDiagnosticSummary**](CampaignDiagnosticSummary)
 
 
 ## get_outbound_digitalruleset
@@ -9096,4 +9149,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

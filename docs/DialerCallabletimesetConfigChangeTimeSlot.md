@@ -10,8 +10,7 @@
 | **stop_time** | str | The stop time of this time slot | [optional] |
 | **day** | int | The day this time slot applies | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
-| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

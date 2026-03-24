@@ -61,8 +61,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id) | Get the session details for the session ID|
 |[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id) | Get the snapshot details for the snapshot ID|
 |[**get_workforcemanagement_businessunit_managementunits**](#get_workforcemanagement_businessunit_managementunits) | Get all authorized management units in the business unit|
+|[**get_workforcemanagement_businessunit_minimumstaffing_settings**](#get_workforcemanagement_businessunit_minimumstaffing_settings) | Get minimum staffing settings for a business unit|
 |[**get_workforcemanagement_businessunit_planninggroup**](#get_workforcemanagement_businessunit_planninggroup) | Get a planning group|
 |[**get_workforcemanagement_businessunit_planninggroups**](#get_workforcemanagement_businessunit_planninggroups) | Gets list of planning groups|
+|[**get_workforcemanagement_businessunit_scheduler_settings**](#get_workforcemanagement_businessunit_scheduler_settings) | Get scheduler settings for a business unit|
 |[**get_workforcemanagement_businessunit_scheduling_run**](#get_workforcemanagement_businessunit_scheduling_run) | Get a scheduling run|
 |[**get_workforcemanagement_businessunit_scheduling_run_result**](#get_workforcemanagement_businessunit_scheduling_run_result) | Get the result of a rescheduling operation|
 |[**get_workforcemanagement_businessunit_scheduling_runs**](#get_workforcemanagement_businessunit_scheduling_runs) | Get the list of scheduling runs|
@@ -74,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_timeofflimits**](#get_workforcemanagement_businessunit_timeofflimits) | Gets a list of time-off limit objects|
 |[**get_workforcemanagement_businessunit_timeoffplan**](#get_workforcemanagement_businessunit_timeoffplan) | Gets a time-off plan|
 |[**get_workforcemanagement_businessunit_timeoffplans**](#get_workforcemanagement_businessunit_timeoffplans) | Gets a list of time-off plans|
+|[**get_workforcemanagement_businessunit_users**](#get_workforcemanagement_businessunit_users) | Get users in the business unit|
 |[**get_workforcemanagement_businessunit_week_schedule**](#get_workforcemanagement_businessunit_week_schedule) | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route|
 |[**get_workforcemanagement_businessunit_week_schedule_generationresults**](#get_workforcemanagement_businessunit_week_schedule_generationresults) | Get the generation results for a generated schedule|
 |[**get_workforcemanagement_businessunit_week_schedule_headcountforecast**](#get_workforcemanagement_businessunit_week_schedule_headcountforecast) | Get the headcount forecast by planning group for the schedule|
@@ -150,7 +153,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_activityplan**](#patch_workforcemanagement_businessunit_activityplan) | Update an activity plan|
 |[**patch_workforcemanagement_businessunit_alternativeshifts_settings**](#patch_workforcemanagement_businessunit_alternativeshifts_settings) | Update alternative shifts settings for a business unit|
 |[**patch_workforcemanagement_businessunit_capacityplan**](#patch_workforcemanagement_businessunit_capacityplan) | Update a capacity plan configuration|
+|[**patch_workforcemanagement_businessunit_minimumstaffing_settings**](#patch_workforcemanagement_businessunit_minimumstaffing_settings) | Update minimum staffing settings for a business unit|
 |[**patch_workforcemanagement_businessunit_planninggroup**](#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
+|[**patch_workforcemanagement_businessunit_scheduler_settings**](#patch_workforcemanagement_businessunit_scheduler_settings) | Update scheduler settings for a business unit|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
 |[**patch_workforcemanagement_businessunit_staffinggroup**](#patch_workforcemanagement_businessunit_staffinggroup) | Updates a staffing group|
@@ -3195,6 +3200,54 @@ except ApiException as e:
 [**ManagementUnitListing**](ManagementUnitListing)
 
 
+## get_workforcemanagement_businessunit_minimumstaffing_settings
+
+> [**MinimumStaffingResponse**](MinimumStaffingResponse) get_workforcemanagement_businessunit_minimumstaffing_settings(business_unit_id)
+
+
+Get minimum staffing settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings 
+
+Requires ANY permissions: 
+
+* wfm:minimumStaffingSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get minimum staffing settings for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_minimumstaffing_settings(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_minimumstaffing_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**MinimumStaffingResponse**](MinimumStaffingResponse)
+
+
 ## get_workforcemanagement_businessunit_planninggroup
 
 > [**PlanningGroup**](PlanningGroup) get_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
@@ -3296,6 +3349,54 @@ except ApiException as e:
 ### Return type
 
 [**PlanningGroupList**](PlanningGroupList)
+
+
+## get_workforcemanagement_businessunit_scheduler_settings
+
+> [**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse) get_workforcemanagement_businessunit_scheduler_settings(business_unit_id)
+
+
+Get scheduler settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings 
+
+Requires ANY permissions: 
+
+* wfm:schedulerSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get scheduler settings for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_scheduler_settings(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduler_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse)
 
 
 ## get_workforcemanagement_businessunit_scheduling_run
@@ -3862,6 +3963,56 @@ except ApiException as e:
 ### Return type
 
 [**BuTimeOffPlanListing**](BuTimeOffPlanListing)
+
+
+## get_workforcemanagement_businessunit_users
+
+> [**BuUserListing**](BuUserListing) get_workforcemanagement_businessunit_users(business_unit_id, management_unit_ids=management_unit_ids)
+
+
+Get users in the business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/users 
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+management_unit_ids = ['management_unit_ids_example'] # list[str] | The IDs of the management units for which to retrieve users (optional)
+
+try:
+    # Get users in the business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_users(business_unit_id, management_unit_ids=management_unit_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_users: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **management_unit_ids** | [**list[str]**](str)| The IDs of the management units for which to retrieve users | [optional]  |
+
+### Return type
+
+[**BuUserListing**](BuUserListing)
 
 
 ## get_workforcemanagement_businessunit_week_schedule
@@ -7819,6 +7970,56 @@ except ApiException as e:
 [**CapacityPlanResponse**](CapacityPlanResponse)
 
 
+## patch_workforcemanagement_businessunit_minimumstaffing_settings
+
+> [**MinimumStaffingResponse**](MinimumStaffingResponse) patch_workforcemanagement_businessunit_minimumstaffing_settings(business_unit_id, body)
+
+
+Update minimum staffing settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/minimumstaffing/settings 
+
+Requires ANY permissions: 
+
+* wfm:minimumStaffingSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.MinimumStaffingRequest() # MinimumStaffingRequest | body
+
+try:
+    # Update minimum staffing settings for a business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit_minimumstaffing_settings(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_minimumstaffing_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**MinimumStaffingRequest**](MinimumStaffingRequest)| body |  |
+
+### Return type
+
+[**MinimumStaffingResponse**](MinimumStaffingResponse)
+
+
 ## patch_workforcemanagement_businessunit_planninggroup
 
 > [**PlanningGroup**](PlanningGroup) patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body)
@@ -7869,6 +8070,56 @@ except ApiException as e:
 ### Return type
 
 [**PlanningGroup**](PlanningGroup)
+
+
+## patch_workforcemanagement_businessunit_scheduler_settings
+
+> [**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse) patch_workforcemanagement_businessunit_scheduler_settings(business_unit_id, body)
+
+
+Update scheduler settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduler/settings 
+
+Requires ANY permissions: 
+
+* wfm:schedulerSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BuSchedulerSettingsRequest() # BuSchedulerSettingsRequest | body
+
+try:
+    # Update scheduler settings for a business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit_scheduler_settings(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_scheduler_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BuSchedulerSettingsRequest**](BuSchedulerSettingsRequest)| body |  |
+
+### Return type
+
+[**BuSchedulerSettingsResponse**](BuSchedulerSettingsResponse)
 
 
 ## patch_workforcemanagement_businessunit_scheduling_run
@@ -14344,4 +14595,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

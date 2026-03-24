@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_knowledge_connection**](#delete_knowledge_connection) | Delete connection|
 |[**delete_knowledge_knowledgebase**](#delete_knowledge_knowledgebase) | Delete knowledge base|
 |[**delete_knowledge_knowledgebase_category**](#delete_knowledge_knowledgebase_category) | Delete category|
 |[**delete_knowledge_knowledgebase_document**](#delete_knowledge_knowledgebase_document) | Delete document.|
@@ -17,6 +18,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_knowledge_knowledgebase_sources_servicenow_source_id**](#delete_knowledge_knowledgebase_sources_servicenow_source_id) | Delete ServiceNow Knowledge integration source|
 |[**delete_knowledge_knowledgebase_synchronize_job**](#delete_knowledge_knowledgebase_synchronize_job) | Delete synchronization job|
 |[**delete_knowledge_setting**](#delete_knowledge_setting) | Delete Knowledge setting.|
+|[**delete_knowledge_source**](#delete_knowledge_source) | Delete source|
+|[**get_knowledge_connection**](#get_knowledge_connection) | Get connection|
+|[**get_knowledge_connection_options**](#get_knowledge_connection_options) | Get connection options|
+|[**get_knowledge_connections**](#get_knowledge_connections) | Get connections|
 |[**get_knowledge_guest_session_categories**](#get_knowledge_guest_session_categories) | Get categories|
 |[**get_knowledge_guest_session_document**](#get_knowledge_guest_session_document) | Get a knowledge document by ID.|
 |[**get_knowledge_guest_session_documents**](#get_knowledge_guest_session_documents) | Get documents.|
@@ -52,6 +57,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebases**](#get_knowledge_knowledgebases) | Get knowledge bases|
 |[**get_knowledge_setting**](#get_knowledge_setting) | Get Knowledge setting.|
 |[**get_knowledge_settings**](#get_knowledge_settings) | Get Knowledge settings.|
+|[**get_knowledge_source**](#get_knowledge_source) | Get source|
+|[**get_knowledge_source_synchronization**](#get_knowledge_source_synchronization) | Get a specific synchronization of a source.|
+|[**get_knowledge_source_synchronizations**](#get_knowledge_source_synchronizations) | Get synchronizations of a source.|
+|[**get_knowledge_sources**](#get_knowledge_sources) | List sources|
+|[**get_knowledge_sources_synchronizations**](#get_knowledge_sources_synchronizations) | Get synchronizations of all sources of the organization.|
+|[**patch_knowledge_connection**](#patch_knowledge_connection) | Update connection|
 |[**patch_knowledge_guest_session_documents_search_search_id**](#patch_knowledge_guest_session_documents_search_search_id) | Update search result.|
 |[**patch_knowledge_knowledgebase**](#patch_knowledge_knowledgebase) | Update knowledge base|
 |[**patch_knowledge_knowledgebase_category**](#patch_knowledge_knowledgebase_category) | Update category|
@@ -66,6 +77,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_knowledgebase_synchronize_job**](#patch_knowledge_knowledgebase_synchronize_job) | Update synchronization job|
 |[**patch_knowledge_knowledgebase_unanswered_group_phrasegroup**](#patch_knowledge_knowledgebase_unanswered_group_phrasegroup) | Update a Knowledge base unanswered phrase group|
 |[**patch_knowledge_setting**](#patch_knowledge_setting) | Update Knowledge setting.|
+|[**patch_knowledge_source_synchronization**](#patch_knowledge_source_synchronization) | Update synchronization.|
+|[**post_knowledge_connections**](#post_knowledge_connections) | Create new connection|
 |[**post_knowledge_documentuploads**](#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
 |[**post_knowledge_guest_session_document_copies**](#post_knowledge_guest_session_document_copies) | Indicate that the document was copied by the user.|
 |[**post_knowledge_guest_session_document_feedback**](#post_knowledge_guest_session_document_feedback) | Give feedback on a document|
@@ -106,9 +119,61 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_search**](#post_knowledge_search) | Get Knowledge Search|
 |[**post_knowledge_search_preview**](#post_knowledge_search_preview) | Get Knowledge Search Preview|
 |[**post_knowledge_settings**](#post_knowledge_settings) | Create Knowledge setting.|
+|[**post_knowledge_source_synchronization_uploads**](#post_knowledge_source_synchronization_uploads) | Create presigned URL for uploading a file in the synchronization.|
+|[**post_knowledge_source_synchronizations**](#post_knowledge_source_synchronizations) | Start a manual synchronization from a source.|
+|[**post_knowledge_sources**](#post_knowledge_sources) | Create a new source|
 |[**put_knowledge_knowledgebase_sources_salesforce_source_id**](#put_knowledge_knowledgebase_sources_salesforce_source_id) | Update Salesforce Knowledge integration source|
 |[**put_knowledge_knowledgebase_sources_servicenow_source_id**](#put_knowledge_knowledgebase_sources_servicenow_source_id) | Update ServiceNow Knowledge integration source|
+|[**put_knowledge_source**](#put_knowledge_source) | Update the source|
 
+
+
+## delete_knowledge_connection
+
+> [**ConnectionResponse**](ConnectionResponse) delete_knowledge_connection(connection_id)
+
+
+Delete connection
+
+Wraps DELETE /api/v2/knowledge/connections/{connectionId} 
+
+Requires ALL permissions: 
+
+* knowledge:connection:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+connection_id = 'connection_id_example' # str | Connection ID
+
+try:
+    # Delete connection
+    api_response = api_instance.delete_knowledge_connection(connection_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_connection: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **connection_id** | **str**| Connection ID |  |
+
+### Return type
+
+[**ConnectionResponse**](ConnectionResponse)
 
 
 ## delete_knowledge_knowledgebase
@@ -650,6 +715,197 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+
+## delete_knowledge_source
+
+>  delete_knowledge_source(source_id)
+
+
+Delete source
+
+Wraps DELETE /api/v2/knowledge/sources/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:source:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+
+try:
+    # Delete source
+    api_instance.delete_knowledge_source(source_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_source: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## get_knowledge_connection
+
+> [**ConnectionResponse**](ConnectionResponse) get_knowledge_connection(connection_id, expand=expand)
+
+
+Get connection
+
+Wraps GET /api/v2/knowledge/connections/{connectionId} 
+
+Requires ALL permissions: 
+
+* knowledge:connection:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+connection_id = 'connection_id_example' # str | Connection ID
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
+
+try:
+    # Get connection
+    api_response = api_instance.get_knowledge_connection(connection_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_connection: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **connection_id** | **str**| Connection ID |  |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: authenticationProperties |
+
+### Return type
+
+[**ConnectionResponse**](ConnectionResponse)
+
+
+## get_knowledge_connection_options
+
+> [**ConnectionOptionListing**](ConnectionOptionListing) get_knowledge_connection_options(connection_id, parent_id=parent_id)
+
+
+Get connection options
+
+Wraps GET /api/v2/knowledge/connections/{connectionId}/options 
+
+Requires ALL permissions: 
+
+* knowledge:connectionOptions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+connection_id = 'connection_id_example' # str | Connection ID
+parent_id = 'parent_id_example' # str | The id of the parent option whose children to be listed. (optional)
+
+try:
+    # Get connection options
+    api_response = api_instance.get_knowledge_connection_options(connection_id, parent_id=parent_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_connection_options: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **connection_id** | **str**| Connection ID |  |
+| **parent_id** | **str**| The id of the parent option whose children to be listed. | [optional]  |
+
+### Return type
+
+[**ConnectionOptionListing**](ConnectionOptionListing)
+
+
+## get_knowledge_connections
+
+> [**ConnectionListing**](ConnectionListing) get_knowledge_connections()
+
+
+Get connections
+
+Wraps GET /api/v2/knowledge/connections 
+
+Requires ALL permissions: 
+
+* knowledge:connection:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+
+try:
+    # Get connections
+    api_response = api_instance.get_knowledge_connections()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_connections: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**ConnectionListing**](ConnectionListing)
 
 
 ## get_knowledge_guest_session_categories
@@ -2582,6 +2838,310 @@ except ApiException as e:
 [**KnowledgeSettingListing**](KnowledgeSettingListing)
 
 
+## get_knowledge_source
+
+> [**V3SourceDetailedWithErrorResponse**](V3SourceDetailedWithErrorResponse) get_knowledge_source(source_id, expand=expand)
+
+
+Get source
+
+Wraps GET /api/v2/knowledge/sources/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:source:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+expand = ['expand_example'] # list[str] | Optional fields to expand for the Source. (optional)
+
+try:
+    # Get source
+    api_response = api_instance.get_knowledge_source(source_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_source: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **expand** | [**list[str]**](str)| Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, filterDetails |
+
+### Return type
+
+[**V3SourceDetailedWithErrorResponse**](V3SourceDetailedWithErrorResponse)
+
+
+## get_knowledge_source_synchronization
+
+> [**V3Synchronization**](V3Synchronization) get_knowledge_source_synchronization(source_id, synchronization_id)
+
+
+Get a specific synchronization of a source.
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId} 
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+
+try:
+    # Get a specific synchronization of a source.
+    api_response = api_instance.get_knowledge_source_synchronization(source_id, synchronization_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_source_synchronization: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+
+### Return type
+
+[**V3Synchronization**](V3Synchronization)
+
+
+## get_knowledge_source_synchronizations
+
+> [**V3SynchronizationListing**](V3SynchronizationListing) get_knowledge_source_synchronizations(source_id, before=before, after=after, page_size=page_size)
+
+
+Get synchronizations of a source.
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations 
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+
+try:
+    # Get synchronizations of a source.
+    api_response = api_instance.get_knowledge_source_synchronizations(source_id, before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_source_synchronizations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**V3SynchronizationListing**](V3SynchronizationListing)
+
+
+## get_knowledge_sources
+
+> [**V3SourceWithErrorListing**](V3SourceWithErrorListing) get_knowledge_sources(expand=expand)
+
+
+List sources
+
+Wraps GET /api/v2/knowledge/sources 
+
+Requires ALL permissions: 
+
+* knowledge:source:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+expand = ['expand_example'] # list[str] | Optional fields to expand for the Source. (optional)
+
+try:
+    # List sources
+    api_response = api_instance.get_knowledge_sources(expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_sources: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expand** | [**list[str]**](str)| Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync |
+
+### Return type
+
+[**V3SourceWithErrorListing**](V3SourceWithErrorListing)
+
+
+## get_knowledge_sources_synchronizations
+
+> [**V3SynchronizationListing**](V3SynchronizationListing) get_knowledge_sources_synchronizations(before=before, after=after, page_size=page_size)
+
+
+Get synchronizations of all sources of the organization.
+
+Wraps GET /api/v2/knowledge/sources/synchronizations 
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+
+try:
+    # Get synchronizations of all sources of the organization.
+    api_response = api_instance.get_knowledge_sources_synchronizations(before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_sources_synchronizations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**V3SynchronizationListing**](V3SynchronizationListing)
+
+
+## patch_knowledge_connection
+
+> [**ConnectionResponse**](ConnectionResponse) patch_knowledge_connection(connection_id, body=body)
+
+
+Update connection
+
+Wraps PATCH /api/v2/knowledge/connections/{connectionId} 
+
+Requires ALL permissions: 
+
+* knowledge:connection:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+connection_id = 'connection_id_example' # str | Connection ID
+body = PureCloudPlatformClientV2.ConnectionUpdateRequest() # ConnectionUpdateRequest |  (optional)
+
+try:
+    # Update connection
+    api_response = api_instance.patch_knowledge_connection(connection_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_connection: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **connection_id** | **str**| Connection ID |  |
+| **body** | [**ConnectionUpdateRequest**](ConnectionUpdateRequest)|  | [optional]  |
+
+### Return type
+
+[**ConnectionResponse**](ConnectionResponse)
+
+
 ## patch_knowledge_guest_session_documents_search_search_id
 
 >  patch_knowledge_guest_session_documents_search_search_id(session_id, search_id, body)
@@ -3303,6 +3863,106 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
+
+
+## patch_knowledge_source_synchronization
+
+> [**V3Synchronization**](V3Synchronization) patch_knowledge_source_synchronization(source_id, synchronization_id, body)
+
+
+Update synchronization.
+
+Wraps PATCH /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId} 
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+body = PureCloudPlatformClientV2.V3SynchronizationUpdateRequest() # V3SynchronizationUpdateRequest | 
+
+try:
+    # Update synchronization.
+    api_response = api_instance.patch_knowledge_source_synchronization(source_id, synchronization_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_source_synchronization: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **body** | [**V3SynchronizationUpdateRequest**](V3SynchronizationUpdateRequest)|  |  |
+
+### Return type
+
+[**V3Synchronization**](V3Synchronization)
+
+
+## post_knowledge_connections
+
+> [**ConnectionCreateResponse**](ConnectionCreateResponse) post_knowledge_connections(body)
+
+
+Create new connection
+
+Wraps POST /api/v2/knowledge/connections 
+
+Requires ALL permissions: 
+
+* knowledge:connection:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+body = PureCloudPlatformClientV2.ConnectionCreateRequest() # ConnectionCreateRequest | 
+
+try:
+    # Create new connection
+    api_response = api_instance.post_knowledge_connections(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_connections: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConnectionCreateRequest**](ConnectionCreateRequest)|  |  |
+
+### Return type
+
+[**ConnectionCreateResponse**](ConnectionCreateResponse)
 
 
 ## post_knowledge_documentuploads
@@ -5284,6 +5944,156 @@ except ApiException as e:
 [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
 
 
+## post_knowledge_source_synchronization_uploads
+
+> [**V3SynchronizationUploadUrlResponse**](V3SynchronizationUploadUrlResponse) post_knowledge_source_synchronization_uploads(source_id, synchronization_id, body)
+
+
+Create presigned URL for uploading a file in the synchronization.
+
+Wraps POST /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads 
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:upload
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+body = PureCloudPlatformClientV2.V3SynchronizationUploadUrlRequest() # V3SynchronizationUploadUrlRequest | 
+
+try:
+    # Create presigned URL for uploading a file in the synchronization.
+    api_response = api_instance.post_knowledge_source_synchronization_uploads(source_id, synchronization_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_source_synchronization_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **body** | [**V3SynchronizationUploadUrlRequest**](V3SynchronizationUploadUrlRequest)|  |  |
+
+### Return type
+
+[**V3SynchronizationUploadUrlResponse**](V3SynchronizationUploadUrlResponse)
+
+
+## post_knowledge_source_synchronizations
+
+> [**V3Synchronization**](V3Synchronization) post_knowledge_source_synchronizations(source_id, body=body)
+
+
+Start a manual synchronization from a source.
+
+Wraps POST /api/v2/knowledge/sources/{sourceId}/synchronizations 
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+body = PureCloudPlatformClientV2.V3StartManualSyncRequest() # V3StartManualSyncRequest |  (optional)
+
+try:
+    # Start a manual synchronization from a source.
+    api_response = api_instance.post_knowledge_source_synchronizations(source_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_source_synchronizations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **body** | [**V3StartManualSyncRequest**](V3StartManualSyncRequest)|  | [optional]  |
+
+### Return type
+
+[**V3Synchronization**](V3Synchronization)
+
+
+## post_knowledge_sources
+
+> [**V3SourceDetailedResponse**](V3SourceDetailedResponse) post_knowledge_sources(body)
+
+
+Create a new source
+
+Wraps POST /api/v2/knowledge/sources 
+
+Requires ALL permissions: 
+
+* knowledge:source:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+body = PureCloudPlatformClientV2.V3SourceCreateRequest() # V3SourceCreateRequest | 
+
+try:
+    # Create a new source
+    api_response = api_instance.post_knowledge_sources(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_sources: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**V3SourceCreateRequest**](V3SourceCreateRequest)|  |  |
+
+### Return type
+
+[**V3SourceDetailedResponse**](V3SourceDetailedResponse)
+
+
 ## put_knowledge_knowledgebase_sources_salesforce_source_id
 
 > [**SalesforceSourceResponse**](SalesforceSourceResponse) put_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id, body)
@@ -5388,4 +6198,54 @@ except ApiException as e:
 [**ServiceNowSourceResponse**](ServiceNowSourceResponse)
 
 
-_PureCloudPlatformClientV2 253.0.0_
+## put_knowledge_source
+
+> [**V3SourceDetailedResponse**](V3SourceDetailedResponse) put_knowledge_source(source_id, body)
+
+
+Update the source
+
+Wraps PUT /api/v2/knowledge/sources/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:source:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+body = PureCloudPlatformClientV2.V3SourceUpdateRequest() # V3SourceUpdateRequest | 
+
+try:
+    # Update the source
+    api_response = api_instance.put_knowledge_source(source_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->put_knowledge_source: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **body** | [**V3SourceUpdateRequest**](V3SourceUpdateRequest)|  |  |
+
+### Return type
+
+[**V3SourceDetailedResponse**](V3SourceDetailedResponse)
+
+
+_PureCloudPlatformClientV2 254.0.0_

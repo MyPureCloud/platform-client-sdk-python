@@ -11,8 +11,7 @@
 | **action_type** | str | The type of this action | [optional] |
 | **campaign_rule_action_entities** | [DialerCampaignRuleConfigChangeCampaignRuleActionEntities](DialerCampaignRuleConfigChangeCampaignRuleActionEntities) |  | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
-| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

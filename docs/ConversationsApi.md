@@ -4145,7 +4145,7 @@ except ApiException as e:
 
 ## get_conversations_email_messages
 
-> [**EmailMessagePreviewListing**](EmailMessagePreviewListing) get_conversations_email_messages(conversation_id)
+> [**EmailMessagePreviewListing**](EmailMessagePreviewListing) get_conversations_email_messages(conversation_id, include_agentless_stitched_messages=include_agentless_stitched_messages)
 
 
 Get conversation messages
@@ -4169,10 +4169,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
+include_agentless_stitched_messages = False # bool | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. (optional) (default to False)
 
 try:
     # Get conversation messages
-    api_response = api_instance.get_conversations_email_messages(conversation_id)
+    api_response = api_instance.get_conversations_email_messages(conversation_id, include_agentless_stitched_messages=include_agentless_stitched_messages)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_email_messages: %s\n" % e)
@@ -4184,6 +4185,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
+| **include_agentless_stitched_messages** | **bool**| Whether to include Agentless &#39;api&#39; type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that&#39;s a stitched agentless message. | [optional] [default to False] |
 
 ### Return type
 
@@ -16410,7 +16412,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-body = PureCloudPlatformClientV2.SupportedContentReference() # SupportedContentReference | SupportedContent
+body = PureCloudPlatformClientV2.SupportedContentReference() # SupportedContentReference | Reference to supported content profile
 
 try:
     # Set the organization's default supported content profile that may be assigned to an integration when it is created.
@@ -16425,7 +16427,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SupportedContentReference**](SupportedContentReference)| SupportedContent |  |
+| **body** | [**SupportedContentReference**](SupportedContentReference)| Reference to supported content profile |  |
 
 ### Return type
 
@@ -16637,4 +16639,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

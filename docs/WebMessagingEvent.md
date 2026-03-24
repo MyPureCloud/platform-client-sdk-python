@@ -9,7 +9,8 @@
 | **event_type** | str | Type of this event element | |
 | **co_browse** | [WebMessagingEventCoBrowse](WebMessagingEventCoBrowse) | Cobrowse event. | [optional] |
 | **presence** | [WebMessagingEventPresence](WebMessagingEventPresence) | Presence event. | [optional] |
+| **video** | [WebMessagingEventVideo](WebMessagingEventVideo) | Video event. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

@@ -15,6 +15,8 @@
 | **division_ids** | list[str] | Identifier(s) of division(s) associated with a conversation | [optional] |
 | **external_tag** | str | External tag for the conversation | [optional] |
 | **inactivity_timeout** | datetime | The time in the future, after which this conversation would be considered inactive. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **associated_conversation_id** | str | ID of the conversation the initiator is signaling this new conversation is associated with | [optional] |
+| **consultation_conversation_ids** | list[str] | Set of conversationIds the initiator has signaled this conversation is associated with | [optional] |
 | **knowledge_base_ids** | list[str] | The unique identifier(s) of the knowledge base(s) used | [optional] |
 | **media_stats_min_conversation_mos** | float | The lowest estimated average MOS among all the audio streams belonging to this conversation | [optional] |
 | **media_stats_min_conversation_r_factor** | float | The lowest R-factor value among all of the audio streams belonging to this conversation | [optional] |
@@ -28,4 +30,4 @@
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

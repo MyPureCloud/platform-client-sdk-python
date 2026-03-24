@@ -28,7 +28,8 @@
 | **wrapup_duration_ms** | int |  | [optional] |
 | **conversation_external_contact_ids** | list[str] |  | [optional] |
 | **conversation_external_organization_ids** | list[str] |  | [optional] |
+| **utilization_label** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

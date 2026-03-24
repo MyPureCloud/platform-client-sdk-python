@@ -67,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_scan_organizations_divisionviews_all**](#get_externalcontacts_scan_organizations_divisionviews_all) | Scan for external organizations using paging|
 |[**get_externalcontacts_scan_relationships**](#get_externalcontacts_scan_relationships) | Scan for relationships|
 |[**get_externalcontacts_scan_relationships_divisionviews_all**](#get_externalcontacts_scan_relationships_divisionviews_all) | Scan for relationships|
+|[**patch_externalcontacts_contact**](#patch_externalcontacts_contact) | Update specific fields of an external contact|
 |[**patch_externalcontacts_contact_identifiers**](#patch_externalcontacts_contact_identifiers) | Claim or release identifiers for a contact|
 |[**patch_externalcontacts_organization_identifiers**](#patch_externalcontacts_organization_identifiers) | Claim or release identifiers for an external organization|
 |[**post_externalcontacts_bulk_contacts**](#post_externalcontacts_bulk_contacts) | Bulk fetch contacts|
@@ -3207,6 +3208,56 @@ except ApiException as e:
 [**CursorRelationshipListing**](CursorRelationshipListing)
 
 
+## patch_externalcontacts_contact
+
+> [**ExternalContact**](ExternalContact) patch_externalcontacts_contact(contact_id, body)
+
+
+Update specific fields of an external contact
+
+Wraps PATCH /api/v2/externalcontacts/contacts/{contactId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+body = PureCloudPlatformClientV2.ExternalContactsPatchRequest() # ExternalContactsPatchRequest | Contact fields to update
+
+try:
+    # Update specific fields of an external contact
+    api_response = api_instance.patch_externalcontacts_contact(contact_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->patch_externalcontacts_contact: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Contact fields to update |  |
+
+### Return type
+
+[**ExternalContact**](ExternalContact)
+
+
 ## patch_externalcontacts_contact_identifiers
 
 > [**ContactIdentifier**](ContactIdentifier) patch_externalcontacts_contact_identifiers(contact_id, body)
@@ -6140,4 +6191,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

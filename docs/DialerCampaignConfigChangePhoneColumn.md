@@ -9,8 +9,7 @@
 | **column_name** | str | The name of the phone column | [optional] |
 | **type** | str | The type of the phone column, for example, &#39;cell&#39; or &#39;home&#39; | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
-| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

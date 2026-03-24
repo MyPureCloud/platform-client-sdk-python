@@ -14,8 +14,7 @@
 | **target_contact_list_ids** | list[str] | The ids for target contact lists | [optional] |
 | **list_name_prefix** | str | The prefix used for target contact list names | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
-| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

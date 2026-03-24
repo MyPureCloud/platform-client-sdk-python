@@ -7,8 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **user** | [UserReference](UserReference) | The user associated with the staffing group | [optional] |
-| **staffing_group** | [StaffingGroupReference](StaffingGroupReference) | The staffing group | [optional] |
+| **staffing_group** | [StaffingGroupReference](StaffingGroupReference) | The current staffing group of the user | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_
