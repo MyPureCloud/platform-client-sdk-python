@@ -47,13 +47,65 @@ class CampaignRuleSpecificDateInterval(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'min': 'str',
+            'max': 'str'
         }
 
         self.attribute_map = {
-            
+            'min': 'min',
+            'max': 'max'
         }
 
+        self._min = None
+        self._max = None
+
+    @property
+    def min(self) -> str:
+        """
+        Gets the min of this CampaignRuleSpecificDateInterval.
+        The minimum value of the interval in yyyy-MM-dd format (if includeYear=true) or in MM-dd format (if includeYear=false). Required for the \"between\" operator
+
+        :return: The min of this CampaignRuleSpecificDateInterval.
+        :rtype: str
+        """
+        return self._min
+
+    @min.setter
+    def min(self, min: str) -> None:
+        """
+        Sets the min of this CampaignRuleSpecificDateInterval.
+        The minimum value of the interval in yyyy-MM-dd format (if includeYear=true) or in MM-dd format (if includeYear=false). Required for the \"between\" operator
+
+        :param min: The min of this CampaignRuleSpecificDateInterval.
+        :type: str
+        """
+        
+
+        self._min = min
+
+    @property
+    def max(self) -> str:
+        """
+        Gets the max of this CampaignRuleSpecificDateInterval.
+        The maximum value of the interval in yyyy-MM-dd format (if includeYear=true) or in MM-dd format (if includeYear=false). Required for the \"between\" operator
+
+        :return: The max of this CampaignRuleSpecificDateInterval.
+        :rtype: str
+        """
+        return self._max
+
+    @max.setter
+    def max(self, max: str) -> None:
+        """
+        Sets the max of this CampaignRuleSpecificDateInterval.
+        The maximum value of the interval in yyyy-MM-dd format (if includeYear=true) or in MM-dd format (if includeYear=false). Required for the \"between\" operator
+
+        :param max: The max of this CampaignRuleSpecificDateInterval.
+        :type: str
+        """
+        
+
+        self._max = max
 
     def to_dict(self):
         """

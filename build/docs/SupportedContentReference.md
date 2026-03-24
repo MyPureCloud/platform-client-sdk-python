@@ -6,11 +6,11 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The SupportedContent unique identifier associated with this integration | |
+| **id** | str | The SupportedContent unique identifier associated with this integration or phone number | |
 | **name** | str | The SupportedContent profile name | [optional] |
 | **self_uri** | str | The SupportedContent profile URI | [optional] |
 | **media_types** | [MediaTypes](MediaTypes) | Media types definition for the supported content | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

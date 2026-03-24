@@ -41,6 +41,12 @@ from ..models import CategoryResponse
 from ..models import CategoryResponseListing
 from ..models import CategoryUpdateRequest
 from ..models import ChunkSearchRegisterRequest
+from ..models import ConnectionCreateRequest
+from ..models import ConnectionCreateResponse
+from ..models import ConnectionListing
+from ..models import ConnectionOptionListing
+from ..models import ConnectionResponse
+from ..models import ConnectionUpdateRequest
 from ..models import CreateUploadSourceUrlJobRequest
 from ..models import CreateUploadSourceUrlJobResponse
 from ..models import DocumentVariationRequest
@@ -133,6 +139,17 @@ from ..models import UnansweredPhraseGroupPatchRequestBody
 from ..models import UnansweredPhraseGroupUpdateResponse
 from ..models import UploadUrlRequest
 from ..models import UploadUrlResponse
+from ..models import V3SourceCreateRequest
+from ..models import V3SourceDetailedResponse
+from ..models import V3SourceDetailedWithErrorResponse
+from ..models import V3SourceUpdateRequest
+from ..models import V3SourceWithErrorListing
+from ..models import V3StartManualSyncRequest
+from ..models import V3Synchronization
+from ..models import V3SynchronizationListing
+from ..models import V3SynchronizationUpdateRequest
+from ..models import V3SynchronizationUploadUrlRequest
+from ..models import V3SynchronizationUploadUrlResponse
 
 class KnowledgeApi(object):
     """
@@ -149,6 +166,84 @@ class KnowledgeApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_knowledge_connection(self, connection_id: str, **kwargs) -> 'ConnectionResponse':
+        """
+        Delete connection
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_connection(connection_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str connection_id: Connection ID (required)
+        :return: ConnectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['connection_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_connection" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'connection_id' is set
+        if ('connection_id' not in params) or (params['connection_id'] is None):
+            raise ValueError("Missing the required parameter `connection_id` when calling `delete_knowledge_connection`")
+
+
+        resource_path = '/api/v2/knowledge/connections/{connectionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'connection_id' in params:
+            path_params['connectionId'] = params['connection_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConnectionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_knowledge_knowledgebase(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeBase':
         """
@@ -1064,6 +1159,318 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_source(self, source_id: str, **kwargs) -> None:
+        """
+        Delete source
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_source(source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_source" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `delete_knowledge_source`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_connection(self, connection_id: str, **kwargs) -> 'ConnectionResponse':
+        """
+        Get connection
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_connection(connection_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str connection_id: Connection ID (required)
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected.
+        :return: ConnectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['connection_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_connection" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'connection_id' is set
+        if ('connection_id' not in params) or (params['connection_id'] is None):
+            raise ValueError("Missing the required parameter `connection_id` when calling `get_knowledge_connection`")
+
+
+        resource_path = '/api/v2/knowledge/connections/{connectionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'connection_id' in params:
+            path_params['connectionId'] = params['connection_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConnectionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_connection_options(self, connection_id: str, **kwargs) -> 'ConnectionOptionListing':
+        """
+        Get connection options
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_connection_options(connection_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str connection_id: Connection ID (required)
+        :param str parent_id: The id of the parent option whose children to be listed.
+        :return: ConnectionOptionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['connection_id', 'parent_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_connection_options" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'connection_id' is set
+        if ('connection_id' not in params) or (params['connection_id'] is None):
+            raise ValueError("Missing the required parameter `connection_id` when calling `get_knowledge_connection_options`")
+
+
+        resource_path = '/api/v2/knowledge/connections/{connectionId}/options'.replace('{format}', 'json')
+        path_params = {}
+        if 'connection_id' in params:
+            path_params['connectionId'] = params['connection_id']
+
+        query_params = {}
+        if 'parent_id' in params:
+            query_params['parentId'] = params['parent_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConnectionOptionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_connections(self, **kwargs) -> 'ConnectionListing':
+        """
+        Get connections
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_connections(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ConnectionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_connections" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/knowledge/connections'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConnectionListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4269,6 +4676,495 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_knowledge_source(self, source_id: str, **kwargs) -> 'V3SourceDetailedWithErrorResponse':
+        """
+        Get source
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_source(source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param list[str] expand: Optional fields to expand for the Source.
+        :return: V3SourceDetailedWithErrorResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_source" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_knowledge_source`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SourceDetailedWithErrorResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_source_synchronization(self, source_id: str, synchronization_id: str, **kwargs) -> 'V3Synchronization':
+        """
+        Get a specific synchronization of a source.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_source_synchronization(source_id, synchronization_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :return: V3Synchronization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_source_synchronization" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_knowledge_source_synchronization`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `get_knowledge_source_synchronization`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3Synchronization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_source_synchronizations(self, source_id: str, **kwargs) -> 'V3SynchronizationListing':
+        """
+        Get synchronizations of a source.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_source_synchronizations(source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: V3SynchronizationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_source_synchronizations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_knowledge_source_synchronizations`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_sources(self, **kwargs) -> 'V3SourceWithErrorListing':
+        """
+        List sources
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_sources(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] expand: Optional fields to expand for the Source.
+        :return: V3SourceWithErrorListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_sources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/knowledge/sources'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SourceWithErrorListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_sources_synchronizations(self, **kwargs) -> 'V3SynchronizationListing':
+        """
+        Get synchronizations of all sources of the organization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_sources_synchronizations(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: V3SynchronizationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_sources_synchronizations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/knowledge/sources/synchronizations'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_connection(self, connection_id: str, **kwargs) -> 'ConnectionResponse':
+        """
+        Update connection
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_connection(connection_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str connection_id: Connection ID (required)
+        :param ConnectionUpdateRequest body: 
+        :return: ConnectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['connection_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_connection" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'connection_id' is set
+        if ('connection_id' not in params) or (params['connection_id'] is None):
+            raise ValueError("Missing the required parameter `connection_id` when calling `patch_knowledge_connection`")
+
+
+        resource_path = '/api/v2/knowledge/connections/{connectionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'connection_id' in params:
+            path_params['connectionId'] = params['connection_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConnectionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_knowledge_guest_session_documents_search_search_id(self, session_id: str, search_id: str, body: 'SearchUpdateRequest', **kwargs) -> None:
         """
         Update search result.
@@ -5522,6 +6418,174 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='KnowledgeSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_knowledge_source_synchronization(self, source_id: str, synchronization_id: str, body: 'V3SynchronizationUpdateRequest', **kwargs) -> 'V3Synchronization':
+        """
+        Update synchronization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_knowledge_source_synchronization(source_id, synchronization_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param V3SynchronizationUpdateRequest body:  (required)
+        :return: V3Synchronization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_knowledge_source_synchronization" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `patch_knowledge_source_synchronization`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `patch_knowledge_source_synchronization`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_knowledge_source_synchronization`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3Synchronization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_connections(self, body: 'ConnectionCreateRequest', **kwargs) -> 'ConnectionCreateResponse':
+        """
+        Create new connection
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_connections(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ConnectionCreateRequest body:  (required)
+        :return: ConnectionCreateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_connections" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_connections`")
+
+
+        resource_path = '/api/v2/knowledge/connections'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConnectionCreateResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8868,6 +9932,255 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_knowledge_source_synchronization_uploads(self, source_id: str, synchronization_id: str, body: 'V3SynchronizationUploadUrlRequest', **kwargs) -> 'V3SynchronizationUploadUrlResponse':
+        """
+        Create presigned URL for uploading a file in the synchronization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_source_synchronization_uploads(source_id, synchronization_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param V3SynchronizationUploadUrlRequest body:  (required)
+        :return: V3SynchronizationUploadUrlResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_source_synchronization_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `post_knowledge_source_synchronization_uploads`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `post_knowledge_source_synchronization_uploads`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_source_synchronization_uploads`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationUploadUrlResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_source_synchronizations(self, source_id: str, **kwargs) -> 'V3Synchronization':
+        """
+        Start a manual synchronization from a source.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_source_synchronizations(source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param V3StartManualSyncRequest body: 
+        :return: V3Synchronization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_source_synchronizations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `post_knowledge_source_synchronizations`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3Synchronization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_sources(self, body: 'V3SourceCreateRequest', **kwargs) -> 'V3SourceDetailedResponse':
+        """
+        Create a new source
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_sources(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V3SourceCreateRequest body:  (required)
+        :return: V3SourceDetailedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_sources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_sources`")
+
+
+        resource_path = '/api/v2/knowledge/sources'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SourceDetailedResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_knowledge_knowledgebase_sources_salesforce_source_id(self, knowledge_base_id: str, source_id: str, body: 'SalesforceSourceRequest', **kwargs) -> 'SalesforceSourceResponse':
         """
         Update Salesforce Knowledge integration source
@@ -9044,6 +10357,90 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ServiceNowSourceResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_knowledge_source(self, source_id: str, body: 'V3SourceUpdateRequest', **kwargs) -> 'V3SourceDetailedResponse':
+        """
+        Update the source
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_knowledge_source(source_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param V3SourceUpdateRequest body:  (required)
+        :return: V3SourceDetailedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_knowledge_source" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `put_knowledge_source`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_knowledge_source`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SourceDetailedResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

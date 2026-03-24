@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_agents_greetings_me**](#get_telephony_agents_greetings_me) | Get the agent&#39;s own greetings.|
 |[**get_telephony_calls_metrics**](#get_telephony_calls_metrics) | Get the concurrent call metrics for a given organization.|
 |[**get_telephony_mediaregions**](#get_telephony_mediaregions) | Retrieve the list of AWS regions media can stream through.|
+|[**get_telephony_settings**](#get_telephony_settings) | Get the global telephony configuration.|
 |[**get_telephony_sipmessages_conversation**](#get_telephony_sipmessages_conversation) | Get a SIP message.|
 |[**get_telephony_sipmessages_conversation_headers**](#get_telephony_sipmessages_conversation_headers) | Get SIP headers.|
 |[**get_telephony_siptraces**](#get_telephony_siptraces) | Fetch SIP metadata|
@@ -17,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_siptraces_download**](#post_telephony_siptraces_download) | Request a download of a pcap file to S3|
 |[**put_telephony_agent_greetings**](#put_telephony_agent_greetings) | Updates an agent&#39;s greetings.|
 |[**put_telephony_agents_greetings_me**](#put_telephony_agents_greetings_me) | Updates the agent&#39;s own greetings.|
+|[**put_telephony_settings**](#put_telephony_settings) | Update the global telephony configuration.|
 
 
 
@@ -202,6 +204,50 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**MediaRegions**](MediaRegions)
+
+
+## get_telephony_settings
+
+> [**TelephonySettings**](TelephonySettings) get_telephony_settings()
+
+
+Get the global telephony configuration.
+
+Wraps GET /api/v2/telephony/settings 
+
+Requires ANY permissions: 
+
+* telephony:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+
+try:
+    # Get the global telephony configuration.
+    api_response = api_instance.get_telephony_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**TelephonySettings**](TelephonySettings)
 
 
 ## get_telephony_sipmessages_conversation
@@ -560,4 +606,52 @@ except ApiException as e:
 [**SelfAgentGreeting**](SelfAgentGreeting)
 
 
-_PureCloudPlatformClientV2 253.0.0_
+## put_telephony_settings
+
+> [**TelephonySettings**](TelephonySettings) put_telephony_settings(body)
+
+
+Update the global telephony configuration.
+
+Wraps PUT /api/v2/telephony/settings 
+
+Requires ANY permissions: 
+
+* telephony:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+body = PureCloudPlatformClientV2.TelephonySettings() # TelephonySettings | Telephony
+
+try:
+    # Update the global telephony configuration.
+    api_response = api_instance.put_telephony_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->put_telephony_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TelephonySettings**](TelephonySettings)| Telephony |  |
+
+### Return type
+
+[**TelephonySettings**](TelephonySettings)
+
+
+_PureCloudPlatformClientV2 254.0.0_

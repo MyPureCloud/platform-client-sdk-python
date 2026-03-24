@@ -31,6 +31,12 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CampaignRuleDayOfMonthParameters
+    from . import CampaignRuleDayOfWeekParameters
+    from . import CampaignRuleSpecificDateParameters
+    from . import CampaignRuleTimeOfDayParameters
+    from . import CampaignRuleWeekDayOfMonthParameters
 
 class CampaignRuleDateTimeConditionParameters(object):
     """
@@ -47,13 +53,173 @@ class CampaignRuleDateTimeConditionParameters(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'inverted': 'bool',
+            'time_of_day': 'CampaignRuleTimeOfDayParameters',
+            'day_of_week': 'CampaignRuleDayOfWeekParameters',
+            'day_of_month': 'CampaignRuleDayOfMonthParameters',
+            'specific_date': 'CampaignRuleSpecificDateParameters',
+            'week_day_of_month': 'CampaignRuleWeekDayOfMonthParameters'
         }
 
         self.attribute_map = {
-            
+            'inverted': 'inverted',
+            'time_of_day': 'timeOfDay',
+            'day_of_week': 'dayOfWeek',
+            'day_of_month': 'dayOfMonth',
+            'specific_date': 'specificDate',
+            'week_day_of_month': 'weekDayOfMonth'
         }
 
+        self._inverted = None
+        self._time_of_day = None
+        self._day_of_week = None
+        self._day_of_month = None
+        self._specific_date = None
+        self._week_day_of_month = None
+
+    @property
+    def inverted(self) -> bool:
+        """
+        Gets the inverted of this CampaignRuleDateTimeConditionParameters.
+        If true, inverts the result of evaluating this sub-condition. Default is false
+
+        :return: The inverted of this CampaignRuleDateTimeConditionParameters.
+        :rtype: bool
+        """
+        return self._inverted
+
+    @inverted.setter
+    def inverted(self, inverted: bool) -> None:
+        """
+        Sets the inverted of this CampaignRuleDateTimeConditionParameters.
+        If true, inverts the result of evaluating this sub-condition. Default is false
+
+        :param inverted: The inverted of this CampaignRuleDateTimeConditionParameters.
+        :type: bool
+        """
+        
+
+        self._inverted = inverted
+
+    @property
+    def time_of_day(self) -> 'CampaignRuleTimeOfDayParameters':
+        """
+        Gets the time_of_day of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"timeOfDay\" conditionType
+
+        :return: The time_of_day of this CampaignRuleDateTimeConditionParameters.
+        :rtype: CampaignRuleTimeOfDayParameters
+        """
+        return self._time_of_day
+
+    @time_of_day.setter
+    def time_of_day(self, time_of_day: 'CampaignRuleTimeOfDayParameters') -> None:
+        """
+        Sets the time_of_day of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"timeOfDay\" conditionType
+
+        :param time_of_day: The time_of_day of this CampaignRuleDateTimeConditionParameters.
+        :type: CampaignRuleTimeOfDayParameters
+        """
+        
+
+        self._time_of_day = time_of_day
+
+    @property
+    def day_of_week(self) -> 'CampaignRuleDayOfWeekParameters':
+        """
+        Gets the day_of_week of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"dayOfWeek\" conditionType
+
+        :return: The day_of_week of this CampaignRuleDateTimeConditionParameters.
+        :rtype: CampaignRuleDayOfWeekParameters
+        """
+        return self._day_of_week
+
+    @day_of_week.setter
+    def day_of_week(self, day_of_week: 'CampaignRuleDayOfWeekParameters') -> None:
+        """
+        Sets the day_of_week of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"dayOfWeek\" conditionType
+
+        :param day_of_week: The day_of_week of this CampaignRuleDateTimeConditionParameters.
+        :type: CampaignRuleDayOfWeekParameters
+        """
+        
+
+        self._day_of_week = day_of_week
+
+    @property
+    def day_of_month(self) -> 'CampaignRuleDayOfMonthParameters':
+        """
+        Gets the day_of_month of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"dayOfMonth\" conditionType
+
+        :return: The day_of_month of this CampaignRuleDateTimeConditionParameters.
+        :rtype: CampaignRuleDayOfMonthParameters
+        """
+        return self._day_of_month
+
+    @day_of_month.setter
+    def day_of_month(self, day_of_month: 'CampaignRuleDayOfMonthParameters') -> None:
+        """
+        Sets the day_of_month of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"dayOfMonth\" conditionType
+
+        :param day_of_month: The day_of_month of this CampaignRuleDateTimeConditionParameters.
+        :type: CampaignRuleDayOfMonthParameters
+        """
+        
+
+        self._day_of_month = day_of_month
+
+    @property
+    def specific_date(self) -> 'CampaignRuleSpecificDateParameters':
+        """
+        Gets the specific_date of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"specificDate\" conditionType
+
+        :return: The specific_date of this CampaignRuleDateTimeConditionParameters.
+        :rtype: CampaignRuleSpecificDateParameters
+        """
+        return self._specific_date
+
+    @specific_date.setter
+    def specific_date(self, specific_date: 'CampaignRuleSpecificDateParameters') -> None:
+        """
+        Sets the specific_date of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"specificDate\" conditionType
+
+        :param specific_date: The specific_date of this CampaignRuleDateTimeConditionParameters.
+        :type: CampaignRuleSpecificDateParameters
+        """
+        
+
+        self._specific_date = specific_date
+
+    @property
+    def week_day_of_month(self) -> 'CampaignRuleWeekDayOfMonthParameters':
+        """
+        Gets the week_day_of_month of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"weekDayOfMonth\" conditionType
+
+        :return: The week_day_of_month of this CampaignRuleDateTimeConditionParameters.
+        :rtype: CampaignRuleWeekDayOfMonthParameters
+        """
+        return self._week_day_of_month
+
+    @week_day_of_month.setter
+    def week_day_of_month(self, week_day_of_month: 'CampaignRuleWeekDayOfMonthParameters') -> None:
+        """
+        Sets the week_day_of_month of this CampaignRuleDateTimeConditionParameters.
+        Parameters for \"weekDayOfMonth\" conditionType
+
+        :param week_day_of_month: The week_day_of_month of this CampaignRuleDateTimeConditionParameters.
+        :type: CampaignRuleWeekDayOfMonthParameters
+        """
+        
+
+        self._week_day_of_month = week_day_of_month
 
     def to_dict(self):
         """

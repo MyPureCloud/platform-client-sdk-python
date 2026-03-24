@@ -42,6 +42,7 @@ from ..models import AttemptLimitsEntityListing
 from ..models import CallableTimeSet
 from ..models import CallableTimeSetEntityListing
 from ..models import Campaign
+from ..models import CampaignDiagnosticSummary
 from ..models import CampaignDiagnostics
 from ..models import CampaignDivisionView
 from ..models import CampaignDivisionViewListing
@@ -773,7 +774,7 @@ class OutboundApi(object):
 
     def delete_outbound_contactlist_contacts(self, contact_list_id: str, contact_ids: List['str'], **kwargs) -> None:
         """
-        Delete contacts from a contact list.
+        Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -5657,6 +5658,96 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContactListTemplateEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_diagnostics_campaign_summary(self, campaign_id: str, start: str, end: str, **kwargs) -> 'CampaignDiagnosticSummary':
+        """
+        Get diagnostic summary for a single campaign
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_diagnostics_campaign_summary(campaign_id, start, end, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str campaign_id: Campaign ID (required)
+        :param str start: Start datetime (ISO 8601 or Unix epoch) (required)
+        :param str end: End datetime (ISO 8601 or Unix epoch) (required)
+        :return: CampaignDiagnosticSummary
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['campaign_id', 'start', 'end']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_diagnostics_campaign_summary" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'campaign_id' is set
+        if ('campaign_id' not in params) or (params['campaign_id'] is None):
+            raise ValueError("Missing the required parameter `campaign_id` when calling `get_outbound_diagnostics_campaign_summary`")
+        # verify the required parameter 'start' is set
+        if ('start' not in params) or (params['start'] is None):
+            raise ValueError("Missing the required parameter `start` when calling `get_outbound_diagnostics_campaign_summary`")
+        # verify the required parameter 'end' is set
+        if ('end' not in params) or (params['end'] is None):
+            raise ValueError("Missing the required parameter `end` when calling `get_outbound_diagnostics_campaign_summary`")
+
+
+        resource_path = '/api/v2/outbound/diagnostics/campaigns/{campaignId}/summary'.replace('{format}', 'json')
+        path_params = {}
+        if 'campaign_id' in params:
+            path_params['campaignId'] = params['campaign_id']
+
+        query_params = {}
+        if 'start' in params:
+            query_params['start'] = params['start']
+        if 'end' in params:
+            query_params['end'] = params['end']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CampaignDiagnosticSummary',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

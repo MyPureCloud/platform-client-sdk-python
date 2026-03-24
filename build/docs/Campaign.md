@@ -41,6 +41,7 @@
 | **agent_owned_column** | str | Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns. | [optional] |
 | **dynamic_contact_queueing_settings** | [DynamicContactQueueingSettings](DynamicContactQueueingSettings) | Settings for dynamic queueing of contacts. | [optional] |
 | **skill_columns** | list[str] | The skill columns on the ContactList that this Campaign should take into account when dialing | [optional] |
+| **preview_auto_end** | bool | Option to enable preview auto end | [optional] |
 | **max_calls_per_agent** | int | The maximum number of calls that can be placed per agent on this campaign | [optional] |
 | **max_calls_per_agent_decimal** | float | The maximum number of calls that can be placed per agent on this campaign with decimal precision | [optional] |
 | **callback_auto_answer** | bool | The option manages the auto-answer callback calls | [optional] |
@@ -50,4 +51,4 @@
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

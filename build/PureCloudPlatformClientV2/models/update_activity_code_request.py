@@ -60,9 +60,9 @@ class UpdateActivityCodeRequest(object):
             'counts_toward_shrinkage': 'bool',
             'planned_shrinkage': 'bool',
             'interruptible': 'bool',
-            'secondary_presences': 'ListWrapperSecondaryPresence',
             'planning_group_ids': 'ListWrapperString',
-            'metadata': 'WfmVersionedEntityMetadata'
+            'metadata': 'WfmVersionedEntityMetadata',
+            'secondary_presences': 'ListWrapperSecondaryPresence'
         }
 
         self.attribute_map = {
@@ -75,9 +75,9 @@ class UpdateActivityCodeRequest(object):
             'counts_toward_shrinkage': 'countsTowardShrinkage',
             'planned_shrinkage': 'plannedShrinkage',
             'interruptible': 'interruptible',
-            'secondary_presences': 'secondaryPresences',
             'planning_group_ids': 'planningGroupIds',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'secondary_presences': 'secondaryPresences'
         }
 
         self._name = None
@@ -89,9 +89,9 @@ class UpdateActivityCodeRequest(object):
         self._counts_toward_shrinkage = None
         self._planned_shrinkage = None
         self._interruptible = None
-        self._secondary_presences = None
         self._planning_group_ids = None
         self._metadata = None
+        self._secondary_presences = None
 
     @property
     def name(self) -> str:
@@ -315,30 +315,6 @@ class UpdateActivityCodeRequest(object):
         self._interruptible = interruptible
 
     @property
-    def secondary_presences(self) -> 'ListWrapperSecondaryPresence':
-        """
-        Gets the secondary_presences of this UpdateActivityCodeRequest.
-        The secondary presences of this activity code
-
-        :return: The secondary_presences of this UpdateActivityCodeRequest.
-        :rtype: ListWrapperSecondaryPresence
-        """
-        return self._secondary_presences
-
-    @secondary_presences.setter
-    def secondary_presences(self, secondary_presences: 'ListWrapperSecondaryPresence') -> None:
-        """
-        Sets the secondary_presences of this UpdateActivityCodeRequest.
-        The secondary presences of this activity code
-
-        :param secondary_presences: The secondary_presences of this UpdateActivityCodeRequest.
-        :type: ListWrapperSecondaryPresence
-        """
-        
-
-        self._secondary_presences = secondary_presences
-
-    @property
     def planning_group_ids(self) -> 'ListWrapperString':
         """
         Gets the planning_group_ids of this UpdateActivityCodeRequest.
@@ -385,6 +361,30 @@ class UpdateActivityCodeRequest(object):
         
 
         self._metadata = metadata
+
+    @property
+    def secondary_presences(self) -> 'ListWrapperSecondaryPresence':
+        """
+        Gets the secondary_presences of this UpdateActivityCodeRequest.
+        The secondary presences of this activity code
+
+        :return: The secondary_presences of this UpdateActivityCodeRequest.
+        :rtype: ListWrapperSecondaryPresence
+        """
+        return self._secondary_presences
+
+    @secondary_presences.setter
+    def secondary_presences(self, secondary_presences: 'ListWrapperSecondaryPresence') -> None:
+        """
+        Sets the secondary_presences of this UpdateActivityCodeRequest.
+        The secondary presences of this activity code
+
+        :param secondary_presences: The secondary_presences of this UpdateActivityCodeRequest.
+        :type: ListWrapperSecondaryPresence
+        """
+        
+
+        self._secondary_presences = secondary_presences
 
     def to_dict(self):
         """

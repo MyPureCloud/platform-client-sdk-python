@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import WebMessagingEventCoBrowse
     from . import WebMessagingEventPresence
+    from . import WebMessagingEventVideo
 
 class WebMessagingEvent(object):
     """
@@ -52,18 +53,21 @@ class WebMessagingEvent(object):
         self.swagger_types = {
             'event_type': 'str',
             'co_browse': 'WebMessagingEventCoBrowse',
-            'presence': 'WebMessagingEventPresence'
+            'presence': 'WebMessagingEventPresence',
+            'video': 'WebMessagingEventVideo'
         }
 
         self.attribute_map = {
             'event_type': 'eventType',
             'co_browse': 'coBrowse',
-            'presence': 'presence'
+            'presence': 'presence',
+            'video': 'video'
         }
 
         self._event_type = None
         self._co_browse = None
         self._presence = None
+        self._video = None
 
     @property
     def event_type(self) -> str:
@@ -87,7 +91,7 @@ class WebMessagingEvent(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["CoBrowse", "Presence"]
+        allowed_values = ["CoBrowse", "Presence", "Video"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -141,6 +145,30 @@ class WebMessagingEvent(object):
         
 
         self._presence = presence
+
+    @property
+    def video(self) -> 'WebMessagingEventVideo':
+        """
+        Gets the video of this WebMessagingEvent.
+        Video event.
+
+        :return: The video of this WebMessagingEvent.
+        :rtype: WebMessagingEventVideo
+        """
+        return self._video
+
+    @video.setter
+    def video(self, video: 'WebMessagingEventVideo') -> None:
+        """
+        Sets the video of this WebMessagingEvent.
+        Video event.
+
+        :param video: The video of this WebMessagingEvent.
+        :type: WebMessagingEventVideo
+        """
+        
+
+        self._video = video
 
     def to_dict(self):
         """

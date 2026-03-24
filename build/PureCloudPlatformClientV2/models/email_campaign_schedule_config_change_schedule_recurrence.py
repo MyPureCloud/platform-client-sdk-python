@@ -58,8 +58,7 @@ class EmailCampaignScheduleConfigChangeScheduleRecurrence(object):
             'range': 'EmailCampaignScheduleConfigChangeRecurrenceRange',
             'pattern': 'EmailCampaignScheduleConfigChangeRecurrencePattern',
             'alterations': 'list[EmailCampaignScheduleConfigChangeAlteration]',
-            'additional_properties': 'dict(str, object)',
-            'get_additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -70,8 +69,7 @@ class EmailCampaignScheduleConfigChangeScheduleRecurrence(object):
             'range': 'range',
             'pattern': 'pattern',
             'alterations': 'alterations',
-            'additional_properties': 'additionalProperties',
-            'get_additional_properties': 'getAdditionalProperties'
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
@@ -82,7 +80,6 @@ class EmailCampaignScheduleConfigChangeScheduleRecurrence(object):
         self._pattern = None
         self._alterations = None
         self._additional_properties = None
-        self._get_additional_properties = None
 
     @property
     def id(self) -> str:
@@ -275,30 +272,6 @@ class EmailCampaignScheduleConfigChangeScheduleRecurrence(object):
         
 
         self._additional_properties = additional_properties
-
-    @property
-    def get_additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the get_additional_properties of this EmailCampaignScheduleConfigChangeScheduleRecurrence.
-
-
-        :return: The get_additional_properties of this EmailCampaignScheduleConfigChangeScheduleRecurrence.
-        :rtype: dict(str, object)
-        """
-        return self._get_additional_properties
-
-    @get_additional_properties.setter
-    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the get_additional_properties of this EmailCampaignScheduleConfigChangeScheduleRecurrence.
-
-
-        :param get_additional_properties: The get_additional_properties of this EmailCampaignScheduleConfigChangeScheduleRecurrence.
-        :type: dict(str, object)
-        """
-        
-
-        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

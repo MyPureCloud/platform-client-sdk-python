@@ -50,23 +50,20 @@ class MessagingCampaignScheduleConfigChangeAlteration(object):
             'type': 'str',
             'start': 'str',
             'end': 'str',
-            'additional_properties': 'dict(str, object)',
-            'get_additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'type': 'type',
             'start': 'start',
             'end': 'end',
-            'additional_properties': 'additionalProperties',
-            'get_additional_properties': 'getAdditionalProperties'
+            'additional_properties': 'additionalProperties'
         }
 
         self._type = None
         self._start = None
         self._end = None
         self._additional_properties = None
-        self._get_additional_properties = None
 
     @property
     def type(self) -> str:
@@ -168,30 +165,6 @@ class MessagingCampaignScheduleConfigChangeAlteration(object):
         
 
         self._additional_properties = additional_properties
-
-    @property
-    def get_additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the get_additional_properties of this MessagingCampaignScheduleConfigChangeAlteration.
-
-
-        :return: The get_additional_properties of this MessagingCampaignScheduleConfigChangeAlteration.
-        :rtype: dict(str, object)
-        """
-        return self._get_additional_properties
-
-    @get_additional_properties.setter
-    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the get_additional_properties of this MessagingCampaignScheduleConfigChangeAlteration.
-
-
-        :param get_additional_properties: The get_additional_properties of this MessagingCampaignScheduleConfigChangeAlteration.
-        :type: dict(str, object)
-        """
-        
-
-        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

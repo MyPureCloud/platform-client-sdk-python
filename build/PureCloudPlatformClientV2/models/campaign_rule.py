@@ -67,6 +67,7 @@ class CampaignRule(object):
             'campaign_rule_processing': 'str',
             'condition_groups': 'list[CampaignRuleConditionGroup]',
             'execution_settings': 'CampaignRuleExecutionSettings',
+            'time_zone_id': 'str',
             'warnings': 'list[CampaignRuleWarning]',
             'self_uri': 'str'
         }
@@ -85,6 +86,7 @@ class CampaignRule(object):
             'campaign_rule_processing': 'campaignRuleProcessing',
             'condition_groups': 'conditionGroups',
             'execution_settings': 'executionSettings',
+            'time_zone_id': 'timeZoneId',
             'warnings': 'warnings',
             'self_uri': 'selfUri'
         }
@@ -102,6 +104,7 @@ class CampaignRule(object):
         self._campaign_rule_processing = None
         self._condition_groups = None
         self._execution_settings = None
+        self._time_zone_id = None
         self._warnings = None
         self._self_uri = None
 
@@ -421,6 +424,30 @@ class CampaignRule(object):
         
 
         self._execution_settings = execution_settings
+
+    @property
+    def time_zone_id(self) -> str:
+        """
+        Gets the time_zone_id of this CampaignRule.
+        The time zone to use for date-time conditions.
+
+        :return: The time_zone_id of this CampaignRule.
+        :rtype: str
+        """
+        return self._time_zone_id
+
+    @time_zone_id.setter
+    def time_zone_id(self, time_zone_id: str) -> None:
+        """
+        Sets the time_zone_id of this CampaignRule.
+        The time zone to use for date-time conditions.
+
+        :param time_zone_id: The time_zone_id of this CampaignRule.
+        :type: str
+        """
+        
+
+        self._time_zone_id = time_zone_id
 
     @property
     def warnings(self) -> List['CampaignRuleWarning']:

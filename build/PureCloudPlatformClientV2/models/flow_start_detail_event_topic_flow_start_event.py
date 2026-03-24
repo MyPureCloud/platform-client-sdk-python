@@ -65,7 +65,8 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
             'division_id': 'str',
             'flow_version': 'str',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'utilization_label': 'str'
         }
 
         self.attribute_map = {
@@ -87,7 +88,8 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
             'division_id': 'divisionId',
             'flow_version': 'flowVersion',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'utilization_label': 'utilizationLabel'
         }
 
         self._event_time = None
@@ -109,6 +111,7 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
         self._flow_version = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._utilization_label = None
 
     @property
     def event_time(self) -> int:
@@ -585,6 +588,30 @@ class FlowStartDetailEventTopicFlowStartEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this FlowStartDetailEventTopicFlowStartEvent.
+
+
+        :return: The utilization_label of this FlowStartDetailEventTopicFlowStartEvent.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this FlowStartDetailEventTopicFlowStartEvent.
+
+
+        :param utilization_label: The utilization_label of this FlowStartDetailEventTopicFlowStartEvent.
+        :type: str
+        """
+        
+
+        self._utilization_label = utilization_label
 
     def to_dict(self):
         """

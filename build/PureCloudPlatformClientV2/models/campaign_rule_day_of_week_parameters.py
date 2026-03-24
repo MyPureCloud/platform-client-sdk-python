@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CampaignRuleDayOfWeekInterval
 
 class CampaignRuleDayOfWeekParameters(object):
     """
@@ -47,13 +49,65 @@ class CampaignRuleDayOfWeekParameters(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'in_set': 'list[int]',
+            'interval': 'CampaignRuleDayOfWeekInterval'
         }
 
         self.attribute_map = {
-            
+            'in_set': 'inSet',
+            'interval': 'interval'
         }
 
+        self._in_set = None
+        self._interval = None
+
+    @property
+    def in_set(self) -> List[int]:
+        """
+        Gets the in_set of this CampaignRuleDayOfWeekParameters.
+        The operand for the \"in\" operator, each value in 1-7 (Monday-Sunday) format
+
+        :return: The in_set of this CampaignRuleDayOfWeekParameters.
+        :rtype: list[int]
+        """
+        return self._in_set
+
+    @in_set.setter
+    def in_set(self, in_set: List[int]) -> None:
+        """
+        Sets the in_set of this CampaignRuleDayOfWeekParameters.
+        The operand for the \"in\" operator, each value in 1-7 (Monday-Sunday) format
+
+        :param in_set: The in_set of this CampaignRuleDayOfWeekParameters.
+        :type: list[int]
+        """
+        
+
+        self._in_set = in_set
+
+    @property
+    def interval(self) -> 'CampaignRuleDayOfWeekInterval':
+        """
+        Gets the interval of this CampaignRuleDayOfWeekParameters.
+        The operand for the \"between\" operator
+
+        :return: The interval of this CampaignRuleDayOfWeekParameters.
+        :rtype: CampaignRuleDayOfWeekInterval
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval: 'CampaignRuleDayOfWeekInterval') -> None:
+        """
+        Sets the interval of this CampaignRuleDayOfWeekParameters.
+        The operand for the \"between\" operator
+
+        :param interval: The interval of this CampaignRuleDayOfWeekParameters.
+        :type: CampaignRuleDayOfWeekInterval
+        """
+        
+
+        self._interval = interval
 
     def to_dict(self):
         """

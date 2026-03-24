@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import BotAggregateQueryFilter
+    from . import BotAggregationSort
     from . import BotAggregationView
 
 class BotAggregationQuery(object):
@@ -58,7 +59,10 @@ class BotAggregationQuery(object):
             'metrics': 'list[str]',
             'flatten_multivalued_dimensions': 'bool',
             'views': 'list[BotAggregationView]',
-            'alternate_time_dimension': 'str'
+            'alternate_time_dimension': 'str',
+            'query_type': 'str',
+            'sort_metric': 'BotAggregationSort',
+            'limit': 'int'
         }
 
         self.attribute_map = {
@@ -70,7 +74,10 @@ class BotAggregationQuery(object):
             'metrics': 'metrics',
             'flatten_multivalued_dimensions': 'flattenMultivaluedDimensions',
             'views': 'views',
-            'alternate_time_dimension': 'alternateTimeDimension'
+            'alternate_time_dimension': 'alternateTimeDimension',
+            'query_type': 'queryType',
+            'sort_metric': 'sortMetric',
+            'limit': 'limit'
         }
 
         self._interval = None
@@ -82,6 +89,9 @@ class BotAggregationQuery(object):
         self._flatten_multivalued_dimensions = None
         self._views = None
         self._alternate_time_dimension = None
+        self._query_type = None
+        self._sort_metric = None
+        self._limit = None
 
     @property
     def interval(self) -> str:
@@ -303,6 +313,83 @@ class BotAggregationQuery(object):
             self._alternate_time_dimension = "outdated_sdk_version"
         else:
             self._alternate_time_dimension = alternate_time_dimension
+
+    @property
+    def query_type(self) -> str:
+        """
+        Gets the query_type of this BotAggregationQuery.
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+
+        :return: The query_type of this BotAggregationQuery.
+        :rtype: str
+        """
+        return self._query_type
+
+    @query_type.setter
+    def query_type(self, query_type: str) -> None:
+        """
+        Sets the query_type of this BotAggregationQuery.
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+
+        :param query_type: The query_type of this BotAggregationQuery.
+        :type: str
+        """
+        if isinstance(query_type, int):
+            query_type = str(query_type)
+        allowed_values = ["bottomN", "groupBy", "topN"]
+        if query_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for query_type -> " + query_type)
+            self._query_type = "outdated_sdk_version"
+        else:
+            self._query_type = query_type
+
+    @property
+    def sort_metric(self) -> 'BotAggregationSort':
+        """
+        Gets the sort_metric of this BotAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :return: The sort_metric of this BotAggregationQuery.
+        :rtype: BotAggregationSort
+        """
+        return self._sort_metric
+
+    @sort_metric.setter
+    def sort_metric(self, sort_metric: 'BotAggregationSort') -> None:
+        """
+        Sets the sort_metric of this BotAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :param sort_metric: The sort_metric of this BotAggregationQuery.
+        :type: BotAggregationSort
+        """
+        
+
+        self._sort_metric = sort_metric
+
+    @property
+    def limit(self) -> int:
+        """
+        Gets the limit of this BotAggregationQuery.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+
+        :return: The limit of this BotAggregationQuery.
+        :rtype: int
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: int) -> None:
+        """
+        Sets the limit of this BotAggregationQuery.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+
+        :param limit: The limit of this BotAggregationQuery.
+        :type: int
+        """
+        
+
+        self._limit = limit
 
     def to_dict(self):
         """

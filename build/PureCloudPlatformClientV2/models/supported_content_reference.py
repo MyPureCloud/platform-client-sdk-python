@@ -71,7 +71,7 @@ class SupportedContentReference(object):
     def id(self) -> str:
         """
         Gets the id of this SupportedContentReference.
-        The SupportedContent unique identifier associated with this integration
+        The SupportedContent unique identifier associated with this integration or phone number
 
         :return: The id of this SupportedContentReference.
         :rtype: str
@@ -82,7 +82,7 @@ class SupportedContentReference(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this SupportedContentReference.
-        The SupportedContent unique identifier associated with this integration
+        The SupportedContent unique identifier associated with this integration or phone number
 
         :param id: The id of this SupportedContentReference.
         :type: str

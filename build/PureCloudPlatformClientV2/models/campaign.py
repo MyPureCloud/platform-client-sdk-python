@@ -90,6 +90,7 @@ class Campaign(object):
             'agent_owned_column': 'str',
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'skill_columns': 'list[str]',
+            'preview_auto_end': 'bool',
             'max_calls_per_agent': 'int',
             'max_calls_per_agent_decimal': 'float',
             'callback_auto_answer': 'bool',
@@ -134,6 +135,7 @@ class Campaign(object):
             'agent_owned_column': 'agentOwnedColumn',
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'skill_columns': 'skillColumns',
+            'preview_auto_end': 'previewAutoEnd',
             'max_calls_per_agent': 'maxCallsPerAgent',
             'max_calls_per_agent_decimal': 'maxCallsPerAgentDecimal',
             'callback_auto_answer': 'callbackAutoAnswer',
@@ -177,6 +179,7 @@ class Campaign(object):
         self._agent_owned_column = None
         self._dynamic_contact_queueing_settings = None
         self._skill_columns = None
+        self._preview_auto_end = None
         self._max_calls_per_agent = None
         self._max_calls_per_agent_decimal = None
         self._callback_auto_answer = None
@@ -1033,6 +1036,30 @@ class Campaign(object):
         
 
         self._skill_columns = skill_columns
+
+    @property
+    def preview_auto_end(self) -> bool:
+        """
+        Gets the preview_auto_end of this Campaign.
+        Option to enable preview auto end
+
+        :return: The preview_auto_end of this Campaign.
+        :rtype: bool
+        """
+        return self._preview_auto_end
+
+    @preview_auto_end.setter
+    def preview_auto_end(self, preview_auto_end: bool) -> None:
+        """
+        Sets the preview_auto_end of this Campaign.
+        Option to enable preview auto end
+
+        :param preview_auto_end: The preview_auto_end of this Campaign.
+        :type: bool
+        """
+        
+
+        self._preview_auto_end = preview_auto_end
 
     @property
     def max_calls_per_agent(self) -> int:

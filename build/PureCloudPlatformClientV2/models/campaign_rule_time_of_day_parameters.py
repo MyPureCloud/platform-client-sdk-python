@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CampaignRuleTimeOfDayInterval
 
 class CampaignRuleTimeOfDayParameters(object):
     """
@@ -47,13 +49,65 @@ class CampaignRuleTimeOfDayParameters(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'interval': 'CampaignRuleTimeOfDayInterval',
+            'threshold_value': 'str'
         }
 
         self.attribute_map = {
-            
+            'interval': 'interval',
+            'threshold_value': 'thresholdValue'
         }
 
+        self._interval = None
+        self._threshold_value = None
+
+    @property
+    def interval(self) -> 'CampaignRuleTimeOfDayInterval':
+        """
+        Gets the interval of this CampaignRuleTimeOfDayParameters.
+        The operand for the \"between\" operator
+
+        :return: The interval of this CampaignRuleTimeOfDayParameters.
+        :rtype: CampaignRuleTimeOfDayInterval
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval: 'CampaignRuleTimeOfDayInterval') -> None:
+        """
+        Sets the interval of this CampaignRuleTimeOfDayParameters.
+        The operand for the \"between\" operator
+
+        :param interval: The interval of this CampaignRuleTimeOfDayParameters.
+        :type: CampaignRuleTimeOfDayInterval
+        """
+        
+
+        self._interval = interval
+
+    @property
+    def threshold_value(self) -> str:
+        """
+        Gets the threshold_value of this CampaignRuleTimeOfDayParameters.
+        Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
+
+        :return: The threshold_value of this CampaignRuleTimeOfDayParameters.
+        :rtype: str
+        """
+        return self._threshold_value
+
+    @threshold_value.setter
+    def threshold_value(self, threshold_value: str) -> None:
+        """
+        Sets the threshold_value of this CampaignRuleTimeOfDayParameters.
+        Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
+
+        :param threshold_value: The threshold_value of this CampaignRuleTimeOfDayParameters.
+        :type: str
+        """
+        
+
+        self._threshold_value = threshold_value
 
     def to_dict(self):
         """

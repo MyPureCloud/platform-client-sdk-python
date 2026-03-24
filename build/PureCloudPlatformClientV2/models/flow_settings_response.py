@@ -151,7 +151,7 @@ class FlowSettingsResponse(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["bot", "commonmodule", "digitalbot", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueshortmessage", "inqueueemail", "outboundcall", "securecall", "surveyinvite", "voice", "voicemail", "voicesurvey", "workflow", "workitem"]
+        allowed_values = ["bot", "commonmodule", "digitalbot", "emailsend", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueshortmessage", "inqueueemail", "outboundcall", "securecall", "surveyinvite", "voice", "voicemail", "voicesurvey", "workflow", "workitem"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

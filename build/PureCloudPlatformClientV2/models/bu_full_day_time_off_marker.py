@@ -204,7 +204,7 @@ class BuFullDayTimeOffMarker(object):
     def payable_minutes(self) -> int:
         """
         Gets the payable_minutes of this BuFullDayTimeOffMarker.
-        Payable minutes for the time off marker
+        Payable minutes for the time off marker. Must not exceed lengthMinutes
 
         :return: The payable_minutes of this BuFullDayTimeOffMarker.
         :rtype: int
@@ -215,7 +215,7 @@ class BuFullDayTimeOffMarker(object):
     def payable_minutes(self, payable_minutes: int) -> None:
         """
         Sets the payable_minutes of this BuFullDayTimeOffMarker.
-        Payable minutes for the time off marker
+        Payable minutes for the time off marker. Must not exceed lengthMinutes
 
         :param payable_minutes: The payable_minutes of this BuFullDayTimeOffMarker.
         :type: int

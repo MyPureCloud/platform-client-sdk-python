@@ -55,7 +55,8 @@ class MediaParticipantRequest(object):
             'muted': 'bool',
             'confined': 'bool',
             'held': 'bool',
-            'wrapup_skipped': 'bool'
+            'wrapup_skipped': 'bool',
+            'resume_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class MediaParticipantRequest(object):
             'muted': 'muted',
             'confined': 'confined',
             'held': 'held',
-            'wrapup_skipped': 'wrapupSkipped'
+            'wrapup_skipped': 'wrapupSkipped',
+            'resume_time': 'resumeTime'
         }
 
         self._wrapup = None
@@ -75,6 +77,7 @@ class MediaParticipantRequest(object):
         self._confined = None
         self._held = None
         self._wrapup_skipped = None
+        self._resume_time = None
 
     @property
     def wrapup(self) -> 'WrapupInput':
@@ -248,6 +251,30 @@ class MediaParticipantRequest(object):
         
 
         self._wrapup_skipped = wrapup_skipped
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this MediaParticipantRequest.
+        Time to resume parked communication. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The resume_time of this MediaParticipantRequest.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this MediaParticipantRequest.
+        Time to resume parked communication. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param resume_time: The resume_time of this MediaParticipantRequest.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     def to_dict(self):
         """

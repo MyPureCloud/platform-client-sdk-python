@@ -50,23 +50,20 @@ class WhatsappCampaignScheduleConfigChangeRecurrencePattern(object):
             'type': 'str',
             'interval': 'int',
             'days_of_week': 'list[str]',
-            'additional_properties': 'dict(str, object)',
-            'get_additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'type': 'type',
             'interval': 'interval',
             'days_of_week': 'daysOfWeek',
-            'additional_properties': 'additionalProperties',
-            'get_additional_properties': 'getAdditionalProperties'
+            'additional_properties': 'additionalProperties'
         }
 
         self._type = None
         self._interval = None
         self._days_of_week = None
         self._additional_properties = None
-        self._get_additional_properties = None
 
     @property
     def type(self) -> str:
@@ -168,30 +165,6 @@ class WhatsappCampaignScheduleConfigChangeRecurrencePattern(object):
         
 
         self._additional_properties = additional_properties
-
-    @property
-    def get_additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the get_additional_properties of this WhatsappCampaignScheduleConfigChangeRecurrencePattern.
-
-
-        :return: The get_additional_properties of this WhatsappCampaignScheduleConfigChangeRecurrencePattern.
-        :rtype: dict(str, object)
-        """
-        return self._get_additional_properties
-
-    @get_additional_properties.setter
-    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the get_additional_properties of this WhatsappCampaignScheduleConfigChangeRecurrencePattern.
-
-
-        :param get_additional_properties: The get_additional_properties of this WhatsappCampaignScheduleConfigChangeRecurrencePattern.
-        :type: dict(str, object)
-        """
-        
-
-        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

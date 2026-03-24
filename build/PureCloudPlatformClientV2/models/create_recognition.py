@@ -128,7 +128,7 @@ class CreateRecognition(object):
     def title(self) -> str:
         """
         Gets the title of this CreateRecognition.
-        The title of the recognition. Max length of 100 characters (optional)
+        The title of the recognition. Max length of 100 characters
 
         :return: The title of this CreateRecognition.
         :rtype: str
@@ -139,7 +139,7 @@ class CreateRecognition(object):
     def title(self, title: str) -> None:
         """
         Sets the title of this CreateRecognition.
-        The title of the recognition. Max length of 100 characters (optional)
+        The title of the recognition. Max length of 100 characters
 
         :param title: The title of this CreateRecognition.
         :type: str

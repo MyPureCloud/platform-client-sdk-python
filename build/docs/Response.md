@@ -18,10 +18,10 @@
 | **substitutions_schema** | [JsonSchemaDocument](JsonSchemaDocument) | Metadata about the text substitutions in json schema format. | [optional] |
 | **response_type** | str | The response type represented by the response. | [optional] |
 | **messaging_template** | [MessagingTemplate](MessagingTemplate) | An optional messaging template definition for responseType.MessagingTemplate. | [optional] |
-| **assets** | [list[AddressableEntityRef]](AddressableEntityRef) | Assets used in the response | [optional] |
+| **assets** | [list[RmsAssetAddressableRef]](RmsAssetAddressableRef) | Assets used in the response | [optional] |
 | **footer** | [FooterTemplate](FooterTemplate) | Footer template definition for responseType.Footer. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

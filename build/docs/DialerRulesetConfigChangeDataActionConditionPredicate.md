@@ -12,8 +12,7 @@
 | **output_field_missing_resolution** | bool | The result of this predicate if the requested output field is missing from the data action&#39;s result | [optional] |
 | **inverted** | bool | If true, inverts the result of evaluating this Predicate. Default is false. | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
-| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

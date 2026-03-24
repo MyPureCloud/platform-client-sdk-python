@@ -15,6 +15,7 @@ from .background_assistant_api import BackgroundAssistantApi
 from .billing_api import BillingApi
 from .business_rules_api import BusinessRulesApi
 from .carrier_services_api import CarrierServicesApi
+from .case_management_api import CaseManagementApi
 from .chat_api import ChatApi
 from .coaching_api import CoachingApi
 from .content_management_api import ContentManagementApi
@@ -100,6 +101,7 @@ from .background_assistant_api import BackgroundAssistantApi
 from .billing_api import BillingApi
 from .business_rules_api import BusinessRulesApi
 from .carrier_services_api import CarrierServicesApi
+from .case_management_api import CaseManagementApi
 from .chat_api import ChatApi
 from .coaching_api import CoachingApi
 from .content_management_api import ContentManagementApi

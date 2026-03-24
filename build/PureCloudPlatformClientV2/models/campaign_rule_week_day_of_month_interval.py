@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CampaignRuleWeekDayOfMonth
 
 class CampaignRuleWeekDayOfMonthInterval(object):
     """
@@ -47,13 +49,65 @@ class CampaignRuleWeekDayOfMonthInterval(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'min': 'CampaignRuleWeekDayOfMonth',
+            'max': 'CampaignRuleWeekDayOfMonth'
         }
 
         self.attribute_map = {
-            
+            'min': 'min',
+            'max': 'max'
         }
 
+        self._min = None
+        self._max = None
+
+    @property
+    def min(self) -> 'CampaignRuleWeekDayOfMonth':
+        """
+        Gets the min of this CampaignRuleWeekDayOfMonthInterval.
+        The minimum value of the interval. Required for the \"between\" operator
+
+        :return: The min of this CampaignRuleWeekDayOfMonthInterval.
+        :rtype: CampaignRuleWeekDayOfMonth
+        """
+        return self._min
+
+    @min.setter
+    def min(self, min: 'CampaignRuleWeekDayOfMonth') -> None:
+        """
+        Sets the min of this CampaignRuleWeekDayOfMonthInterval.
+        The minimum value of the interval. Required for the \"between\" operator
+
+        :param min: The min of this CampaignRuleWeekDayOfMonthInterval.
+        :type: CampaignRuleWeekDayOfMonth
+        """
+        
+
+        self._min = min
+
+    @property
+    def max(self) -> 'CampaignRuleWeekDayOfMonth':
+        """
+        Gets the max of this CampaignRuleWeekDayOfMonthInterval.
+        The maximum value of the interval. Required for the \"between\" operator
+
+        :return: The max of this CampaignRuleWeekDayOfMonthInterval.
+        :rtype: CampaignRuleWeekDayOfMonth
+        """
+        return self._max
+
+    @max.setter
+    def max(self, max: 'CampaignRuleWeekDayOfMonth') -> None:
+        """
+        Sets the max of this CampaignRuleWeekDayOfMonthInterval.
+        The maximum value of the interval. Required for the \"between\" operator
+
+        :param max: The max of this CampaignRuleWeekDayOfMonthInterval.
+        :type: CampaignRuleWeekDayOfMonth
+        """
+        
+
+        self._max = max
 
     def to_dict(self):
         """

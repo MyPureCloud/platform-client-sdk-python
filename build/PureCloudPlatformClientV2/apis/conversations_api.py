@@ -6575,12 +6575,13 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
+        :param bool include_agentless_stitched_messages: Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message.
         :return: EmailMessagePreviewListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id']
+        all_params = ['conversation_id', 'include_agentless_stitched_messages']
         all_params.append('callback')
 
         params = locals()
@@ -6604,6 +6605,8 @@ class ConversationsApi(object):
             path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
+        if 'include_agentless_stitched_messages' in params:
+            query_params['includeAgentlessStitchedMessages'] = params['include_agentless_stitched_messages']
 
         header_params = {}
 
@@ -26744,7 +26747,7 @@ class ConversationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param SupportedContentReference body: SupportedContent (required)
+        :param SupportedContentReference body: Reference to supported content profile (required)
         :return: SupportedContent
                  If the method is called asynchronously,
                  returns the request thread.

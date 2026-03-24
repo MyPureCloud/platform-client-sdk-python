@@ -51,6 +51,8 @@ class SchemaQuantityLimits(object):
             'name': 'str',
             'min_field_name_characters': 'int',
             'max_field_name_characters': 'int',
+            'min_field_title_characters': 'int',
+            'max_field_title_characters': 'int',
             'min_field_description_characters': 'int',
             'max_field_description_characters': 'int',
             'min_schema_name_characters': 'int',
@@ -68,6 +70,8 @@ class SchemaQuantityLimits(object):
             'name': 'name',
             'min_field_name_characters': 'minFieldNameCharacters',
             'max_field_name_characters': 'maxFieldNameCharacters',
+            'min_field_title_characters': 'minFieldTitleCharacters',
+            'max_field_title_characters': 'maxFieldTitleCharacters',
             'min_field_description_characters': 'minFieldDescriptionCharacters',
             'max_field_description_characters': 'maxFieldDescriptionCharacters',
             'min_schema_name_characters': 'minSchemaNameCharacters',
@@ -84,6 +88,8 @@ class SchemaQuantityLimits(object):
         self._name = None
         self._min_field_name_characters = None
         self._max_field_name_characters = None
+        self._min_field_title_characters = None
+        self._max_field_title_characters = None
         self._min_field_description_characters = None
         self._max_field_description_characters = None
         self._min_schema_name_characters = None
@@ -190,6 +196,54 @@ class SchemaQuantityLimits(object):
         
 
         self._max_field_name_characters = max_field_name_characters
+
+    @property
+    def min_field_title_characters(self) -> int:
+        """
+        Gets the min_field_title_characters of this SchemaQuantityLimits.
+        The minimum number of schema field title characters allowed.
+
+        :return: The min_field_title_characters of this SchemaQuantityLimits.
+        :rtype: int
+        """
+        return self._min_field_title_characters
+
+    @min_field_title_characters.setter
+    def min_field_title_characters(self, min_field_title_characters: int) -> None:
+        """
+        Sets the min_field_title_characters of this SchemaQuantityLimits.
+        The minimum number of schema field title characters allowed.
+
+        :param min_field_title_characters: The min_field_title_characters of this SchemaQuantityLimits.
+        :type: int
+        """
+        
+
+        self._min_field_title_characters = min_field_title_characters
+
+    @property
+    def max_field_title_characters(self) -> int:
+        """
+        Gets the max_field_title_characters of this SchemaQuantityLimits.
+        The maximum number of schema field title characters allowed.
+
+        :return: The max_field_title_characters of this SchemaQuantityLimits.
+        :rtype: int
+        """
+        return self._max_field_title_characters
+
+    @max_field_title_characters.setter
+    def max_field_title_characters(self, max_field_title_characters: int) -> None:
+        """
+        Sets the max_field_title_characters of this SchemaQuantityLimits.
+        The maximum number of schema field title characters allowed.
+
+        :param max_field_title_characters: The max_field_title_characters of this SchemaQuantityLimits.
+        :type: int
+        """
+        
+
+        self._max_field_title_characters = max_field_title_characters
 
     @property
     def min_field_description_characters(self) -> int:

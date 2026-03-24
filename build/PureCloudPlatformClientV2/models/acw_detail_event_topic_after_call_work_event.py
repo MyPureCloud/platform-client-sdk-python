@@ -69,7 +69,8 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
             'wrapup_notes': 'str',
             'wrapup_duration_ms': 'int',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'utilization_label': 'str'
         }
 
         self.attribute_map = {
@@ -95,7 +96,8 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
             'wrapup_notes': 'wrapupNotes',
             'wrapup_duration_ms': 'wrapupDurationMs',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'utilization_label': 'utilizationLabel'
         }
 
         self._event_time = None
@@ -121,6 +123,7 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         self._wrapup_duration_ms = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._utilization_label = None
 
     @property
     def event_time(self) -> int:
@@ -688,6 +691,30 @@ class AcwDetailEventTopicAfterCallWorkEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this AcwDetailEventTopicAfterCallWorkEvent.
+
+
+        :return: The utilization_label of this AcwDetailEventTopicAfterCallWorkEvent.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this AcwDetailEventTopicAfterCallWorkEvent.
+
+
+        :param utilization_label: The utilization_label of this AcwDetailEventTopicAfterCallWorkEvent.
+        :type: str
+        """
+        
+
+        self._utilization_label = utilization_label
 
     def to_dict(self):
         """

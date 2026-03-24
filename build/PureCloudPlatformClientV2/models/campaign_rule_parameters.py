@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
+    from . import Duration
 
 class CampaignRuleParameters(object):
     """
@@ -62,7 +63,8 @@ class CampaignRuleParameters(object):
             'sms_messages_per_minute': 'int',
             'email_messages_per_minute': 'int',
             'sms_content_template': 'DomainEntityRef',
-            'email_content_template': 'DomainEntityRef'
+            'email_content_template': 'DomainEntityRef',
+            'for_duration': 'Duration'
         }
 
         self.attribute_map = {
@@ -79,7 +81,8 @@ class CampaignRuleParameters(object):
             'sms_messages_per_minute': 'smsMessagesPerMinute',
             'email_messages_per_minute': 'emailMessagesPerMinute',
             'sms_content_template': 'smsContentTemplate',
-            'email_content_template': 'emailContentTemplate'
+            'email_content_template': 'emailContentTemplate',
+            'for_duration': 'forDuration'
         }
 
         self._operator = None
@@ -96,6 +99,7 @@ class CampaignRuleParameters(object):
         self._email_messages_per_minute = None
         self._sms_content_template = None
         self._email_content_template = None
+        self._for_duration = None
 
     @property
     def operator(self) -> str:
@@ -447,6 +451,30 @@ class CampaignRuleParameters(object):
         
 
         self._email_content_template = email_content_template
+
+    @property
+    def for_duration(self) -> 'Duration':
+        """
+        Gets the for_duration of this CampaignRuleParameters.
+        ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true
+
+        :return: The for_duration of this CampaignRuleParameters.
+        :rtype: Duration
+        """
+        return self._for_duration
+
+    @for_duration.setter
+    def for_duration(self, for_duration: 'Duration') -> None:
+        """
+        Sets the for_duration of this CampaignRuleParameters.
+        ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true
+
+        :param for_duration: The for_duration of this CampaignRuleParameters.
+        :type: Duration
+        """
+        
+
+        self._for_duration = for_duration
 
     def to_dict(self):
         """

@@ -103,7 +103,7 @@ class BuSchedulingSettingsRequest(object):
     def sync_time_off_properties(self) -> 'SetWrapperSyncTimeOffProperty':
         """
         Gets the sync_time_off_properties of this BuSchedulingSettingsRequest.
-        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published
 
         :return: The sync_time_off_properties of this BuSchedulingSettingsRequest.
         :rtype: SetWrapperSyncTimeOffProperty
@@ -114,7 +114,7 @@ class BuSchedulingSettingsRequest(object):
     def sync_time_off_properties(self, sync_time_off_properties: 'SetWrapperSyncTimeOffProperty') -> None:
         """
         Sets the sync_time_off_properties of this BuSchedulingSettingsRequest.
-        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published
 
         :param sync_time_off_properties: The sync_time_off_properties of this BuSchedulingSettingsRequest.
         :type: SetWrapperSyncTimeOffProperty
@@ -151,7 +151,7 @@ class BuSchedulingSettingsRequest(object):
     def allow_work_plan_per_minute_granularity(self) -> bool:
         """
         Gets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
-        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false
 
         :return: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
         :rtype: bool
@@ -162,7 +162,7 @@ class BuSchedulingSettingsRequest(object):
     def allow_work_plan_per_minute_granularity(self, allow_work_plan_per_minute_granularity: bool) -> None:
         """
         Sets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
-        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false
 
         :param allow_work_plan_per_minute_granularity: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
         :type: bool

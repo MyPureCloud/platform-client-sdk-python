@@ -53,6 +53,7 @@ from .activation_trigger import ActivationTrigger
 from .activity_code import ActivityCode
 from .activity_code_container import ActivityCodeContainer
 from .activity_code_reference import ActivityCodeReference
+from .activity_code_style import ActivityCodeStyle
 from .activity_code_summary import ActivityCodeSummary
 from .activity_codes_reference import ActivityCodesReference
 from .activity_plan_abandon_rate_impact_override import ActivityPlanAbandonRateImpactOverride
@@ -338,6 +339,7 @@ from .assigned_learning_module_domain_entity_listing import AssignedLearningModu
 from .assigned_segment import AssignedSegment
 from .assigned_wrapup_code import AssignedWrapupCode
 from .assignment import Assignment
+from .assignment_effective_date_range import AssignmentEffectiveDateRange
 from .assignment_error import AssignmentError
 from .assignment_validation import AssignmentValidation
 from .assistance_condition import AssistanceCondition
@@ -398,6 +400,7 @@ from .audit_topic_audit_log_message import AuditTopicAuditLogMessage
 from .audit_topic_domain_entity_ref import AuditTopicDomainEntityRef
 from .audit_topic_message_info import AuditTopicMessageInfo
 from .audit_topic_property_change import AuditTopicPropertyChange
+from .authentication_properties import AuthenticationProperties
 from .authentication_settings import AuthenticationSettings
 from .authoring_knowledge_settings import AuthoringKnowledgeSettings
 from .authorization_policy import AuthorizationPolicy
@@ -569,6 +572,8 @@ from .bu_schedule_reference import BuScheduleReference
 from .bu_schedule_reference_for_mu_route import BuScheduleReferenceForMuRoute
 from .bu_schedule_run import BuScheduleRun
 from .bu_schedule_run_listing import BuScheduleRunListing
+from .bu_scheduler_settings_request import BuSchedulerSettingsRequest
+from .bu_scheduler_settings_response import BuSchedulerSettingsResponse
 from .bu_scheduling_settings_request import BuSchedulingSettingsRequest
 from .bu_scheduling_settings_response import BuSchedulingSettingsResponse
 from .bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
@@ -591,6 +596,7 @@ from .bu_time_off_plan_response import BuTimeOffPlanResponse
 from .bu_update_agent_schedule_shift import BuUpdateAgentScheduleShift
 from .bu_update_agent_schedule_upload_schema import BuUpdateAgentScheduleUploadSchema
 from .bu_update_time_off_plan_request import BuUpdateTimeOffPlanRequest
+from .bu_user_listing import BuUserListing
 from .bulk_add_source_intents_request import BulkAddSourceIntentsRequest
 from .bulk_callback_disconnect_request import BulkCallbackDisconnectRequest
 from .bulk_callback_patch_request import BulkCallbackPatchRequest
@@ -715,6 +721,11 @@ from .callheader import Callheader
 from .callmessage import Callmessage
 from .campaign import Campaign
 from .campaign_business_category_metrics import CampaignBusinessCategoryMetrics
+from .campaign_diagnostic_campaign_health_state import CampaignDiagnosticCampaignHealthState
+from .campaign_diagnostic_campaign_state import CampaignDiagnosticCampaignState
+from .campaign_diagnostic_config_change import CampaignDiagnosticConfigChange
+from .campaign_diagnostic_summary import CampaignDiagnosticSummary
+from .campaign_diagnostic_window import CampaignDiagnosticWindow
 from .campaign_diagnostics import CampaignDiagnostics
 from .campaign_division_view import CampaignDivisionView
 from .campaign_division_view_listing import CampaignDivisionViewListing
@@ -786,6 +797,16 @@ from .card_parameters import CardParameters
 from .carousel import Carousel
 from .carousel_card import CarouselCard
 from .carousel_parameters import CarouselParameters
+from .case import Case
+from .case_association import CaseAssociation
+from .case_association_create import CaseAssociationCreate
+from .case_association_listing import CaseAssociationListing
+from .case_association_query import CaseAssociationQuery
+from .case_association_query_entity_listing import CaseAssociationQueryEntityListing
+from .case_create import CaseCreate
+from .case_date_due_update import CaseDateDueUpdate
+from .case_external_contact_reference import CaseExternalContactReference
+from .case_listing import CaseListing
 from .case_management_aggregate_data_container import CaseManagementAggregateDataContainer
 from .case_management_aggregate_query_clause import CaseManagementAggregateQueryClause
 from .case_management_aggregate_query_filter import CaseManagementAggregateQueryFilter
@@ -796,6 +817,17 @@ from .case_management_aggregation_sort import CaseManagementAggregationSort
 from .case_management_aggregation_view import CaseManagementAggregationView
 from .case_management_async_aggregate_query_response import CaseManagementAsyncAggregateQueryResponse
 from .case_management_async_aggregation_query import CaseManagementAsyncAggregationQuery
+from .case_priority_update import CasePriorityUpdate
+from .case_reference import CaseReference
+from .case_summary_update import CaseSummaryUpdate
+from .caseplan import Caseplan
+from .caseplan_create import CaseplanCreate
+from .caseplan_create_response import CaseplanCreateResponse
+from .caseplan_data_schema import CaseplanDataSchema
+from .caseplan_data_schema_listing import CaseplanDataSchemaListing
+from .caseplan_listing import CaseplanListing
+from .caseplan_reference import CaseplanReference
+from .caseplan_update import CaseplanUpdate
 from .categories_entity_listing import CategoriesEntityListing
 from .categories_filter import CategoriesFilter
 from .category import Category
@@ -938,6 +970,13 @@ from .connect_rate import ConnectRate
 from .connected_edge import ConnectedEdge
 from .connected_queue import ConnectedQueue
 from .connected_user import ConnectedUser
+from .connection_create_request import ConnectionCreateRequest
+from .connection_create_response import ConnectionCreateResponse
+from .connection_listing import ConnectionListing
+from .connection_option import ConnectionOption
+from .connection_option_listing import ConnectionOptionListing
+from .connection_response import ConnectionResponse
+from .connection_update_request import ConnectionUpdateRequest
 from .constraint_conflict_message import ConstraintConflictMessage
 from .consult_transfer import ConsultTransfer
 from .consult_transfer_event import ConsultTransferEvent
@@ -1009,6 +1048,7 @@ from .contacts_export_field_list_filter import ContactsExportFieldListFilter
 from .contacts_export_filter import ContactsExportFilter
 from .contacts_export_query_conditions import ContactsExportQueryConditions
 from .contacts_export_request import ContactsExportRequest
+from .contacts_patch_change import ContactsPatchChange
 from .content_actions import ContentActions
 from .content_button_response import ContentButtonResponse
 from .content_card import ContentCard
@@ -1394,6 +1434,7 @@ from .conversation_query import ConversationQuery
 from .conversation_queue_media_settings import ConversationQueueMediaSettings
 from .conversation_reason import ConversationReason
 from .conversation_recipient_additional_identifier import ConversationRecipientAdditionalIdentifier
+from .conversation_recipient_additional_provider_info import ConversationRecipientAdditionalProviderInfo
 from .conversation_reference import ConversationReference
 from .conversation_response_suggestions_topic_canned_response_suggestion_event import ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent
 from .conversation_response_suggestions_topic_suggested_canned_response import ConversationResponseSuggestionsTopicSuggestedCannedResponse
@@ -1589,6 +1630,7 @@ from .create_trigger_request import CreateTriggerRequest
 from .create_upload_source_url_job_request import CreateUploadSourceUrlJobRequest
 from .create_upload_source_url_job_response import CreateUploadSourceUrlJobResponse
 from .create_user import CreateUser
+from .create_user_assignments_request import CreateUserAssignmentsRequest
 from .create_utilization_label_request import CreateUtilizationLabelRequest
 from .create_utilization_tag_request import CreateUtilizationTagRequest
 from .create_web_chat_conversation_request import CreateWebChatConversationRequest
@@ -1657,6 +1699,7 @@ from .customer_intent_assignment_request import CustomerIntentAssignmentRequest
 from .customer_intent_assignment_response import CustomerIntentAssignmentResponse
 from .customer_intent_listing import CustomerIntentListing
 from .customer_intent_patch import CustomerIntentPatch
+from .customer_intent_reference import CustomerIntentReference
 from .customer_intent_response import CustomerIntentResponse
 from .customer_interaction_center import CustomerInteractionCenter
 from .customer_source_intent import CustomerSourceIntent
@@ -1707,6 +1750,7 @@ from .date_picker import DatePicker
 from .date_picker_available_date_time import DatePickerAvailableDateTime
 from .date_range import DateRange
 from .date_range_with_optional_end import DateRangeWithOptionalEnd
+from .day_of_week_minimums import DayOfWeekMinimums
 from .decision_table import DecisionTable
 from .decision_table_column_default_row_value import DecisionTableColumnDefaultRowValue
 from .decision_table_columns import DecisionTableColumns
@@ -2269,6 +2313,7 @@ from .external_contacts_organization_changed_topic_twitter_id import ExternalCon
 from .external_contacts_organization_note_changed_topic_division import ExternalContactsOrganizationNoteChangedTopicDivision
 from .external_contacts_organization_note_changed_topic_note import ExternalContactsOrganizationNoteChangedTopicNote
 from .external_contacts_organization_note_changed_topic_user import ExternalContactsOrganizationNoteChangedTopicUser
+from .external_contacts_patch_request import ExternalContactsPatchRequest
 from .external_contacts_relationship_changed_topic_contact_address import ExternalContactsRelationshipChangedTopicContactAddress
 from .external_contacts_relationship_changed_topic_division import ExternalContactsRelationshipChangedTopicDivision
 from .external_contacts_relationship_changed_topic_external_organization import ExternalContactsRelationshipChangedTopicExternalOrganization
@@ -2321,6 +2366,7 @@ from .external_organization_trustor_link import ExternalOrganizationTrustorLink
 from .external_page_metadata import ExternalPageMetadata
 from .external_segment import ExternalSegment
 from .external_source import ExternalSource
+from .fabric_tag import FabricTag
 from .facebook_app_credentials import FacebookAppCredentials
 from .facebook_data_ingestion_rule_request import FacebookDataIngestionRuleRequest
 from .facebook_data_ingestion_rule_response import FacebookDataIngestionRuleResponse
@@ -2508,6 +2554,10 @@ from .gamification_scorecard_change_topic_punctuality_event import GamificationS
 from .gamification_scorecard_change_topic_scorecard_change import GamificationScorecardChangeTopicScorecardChange
 from .gamification_status import GamificationStatus
 from .gcucc_teams_calendar_events_gcucc_teams_calendar_event_v2 import GcuccTeamsCalendarEventsGCUCCTeamsCalendarEventV2
+from .gen_ai_phrases_test_phrase_detected_phrase import GenAiPhrasesTestPhraseDetectedPhrase
+from .gen_ai_phrases_test_phrase_matched_transcript import GenAiPhrasesTestPhraseMatchedTranscript
+from .gen_ai_phrases_test_topic_phrase_results import GenAiPhrasesTestTopicPhraseResults
+from .gen_ai_phrases_topics_definitions_job import GenAiPhrasesTopicsDefinitionsJob
 from .general_program_job import GeneralProgramJob
 from .general_program_job_request import GeneralProgramJobRequest
 from .general_topic import GeneralTopic
@@ -2726,6 +2776,9 @@ from .instagram_integration_entity_listing import InstagramIntegrationEntityList
 from .instagram_integration_request import InstagramIntegrationRequest
 from .instagram_integration_update_request import InstagramIntegrationUpdateRequest
 from .instagram_scoped_id import InstagramScopedId
+from .intake import Intake
+from .intake_setting import IntakeSetting
+from .intake_settings_listing import IntakeSettingsListing
 from .integration import Integration
 from .integration_action import IntegrationAction
 from .integration_action_fields import IntegrationActionFields
@@ -3213,8 +3266,10 @@ from .list_wrapper_alternative_shift_bu_settings_activity_category import ListWr
 from .list_wrapper_alternative_shift_bu_settings_granularity import ListWrapperAlternativeShiftBuSettingsGranularity
 from .list_wrapper_bid_group_work_plan_request import ListWrapperBidGroupWorkPlanRequest
 from .list_wrapper_fixed_availability import ListWrapperFixedAvailability
+from .list_wrapper_integer import ListWrapperInteger
 from .list_wrapper_interval import ListWrapperInterval
 from .list_wrapper_override_date import ListWrapperOverrideDate
+from .list_wrapper_planning_group_minimums_request import ListWrapperPlanningGroupMinimumsRequest
 from .list_wrapper_secondary_presence import ListWrapperSecondaryPresence
 from .list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
 from .list_wrapper_string import ListWrapperString
@@ -3269,6 +3324,7 @@ from .management_unit_listing import ManagementUnitListing
 from .management_unit_reference import ManagementUnitReference
 from .management_unit_settings_request import ManagementUnitSettingsRequest
 from .management_unit_settings_response import ManagementUnitSettingsResponse
+from .management_unit_user_listing import ManagementUnitUserListing
 from .manager import Manager
 from .mandatory_post_call_action_input import MandatoryPostCallActionInput
 from .manual_escalation_request import ManualEscalationRequest
@@ -3411,6 +3467,8 @@ from .miner_listing import MinerListing
 from .miner_topic import MinerTopic
 from .miner_topic_phrase import MinerTopicPhrase
 from .miner_topics_listing import MinerTopicsListing
+from .minimum_staffing_request import MinimumStaffingRequest
+from .minimum_staffing_response import MinimumStaffingResponse
 from .mobile_notification_settings import MobileNotificationSettings
 from .mobile_settings import MobileSettings
 from .model_data import ModelData
@@ -3500,6 +3558,7 @@ from .observation_metric_data import ObservationMetricData
 from .observation_value import ObservationValue
 from .occurrence_details import OccurrenceDetails
 from .okta import Okta
+from .on_demand_summary_config import OnDemandSummaryConfig
 from .one_login import OneLogin
 from .one_on_one import OneOnOne
 from .open_action_fields import OpenActionFields
@@ -3796,6 +3855,8 @@ from .ping_identity import PingIdentity
 from .pinned_message_request import PinnedMessageRequest
 from .planning_group import PlanningGroup
 from .planning_group_list import PlanningGroupList
+from .planning_group_minimums_request import PlanningGroupMinimumsRequest
+from .planning_group_minimums_response import PlanningGroupMinimumsResponse
 from .planning_group_model import PlanningGroupModel
 from .planning_group_outputs import PlanningGroupOutputs
 from .planning_group_reference import PlanningGroupReference
@@ -3915,6 +3976,9 @@ from .query_availability_management_units_settings_request import QueryAvailabil
 from .query_availability_management_units_settings_response import QueryAvailabilityManagementUnitsSettingsResponse
 from .query_capacity_plan_staffing_group_metric_change_history import QueryCapacityPlanStaffingGroupMetricChangeHistory
 from .query_criteria import QueryCriteria
+from .query_criteria_group import QueryCriteriaGroup
+from .query_criteria_item import QueryCriteriaItem
+from .query_criteria_query import QueryCriteriaQuery
 from .query_division import QueryDivision
 from .query_facet_info import QueryFacetInfo
 from .query_planning_group_to_staffing_groups_request import QueryPlanningGroupToStaffingGroupsRequest
@@ -4396,6 +4460,8 @@ from .resource_condition_value import ResourceConditionValue
 from .resource_permission_policy import ResourcePermissionPolicy
 from .response import Response
 from .response_asset import ResponseAsset
+from .response_asset_bulk_request import ResponseAssetBulkRequest
+from .response_asset_entity_listing import ResponseAssetEntityListing
 from .response_asset_filter import ResponseAssetFilter
 from .response_asset_request import ResponseAssetRequest
 from .response_asset_search_request import ResponseAssetSearchRequest
@@ -4420,6 +4486,7 @@ from .review_assessment_results import ReviewAssessmentResults
 from .rich_link import RichLink
 from .rich_link_header import RichLinkHeader
 from .ring import Ring
+from .rms_asset_addressable_ref import RmsAssetAddressableRef
 from .role_division import RoleDivision
 from .role_division_grants import RoleDivisionGrants
 from .role_division_pair import RoleDivisionPair
@@ -4613,6 +4680,7 @@ from .set_time_off_integration_status_request import SetTimeOffIntegrationStatus
 from .set_time_off_limit_values_request import SetTimeOffLimitValuesRequest
 from .set_uui_data_request import SetUuiDataRequest
 from .set_whats_app_integration_action_settings import SetWhatsAppIntegrationActionSettings
+from .set_wrapper_assignment_effective_date_range import SetWrapperAssignmentEffectiveDateRange
 from .set_wrapper_day_of_week import SetWrapperDayOfWeek
 from .set_wrapper_route_path_request import SetWrapperRoutePathRequest
 from .set_wrapper_string import SetWrapperString
@@ -4623,6 +4691,7 @@ from .share import Share
 from .share_entity_listing import ShareEntityListing
 from .shared_entity import SharedEntity
 from .shared_response import SharedResponse
+from .sharepoint_authentication_properties import SharepointAuthenticationProperties
 from .shift_start_variance import ShiftStartVariance
 from .shift_trade_activity_preview_response import ShiftTradeActivityPreviewResponse
 from .shift_trade_activity_rule import ShiftTradeActivityRule
@@ -4736,6 +4805,13 @@ from .staffing_group_reference import StaffingGroupReference
 from .staffing_group_response import StaffingGroupResponse
 from .staffing_requirement_result_response_template import StaffingRequirementResultResponseTemplate
 from .staffing_requirements_planning_group_data import StaffingRequirementsPlanningGroupData
+from .stage import Stage
+from .stage_listing import StageListing
+from .stage_reference import StageReference
+from .stageplan import Stageplan
+from .stageplan_listing import StageplanListing
+from .stageplan_reference import StageplanReference
+from .stageplan_update import StageplanUpdate
 from .starrable_division import StarrableDivision
 from .stat_event_campaign_topic_interval_metrics import StatEventCampaignTopicIntervalMetrics
 from .stat_event_campaign_topic_metric_stats import StatEventCampaignTopicMetricStats
@@ -4761,6 +4837,13 @@ from .statistical_response import StatisticalResponse
 from .statistical_summary import StatisticalSummary
 from .status_change import StatusChange
 from .status_info import StatusInfo
+from .step import Step
+from .step_listing import StepListing
+from .step_reference import StepReference
+from .stepplan import Stepplan
+from .stepplan_listing import StepplanListing
+from .stepplan_update import StepplanUpdate
+from .stepplans_worktype_reference import StepplansWorktypeReference
 from .stop_settings import StopSettings
 from .story_setting import StorySetting
 from .street_address import StreetAddress
@@ -4907,10 +4990,12 @@ from .team_reference import TeamReference
 from .team_search_criteria import TeamSearchCriteria
 from .team_search_request import TeamSearchRequest
 from .teams_search_response import TeamsSearchResponse
+from .telephony_settings import TelephonySettings
 from .template_parameter import TemplateParameter
 from .temporal_unit import TemporalUnit
 from .term import Term
 from .term_attribute import TermAttribute
+from .terminate_job import TerminateJob
 from .test_execution_operation_result import TestExecutionOperationResult
 from .test_execution_result import TestExecutionResult
 from .test_matches_event_operation import TestMatchesEventOperation
@@ -5197,6 +5282,7 @@ from .update_trigger_request import UpdateTriggerRequest
 from .update_unavailable_time import UpdateUnavailableTime
 from .update_unavailable_times_request import UpdateUnavailableTimesRequest
 from .update_user import UpdateUser
+from .update_user_assignments_request import UpdateUserAssignmentsRequest
 from .update_utilization_label_request import UpdateUtilizationLabelRequest
 from .update_verifier_request import UpdateVerifierRequest
 from .update_work_plan_bid import UpdateWorkPlanBid
@@ -5236,6 +5322,7 @@ from .user_aggregation_view import UserAggregationView
 from .user_app import UserApp
 from .user_app_configuration_info import UserAppConfigurationInfo
 from .user_app_entity_listing import UserAppEntityListing
+from .user_assignments_response import UserAssignmentsResponse
 from .user_async_aggregate_query_response import UserAsyncAggregateQueryResponse
 from .user_async_aggregation_query import UserAsyncAggregationQuery
 from .user_authorization import UserAuthorization
@@ -5443,7 +5530,27 @@ from .v2_wfm_main_forecast_export_historical_event_main_forecast_export_notifica
 from .v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body import V2WfmMainForecastExportSnapshotEventMainForecastErrorBody
 from .v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification import V2WfmMainForecastExportSnapshotEventMainForecastExportNotification
 from .v3_knowledge_search_client_application import V3KnowledgeSearchClientApplication
+from .v3_source_create_request import V3SourceCreateRequest
+from .v3_source_detailed_response import V3SourceDetailedResponse
+from .v3_source_detailed_with_error_response import V3SourceDetailedWithErrorResponse
+from .v3_source_filter import V3SourceFilter
+from .v3_source_filter_details import V3SourceFilterDetails
+from .v3_source_folder_details import V3SourceFolderDetails
+from .v3_source_last_synchronization import V3SourceLastSynchronization
 from .v3_source_ref import V3SourceRef
+from .v3_source_schedule_settings import V3SourceScheduleSettings
+from .v3_source_site_details import V3SourceSiteDetails
+from .v3_source_update_request import V3SourceUpdateRequest
+from .v3_source_with_error_listing import V3SourceWithErrorListing
+from .v3_source_with_error_response import V3SourceWithErrorResponse
+from .v3_start_manual_sync_request import V3StartManualSyncRequest
+from .v3_synchronization import V3Synchronization
+from .v3_synchronization_listing import V3SynchronizationListing
+from .v3_synchronization_statistics import V3SynchronizationStatistics
+from .v3_synchronization_update_request import V3SynchronizationUpdateRequest
+from .v3_synchronization_upload_metadata import V3SynchronizationUploadMetadata
+from .v3_synchronization_upload_url_request import V3SynchronizationUploadUrlRequest
+from .v3_synchronization_upload_url_response import V3SynchronizationUploadUrlResponse
 from .validate_address_request import ValidateAddressRequest
 from .validate_address_response import ValidateAddressResponse
 from .validate_agent_unavailable_times_request import ValidateAgentUnavailableTimesRequest
@@ -5458,6 +5565,7 @@ from .validation_limits import ValidationLimits
 from .validation_result import ValidationResult
 from .validation_service_async_response import ValidationServiceAsyncResponse
 from .validation_service_request import ValidationServiceRequest
+from .value_wrapper_activity_code_style import ValueWrapperActivityCodeStyle
 from .value_wrapper_activity_plan_service_goal_impact_overrides import ValueWrapperActivityPlanServiceGoalImpactOverrides
 from .value_wrapper_bu_short_term_forecast_reference import ValueWrapperBuShortTermForecastReference
 from .value_wrapper_date import ValueWrapperDate
@@ -5469,6 +5577,7 @@ from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSe
 from .value_wrapper_string import ValueWrapperString
 from .value_wrapper_user_search_rule import ValueWrapperUserSearchRule
 from .variable import Variable
+from .variable_validation import VariableValidation
 from .verification_result import VerificationResult
 from .verifier import Verifier
 from .verifier_entity_listing import VerifierEntityListing
@@ -5545,6 +5654,7 @@ from .web_messaging_content import WebMessagingContent
 from .web_messaging_event import WebMessagingEvent
 from .web_messaging_event_co_browse import WebMessagingEventCoBrowse
 from .web_messaging_event_presence import WebMessagingEventPresence
+from .web_messaging_event_video import WebMessagingEventVideo
 from .web_messaging_generic import WebMessagingGeneric
 from .web_messaging_message import WebMessagingMessage
 from .web_messaging_message_entity_list import WebMessagingMessageEntityList
@@ -5897,6 +6007,8 @@ from .workitem_scored_agent import WorkitemScoredAgent
 from .workitem_scored_agent_delta import WorkitemScoredAgentDelta
 from .workitem_scored_agent_request import WorkitemScoredAgentRequest
 from .workitem_script_reference import WorkitemScriptReference
+from .workitem_settings import WorkitemSettings
+from .workitem_settings_response import WorkitemSettingsResponse
 from .workitem_status import WorkitemStatus
 from .workitem_status_create import WorkitemStatusCreate
 from .workitem_status_filter import WorkitemStatusFilter

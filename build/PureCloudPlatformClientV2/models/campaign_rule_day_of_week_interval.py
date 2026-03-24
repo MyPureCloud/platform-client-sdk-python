@@ -47,13 +47,65 @@ class CampaignRuleDayOfWeekInterval(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'min': 'int',
+            'max': 'int'
         }
 
         self.attribute_map = {
-            
+            'min': 'min',
+            'max': 'max'
         }
 
+        self._min = None
+        self._max = None
+
+    @property
+    def min(self) -> int:
+        """
+        Gets the min of this CampaignRuleDayOfWeekInterval.
+        The minimum value of the interval in 1-7 (Monday-Sunday). Required for the \"between\" operator
+
+        :return: The min of this CampaignRuleDayOfWeekInterval.
+        :rtype: int
+        """
+        return self._min
+
+    @min.setter
+    def min(self, min: int) -> None:
+        """
+        Sets the min of this CampaignRuleDayOfWeekInterval.
+        The minimum value of the interval in 1-7 (Monday-Sunday). Required for the \"between\" operator
+
+        :param min: The min of this CampaignRuleDayOfWeekInterval.
+        :type: int
+        """
+        
+
+        self._min = min
+
+    @property
+    def max(self) -> int:
+        """
+        Gets the max of this CampaignRuleDayOfWeekInterval.
+        The maximum value of the interval in 1-7 (Monday-Sunday). Required for the \"between\" operator
+
+        :return: The max of this CampaignRuleDayOfWeekInterval.
+        :rtype: int
+        """
+        return self._max
+
+    @max.setter
+    def max(self, max: int) -> None:
+        """
+        Sets the max of this CampaignRuleDayOfWeekInterval.
+        The maximum value of the interval in 1-7 (Monday-Sunday). Required for the \"between\" operator
+
+        :param max: The max of this CampaignRuleDayOfWeekInterval.
+        :type: int
+        """
+        
+
+        self._max = max
 
     def to_dict(self):
         """

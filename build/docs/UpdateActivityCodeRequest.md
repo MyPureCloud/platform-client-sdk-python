@@ -15,10 +15,10 @@
 | **counts_toward_shrinkage** | bool | Whether or not this activity code counts toward shrinkage calculations | [optional] |
 | **planned_shrinkage** | bool | Whether this activity code is considered planned or unplanned shrinkage | [optional] |
 | **interruptible** | bool | Whether this activity code is considered interruptible | [optional] |
-| **secondary_presences** | [ListWrapperSecondaryPresence](ListWrapperSecondaryPresence) | The secondary presences of this activity code | [optional] |
 | **planning_group_ids** | [ListWrapperString](ListWrapperString) | The planning group IDs associated with this activity code | [optional] |
 | **metadata** | [WfmVersionedEntityMetadata](WfmVersionedEntityMetadata) | Version metadata for the associated business unit&#39;s list of activity codes | |
+| **secondary_presences** | [ListWrapperSecondaryPresence](ListWrapperSecondaryPresence) | The secondary presences of this activity code | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

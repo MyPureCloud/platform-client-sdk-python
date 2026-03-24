@@ -52,6 +52,8 @@ class EvaluationScoringSet(object):
         self.swagger_types = {
             'total_score': 'float',
             'total_critical_score': 'float',
+            'max_total_raw_critical_score': 'float',
+            'max_total_raw_score': 'float',
             'total_non_critical_score': 'float',
             'question_group_scores': 'list[EvaluationQuestionGroupScore]',
             'any_failed_kill_questions': 'bool',
@@ -64,6 +66,8 @@ class EvaluationScoringSet(object):
         self.attribute_map = {
             'total_score': 'totalScore',
             'total_critical_score': 'totalCriticalScore',
+            'max_total_raw_critical_score': 'maxTotalRawCriticalScore',
+            'max_total_raw_score': 'maxTotalRawScore',
             'total_non_critical_score': 'totalNonCriticalScore',
             'question_group_scores': 'questionGroupScores',
             'any_failed_kill_questions': 'anyFailedKillQuestions',
@@ -75,6 +79,8 @@ class EvaluationScoringSet(object):
 
         self._total_score = None
         self._total_critical_score = None
+        self._max_total_raw_critical_score = None
+        self._max_total_raw_score = None
         self._total_non_critical_score = None
         self._question_group_scores = None
         self._any_failed_kill_questions = None
@@ -130,6 +136,54 @@ class EvaluationScoringSet(object):
         
 
         self._total_critical_score = total_critical_score
+
+    @property
+    def max_total_raw_critical_score(self) -> float:
+        """
+        Gets the max_total_raw_critical_score of this EvaluationScoringSet.
+        Maximum total raw score for the critical questions. Raw score is the actual point values before applying weights or percentages.
+
+        :return: The max_total_raw_critical_score of this EvaluationScoringSet.
+        :rtype: float
+        """
+        return self._max_total_raw_critical_score
+
+    @max_total_raw_critical_score.setter
+    def max_total_raw_critical_score(self, max_total_raw_critical_score: float) -> None:
+        """
+        Sets the max_total_raw_critical_score of this EvaluationScoringSet.
+        Maximum total raw score for the critical questions. Raw score is the actual point values before applying weights or percentages.
+
+        :param max_total_raw_critical_score: The max_total_raw_critical_score of this EvaluationScoringSet.
+        :type: float
+        """
+        
+
+        self._max_total_raw_critical_score = max_total_raw_critical_score
+
+    @property
+    def max_total_raw_score(self) -> float:
+        """
+        Gets the max_total_raw_score of this EvaluationScoringSet.
+        Maximum total raw score for all questions. Raw score is the actual point values before applying weights or percentages.
+
+        :return: The max_total_raw_score of this EvaluationScoringSet.
+        :rtype: float
+        """
+        return self._max_total_raw_score
+
+    @max_total_raw_score.setter
+    def max_total_raw_score(self, max_total_raw_score: float) -> None:
+        """
+        Sets the max_total_raw_score of this EvaluationScoringSet.
+        Maximum total raw score for all questions. Raw score is the actual point values before applying weights or percentages.
+
+        :param max_total_raw_score: The max_total_raw_score of this EvaluationScoringSet.
+        :type: float
+        """
+        
+
+        self._max_total_raw_score = max_total_raw_score
 
     @property
     def total_non_critical_score(self) -> float:

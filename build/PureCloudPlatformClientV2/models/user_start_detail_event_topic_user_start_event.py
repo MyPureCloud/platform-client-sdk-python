@@ -67,7 +67,8 @@ class UserStartDetailEventTopicUserStartEvent(object):
             'division_id': 'str',
             'queue_id': 'str',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'utilization_label': 'str'
         }
 
         self.attribute_map = {
@@ -91,7 +92,8 @@ class UserStartDetailEventTopicUserStartEvent(object):
             'division_id': 'divisionId',
             'queue_id': 'queueId',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'utilization_label': 'utilizationLabel'
         }
 
         self._event_time = None
@@ -115,6 +117,7 @@ class UserStartDetailEventTopicUserStartEvent(object):
         self._queue_id = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._utilization_label = None
 
     @property
     def event_time(self) -> int:
@@ -634,6 +637,30 @@ class UserStartDetailEventTopicUserStartEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this UserStartDetailEventTopicUserStartEvent.
+
+
+        :return: The utilization_label of this UserStartDetailEventTopicUserStartEvent.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this UserStartDetailEventTopicUserStartEvent.
+
+
+        :param utilization_label: The utilization_label of this UserStartDetailEventTopicUserStartEvent.
+        :type: str
+        """
+        
+
+        self._utilization_label = utilization_label
 
     def to_dict(self):
         """

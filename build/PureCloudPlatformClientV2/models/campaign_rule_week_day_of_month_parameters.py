@@ -31,6 +31,9 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CampaignRuleWeekDayOfMonth
+    from . import CampaignRuleWeekDayOfMonthInterval
 
 class CampaignRuleWeekDayOfMonthParameters(object):
     """
@@ -47,13 +50,65 @@ class CampaignRuleWeekDayOfMonthParameters(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'threshold_value': 'CampaignRuleWeekDayOfMonth',
+            'interval': 'CampaignRuleWeekDayOfMonthInterval'
         }
 
         self.attribute_map = {
-            
+            'threshold_value': 'thresholdValue',
+            'interval': 'interval'
         }
 
+        self._threshold_value = None
+        self._interval = None
+
+    @property
+    def threshold_value(self) -> 'CampaignRuleWeekDayOfMonth':
+        """
+        Gets the threshold_value of this CampaignRuleWeekDayOfMonthParameters.
+        The operand for the \"equals\", \"before\" and \"after\" operators
+
+        :return: The threshold_value of this CampaignRuleWeekDayOfMonthParameters.
+        :rtype: CampaignRuleWeekDayOfMonth
+        """
+        return self._threshold_value
+
+    @threshold_value.setter
+    def threshold_value(self, threshold_value: 'CampaignRuleWeekDayOfMonth') -> None:
+        """
+        Sets the threshold_value of this CampaignRuleWeekDayOfMonthParameters.
+        The operand for the \"equals\", \"before\" and \"after\" operators
+
+        :param threshold_value: The threshold_value of this CampaignRuleWeekDayOfMonthParameters.
+        :type: CampaignRuleWeekDayOfMonth
+        """
+        
+
+        self._threshold_value = threshold_value
+
+    @property
+    def interval(self) -> 'CampaignRuleWeekDayOfMonthInterval':
+        """
+        Gets the interval of this CampaignRuleWeekDayOfMonthParameters.
+        The operand for the \"between\" operator
+
+        :return: The interval of this CampaignRuleWeekDayOfMonthParameters.
+        :rtype: CampaignRuleWeekDayOfMonthInterval
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval: 'CampaignRuleWeekDayOfMonthInterval') -> None:
+        """
+        Sets the interval of this CampaignRuleWeekDayOfMonthParameters.
+        The operand for the \"between\" operator
+
+        :param interval: The interval of this CampaignRuleWeekDayOfMonthParameters.
+        :type: CampaignRuleWeekDayOfMonthInterval
+        """
+        
+
+        self._interval = interval
 
     def to_dict(self):
         """

@@ -50,23 +50,20 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
             'start_time': 'str',
             'stop_time': 'str',
             'day': 'int',
-            'additional_properties': 'dict(str, object)',
-            'get_additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'start_time': 'startTime',
             'stop_time': 'stopTime',
             'day': 'day',
-            'additional_properties': 'additionalProperties',
-            'get_additional_properties': 'getAdditionalProperties'
+            'additional_properties': 'additionalProperties'
         }
 
         self._start_time = None
         self._stop_time = None
         self._day = None
         self._additional_properties = None
-        self._get_additional_properties = None
 
     @property
     def start_time(self) -> str:
@@ -163,30 +160,6 @@ class DialerCallabletimesetConfigChangeTimeSlot(object):
         
 
         self._additional_properties = additional_properties
-
-    @property
-    def get_additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the get_additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-
-
-        :return: The get_additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-        :rtype: dict(str, object)
-        """
-        return self._get_additional_properties
-
-    @get_additional_properties.setter
-    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the get_additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-
-
-        :param get_additional_properties: The get_additional_properties of this DialerCallabletimesetConfigChangeTimeSlot.
-        :type: dict(str, object)
-        """
-        
-
-        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

@@ -792,7 +792,7 @@ class SmsPhoneNumber(object):
     def supported_content(self) -> 'SupportedContentReference':
         """
         Gets the supported_content of this SmsPhoneNumber.
-        Defines the media SupportedContent profile configured for an MMS capable phone number.
+        Defines the media SupportedContent profile configured for an MMS capable phone number. If no custom profile is assigned, the phone number uses the system's \"SMS Default\" profile. The \"SMS Default\" profile allows all media types (*/*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. When the \"SMS Default\" profile is in use, this field will contain the profile name and media types, but will not have an 'id' or 'selfUri' field. To customize media filtering, assign a custom supported content profile using the PATCH endpoint.
 
         :return: The supported_content of this SmsPhoneNumber.
         :rtype: SupportedContentReference
@@ -803,7 +803,7 @@ class SmsPhoneNumber(object):
     def supported_content(self, supported_content: 'SupportedContentReference') -> None:
         """
         Sets the supported_content of this SmsPhoneNumber.
-        Defines the media SupportedContent profile configured for an MMS capable phone number.
+        Defines the media SupportedContent profile configured for an MMS capable phone number. If no custom profile is assigned, the phone number uses the system's \"SMS Default\" profile. The \"SMS Default\" profile allows all media types (*/*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. When the \"SMS Default\" profile is in use, this field will contain the profile name and media types, but will not have an 'id' or 'selfUri' field. To customize media filtering, assign a custom supported content profile using the PATCH endpoint.
 
         :param supported_content: The supported_content of this SmsPhoneNumber.
         :type: SupportedContentReference

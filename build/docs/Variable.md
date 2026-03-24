@@ -10,7 +10,8 @@
 | **type** | str | The data type of the variable. | |
 | **scope** | str | The scope that determines the variable&#39;s usage context within Guides runtime. | |
 | **description** | str | The description of the variable used by Guides runtime for input/output handling. | [optional] |
+| **validation** | [VariableValidation](VariableValidation) | The validation configuration for the variable. Optional - if not present, no validation is applied. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

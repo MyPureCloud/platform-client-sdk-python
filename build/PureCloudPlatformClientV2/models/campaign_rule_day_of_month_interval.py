@@ -47,13 +47,65 @@ class CampaignRuleDayOfMonthInterval(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'min': 'str',
+            'max': 'str'
         }
 
         self.attribute_map = {
-            
+            'min': 'min',
+            'max': 'max'
         }
 
+        self._min = None
+        self._max = None
+
+    @property
+    def min(self) -> str:
+        """
+        Gets the min of this CampaignRuleDayOfMonthInterval.
+        The minimal day of month (exact day: 1-31) for the \"between\" operator
+
+        :return: The min of this CampaignRuleDayOfMonthInterval.
+        :rtype: str
+        """
+        return self._min
+
+    @min.setter
+    def min(self, min: str) -> None:
+        """
+        Sets the min of this CampaignRuleDayOfMonthInterval.
+        The minimal day of month (exact day: 1-31) for the \"between\" operator
+
+        :param min: The min of this CampaignRuleDayOfMonthInterval.
+        :type: str
+        """
+        
+
+        self._min = min
+
+    @property
+    def max(self) -> str:
+        """
+        Gets the max of this CampaignRuleDayOfMonthInterval.
+        The maximum value of month (exact day: 1-31 or \"LAST_DAY\") for the \"between\" operator
+
+        :return: The max of this CampaignRuleDayOfMonthInterval.
+        :rtype: str
+        """
+        return self._max
+
+    @max.setter
+    def max(self, max: str) -> None:
+        """
+        Sets the max of this CampaignRuleDayOfMonthInterval.
+        The maximum value of month (exact day: 1-31 or \"LAST_DAY\") for the \"between\" operator
+
+        :param max: The max of this CampaignRuleDayOfMonthInterval.
+        :type: str
+        """
+        
+
+        self._max = max
 
     def to_dict(self):
         """

@@ -47,13 +47,92 @@ class CampaignRuleWeekDayOfMonth(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'day_of_week': 'int',
+            'month': 'int',
+            'occurrence': 'int'
         }
 
         self.attribute_map = {
-            
+            'day_of_week': 'dayOfWeek',
+            'month': 'month',
+            'occurrence': 'occurrence'
         }
 
+        self._day_of_week = None
+        self._month = None
+        self._occurrence = None
+
+    @property
+    def day_of_week(self) -> int:
+        """
+        Gets the day_of_week of this CampaignRuleWeekDayOfMonth.
+        Day of week (1-7)
+
+        :return: The day_of_week of this CampaignRuleWeekDayOfMonth.
+        :rtype: int
+        """
+        return self._day_of_week
+
+    @day_of_week.setter
+    def day_of_week(self, day_of_week: int) -> None:
+        """
+        Sets the day_of_week of this CampaignRuleWeekDayOfMonth.
+        Day of week (1-7)
+
+        :param day_of_week: The day_of_week of this CampaignRuleWeekDayOfMonth.
+        :type: int
+        """
+        
+
+        self._day_of_week = day_of_week
+
+    @property
+    def month(self) -> int:
+        """
+        Gets the month of this CampaignRuleWeekDayOfMonth.
+        Month (1-12)
+
+        :return: The month of this CampaignRuleWeekDayOfMonth.
+        :rtype: int
+        """
+        return self._month
+
+    @month.setter
+    def month(self, month: int) -> None:
+        """
+        Sets the month of this CampaignRuleWeekDayOfMonth.
+        Month (1-12)
+
+        :param month: The month of this CampaignRuleWeekDayOfMonth.
+        :type: int
+        """
+        
+
+        self._month = month
+
+    @property
+    def occurrence(self) -> int:
+        """
+        Gets the occurrence of this CampaignRuleWeekDayOfMonth.
+        Occurrence 1-4, -1 (last)
+
+        :return: The occurrence of this CampaignRuleWeekDayOfMonth.
+        :rtype: int
+        """
+        return self._occurrence
+
+    @occurrence.setter
+    def occurrence(self, occurrence: int) -> None:
+        """
+        Sets the occurrence of this CampaignRuleWeekDayOfMonth.
+        Occurrence 1-4, -1 (last)
+
+        :param occurrence: The occurrence of this CampaignRuleWeekDayOfMonth.
+        :type: int
+        """
+        
+
+        self._occurrence = occurrence
 
     def to_dict(self):
         """

@@ -47,14 +47,17 @@ class ParkingStateRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'state': 'str'
+            'state': 'str',
+            'resume_time': 'datetime'
         }
 
         self.attribute_map = {
-            'state': 'state'
+            'state': 'state',
+            'resume_time': 'resumeTime'
         }
 
         self._state = None
+        self._resume_time = None
 
     @property
     def state(self) -> str:
@@ -84,6 +87,30 @@ class ParkingStateRequest(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this ParkingStateRequest.
+        Timestamp for resume parked conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The resume_time of this ParkingStateRequest.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this ParkingStateRequest.
+        Timestamp for resume parked conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param resume_time: The resume_time of this ParkingStateRequest.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     def to_dict(self):
         """

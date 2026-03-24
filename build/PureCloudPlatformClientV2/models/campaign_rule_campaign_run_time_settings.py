@@ -47,13 +47,38 @@ class CampaignRuleCampaignRunTimeSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'include_waiting_time': 'bool'
         }
 
         self.attribute_map = {
-            
+            'include_waiting_time': 'includeWaitingTime'
         }
 
+        self._include_waiting_time = None
+
+    @property
+    def include_waiting_time(self) -> bool:
+        """
+        Gets the include_waiting_time of this CampaignRuleCampaignRunTimeSettings.
+        When true counts all campaign running time, otherwise only running time that a campaign was not waiting. Default: true
+
+        :return: The include_waiting_time of this CampaignRuleCampaignRunTimeSettings.
+        :rtype: bool
+        """
+        return self._include_waiting_time
+
+    @include_waiting_time.setter
+    def include_waiting_time(self, include_waiting_time: bool) -> None:
+        """
+        Sets the include_waiting_time of this CampaignRuleCampaignRunTimeSettings.
+        When true counts all campaign running time, otherwise only running time that a campaign was not waiting. Default: true
+
+        :param include_waiting_time: The include_waiting_time of this CampaignRuleCampaignRunTimeSettings.
+        :type: bool
+        """
+        
+
+        self._include_waiting_time = include_waiting_time
 
     def to_dict(self):
         """

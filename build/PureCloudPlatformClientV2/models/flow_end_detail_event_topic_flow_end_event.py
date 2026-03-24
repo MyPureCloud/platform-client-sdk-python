@@ -69,7 +69,8 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'conversation_external_contact_ids': 'list[str]',
             'conversation_external_organization_ids': 'list[str]',
             'exit_reason': 'str',
-            'transfer_type': 'str'
+            'transfer_type': 'str',
+            'utilization_label': 'str'
         }
 
         self.attribute_map = {
@@ -95,7 +96,8 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'conversation_external_contact_ids': 'conversationExternalContactIds',
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
             'exit_reason': 'exitReason',
-            'transfer_type': 'transferType'
+            'transfer_type': 'transferType',
+            'utilization_label': 'utilizationLabel'
         }
 
         self._event_time = None
@@ -121,6 +123,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         self._conversation_external_organization_ids = None
         self._exit_reason = None
         self._transfer_type = None
+        self._utilization_label = None
 
     @property
     def event_time(self) -> int:
@@ -708,6 +711,30 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             self._transfer_type = "outdated_sdk_version"
         else:
             self._transfer_type = transfer_type
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The utilization_label of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param utilization_label: The utilization_label of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: str
+        """
+        
+
+        self._utilization_label = utilization_label
 
     def to_dict(self):
         """

@@ -90,7 +90,7 @@ class UserStaffingGroupResponse(object):
     def staffing_group(self) -> 'StaffingGroupReference':
         """
         Gets the staffing_group of this UserStaffingGroupResponse.
-        The staffing group
+        The current staffing group of the user
 
         :return: The staffing_group of this UserStaffingGroupResponse.
         :rtype: StaffingGroupReference
@@ -101,7 +101,7 @@ class UserStaffingGroupResponse(object):
     def staffing_group(self, staffing_group: 'StaffingGroupReference') -> None:
         """
         Sets the staffing_group of this UserStaffingGroupResponse.
-        The staffing group
+        The current staffing group of the user
 
         :param staffing_group: The staffing_group of this UserStaffingGroupResponse.
         :type: StaffingGroupReference

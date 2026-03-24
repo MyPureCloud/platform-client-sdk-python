@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_license_user**](#get_license_user) | Get licenses for specified user.|
 |[**get_license_users**](#get_license_users) | Get a page of users and their licenses|
 |[**post_license_infer**](#post_license_infer) | Get a list of licenses inferred based on a list of roleIds|
+|[**post_license_infer_permissions**](#post_license_infer_permissions) | Get a list of licenses inferred based on a list of permissions|
 |[**post_license_organization**](#post_license_organization) | Update the organization&#39;s license assignments in a batch.|
 |[**post_license_toggle**](#post_license_toggle) | Deprecated. No alternative required - this endpoint has no effect|
 |[**post_license_users**](#post_license_users) | Fetch user licenses in a batch.|
@@ -306,6 +307,57 @@ except ApiException as e:
 **list[str]**
 
 
+## post_license_infer_permissions
+
+> list[str]** post_license_infer_permissions(body=body)
+
+
+Get a list of licenses inferred based on a list of permissions
+
+post_license_infer_permissions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/license/infer/permissions 
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+* authorization:license:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LicenseApi()
+body = ['body_example'] # list[str] | The permissions to use while inferring licenses (optional)
+
+try:
+    # Get a list of licenses inferred based on a list of permissions
+    api_response = api_instance.post_license_infer_permissions(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LicenseApi->post_license_infer_permissions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[str]**](str)| The permissions to use while inferring licenses | [optional]  |
+
+### Return type
+
+**list[str]**
+
+
 ## post_license_organization
 
 > [**list[LicenseUpdateStatus]**](LicenseUpdateStatus) post_license_organization(body=body)
@@ -450,4 +502,4 @@ except ApiException as e:
 **dict(str, object)**
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

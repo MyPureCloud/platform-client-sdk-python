@@ -108,7 +108,7 @@ class ResponseFilter(object):
         """
         if isinstance(operator, int):
             operator = str(operator)
-        allowed_values = ["IN", "EQUALS", "NOTEQUALS"]
+        allowed_values = ["IN", "EQUALS", "NOTEQUALS", "BEGINS_WITH", "ENDS_WITH", "CONTAINS"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"

@@ -60,8 +60,7 @@ class EmailCampaignScheduleConfigChangeEmailCampaignSchedule(object):
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int',
-            'get_additional_properties': 'dict(str, object)'
+            'version': 'int'
         }
 
         self.attribute_map = {
@@ -74,8 +73,7 @@ class EmailCampaignScheduleConfigChangeEmailCampaignSchedule(object):
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version',
-            'get_additional_properties': 'getAdditionalProperties'
+            'version': 'version'
         }
 
         self._intervals = None
@@ -88,7 +86,6 @@ class EmailCampaignScheduleConfigChangeEmailCampaignSchedule(object):
         self._date_created = None
         self._date_modified = None
         self._version = None
-        self._get_additional_properties = None
 
     @property
     def intervals(self) -> List['EmailCampaignScheduleConfigChangeScheduleInterval']:
@@ -329,30 +326,6 @@ class EmailCampaignScheduleConfigChangeEmailCampaignSchedule(object):
         
 
         self._version = version
-
-    @property
-    def get_additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the get_additional_properties of this EmailCampaignScheduleConfigChangeEmailCampaignSchedule.
-
-
-        :return: The get_additional_properties of this EmailCampaignScheduleConfigChangeEmailCampaignSchedule.
-        :rtype: dict(str, object)
-        """
-        return self._get_additional_properties
-
-    @get_additional_properties.setter
-    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the get_additional_properties of this EmailCampaignScheduleConfigChangeEmailCampaignSchedule.
-
-
-        :param get_additional_properties: The get_additional_properties of this EmailCampaignScheduleConfigChangeEmailCampaignSchedule.
-        :type: dict(str, object)
-        """
-        
-
-        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

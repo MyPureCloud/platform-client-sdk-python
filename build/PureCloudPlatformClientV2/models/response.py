@@ -32,13 +32,13 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import AddressableEntityRef
     from . import DomainEntityRef
     from . import FooterTemplate
     from . import JsonSchemaDocument
     from . import MessagingTemplate
     from . import ResponseSubstitution
     from . import ResponseText
+    from . import RmsAssetAddressableRef
     from . import User
 
 class Response(object):
@@ -68,7 +68,7 @@ class Response(object):
             'substitutions_schema': 'JsonSchemaDocument',
             'response_type': 'str',
             'messaging_template': 'MessagingTemplate',
-            'assets': 'list[AddressableEntityRef]',
+            'assets': 'list[RmsAssetAddressableRef]',
             'footer': 'FooterTemplate',
             'self_uri': 'str'
         }
@@ -406,24 +406,24 @@ class Response(object):
         self._messaging_template = messaging_template
 
     @property
-    def assets(self) -> List['AddressableEntityRef']:
+    def assets(self) -> List['RmsAssetAddressableRef']:
         """
         Gets the assets of this Response.
         Assets used in the response
 
         :return: The assets of this Response.
-        :rtype: list[AddressableEntityRef]
+        :rtype: list[RmsAssetAddressableRef]
         """
         return self._assets
 
     @assets.setter
-    def assets(self, assets: List['AddressableEntityRef']) -> None:
+    def assets(self, assets: List['RmsAssetAddressableRef']) -> None:
         """
         Sets the assets of this Response.
         Assets used in the response
 
         :param assets: The assets of this Response.
-        :type: list[AddressableEntityRef]
+        :type: list[RmsAssetAddressableRef]
         """
         
 

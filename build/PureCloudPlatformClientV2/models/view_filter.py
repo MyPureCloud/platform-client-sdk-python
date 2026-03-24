@@ -287,9 +287,11 @@ class ViewFilter(object):
             'sentiment_score_categories': 'list[str]',
             'sentiment_trend_categories': 'list[str]',
             'content_moderation_flags': 'list[str]',
+            'social_source_types': 'list[str]',
             'session_expired': 'bool',
             'engagement_sources': 'list[str]',
-            'is_snippet_recorded': 'bool'
+            'is_snippet_recorded': 'bool',
+            'takeover': 'bool'
         }
 
         self.attribute_map = {
@@ -526,9 +528,11 @@ class ViewFilter(object):
             'sentiment_score_categories': 'sentimentScoreCategories',
             'sentiment_trend_categories': 'sentimentTrendCategories',
             'content_moderation_flags': 'contentModerationFlags',
+            'social_source_types': 'socialSourceTypes',
             'session_expired': 'sessionExpired',
             'engagement_sources': 'engagementSources',
-            'is_snippet_recorded': 'isSnippetRecorded'
+            'is_snippet_recorded': 'isSnippetRecorded',
+            'takeover': 'takeover'
         }
 
         self._media_types = None
@@ -764,9 +768,11 @@ class ViewFilter(object):
         self._sentiment_score_categories = None
         self._sentiment_trend_categories = None
         self._content_moderation_flags = None
+        self._social_source_types = None
         self._session_expired = None
         self._engagement_sources = None
         self._is_snippet_recorded = None
+        self._takeover = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6391,6 +6397,30 @@ class ViewFilter(object):
         self._content_moderation_flags = content_moderation_flags
 
     @property
+    def social_source_types(self) -> List[str]:
+        """
+        Gets the social_source_types of this ViewFilter.
+        A set of Source Types for social filtering
+
+        :return: The social_source_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_source_types
+
+    @social_source_types.setter
+    def social_source_types(self, social_source_types: List[str]) -> None:
+        """
+        Sets the social_source_types of this ViewFilter.
+        A set of Source Types for social filtering
+
+        :param social_source_types: The social_source_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_source_types = social_source_types
+
+    @property
     def session_expired(self) -> bool:
         """
         Gets the session_expired of this ViewFilter.
@@ -6461,6 +6491,30 @@ class ViewFilter(object):
         
 
         self._is_snippet_recorded = is_snippet_recorded
+
+    @property
+    def takeover(self) -> bool:
+        """
+        Gets the takeover of this ViewFilter.
+        Indicates filtering for takeover
+
+        :return: The takeover of this ViewFilter.
+        :rtype: bool
+        """
+        return self._takeover
+
+    @takeover.setter
+    def takeover(self, takeover: bool) -> None:
+        """
+        Sets the takeover of this ViewFilter.
+        Indicates filtering for takeover
+
+        :param takeover: The takeover of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._takeover = takeover
 
     def to_dict(self):
         """

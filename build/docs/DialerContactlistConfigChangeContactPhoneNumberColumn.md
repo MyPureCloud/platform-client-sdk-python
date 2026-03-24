@@ -10,8 +10,7 @@
 | **type** | str | type of the phone column, for example, &#39;cell&#39; or &#39;home&#39; | [optional] |
 | **callable_time_column** | str | name of the column indicating the timezone to be considered for determining callable times | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
-| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

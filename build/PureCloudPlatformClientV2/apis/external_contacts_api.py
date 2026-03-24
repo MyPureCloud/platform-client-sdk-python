@@ -86,6 +86,7 @@ from ..models import ErrorBody
 from ..models import ErrorInfo
 from ..models import ExportListing
 from ..models import ExternalContact
+from ..models import ExternalContactsPatchRequest
 from ..models import ExternalOrganization
 from ..models import ExternalOrganizationEnrichRequest
 from ..models import ExternalOrganizationIdentifier
@@ -5044,6 +5045,90 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CursorRelationshipListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_externalcontacts_contact(self, contact_id: str, body: 'ExternalContactsPatchRequest', **kwargs) -> 'ExternalContact':
+        """
+        Update specific fields of an external contact
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_externalcontacts_contact(contact_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_id: ExternalContact ID (required)
+        :param ExternalContactsPatchRequest body: Contact fields to update (required)
+        :return: ExternalContact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_externalcontacts_contact" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_id' is set
+        if ('contact_id' not in params) or (params['contact_id'] is None):
+            raise ValueError("Missing the required parameter `contact_id` when calling `patch_externalcontacts_contact`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_externalcontacts_contact`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/{contactId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_id' in params:
+            path_params['contactId'] = params['contact_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalContact',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

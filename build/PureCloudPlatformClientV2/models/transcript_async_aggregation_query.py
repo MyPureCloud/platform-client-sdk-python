@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import TranscriptAggregateQueryFilter
+    from . import TranscriptAggregationSort
     from . import TranscriptAggregationView
 
 class TranscriptAsyncAggregationQuery(object):
@@ -59,6 +60,9 @@ class TranscriptAsyncAggregationQuery(object):
             'flatten_multivalued_dimensions': 'bool',
             'views': 'list[TranscriptAggregationView]',
             'alternate_time_dimension': 'str',
+            'query_type': 'str',
+            'sort_metric': 'TranscriptAggregationSort',
+            'limit': 'int',
             'page_size': 'int'
         }
 
@@ -72,6 +76,9 @@ class TranscriptAsyncAggregationQuery(object):
             'flatten_multivalued_dimensions': 'flattenMultivaluedDimensions',
             'views': 'views',
             'alternate_time_dimension': 'alternateTimeDimension',
+            'query_type': 'queryType',
+            'sort_metric': 'sortMetric',
+            'limit': 'limit',
             'page_size': 'pageSize'
         }
 
@@ -84,6 +91,9 @@ class TranscriptAsyncAggregationQuery(object):
         self._flatten_multivalued_dimensions = None
         self._views = None
         self._alternate_time_dimension = None
+        self._query_type = None
+        self._sort_metric = None
+        self._limit = None
         self._page_size = None
 
     @property
@@ -306,6 +316,83 @@ class TranscriptAsyncAggregationQuery(object):
             self._alternate_time_dimension = "outdated_sdk_version"
         else:
             self._alternate_time_dimension = alternate_time_dimension
+
+    @property
+    def query_type(self) -> str:
+        """
+        Gets the query_type of this TranscriptAsyncAggregationQuery.
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+
+        :return: The query_type of this TranscriptAsyncAggregationQuery.
+        :rtype: str
+        """
+        return self._query_type
+
+    @query_type.setter
+    def query_type(self, query_type: str) -> None:
+        """
+        Sets the query_type of this TranscriptAsyncAggregationQuery.
+        Query type to use. Use groupBy for all matching results, and topN/bottomN for N results ordered by the sortMetric. Default is groupBy.
+
+        :param query_type: The query_type of this TranscriptAsyncAggregationQuery.
+        :type: str
+        """
+        if isinstance(query_type, int):
+            query_type = str(query_type)
+        allowed_values = ["bottomN", "groupBy", "topN"]
+        if query_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for query_type -> " + query_type)
+            self._query_type = "outdated_sdk_version"
+        else:
+            self._query_type = query_type
+
+    @property
+    def sort_metric(self) -> 'TranscriptAggregationSort':
+        """
+        Gets the sort_metric of this TranscriptAsyncAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :return: The sort_metric of this TranscriptAsyncAggregationQuery.
+        :rtype: TranscriptAggregationSort
+        """
+        return self._sort_metric
+
+    @sort_metric.setter
+    def sort_metric(self, sort_metric: 'TranscriptAggregationSort') -> None:
+        """
+        Sets the sort_metric of this TranscriptAsyncAggregationQuery.
+        Required when requesting multiple metrics. Only applicable for topN/bottomN query type.
+
+        :param sort_metric: The sort_metric of this TranscriptAsyncAggregationQuery.
+        :type: TranscriptAggregationSort
+        """
+        
+
+        self._sort_metric = sort_metric
+
+    @property
+    def limit(self) -> int:
+        """
+        Gets the limit of this TranscriptAsyncAggregationQuery.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+
+        :return: The limit of this TranscriptAsyncAggregationQuery.
+        :rtype: int
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: int) -> None:
+        """
+        Sets the limit of this TranscriptAsyncAggregationQuery.
+        How many results you want in an ordered list. Only applicable for topN/bottomN query type.
+
+        :param limit: The limit of this TranscriptAsyncAggregationQuery.
+        :type: int
+        """
+        
+
+        self._limit = limit
 
     @property
     def page_size(self) -> int:

@@ -61,8 +61,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
             'name': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'version': 'int',
-            'get_additional_properties': 'dict(str, object)'
+            'version': 'int'
         }
 
         self.attribute_map = {
@@ -76,8 +75,7 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
             'name': 'name',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
-            'version': 'version',
-            'get_additional_properties': 'getAdditionalProperties'
+            'version': 'version'
         }
 
         self._campaign_rule_entities = None
@@ -91,7 +89,6 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         self._date_created = None
         self._date_modified = None
         self._version = None
-        self._get_additional_properties = None
 
     @property
     def campaign_rule_entities(self) -> 'DialerCampaignRuleConfigChangeCampaignRuleEntities':
@@ -356,30 +353,6 @@ class DialerCampaignRuleConfigChangeCampaignRule(object):
         
 
         self._version = version
-
-    @property
-    def get_additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :return: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
-        :rtype: dict(str, object)
-        """
-        return self._get_additional_properties
-
-    @get_additional_properties.setter
-    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
-
-
-        :param get_additional_properties: The get_additional_properties of this DialerCampaignRuleConfigChangeCampaignRule.
-        :type: dict(str, object)
-        """
-        
-
-        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

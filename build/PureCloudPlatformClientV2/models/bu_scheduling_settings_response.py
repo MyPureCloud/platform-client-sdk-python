@@ -102,7 +102,7 @@ class BuSchedulingSettingsResponse(object):
     def sync_time_off_properties(self) -> List[str]:
         """
         Gets the sync_time_off_properties of this BuSchedulingSettingsResponse.
-        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published
 
         :return: The sync_time_off_properties of this BuSchedulingSettingsResponse.
         :rtype: list[str]
@@ -113,7 +113,7 @@ class BuSchedulingSettingsResponse(object):
     def sync_time_off_properties(self, sync_time_off_properties: List[str]) -> None:
         """
         Sets the sync_time_off_properties of this BuSchedulingSettingsResponse.
-        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published
 
         :param sync_time_off_properties: The sync_time_off_properties of this BuSchedulingSettingsResponse.
         :type: list[str]
@@ -150,7 +150,7 @@ class BuSchedulingSettingsResponse(object):
     def allow_work_plan_per_minute_granularity(self) -> bool:
         """
         Gets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
-        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false
 
         :return: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
         :rtype: bool
@@ -161,7 +161,7 @@ class BuSchedulingSettingsResponse(object):
     def allow_work_plan_per_minute_granularity(self, allow_work_plan_per_minute_granularity: bool) -> None:
         """
         Sets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
-        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false
 
         :param allow_work_plan_per_minute_granularity: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
         :type: bool

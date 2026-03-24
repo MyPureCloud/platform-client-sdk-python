@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import VariableValidation
 
 class Variable(object):
     """
@@ -50,20 +52,23 @@ class Variable(object):
             'name': 'str',
             'type': 'str',
             'scope': 'str',
-            'description': 'str'
+            'description': 'str',
+            'validation': 'VariableValidation'
         }
 
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'scope': 'scope',
-            'description': 'description'
+            'description': 'description',
+            'validation': 'validation'
         }
 
         self._name = None
         self._type = None
         self._scope = None
         self._description = None
+        self._validation = None
 
     @property
     def name(self) -> str:
@@ -111,7 +116,7 @@ class Variable(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["String", "Integer", "Number", "Boolean"]
+        allowed_values = ["String", "Integer", "Number", "Boolean", "Date"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -170,6 +175,30 @@ class Variable(object):
         
 
         self._description = description
+
+    @property
+    def validation(self) -> 'VariableValidation':
+        """
+        Gets the validation of this Variable.
+        The validation configuration for the variable. Optional - if not present, no validation is applied.
+
+        :return: The validation of this Variable.
+        :rtype: VariableValidation
+        """
+        return self._validation
+
+    @validation.setter
+    def validation(self, validation: 'VariableValidation') -> None:
+        """
+        Sets the validation of this Variable.
+        The validation configuration for the variable. Optional - if not present, no validation is applied.
+
+        :param validation: The validation of this Variable.
+        :type: VariableValidation
+        """
+        
+
+        self._validation = validation
 
     def to_dict(self):
         """

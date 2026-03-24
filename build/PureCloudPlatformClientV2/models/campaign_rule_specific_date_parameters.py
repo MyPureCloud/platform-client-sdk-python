@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CampaignRuleSpecificDateInterval
 
 class CampaignRuleSpecificDateParameters(object):
     """
@@ -47,13 +49,92 @@ class CampaignRuleSpecificDateParameters(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'include_year': 'bool',
+            'threshold_value': 'str',
+            'interval': 'CampaignRuleSpecificDateInterval'
         }
 
         self.attribute_map = {
-            
+            'include_year': 'includeYear',
+            'threshold_value': 'thresholdValue',
+            'interval': 'interval'
         }
 
+        self._include_year = None
+        self._threshold_value = None
+        self._interval = None
+
+    @property
+    def include_year(self) -> bool:
+        """
+        Gets the include_year of this CampaignRuleSpecificDateParameters.
+        If true, includes year in date comparison for specificDate type. When false, only month and day are compared. Default is true. 
+
+        :return: The include_year of this CampaignRuleSpecificDateParameters.
+        :rtype: bool
+        """
+        return self._include_year
+
+    @include_year.setter
+    def include_year(self, include_year: bool) -> None:
+        """
+        Sets the include_year of this CampaignRuleSpecificDateParameters.
+        If true, includes year in date comparison for specificDate type. When false, only month and day are compared. Default is true. 
+
+        :param include_year: The include_year of this CampaignRuleSpecificDateParameters.
+        :type: bool
+        """
+        
+
+        self._include_year = include_year
+
+    @property
+    def threshold_value(self) -> str:
+        """
+        Gets the threshold_value of this CampaignRuleSpecificDateParameters.
+        The operand for the \"equals\", \"after\" and \"before\" operators in yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false) format.
+
+        :return: The threshold_value of this CampaignRuleSpecificDateParameters.
+        :rtype: str
+        """
+        return self._threshold_value
+
+    @threshold_value.setter
+    def threshold_value(self, threshold_value: str) -> None:
+        """
+        Sets the threshold_value of this CampaignRuleSpecificDateParameters.
+        The operand for the \"equals\", \"after\" and \"before\" operators in yyyy-MM-dd (if includeYear=true) or MM-dd (if includeYear=false) format.
+
+        :param threshold_value: The threshold_value of this CampaignRuleSpecificDateParameters.
+        :type: str
+        """
+        
+
+        self._threshold_value = threshold_value
+
+    @property
+    def interval(self) -> 'CampaignRuleSpecificDateInterval':
+        """
+        Gets the interval of this CampaignRuleSpecificDateParameters.
+        The operand for the \"between\" operator
+
+        :return: The interval of this CampaignRuleSpecificDateParameters.
+        :rtype: CampaignRuleSpecificDateInterval
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval: 'CampaignRuleSpecificDateInterval') -> None:
+        """
+        Sets the interval of this CampaignRuleSpecificDateParameters.
+        The operand for the \"between\" operator
+
+        :param interval: The interval of this CampaignRuleSpecificDateParameters.
+        :type: CampaignRuleSpecificDateInterval
+        """
+        
+
+        self._interval = interval
 
     def to_dict(self):
         """

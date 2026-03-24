@@ -49,21 +49,18 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
         self.swagger_types = {
             'contact_column_name': 'str',
             'data_action_field': 'str',
-            'additional_properties': 'dict(str, object)',
-            'get_additional_properties': 'dict(str, object)'
+            'additional_properties': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'contact_column_name': 'contactColumnName',
             'data_action_field': 'dataActionField',
-            'additional_properties': 'additionalProperties',
-            'get_additional_properties': 'getAdditionalProperties'
+            'additional_properties': 'additionalProperties'
         }
 
         self._contact_column_name = None
         self._data_action_field = None
         self._additional_properties = None
-        self._get_additional_properties = None
 
     @property
     def contact_column_name(self) -> str:
@@ -136,30 +133,6 @@ class DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(object):
         
 
         self._additional_properties = additional_properties
-
-    @property
-    def get_additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the get_additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
-
-        :return: The get_additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-        :rtype: dict(str, object)
-        """
-        return self._get_additional_properties
-
-    @get_additional_properties.setter
-    def get_additional_properties(self, get_additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the get_additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-
-
-        :param get_additional_properties: The get_additional_properties of this DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.
-        :type: dict(str, object)
-        """
-        
-
-        self._get_additional_properties = get_additional_properties
 
     def to_dict(self):
         """

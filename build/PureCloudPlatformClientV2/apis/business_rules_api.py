@@ -242,7 +242,7 @@ class BusinessRulesApi(object):
     def delete_businessrules_decisiontable_version_row(self, table_id: str, table_version: int, row_id: str, **kwargs) -> None:
         """
         Delete a decision table row
-        
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1313,7 +1313,7 @@ class BusinessRulesApi(object):
     def patch_businessrules_decisiontable(self, table_id: str, body: 'UpdateDecisionTableRequest', **kwargs) -> 'DecisionTable':
         """
         Update a decision table
-        
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1751,7 +1751,7 @@ class BusinessRulesApi(object):
     def post_businessrules_decisiontable_version_rows(self, table_id: str, table_version: int, body: 'CreateDecisionTableRowRequest', **kwargs) -> 'DecisionTableRow':
         """
         Create a decision table row
-        
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2099,7 +2099,7 @@ class BusinessRulesApi(object):
     def post_businessrules_decisiontables(self, body: 'CreateDecisionTableRequest', **kwargs) -> 'DecisionTableVersion':
         """
         Create a decision table
-        
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2339,7 +2339,7 @@ class BusinessRulesApi(object):
     def put_businessrules_decisiontable_version_row(self, table_id: str, table_version: int, row_id: str, body: 'PutDecisionTableRowRequest', **kwargs) -> 'DecisionTableRow':
         """
         Full update a decision table row
-        
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

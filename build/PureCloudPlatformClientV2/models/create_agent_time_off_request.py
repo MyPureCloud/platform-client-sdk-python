@@ -126,7 +126,7 @@ class CreateAgentTimeOffRequest(object):
     def full_day_management_unit_dates(self) -> List[str]:
         """
         Gets the full_day_management_unit_dates of this CreateAgentTimeOffRequest.
-        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
+        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone
 
         :return: The full_day_management_unit_dates of this CreateAgentTimeOffRequest.
         :rtype: list[str]
@@ -137,7 +137,7 @@ class CreateAgentTimeOffRequest(object):
     def full_day_management_unit_dates(self, full_day_management_unit_dates: List[str]) -> None:
         """
         Sets the full_day_management_unit_dates of this CreateAgentTimeOffRequest.
-        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
+        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone
 
         :param full_day_management_unit_dates: The full_day_management_unit_dates of this CreateAgentTimeOffRequest.
         :type: list[str]
@@ -150,7 +150,7 @@ class CreateAgentTimeOffRequest(object):
     def partial_day_start_date_times(self) -> List[datetime]:
         """
         Gets the partial_day_start_date_times of this CreateAgentTimeOffRequest.
-        A set of start date-times in ISO-8601 format for partial day requests.
+        A set of start date-times in ISO-8601 format for partial day requests
 
         :return: The partial_day_start_date_times of this CreateAgentTimeOffRequest.
         :rtype: list[datetime]
@@ -161,7 +161,7 @@ class CreateAgentTimeOffRequest(object):
     def partial_day_start_date_times(self, partial_day_start_date_times: List[datetime]) -> None:
         """
         Sets the partial_day_start_date_times of this CreateAgentTimeOffRequest.
-        A set of start date-times in ISO-8601 format for partial day requests.
+        A set of start date-times in ISO-8601 format for partial day requests
 
         :param partial_day_start_date_times: The partial_day_start_date_times of this CreateAgentTimeOffRequest.
         :type: list[datetime]

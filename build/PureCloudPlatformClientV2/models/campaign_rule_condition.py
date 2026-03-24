@@ -32,6 +32,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import CampaignRuleCampaignRunTimeSettings
+    from . import CampaignRuleCampaignWaitTimeSettings
+    from . import CampaignRuleDateTimeConditionParameters
     from . import CampaignRuleParameters
 
 class CampaignRuleCondition(object):
@@ -51,18 +54,27 @@ class CampaignRuleCondition(object):
         self.swagger_types = {
             'id': 'str',
             'parameters': 'CampaignRuleParameters',
-            'condition_type': 'str'
+            'condition_type': 'str',
+            'date_time_parameters': 'CampaignRuleDateTimeConditionParameters',
+            'campaign_run_time_settings': 'CampaignRuleCampaignRunTimeSettings',
+            'campaign_wait_time_settings': 'CampaignRuleCampaignWaitTimeSettings'
         }
 
         self.attribute_map = {
             'id': 'id',
             'parameters': 'parameters',
-            'condition_type': 'conditionType'
+            'condition_type': 'conditionType',
+            'date_time_parameters': 'dateTimeParameters',
+            'campaign_run_time_settings': 'campaignRunTimeSettings',
+            'campaign_wait_time_settings': 'campaignWaitTimeSettings'
         }
 
         self._id = None
         self._parameters = None
         self._condition_type = None
+        self._date_time_parameters = None
+        self._campaign_run_time_settings = None
+        self._campaign_wait_time_settings = None
 
     @property
     def id(self) -> str:
@@ -140,6 +152,78 @@ class CampaignRuleCondition(object):
             self._condition_type = "outdated_sdk_version"
         else:
             self._condition_type = condition_type
+
+    @property
+    def date_time_parameters(self) -> 'CampaignRuleDateTimeConditionParameters':
+        """
+        Gets the date_time_parameters of this CampaignRuleCondition.
+        Parameters for conditions (timeOfDay, dayOfWeek, dayOfMonth, weekDayOfMonth and specificDate)
+
+        :return: The date_time_parameters of this CampaignRuleCondition.
+        :rtype: CampaignRuleDateTimeConditionParameters
+        """
+        return self._date_time_parameters
+
+    @date_time_parameters.setter
+    def date_time_parameters(self, date_time_parameters: 'CampaignRuleDateTimeConditionParameters') -> None:
+        """
+        Sets the date_time_parameters of this CampaignRuleCondition.
+        Parameters for conditions (timeOfDay, dayOfWeek, dayOfMonth, weekDayOfMonth and specificDate)
+
+        :param date_time_parameters: The date_time_parameters of this CampaignRuleCondition.
+        :type: CampaignRuleDateTimeConditionParameters
+        """
+        
+
+        self._date_time_parameters = date_time_parameters
+
+    @property
+    def campaign_run_time_settings(self) -> 'CampaignRuleCampaignRunTimeSettings':
+        """
+        Gets the campaign_run_time_settings of this CampaignRuleCondition.
+        Settings for campaignRunTime conditions
+
+        :return: The campaign_run_time_settings of this CampaignRuleCondition.
+        :rtype: CampaignRuleCampaignRunTimeSettings
+        """
+        return self._campaign_run_time_settings
+
+    @campaign_run_time_settings.setter
+    def campaign_run_time_settings(self, campaign_run_time_settings: 'CampaignRuleCampaignRunTimeSettings') -> None:
+        """
+        Sets the campaign_run_time_settings of this CampaignRuleCondition.
+        Settings for campaignRunTime conditions
+
+        :param campaign_run_time_settings: The campaign_run_time_settings of this CampaignRuleCondition.
+        :type: CampaignRuleCampaignRunTimeSettings
+        """
+        
+
+        self._campaign_run_time_settings = campaign_run_time_settings
+
+    @property
+    def campaign_wait_time_settings(self) -> 'CampaignRuleCampaignWaitTimeSettings':
+        """
+        Gets the campaign_wait_time_settings of this CampaignRuleCondition.
+        Settings for campaignWaitTime conditions
+
+        :return: The campaign_wait_time_settings of this CampaignRuleCondition.
+        :rtype: CampaignRuleCampaignWaitTimeSettings
+        """
+        return self._campaign_wait_time_settings
+
+    @campaign_wait_time_settings.setter
+    def campaign_wait_time_settings(self, campaign_wait_time_settings: 'CampaignRuleCampaignWaitTimeSettings') -> None:
+        """
+        Sets the campaign_wait_time_settings of this CampaignRuleCondition.
+        Settings for campaignWaitTime conditions
+
+        :param campaign_wait_time_settings: The campaign_wait_time_settings of this CampaignRuleCondition.
+        :type: CampaignRuleCampaignWaitTimeSettings
+        """
+        
+
+        self._campaign_wait_time_settings = campaign_wait_time_settings
 
     def to_dict(self):
         """

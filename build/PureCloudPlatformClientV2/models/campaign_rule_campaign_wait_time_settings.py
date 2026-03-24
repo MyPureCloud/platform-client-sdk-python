@@ -47,13 +47,43 @@ class CampaignRuleCampaignWaitTimeSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'wait_type': 'str'
         }
 
         self.attribute_map = {
-            
+            'wait_type': 'waitType'
         }
 
+        self._wait_type = None
+
+    @property
+    def wait_type(self) -> str:
+        """
+        Gets the wait_type of this CampaignRuleCampaignWaitTimeSettings.
+        Campaign wait type
+
+        :return: The wait_type of this CampaignRuleCampaignWaitTimeSettings.
+        :rtype: str
+        """
+        return self._wait_type
+
+    @wait_type.setter
+    def wait_type(self, wait_type: str) -> None:
+        """
+        Sets the wait_type of this CampaignRuleCampaignWaitTimeSettings.
+        Campaign wait type
+
+        :param wait_type: The wait_type of this CampaignRuleCampaignWaitTimeSettings.
+        :type: str
+        """
+        if isinstance(wait_type, int):
+            wait_type = str(wait_type)
+        allowed_values = ["WaitingForAgents", "WaitingForContacts", "WaitingForLines"]
+        if wait_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for wait_type -> " + wait_type)
+            self._wait_type = "outdated_sdk_version"
+        else:
+            self._wait_type = wait_type
 
     def to_dict(self):
         """

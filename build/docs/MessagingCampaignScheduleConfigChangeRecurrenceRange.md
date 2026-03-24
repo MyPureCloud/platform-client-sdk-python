@@ -10,8 +10,7 @@
 | **end** | str | the range end date | [optional] |
 | **number_of_occurrences** | int | the number of occurrences to happen before ending | [optional] |
 | **additional_properties** | dict(str, object) |  | [optional] |
-| **get_additional_properties** | dict(str, object) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

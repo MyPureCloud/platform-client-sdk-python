@@ -69,7 +69,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
             'interacting_duration_ms': 'int',
             'conversation_external_contact_ids': 'list[str]',
             'conversation_external_organization_ids': 'list[str]',
-            'division_id': 'str'
+            'division_id': 'str',
+            'utilization_label': 'str'
         }
 
         self.attribute_map = {
@@ -95,7 +96,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
             'interacting_duration_ms': 'interactingDurationMs',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
-            'division_id': 'divisionId'
+            'division_id': 'divisionId',
+            'utilization_label': 'utilizationLabel'
         }
 
         self._event_time = None
@@ -121,6 +123,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
         self._division_id = None
+        self._utilization_label = None
 
     @property
     def event_time(self) -> int:
@@ -693,6 +696,30 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         
 
         self._division_id = division_id
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this CustomerEndDetailEventTopicCustomerEndEvent.
+
+
+        :return: The utilization_label of this CustomerEndDetailEventTopicCustomerEndEvent.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this CustomerEndDetailEventTopicCustomerEndEvent.
+
+
+        :param utilization_label: The utilization_label of this CustomerEndDetailEventTopicCustomerEndEvent.
+        :type: str
+        """
+        
+
+        self._utilization_label = utilization_label
 
     def to_dict(self):
         """

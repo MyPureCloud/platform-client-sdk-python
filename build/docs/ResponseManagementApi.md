@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_responsemanagement_responses**](#get_responsemanagement_responses) | Gets a list of existing responses.|
 |[**post_responsemanagement_libraries**](#post_responsemanagement_libraries) | Create a response library.|
 |[**post_responsemanagement_libraries_bulk**](#post_responsemanagement_libraries_bulk) | Get response libraries.|
+|[**post_responsemanagement_libraries_query**](#post_responsemanagement_libraries_query) | Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions.|
+|[**post_responsemanagement_responseassets_bulk**](#post_responsemanagement_responseassets_bulk) | Get response assets.|
 |[**post_responsemanagement_responseassets_search**](#post_responsemanagement_responseassets_search) | Search response assets|
 |[**post_responsemanagement_responseassets_uploads**](#post_responsemanagement_responseassets_uploads) | Creates pre-signed url for uploading response asset|
 |[**post_responsemanagement_responses**](#post_responsemanagement_responses) | Create a response.|
@@ -570,6 +572,108 @@ except ApiException as e:
 [**LibraryEntityListing**](LibraryEntityListing)
 
 
+## post_responsemanagement_libraries_query
+
+> [**LibraryEntityListing**](LibraryEntityListing) post_responsemanagement_libraries_query(body, page_number=page_number, page_size=page_size)
+
+
+Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+
+post_responsemanagement_libraries_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/responsemanagement/libraries/query 
+
+Requires ANY permissions: 
+
+* responses:library:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+body = PureCloudPlatformClientV2.QueryCriteriaQuery() # QueryCriteriaQuery | Query criteria
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+    api_response = api_instance.post_responsemanagement_libraries_query(body, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_libraries_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QueryCriteriaQuery**](QueryCriteriaQuery)| Query criteria |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**LibraryEntityListing**](LibraryEntityListing)
+
+
+## post_responsemanagement_responseassets_bulk
+
+> [**ResponseAssetEntityListing**](ResponseAssetEntityListing) post_responsemanagement_responseassets_bulk(body)
+
+
+Get response assets.
+
+Wraps POST /api/v2/responsemanagement/responseassets/bulk 
+
+Requires ANY permissions: 
+
+* responseAssets:asset:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+body = PureCloudPlatformClientV2.ResponseAssetBulkRequest() # ResponseAssetBulkRequest | Asset IDs (max allowed 50)
+
+try:
+    # Get response assets.
+    api_response = api_instance.post_responsemanagement_responseassets_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_responseassets_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ResponseAssetBulkRequest**](ResponseAssetBulkRequest)| Asset IDs (max allowed 50) |  |
+
+### Return type
+
+[**ResponseAssetEntityListing**](ResponseAssetEntityListing)
+
+
 ## post_responsemanagement_responseassets_search
 
 > [**ResponseAssetSearchResults**](ResponseAssetSearchResults) post_responsemanagement_responseassets_search(body, expand=expand)
@@ -922,4 +1026,4 @@ except ApiException as e:
 [**ResponseAsset**](ResponseAsset)
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

@@ -8,11 +8,11 @@
 |------------ | ------------- | ------------- | -------------|
 | **recipient_id** | str | The recipient of the recognition | |
 | **type** | str | The type of the recognition | |
-| **title** | str | The title of the recognition. Max length of 100 characters (optional) | [optional] |
+| **title** | str | The title of the recognition. Max length of 100 characters | |
 | **note** | str | The note of the recognition. Max length of 800 characters (optional) | [optional] |
 | **context_type** | str | The context type (optional) | [optional] |
 | **context_id** | str | The context id (optional) | [optional] |
 
 
 
-_PureCloudPlatformClientV2 253.0.0_
+_PureCloudPlatformClientV2 254.0.0_

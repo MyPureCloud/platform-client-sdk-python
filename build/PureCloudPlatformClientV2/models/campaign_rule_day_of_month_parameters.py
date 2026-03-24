@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CampaignRuleDayOfMonthInterval
 
 class CampaignRuleDayOfMonthParameters(object):
     """
@@ -47,13 +49,92 @@ class CampaignRuleDayOfMonthParameters(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'threshold_value': 'str',
+            'in_set': 'list[str]',
+            'interval': 'CampaignRuleDayOfMonthInterval'
         }
 
         self.attribute_map = {
-            
+            'threshold_value': 'thresholdValue',
+            'in_set': 'inSet',
+            'interval': 'interval'
         }
 
+        self._threshold_value = None
+        self._in_set = None
+        self._interval = None
+
+    @property
+    def threshold_value(self) -> str:
+        """
+        Gets the threshold_value of this CampaignRuleDayOfMonthParameters.
+        The operand for the \"before\" and \"after\" operators, can be either exact day (1-31) or \"LAST_DAY\"
+
+        :return: The threshold_value of this CampaignRuleDayOfMonthParameters.
+        :rtype: str
+        """
+        return self._threshold_value
+
+    @threshold_value.setter
+    def threshold_value(self, threshold_value: str) -> None:
+        """
+        Sets the threshold_value of this CampaignRuleDayOfMonthParameters.
+        The operand for the \"before\" and \"after\" operators, can be either exact day (1-31) or \"LAST_DAY\"
+
+        :param threshold_value: The threshold_value of this CampaignRuleDayOfMonthParameters.
+        :type: str
+        """
+        
+
+        self._threshold_value = threshold_value
+
+    @property
+    def in_set(self) -> List[str]:
+        """
+        Gets the in_set of this CampaignRuleDayOfMonthParameters.
+        The operand for the \"in\" operator, each element can be either exact day (1,31) or \"LAST_DAY\", \"EVEN_DAY\", \"ODD_DAY\"
+
+        :return: The in_set of this CampaignRuleDayOfMonthParameters.
+        :rtype: list[str]
+        """
+        return self._in_set
+
+    @in_set.setter
+    def in_set(self, in_set: List[str]) -> None:
+        """
+        Sets the in_set of this CampaignRuleDayOfMonthParameters.
+        The operand for the \"in\" operator, each element can be either exact day (1,31) or \"LAST_DAY\", \"EVEN_DAY\", \"ODD_DAY\"
+
+        :param in_set: The in_set of this CampaignRuleDayOfMonthParameters.
+        :type: list[str]
+        """
+        
+
+        self._in_set = in_set
+
+    @property
+    def interval(self) -> 'CampaignRuleDayOfMonthInterval':
+        """
+        Gets the interval of this CampaignRuleDayOfMonthParameters.
+        The interval operand for the \"between\" operator
+
+        :return: The interval of this CampaignRuleDayOfMonthParameters.
+        :rtype: CampaignRuleDayOfMonthInterval
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval: 'CampaignRuleDayOfMonthInterval') -> None:
+        """
+        Sets the interval of this CampaignRuleDayOfMonthParameters.
+        The interval operand for the \"between\" operator
+
+        :param interval: The interval of this CampaignRuleDayOfMonthParameters.
+        :type: CampaignRuleDayOfMonthInterval
+        """
+        
+
+        self._interval = interval
 
     def to_dict(self):
         """

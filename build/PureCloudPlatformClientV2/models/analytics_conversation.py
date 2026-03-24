@@ -61,6 +61,8 @@ class AnalyticsConversation(object):
             'division_ids': 'list[str]',
             'external_tag': 'str',
             'inactivity_timeout': 'datetime',
+            'associated_conversation_id': 'str',
+            'consultation_conversation_ids': 'list[str]',
             'knowledge_base_ids': 'list[str]',
             'media_stats_min_conversation_mos': 'float',
             'media_stats_min_conversation_r_factor': 'float',
@@ -83,6 +85,8 @@ class AnalyticsConversation(object):
             'division_ids': 'divisionIds',
             'external_tag': 'externalTag',
             'inactivity_timeout': 'inactivityTimeout',
+            'associated_conversation_id': 'associatedConversationId',
+            'consultation_conversation_ids': 'consultationConversationIds',
             'knowledge_base_ids': 'knowledgeBaseIds',
             'media_stats_min_conversation_mos': 'mediaStatsMinConversationMos',
             'media_stats_min_conversation_r_factor': 'mediaStatsMinConversationRFactor',
@@ -104,6 +108,8 @@ class AnalyticsConversation(object):
         self._division_ids = None
         self._external_tag = None
         self._inactivity_timeout = None
+        self._associated_conversation_id = None
+        self._consultation_conversation_ids = None
         self._knowledge_base_ids = None
         self._media_stats_min_conversation_mos = None
         self._media_stats_min_conversation_r_factor = None
@@ -335,6 +341,54 @@ class AnalyticsConversation(object):
         
 
         self._inactivity_timeout = inactivity_timeout
+
+    @property
+    def associated_conversation_id(self) -> str:
+        """
+        Gets the associated_conversation_id of this AnalyticsConversation.
+        ID of the conversation the initiator is signaling this new conversation is associated with
+
+        :return: The associated_conversation_id of this AnalyticsConversation.
+        :rtype: str
+        """
+        return self._associated_conversation_id
+
+    @associated_conversation_id.setter
+    def associated_conversation_id(self, associated_conversation_id: str) -> None:
+        """
+        Sets the associated_conversation_id of this AnalyticsConversation.
+        ID of the conversation the initiator is signaling this new conversation is associated with
+
+        :param associated_conversation_id: The associated_conversation_id of this AnalyticsConversation.
+        :type: str
+        """
+        
+
+        self._associated_conversation_id = associated_conversation_id
+
+    @property
+    def consultation_conversation_ids(self) -> List[str]:
+        """
+        Gets the consultation_conversation_ids of this AnalyticsConversation.
+        Set of conversationIds the initiator has signaled this conversation is associated with
+
+        :return: The consultation_conversation_ids of this AnalyticsConversation.
+        :rtype: list[str]
+        """
+        return self._consultation_conversation_ids
+
+    @consultation_conversation_ids.setter
+    def consultation_conversation_ids(self, consultation_conversation_ids: List[str]) -> None:
+        """
+        Sets the consultation_conversation_ids of this AnalyticsConversation.
+        Set of conversationIds the initiator has signaled this conversation is associated with
+
+        :param consultation_conversation_ids: The consultation_conversation_ids of this AnalyticsConversation.
+        :type: list[str]
+        """
+        
+
+        self._consultation_conversation_ids = consultation_conversation_ids
 
     @property
     def knowledge_base_ids(self) -> List[str]:

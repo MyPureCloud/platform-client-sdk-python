@@ -59,6 +59,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
             'substatus': 'str',
             'partial_day_start_date_times': 'list[str]',
             'full_day_management_unit_dates': 'list[str]',
+            'full_day_earliest_start_offset_minutes': 'list[int]',
+            'full_day_latest_end_offset_minutes': 'list[int]',
             'daily_duration_minutes': 'int',
             'duration_minutes': 'list[int]',
             'payable_minutes': 'list[int]',
@@ -82,6 +84,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
             'substatus': 'substatus',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
+            'full_day_earliest_start_offset_minutes': 'fullDayEarliestStartOffsetMinutes',
+            'full_day_latest_end_offset_minutes': 'fullDayLatestEndOffsetMinutes',
             'daily_duration_minutes': 'dailyDurationMinutes',
             'duration_minutes': 'durationMinutes',
             'payable_minutes': 'payableMinutes',
@@ -104,6 +108,8 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         self._substatus = None
         self._partial_day_start_date_times = None
         self._full_day_management_unit_dates = None
+        self._full_day_earliest_start_offset_minutes = None
+        self._full_day_latest_end_offset_minutes = None
         self._daily_duration_minutes = None
         self._duration_minutes = None
         self._payable_minutes = None
@@ -364,6 +370,54 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         
 
         self._full_day_management_unit_dates = full_day_management_unit_dates
+
+    @property
+    def full_day_earliest_start_offset_minutes(self) -> List[int]:
+        """
+        Gets the full_day_earliest_start_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :return: The full_day_earliest_start_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :rtype: list[int]
+        """
+        return self._full_day_earliest_start_offset_minutes
+
+    @full_day_earliest_start_offset_minutes.setter
+    def full_day_earliest_start_offset_minutes(self, full_day_earliest_start_offset_minutes: List[int]) -> None:
+        """
+        Sets the full_day_earliest_start_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :param full_day_earliest_start_offset_minutes: The full_day_earliest_start_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :type: list[int]
+        """
+        
+
+        self._full_day_earliest_start_offset_minutes = full_day_earliest_start_offset_minutes
+
+    @property
+    def full_day_latest_end_offset_minutes(self) -> List[int]:
+        """
+        Gets the full_day_latest_end_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :return: The full_day_latest_end_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :rtype: list[int]
+        """
+        return self._full_day_latest_end_offset_minutes
+
+    @full_day_latest_end_offset_minutes.setter
+    def full_day_latest_end_offset_minutes(self, full_day_latest_end_offset_minutes: List[int]) -> None:
+        """
+        Sets the full_day_latest_end_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :param full_day_latest_end_offset_minutes: The full_day_latest_end_offset_minutes of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :type: list[int]
+        """
+        
+
+        self._full_day_latest_end_offset_minutes = full_day_latest_end_offset_minutes
 
     @property
     def daily_duration_minutes(self) -> int:
