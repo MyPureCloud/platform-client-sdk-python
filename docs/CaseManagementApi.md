@@ -1853,4 +1853,4 @@ except ApiException as e:
 [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing)
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_

@@ -237,6 +237,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_call_participant_consult_queue**](#post_conversations_call_participant_consult_queue) | Initiate a consult transfer to a queue|
 |[**post_conversations_call_participant_monitor**](#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_call_participant_replace**](#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_call_participant_snippet_record**](#post_conversations_call_participant_snippet_record) | Start/stop the snippet recording for a participant|
 |[**post_conversations_call_participant_voice_consult**](#post_conversations_call_participant_voice_consult) | Initiate voice consult transfer|
 |[**post_conversations_call_participants**](#post_conversations_call_participants) | Add participants to a conversation|
 |[**post_conversations_call_participants_user_user_id**](#post_conversations_call_participants_user_user_id) | Add participants to a conversation on behalf of a user|
@@ -12031,6 +12032,58 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_conversations_call_participant_snippet_record
+
+> str** post_conversations_call_participant_snippet_record(conversation_id, participant_id, body)
+
+
+Start/stop the snippet recording for a participant
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record 
+
+Requires ANY permissions: 
+
+* conversation:recording:snippetRecord
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.SnippetRecordingRequest() # SnippetRecordingRequest | snippetRecordingRequest
+
+try:
+    # Start/stop the snippet recording for a participant
+    api_response = api_instance.post_conversations_call_participant_snippet_record(conversation_id, participant_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_snippet_record: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**SnippetRecordingRequest**](SnippetRecordingRequest)| snippetRecordingRequest |  |
+
+### Return type
+
+**str**
+
+
 ## post_conversations_call_participant_voice_consult
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_voice_consult(conversation_id, participant_id, body)
@@ -16639,4 +16692,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_

@@ -1910,7 +1910,7 @@ except ApiException as e:
 
 ## get_integrations_credentials_types
 
-> [**CredentialTypeListing**](CredentialTypeListing) get_integrations_credentials_types()
+> [**list[CredentialType]**](CredentialType) get_integrations_credentials_types()
 
 
 List all credential types
@@ -1949,7 +1949,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CredentialTypeListing**](CredentialTypeListing)
+[**list[CredentialType]**](CredentialType)
 
 
 ## get_integrations_speech_audioconnector
@@ -4864,4 +4864,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_
