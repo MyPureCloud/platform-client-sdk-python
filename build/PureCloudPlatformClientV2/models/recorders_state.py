@@ -49,18 +49,21 @@ class RecordersState(object):
         self.swagger_types = {
             'adhoc_state': 'str',
             'customer_experience_state': 'str',
-            'agent_experience_state': 'str'
+            'agent_experience_state': 'str',
+            'snippet_state': 'str'
         }
 
         self.attribute_map = {
             'adhoc_state': 'adhocState',
             'customer_experience_state': 'customerExperienceState',
-            'agent_experience_state': 'agentExperienceState'
+            'agent_experience_state': 'agentExperienceState',
+            'snippet_state': 'snippetState'
         }
 
         self._adhoc_state = None
         self._customer_experience_state = None
         self._agent_experience_state = None
+        self._snippet_state = None
 
     @property
     def adhoc_state(self) -> str:
@@ -148,6 +151,35 @@ class RecordersState(object):
             self._agent_experience_state = "outdated_sdk_version"
         else:
             self._agent_experience_state = agent_experience_state
+
+    @property
+    def snippet_state(self) -> str:
+        """
+        Gets the snippet_state of this RecordersState.
+        Indicates the state of the snippet recording.
+
+        :return: The snippet_state of this RecordersState.
+        :rtype: str
+        """
+        return self._snippet_state
+
+    @snippet_state.setter
+    def snippet_state(self, snippet_state: str) -> None:
+        """
+        Sets the snippet_state of this RecordersState.
+        Indicates the state of the snippet recording.
+
+        :param snippet_state: The snippet_state of this RecordersState.
+        :type: str
+        """
+        if isinstance(snippet_state, int):
+            snippet_state = str(snippet_state)
+        allowed_values = ["ACTIVE", "PAUSED", "NONE"]
+        if snippet_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for snippet_state -> " + snippet_state)
+            self._snippet_state = "outdated_sdk_version"
+        else:
+            self._snippet_state = snippet_state
 
     def to_dict(self):
         """

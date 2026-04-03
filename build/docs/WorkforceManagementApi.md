@@ -70,6 +70,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_scheduling_runs**](#get_workforcemanagement_businessunit_scheduling_runs) | Get the list of scheduling runs|
 |[**get_workforcemanagement_businessunit_servicegoaltemplate**](#get_workforcemanagement_businessunit_servicegoaltemplate) | Get a service goal template|
 |[**get_workforcemanagement_businessunit_servicegoaltemplates**](#get_workforcemanagement_businessunit_servicegoaltemplates) | Gets list of service goal templates|
+|[**get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job**](#get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job) | View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_businessunit_shifttrading_trades_query_job**](#get_workforcemanagement_businessunit_shifttrading_trades_query_job) | View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job**](#get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job) | View results of bulk update trades states operation. Only the user who started the operation can query the status.|
+|[**get_workforcemanagement_businessunit_shifttrading_unmatched_search_job**](#get_workforcemanagement_businessunit_shifttrading_unmatched_search_job) | View result of potential shift trade matches for the current user. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_businessunit_shifttrading_weeks_summary_job**](#get_workforcemanagement_businessunit_shifttrading_weeks_summary_job) | View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_businessunit_staffinggroup**](#get_workforcemanagement_businessunit_staffinggroup) | Gets a staffing group|
 |[**get_workforcemanagement_businessunit_staffinggroups**](#get_workforcemanagement_businessunit_staffinggroups) | Gets a list of staffing groups|
 |[**get_workforcemanagement_businessunit_timeofflimit**](#get_workforcemanagement_businessunit_timeofflimit) | Gets a time-off limit object|
@@ -133,6 +138,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_notifications**](#get_workforcemanagement_notifications) | Get a list of notifications for the current user|
 |[**get_workforcemanagement_schedulingjob**](#get_workforcemanagement_schedulingjob) | Get status of the scheduling job|
 |[**get_workforcemanagement_shifttrades**](#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
+|[**get_workforcemanagement_shifttrading_trade_job**](#get_workforcemanagement_shifttrading_trade_job) | View result of update trade operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_shifttrading_trade_match_job**](#get_workforcemanagement_shifttrading_trade_match_job) | View result of match shift trade operation. Only the receiving user who started the operation can query the status.|
+|[**get_workforcemanagement_shifttrading_trade_state_job**](#get_workforcemanagement_shifttrading_trade_state_job) | View result of update trade state operation. Only the user who started the operation can query the status.|
+|[**get_workforcemanagement_shifttrading_trades_job**](#get_workforcemanagement_shifttrading_trades_job) | View result of create trade operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_shifttrading_trades_mine_query_job**](#get_workforcemanagement_shifttrading_trades_mine_query_job) | View results of retrieve all my shift trade operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_shrinkage_job**](#get_workforcemanagement_shrinkage_job) | Request to fetch the status of the historical shrinkage query|
 |[**get_workforcemanagement_team_adherence**](#get_workforcemanagement_team_adherence) | Get a list of user schedule adherence records for the requested team|
 |[**get_workforcemanagement_timeoffbalance_job**](#get_workforcemanagement_timeoffbalance_job) | Query the results of time off types job|
@@ -211,6 +221,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_intraday**](#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
 |[**post_workforcemanagement_businessunit_planninggroups**](#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
 |[**post_workforcemanagement_businessunit_servicegoaltemplates**](#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
+|[**post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs**](#post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs) | Queries and evaluates against shift trade configuration shift trades in a management unit per week|
+|[**post_workforcemanagement_businessunit_shifttrading_trades_query_jobs**](#post_workforcemanagement_businessunit_shifttrading_trades_query_jobs) | Queries shift trades in a management unit per user|
+|[**post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs**](#post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs) | Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.|
+|[**post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs**](#post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs) | Start an async job to find potential shift trade matches for the current receiving user|
+|[**post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs**](#post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs) | Retrieves the summary of shift trades in a matched state per week|
 |[**post_workforcemanagement_businessunit_staffinggroups**](#post_workforcemanagement_businessunit_staffinggroups) | Creates a new staffing group|
 |[**post_workforcemanagement_businessunit_staffinggroups_planninggroups_query**](#post_workforcemanagement_businessunit_staffinggroups_planninggroups_query) | Gets a list of planning group to staffing groups list association|
 |[**post_workforcemanagement_businessunit_staffinggroups_query**](#post_workforcemanagement_businessunit_staffinggroups_query) | Gets staffing group associations for a list of user IDs|
@@ -270,6 +285,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunits**](#post_workforcemanagement_managementunits) | Add a management unit|
 |[**post_workforcemanagement_notifications_update**](#post_workforcemanagement_notifications_update) | Mark a list of notifications as read or unread|
 |[**post_workforcemanagement_schedules**](#post_workforcemanagement_schedules) | Get published schedule for the current user|
+|[**post_workforcemanagement_shifttrading_trade_jobs**](#post_workforcemanagement_shifttrading_trade_jobs) | Updates a shift trade. This route can only be called by the initiating user|
+|[**post_workforcemanagement_shifttrading_trade_match_jobs**](#post_workforcemanagement_shifttrading_trade_match_jobs) | Matches a shift trade. This route can only be called by the receiving user|
+|[**post_workforcemanagement_shifttrading_trade_state_jobs**](#post_workforcemanagement_shifttrading_trade_state_jobs) | Update trade state by a user|
+|[**post_workforcemanagement_shifttrading_trades_jobs**](#post_workforcemanagement_shifttrading_trades_jobs) | Add a shift trade job|
+|[**post_workforcemanagement_shifttrading_trades_mine_query_jobs**](#post_workforcemanagement_shifttrading_trades_mine_query_jobs) | Retrieve all my shift trades where I am either the initiating or receiving user|
 |[**post_workforcemanagement_team_adherence_historical**](#post_workforcemanagement_team_adherence_historical) | Request a teams historical adherence report|
 |[**post_workforcemanagement_team_shrinkage_jobs**](#post_workforcemanagement_team_shrinkage_jobs) | Request a historical shrinkage report|
 |[**post_workforcemanagement_timeoffbalance_jobs**](#post_workforcemanagement_timeoffbalance_jobs) | Query time off balances for the current user for specified activity code and dates|
@@ -3658,6 +3678,269 @@ except ApiException as e:
 [**ServiceGoalTemplateList**](ServiceGoalTemplateList)
 
 
+## get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job
+
+> [**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse) get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job(business_unit_id, job_id)
+
+
+View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse)
+
+
+## get_workforcemanagement_businessunit_shifttrading_trades_query_job
+
+> [**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse) get_workforcemanagement_businessunit_shifttrading_trades_query_job(business_unit_id, job_id)
+
+
+View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_businessunit_shifttrading_trades_query_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_shifttrading_trades_query_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse)
+
+
+## get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job
+
+> [**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse) get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job(business_unit_id, job_id)
+
+
+View results of bulk update trades states operation. Only the user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View results of bulk update trades states operation. Only the user who started the operation can query the status.
+    api_response = api_instance.get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse)
+
+
+## get_workforcemanagement_businessunit_shifttrading_unmatched_search_job
+
+> [**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse) get_workforcemanagement_businessunit_shifttrading_unmatched_search_job(business_unit_id, job_id)
+
+
+View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_businessunit_shifttrading_unmatched_search_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_shifttrading_unmatched_search_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse)
+
+
+## get_workforcemanagement_businessunit_shifttrading_weeks_summary_job
+
+> [**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse) get_workforcemanagement_businessunit_shifttrading_weeks_summary_job(business_unit_id, job_id)
+
+
+View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_businessunit_shifttrading_weeks_summary_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_shifttrading_weeks_summary_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse)
+
+
 ## get_workforcemanagement_businessunit_staffinggroup
 
 > [**StaffingGroupResponse**](StaffingGroupResponse) get_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id)
@@ -4348,7 +4631,7 @@ except ApiException as e:
 
 Get the list of week schedules for the specified week
 
-Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules 
 
@@ -4735,7 +5018,7 @@ except ApiException as e:
 
 Get short term forecasts
 
-Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts 
 
@@ -6994,6 +7277,262 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**ShiftTradeListResponse**](ShiftTradeListResponse)
+
+
+## get_workforcemanagement_shifttrading_trade_job
+
+> [**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse) get_workforcemanagement_shifttrading_trade_job(trade_id, job_id)
+
+
+View result of update trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View result of update trade operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_shifttrading_trade_job(trade_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_shifttrading_trade_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the shift trade to update |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse)
+
+
+## get_workforcemanagement_shifttrading_trade_match_job
+
+> [**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse) get_workforcemanagement_shifttrading_trade_match_job(trade_id, job_id)
+
+
+View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+    api_response = api_instance.get_workforcemanagement_shifttrading_trade_match_job(trade_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_shifttrading_trade_match_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the shift trade to update |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse)
+
+
+## get_workforcemanagement_shifttrading_trade_state_job
+
+> [**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse) get_workforcemanagement_shifttrading_trade_state_job(trade_id, job_id)
+
+
+View result of update trade state operation. Only the user who started the operation can query the status.
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View result of update trade state operation. Only the user who started the operation can query the status.
+    api_response = api_instance.get_workforcemanagement_shifttrading_trade_state_job(trade_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_shifttrading_trade_state_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the shift trade to update |  |
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse)
+
+
+## get_workforcemanagement_shifttrading_trades_job
+
+> [**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse) get_workforcemanagement_shifttrading_trades_job(job_id)
+
+
+View result of create trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View result of create trade operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_shifttrading_trades_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_shifttrading_trades_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse)
+
+
+## get_workforcemanagement_shifttrading_trades_mine_query_job
+
+> [**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse) get_workforcemanagement_shifttrading_trades_mine_query_job(job_id)
+
+
+View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_shifttrading_trades_mine_query_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_shifttrading_trades_mine_query_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse)
 
 
 ## get_workforcemanagement_shrinkage_job
@@ -10924,6 +11463,277 @@ except ApiException as e:
 [**ServiceGoalTemplate**](ServiceGoalTemplate)
 
 
+## post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs
+
+> [**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse) post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+
+
+Queries and evaluates against shift trade configuration shift trades in a management unit per week
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.EvaluateShiftTradeListJobRequest() # EvaluateShiftTradeListJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Queries and evaluates against shift trade configuration shift trades in a management unit per week
+    api_response = api_instance.post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**EvaluateShiftTradeListJobRequest**](EvaluateShiftTradeListJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeEvaluateTradesBuJobResponse**](ShiftTradeEvaluateTradesBuJobResponse)
+
+
+## post_workforcemanagement_businessunit_shifttrading_trades_query_jobs
+
+> [**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse) post_workforcemanagement_businessunit_shifttrading_trades_query_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+
+
+Queries shift trades in a management unit per user
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryShiftTradeListJobRequest() # QueryShiftTradeListJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Queries shift trades in a management unit per user
+    api_response = api_instance.post_workforcemanagement_businessunit_shifttrading_trades_query_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_shifttrading_trades_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryShiftTradeListJobRequest**](QueryShiftTradeListJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeQueryTradesBuJobResponse**](ShiftTradeQueryTradesBuJobResponse)
+
+
+## post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs
+
+> [**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse) post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+
+
+Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BulkUpdateShiftTradeListJobRequest() # BulkUpdateShiftTradeListJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+    api_response = api_instance.post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BulkUpdateShiftTradeListJobRequest**](BulkUpdateShiftTradeListJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeBulkUpdateTradeStateBuJobResponse**](ShiftTradeBulkUpdateTradeStateBuJobResponse)
+
+
+## post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs
+
+> [**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse) post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+
+
+Start an async job to find potential shift trade matches for the current receiving user
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.SearchUnmatchedShiftTradeListJobRequest() # SearchUnmatchedShiftTradeListJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Start an async job to find potential shift trade matches for the current receiving user
+    api_response = api_instance.post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**SearchUnmatchedShiftTradeListJobRequest**](SearchUnmatchedShiftTradeListJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeSearchUnmatchedTradesBuJobResponse**](ShiftTradeSearchUnmatchedTradesBuJobResponse)
+
+
+## post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs
+
+> [**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse) post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs(business_unit_id, body, force_async=force_async)
+
+
+Retrieves the summary of shift trades in a matched state per week
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs 
+
+Requires ANY permissions: 
+
+* wfm:shiftTradeRequest:view
+* wfm:shiftTradeRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryWeekSummaryListJobRequest() # QueryWeekSummaryListJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+
+try:
+    # Retrieves the summary of shift trades in a matched state per week
+    api_response = api_instance.post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs(business_unit_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryWeekSummaryListJobRequest**](QueryWeekSummaryListJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeQueryWeekSummariesBuJobResponse**](ShiftTradeQueryWeekSummariesBuJobResponse)
+
+
 ## post_workforcemanagement_businessunit_staffinggroups
 
 > [**StaffingGroupResponse**](StaffingGroupResponse) post_workforcemanagement_businessunit_staffinggroups(business_unit_id, body)
@@ -13997,6 +14807,264 @@ except ApiException as e:
 [**UserScheduleContainer**](UserScheduleContainer)
 
 
+## post_workforcemanagement_shifttrading_trade_jobs
+
+> [**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse) post_workforcemanagement_shifttrading_trade_jobs(trade_id, body, force_async=force_async)
+
+
+Updates a shift trade. This route can only be called by the initiating user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+body = PureCloudPlatformClientV2.UpdateShiftTradeJobRequest() # UpdateShiftTradeJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+
+try:
+    # Updates a shift trade. This route can only be called by the initiating user
+    api_response = api_instance.post_workforcemanagement_shifttrading_trade_jobs(trade_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_shifttrading_trade_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the shift trade to update |  |
+| **body** | [**UpdateShiftTradeJobRequest**](UpdateShiftTradeJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse)
+
+
+## post_workforcemanagement_shifttrading_trade_match_jobs
+
+> [**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse) post_workforcemanagement_shifttrading_trade_match_jobs(trade_id, body, force_async=force_async)
+
+
+Matches a shift trade. This route can only be called by the receiving user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the shift trade to match
+body = PureCloudPlatformClientV2.MatchShiftTradeJobRequest() # MatchShiftTradeJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+
+try:
+    # Matches a shift trade. This route can only be called by the receiving user
+    api_response = api_instance.post_workforcemanagement_shifttrading_trade_match_jobs(trade_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_shifttrading_trade_match_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the shift trade to match |  |
+| **body** | [**MatchShiftTradeJobRequest**](MatchShiftTradeJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeMatchTradeJobResponse**](ShiftTradeMatchTradeJobResponse)
+
+
+## post_workforcemanagement_shifttrading_trade_state_jobs
+
+> [**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse) post_workforcemanagement_shifttrading_trade_state_jobs(trade_id, body, force_async=force_async)
+
+
+Update trade state by a user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update state
+body = PureCloudPlatformClientV2.UpdateShiftTradeStateJobRequest() # UpdateShiftTradeStateJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+
+try:
+    # Update trade state by a user
+    api_response = api_instance.post_workforcemanagement_shifttrading_trade_state_jobs(trade_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_shifttrading_trade_state_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the shift trade to update state |  |
+| **body** | [**UpdateShiftTradeStateJobRequest**](UpdateShiftTradeStateJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeUpdateTradeStateJobResponse**](ShiftTradeUpdateTradeStateJobResponse)
+
+
+## post_workforcemanagement_shifttrading_trades_jobs
+
+> [**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse) post_workforcemanagement_shifttrading_trades_jobs(body, force_async=force_async)
+
+
+Add a shift trade job
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AddShiftTradeJobRequest() # AddShiftTradeJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+
+try:
+    # Add a shift trade job
+    api_response = api_instance.post_workforcemanagement_shifttrading_trades_jobs(body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_shifttrading_trades_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AddShiftTradeJobRequest**](AddShiftTradeJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeAddTradeJobResponse**](ShiftTradeAddTradeJobResponse)
+
+
+## post_workforcemanagement_shifttrading_trades_mine_query_jobs
+
+> [**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse) post_workforcemanagement_shifttrading_trades_mine_query_jobs(body, force_async=force_async, force_download_service=force_download_service)
+
+
+Retrieve all my shift trades where I am either the initiating or receiving user
+
+Wraps POST /api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentShiftTradeRequest:participate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.QueryAgentShiftTradeListJobRequest() # QueryAgentShiftTradeListJobRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Retrieve all my shift trades where I am either the initiating or receiving user
+    api_response = api_instance.post_workforcemanagement_shifttrading_trades_mine_query_jobs(body, force_async=force_async, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_shifttrading_trades_mine_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QueryAgentShiftTradeListJobRequest**](QueryAgentShiftTradeListJobRequest)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**ShiftTradeQueryAgentTradesJobResponse**](ShiftTradeQueryAgentTradesJobResponse)
+
+
 ## post_workforcemanagement_team_adherence_historical
 
 > [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse) post_workforcemanagement_team_adherence_historical(team_id, body)
@@ -14595,4 +15663,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_

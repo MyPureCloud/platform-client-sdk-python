@@ -9,6 +9,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_analytics_journeys_aggregates_job**](#delete_analytics_journeys_aggregates_job) | Delete/cancel an async request for journey aggregates|
 |[**delete_journey_actionmap**](#delete_journey_actionmap) | Delete single action map.|
 |[**delete_journey_actiontemplate**](#delete_journey_actiontemplate) | Delete a single action template.|
+|[**delete_journey_externalevents_configuration**](#delete_journey_externalevents_configuration) | Delete an external events configuration.|
+|[**delete_journey_externalevents_schema**](#delete_journey_externalevents_schema) | Delete a schema|
 |[**delete_journey_outcome**](#delete_journey_outcome) | Delete an outcome.|
 |[**delete_journey_outcomes_predictor**](#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
 |[**delete_journey_segment**](#delete_journey_segment) | Delete a segment.|
@@ -27,6 +29,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_actiontemplate**](#get_journey_actiontemplate) | Retrieve a single action template.|
 |[**get_journey_actiontemplates**](#get_journey_actiontemplates) | Retrieve all action templates.|
 |[**get_journey_deployment_customer_ping**](#get_journey_deployment_customer_ping) | Send a ping.|
+|[**get_journey_externalevents_configuration**](#get_journey_externalevents_configuration) | Get an external events configuration|
+|[**get_journey_externalevents_configurations**](#get_journey_externalevents_configurations) | Get all external event configurations.|
+|[**get_journey_externalevents_schema**](#get_journey_externalevents_schema) | Get a schema|
+|[**get_journey_externalevents_schema_version**](#get_journey_externalevents_schema_version) | Get a specific version of a schema|
+|[**get_journey_externalevents_schema_versions**](#get_journey_externalevents_schema_versions) | Get all versions of a External Events schema|
+|[**get_journey_externalevents_schemas**](#get_journey_externalevents_schemas) | Get a list of schemas.|
+|[**get_journey_externalevents_schemas_coretype**](#get_journey_externalevents_schemas_coretype) | Get a core type from which all schemas are built|
+|[**get_journey_externalevents_schemas_coretypes**](#get_journey_externalevents_schemas_coretypes) | Get the list of core types enabled for a specific namespace.|
+|[**get_journey_externalevents_schemas_limits**](#get_journey_externalevents_schemas_limits) | Get quantitative limits on schemas|
 |[**get_journey_outcome**](#get_journey_outcome) | Retrieve a single outcome.|
 |[**get_journey_outcomes**](#get_journey_outcomes) | Retrieve all outcomes.|
 |[**get_journey_outcomes_attributions_job**](#get_journey_outcomes_attributions_job) | Get job status.|
@@ -57,6 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_journey_actionmap**](#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](#patch_journey_actiontemplate) | Update a single action template.|
+|[**patch_journey_externalevents_configuration**](#patch_journey_externalevents_configuration) | Update an external events configuration.|
 |[**patch_journey_outcome**](#patch_journey_outcome) | Update an outcome.|
 |[**patch_journey_segment**](#patch_journey_segment) | Update a segment.|
 |[**patch_journey_view_version_job**](#patch_journey_view_version_job) | Update the job for a journey view version. Only the status can be changed and only to Cancelled|
@@ -69,6 +81,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_deployment_actionevent**](#post_journey_deployment_actionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user.|
 |[**post_journey_deployment_appevents**](#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
 |[**post_journey_deployment_webevents**](#post_journey_deployment_webevents) | Send a journey web event, used for tracking customer activity on a website.|
+|[**post_journey_externalevents_configuration_events**](#post_journey_externalevents_configuration_events) | Create external events|
+|[**post_journey_externalevents_configurations**](#post_journey_externalevents_configurations) | Create an external events configuration.|
+|[**post_journey_externalevents_schemas**](#post_journey_externalevents_schemas) | Create a schema|
 |[**post_journey_flows_paths_query**](#post_journey_flows_paths_query) | Query for flow paths.|
 |[**post_journey_outcomes**](#post_journey_outcomes) | Create an outcome.|
 |[**post_journey_outcomes_attributions_jobs**](#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
@@ -79,6 +94,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_view_versions**](#post_journey_view_versions) | Update a Journey View by ID|
 |[**post_journey_views**](#post_journey_views) | Create a new Journey View|
 |[**post_journey_views_encodings_validate**](#post_journey_views_encodings_validate) | Validate whether an encoding exist for a label/value combination.|
+|[**put_journey_externalevents_schema**](#put_journey_externalevents_schema) | Update a schema|
 |[**put_journey_view_schedules**](#put_journey_view_schedules) | Update the Schedule for a JourneyView|
 |[**put_journey_view_version**](#put_journey_view_version) | Update a Journey View by ID and version|
 
@@ -223,6 +239,100 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_template_id** | **str**| ID of the action template. |  |
 | **hard_delete** | **bool**| Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_journey_externalevents_configuration
+
+>  delete_journey_externalevents_configuration(config_id)
+
+
+Delete an external events configuration.
+
+Wraps DELETE /api/v2/journey/externalevents/configurations/{configId} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+config_id = 'config_id_example' # str | The ID of the external event configuration.
+
+try:
+    # Delete an external events configuration.
+    api_instance.delete_journey_externalevents_configuration(config_id)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_externalevents_configuration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **config_id** | **str**| The ID of the external event configuration. |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_journey_externalevents_schema
+
+>  delete_journey_externalevents_schema(schema_id)
+
+
+Delete a schema
+
+Wraps DELETE /api/v2/journey/externalevents/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Delete a schema
+    api_instance.delete_journey_externalevents_schema(schema_id)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_externalevents_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
 
 ### Return type
 
@@ -1141,6 +1251,430 @@ except ApiException as e:
 ### Return type
 
 [**DeploymentPing**](DeploymentPing)
+
+
+## get_journey_externalevents_configuration
+
+> [**ExternalEventsConfiguration**](ExternalEventsConfiguration) get_journey_externalevents_configuration(config_id)
+
+
+Get an external events configuration
+
+Wraps GET /api/v2/journey/externalevents/configurations/{configId} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+config_id = 'config_id_example' # str | The ID of the external event configuration.
+
+try:
+    # Get an external events configuration
+    api_response = api_instance.get_journey_externalevents_configuration(config_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_configuration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **config_id** | **str**| The ID of the external event configuration. |  |
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
+## get_journey_externalevents_configurations
+
+> [**ExternalEventsConfigurationListing**](ExternalEventsConfigurationListing) get_journey_externalevents_configurations(page_size=page_size, page_number=page_number)
+
+
+Get all external event configurations.
+
+Wraps GET /api/v2/journey/externalevents/configurations 
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+page_size = 20 # int | Page size (optional) (default to 20)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get all external event configurations.
+    api_response = api_instance.get_journey_externalevents_configurations(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_configurations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 20] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**ExternalEventsConfigurationListing**](ExternalEventsConfigurationListing)
+
+
+## get_journey_externalevents_schema
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) get_journey_externalevents_schema(schema_id)
+
+
+Get a schema
+
+Wraps GET /api/v2/journey/externalevents/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Get a schema
+    api_response = api_instance.get_journey_externalevents_schema(schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
+## get_journey_externalevents_schema_version
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) get_journey_externalevents_schema_version(schema_id, version_id)
+
+
+Get a specific version of a schema
+
+Wraps GET /api/v2/journey/externalevents/schemas/{schemaId}/versions/{versionId} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+schema_id = 'schema_id_example' # str | Schema ID
+version_id = 'version_id_example' # str | Schema version
+
+try:
+    # Get a specific version of a schema
+    api_response = api_instance.get_journey_externalevents_schema_version(schema_id, version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_schema_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **version_id** | **str**| Schema version |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
+## get_journey_externalevents_schema_versions
+
+> [**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing) get_journey_externalevents_schema_versions(schema_id)
+
+
+Get all versions of a External Events schema
+
+Wraps GET /api/v2/journey/externalevents/schemas/{schemaId}/versions 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+schema_id = 'schema_id_example' # str | Schema ID
+
+try:
+    # Get all versions of a External Events schema
+    api_response = api_instance.get_journey_externalevents_schema_versions(schema_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_schema_versions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+[**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing)
+
+
+## get_journey_externalevents_schemas
+
+> [**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing) get_journey_externalevents_schemas()
+
+
+Get a list of schemas.
+
+Wraps GET /api/v2/journey/externalevents/schemas 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get a list of schemas.
+    api_response = api_instance.get_journey_externalevents_schemas()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_schemas: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**JourneyExternalEventsSchemaListing**](JourneyExternalEventsSchemaListing)
+
+
+## get_journey_externalevents_schemas_coretype
+
+> [**Coretype**](Coretype) get_journey_externalevents_schemas_coretype(core_type_name)
+
+
+Get a core type from which all schemas are built
+
+Wraps GET /api/v2/journey/externalevents/schemas/coretypes/{coreTypeName} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+core_type_name = 'core_type_name_example' # str | Name of core type
+
+try:
+    # Get a core type from which all schemas are built
+    api_response = api_instance.get_journey_externalevents_schemas_coretype(core_type_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_schemas_coretype: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **core_type_name** | **str**| Name of core type |  |
+
+### Return type
+
+[**Coretype**](Coretype)
+
+
+## get_journey_externalevents_schemas_coretypes
+
+> [**CoretypeListing**](CoretypeListing) get_journey_externalevents_schemas_coretypes()
+
+
+Get the list of core types enabled for a specific namespace.
+
+Wraps GET /api/v2/journey/externalevents/schemas/coretypes 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get the list of core types enabled for a specific namespace.
+    api_response = api_instance.get_journey_externalevents_schemas_coretypes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_schemas_coretypes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**CoretypeListing**](CoretypeListing)
+
+
+## get_journey_externalevents_schemas_limits
+
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) get_journey_externalevents_schemas_limits()
+
+
+Get quantitative limits on schemas
+
+Wraps GET /api/v2/journey/externalevents/schemas/limits 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get quantitative limits on schemas
+    api_response = api_instance.get_journey_externalevents_schemas_limits()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_externalevents_schemas_limits: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
 ## get_journey_outcome
@@ -2664,6 +3198,56 @@ except ApiException as e:
 [**ActionTemplate**](ActionTemplate)
 
 
+## patch_journey_externalevents_configuration
+
+> [**ExternalEventsConfiguration**](ExternalEventsConfiguration) patch_journey_externalevents_configuration(config_id, body=body)
+
+
+Update an external events configuration.
+
+Wraps PATCH /api/v2/journey/externalevents/configurations/{configId} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+config_id = 'config_id_example' # str | The ID of the external event configuration.
+body = PureCloudPlatformClientV2.UpdateExternalEventsConfigurationRequest() # UpdateExternalEventsConfigurationRequest |  (optional)
+
+try:
+    # Update an external events configuration.
+    api_response = api_instance.patch_journey_externalevents_configuration(config_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->patch_journey_externalevents_configuration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **config_id** | **str**| The ID of the external event configuration. |  |
+| **body** | [**UpdateExternalEventsConfigurationRequest**](UpdateExternalEventsConfigurationRequest)|  | [optional]  |
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
 ## patch_journey_outcome
 
 > [**Outcome**](Outcome) patch_journey_outcome(outcome_id, body=body)
@@ -3248,6 +3832,152 @@ except ApiException as e:
 [**WebEventResponse**](WebEventResponse)
 
 
+## post_journey_externalevents_configuration_events
+
+> [**ExternalEventsResponse**](ExternalEventsResponse) post_journey_externalevents_configuration_events(configuration_id, body=body)
+
+
+Create external events
+
+Wraps POST /api/v2/journey/externalevents/configurations/{configurationId}/events 
+
+Requires ANY permissions: 
+
+* journey:externalEventsEvent:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+configuration_id = 'configuration_id_example' # str | The ID of the external event configuration.
+body = PureCloudPlatformClientV2.ExternalEventsRequest() # ExternalEventsRequest |  (optional)
+
+try:
+    # Create external events
+    api_response = api_instance.post_journey_externalevents_configuration_events(configuration_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_externalevents_configuration_events: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **configuration_id** | **str**| The ID of the external event configuration. |  |
+| **body** | [**ExternalEventsRequest**](ExternalEventsRequest)|  | [optional]  |
+
+### Return type
+
+[**ExternalEventsResponse**](ExternalEventsResponse)
+
+
+## post_journey_externalevents_configurations
+
+> [**ExternalEventsConfiguration**](ExternalEventsConfiguration) post_journey_externalevents_configurations(body=body)
+
+
+Create an external events configuration.
+
+Wraps POST /api/v2/journey/externalevents/configurations 
+
+Requires ANY permissions: 
+
+* journey:externalEventsConfiguration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.CreateExternalEventsConfigurationRequest() # CreateExternalEventsConfigurationRequest |  (optional)
+
+try:
+    # Create an external events configuration.
+    api_response = api_instance.post_journey_externalevents_configurations(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_externalevents_configurations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateExternalEventsConfigurationRequest**](CreateExternalEventsConfigurationRequest)|  | [optional]  |
+
+### Return type
+
+[**ExternalEventsConfiguration**](ExternalEventsConfiguration)
+
+
+## post_journey_externalevents_schemas
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) post_journey_externalevents_schemas(body)
+
+
+Create a schema
+
+Wraps POST /api/v2/journey/externalevents/schemas 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.JourneyJsonSchemaRequest() # JourneyJsonSchemaRequest | Schema create request body
+
+try:
+    # Create a schema
+    api_response = api_instance.post_journey_externalevents_schemas(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_externalevents_schemas: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**JourneyJsonSchemaRequest**](JourneyJsonSchemaRequest)| Schema create request body |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
 ## post_journey_flows_paths_query
 
 > [**FlowPaths**](FlowPaths) post_journey_flows_paths_query(body=body)
@@ -3740,6 +4470,56 @@ except ApiException as e:
 [**EntityListing**](EntityListing)
 
 
+## put_journey_externalevents_schema
+
+> [**JourneyExternalEventsSchema**](JourneyExternalEventsSchema) put_journey_externalevents_schema(schema_id, body)
+
+
+Update a schema
+
+Wraps PUT /api/v2/journey/externalevents/schemas/{schemaId} 
+
+Requires ANY permissions: 
+
+* journey:externalEventsSchema:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+schema_id = 'schema_id_example' # str | Schema ID
+body = PureCloudPlatformClientV2.JourneySchemaUpdateRequest() # JourneySchemaUpdateRequest | Schema update request body
+
+try:
+    # Update a schema
+    api_response = api_instance.put_journey_externalevents_schema(schema_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->put_journey_externalevents_schema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **body** | [**JourneySchemaUpdateRequest**](JourneySchemaUpdateRequest)| Schema update request body |  |
+
+### Return type
+
+[**JourneyExternalEventsSchema**](JourneyExternalEventsSchema)
+
+
 ## put_journey_view_schedules
 
 > [**JourneyViewSchedule**](JourneyViewSchedule) put_journey_view_schedules(view_id, body)
@@ -3844,4 +4624,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_

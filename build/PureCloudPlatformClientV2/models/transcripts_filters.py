@@ -50,6 +50,7 @@ class TranscriptsFilters(object):
             'media_type': 'str',
             'start_time_ms': 'int',
             'end_time_ms': 'int',
+            'programs': 'list[str]',
             'queues': 'list[str]',
             'flows': 'list[str]'
         }
@@ -58,6 +59,7 @@ class TranscriptsFilters(object):
             'media_type': 'mediaType',
             'start_time_ms': 'startTimeMs',
             'end_time_ms': 'endTimeMs',
+            'programs': 'programs',
             'queues': 'queues',
             'flows': 'flows'
         }
@@ -65,6 +67,7 @@ class TranscriptsFilters(object):
         self._media_type = None
         self._start_time_ms = None
         self._end_time_ms = None
+        self._programs = None
         self._queues = None
         self._flows = None
 
@@ -144,6 +147,30 @@ class TranscriptsFilters(object):
         
 
         self._end_time_ms = end_time_ms
+
+    @property
+    def programs(self) -> List[str]:
+        """
+        Gets the programs of this TranscriptsFilters.
+        list of programs ids to filter by
+
+        :return: The programs of this TranscriptsFilters.
+        :rtype: list[str]
+        """
+        return self._programs
+
+    @programs.setter
+    def programs(self, programs: List[str]) -> None:
+        """
+        Sets the programs of this TranscriptsFilters.
+        list of programs ids to filter by
+
+        :param programs: The programs of this TranscriptsFilters.
+        :type: list[str]
+        """
+        
+
+        self._programs = programs
 
     @property
     def queues(self) -> List[str]:

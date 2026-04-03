@@ -56,7 +56,7 @@ from ..models import Credential
 from ..models import CredentialInfo
 from ..models import CredentialInfoCursorListing
 from ..models import CredentialInfoListing
-from ..models import CredentialTypeListing
+from ..models import CredentialType
 from ..models import DialogflowAgent
 from ..models import DialogflowAgentSummaryEntityListing
 from ..models import DialogflowCXAgent
@@ -3005,7 +3005,7 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_integrations_credentials_types(self, **kwargs) -> 'CredentialTypeListing':
+    def get_integrations_credentials_types(self, **kwargs) -> List['CredentialType']:
         """
         List all credential types
         
@@ -3020,7 +3020,7 @@ class IntegrationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: CredentialTypeListing
+        :return: list[CredentialType]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3072,7 +3072,7 @@ class IntegrationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='CredentialTypeListing',
+                                            response_type='list[CredentialType]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

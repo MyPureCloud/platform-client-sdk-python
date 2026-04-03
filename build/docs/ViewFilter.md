@@ -241,10 +241,11 @@
 | **content_moderation_flags** | list[str] | A set of Content Moderation Flags for filtering | [optional] |
 | **social_source_types** | list[str] | A set of Source Types for social filtering | [optional] |
 | **session_expired** | bool | Filter to indicate for if session is expired | [optional] |
+| **screen_monitored** | bool | Filter to indicate if the interaction was screen monitored | [optional] |
 | **engagement_sources** | list[str] | The engagement sources used to filter the view | [optional] |
 | **is_snippet_recorded** | bool | Indicates filtering for snippet recorded | [optional] |
 | **takeover** | bool | Indicates filtering for takeover | [optional] |
 
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_

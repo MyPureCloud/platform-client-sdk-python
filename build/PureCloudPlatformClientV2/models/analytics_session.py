@@ -128,6 +128,7 @@ class AnalyticsSession(object):
             'session_dnis': 'str',
             'session_id': 'str',
             'sharing_screen': 'bool',
+            'skill_expression_id': 'str',
             'skip_enabled': 'bool',
             'snippet_recording': 'bool',
             'timeout_seconds': 'int',
@@ -218,6 +219,7 @@ class AnalyticsSession(object):
             'session_dnis': 'sessionDnis',
             'session_id': 'sessionId',
             'sharing_screen': 'sharingScreen',
+            'skill_expression_id': 'skillExpressionId',
             'skip_enabled': 'skipEnabled',
             'snippet_recording': 'snippetRecording',
             'timeout_seconds': 'timeoutSeconds',
@@ -307,6 +309,7 @@ class AnalyticsSession(object):
         self._session_dnis = None
         self._session_id = None
         self._sharing_screen = None
+        self._skill_expression_id = None
         self._skip_enabled = None
         self._snippet_recording = None
         self._timeout_seconds = None
@@ -2121,6 +2124,30 @@ class AnalyticsSession(object):
         
 
         self._sharing_screen = sharing_screen
+
+    @property
+    def skill_expression_id(self) -> str:
+        """
+        Gets the skill_expression_id of this AnalyticsSession.
+        Unique identifier for the skill requested for an interaction
+
+        :return: The skill_expression_id of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: str) -> None:
+        """
+        Sets the skill_expression_id of this AnalyticsSession.
+        Unique identifier for the skill requested for an interaction
+
+        :param skill_expression_id: The skill_expression_id of this AnalyticsSession.
+        :type: str
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     @property
     def skip_enabled(self) -> bool:

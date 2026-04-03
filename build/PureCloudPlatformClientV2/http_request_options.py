@@ -6,7 +6,7 @@ class HttpRequestOptions:
         self.headers = headers if headers else {}
         self.query_params = query_params if query_params else {}
         self.post_params = post_params if post_params else {}
-        self.body = body if body else None
+        self.body = body
         self.timeout = timeout
 
     #getters

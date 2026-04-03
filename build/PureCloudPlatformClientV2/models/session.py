@@ -43,6 +43,7 @@ if TYPE_CHECKING:
     from . import Device
     from . import JourneyApp
     from . import JourneyCampaign
+    from . import JourneyCaseAssociation
     from . import JourneyGeolocation
     from . import JourneyPage
     from . import NetworkConnectivity
@@ -109,6 +110,10 @@ class Session(object):
             'authenticated': 'bool',
             'division_ids': 'list[str]',
             'last_screen': 'str',
+            'case_associations': 'list[JourneyCaseAssociation]',
+            'case_entity': 'AddressableEntityRef',
+            'case_reference': 'str',
+            'case_status': 'str',
             'self_uri': 'str',
             'created_date': 'datetime',
             'ended_date': 'datetime',
@@ -159,6 +164,10 @@ class Session(object):
             'authenticated': 'authenticated',
             'division_ids': 'divisionIds',
             'last_screen': 'lastScreen',
+            'case_associations': 'caseAssociations',
+            'case_entity': 'caseEntity',
+            'case_reference': 'caseReference',
+            'case_status': 'caseStatus',
             'self_uri': 'selfUri',
             'created_date': 'createdDate',
             'ended_date': 'endedDate',
@@ -208,6 +217,10 @@ class Session(object):
         self._authenticated = None
         self._division_ids = None
         self._last_screen = None
+        self._case_associations = None
+        self._case_entity = None
+        self._case_reference = None
+        self._case_status = None
         self._self_uri = None
         self._created_date = None
         self._ended_date = None
@@ -1236,6 +1249,107 @@ class Session(object):
         
 
         self._last_screen = last_screen
+
+    @property
+    def case_associations(self) -> List['JourneyCaseAssociation']:
+        """
+        Gets the case_associations of this Session.
+        Cases associated with the session - conversation only.
+
+        :return: The case_associations of this Session.
+        :rtype: list[JourneyCaseAssociation]
+        """
+        return self._case_associations
+
+    @case_associations.setter
+    def case_associations(self, case_associations: List['JourneyCaseAssociation']) -> None:
+        """
+        Sets the case_associations of this Session.
+        Cases associated with the session - conversation only.
+
+        :param case_associations: The case_associations of this Session.
+        :type: list[JourneyCaseAssociation]
+        """
+        
+
+        self._case_associations = case_associations
+
+    @property
+    def case_entity(self) -> 'AddressableEntityRef':
+        """
+        Gets the case_entity of this Session.
+        The case this session refers to.
+
+        :return: The case_entity of this Session.
+        :rtype: AddressableEntityRef
+        """
+        return self._case_entity
+
+    @case_entity.setter
+    def case_entity(self, case_entity: 'AddressableEntityRef') -> None:
+        """
+        Sets the case_entity of this Session.
+        The case this session refers to.
+
+        :param case_entity: The case_entity of this Session.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._case_entity = case_entity
+
+    @property
+    def case_reference(self) -> str:
+        """
+        Gets the case_reference of this Session.
+        The reference for this case.
+
+        :return: The case_reference of this Session.
+        :rtype: str
+        """
+        return self._case_reference
+
+    @case_reference.setter
+    def case_reference(self, case_reference: str) -> None:
+        """
+        Sets the case_reference of this Session.
+        The reference for this case.
+
+        :param case_reference: The case_reference of this Session.
+        :type: str
+        """
+        
+
+        self._case_reference = case_reference
+
+    @property
+    def case_status(self) -> str:
+        """
+        Gets the case_status of this Session.
+        The status of this case.
+
+        :return: The case_status of this Session.
+        :rtype: str
+        """
+        return self._case_status
+
+    @case_status.setter
+    def case_status(self, case_status: str) -> None:
+        """
+        Sets the case_status of this Session.
+        The status of this case.
+
+        :param case_status: The case_status of this Session.
+        :type: str
+        """
+        if isinstance(case_status, int):
+            case_status = str(case_status)
+        allowed_values = ["Unknown", "Open", "InProgress", "Terminated", "Closed"]
+        if case_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for case_status -> " + case_status)
+            self._case_status = "outdated_sdk_version"
+        else:
+            self._case_status = case_status
 
     @property
     def self_uri(self) -> str:

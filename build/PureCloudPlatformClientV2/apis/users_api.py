@@ -680,7 +680,6 @@ class UsersApi(object):
         """
         Delete a custom attributes record.
         
-	    delete_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1263,7 +1262,6 @@ class UsersApi(object):
         """
         Delete a schema
         
-	    delete_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2565,13 +2563,14 @@ class UsersApi(object):
         :param str user_id: User ID (required)
         :param list[str] expand: Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
         :param str integration_presence_source: Gets an integration presence for a user instead of their default.
+        :param list[str] user_custom_attribute_schema_ids: Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100
         :param str state: Search for a user with this state
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'expand', 'integration_presence_source', 'state']
+        all_params = ['user_id', 'expand', 'integration_presence_source', 'user_custom_attribute_schema_ids', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -2599,6 +2598,8 @@ class UsersApi(object):
             query_params['expand'] = params['expand']
         if 'integration_presence_source' in params:
             query_params['integrationPresenceSource'] = params['integration_presence_source']
+        if 'user_custom_attribute_schema_ids' in params:
+            query_params['userCustomAttributeSchemaIds'] = params['user_custom_attribute_schema_ids']
         if 'state' in params:
             query_params['state'] = params['state']
 
@@ -2797,7 +2798,6 @@ class UsersApi(object):
         """
         Get custom attributes by schema id
         
-	    get_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2882,7 +2882,6 @@ class UsersApi(object):
         """
         Get multiple custom attributes records by schema ids
         
-	    get_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4550,13 +4549,14 @@ class UsersApi(object):
         :param str sort_order: Ascending or descending sort order
         :param list[str] expand: Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
         :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
+        :param list[str] user_custom_attribute_schema_ids: Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5
         :param str state: Only list users of this state
         :return: UserEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'id', 'jabber_id', 'sort_order', 'expand', 'integration_presence_source', 'state']
+        all_params = ['page_size', 'page_number', 'id', 'jabber_id', 'sort_order', 'expand', 'integration_presence_source', 'user_custom_attribute_schema_ids', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -4589,6 +4589,8 @@ class UsersApi(object):
             query_params['expand'] = params['expand']
         if 'integration_presence_source' in params:
             query_params['integrationPresenceSource'] = params['integration_presence_source']
+        if 'user_custom_attribute_schema_ids' in params:
+            query_params['userCustomAttributeSchemaIds'] = params['user_custom_attribute_schema_ids']
         if 'state' in params:
             query_params['state'] = params['state']
 
@@ -4709,7 +4711,6 @@ class UsersApi(object):
         """
         Get a schema
         
-	    get_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4788,7 +4789,6 @@ class UsersApi(object):
         """
         Get a specific version of a schema
         
-	    get_users_customattributes_schema_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4873,7 +4873,6 @@ class UsersApi(object):
         """
         Get all versions of a user schema
         
-	    get_users_customattributes_schema_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4952,7 +4951,6 @@ class UsersApi(object):
         """
         Get a list of schemas.
         
-	    get_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5025,7 +5023,6 @@ class UsersApi(object):
         """
         Get the core types from which all schemas are built.
         
-	    get_users_customattributes_schemas_coretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5104,7 +5101,6 @@ class UsersApi(object):
         """
         Get the list of core types enabled for a specific namespace.
         
-	    get_users_customattributes_schemas_coretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5177,7 +5173,6 @@ class UsersApi(object):
         """
         Get quantitative limits on schemas
         
-	    get_users_customattributes_schemas_limits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5647,12 +5642,13 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param list[str] expand: Which fields, if any, to expand.
         :param str integration_presence_source: Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\".
+        :param list[str] user_custom_attribute_schema_ids: Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100
         :return: UserMe
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['expand', 'integration_presence_source']
+        all_params = ['expand', 'integration_presence_source', 'user_custom_attribute_schema_ids']
         all_params.append('callback')
 
         params = locals()
@@ -5675,6 +5671,8 @@ class UsersApi(object):
             query_params['expand'] = params['expand']
         if 'integration_presence_source' in params:
             query_params['integrationPresenceSource'] = params['integration_presence_source']
+        if 'user_custom_attribute_schema_ids' in params:
+            query_params['userCustomAttributeSchemaIds'] = params['user_custom_attribute_schema_ids']
 
         header_params = {}
 
@@ -5729,13 +5727,14 @@ class UsersApi(object):
         :param str sort_order: Ascending or descending sort order
         :param list[str] expand: Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
         :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
+        :param list[str] user_custom_attribute_schema_ids: Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5
         :param str state: Only list users of this state
         :return: UserCursorEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cursor', 'page_size', 'sort_order', 'expand', 'integration_presence_source', 'state']
+        all_params = ['cursor', 'page_size', 'sort_order', 'expand', 'integration_presence_source', 'user_custom_attribute_schema_ids', 'state']
         all_params.append('callback')
 
         params = locals()
@@ -5764,6 +5763,8 @@ class UsersApi(object):
             query_params['expand'] = params['expand']
         if 'integration_presence_source' in params:
             query_params['integrationPresenceSource'] = params['integration_presence_source']
+        if 'user_custom_attribute_schema_ids' in params:
+            query_params['userCustomAttributeSchemaIds'] = params['user_custom_attribute_schema_ids']
         if 'state' in params:
             query_params['state'] = params['state']
 
@@ -6055,7 +6056,6 @@ class UsersApi(object):
         """
         Update a single custom attributes record by amending the data with only the provided fields.
         
-	    patch_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6140,7 +6140,6 @@ class UsersApi(object):
         """
         Update multiple custom attributes records by amending the data with only the provided fields.
         
-	    patch_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8149,7 +8148,6 @@ class UsersApi(object):
         """
         Create a schema
         
-	    post_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9028,7 +9026,6 @@ class UsersApi(object):
         """
         Create or update a single custom attributes record. Updating replaces all data with the provided fields.
         
-	    put_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9965,7 +9962,6 @@ class UsersApi(object):
         """
         Update a schema
         
-	    put_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

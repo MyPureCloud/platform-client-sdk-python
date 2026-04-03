@@ -43,6 +43,7 @@ from ..models import ActivityPlanResponse
 from ..models import ActivityPlanRunJobResponse
 from ..models import AddAdherenceExplanationAdminRequest
 from ..models import AddAdherenceExplanationAgentRequest
+from ..models import AddShiftTradeJobRequest
 from ..models import AddShiftTradeRequest
 from ..models import AddWorkPlanRotationRequest
 from ..models import AdherenceExplanationAsyncResponse
@@ -119,6 +120,7 @@ from ..models import BuTimeOffPlanResponse
 from ..models import BuUpdateTimeOffPlanRequest
 from ..models import BuUserListing
 from ..models import BulkShiftTradeStateUpdateRequest
+from ..models import BulkUpdateShiftTradeListJobRequest
 from ..models import BulkUpdateShiftTradeStateResponse
 from ..models import BusinessUnitActivityCode
 from ..models import BusinessUnitActivityCodeListing
@@ -162,6 +164,7 @@ from ..models import EntityListing
 from ..models import ErrorBody
 from ..models import EstimateAvailableTimeOffRequest
 from ..models import EstimateAvailableTimeOffResponse
+from ..models import EvaluateShiftTradeListJobRequest
 from ..models import ForecastPlanningGroupsResponse
 from ..models import GenerateBuForecastRequest
 from ..models import GetAgentsWorkPlansRequest
@@ -182,6 +185,7 @@ from ..models import LongTermRequirementsResponse
 from ..models import ManagementUnit
 from ..models import ManagementUnitAvailabilitySettingsResponse
 from ..models import ManagementUnitListing
+from ..models import MatchShiftTradeJobRequest
 from ..models import MatchShiftTradeRequest
 from ..models import MatchShiftTradeResponse
 from ..models import MinimumStaffingRequest
@@ -203,6 +207,7 @@ from ..models import ProcessScheduleUpdateUploadRequest
 from ..models import QueryAdherenceExplanationsResponse
 from ..models import QueryAgentScheduleUnavailableTimesRequest
 from ..models import QueryAgentScheduleUnavailableTimesResponse
+from ..models import QueryAgentShiftTradeListJobRequest
 from ..models import QueryAgentUnavailableTimesRequest
 from ..models import QueryAgentUnavailableTimesValidationJobResponse
 from ..models import QueryAgentsIntegrationsRequest
@@ -210,24 +215,37 @@ from ..models import QueryAvailabilityManagementUnitsSettingsRequest
 from ..models import QueryAvailabilityManagementUnitsSettingsResponse
 from ..models import QueryCapacityPlanStaffingGroupMetricChangeHistory
 from ..models import QueryPlanningGroupToStaffingGroupsRequest
+from ..models import QueryShiftTradeListJobRequest
 from ..models import QueryTimeOffIntegrationStatusRequest
 from ..models import QueryTimeOffLimitValuesRequest
 from ..models import QueryTimeOffLimitValuesResponse
 from ..models import QueryUserStaffingGroupListRequest
 from ..models import QueryWaitlistPositionsRequest
+from ..models import QueryWeekSummaryListJobRequest
 from ..models import ScheduleGenerationResult
 from ..models import ScheduleUploadProcessingResponse
 from ..models import SchedulingStatusResponse
 from ..models import SearchAlternativeShiftTradesRequest
 from ..models import SearchShiftTradesRequest
 from ..models import SearchShiftTradesResponse
+from ..models import SearchUnmatchedShiftTradeListJobRequest
 from ..models import ServiceGoalTemplate
 from ..models import ServiceGoalTemplateList
 from ..models import SetTimeOffIntegrationStatusRequest
 from ..models import SetTimeOffLimitValuesRequest
+from ..models import ShiftTradeAddTradeJobResponse
+from ..models import ShiftTradeBulkUpdateTradeStateBuJobResponse
+from ..models import ShiftTradeEvaluateTradesBuJobResponse
 from ..models import ShiftTradeListResponse
+from ..models import ShiftTradeMatchTradeJobResponse
 from ..models import ShiftTradeMatchesSummaryResponse
+from ..models import ShiftTradeQueryAgentTradesJobResponse
+from ..models import ShiftTradeQueryTradesBuJobResponse
+from ..models import ShiftTradeQueryWeekSummariesBuJobResponse
 from ..models import ShiftTradeResponse
+from ..models import ShiftTradeSearchUnmatchedTradesBuJobResponse
+from ..models import ShiftTradeUpdateTradeJobResponse
+from ..models import ShiftTradeUpdateTradeStateJobResponse
 from ..models import StaffingGroupListing
 from ..models import StaffingGroupResponse
 from ..models import TimeOffBalanceJobResponse
@@ -260,6 +278,8 @@ from ..models import UpdateNotificationsResponse
 from ..models import UpdatePlanningGroupRequest
 from ..models import UpdateScheduleUploadResponse
 from ..models import UpdateServiceGoalTemplate
+from ..models import UpdateShiftTradeJobRequest
+from ..models import UpdateShiftTradeStateJobRequest
 from ..models import UpdateStaffingGroupRequest
 from ..models import UpdateTimeOffLimitRequest
 from ..models import UpdateTimeOffPlanRequest
@@ -5581,6 +5601,426 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'ShiftTradeEvaluateTradesBuJobResponse':
+        """
+        View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeEvaluateTradesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeEvaluateTradesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_shifttrading_trades_query_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'ShiftTradeQueryTradesBuJobResponse':
+        """
+        View results of the query shift trades in a management unit per user operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_shifttrading_trades_query_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeQueryTradesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_shifttrading_trades_query_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_shifttrading_trades_query_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_shifttrading_trades_query_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeQueryTradesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'ShiftTradeBulkUpdateTradeStateBuJobResponse':
+        """
+        View results of bulk update trades states operation. Only the user who started the operation can query the status.
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeBulkUpdateTradeStateBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_shifttrading_trades_state_bulk_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeBulkUpdateTradeStateBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_shifttrading_unmatched_search_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'ShiftTradeSearchUnmatchedTradesBuJobResponse':
+        """
+        View result of potential shift trade matches for the current user. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_shifttrading_unmatched_search_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeSearchUnmatchedTradesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_shifttrading_unmatched_search_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_shifttrading_unmatched_search_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_shifttrading_unmatched_search_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeSearchUnmatchedTradesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_shifttrading_weeks_summary_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'ShiftTradeQueryWeekSummariesBuJobResponse':
+        """
+        View results of the retrieve the summary of shift trades in a matched state per week operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_shifttrading_weeks_summary_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeQueryWeekSummariesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_shifttrading_weeks_summary_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_shifttrading_weeks_summary_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_shifttrading_weeks_summary_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeQueryWeekSummariesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_businessunit_staffinggroup(self, business_unit_id: str, staffing_group_id: str, **kwargs) -> 'StaffingGroupResponse':
         """
         Gets a staffing group
@@ -6724,7 +7164,7 @@ class WorkforceManagementApi(object):
     def get_workforcemanagement_businessunit_week_schedules(self, business_unit_id: str, week_id: str, **kwargs) -> 'BuScheduleListing':
         """
         Get the list of week schedules for the specified week
-        Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+        Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all schedules for up to +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7372,7 +7812,7 @@ class WorkforceManagementApi(object):
     def get_workforcemanagement_businessunit_week_shorttermforecasts(self, business_unit_id: str, week_date_id: str, **kwargs) -> 'BuShortTermForecastListing':
         """
         Get short term forecasts
-        Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+        Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for up to +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10869,6 +11309,414 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ShiftTradeListResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_shifttrading_trade_job(self, trade_id: str, job_id: str, **kwargs) -> 'ShiftTradeUpdateTradeJobResponse':
+        """
+        View result of update trade operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_shifttrading_trade_job(trade_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the shift trade to update (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeUpdateTradeJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_shifttrading_trade_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `get_workforcemanagement_shifttrading_trade_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_shifttrading_trade_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeUpdateTradeJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_shifttrading_trade_match_job(self, trade_id: str, job_id: str, **kwargs) -> 'ShiftTradeMatchTradeJobResponse':
+        """
+        View result of match shift trade operation. Only the receiving user who started the operation can query the status.
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_shifttrading_trade_match_job(trade_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the shift trade to update (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeMatchTradeJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_shifttrading_trade_match_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `get_workforcemanagement_shifttrading_trade_match_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_shifttrading_trade_match_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeMatchTradeJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_shifttrading_trade_state_job(self, trade_id: str, job_id: str, **kwargs) -> 'ShiftTradeUpdateTradeStateJobResponse':
+        """
+        View result of update trade state operation. Only the user who started the operation can query the status.
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_shifttrading_trade_state_job(trade_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the shift trade to update (required)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeUpdateTradeStateJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_shifttrading_trade_state_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `get_workforcemanagement_shifttrading_trade_state_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_shifttrading_trade_state_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeUpdateTradeStateJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_shifttrading_trades_job(self, job_id: str, **kwargs) -> 'ShiftTradeAddTradeJobResponse':
+        """
+        View result of create trade operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_shifttrading_trades_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeAddTradeJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_shifttrading_trades_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_shifttrading_trades_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeAddTradeJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_shifttrading_trades_mine_query_job(self, job_id: str, **kwargs) -> 'ShiftTradeQueryAgentTradesJobResponse':
+        """
+        View results of retrieve all my shift trade operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_shifttrading_trades_mine_query_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: ShiftTradeQueryAgentTradesJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_shifttrading_trades_mine_query_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_shifttrading_trades_mine_query_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeQueryAgentTradesJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -17447,6 +18295,453 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs(self, business_unit_id: str, body: 'EvaluateShiftTradeListJobRequest', **kwargs) -> 'ShiftTradeEvaluateTradesBuJobResponse':
+        """
+        Queries and evaluates against shift trade configuration shift trades in a management unit per week
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param EvaluateShiftTradeListJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: ShiftTradeEvaluateTradesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'force_async', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeEvaluateTradesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_shifttrading_trades_query_jobs(self, business_unit_id: str, body: 'QueryShiftTradeListJobRequest', **kwargs) -> 'ShiftTradeQueryTradesBuJobResponse':
+        """
+        Queries shift trades in a management unit per user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_shifttrading_trades_query_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param QueryShiftTradeListJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: ShiftTradeQueryTradesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'force_async', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_shifttrading_trades_query_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_shifttrading_trades_query_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_shifttrading_trades_query_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/query/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeQueryTradesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs(self, business_unit_id: str, body: 'BulkUpdateShiftTradeListJobRequest', **kwargs) -> 'ShiftTradeBulkUpdateTradeStateBuJobResponse':
+        """
+        Bulk update multiple trade states. Permits a supervisor to approve or deny multiple trades.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BulkUpdateShiftTradeListJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: ShiftTradeBulkUpdateTradeStateBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'force_async', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_shifttrading_trades_state_bulk_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/trades/state/bulk/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeBulkUpdateTradeStateBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs(self, business_unit_id: str, body: 'SearchUnmatchedShiftTradeListJobRequest', **kwargs) -> 'ShiftTradeSearchUnmatchedTradesBuJobResponse':
+        """
+        Start an async job to find potential shift trade matches for the current receiving user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param SearchUnmatchedShiftTradeListJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: ShiftTradeSearchUnmatchedTradesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'force_async', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_shifttrading_unmatched_search_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeSearchUnmatchedTradesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs(self, business_unit_id: str, body: 'QueryWeekSummaryListJobRequest', **kwargs) -> 'ShiftTradeQueryWeekSummariesBuJobResponse':
+        """
+        Retrieves the summary of shift trades in a matched state per week
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param QueryWeekSummaryListJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :return: ShiftTradeQueryWeekSummariesBuJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'force_async']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeQueryWeekSummariesBuJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_businessunit_staffinggroups(self, business_unit_id: str, body: 'CreateStaffingGroupRequest', **kwargs) -> 'StaffingGroupResponse':
         """
         Creates a new staffing group
@@ -22605,6 +23900,432 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UserScheduleContainer',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_shifttrading_trade_jobs(self, trade_id: str, body: 'UpdateShiftTradeJobRequest', **kwargs) -> 'ShiftTradeUpdateTradeJobResponse':
+        """
+        Updates a shift trade. This route can only be called by the initiating user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_shifttrading_trade_jobs(trade_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the shift trade to update (required)
+        :param UpdateShiftTradeJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :return: ShiftTradeUpdateTradeJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id', 'body', 'force_async']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_shifttrading_trade_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `post_workforcemanagement_shifttrading_trade_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_shifttrading_trade_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeUpdateTradeJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_shifttrading_trade_match_jobs(self, trade_id: str, body: 'MatchShiftTradeJobRequest', **kwargs) -> 'ShiftTradeMatchTradeJobResponse':
+        """
+        Matches a shift trade. This route can only be called by the receiving user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_shifttrading_trade_match_jobs(trade_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the shift trade to match (required)
+        :param MatchShiftTradeJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :return: ShiftTradeMatchTradeJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id', 'body', 'force_async']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_shifttrading_trade_match_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `post_workforcemanagement_shifttrading_trade_match_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_shifttrading_trade_match_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/match/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeMatchTradeJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_shifttrading_trade_state_jobs(self, trade_id: str, body: 'UpdateShiftTradeStateJobRequest', **kwargs) -> 'ShiftTradeUpdateTradeStateJobResponse':
+        """
+        Update trade state by a user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_shifttrading_trade_state_jobs(trade_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the shift trade to update state (required)
+        :param UpdateShiftTradeStateJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :return: ShiftTradeUpdateTradeStateJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id', 'body', 'force_async']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_shifttrading_trade_state_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `post_workforcemanagement_shifttrading_trade_state_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_shifttrading_trade_state_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/{tradeId}/state/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeUpdateTradeStateJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_shifttrading_trades_jobs(self, body: 'AddShiftTradeJobRequest', **kwargs) -> 'ShiftTradeAddTradeJobResponse':
+        """
+        Add a shift trade job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_shifttrading_trades_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AddShiftTradeJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :return: ShiftTradeAddTradeJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'force_async']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_shifttrading_trades_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_shifttrading_trades_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeAddTradeJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_shifttrading_trades_mine_query_jobs(self, body: 'QueryAgentShiftTradeListJobRequest', **kwargs) -> 'ShiftTradeQueryAgentTradesJobResponse':
+        """
+        Retrieve all my shift trades where I am either the initiating or receiving user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_shifttrading_trades_mine_query_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param QueryAgentShiftTradeListJobRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: ShiftTradeQueryAgentTradesJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'force_async', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_shifttrading_trades_mine_query_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_shifttrading_trades_mine_query_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/shifttrading/trades/mine/query/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ShiftTradeQueryAgentTradesJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -57,8 +57,7 @@ class ExternalOrganizationEnrichRequest(object):
             'matching_identifiers': 'list[ExternalOrganizationIdentifier]',
             'action': 'str',
             'external_organization': 'ExternalOrganization',
-            'field_rules': 'EnrichFieldRules',
-            'self_uri': 'str'
+            'field_rules': 'EnrichFieldRules'
         }
 
         self.attribute_map = {
@@ -67,8 +66,7 @@ class ExternalOrganizationEnrichRequest(object):
             'matching_identifiers': 'matchingIdentifiers',
             'action': 'action',
             'external_organization': 'externalOrganization',
-            'field_rules': 'fieldRules',
-            'self_uri': 'selfUri'
+            'field_rules': 'fieldRules'
         }
 
         self._id = None
@@ -77,7 +75,6 @@ class ExternalOrganizationEnrichRequest(object):
         self._action = None
         self._external_organization = None
         self._field_rules = None
-        self._self_uri = None
 
     @property
     def id(self) -> str:
@@ -227,30 +224,6 @@ class ExternalOrganizationEnrichRequest(object):
         
 
         self._field_rules = field_rules
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this ExternalOrganizationEnrichRequest.
-        The URI for this object
-
-        :return: The self_uri of this ExternalOrganizationEnrichRequest.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this ExternalOrganizationEnrichRequest.
-        The URI for this object
-
-        :param self_uri: The self_uri of this ExternalOrganizationEnrichRequest.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

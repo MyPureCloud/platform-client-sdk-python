@@ -51,16 +51,19 @@ class UtilizationRequest(object):
         """
         self.swagger_types = {
             'utilization': 'dict(str, MediaUtilization)',
-            'label_utilizations': 'dict(str, LabelUtilizationRequest)'
+            'label_utilizations': 'dict(str, LabelUtilizationRequest)',
+            'max_inbound_calls': 'int'
         }
 
         self.attribute_map = {
             'utilization': 'utilization',
-            'label_utilizations': 'labelUtilizations'
+            'label_utilizations': 'labelUtilizations',
+            'max_inbound_calls': 'maxInboundCalls'
         }
 
         self._utilization = None
         self._label_utilizations = None
+        self._max_inbound_calls = None
 
     @property
     def utilization(self) -> Dict[str, 'MediaUtilization']:
@@ -109,6 +112,30 @@ class UtilizationRequest(object):
         
 
         self._label_utilizations = label_utilizations
+
+    @property
+    def max_inbound_calls(self) -> int:
+        """
+        Gets the max_inbound_calls of this UtilizationRequest.
+        Max number of inbound voice calls.
+
+        :return: The max_inbound_calls of this UtilizationRequest.
+        :rtype: int
+        """
+        return self._max_inbound_calls
+
+    @max_inbound_calls.setter
+    def max_inbound_calls(self, max_inbound_calls: int) -> None:
+        """
+        Sets the max_inbound_calls of this UtilizationRequest.
+        Max number of inbound voice calls.
+
+        :param max_inbound_calls: The max_inbound_calls of this UtilizationRequest.
+        :type: int
+        """
+        
+
+        self._max_inbound_calls = max_inbound_calls
 
     def to_dict(self):
         """

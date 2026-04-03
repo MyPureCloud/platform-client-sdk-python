@@ -289,6 +289,7 @@ class ViewFilter(object):
             'content_moderation_flags': 'list[str]',
             'social_source_types': 'list[str]',
             'session_expired': 'bool',
+            'screen_monitored': 'bool',
             'engagement_sources': 'list[str]',
             'is_snippet_recorded': 'bool',
             'takeover': 'bool'
@@ -530,6 +531,7 @@ class ViewFilter(object):
             'content_moderation_flags': 'contentModerationFlags',
             'social_source_types': 'socialSourceTypes',
             'session_expired': 'sessionExpired',
+            'screen_monitored': 'screenMonitored',
             'engagement_sources': 'engagementSources',
             'is_snippet_recorded': 'isSnippetRecorded',
             'takeover': 'takeover'
@@ -770,6 +772,7 @@ class ViewFilter(object):
         self._content_moderation_flags = None
         self._social_source_types = None
         self._session_expired = None
+        self._screen_monitored = None
         self._engagement_sources = None
         self._is_snippet_recorded = None
         self._takeover = None
@@ -6443,6 +6446,30 @@ class ViewFilter(object):
         
 
         self._session_expired = session_expired
+
+    @property
+    def screen_monitored(self) -> bool:
+        """
+        Gets the screen_monitored of this ViewFilter.
+        Filter to indicate if the interaction was screen monitored
+
+        :return: The screen_monitored of this ViewFilter.
+        :rtype: bool
+        """
+        return self._screen_monitored
+
+    @screen_monitored.setter
+    def screen_monitored(self, screen_monitored: bool) -> None:
+        """
+        Sets the screen_monitored of this ViewFilter.
+        Filter to indicate if the interaction was screen monitored
+
+        :param screen_monitored: The screen_monitored of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._screen_monitored = screen_monitored
 
     @property
     def engagement_sources(self) -> List[str]:

@@ -48,6 +48,10 @@
 | **authenticated** | bool | Indicates whether or not the session is authenticated. | |
 | **division_ids** | list[str] | List of division IDs associated with the session. | [optional] |
 | **last_screen** | str | The app screen name where the customer&#39;s last app interaction occurred. | [optional] |
+| **case_associations** | [list[JourneyCaseAssociation]](JourneyCaseAssociation) | Cases associated with the session - conversation only. | [optional] |
+| **case_entity** | [AddressableEntityRef](AddressableEntityRef) | The case this session refers to. | [optional] |
+| **case_reference** | str | The reference for this case. | [optional] |
+| **case_status** | str | The status of this case. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 | **created_date** | datetime | Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **ended_date** | datetime | Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -56,4 +60,4 @@
 
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_

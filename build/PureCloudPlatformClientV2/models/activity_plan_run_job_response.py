@@ -52,27 +52,27 @@ class ActivityPlanRunJobResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'activity_plan': 'ActivityPlanReference',
             'status': 'str',
             'exceptions': 'list[ActivityPlanJobException]',
             'error': 'ErrorBody',
+            'activity_plan': 'ActivityPlanReference',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'activity_plan': 'activityPlan',
             'status': 'status',
             'exceptions': 'exceptions',
             'error': 'error',
+            'activity_plan': 'activityPlan',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._activity_plan = None
         self._status = None
         self._exceptions = None
         self._error = None
+        self._activity_plan = None
         self._self_uri = None
 
     @property
@@ -98,30 +98,6 @@ class ActivityPlanRunJobResponse(object):
         
 
         self._id = id
-
-    @property
-    def activity_plan(self) -> 'ActivityPlanReference':
-        """
-        Gets the activity_plan of this ActivityPlanRunJobResponse.
-        The activity plan associated with this job
-
-        :return: The activity_plan of this ActivityPlanRunJobResponse.
-        :rtype: ActivityPlanReference
-        """
-        return self._activity_plan
-
-    @activity_plan.setter
-    def activity_plan(self, activity_plan: 'ActivityPlanReference') -> None:
-        """
-        Sets the activity_plan of this ActivityPlanRunJobResponse.
-        The activity plan associated with this job
-
-        :param activity_plan: The activity_plan of this ActivityPlanRunJobResponse.
-        :type: ActivityPlanReference
-        """
-        
-
-        self._activity_plan = activity_plan
 
     @property
     def status(self) -> str:
@@ -199,6 +175,30 @@ class ActivityPlanRunJobResponse(object):
         
 
         self._error = error
+
+    @property
+    def activity_plan(self) -> 'ActivityPlanReference':
+        """
+        Gets the activity_plan of this ActivityPlanRunJobResponse.
+        The activity plan associated with this job
+
+        :return: The activity_plan of this ActivityPlanRunJobResponse.
+        :rtype: ActivityPlanReference
+        """
+        return self._activity_plan
+
+    @activity_plan.setter
+    def activity_plan(self, activity_plan: 'ActivityPlanReference') -> None:
+        """
+        Sets the activity_plan of this ActivityPlanRunJobResponse.
+        The activity plan associated with this job
+
+        :param activity_plan: The activity_plan of this ActivityPlanRunJobResponse.
+        :type: ActivityPlanReference
+        """
+        
+
+        self._activity_plan = activity_plan
 
     @property
     def self_uri(self) -> str:

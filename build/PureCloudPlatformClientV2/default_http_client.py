@@ -82,7 +82,7 @@ class DefaultHttpClient(AbstractHttpClient):
             "headers": http_request_options.headers or {},
             "query_params": http_request_options.query_params or {},
             "post_params": http_request_options.post_params or {},
-            "body": http_request_options.body or None,
+            "body": http_request_options.body,
             "timeout": self.timeout if self.timeout else None,
         }
         return config

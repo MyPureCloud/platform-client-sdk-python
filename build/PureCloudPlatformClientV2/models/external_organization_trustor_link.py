@@ -49,56 +49,26 @@ class ExternalOrganizationTrustorLink(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
             'division': 'WritableStarrableDivision',
             'external_organization_id': 'str',
             'trustor_org_id': 'str',
             'date_created': 'datetime',
-            'external_organization_uri': 'str',
-            'self_uri': 'str'
+            'external_organization_uri': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id',
             'division': 'division',
             'external_organization_id': 'externalOrganizationId',
             'trustor_org_id': 'trustorOrgId',
             'date_created': 'dateCreated',
-            'external_organization_uri': 'externalOrganizationUri',
-            'self_uri': 'selfUri'
+            'external_organization_uri': 'externalOrganizationUri'
         }
 
-        self._id = None
         self._division = None
         self._external_organization_id = None
         self._trustor_org_id = None
         self._date_created = None
         self._external_organization_uri = None
-        self._self_uri = None
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this ExternalOrganizationTrustorLink.
-        The globally unique identifier for the object.
-
-        :return: The id of this ExternalOrganizationTrustorLink.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this ExternalOrganizationTrustorLink.
-        The globally unique identifier for the object.
-
-        :param id: The id of this ExternalOrganizationTrustorLink.
-        :type: str
-        """
-        
-
-        self._id = id
 
     @property
     def division(self) -> 'WritableStarrableDivision':
@@ -219,30 +189,6 @@ class ExternalOrganizationTrustorLink(object):
         
 
         self._external_organization_uri = external_organization_uri
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this ExternalOrganizationTrustorLink.
-        The URI for this object
-
-        :return: The self_uri of this ExternalOrganizationTrustorLink.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this ExternalOrganizationTrustorLink.
-        The URI for this object
-
-        :param self_uri: The self_uri of this ExternalOrganizationTrustorLink.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

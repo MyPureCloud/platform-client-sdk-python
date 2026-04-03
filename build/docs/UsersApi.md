@@ -470,8 +470,6 @@ except ApiException as e:
 
 Delete a custom attributes record.
 
-delete_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/users/{userId}/customattributes/{schemaId} 
 
 Requires ANY permissions: 
@@ -813,8 +811,6 @@ void (empty response body)
 
 
 Delete a schema
-
-delete_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/users/customattributes/schemas/{schemaId} 
 
@@ -1619,7 +1615,7 @@ except ApiException as e:
 
 ## get_user
 
-> [**User**](User) get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, state=state)
+> [**User**](User) get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids, state=state)
 
 
 Get user.
@@ -1645,11 +1641,12 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 user_id = 'user_id_example' # str | User ID
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
 integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for a user instead of their default. (optional)
+user_custom_attribute_schema_ids = ['user_custom_attribute_schema_ids_example'] # list[str] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional)
 state = ''active'' # str | Search for a user with this state (optional) (default to 'active')
 
 try:
     # Get user.
-    api_response = api_instance.get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, state=state)
+    api_response = api_instance.get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids, state=state)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_user: %s\n" % e)
@@ -1663,6 +1660,7 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 100 | [optional]  |
 | **state** | **str**| Search for a user with this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, deleted |
 
 ### Return type
@@ -1773,8 +1771,6 @@ except ApiException as e:
 
 Get custom attributes by schema id
 
-get_user_customattribute is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/{userId}/customattributes/{schemaId} 
 
 Requires ANY permissions: 
@@ -1824,8 +1820,6 @@ except ApiException as e:
 
 
 Get multiple custom attributes records by schema ids
-
-get_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/{userId}/customattributes/bulk 
 
@@ -2832,7 +2826,7 @@ except ApiException as e:
 
 ## get_users
 
-> [**UserEntityListing**](UserEntityListing) get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
+> [**UserEntityListing**](UserEntityListing) get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids, state=state)
 
 
 Get the list of available users.
@@ -2862,11 +2856,12 @@ jabber_id = ['jabber_id_example'] # list[str] | A list of jabberIds to fetch by 
 sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
 integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+user_custom_attribute_schema_ids = ['user_custom_attribute_schema_ids_example'] # list[str] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional)
 state = ''active'' # str | Only list users of this state (optional) (default to 'active')
 
 try:
     # Get the list of available users.
-    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
+    api_response = api_instance.get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids, state=state)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_users: %s\n" % e)
@@ -2884,6 +2879,7 @@ except ApiException as e:
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 5 | [optional]  |
 | **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 
 ### Return type
@@ -2951,8 +2947,6 @@ except ApiException as e:
 
 Get a schema
 
-get_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/customattributes/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -3000,8 +2994,6 @@ except ApiException as e:
 
 
 Get a specific version of a schema
-
-get_users_customattributes_schema_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/customattributes/schemas/{schemaId}/versions/{versionId} 
 
@@ -3053,8 +3045,6 @@ except ApiException as e:
 
 Get all versions of a user schema
 
-get_users_customattributes_schema_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/customattributes/schemas/{schemaId}/versions 
 
 Requires ANY permissions: 
@@ -3103,8 +3093,6 @@ except ApiException as e:
 
 Get a list of schemas.
 
-get_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/customattributes/schemas 
 
 Requires ANY permissions: 
@@ -3148,8 +3136,6 @@ This endpoint does not need any parameters.
 
 
 Get the core types from which all schemas are built.
-
-get_users_customattributes_schemas_coretype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/customattributes/schemas/coretypes/{coreTypeName} 
 
@@ -3199,8 +3185,6 @@ except ApiException as e:
 
 Get the list of core types enabled for a specific namespace.
 
-get_users_customattributes_schemas_coretypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/customattributes/schemas/coretypes 
 
 Requires ANY permissions: 
@@ -3244,8 +3228,6 @@ This endpoint does not need any parameters.
 
 
 Get quantitative limits on schemas
-
-get_users_customattributes_schemas_limits is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/users/customattributes/schemas/limits 
 
@@ -3534,7 +3516,7 @@ except ApiException as e:
 
 ## get_users_me
 
-> [**UserMe**](UserMe) get_users_me(expand=expand, integration_presence_source=integration_presence_source)
+> [**UserMe**](UserMe) get_users_me(expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids)
 
 
 Get current user details.
@@ -3561,10 +3543,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
 integration_presence_source = 'integration_presence_source_example' # str | Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\". (optional)
+user_custom_attribute_schema_ids = ['user_custom_attribute_schema_ids_example'] # list[str] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 100 (optional)
 
 try:
     # Get current user details.
-    api_response = api_instance.get_users_me(expand=expand, integration_presence_source=integration_presence_source)
+    api_response = api_instance.get_users_me(expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_users_me: %s\n" % e)
@@ -3577,6 +3560,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
 | **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 100 | [optional]  |
 
 ### Return type
 
@@ -3585,7 +3569,7 @@ except ApiException as e:
 
 ## get_users_query
 
-> [**UserCursorEntityListing**](UserCursorEntityListing) get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
+> [**UserCursorEntityListing**](UserCursorEntityListing) get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids, state=state)
 
 
 Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
@@ -3616,11 +3600,12 @@ page_size = 25 # int | Page size (optional) (default to 25)
 sort_order = ''ASC'' # str | Ascending or descending sort order (optional) (default to 'ASC')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. (optional)
 integration_presence_source = 'integration_presence_source_example' # str | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100. (optional)
+user_custom_attribute_schema_ids = ['user_custom_attribute_schema_ids_example'] # list[str] | Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \"expand\". The maximum number of schemaIds that can be requested is 5 (optional)
 state = ''active'' # str | Only list users of this state (optional) (default to 'active')
 
 try:
     # Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
-    api_response = api_instance.get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
+    api_response = api_instance.get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids, state=state)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_users_query: %s\n" % e)
@@ -3636,6 +3621,7 @@ except ApiException as e:
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ASC, DESC |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 | **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 5 | [optional]  |
 | **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 
 ### Return type
@@ -3804,8 +3790,6 @@ except ApiException as e:
 
 Update a single custom attributes record by amending the data with only the provided fields.
 
-patch_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/users/{userId}/customattributes 
 
 Requires ANY permissions: 
@@ -3855,8 +3839,6 @@ except ApiException as e:
 
 
 Update multiple custom attributes records by amending the data with only the provided fields.
-
-patch_user_customattributes_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/users/{userId}/customattributes/bulk 
 
@@ -5076,8 +5058,6 @@ except ApiException as e:
 
 Create a schema
 
-post_users_customattributes_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/users/customattributes/schemas 
 
 Requires ANY permissions: 
@@ -5617,8 +5597,6 @@ except ApiException as e:
 
 
 Create or update a single custom attributes record. Updating replaces all data with the provided fields.
-
-put_user_customattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/users/{userId}/customattributes 
 
@@ -6170,8 +6148,6 @@ except ApiException as e:
 
 Update a schema
 
-put_users_customattributes_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/users/customattributes/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -6215,4 +6191,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 254.0.0_
+_PureCloudPlatformClientV2 255.0.0_

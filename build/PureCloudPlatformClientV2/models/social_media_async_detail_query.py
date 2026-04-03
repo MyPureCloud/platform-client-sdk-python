@@ -197,7 +197,7 @@ class SocialMediaAsyncDetailQuery(object):
     def order(self) -> str:
         """
         Gets the order of this SocialMediaAsyncDetailQuery.
-        Sorting of results based on time
+        Deprecated: use 'sort' field instead. Sorting of results based on time
 
         :return: The order of this SocialMediaAsyncDetailQuery.
         :rtype: str
@@ -208,7 +208,7 @@ class SocialMediaAsyncDetailQuery(object):
     def order(self, order: str) -> None:
         """
         Sets the order of this SocialMediaAsyncDetailQuery.
-        Sorting of results based on time
+        Deprecated: use 'sort' field instead. Sorting of results based on time
 
         :param order: The order of this SocialMediaAsyncDetailQuery.
         :type: str

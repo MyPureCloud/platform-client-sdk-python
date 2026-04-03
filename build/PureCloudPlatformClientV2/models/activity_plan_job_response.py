@@ -34,7 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ActivityPlanJobException
     from . import ActivityPlanOccurrenceReference
-    from . import ActivityPlanReference
+    from . import ActivityPlanStructureWithOccurrenceSessionsUsersReference
     from . import ErrorBody
 
 class ActivityPlanJobResponse(object):
@@ -53,33 +53,33 @@ class ActivityPlanJobResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'activity_plan': 'ActivityPlanReference',
             'status': 'str',
             'exceptions': 'list[ActivityPlanJobException]',
             'error': 'ErrorBody',
-            'occurrence': 'ActivityPlanOccurrenceReference',
+            'activity_plan': 'ActivityPlanStructureWithOccurrenceSessionsUsersReference',
             'type': 'str',
+            'occurrence': 'ActivityPlanOccurrenceReference',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'activity_plan': 'activityPlan',
             'status': 'status',
             'exceptions': 'exceptions',
             'error': 'error',
-            'occurrence': 'occurrence',
+            'activity_plan': 'activityPlan',
             'type': 'type',
+            'occurrence': 'occurrence',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._activity_plan = None
         self._status = None
         self._exceptions = None
         self._error = None
-        self._occurrence = None
+        self._activity_plan = None
         self._type = None
+        self._occurrence = None
         self._self_uri = None
 
     @property
@@ -105,30 +105,6 @@ class ActivityPlanJobResponse(object):
         
 
         self._id = id
-
-    @property
-    def activity_plan(self) -> 'ActivityPlanReference':
-        """
-        Gets the activity_plan of this ActivityPlanJobResponse.
-        The activity plan associated with this job
-
-        :return: The activity_plan of this ActivityPlanJobResponse.
-        :rtype: ActivityPlanReference
-        """
-        return self._activity_plan
-
-    @activity_plan.setter
-    def activity_plan(self, activity_plan: 'ActivityPlanReference') -> None:
-        """
-        Sets the activity_plan of this ActivityPlanJobResponse.
-        The activity plan associated with this job
-
-        :param activity_plan: The activity_plan of this ActivityPlanJobResponse.
-        :type: ActivityPlanReference
-        """
-        
-
-        self._activity_plan = activity_plan
 
     @property
     def status(self) -> str:
@@ -208,28 +184,28 @@ class ActivityPlanJobResponse(object):
         self._error = error
 
     @property
-    def occurrence(self) -> 'ActivityPlanOccurrenceReference':
+    def activity_plan(self) -> 'ActivityPlanStructureWithOccurrenceSessionsUsersReference':
         """
-        Gets the occurrence of this ActivityPlanJobResponse.
-        The occurrence associated with this job if type == 'DeleteOccurrence'
+        Gets the activity_plan of this ActivityPlanJobResponse.
+        The activity plan associated with this job
 
-        :return: The occurrence of this ActivityPlanJobResponse.
-        :rtype: ActivityPlanOccurrenceReference
+        :return: The activity_plan of this ActivityPlanJobResponse.
+        :rtype: ActivityPlanStructureWithOccurrenceSessionsUsersReference
         """
-        return self._occurrence
+        return self._activity_plan
 
-    @occurrence.setter
-    def occurrence(self, occurrence: 'ActivityPlanOccurrenceReference') -> None:
+    @activity_plan.setter
+    def activity_plan(self, activity_plan: 'ActivityPlanStructureWithOccurrenceSessionsUsersReference') -> None:
         """
-        Sets the occurrence of this ActivityPlanJobResponse.
-        The occurrence associated with this job if type == 'DeleteOccurrence'
+        Sets the activity_plan of this ActivityPlanJobResponse.
+        The activity plan associated with this job
 
-        :param occurrence: The occurrence of this ActivityPlanJobResponse.
-        :type: ActivityPlanOccurrenceReference
+        :param activity_plan: The activity_plan of this ActivityPlanJobResponse.
+        :type: ActivityPlanStructureWithOccurrenceSessionsUsersReference
         """
         
 
-        self._occurrence = occurrence
+        self._activity_plan = activity_plan
 
     @property
     def type(self) -> str:
@@ -253,12 +229,36 @@ class ActivityPlanJobResponse(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["RunPlan", "DeleteOccurrence"]
+        allowed_values = ["RunPlan", "DeleteActivityPlan", "DeleteOccurrence", "DeleteOccurrences", "DeleteSessions", "DeleteSessionUsers"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
+
+    @property
+    def occurrence(self) -> 'ActivityPlanOccurrenceReference':
+        """
+        Gets the occurrence of this ActivityPlanJobResponse.
+        The occurrence associated with this job if type == 'DeleteOccurrence'
+
+        :return: The occurrence of this ActivityPlanJobResponse.
+        :rtype: ActivityPlanOccurrenceReference
+        """
+        return self._occurrence
+
+    @occurrence.setter
+    def occurrence(self, occurrence: 'ActivityPlanOccurrenceReference') -> None:
+        """
+        Sets the occurrence of this ActivityPlanJobResponse.
+        The occurrence associated with this job if type == 'DeleteOccurrence'
+
+        :param occurrence: The occurrence of this ActivityPlanJobResponse.
+        :type: ActivityPlanOccurrenceReference
+        """
+        
+
+        self._occurrence = occurrence
 
     @property
     def self_uri(self) -> str:

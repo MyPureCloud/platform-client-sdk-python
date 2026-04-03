@@ -32,8 +32,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import EvaluationResponse
     from . import EvaluationSearchAggregationResponse
+    from . import EvaluationSearchItemResponse
 
 class EvaluationSearchResponse(object):
     """
@@ -52,7 +52,7 @@ class EvaluationSearchResponse(object):
         self.swagger_types = {
             'page_size': 'int',
             'page_number': 'int',
-            'results': 'list[EvaluationResponse]',
+            'results': 'list[EvaluationSearchItemResponse]',
             'aggregations': 'dict(str, EvaluationSearchAggregationResponse)'
         }
 
@@ -117,24 +117,24 @@ class EvaluationSearchResponse(object):
         self._page_number = page_number
 
     @property
-    def results(self) -> List['EvaluationResponse']:
+    def results(self) -> List['EvaluationSearchItemResponse']:
         """
         Gets the results of this EvaluationSearchResponse.
         Results associated to the search response
 
         :return: The results of this EvaluationSearchResponse.
-        :rtype: list[EvaluationResponse]
+        :rtype: list[EvaluationSearchItemResponse]
         """
         return self._results
 
     @results.setter
-    def results(self, results: List['EvaluationResponse']) -> None:
+    def results(self, results: List['EvaluationSearchItemResponse']) -> None:
         """
         Sets the results of this EvaluationSearchResponse.
         Results associated to the search response
 
         :param results: The results of this EvaluationSearchResponse.
-        :type: list[EvaluationResponse]
+        :type: list[EvaluationSearchItemResponse]
         """
         
 
