@@ -40,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_casemanagement_caseplans**](#post_casemanagement_caseplans) | Create a Caseplan.|
 |[**post_casemanagement_cases**](#post_casemanagement_cases) | Create a Case.|
 |[**post_casemanagement_cases_associations_query**](#post_casemanagement_cases_associations_query) | Query for case associations|
+|[**put_casemanagement_caseplan_intakesettings**](#put_casemanagement_caseplan_intakesettings) | Update the intake settings for a Caseplan.|
 
 
 
@@ -888,7 +889,7 @@ except ApiException as e:
 | **version_id** | **str**| Version ID |  |
 | **stageplan_id** | **str**| Stageplan ID |  |
 | **stepplan_id** | **str**| Stepplan ID |  |
-| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: stageplan, caseplan |
+| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: stageplan, caseplan, worktype |
 
 ### Return type
 
@@ -950,7 +951,7 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: caseplan, stageplan |
+| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: caseplan, stageplan, worktype |
 
 ### Return type
 
@@ -1853,4 +1854,56 @@ except ApiException as e:
 [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing)
 
 
-_PureCloudPlatformClientV2 255.0.0_
+## put_casemanagement_caseplan_intakesettings
+
+> [**IntakeSettingsListing**](IntakeSettingsListing) put_casemanagement_caseplan_intakesettings(caseplan_id, body)
+
+
+Update the intake settings for a Caseplan.
+
+put_casemanagement_caseplan_intakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings 
+
+Requires ANY permissions: 
+
+* caseManagement:caseplanIntakeSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+caseplan_id = 'caseplan_id_example' # str | Caseplan ID
+body = PureCloudPlatformClientV2.IntakeSettingsUpdate() # IntakeSettingsUpdate | Intake Settings
+
+try:
+    # Update the intake settings for a Caseplan.
+    api_response = api_instance.put_casemanagement_caseplan_intakesettings(caseplan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->put_casemanagement_caseplan_intakesettings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **caseplan_id** | **str**| Caseplan ID |  |
+| **body** | [**IntakeSettingsUpdate**](IntakeSettingsUpdate)| Intake Settings |  |
+
+### Return type
+
+[**IntakeSettingsListing**](IntakeSettingsListing)
+
+
+_PureCloudPlatformClientV2 256.0.0_

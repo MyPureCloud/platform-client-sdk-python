@@ -579,8 +579,6 @@ except ApiException as e:
 
 Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
 
-post_responsemanagement_libraries_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/responsemanagement/libraries/query 
 
 Requires ANY permissions: 
@@ -1026,4 +1024,4 @@ except ApiException as e:
 [**ResponseAsset**](ResponseAsset)
 
 
-_PureCloudPlatformClientV2 255.0.0_
+_PureCloudPlatformClientV2 256.0.0_

@@ -1105,7 +1105,7 @@ except ApiException as e:
 
 ## get_speechandtextanalytics_programs
 
-> [**ProgramsEntityListing**](ProgramsEntityListing) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state, name=name, sort_by=sort_by, sort_order=sort_order)
+> [**ProgramsEntityListing**](ProgramsEntityListing) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, sort_by=sort_by, sort_order=sort_order)
 
 
 Get the list of Speech & Text Analytics programs
@@ -1133,12 +1133,13 @@ next_page = 'next_page_example' # str | The key for listing the next page (optio
 page_size = 20 # int | The page size for the listing (optional) (default to 20)
 state = 'state_example' # str | Program state. Defaults to Latest (optional)
 name = 'name_example' # str | Case insensitive partial name to filter by (optional)
+ids = ['ids_example'] # list[str] | Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. (optional)
 sort_by = 'sort_by_example' # str | Sort results by. Defaults to name (optional)
 sort_order = 'sort_order_example' # str | Sort order. Defaults to asc (optional)
 
 try:
     # Get the list of Speech & Text Analytics programs
-    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_programs: %s\n" % e)
@@ -1153,6 +1154,7 @@ except ApiException as e:
 | **page_size** | **int**| The page size for the listing | [optional] [default to 20] |
 | **state** | **str**| Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
 | **name** | **str**| Case insensitive partial name to filter by | [optional]  |
+| **ids** | [**list[str]**](str)| Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. | [optional]  |
 | **sort_by** | **str**| Sort results by. Defaults to name | [optional] <br />**Values**: name |
 | **sort_order** | **str**| Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 
@@ -3222,4 +3224,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 255.0.0_
+_PureCloudPlatformClientV2 256.0.0_
