@@ -169,8 +169,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_settings_transcription**](#put_routing_settings_transcription) | Update Transcription Settings|
 |[**put_routing_sms_identityresolution_phonenumber**](#put_routing_sms_identityresolution_phonenumber) | Update an SMS identity resolution settings.|
 |[**put_routing_user_directroutingbackup_settings**](#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
-|[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
-|[**put_routing_utilization**](#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
+|[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values.|
+|[**put_routing_utilization**](#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.|
 |[**put_routing_utilization_label**](#put_routing_utilization_label) | Update a utilization label|
 |[**put_routing_wrapupcode**](#put_routing_wrapupcode) | Update wrap-up code|
 |[**put_user_routingskill**](#put_user_routingskill) | Update an assigned routing skill&#39;s proficiency|
@@ -8431,7 +8431,7 @@ except ApiException as e:
 > [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) put_routing_user_utilization(user_id, body)
 
 
-Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 
 Wraps PUT /api/v2/routing/users/{userId}/utilization 
 
@@ -8456,7 +8456,7 @@ user_id = 'user_id_example' # str | User ID
 body = PureCloudPlatformClientV2.UtilizationRequest() # UtilizationRequest | utilization
 
 try:
-    # Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+    # Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
     api_response = api_instance.put_routing_user_utilization(user_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -8481,7 +8481,7 @@ except ApiException as e:
 > [**UtilizationResponse**](UtilizationResponse) put_routing_utilization(body)
 
 
-Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
 
 Wraps PUT /api/v2/routing/utilization 
 
@@ -8505,7 +8505,7 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 body = PureCloudPlatformClientV2.UtilizationRequest() # UtilizationRequest | utilization
 
 try:
-    # Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+    # Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
     api_response = api_instance.put_routing_utilization(body)
     pprint(api_response)
 except ApiException as e:
@@ -8726,4 +8726,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 255.0.0_
+_PureCloudPlatformClientV2 256.0.0_

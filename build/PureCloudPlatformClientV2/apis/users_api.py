@@ -8856,7 +8856,7 @@ class UsersApi(object):
 
     def put_routing_user_utilization(self, user_id: str, body: 'UtilizationRequest', **kwargs) -> 'AgentMaxUtilizationResponse':
         """
-        Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+        Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
         
 
         This method makes a synchronous HTTP request by default. To make an

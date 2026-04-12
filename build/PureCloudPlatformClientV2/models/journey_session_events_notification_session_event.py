@@ -34,6 +34,8 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import JourneySessionEventsNotificationApp
     from . import JourneySessionEventsNotificationBrowser
+    from . import JourneySessionEventsNotificationCase
+    from . import JourneySessionEventsNotificationCaseAssociation
     from . import JourneySessionEventsNotificationConnectedQueue
     from . import JourneySessionEventsNotificationConversation
     from . import JourneySessionEventsNotificationConversationChannel
@@ -107,7 +109,11 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'sdk_library': 'JourneySessionEventsNotificationSdkLibrary',
             'network_connectivity': 'JourneySessionEventsNotificationNetworkConnectivity',
             'division_ids': 'list[str]',
-            'last_screen': 'str'
+            'last_screen': 'str',
+            'case_associations': 'list[JourneySessionEventsNotificationCaseAssociation]',
+            'case_entity': 'JourneySessionEventsNotificationCase',
+            'case_reference': 'str',
+            'case_status': 'str'
         }
 
         self.attribute_map = {
@@ -152,7 +158,11 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'sdk_library': 'sdkLibrary',
             'network_connectivity': 'networkConnectivity',
             'division_ids': 'divisionIds',
-            'last_screen': 'lastScreen'
+            'last_screen': 'lastScreen',
+            'case_associations': 'caseAssociations',
+            'case_entity': 'caseEntity',
+            'case_reference': 'caseReference',
+            'case_status': 'caseStatus'
         }
 
         self._id = None
@@ -197,6 +207,10 @@ class JourneySessionEventsNotificationSessionEvent(object):
         self._network_connectivity = None
         self._division_ids = None
         self._last_screen = None
+        self._case_associations = None
+        self._case_entity = None
+        self._case_reference = None
+        self._case_status = None
 
     @property
     def id(self) -> str:
@@ -1220,6 +1234,107 @@ class JourneySessionEventsNotificationSessionEvent(object):
         
 
         self._last_screen = last_screen
+
+    @property
+    def case_associations(self) -> List['JourneySessionEventsNotificationCaseAssociation']:
+        """
+        Gets the case_associations of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The case_associations of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: list[JourneySessionEventsNotificationCaseAssociation]
+        """
+        return self._case_associations
+
+    @case_associations.setter
+    def case_associations(self, case_associations: List['JourneySessionEventsNotificationCaseAssociation']) -> None:
+        """
+        Sets the case_associations of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param case_associations: The case_associations of this JourneySessionEventsNotificationSessionEvent.
+        :type: list[JourneySessionEventsNotificationCaseAssociation]
+        """
+        
+
+        self._case_associations = case_associations
+
+    @property
+    def case_entity(self) -> 'JourneySessionEventsNotificationCase':
+        """
+        Gets the case_entity of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The case_entity of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: JourneySessionEventsNotificationCase
+        """
+        return self._case_entity
+
+    @case_entity.setter
+    def case_entity(self, case_entity: 'JourneySessionEventsNotificationCase') -> None:
+        """
+        Sets the case_entity of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param case_entity: The case_entity of this JourneySessionEventsNotificationSessionEvent.
+        :type: JourneySessionEventsNotificationCase
+        """
+        
+
+        self._case_entity = case_entity
+
+    @property
+    def case_reference(self) -> str:
+        """
+        Gets the case_reference of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The case_reference of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: str
+        """
+        return self._case_reference
+
+    @case_reference.setter
+    def case_reference(self, case_reference: str) -> None:
+        """
+        Sets the case_reference of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param case_reference: The case_reference of this JourneySessionEventsNotificationSessionEvent.
+        :type: str
+        """
+        
+
+        self._case_reference = case_reference
+
+    @property
+    def case_status(self) -> str:
+        """
+        Gets the case_status of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The case_status of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: str
+        """
+        return self._case_status
+
+    @case_status.setter
+    def case_status(self, case_status: str) -> None:
+        """
+        Sets the case_status of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param case_status: The case_status of this JourneySessionEventsNotificationSessionEvent.
+        :type: str
+        """
+        if isinstance(case_status, int):
+            case_status = str(case_status)
+        allowed_values = ["Unknown", "Open", "InProgress", "Terminated", "Closed"]
+        if case_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for case_status -> " + case_status)
+            self._case_status = "outdated_sdk_version"
+        else:
+            self._case_status = case_status
 
     def to_dict(self):
         """

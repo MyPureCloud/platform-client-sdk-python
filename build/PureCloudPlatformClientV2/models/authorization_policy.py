@@ -60,6 +60,7 @@ class AuthorizationPolicy(object):
             'date_modified': 'datetime',
             'preset_attributes': 'dict(str, TypedAttribute)',
             'active': 'bool',
+            'apply_to_clients': 'bool',
             'self_uri': 'str'
         }
 
@@ -74,6 +75,7 @@ class AuthorizationPolicy(object):
             'date_modified': 'dateModified',
             'preset_attributes': 'presetAttributes',
             'active': 'active',
+            'apply_to_clients': 'applyToClients',
             'self_uri': 'selfUri'
         }
 
@@ -87,6 +89,7 @@ class AuthorizationPolicy(object):
         self._date_modified = None
         self._preset_attributes = None
         self._active = None
+        self._apply_to_clients = None
         self._self_uri = None
 
     @property
@@ -333,6 +336,30 @@ class AuthorizationPolicy(object):
         
 
         self._active = active
+
+    @property
+    def apply_to_clients(self) -> bool:
+        """
+        Gets the apply_to_clients of this AuthorizationPolicy.
+        Flag to determine whether policy applies to OAuth Clients
+
+        :return: The apply_to_clients of this AuthorizationPolicy.
+        :rtype: bool
+        """
+        return self._apply_to_clients
+
+    @apply_to_clients.setter
+    def apply_to_clients(self, apply_to_clients: bool) -> None:
+        """
+        Sets the apply_to_clients of this AuthorizationPolicy.
+        Flag to determine whether policy applies to OAuth Clients
+
+        :param apply_to_clients: The apply_to_clients of this AuthorizationPolicy.
+        :type: bool
+        """
+        
+
+        self._apply_to_clients = apply_to_clients
 
     @property
     def self_uri(self) -> str:

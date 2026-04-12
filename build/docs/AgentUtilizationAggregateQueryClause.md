@@ -1,0 +1,14 @@
+# AgentUtilizationAggregateQueryClause
+
+## AgentUtilizationAggregateQueryClause
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **type** | str | Boolean operation to apply to the provided predicates | |
+| **predicates** | [list[AgentUtilizationAggregateQueryPredicate]](AgentUtilizationAggregateQueryPredicate) | Like a three-word sentence: (attribute-name) (operator) (target-value). | |
+
+
+
+_PureCloudPlatformClientV2 256.0.0_

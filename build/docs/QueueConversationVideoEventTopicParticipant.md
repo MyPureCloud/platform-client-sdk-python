@@ -30,6 +30,7 @@
 | **conversation_routing_data** | [QueueConversationVideoEventTopicConversationRoutingData](QueueConversationVideoEventTopicConversationRoutingData) |  | [optional] |
 | **alerting_timeout_ms** | int | Specifies how long the agent has to answer an interaction before being marked as not responding. | [optional] |
 | **monitored_participant_id** | str | If this participant is a monitor, then this will be the id of the participant that is being monitored. | [optional] |
+| **screen_monitored_participant_id** | str | If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored. | [optional] |
 | **coached_participant_id** | str | If this participant is a coach, then this will be the id of the participant that is being coached. | [optional] |
 | **barged_participant_id** | str | If this participant created a barge in conference, then this will be the id of the participant that is barged in. | [optional] |
 | **media_roles** | list[str] | List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc. | [optional] |
@@ -51,4 +52,4 @@
 
 
 
-_PureCloudPlatformClientV2 255.0.0_
+_PureCloudPlatformClientV2 256.0.0_

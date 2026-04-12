@@ -54,6 +54,7 @@ from ..models import CaseplanListing
 from ..models import CaseplanUpdate
 from ..models import ErrorBody
 from ..models import IntakeSettingsListing
+from ..models import IntakeSettingsUpdate
 from ..models import Stage
 from ..models import StageListing
 from ..models import Stageplan
@@ -3079,6 +3080,93 @@ class CaseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CaseAssociationQueryEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_casemanagement_caseplan_intakesettings(self, caseplan_id: str, body: 'IntakeSettingsUpdate', **kwargs) -> 'IntakeSettingsListing':
+        """
+        Update the intake settings for a Caseplan.
+        
+	    put_casemanagement_caseplan_intakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_casemanagement_caseplan_intakesettings(caseplan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str caseplan_id: Caseplan ID (required)
+        :param IntakeSettingsUpdate body: Intake Settings (required)
+        :return: IntakeSettingsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['caseplan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_casemanagement_caseplan_intakesettings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'caseplan_id' is set
+        if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
+            raise ValueError("Missing the required parameter `caseplan_id` when calling `put_casemanagement_caseplan_intakesettings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_casemanagement_caseplan_intakesettings`")
+
+        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+            raise ValueError("Invalid value for parameter `caseplan_id` when calling `put_casemanagement_caseplan_intakesettings`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings'.replace('{format}', 'json')
+        path_params = {}
+        if 'caseplan_id' in params:
+            path_params['caseplanId'] = params['caseplan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IntakeSettingsListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

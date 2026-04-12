@@ -86,6 +86,7 @@ class ConversationEventTopicParticipant(object):
             'conversation_routing_data': 'ConversationEventTopicConversationRoutingData',
             'alerting_timeout_ms': 'int',
             'monitored_participant_id': 'str',
+            'screen_monitored_participant_id': 'str',
             'coached_participant_id': 'str',
             'barged_participant_id': 'str',
             'media_roles': 'list[str]',
@@ -131,6 +132,7 @@ class ConversationEventTopicParticipant(object):
             'conversation_routing_data': 'conversationRoutingData',
             'alerting_timeout_ms': 'alertingTimeoutMs',
             'monitored_participant_id': 'monitoredParticipantId',
+            'screen_monitored_participant_id': 'screenMonitoredParticipantId',
             'coached_participant_id': 'coachedParticipantId',
             'barged_participant_id': 'bargedParticipantId',
             'media_roles': 'mediaRoles',
@@ -175,6 +177,7 @@ class ConversationEventTopicParticipant(object):
         self._conversation_routing_data = None
         self._alerting_timeout_ms = None
         self._monitored_participant_id = None
+        self._screen_monitored_participant_id = None
         self._coached_participant_id = None
         self._barged_participant_id = None
         self._media_roles = None
@@ -769,6 +772,30 @@ class ConversationEventTopicParticipant(object):
         
 
         self._monitored_participant_id = monitored_participant_id
+
+    @property
+    def screen_monitored_participant_id(self) -> str:
+        """
+        Gets the screen_monitored_participant_id of this ConversationEventTopicParticipant.
+        If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored.
+
+        :return: The screen_monitored_participant_id of this ConversationEventTopicParticipant.
+        :rtype: str
+        """
+        return self._screen_monitored_participant_id
+
+    @screen_monitored_participant_id.setter
+    def screen_monitored_participant_id(self, screen_monitored_participant_id: str) -> None:
+        """
+        Sets the screen_monitored_participant_id of this ConversationEventTopicParticipant.
+        If this participant is a screen monitor, then this will be the id of the participant that is being screen monitored.
+
+        :param screen_monitored_participant_id: The screen_monitored_participant_id of this ConversationEventTopicParticipant.
+        :type: str
+        """
+        
+
+        self._screen_monitored_participant_id = screen_monitored_participant_id
 
     @property
     def coached_participant_id(self) -> str:

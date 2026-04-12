@@ -56,6 +56,7 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         self.swagger_types = {
             'user': 'WfmUserScheduleAdherenceUpdatedTopicUserReference',
             'management_unit_id': 'str',
+            'business_unit_id': 'str',
             'team': 'WfmUserScheduleAdherenceUpdatedTopicUriReference',
             'scheduled_activity_category': 'str',
             'scheduled_activity_code': 'WfmUserScheduleAdherenceUpdatedTopicActivityCodeReference',
@@ -79,6 +80,7 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         self.attribute_map = {
             'user': 'user',
             'management_unit_id': 'managementUnitId',
+            'business_unit_id': 'businessUnitId',
             'team': 'team',
             'scheduled_activity_category': 'scheduledActivityCategory',
             'scheduled_activity_code': 'scheduledActivityCode',
@@ -101,6 +103,7 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
 
         self._user = None
         self._management_unit_id = None
+        self._business_unit_id = None
         self._team = None
         self._scheduled_activity_category = None
         self._scheduled_activity_code = None
@@ -167,6 +170,30 @@ class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate(object):
         
 
         self._management_unit_id = management_unit_id
+
+    @property
+    def business_unit_id(self) -> str:
+        """
+        Gets the business_unit_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :return: The business_unit_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :rtype: str
+        """
+        return self._business_unit_id
+
+    @business_unit_id.setter
+    def business_unit_id(self, business_unit_id: str) -> None:
+        """
+        Sets the business_unit_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+
+
+        :param business_unit_id: The business_unit_id of this WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.
+        :type: str
+        """
+        
+
+        self._business_unit_id = business_unit_id
 
     @property
     def team(self) -> 'WfmUserScheduleAdherenceUpdatedTopicUriReference':

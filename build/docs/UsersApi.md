@@ -112,7 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users_search_teams_assign**](#post_users_search_teams_assign) | Search users assigned to teams|
 |[**put_routing_directroutingbackup_settings_me**](#put_routing_directroutingbackup_settings_me) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_user_directroutingbackup_settings**](#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
-|[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
+|[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization&#39;s default values.|
 |[**put_user_callforwarding**](#put_user_callforwarding) | Update a user&#39;s CallForwarding|
 |[**put_user_customattributes**](#put_user_customattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields.|
 |[**put_user_outofoffice**](#put_user_outofoffice) | Update an OutOfOffice|
@@ -5496,7 +5496,7 @@ except ApiException as e:
 > [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) put_routing_user_utilization(user_id, body)
 
 
-Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 
 Wraps PUT /api/v2/routing/users/{userId}/utilization 
 
@@ -5521,7 +5521,7 @@ user_id = 'user_id_example' # str | User ID
 body = PureCloudPlatformClientV2.UtilizationRequest() # UtilizationRequest | utilization
 
 try:
-    # Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+    # Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
     api_response = api_instance.put_routing_user_utilization(user_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -6191,4 +6191,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 255.0.0_
+_PureCloudPlatformClientV2 256.0.0_

@@ -16,8 +16,9 @@
 | **date_modified** | datetime | Date this policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **preset_attributes** | [dict(str, TypedAttribute)](TypedAttribute) | Map of names and values of preset attributes to use in policy evaluation | [optional] |
 | **active** | bool | Flag for active enforcement. If this value is false or null, the policy will be saved but will not be checked or enforced on users. | [optional] |
+| **apply_to_clients** | bool | Flag to determine whether policy applies to OAuth Clients | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 255.0.0_
+_PureCloudPlatformClientV2 256.0.0_

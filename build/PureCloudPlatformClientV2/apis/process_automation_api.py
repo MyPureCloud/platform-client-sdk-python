@@ -35,13 +35,17 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import CreateScheduledTriggerRequest
 from ..models import CreateTriggerRequest
 from ..models import ErrorBody
+from ..models import ScheduledTrigger
+from ..models import ScheduledTriggerEntityListing
 from ..models import TestModeEventResults
 from ..models import TestModeResults
 from ..models import TopicCursorEntityListing
 from ..models import Trigger
 from ..models import TriggerEntityListing
+from ..models import UpdateScheduledTriggerRequest
 from ..models import UpdateTriggerRequest
 
 class ProcessAutomationApi(object):
@@ -59,6 +63,84 @@ class ProcessAutomationApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_processautomation_scheduledtrigger(self, scheduled_trigger_id: str, **kwargs) -> None:
+        """
+        Delete a Scheduled Trigger
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_processautomation_scheduledtrigger(scheduled_trigger_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scheduled_trigger_id: scheduledTriggerId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_trigger_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_processautomation_scheduledtrigger" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_trigger_id' is set
+        if ('scheduled_trigger_id' not in params) or (params['scheduled_trigger_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_trigger_id` when calling `delete_processautomation_scheduledtrigger`")
+
+
+        resource_path = '/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_trigger_id' in params:
+            path_params['scheduledTriggerId'] = params['scheduled_trigger_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_processautomation_trigger(self, trigger_id: str, **kwargs) -> None:
         """
@@ -134,6 +216,168 @@ class ProcessAutomationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_processautomation_scheduledtrigger(self, scheduled_trigger_id: str, **kwargs) -> 'ScheduledTrigger':
+        """
+        Retrieve a single Scheduled Trigger matching id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_processautomation_scheduledtrigger(scheduled_trigger_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scheduled_trigger_id: scheduledTriggerId (required)
+        :return: ScheduledTrigger
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_trigger_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_processautomation_scheduledtrigger" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_trigger_id' is set
+        if ('scheduled_trigger_id' not in params) or (params['scheduled_trigger_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_trigger_id` when calling `get_processautomation_scheduledtrigger`")
+
+
+        resource_path = '/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_trigger_id' in params:
+            path_params['scheduledTriggerId'] = params['scheduled_trigger_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScheduledTrigger',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_processautomation_scheduledtriggers(self, **kwargs) -> 'ScheduledTriggerEntityListing':
+        """
+        Retrieves all scheduled triggers, optionally filtered by query parameters.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_processautomation_scheduledtriggers(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param bool enabled: Boolean indicating desired enabled state of scheduled triggers
+        :return: ScheduledTriggerEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size', 'enabled']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_processautomation_scheduledtriggers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/processautomation/scheduledtriggers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'enabled' in params:
+            query_params['enabled'] = params['enabled']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScheduledTriggerEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -387,6 +631,84 @@ class ProcessAutomationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_processautomation_scheduledtriggers(self, body: 'CreateScheduledTriggerRequest', **kwargs) -> 'ScheduledTrigger':
+        """
+        Create a scheduled Trigger
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_processautomation_scheduledtriggers(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateScheduledTriggerRequest body: Input used to create a Scheduled Trigger (required)
+        :return: ScheduledTrigger
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_processautomation_scheduledtriggers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_processautomation_scheduledtriggers`")
+
+
+        resource_path = '/api/v2/processautomation/scheduledtriggers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScheduledTrigger',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_processautomation_trigger_test(self, trigger_id: str, **kwargs) -> 'TestModeResults':
         """
         Test the matching of a Trigger based on provided event body
@@ -623,6 +945,90 @@ class ProcessAutomationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TestModeEventResults',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_processautomation_scheduledtrigger(self, scheduled_trigger_id: str, body: 'UpdateScheduledTriggerRequest', **kwargs) -> 'ScheduledTrigger':
+        """
+        Update a Scheduled Trigger
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_processautomation_scheduledtrigger(scheduled_trigger_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scheduled_trigger_id: scheduledTriggerId (required)
+        :param UpdateScheduledTriggerRequest body: Input to update Scheduled Trigger. (required)
+        :return: ScheduledTrigger
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scheduled_trigger_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_processautomation_scheduledtrigger" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scheduled_trigger_id' is set
+        if ('scheduled_trigger_id' not in params) or (params['scheduled_trigger_id'] is None):
+            raise ValueError("Missing the required parameter `scheduled_trigger_id` when calling `put_processautomation_scheduledtrigger`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_processautomation_scheduledtrigger`")
+
+
+        resource_path = '/api/v2/processautomation/scheduledtriggers/{scheduledTriggerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scheduled_trigger_id' in params:
+            path_params['scheduledTriggerId'] = params['scheduled_trigger_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScheduledTrigger',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

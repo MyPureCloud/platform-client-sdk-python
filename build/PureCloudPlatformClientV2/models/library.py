@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import User
+    from . import WritableDivision
 
 class Library(object):
     """
@@ -55,6 +56,7 @@ class Library(object):
             'created_by': 'User',
             'date_created': 'datetime',
             'response_type': 'str',
+            'division': 'WritableDivision',
             'self_uri': 'str'
         }
 
@@ -65,6 +67,7 @@ class Library(object):
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'response_type': 'responseType',
+            'division': 'division',
             'self_uri': 'selfUri'
         }
 
@@ -74,6 +77,7 @@ class Library(object):
         self._created_by = None
         self._date_created = None
         self._response_type = None
+        self._division = None
         self._self_uri = None
 
     @property
@@ -224,6 +228,30 @@ class Library(object):
             self._response_type = "outdated_sdk_version"
         else:
             self._response_type = response_type
+
+    @property
+    def division(self) -> 'WritableDivision':
+        """
+        Gets the division of this Library.
+        The division to which this entity belongs.
+
+        :return: The division of this Library.
+        :rtype: WritableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableDivision') -> None:
+        """
+        Sets the division of this Library.
+        The division to which this entity belongs.
+
+        :param division: The division of this Library.
+        :type: WritableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def self_uri(self) -> str:
