@@ -21,8 +21,9 @@ Unassigns the user assigned to this station
 
 Wraps DELETE /api/v2/stations/{stationId}/associateduser 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* telephony:station:disassociate
 
 ### Example
 
@@ -166,4 +167,4 @@ except ApiException as e:
 [**StationEntityListing**](StationEntityListing)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

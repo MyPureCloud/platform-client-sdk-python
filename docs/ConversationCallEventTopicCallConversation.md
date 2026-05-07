@@ -12,6 +12,7 @@
 | **other_media_uris** | list[str] |  | [optional] |
 | **address** | str |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
+| **access_attributes** | list[str] |  | [optional] |
 | **inactivity_timeout** | datetime |  | [optional] |
 | **divisions** | [list[ConversationCallEventTopicConversationDivisionMembership]](ConversationCallEventTopicConversationDivisionMembership) |  | [optional] |
 | **recording_state** | str |  | [optional] |
@@ -20,4 +21,4 @@
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

@@ -8,8 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **description** | str | Room&#39;s description | [optional] |
 | **subject** | str | Room&#39;s subject | |
-| **user_ids** | list[str] | Users to add to the room | [optional] |
+| **user_ids** | list[str] | Users to add to the room, limit of 25 | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

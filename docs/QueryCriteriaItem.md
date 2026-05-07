@@ -7,9 +7,9 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **key** | str | The key to filter on | |
-| **operator** | str | The operator for comparison | |
+| **operator** | str | The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported. | |
 | **value** | str | The target value to match | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

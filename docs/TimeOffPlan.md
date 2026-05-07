@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The globally unique identifier for the object. | [optional] |
+| **id** | str | The globally unique identifier for the object. | |
 | **name** | str | The name of this time off plan. | [optional] |
 | **activity_code_ids** | list[str] | The set of activity code IDs associated with this time off plan. | [optional] |
 | **time_off_limits** | [list[TimeOffLimitReference]](TimeOffLimitReference) | The set of time off limit IDs associated with this time off plan. | [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

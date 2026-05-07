@@ -6,10 +6,10 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **operator** | str | The operator for this criteria | |
+| **operators** | list[str] | The allowed operators for this criteria | |
 | **container** | str | The container that the ids belong to | |
 | **max_id_count** | int | Maximum number of ids that can be specified in this container | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

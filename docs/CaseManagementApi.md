@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_casemanagement_caseplan_publish**](#post_casemanagement_caseplan_publish) | Publish Caseplan.|
 |[**post_casemanagement_caseplan_versions**](#post_casemanagement_caseplan_versions) | Create Caseplan version.|
 |[**post_casemanagement_caseplans**](#post_casemanagement_caseplans) | Create a Caseplan.|
+|[**post_casemanagement_caseplans_query**](#post_casemanagement_caseplans_query) | Query for caseplans|
 |[**post_casemanagement_cases**](#post_casemanagement_cases) | Create a Case.|
 |[**post_casemanagement_cases_associations_query**](#post_casemanagement_cases_associations_query) | Query for case associations|
 |[**put_casemanagement_caseplan_intakesettings**](#put_casemanagement_caseplan_intakesettings) | Update the intake settings for a Caseplan.|
@@ -1754,6 +1755,56 @@ except ApiException as e:
 [**CaseplanCreateResponse**](CaseplanCreateResponse)
 
 
+## post_casemanagement_caseplans_query
+
+> [**CaseplanQueryEntityListing**](CaseplanQueryEntityListing) post_casemanagement_caseplans_query(body)
+
+
+Query for caseplans
+
+post_casemanagement_caseplans_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/caseplans/query 
+
+Requires ANY permissions: 
+
+* caseManagement:caseplan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+body = PureCloudPlatformClientV2.CaseplanQueryRequest() # CaseplanQueryRequest | CaseplanQueryRequest
+
+try:
+    # Query for caseplans
+    api_response = api_instance.post_casemanagement_caseplans_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->post_casemanagement_caseplans_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CaseplanQueryRequest**](CaseplanQueryRequest)| CaseplanQueryRequest |  |
+
+### Return type
+
+[**CaseplanQueryEntityListing**](CaseplanQueryEntityListing)
+
+
 ## post_casemanagement_cases
 
 > [**Case**](Case) post_casemanagement_cases(body)
@@ -1906,4 +1957,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

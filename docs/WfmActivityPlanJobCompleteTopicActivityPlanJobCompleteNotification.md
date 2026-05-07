@@ -1,6 +1,6 @@
-# WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
+# WfmActivityPlanJobCompleteTopicActivityPlanJobCompleteNotification
 
-## WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
+## WfmActivityPlanJobCompleteTopicActivityPlanJobCompleteNotification
 
 ## Properties
 
@@ -12,8 +12,7 @@
 | **status** | str |  | [optional] |
 | **exceptions** | [list[WfmActivityPlanJobCompleteTopicActivityPlanJobException]](WfmActivityPlanJobCompleteTopicActivityPlanJobException) |  | [optional] |
 | **error** | [WfmActivityPlanJobCompleteTopicErrorBody](WfmActivityPlanJobCompleteTopicErrorBody) |  | [optional] |
-| **occurrence** | [WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

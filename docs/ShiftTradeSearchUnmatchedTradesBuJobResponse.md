@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The globally unique identifier for the object. | [optional] |
+| **id** | str | The globally unique identifier for the object. | |
 | **status** | str | The status of the job | |
 | **type** | str | The type of the job | |
 | **download_url** | str | The URL where completed results might be available for download in case the result body for that job type is too large | [optional] |
@@ -16,4 +16,4 @@
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

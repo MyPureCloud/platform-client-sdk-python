@@ -698,4 +698,4 @@ except ApiException as e:
 [**MessagingSetting**](MessagingSetting)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

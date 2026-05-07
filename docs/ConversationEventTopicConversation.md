@@ -14,6 +14,7 @@
 | **address** | str |  | [optional] |
 | **external_tag** | str |  | [optional] |
 | **utilization_label_id** | str |  | [optional] |
+| **access_attributes** | list[str] |  | [optional] |
 | **secure_pause** | bool |  | [optional] |
 | **inactivity_timeout** | datetime |  | [optional] |
 | **associated_conversation** | [ConversationEventTopicDomainEntityRef](ConversationEventTopicDomainEntityRef) |  | [optional] |
@@ -22,4 +23,4 @@
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

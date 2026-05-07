@@ -11,8 +11,9 @@
 | **filters** | [list[WorkitemFilter]](WorkitemFilter) | List of filter objects to be used in the search. Valid filter names are: &#39;divisionId&#39;, &#39;id&#39;, &#39;name&#39;, &#39;description&#39;, &#39;defaultWorkbinId&#39;, &#39;defaultDurationSeconds&#39;, &#39;defaultExpirationSeconds&#39;, &#39;defaultDueDurationSeconds&#39;, &#39;defaultPriority&#39;, &#39;defaultLanguageId&#39;, &#39;defaultTtlSeconds&#39;, &#39;assignmentEnabled&#39;, &#39;defaultQueueId&#39;, &#39;schemaId&#39;, &#39;schemaVersion&#39;, &#39;dateCreated&#39;, &#39;dateModified&#39;, &#39;modifiedBy&#39; | |
 | **attributes** | list[str] | List of entity attributes to be retrieved in the result. | [optional] |
 | **after** | str | The cursor that points to the end of the set of entities that has been returned. | [optional] |
+| **expands** | str | List of entity attributes to be expanded in the result. | [optional] |
 | **sort** | [WorktypeQuerySort](WorktypeQuerySort) | Sort | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

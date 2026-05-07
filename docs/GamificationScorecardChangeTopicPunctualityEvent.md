@@ -9,8 +9,10 @@
 | **date_start** | str |  | [optional] |
 | **date_schedule_start** | str |  | [optional] |
 | **activity_code** | str |  | [optional] |
+| **activity_color** | str |  | [optional] |
+| **activity_name** | str |  | [optional] |
 | **points** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

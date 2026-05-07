@@ -11,8 +11,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_actiontemplate**](#delete_journey_actiontemplate) | Delete a single action template.|
 |[**delete_journey_externalevents_configuration**](#delete_journey_externalevents_configuration) | Delete an external events configuration.|
 |[**delete_journey_externalevents_schema**](#delete_journey_externalevents_schema) | Delete a schema|
-|[**delete_journey_outcome**](#delete_journey_outcome) | Delete an outcome.|
-|[**delete_journey_outcomes_predictor**](#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
+|[**delete_journey_outcome**](#delete_journey_outcome) | Deprecated. Delete an outcome.|
+|[**delete_journey_outcomes_predictor**](#delete_journey_outcomes_predictor) | Deprecated. Delete an outcome predictor.|
 |[**delete_journey_segment**](#delete_journey_segment) | Delete a segment.|
 |[**delete_journey_view**](#delete_journey_view) | Delete a Journey View by ID|
 |[**delete_journey_view_schedules**](#delete_journey_view_schedules) | Delete the Schedule of a JourneyView|
@@ -22,8 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contact_journey_sessions**](#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
 |[**get_journey_actionmap**](#get_journey_actionmap) | Retrieve a single action map.|
 |[**get_journey_actionmaps**](#get_journey_actionmaps) | Retrieve all action maps.|
-|[**get_journey_actionmaps_estimates_job**](#get_journey_actionmaps_estimates_job) | Get status of job.|
-|[**get_journey_actionmaps_estimates_job_results**](#get_journey_actionmaps_estimates_job_results) | Get estimates from completed job.|
+|[**get_journey_actionmaps_estimates_job**](#get_journey_actionmaps_estimates_job) | Deprecated. Get status of job.|
+|[**get_journey_actionmaps_estimates_job_results**](#get_journey_actionmaps_estimates_job_results) | Deprecated. Get estimates from completed job.|
 |[**get_journey_actiontarget**](#get_journey_actiontarget) | Retrieve a single action target.|
 |[**get_journey_actiontargets**](#get_journey_actiontargets) | Retrieve all action targets.|
 |[**get_journey_actiontemplate**](#get_journey_actiontemplate) | Retrieve a single action template.|
@@ -38,17 +38,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_externalevents_schemas_coretype**](#get_journey_externalevents_schemas_coretype) | Get a core type from which all schemas are built|
 |[**get_journey_externalevents_schemas_coretypes**](#get_journey_externalevents_schemas_coretypes) | Get the list of core types enabled for a specific namespace.|
 |[**get_journey_externalevents_schemas_limits**](#get_journey_externalevents_schemas_limits) | Get quantitative limits on schemas|
-|[**get_journey_outcome**](#get_journey_outcome) | Retrieve a single outcome.|
-|[**get_journey_outcomes**](#get_journey_outcomes) | Retrieve all outcomes.|
-|[**get_journey_outcomes_attributions_job**](#get_journey_outcomes_attributions_job) | Get job status.|
-|[**get_journey_outcomes_attributions_job_results**](#get_journey_outcomes_attributions_job_results) | Get outcome attribution entities from completed job.|
-|[**get_journey_outcomes_predictor**](#get_journey_outcomes_predictor) | Retrieve a single outcome predictor.|
-|[**get_journey_outcomes_predictors**](#get_journey_outcomes_predictors) | Retrieve all outcome predictors.|
+|[**get_journey_outcome**](#get_journey_outcome) | Deprecated. Retrieve a single outcome.|
+|[**get_journey_outcomes**](#get_journey_outcomes) | Deprecated. Retrieve all outcomes.|
+|[**get_journey_outcomes_attributions_job**](#get_journey_outcomes_attributions_job) | Deprecated. Get job status.|
+|[**get_journey_outcomes_attributions_job_results**](#get_journey_outcomes_attributions_job_results) | Deprecated. Get outcome attribution entities from completed job.|
+|[**get_journey_outcomes_predictor**](#get_journey_outcomes_predictor) | Deprecated. Retrieve a single outcome predictor.|
+|[**get_journey_outcomes_predictors**](#get_journey_outcomes_predictors) | Deprecated. Retrieve all outcome predictors.|
 |[**get_journey_segment**](#get_journey_segment) | Retrieve a single segment.|
 |[**get_journey_segments**](#get_journey_segments) | Retrieve all segments.|
 |[**get_journey_session**](#get_journey_session) | Retrieve a single session.|
 |[**get_journey_session_events**](#get_journey_session_events) | Retrieve all events for a given session.|
-|[**get_journey_session_outcomescores**](#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
+|[**get_journey_session_outcomescores**](#get_journey_session_outcomescores) | Deprecated. Retrieve latest outcome score associated with a session for all outcomes.|
 |[**get_journey_view**](#get_journey_view) | Get a Journey View by ID|
 |[**get_journey_view_schedules**](#get_journey_view_schedules) | Get the Schedule for a JourneyView|
 |[**get_journey_view_version**](#get_journey_view_version) | Get a Journey View by ID and version|
@@ -69,14 +69,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](#patch_journey_actiontemplate) | Update a single action template.|
 |[**patch_journey_externalevents_configuration**](#patch_journey_externalevents_configuration) | Update an external events configuration.|
-|[**patch_journey_outcome**](#patch_journey_outcome) | Update an outcome.|
+|[**patch_journey_outcome**](#patch_journey_outcome) | Deprecated. Update an outcome.|
 |[**patch_journey_segment**](#patch_journey_segment) | Update a segment.|
 |[**patch_journey_view_version_job**](#patch_journey_view_version_job) | Update the job for a journey view version. Only the status can be changed and only to Cancelled|
 |[**post_analytics_journeys_aggregates_jobs**](#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
 |[**post_analytics_journeys_aggregates_query**](#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
 |[**post_externalcontacts_contact_journey_segments**](#post_externalcontacts_contact_journey_segments) | Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.|
 |[**post_journey_actionmaps**](#post_journey_actionmaps) | Create an action map.|
-|[**post_journey_actionmaps_estimates_jobs**](#post_journey_actionmaps_estimates_jobs) | Query for estimates|
+|[**post_journey_actionmaps_estimates_jobs**](#post_journey_actionmaps_estimates_jobs) | Deprecated. Query for estimates|
 |[**post_journey_actiontemplates**](#post_journey_actiontemplates) | Create a single action template.|
 |[**post_journey_deployment_actionevent**](#post_journey_deployment_actionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user.|
 |[**post_journey_deployment_appevents**](#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
@@ -85,9 +85,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_externalevents_configurations**](#post_journey_externalevents_configurations) | Create an external events configuration.|
 |[**post_journey_externalevents_schemas**](#post_journey_externalevents_schemas) | Create a schema|
 |[**post_journey_flows_paths_query**](#post_journey_flows_paths_query) | Query for flow paths.|
-|[**post_journey_outcomes**](#post_journey_outcomes) | Create an outcome.|
-|[**post_journey_outcomes_attributions_jobs**](#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
-|[**post_journey_outcomes_predictors**](#post_journey_outcomes_predictors) | Create an outcome predictor.|
+|[**post_journey_outcomes**](#post_journey_outcomes) | Deprecated. Create an outcome.|
+|[**post_journey_outcomes_attributions_jobs**](#post_journey_outcomes_attributions_jobs) | Deprecated. Create Outcome Attributions|
+|[**post_journey_outcomes_predictors**](#post_journey_outcomes_predictors) | Deprecated. Create an outcome predictor.|
 |[**post_journey_segments**](#post_journey_segments) | Create a segment.|
 |[**post_journey_view_schedules**](#post_journey_view_schedules) | Add a new Schedule to a JourneyView|
 |[**post_journey_view_version_jobs**](#post_journey_view_version_jobs) | Submit a job request for a journey view version.|
@@ -343,8 +343,13 @@ void (empty response body)
 
 >  delete_journey_outcome(outcome_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Delete an outcome.
+Deprecated. Delete an outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps DELETE /api/v2/journey/outcomes/{outcomeId} 
 
@@ -368,7 +373,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 outcome_id = 'outcome_id_example' # str | ID of the outcome.
 
 try:
-    # Delete an outcome.
+    # Deprecated. Delete an outcome.
     api_instance.delete_journey_outcome(outcome_id)
 except ApiException as e:
     print("Exception when calling JourneyApi->delete_journey_outcome: %s\n" % e)
@@ -390,8 +395,13 @@ void (empty response body)
 
 >  delete_journey_outcomes_predictor(predictor_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Delete an outcome predictor.
+Deprecated. Delete an outcome predictor.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps DELETE /api/v2/journey/outcomes/predictors/{predictorId} 
 
@@ -415,7 +425,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 predictor_id = 'predictor_id_example' # str | ID of predictor
 
 try:
-    # Delete an outcome predictor.
+    # Deprecated. Delete an outcome predictor.
     api_instance.delete_journey_outcomes_predictor(predictor_id)
 except ApiException as e:
     print("Exception when calling JourneyApi->delete_journey_outcomes_predictor: %s\n" % e)
@@ -899,8 +909,13 @@ except ApiException as e:
 
 > str** get_journey_actionmaps_estimates_job(job_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get status of job.
+Deprecated. Get status of job.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId} 
 
@@ -924,7 +939,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 job_id = 'job_id_example' # str | ID of the job.
 
 try:
-    # Get status of job.
+    # Deprecated. Get status of job.
     api_response = api_instance.get_journey_actionmaps_estimates_job(job_id)
     pprint(api_response)
 except ApiException as e:
@@ -947,8 +962,13 @@ except ApiException as e:
 
 > [**ActionMapEstimateResult**](ActionMapEstimateResult) get_journey_actionmaps_estimates_job_results(job_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get estimates from completed job.
+Deprecated. Get estimates from completed job.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results 
 
@@ -972,7 +992,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 job_id = 'job_id_example' # str | ID of the job.
 
 try:
-    # Get estimates from completed job.
+    # Deprecated. Get estimates from completed job.
     api_response = api_instance.get_journey_actionmaps_estimates_job_results(job_id)
     pprint(api_response)
 except ApiException as e:
@@ -1681,8 +1701,13 @@ This endpoint does not need any parameters.
 
 > [**Outcome**](Outcome) get_journey_outcome(outcome_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve a single outcome.
+Deprecated. Retrieve a single outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps GET /api/v2/journey/outcomes/{outcomeId} 
 
@@ -1706,7 +1731,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 outcome_id = 'outcome_id_example' # str | ID of the outcome.
 
 try:
-    # Retrieve a single outcome.
+    # Deprecated. Retrieve a single outcome.
     api_response = api_instance.get_journey_outcome(outcome_id)
     pprint(api_response)
 except ApiException as e:
@@ -1729,8 +1754,13 @@ except ApiException as e:
 
 > [**OutcomeListing**](OutcomeListing) get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve all outcomes.
+Deprecated. Retrieve all outcomes.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps GET /api/v2/journey/outcomes 
 
@@ -1759,7 +1789,7 @@ query_fields = ['query_fields_example'] # list[str] | Outcome field(s) to query 
 query_value = 'query_value_example' # str | Value to query on using fuzzy matching. Requires 'queryFields' to also be set. (optional)
 
 try:
-    # Retrieve all outcomes.
+    # Deprecated. Retrieve all outcomes.
     api_response = api_instance.get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)
     pprint(api_response)
 except ApiException as e:
@@ -1787,8 +1817,13 @@ except ApiException as e:
 
 > [**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse) get_journey_outcomes_attributions_job(job_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get job status.
+Deprecated. Get job status.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 get_journey_outcomes_attributions_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -1814,7 +1849,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 job_id = 'job_id_example' # str | ID of the job.
 
 try:
-    # Get job status.
+    # Deprecated. Get job status.
     api_response = api_instance.get_journey_outcomes_attributions_job(job_id)
     pprint(api_response)
 except ApiException as e:
@@ -1837,8 +1872,13 @@ except ApiException as e:
 
 > [**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing) get_journey_outcomes_attributions_job_results(job_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Get outcome attribution entities from completed job.
+Deprecated. Get outcome attribution entities from completed job.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 get_journey_outcomes_attributions_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -1864,7 +1904,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 job_id = 'job_id_example' # str | ID of the job.
 
 try:
-    # Get outcome attribution entities from completed job.
+    # Deprecated. Get outcome attribution entities from completed job.
     api_response = api_instance.get_journey_outcomes_attributions_job_results(job_id)
     pprint(api_response)
 except ApiException as e:
@@ -1887,8 +1927,13 @@ except ApiException as e:
 
 > [**OutcomePredictor**](OutcomePredictor) get_journey_outcomes_predictor(predictor_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve a single outcome predictor.
+Deprecated. Retrieve a single outcome predictor.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps GET /api/v2/journey/outcomes/predictors/{predictorId} 
 
@@ -1912,7 +1957,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 predictor_id = 'predictor_id_example' # str | ID of predictor
 
 try:
-    # Retrieve a single outcome predictor.
+    # Deprecated. Retrieve a single outcome predictor.
     api_response = api_instance.get_journey_outcomes_predictor(predictor_id)
     pprint(api_response)
 except ApiException as e:
@@ -1935,8 +1980,13 @@ except ApiException as e:
 
 > [**OutcomePredictorListing**](OutcomePredictorListing) get_journey_outcomes_predictors()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve all outcome predictors.
+Deprecated. Retrieve all outcome predictors.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps GET /api/v2/journey/outcomes/predictors 
 
@@ -1959,7 +2009,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.JourneyApi()
 
 try:
-    # Retrieve all outcome predictors.
+    # Deprecated. Retrieve all outcome predictors.
     api_response = api_instance.get_journey_outcomes_predictors()
     pprint(api_response)
 except ApiException as e:
@@ -2190,8 +2240,13 @@ except ApiException as e:
 
 > [**OutcomeScoresResult**](OutcomeScoresResult) get_journey_session_outcomescores(session_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve latest outcome score associated with a session for all outcomes.
+Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps GET /api/v2/journey/sessions/{sessionId}/outcomescores 
 
@@ -2215,7 +2270,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 session_id = 'session_id_example' # str | ID of the session.
 
 try:
-    # Retrieve latest outcome score associated with a session for all outcomes.
+    # Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
     api_response = api_instance.get_journey_session_outcomescores(session_id)
     pprint(api_response)
 except ApiException as e:
@@ -3252,8 +3307,13 @@ except ApiException as e:
 
 > [**Outcome**](Outcome) patch_journey_outcome(outcome_id, body=body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Update an outcome.
+Deprecated. Update an outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps PATCH /api/v2/journey/outcomes/{outcomeId} 
 
@@ -3278,7 +3338,7 @@ outcome_id = 'outcome_id_example' # str | ID of the outcome.
 body = PureCloudPlatformClientV2.PatchOutcome() # PatchOutcome |  (optional)
 
 try:
-    # Update an outcome.
+    # Deprecated. Update an outcome.
     api_response = api_instance.patch_journey_outcome(outcome_id, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -3603,8 +3663,13 @@ except ApiException as e:
 
 > [**EstimateJobAsyncResponse**](EstimateJobAsyncResponse) post_journey_actionmaps_estimates_jobs(body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Query for estimates
+Deprecated. Query for estimates
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps POST /api/v2/journey/actionmaps/estimates/jobs 
 
@@ -3628,7 +3693,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 body = PureCloudPlatformClientV2.ActionMapEstimateRequest() # ActionMapEstimateRequest | audience estimator request
 
 try:
-    # Query for estimates
+    # Deprecated. Query for estimates
     api_response = api_instance.post_journey_actionmaps_estimates_jobs(body)
     pprint(api_response)
 except ApiException as e:
@@ -4030,8 +4095,13 @@ except ApiException as e:
 
 > [**Outcome**](Outcome) post_journey_outcomes(body=body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Create an outcome.
+Deprecated. Create an outcome.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps POST /api/v2/journey/outcomes 
 
@@ -4055,7 +4125,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 body = PureCloudPlatformClientV2.OutcomeRequest() # OutcomeRequest |  (optional)
 
 try:
-    # Create an outcome.
+    # Deprecated. Create an outcome.
     api_response = api_instance.post_journey_outcomes(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -4078,8 +4148,13 @@ except ApiException as e:
 
 > [**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse) post_journey_outcomes_attributions_jobs(body=body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Create Outcome Attributions
+Deprecated. Create Outcome Attributions
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 post_journey_outcomes_attributions_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
@@ -4105,7 +4180,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 body = PureCloudPlatformClientV2.OutcomeAttributionListing() # OutcomeAttributionListing | outcome attribution request (optional)
 
 try:
-    # Create Outcome Attributions
+    # Deprecated. Create Outcome Attributions
     api_response = api_instance.post_journey_outcomes_attributions_jobs(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -4128,8 +4203,13 @@ except ApiException as e:
 
 > [**OutcomePredictor**](OutcomePredictor) post_journey_outcomes_predictors(body=body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Create an outcome predictor.
+Deprecated. Create an outcome predictor.
+
+Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
 Wraps POST /api/v2/journey/outcomes/predictors 
 
@@ -4153,7 +4233,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 body = PureCloudPlatformClientV2.OutcomePredictorRequest() # OutcomePredictorRequest |  (optional)
 
 try:
-    # Create an outcome predictor.
+    # Deprecated. Create an outcome predictor.
     api_response = api_instance.post_journey_outcomes_predictors(body=body)
     pprint(api_response)
 except ApiException as e:
@@ -4624,4 +4704,4 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_
