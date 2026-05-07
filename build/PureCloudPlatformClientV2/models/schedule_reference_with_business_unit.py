@@ -71,7 +71,7 @@ class ScheduleReferenceWithBusinessUnit(object):
     def id(self) -> str:
         """
         Gets the id of this ScheduleReferenceWithBusinessUnit.
-        The unique identifier of the schedule
+        The globally unique identifier for the object.
 
         :return: The id of this ScheduleReferenceWithBusinessUnit.
         :rtype: str
@@ -82,7 +82,7 @@ class ScheduleReferenceWithBusinessUnit(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this ScheduleReferenceWithBusinessUnit.
-        The unique identifier of the schedule
+        The globally unique identifier for the object.
 
         :param id: The id of this ScheduleReferenceWithBusinessUnit.
         :type: str

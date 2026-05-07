@@ -423,7 +423,7 @@ class Session(object):
     def outcome_achievements(self) -> List['OutcomeAchievement']:
         """
         Gets the outcome_achievements of this Session.
-        List of the outcome achievements by the customer in this session.
+        Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         :return: The outcome_achievements of this Session.
         :rtype: list[OutcomeAchievement]
@@ -434,7 +434,7 @@ class Session(object):
     def outcome_achievements(self, outcome_achievements: List['OutcomeAchievement']) -> None:
         """
         Sets the outcome_achievements of this Session.
-        List of the outcome achievements by the customer in this session.
+        Deprecated. List of the outcome achievements by the customer in this session. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         :param outcome_achievements: The outcome_achievements of this Session.
         :type: list[OutcomeAchievement]

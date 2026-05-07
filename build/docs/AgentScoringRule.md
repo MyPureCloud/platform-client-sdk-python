@@ -15,10 +15,11 @@
 | **enabled** | bool | Whether the rule is enabled. | |
 | **published** | bool | Whether the rule is published. | [optional] |
 | **evaluator** | [AddressableEntityRef](AddressableEntityRef) | The evaluator for evaluations created by this rule. | [optional] |
+| **agent_to_score** | str | Which agent(s) to score. Valid values: First, Last, Each. | [optional] |
 | **date_created** | datetime | Date when the rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **date_modified** | datetime | Date when the rule was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

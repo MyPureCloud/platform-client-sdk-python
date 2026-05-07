@@ -86,7 +86,9 @@ class Message(object):
             'agent_assistant_id': 'str',
             'byo_sms_integration_id': 'str',
             'queue_media_settings': 'ConversationQueueMediaSettings',
-            'engagement_source': 'str'
+            'engagement_source': 'str',
+            'resume_time': 'datetime',
+            'park_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -120,7 +122,9 @@ class Message(object):
             'agent_assistant_id': 'agentAssistantId',
             'byo_sms_integration_id': 'byoSmsIntegrationId',
             'queue_media_settings': 'queueMediaSettings',
-            'engagement_source': 'engagementSource'
+            'engagement_source': 'engagementSource',
+            'resume_time': 'resumeTime',
+            'park_time': 'parkTime'
         }
 
         self._state = None
@@ -154,6 +158,8 @@ class Message(object):
         self._byo_sms_integration_id = None
         self._queue_media_settings = None
         self._engagement_source = None
+        self._resume_time = None
+        self._park_time = None
 
     @property
     def state(self) -> str:
@@ -928,6 +934,54 @@ class Message(object):
             self._engagement_source = "outdated_sdk_version"
         else:
             self._engagement_source = engagement_source
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this Message.
+        Represents the time when a parked message will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The resume_time of this Message.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this Message.
+        Represents the time when a parked message will resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param resume_time: The resume_time of this Message.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this Message.
+        Represents the time when an message was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The park_time of this Message.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this Message.
+        Represents the time when an message was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param park_time: The park_time of this Message.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     def to_dict(self):
         """

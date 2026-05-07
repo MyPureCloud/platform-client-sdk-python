@@ -81,7 +81,7 @@ class LocalizedLabels(object):
         """
         if isinstance(key, int):
             key = str(key)
-        allowed_values = ["MessengerHomeHeaderTitle", "MessengerHomeHeaderSubTitle", "PushNotificationTitle", "PushNotificationBody"]
+        allowed_values = ["MessengerHomeHeaderTitle", "MessengerHomeHeaderSubTitle", "PushNotificationTitle", "PushNotificationBody", "MessengerLauncherButtonText"]
         if key.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for key -> " + key)
             self._key = "outdated_sdk_version"

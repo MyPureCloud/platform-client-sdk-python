@@ -3513,7 +3513,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_workforcemanagement_businessunit_activityplan_runs_job(self, business_unit_id: str, activity_plan_id: str, job_id: str, **kwargs) -> 'ActivityPlanRunJobResponse':
+    def get_workforcemanagement_businessunit_activityplan_runs_job(self, business_unit_id: str, activity_plan_id: str, job_id: str, **kwargs) -> 'ActivityPlanJobResponse':
         """
         Gets an activity plan run job
         
@@ -3531,7 +3531,7 @@ class WorkforceManagementApi(object):
         :param str business_unit_id: The ID of the business unit (required)
         :param str activity_plan_id: The ID of the activity plan associated with the run job (required)
         :param str job_id: The ID of the activity plan run job (required)
-        :return: ActivityPlanRunJobResponse
+        :return: ActivityPlanJobResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3598,7 +3598,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ActivityPlanRunJobResponse',
+                                            response_type='ActivityPlanJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -16993,7 +16993,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_workforcemanagement_businessunit_activityplan_runs_jobs(self, business_unit_id: str, activity_plan_id: str, **kwargs) -> 'ActivityPlanJobResponse':
+    def post_workforcemanagement_businessunit_activityplan_runs_jobs(self, business_unit_id: str, activity_plan_id: str, **kwargs) -> 'ActivityPlanRunJobResponse':
         """
         Run an activity plan manually
         Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
@@ -17010,7 +17010,7 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str activity_plan_id: The ID of the activity plan to run (required)
-        :return: ActivityPlanJobResponse
+        :return: ActivityPlanRunJobResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17072,7 +17072,7 @@ class WorkforceManagementApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ActivityPlanJobResponse',
+                                            response_type='ActivityPlanRunJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

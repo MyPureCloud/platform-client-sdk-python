@@ -50,17 +50,20 @@ class ReportingTurnIntent(object):
         """
         self.swagger_types = {
             'name': 'str',
+            'id': 'str',
             'confidence': 'float',
             'slots': 'list[ReportingTurnIntentSlot]'
         }
 
         self.attribute_map = {
             'name': 'name',
+            'id': 'id',
             'confidence': 'confidence',
             'slots': 'slots'
         }
 
         self._name = None
+        self._id = None
         self._confidence = None
         self._slots = None
 
@@ -87,6 +90,30 @@ class ReportingTurnIntent(object):
         
 
         self._name = name
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ReportingTurnIntent.
+        The ID of the intent detected during this reporting turn.
+
+        :return: The id of this ReportingTurnIntent.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ReportingTurnIntent.
+        The ID of the intent detected during this reporting turn.
+
+        :param id: The id of this ReportingTurnIntent.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def confidence(self) -> float:

@@ -50,20 +50,23 @@ class KnowledgeRetrievedReference(object):
             'confidence': 'float',
             'text': 'str',
             'file_name': 'str',
-            'url': 'str'
+            'url': 'str',
+            'used_for_generation': 'bool'
         }
 
         self.attribute_map = {
             'confidence': 'confidence',
             'text': 'text',
             'file_name': 'fileName',
-            'url': 'url'
+            'url': 'url',
+            'used_for_generation': 'usedForGeneration'
         }
 
         self._confidence = None
         self._text = None
         self._file_name = None
         self._url = None
+        self._used_for_generation = None
 
     @property
     def confidence(self) -> float:
@@ -160,6 +163,30 @@ class KnowledgeRetrievedReference(object):
         
 
         self._url = url
+
+    @property
+    def used_for_generation(self) -> bool:
+        """
+        Gets the used_for_generation of this KnowledgeRetrievedReference.
+        Indicates whether a retrieved reference is used for answer generation
+
+        :return: The used_for_generation of this KnowledgeRetrievedReference.
+        :rtype: bool
+        """
+        return self._used_for_generation
+
+    @used_for_generation.setter
+    def used_for_generation(self, used_for_generation: bool) -> None:
+        """
+        Sets the used_for_generation of this KnowledgeRetrievedReference.
+        Indicates whether a retrieved reference is used for answer generation
+
+        :param used_for_generation: The used_for_generation of this KnowledgeRetrievedReference.
+        :type: bool
+        """
+        
+
+        self._used_for_generation = used_for_generation
 
     def to_dict(self):
         """

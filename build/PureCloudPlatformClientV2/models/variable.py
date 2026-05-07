@@ -31,8 +31,6 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
-if TYPE_CHECKING:
-    from . import VariableValidation
 
 class Variable(object):
     """
@@ -53,7 +51,9 @@ class Variable(object):
             'type': 'str',
             'scope': 'str',
             'description': 'str',
-            'validation': 'VariableValidation'
+            'validation': 'object',
+            'list_values': 'object',
+            'list_variables': 'list[Variable]'
         }
 
         self.attribute_map = {
@@ -61,7 +61,9 @@ class Variable(object):
             'type': 'type',
             'scope': 'scope',
             'description': 'description',
-            'validation': 'validation'
+            'validation': 'validation',
+            'list_values': 'listValues',
+            'list_variables': 'listVariables'
         }
 
         self._name = None
@@ -69,6 +71,8 @@ class Variable(object):
         self._scope = None
         self._description = None
         self._validation = None
+        self._list_values = None
+        self._list_variables = None
 
     @property
     def name(self) -> str:
@@ -116,7 +120,7 @@ class Variable(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["String", "Integer", "Number", "Boolean", "Date"]
+        allowed_values = ["String", "Integer", "Number", "Boolean", "Date", "List"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -177,28 +181,76 @@ class Variable(object):
         self._description = description
 
     @property
-    def validation(self) -> 'VariableValidation':
+    def validation(self) -> 'object':
         """
         Gets the validation of this Variable.
         The validation configuration for the variable. Optional - if not present, no validation is applied.
 
         :return: The validation of this Variable.
-        :rtype: VariableValidation
+        :rtype: object
         """
         return self._validation
 
     @validation.setter
-    def validation(self, validation: 'VariableValidation') -> None:
+    def validation(self, validation: 'object') -> None:
         """
         Sets the validation of this Variable.
         The validation configuration for the variable. Optional - if not present, no validation is applied.
 
         :param validation: The validation of this Variable.
-        :type: VariableValidation
+        :type: object
         """
         
 
         self._validation = validation
+
+    @property
+    def list_values(self) -> 'object':
+        """
+        Gets the list_values of this Variable.
+        The values configuration for List variables. Only applicable when type is 'List'.
+
+        :return: The list_values of this Variable.
+        :rtype: object
+        """
+        return self._list_values
+
+    @list_values.setter
+    def list_values(self, list_values: 'object') -> None:
+        """
+        Sets the list_values of this Variable.
+        The values configuration for List variables. Only applicable when type is 'List'.
+
+        :param list_values: The list_values of this Variable.
+        :type: object
+        """
+        
+
+        self._list_values = list_values
+
+    @property
+    def list_variables(self) -> List['Variable']:
+        """
+        Gets the list_variables of this Variable.
+        The variables that the list result will be stored in. Only applicable when type is 'List'.
+
+        :return: The list_variables of this Variable.
+        :rtype: list[Variable]
+        """
+        return self._list_variables
+
+    @list_variables.setter
+    def list_variables(self, list_variables: List['Variable']) -> None:
+        """
+        Sets the list_variables of this Variable.
+        The variables that the list result will be stored in. Only applicable when type is 'List'.
+
+        :param list_variables: The list_variables of this Variable.
+        :type: list[Variable]
+        """
+        
+
+        self._list_variables = list_variables
 
     def to_dict(self):
         """

@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import HistoricalData
     from . import ModelData
     from . import ModelMetaData
+    from . import OutlierData
 
 class SessionMetricData(object):
     """
@@ -55,20 +56,23 @@ class SessionMetricData(object):
             'model': 'ModelData',
             'computed': 'ComputedData',
             'historical': 'HistoricalData',
-            'model_meta_data': 'ModelMetaData'
+            'model_meta_data': 'ModelMetaData',
+            'outliers': 'OutlierData'
         }
 
         self.attribute_map = {
             'model': 'model',
             'computed': 'computed',
             'historical': 'historical',
-            'model_meta_data': 'modelMetaData'
+            'model_meta_data': 'modelMetaData',
+            'outliers': 'outliers'
         }
 
         self._model = None
         self._computed = None
         self._historical = None
         self._model_meta_data = None
+        self._outliers = None
 
     @property
     def model(self) -> 'ModelData':
@@ -146,7 +150,7 @@ class SessionMetricData(object):
     def model_meta_data(self) -> 'ModelMetaData':
         """
         Gets the model_meta_data of this SessionMetricData.
-        Contains forecast meta data
+        Contains forecast metadata
 
         :return: The model_meta_data of this SessionMetricData.
         :rtype: ModelMetaData
@@ -157,7 +161,7 @@ class SessionMetricData(object):
     def model_meta_data(self, model_meta_data: 'ModelMetaData') -> None:
         """
         Sets the model_meta_data of this SessionMetricData.
-        Contains forecast meta data
+        Contains forecast metadata
 
         :param model_meta_data: The model_meta_data of this SessionMetricData.
         :type: ModelMetaData
@@ -165,6 +169,30 @@ class SessionMetricData(object):
         
 
         self._model_meta_data = model_meta_data
+
+    @property
+    def outliers(self) -> 'OutlierData':
+        """
+        Gets the outliers of this SessionMetricData.
+        Contains forecast outlier data
+
+        :return: The outliers of this SessionMetricData.
+        :rtype: OutlierData
+        """
+        return self._outliers
+
+    @outliers.setter
+    def outliers(self, outliers: 'OutlierData') -> None:
+        """
+        Sets the outliers of this SessionMetricData.
+        Contains forecast outlier data
+
+        :param outliers: The outliers of this SessionMetricData.
+        :type: OutlierData
+        """
+        
+
+        self._outliers = outliers
 
     def to_dict(self):
         """

@@ -56,6 +56,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'other_media_uris': 'list[str]',
             'address': 'str',
             'utilization_label_id': 'str',
+            'access_attributes': 'list[str]',
             'inactivity_timeout': 'datetime',
             'divisions': 'list[QueueConversationCallEventTopicConversationDivisionMembership]',
             'recording_state': 'str',
@@ -70,6 +71,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
             'utilization_label_id': 'utilizationLabelId',
+            'access_attributes': 'accessAttributes',
             'inactivity_timeout': 'inactivityTimeout',
             'divisions': 'divisions',
             'recording_state': 'recordingState',
@@ -83,6 +85,7 @@ class QueueConversationCallEventTopicCallConversation(object):
         self._other_media_uris = None
         self._address = None
         self._utilization_label_id = None
+        self._access_attributes = None
         self._inactivity_timeout = None
         self._divisions = None
         self._recording_state = None
@@ -232,6 +235,30 @@ class QueueConversationCallEventTopicCallConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def access_attributes(self) -> List[str]:
+        """
+        Gets the access_attributes of this QueueConversationCallEventTopicCallConversation.
+
+
+        :return: The access_attributes of this QueueConversationCallEventTopicCallConversation.
+        :rtype: list[str]
+        """
+        return self._access_attributes
+
+    @access_attributes.setter
+    def access_attributes(self, access_attributes: List[str]) -> None:
+        """
+        Sets the access_attributes of this QueueConversationCallEventTopicCallConversation.
+
+
+        :param access_attributes: The access_attributes of this QueueConversationCallEventTopicCallConversation.
+        :type: list[str]
+        """
+        
+
+        self._access_attributes = access_attributes
 
     @property
     def inactivity_timeout(self) -> datetime:

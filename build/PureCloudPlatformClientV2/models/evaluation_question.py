@@ -62,6 +62,7 @@ class EvaluationQuestion(object):
             'answer_options': 'list[AnswerOption]',
             'multiple_select_option_questions': 'list[EvaluationQuestion]',
             'default_answer': 'DefaultAnswer',
+            'automated_scoring_focus': 'str',
             'is_kill': 'bool',
             'is_critical': 'bool'
         }
@@ -78,6 +79,7 @@ class EvaluationQuestion(object):
             'answer_options': 'answerOptions',
             'multiple_select_option_questions': 'multipleSelectOptionQuestions',
             'default_answer': 'defaultAnswer',
+            'automated_scoring_focus': 'automatedScoringFocus',
             'is_kill': 'isKill',
             'is_critical': 'isCritical'
         }
@@ -93,6 +95,7 @@ class EvaluationQuestion(object):
         self._answer_options = None
         self._multiple_select_option_questions = None
         self._default_answer = None
+        self._automated_scoring_focus = None
         self._is_kill = None
         self._is_critical = None
 
@@ -364,6 +367,35 @@ class EvaluationQuestion(object):
         
 
         self._default_answer = default_answer
+
+    @property
+    def automated_scoring_focus(self) -> str:
+        """
+        Gets the automated_scoring_focus of this EvaluationQuestion.
+        Focus setting for automated scoring
+
+        :return: The automated_scoring_focus of this EvaluationQuestion.
+        :rtype: str
+        """
+        return self._automated_scoring_focus
+
+    @automated_scoring_focus.setter
+    def automated_scoring_focus(self, automated_scoring_focus: str) -> None:
+        """
+        Sets the automated_scoring_focus of this EvaluationQuestion.
+        Focus setting for automated scoring
+
+        :param automated_scoring_focus: The automated_scoring_focus of this EvaluationQuestion.
+        :type: str
+        """
+        if isinstance(automated_scoring_focus, int):
+            automated_scoring_focus = str(automated_scoring_focus)
+        allowed_values = ["FullInteraction", "EvaluatedAgent"]
+        if automated_scoring_focus.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for automated_scoring_focus -> " + automated_scoring_focus)
+            self._automated_scoring_focus = "outdated_sdk_version"
+        else:
+            self._automated_scoring_focus = automated_scoring_focus
 
     @property
     def is_kill(self) -> bool:

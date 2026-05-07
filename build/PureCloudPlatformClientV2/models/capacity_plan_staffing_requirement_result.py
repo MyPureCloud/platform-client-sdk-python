@@ -162,7 +162,7 @@ class CapacityPlanStaffingRequirementResult(object):
     def reference_business_unit_date(self) -> date:
         """
         Gets the reference_business_unit_date of this CapacityPlanStaffingRequirementResult.
-        The reference date for interval-based data for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        The reference date for interval-based data relative to the business unit time zone for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :return: The reference_business_unit_date of this CapacityPlanStaffingRequirementResult.
         :rtype: date
@@ -173,7 +173,7 @@ class CapacityPlanStaffingRequirementResult(object):
     def reference_business_unit_date(self, reference_business_unit_date: date) -> None:
         """
         Sets the reference_business_unit_date of this CapacityPlanStaffingRequirementResult.
-        The reference date for interval-based data for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        The reference date for interval-based data relative to the business unit time zone for the requirements. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :param reference_business_unit_date: The reference_business_unit_date of this CapacityPlanStaffingRequirementResult.
         :type: date

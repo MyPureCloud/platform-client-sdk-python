@@ -47,13 +47,38 @@ class SetWhatsAppIntegrationActionSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'whats_app_integration_id': 'str'
         }
 
         self.attribute_map = {
-            
+            'whats_app_integration_id': 'whatsAppIntegrationId'
         }
 
+        self._whats_app_integration_id = None
+
+    @property
+    def whats_app_integration_id(self) -> str:
+        """
+        Gets the whats_app_integration_id of this SetWhatsAppIntegrationActionSettings.
+        The ID of the WhatsApp integration.
+
+        :return: The whats_app_integration_id of this SetWhatsAppIntegrationActionSettings.
+        :rtype: str
+        """
+        return self._whats_app_integration_id
+
+    @whats_app_integration_id.setter
+    def whats_app_integration_id(self, whats_app_integration_id: str) -> None:
+        """
+        Sets the whats_app_integration_id of this SetWhatsAppIntegrationActionSettings.
+        The ID of the WhatsApp integration.
+
+        :param whats_app_integration_id: The whats_app_integration_id of this SetWhatsAppIntegrationActionSettings.
+        :type: str
+        """
+        
+
+        self._whats_app_integration_id = whats_app_integration_id
 
     def to_dict(self):
         """

@@ -81,6 +81,7 @@
 | **self_served** | bool | Indicates whether all flow sessions were self serviced | [optional] |
 | **session_dnis** | str | Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred | [optional] |
 | **session_id** | str | The unique identifier of this session | [optional] |
+| **skill_expression_id** | str | Unique identifier for the skill requested for an interaction | [optional] |
 | **station_id** | str | Unique identifier for a phone | [optional] |
 | **team_id** | str | The team ID the user is a member of | [optional] |
 | **used_routing** | str | Complete routing method | [optional] |
@@ -93,4 +94,4 @@
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

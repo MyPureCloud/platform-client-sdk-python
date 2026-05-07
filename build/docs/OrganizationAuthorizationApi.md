@@ -2455,4 +2455,4 @@ except ApiException as e:
 [**TrustUser**](TrustUser)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

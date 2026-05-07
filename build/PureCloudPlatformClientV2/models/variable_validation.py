@@ -47,38 +47,13 @@ class VariableValidation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'additional_properties': 'dict(str, object)'
+            
         }
 
         self.attribute_map = {
-            'additional_properties': 'additionalProperties'
+            
         }
 
-        self._additional_properties = None
-
-    @property
-    def additional_properties(self) -> Dict[str, object]:
-        """
-        Gets the additional_properties of this VariableValidation.
-
-
-        :return: The additional_properties of this VariableValidation.
-        :rtype: dict(str, object)
-        """
-        return self._additional_properties
-
-    @additional_properties.setter
-    def additional_properties(self, additional_properties: Dict[str, object]) -> None:
-        """
-        Sets the additional_properties of this VariableValidation.
-
-
-        :param additional_properties: The additional_properties of this VariableValidation.
-        :type: dict(str, object)
-        """
-        
-
-        self._additional_properties = additional_properties
 
     def to_dict(self):
         """

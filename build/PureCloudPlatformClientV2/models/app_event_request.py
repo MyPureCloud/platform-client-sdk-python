@@ -63,6 +63,7 @@ class AppEventRequest(object):
             'search_query': 'str',
             'attributes': 'dict(str, CustomEventAttribute)',
             'traits': 'dict(str, CustomEventAttribute)',
+            'external_id': 'str',
             'customer_cookie_id': 'str',
             'created_date': 'datetime'
         }
@@ -78,6 +79,7 @@ class AppEventRequest(object):
             'search_query': 'searchQuery',
             'attributes': 'attributes',
             'traits': 'traits',
+            'external_id': 'externalId',
             'customer_cookie_id': 'customerCookieId',
             'created_date': 'createdDate'
         }
@@ -92,6 +94,7 @@ class AppEventRequest(object):
         self._search_query = None
         self._attributes = None
         self._traits = None
+        self._external_id = None
         self._customer_cookie_id = None
         self._created_date = None
 
@@ -334,6 +337,30 @@ class AppEventRequest(object):
         
 
         self._traits = traits
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this AppEventRequest.
+        An external identifier for the customer.
+
+        :return: The external_id of this AppEventRequest.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this AppEventRequest.
+        An external identifier for the customer.
+
+        :param external_id: The external_id of this AppEventRequest.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def customer_cookie_id(self) -> str:

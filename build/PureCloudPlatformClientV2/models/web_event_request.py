@@ -63,6 +63,7 @@ class WebEventRequest(object):
             'referrer_url': 'str',
             'attributes': 'dict(str, CustomEventAttribute)',
             'traits': 'dict(str, CustomEventAttribute)',
+            'external_id': 'str',
             'created_date': 'datetime'
         }
 
@@ -78,6 +79,7 @@ class WebEventRequest(object):
             'referrer_url': 'referrerUrl',
             'attributes': 'attributes',
             'traits': 'traits',
+            'external_id': 'externalId',
             'created_date': 'createdDate'
         }
 
@@ -92,6 +94,7 @@ class WebEventRequest(object):
         self._referrer_url = None
         self._attributes = None
         self._traits = None
+        self._external_id = None
         self._created_date = None
 
     @property
@@ -357,6 +360,30 @@ class WebEventRequest(object):
         
 
         self._traits = traits
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this WebEventRequest.
+        An external identifier for the customer.
+
+        :return: The external_id of this WebEventRequest.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this WebEventRequest.
+        An external identifier for the customer.
+
+        :param external_id: The external_id of this WebEventRequest.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def created_date(self) -> datetime:

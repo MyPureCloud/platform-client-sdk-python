@@ -41,6 +41,7 @@ if TYPE_CHECKING:
     from . import ConversationContentInteractiveApplication
     from . import ConversationContentListPicker
     from . import ConversationContentLocation
+    from . import ConversationContentNotificationResponse
     from . import ConversationContentNotificationTemplate
     from . import ConversationContentPaymentRequest
     from . import ConversationContentPaymentResponse
@@ -84,7 +85,8 @@ class ConversationMessageContent(object):
             'payment_request': 'ConversationContentPaymentRequest',
             'payment_response': 'ConversationContentPaymentResponse',
             'push': 'ConversationContentPush',
-            'form': 'ConversationContentForm'
+            'form': 'ConversationContentForm',
+            'notification_response': 'ConversationContentNotificationResponse'
         }
 
         self.attribute_map = {
@@ -106,7 +108,8 @@ class ConversationMessageContent(object):
             'payment_request': 'paymentRequest',
             'payment_response': 'paymentResponse',
             'push': 'push',
-            'form': 'form'
+            'form': 'form',
+            'notification_response': 'notificationResponse'
         }
 
         self._content_type = None
@@ -128,6 +131,7 @@ class ConversationMessageContent(object):
         self._payment_response = None
         self._push = None
         self._form = None
+        self._notification_response = None
 
     @property
     def content_type(self) -> str:
@@ -151,7 +155,7 @@ class ConversationMessageContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Reactions", "Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker", "InteractiveApplication", "ListPicker", "PaymentRequest", "PaymentResponse", "Push", "Form", "RoadsideAssistance", "RichLink", "Unknown"]
+        allowed_values = ["Reactions", "Attachment", "Location", "QuickReply", "Notification", "ButtonResponse", "Story", "Mention", "Card", "Carousel", "Text", "QuickReplyV2", "DatePicker", "InteractiveApplication", "ListPicker", "PaymentRequest", "PaymentResponse", "Push", "Form", "RoadsideAssistance", "RichLink", "NotificationResponse", "Unknown"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -589,6 +593,30 @@ class ConversationMessageContent(object):
         
 
         self._form = form
+
+    @property
+    def notification_response(self) -> 'ConversationContentNotificationResponse':
+        """
+        Gets the notification_response of this ConversationMessageContent.
+        Notification response content, e.g. an Apple Invitation acceptance.
+
+        :return: The notification_response of this ConversationMessageContent.
+        :rtype: ConversationContentNotificationResponse
+        """
+        return self._notification_response
+
+    @notification_response.setter
+    def notification_response(self, notification_response: 'ConversationContentNotificationResponse') -> None:
+        """
+        Sets the notification_response of this ConversationMessageContent.
+        Notification response content, e.g. an Apple Invitation acceptance.
+
+        :param notification_response: The notification_response of this ConversationMessageContent.
+        :type: ConversationContentNotificationResponse
+        """
+        
+
+        self._notification_response = notification_response
 
     def to_dict(self):
         """

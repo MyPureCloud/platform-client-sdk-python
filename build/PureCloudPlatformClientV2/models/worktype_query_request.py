@@ -55,6 +55,7 @@ class WorktypeQueryRequest(object):
             'filters': 'list[WorkitemFilter]',
             'attributes': 'list[str]',
             'after': 'str',
+            'expands': 'str',
             'sort': 'WorktypeQuerySort'
         }
 
@@ -64,6 +65,7 @@ class WorktypeQueryRequest(object):
             'filters': 'filters',
             'attributes': 'attributes',
             'after': 'after',
+            'expands': 'expands',
             'sort': 'sort'
         }
 
@@ -72,6 +74,7 @@ class WorktypeQueryRequest(object):
         self._filters = None
         self._attributes = None
         self._after = None
+        self._expands = None
         self._sort = None
 
     @property
@@ -198,6 +201,35 @@ class WorktypeQueryRequest(object):
         
 
         self._after = after
+
+    @property
+    def expands(self) -> str:
+        """
+        Gets the expands of this WorktypeQueryRequest.
+        List of entity attributes to be expanded in the result.
+
+        :return: The expands of this WorktypeQueryRequest.
+        :rtype: str
+        """
+        return self._expands
+
+    @expands.setter
+    def expands(self, expands: str) -> None:
+        """
+        Sets the expands of this WorktypeQueryRequest.
+        List of entity attributes to be expanded in the result.
+
+        :param expands: The expands of this WorktypeQueryRequest.
+        :type: str
+        """
+        if isinstance(expands, int):
+            expands = str(expands)
+        allowed_values = ["schema"]
+        if expands.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for expands -> " + expands)
+            self._expands = "outdated_sdk_version"
+        else:
+            self._expands = expands
 
     @property
     def sort(self) -> 'WorktypeQuerySort':

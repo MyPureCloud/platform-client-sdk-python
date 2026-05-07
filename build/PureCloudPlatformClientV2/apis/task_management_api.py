@@ -6193,7 +6193,7 @@ class TaskManagementApi(object):
     def post_taskmanagement_worktypes_query(self, body: 'WorktypeQueryRequest', **kwargs) -> 'WorktypeQueryEntityListing':
         """
         Query for worktypes
-        
+        Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

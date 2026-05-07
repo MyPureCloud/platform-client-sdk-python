@@ -50,20 +50,26 @@ class LastResultByColumnConditionSettings(object):
             'email_column_name': 'str',
             'email_wrapup_codes': 'list[str]',
             'sms_column_name': 'str',
-            'sms_wrapup_codes': 'list[str]'
+            'sms_wrapup_codes': 'list[str]',
+            'whats_app_column_name': 'str',
+            'whats_app_wrapup_codes': 'list[str]'
         }
 
         self.attribute_map = {
             'email_column_name': 'emailColumnName',
             'email_wrapup_codes': 'emailWrapupCodes',
             'sms_column_name': 'smsColumnName',
-            'sms_wrapup_codes': 'smsWrapupCodes'
+            'sms_wrapup_codes': 'smsWrapupCodes',
+            'whats_app_column_name': 'whatsAppColumnName',
+            'whats_app_wrapup_codes': 'whatsAppWrapupCodes'
         }
 
         self._email_column_name = None
         self._email_wrapup_codes = None
         self._sms_column_name = None
         self._sms_wrapup_codes = None
+        self._whats_app_column_name = None
+        self._whats_app_wrapup_codes = None
 
     @property
     def email_column_name(self) -> str:
@@ -160,6 +166,54 @@ class LastResultByColumnConditionSettings(object):
         
 
         self._sms_wrapup_codes = sms_wrapup_codes
+
+    @property
+    def whats_app_column_name(self) -> str:
+        """
+        Gets the whats_app_column_name of this LastResultByColumnConditionSettings.
+        The name of the contact column to evaluate for WhatsApp.
+
+        :return: The whats_app_column_name of this LastResultByColumnConditionSettings.
+        :rtype: str
+        """
+        return self._whats_app_column_name
+
+    @whats_app_column_name.setter
+    def whats_app_column_name(self, whats_app_column_name: str) -> None:
+        """
+        Sets the whats_app_column_name of this LastResultByColumnConditionSettings.
+        The name of the contact column to evaluate for WhatsApp.
+
+        :param whats_app_column_name: The whats_app_column_name of this LastResultByColumnConditionSettings.
+        :type: str
+        """
+        
+
+        self._whats_app_column_name = whats_app_column_name
+
+    @property
+    def whats_app_wrapup_codes(self) -> List[str]:
+        """
+        Gets the whats_app_wrapup_codes of this LastResultByColumnConditionSettings.
+        A list of wrapup code identifiers to match for WhatsApp.
+
+        :return: The whats_app_wrapup_codes of this LastResultByColumnConditionSettings.
+        :rtype: list[str]
+        """
+        return self._whats_app_wrapup_codes
+
+    @whats_app_wrapup_codes.setter
+    def whats_app_wrapup_codes(self, whats_app_wrapup_codes: List[str]) -> None:
+        """
+        Sets the whats_app_wrapup_codes of this LastResultByColumnConditionSettings.
+        A list of wrapup code identifiers to match for WhatsApp.
+
+        :param whats_app_wrapup_codes: The whats_app_wrapup_codes of this LastResultByColumnConditionSettings.
+        :type: list[str]
+        """
+        
+
+        self._whats_app_wrapup_codes = whats_app_wrapup_codes
 
     def to_dict(self):
         """

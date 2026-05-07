@@ -48,16 +48,19 @@ class SetContentTemplateActionSettings(object):
         """
         self.swagger_types = {
             'sms_content_template_id': 'str',
-            'email_content_template_id': 'str'
+            'email_content_template_id': 'str',
+            'whats_app_content_template_id': 'str'
         }
 
         self.attribute_map = {
             'sms_content_template_id': 'smsContentTemplateId',
-            'email_content_template_id': 'emailContentTemplateId'
+            'email_content_template_id': 'emailContentTemplateId',
+            'whats_app_content_template_id': 'whatsAppContentTemplateId'
         }
 
         self._sms_content_template_id = None
         self._email_content_template_id = None
+        self._whats_app_content_template_id = None
 
     @property
     def sms_content_template_id(self) -> str:
@@ -106,6 +109,30 @@ class SetContentTemplateActionSettings(object):
         
 
         self._email_content_template_id = email_content_template_id
+
+    @property
+    def whats_app_content_template_id(self) -> str:
+        """
+        Gets the whats_app_content_template_id of this SetContentTemplateActionSettings.
+        A string containing the WhatsApp contentTemplateId.
+
+        :return: The whats_app_content_template_id of this SetContentTemplateActionSettings.
+        :rtype: str
+        """
+        return self._whats_app_content_template_id
+
+    @whats_app_content_template_id.setter
+    def whats_app_content_template_id(self, whats_app_content_template_id: str) -> None:
+        """
+        Sets the whats_app_content_template_id of this SetContentTemplateActionSettings.
+        A string containing the WhatsApp contentTemplateId.
+
+        :param whats_app_content_template_id: The whats_app_content_template_id of this SetContentTemplateActionSettings.
+        :type: str
+        """
+        
+
+        self._whats_app_content_template_id = whats_app_content_template_id
 
     def to_dict(self):
         """

@@ -81,7 +81,7 @@ class AgentStateAgentQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["activeQueueId", "assignedSkillId", "assignedLanguageId", "divisionId", "userId", "managerId", "systemPresence", "organizationPresenceId", "routingStatus", "isOutOfOffice", "online"]
+        allowed_values = ["activeQueueId", "inactiveQueueId", "queueId", "assignedSkillId", "assignedLanguageId", "divisionId", "userId", "managerId", "systemPresence", "organizationPresenceId", "routingStatus", "isOutOfOffice", "online", "teamId", "managementUnitId", "businessUnitId", "adherenceState", "adherenceImpact", "scheduledActivityCodeId", "scheduledActivityCategory", "actualActivityCategory"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

@@ -64,6 +64,7 @@ class ADFS(object):
             'provider_name': 'str',
             'display_on_login': 'bool',
             'metadata_url': 'str',
+            'force_authn': 'bool',
             'self_uri': 'str'
         }
 
@@ -85,6 +86,7 @@ class ADFS(object):
             'provider_name': 'providerName',
             'display_on_login': 'displayOnLogin',
             'metadata_url': 'metadataURL',
+            'force_authn': 'forceAuthn',
             'self_uri': 'selfUri'
         }
 
@@ -105,6 +107,7 @@ class ADFS(object):
         self._provider_name = None
         self._display_on_login = None
         self._metadata_url = None
+        self._force_authn = None
         self._self_uri = None
 
     @property
@@ -524,6 +527,30 @@ class ADFS(object):
         
 
         self._metadata_url = metadata_url
+
+    @property
+    def force_authn(self) -> bool:
+        """
+        Gets the force_authn of this ADFS.
+
+
+        :return: The force_authn of this ADFS.
+        :rtype: bool
+        """
+        return self._force_authn
+
+    @force_authn.setter
+    def force_authn(self, force_authn: bool) -> None:
+        """
+        Sets the force_authn of this ADFS.
+
+
+        :param force_authn: The force_authn of this ADFS.
+        :type: bool
+        """
+        
+
+        self._force_authn = force_authn
 
     @property
     def self_uri(self) -> str:

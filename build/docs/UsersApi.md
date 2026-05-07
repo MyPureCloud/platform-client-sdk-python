@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_station_defaultstation**](#delete_user_station_defaultstation) | Clear default station|
 |[**delete_user_verifier**](#delete_user_verifier) | Delete a verifier|
 |[**delete_users_customattributes_schema**](#delete_users_customattributes_schema) | Delete a schema|
+|[**delete_users_stations_me_associatedstation**](#delete_users_stations_me_associatedstation) | Clear self associated station|
 |[**get_analytics_users_aggregates_job**](#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
 |[**get_analytics_users_aggregates_job_results**](#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_users_details_job**](#get_analytics_users_details_job) | Get status for async query for user details|
@@ -76,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_users_me**](#get_users_me) | Get current user details.|
 |[**get_users_query**](#get_users_query) | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required|
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
+|[**get_users_stations_me**](#get_users_stations_me) | Get station information for self|
 |[**patch_user**](#patch_user) | Update user|
 |[**patch_user_callforwarding**](#patch_user_callforwarding) | Patch a user&#39;s CallForwarding|
 |[**patch_user_customattributes**](#patch_user_customattributes) | Update a single custom attributes record by amending the data with only the provided fields.|
@@ -126,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_station_defaultstation_station_id**](#put_user_station_defaultstation_station_id) | Set default station|
 |[**put_user_verifier**](#put_user_verifier) | Update a verifier|
 |[**put_users_customattributes_schema**](#put_users_customattributes_schema) | Update a schema|
+|[**put_users_stations_me_associatedstation_station_id**](#put_users_stations_me_associatedstation_station_id) | Set self associated station|
 
 
 
@@ -671,8 +674,9 @@ Clear associated station
 
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* telephony:station:disassociate
 
 ### Example
 
@@ -846,6 +850,49 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_users_stations_me_associatedstation
+
+>  delete_users_stations_me_associatedstation()
+
+
+Clear self associated station
+
+Wraps DELETE /api/v2/users/stations/me/associatedstation 
+
+Requires ANY permissions: 
+
+* telephony:station:disassociateSelf
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Clear self associated station
+    api_instance.delete_users_stations_me_associatedstation()
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_users_stations_me_associatedstation: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
 
 ### Return type
 
@@ -1726,8 +1773,9 @@ Get a user's CallForwarding
 
 Wraps GET /api/v2/users/{userId}/callforwarding 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:callForwarding:view
 
 ### Example
 
@@ -2637,8 +2685,9 @@ Get station information for user
 
 Wraps GET /api/v2/users/{userId}/station 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* telephony:otherStationAssociation:view
 
 ### Example
 
@@ -2889,7 +2938,7 @@ except ApiException as e:
 
 ## get_users_chats_me
 
-> [**ChatItemCursorListing**](ChatItemCursorListing) get_users_chats_me(exclude_closed=exclude_closed, include_presence=include_presence, after=after)
+> [**ChatItemCursorListing**](ChatItemCursorListing) get_users_chats_me(exclude_closed=exclude_closed, include_presence=include_presence, include_room_owners=include_room_owners, after=after)
 
 
 Get chats for a user
@@ -2916,11 +2965,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 exclude_closed = True # bool | Whether or not to exclude closed chats (optional)
 include_presence = True # bool | Whether or not to include user presence (optional)
+include_room_owners = True # bool | Whether or not to include room owners (optional)
 after = 'after_example' # str | The key to start after (optional)
 
 try:
     # Get chats for a user
-    api_response = api_instance.get_users_chats_me(exclude_closed=exclude_closed, include_presence=include_presence, after=after)
+    api_response = api_instance.get_users_chats_me(exclude_closed=exclude_closed, include_presence=include_presence, include_room_owners=include_room_owners, after=after)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_users_chats_me: %s\n" % e)
@@ -2933,6 +2983,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **exclude_closed** | **bool**| Whether or not to exclude closed chats | [optional]  |
 | **include_presence** | **bool**| Whether or not to include user presence | [optional]  |
+| **include_room_owners** | **bool**| Whether or not to include room owners | [optional]  |
 | **after** | **str**| The key to start after | [optional]  |
 
 ### Return type
@@ -3574,8 +3625,6 @@ except ApiException as e:
 
 Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
 
-get_users_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/users/query 
 
 Requires ANY permissions: 
@@ -3679,6 +3728,50 @@ except ApiException as e:
 ### Return type
 
 [**UsersSearchResponse**](UsersSearchResponse)
+
+
+## get_users_stations_me
+
+> [**UserStations**](UserStations) get_users_stations_me()
+
+
+Get station information for self
+
+Wraps GET /api/v2/users/stations/me 
+
+Requires ANY permissions: 
+
+* telephony:selfStationAssociation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Get station information for self
+    api_response = api_instance.get_users_stations_me()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_stations_me: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**UserStations**](UserStations)
 
 
 ## patch_user
@@ -6000,8 +6093,9 @@ Set associated station
 
 Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* telephony:otherStationAssociation:edit
 
 ### Example
 
@@ -6191,4 +6285,51 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+## put_users_stations_me_associatedstation_station_id
+
+>  put_users_stations_me_associatedstation_station_id(station_id)
+
+
+Set self associated station
+
+Wraps PUT /api/v2/users/stations/me/associatedstation/{stationId} 
+
+Requires ANY permissions: 
+
+* telephony:selfStationAssociation:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+station_id = 'station_id_example' # str | stationId
+
+try:
+    # Set self associated station
+    api_instance.put_users_stations_me_associatedstation_station_id(station_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_users_stations_me_associatedstation_station_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **station_id** | **str**| stationId |  |
+
+### Return type
+
+void (empty response body)
+
+
+_PureCloudPlatformClientV2 257.0.0_

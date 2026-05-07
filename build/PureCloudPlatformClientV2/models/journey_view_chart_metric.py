@@ -135,7 +135,7 @@ class JourneyViewChartMetric(object):
         """
         if isinstance(aggregate, int):
             aggregate = str(aggregate)
-        allowed_values = ["EventCount", "CustomerCount"]
+        allowed_values = ["EventCount", "CustomerCount", "Minimum", "Maximum", "Average", "Sum"]
         if aggregate.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for aggregate -> " + aggregate)
             self._aggregate = "outdated_sdk_version"

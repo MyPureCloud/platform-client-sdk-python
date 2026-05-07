@@ -816,7 +816,7 @@ except ApiException as e:
 
 ## get_knowledge_connection_options
 
-> [**ConnectionOptionListing**](ConnectionOptionListing) get_knowledge_connection_options(connection_id, parent_id=parent_id)
+> [**ConnectionOptionListing**](ConnectionOptionListing) get_knowledge_connection_options(connection_id, after=after, page_size=page_size, parent_id=parent_id)
 
 
 Get connection options
@@ -841,11 +841,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 connection_id = 'connection_id_example' # str | Connection ID
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = ''200'' # str | Number of results per page. Minimum: 25, Maximum: 500. (optional) (default to '200')
 parent_id = 'parent_id_example' # str | The id of the parent option whose children to be listed. (optional)
 
 try:
     # Get connection options
-    api_response = api_instance.get_knowledge_connection_options(connection_id, parent_id=parent_id)
+    api_response = api_instance.get_knowledge_connection_options(connection_id, after=after, page_size=page_size, parent_id=parent_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_connection_options: %s\n" % e)
@@ -857,6 +859,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **connection_id** | **str**| Connection ID |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of results per page. Minimum: 25, Maximum: 500. | [optional] [default to &#39;200&#39;] |
 | **parent_id** | **str**| The id of the parent option whose children to be listed. | [optional]  |
 
 ### Return type
@@ -2840,7 +2844,7 @@ except ApiException as e:
 
 ## get_knowledge_source
 
-> [**V3SourceDetailedWithErrorResponse**](V3SourceDetailedWithErrorResponse) get_knowledge_source(source_id, expand=expand)
+> [**V3SourceExpandableResponse**](V3SourceExpandableResponse) get_knowledge_source(source_id, expand=expand)
 
 
 Get source
@@ -2881,11 +2885,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **source_id** | **str**| Source ID |  |
-| **expand** | [**list[str]**](str)| Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, filterDetails |
+| **expand** | [**list[str]**](str)| Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, filterDetails, connection |
 
 ### Return type
 
-[**V3SourceDetailedWithErrorResponse**](V3SourceDetailedWithErrorResponse)
+[**V3SourceExpandableResponse**](V3SourceExpandableResponse)
 
 
 ## get_knowledge_source_synchronization
@@ -2994,7 +2998,7 @@ except ApiException as e:
 
 ## get_knowledge_sources
 
-> [**V3SourceWithErrorListing**](V3SourceWithErrorListing) get_knowledge_sources(expand=expand)
+> [**V3SourceExpandableListing**](V3SourceExpandableListing) get_knowledge_sources(expand=expand)
 
 
 List sources
@@ -3033,11 +3037,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str)| Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync |
+| **expand** | [**list[str]**](str)| Optional fields to expand for the Source. | [optional] <br />**Values**: lastSync, connection |
 
 ### Return type
 
-[**V3SourceWithErrorListing**](V3SourceWithErrorListing)
+[**V3SourceExpandableListing**](V3SourceExpandableListing)
 
 
 ## get_knowledge_sources_synchronizations
@@ -6248,4 +6252,4 @@ except ApiException as e:
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

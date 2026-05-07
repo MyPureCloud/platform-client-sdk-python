@@ -62,7 +62,7 @@ class RequestContext(object):
     def patterns(self) -> List['RequestContextPattern']:
         """
         Gets the patterns of this RequestContext.
-        A list of one or more patterns to match.
+        A list of one or more patterns to match. Defaults to an empty list if not provided.
 
         :return: The patterns of this RequestContext.
         :rtype: list[RequestContextPattern]
@@ -73,7 +73,7 @@ class RequestContext(object):
     def patterns(self, patterns: List['RequestContextPattern']) -> None:
         """
         Sets the patterns of this RequestContext.
-        A list of one or more patterns to match.
+        A list of one or more patterns to match. Defaults to an empty list if not provided.
 
         :param patterns: The patterns of this RequestContext.
         :type: list[RequestContextPattern]

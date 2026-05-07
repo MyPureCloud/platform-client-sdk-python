@@ -114,7 +114,7 @@ class CreateRoomRequest(object):
     def user_ids(self) -> List[str]:
         """
         Gets the user_ids of this CreateRoomRequest.
-        Users to add to the room
+        Users to add to the room, limit of 25
 
         :return: The user_ids of this CreateRoomRequest.
         :rtype: list[str]
@@ -125,7 +125,7 @@ class CreateRoomRequest(object):
     def user_ids(self, user_ids: List[str]) -> None:
         """
         Sets the user_ids of this CreateRoomRequest.
-        Users to add to the room
+        Users to add to the room, limit of 25
 
         :param user_ids: The user_ids of this CreateRoomRequest.
         :type: list[str]

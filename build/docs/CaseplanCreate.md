@@ -14,9 +14,9 @@
 | **description** | str | The description of the Caseplan. Maximum length of 512 characters. | [optional] |
 | **default_case_owner_id** | str | The ID of the default owner of a Case created from the Caseplan. | [optional] |
 | **division_id** | str | The ID of the division the Caseplan belongs to. Use &#39;*&#39; for divisionless caseplans. | |
-| **data_schemas** | [list[CaseplanDataSchema]](CaseplanDataSchema) | The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. | |
+| **data_schemas** | [list[CaseplanDataSchema]](CaseplanDataSchema) | The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish. | [optional] |
 | **intake_settings** | [list[IntakeSetting]](IntakeSetting) | The intake format when collecting data for a case from this caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

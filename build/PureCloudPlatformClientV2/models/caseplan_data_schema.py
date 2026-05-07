@@ -48,18 +48,15 @@ class CaseplanDataSchema(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'version': 'int',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'version': 'version',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._version = None
         self._self_uri = None
 
     @property
@@ -88,30 +85,6 @@ class CaseplanDataSchema(object):
 
 
         self._id = id
-
-    @property
-    def version(self) -> int:
-        """
-        Gets the version of this CaseplanDataSchema.
-        The version of the schema.
-
-        :return: The version of this CaseplanDataSchema.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version: int) -> None:
-        """
-        Sets the version of this CaseplanDataSchema.
-        The version of the schema.
-
-        :param version: The version of this CaseplanDataSchema.
-        :type: int
-        """
-        
-
-        self._version = version
 
     @property
     def self_uri(self) -> str:

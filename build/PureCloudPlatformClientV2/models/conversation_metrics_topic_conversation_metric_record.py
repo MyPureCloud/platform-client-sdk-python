@@ -125,6 +125,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'self_served': 'bool',
             'session_dnis': 'str',
             'session_id': 'str',
+            'skill_expression_id': 'str',
             'station_id': 'str',
             'team_id': 'str',
             'used_routing': 'str',
@@ -212,6 +213,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'self_served': 'selfServed',
             'session_dnis': 'sessionDnis',
             'session_id': 'sessionId',
+            'skill_expression_id': 'skillExpressionId',
             'station_id': 'stationId',
             'team_id': 'teamId',
             'used_routing': 'usedRouting',
@@ -298,6 +300,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         self._self_served = None
         self._session_dnis = None
         self._session_id = None
+        self._skill_expression_id = None
         self._station_id = None
         self._team_id = None
         self._used_routing = None
@@ -330,7 +333,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["nBlindTransferred", "nBotInteractions", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nConversations", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTransferred", "oAudioMessageCount", "oExternalAudioMessageCount", "oExternalMediaCount", "oMediaCount", "oMessageCount", "oMessageSegmentCount", "oMessageTurn", "tAbandon", "tAcd", "tActiveCallback", "tActiveCallbackComplete", "tAcw", "tAgentResponseTime", "tAgentVideoConnected", "tAlert", "tAnswered", "tAverageAgentResponseTime", "tAverageCustomerResponseTime", "tBarging", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFirstEngagement", "tFirstResponse", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tPark", "tParkComplete", "tScreenMonitoring", "tTalk", "tTalkComplete", "tUserResponseTime", "tVoicemail"]
+        allowed_values = ["nBlindTransferred", "nBotInteractions", "nCallbackAttempts", "nCallbackScheduled", "nCfcOffered", "nCobrowseSessions", "nConnected", "nConsult", "nConsultTransferred", "nConversations", "nError", "nOffered", "nOutbound", "nOutboundAbandoned", "nOutboundAttempted", "nOutboundConnected", "nOverSla", "nTakeover", "nTransferred", "oAudioMessageCount", "oExternalAudioMessageCount", "oExternalMediaCount", "oMediaCount", "oMessageCount", "oMessageSegmentCount", "oMessageTurn", "oSkillExpressionApplications", "tAbandon", "tAcd", "tActiveCallback", "tActiveCallbackComplete", "tAcw", "tAgentResponseTime", "tAgentVideoConnected", "tAlert", "tAnswered", "tAverageAgentResponseTime", "tAverageCustomerResponseTime", "tBarging", "tCfcAbandon", "tCfcAcd", "tCfcAnswered", "tCfcFlowOut", "tCoaching", "tCoachingComplete", "tConnected", "tContacting", "tDialing", "tFirstConnect", "tFirstDial", "tFirstEngagement", "tFirstResponse", "tFlowOut", "tHandle", "tHeld", "tHeldComplete", "tIvr", "tMonitoring", "tMonitoringComplete", "tNotResponding", "tPark", "tParkComplete", "tScreenMonitoring", "tSnippetRecord", "tTalk", "tTalkComplete", "tTransmitting", "tUserResponseTime", "tVoicemail"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"
@@ -2162,6 +2165,30 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         
 
         self._session_id = session_id
+
+    @property
+    def skill_expression_id(self) -> str:
+        """
+        Gets the skill_expression_id of this ConversationMetricsTopicConversationMetricRecord.
+        Unique identifier for the skill requested for an interaction
+
+        :return: The skill_expression_id of this ConversationMetricsTopicConversationMetricRecord.
+        :rtype: str
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: str) -> None:
+        """
+        Sets the skill_expression_id of this ConversationMetricsTopicConversationMetricRecord.
+        Unique identifier for the skill requested for an interaction
+
+        :param skill_expression_id: The skill_expression_id of this ConversationMetricsTopicConversationMetricRecord.
+        :type: str
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     @property
     def station_id(self) -> str:

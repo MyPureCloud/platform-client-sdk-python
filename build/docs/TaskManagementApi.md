@@ -3769,6 +3769,8 @@ except ApiException as e:
 
 Query for worktypes
 
+Optional request field 'expands' may include 'schema' to populate the name on each worktype's schema reference.
+
 Wraps POST /api/v2/taskmanagement/worktypes/query 
 
 Requires ALL permissions: 
@@ -3860,4 +3862,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

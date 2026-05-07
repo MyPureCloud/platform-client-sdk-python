@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference
 
 class WfmActivityPlanJobCompleteTopicActivityPlanReference(object):
     """
@@ -47,14 +49,17 @@ class WfmActivityPlanJobCompleteTopicActivityPlanReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'occurrences': 'list[WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference]'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'occurrences': 'occurrences'
         }
 
         self._id = None
+        self._occurrences = None
 
     @property
     def id(self) -> str:
@@ -79,6 +84,30 @@ class WfmActivityPlanJobCompleteTopicActivityPlanReference(object):
         
 
         self._id = id
+
+    @property
+    def occurrences(self) -> List['WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference']:
+        """
+        Gets the occurrences of this WfmActivityPlanJobCompleteTopicActivityPlanReference.
+
+
+        :return: The occurrences of this WfmActivityPlanJobCompleteTopicActivityPlanReference.
+        :rtype: list[WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference]
+        """
+        return self._occurrences
+
+    @occurrences.setter
+    def occurrences(self, occurrences: List['WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference']) -> None:
+        """
+        Sets the occurrences of this WfmActivityPlanJobCompleteTopicActivityPlanReference.
+
+
+        :param occurrences: The occurrences of this WfmActivityPlanJobCompleteTopicActivityPlanReference.
+        :type: list[WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference]
+        """
+        
+
+        self._occurrences = occurrences
 
     def to_dict(self):
         """

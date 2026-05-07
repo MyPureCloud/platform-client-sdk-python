@@ -174,7 +174,7 @@ class CreateAgentTimeOffRequest(object):
     def daily_duration_minutes(self) -> int:
         """
         Gets the daily_duration_minutes of this CreateAgentTimeOffRequest.
-        The daily duration of this time off request in minutes
+        Daily duration in minutes applied to all days of this time off request. Ignored if durationMinutes is specified. At least one of dailyDurationMinutes or durationMinutes is required
 
         :return: The daily_duration_minutes of this CreateAgentTimeOffRequest.
         :rtype: int
@@ -185,7 +185,7 @@ class CreateAgentTimeOffRequest(object):
     def daily_duration_minutes(self, daily_duration_minutes: int) -> None:
         """
         Sets the daily_duration_minutes of this CreateAgentTimeOffRequest.
-        The daily duration of this time off request in minutes
+        Daily duration in minutes applied to all days of this time off request. Ignored if durationMinutes is specified. At least one of dailyDurationMinutes or durationMinutes is required
 
         :param daily_duration_minutes: The daily_duration_minutes of this CreateAgentTimeOffRequest.
         :type: int
@@ -198,7 +198,7 @@ class CreateAgentTimeOffRequest(object):
     def duration_minutes(self) -> List[int]:
         """
         Gets the duration_minutes of this CreateAgentTimeOffRequest.
-        Daily durations for each day of this time off request in minutes
+        Duration in minutes for each day of this time off request. Must match the size of fullDayManagementUnitDates or partialDayStartDateTimes. At least one of dailyDurationMinutes or durationMinutes is required
 
         :return: The duration_minutes of this CreateAgentTimeOffRequest.
         :rtype: list[int]
@@ -209,7 +209,7 @@ class CreateAgentTimeOffRequest(object):
     def duration_minutes(self, duration_minutes: List[int]) -> None:
         """
         Sets the duration_minutes of this CreateAgentTimeOffRequest.
-        Daily durations for each day of this time off request in minutes
+        Duration in minutes for each day of this time off request. Must match the size of fullDayManagementUnitDates or partialDayStartDateTimes. At least one of dailyDurationMinutes or durationMinutes is required
 
         :param duration_minutes: The duration_minutes of this CreateAgentTimeOffRequest.
         :type: list[int]
@@ -222,7 +222,7 @@ class CreateAgentTimeOffRequest(object):
     def payable_minutes(self) -> List[int]:
         """
         Gets the payable_minutes of this CreateAgentTimeOffRequest.
-        Payable minutes for each day of this time off request
+        Payable minutes for each day of this time off request, representing scheduled paid time displaced by this request. Defaults to dailyDurationMinutes if not specified
 
         :return: The payable_minutes of this CreateAgentTimeOffRequest.
         :rtype: list[int]
@@ -233,7 +233,7 @@ class CreateAgentTimeOffRequest(object):
     def payable_minutes(self, payable_minutes: List[int]) -> None:
         """
         Sets the payable_minutes of this CreateAgentTimeOffRequest.
-        Payable minutes for each day of this time off request
+        Payable minutes for each day of this time off request, representing scheduled paid time displaced by this request. Defaults to dailyDurationMinutes if not specified
 
         :param payable_minutes: The payable_minutes of this CreateAgentTimeOffRequest.
         :type: list[int]

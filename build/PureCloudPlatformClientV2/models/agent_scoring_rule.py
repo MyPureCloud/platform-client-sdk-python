@@ -58,6 +58,7 @@ class AgentScoringRule(object):
             'enabled': 'bool',
             'published': 'bool',
             'evaluator': 'AddressableEntityRef',
+            'agent_to_score': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'self_uri': 'str'
@@ -73,6 +74,7 @@ class AgentScoringRule(object):
             'enabled': 'enabled',
             'published': 'published',
             'evaluator': 'evaluator',
+            'agent_to_score': 'agentToScore',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'self_uri': 'selfUri'
@@ -87,6 +89,7 @@ class AgentScoringRule(object):
         self._enabled = None
         self._published = None
         self._evaluator = None
+        self._agent_to_score = None
         self._date_created = None
         self._date_modified = None
         self._self_uri = None
@@ -322,6 +325,35 @@ class AgentScoringRule(object):
         
 
         self._evaluator = evaluator
+
+    @property
+    def agent_to_score(self) -> str:
+        """
+        Gets the agent_to_score of this AgentScoringRule.
+        Which agent(s) to score. Valid values: First, Last, Each.
+
+        :return: The agent_to_score of this AgentScoringRule.
+        :rtype: str
+        """
+        return self._agent_to_score
+
+    @agent_to_score.setter
+    def agent_to_score(self, agent_to_score: str) -> None:
+        """
+        Sets the agent_to_score of this AgentScoringRule.
+        Which agent(s) to score. Valid values: First, Last, Each.
+
+        :param agent_to_score: The agent_to_score of this AgentScoringRule.
+        :type: str
+        """
+        if isinstance(agent_to_score, int):
+            agent_to_score = str(agent_to_score)
+        allowed_values = ["First", "Last", "Each"]
+        if agent_to_score.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for agent_to_score -> " + agent_to_score)
+            self._agent_to_score = "outdated_sdk_version"
+        else:
+            self._agent_to_score = agent_to_score
 
     @property
     def date_created(self) -> datetime:

@@ -10491,9 +10491,94 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_flows_datatable_import_csv_jobs(self, datatable_id: str, body: 'DataTableImportJob', **kwargs) -> 'DataTableImportJob':
+        """
+        Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+        Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_datatable_import_csv_jobs(datatable_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str datatable_id: id of datatable (required)
+        :param DataTableImportJob body: import job information (required)
+        :return: DataTableImportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['datatable_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_datatable_import_csv_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'datatable_id' is set
+        if ('datatable_id' not in params) or (params['datatable_id'] is None):
+            raise ValueError("Missing the required parameter `datatable_id` when calling `post_flows_datatable_import_csv_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flows_datatable_import_csv_jobs`")
+
+
+        resource_path = '/api/v2/flows/datatables/{datatableId}/import/csv/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'datatable_id' in params:
+            path_params['datatableId'] = params['datatable_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DataTableImportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    @deprecated("post_flows_datatable_import_jobs is deprecated")
     def post_flows_datatable_import_jobs(self, datatable_id: str, body: 'DataTableImportJob', **kwargs) -> 'DataTableImportJob':
         """
-        Begin an import process for importing rows into a datatable
+        Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
         Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
 
         This method makes a synchronous HTTP request by default. To make an

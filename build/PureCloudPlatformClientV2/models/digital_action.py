@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import MarkContactUncontactableActionSettings
     from . import SetContentTemplateActionSettings
     from . import SetSmsPhoneNumberActionSettings
+    from . import SetWhatsAppIntegrationActionSettings
     from . import UpdateContactColumnActionSettings
 
 class DigitalAction(object):
@@ -59,7 +60,8 @@ class DigitalAction(object):
             'mark_contact_uncontactable_action_settings': 'MarkContactUncontactableActionSettings',
             'mark_contact_address_uncontactable_action_settings': 'object',
             'set_content_template_action_settings': 'SetContentTemplateActionSettings',
-            'set_sms_phone_number_action_settings': 'SetSmsPhoneNumberActionSettings'
+            'set_sms_phone_number_action_settings': 'SetSmsPhoneNumberActionSettings',
+            'set_whats_app_integration_action_settings': 'SetWhatsAppIntegrationActionSettings'
         }
 
         self.attribute_map = {
@@ -69,7 +71,8 @@ class DigitalAction(object):
             'mark_contact_uncontactable_action_settings': 'markContactUncontactableActionSettings',
             'mark_contact_address_uncontactable_action_settings': 'markContactAddressUncontactableActionSettings',
             'set_content_template_action_settings': 'setContentTemplateActionSettings',
-            'set_sms_phone_number_action_settings': 'setSmsPhoneNumberActionSettings'
+            'set_sms_phone_number_action_settings': 'setSmsPhoneNumberActionSettings',
+            'set_whats_app_integration_action_settings': 'setWhatsAppIntegrationActionSettings'
         }
 
         self._update_contact_column_action_settings = None
@@ -79,6 +82,7 @@ class DigitalAction(object):
         self._mark_contact_address_uncontactable_action_settings = None
         self._set_content_template_action_settings = None
         self._set_sms_phone_number_action_settings = None
+        self._set_whats_app_integration_action_settings = None
 
     @property
     def update_contact_column_action_settings(self) -> 'UpdateContactColumnActionSettings':
@@ -247,6 +251,30 @@ class DigitalAction(object):
         
 
         self._set_sms_phone_number_action_settings = set_sms_phone_number_action_settings
+
+    @property
+    def set_whats_app_integration_action_settings(self) -> 'SetWhatsAppIntegrationActionSettings':
+        """
+        Gets the set_whats_app_integration_action_settings of this DigitalAction.
+        The settings for a 'set WhatsApp integration' action.
+
+        :return: The set_whats_app_integration_action_settings of this DigitalAction.
+        :rtype: SetWhatsAppIntegrationActionSettings
+        """
+        return self._set_whats_app_integration_action_settings
+
+    @set_whats_app_integration_action_settings.setter
+    def set_whats_app_integration_action_settings(self, set_whats_app_integration_action_settings: 'SetWhatsAppIntegrationActionSettings') -> None:
+        """
+        Sets the set_whats_app_integration_action_settings of this DigitalAction.
+        The settings for a 'set WhatsApp integration' action.
+
+        :param set_whats_app_integration_action_settings: The set_whats_app_integration_action_settings of this DigitalAction.
+        :type: SetWhatsAppIntegrationActionSettings
+        """
+        
+
+        self._set_whats_app_integration_action_settings = set_whats_app_integration_action_settings
 
     def to_dict(self):
         """

@@ -123,7 +123,7 @@ class TimeOffRequest(object):
     def id(self) -> str:
         """
         Gets the id of this TimeOffRequest.
-        The id of the time off request
+        The globally unique identifier for the object.
 
         :return: The id of this TimeOffRequest.
         :rtype: str
@@ -134,7 +134,7 @@ class TimeOffRequest(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this TimeOffRequest.
-        The id of the time off request
+        The globally unique identifier for the object.
 
         :param id: The id of this TimeOffRequest.
         :type: str

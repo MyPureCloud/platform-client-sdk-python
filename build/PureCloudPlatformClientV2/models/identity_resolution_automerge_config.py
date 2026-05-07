@@ -47,14 +47,17 @@ class IdentityResolutionAutomergeConfig(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'authenticated_web_messaging': 'bool'
+            'authenticated_web_messaging': 'bool',
+            'web_tracking': 'bool'
         }
 
         self.attribute_map = {
-            'authenticated_web_messaging': 'authenticatedWebMessaging'
+            'authenticated_web_messaging': 'authenticatedWebMessaging',
+            'web_tracking': 'webTracking'
         }
 
         self._authenticated_web_messaging = None
+        self._web_tracking = None
 
     @property
     def authenticated_web_messaging(self) -> bool:
@@ -79,6 +82,30 @@ class IdentityResolutionAutomergeConfig(object):
         
 
         self._authenticated_web_messaging = authenticated_web_messaging
+
+    @property
+    def web_tracking(self) -> bool:
+        """
+        Gets the web_tracking of this IdentityResolutionAutomergeConfig.
+        Whether automerging is enabled for Web Tracking sessions in this channel.
+
+        :return: The web_tracking of this IdentityResolutionAutomergeConfig.
+        :rtype: bool
+        """
+        return self._web_tracking
+
+    @web_tracking.setter
+    def web_tracking(self, web_tracking: bool) -> None:
+        """
+        Sets the web_tracking of this IdentityResolutionAutomergeConfig.
+        Whether automerging is enabled for Web Tracking sessions in this channel.
+
+        :param web_tracking: The web_tracking of this IdentityResolutionAutomergeConfig.
+        :type: bool
+        """
+        
+
+        self._web_tracking = web_tracking
 
     def to_dict(self):
         """

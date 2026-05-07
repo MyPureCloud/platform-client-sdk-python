@@ -60,6 +60,7 @@ class QueueConversationVideoEventTopicConversation(object):
             'address': 'str',
             'external_tag': 'str',
             'utilization_label_id': 'str',
+            'access_attributes': 'list[str]',
             'secure_pause': 'bool',
             'inactivity_timeout': 'datetime',
             'associated_conversation': 'QueueConversationVideoEventTopicDomainEntityRef',
@@ -76,6 +77,7 @@ class QueueConversationVideoEventTopicConversation(object):
             'address': 'address',
             'external_tag': 'externalTag',
             'utilization_label_id': 'utilizationLabelId',
+            'access_attributes': 'accessAttributes',
             'secure_pause': 'securePause',
             'inactivity_timeout': 'inactivityTimeout',
             'associated_conversation': 'associatedConversation',
@@ -91,6 +93,7 @@ class QueueConversationVideoEventTopicConversation(object):
         self._address = None
         self._external_tag = None
         self._utilization_label_id = None
+        self._access_attributes = None
         self._secure_pause = None
         self._inactivity_timeout = None
         self._associated_conversation = None
@@ -288,6 +291,30 @@ class QueueConversationVideoEventTopicConversation(object):
         
 
         self._utilization_label_id = utilization_label_id
+
+    @property
+    def access_attributes(self) -> List[str]:
+        """
+        Gets the access_attributes of this QueueConversationVideoEventTopicConversation.
+
+
+        :return: The access_attributes of this QueueConversationVideoEventTopicConversation.
+        :rtype: list[str]
+        """
+        return self._access_attributes
+
+    @access_attributes.setter
+    def access_attributes(self, access_attributes: List[str]) -> None:
+        """
+        Sets the access_attributes of this QueueConversationVideoEventTopicConversation.
+
+
+        :param access_attributes: The access_attributes of this QueueConversationVideoEventTopicConversation.
+        :type: list[str]
+        """
+        
+
+        self._access_attributes = access_attributes
 
     @property
     def secure_pause(self) -> bool:

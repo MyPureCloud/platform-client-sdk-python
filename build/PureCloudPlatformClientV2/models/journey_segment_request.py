@@ -187,7 +187,7 @@ class JourneySegmentRequest(object):
     def color(self) -> str:
         """
         Gets the color of this JourneySegmentRequest.
-        The hexadecimal color value of the segment.
+        The hexadecimal color value of the segment. Defaults if not provided.
 
         :return: The color of this JourneySegmentRequest.
         :rtype: str
@@ -198,7 +198,7 @@ class JourneySegmentRequest(object):
     def color(self, color: str) -> None:
         """
         Sets the color of this JourneySegmentRequest.
-        The hexadecimal color value of the segment.
+        The hexadecimal color value of the segment. Defaults if not provided.
 
         :param color: The color of this JourneySegmentRequest.
         :type: str
@@ -235,7 +235,7 @@ class JourneySegmentRequest(object):
     def context(self) -> 'RequestContext':
         """
         Gets the context of this JourneySegmentRequest.
-        The context of the segment.
+        The context of the segment. Defaults if not provided.
 
         :return: The context of this JourneySegmentRequest.
         :rtype: RequestContext
@@ -246,7 +246,7 @@ class JourneySegmentRequest(object):
     def context(self, context: 'RequestContext') -> None:
         """
         Sets the context of this JourneySegmentRequest.
-        The context of the segment.
+        The context of the segment. Defaults if not provided.
 
         :param context: The context of this JourneySegmentRequest.
         :type: RequestContext
@@ -259,7 +259,7 @@ class JourneySegmentRequest(object):
     def journey(self) -> 'RequestJourney':
         """
         Gets the journey of this JourneySegmentRequest.
-        The pattern of rules defining the segment.
+        The pattern of rules defining the segment. Defaults if not provided.
 
         :return: The journey of this JourneySegmentRequest.
         :rtype: RequestJourney
@@ -270,7 +270,7 @@ class JourneySegmentRequest(object):
     def journey(self, journey: 'RequestJourney') -> None:
         """
         Sets the journey of this JourneySegmentRequest.
-        The pattern of rules defining the segment.
+        The pattern of rules defining the segment. Defaults if not provided.
 
         :param journey: The journey of this JourneySegmentRequest.
         :type: RequestJourney

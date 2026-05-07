@@ -63,6 +63,7 @@ class ConnectionResponse(object):
             'date_modified': 'datetime',
             'status': 'str',
             'error': 'ErrorBody',
+            'date_expiry': 'datetime',
             'self_uri': 'str'
         }
 
@@ -78,6 +79,7 @@ class ConnectionResponse(object):
             'date_modified': 'dateModified',
             'status': 'status',
             'error': 'error',
+            'date_expiry': 'dateExpiry',
             'self_uri': 'selfUri'
         }
 
@@ -92,6 +94,7 @@ class ConnectionResponse(object):
         self._date_modified = None
         self._status = None
         self._error = None
+        self._date_expiry = None
         self._self_uri = None
 
     @property
@@ -367,6 +370,30 @@ class ConnectionResponse(object):
         
 
         self._error = error
+
+    @property
+    def date_expiry(self) -> datetime:
+        """
+        Gets the date_expiry of this ConnectionResponse.
+        Expiry date of the authentication credentials. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_expiry of this ConnectionResponse.
+        :rtype: datetime
+        """
+        return self._date_expiry
+
+    @date_expiry.setter
+    def date_expiry(self, date_expiry: datetime) -> None:
+        """
+        Sets the date_expiry of this ConnectionResponse.
+        Expiry date of the authentication credentials. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_expiry: The date_expiry of this ConnectionResponse.
+        :type: datetime
+        """
+        
+
+        self._date_expiry = date_expiry
 
     @property
     def self_uri(self) -> str:

@@ -49,6 +49,7 @@ class LastAttemptByColumnConditionSettings(object):
         self.swagger_types = {
             'email_column_name': 'str',
             'sms_column_name': 'str',
+            'whats_app_column_name': 'str',
             'operator': 'str',
             'value': 'str'
         }
@@ -56,12 +57,14 @@ class LastAttemptByColumnConditionSettings(object):
         self.attribute_map = {
             'email_column_name': 'emailColumnName',
             'sms_column_name': 'smsColumnName',
+            'whats_app_column_name': 'whatsAppColumnName',
             'operator': 'operator',
             'value': 'value'
         }
 
         self._email_column_name = None
         self._sms_column_name = None
+        self._whats_app_column_name = None
         self._operator = None
         self._value = None
 
@@ -112,6 +115,30 @@ class LastAttemptByColumnConditionSettings(object):
         
 
         self._sms_column_name = sms_column_name
+
+    @property
+    def whats_app_column_name(self) -> str:
+        """
+        Gets the whats_app_column_name of this LastAttemptByColumnConditionSettings.
+        The name of the contact column to evaluate for WhatsApp.
+
+        :return: The whats_app_column_name of this LastAttemptByColumnConditionSettings.
+        :rtype: str
+        """
+        return self._whats_app_column_name
+
+    @whats_app_column_name.setter
+    def whats_app_column_name(self, whats_app_column_name: str) -> None:
+        """
+        Sets the whats_app_column_name of this LastAttemptByColumnConditionSettings.
+        The name of the contact column to evaluate for WhatsApp.
+
+        :param whats_app_column_name: The whats_app_column_name of this LastAttemptByColumnConditionSettings.
+        :type: str
+        """
+        
+
+        self._whats_app_column_name = whats_app_column_name
 
     @property
     def operator(self) -> str:

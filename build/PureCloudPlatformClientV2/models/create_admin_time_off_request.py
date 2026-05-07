@@ -238,7 +238,7 @@ class CreateAdminTimeOffRequest(object):
     def daily_duration_minutes(self) -> int:
         """
         Gets the daily_duration_minutes of this CreateAdminTimeOffRequest.
-        The daily duration of this time off request in minutes
+        Daily duration in minutes applied to all days of this time off request. Ignored if durationMinutes is specified. At least one of dailyDurationMinutes or durationMinutes is required
 
         :return: The daily_duration_minutes of this CreateAdminTimeOffRequest.
         :rtype: int
@@ -249,7 +249,7 @@ class CreateAdminTimeOffRequest(object):
     def daily_duration_minutes(self, daily_duration_minutes: int) -> None:
         """
         Sets the daily_duration_minutes of this CreateAdminTimeOffRequest.
-        The daily duration of this time off request in minutes
+        Daily duration in minutes applied to all days of this time off request. Ignored if durationMinutes is specified. At least one of dailyDurationMinutes or durationMinutes is required
 
         :param daily_duration_minutes: The daily_duration_minutes of this CreateAdminTimeOffRequest.
         :type: int
@@ -262,7 +262,7 @@ class CreateAdminTimeOffRequest(object):
     def duration_minutes(self) -> List[int]:
         """
         Gets the duration_minutes of this CreateAdminTimeOffRequest.
-        Daily durations for each day of this time off request in minutes
+        Duration in minutes for each day of this time off request. Must match the size of fullDayManagementUnitDates or partialDayStartDateTimes. At least one of dailyDurationMinutes or durationMinutes is required
 
         :return: The duration_minutes of this CreateAdminTimeOffRequest.
         :rtype: list[int]
@@ -273,7 +273,7 @@ class CreateAdminTimeOffRequest(object):
     def duration_minutes(self, duration_minutes: List[int]) -> None:
         """
         Sets the duration_minutes of this CreateAdminTimeOffRequest.
-        Daily durations for each day of this time off request in minutes
+        Duration in minutes for each day of this time off request. Must match the size of fullDayManagementUnitDates or partialDayStartDateTimes. At least one of dailyDurationMinutes or durationMinutes is required
 
         :param duration_minutes: The duration_minutes of this CreateAdminTimeOffRequest.
         :type: list[int]
@@ -286,7 +286,7 @@ class CreateAdminTimeOffRequest(object):
     def payable_minutes(self) -> List[int]:
         """
         Gets the payable_minutes of this CreateAdminTimeOffRequest.
-        Payable minutes for each day of this time off request
+        Payable minutes for each day of this time off request, representing scheduled paid time displaced by this request. Defaults to dailyDurationMinutes if not specified
 
         :return: The payable_minutes of this CreateAdminTimeOffRequest.
         :rtype: list[int]
@@ -297,7 +297,7 @@ class CreateAdminTimeOffRequest(object):
     def payable_minutes(self, payable_minutes: List[int]) -> None:
         """
         Sets the payable_minutes of this CreateAdminTimeOffRequest.
-        Payable minutes for each day of this time off request
+        Payable minutes for each day of this time off request, representing scheduled paid time displaced by this request. Defaults to dailyDurationMinutes if not specified
 
         :param payable_minutes: The payable_minutes of this CreateAdminTimeOffRequest.
         :type: list[int]
@@ -310,7 +310,7 @@ class CreateAdminTimeOffRequest(object):
     def paid(self) -> bool:
         """
         Gets the paid of this CreateAdminTimeOffRequest.
-        Whether this is a paid time off request
+        Whether this is a paid time off request. Defaults to the activity code's paid value if not specified
 
         :return: The paid of this CreateAdminTimeOffRequest.
         :rtype: bool
@@ -321,7 +321,7 @@ class CreateAdminTimeOffRequest(object):
     def paid(self, paid: bool) -> None:
         """
         Sets the paid of this CreateAdminTimeOffRequest.
-        Whether this is a paid time off request
+        Whether this is a paid time off request. Defaults to the activity code's paid value if not specified
 
         :param paid: The paid of this CreateAdminTimeOffRequest.
         :type: bool

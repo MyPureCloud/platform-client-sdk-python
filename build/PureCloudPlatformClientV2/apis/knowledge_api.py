@@ -141,9 +141,9 @@ from ..models import UploadUrlRequest
 from ..models import UploadUrlResponse
 from ..models import V3SourceCreateRequest
 from ..models import V3SourceDetailedResponse
-from ..models import V3SourceDetailedWithErrorResponse
+from ..models import V3SourceExpandableListing
+from ..models import V3SourceExpandableResponse
 from ..models import V3SourceUpdateRequest
-from ..models import V3SourceWithErrorListing
 from ..models import V3StartManualSyncRequest
 from ..models import V3Synchronization
 from ..models import V3SynchronizationListing
@@ -1338,13 +1338,15 @@ class KnowledgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str connection_id: Connection ID (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of results per page. Minimum: 25, Maximum: 500.
         :param str parent_id: The id of the parent option whose children to be listed.
         :return: ConnectionOptionListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['connection_id', 'parent_id']
+        all_params = ['connection_id', 'after', 'page_size', 'parent_id']
         all_params.append('callback')
 
         params = locals()
@@ -1368,6 +1370,10 @@ class KnowledgeApi(object):
             path_params['connectionId'] = params['connection_id']
 
         query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
         if 'parent_id' in params:
             query_params['parentId'] = params['parent_id']
 
@@ -4676,7 +4682,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_source(self, source_id: str, **kwargs) -> 'V3SourceDetailedWithErrorResponse':
+    def get_knowledge_source(self, source_id: str, **kwargs) -> 'V3SourceExpandableResponse':
         """
         Get source
         
@@ -4693,7 +4699,7 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str source_id: Source ID (required)
         :param list[str] expand: Optional fields to expand for the Source.
-        :return: V3SourceDetailedWithErrorResponse
+        :return: V3SourceExpandableResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4752,7 +4758,7 @@ class KnowledgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='V3SourceDetailedWithErrorResponse',
+                                            response_type='V3SourceExpandableResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4928,7 +4934,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_sources(self, **kwargs) -> 'V3SourceWithErrorListing':
+    def get_knowledge_sources(self, **kwargs) -> 'V3SourceExpandableListing':
         """
         List sources
         
@@ -4944,7 +4950,7 @@ class KnowledgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] expand: Optional fields to expand for the Source.
-        :return: V3SourceWithErrorListing
+        :return: V3SourceExpandableListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4998,7 +5004,7 @@ class KnowledgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='V3SourceWithErrorListing',
+                                            response_type='V3SourceExpandableListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

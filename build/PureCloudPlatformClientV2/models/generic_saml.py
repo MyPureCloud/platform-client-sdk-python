@@ -64,6 +64,7 @@ class GenericSAML(object):
             'provider_name': 'str',
             'display_on_login': 'bool',
             'metadata_url': 'str',
+            'force_authn': 'bool',
             'endpoint_compression': 'bool',
             'self_uri': 'str'
         }
@@ -86,6 +87,7 @@ class GenericSAML(object):
             'provider_name': 'providerName',
             'display_on_login': 'displayOnLogin',
             'metadata_url': 'metadataURL',
+            'force_authn': 'forceAuthn',
             'endpoint_compression': 'endpointCompression',
             'self_uri': 'selfUri'
         }
@@ -107,6 +109,7 @@ class GenericSAML(object):
         self._provider_name = None
         self._display_on_login = None
         self._metadata_url = None
+        self._force_authn = None
         self._endpoint_compression = None
         self._self_uri = None
 
@@ -527,6 +530,30 @@ class GenericSAML(object):
         
 
         self._metadata_url = metadata_url
+
+    @property
+    def force_authn(self) -> bool:
+        """
+        Gets the force_authn of this GenericSAML.
+
+
+        :return: The force_authn of this GenericSAML.
+        :rtype: bool
+        """
+        return self._force_authn
+
+    @force_authn.setter
+    def force_authn(self, force_authn: bool) -> None:
+        """
+        Sets the force_authn of this GenericSAML.
+
+
+        :param force_authn: The force_authn of this GenericSAML.
+        :type: bool
+        """
+        
+
+        self._force_authn = force_authn
 
     @property
     def endpoint_compression(self) -> bool:

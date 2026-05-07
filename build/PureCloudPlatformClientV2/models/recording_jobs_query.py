@@ -57,6 +57,8 @@ class RecordingJobsQuery(object):
             'integration_id': 'str',
             'include_recordings_with_sensitive_data': 'bool',
             'include_screen_recordings': 'bool',
+            'include_policy_based_recordings': 'bool',
+            'include_snippet_recordings': 'bool',
             'clear_export': 'bool',
             'conversation_query': 'AsyncConversationQuery',
             'aged_conversation_interval': 'str'
@@ -71,6 +73,8 @@ class RecordingJobsQuery(object):
             'integration_id': 'integrationId',
             'include_recordings_with_sensitive_data': 'includeRecordingsWithSensitiveData',
             'include_screen_recordings': 'includeScreenRecordings',
+            'include_policy_based_recordings': 'includePolicyBasedRecordings',
+            'include_snippet_recordings': 'includeSnippetRecordings',
             'clear_export': 'clearExport',
             'conversation_query': 'conversationQuery',
             'aged_conversation_interval': 'agedConversationInterval'
@@ -84,6 +88,8 @@ class RecordingJobsQuery(object):
         self._integration_id = None
         self._include_recordings_with_sensitive_data = None
         self._include_screen_recordings = None
+        self._include_policy_based_recordings = None
+        self._include_snippet_recordings = None
         self._clear_export = None
         self._conversation_query = None
         self._aged_conversation_interval = None
@@ -284,6 +290,54 @@ class RecordingJobsQuery(object):
         
 
         self._include_screen_recordings = include_screen_recordings
+
+    @property
+    def include_policy_based_recordings(self) -> bool:
+        """
+        Gets the include_policy_based_recordings of this RecordingJobsQuery.
+        Whether to include policy-based recordings for the action, default value = true
+
+        :return: The include_policy_based_recordings of this RecordingJobsQuery.
+        :rtype: bool
+        """
+        return self._include_policy_based_recordings
+
+    @include_policy_based_recordings.setter
+    def include_policy_based_recordings(self, include_policy_based_recordings: bool) -> None:
+        """
+        Sets the include_policy_based_recordings of this RecordingJobsQuery.
+        Whether to include policy-based recordings for the action, default value = true
+
+        :param include_policy_based_recordings: The include_policy_based_recordings of this RecordingJobsQuery.
+        :type: bool
+        """
+        
+
+        self._include_policy_based_recordings = include_policy_based_recordings
+
+    @property
+    def include_snippet_recordings(self) -> bool:
+        """
+        Gets the include_snippet_recordings of this RecordingJobsQuery.
+        Whether to include snippet recordings for the action, default value = true
+
+        :return: The include_snippet_recordings of this RecordingJobsQuery.
+        :rtype: bool
+        """
+        return self._include_snippet_recordings
+
+    @include_snippet_recordings.setter
+    def include_snippet_recordings(self, include_snippet_recordings: bool) -> None:
+        """
+        Sets the include_snippet_recordings of this RecordingJobsQuery.
+        Whether to include snippet recordings for the action, default value = true
+
+        :param include_snippet_recordings: The include_snippet_recordings of this RecordingJobsQuery.
+        :type: bool
+        """
+        
+
+        self._include_snippet_recordings = include_snippet_recordings
 
     @property
     def clear_export(self) -> bool:

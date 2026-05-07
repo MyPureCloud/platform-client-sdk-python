@@ -48,16 +48,19 @@ class LastResultOverallConditionSettings(object):
         """
         self.swagger_types = {
             'email_wrapup_codes': 'list[str]',
-            'sms_wrapup_codes': 'list[str]'
+            'sms_wrapup_codes': 'list[str]',
+            'whats_app_wrapup_codes': 'list[str]'
         }
 
         self.attribute_map = {
             'email_wrapup_codes': 'emailWrapupCodes',
-            'sms_wrapup_codes': 'smsWrapupCodes'
+            'sms_wrapup_codes': 'smsWrapupCodes',
+            'whats_app_wrapup_codes': 'whatsAppWrapupCodes'
         }
 
         self._email_wrapup_codes = None
         self._sms_wrapup_codes = None
+        self._whats_app_wrapup_codes = None
 
     @property
     def email_wrapup_codes(self) -> List[str]:
@@ -106,6 +109,30 @@ class LastResultOverallConditionSettings(object):
         
 
         self._sms_wrapup_codes = sms_wrapup_codes
+
+    @property
+    def whats_app_wrapup_codes(self) -> List[str]:
+        """
+        Gets the whats_app_wrapup_codes of this LastResultOverallConditionSettings.
+        A list of wrapup code identifiers to match for WhatsApp.
+
+        :return: The whats_app_wrapup_codes of this LastResultOverallConditionSettings.
+        :rtype: list[str]
+        """
+        return self._whats_app_wrapup_codes
+
+    @whats_app_wrapup_codes.setter
+    def whats_app_wrapup_codes(self, whats_app_wrapup_codes: List[str]) -> None:
+        """
+        Sets the whats_app_wrapup_codes of this LastResultOverallConditionSettings.
+        A list of wrapup code identifiers to match for WhatsApp.
+
+        :param whats_app_wrapup_codes: The whats_app_wrapup_codes of this LastResultOverallConditionSettings.
+        :type: list[str]
+        """
+        
+
+        self._whats_app_wrapup_codes = whats_app_wrapup_codes
 
     def to_dict(self):
         """

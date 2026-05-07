@@ -95,7 +95,7 @@ class QueryCriteriaItem(object):
     def operator(self) -> str:
         """
         Gets the operator of this QueryCriteriaItem.
-        The operator for comparison
+        The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported.
 
         :return: The operator of this QueryCriteriaItem.
         :rtype: str
@@ -106,7 +106,7 @@ class QueryCriteriaItem(object):
     def operator(self, operator: str) -> None:
         """
         Sets the operator of this QueryCriteriaItem.
-        The operator for comparison
+        The operator for comparison. For DivisionId, only EQUALS and NOTEQUALS operators are supported.
 
         :param operator: The operator of this QueryCriteriaItem.
         :type: str

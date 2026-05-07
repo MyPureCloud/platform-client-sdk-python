@@ -111,7 +111,7 @@ class PolicyAttribute(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["BOOLEAN", "NUMBER", "STRING", "STRING_LIST", "TIME", "RELATIVE_TIME", "TIME_RANGE", "DAY_RANGE", "IP_ADDRESS", "IP_CIDR"]
+        allowed_values = ["BOOLEAN", "NUMBER", "STRING", "STRING_LIST", "TIME", "RELATIVE_TIME", "DATE", "TIME_RANGE", "DAY_RANGE", "IP_ADDRESS", "IP_CIDR"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

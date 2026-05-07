@@ -244,7 +244,7 @@ class Event(object):
     def outcome_achieved_event(self) -> 'OutcomeAchievedEvent':
         """
         Gets the outcome_achieved_event of this Event.
-        Event where a customer has achieved a specific outcome or goal.
+        Deprecated. Event where a customer has achieved a specific outcome or goal. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         :return: The outcome_achieved_event of this Event.
         :rtype: OutcomeAchievedEvent
@@ -255,7 +255,7 @@ class Event(object):
     def outcome_achieved_event(self, outcome_achieved_event: 'OutcomeAchievedEvent') -> None:
         """
         Sets the outcome_achieved_event of this Event.
-        Event where a customer has achieved a specific outcome or goal.
+        Deprecated. Event where a customer has achieved a specific outcome or goal. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         :param outcome_achieved_event: The outcome_achieved_event of this Event.
         :type: OutcomeAchievedEvent

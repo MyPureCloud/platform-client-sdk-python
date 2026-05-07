@@ -522,10 +522,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_journey_outcome is deprecated")
     def delete_journey_outcome(self, outcome_id: str, **kwargs) -> None:
         """
-        Delete an outcome.
-        
+        Deprecated. Delete an outcome.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -600,10 +601,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_journey_outcomes_predictor is deprecated")
     def delete_journey_outcomes_predictor(self, predictor_id: str, **kwargs) -> None:
         """
-        Delete an outcome predictor.
-        
+        Deprecated. Delete an outcome predictor.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1418,10 +1420,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_actionmaps_estimates_job is deprecated")
     def get_journey_actionmaps_estimates_job(self, job_id: str, **kwargs) -> str:
         """
-        Get status of job.
-        
+        Deprecated. Get status of job.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1496,10 +1499,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_actionmaps_estimates_job_results is deprecated")
     def get_journey_actionmaps_estimates_job_results(self, job_id: str, **kwargs) -> 'ActionMapEstimateResult':
         """
-        Get estimates from completed job.
-        
+        Deprecated. Get estimates from completed job.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2696,10 +2700,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_outcome is deprecated")
     def get_journey_outcome(self, outcome_id: str, **kwargs) -> 'Outcome':
         """
-        Retrieve a single outcome.
-        
+        Deprecated. Retrieve a single outcome.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2774,10 +2779,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_outcomes is deprecated")
     def get_journey_outcomes(self, **kwargs) -> 'OutcomeListing':
         """
-        Retrieve all outcomes.
-        
+        Deprecated. Retrieve all outcomes.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2864,10 +2870,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_outcomes_attributions_job is deprecated")
     def get_journey_outcomes_attributions_job(self, job_id: str, **kwargs) -> 'OutcomeAttributionJobStateResponse':
         """
-        Get job status.
-        
+        Deprecated. Get job status.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	    get_journey_outcomes_attributions_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2943,10 +2950,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_outcomes_attributions_job_results is deprecated")
     def get_journey_outcomes_attributions_job_results(self, job_id: str, **kwargs) -> 'OutcomeAttributionResponseListing':
         """
-        Get outcome attribution entities from completed job.
-        
+        Deprecated. Get outcome attribution entities from completed job.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	    get_journey_outcomes_attributions_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3022,10 +3030,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_outcomes_predictor is deprecated")
     def get_journey_outcomes_predictor(self, predictor_id: str, **kwargs) -> 'OutcomePredictor':
         """
-        Retrieve a single outcome predictor.
-        
+        Deprecated. Retrieve a single outcome predictor.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3100,10 +3109,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_outcomes_predictors is deprecated")
     def get_journey_outcomes_predictors(self, **kwargs) -> 'OutcomePredictorListing':
         """
-        Retrieve all outcome predictors.
-        
+        Deprecated. Retrieve all outcome predictors.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3508,10 +3518,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_session_outcomescores is deprecated")
     def get_journey_session_outcomescores(self, session_id: str, **kwargs) -> 'OutcomeScoresResult':
         """
-        Retrieve latest outcome score associated with a session for all outcomes.
-        
+        Deprecated. Retrieve latest outcome score associated with a session for all outcomes.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5251,10 +5262,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_journey_outcome is deprecated")
     def patch_journey_outcome(self, outcome_id: str, **kwargs) -> 'Outcome':
         """
-        Update an outcome.
-        
+        Deprecated. Update an outcome.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5822,10 +5834,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_journey_actionmaps_estimates_jobs is deprecated")
     def post_journey_actionmaps_estimates_jobs(self, body: 'ActionMapEstimateRequest', **kwargs) -> 'EstimateJobAsyncResponse':
         """
-        Query for estimates
-        
+        Deprecated. Query for estimates
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6530,10 +6543,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_journey_outcomes is deprecated")
     def post_journey_outcomes(self, **kwargs) -> 'Outcome':
         """
-        Create an outcome.
-        
+        Deprecated. Create an outcome.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6605,10 +6619,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_journey_outcomes_attributions_jobs is deprecated")
     def post_journey_outcomes_attributions_jobs(self, **kwargs) -> 'OutcomeAttributionAsyncResponse':
         """
-        Create Outcome Attributions
-        
+        Deprecated. Create Outcome Attributions
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 	    post_journey_outcomes_attributions_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
@@ -6681,10 +6696,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_journey_outcomes_predictors is deprecated")
     def post_journey_outcomes_predictors(self, **kwargs) -> 'OutcomePredictor':
         """
-        Create an outcome predictor.
-        
+        Deprecated. Create an outcome predictor.
+        Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

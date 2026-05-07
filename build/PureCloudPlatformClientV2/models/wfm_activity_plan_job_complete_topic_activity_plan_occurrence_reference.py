@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WfmActivityPlanJobCompleteTopicActivityPlanSessionReference
 
 class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference(object):
     """
@@ -47,14 +49,17 @@ class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'sessions': 'list[WfmActivityPlanJobCompleteTopicActivityPlanSessionReference]'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'sessions': 'sessions'
         }
 
         self._id = None
+        self._sessions = None
 
     @property
     def id(self) -> str:
@@ -79,6 +84,30 @@ class WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference(object):
         
 
         self._id = id
+
+    @property
+    def sessions(self) -> List['WfmActivityPlanJobCompleteTopicActivityPlanSessionReference']:
+        """
+        Gets the sessions of this WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.
+
+
+        :return: The sessions of this WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.
+        :rtype: list[WfmActivityPlanJobCompleteTopicActivityPlanSessionReference]
+        """
+        return self._sessions
+
+    @sessions.setter
+    def sessions(self, sessions: List['WfmActivityPlanJobCompleteTopicActivityPlanSessionReference']) -> None:
+        """
+        Sets the sessions of this WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.
+
+
+        :param sessions: The sessions of this WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.
+        :type: list[WfmActivityPlanJobCompleteTopicActivityPlanSessionReference]
+        """
+        
+
+        self._sessions = sessions
 
     def to_dict(self):
         """

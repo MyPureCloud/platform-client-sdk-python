@@ -47,49 +47,44 @@ class UsersRulesLockedCriteriaSettingsGroup(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'operator': 'str',
+            'operators': 'list[str]',
             'container': 'str',
             'max_id_count': 'int'
         }
 
         self.attribute_map = {
-            'operator': 'operator',
+            'operators': 'operators',
             'container': 'container',
             'max_id_count': 'maxIdCount'
         }
 
-        self._operator = None
+        self._operators = None
         self._container = None
         self._max_id_count = None
 
     @property
-    def operator(self) -> str:
+    def operators(self) -> List[str]:
         """
-        Gets the operator of this UsersRulesLockedCriteriaSettingsGroup.
-        The operator for this criteria
+        Gets the operators of this UsersRulesLockedCriteriaSettingsGroup.
+        The allowed operators for this criteria
 
-        :return: The operator of this UsersRulesLockedCriteriaSettingsGroup.
-        :rtype: str
+        :return: The operators of this UsersRulesLockedCriteriaSettingsGroup.
+        :rtype: list[str]
         """
-        return self._operator
+        return self._operators
 
-    @operator.setter
-    def operator(self, operator: str) -> None:
+    @operators.setter
+    def operators(self, operators: List[str]) -> None:
         """
-        Sets the operator of this UsersRulesLockedCriteriaSettingsGroup.
-        The operator for this criteria
+        Sets the operators of this UsersRulesLockedCriteriaSettingsGroup.
+        The allowed operators for this criteria
 
-        :param operator: The operator of this UsersRulesLockedCriteriaSettingsGroup.
-        :type: str
+        :param operators: The operators of this UsersRulesLockedCriteriaSettingsGroup.
+        :type: list[str]
         """
-        if isinstance(operator, int):
-            operator = str(operator)
-        allowed_values = ["And", "Not"]
-        if operator.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for operator -> " + operator)
-            self._operator = "outdated_sdk_version"
-        else:
-            self._operator = operator
+        
+
+        self._operators = operators
 
     @property
     def container(self) -> str:

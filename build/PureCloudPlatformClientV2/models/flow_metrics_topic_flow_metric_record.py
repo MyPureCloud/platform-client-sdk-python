@@ -136,6 +136,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'self_served': 'bool',
             'session_dnis': 'str',
             'session_id': 'str',
+            'skill_expression_id': 'str',
             'starting_language': 'str',
             'station_id': 'str',
             'team_id': 'str',
@@ -238,6 +239,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'self_served': 'selfServed',
             'session_dnis': 'sessionDnis',
             'session_id': 'sessionId',
+            'skill_expression_id': 'skillExpressionId',
             'starting_language': 'startingLanguage',
             'station_id': 'stationId',
             'team_id': 'teamId',
@@ -339,6 +341,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         self._self_served = None
         self._session_dnis = None
         self._session_id = None
+        self._skill_expression_id = None
         self._starting_language = None
         self._station_id = None
         self._team_id = None
@@ -2463,6 +2466,30 @@ class FlowMetricsTopicFlowMetricRecord(object):
         
 
         self._session_id = session_id
+
+    @property
+    def skill_expression_id(self) -> str:
+        """
+        Gets the skill_expression_id of this FlowMetricsTopicFlowMetricRecord.
+        Unique identifier for the skill requested for an interaction
+
+        :return: The skill_expression_id of this FlowMetricsTopicFlowMetricRecord.
+        :rtype: str
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: str) -> None:
+        """
+        Sets the skill_expression_id of this FlowMetricsTopicFlowMetricRecord.
+        Unique identifier for the skill requested for an interaction
+
+        :param skill_expression_id: The skill_expression_id of this FlowMetricsTopicFlowMetricRecord.
+        :type: str
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     @property
     def starting_language(self) -> str:

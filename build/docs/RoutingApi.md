@@ -3755,8 +3755,9 @@ Get Routing Skill
 
 Wraps GET /api/v2/routing/skills/{skillId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* routing:skill:view
 
 ### Example
 
@@ -4010,8 +4011,9 @@ Get the list of routing skills.
 
 Wraps GET /api/v2/routing/skills 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* routing:skill:view
 
 ### Example
 
@@ -8726,4 +8728,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

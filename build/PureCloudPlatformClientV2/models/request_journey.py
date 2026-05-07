@@ -62,7 +62,7 @@ class RequestJourney(object):
     def patterns(self) -> List['RequestJourneyPattern']:
         """
         Gets the patterns of this RequestJourney.
-        A list of zero or more patterns to match.
+        A list of zero or more patterns to match. Defaults to an empty list if not provided.
 
         :return: The patterns of this RequestJourney.
         :rtype: list[RequestJourneyPattern]
@@ -73,7 +73,7 @@ class RequestJourney(object):
     def patterns(self, patterns: List['RequestJourneyPattern']) -> None:
         """
         Sets the patterns of this RequestJourney.
-        A list of zero or more patterns to match.
+        A list of zero or more patterns to match. Defaults to an empty list if not provided.
 
         :param patterns: The patterns of this RequestJourney.
         :type: list[RequestJourneyPattern]

@@ -309,7 +309,7 @@ class ConversationProperties(object):
     def is_screen_monitored(self) -> bool:
         """
         Gets the is_screen_monitored of this ConversationProperties.
-        Indicates filtering for screenMonitored
+        Deprecated: Use screenMonitored
 
         :return: The is_screen_monitored of this ConversationProperties.
         :rtype: bool
@@ -320,7 +320,7 @@ class ConversationProperties(object):
     def is_screen_monitored(self, is_screen_monitored: bool) -> None:
         """
         Sets the is_screen_monitored of this ConversationProperties.
-        Indicates filtering for screenMonitored
+        Deprecated: Use screenMonitored
 
         :param is_screen_monitored: The is_screen_monitored of this ConversationProperties.
         :type: bool

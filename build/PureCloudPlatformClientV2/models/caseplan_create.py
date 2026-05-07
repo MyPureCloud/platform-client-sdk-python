@@ -321,7 +321,7 @@ class CaseplanCreate(object):
     def data_schemas(self) -> List['CaseplanDataSchema']:
         """
         Gets the data_schemas of this CaseplanCreate.
-        The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace.
+        The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
 
         :return: The data_schemas of this CaseplanCreate.
         :rtype: list[CaseplanDataSchema]
@@ -332,7 +332,7 @@ class CaseplanCreate(object):
     def data_schemas(self, data_schemas: List['CaseplanDataSchema']) -> None:
         """
         Sets the data_schemas of this CaseplanCreate.
-        The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace.
+        The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
 
         :param data_schemas: The data_schemas of this CaseplanCreate.
         :type: list[CaseplanDataSchema]

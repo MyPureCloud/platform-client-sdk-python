@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details_job_results**](#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_conversation**](#get_conversation) | Get conversation|
+|[**get_conversation_assistant_copilotcontext**](#get_conversation_assistant_copilotcontext) | Get copilot context values for a conversation.|
 |[**get_conversation_communication_agentchecklist**](#get_conversation_communication_agentchecklist) | Get checklist info for a single checklist.|
 |[**get_conversation_communication_agentchecklist_job**](#get_conversation_communication_agentchecklist_job) | Get inference job status|
 |[**get_conversation_communication_agentchecklists**](#get_conversation_communication_agentchecklists) | Get information of all checklists associated with a conversation.|
@@ -187,6 +188,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_message_participant**](#patch_conversations_message_participant) | Update conversation participant|
 |[**patch_conversations_message_participant_attributes**](#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_message_participant_communication**](#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it. This endpoint does not update wrapup.|
+|[**patch_conversations_message_participant_parkingstate**](#patch_conversations_message_participant_parkingstate) | Update conversation by setting its parking state|
 |[**patch_conversations_messaging_integrations_apple_integration_id**](#patch_conversations_messaging_integrations_apple_integration_id) | Update an Apple messaging integration|
 |[**patch_conversations_messaging_integrations_facebook_integration_id**](#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
 |[**patch_conversations_messaging_integrations_instagram_integration_id**](#patch_conversations_messaging_integrations_instagram_integration_id) | Update Instagram messaging integration|
@@ -1685,6 +1687,56 @@ except ApiException as e:
 [**Conversation**](Conversation)
 
 
+## get_conversation_assistant_copilotcontext
+
+> [**CopilotContextValues**](CopilotContextValues) get_conversation_assistant_copilotcontext(conversation_id)
+
+
+Get copilot context values for a conversation.
+
+get_conversation_assistant_copilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/assistant/copilotcontext 
+
+Requires ALL permissions: 
+
+* conversation:assistantCopilotContext:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID.
+
+try:
+    # Get copilot context values for a conversation.
+    api_response = api_instance.get_conversation_assistant_copilotcontext(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_assistant_copilotcontext: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID. |  |
+
+### Return type
+
+[**CopilotContextValues**](CopilotContextValues)
+
+
 ## get_conversation_communication_agentchecklist
 
 > [**AgentChecklistResponse**](AgentChecklistResponse) get_conversation_communication_agentchecklist(conversation_id, communication_id, agent_checklist_id)
@@ -2393,7 +2445,7 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **type** | **str**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer |
+| **type** | **str**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer, ThirdPartySuggestion |
 | **state** | **str**| Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
 
 ### Return type
@@ -9449,6 +9501,57 @@ except ApiException as e:
 ### Return type
 
 **object**
+
+
+## patch_conversations_message_participant_parkingstate
+
+>  patch_conversations_message_participant_parkingstate(conversation_id, participant_id, body)
+
+
+Update conversation by setting its parking state
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate 
+
+Requires ANY permissions: 
+
+* conversation:message:park
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ParkingStateRequest() # ParkingStateRequest | Parking update request
+
+try:
+    # Update conversation by setting its parking state
+    api_instance.patch_conversations_message_participant_parkingstate(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_message_participant_parkingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParkingStateRequest**](ParkingStateRequest)| Parking update request |  |
+
+### Return type
+
+void (empty response body)
 
 
 ## patch_conversations_messaging_integrations_apple_integration_id
@@ -16692,4 +16795,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

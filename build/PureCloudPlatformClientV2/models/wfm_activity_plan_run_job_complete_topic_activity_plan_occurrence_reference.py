@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference
 
 class WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference(object):
     """
@@ -47,14 +49,17 @@ class WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'sessions': 'list[WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference]'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'sessions': 'sessions'
         }
 
         self._id = None
+        self._sessions = None
 
     @property
     def id(self) -> str:
@@ -79,6 +84,30 @@ class WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference(object):
         
 
         self._id = id
+
+    @property
+    def sessions(self) -> List['WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference']:
+        """
+        Gets the sessions of this WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference.
+
+
+        :return: The sessions of this WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference.
+        :rtype: list[WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference]
+        """
+        return self._sessions
+
+    @sessions.setter
+    def sessions(self, sessions: List['WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference']) -> None:
+        """
+        Sets the sessions of this WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference.
+
+
+        :param sessions: The sessions of this WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference.
+        :type: list[WfmActivityPlanRunJobCompleteTopicActivityPlanSessionReference]
+        """
+        
+
+        self._sessions = sessions
 
     def to_dict(self):
         """

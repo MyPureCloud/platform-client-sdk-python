@@ -270,7 +270,7 @@ class ActionMap(object):
     def trigger_with_outcome_probability_conditions(self) -> List['OutcomeProbabilityCondition']:
         """
         Gets the trigger_with_outcome_probability_conditions of this ActionMap.
-        (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
+        Deprecated. Probability conditions for outcomes that must be satisfied to trigger the action map.
 
         :return: The trigger_with_outcome_probability_conditions of this ActionMap.
         :rtype: list[OutcomeProbabilityCondition]
@@ -281,7 +281,7 @@ class ActionMap(object):
     def trigger_with_outcome_probability_conditions(self, trigger_with_outcome_probability_conditions: List['OutcomeProbabilityCondition']) -> None:
         """
         Sets the trigger_with_outcome_probability_conditions of this ActionMap.
-        (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
+        Deprecated. Probability conditions for outcomes that must be satisfied to trigger the action map.
 
         :param trigger_with_outcome_probability_conditions: The trigger_with_outcome_probability_conditions of this ActionMap.
         :type: list[OutcomeProbabilityCondition]
@@ -294,7 +294,7 @@ class ActionMap(object):
     def trigger_with_outcome_percentile_conditions(self) -> List['OutcomePercentileCondition']:
         """
         Gets the trigger_with_outcome_percentile_conditions of this ActionMap.
-        (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
+        Deprecated. Percentile conditions for outcomes that must be satisfied to trigger the action map.
 
         :return: The trigger_with_outcome_percentile_conditions of this ActionMap.
         :rtype: list[OutcomePercentileCondition]
@@ -305,7 +305,7 @@ class ActionMap(object):
     def trigger_with_outcome_percentile_conditions(self, trigger_with_outcome_percentile_conditions: List['OutcomePercentileCondition']) -> None:
         """
         Sets the trigger_with_outcome_percentile_conditions of this ActionMap.
-        (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
+        Deprecated. Percentile conditions for outcomes that must be satisfied to trigger the action map.
 
         :param trigger_with_outcome_percentile_conditions: The trigger_with_outcome_percentile_conditions of this ActionMap.
         :type: list[OutcomePercentileCondition]
@@ -318,7 +318,7 @@ class ActionMap(object):
     def trigger_with_outcome_quantile_conditions(self) -> List['OutcomeQuantileCondition']:
         """
         Gets the trigger_with_outcome_quantile_conditions of this ActionMap.
-        Quantile conditions for outcomes that must be satisfied to trigger the action map.
+        Deprecated. Quantile conditions for outcomes that must be satisfied to trigger the action map. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         :return: The trigger_with_outcome_quantile_conditions of this ActionMap.
         :rtype: list[OutcomeQuantileCondition]
@@ -329,7 +329,7 @@ class ActionMap(object):
     def trigger_with_outcome_quantile_conditions(self, trigger_with_outcome_quantile_conditions: List['OutcomeQuantileCondition']) -> None:
         """
         Sets the trigger_with_outcome_quantile_conditions of this ActionMap.
-        Quantile conditions for outcomes that must be satisfied to trigger the action map.
+        Deprecated. Quantile conditions for outcomes that must be satisfied to trigger the action map. Journey Outcomes is being removed. See https://help.genesys.cloud/announcements/genesys-cloud/deprecation-journey-outcomes/
 
         :param trigger_with_outcome_quantile_conditions: The trigger_with_outcome_quantile_conditions of this ActionMap.
         :type: list[OutcomeQuantileCondition]

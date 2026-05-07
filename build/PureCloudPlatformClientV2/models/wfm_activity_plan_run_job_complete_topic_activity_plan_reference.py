@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference
 
 class WfmActivityPlanRunJobCompleteTopicActivityPlanReference(object):
     """
@@ -47,14 +49,17 @@ class WfmActivityPlanRunJobCompleteTopicActivityPlanReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'occurrences': 'list[WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference]'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'occurrences': 'occurrences'
         }
 
         self._id = None
+        self._occurrences = None
 
     @property
     def id(self) -> str:
@@ -79,6 +84,30 @@ class WfmActivityPlanRunJobCompleteTopicActivityPlanReference(object):
         
 
         self._id = id
+
+    @property
+    def occurrences(self) -> List['WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference']:
+        """
+        Gets the occurrences of this WfmActivityPlanRunJobCompleteTopicActivityPlanReference.
+
+
+        :return: The occurrences of this WfmActivityPlanRunJobCompleteTopicActivityPlanReference.
+        :rtype: list[WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference]
+        """
+        return self._occurrences
+
+    @occurrences.setter
+    def occurrences(self, occurrences: List['WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference']) -> None:
+        """
+        Sets the occurrences of this WfmActivityPlanRunJobCompleteTopicActivityPlanReference.
+
+
+        :param occurrences: The occurrences of this WfmActivityPlanRunJobCompleteTopicActivityPlanReference.
+        :type: list[WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference]
+        """
+        
+
+        self._occurrences = occurrences
 
     def to_dict(self):
         """

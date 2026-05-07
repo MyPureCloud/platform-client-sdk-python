@@ -348,7 +348,7 @@ class V3Synchronization(object):
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["InQueue", "InProgress", "PostProcessing", "Completed", "Failed", "Unknown"]
+        allowed_values = ["InQueue", "InProgress", "PostProcessing", "Completed", "Failed", "Unknown", "Cancelled"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"

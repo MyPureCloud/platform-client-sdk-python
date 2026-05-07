@@ -72,6 +72,7 @@ class AppEventResponse(object):
             'search_query': 'str',
             'attributes': 'dict(str, CustomEventAttribute)',
             'traits': 'dict(str, CustomEventAttribute)',
+            'external_id': 'str',
             'created_date': 'datetime'
         }
 
@@ -92,6 +93,7 @@ class AppEventResponse(object):
             'search_query': 'searchQuery',
             'attributes': 'attributes',
             'traits': 'traits',
+            'external_id': 'externalId',
             'created_date': 'createdDate'
         }
 
@@ -111,6 +113,7 @@ class AppEventResponse(object):
         self._search_query = None
         self._attributes = None
         self._traits = None
+        self._external_id = None
         self._created_date = None
 
     @property
@@ -496,6 +499,30 @@ class AppEventResponse(object):
         
 
         self._traits = traits
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this AppEventResponse.
+        An external identifier for the customer.
+
+        :return: The external_id of this AppEventResponse.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this AppEventResponse.
+        An external identifier for the customer.
+
+        :param external_id: The external_id of this AppEventResponse.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def created_date(self) -> datetime:

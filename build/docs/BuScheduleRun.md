@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The globally unique identifier for the object. | [optional] |
+| **id** | str | The globally unique identifier for the object. | |
 | **scheduler_run_id** | str | The scheduler run ID.  Reference this value for support | [optional] |
 | **intraday_rescheduling** | bool | Whether this is an intraday rescheduling run | [optional] |
 | **state** | str | The state of the generation run | [optional] |
@@ -27,4 +27,4 @@
 
 
 
-_PureCloudPlatformClientV2 256.0.0_
+_PureCloudPlatformClientV2 257.0.0_

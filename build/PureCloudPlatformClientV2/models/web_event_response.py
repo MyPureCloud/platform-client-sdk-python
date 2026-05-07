@@ -72,6 +72,7 @@ class WebEventResponse(object):
             'attributes': 'dict(str, CustomEventAttribute)',
             'traits': 'dict(str, CustomEventAttribute)',
             'authenticated': 'bool',
+            'external_id': 'str',
             'created_date': 'datetime'
         }
 
@@ -92,6 +93,7 @@ class WebEventResponse(object):
             'attributes': 'attributes',
             'traits': 'traits',
             'authenticated': 'authenticated',
+            'external_id': 'externalId',
             'created_date': 'createdDate'
         }
 
@@ -111,6 +113,7 @@ class WebEventResponse(object):
         self._attributes = None
         self._traits = None
         self._authenticated = None
+        self._external_id = None
         self._created_date = None
 
     @property
@@ -496,6 +499,30 @@ class WebEventResponse(object):
         
 
         self._authenticated = authenticated
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this WebEventResponse.
+        An external identifier for the customer.
+
+        :return: The external_id of this WebEventResponse.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this WebEventResponse.
+        An external identifier for the customer.
+
+        :param external_id: The external_id of this WebEventResponse.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def created_date(self) -> datetime:
