@@ -3862,4 +3862,4 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 257.0.0_
+_PureCloudPlatformClientV2 257.1.0_

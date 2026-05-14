@@ -3224,4 +3224,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 257.0.0_
+_PureCloudPlatformClientV2 257.1.0_

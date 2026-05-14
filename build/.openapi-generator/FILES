@@ -16017,6 +16017,7 @@ docs/put_workforcemanagement_agent_integrations_hris-example.txt
 docs/put_workforcemanagement_businessunit_timeofflimit_values-example.txt
 docs/put_workforcemanagement_managementunit_timeofflimit_values-example.txt
 git_push.sh
+pyproject.toml
 requirements.txt
 setup.py
 test-requirements.txt

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PureCloudPlatformClientV2"
+version = "257.1.0"
+authors = [
+    {name = "Genesys Developer Evangelists", email = "DeveloperEvangelists@Genesys.com"},
+]
+description = "PureCloud Platform API SDK"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["Swagger PureCloud Platform API Genesys"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python"
+]
+license = {file = "License.txt"}
+dependencies = [
+    "certifi>=2026.4.22",
+    "urllib3>=2.6.3",
+    "python-dateutil>=2.9.0.post0",
+    "watchdog>=6.0.0"
+]
+
+[project.urls]
+Homepage = "https://mypurecloud.github.io/platform-client-sdk-python/"
+
+[tool.setuptools]
+include-package-data = true
