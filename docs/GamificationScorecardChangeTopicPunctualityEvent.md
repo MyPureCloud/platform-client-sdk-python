@@ -9,6 +9,7 @@
 | **date_start** | str |  | [optional] |
 | **date_schedule_start** | str |  | [optional] |
 | **activity_code** | str |  | [optional] |
+| **activity_code_id** | str |  | [optional] |
 | **activity_color** | str |  | [optional] |
 | **activity_name** | str |  | [optional] |
 | **points** | int |  | [optional] |

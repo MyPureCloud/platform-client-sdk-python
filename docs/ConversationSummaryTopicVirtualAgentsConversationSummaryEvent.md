@@ -23,6 +23,8 @@
 | **extracted_entities** | [list[ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity]](ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity) |  | [optional] |
 | **wrap_up_codes** | [list[ConversationSummaryTopicVirtualAgentsConversationWrapUpCode]](ConversationSummaryTopicVirtualAgentsConversationWrapUpCode) |  | [optional] |
 | **trigger_source** | [ConversationSummaryTopicVirtualAgentsTriggerSource](ConversationSummaryTopicVirtualAgentsTriggerSource) |  | [optional] |
+| **summary_source_type** | str |  | [optional] |
+| **trigger_type** | str |  | [optional] |
 | **last_edited_by** | [ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  | [optional] |
 | **error_type** | str |  | [optional] |
 | **duration_ms** | int |  | [optional] |
