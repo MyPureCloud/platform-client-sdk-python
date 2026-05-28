@@ -14,6 +14,7 @@
 | **date_created** | datetime | Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **date_modified** | datetime | Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **platform** | str | The platform of the data ingestion rule. | [optional] |
+| **ingestion_rule_info** | [MessageInfo](MessageInfo) | The Info about ingestion rule. | [optional] |
 | **countries** | list[str] | The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide. | [optional] |
 | **integration_id** | str | The Integration Id from which public social posts are ingested. This entity is created using the /conversations/messaging/integrations/open/extensions/googlebusinessprofile resource | [optional] |
 | **external_source** | [DomainEntityRef](DomainEntityRef) | The external source associated with this data ingestion rule, which is used when performing identity resolution | [optional] |
@@ -21,4 +22,4 @@
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

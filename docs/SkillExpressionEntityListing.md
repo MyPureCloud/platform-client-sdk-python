@@ -1,12 +1,12 @@
-# UtilizationTagEntityListing
+# SkillExpressionEntityListing
 
-## UtilizationTagEntityListing
+## SkillExpressionEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [list[UtilizationTag]](UtilizationTag) |  | [optional] |
+| **entities** | [list[SkillExpression]](SkillExpression) |  | [optional] |
 | **page_size** | int |  | [optional] |
 | **page_number** | int |  | [optional] |
 | **total** | int |  | [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

@@ -10,6 +10,7 @@
 | **name** | str | Name of the checklist item. | |
 | **description** | str | Description of the checklist item. | [optional] |
 | **automated_check_enabled** | bool | Flag to indicate whether automated check is enabled for this checklist item. | [optional] |
+| **exact_phrase_match** | bool | Flag to indicate whether exact phrase matching is applicable for this checklist item. | [optional] |
 | **important** | bool | Flag to indicate whether this checklist item is marked as important. | [optional] |
 | **state_from_model** | str | Checklist state as evaluated by the model. | [optional] |
 | **state_from_agent** | str | Checklist state as evaluated by the agent. | [optional] |
@@ -20,4 +21,4 @@
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

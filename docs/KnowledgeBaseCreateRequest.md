@@ -9,7 +9,8 @@
 | **name** | str | Knowledge base name | |
 | **description** | str | Knowledge base description | [optional] |
 | **core_language** | str | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with &#39;early preview&#39; language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA] which might have a lower accuracy. | |
+| **content_search_enabled** | bool | Flag that indicates the search on content is enabled for the knowledge base. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

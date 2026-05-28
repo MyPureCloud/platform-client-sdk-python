@@ -15,7 +15,8 @@
 | **carousel** | [ContentCarousel](ContentCarousel) | Carousel content | [optional] |
 | **date_picker** | [ContentDatePicker](ContentDatePicker) | DatePicker content | [optional] |
 | **list_picker** | [ConversationContentListPicker](ConversationContentListPicker) | ListPicker content | [optional] |
+| **form** | [ConversationContentForm](ConversationContentForm) | Form content | [optional] |
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

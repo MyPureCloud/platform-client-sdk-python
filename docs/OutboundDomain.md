@@ -12,8 +12,9 @@
 | **dkim_verification_result** | [VerificationResult](VerificationResult) | DKIM registration Status | [optional] |
 | **sender_type** | str | Sender Type | [optional] |
 | **email_setting** | [EmailSetting](EmailSetting) | The email settings associated with this domain. | [optional] |
+| **dmarc_verification_result** | [DmarcResult](DmarcResult) | The DMARC verification status for this domain. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

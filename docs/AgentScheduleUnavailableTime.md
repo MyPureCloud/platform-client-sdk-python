@@ -6,9 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **time_span** | [UnavailableTimesTimeSpan](UnavailableTimesTimeSpan) | Exact date, time and length of the unavailability time span | |
+| **time_span** | [WfmTimeSpan](WfmTimeSpan) | Exact date, time and length of the unavailability time span | |
 | **notes** | str | Comments explaining the unavailability time span | [optional] |
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

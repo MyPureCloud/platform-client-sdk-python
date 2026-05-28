@@ -7050,7 +7050,7 @@ except ApiException as e:
 
 ## post_flows_jobs
 
-> [**RegisterArchitectJobResponse**](RegisterArchitectJobResponse) post_flows_jobs()
+> [**RegisterArchitectJobResponse**](RegisterArchitectJobResponse) post_flows_jobs(body=body)
 
 
 Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
@@ -7074,10 +7074,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = NULL # object |  (optional)
 
 try:
     # Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
-    api_response = api_instance.post_flows_jobs()
+    api_response = api_instance.post_flows_jobs(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->post_flows_jobs: %s\n" % e)
@@ -7085,7 +7086,10 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | [optional]  |
 
 ### Return type
 
@@ -7962,4 +7966,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

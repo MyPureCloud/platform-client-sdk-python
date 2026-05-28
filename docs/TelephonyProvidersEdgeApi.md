@@ -108,7 +108,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_didpools**](#post_telephony_providers_edges_didpools) | Create a new DID pool|
 |[**post_telephony_providers_edges_edgegroups**](#post_telephony_providers_edges_edgegroups) | Create an edge group.|
 |[**post_telephony_providers_edges_extensionpools**](#post_telephony_providers_edges_extensionpools) | Create a new extension pool|
-|[**post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource**](#post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource) | Post media endpoint statistics event.|
 |[**post_telephony_providers_edges_phone_reboot**](#post_telephony_providers_edges_phone_reboot) | Reboot a Phone|
 |[**post_telephony_providers_edges_phonebasesettings**](#post_telephony_providers_edges_phonebasesettings) | Create a new Phone Base Settings object|
 |[**post_telephony_providers_edges_phones**](#post_telephony_providers_edges_phones) | Create a new Phone|
@@ -5302,62 +5301,6 @@ except ApiException as e:
 [**ExtensionPool**](ExtensionPool)
 
 
-## post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource
-
-> [**MediaStatistics**](MediaStatistics) post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource(conversation_id, communication_id, media_resource_id, body)
-
-
-Post media endpoint statistics event.
-
-post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps POST /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId} 
-
-Requires ANY permissions: 
-
-* telephony:mediaStatistics:add
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-conversation_id = 'conversation_id_example' # str | Identifier of the conversation
-communication_id = 'communication_id_example' # str | Identifier of the media session
-media_resource_id = 'media_resource_id_example' # str | Identifier of the media resource of the endpoint
-body = PureCloudPlatformClientV2.MediaStatisticsPostRequest() # MediaStatisticsPostRequest | MediaStatisticsPostRequest
-
-try:
-    # Post media endpoint statistics event.
-    api_response = api_instance.post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource(conversation_id, communication_id, media_resource_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_mediastatistics_conversation_communication_mediaresource: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**| Identifier of the conversation |  |
-| **communication_id** | **str**| Identifier of the media session |  |
-| **media_resource_id** | **str**| Identifier of the media resource of the endpoint |  |
-| **body** | [**MediaStatisticsPostRequest**](MediaStatisticsPostRequest)| MediaStatisticsPostRequest |  |
-
-### Return type
-
-[**MediaStatistics**](MediaStatistics)
-
-
 ## post_telephony_providers_edges_phone_reboot
 
 >  post_telephony_providers_edges_phone_reboot(phone_id)
@@ -6496,4 +6439,4 @@ except ApiException as e:
 [**TrunkBase**](TrunkBase)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_
