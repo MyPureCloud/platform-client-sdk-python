@@ -49,17 +49,20 @@ class KnowledgeBaseReference(object):
         self.swagger_types = {
             'id': 'str',
             'language_code': 'str',
+            'content_search_enabled': 'bool',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'language_code': 'languageCode',
+            'content_search_enabled': 'contentSearchEnabled',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._language_code = None
+        self._content_search_enabled = None
         self._self_uri = None
 
     @property
@@ -114,6 +117,30 @@ class KnowledgeBaseReference(object):
             self._language_code = "outdated_sdk_version"
         else:
             self._language_code = language_code
+
+    @property
+    def content_search_enabled(self) -> bool:
+        """
+        Gets the content_search_enabled of this KnowledgeBaseReference.
+        Flag that indicates the search on content is enabled for the knowledge base.
+
+        :return: The content_search_enabled of this KnowledgeBaseReference.
+        :rtype: bool
+        """
+        return self._content_search_enabled
+
+    @content_search_enabled.setter
+    def content_search_enabled(self, content_search_enabled: bool) -> None:
+        """
+        Sets the content_search_enabled of this KnowledgeBaseReference.
+        Flag that indicates the search on content is enabled for the knowledge base.
+
+        :param content_search_enabled: The content_search_enabled of this KnowledgeBaseReference.
+        :type: bool
+        """
+        
+
+        self._content_search_enabled = content_search_enabled
 
     @property
     def self_uri(self) -> str:

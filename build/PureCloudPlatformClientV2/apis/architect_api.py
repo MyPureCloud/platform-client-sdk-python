@@ -11158,12 +11158,13 @@ class ArchitectApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param object body: 
         :return: RegisterArchitectJobResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -11189,6 +11190,8 @@ class ArchitectApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\

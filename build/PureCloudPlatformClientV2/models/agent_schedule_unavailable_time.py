@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import UnavailableTimesTimeSpan
+    from . import WfmTimeSpan
 
 class AgentScheduleUnavailableTime(object):
     """
@@ -49,7 +49,7 @@ class AgentScheduleUnavailableTime(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'time_span': 'UnavailableTimesTimeSpan',
+            'time_span': 'WfmTimeSpan',
             'notes': 'str'
         }
 
@@ -62,24 +62,24 @@ class AgentScheduleUnavailableTime(object):
         self._notes = None
 
     @property
-    def time_span(self) -> 'UnavailableTimesTimeSpan':
+    def time_span(self) -> 'WfmTimeSpan':
         """
         Gets the time_span of this AgentScheduleUnavailableTime.
         Exact date, time and length of the unavailability time span
 
         :return: The time_span of this AgentScheduleUnavailableTime.
-        :rtype: UnavailableTimesTimeSpan
+        :rtype: WfmTimeSpan
         """
         return self._time_span
 
     @time_span.setter
-    def time_span(self, time_span: 'UnavailableTimesTimeSpan') -> None:
+    def time_span(self, time_span: 'WfmTimeSpan') -> None:
         """
         Sets the time_span of this AgentScheduleUnavailableTime.
         Exact date, time and length of the unavailability time span
 
         :param time_span: The time_span of this AgentScheduleUnavailableTime.
-        :type: UnavailableTimesTimeSpan
+        :type: WfmTimeSpan
         """
         
 

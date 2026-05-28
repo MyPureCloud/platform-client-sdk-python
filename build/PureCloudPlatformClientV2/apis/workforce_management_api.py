@@ -52,6 +52,10 @@ from ..models import AdherenceExplanationResponse
 from ..models import AdminAgentWorkPlanPreferenceResponse
 from ..models import AdminBulkUpdateAlternativeShiftTradeStateRequest
 from ..models import AdminTimeOffRequestPatch
+from ..models import AgentBulkAddOpportunityEnrollmentsRequest
+from ..models import AgentBulkAddOpportunityEnrollmentsResponse
+from ..models import AgentBulkStatusUpdateOpportunityEnrollmentsRequest
+from ..models import AgentBulkStatusUpdateOpportunityEnrollmentsResponse
 from ..models import AgentIntegrationsRequest
 from ..models import AgentIntegrationsResponse
 from ..models import AgentManagementUnitReference
@@ -61,6 +65,7 @@ from ..models import AgentPossibleWorkShiftsRequest
 from ..models import AgentPossibleWorkShiftsResponse
 from ..models import AgentQueryAdherenceExplanationsRequest
 from ..models import AgentQueryAdherenceExplanationsResponse
+from ..models import AgentQueryOpportunitiesResponse
 from ..models import AgentTimeOffRequestPatch
 from ..models import AgentUpdateAlternativeShiftTradeRequest
 from ..models import AgentWorkPlanBiddingPreferenceResponse
@@ -119,7 +124,17 @@ from ..models import BuTimeOffPlanListing
 from ..models import BuTimeOffPlanResponse
 from ..models import BuUpdateTimeOffPlanRequest
 from ..models import BuUserListing
+from ..models import BulkAddOpportunitiesRequest
+from ..models import BulkAddOpportunitiesResponse
+from ..models import BulkOpportunitiesExternalActivitiesRequest
+from ..models import BulkOpportunitiesRequest
+from ..models import BulkOpportunitiesStatusUpdateRequest
+from ..models import BulkOpportunitiesStatusUpdateResponse
+from ..models import BulkOpportunityEnrollmentsStatusUpdateRequest
+from ..models import BulkPublishOpportunitiesResponse
+from ..models import BulkRemoveOpportunitiesResponse
 from ..models import BulkShiftTradeStateUpdateRequest
+from ..models import BulkUpdateOpportunityEnrollmentsStatusResponse
 from ..models import BulkUpdateShiftTradeListJobRequest
 from ..models import BulkUpdateShiftTradeStateResponse
 from ..models import BusinessUnitActivityCode
@@ -195,7 +210,10 @@ from ..models import MoveAgentsResponse
 from ..models import MoveManagementUnitRequest
 from ..models import MoveManagementUnitResponse
 from ..models import NotificationsResponse
+from ..models import OpportunityResult
+from ..models import OpportunityResultWithAgentIds
 from ..models import PatchBuScheduleRunRequest
+from ..models import PatchOpportunityRequest
 from ..models import PatchShiftTradeRequest
 from ..models import PerformancePredictionRecalculationResponse
 from ..models import PerformancePredictionRecalculationUploadResponse
@@ -214,6 +232,11 @@ from ..models import QueryAgentsIntegrationsRequest
 from ..models import QueryAvailabilityManagementUnitsSettingsRequest
 from ..models import QueryAvailabilityManagementUnitsSettingsResponse
 from ..models import QueryCapacityPlanStaffingGroupMetricChangeHistory
+from ..models import QueryExternalActivityOpportunitiesResponse
+from ..models import QueryOpportunitiesRequest
+from ..models import QueryOpportunitiesResponse
+from ..models import QueryOpportunityEnrollmentsRequest
+from ..models import QueryOpportunityEnrollmentsResponse
 from ..models import QueryPlanningGroupToStaffingGroupsRequest
 from ..models import QueryShiftTradeListJobRequest
 from ..models import QueryTimeOffIntegrationStatusRequest
@@ -310,7 +333,6 @@ from ..models import WfmHistoricalAdherenceBulkResponse
 from ..models import WfmHistoricalAdherenceQuery
 from ..models import WfmHistoricalAdherenceQueryForAgent
 from ..models import WfmHistoricalAdherenceQueryForTeams
-from ..models import WfmHistoricalAdherenceQueryForUsers
 from ..models import WfmHistoricalAdherenceResponse
 from ..models import WfmHistoricalShrinkageRequest
 from ..models import WfmHistoricalShrinkageResponse
@@ -4935,6 +4957,93 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_businessunit_opportunity(self, business_unit_id: str, opportunity_id: str, **kwargs) -> 'OpportunityResultWithAgentIds':
+        """
+        Get opportunity details
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_opportunity(business_unit_id, opportunity_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str opportunity_id: The ID of the opportunity (required)
+        :param str expand: List of resources to expand
+        :return: OpportunityResultWithAgentIds
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'opportunity_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_opportunity" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_opportunity`")
+        # verify the required parameter 'opportunity_id' is set
+        if ('opportunity_id' not in params) or (params['opportunity_id'] is None):
+            raise ValueError("Missing the required parameter `opportunity_id` when calling `get_workforcemanagement_businessunit_opportunity`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'opportunity_id' in params:
+            path_params['opportunityId'] = params['opportunity_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpportunityResultWithAgentIds',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_businessunit_planninggroup(self, business_unit_id: str, planning_group_id: str, **kwargs) -> 'PlanningGroup':
         """
         Get a planning group
@@ -9403,10 +9512,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_managementunit_agent_shifttrades is deprecated")
     def get_workforcemanagement_managementunit_agent_shifttrades(self, management_unit_id: str, agent_id: str, **kwargs) -> 'ShiftTradeListResponse':
         """
         Gets all the shift trades for a given agent
-        
+        Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9487,10 +9597,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_managementunit_shifttrades_matched is deprecated")
     def get_workforcemanagement_managementunit_shifttrades_matched(self, management_unit_id: str, **kwargs) -> 'ShiftTradeMatchesSummaryResponse':
         """
         Gets a summary of all shift trades in the matched state
-        
+        Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10500,10 +10611,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_managementunit_week_shifttrades is deprecated")
     def get_workforcemanagement_managementunit_week_shifttrades(self, management_unit_id: str, week_date_id: date, **kwargs) -> 'WeekShiftTradeListResponse':
         """
         Gets all the shift trades for a given week
-        
+        Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11241,10 +11353,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_shifttrades is deprecated")
     def get_workforcemanagement_shifttrades(self, **kwargs) -> 'ShiftTradeListResponse':
         """
         Gets all of my shift trades
-        
+        Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -13416,10 +13529,100 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_businessunit_opportunity(self, business_unit_id: str, opportunity_id: str, body: 'PatchOpportunityRequest', **kwargs) -> 'OpportunityResult':
+        """
+        Update the opportunity
+        Only opportunities with Draft status can be updated.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_opportunity(business_unit_id, opportunity_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str opportunity_id: The ID of the opportunity (required)
+        :param PatchOpportunityRequest body: body (required)
+        :return: OpportunityResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'opportunity_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_opportunity" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_opportunity`")
+        # verify the required parameter 'opportunity_id' is set
+        if ('opportunity_id' not in params) or (params['opportunity_id'] is None):
+            raise ValueError("Missing the required parameter `opportunity_id` when calling `patch_workforcemanagement_businessunit_opportunity`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_opportunity`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'opportunity_id' in params:
+            path_params['opportunityId'] = params['opportunity_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpportunityResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_businessunit_planninggroup(self, business_unit_id: str, planning_group_id: str, body: 'UpdatePlanningGroupRequest', **kwargs) -> 'PlanningGroup':
         """
         Updates the planning group
-        
+        If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -14940,10 +15143,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_workforcemanagement_managementunit_week_shifttrade is deprecated")
     def patch_workforcemanagement_managementunit_week_shifttrade(self, management_unit_id: str, week_date_id: date, trade_id: str, body: 'PatchShiftTradeRequest', **kwargs) -> 'ShiftTradeResponse':
         """
         Updates a shift trade. This route can only be called by the initiating agent
-        
+        Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15789,82 +15993,6 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    @deprecated("post_workforcemanagement_adherence_historical is deprecated")
-    def post_workforcemanagement_adherence_historical(self, **kwargs) -> 'WfmHistoricalAdherenceResponse':
-        """
-        Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.post_workforcemanagement_adherence_historical(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param WfmHistoricalAdherenceQueryForUsers body: body
-        :return: WfmHistoricalAdherenceResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in params['kwargs'].items():
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_workforcemanagement_adherence_historical" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-
-        resource_path = '/api/v2/workforcemanagement/adherence/historical'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='WfmHistoricalAdherenceResponse',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def post_workforcemanagement_adherence_historical_bulk(self, body: 'WfmHistoricalAdherenceBulkQuery', **kwargs) -> 'WfmHistoricalAdherenceBulkResponse':
         """
         Request a historical adherence report in bulk
@@ -16509,6 +16637,246 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AgentPossibleWorkShiftsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agents_opportunities_enrollments_bulk_add(self, body: 'AgentBulkAddOpportunityEnrollmentsRequest', **kwargs) -> 'AgentBulkAddOpportunityEnrollmentsResponse':
+        """
+        Bulk add enrollments to opportunities for the authenticated agent
+        Allows an agent to enroll in opportunities. This endpoint can return partial success.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agents_opportunities_enrollments_bulk_add(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AgentBulkAddOpportunityEnrollmentsRequest body: body (required)
+        :return: AgentBulkAddOpportunityEnrollmentsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agents_opportunities_enrollments_bulk_add" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agents_opportunities_enrollments_bulk_add`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/opportunities/enrollments/bulk/add'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentBulkAddOpportunityEnrollmentsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update(self, body: 'AgentBulkStatusUpdateOpportunityEnrollmentsRequest', **kwargs) -> 'AgentBulkStatusUpdateOpportunityEnrollmentsResponse':
+        """
+        Bulk update enrollment status for the authenticated agent
+        Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AgentBulkStatusUpdateOpportunityEnrollmentsRequest body: body (required)
+        :return: AgentBulkStatusUpdateOpportunityEnrollmentsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/opportunities/enrollments/bulk/statuses/update'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentBulkStatusUpdateOpportunityEnrollmentsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agents_opportunities_query(self, body: 'QueryOpportunitiesRequest', **kwargs) -> 'AgentQueryOpportunitiesResponse':
+        """
+        Query opportunities for the authenticated agent
+        Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agents_opportunities_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param QueryOpportunitiesRequest body: body (required)
+        :param str expand: List of resources to expand
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: AgentQueryOpportunitiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'expand', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agents_opportunities_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agents_opportunities_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/opportunities/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentQueryOpportunitiesResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -18127,10 +18495,691 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_businessunit_opportunities_bulk_add(self, business_unit_id: str, body: 'BulkAddOpportunitiesRequest', **kwargs) -> 'BulkAddOpportunitiesResponse':
+        """
+        Bulk add opportunities
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_bulk_add(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BulkAddOpportunitiesRequest body: body (required)
+        :return: BulkAddOpportunitiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_bulk_add" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_bulk_add`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_bulk_add`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/add'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkAddOpportunitiesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_opportunities_bulk_publish(self, business_unit_id: str, body: 'BulkOpportunitiesRequest', **kwargs) -> 'BulkPublishOpportunitiesResponse':
+        """
+        Bulk publish opportunities
+        Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_bulk_publish(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BulkOpportunitiesRequest body: body (required)
+        :return: BulkPublishOpportunitiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_bulk_publish" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_bulk_publish`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_bulk_publish`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/publish'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkPublishOpportunitiesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_opportunities_bulk_remove(self, business_unit_id: str, body: 'BulkOpportunitiesRequest', **kwargs) -> 'BulkRemoveOpportunitiesResponse':
+        """
+        Bulk remove opportunities
+        This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_bulk_remove(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BulkOpportunitiesRequest body: body (required)
+        :return: BulkRemoveOpportunitiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_bulk_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_bulk_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_bulk_remove`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkRemoveOpportunitiesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_opportunities_bulk_statuses_update(self, business_unit_id: str, body: 'BulkOpportunitiesStatusUpdateRequest', **kwargs) -> 'BulkOpportunitiesStatusUpdateResponse':
+        """
+        Bulk update opportunities status
+        If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_bulk_statuses_update(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BulkOpportunitiesStatusUpdateRequest body: body (required)
+        :return: BulkOpportunitiesStatusUpdateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_bulk_statuses_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_bulk_statuses_update`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_bulk_statuses_update`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/statuses/update'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkOpportunitiesStatusUpdateResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update(self, business_unit_id: str, body: 'BulkOpportunityEnrollmentsStatusUpdateRequest', **kwargs) -> 'BulkUpdateOpportunityEnrollmentsStatusResponse':
+        """
+        Bulk update enrollment status
+        Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BulkOpportunityEnrollmentsStatusUpdateRequest body: body (required)
+        :return: BulkUpdateOpportunityEnrollmentsStatusResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/enrollments/bulk/statuses/update'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkUpdateOpportunityEnrollmentsStatusResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_opportunities_enrollments_query(self, business_unit_id: str, body: 'QueryOpportunityEnrollmentsRequest', **kwargs) -> 'QueryOpportunityEnrollmentsResponse':
+        """
+        Query enrollments
+        For more information about opportunities, use the expand parameter.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_enrollments_query(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param QueryOpportunityEnrollmentsRequest body: body (required)
+        :param str expand: List of resources to expand
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: QueryOpportunityEnrollmentsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'expand', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_enrollments_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_enrollments_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_enrollments_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/enrollments/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueryOpportunityEnrollmentsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_opportunities_externalactivities_query(self, business_unit_id: str, body: 'BulkOpportunitiesExternalActivitiesRequest', **kwargs) -> 'QueryExternalActivityOpportunitiesResponse':
+        """
+        Query opportunities by external activity IDs
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_externalactivities_query(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BulkOpportunitiesExternalActivitiesRequest body: body (required)
+        :return: QueryExternalActivityOpportunitiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_externalactivities_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_externalactivities_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_externalactivities_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/externalactivities/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueryExternalActivityOpportunitiesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_opportunities_query(self, business_unit_id: str, body: 'QueryOpportunitiesRequest', **kwargs) -> 'QueryOpportunitiesResponse':
+        """
+        Query opportunities within the specified date range
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_opportunities_query(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param QueryOpportunitiesRequest body: body (required)
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :return: QueryOpportunitiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'force_download_service']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_opportunities_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_opportunities_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_opportunities_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='QueryOpportunitiesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_businessunit_planninggroups(self, business_unit_id: str, body: 'CreatePlanningGroupRequest', **kwargs) -> 'PlanningGroup':
         """
         Adds a new planning group
-        
+        If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -22856,10 +23905,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_managementunit_week_shifttrade_match is deprecated")
     def post_workforcemanagement_managementunit_week_shifttrade_match(self, management_unit_id: str, week_date_id: date, trade_id: str, body: 'MatchShiftTradeRequest', **kwargs) -> 'MatchShiftTradeResponse':
         """
         Matches a shift trade. This route can only be called by the receiving agent
-        
+        Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -22952,10 +24002,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_managementunit_week_shifttrades is deprecated")
     def post_workforcemanagement_managementunit_week_shifttrades(self, management_unit_id: str, week_date_id: date, body: 'AddShiftTradeRequest', **kwargs) -> 'ShiftTradeResponse':
         """
         Adds a shift trade
-        
+        Deprecated. Use new route instead (/shifttrading/trades/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -23042,10 +24093,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_managementunit_week_shifttrades_search is deprecated")
     def post_workforcemanagement_managementunit_week_shifttrades_search(self, management_unit_id: str, week_date_id: date, body: 'SearchShiftTradesRequest', **kwargs) -> 'SearchShiftTradesResponse':
         """
         Searches for potential shift trade matches for the current agent
-        
+        Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -23135,10 +24187,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_managementunit_week_shifttrades_state_bulk is deprecated")
     def post_workforcemanagement_managementunit_week_shifttrades_state_bulk(self, management_unit_id: str, week_date_id: date, body: 'BulkShiftTradeStateUpdateRequest', **kwargs) -> 'BulkUpdateShiftTradeStateResponse':
         """
         Updates the state of a batch of shift trades
-        Admin functionality is not supported with \"mine\".
+        Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

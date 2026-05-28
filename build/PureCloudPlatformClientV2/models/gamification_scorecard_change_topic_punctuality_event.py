@@ -50,6 +50,7 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
             'date_start': 'str',
             'date_schedule_start': 'str',
             'activity_code': 'str',
+            'activity_code_id': 'str',
             'activity_color': 'str',
             'activity_name': 'str',
             'points': 'int'
@@ -59,6 +60,7 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
             'date_start': 'dateStart',
             'date_schedule_start': 'dateScheduleStart',
             'activity_code': 'activityCode',
+            'activity_code_id': 'activityCodeId',
             'activity_color': 'activityColor',
             'activity_name': 'activityName',
             'points': 'points'
@@ -67,6 +69,7 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
         self._date_start = None
         self._date_schedule_start = None
         self._activity_code = None
+        self._activity_code_id = None
         self._activity_color = None
         self._activity_name = None
         self._points = None
@@ -142,6 +145,30 @@ class GamificationScorecardChangeTopicPunctualityEvent(object):
         
 
         self._activity_code = activity_code
+
+    @property
+    def activity_code_id(self) -> str:
+        """
+        Gets the activity_code_id of this GamificationScorecardChangeTopicPunctualityEvent.
+
+
+        :return: The activity_code_id of this GamificationScorecardChangeTopicPunctualityEvent.
+        :rtype: str
+        """
+        return self._activity_code_id
+
+    @activity_code_id.setter
+    def activity_code_id(self, activity_code_id: str) -> None:
+        """
+        Sets the activity_code_id of this GamificationScorecardChangeTopicPunctualityEvent.
+
+
+        :param activity_code_id: The activity_code_id of this GamificationScorecardChangeTopicPunctualityEvent.
+        :type: str
+        """
+        
+
+        self._activity_code_id = activity_code_id
 
     @property
     def activity_color(self) -> str:

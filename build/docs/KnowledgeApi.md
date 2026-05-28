@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_document_version_variations**](#get_knowledge_knowledgebase_document_version_variations) | Get variations for the given document version.|
 |[**get_knowledge_knowledgebase_document_versions**](#get_knowledge_knowledgebase_document_versions) | Get document versions.|
 |[**get_knowledge_knowledgebase_documents**](#get_knowledge_knowledgebase_documents) | Get documents.|
+|[**get_knowledge_knowledgebase_documents_feedback**](#get_knowledge_knowledgebase_documents_feedback) | Get a list of feedback records given on documents in a knowledge base|
 |[**get_knowledge_knowledgebase_export_job**](#get_knowledge_knowledgebase_export_job) | Get export job report|
 |[**get_knowledge_knowledgebase_import_job**](#get_knowledge_knowledgebase_import_job) | Get import job report|
 |[**get_knowledge_knowledgebase_label**](#get_knowledge_knowledgebase_label) | Get label|
@@ -1868,6 +1869,76 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing)
+
+
+## get_knowledge_knowledgebase_documents_feedback
+
+> [**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing) get_knowledge_knowledgebase_documents_feedback(knowledge_base_id, before=before, after=after, page_size=page_size, only_commented=only_commented, document_version_id=document_version_id, document_variation_id=document_variation_id, app_type=app_type, query_type=query_type, user_id=user_id, queue_id=queue_id, state=state)
+
+
+Get a list of feedback records given on documents in a knowledge base
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback 
+
+Requires ANY permissions: 
+
+* knowledge:feedback:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+only_commented = True # bool | If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. (optional)
+document_version_id = 'document_version_id_example' # str | Document version ID to filter by. Supported only if onlyCommented=true is set. (optional)
+document_variation_id = 'document_variation_id_example' # str | Document variation ID to filter by. Supported only if onlyCommented=true is set. (optional)
+app_type = 'app_type_example' # str | Application type to filter by. Supported only if onlyCommented=true is set. (optional)
+query_type = 'query_type_example' # str | Query type to filter by. Supported only if onlyCommented=true is set. (optional)
+user_id = 'user_id_example' # str | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. (optional)
+queue_id = 'queue_id_example' # str | Queue ID to filter by. Supported only if onlyCommented=true is set. (optional)
+state = 'state_example' # str | State to filter by. Supported only if onlyCommented=true is set. Default: Final (optional)
+
+try:
+    # Get a list of feedback records given on documents in a knowledge base
+    api_response = api_instance.get_knowledge_knowledgebase_documents_feedback(knowledge_base_id, before=before, after=after, page_size=page_size, only_commented=only_commented, document_version_id=document_version_id, document_variation_id=document_variation_id, app_type=app_type, query_type=query_type, user_id=user_id, queue_id=queue_id, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_documents_feedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **only_commented** | **bool**| If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. | [optional]  |
+| **document_version_id** | **str**| Document version ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **document_variation_id** | **str**| Document variation ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **app_type** | **str**| Application type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] <br />**Values**: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter |
+| **query_type** | **str**| Query type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] <br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion, ExpandedArticle |
+| **user_id** | **str**| The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **queue_id** | **str**| Queue ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **state** | **str**| State to filter by. Supported only if onlyCommented&#x3D;true is set. Default: Final | [optional] <br />**Values**: All, Draft, Final |
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing)
 
 
 ## get_knowledge_knowledgebase_export_job
@@ -6252,4 +6323,4 @@ except ApiException as e:
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

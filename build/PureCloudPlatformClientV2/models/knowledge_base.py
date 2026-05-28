@@ -57,6 +57,7 @@ class KnowledgeBase(object):
             'date_document_last_modified': 'datetime',
             'article_count': 'int',
             'published': 'bool',
+            'content_search_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -71,6 +72,7 @@ class KnowledgeBase(object):
             'date_document_last_modified': 'dateDocumentLastModified',
             'article_count': 'articleCount',
             'published': 'published',
+            'content_search_enabled': 'contentSearchEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -84,6 +86,7 @@ class KnowledgeBase(object):
         self._date_document_last_modified = None
         self._article_count = None
         self._published = None
+        self._content_search_enabled = None
         self._self_uri = None
 
     @property
@@ -330,6 +333,30 @@ class KnowledgeBase(object):
         
 
         self._published = published
+
+    @property
+    def content_search_enabled(self) -> bool:
+        """
+        Gets the content_search_enabled of this KnowledgeBase.
+        Flag that indicates the search on content is enabled for the knowledge base.
+
+        :return: The content_search_enabled of this KnowledgeBase.
+        :rtype: bool
+        """
+        return self._content_search_enabled
+
+    @content_search_enabled.setter
+    def content_search_enabled(self, content_search_enabled: bool) -> None:
+        """
+        Sets the content_search_enabled of this KnowledgeBase.
+        Flag that indicates the search on content is enabled for the knowledge base.
+
+        :param content_search_enabled: The content_search_enabled of this KnowledgeBase.
+        :type: bool
+        """
+        
+
+        self._content_search_enabled = content_search_enabled
 
     @property
     def self_uri(self) -> str:

@@ -13,10 +13,10 @@
 | **version** | int | Required for updates, must match the version number of the most recent update | [optional] |
 | **intervals** | [list[ScheduleInterval]](ScheduleInterval) | A list of intervals during which to run the associated CampaignSequence. | |
 | **recurrences** | [list[Reoccurrence]](Reoccurrence) | Recurring schedules of the campaign | [optional] |
-| **time_zone** | str | The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones | [optional] |
+| **time_zone** | str | The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London | [optional] |
 | **sequence** | [DomainEntityRef](DomainEntityRef) | The CampaignSequence that this SequenceSchedule is for. | |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

@@ -546,7 +546,7 @@ except ApiException as e:
 
 ## get_assistants_agentchecklists
 
-> [**AgentChecklistListing**](AgentChecklistListing) get_assistants_agentchecklists(before=before, after=after, page_size=page_size, name_prefix=name_prefix, language=language, sort_order=sort_order, sort_by=sort_by)
+> [**AgentChecklistListing**](AgentChecklistListing) get_assistants_agentchecklists(before=before, after=after, page_size=page_size, name_prefix=name_prefix, language=language, sort_order=sort_order, sort_by=sort_by, agent_checklist_ids=agent_checklist_ids)
 
 
 Get the list of agent checklists
@@ -577,10 +577,11 @@ name_prefix = 'name_prefix_example' # str | The agent checklist name prefix filt
 language = 'language_example' # str | The agent checklist language filter applied to the listing. (optional)
 sort_order = 'sort_order_example' # str | The sort order for the listing (optional)
 sort_by = 'sort_by_example' # str | The field to sort by for the listing. (optional)
+agent_checklist_ids = ['agent_checklist_ids_example'] # list[str] | Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters. (optional)
 
 try:
     # Get the list of agent checklists
-    api_response = api_instance.get_assistants_agentchecklists(before=before, after=after, page_size=page_size, name_prefix=name_prefix, language=language, sort_order=sort_order, sort_by=sort_by)
+    api_response = api_instance.get_assistants_agentchecklists(before=before, after=after, page_size=page_size, name_prefix=name_prefix, language=language, sort_order=sort_order, sort_by=sort_by, agent_checklist_ids=agent_checklist_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentAssistantsApi->get_assistants_agentchecklists: %s\n" % e)
@@ -598,6 +599,7 @@ except ApiException as e:
 | **language** | **str**| The agent checklist language filter applied to the listing. | [optional]  |
 | **sort_order** | **str**| The sort order for the listing | [optional] <br />**Values**: asc, desc |
 | **sort_by** | **str**| The field to sort by for the listing. | [optional] <br />**Values**: dateModified, language, name |
+| **agent_checklist_ids** | [**list[str]**](str)| Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters. | [optional]  |
 
 ### Return type
 
@@ -1212,4 +1214,4 @@ except ApiException as e:
 [**AgentChecklist**](AgentChecklist)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

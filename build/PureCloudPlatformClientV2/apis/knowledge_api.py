@@ -3089,6 +3089,117 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_knowledge_knowledgebase_documents_feedback(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentFeedbackResponseListing':
+        """
+        Get a list of feedback records given on documents in a knowledge base
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_documents_feedback(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID. (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param bool only_commented: If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false.
+        :param str document_version_id: Document version ID to filter by. Supported only if onlyCommented=true is set.
+        :param str document_variation_id: Document variation ID to filter by. Supported only if onlyCommented=true is set.
+        :param str app_type: Application type to filter by. Supported only if onlyCommented=true is set.
+        :param str query_type: Query type to filter by. Supported only if onlyCommented=true is set.
+        :param str user_id: The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set.
+        :param str queue_id: Queue ID to filter by. Supported only if onlyCommented=true is set.
+        :param str state: State to filter by. Supported only if onlyCommented=true is set. Default: Final
+        :return: KnowledgeDocumentFeedbackResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'only_commented', 'document_version_id', 'document_variation_id', 'app_type', 'query_type', 'user_id', 'queue_id', 'state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_documents_feedback" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_documents_feedback`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/feedback'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'only_commented' in params:
+            query_params['onlyCommented'] = params['only_commented']
+        if 'document_version_id' in params:
+            query_params['documentVersionId'] = params['document_version_id']
+        if 'document_variation_id' in params:
+            query_params['documentVariationId'] = params['document_variation_id']
+        if 'app_type' in params:
+            query_params['appType'] = params['app_type']
+        if 'query_type' in params:
+            query_params['queryType'] = params['query_type']
+        if 'user_id' in params:
+            query_params['userId'] = params['user_id']
+        if 'queue_id' in params:
+            query_params['queueId'] = params['queue_id']
+        if 'state' in params:
+            query_params['state'] = params['state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentFeedbackResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_knowledge_knowledgebase_export_job(self, knowledge_base_id: str, export_job_id: str, **kwargs) -> 'KnowledgeExportJobResponse':
         """
         Get export job report

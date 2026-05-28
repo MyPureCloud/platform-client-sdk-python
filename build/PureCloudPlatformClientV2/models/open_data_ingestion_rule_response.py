@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
+    from . import MessageInfo
 
 class OpenDataIngestionRuleResponse(object):
     """
@@ -57,6 +58,7 @@ class OpenDataIngestionRuleResponse(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'platform': 'str',
+            'ingestion_rule_info': 'MessageInfo',
             'countries': 'list[str]',
             'external_source': 'DomainEntityRef',
             'self_uri': 'str'
@@ -71,6 +73,7 @@ class OpenDataIngestionRuleResponse(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'platform': 'platform',
+            'ingestion_rule_info': 'ingestionRuleInfo',
             'countries': 'countries',
             'external_source': 'externalSource',
             'self_uri': 'selfUri'
@@ -84,6 +87,7 @@ class OpenDataIngestionRuleResponse(object):
         self._date_created = None
         self._date_modified = None
         self._platform = None
+        self._ingestion_rule_info = None
         self._countries = None
         self._external_source = None
         self._self_uri = None
@@ -284,6 +288,30 @@ class OpenDataIngestionRuleResponse(object):
         
 
         self._platform = platform
+
+    @property
+    def ingestion_rule_info(self) -> 'MessageInfo':
+        """
+        Gets the ingestion_rule_info of this OpenDataIngestionRuleResponse.
+        The Info about ingestion rule.
+
+        :return: The ingestion_rule_info of this OpenDataIngestionRuleResponse.
+        :rtype: MessageInfo
+        """
+        return self._ingestion_rule_info
+
+    @ingestion_rule_info.setter
+    def ingestion_rule_info(self, ingestion_rule_info: 'MessageInfo') -> None:
+        """
+        Sets the ingestion_rule_info of this OpenDataIngestionRuleResponse.
+        The Info about ingestion rule.
+
+        :param ingestion_rule_info: The ingestion_rule_info of this OpenDataIngestionRuleResponse.
+        :type: MessageInfo
+        """
+        
+
+        self._ingestion_rule_info = ingestion_rule_info
 
     @property
     def countries(self) -> List[str]:

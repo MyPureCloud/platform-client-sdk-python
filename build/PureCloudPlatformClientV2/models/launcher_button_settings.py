@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import Icon
 
 class LauncherButtonSettings(object):
     """
@@ -47,14 +49,20 @@ class LauncherButtonSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'visibility': 'str'
+            'visibility': 'str',
+            'display_type': 'str',
+            'icon': 'Icon'
         }
 
         self.attribute_map = {
-            'visibility': 'visibility'
+            'visibility': 'visibility',
+            'display_type': 'displayType',
+            'icon': 'icon'
         }
 
         self._visibility = None
+        self._display_type = None
+        self._icon = None
 
     @property
     def visibility(self) -> str:
@@ -84,6 +92,59 @@ class LauncherButtonSettings(object):
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def display_type(self) -> str:
+        """
+        Gets the display_type of this LauncherButtonSettings.
+        The display type of the launcher button
+
+        :return: The display_type of this LauncherButtonSettings.
+        :rtype: str
+        """
+        return self._display_type
+
+    @display_type.setter
+    def display_type(self, display_type: str) -> None:
+        """
+        Sets the display_type of this LauncherButtonSettings.
+        The display type of the launcher button
+
+        :param display_type: The display_type of this LauncherButtonSettings.
+        :type: str
+        """
+        if isinstance(display_type, int):
+            display_type = str(display_type)
+        allowed_values = ["IconAndText", "Icon", "Text"]
+        if display_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for display_type -> " + display_type)
+            self._display_type = "outdated_sdk_version"
+        else:
+            self._display_type = display_type
+
+    @property
+    def icon(self) -> 'Icon':
+        """
+        Gets the icon of this LauncherButtonSettings.
+        The icon for the launcher button
+
+        :return: The icon of this LauncherButtonSettings.
+        :rtype: Icon
+        """
+        return self._icon
+
+    @icon.setter
+    def icon(self, icon: 'Icon') -> None:
+        """
+        Sets the icon of this LauncherButtonSettings.
+        The icon for the launcher button
+
+        :param icon: The icon of this LauncherButtonSettings.
+        :type: Icon
+        """
+        
+
+        self._icon = icon
 
     def to_dict(self):
         """

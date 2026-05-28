@@ -259,7 +259,7 @@ class CampaignSchedule(object):
     def time_zone(self) -> str:
         """
         Gets the time_zone of this CampaignSchedule.
-        The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
+        The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :return: The time_zone of this CampaignSchedule.
         :rtype: str
@@ -270,7 +270,7 @@ class CampaignSchedule(object):
     def time_zone(self, time_zone: str) -> None:
         """
         Sets the time_zone of this CampaignSchedule.
-        The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
+        The time zone for this CampaignSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :param time_zone: The time_zone of this CampaignSchedule.
         :type: str

@@ -51,6 +51,7 @@ class RoutingConversationAttributesRequest(object):
         self.swagger_types = {
             'priority': 'int',
             'skill_ids': 'list[str]',
+            'skill_expression': 'str',
             'language_id': 'str',
             'label_id': 'str',
             'request_scored_agents': 'list[RequestScoredAgent]'
@@ -59,6 +60,7 @@ class RoutingConversationAttributesRequest(object):
         self.attribute_map = {
             'priority': 'priority',
             'skill_ids': 'skillIds',
+            'skill_expression': 'skillExpression',
             'language_id': 'languageId',
             'label_id': 'labelId',
             'request_scored_agents': 'requestScoredAgents'
@@ -66,6 +68,7 @@ class RoutingConversationAttributesRequest(object):
 
         self._priority = None
         self._skill_ids = None
+        self._skill_expression = None
         self._language_id = None
         self._label_id = None
         self._request_scored_agents = None
@@ -123,6 +126,30 @@ class RoutingConversationAttributesRequest(object):
         
 
         self._skill_ids = skill_ids
+
+    @property
+    def skill_expression(self) -> str:
+        """
+        Gets the skill_expression of this RoutingConversationAttributesRequest.
+        Skill requirements in form of expression for the conversation.  To remove the skill expression, specify an empty string, i.e., \"\".
+
+        :return: The skill_expression of this RoutingConversationAttributesRequest.
+        :rtype: str
+        """
+        return self._skill_expression
+
+    @skill_expression.setter
+    def skill_expression(self, skill_expression: str) -> None:
+        """
+        Sets the skill_expression of this RoutingConversationAttributesRequest.
+        Skill requirements in form of expression for the conversation.  To remove the skill expression, specify an empty string, i.e., \"\".
+
+        :param skill_expression: The skill_expression of this RoutingConversationAttributesRequest.
+        :type: str
+        """
+        
+
+        self._skill_expression = skill_expression
 
     @property
     def language_id(self) -> str:

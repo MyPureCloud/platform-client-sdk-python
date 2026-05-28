@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DmarcResult
     from . import DnsRecordEntry
     from . import EmailSetting
 
@@ -55,7 +56,8 @@ class EmailOutboundDomainResult(object):
             'domain_name': 'str',
             'sender_status': 'str',
             'sender_type': 'str',
-            'email_setting': 'EmailSetting'
+            'email_setting': 'EmailSetting',
+            'dmarc_verification_result': 'DmarcResult'
         }
 
         self.attribute_map = {
@@ -64,7 +66,8 @@ class EmailOutboundDomainResult(object):
             'domain_name': 'domainName',
             'sender_status': 'senderStatus',
             'sender_type': 'senderType',
-            'email_setting': 'emailSetting'
+            'email_setting': 'emailSetting',
+            'dmarc_verification_result': 'dmarcVerificationResult'
         }
 
         self._dns_cname_bounce_record = None
@@ -73,6 +76,7 @@ class EmailOutboundDomainResult(object):
         self._sender_status = None
         self._sender_type = None
         self._email_setting = None
+        self._dmarc_verification_result = None
 
     @property
     def dns_cname_bounce_record(self) -> 'DnsRecordEntry':
@@ -227,6 +231,30 @@ class EmailOutboundDomainResult(object):
         
 
         self._email_setting = email_setting
+
+    @property
+    def dmarc_verification_result(self) -> 'DmarcResult':
+        """
+        Gets the dmarc_verification_result of this EmailOutboundDomainResult.
+        The DMARC verification status for this domain.
+
+        :return: The dmarc_verification_result of this EmailOutboundDomainResult.
+        :rtype: DmarcResult
+        """
+        return self._dmarc_verification_result
+
+    @dmarc_verification_result.setter
+    def dmarc_verification_result(self, dmarc_verification_result: 'DmarcResult') -> None:
+        """
+        Sets the dmarc_verification_result of this EmailOutboundDomainResult.
+        The DMARC verification status for this domain.
+
+        :param dmarc_verification_result: The dmarc_verification_result of this EmailOutboundDomainResult.
+        :type: DmarcResult
+        """
+        
+
+        self._dmarc_verification_result = dmarc_verification_result
 
     def to_dict(self):
         """

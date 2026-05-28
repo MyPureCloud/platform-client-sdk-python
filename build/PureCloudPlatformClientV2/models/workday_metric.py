@@ -58,6 +58,7 @@ class WorkdayMetric(object):
             'max_points': 'int',
             'value': 'float',
             'punctuality_events': 'list[PunctualityEvent]',
+            'business_unit_id': 'str',
             'evaluation_details': 'list[QualityEvaluationScoreItem]'
         }
 
@@ -68,6 +69,7 @@ class WorkdayMetric(object):
             'max_points': 'maxPoints',
             'value': 'value',
             'punctuality_events': 'punctualityEvents',
+            'business_unit_id': 'businessUnitId',
             'evaluation_details': 'evaluationDetails'
         }
 
@@ -77,6 +79,7 @@ class WorkdayMetric(object):
         self._max_points = None
         self._value = None
         self._punctuality_events = None
+        self._business_unit_id = None
         self._evaluation_details = None
 
     @property
@@ -222,6 +225,30 @@ class WorkdayMetric(object):
         
 
         self._punctuality_events = punctuality_events
+
+    @property
+    def business_unit_id(self) -> str:
+        """
+        Gets the business_unit_id of this WorkdayMetric.
+        The id of the business unit associated with this metric, only returned for metrics with punctuality events
+
+        :return: The business_unit_id of this WorkdayMetric.
+        :rtype: str
+        """
+        return self._business_unit_id
+
+    @business_unit_id.setter
+    def business_unit_id(self, business_unit_id: str) -> None:
+        """
+        Sets the business_unit_id of this WorkdayMetric.
+        The id of the business unit associated with this metric, only returned for metrics with punctuality events
+
+        :param business_unit_id: The business_unit_id of this WorkdayMetric.
+        :type: str
+        """
+        
+
+        self._business_unit_id = business_unit_id
 
     @property
     def evaluation_details(self) -> List['QualityEvaluationScoreItem']:

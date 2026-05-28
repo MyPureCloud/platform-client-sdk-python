@@ -51,6 +51,7 @@ class AgentChecklistItem(object):
             'name': 'str',
             'description': 'str',
             'automated_check_enabled': 'bool',
+            'exact_phrase_match': 'bool',
             'important': 'bool',
             'self_uri': 'str'
         }
@@ -60,6 +61,7 @@ class AgentChecklistItem(object):
             'name': 'name',
             'description': 'description',
             'automated_check_enabled': 'automatedCheckEnabled',
+            'exact_phrase_match': 'exactPhraseMatch',
             'important': 'important',
             'self_uri': 'selfUri'
         }
@@ -68,6 +70,7 @@ class AgentChecklistItem(object):
         self._name = None
         self._description = None
         self._automated_check_enabled = None
+        self._exact_phrase_match = None
         self._important = None
         self._self_uri = None
 
@@ -166,6 +169,30 @@ class AgentChecklistItem(object):
         
 
         self._automated_check_enabled = automated_check_enabled
+
+    @property
+    def exact_phrase_match(self) -> bool:
+        """
+        Gets the exact_phrase_match of this AgentChecklistItem.
+        Flag to indicate whether exact phrase matching is applicable for this checklist item.
+
+        :return: The exact_phrase_match of this AgentChecklistItem.
+        :rtype: bool
+        """
+        return self._exact_phrase_match
+
+    @exact_phrase_match.setter
+    def exact_phrase_match(self, exact_phrase_match: bool) -> None:
+        """
+        Sets the exact_phrase_match of this AgentChecklistItem.
+        Flag to indicate whether exact phrase matching is applicable for this checklist item.
+
+        :param exact_phrase_match: The exact_phrase_match of this AgentChecklistItem.
+        :type: bool
+        """
+        
+
+        self._exact_phrase_match = exact_phrase_match
 
     @property
     def important(self) -> bool:

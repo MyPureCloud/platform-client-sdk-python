@@ -11,7 +11,9 @@
 | **language** | [Language](Language) | Current language on in-queue conversation | [optional] |
 | **label** | [UtilizationLabel](UtilizationLabel) | Current label on in-queue conversation | [optional] |
 | **scored_agents** | [list[ScoredAgent]](ScoredAgent) | Current scored agents on in-queue conversation | [optional] |
+| **skill_expression** | str | Current skill expression on in-queue conversation | [optional] |
+| **skill_expression_id** | str | Current skill expression ID on in-queue conversation | [optional] |
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

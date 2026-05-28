@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The globally unique identifier for the object. | [optional] |
+| **id** | str | The globally unique identifier for the object. | |
 | **name** | str |  | [optional] |
 | **constrain_weekly_paid_time** | bool | Whether the weekly paid time constraint is enabled for this work plan | |
 | **flexible_weekly_paid_time** | bool | Whether the weekly paid time constraint is flexible for this work plan | |
@@ -19,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

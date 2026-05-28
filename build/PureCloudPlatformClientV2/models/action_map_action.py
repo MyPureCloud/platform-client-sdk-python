@@ -140,7 +140,7 @@ class ActionMapAction(object):
     def action_target_id(self) -> str:
         """
         Gets the action_target_id of this ActionMapAction.
-        Action target ID.
+        Deprecated. Action target ID.
 
         :return: The action_target_id of this ActionMapAction.
         :rtype: str
@@ -151,7 +151,7 @@ class ActionMapAction(object):
     def action_target_id(self, action_target_id: str) -> None:
         """
         Sets the action_target_id of this ActionMapAction.
-        Action target ID.
+        Deprecated. Action target ID.
 
         :param action_target_id: The action_target_id of this ActionMapAction.
         :type: str
@@ -164,7 +164,7 @@ class ActionMapAction(object):
     def is_pacing_enabled(self) -> bool:
         """
         Gets the is_pacing_enabled of this ActionMapAction.
-        Whether this action should be throttled.
+        Deprecated. Whether this action should be throttled.
 
         :return: The is_pacing_enabled of this ActionMapAction.
         :rtype: bool
@@ -175,7 +175,7 @@ class ActionMapAction(object):
     def is_pacing_enabled(self, is_pacing_enabled: bool) -> None:
         """
         Sets the is_pacing_enabled of this ActionMapAction.
-        Whether this action should be throttled.
+        Deprecated. Whether this action should be throttled.
 
         :param is_pacing_enabled: The is_pacing_enabled of this ActionMapAction.
         :type: bool
@@ -188,7 +188,7 @@ class ActionMapAction(object):
     def props(self) -> 'ActionProperties':
         """
         Gets the props of this ActionMapAction.
-        Additional properties.
+        Deprecated. Additional properties.
 
         :return: The props of this ActionMapAction.
         :rtype: ActionProperties
@@ -199,7 +199,7 @@ class ActionMapAction(object):
     def props(self, props: 'ActionProperties') -> None:
         """
         Sets the props of this ActionMapAction.
-        Additional properties.
+        Deprecated. Additional properties.
 
         :param props: The props of this ActionMapAction.
         :type: ActionProperties

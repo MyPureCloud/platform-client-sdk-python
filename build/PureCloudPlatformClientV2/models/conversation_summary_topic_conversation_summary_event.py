@@ -74,6 +74,8 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'extracted_entities': 'list[ConversationSummaryTopicSummaryExtractedCustomEntity]',
             'wrap_up_codes': 'list[ConversationSummaryTopicConversationWrapUpCode]',
             'trigger_source': 'ConversationSummaryTopicTriggerSource',
+            'summary_source_type': 'str',
+            'trigger_type': 'str',
             'last_edited_by': 'ConversationSummaryTopicConversationSummaryParticipant',
             'error_type': 'str',
             'duration_ms': 'int'
@@ -97,6 +99,8 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'extracted_entities': 'extractedEntities',
             'wrap_up_codes': 'wrapUpCodes',
             'trigger_source': 'triggerSource',
+            'summary_source_type': 'summarySourceType',
+            'trigger_type': 'triggerType',
             'last_edited_by': 'lastEditedBy',
             'error_type': 'errorType',
             'duration_ms': 'durationMs'
@@ -119,6 +123,8 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         self._extracted_entities = None
         self._wrap_up_codes = None
         self._trigger_source = None
+        self._summary_source_type = None
+        self._trigger_type = None
         self._last_edited_by = None
         self._error_type = None
         self._duration_ms = None
@@ -540,6 +546,64 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         
 
         self._trigger_source = trigger_source
+
+    @property
+    def summary_source_type(self) -> str:
+        """
+        Gets the summary_source_type of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :return: The summary_source_type of this ConversationSummaryTopicConversationSummaryEvent.
+        :rtype: str
+        """
+        return self._summary_source_type
+
+    @summary_source_type.setter
+    def summary_source_type(self, summary_source_type: str) -> None:
+        """
+        Sets the summary_source_type of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :param summary_source_type: The summary_source_type of this ConversationSummaryTopicConversationSummaryEvent.
+        :type: str
+        """
+        if isinstance(summary_source_type, int):
+            summary_source_type = str(summary_source_type)
+        allowed_values = ["UNKNOWN", "GENESYS_NATIVE_SERVICE", "EXTERNAL_SERVICE"]
+        if summary_source_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for summary_source_type -> " + summary_source_type)
+            self._summary_source_type = "outdated_sdk_version"
+        else:
+            self._summary_source_type = summary_source_type
+
+    @property
+    def trigger_type(self) -> str:
+        """
+        Gets the trigger_type of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :return: The trigger_type of this ConversationSummaryTopicConversationSummaryEvent.
+        :rtype: str
+        """
+        return self._trigger_type
+
+    @trigger_type.setter
+    def trigger_type(self, trigger_type: str) -> None:
+        """
+        Sets the trigger_type of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :param trigger_type: The trigger_type of this ConversationSummaryTopicConversationSummaryEvent.
+        :type: str
+        """
+        if isinstance(trigger_type, int):
+            trigger_type = str(trigger_type)
+        allowed_values = ["UNKNOWN", "ON_DEMAND", "AFTER_DISCONNECT"]
+        if trigger_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for trigger_type -> " + trigger_type)
+            self._trigger_type = "outdated_sdk_version"
+        else:
+            self._trigger_type = trigger_type
 
     @property
     def last_edited_by(self) -> 'ConversationSummaryTopicConversationSummaryParticipant':

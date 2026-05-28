@@ -53,7 +53,6 @@ from ..models import CreatePredictorRequest
 from ..models import CreateQueueRequest
 from ..models import CreateRoutingSkill
 from ..models import CreateUtilizationLabelRequest
-from ..models import CreateUtilizationTagRequest
 from ..models import EmailOutboundDomainResult
 from ..models import EmailSetup
 from ..models import ErrorBody
@@ -99,6 +98,10 @@ from ..models import RoutingSettings
 from ..models import RoutingSkill
 from ..models import SMSAvailablePhoneNumberEntityListing
 from ..models import SkillEntityListing
+from ..models import SkillExpression
+from ..models import SkillExpressionData
+from ..models import SkillExpressionEntityListing
+from ..models import SkillExpressionValidationResult
 from ..models import SkillGroup
 from ..models import SkillGroupEntityListing
 from ..models import SkillGroupMemberDivisionList
@@ -133,8 +136,6 @@ from ..models import UtilizationLabel
 from ..models import UtilizationLabelEntityListing
 from ..models import UtilizationRequest
 from ..models import UtilizationResponse
-from ..models import UtilizationTag
-from ..models import UtilizationTagEntityListing
 from ..models import VerificationResult
 from ..models import WrapUpCodeReference
 from ..models import WrapupCode
@@ -1267,6 +1268,159 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_routing_skillexpression(self, expression_id: str, **kwargs) -> None:
+        """
+        Archive a skill expression to remove it from the set of active expressions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_skillexpression(expression_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str expression_id: Expression ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expression_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_skillexpression" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'expression_id' is set
+        if ('expression_id' not in params) or (params['expression_id'] is None):
+            raise ValueError("Missing the required parameter `expression_id` when calling `delete_routing_skillexpression`")
+
+
+        resource_path = '/api/v2/routing/skillexpressions/{expressionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'expression_id' in params:
+            path_params['expressionId'] = params['expression_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_routing_skillexpressions(self, **kwargs) -> None:
+        """
+        Archive a set of skill expressions to remove them from the set of active expressions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_skillexpressions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] id: Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_skillexpressions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/skillexpressions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_routing_skillgroup(self, skill_group_id: str, **kwargs) -> None:
         """
         Remove skill group definition
@@ -1773,88 +1927,6 @@ class RoutingApi(object):
         path_params = {}
         if 'label_id' in params:
             path_params['labelId'] = params['label_id']
-
-        query_params = {}
-        if 'force_delete' in params:
-            query_params['forceDelete'] = params['force_delete']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_routing_utilization_tag(self, tag_id: str, **kwargs) -> None:
-        """
-        Delete an utilization tag
-        
-	    delete_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_routing_utilization_tag(tag_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str tag_id: Utilization Tag ID (required)
-        :param bool force_delete: Remove all tag usages (if found) without warning
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['tag_id', 'force_delete']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in params['kwargs'].items():
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_routing_utilization_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'tag_id' is set
-        if ('tag_id' not in params) or (params['tag_id'] is None):
-            raise ValueError("Missing the required parameter `tag_id` when calling `delete_routing_utilization_tag`")
-
-
-        resource_path = '/api/v2/routing/utilization/tags/{tagId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'tag_id' in params:
-            path_params['tagId'] = params['tag_id']
 
         query_params = {}
         if 'force_delete' in params:
@@ -6014,6 +6086,255 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_skillexpression(self, expression_id: str, **kwargs) -> 'SkillExpression':
+        """
+        Get a skill expression by ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_skillexpression(expression_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str expression_id: Expression ID (required)
+        :param bool include_archived: Include archived
+        :param str format: Response format: raw expression or normalized
+        :return: SkillExpression
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expression_id', 'include_archived', 'format']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_skillexpression" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'expression_id' is set
+        if ('expression_id' not in params) or (params['expression_id'] is None):
+            raise ValueError("Missing the required parameter `expression_id` when calling `get_routing_skillexpression`")
+
+
+        resource_path = '/api/v2/routing/skillexpressions/{expressionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'expression_id' in params:
+            path_params['expressionId'] = params['expression_id']
+
+        query_params = {}
+        if 'include_archived' in params:
+            query_params['includeArchived'] = params['include_archived']
+        if 'format' in params:
+            query_params['format'] = params['format']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillExpression',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_skillexpressions(self, **kwargs) -> 'SkillExpressionEntityListing':
+        """
+        Get skill expressions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_skillexpressions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str format: Response format: raw expression or normalized
+        :param bool include_archived: Include archived
+        :param list[str] id: Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+        :return: SkillExpressionEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['format', 'include_archived', 'id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_skillexpressions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/skillexpressions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'format' in params:
+            query_params['format'] = params['format']
+        if 'include_archived' in params:
+            query_params['includeArchived'] = params['include_archived']
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillExpressionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_skillexpressions_queue_queue_id(self, queue_id: str, **kwargs) -> 'SkillExpressionEntityListing':
+        """
+        Get skill expressions associated with a queue
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_skillexpressions_queue_queue_id(queue_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str queue_id: Queue ID (required)
+        :param str format: Response format: raw expression or normalized
+        :param bool include_archived: Include archived
+        :return: SkillExpressionEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['queue_id', 'format', 'include_archived']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_skillexpressions_queue_queue_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'queue_id' is set
+        if ('queue_id' not in params) or (params['queue_id'] is None):
+            raise ValueError("Missing the required parameter `queue_id` when calling `get_routing_skillexpressions_queue_queue_id`")
+
+
+        resource_path = '/api/v2/routing/skillexpressions/queue/{queueId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'queue_id' in params:
+            path_params['queueId'] = params['queue_id']
+
+        query_params = {}
+        if 'format' in params:
+            query_params['format'] = params['format']
+        if 'include_archived' in params:
+            query_params['includeArchived'] = params['include_archived']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillExpressionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_routing_skillgroup(self, skill_group_id: str, **kwargs) -> 'SkillGroup':
         """
         Get skill group
@@ -7417,249 +7738,6 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UtilizationLabelEntityListing',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_routing_utilization_tag(self, tag_id: str, **kwargs) -> 'UtilizationTag':
-        """
-        Get details about this utilization tag
-        
-	    get_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_routing_utilization_tag(tag_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str tag_id: Utilization Tag ID (required)
-        :return: UtilizationTag
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['tag_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in params['kwargs'].items():
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_routing_utilization_tag" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'tag_id' is set
-        if ('tag_id' not in params) or (params['tag_id'] is None):
-            raise ValueError("Missing the required parameter `tag_id` when calling `get_routing_utilization_tag`")
-
-
-        resource_path = '/api/v2/routing/utilization/tags/{tagId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'tag_id' in params:
-            path_params['tagId'] = params['tag_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UtilizationTag',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_routing_utilization_tag_agents(self, tag_id: str, **kwargs) -> List[object]:
-        """
-        Get list of agent ids associated with a utilization tag
-        
-	    get_routing_utilization_tag_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_routing_utilization_tag_agents(tag_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str tag_id: Utilization Tag ID (required)
-        :return: list[object]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['tag_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in params['kwargs'].items():
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_routing_utilization_tag_agents" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'tag_id' is set
-        if ('tag_id' not in params) or (params['tag_id'] is None):
-            raise ValueError("Missing the required parameter `tag_id` when calling `get_routing_utilization_tag_agents`")
-
-
-        resource_path = '/api/v2/routing/utilization/tags/{tagId}/agents'.replace('{format}', 'json')
-        path_params = {}
-        if 'tag_id' in params:
-            path_params['tagId'] = params['tag_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='list[object]',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_routing_utilization_tags(self, **kwargs) -> 'UtilizationTagEntityListing':
-        """
-        Get list of utilization tags
-        
-	    get_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_routing_utilization_tags(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int page_size: Page size
-        :param int page_number: Page number
-        :param str sort_order: Sort order by name
-        :param str name: Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
-        :return: UtilizationTagEntityListing
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['page_size', 'page_number', 'sort_order', 'name']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in params['kwargs'].items():
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_routing_utilization_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-
-        resource_path = '/api/v2/routing/utilization/tags'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'sort_order' in params:
-            query_params['sortOrder'] = params['sort_order']
-        if 'name' in params:
-            query_params['name'] = params['name']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UtilizationTagEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11647,6 +11725,84 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_routing_skillexpressions_validate(self, body: 'SkillExpressionData', **kwargs) -> 'SkillExpressionValidationResult':
+        """
+        Validate and normalize a skill expression
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_skillexpressions_validate(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SkillExpressionData body: Skill expression data to validate (required)
+        :return: SkillExpressionValidationResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_skillexpressions_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_skillexpressions_validate`")
+
+
+        resource_path = '/api/v2/routing/skillexpressions/validate'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SkillExpressionValidationResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_routing_skillgroup_members_divisions(self, skill_group_id: str, **kwargs) -> None:
         """
         Add or remove member divisions for this skill group.
@@ -12271,85 +12427,6 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UtilizationLabel',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def post_routing_utilization_tags(self, body: 'CreateUtilizationTagRequest', **kwargs) -> 'UtilizationTag':
-        """
-        Create an utilization tag
-        
-	    post_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.post_routing_utilization_tags(body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param CreateUtilizationTagRequest body: UtilizationTag (required)
-        :return: UtilizationTag
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in params['kwargs'].items():
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_routing_utilization_tags" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_routing_utilization_tags`")
-
-
-        resource_path = '/api/v2/routing/utilization/tags'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='UtilizationTag',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

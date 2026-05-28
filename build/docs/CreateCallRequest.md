@@ -16,6 +16,7 @@
 | **attributes** | dict(str, str) | The list of attributes to associate with the customer participant. | [optional] |
 | **language_id** | str | The language skill ID to use for routing this call (if calling a queue). | [optional] |
 | **routing_skills_ids** | list[str] | The skill ID&#39;s to use for routing this call (if calling a queue). | [optional] |
+| **routing_skill_expression** | str | The skill expression to use for routing this call (if calling a queue). | [optional] |
 | **conversation_ids** | list[str] | The list of existing call conversations to merge into a new ad-hoc conference. | [optional] |
 | **participants** | [list[Destination]](Destination) | The list of participants to call to create a new ad-hoc conference. | [optional] |
 | **uui_data** | str | User to User Information (UUI) data managed by SIP session application. | [optional] |
@@ -24,4 +25,4 @@
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

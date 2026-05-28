@@ -53,10 +53,13 @@ class SummarySetting(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'date_modified': 'datetime',
+            'interaction_type': 'str',
             'language': 'str',
             'summary_type': 'str',
             'format': 'str',
             'mask_pii': 'SummarySettingPII',
+            'date_created': 'datetime',
             'participant_labels': 'SummarySettingParticipantLabels',
             'predefined_insights': 'list[str]',
             'custom_entities': 'list[SummarySettingCustomEntity]',
@@ -65,18 +68,19 @@ class SummarySetting(object):
             'service_type': 'str',
             'integration_id': 'str',
             'timeout_duration': 'int',
-            'date_created': 'datetime',
-            'date_modified': 'datetime',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'date_modified': 'dateModified',
+            'interaction_type': 'interactionType',
             'language': 'language',
             'summary_type': 'summaryType',
             'format': 'format',
             'mask_pii': 'maskPII',
+            'date_created': 'dateCreated',
             'participant_labels': 'participantLabels',
             'predefined_insights': 'predefinedInsights',
             'custom_entities': 'customEntities',
@@ -85,17 +89,18 @@ class SummarySetting(object):
             'service_type': 'serviceType',
             'integration_id': 'integrationId',
             'timeout_duration': 'timeoutDuration',
-            'date_created': 'dateCreated',
-            'date_modified': 'dateModified',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._date_modified = None
+        self._interaction_type = None
         self._language = None
         self._summary_type = None
         self._format = None
         self._mask_pii = None
+        self._date_created = None
         self._participant_labels = None
         self._predefined_insights = None
         self._custom_entities = None
@@ -104,8 +109,6 @@ class SummarySetting(object):
         self._service_type = None
         self._integration_id = None
         self._timeout_duration = None
-        self._date_created = None
-        self._date_modified = None
         self._self_uri = None
 
     @property
@@ -155,6 +158,59 @@ class SummarySetting(object):
         
 
         self._name = name
+
+    @property
+    def date_modified(self) -> datetime:
+        """
+        Gets the date_modified of this SummarySetting.
+        The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_modified of this SummarySetting.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified: datetime) -> None:
+        """
+        Sets the date_modified of this SummarySetting.
+        The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_modified: The date_modified of this SummarySetting.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
+
+    @property
+    def interaction_type(self) -> str:
+        """
+        Gets the interaction_type of this SummarySetting.
+        The interaction type the setting can be used for
+
+        :return: The interaction_type of this SummarySetting.
+        :rtype: str
+        """
+        return self._interaction_type
+
+    @interaction_type.setter
+    def interaction_type(self, interaction_type: str) -> None:
+        """
+        Sets the interaction_type of this SummarySetting.
+        The interaction type the setting can be used for
+
+        :param interaction_type: The interaction_type of this SummarySetting.
+        :type: str
+        """
+        if isinstance(interaction_type, int):
+            interaction_type = str(interaction_type)
+        allowed_values = ["Live", "Email"]
+        if interaction_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for interaction_type -> " + interaction_type)
+            self._interaction_type = "outdated_sdk_version"
+        else:
+            self._interaction_type = interaction_type
 
     @property
     def language(self) -> str:
@@ -261,6 +317,30 @@ class SummarySetting(object):
         
 
         self._mask_pii = mask_pii
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this SummarySetting.
+        The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this SummarySetting.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this SummarySetting.
+        The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this SummarySetting.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
 
     @property
     def participant_labels(self) -> 'SummarySettingParticipantLabels':
@@ -463,54 +543,6 @@ class SummarySetting(object):
         
 
         self._timeout_duration = timeout_duration
-
-    @property
-    def date_created(self) -> datetime:
-        """
-        Gets the date_created of this SummarySetting.
-        The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_created of this SummarySetting.
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created: datetime) -> None:
-        """
-        Sets the date_created of this SummarySetting.
-        The date and time the setting was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_created: The date_created of this SummarySetting.
-        :type: datetime
-        """
-        
-
-        self._date_created = date_created
-
-    @property
-    def date_modified(self) -> datetime:
-        """
-        Gets the date_modified of this SummarySetting.
-        The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The date_modified of this SummarySetting.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified: datetime) -> None:
-        """
-        Sets the date_modified of this SummarySetting.
-        The date and time the setting was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param date_modified: The date_modified of this SummarySetting.
-        :type: datetime
-        """
-        
-
-        self._date_modified = date_modified
 
     @property
     def self_uri(self) -> str:

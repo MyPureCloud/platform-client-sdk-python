@@ -54,6 +54,7 @@ class RoutingData(object):
             'label': 'str',
             'priority': 'int',
             'skill_ids': 'list[str]',
+            'skill_expression': 'str',
             'preferred_agent_ids': 'list[str]',
             'scored_agents': 'list[ScoredAgent]',
             'routing_flags': 'list[str]'
@@ -65,6 +66,7 @@ class RoutingData(object):
             'label': 'label',
             'priority': 'priority',
             'skill_ids': 'skillIds',
+            'skill_expression': 'skillExpression',
             'preferred_agent_ids': 'preferredAgentIds',
             'scored_agents': 'scoredAgents',
             'routing_flags': 'routingFlags'
@@ -75,6 +77,7 @@ class RoutingData(object):
         self._label = None
         self._priority = None
         self._skill_ids = None
+        self._skill_expression = None
         self._preferred_agent_ids = None
         self._scored_agents = None
         self._routing_flags = None
@@ -198,6 +201,30 @@ class RoutingData(object):
         
 
         self._skill_ids = skill_ids
+
+    @property
+    def skill_expression(self) -> str:
+        """
+        Gets the skill_expression of this RoutingData.
+        Optional skill expression for routing when skillIds are present. Used to match agents by a logical expression over skills.
+
+        :return: The skill_expression of this RoutingData.
+        :rtype: str
+        """
+        return self._skill_expression
+
+    @skill_expression.setter
+    def skill_expression(self, skill_expression: str) -> None:
+        """
+        Sets the skill_expression of this RoutingData.
+        Optional skill expression for routing when skillIds are present. Used to match agents by a logical expression over skills.
+
+        :param skill_expression: The skill_expression of this RoutingData.
+        :type: str
+        """
+        
+
+        self._skill_expression = skill_expression
 
     @property
     def preferred_agent_ids(self) -> List[str]:

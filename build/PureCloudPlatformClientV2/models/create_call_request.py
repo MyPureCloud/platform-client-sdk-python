@@ -59,6 +59,7 @@ class CreateCallRequest(object):
             'attributes': 'dict(str, str)',
             'language_id': 'str',
             'routing_skills_ids': 'list[str]',
+            'routing_skill_expression': 'str',
             'conversation_ids': 'list[str]',
             'participants': 'list[Destination]',
             'uui_data': 'str',
@@ -77,6 +78,7 @@ class CreateCallRequest(object):
             'attributes': 'attributes',
             'language_id': 'languageId',
             'routing_skills_ids': 'routingSkillsIds',
+            'routing_skill_expression': 'routingSkillExpression',
             'conversation_ids': 'conversationIds',
             'participants': 'participants',
             'uui_data': 'uuiData',
@@ -94,6 +96,7 @@ class CreateCallRequest(object):
         self._attributes = None
         self._language_id = None
         self._routing_skills_ids = None
+        self._routing_skill_expression = None
         self._conversation_ids = None
         self._participants = None
         self._uui_data = None
@@ -339,6 +342,30 @@ class CreateCallRequest(object):
         
 
         self._routing_skills_ids = routing_skills_ids
+
+    @property
+    def routing_skill_expression(self) -> str:
+        """
+        Gets the routing_skill_expression of this CreateCallRequest.
+        The skill expression to use for routing this call (if calling a queue).
+
+        :return: The routing_skill_expression of this CreateCallRequest.
+        :rtype: str
+        """
+        return self._routing_skill_expression
+
+    @routing_skill_expression.setter
+    def routing_skill_expression(self, routing_skill_expression: str) -> None:
+        """
+        Sets the routing_skill_expression of this CreateCallRequest.
+        The skill expression to use for routing this call (if calling a queue).
+
+        :param routing_skill_expression: The routing_skill_expression of this CreateCallRequest.
+        :type: str
+        """
+        
+
+        self._routing_skill_expression = routing_skill_expression
 
     @property
     def conversation_ids(self) -> List[str]:

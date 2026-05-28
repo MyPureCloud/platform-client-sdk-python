@@ -175,7 +175,7 @@ except ApiException as e:
 
 ## get_conversations_summaries_settings
 
-> [**SummarySettingEntityListing**](SummarySettingEntityListing) get_conversations_summaries_settings(language=language, name=name, sort_by=sort_by, sort_order=sort_order, page_number=page_number, page_size=page_size)
+> [**SummarySettingEntityListing**](SummarySettingEntityListing) get_conversations_summaries_settings(page_number=page_number, page_size=page_size, name=name, sort_order=sort_order, language=language, sort_by=sort_by)
 
 
 Get all summary settings.
@@ -199,16 +199,16 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AIStudioApi()
-language = 'language_example' # str | Filter by matching language - case insensitive. (optional)
-name = 'name_example' # str | Filter by partially matching name - case insensitive. (optional)
-sort_by = ''dateModified'' # str | Sort by. Default value dateModified. (optional) (default to 'dateModified')
-sort_order = ''desc'' # str | Sort Order. Default value desc. (optional) (default to 'desc')
 page_number = 1 # int | Page number. (optional) (default to 1)
 page_size = 25 # int | Page size. The maximum page size is 100. (optional) (default to 25)
+name = 'name_example' # str | Filter by partially matching name - case insensitive. (optional)
+sort_order = ''desc'' # str | Sort Order. Default value desc. (optional) (default to 'desc')
+language = 'language_example' # str | Filter by matching language - case insensitive. (optional)
+sort_by = ''dateModified'' # str | Sort by. Default value dateModified. (optional) (default to 'dateModified')
 
 try:
     # Get all summary settings.
-    api_response = api_instance.get_conversations_summaries_settings(language=language, name=name, sort_by=sort_by, sort_order=sort_order, page_number=page_number, page_size=page_size)
+    api_response = api_instance.get_conversations_summaries_settings(page_number=page_number, page_size=page_size, name=name, sort_order=sort_order, language=language, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AIStudioApi->get_conversations_summaries_settings: %s\n" % e)
@@ -219,12 +219,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **language** | **str**| Filter by matching language - case insensitive. | [optional]  |
-| **name** | **str**| Filter by partially matching name - case insensitive. | [optional]  |
-| **sort_by** | **str**| Sort by. Default value dateModified. | [optional] [default to &#39;dateModified&#39;]<br />**Values**: dateModified, name |
-| **sort_order** | **str**| Sort Order. Default value desc. | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
 | **page_number** | **int**| Page number. | [optional] [default to 1] |
 | **page_size** | **int**| Page size. The maximum page size is 100. | [optional] [default to 25] |
+| **name** | **str**| Filter by partially matching name - case insensitive. | [optional]  |
+| **sort_order** | **str**| Sort Order. Default value desc. | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
+| **language** | **str**| Filter by matching language - case insensitive. | [optional]  |
+| **sort_by** | **str**| Sort by. Default value dateModified. | [optional] [default to &#39;dateModified&#39;]<br />**Values**: dateModified, name |
 
 ### Return type
 
@@ -1086,4 +1086,4 @@ except ApiException as e:
 [**SummarySetting**](SummarySetting)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

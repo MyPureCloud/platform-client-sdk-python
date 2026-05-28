@@ -156,7 +156,7 @@ class WebActionEvent(object):
     def action_target(self) -> 'AddressableEntityRef':
         """
         Gets the action_target of this WebActionEvent.
-        The target for engagement actions.
+        Deprecated. The target for engagement actions.
 
         :return: The action_target of this WebActionEvent.
         :rtype: AddressableEntityRef
@@ -167,7 +167,7 @@ class WebActionEvent(object):
     def action_target(self, action_target: 'AddressableEntityRef') -> None:
         """
         Sets the action_target of this WebActionEvent.
-        The target for engagement actions.
+        Deprecated. The target for engagement actions.
 
         :param action_target: The action_target of this WebActionEvent.
         :type: AddressableEntityRef

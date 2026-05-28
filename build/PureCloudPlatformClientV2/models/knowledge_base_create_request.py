@@ -49,18 +49,21 @@ class KnowledgeBaseCreateRequest(object):
         self.swagger_types = {
             'name': 'str',
             'description': 'str',
-            'core_language': 'str'
+            'core_language': 'str',
+            'content_search_enabled': 'bool'
         }
 
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
-            'core_language': 'coreLanguage'
+            'core_language': 'coreLanguage',
+            'content_search_enabled': 'contentSearchEnabled'
         }
 
         self._name = None
         self._description = None
         self._core_language = None
+        self._content_search_enabled = None
 
     @property
     def name(self) -> str:
@@ -138,6 +141,30 @@ class KnowledgeBaseCreateRequest(object):
             self._core_language = "outdated_sdk_version"
         else:
             self._core_language = core_language
+
+    @property
+    def content_search_enabled(self) -> bool:
+        """
+        Gets the content_search_enabled of this KnowledgeBaseCreateRequest.
+        Flag that indicates the search on content is enabled for the knowledge base.
+
+        :return: The content_search_enabled of this KnowledgeBaseCreateRequest.
+        :rtype: bool
+        """
+        return self._content_search_enabled
+
+    @content_search_enabled.setter
+    def content_search_enabled(self, content_search_enabled: bool) -> None:
+        """
+        Sets the content_search_enabled of this KnowledgeBaseCreateRequest.
+        Flag that indicates the search on content is enabled for the knowledge base.
+
+        :param content_search_enabled: The content_search_enabled of this KnowledgeBaseCreateRequest.
+        :type: bool
+        """
+        
+
+        self._content_search_enabled = content_search_enabled
 
     def to_dict(self):
         """

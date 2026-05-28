@@ -281,4 +281,4 @@ except ApiException as e:
 [**WidgetDeployment**](WidgetDeployment)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

@@ -50,19 +50,19 @@ class SummarySettingWithTranscript(object):
         """
         self.swagger_types = {
             'transcript': 'str',
-            'summary_setting': 'SummarySetting',
-            'summary_preview_session_id': 'str'
+            'summary_preview_session_id': 'str',
+            'summary_setting': 'SummarySetting'
         }
 
         self.attribute_map = {
             'transcript': 'transcript',
-            'summary_setting': 'summarySetting',
-            'summary_preview_session_id': 'summaryPreviewSessionId'
+            'summary_preview_session_id': 'summaryPreviewSessionId',
+            'summary_setting': 'summarySetting'
         }
 
         self._transcript = None
-        self._summary_setting = None
         self._summary_preview_session_id = None
+        self._summary_setting = None
 
     @property
     def transcript(self) -> str:
@@ -87,30 +87,6 @@ class SummarySettingWithTranscript(object):
         
 
         self._transcript = transcript
-
-    @property
-    def summary_setting(self) -> 'SummarySetting':
-        """
-        Gets the summary_setting of this SummarySettingWithTranscript.
-        Summary setting to preview on the transcript.
-
-        :return: The summary_setting of this SummarySettingWithTranscript.
-        :rtype: SummarySetting
-        """
-        return self._summary_setting
-
-    @summary_setting.setter
-    def summary_setting(self, summary_setting: 'SummarySetting') -> None:
-        """
-        Sets the summary_setting of this SummarySettingWithTranscript.
-        Summary setting to preview on the transcript.
-
-        :param summary_setting: The summary_setting of this SummarySettingWithTranscript.
-        :type: SummarySetting
-        """
-        
-
-        self._summary_setting = summary_setting
 
     @property
     def summary_preview_session_id(self) -> str:
@@ -138,6 +114,30 @@ class SummarySettingWithTranscript(object):
 
 
         self._summary_preview_session_id = summary_preview_session_id
+
+    @property
+    def summary_setting(self) -> 'SummarySetting':
+        """
+        Gets the summary_setting of this SummarySettingWithTranscript.
+        Summary setting to preview on the transcript.
+
+        :return: The summary_setting of this SummarySettingWithTranscript.
+        :rtype: SummarySetting
+        """
+        return self._summary_setting
+
+    @summary_setting.setter
+    def summary_setting(self, summary_setting: 'SummarySetting') -> None:
+        """
+        Sets the summary_setting of this SummarySettingWithTranscript.
+        Summary setting to preview on the transcript.
+
+        :param summary_setting: The summary_setting of this SummarySettingWithTranscript.
+        :type: SummarySetting
+        """
+        
+
+        self._summary_setting = summary_setting
 
     def to_dict(self):
         """

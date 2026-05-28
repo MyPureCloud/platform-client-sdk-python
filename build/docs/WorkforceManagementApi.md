@@ -62,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id_snapshot_snapshot_id) | Get the snapshot details for the snapshot ID|
 |[**get_workforcemanagement_businessunit_managementunits**](#get_workforcemanagement_businessunit_managementunits) | Get all authorized management units in the business unit|
 |[**get_workforcemanagement_businessunit_minimumstaffing_settings**](#get_workforcemanagement_businessunit_minimumstaffing_settings) | Get minimum staffing settings for a business unit|
+|[**get_workforcemanagement_businessunit_opportunity**](#get_workforcemanagement_businessunit_opportunity) | Get opportunity details|
 |[**get_workforcemanagement_businessunit_planninggroup**](#get_workforcemanagement_businessunit_planninggroup) | Get a planning group|
 |[**get_workforcemanagement_businessunit_planninggroups**](#get_workforcemanagement_businessunit_planninggroups) | Gets list of planning groups|
 |[**get_workforcemanagement_businessunit_scheduler_settings**](#get_workforcemanagement_businessunit_scheduler_settings) | Get scheduler settings for a business unit|
@@ -164,6 +165,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_alternativeshifts_settings**](#patch_workforcemanagement_businessunit_alternativeshifts_settings) | Update alternative shifts settings for a business unit|
 |[**patch_workforcemanagement_businessunit_capacityplan**](#patch_workforcemanagement_businessunit_capacityplan) | Update a capacity plan configuration|
 |[**patch_workforcemanagement_businessunit_minimumstaffing_settings**](#patch_workforcemanagement_businessunit_minimumstaffing_settings) | Update minimum staffing settings for a business unit|
+|[**patch_workforcemanagement_businessunit_opportunity**](#patch_workforcemanagement_businessunit_opportunity) | Update the opportunity|
 |[**patch_workforcemanagement_businessunit_planninggroup**](#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
 |[**patch_workforcemanagement_businessunit_scheduler_settings**](#patch_workforcemanagement_businessunit_scheduler_settings) | Update scheduler settings for a business unit|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
@@ -191,7 +193,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_workplanbid_preferences**](#patch_workforcemanagement_workplanbid_preferences) | Update an agent&#39;s work plan bidding preference|
 |[**post_workforcemanagement_adherence_explanations**](#post_workforcemanagement_adherence_explanations) | Submit an adherence explanation for the current user|
 |[**post_workforcemanagement_adherence_explanations_query**](#post_workforcemanagement_adherence_explanations_query) | Query adherence explanations for the current user|
-|[**post_workforcemanagement_adherence_historical**](#post_workforcemanagement_adherence_historical) | Deprecated. Use bulk routes instead (/adherence/historical/bulk)|
 |[**post_workforcemanagement_adherence_historical_bulk**](#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
 |[**post_workforcemanagement_agent_adherence_explanations**](#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
@@ -200,6 +201,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_agents_integrations_hris_query**](#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
 |[**post_workforcemanagement_agents_me_adherence_historical_jobs**](#post_workforcemanagement_agents_me_adherence_historical_jobs) | Request an agent historical adherence report|
 |[**post_workforcemanagement_agents_me_possibleworkshifts**](#post_workforcemanagement_agents_me_possibleworkshifts) | Get agent possible work shifts for requested time frame|
+|[**post_workforcemanagement_agents_opportunities_enrollments_bulk_add**](#post_workforcemanagement_agents_opportunities_enrollments_bulk_add) | Bulk add enrollments to opportunities for the authenticated agent|
+|[**post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update**](#post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update) | Bulk update enrollment status for the authenticated agent|
+|[**post_workforcemanagement_agents_opportunities_query**](#post_workforcemanagement_agents_opportunities_query) | Query opportunities for the authenticated agent|
 |[**post_workforcemanagement_agentschedules_managementunits_mine**](#post_workforcemanagement_agentschedules_managementunits_mine) | Fetch agent schedules for the logged in user&#39;s management unit|
 |[**post_workforcemanagement_agentschedules_mine**](#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
 |[**post_workforcemanagement_alternativeshifts_offers_jobs**](#post_workforcemanagement_alternativeshifts_offers_jobs) | Request a list of alternative shift offers for a given schedule|
@@ -219,6 +223,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_capacityplans**](#post_workforcemanagement_businessunit_capacityplans) | Create a new capacity plan|
 |[**post_workforcemanagement_businessunit_capacityplans_bulk_remove**](#post_workforcemanagement_businessunit_capacityplans_bulk_remove) | Delete capacity plans in a business unit|
 |[**post_workforcemanagement_businessunit_intraday**](#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
+|[**post_workforcemanagement_businessunit_opportunities_bulk_add**](#post_workforcemanagement_businessunit_opportunities_bulk_add) | Bulk add opportunities|
+|[**post_workforcemanagement_businessunit_opportunities_bulk_publish**](#post_workforcemanagement_businessunit_opportunities_bulk_publish) | Bulk publish opportunities|
+|[**post_workforcemanagement_businessunit_opportunities_bulk_remove**](#post_workforcemanagement_businessunit_opportunities_bulk_remove) | Bulk remove opportunities|
+|[**post_workforcemanagement_businessunit_opportunities_bulk_statuses_update**](#post_workforcemanagement_businessunit_opportunities_bulk_statuses_update) | Bulk update opportunities status|
+|[**post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update**](#post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update) | Bulk update enrollment status|
+|[**post_workforcemanagement_businessunit_opportunities_enrollments_query**](#post_workforcemanagement_businessunit_opportunities_enrollments_query) | Query enrollments|
+|[**post_workforcemanagement_businessunit_opportunities_externalactivities_query**](#post_workforcemanagement_businessunit_opportunities_externalactivities_query) | Query opportunities by external activity IDs|
+|[**post_workforcemanagement_businessunit_opportunities_query**](#post_workforcemanagement_businessunit_opportunities_query) | Query opportunities within the specified date range|
 |[**post_workforcemanagement_businessunit_planninggroups**](#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
 |[**post_workforcemanagement_businessunit_servicegoaltemplates**](#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
 |[**post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs**](#post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs) | Queries and evaluates against shift trade configuration shift trades in a management unit per week|
@@ -1705,6 +1717,12 @@ Requires ANY permissions:
 * wfm:workPlanRotation:delete
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
+* wfm:agentSchedulingPreferencesQuery:view
+* wfm:agentSchedulingPreferences:edit
+* wfm:agentSchedulingPreferencesSettings:view
+* wfm:schedulingPreferencesQuery:view
+* wfm:schedulingPreferencesSettings:view
+* wfm:schedulingPreferencesSettings:edit
 
 ### Example
 
@@ -2161,6 +2179,12 @@ Requires ANY permissions:
 * coaching:appointment:edit
 * learning:assignment:add
 * learning:assignment:reschedule
+* wfm:agentSchedulingPreferencesQuery:view
+* wfm:agentSchedulingPreferences:edit
+* wfm:agentSchedulingPreferencesSettings:view
+* wfm:schedulingPreferencesQuery:view
+* wfm:schedulingPreferencesSettings:view
+* wfm:schedulingPreferencesSettings:edit
 
 ### Example
 
@@ -2321,6 +2345,12 @@ Requires ANY permissions:
 * wfm:workPlanRotation:delete
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
+* wfm:agentSchedulingPreferencesQuery:view
+* wfm:agentSchedulingPreferences:edit
+* wfm:agentSchedulingPreferencesSettings:view
+* wfm:schedulingPreferencesQuery:view
+* wfm:schedulingPreferencesSettings:view
+* wfm:schedulingPreferencesSettings:edit
 
 ### Example
 
@@ -3212,7 +3242,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -3266,6 +3296,58 @@ except ApiException as e:
 ### Return type
 
 [**MinimumStaffingResponse**](MinimumStaffingResponse)
+
+
+## get_workforcemanagement_businessunit_opportunity
+
+> [**OpportunityResultWithAgentIds**](OpportunityResultWithAgentIds) get_workforcemanagement_businessunit_opportunity(business_unit_id, opportunity_id, expand=expand)
+
+
+Get opportunity details
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId} 
+
+Requires ANY permissions: 
+
+* wfm:opportunity:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+opportunity_id = 'opportunity_id_example' # str | The ID of the opportunity
+expand = 'expand_example' # str | List of resources to expand (optional)
+
+try:
+    # Get opportunity details
+    api_response = api_instance.get_workforcemanagement_businessunit_opportunity(business_unit_id, opportunity_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_opportunity: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **opportunity_id** | **str**| The ID of the opportunity |  |
+| **expand** | **str**| List of resources to expand | [optional] <br />**Values**: agentIds |
+
+### Return type
+
+[**OpportunityResultWithAgentIds**](OpportunityResultWithAgentIds)
 
 
 ## get_workforcemanagement_businessunit_planninggroup
@@ -5357,7 +5439,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
+| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of business units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -5854,6 +5936,12 @@ Requires ANY permissions:
 * wfm:workPlanRotation:delete
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
+* wfm:agentSchedulingPreferencesQuery:view
+* wfm:agentSchedulingPreferences:edit
+* wfm:agentSchedulingPreferencesSettings:view
+* wfm:schedulingPreferencesQuery:view
+* wfm:schedulingPreferencesSettings:view
+* wfm:schedulingPreferencesSettings:edit
 
 ### Example
 
@@ -5947,6 +6035,12 @@ Requires ANY permissions:
 * wfm:workPlanRotation:delete
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
+* wfm:agentSchedulingPreferencesQuery:view
+* wfm:agentSchedulingPreferences:edit
+* wfm:agentSchedulingPreferencesSettings:view
+* wfm:schedulingPreferencesQuery:view
+* wfm:schedulingPreferencesSettings:view
+* wfm:schedulingPreferencesSettings:edit
 
 ### Example
 
@@ -6091,8 +6185,13 @@ except ApiException as e:
 
 > [**ShiftTradeListResponse**](ShiftTradeListResponse) get_workforcemanagement_managementunit_agent_shifttrades(management_unit_id, agent_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Gets all the shift trades for a given agent
+
+Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/query/jobs)
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades 
 
@@ -6142,8 +6241,13 @@ except ApiException as e:
 
 > [**ShiftTradeMatchesSummaryResponse**](ShiftTradeMatchesSummaryResponse) get_workforcemanagement_managementunit_shifttrades_matched(management_unit_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Gets a summary of all shift trades in the matched state
+
+Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched 
 
@@ -6771,8 +6875,13 @@ except ApiException as e:
 
 > [**WeekShiftTradeListResponse**](WeekShiftTradeListResponse) get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, include_cross_week_shifts=include_cross_week_shifts, force_download_service=force_download_service)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Gets all the shift trades for a given week
+
+Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/trades/evaluate/jobs)
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades 
 
@@ -7084,7 +7193,7 @@ except ApiException as e:
 | **page_size** | **int**| Deprecated, paging is not supported | [optional]  |
 | **page_number** | **int**| Deprecated, paging is not supported | [optional]  |
 | **expand** | **str**| Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentAdherenceAdjustmentsQuery, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -7237,8 +7346,13 @@ except ApiException as e:
 
 > [**ShiftTradeListResponse**](ShiftTradeListResponse) get_workforcemanagement_shifttrades()
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Gets all of my shift trades
+
+Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
 
 Wraps GET /api/v2/workforcemanagement/shifttrades 
 
@@ -8559,6 +8673,60 @@ except ApiException as e:
 [**MinimumStaffingResponse**](MinimumStaffingResponse)
 
 
+## patch_workforcemanagement_businessunit_opportunity
+
+> [**OpportunityResult**](OpportunityResult) patch_workforcemanagement_businessunit_opportunity(business_unit_id, opportunity_id, body)
+
+
+Update the opportunity
+
+Only opportunities with Draft status can be updated.
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/{opportunityId} 
+
+Requires ANY permissions: 
+
+* wfm:opportunity:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+opportunity_id = 'opportunity_id_example' # str | The ID of the opportunity
+body = PureCloudPlatformClientV2.PatchOpportunityRequest() # PatchOpportunityRequest | body
+
+try:
+    # Update the opportunity
+    api_response = api_instance.patch_workforcemanagement_businessunit_opportunity(business_unit_id, opportunity_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_opportunity: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **opportunity_id** | **str**| The ID of the opportunity |  |
+| **body** | [**PatchOpportunityRequest**](PatchOpportunityRequest)| body |  |
+
+### Return type
+
+[**OpportunityResult**](OpportunityResult)
+
+
 ## patch_workforcemanagement_businessunit_planninggroup
 
 > [**PlanningGroup**](PlanningGroup) patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body)
@@ -8566,11 +8734,14 @@ except ApiException as e:
 
 Updates the planning group
 
+If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
+
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * wfm:planningGroup:edit
+* routing:queue:view
 
 ### Example
 
@@ -9445,8 +9616,13 @@ except ApiException as e:
 
 > [**ShiftTradeResponse**](ShiftTradeResponse) patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, trade_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Updates a shift trade. This route can only be called by the initiating agent
+
+Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/jobs)
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId} 
 
@@ -9947,57 +10123,6 @@ except ApiException as e:
 [**QueryAdherenceExplanationsResponse**](QueryAdherenceExplanationsResponse)
 
 
-## post_workforcemanagement_adherence_historical
-
-> [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse) post_workforcemanagement_adherence_historical(body=body)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-
-Wraps POST /api/v2/workforcemanagement/adherence/historical 
-
-Requires ANY permissions: 
-
-* wfm:historicalAdherence:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-body = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForUsers() # WfmHistoricalAdherenceQueryForUsers | body (optional)
-
-try:
-    # Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-    api_response = api_instance.post_workforcemanagement_adherence_historical(body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_historical: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**WfmHistoricalAdherenceQueryForUsers**](WfmHistoricalAdherenceQueryForUsers)| body | [optional]  |
-
-### Return type
-
-[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse)
-
-
 ## post_workforcemanagement_adherence_historical_bulk
 
 > [**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse) post_workforcemanagement_adherence_historical_bulk(body)
@@ -10395,6 +10520,160 @@ except ApiException as e:
 ### Return type
 
 [**AgentPossibleWorkShiftsResponse**](AgentPossibleWorkShiftsResponse)
+
+
+## post_workforcemanagement_agents_opportunities_enrollments_bulk_add
+
+> [**AgentBulkAddOpportunityEnrollmentsResponse**](AgentBulkAddOpportunityEnrollmentsResponse) post_workforcemanagement_agents_opportunities_enrollments_bulk_add(body)
+
+
+Bulk add enrollments to opportunities for the authenticated agent
+
+Allows an agent to enroll in opportunities. This endpoint can return partial success.
+
+Wraps POST /api/v2/workforcemanagement/agents/opportunities/enrollments/bulk/add 
+
+Requires ANY permissions: 
+
+* wfm:agentOpportunitiesEnrollments:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AgentBulkAddOpportunityEnrollmentsRequest() # AgentBulkAddOpportunityEnrollmentsRequest | body
+
+try:
+    # Bulk add enrollments to opportunities for the authenticated agent
+    api_response = api_instance.post_workforcemanagement_agents_opportunities_enrollments_bulk_add(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agents_opportunities_enrollments_bulk_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentBulkAddOpportunityEnrollmentsRequest**](AgentBulkAddOpportunityEnrollmentsRequest)| body |  |
+
+### Return type
+
+[**AgentBulkAddOpportunityEnrollmentsResponse**](AgentBulkAddOpportunityEnrollmentsResponse)
+
+
+## post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update
+
+> [**AgentBulkStatusUpdateOpportunityEnrollmentsResponse**](AgentBulkStatusUpdateOpportunityEnrollmentsResponse) post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update(body)
+
+
+Bulk update enrollment status for the authenticated agent
+
+Allows an agent to update the status of their enrollments (e.g. withdraw). Returns partial success if some enrollments cannot be updated.
+
+Wraps POST /api/v2/workforcemanagement/agents/opportunities/enrollments/bulk/statuses/update 
+
+Requires ANY permissions: 
+
+* wfm:agentOpportunitiesEnrollmentsStatuses:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AgentBulkStatusUpdateOpportunityEnrollmentsRequest() # AgentBulkStatusUpdateOpportunityEnrollmentsRequest | body
+
+try:
+    # Bulk update enrollment status for the authenticated agent
+    api_response = api_instance.post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agents_opportunities_enrollments_bulk_statuses_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentBulkStatusUpdateOpportunityEnrollmentsRequest**](AgentBulkStatusUpdateOpportunityEnrollmentsRequest)| body |  |
+
+### Return type
+
+[**AgentBulkStatusUpdateOpportunityEnrollmentsResponse**](AgentBulkStatusUpdateOpportunityEnrollmentsResponse)
+
+
+## post_workforcemanagement_agents_opportunities_query
+
+> [**AgentQueryOpportunitiesResponse**](AgentQueryOpportunitiesResponse) post_workforcemanagement_agents_opportunities_query(body, expand=expand, force_download_service=force_download_service)
+
+
+Query opportunities for the authenticated agent
+
+Queries within the specified date range. Each opportunity includes the agent's enrollment details if they have enrolled.
+
+Wraps POST /api/v2/workforcemanagement/agents/opportunities/query 
+
+Requires ANY permissions: 
+
+* wfm:agentOpportunitiesQuery:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.QueryOpportunitiesRequest() # QueryOpportunitiesRequest | body
+expand = 'expand_example' # str | List of resources to expand (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Query opportunities for the authenticated agent
+    api_response = api_instance.post_workforcemanagement_agents_opportunities_query(body, expand=expand, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agents_opportunities_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QueryOpportunitiesRequest**](QueryOpportunitiesRequest)| body |  |
+| **expand** | **str**| List of resources to expand | [optional] <br />**Values**: enrollment |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**AgentQueryOpportunitiesResponse**](AgentQueryOpportunitiesResponse)
 
 
 ## post_workforcemanagement_agentschedules_managementunits_mine
@@ -11363,6 +11642,422 @@ except ApiException as e:
 [**AsyncIntradayResponse**](AsyncIntradayResponse)
 
 
+## post_workforcemanagement_businessunit_opportunities_bulk_add
+
+> [**BulkAddOpportunitiesResponse**](BulkAddOpportunitiesResponse) post_workforcemanagement_businessunit_opportunities_bulk_add(business_unit_id, body)
+
+
+Bulk add opportunities
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/add 
+
+Requires ANY permissions: 
+
+* wfm:opportunities:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BulkAddOpportunitiesRequest() # BulkAddOpportunitiesRequest | body
+
+try:
+    # Bulk add opportunities
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_bulk_add(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_bulk_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BulkAddOpportunitiesRequest**](BulkAddOpportunitiesRequest)| body |  |
+
+### Return type
+
+[**BulkAddOpportunitiesResponse**](BulkAddOpportunitiesResponse)
+
+
+## post_workforcemanagement_businessunit_opportunities_bulk_publish
+
+> [**BulkPublishOpportunitiesResponse**](BulkPublishOpportunitiesResponse) post_workforcemanagement_businessunit_opportunities_bulk_publish(business_unit_id, body)
+
+
+Bulk publish opportunities
+
+Published opportunities become available for agent enrollment when they open. Returns partial success if some opportunities cannot be published.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/publish 
+
+Requires ANY permissions: 
+
+* wfm:opportunities:publish
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BulkOpportunitiesRequest() # BulkOpportunitiesRequest | body
+
+try:
+    # Bulk publish opportunities
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_bulk_publish(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_bulk_publish: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BulkOpportunitiesRequest**](BulkOpportunitiesRequest)| body |  |
+
+### Return type
+
+[**BulkPublishOpportunitiesResponse**](BulkPublishOpportunitiesResponse)
+
+
+## post_workforcemanagement_businessunit_opportunities_bulk_remove
+
+> [**BulkRemoveOpportunitiesResponse**](BulkRemoveOpportunitiesResponse) post_workforcemanagement_businessunit_opportunities_bulk_remove(business_unit_id, body)
+
+
+Bulk remove opportunities
+
+This operation is permanent and cannot be undone. Returns partial success if some opportunities cannot be removed.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/remove 
+
+Requires ANY permissions: 
+
+* wfm:opportunities:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BulkOpportunitiesRequest() # BulkOpportunitiesRequest | body
+
+try:
+    # Bulk remove opportunities
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_bulk_remove(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BulkOpportunitiesRequest**](BulkOpportunitiesRequest)| body |  |
+
+### Return type
+
+[**BulkRemoveOpportunitiesResponse**](BulkRemoveOpportunitiesResponse)
+
+
+## post_workforcemanagement_businessunit_opportunities_bulk_statuses_update
+
+> [**BulkOpportunitiesStatusUpdateResponse**](BulkOpportunitiesStatusUpdateResponse) post_workforcemanagement_businessunit_opportunities_bulk_statuses_update(business_unit_id, body)
+
+
+Bulk update opportunities status
+
+If status is Closed, pending enrollments are automatically denied; approved enrollments remain in schedules. Returns partial success if some opportunities cannot be updated.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/bulk/statuses/update 
+
+Requires ANY permissions: 
+
+* wfm:opportunitiesStatuses:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BulkOpportunitiesStatusUpdateRequest() # BulkOpportunitiesStatusUpdateRequest | body
+
+try:
+    # Bulk update opportunities status
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_bulk_statuses_update(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_bulk_statuses_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BulkOpportunitiesStatusUpdateRequest**](BulkOpportunitiesStatusUpdateRequest)| body |  |
+
+### Return type
+
+[**BulkOpportunitiesStatusUpdateResponse**](BulkOpportunitiesStatusUpdateResponse)
+
+
+## post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update
+
+> [**BulkUpdateOpportunityEnrollmentsStatusResponse**](BulkUpdateOpportunityEnrollmentsStatusResponse) post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update(business_unit_id, body)
+
+
+Bulk update enrollment status
+
+Updates the status of enrollments (approve/deny). Returns partial success if some enrollments cannot be updated.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/enrollments/bulk/statuses/update 
+
+Requires ANY permissions: 
+
+* wfm:opportunitiesEnrollmentsStatuses:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BulkOpportunityEnrollmentsStatusUpdateRequest() # BulkOpportunityEnrollmentsStatusUpdateRequest | body
+
+try:
+    # Bulk update enrollment status
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_enrollments_bulk_statuses_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BulkOpportunityEnrollmentsStatusUpdateRequest**](BulkOpportunityEnrollmentsStatusUpdateRequest)| body |  |
+
+### Return type
+
+[**BulkUpdateOpportunityEnrollmentsStatusResponse**](BulkUpdateOpportunityEnrollmentsStatusResponse)
+
+
+## post_workforcemanagement_businessunit_opportunities_enrollments_query
+
+> [**QueryOpportunityEnrollmentsResponse**](QueryOpportunityEnrollmentsResponse) post_workforcemanagement_businessunit_opportunities_enrollments_query(business_unit_id, body, expand=expand, force_download_service=force_download_service)
+
+
+Query enrollments
+
+For more information about opportunities, use the expand parameter.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/enrollments/query 
+
+Requires ANY permissions: 
+
+* wfm:opportunitiesEnrollmentsQuery:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryOpportunityEnrollmentsRequest() # QueryOpportunityEnrollmentsRequest | body
+expand = 'expand_example' # str | List of resources to expand (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Query enrollments
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_enrollments_query(business_unit_id, body, expand=expand, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_enrollments_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryOpportunityEnrollmentsRequest**](QueryOpportunityEnrollmentsRequest)| body |  |
+| **expand** | **str**| List of resources to expand | [optional] <br />**Values**: opportunities |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**QueryOpportunityEnrollmentsResponse**](QueryOpportunityEnrollmentsResponse)
+
+
+## post_workforcemanagement_businessunit_opportunities_externalactivities_query
+
+> [**QueryExternalActivityOpportunitiesResponse**](QueryExternalActivityOpportunitiesResponse) post_workforcemanagement_businessunit_opportunities_externalactivities_query(business_unit_id, body)
+
+
+Query opportunities by external activity IDs
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/externalactivities/query 
+
+Requires ANY permissions: 
+
+* wfm:opportunitiesExternalActivitiesQuery:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BulkOpportunitiesExternalActivitiesRequest() # BulkOpportunitiesExternalActivitiesRequest | body
+
+try:
+    # Query opportunities by external activity IDs
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_externalactivities_query(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_externalactivities_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BulkOpportunitiesExternalActivitiesRequest**](BulkOpportunitiesExternalActivitiesRequest)| body |  |
+
+### Return type
+
+[**QueryExternalActivityOpportunitiesResponse**](QueryExternalActivityOpportunitiesResponse)
+
+
+## post_workforcemanagement_businessunit_opportunities_query
+
+> [**QueryOpportunitiesResponse**](QueryOpportunitiesResponse) post_workforcemanagement_businessunit_opportunities_query(business_unit_id, body, force_download_service=force_download_service)
+
+
+Query opportunities within the specified date range
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/opportunities/query 
+
+Requires ANY permissions: 
+
+* wfm:opportunitiesQuery:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryOpportunitiesRequest() # QueryOpportunitiesRequest | body
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Query opportunities within the specified date range
+    api_response = api_instance.post_workforcemanagement_businessunit_opportunities_query(business_unit_id, body, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_opportunities_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryOpportunitiesRequest**](QueryOpportunitiesRequest)| body |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+[**QueryOpportunitiesResponse**](QueryOpportunitiesResponse)
+
+
 ## post_workforcemanagement_businessunit_planninggroups
 
 > [**PlanningGroup**](PlanningGroup) post_workforcemanagement_businessunit_planninggroups(business_unit_id, body)
@@ -11370,11 +12065,14 @@ except ApiException as e:
 
 Adds a new planning group
 
+If the request body contains queue references in route paths, routing:queue:view is required in each referenced queue's division.
+
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * wfm:planningGroup:add
+* routing:queue:view
 
 ### Example
 
@@ -14185,8 +14883,13 @@ except ApiException as e:
 
 > [**MatchShiftTradeResponse**](MatchShiftTradeResponse) post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, trade_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Matches a shift trade. This route can only be called by the receiving agent
+
+Deprecated. Use new route instead (/shifttrading/trades/{tradeId}/match/jobs)
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match 
 
@@ -14239,8 +14942,13 @@ except ApiException as e:
 
 > [**ShiftTradeResponse**](ShiftTradeResponse) post_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Adds a shift trade
+
+Deprecated. Use new route instead (/shifttrading/trades/jobs)
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades 
 
@@ -14291,8 +14999,13 @@ except ApiException as e:
 
 > [**SearchShiftTradesResponse**](SearchShiftTradesResponse) post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body, force_download_service=force_download_service)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Searches for potential shift trade matches for the current agent
+
+Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/unmatched/search/jobs)
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search 
 
@@ -14345,10 +15058,13 @@ except ApiException as e:
 
 > [**BulkUpdateShiftTradeStateResponse**](BulkUpdateShiftTradeStateResponse) post_workforcemanagement_managementunit_week_shifttrades_state_bulk(management_unit_id, week_date_id, body, force_async=force_async)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Updates the state of a batch of shift trades
 
-Admin functionality is not supported with \"mine\".
+Admin functionality is not supported with \"mine\". Deprecated. Use new route instead (/businessunits/{buId}/shifttrading/trades/state/bulk/jobs)
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk 
 
@@ -15663,4 +16379,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

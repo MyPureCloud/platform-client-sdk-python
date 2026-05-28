@@ -299,7 +299,7 @@ class UserSearchCriteria(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "REGEX", "TERM", "TERMS", "REQUIRED_FIELDS", "MATCH_ALL", "QUERY_STRING"]
+        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "REGEX", "TERM", "TERMS", "REQUIRED_FIELDS", "MATCH_ALL", "QUERY_STRING", "RANGE", "LESS_THAN", "LESS_THAN_EQUAL_TO", "GREATER_THAN", "GREATER_THAN_EQUAL_TO"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

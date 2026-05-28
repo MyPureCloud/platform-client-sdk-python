@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ContentCard
     from . import ContentCarousel
     from . import ContentDatePicker
+    from . import ConversationContentForm
     from . import ConversationContentListPicker
     from . import WebMessagingAttachment
     from . import WebMessagingButtonResponse
@@ -64,7 +65,8 @@ class WebMessagingContent(object):
             'card': 'ContentCard',
             'carousel': 'ContentCarousel',
             'date_picker': 'ContentDatePicker',
-            'list_picker': 'ConversationContentListPicker'
+            'list_picker': 'ConversationContentListPicker',
+            'form': 'ConversationContentForm'
         }
 
         self.attribute_map = {
@@ -76,7 +78,8 @@ class WebMessagingContent(object):
             'card': 'card',
             'carousel': 'carousel',
             'date_picker': 'datePicker',
-            'list_picker': 'listPicker'
+            'list_picker': 'listPicker',
+            'form': 'form'
         }
 
         self._content_type = None
@@ -88,6 +91,7 @@ class WebMessagingContent(object):
         self._carousel = None
         self._date_picker = None
         self._list_picker = None
+        self._form = None
 
     @property
     def content_type(self) -> str:
@@ -111,7 +115,7 @@ class WebMessagingContent(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel", "DatePicker", "ListPicker"]
+        allowed_values = ["Attachment", "QuickReply", "ButtonResponse", "GenericTemplate", "Card", "Carousel", "DatePicker", "ListPicker", "Form"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"
@@ -309,6 +313,30 @@ class WebMessagingContent(object):
         
 
         self._list_picker = list_picker
+
+    @property
+    def form(self) -> 'ConversationContentForm':
+        """
+        Gets the form of this WebMessagingContent.
+        Form content
+
+        :return: The form of this WebMessagingContent.
+        :rtype: ConversationContentForm
+        """
+        return self._form
+
+    @form.setter
+    def form(self, form: 'ConversationContentForm') -> None:
+        """
+        Sets the form of this WebMessagingContent.
+        Form content
+
+        :param form: The form of this WebMessagingContent.
+        :type: ConversationContentForm
+        """
+        
+
+        self._form = form
 
     def to_dict(self):
         """

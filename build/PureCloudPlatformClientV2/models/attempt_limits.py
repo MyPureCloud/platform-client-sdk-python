@@ -260,7 +260,7 @@ class AttemptLimits(object):
     def time_zone_id(self) -> str:
         """
         Gets the time_zone_id of this AttemptLimits.
-        If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
+        If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :return: The time_zone_id of this AttemptLimits.
         :rtype: str
@@ -271,7 +271,7 @@ class AttemptLimits(object):
     def time_zone_id(self, time_zone_id: str) -> None:
         """
         Sets the time_zone_id of this AttemptLimits.
-        If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
+        If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :param time_zone_id: The time_zone_id of this AttemptLimits.
         :type: str

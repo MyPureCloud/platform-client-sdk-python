@@ -56,7 +56,9 @@ class RoutingConversationAttributesResponse(object):
             'skills': 'list[RoutingSkill]',
             'language': 'Language',
             'label': 'UtilizationLabel',
-            'scored_agents': 'list[ScoredAgent]'
+            'scored_agents': 'list[ScoredAgent]',
+            'skill_expression': 'str',
+            'skill_expression_id': 'str'
         }
 
         self.attribute_map = {
@@ -64,7 +66,9 @@ class RoutingConversationAttributesResponse(object):
             'skills': 'skills',
             'language': 'language',
             'label': 'label',
-            'scored_agents': 'scoredAgents'
+            'scored_agents': 'scoredAgents',
+            'skill_expression': 'skillExpression',
+            'skill_expression_id': 'skillExpressionId'
         }
 
         self._priority = None
@@ -72,6 +76,8 @@ class RoutingConversationAttributesResponse(object):
         self._language = None
         self._label = None
         self._scored_agents = None
+        self._skill_expression = None
+        self._skill_expression_id = None
 
     @property
     def priority(self) -> int:
@@ -192,6 +198,54 @@ class RoutingConversationAttributesResponse(object):
         
 
         self._scored_agents = scored_agents
+
+    @property
+    def skill_expression(self) -> str:
+        """
+        Gets the skill_expression of this RoutingConversationAttributesResponse.
+        Current skill expression on in-queue conversation
+
+        :return: The skill_expression of this RoutingConversationAttributesResponse.
+        :rtype: str
+        """
+        return self._skill_expression
+
+    @skill_expression.setter
+    def skill_expression(self, skill_expression: str) -> None:
+        """
+        Sets the skill_expression of this RoutingConversationAttributesResponse.
+        Current skill expression on in-queue conversation
+
+        :param skill_expression: The skill_expression of this RoutingConversationAttributesResponse.
+        :type: str
+        """
+        
+
+        self._skill_expression = skill_expression
+
+    @property
+    def skill_expression_id(self) -> str:
+        """
+        Gets the skill_expression_id of this RoutingConversationAttributesResponse.
+        Current skill expression ID on in-queue conversation
+
+        :return: The skill_expression_id of this RoutingConversationAttributesResponse.
+        :rtype: str
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: str) -> None:
+        """
+        Sets the skill_expression_id of this RoutingConversationAttributesResponse.
+        Current skill expression ID on in-queue conversation
+
+        :param skill_expression_id: The skill_expression_id of this RoutingConversationAttributesResponse.
+        :type: str
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     def to_dict(self):
         """

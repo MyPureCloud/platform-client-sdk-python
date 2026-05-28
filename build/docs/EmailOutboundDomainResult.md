@@ -12,7 +12,8 @@
 | **sender_status** | str |  | [optional] |
 | **sender_type** | str |  | [optional] |
 | **email_setting** | [EmailSetting](EmailSetting) | The email settings associated with this domain. | [optional] |
+| **dmarc_verification_result** | [DmarcResult](DmarcResult) | The DMARC verification status for this domain. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

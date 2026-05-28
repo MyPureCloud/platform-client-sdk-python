@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import MessageInfo
 
 class FacebookDataIngestionRuleResponse(object):
     """
@@ -55,6 +57,7 @@ class FacebookDataIngestionRuleResponse(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'platform': 'str',
+            'ingestion_rule_info': 'MessageInfo',
             'countries': 'list[str]',
             'integration_id': 'str',
             'self_uri': 'str'
@@ -69,6 +72,7 @@ class FacebookDataIngestionRuleResponse(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'platform': 'platform',
+            'ingestion_rule_info': 'ingestionRuleInfo',
             'countries': 'countries',
             'integration_id': 'integrationId',
             'self_uri': 'selfUri'
@@ -82,6 +86,7 @@ class FacebookDataIngestionRuleResponse(object):
         self._date_created = None
         self._date_modified = None
         self._platform = None
+        self._ingestion_rule_info = None
         self._countries = None
         self._integration_id = None
         self._self_uri = None
@@ -282,6 +287,30 @@ class FacebookDataIngestionRuleResponse(object):
         
 
         self._platform = platform
+
+    @property
+    def ingestion_rule_info(self) -> 'MessageInfo':
+        """
+        Gets the ingestion_rule_info of this FacebookDataIngestionRuleResponse.
+        The Info about ingestion rule.
+
+        :return: The ingestion_rule_info of this FacebookDataIngestionRuleResponse.
+        :rtype: MessageInfo
+        """
+        return self._ingestion_rule_info
+
+    @ingestion_rule_info.setter
+    def ingestion_rule_info(self, ingestion_rule_info: 'MessageInfo') -> None:
+        """
+        Sets the ingestion_rule_info of this FacebookDataIngestionRuleResponse.
+        The Info about ingestion rule.
+
+        :param ingestion_rule_info: The ingestion_rule_info of this FacebookDataIngestionRuleResponse.
+        :type: MessageInfo
+        """
+        
+
+        self._ingestion_rule_info = ingestion_rule_info
 
     @property
     def countries(self) -> List[str]:

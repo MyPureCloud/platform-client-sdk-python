@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import GroupByAttribute
+    from . import Number
 
 class JourneyViewChartMetricResultValue(object):
     """
@@ -49,7 +50,7 @@ class JourneyViewChartMetricResultValue(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'value': 'int',
+            'value': 'Number',
             'group_by_attributes': 'list[GroupByAttribute]'
         }
 
@@ -62,24 +63,24 @@ class JourneyViewChartMetricResultValue(object):
         self._group_by_attributes = None
 
     @property
-    def value(self) -> int:
+    def value(self) -> 'Number':
         """
         Gets the value of this JourneyViewChartMetricResultValue.
         Value for this metric
 
         :return: The value of this JourneyViewChartMetricResultValue.
-        :rtype: int
+        :rtype: Number
         """
         return self._value
 
     @value.setter
-    def value(self, value: int) -> None:
+    def value(self, value: 'Number') -> None:
         """
         Sets the value of this JourneyViewChartMetricResultValue.
         Value for this metric
 
         :param value: The value of this JourneyViewChartMetricResultValue.
-        :type: int
+        :type: Number
         """
         
 

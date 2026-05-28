@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import UnavailableTimesTimeSpan
+    from . import WfmTimeSpan
 
 class UpdateUnavailableTime(object):
     """
@@ -50,7 +50,7 @@ class UpdateUnavailableTime(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'time_span': 'UnavailableTimesTimeSpan',
+            'time_span': 'WfmTimeSpan',
             'notes': 'str',
             'delete': 'bool'
         }
@@ -92,24 +92,24 @@ class UpdateUnavailableTime(object):
         self._id = id
 
     @property
-    def time_span(self) -> 'UnavailableTimesTimeSpan':
+    def time_span(self) -> 'WfmTimeSpan':
         """
         Gets the time_span of this UpdateUnavailableTime.
         Exact date, time and length of the unavailability time in granularity of minutes. Must be specified when creating a new unavailable time span
 
         :return: The time_span of this UpdateUnavailableTime.
-        :rtype: UnavailableTimesTimeSpan
+        :rtype: WfmTimeSpan
         """
         return self._time_span
 
     @time_span.setter
-    def time_span(self, time_span: 'UnavailableTimesTimeSpan') -> None:
+    def time_span(self, time_span: 'WfmTimeSpan') -> None:
         """
         Sets the time_span of this UpdateUnavailableTime.
         Exact date, time and length of the unavailability time in granularity of minutes. Must be specified when creating a new unavailable time span
 
         :param time_span: The time_span of this UpdateUnavailableTime.
-        :type: UnavailableTimesTimeSpan
+        :type: WfmTimeSpan
         """
         
 

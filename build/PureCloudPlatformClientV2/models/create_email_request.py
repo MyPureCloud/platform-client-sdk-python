@@ -51,6 +51,7 @@ class CreateEmailRequest(object):
             'flow_id': 'str',
             'provider': 'str',
             'skill_ids': 'list[str]',
+            'skill_expression': 'str',
             'language_id': 'str',
             'priority': 'int',
             'attributes': 'dict(str, str)',
@@ -71,6 +72,7 @@ class CreateEmailRequest(object):
             'flow_id': 'flowId',
             'provider': 'provider',
             'skill_ids': 'skillIds',
+            'skill_expression': 'skillExpression',
             'language_id': 'languageId',
             'priority': 'priority',
             'attributes': 'attributes',
@@ -90,6 +92,7 @@ class CreateEmailRequest(object):
         self._flow_id = None
         self._provider = None
         self._skill_ids = None
+        self._skill_expression = None
         self._language_id = None
         self._priority = None
         self._attributes = None
@@ -199,6 +202,30 @@ class CreateEmailRequest(object):
         
 
         self._skill_ids = skill_ids
+
+    @property
+    def skill_expression(self) -> str:
+        """
+        Gets the skill_expression of this CreateEmailRequest.
+        The skill expression to use for routing the email conversation (when using queueId).
+
+        :return: The skill_expression of this CreateEmailRequest.
+        :rtype: str
+        """
+        return self._skill_expression
+
+    @skill_expression.setter
+    def skill_expression(self, skill_expression: str) -> None:
+        """
+        Sets the skill_expression of this CreateEmailRequest.
+        The skill expression to use for routing the email conversation (when using queueId).
+
+        :param skill_expression: The skill_expression of this CreateEmailRequest.
+        :type: str
+        """
+        
+
+        self._skill_expression = skill_expression
 
     @property
     def language_id(self) -> str:

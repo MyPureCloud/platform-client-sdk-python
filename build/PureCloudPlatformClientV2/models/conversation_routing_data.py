@@ -54,6 +54,8 @@ class ConversationRoutingData(object):
             'language': 'AddressableEntityRef',
             'priority': 'int',
             'skills': 'list[AddressableEntityRef]',
+            'skill_expression': 'str',
+            'skill_expression_id': 'str',
             'scored_agents': 'list[ScoredAgent]',
             'label': 'str'
         }
@@ -63,6 +65,8 @@ class ConversationRoutingData(object):
             'language': 'language',
             'priority': 'priority',
             'skills': 'skills',
+            'skill_expression': 'skillExpression',
+            'skill_expression_id': 'skillExpressionId',
             'scored_agents': 'scoredAgents',
             'label': 'label'
         }
@@ -71,6 +75,8 @@ class ConversationRoutingData(object):
         self._language = None
         self._priority = None
         self._skills = None
+        self._skill_expression = None
+        self._skill_expression_id = None
         self._scored_agents = None
         self._label = None
 
@@ -169,6 +175,54 @@ class ConversationRoutingData(object):
         
 
         self._skills = skills
+
+    @property
+    def skill_expression(self) -> str:
+        """
+        Gets the skill_expression of this ConversationRoutingData.
+        The string with skill expression requested by the caller for routing decisions
+
+        :return: The skill_expression of this ConversationRoutingData.
+        :rtype: str
+        """
+        return self._skill_expression
+
+    @skill_expression.setter
+    def skill_expression(self, skill_expression: str) -> None:
+        """
+        Sets the skill_expression of this ConversationRoutingData.
+        The string with skill expression requested by the caller for routing decisions
+
+        :param skill_expression: The skill_expression of this ConversationRoutingData.
+        :type: str
+        """
+        
+
+        self._skill_expression = skill_expression
+
+    @property
+    def skill_expression_id(self) -> str:
+        """
+        Gets the skill_expression_id of this ConversationRoutingData.
+        The internal id of the skill expression, if any, that is currently in use for routing decisions
+
+        :return: The skill_expression_id of this ConversationRoutingData.
+        :rtype: str
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: str) -> None:
+        """
+        Sets the skill_expression_id of this ConversationRoutingData.
+        The internal id of the skill expression, if any, that is currently in use for routing decisions
+
+        :param skill_expression_id: The skill_expression_id of this ConversationRoutingData.
+        :type: str
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     @property
     def scored_agents(self) -> List['ScoredAgent']:

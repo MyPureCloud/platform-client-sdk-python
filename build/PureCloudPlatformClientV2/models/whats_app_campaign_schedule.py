@@ -259,7 +259,7 @@ class WhatsAppCampaignSchedule(object):
     def time_zone(self) -> str:
         """
         Gets the time_zone of this WhatsAppCampaignSchedule.
-        The time zone for this WhatsApp campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
+        The time zone for this WhatsApp campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :return: The time_zone of this WhatsAppCampaignSchedule.
         :rtype: str
@@ -270,7 +270,7 @@ class WhatsAppCampaignSchedule(object):
     def time_zone(self, time_zone: str) -> None:
         """
         Sets the time_zone of this WhatsAppCampaignSchedule.
-        The time zone for this WhatsApp campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
+        The time zone for this WhatsApp campaign schedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :param time_zone: The time_zone of this WhatsAppCampaignSchedule.
         :type: str

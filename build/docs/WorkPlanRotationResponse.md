@@ -6,7 +6,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | str | The globally unique identifier for the object. | [optional] |
+| **id** | str | The globally unique identifier for the object. | |
 | **name** | str |  | [optional] |
 | **enabled** | bool | Whether the work plan rotation is enabled for scheduling | [optional] |
 | **date_range** | [DateRangeWithOptionalEnd](DateRangeWithOptionalEnd) | The date range to which this work plan rotation applies | [optional] |
@@ -18,4 +18,4 @@
 
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_

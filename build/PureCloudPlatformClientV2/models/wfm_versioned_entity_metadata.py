@@ -49,50 +49,26 @@ class WfmVersionedEntityMetadata(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'version': 'int',
             'modified_by': 'UserReference',
             'date_modified': 'datetime',
             'created_by': 'UserReference',
-            'date_created': 'datetime'
+            'date_created': 'datetime',
+            'version': 'int'
         }
 
         self.attribute_map = {
-            'version': 'version',
             'modified_by': 'modifiedBy',
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
-            'date_created': 'dateCreated'
+            'date_created': 'dateCreated',
+            'version': 'version'
         }
 
-        self._version = None
         self._modified_by = None
         self._date_modified = None
         self._created_by = None
         self._date_created = None
-
-    @property
-    def version(self) -> int:
-        """
-        Gets the version of this WfmVersionedEntityMetadata.
-        The version of the associated entity.  Used to prevent conflicts on concurrent edits
-
-        :return: The version of this WfmVersionedEntityMetadata.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version: int) -> None:
-        """
-        Sets the version of this WfmVersionedEntityMetadata.
-        The version of the associated entity.  Used to prevent conflicts on concurrent edits
-
-        :param version: The version of this WfmVersionedEntityMetadata.
-        :type: int
-        """
-        
-
-        self._version = version
+        self._version = None
 
     @property
     def modified_by(self) -> 'UserReference':
@@ -189,6 +165,30 @@ class WfmVersionedEntityMetadata(object):
         
 
         self._date_created = date_created
+
+    @property
+    def version(self) -> int:
+        """
+        Gets the version of this WfmVersionedEntityMetadata.
+        The version of the associated entity.  Used to prevent conflicts on concurrent edits
+
+        :return: The version of this WfmVersionedEntityMetadata.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version: int) -> None:
+        """
+        Sets the version of this WfmVersionedEntityMetadata.
+        The version of the associated entity.  Used to prevent conflicts on concurrent edits
+
+        :param version: The version of this WfmVersionedEntityMetadata.
+        :type: int
+        """
+        
+
+        self._version = version
 
     def to_dict(self):
         """

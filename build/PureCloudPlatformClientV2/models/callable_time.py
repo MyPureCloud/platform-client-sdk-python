@@ -89,7 +89,7 @@ class CallableTime(object):
     def time_zone_id(self) -> str:
         """
         Gets the time_zone_id of this CallableTime.
-        The time zone for the time slots; for example, Africa/Abidjan
+        The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :return: The time_zone_id of this CallableTime.
         :rtype: str
@@ -100,7 +100,7 @@ class CallableTime(object):
     def time_zone_id(self, time_zone_id: str) -> None:
         """
         Sets the time_zone_id of this CallableTime.
-        The time zone for the time slots; for example, Africa/Abidjan
+        The time zone for the time slots; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
 
         :param time_zone_id: The time_zone_id of this CallableTime.
         :type: str

@@ -140,7 +140,7 @@ class PatchAction(object):
     def action_target_id(self) -> str:
         """
         Gets the action_target_id of this PatchAction.
-        Action target ID.
+        Deprecated. Action target ID.
 
         :return: The action_target_id of this PatchAction.
         :rtype: str
@@ -151,7 +151,7 @@ class PatchAction(object):
     def action_target_id(self, action_target_id: str) -> None:
         """
         Sets the action_target_id of this PatchAction.
-        Action target ID.
+        Deprecated. Action target ID.
 
         :param action_target_id: The action_target_id of this PatchAction.
         :type: str
@@ -164,7 +164,7 @@ class PatchAction(object):
     def is_pacing_enabled(self) -> bool:
         """
         Gets the is_pacing_enabled of this PatchAction.
-        Whether this action should be throttled.
+        Deprecated. Whether this action should be throttled.
 
         :return: The is_pacing_enabled of this PatchAction.
         :rtype: bool
@@ -175,7 +175,7 @@ class PatchAction(object):
     def is_pacing_enabled(self, is_pacing_enabled: bool) -> None:
         """
         Sets the is_pacing_enabled of this PatchAction.
-        Whether this action should be throttled.
+        Deprecated. Whether this action should be throttled.
 
         :param is_pacing_enabled: The is_pacing_enabled of this PatchAction.
         :type: bool
@@ -188,7 +188,7 @@ class PatchAction(object):
     def props(self) -> 'PatchActionProperties':
         """
         Gets the props of this PatchAction.
-        Additional properties.
+        Deprecated. Additional properties.
 
         :return: The props of this PatchAction.
         :rtype: PatchActionProperties
@@ -199,7 +199,7 @@ class PatchAction(object):
     def props(self, props: 'PatchActionProperties') -> None:
         """
         Sets the props of this PatchAction.
-        Additional properties.
+        Deprecated. Additional properties.
 
         :param props: The props of this PatchAction.
         :type: PatchActionProperties

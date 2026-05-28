@@ -48,6 +48,8 @@ from .models.action_target_listing import ActionTargetListing
 from .models.action_template import ActionTemplate
 from .models.action_template_listing import ActionTemplateListing
 from .models.actions import Actions
+from .models.activate_external_event_request import ActivateExternalEventRequest
+from .models.activate_external_event_response import ActivateExternalEventResponse
 from .models.activation import Activation
 from .models.activation_trigger import ActivationTrigger
 from .models.activity_code import ActivityCode
@@ -78,6 +80,7 @@ from .models.add_adherence_explanation_admin_request import AddAdherenceExplanat
 from .models.add_adherence_explanation_agent_request import AddAdherenceExplanationAgentRequest
 from .models.add_conversation_request import AddConversationRequest
 from .models.add_conversation_response import AddConversationResponse
+from .models.add_opportunity_body import AddOpportunityBody
 from .models.add_shift_trade_job_request import AddShiftTradeJobRequest
 from .models.add_shift_trade_request import AddShiftTradeRequest
 from .models.add_work_plan_rotation_agent_request import AddWorkPlanRotationAgentRequest
@@ -123,9 +126,17 @@ from .models.agent_activity_changed_topic_out_of_office import AgentActivityChan
 from .models.agent_activity_changed_topic_presence import AgentActivityChangedTopicPresence
 from .models.agent_activity_changed_topic_routing_status import AgentActivityChangedTopicRoutingStatus
 from .models.agent_activity_entity_listing import AgentActivityEntityListing
+from .models.agent_add_opportunity_enrollment import AgentAddOpportunityEnrollment
 from .models.agent_adherence_day_metrics import AgentAdherenceDayMetrics
 from .models.agent_adherence_scheduled_activity import AgentAdherenceScheduledActivity
 from .models.agent_bid_work_plan_override_request import AgentBidWorkPlanOverrideRequest
+from .models.agent_bulk_add_opportunity_enrollment import AgentBulkAddOpportunityEnrollment
+from .models.agent_bulk_add_opportunity_enrollment_result import AgentBulkAddOpportunityEnrollmentResult
+from .models.agent_bulk_add_opportunity_enrollments_request import AgentBulkAddOpportunityEnrollmentsRequest
+from .models.agent_bulk_add_opportunity_enrollments_response import AgentBulkAddOpportunityEnrollmentsResponse
+from .models.agent_bulk_status_update_opportunity_enrollments_request import AgentBulkStatusUpdateOpportunityEnrollmentsRequest
+from .models.agent_bulk_status_update_opportunity_enrollments_response import AgentBulkStatusUpdateOpportunityEnrollmentsResponse
+from .models.agent_business_unit_opportunities import AgentBusinessUnitOpportunities
 from .models.agent_checklist import AgentChecklist
 from .models.agent_checklist_info import AgentChecklistInfo
 from .models.agent_checklist_item import AgentChecklistItem
@@ -157,6 +168,7 @@ from .models.agent_mu_schedule_item import AgentMuScheduleItem
 from .models.agent_mu_schedule_query import AgentMuScheduleQuery
 from .models.agent_mu_schedule_result import AgentMuScheduleResult
 from .models.agent_mu_schedule_shift import AgentMuScheduleShift
+from .models.agent_opportunity_enrollment_result import AgentOpportunityEnrollmentResult
 from .models.agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .models.agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .models.agent_owned_routing import AgentOwnedRouting
@@ -164,6 +176,9 @@ from .models.agent_possible_work_shifts_request import AgentPossibleWorkShiftsRe
 from .models.agent_possible_work_shifts_response import AgentPossibleWorkShiftsResponse
 from .models.agent_query_adherence_explanations_request import AgentQueryAdherenceExplanationsRequest
 from .models.agent_query_adherence_explanations_response import AgentQueryAdherenceExplanationsResponse
+from .models.agent_query_opportunities import AgentQueryOpportunities
+from .models.agent_query_opportunities_response import AgentQueryOpportunitiesResponse
+from .models.agent_query_opportunity_result import AgentQueryOpportunityResult
 from .models.agent_queue_time_request import AgentQueueTimeRequest
 from .models.agent_schedule_shift_activity import AgentScheduleShiftActivity
 from .models.agent_schedule_unavailable_time import AgentScheduleUnavailableTime
@@ -612,6 +627,8 @@ from .models.bu_update_agent_schedule_shift import BuUpdateAgentScheduleShift
 from .models.bu_update_agent_schedule_upload_schema import BuUpdateAgentScheduleUploadSchema
 from .models.bu_update_time_off_plan_request import BuUpdateTimeOffPlanRequest
 from .models.bu_user_listing import BuUserListing
+from .models.bulk_add_opportunities_request import BulkAddOpportunitiesRequest
+from .models.bulk_add_opportunities_response import BulkAddOpportunitiesResponse
 from .models.bulk_add_source_intents_request import BulkAddSourceIntentsRequest
 from .models.bulk_callback_disconnect_request import BulkCallbackDisconnectRequest
 from .models.bulk_callback_patch_request import BulkCallbackPatchRequest
@@ -650,12 +667,23 @@ from .models.bulk_job_update import BulkJobUpdate
 from .models.bulk_jobs_listing import BulkJobsListing
 from .models.bulk_notes_request import BulkNotesRequest
 from .models.bulk_notes_response import BulkNotesResponse
+from .models.bulk_opportunities_enrollment_result import BulkOpportunitiesEnrollmentResult
+from .models.bulk_opportunities_error import BulkOpportunitiesError
+from .models.bulk_opportunities_external_activities_request import BulkOpportunitiesExternalActivitiesRequest
+from .models.bulk_opportunities_reference_result import BulkOpportunitiesReferenceResult
+from .models.bulk_opportunities_request import BulkOpportunitiesRequest
+from .models.bulk_opportunities_status_update_request import BulkOpportunitiesStatusUpdateRequest
+from .models.bulk_opportunities_status_update_response import BulkOpportunitiesStatusUpdateResponse
+from .models.bulk_opportunity_enrollments_status_update_request import BulkOpportunityEnrollmentsStatusUpdateRequest
 from .models.bulk_organizations_enrich_request import BulkOrganizationsEnrichRequest
 from .models.bulk_organizations_enrich_response import BulkOrganizationsEnrichResponse
 from .models.bulk_organizations_request import BulkOrganizationsRequest
 from .models.bulk_organizations_response import BulkOrganizationsResponse
+from .models.bulk_publish_opportunities_response import BulkPublishOpportunitiesResponse
 from .models.bulk_relationships_request import BulkRelationshipsRequest
 from .models.bulk_relationships_response import BulkRelationshipsResponse
+from .models.bulk_remove_opportunities_response import BulkRemoveOpportunitiesResponse
+from .models.bulk_remove_opportunities_result import BulkRemoveOpportunitiesResult
 from .models.bulk_remove_source_intents_request import BulkRemoveSourceIntentsRequest
 from .models.bulk_response import BulkResponse
 from .models.bulk_response_result_external_contact_contact_enrich_request_bulk_entity_error_contact_enrich_request import BulkResponseResultExternalContactContactEnrichRequestBulkEntityErrorContactEnrichRequest
@@ -673,6 +701,7 @@ from .models.bulk_result import BulkResult
 from .models.bulk_results import BulkResults
 from .models.bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .models.bulk_source_intents_response import BulkSourceIntentsResponse
+from .models.bulk_update_opportunity_enrollments_status_response import BulkUpdateOpportunityEnrollmentsStatusResponse
 from .models.bulk_update_shift_trade_list_job_request import BulkUpdateShiftTradeListJobRequest
 from .models.bulk_update_shift_trade_state_request_item import BulkUpdateShiftTradeStateRequestItem
 from .models.bulk_update_shift_trade_state_response import BulkUpdateShiftTradeStateResponse
@@ -737,6 +766,7 @@ from .models.callheader import Callheader
 from .models.callmessage import Callmessage
 from .models.campaign import Campaign
 from .models.campaign_business_category_metrics import CampaignBusinessCategoryMetrics
+from .models.campaign_diagnostic_campaign_action import CampaignDiagnosticCampaignAction
 from .models.campaign_diagnostic_campaign_health_state import CampaignDiagnosticCampaignHealthState
 from .models.campaign_diagnostic_campaign_state import CampaignDiagnosticCampaignState
 from .models.campaign_diagnostic_config_change import CampaignDiagnosticConfigChange
@@ -1666,7 +1696,6 @@ from .models.create_upload_source_url_job_response import CreateUploadSourceUrlJ
 from .models.create_user import CreateUser
 from .models.create_user_assignments_request import CreateUserAssignmentsRequest
 from .models.create_utilization_label_request import CreateUtilizationLabelRequest
-from .models.create_utilization_tag_request import CreateUtilizationTagRequest
 from .models.create_web_chat_conversation_request import CreateWebChatConversationRequest
 from .models.create_web_chat_conversation_response import CreateWebChatConversationResponse
 from .models.create_web_chat_message_request import CreateWebChatMessageRequest
@@ -2181,6 +2210,8 @@ from .models.email_setting import EmailSetting
 from .models.email_setting_reference import EmailSettingReference
 from .models.email_settings import EmailSettings
 from .models.email_setup import EmailSetup
+from .models.email_summary_generation_config import EmailSummaryGenerationConfig
+from .models.email_summary_settings_entity import EmailSummarySettingsEntity
 from .models.email_threading_settings import EmailThreadingSettings
 from .models.email_user_established_event import EmailUserEstablishedEvent
 from .models.email_user_transfer_event import EmailUserTransferEvent
@@ -2388,8 +2419,11 @@ from .models.external_contacts_unresolved_contact_changed_topic_whats_app_id imp
 from .models.external_data_source import ExternalDataSource
 from .models.external_established_event import ExternalEstablishedEvent
 from .models.external_event import ExternalEvent
+from .models.external_event_change import ExternalEventChange
+from .models.external_event_changes_response import ExternalEventChangesResponse
 from .models.external_event_external_id import ExternalEventExternalId
 from .models.external_event_identifiers import ExternalEventIdentifiers
+from .models.external_event_summary import ExternalEventSummary
 from .models.external_events_configuration import ExternalEventsConfiguration
 from .models.external_events_configuration_listing import ExternalEventsConfigurationListing
 from .models.external_events_request import ExternalEventsRequest
@@ -2624,6 +2658,7 @@ from .models.get_agents_work_plans_request import GetAgentsWorkPlansRequest
 from .models.get_alert_query import GetAlertQuery
 from .models.get_celebration_listing import GetCelebrationListing
 from .models.get_contests_essentials_listing import GetContestsEssentialsListing
+from .models.get_external_events_response import GetExternalEventsResponse
 from .models.get_flow_execution_data_job_result import GetFlowExecutionDataJobResult
 from .models.get_metric_definitions_response import GetMetricDefinitionsResponse
 from .models.get_metric_response import GetMetricResponse
@@ -3418,7 +3453,6 @@ from .models.media_settings import MediaSettings
 from .models.media_statistics import MediaStatistics
 from .models.media_statistics_client_info import MediaStatisticsClientInfo
 from .models.media_statistics_listing import MediaStatisticsListing
-from .models.media_statistics_post_request import MediaStatisticsPostRequest
 from .models.media_statistics_trunk_info import MediaStatisticsTrunkInfo
 from .models.media_summary import MediaSummary
 from .models.media_summary_detail import MediaSummaryDetail
@@ -3678,6 +3712,12 @@ from .models.operational_event import OperationalEvent
 from .models.operational_event_notification_topic_event_entity import OperationalEventNotificationTopicEventEntity
 from .models.operational_event_notification_topic_operational_event_notification import OperationalEventNotificationTopicOperationalEventNotification
 from .models.operator_position import OperatorPosition
+from .models.opportunities_result_with_pagination import OpportunitiesResultWithPagination
+from .models.opportunity_enrollment import OpportunityEnrollment
+from .models.opportunity_enrollment_counts import OpportunityEnrollmentCounts
+from .models.opportunity_reference import OpportunityReference
+from .models.opportunity_result import OpportunityResult
+from .models.opportunity_result_with_agent_ids import OpportunityResultWithAgentIds
 from .models.opt_in_settings import OptInSettings
 from .models.org_auth_settings import OrgAuthSettings
 from .models.org_o_auth_client import OrgOAuthClient
@@ -3862,6 +3902,7 @@ from .models.patch_integration_action import PatchIntegrationAction
 from .models.patch_integration_action_fields import PatchIntegrationActionFields
 from .models.patch_journey import PatchJourney
 from .models.patch_journey_pattern import PatchJourneyPattern
+from .models.patch_opportunity_request import PatchOpportunityRequest
 from .models.patch_outcome import PatchOutcome
 from .models.patch_predictor_request import PatchPredictorRequest
 from .models.patch_segment import PatchSegment
@@ -3875,6 +3916,7 @@ from .models.pause_criteria import PauseCriteria
 from .models.payment_line_item import PaymentLineItem
 from .models.payment_request import PaymentRequest
 from .models.payment_response import PaymentResponse
+from .models.pending_and_approved_opportunity_enrollment_counts import PendingAndApprovedOpportunityEnrollmentCounts
 from .models.performance_prediction_complete_event_topic_error_body import PerformancePredictionCompleteEventTopicErrorBody
 from .models.performance_prediction_complete_event_topic_performance_prediction_calculation_notification import PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
 from .models.performance_prediction_outputs import PerformancePredictionOutputs
@@ -4048,7 +4090,17 @@ from .models.query_criteria_group import QueryCriteriaGroup
 from .models.query_criteria_item import QueryCriteriaItem
 from .models.query_criteria_query import QueryCriteriaQuery
 from .models.query_division import QueryDivision
+from .models.query_enrollment_opportunity_result import QueryEnrollmentOpportunityResult
+from .models.query_external_activity_opportunities_response import QueryExternalActivityOpportunitiesResponse
+from .models.query_external_activity_opportunity_result import QueryExternalActivityOpportunityResult
 from .models.query_facet_info import QueryFacetInfo
+from .models.query_opportunities_request import QueryOpportunitiesRequest
+from .models.query_opportunities_response import QueryOpportunitiesResponse
+from .models.query_opportunity_enrollment_metadata import QueryOpportunityEnrollmentMetadata
+from .models.query_opportunity_enrollment_result import QueryOpportunityEnrollmentResult
+from .models.query_opportunity_enrollments_request import QueryOpportunityEnrollmentsRequest
+from .models.query_opportunity_enrollments_response import QueryOpportunityEnrollmentsResponse
+from .models.query_opportunity_enrollments_result import QueryOpportunityEnrollmentsResult
 from .models.query_planning_group_to_staffing_groups_request import QueryPlanningGroupToStaffingGroupsRequest
 from .models.query_request import QueryRequest
 from .models.query_request_clause import QueryRequestClause
@@ -4466,6 +4518,7 @@ from .models.referrer import Referrer
 from .models.region_time_zone import RegionTimeZone
 from .models.register_architect_export_job import RegisterArchitectExportJob
 from .models.register_architect_export_job_response import RegisterArchitectExportJobResponse
+from .models.register_architect_job_request import RegisterArchitectJobRequest
 from .models.register_architect_job_response import RegisterArchitectJobResponse
 from .models.relationship import Relationship
 from .models.relationship_listing import RelationshipListing
@@ -4825,6 +4878,11 @@ from .models.site_search_request import SiteSearchRequest
 from .models.sites_search_response import SitesSearchResponse
 from .models.skill_combination_info import SkillCombinationInfo
 from .models.skill_entity_listing import SkillEntityListing
+from .models.skill_expression import SkillExpression
+from .models.skill_expression_data import SkillExpressionData
+from .models.skill_expression_entity_listing import SkillExpressionEntityListing
+from .models.skill_expression_validation_error import SkillExpressionValidationError
+from .models.skill_expression_validation_result import SkillExpressionValidationResult
 from .models.skill_group import SkillGroup
 from .models.skill_group_condition import SkillGroupCondition
 from .models.skill_group_definition import SkillGroupDefinition
@@ -4835,6 +4893,7 @@ from .models.skill_group_member_divisions import SkillGroupMemberDivisions
 from .models.skill_group_member_entity_listing import SkillGroupMemberEntityListing
 from .models.skill_group_routing_condition import SkillGroupRoutingCondition
 from .models.skill_group_with_member_divisions import SkillGroupWithMemberDivisions
+from .models.skill_reference import SkillReference
 from .models.skills_to_remove import SkillsToRemove
 from .models.sms_address import SmsAddress
 from .models.sms_address_entity_listing import SmsAddressEntityListing
@@ -5208,6 +5267,7 @@ from .models.transcript_aggregation_sort import TranscriptAggregationSort
 from .models.transcript_aggregation_view import TranscriptAggregationView
 from .models.transcript_async_aggregate_query_response import TranscriptAsyncAggregateQueryResponse
 from .models.transcript_async_aggregation_query import TranscriptAsyncAggregationQuery
+from .models.transcript_categories import TranscriptCategories
 from .models.transcript_search_criteria import TranscriptSearchCriteria
 from .models.transcript_search_request import TranscriptSearchRequest
 from .models.transcript_topic import TranscriptTopic
@@ -5329,7 +5389,6 @@ from .models.unanswered_phrase_group_update_response import UnansweredPhraseGrou
 from .models.unavailable_time import UnavailableTime
 from .models.unavailable_time_listing import UnavailableTimeListing
 from .models.unavailable_times_management_unit_settings import UnavailableTimesManagementUnitSettings
-from .models.unavailable_times_time_span import UnavailableTimesTimeSpan
 from .models.unavailable_times_validation_result import UnavailableTimesValidationResult
 from .models.unavailable_times_violation_message_argument import UnavailableTimesViolationMessageArgument
 from .models.unified_communications_integration import UnifiedCommunicationsIntegration
@@ -5357,6 +5416,8 @@ from .models.update_decision_table_columns_request import UpdateDecisionTableCol
 from .models.update_decision_table_request import UpdateDecisionTableRequest
 from .models.update_decision_table_version_request import UpdateDecisionTableVersionRequest
 from .models.update_draft_input import UpdateDraftInput
+from .models.update_external_event_request import UpdateExternalEventRequest
+from .models.update_external_event_response import UpdateExternalEventResponse
 from .models.update_external_events_configuration_request import UpdateExternalEventsConfigurationRequest
 from .models.update_guide import UpdateGuide
 from .models.update_guide_version import UpdateGuideVersion
@@ -5557,8 +5618,6 @@ from .models.utilization_label import UtilizationLabel
 from .models.utilization_label_entity_listing import UtilizationLabelEntityListing
 from .models.utilization_request import UtilizationRequest
 from .models.utilization_response import UtilizationResponse
-from .models.utilization_tag import UtilizationTag
-from .models.utilization_tag_entity_listing import UtilizationTagEntityListing
 from .models.utterance import Utterance
 from .models.v2_conversation_message_typing_event_for_user_topic_conversation_event_typing import V2ConversationMessageTypingEventForUserTopicConversationEventTyping
 from .models.v2_conversation_message_typing_event_for_user_topic_conversation_message_event import V2ConversationMessageTypingEventForUserTopicConversationMessageEvent
@@ -5681,6 +5740,7 @@ from .models.value_wrapper_bu_short_term_forecast_reference import ValueWrapperB
 from .models.value_wrapper_date import ValueWrapperDate
 from .models.value_wrapper_group_settings import ValueWrapperGroupSettings
 from .models.value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType
+from .models.value_wrapper_instant import ValueWrapperInstant
 from .models.value_wrapper_local_date import ValueWrapperLocalDate
 from .models.value_wrapper_monthly_planning_period_settings import ValueWrapperMonthlyPlanningPeriodSettings
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
@@ -5911,7 +5971,6 @@ from .models.wfm_historical_adherence_calculations_complete_topic_wfm_historical
 from .models.wfm_historical_adherence_query import WfmHistoricalAdherenceQuery
 from .models.wfm_historical_adherence_query_for_agent import WfmHistoricalAdherenceQueryForAgent
 from .models.wfm_historical_adherence_query_for_teams import WfmHistoricalAdherenceQueryForTeams
-from .models.wfm_historical_adherence_query_for_users import WfmHistoricalAdherenceQueryForUsers
 from .models.wfm_historical_adherence_response import WfmHistoricalAdherenceResponse
 from .models.wfm_historical_adherence_result_wrapper import WfmHistoricalAdherenceResultWrapper
 from .models.wfm_historical_data_import_purge_complete_topic_historical_data_delete_entity import WfmHistoricalDataImportPurgeCompleteTopicHistoricalDataDeleteEntity
@@ -5965,6 +6024,7 @@ from .models.wfm_time_off_balance_job_topic_time_off_balance import WfmTimeOffBa
 from .models.wfm_time_off_balance_job_topic_time_off_balance_job_notification import WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
 from .models.wfm_time_off_request_update_topic_time_off_request_update import WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 from .models.wfm_time_off_request_update_topic_user_reference import WfmTimeOffRequestUpdateTopicUserReference
+from .models.wfm_time_span import WfmTimeSpan
 from .models.wfm_update_agent_details_topic_wfm_update_agent_details_complete import WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete
 from .models.wfm_user_entity_listing import WfmUserEntityListing
 from .models.wfm_user_notification import WfmUserNotification

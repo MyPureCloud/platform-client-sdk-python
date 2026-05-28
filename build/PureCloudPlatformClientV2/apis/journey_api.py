@@ -44,6 +44,8 @@ from ..models import ActionTarget
 from ..models import ActionTargetListing
 from ..models import ActionTemplate
 from ..models import ActionTemplateListing
+from ..models import ActivateExternalEventRequest
+from ..models import ActivateExternalEventResponse
 from ..models import AppEventRequest
 from ..models import AppEventResponse
 from ..models import AsyncQueryResponse
@@ -57,12 +59,14 @@ from ..models import EntityListing
 from ..models import ErrorBody
 from ..models import EstimateJobAsyncResponse
 from ..models import EventListing
+from ..models import ExternalEventChangesResponse
 from ..models import ExternalEventsConfiguration
 from ..models import ExternalEventsConfigurationListing
 from ..models import ExternalEventsRequest
 from ..models import ExternalEventsResponse
 from ..models import FlowPaths
 from ..models import FlowPathsQuery
+from ..models import GetExternalEventsResponse
 from ..models import JourneyAggregateQueryResponse
 from ..models import JourneyAggregationQuery
 from ..models import JourneyAsyncAggregateQueryResponse
@@ -106,6 +110,8 @@ from ..models import SegmentAssignmentListing
 from ..models import SegmentListing
 from ..models import Session
 from ..models import SessionListing
+from ..models import UpdateExternalEventRequest
+from ..models import UpdateExternalEventResponse
 from ..models import UpdateExternalEventsConfigurationRequest
 from ..models import UpdateSegmentAssignmentRequest
 from ..models import UpdateSegmentAssignmentResponse
@@ -1578,10 +1584,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_actiontarget is deprecated")
     def get_journey_actiontarget(self, action_target_id: str, **kwargs) -> 'ActionTarget':
         """
-        Retrieve a single action target.
-        
+        Deprecated. Retrieve a single action target.
+        ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1656,10 +1663,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_journey_actiontargets is deprecated")
     def get_journey_actiontargets(self, **kwargs) -> 'ActionTargetListing':
         """
-        Retrieve all action targets.
-        
+        Deprecated. Retrieve all action targets.
+        ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4692,6 +4700,150 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_journey_views_eventdefinitions_external(self, **kwargs) -> 'GetExternalEventsResponse':
+        """
+        Get external events for journey views
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_views_eventdefinitions_external(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: GetExternalEventsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_views_eventdefinitions_external" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/views/eventdefinitions/external'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GetExternalEventsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_views_eventdefinitions_external_changes(self, **kwargs) -> 'ExternalEventChangesResponse':
+        """
+        Get changes in external event definitions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_views_eventdefinitions_external_changes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ExternalEventChangesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_views_eventdefinitions_external_changes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/views/eventdefinitions/external/changes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalEventChangesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_journey_views_jobs(self, **kwargs) -> 'JourneyViewJobListing':
         """
         Get the jobs for an organization.
@@ -5019,10 +5171,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_journey_actiontarget is deprecated")
     def patch_journey_actiontarget(self, action_target_id: str, **kwargs) -> 'ActionTarget':
         """
-        Update a single action target.
-        
+        Deprecated. Update a single action target.
+        ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7506,6 +7659,168 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_journey_views_eventdefinition(self, event_definition_id: str, **kwargs) -> 'UpdateExternalEventResponse':
+        """
+        Update external event for journey views
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_journey_views_eventdefinition(event_definition_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str event_definition_id: Event Definition ID (required)
+        :param UpdateExternalEventRequest body: 
+        :return: UpdateExternalEventResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['event_definition_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_journey_views_eventdefinition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'event_definition_id' is set
+        if ('event_definition_id' not in params) or (params['event_definition_id'] is None):
+            raise ValueError("Missing the required parameter `event_definition_id` when calling `put_journey_views_eventdefinition`")
+
+
+        resource_path = '/api/v2/journey/views/eventdefinitions/{eventDefinitionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'event_definition_id' in params:
+            path_params['eventDefinitionId'] = params['event_definition_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UpdateExternalEventResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_journey_views_eventdefinition_activate(self, event_definition_id: str, **kwargs) -> 'ActivateExternalEventResponse':
+        """
+        Activate external event for journey views
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_journey_views_eventdefinition_activate(event_definition_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str event_definition_id: Event Definition ID (required)
+        :param ActivateExternalEventRequest body: 
+        :return: ActivateExternalEventResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['event_definition_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_journey_views_eventdefinition_activate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'event_definition_id' is set
+        if ('event_definition_id' not in params) or (params['event_definition_id'] is None):
+            raise ValueError("Missing the required parameter `event_definition_id` when calling `put_journey_views_eventdefinition_activate`")
+
+
+        resource_path = '/api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate'.replace('{format}', 'json')
+        path_params = {}
+        if 'event_definition_id' in params:
+            path_params['eventDefinitionId'] = params['event_definition_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivateExternalEventResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

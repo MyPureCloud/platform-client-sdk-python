@@ -67,6 +67,9 @@ class AgentChecklistResponse(object):
             'evaluation_last_modified_date': 'datetime',
             'evaluation_finalized_date': 'datetime',
             'evaluation_finalized_with_acw_date': 'datetime',
+            'success': 'bool',
+            'error_code': 'str',
+            'error_message': 'str',
             'self_uri': 'str'
         }
 
@@ -88,6 +91,9 @@ class AgentChecklistResponse(object):
             'evaluation_last_modified_date': 'evaluationLastModifiedDate',
             'evaluation_finalized_date': 'evaluationFinalizedDate',
             'evaluation_finalized_with_acw_date': 'evaluationFinalizedWithAcwDate',
+            'success': 'success',
+            'error_code': 'errorCode',
+            'error_message': 'errorMessage',
             'self_uri': 'selfUri'
         }
 
@@ -108,6 +114,9 @@ class AgentChecklistResponse(object):
         self._evaluation_last_modified_date = None
         self._evaluation_finalized_date = None
         self._evaluation_finalized_with_acw_date = None
+        self._success = None
+        self._error_code = None
+        self._error_message = None
         self._self_uri = None
 
     @property
@@ -532,6 +541,78 @@ class AgentChecklistResponse(object):
         
 
         self._evaluation_finalized_with_acw_date = evaluation_finalized_with_acw_date
+
+    @property
+    def success(self) -> bool:
+        """
+        Gets the success of this AgentChecklistResponse.
+        Whether activation succeeded for this checklist (bulk activation). Omitted for non-bulk responses.
+
+        :return: The success of this AgentChecklistResponse.
+        :rtype: bool
+        """
+        return self._success
+
+    @success.setter
+    def success(self, success: bool) -> None:
+        """
+        Sets the success of this AgentChecklistResponse.
+        Whether activation succeeded for this checklist (bulk activation). Omitted for non-bulk responses.
+
+        :param success: The success of this AgentChecklistResponse.
+        :type: bool
+        """
+        
+
+        self._success = success
+
+    @property
+    def error_code(self) -> str:
+        """
+        Gets the error_code of this AgentChecklistResponse.
+        Error code when success is false.
+
+        :return: The error_code of this AgentChecklistResponse.
+        :rtype: str
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code: str) -> None:
+        """
+        Sets the error_code of this AgentChecklistResponse.
+        Error code when success is false.
+
+        :param error_code: The error_code of this AgentChecklistResponse.
+        :type: str
+        """
+        
+
+        self._error_code = error_code
+
+    @property
+    def error_message(self) -> str:
+        """
+        Gets the error_message of this AgentChecklistResponse.
+        Error message when success is false.
+
+        :return: The error_message of this AgentChecklistResponse.
+        :rtype: str
+        """
+        return self._error_message
+
+    @error_message.setter
+    def error_message(self, error_message: str) -> None:
+        """
+        Sets the error_message of this AgentChecklistResponse.
+        Error message when success is false.
+
+        :param error_message: The error_message of this AgentChecklistResponse.
+        :type: str
+        """
+        
+
+        self._error_message = error_message
 
     @property
     def self_uri(self) -> str:

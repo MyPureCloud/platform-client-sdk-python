@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
+    from . import MessageInfo
 
 class GoogleBusinessProfileDataIngestionRuleVersionResponse(object):
     """
@@ -57,6 +58,7 @@ class GoogleBusinessProfileDataIngestionRuleVersionResponse(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'platform': 'str',
+            'ingestion_rule_info': 'MessageInfo',
             'countries': 'list[str]',
             'integration_id': 'str',
             'external_source': 'DomainEntityRef',
@@ -72,6 +74,7 @@ class GoogleBusinessProfileDataIngestionRuleVersionResponse(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'platform': 'platform',
+            'ingestion_rule_info': 'ingestionRuleInfo',
             'countries': 'countries',
             'integration_id': 'integrationId',
             'external_source': 'externalSource',
@@ -86,6 +89,7 @@ class GoogleBusinessProfileDataIngestionRuleVersionResponse(object):
         self._date_created = None
         self._date_modified = None
         self._platform = None
+        self._ingestion_rule_info = None
         self._countries = None
         self._integration_id = None
         self._external_source = None
@@ -287,6 +291,30 @@ class GoogleBusinessProfileDataIngestionRuleVersionResponse(object):
         
 
         self._platform = platform
+
+    @property
+    def ingestion_rule_info(self) -> 'MessageInfo':
+        """
+        Gets the ingestion_rule_info of this GoogleBusinessProfileDataIngestionRuleVersionResponse.
+        The Info about ingestion rule.
+
+        :return: The ingestion_rule_info of this GoogleBusinessProfileDataIngestionRuleVersionResponse.
+        :rtype: MessageInfo
+        """
+        return self._ingestion_rule_info
+
+    @ingestion_rule_info.setter
+    def ingestion_rule_info(self, ingestion_rule_info: 'MessageInfo') -> None:
+        """
+        Sets the ingestion_rule_info of this GoogleBusinessProfileDataIngestionRuleVersionResponse.
+        The Info about ingestion rule.
+
+        :param ingestion_rule_info: The ingestion_rule_info of this GoogleBusinessProfileDataIngestionRuleVersionResponse.
+        :type: MessageInfo
+        """
+        
+
+        self._ingestion_rule_info = ingestion_rule_info
 
     @property
     def countries(self) -> List[str]:

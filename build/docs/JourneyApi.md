@@ -24,8 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_actionmaps**](#get_journey_actionmaps) | Retrieve all action maps.|
 |[**get_journey_actionmaps_estimates_job**](#get_journey_actionmaps_estimates_job) | Deprecated. Get status of job.|
 |[**get_journey_actionmaps_estimates_job_results**](#get_journey_actionmaps_estimates_job_results) | Deprecated. Get estimates from completed job.|
-|[**get_journey_actiontarget**](#get_journey_actiontarget) | Retrieve a single action target.|
-|[**get_journey_actiontargets**](#get_journey_actiontargets) | Retrieve all action targets.|
+|[**get_journey_actiontarget**](#get_journey_actiontarget) | Deprecated. Retrieve a single action target.|
+|[**get_journey_actiontargets**](#get_journey_actiontargets) | Deprecated. Retrieve all action targets.|
 |[**get_journey_actiontemplate**](#get_journey_actiontemplate) | Retrieve a single action template.|
 |[**get_journey_actiontemplates**](#get_journey_actiontemplates) | Retrieve all action templates.|
 |[**get_journey_deployment_customer_ping**](#get_journey_deployment_customer_ping) | Send a ping.|
@@ -62,11 +62,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_views_data_details**](#get_journey_views_data_details) | Get details about the data available for journey queries including oldest and newest event dates|
 |[**get_journey_views_eventdefinition**](#get_journey_views_eventdefinition) | Get an Event Definition|
 |[**get_journey_views_eventdefinitions**](#get_journey_views_eventdefinitions) | Get a list of Event Definitions|
+|[**get_journey_views_eventdefinitions_external**](#get_journey_views_eventdefinitions_external) | Get external events for journey views|
+|[**get_journey_views_eventdefinitions_external_changes**](#get_journey_views_eventdefinitions_external_changes) | Get changes in external event definitions|
 |[**get_journey_views_jobs**](#get_journey_views_jobs) | Get the jobs for an organization.|
 |[**get_journey_views_jobs_me**](#get_journey_views_jobs_me) | Get my jobs|
 |[**get_journey_views_schedules**](#get_journey_views_schedules) | Get the journey schedules for an organization.|
 |[**patch_journey_actionmap**](#patch_journey_actionmap) | Update single action map.|
-|[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Update a single action target.|
+|[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Deprecated. Update a single action target.|
 |[**patch_journey_actiontemplate**](#patch_journey_actiontemplate) | Update a single action template.|
 |[**patch_journey_externalevents_configuration**](#patch_journey_externalevents_configuration) | Update an external events configuration.|
 |[**patch_journey_outcome**](#patch_journey_outcome) | Deprecated. Update an outcome.|
@@ -97,6 +99,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_journey_externalevents_schema**](#put_journey_externalevents_schema) | Update a schema|
 |[**put_journey_view_schedules**](#put_journey_view_schedules) | Update the Schedule for a JourneyView|
 |[**put_journey_view_version**](#put_journey_view_version) | Update a Journey View by ID and version|
+|[**put_journey_views_eventdefinition**](#put_journey_views_eventdefinition) | Update external event for journey views|
+|[**put_journey_views_eventdefinition_activate**](#put_journey_views_eventdefinition_activate) | Activate external event for journey views|
 
 
 
@@ -1015,8 +1019,13 @@ except ApiException as e:
 
 > [**ActionTarget**](ActionTarget) get_journey_actiontarget(action_target_id)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve a single action target.
+Deprecated. Retrieve a single action target.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Wraps GET /api/v2/journey/actiontargets/{actionTargetId} 
 
@@ -1040,7 +1049,7 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 action_target_id = 'action_target_id_example' # str | ID of the action target.
 
 try:
-    # Retrieve a single action target.
+    # Deprecated. Retrieve a single action target.
     api_response = api_instance.get_journey_actiontarget(action_target_id)
     pprint(api_response)
 except ApiException as e:
@@ -1063,8 +1072,13 @@ except ApiException as e:
 
 > [**ActionTargetListing**](ActionTargetListing) get_journey_actiontargets(page_number=page_number, page_size=page_size)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Retrieve all action targets.
+Deprecated. Retrieve all action targets.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Wraps GET /api/v2/journey/actiontargets 
 
@@ -1089,7 +1103,7 @@ page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 
 try:
-    # Retrieve all action targets.
+    # Deprecated. Retrieve all action targets.
     api_response = api_instance.get_journey_actiontargets(page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
@@ -2945,6 +2959,94 @@ This endpoint does not need any parameters.
 [**JourneyEventDefinitionListing**](JourneyEventDefinitionListing)
 
 
+## get_journey_views_eventdefinitions_external
+
+> [**GetExternalEventsResponse**](GetExternalEventsResponse) get_journey_views_eventdefinitions_external()
+
+
+Get external events for journey views
+
+Wraps GET /api/v2/journey/views/eventdefinitions/external 
+
+Requires ALL permissions: 
+
+* journey:externalEvents:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get external events for journey views
+    api_response = api_instance.get_journey_views_eventdefinitions_external()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_eventdefinitions_external: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**GetExternalEventsResponse**](GetExternalEventsResponse)
+
+
+## get_journey_views_eventdefinitions_external_changes
+
+> [**ExternalEventChangesResponse**](ExternalEventChangesResponse) get_journey_views_eventdefinitions_external_changes()
+
+
+Get changes in external event definitions
+
+Wraps GET /api/v2/journey/views/eventdefinitions/external/changes 
+
+Requires ALL permissions: 
+
+* journey:externalEvents:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get changes in external event definitions
+    api_response = api_instance.get_journey_views_eventdefinitions_external_changes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_eventdefinitions_external_changes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**ExternalEventChangesResponse**](ExternalEventChangesResponse)
+
+
 ## get_journey_views_jobs
 
 > [**JourneyViewJobListing**](JourneyViewJobListing) get_journey_views_jobs(page_number=page_number, page_size=page_size, interval=interval, statuses=statuses)
@@ -3157,8 +3259,13 @@ except ApiException as e:
 
 > [**ActionTarget**](ActionTarget) patch_journey_actiontarget(action_target_id, body=body)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
-Update a single action target.
+Deprecated. Update a single action target.
+
+ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
 
 Wraps PATCH /api/v2/journey/actiontargets/{actionTargetId} 
 
@@ -3183,7 +3290,7 @@ action_target_id = 'action_target_id_example' # str | ID of the action target.
 body = PureCloudPlatformClientV2.PatchActionTarget() # PatchActionTarget |  (optional)
 
 try:
-    # Update a single action target.
+    # Deprecated. Update a single action target.
     api_response = api_instance.patch_journey_actiontarget(action_target_id, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -4704,4 +4811,104 @@ except ApiException as e:
 [**JourneyView**](JourneyView)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+## put_journey_views_eventdefinition
+
+> [**UpdateExternalEventResponse**](UpdateExternalEventResponse) put_journey_views_eventdefinition(event_definition_id, body=body)
+
+
+Update external event for journey views
+
+Wraps PUT /api/v2/journey/views/eventdefinitions/{eventDefinitionId} 
+
+Requires ALL permissions: 
+
+* journey:externalEvents:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+event_definition_id = 'event_definition_id_example' # str | Event Definition ID
+body = PureCloudPlatformClientV2.UpdateExternalEventRequest() # UpdateExternalEventRequest |  (optional)
+
+try:
+    # Update external event for journey views
+    api_response = api_instance.put_journey_views_eventdefinition(event_definition_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->put_journey_views_eventdefinition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **event_definition_id** | **str**| Event Definition ID |  |
+| **body** | [**UpdateExternalEventRequest**](UpdateExternalEventRequest)|  | [optional]  |
+
+### Return type
+
+[**UpdateExternalEventResponse**](UpdateExternalEventResponse)
+
+
+## put_journey_views_eventdefinition_activate
+
+> [**ActivateExternalEventResponse**](ActivateExternalEventResponse) put_journey_views_eventdefinition_activate(event_definition_id, body=body)
+
+
+Activate external event for journey views
+
+Wraps PUT /api/v2/journey/views/eventdefinitions/{eventDefinitionId}/activate 
+
+Requires ALL permissions: 
+
+* journey:externalEvents:activate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+event_definition_id = 'event_definition_id_example' # str | Event Definition ID
+body = PureCloudPlatformClientV2.ActivateExternalEventRequest() # ActivateExternalEventRequest |  (optional)
+
+try:
+    # Activate external event for journey views
+    api_response = api_instance.put_journey_views_eventdefinition_activate(event_definition_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->put_journey_views_eventdefinition_activate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **event_definition_id** | **str**| Event Definition ID |  |
+| **body** | [**ActivateExternalEventRequest**](ActivateExternalEventRequest)|  | [optional]  |
+
+### Return type
+
+[**ActivateExternalEventResponse**](ActivateExternalEventResponse)
+
+
+_PureCloudPlatformClientV2 258.0.0_

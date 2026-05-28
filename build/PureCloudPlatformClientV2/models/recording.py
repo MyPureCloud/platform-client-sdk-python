@@ -87,6 +87,7 @@ class Recording(object):
             'recording_error_status': 'str',
             'original_recording_start_time': 'datetime',
             'creation_time': 'datetime',
+            'associated_conversation_ids': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -124,6 +125,7 @@ class Recording(object):
             'recording_error_status': 'recordingErrorStatus',
             'original_recording_start_time': 'originalRecordingStartTime',
             'creation_time': 'creationTime',
+            'associated_conversation_ids': 'associatedConversationIds',
             'self_uri': 'selfUri'
         }
 
@@ -160,6 +162,7 @@ class Recording(object):
         self._recording_error_status = None
         self._original_recording_start_time = None
         self._creation_time = None
+        self._associated_conversation_ids = None
         self._self_uri = None
 
     @property
@@ -978,6 +981,30 @@ class Recording(object):
         
 
         self._creation_time = creation_time
+
+    @property
+    def associated_conversation_ids(self) -> List[str]:
+        """
+        Gets the associated_conversation_ids of this Recording.
+        List of associated conversation IDs
+
+        :return: The associated_conversation_ids of this Recording.
+        :rtype: list[str]
+        """
+        return self._associated_conversation_ids
+
+    @associated_conversation_ids.setter
+    def associated_conversation_ids(self, associated_conversation_ids: List[str]) -> None:
+        """
+        Sets the associated_conversation_ids of this Recording.
+        List of associated conversation IDs
+
+        :param associated_conversation_ids: The associated_conversation_ids of this Recording.
+        :type: list[str]
+        """
+        
+
+        self._associated_conversation_ids = associated_conversation_ids
 
     @property
     def self_uri(self) -> str:

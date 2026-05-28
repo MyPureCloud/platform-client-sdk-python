@@ -325,18 +325,18 @@ class AIStudioApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str language: Filter by matching language - case insensitive.
-        :param str name: Filter by partially matching name - case insensitive.
-        :param str sort_by: Sort by. Default value dateModified.
-        :param str sort_order: Sort Order. Default value desc.
         :param int page_number: Page number.
         :param int page_size: Page size. The maximum page size is 100.
+        :param str name: Filter by partially matching name - case insensitive.
+        :param str sort_order: Sort Order. Default value desc.
+        :param str language: Filter by matching language - case insensitive.
+        :param str sort_by: Sort by. Default value dateModified.
         :return: SummarySettingEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['language', 'name', 'sort_by', 'sort_order', 'page_number', 'page_size']
+        all_params = ['page_number', 'page_size', 'name', 'sort_order', 'language', 'sort_by']
         all_params.append('callback')
 
         params = locals()
@@ -361,18 +361,18 @@ class AIStudioApi(object):
         path_params = {}
 
         query_params = {}
-        if 'language' in params:
-            query_params['language'] = params['language']
-        if 'name' in params:
-            query_params['name'] = params['name']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'sort_order' in params:
-            query_params['sortOrder'] = params['sort_order']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'language' in params:
+            query_params['language'] = params['language']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
 
         header_params = {}
 

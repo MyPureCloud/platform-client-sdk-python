@@ -50,20 +50,23 @@ class ContinuousForecastGetSessionResponse(object):
             'session_id': 'str',
             'last_successful_session_id': 'str',
             'state': 'str',
-            'error_code': 'str'
+            'error_code': 'str',
+            'retrain_in_progress': 'bool'
         }
 
         self.attribute_map = {
             'session_id': 'sessionId',
             'last_successful_session_id': 'lastSuccessfulSessionId',
             'state': 'state',
-            'error_code': 'errorCode'
+            'error_code': 'errorCode',
+            'retrain_in_progress': 'retrainInProgress'
         }
 
         self._session_id = None
         self._last_successful_session_id = None
         self._state = None
         self._error_code = None
+        self._retrain_in_progress = None
 
     @property
     def session_id(self) -> str:
@@ -165,6 +168,30 @@ class ContinuousForecastGetSessionResponse(object):
         
 
         self._error_code = error_code
+
+    @property
+    def retrain_in_progress(self) -> bool:
+        """
+        Gets the retrain_in_progress of this ContinuousForecastGetSessionResponse.
+        True if a model retrain is currently running for the organization, false if not
+
+        :return: The retrain_in_progress of this ContinuousForecastGetSessionResponse.
+        :rtype: bool
+        """
+        return self._retrain_in_progress
+
+    @retrain_in_progress.setter
+    def retrain_in_progress(self, retrain_in_progress: bool) -> None:
+        """
+        Sets the retrain_in_progress of this ContinuousForecastGetSessionResponse.
+        True if a model retrain is currently running for the organization, false if not
+
+        :param retrain_in_progress: The retrain_in_progress of this ContinuousForecastGetSessionResponse.
+        :type: bool
+        """
+        
+
+        self._retrain_in_progress = retrain_in_progress
 
     def to_dict(self):
         """

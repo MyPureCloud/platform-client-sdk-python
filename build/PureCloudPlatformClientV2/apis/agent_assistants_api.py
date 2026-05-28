@@ -932,12 +932,13 @@ class AgentAssistantsApi(object):
         :param str language: The agent checklist language filter applied to the listing.
         :param str sort_order: The sort order for the listing
         :param str sort_by: The field to sort by for the listing.
+        :param list[str] agent_checklist_ids: Agent checklist IDs (repeat param or comma-separated). Do not use with other optional filters.
         :return: AgentChecklistListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['before', 'after', 'page_size', 'name_prefix', 'language', 'sort_order', 'sort_by']
+        all_params = ['before', 'after', 'page_size', 'name_prefix', 'language', 'sort_order', 'sort_by', 'agent_checklist_ids']
         all_params.append('callback')
 
         params = locals()
@@ -974,6 +975,8 @@ class AgentAssistantsApi(object):
             query_params['sortOrder'] = params['sort_order']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
+        if 'agent_checklist_ids' in params:
+            query_params['agentChecklistIds'] = params['agent_checklist_ids']
 
         header_params = {}
 

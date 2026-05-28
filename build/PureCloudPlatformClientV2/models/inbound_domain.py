@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DmarcResult
     from . import DomainEntityRef
     from . import EmailSetting
     from . import GraphApiSettings
@@ -62,6 +63,7 @@ class InboundDomain(object):
             'imap_settings': 'ImapSettings',
             'graph_api_settings': 'GraphApiSettings',
             'email_setting': 'EmailSetting',
+            'dmarc_verification_result': 'DmarcResult',
             'self_uri': 'str'
         }
 
@@ -75,6 +77,7 @@ class InboundDomain(object):
             'imap_settings': 'imapSettings',
             'graph_api_settings': 'graphApiSettings',
             'email_setting': 'emailSetting',
+            'dmarc_verification_result': 'dmarcVerificationResult',
             'self_uri': 'selfUri'
         }
 
@@ -87,6 +90,7 @@ class InboundDomain(object):
         self._imap_settings = None
         self._graph_api_settings = None
         self._email_setting = None
+        self._dmarc_verification_result = None
         self._self_uri = None
 
     @property
@@ -309,6 +313,30 @@ class InboundDomain(object):
         
 
         self._email_setting = email_setting
+
+    @property
+    def dmarc_verification_result(self) -> 'DmarcResult':
+        """
+        Gets the dmarc_verification_result of this InboundDomain.
+        The DMARC verification status for this domain.
+
+        :return: The dmarc_verification_result of this InboundDomain.
+        :rtype: DmarcResult
+        """
+        return self._dmarc_verification_result
+
+    @dmarc_verification_result.setter
+    def dmarc_verification_result(self, dmarc_verification_result: 'DmarcResult') -> None:
+        """
+        Sets the dmarc_verification_result of this InboundDomain.
+        The DMARC verification status for this domain.
+
+        :param dmarc_verification_result: The dmarc_verification_result of this InboundDomain.
+        :type: DmarcResult
+        """
+        
+
+        self._dmarc_verification_result = dmarc_verification_result
 
     @property
     def self_uri(self) -> str:

@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_queue_wrapupcode**](#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
 |[**delete_routing_settings**](#delete_routing_settings) | Delete an organization&#39;s routing settings|
 |[**delete_routing_skill**](#delete_routing_skill) | Delete Routing Skill|
+|[**delete_routing_skillexpression**](#delete_routing_skillexpression) | Archive a skill expression to remove it from the set of active expressions|
+|[**delete_routing_skillexpressions**](#delete_routing_skillexpressions) | Archive a set of skill expressions to remove them from the set of active expressions|
 |[**delete_routing_skillgroup**](#delete_routing_skillgroup) | Remove skill group definition|
 |[**delete_routing_sms_address**](#delete_routing_sms_address) | Delete an Address by Id for SMS|
 |[**delete_routing_sms_phonenumber**](#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
@@ -27,7 +29,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_user_utilization**](#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_routing_utilization**](#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
 |[**delete_routing_utilization_label**](#delete_routing_utilization_label) | Delete a utilization label|
-|[**delete_routing_utilization_tag**](#delete_routing_utilization_tag) | Delete an utilization tag|
 |[**delete_routing_wrapupcode**](#delete_routing_wrapupcode) | Delete wrap-up code|
 |[**delete_user_routinglanguage**](#delete_user_routinglanguage) | Remove a routing language from a user|
 |[**delete_user_routingskill**](#delete_user_routingskill) | Remove a routing skill from a user|
@@ -78,6 +79,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_settings_contactcenter**](#get_routing_settings_contactcenter) | Get Contact Center Settings|
 |[**get_routing_settings_transcription**](#get_routing_settings_transcription) | Get Transcription Settings|
 |[**get_routing_skill**](#get_routing_skill) | Get Routing Skill|
+|[**get_routing_skillexpression**](#get_routing_skillexpression) | Get a skill expression by ID|
+|[**get_routing_skillexpressions**](#get_routing_skillexpressions) | Get skill expressions|
+|[**get_routing_skillexpressions_queue_queue_id**](#get_routing_skillexpressions_queue_queue_id) | Get skill expressions associated with a queue|
 |[**get_routing_skillgroup**](#get_routing_skillgroup) | Get skill group|
 |[**get_routing_skillgroup_members**](#get_routing_skillgroup_members) | Get skill group members|
 |[**get_routing_skillgroup_members_divisions**](#get_routing_skillgroup_members_divisions) | Get list of member divisions for this skill group.|
@@ -95,9 +99,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_utilization_label**](#get_routing_utilization_label) | Get details about this utilization label|
 |[**get_routing_utilization_label_agents**](#get_routing_utilization_label_agents) | Get list of agent ids associated with a utilization label|
 |[**get_routing_utilization_labels**](#get_routing_utilization_labels) | Get list of utilization labels|
-|[**get_routing_utilization_tag**](#get_routing_utilization_tag) | Get details about this utilization tag|
-|[**get_routing_utilization_tag_agents**](#get_routing_utilization_tag_agents) | Get list of agent ids associated with a utilization tag|
-|[**get_routing_utilization_tags**](#get_routing_utilization_tags) | Get list of utilization tags|
 |[**get_routing_wrapupcode**](#get_routing_wrapupcode) | Get details about this wrap-up code.|
 |[**get_routing_wrapupcodes**](#get_routing_wrapupcodes) | Get list of wrapup codes.|
 |[**get_routing_wrapupcodes_divisionview**](#get_routing_wrapupcodes_divisionview) | Get a simplified wrap-up code.|
@@ -146,6 +147,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_queue_users**](#post_routing_queue_users) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.|
 |[**post_routing_queue_wrapupcodes**](#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
 |[**post_routing_queues**](#post_routing_queues) | Create a queue|
+|[**post_routing_skillexpressions_validate**](#post_routing_skillexpressions_validate) | Validate and normalize a skill expression|
 |[**post_routing_skillgroup_members_divisions**](#post_routing_skillgroup_members_divisions) | Add or remove member divisions for this skill group.|
 |[**post_routing_skillgroups**](#post_routing_skillgroups) | Create a skill group|
 |[**post_routing_skills**](#post_routing_skills) | Create Skill|
@@ -154,7 +156,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_sms_phonenumbers_alphanumeric**](#post_routing_sms_phonenumbers_alphanumeric) | Provision an alphanumeric number for SMS|
 |[**post_routing_sms_phonenumbers_import**](#post_routing_sms_phonenumbers_import) | Imports a phone number for SMS|
 |[**post_routing_utilization_labels**](#post_routing_utilization_labels) | Create a utilization label|
-|[**post_routing_utilization_tags**](#post_routing_utilization_tags) | Create an utilization tag|
 |[**post_routing_wrapupcodes**](#post_routing_wrapupcodes) | Create a wrap-up code|
 |[**post_user_routinglanguages**](#post_user_routinglanguages) | Assign a routing language to a user|
 |[**post_user_routingskills**](#post_user_routingskills) | Assign a routing skill to a user|
@@ -847,6 +848,100 @@ except ApiException as e:
 void (empty response body)
 
 
+## delete_routing_skillexpression
+
+>  delete_routing_skillexpression(expression_id)
+
+
+Archive a skill expression to remove it from the set of active expressions
+
+Wraps DELETE /api/v2/routing/skillexpressions/{expressionId} 
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+expression_id = 'expression_id_example' # str | Expression ID
+
+try:
+    # Archive a skill expression to remove it from the set of active expressions
+    api_instance.delete_routing_skillexpression(expression_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_skillexpression: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expression_id** | **str**| Expression ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_routing_skillexpressions
+
+>  delete_routing_skillexpressions(id=id)
+
+
+Archive a set of skill expressions to remove them from the set of active expressions
+
+Wraps DELETE /api/v2/routing/skillexpressions 
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+id = ['id_example'] # list[str] | Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional)
+
+try:
+    # Archive a set of skill expressions to remove them from the set of active expressions
+    api_instance.delete_routing_skillexpressions(id=id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_skillexpressions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str)| Expression ID(s) to filter. Repeat for multiple or use comma-separated list. | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+
 ## delete_routing_skillgroup
 
 >  delete_routing_skillgroup(skill_group_id)
@@ -1168,57 +1263,6 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **label_id** | **str**| Utilization Label ID |  |
 | **force_delete** | **bool**| Remove all label usages (if found) without warning | [optional] [default to False] |
-
-### Return type
-
-void (empty response body)
-
-
-## delete_routing_utilization_tag
-
->  delete_routing_utilization_tag(tag_id, force_delete=force_delete)
-
-
-Delete an utilization tag
-
-delete_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps DELETE /api/v2/routing/utilization/tags/{tagId} 
-
-Requires ALL permissions: 
-
-* routing:utilization:manage
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-tag_id = 'tag_id_example' # str | Utilization Tag ID
-force_delete = False # bool | Remove all tag usages (if found) without warning (optional) (default to False)
-
-try:
-    # Delete an utilization tag
-    api_instance.delete_routing_utilization_tag(tag_id, force_delete=force_delete)
-except ApiException as e:
-    print("Exception when calling RoutingApi->delete_routing_utilization_tag: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **tag_id** | **str**| Utilization Tag ID |  |
-| **force_delete** | **bool**| Remove all tag usages (if found) without warning | [optional] [default to False] |
 
 ### Return type
 
@@ -3794,6 +3838,162 @@ except ApiException as e:
 [**RoutingSkill**](RoutingSkill)
 
 
+## get_routing_skillexpression
+
+> [**SkillExpression**](SkillExpression) get_routing_skillexpression(expression_id, include_archived=include_archived, format=format)
+
+
+Get a skill expression by ID
+
+Wraps GET /api/v2/routing/skillexpressions/{expressionId} 
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+expression_id = 'expression_id_example' # str | Expression ID
+include_archived = False # bool | Include archived (optional) (default to False)
+format = ''Raw'' # str | Response format: raw expression or normalized (optional) (default to 'Raw')
+
+try:
+    # Get a skill expression by ID
+    api_response = api_instance.get_routing_skillexpression(expression_id, include_archived=include_archived, format=format)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillexpression: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expression_id** | **str**| Expression ID |  |
+| **include_archived** | **bool**| Include archived | [optional] [default to False] |
+| **format** | **str**| Response format: raw expression or normalized | [optional] [default to &#39;Raw&#39;]<br />**Values**: Raw, Normalized |
+
+### Return type
+
+[**SkillExpression**](SkillExpression)
+
+
+## get_routing_skillexpressions
+
+> [**SkillExpressionEntityListing**](SkillExpressionEntityListing) get_routing_skillexpressions(format=format, include_archived=include_archived, id=id)
+
+
+Get skill expressions
+
+Wraps GET /api/v2/routing/skillexpressions 
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+format = ''Raw'' # str | Response format: raw expression or normalized (optional) (default to 'Raw')
+include_archived = False # bool | Include archived (optional) (default to False)
+id = ['id_example'] # list[str] | Expression ID(s) to filter. Repeat for multiple or use comma-separated list. (optional)
+
+try:
+    # Get skill expressions
+    api_response = api_instance.get_routing_skillexpressions(format=format, include_archived=include_archived, id=id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillexpressions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **format** | **str**| Response format: raw expression or normalized | [optional] [default to &#39;Raw&#39;]<br />**Values**: Raw, Normalized |
+| **include_archived** | **bool**| Include archived | [optional] [default to False] |
+| **id** | [**list[str]**](str)| Expression ID(s) to filter. Repeat for multiple or use comma-separated list. | [optional]  |
+
+### Return type
+
+[**SkillExpressionEntityListing**](SkillExpressionEntityListing)
+
+
+## get_routing_skillexpressions_queue_queue_id
+
+> [**SkillExpressionEntityListing**](SkillExpressionEntityListing) get_routing_skillexpressions_queue_queue_id(queue_id, format=format, include_archived=include_archived)
+
+
+Get skill expressions associated with a queue
+
+Wraps GET /api/v2/routing/skillexpressions/queue/{queueId} 
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+queue_id = 'queue_id_example' # str | Queue ID
+format = ''Raw'' # str | Response format: raw expression or normalized (optional) (default to 'Raw')
+include_archived = False # bool | Include archived (optional) (default to False)
+
+try:
+    # Get skill expressions associated with a queue
+    api_response = api_instance.get_routing_skillexpressions_queue_queue_id(queue_id, format=format, include_archived=include_archived)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillexpressions_queue_queue_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue ID |  |
+| **format** | **str**| Response format: raw expression or normalized | [optional] [default to &#39;Raw&#39;]<br />**Values**: Raw, Normalized |
+| **include_archived** | **bool**| Include archived | [optional] [default to False] |
+
+### Return type
+
+[**SkillExpressionEntityListing**](SkillExpressionEntityListing)
+
+
 ## get_routing_skillgroup
 
 > [**SkillGroup**](SkillGroup) get_routing_skillgroup(skill_group_id)
@@ -4679,162 +4879,6 @@ except ApiException as e:
 ### Return type
 
 [**UtilizationLabelEntityListing**](UtilizationLabelEntityListing)
-
-
-## get_routing_utilization_tag
-
-> [**UtilizationTag**](UtilizationTag) get_routing_utilization_tag(tag_id)
-
-
-Get details about this utilization tag
-
-get_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps GET /api/v2/routing/utilization/tags/{tagId} 
-
-Requires ALL permissions: 
-
-* routing:utilization:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-tag_id = 'tag_id_example' # str | Utilization Tag ID
-
-try:
-    # Get details about this utilization tag
-    api_response = api_instance.get_routing_utilization_tag(tag_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RoutingApi->get_routing_utilization_tag: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **tag_id** | **str**| Utilization Tag ID |  |
-
-### Return type
-
-[**UtilizationTag**](UtilizationTag)
-
-
-## get_routing_utilization_tag_agents
-
-> list[object]** get_routing_utilization_tag_agents(tag_id)
-
-
-Get list of agent ids associated with a utilization tag
-
-get_routing_utilization_tag_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps GET /api/v2/routing/utilization/tags/{tagId}/agents 
-
-Requires ALL permissions: 
-
-* routing:utilization:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-tag_id = 'tag_id_example' # str | Utilization Tag ID
-
-try:
-    # Get list of agent ids associated with a utilization tag
-    api_response = api_instance.get_routing_utilization_tag_agents(tag_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RoutingApi->get_routing_utilization_tag_agents: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **tag_id** | **str**| Utilization Tag ID |  |
-
-### Return type
-
-**list[object]**
-
-
-## get_routing_utilization_tags
-
-> [**UtilizationTagEntityListing**](UtilizationTagEntityListing) get_routing_utilization_tags(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
-
-
-Get list of utilization tags
-
-get_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps GET /api/v2/routing/utilization/tags 
-
-Requires ALL permissions: 
-
-* routing:utilization:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-sort_order = ''ascending'' # str | Sort order by name (optional) (default to 'ascending')
-name = 'name_example' # str | Utilization tag's name (Wildcard is supported, e.g., 'tag1*') (optional)
-
-try:
-    # Get list of utilization tags
-    api_response = api_instance.get_routing_utilization_tags(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RoutingApi->get_routing_utilization_tags: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order by name | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
-| **name** | **str**| Utilization tag&#39;s name (Wildcard is supported, e.g., &#39;tag1*&#39;) | [optional]  |
-
-### Return type
-
-[**UtilizationTagEntityListing**](UtilizationTagEntityListing)
 
 
 ## get_routing_wrapupcode
@@ -7290,6 +7334,54 @@ except ApiException as e:
 [**Queue**](Queue)
 
 
+## post_routing_skillexpressions_validate
+
+> [**SkillExpressionValidationResult**](SkillExpressionValidationResult) post_routing_skillexpressions_validate(body)
+
+
+Validate and normalize a skill expression
+
+Wraps POST /api/v2/routing/skillexpressions/validate 
+
+Requires ALL permissions: 
+
+* routing:skillExpressions:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.SkillExpressionData() # SkillExpressionData | Skill expression data to validate
+
+try:
+    # Validate and normalize a skill expression
+    api_response = api_instance.post_routing_skillexpressions_validate(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_skillexpressions_validate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SkillExpressionData**](SkillExpressionData)| Skill expression data to validate |  |
+
+### Return type
+
+[**SkillExpressionValidationResult**](SkillExpressionValidationResult)
+
+
 ## post_routing_skillgroup_members_divisions
 
 >  post_routing_skillgroup_members_divisions(skill_group_id, body=body)
@@ -7678,56 +7770,6 @@ except ApiException as e:
 ### Return type
 
 [**UtilizationLabel**](UtilizationLabel)
-
-
-## post_routing_utilization_tags
-
-> [**UtilizationTag**](UtilizationTag) post_routing_utilization_tags(body)
-
-
-Create an utilization tag
-
-post_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps POST /api/v2/routing/utilization/tags 
-
-Requires ALL permissions: 
-
-* routing:utilization:manage
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.CreateUtilizationTagRequest() # CreateUtilizationTagRequest | UtilizationTag
-
-try:
-    # Create an utilization tag
-    api_response = api_instance.post_routing_utilization_tags(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RoutingApi->post_routing_utilization_tags: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateUtilizationTagRequest**](CreateUtilizationTagRequest)| UtilizationTag |  |
-
-### Return type
-
-[**UtilizationTag**](UtilizationTag)
 
 
 ## post_routing_wrapupcodes
@@ -8728,4 +8770,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 257.1.0_
+_PureCloudPlatformClientV2 258.0.0_
