@@ -93,7 +93,7 @@ class CaseAssociationQuery(object):
     def after(self) -> str:
         """
         Gets the after of this CaseAssociationQuery.
-        The cursor that points to the end of the set of entities that has been returned.
+        Cursor pointing to the end of the previously returned page of associations.
 
         :return: The after of this CaseAssociationQuery.
         :rtype: str
@@ -104,7 +104,7 @@ class CaseAssociationQuery(object):
     def after(self, after: str) -> None:
         """
         Sets the after of this CaseAssociationQuery.
-        The cursor that points to the end of the set of entities that has been returned.
+        Cursor pointing to the end of the previously returned page of associations.
 
         :param after: The after of this CaseAssociationQuery.
         :type: str
@@ -144,7 +144,7 @@ class CaseAssociationQuery(object):
     def conversation_id(self) -> str:
         """
         Gets the conversation_id of this CaseAssociationQuery.
-        The conversation ID to query by.
+        The Conversation ID to query by.
 
         :return: The conversation_id of this CaseAssociationQuery.
         :rtype: str
@@ -155,7 +155,7 @@ class CaseAssociationQuery(object):
     def conversation_id(self, conversation_id: str) -> None:
         """
         Sets the conversation_id of this CaseAssociationQuery.
-        The conversation ID to query by.
+        The Conversation ID to query by.
 
         :param conversation_id: The conversation_id of this CaseAssociationQuery.
         :type: str

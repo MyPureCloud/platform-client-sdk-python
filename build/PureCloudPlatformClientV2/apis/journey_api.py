@@ -138,7 +138,6 @@ class JourneyApi(object):
         """
         Delete/cancel an async request for journey aggregates
         
-	    delete_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -924,7 +923,6 @@ class JourneyApi(object):
         """
         Get status for async query for journey aggregates
         
-	    get_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1003,7 +1001,6 @@ class JourneyApi(object):
         """
         Fetch a page of results for an async aggregates query
         
-	    get_analytics_journeys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5678,7 +5675,6 @@ class JourneyApi(object):
         """
         Query for journey aggregates asynchronously
         
-	    post_analytics_journeys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

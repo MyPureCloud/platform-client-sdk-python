@@ -141,7 +141,7 @@ class CaseAssociation(object):
     def association_type(self) -> str:
         """
         Gets the association_type of this CaseAssociation.
-        Association type.
+        The association type.
 
         :return: The association_type of this CaseAssociation.
         :rtype: str
@@ -152,7 +152,7 @@ class CaseAssociation(object):
     def association_type(self, association_type: str) -> None:
         """
         Sets the association_type of this CaseAssociation.
-        Association type.
+        The association type.
 
         :param association_type: The association_type of this CaseAssociation.
         :type: str
@@ -170,7 +170,7 @@ class CaseAssociation(object):
     def date_associated(self) -> datetime:
         """
         Gets the date_associated of this CaseAssociation.
-        Interaction association date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date of the interaction association. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_associated of this CaseAssociation.
         :rtype: datetime
@@ -181,7 +181,7 @@ class CaseAssociation(object):
     def date_associated(self, date_associated: datetime) -> None:
         """
         Sets the date_associated of this CaseAssociation.
-        Interaction association date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The date of the interaction association. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_associated: The date_associated of this CaseAssociation.
         :type: datetime
@@ -194,7 +194,7 @@ class CaseAssociation(object):
     def workitem(self) -> 'WorkitemReference':
         """
         Gets the workitem of this CaseAssociation.
-        Associated workitem ID.
+        The associated Workitem.
 
         :return: The workitem of this CaseAssociation.
         :rtype: WorkitemReference
@@ -205,7 +205,7 @@ class CaseAssociation(object):
     def workitem(self, workitem: 'WorkitemReference') -> None:
         """
         Sets the workitem of this CaseAssociation.
-        Associated workitem ID.
+        The associated Workitem.
 
         :param workitem: The workitem of this CaseAssociation.
         :type: WorkitemReference
@@ -218,7 +218,7 @@ class CaseAssociation(object):
     def conversation(self) -> 'ConversationReference':
         """
         Gets the conversation of this CaseAssociation.
-        Associated conversation ID.
+        The associated Conversation.
 
         :return: The conversation of this CaseAssociation.
         :rtype: ConversationReference
@@ -229,7 +229,7 @@ class CaseAssociation(object):
     def conversation(self, conversation: 'ConversationReference') -> None:
         """
         Sets the conversation of this CaseAssociation.
-        Associated conversation ID.
+        The associated Conversation.
 
         :param conversation: The conversation of this CaseAssociation.
         :type: ConversationReference
@@ -242,7 +242,7 @@ class CaseAssociation(object):
     def stage(self) -> 'StageReference':
         """
         Gets the stage of this CaseAssociation.
-        The stage related to this association.
+        The Stage related to this association.
 
         :return: The stage of this CaseAssociation.
         :rtype: StageReference
@@ -253,7 +253,7 @@ class CaseAssociation(object):
     def stage(self, stage: 'StageReference') -> None:
         """
         Sets the stage of this CaseAssociation.
-        The stage related to this association.
+        The Stage related to this association.
 
         :param stage: The stage of this CaseAssociation.
         :type: StageReference
@@ -266,7 +266,7 @@ class CaseAssociation(object):
     def step(self) -> 'StepReference':
         """
         Gets the step of this CaseAssociation.
-        The step related to this association.
+        The Step related to this association.
 
         :return: The step of this CaseAssociation.
         :rtype: StepReference
@@ -277,7 +277,7 @@ class CaseAssociation(object):
     def step(self, step: 'StepReference') -> None:
         """
         Sets the step of this CaseAssociation.
-        The step related to this association.
+        The Step related to this association.
 
         :param step: The step of this CaseAssociation.
         :type: StepReference
@@ -314,7 +314,7 @@ class CaseAssociation(object):
     def case(self) -> 'CaseReference':
         """
         Gets the case of this CaseAssociation.
-        Case ID
+        The Case for this association.
 
         :return: The case of this CaseAssociation.
         :rtype: CaseReference
@@ -325,7 +325,7 @@ class CaseAssociation(object):
     def case(self, case: 'CaseReference') -> None:
         """
         Sets the case of this CaseAssociation.
-        Case ID
+        The Case for this association.
 
         :param case: The case of this CaseAssociation.
         :type: CaseReference

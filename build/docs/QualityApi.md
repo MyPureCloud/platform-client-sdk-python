@@ -88,8 +88,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request for evaluation aggregates
 
-delete_analytics_evaluations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -136,8 +134,6 @@ void (empty response body)
 
 
 Delete/cancel an async request for survey aggregates
-
-delete_analytics_surveys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
 
@@ -481,8 +477,6 @@ void (empty response body)
 
 Get status for async query for evaluation aggregates
 
-get_analytics_evaluations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -530,8 +524,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async aggregates query
-
-get_analytics_evaluations_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results 
 
@@ -583,8 +575,6 @@ except ApiException as e:
 
 Get status for async query for survey aggregates
 
-get_analytics_surveys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -632,8 +622,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async aggregates query
-
-get_analytics_surveys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results 
 
@@ -2494,8 +2482,6 @@ except ApiException as e:
 
 Query for evaluation aggregates asynchronously
 
-post_analytics_evaluations_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/evaluations/aggregates/jobs 
 
 Requires ANY permissions: 
@@ -2591,8 +2577,6 @@ except ApiException as e:
 
 
 Query for survey aggregates asynchronously
-
-post_analytics_surveys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/surveys/aggregates/jobs 
 
@@ -3829,4 +3813,4 @@ except ApiException as e:
 [**ScorableSurvey**](ScorableSurvey)
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

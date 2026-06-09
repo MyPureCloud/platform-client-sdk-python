@@ -69,7 +69,7 @@ class CaseplanQueryRequest(object):
     def name(self) -> str:
         """
         Gets the name of this CaseplanQueryRequest.
-        Filter by caseplan name (case-insensitive, partial match). Omitting name returns all caseplans (subject to pagination).
+        Filter by Caseplan name (case-insensitive, partial match). Omitting name returns all Caseplans (subject to pagination).
 
         :return: The name of this CaseplanQueryRequest.
         :rtype: str
@@ -80,7 +80,7 @@ class CaseplanQueryRequest(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this CaseplanQueryRequest.
-        Filter by caseplan name (case-insensitive, partial match). Omitting name returns all caseplans (subject to pagination).
+        Filter by Caseplan name (case-insensitive, partial match). Omitting name returns all Caseplans (subject to pagination).
 
         :param name: The name of this CaseplanQueryRequest.
         :type: str

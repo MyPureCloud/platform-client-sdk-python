@@ -54,6 +54,8 @@ from ..models import CreateQueueRequest
 from ..models import CreateRoutingSkill
 from ..models import CreateUtilizationLabelRequest
 from ..models import EmailOutboundDomainResult
+from ..models import EmailSetting
+from ..models import EmailSettingEntityListing
 from ..models import EmailSetup
 from ..models import ErrorBody
 from ..models import EstimatedWaitTimePredictions
@@ -514,6 +516,84 @@ class RoutingApi(object):
         path_params = {}
         if 'domain_id' in params:
             path_params['domainId'] = params['domain_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_routing_email_setting_email_setting_id(self, email_setting_id: str, **kwargs) -> None:
+        """
+        Delete an email setting. Removes the email setting and its associated settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_email_setting_email_setting_id(email_setting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str email_setting_id: Email Setting ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['email_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_email_setting_email_setting_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'email_setting_id' is set
+        if ('email_setting_id' not in params) or (params['email_setting_id'] is None):
+            raise ValueError("Missing the required parameter `email_setting_id` when calling `delete_routing_email_setting_email_setting_id`")
+
+
+        resource_path = '/api/v2/routing/email/setting/{emailSettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'email_setting_id' in params:
+            path_params['emailSettingId'] = params['email_setting_id']
 
         query_params = {}
 
@@ -3578,6 +3658,162 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_email_setting(self, **kwargs) -> 'EmailSettingEntityListing':
+        """
+        Get a paged list of email routing settings.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_email_setting(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: EmailSettingEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_email_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/email/setting'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmailSettingEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_email_setting_email_setting_id(self, email_setting_id: str, **kwargs) -> 'EmailSetting':
+        """
+        Get email setting. Returns the specified email setting that defines settings for email
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_email_setting_email_setting_id(email_setting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str email_setting_id: Email Setting ID (required)
+        :return: EmailSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['email_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_email_setting_email_setting_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'email_setting_id' is set
+        if ('email_setting_id' not in params) or (params['email_setting_id'] is None):
+            raise ValueError("Missing the required parameter `email_setting_id` when calling `get_routing_email_setting_email_setting_id`")
+
+
+        resource_path = '/api/v2/routing/email/setting/{emailSettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'email_setting_id' in params:
+            path_params['emailSettingId'] = params['email_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmailSetting',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_routing_email_setup(self, **kwargs) -> 'EmailSetup':
         """
         Get email setup
@@ -5555,7 +5791,7 @@ class RoutingApi(object):
         :param str sort_order: Sort order
         :param str name: Name
         :param list[str] id: Queue ID(s)
-        :param list[str] division_id: Division ID(s)
+        :param list[str] division_id: Division ID(s). Including '*' will query for all divisions
         :return: QueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6670,7 +6906,7 @@ class RoutingApi(object):
 
     def get_routing_skills(self, **kwargs) -> 'SkillEntityListing':
         """
-        Get the list of routing skills.
+        Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -8764,6 +9000,90 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OutboundDomain',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_routing_email_setting_email_setting_id(self, email_setting_id: str, body: 'EmailSetting', **kwargs) -> 'EmailSetting':
+        """
+        Update an email setting. Modifies the settings for email setting
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_email_setting_email_setting_id(email_setting_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str email_setting_id: Email Setting ID (required)
+        :param EmailSetting body: EmailSetting (required)
+        :return: EmailSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['email_setting_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_email_setting_email_setting_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'email_setting_id' is set
+        if ('email_setting_id' not in params) or (params['email_setting_id'] is None):
+            raise ValueError("Missing the required parameter `email_setting_id` when calling `patch_routing_email_setting_email_setting_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_routing_email_setting_email_setting_id`")
+
+
+        resource_path = '/api/v2/routing/email/setting/{emailSettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'email_setting_id' in params:
+            path_params['emailSettingId'] = params['email_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmailSetting',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11152,6 +11472,84 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EmailOutboundDomainResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_email_setting(self, body: 'EmailSetting', **kwargs) -> 'EmailSetting':
+        """
+        Create a new email setting. Used to define various settings, that can then be associated with email domains
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_email_setting(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param EmailSetting body: EmailSetting (required)
+        :return: EmailSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_email_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_email_setting`")
+
+
+        resource_path = '/api/v2/routing/email/setting'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmailSetting',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

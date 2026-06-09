@@ -275,6 +275,8 @@ PureCloudPlatformClientV2/models/agent_schedule_shift_activity.py
 PureCloudPlatformClientV2/models/agent_schedule_unavailable_time.py
 PureCloudPlatformClientV2/models/agent_scoring_rule.py
 PureCloudPlatformClientV2/models/agent_scoring_rule_entity_listing.py
+PureCloudPlatformClientV2/models/agent_state_activity_category_count.py
+PureCloudPlatformClientV2/models/agent_state_adherence_state_count.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_clause.py
 PureCloudPlatformClientV2/models/agent_state_agent_query_predicate.py
 PureCloudPlatformClientV2/models/agent_state_counts_request.py
@@ -405,6 +407,7 @@ PureCloudPlatformClientV2/models/apple_integration.py
 PureCloudPlatformClientV2/models/apple_integration_entity_listing.py
 PureCloudPlatformClientV2/models/apple_integration_request.py
 PureCloudPlatformClientV2/models/apple_integration_update_request.py
+PureCloudPlatformClientV2/models/apple_invitation.py
 PureCloudPlatformClientV2/models/apple_opaque_id.py
 PureCloudPlatformClientV2/models/apple_pay.py
 PureCloudPlatformClientV2/models/approval_namespace.py
@@ -718,6 +721,8 @@ PureCloudPlatformClientV2/models/bu_update_agent_schedule_shift.py
 PureCloudPlatformClientV2/models/bu_update_agent_schedule_upload_schema.py
 PureCloudPlatformClientV2/models/bu_update_time_off_plan_request.py
 PureCloudPlatformClientV2/models/bu_user_listing.py
+PureCloudPlatformClientV2/models/bulk_add_decision_table_rows_request.py
+PureCloudPlatformClientV2/models/bulk_add_decision_table_rows_response.py
 PureCloudPlatformClientV2/models/bulk_add_opportunities_request.py
 PureCloudPlatformClientV2/models/bulk_add_opportunities_response.py
 PureCloudPlatformClientV2/models/bulk_add_source_intents_request.py
@@ -728,6 +733,7 @@ PureCloudPlatformClientV2/models/bulk_contacts_enrich_request.py
 PureCloudPlatformClientV2/models/bulk_contacts_enrich_response.py
 PureCloudPlatformClientV2/models/bulk_contacts_request.py
 PureCloudPlatformClientV2/models/bulk_contacts_response.py
+PureCloudPlatformClientV2/models/bulk_delete_decision_table_rows_request.py
 PureCloudPlatformClientV2/models/bulk_delete_response.py
 PureCloudPlatformClientV2/models/bulk_entity_error_contact_enrich_request.py
 PureCloudPlatformClientV2/models/bulk_entity_error_entity.py
@@ -792,6 +798,8 @@ PureCloudPlatformClientV2/models/bulk_result.py
 PureCloudPlatformClientV2/models/bulk_results.py
 PureCloudPlatformClientV2/models/bulk_shift_trade_state_update_request.py
 PureCloudPlatformClientV2/models/bulk_source_intents_response.py
+PureCloudPlatformClientV2/models/bulk_update_decision_table_rows_request.py
+PureCloudPlatformClientV2/models/bulk_update_decision_table_rows_response.py
 PureCloudPlatformClientV2/models/bulk_update_opportunity_enrollments_status_response.py
 PureCloudPlatformClientV2/models/bulk_update_shift_trade_list_job_request.py
 PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_request_item.py
@@ -962,6 +970,7 @@ PureCloudPlatformClientV2/models/caseplan_create.py
 PureCloudPlatformClientV2/models/caseplan_create_response.py
 PureCloudPlatformClientV2/models/caseplan_data_schema.py
 PureCloudPlatformClientV2/models/caseplan_data_schema_listing.py
+PureCloudPlatformClientV2/models/caseplan_data_schema_request.py
 PureCloudPlatformClientV2/models/caseplan_listing.py
 PureCloudPlatformClientV2/models/caseplan_query_entity_listing.py
 PureCloudPlatformClientV2/models/caseplan_query_request.py
@@ -1185,6 +1194,7 @@ PureCloudPlatformClientV2/models/contacts_export.py
 PureCloudPlatformClientV2/models/contacts_export_field_filter.py
 PureCloudPlatformClientV2/models/contacts_export_field_list_filter.py
 PureCloudPlatformClientV2/models/contacts_export_filter.py
+PureCloudPlatformClientV2/models/contacts_export_listing.py
 PureCloudPlatformClientV2/models/contacts_export_query_conditions.py
 PureCloudPlatformClientV2/models/contacts_export_request.py
 PureCloudPlatformClientV2/models/contacts_patch_change.py
@@ -1633,6 +1643,7 @@ PureCloudPlatformClientV2/models/conversation_summaries_get_response.py
 PureCloudPlatformClientV2/models/conversation_summary.py
 PureCloudPlatformClientV2/models/conversation_summary_extracted_entity.py
 PureCloudPlatformClientV2/models/conversation_summary_followup.py
+PureCloudPlatformClientV2/models/conversation_summary_label.py
 PureCloudPlatformClientV2/models/conversation_summary_reason.py
 PureCloudPlatformClientV2/models/conversation_summary_resolution.py
 PureCloudPlatformClientV2/models/conversation_summary_topic_conversation_followup_action.py
@@ -1738,6 +1749,7 @@ PureCloudPlatformClientV2/models/create_callback_response.py
 PureCloudPlatformClientV2/models/create_capacity_plan_staffing_group_metric_change_request.py
 PureCloudPlatformClientV2/models/create_coaching_appointment_request.py
 PureCloudPlatformClientV2/models/create_decision_table_columns_request.py
+PureCloudPlatformClientV2/models/create_decision_table_import_job_request.py
 PureCloudPlatformClientV2/models/create_decision_table_request.py
 PureCloudPlatformClientV2/models/create_decision_table_row_request.py
 PureCloudPlatformClientV2/models/create_email_request.py
@@ -1754,6 +1766,7 @@ PureCloudPlatformClientV2/models/create_management_unit_api_request.py
 PureCloudPlatformClientV2/models/create_management_unit_settings_request.py
 PureCloudPlatformClientV2/models/create_metric.py
 PureCloudPlatformClientV2/models/create_objective.py
+PureCloudPlatformClientV2/models/create_organization_link.py
 PureCloudPlatformClientV2/models/create_outbound_messaging_conversation_request.py
 PureCloudPlatformClientV2/models/create_outbound_messaging_conversation_response.py
 PureCloudPlatformClientV2/models/create_performance_profile.py
@@ -1903,9 +1916,18 @@ PureCloudPlatformClientV2/models/decision_table_columns.py
 PureCloudPlatformClientV2/models/decision_table_contract.py
 PureCloudPlatformClientV2/models/decision_table_execution_request.py
 PureCloudPlatformClientV2/models/decision_table_execution_response.py
+PureCloudPlatformClientV2/models/decision_table_export_job.py
+PureCloudPlatformClientV2/models/decision_table_export_job_error.py
+PureCloudPlatformClientV2/models/decision_table_export_job_listing.py
+PureCloudPlatformClientV2/models/decision_table_export_job_request.py
+PureCloudPlatformClientV2/models/decision_table_import_job.py
+PureCloudPlatformClientV2/models/decision_table_import_job_error.py
+PureCloudPlatformClientV2/models/decision_table_import_job_listing.py
+PureCloudPlatformClientV2/models/decision_table_import_row_metrics.py
 PureCloudPlatformClientV2/models/decision_table_input_column.py
 PureCloudPlatformClientV2/models/decision_table_input_column_expression.py
 PureCloudPlatformClientV2/models/decision_table_input_column_request.py
+PureCloudPlatformClientV2/models/decision_table_job_validation_error.py
 PureCloudPlatformClientV2/models/decision_table_listing.py
 PureCloudPlatformClientV2/models/decision_table_output_column.py
 PureCloudPlatformClientV2/models/decision_table_output_column_request.py
@@ -2071,6 +2093,7 @@ PureCloudPlatformClientV2/models/directory_user_devices_listing.py
 PureCloudPlatformClientV2/models/disable_site_connections_request.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_item.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_reference.py
+PureCloudPlatformClientV2/models/disaster_recovery_all_routing_request.py
 PureCloudPlatformClientV2/models/disconnect_reason.py
 PureCloudPlatformClientV2/models/disposition.py
 PureCloudPlatformClientV2/models/disposition_amd_timeout.py
@@ -2298,6 +2321,7 @@ PureCloudPlatformClientV2/models/email_progress_transfer_event.py
 PureCloudPlatformClientV2/models/email_routing_established_event.py
 PureCloudPlatformClientV2/models/email_routing_transfer_event.py
 PureCloudPlatformClientV2/models/email_setting.py
+PureCloudPlatformClientV2/models/email_setting_entity_listing.py
 PureCloudPlatformClientV2/models/email_setting_reference.py
 PureCloudPlatformClientV2/models/email_settings.py
 PureCloudPlatformClientV2/models/email_setup.py
@@ -2430,7 +2454,6 @@ PureCloudPlatformClientV2/models/expandable_web_deployment_entity_listing.py
 PureCloudPlatformClientV2/models/expansion_criterium.py
 PureCloudPlatformClientV2/models/expired_edge_listing.py
 PureCloudPlatformClientV2/models/export_details.py
-PureCloudPlatformClientV2/models/export_listing.py
 PureCloudPlatformClientV2/models/export_script_request.py
 PureCloudPlatformClientV2/models/export_script_response.py
 PureCloudPlatformClientV2/models/export_uri.py
@@ -3727,6 +3750,10 @@ PureCloudPlatformClientV2/models/nuance_mix_dlg_settings.py
 PureCloudPlatformClientV2/models/nuance_organization.py
 PureCloudPlatformClientV2/models/number.py
 PureCloudPlatformClientV2/models/number_plan.py
+PureCloudPlatformClientV2/models/number_routing.py
+PureCloudPlatformClientV2/models/number_routing_listing.py
+PureCloudPlatformClientV2/models/number_routing_request.py
+PureCloudPlatformClientV2/models/number_routing_reset_organization_request.py
 PureCloudPlatformClientV2/models/numeric_range.py
 PureCloudPlatformClientV2/models/o_auth_apple_authorization_response.py
 PureCloudPlatformClientV2/models/o_auth_apple_authorization_response_error.py
@@ -3817,6 +3844,9 @@ PureCloudPlatformClientV2/models/org_whitelist_settings.py
 PureCloudPlatformClientV2/models/organization.py
 PureCloudPlatformClientV2/models/organization_call_metrics.py
 PureCloudPlatformClientV2/models/organization_features.py
+PureCloudPlatformClientV2/models/organization_link.py
+PureCloudPlatformClientV2/models/organization_link_approval_request.py
+PureCloudPlatformClientV2/models/organization_link_response.py
 PureCloudPlatformClientV2/models/organization_presence.py
 PureCloudPlatformClientV2/models/organization_presence_definition.py
 PureCloudPlatformClientV2/models/organization_presence_definition_entity_listing.py
@@ -4584,6 +4614,7 @@ PureCloudPlatformClientV2/models/recording_message_receipt.py
 PureCloudPlatformClientV2/models/recording_message_receipt_reason.py
 PureCloudPlatformClientV2/models/recording_messaging_message.py
 PureCloudPlatformClientV2/models/recording_metadata.py
+PureCloudPlatformClientV2/models/recording_notification_response.py
 PureCloudPlatformClientV2/models/recording_notification_template.py
 PureCloudPlatformClientV2/models/recording_retention.py
 PureCloudPlatformClientV2/models/recording_retention_cursor_entity_listing.py
@@ -4606,6 +4637,7 @@ PureCloudPlatformClientV2/models/recurrence_period.py
 PureCloudPlatformClientV2/models/recurrence_settings.py
 PureCloudPlatformClientV2/models/recurrence_settings_base.py
 PureCloudPlatformClientV2/models/referrer.py
+PureCloudPlatformClientV2/models/region_response.py
 PureCloudPlatformClientV2/models/region_time_zone.py
 PureCloudPlatformClientV2/models/register_architect_export_job.py
 PureCloudPlatformClientV2/models/register_architect_export_job_response.py
@@ -4740,6 +4772,7 @@ PureCloudPlatformClientV2/models/routing_status_detail_query_clause.py
 PureCloudPlatformClientV2/models/routing_status_detail_query_filter.py
 PureCloudPlatformClientV2/models/routing_status_detail_query_predicate.py
 PureCloudPlatformClientV2/models/routing_transfer_event.py
+PureCloudPlatformClientV2/models/row.py
 PureCloudPlatformClientV2/models/row_search_filter.py
 PureCloudPlatformClientV2/models/row_search_predicate.py
 PureCloudPlatformClientV2/models/rule_config.py
@@ -4767,6 +4800,9 @@ PureCloudPlatformClientV2/models/schedule_group_entity_listing.py
 PureCloudPlatformClientV2/models/schedule_interval.py
 PureCloudPlatformClientV2/models/schedule_reference_with_business_unit.py
 PureCloudPlatformClientV2/models/schedule_upload_processing_response.py
+PureCloudPlatformClientV2/models/schedule_visibility_range.py
+PureCloudPlatformClientV2/models/schedule_visibility_settings_request.py
+PureCloudPlatformClientV2/models/schedule_visibility_settings_response.py
 PureCloudPlatformClientV2/models/scheduled_trigger.py
 PureCloudPlatformClientV2/models/scheduled_trigger_entity_listing.py
 PureCloudPlatformClientV2/models/scheduler_message_argument.py
@@ -5028,6 +5064,7 @@ PureCloudPlatformClientV2/models/social_media_query_predicate.py
 PureCloudPlatformClientV2/models/social_media_query_sort.py
 PureCloudPlatformClientV2/models/social_media_statistical_response.py
 PureCloudPlatformClientV2/models/social_media_statistical_summary.py
+PureCloudPlatformClientV2/models/social_numeric_range.py
 PureCloudPlatformClientV2/models/social_topic_patch_request.py
 PureCloudPlatformClientV2/models/social_topic_request.py
 PureCloudPlatformClientV2/models/social_topic_response.py
@@ -5296,6 +5333,7 @@ PureCloudPlatformClientV2/models/text_bots_rich_media_input_event.py
 PureCloudPlatformClientV2/models/text_message_listing.py
 PureCloudPlatformClientV2/models/text_style_properties.py
 PureCloudPlatformClientV2/models/third_party_suggestion.py
+PureCloudPlatformClientV2/models/third_party_suggestion_source.py
 PureCloudPlatformClientV2/models/ticker.py
 PureCloudPlatformClientV2/models/time_allowed.py
 PureCloudPlatformClientV2/models/time_and_date_sub_condition.py
@@ -5504,6 +5542,7 @@ PureCloudPlatformClientV2/models/update_coaching_appointment_request.py
 PureCloudPlatformClientV2/models/update_conference_request.py
 PureCloudPlatformClientV2/models/update_contact_column_action_settings.py
 PureCloudPlatformClientV2/models/update_decision_table_columns_request.py
+PureCloudPlatformClientV2/models/update_decision_table_import_job_request.py
 PureCloudPlatformClientV2/models/update_decision_table_request.py
 PureCloudPlatformClientV2/models/update_decision_table_version_request.py
 PureCloudPlatformClientV2/models/update_draft_input.py
@@ -5802,10 +5841,12 @@ PureCloudPlatformClientV2/models/v3_source_last_synchronization.py
 PureCloudPlatformClientV2/models/v3_source_ref.py
 PureCloudPlatformClientV2/models/v3_source_schedule_settings.py
 PureCloudPlatformClientV2/models/v3_source_site_details.py
+PureCloudPlatformClientV2/models/v3_source_tag_filter.py
 PureCloudPlatformClientV2/models/v3_source_update_request.py
 PureCloudPlatformClientV2/models/v3_start_manual_sync_request.py
 PureCloudPlatformClientV2/models/v3_synchronization.py
 PureCloudPlatformClientV2/models/v3_synchronization_listing.py
+PureCloudPlatformClientV2/models/v3_synchronization_ref.py
 PureCloudPlatformClientV2/models/v3_synchronization_statistics.py
 PureCloudPlatformClientV2/models/v3_synchronization_update_request.py
 PureCloudPlatformClientV2/models/v3_synchronization_upload_metadata.py
@@ -6563,6 +6604,8 @@ docs/AgentScheduleShiftActivity.md
 docs/AgentScheduleUnavailableTime.md
 docs/AgentScoringRule.md
 docs/AgentScoringRuleEntityListing.md
+docs/AgentStateActivityCategoryCount.md
+docs/AgentStateAdherenceStateCount.md
 docs/AgentStateAgentQueryClause.md
 docs/AgentStateAgentQueryPredicate.md
 docs/AgentStateCountsRequest.md
@@ -6699,6 +6742,7 @@ docs/AppleIntegration.md
 docs/AppleIntegrationEntityListing.md
 docs/AppleIntegrationRequest.md
 docs/AppleIntegrationUpdateRequest.md
+docs/AppleInvitation.md
 docs/AppleOpaqueId.md
 docs/ApplePay.md
 docs/ApprovalNamespace.md
@@ -7024,6 +7068,8 @@ docs/BuUpdateAgentScheduleShift.md
 docs/BuUpdateAgentScheduleUploadSchema.md
 docs/BuUpdateTimeOffPlanRequest.md
 docs/BuUserListing.md
+docs/BulkAddDecisionTableRowsRequest.md
+docs/BulkAddDecisionTableRowsResponse.md
 docs/BulkAddOpportunitiesRequest.md
 docs/BulkAddOpportunitiesResponse.md
 docs/BulkAddSourceIntentsRequest.md
@@ -7034,6 +7080,7 @@ docs/BulkContactsEnrichRequest.md
 docs/BulkContactsEnrichResponse.md
 docs/BulkContactsRequest.md
 docs/BulkContactsResponse.md
+docs/BulkDeleteDecisionTableRowsRequest.md
 docs/BulkDeleteResponse.md
 docs/BulkEntityErrorContactEnrichRequest.md
 docs/BulkEntityErrorEntity.md
@@ -7098,6 +7145,8 @@ docs/BulkResult.md
 docs/BulkResults.md
 docs/BulkShiftTradeStateUpdateRequest.md
 docs/BulkSourceIntentsResponse.md
+docs/BulkUpdateDecisionTableRowsRequest.md
+docs/BulkUpdateDecisionTableRowsResponse.md
 docs/BulkUpdateOpportunityEnrollmentsStatusResponse.md
 docs/BulkUpdateShiftTradeListJobRequest.md
 docs/BulkUpdateShiftTradeStateRequestItem.md
@@ -7274,6 +7323,7 @@ docs/CaseplanCreate.md
 docs/CaseplanCreateResponse.md
 docs/CaseplanDataSchema.md
 docs/CaseplanDataSchemaListing.md
+docs/CaseplanDataSchemaRequest.md
 docs/CaseplanListing.md
 docs/CaseplanQueryEntityListing.md
 docs/CaseplanQueryRequest.md
@@ -7501,6 +7551,7 @@ docs/ContactsExport.md
 docs/ContactsExportFieldFilter.md
 docs/ContactsExportFieldListFilter.md
 docs/ContactsExportFilter.md
+docs/ContactsExportListing.md
 docs/ContactsExportQueryConditions.md
 docs/ContactsExportRequest.md
 docs/ContactsPatchChange.md
@@ -7951,6 +8002,7 @@ docs/ConversationSummariesGetResponse.md
 docs/ConversationSummary.md
 docs/ConversationSummaryExtractedEntity.md
 docs/ConversationSummaryFollowup.md
+docs/ConversationSummaryLabel.md
 docs/ConversationSummaryReason.md
 docs/ConversationSummaryResolution.md
 docs/ConversationSummaryTopicConversationFollowupAction.md
@@ -8058,6 +8110,7 @@ docs/CreateCallbackResponse.md
 docs/CreateCapacityPlanStaffingGroupMetricChangeRequest.md
 docs/CreateCoachingAppointmentRequest.md
 docs/CreateDecisionTableColumnsRequest.md
+docs/CreateDecisionTableImportJobRequest.md
 docs/CreateDecisionTableRequest.md
 docs/CreateDecisionTableRowRequest.md
 docs/CreateEmailRequest.md
@@ -8074,6 +8127,7 @@ docs/CreateManagementUnitApiRequest.md
 docs/CreateManagementUnitSettingsRequest.md
 docs/CreateMetric.md
 docs/CreateObjective.md
+docs/CreateOrganizationLink.md
 docs/CreateOutboundMessagingConversationRequest.md
 docs/CreateOutboundMessagingConversationResponse.md
 docs/CreatePerformanceProfile.md
@@ -8234,9 +8288,18 @@ docs/DecisionTableColumns.md
 docs/DecisionTableContract.md
 docs/DecisionTableExecutionRequest.md
 docs/DecisionTableExecutionResponse.md
+docs/DecisionTableExportJob.md
+docs/DecisionTableExportJobError.md
+docs/DecisionTableExportJobListing.md
+docs/DecisionTableExportJobRequest.md
+docs/DecisionTableImportJob.md
+docs/DecisionTableImportJobError.md
+docs/DecisionTableImportJobListing.md
+docs/DecisionTableImportRowMetrics.md
 docs/DecisionTableInputColumn.md
 docs/DecisionTableInputColumnExpression.md
 docs/DecisionTableInputColumnRequest.md
+docs/DecisionTableJobValidationError.md
 docs/DecisionTableListing.md
 docs/DecisionTableOutputColumn.md
 docs/DecisionTableOutputColumnRequest.md
@@ -8396,6 +8459,7 @@ docs/DirectoryUserDevicesListing.md
 docs/DisableSiteConnectionsRequest.md
 docs/DisallowedEntityLearningAssignmentItem.md
 docs/DisallowedEntityLearningAssignmentReference.md
+docs/DisasterRecoveryAllRoutingRequest.md
 docs/DisconnectReason.md
 docs/Disposition.md
 docs/DispositionAmdTimeout.md
@@ -8624,6 +8688,7 @@ docs/EmailProgressTransferEvent.md
 docs/EmailRoutingEstablishedEvent.md
 docs/EmailRoutingTransferEvent.md
 docs/EmailSetting.md
+docs/EmailSettingEntityListing.md
 docs/EmailSettingReference.md
 docs/EmailSettings.md
 docs/EmailSetup.md
@@ -8762,7 +8827,6 @@ docs/ExpandableWebDeploymentEntityListing.md
 docs/ExpansionCriterium.md
 docs/ExpiredEdgeListing.md
 docs/ExportDetails.md
-docs/ExportListing.md
 docs/ExportScriptRequest.md
 docs/ExportScriptResponse.md
 docs/ExportUri.md
@@ -10105,6 +10169,10 @@ docs/NuanceMixDlgSettings.md
 docs/NuanceOrganization.md
 docs/Number.md
 docs/NumberPlan.md
+docs/NumberRouting.md
+docs/NumberRoutingListing.md
+docs/NumberRoutingRequest.md
+docs/NumberRoutingResetOrganizationRequest.md
 docs/NumericRange.md
 docs/OAuthApi.json
 docs/OAuthApi.md
@@ -10205,6 +10273,9 @@ docs/OrganizationAuthorizationApi.json
 docs/OrganizationAuthorizationApi.md
 docs/OrganizationCallMetrics.md
 docs/OrganizationFeatures.md
+docs/OrganizationLink.md
+docs/OrganizationLinkApprovalRequest.md
+docs/OrganizationLinkResponse.md
 docs/OrganizationPresence.md
 docs/OrganizationPresenceDefinition.md
 docs/OrganizationPresenceDefinitionEntityListing.md
@@ -10982,6 +11053,7 @@ docs/RecordingMessageReceipt.md
 docs/RecordingMessageReceiptReason.md
 docs/RecordingMessagingMessage.md
 docs/RecordingMetadata.md
+docs/RecordingNotificationResponse.md
 docs/RecordingNotificationTemplate.md
 docs/RecordingRetention.md
 docs/RecordingRetentionCursorEntityListing.md
@@ -11004,6 +11076,7 @@ docs/RecurrencePeriod.md
 docs/RecurrenceSettings.md
 docs/RecurrenceSettingsBase.md
 docs/Referrer.md
+docs/RegionResponse.md
 docs/RegionTimeZone.md
 docs/RegisterArchitectExportJob.md
 docs/RegisterArchitectExportJobResponse.md
@@ -11142,6 +11215,7 @@ docs/RoutingStatusDetailQueryClause.md
 docs/RoutingStatusDetailQueryFilter.md
 docs/RoutingStatusDetailQueryPredicate.md
 docs/RoutingTransferEvent.md
+docs/Row.md
 docs/RowSearchFilter.md
 docs/RowSearchPredicate.md
 docs/RuleConfig.md
@@ -11173,6 +11247,9 @@ docs/ScheduleGroupEntityListing.md
 docs/ScheduleInterval.md
 docs/ScheduleReferenceWithBusinessUnit.md
 docs/ScheduleUploadProcessingResponse.md
+docs/ScheduleVisibilityRange.md
+docs/ScheduleVisibilitySettingsRequest.md
+docs/ScheduleVisibilitySettingsResponse.md
 docs/ScheduledTrigger.md
 docs/ScheduledTriggerEntityListing.md
 docs/SchedulerMessageArgument.md
@@ -11440,6 +11517,7 @@ docs/SocialMediaQueryPredicate.md
 docs/SocialMediaQuerySort.md
 docs/SocialMediaStatisticalResponse.md
 docs/SocialMediaStatisticalSummary.md
+docs/SocialNumericRange.md
 docs/SocialTopicPatchRequest.md
 docs/SocialTopicRequest.md
 docs/SocialTopicResponse.md
@@ -11724,6 +11802,7 @@ docs/TextStyleProperties.md
 docs/TextbotsApi.json
 docs/TextbotsApi.md
 docs/ThirdPartySuggestion.md
+docs/ThirdPartySuggestionSource.md
 docs/Ticker.md
 docs/TimeAllowed.md
 docs/TimeAndDateSubCondition.md
@@ -11934,6 +12013,7 @@ docs/UpdateCoachingAppointmentRequest.md
 docs/UpdateConferenceRequest.md
 docs/UpdateContactColumnActionSettings.md
 docs/UpdateDecisionTableColumnsRequest.md
+docs/UpdateDecisionTableImportJobRequest.md
 docs/UpdateDecisionTableRequest.md
 docs/UpdateDecisionTableVersionRequest.md
 docs/UpdateDraftInput.md
@@ -12244,10 +12324,12 @@ docs/V3SourceLastSynchronization.md
 docs/V3SourceRef.md
 docs/V3SourceScheduleSettings.md
 docs/V3SourceSiteDetails.md
+docs/V3SourceTagFilter.md
 docs/V3SourceUpdateRequest.md
 docs/V3StartManualSyncRequest.md
 docs/V3Synchronization.md
 docs/V3SynchronizationListing.md
+docs/V3SynchronizationRef.md
 docs/V3SynchronizationStatistics.md
 docs/V3SynchronizationUpdateRequest.md
 docs/V3SynchronizationUploadMetadata.md
@@ -12882,11 +12964,14 @@ docs/delete_authorization_role-example.txt
 docs/delete_authorization_subject_division_role-example.txt
 docs/delete_authorization_subject_division_role-example.txt
 docs/delete_businessrules_decisiontable-example.txt
+docs/delete_businessrules_decisiontable_export-example.txt
+docs/delete_businessrules_decisiontable_import-example.txt
 docs/delete_businessrules_decisiontable_version-example.txt
 docs/delete_businessrules_decisiontable_version_row-example.txt
 docs/delete_businessrules_schema-example.txt
 docs/delete_casemanagement_case-example.txt
 docs/delete_casemanagement_caseplan-example.txt
+docs/delete_casemanagement_caseplan_dataschema-example.txt
 docs/delete_chats_room_message-example.txt
 docs/delete_chats_room_messages_pin-example.txt
 docs/delete_chats_room_participant-example.txt
@@ -13077,6 +13162,7 @@ docs/delete_routing_directroutingbackup_settings_me-example.txt
 docs/delete_routing_email_domain-example.txt
 docs/delete_routing_email_domain_route-example.txt
 docs/delete_routing_email_outbound_domain-example.txt
+docs/delete_routing_email_setting_email_setting_id-example.txt
 docs/delete_routing_language-example.txt
 docs/delete_routing_predictor-example.txt
 docs/delete_routing_predictors_keyperformanceindicator-example.txt
@@ -13128,6 +13214,7 @@ docs/delete_taskmanagement_worktype_flows_oncreate_rule-example.txt
 docs/delete_taskmanagement_worktype_status-example.txt
 docs/delete_team-example.txt
 docs/delete_team_members-example.txt
+docs/delete_telephony_organization_link_target_organization_id-example.txt
 docs/delete_telephony_providers_edge-example.txt
 docs/delete_telephony_providers_edge_logicalinterface-example.txt
 docs/delete_telephony_providers_edge_softwareupdate-example.txt
@@ -13370,6 +13457,10 @@ docs/get_billing_contracts_invoices-example.txt
 docs/get_billing_reports_billableusage-example.txt
 docs/get_billing_trusteebillingoverview_trustor_org_id-example.txt
 docs/get_businessrules_decisiontable-example.txt
+docs/get_businessrules_decisiontable_export-example.txt
+docs/get_businessrules_decisiontable_exports-example.txt
+docs/get_businessrules_decisiontable_import-example.txt
+docs/get_businessrules_decisiontable_imports-example.txt
 docs/get_businessrules_decisiontable_version-example.txt
 docs/get_businessrules_decisiontable_version_row-example.txt
 docs/get_businessrules_decisiontable_version_rows-example.txt
@@ -14208,6 +14299,8 @@ docs/get_routing_email_domains-example.txt
 docs/get_routing_email_outbound_domain-example.txt
 docs/get_routing_email_outbound_domain_activation-example.txt
 docs/get_routing_email_outbound_domains-example.txt
+docs/get_routing_email_setting-example.txt
+docs/get_routing_email_setting_email_setting_id-example.txt
 docs/get_routing_email_setup-example.txt
 docs/get_routing_language-example.txt
 docs/get_routing_languages-example.txt
@@ -14407,6 +14500,9 @@ docs/get_telephony_agent_greetings-example.txt
 docs/get_telephony_agents_greetings_me-example.txt
 docs/get_telephony_calls_metrics-example.txt
 docs/get_telephony_mediaregions-example.txt
+docs/get_telephony_numbers_routing-example.txt
+docs/get_telephony_organization_link-example.txt
+docs/get_telephony_organization_link_regions-example.txt
 docs/get_telephony_providers_edge-example.txt
 docs/get_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/get_telephony_providers_edge_diagnostic_ping-example.txt
@@ -14742,6 +14838,7 @@ docs/patch_assistant_queues-example.txt
 docs/patch_authorization_role-example.txt
 docs/patch_authorization_settings-example.txt
 docs/patch_businessrules_decisiontable-example.txt
+docs/patch_businessrules_decisiontable_import-example.txt
 docs/patch_businessrules_decisiontable_version-example.txt
 docs/patch_casemanagement_case_datedue-example.txt
 docs/patch_casemanagement_case_priority-example.txt
@@ -14879,6 +14976,7 @@ docs/patch_routing_conversation-example.txt
 docs/patch_routing_email_domain-example.txt
 docs/patch_routing_email_domain_validate-example.txt
 docs/patch_routing_email_outbound_domain-example.txt
+docs/patch_routing_email_setting_email_setting_id-example.txt
 docs/patch_routing_predictor-example.txt
 docs/patch_routing_predictors_keyperformanceindicator-example.txt
 docs/patch_routing_queue_member-example.txt
@@ -14915,6 +15013,7 @@ docs/patch_taskmanagement_worktype_flows_onattributechange_rule-example.txt
 docs/patch_taskmanagement_worktype_flows_oncreate_rule-example.txt
 docs/patch_taskmanagement_worktype_status-example.txt
 docs/patch_team-example.txt
+docs/patch_telephony_organization_link_approve_requesting_organization_id-example.txt
 docs/patch_telephony_providers_edges_site_siteconnections-example.txt
 docs/patch_user-example.txt
 docs/patch_user_callforwarding-example.txt
@@ -15115,9 +15214,14 @@ docs/post_authorization_subject_division_role-example.txt
 docs/post_authorization_subject_division_role-example.txt
 docs/post_backgroundassistant_token-example.txt
 docs/post_businessrules_decisiontable_execute-example.txt
+docs/post_businessrules_decisiontable_exports-example.txt
+docs/post_businessrules_decisiontable_imports-example.txt
 docs/post_businessrules_decisiontable_version_copy-example.txt
 docs/post_businessrules_decisiontable_version_execute-example.txt
 docs/post_businessrules_decisiontable_version_rows-example.txt
+docs/post_businessrules_decisiontable_version_rows_bulk_add-example.txt
+docs/post_businessrules_decisiontable_version_rows_bulk_remove-example.txt
+docs/post_businessrules_decisiontable_version_rows_bulk_update-example.txt
 docs/post_businessrules_decisiontable_version_rows_search-example.txt
 docs/post_businessrules_decisiontable_version_sync-example.txt
 docs/post_businessrules_decisiontable_versions-example.txt
@@ -15126,6 +15230,7 @@ docs/post_businessrules_schemas-example.txt
 docs/post_carrierservices_integrations_emergencylocations_me-example.txt
 docs/post_casemanagement_case_associations-example.txt
 docs/post_casemanagement_case_terminate_jobs-example.txt
+docs/post_casemanagement_caseplan_dataschemas-example.txt
 docs/post_casemanagement_caseplan_publish-example.txt
 docs/post_casemanagement_caseplan_versions-example.txt
 docs/post_casemanagement_caseplans-example.txt
@@ -15604,6 +15709,7 @@ docs/post_routing_email_domains-example.txt
 docs/post_routing_email_outbound_domain_testconnection-example.txt
 docs/post_routing_email_outbound_domains-example.txt
 docs/post_routing_email_outbound_domains_simulated-example.txt
+docs/post_routing_email_setting-example.txt
 docs/post_routing_languages-example.txt
 docs/post_routing_predictors-example.txt
 docs/post_routing_predictors_keyperformanceindicators-example.txt
@@ -15676,6 +15782,10 @@ docs/post_team_members-example.txt
 docs/post_teams-example.txt
 docs/post_teams_search-example.txt
 docs/post_teams_search-example.txt
+docs/post_telephony_numbers_routing-example.txt
+docs/post_telephony_numbers_routing_all-example.txt
+docs/post_telephony_numbers_routing_reset-example.txt
+docs/post_telephony_organization_link-example.txt
 docs/post_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/post_telephony_providers_edge_diagnostic_ping-example.txt
 docs/post_telephony_providers_edge_diagnostic_route-example.txt
@@ -15899,6 +16009,7 @@ docs/put_authorization_roles_settings-example.txt
 docs/put_businessrules_decisiontable_version_publish-example.txt
 docs/put_businessrules_decisiontable_version_row-example.txt
 docs/put_businessrules_schema-example.txt
+docs/put_casemanagement_caseplan_dataschema-example.txt
 docs/put_casemanagement_caseplan_intakesettings-example.txt
 docs/put_chats_message_reactions-example.txt
 docs/put_chats_settings-example.txt

@@ -96,7 +96,7 @@ class IntakeSetting(object):
     def required(self) -> bool:
         """
         Gets the required of this IntakeSetting.
-        Defines if this property is required for intake
+        Whether this property is required for intake.
 
         :return: The required of this IntakeSetting.
         :rtype: bool
@@ -107,7 +107,7 @@ class IntakeSetting(object):
     def required(self, required: bool) -> None:
         """
         Sets the required of this IntakeSetting.
-        Defines if this property is required for intake
+        Whether this property is required for intake.
 
         :param required: The required of this IntakeSetting.
         :type: bool
@@ -120,7 +120,7 @@ class IntakeSetting(object):
     def display_order(self) -> int:
         """
         Gets the display_order of this IntakeSetting.
-        The order where this property should be displayed
+        The display order for this property.
 
         :return: The display_order of this IntakeSetting.
         :rtype: int
@@ -131,7 +131,7 @@ class IntakeSetting(object):
     def display_order(self, display_order: int) -> None:
         """
         Sets the display_order of this IntakeSetting.
-        The order where this property should be displayed
+        The display order for this property.
 
         :param display_order: The display_order of this IntakeSetting.
         :type: int

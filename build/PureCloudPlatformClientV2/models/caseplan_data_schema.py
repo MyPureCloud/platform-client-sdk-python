@@ -63,7 +63,7 @@ class CaseplanDataSchema(object):
     def id(self) -> str:
         """
         Gets the id of this CaseplanDataSchema.
-        The id of the schema.
+        The schema ID.
 
         :return: The id of this CaseplanDataSchema.
         :rtype: str
@@ -74,7 +74,7 @@ class CaseplanDataSchema(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this CaseplanDataSchema.
-        The id of the schema.
+        The schema ID.
 
         :param id: The id of this CaseplanDataSchema.
         :type: str

@@ -49,18 +49,21 @@ class Button(object):
         self.swagger_types = {
             'type': 'str',
             'content': 'str',
-            'content_text': 'str'
+            'content_text': 'str',
+            'payload': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'content': 'content',
-            'content_text': 'contentText'
+            'content_text': 'contentText',
+            'payload': 'payload'
         }
 
         self._type = None
         self._content = None
         self._content_text = None
+        self._payload = None
 
     @property
     def type(self) -> str:
@@ -138,6 +141,30 @@ class Button(object):
         
 
         self._content_text = content_text
+
+    @property
+    def payload(self) -> str:
+        """
+        Gets the payload of this Button.
+        A payload to uniquely identify a quickReply button in carousel
+
+        :return: The payload of this Button.
+        :rtype: str
+        """
+        return self._payload
+
+    @payload.setter
+    def payload(self, payload: str) -> None:
+        """
+        Sets the payload of this Button.
+        A payload to uniquely identify a quickReply button in carousel
+
+        :param payload: The payload of this Button.
+        :type: str
+        """
+        
+
+        self._payload = payload
 
     def to_dict(self):
         """

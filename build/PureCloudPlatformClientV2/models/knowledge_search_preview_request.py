@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import KnowledgeConversationTurn
     from . import KnowledgeGenerationSetting
     from . import V3SourceRef
+    from . import V3SourceTagFilter
 
 class KnowledgeSearchPreviewRequest(object):
     """
@@ -55,7 +56,8 @@ class KnowledgeSearchPreviewRequest(object):
             'sources': 'list[V3SourceRef]',
             'generation_setting': 'KnowledgeGenerationSetting',
             'stateful': 'bool',
-            'conversation_turns': 'list[KnowledgeConversationTurn]'
+            'conversation_turns': 'list[KnowledgeConversationTurn]',
+            'filter': 'V3SourceTagFilter'
         }
 
         self.attribute_map = {
@@ -63,7 +65,8 @@ class KnowledgeSearchPreviewRequest(object):
             'sources': 'sources',
             'generation_setting': 'generationSetting',
             'stateful': 'stateful',
-            'conversation_turns': 'conversationTurns'
+            'conversation_turns': 'conversationTurns',
+            'filter': 'filter'
         }
 
         self._query = None
@@ -71,6 +74,7 @@ class KnowledgeSearchPreviewRequest(object):
         self._generation_setting = None
         self._stateful = None
         self._conversation_turns = None
+        self._filter = None
 
     @property
     def query(self) -> str:
@@ -191,6 +195,30 @@ class KnowledgeSearchPreviewRequest(object):
         
 
         self._conversation_turns = conversation_turns
+
+    @property
+    def filter(self) -> 'V3SourceTagFilter':
+        """
+        Gets the filter of this KnowledgeSearchPreviewRequest.
+        Composite tag filter applied to the search preview.
+
+        :return: The filter of this KnowledgeSearchPreviewRequest.
+        :rtype: V3SourceTagFilter
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter: 'V3SourceTagFilter') -> None:
+        """
+        Sets the filter of this KnowledgeSearchPreviewRequest.
+        Composite tag filter applied to the search preview.
+
+        :param filter: The filter of this KnowledgeSearchPreviewRequest.
+        :type: V3SourceTagFilter
+        """
+        
+
+        self._filter = filter
 
     def to_dict(self):
         """

@@ -65,6 +65,7 @@ from ..models import ContactImportSettings
 from ..models import ContactImportSettingsEntityListing
 from ..models import ContactListing
 from ..models import ContactsExport
+from ..models import ContactsExportListing
 from ..models import ConversationAssociation
 from ..models import Coretype
 from ..models import CoretypeListing
@@ -84,7 +85,6 @@ from ..models import DataSchema
 from ..models import DataSchemaListing
 from ..models import ErrorBody
 from ..models import ErrorInfo
-from ..models import ExportListing
 from ..models import ExternalContact
 from ..models import ExternalContactsPatchRequest
 from ..models import ExternalOrganization
@@ -1674,7 +1674,7 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_externalcontacts_contacts_exports(self, **kwargs) -> 'ExportListing':
+    def get_externalcontacts_contacts_exports(self, **kwargs) -> 'ContactsExportListing':
         """
         List exports for organization
         
@@ -1692,7 +1692,7 @@ class ExternalContactsApi(object):
         :param list[str] division_ids: Division IDs of entities
         :param str after: The cursor that points to the end of the set of entities
         :param int page_size: Number of entities to return
-        :return: ExportListing
+        :return: ContactsExportListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1750,7 +1750,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ExportListing',
+                                            response_type='ContactsExportListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

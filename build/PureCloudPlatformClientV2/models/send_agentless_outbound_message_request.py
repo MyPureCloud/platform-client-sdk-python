@@ -101,7 +101,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address(self) -> str:
         """
         Gets the to_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555.
 
         :return: The to_address of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -112,7 +112,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address(self, to_address: str) -> None:
         """
         Sets the to_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555.
 
         :param to_address: The to_address of this SendAgentlessOutboundMessageRequest.
         :type: str
@@ -143,7 +143,7 @@ class SendAgentlessOutboundMessageRequest(object):
         """
         if isinstance(to_address_messenger_type, int):
             to_address_messenger_type = str(to_address_messenger_type)
-        allowed_values = ["sms", "whatsapp", "open"]
+        allowed_values = ["sms", "whatsapp", "open", "webmessaging"]
         if to_address_messenger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for to_address_messenger_type -> " + to_address_messenger_type)
             self._to_address_messenger_type = "outdated_sdk_version"

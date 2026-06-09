@@ -33,8 +33,10 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Button
+    from . import Carousel
     from . import MessageFooter
     from . import MessageHeader
+    from . import StatusInfo
 
 class WhatsAppDefinition(object):
     """
@@ -56,7 +58,12 @@ class WhatsAppDefinition(object):
             'language': 'str',
             'buttons': 'list[Button]',
             'message_footer': 'MessageFooter',
-            'header': 'MessageHeader'
+            'header': 'MessageHeader',
+            'integration_id': 'str',
+            'category': 'str',
+            'template_status': 'str',
+            'status_info': 'StatusInfo',
+            'carousel': 'Carousel'
         }
 
         self.attribute_map = {
@@ -65,7 +72,12 @@ class WhatsAppDefinition(object):
             'language': 'language',
             'buttons': 'buttons',
             'message_footer': 'messageFooter',
-            'header': 'header'
+            'header': 'header',
+            'integration_id': 'integrationId',
+            'category': 'category',
+            'template_status': 'templateStatus',
+            'status_info': 'statusInfo',
+            'carousel': 'carousel'
         }
 
         self._name = None
@@ -74,6 +86,11 @@ class WhatsAppDefinition(object):
         self._buttons = None
         self._message_footer = None
         self._header = None
+        self._integration_id = None
+        self._category = None
+        self._template_status = None
+        self._status_info = None
+        self._carousel = None
 
     @property
     def name(self) -> str:
@@ -218,6 +235,131 @@ class WhatsAppDefinition(object):
         
 
         self._header = header
+
+    @property
+    def integration_id(self) -> str:
+        """
+        Gets the integration_id of this WhatsAppDefinition.
+        WhatsApp integration ID for whatsApp carousels
+
+        :return: The integration_id of this WhatsAppDefinition.
+        :rtype: str
+        """
+        return self._integration_id
+
+    @integration_id.setter
+    def integration_id(self, integration_id: str) -> None:
+        """
+        Sets the integration_id of this WhatsAppDefinition.
+        WhatsApp integration ID for whatsApp carousels
+
+        :param integration_id: The integration_id of this WhatsAppDefinition.
+        :type: str
+        """
+        
+
+        self._integration_id = integration_id
+
+    @property
+    def category(self) -> str:
+        """
+        Gets the category of this WhatsAppDefinition.
+        Category of whatsApp carousels template.
+
+        :return: The category of this WhatsAppDefinition.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category: str) -> None:
+        """
+        Sets the category of this WhatsAppDefinition.
+        Category of whatsApp carousels template.
+
+        :param category: The category of this WhatsAppDefinition.
+        :type: str
+        """
+        if isinstance(category, int):
+            category = str(category)
+        allowed_values = ["marketing"]
+        if category.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for category -> " + category)
+            self._category = "outdated_sdk_version"
+        else:
+            self._category = category
+
+    @property
+    def template_status(self) -> str:
+        """
+        Gets the template_status of this WhatsAppDefinition.
+        Template status of whatsApp carousels template.
+
+        :return: The template_status of this WhatsAppDefinition.
+        :rtype: str
+        """
+        return self._template_status
+
+    @template_status.setter
+    def template_status(self, template_status: str) -> None:
+        """
+        Sets the template_status of this WhatsAppDefinition.
+        Template status of whatsApp carousels template.
+
+        :param template_status: The template_status of this WhatsAppDefinition.
+        :type: str
+        """
+        
+
+        self._template_status = template_status
+
+    @property
+    def status_info(self) -> 'StatusInfo':
+        """
+        Gets the status_info of this WhatsAppDefinition.
+        Status information about the template
+
+        :return: The status_info of this WhatsAppDefinition.
+        :rtype: StatusInfo
+        """
+        return self._status_info
+
+    @status_info.setter
+    def status_info(self, status_info: 'StatusInfo') -> None:
+        """
+        Sets the status_info of this WhatsAppDefinition.
+        Status information about the template
+
+        :param status_info: The status_info of this WhatsAppDefinition.
+        :type: StatusInfo
+        """
+        
+
+        self._status_info = status_info
+
+    @property
+    def carousel(self) -> 'Carousel':
+        """
+        Gets the carousel of this WhatsAppDefinition.
+        Definition for whatsApp carousels template.
+
+        :return: The carousel of this WhatsAppDefinition.
+        :rtype: Carousel
+        """
+        return self._carousel
+
+    @carousel.setter
+    def carousel(self, carousel: 'Carousel') -> None:
+        """
+        Sets the carousel of this WhatsAppDefinition.
+        Definition for whatsApp carousels template.
+
+        :param carousel: The carousel of this WhatsAppDefinition.
+        :type: Carousel
+        """
+        
+
+        self._carousel = carousel
 
     def to_dict(self):
         """

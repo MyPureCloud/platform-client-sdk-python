@@ -343,7 +343,7 @@ class PolicyActions(object):
     def media_transcriptions(self) -> List['MediaTranscription']:
         """
         Gets the media_transcriptions of this PolicyActions.
-
+        Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
 
         :return: The media_transcriptions of this PolicyActions.
         :rtype: list[MediaTranscription]
@@ -354,7 +354,7 @@ class PolicyActions(object):
     def media_transcriptions(self, media_transcriptions: List['MediaTranscription']) -> None:
         """
         Sets the media_transcriptions of this PolicyActions.
-
+        Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
 
         :param media_transcriptions: The media_transcriptions of this PolicyActions.
         :type: list[MediaTranscription]

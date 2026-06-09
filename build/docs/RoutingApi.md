@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_email_domain**](#delete_routing_email_domain) | Delete a domain|
 |[**delete_routing_email_domain_route**](#delete_routing_email_domain_route) | Delete a route|
 |[**delete_routing_email_outbound_domain**](#delete_routing_email_outbound_domain) | Delete an outbound domain|
+|[**delete_routing_email_setting_email_setting_id**](#delete_routing_email_setting_email_setting_id) | Delete an email setting. Removes the email setting and its associated settings|
 |[**delete_routing_language**](#delete_routing_language) | Delete a routing language|
 |[**delete_routing_predictor**](#delete_routing_predictor) | Delete single predictor.|
 |[**delete_routing_predictors_keyperformanceindicator**](#delete_routing_predictors_keyperformanceindicator) | Delete a custom Key Performance Indicator.|
@@ -49,6 +50,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_email_outbound_domain**](#get_routing_email_outbound_domain) | Get domain|
 |[**get_routing_email_outbound_domain_activation**](#get_routing_email_outbound_domain_activation) | Get activation status (cname + dkim) of an outbound domain|
 |[**get_routing_email_outbound_domains**](#get_routing_email_outbound_domains) | Get outbound domains|
+|[**get_routing_email_setting**](#get_routing_email_setting) | Get a paged list of email routing settings.|
+|[**get_routing_email_setting_email_setting_id**](#get_routing_email_setting_email_setting_id) | Get email setting. Returns the specified email setting that defines settings for email|
 |[**get_routing_email_setup**](#get_routing_email_setup) | Get email setup|
 |[**get_routing_language**](#get_routing_language) | Get a routing language|
 |[**get_routing_languages**](#get_routing_languages) | Get the list of supported languages.|
@@ -86,7 +89,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_skillgroup_members**](#get_routing_skillgroup_members) | Get skill group members|
 |[**get_routing_skillgroup_members_divisions**](#get_routing_skillgroup_members_divisions) | Get list of member divisions for this skill group.|
 |[**get_routing_skillgroups**](#get_routing_skillgroups) | Get skill group listing|
-|[**get_routing_skills**](#get_routing_skills) | Get the list of routing skills.|
+|[**get_routing_skills**](#get_routing_skills) | Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.|
 |[**get_routing_sms_address**](#get_routing_sms_address) | Get an Address by Id for SMS|
 |[**get_routing_sms_addresses**](#get_routing_sms_addresses) | Get a list of Addresses for SMS|
 |[**get_routing_sms_availablephonenumbers**](#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
@@ -111,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_email_domain**](#patch_routing_email_domain) | Update domain settings|
 |[**patch_routing_email_domain_validate**](#patch_routing_email_domain_validate) | Validate domain settings|
 |[**patch_routing_email_outbound_domain**](#patch_routing_email_outbound_domain) | Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).|
+|[**patch_routing_email_setting_email_setting_id**](#patch_routing_email_setting_email_setting_id) | Update an email setting. Modifies the settings for email setting|
 |[**patch_routing_predictor**](#patch_routing_predictor) | Update single predictor.|
 |[**patch_routing_predictors_keyperformanceindicator**](#patch_routing_predictors_keyperformanceindicator) | Update a custom Key Performance Indicator.|
 |[**patch_routing_queue_member**](#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
@@ -140,6 +144,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_email_outbound_domain_testconnection**](#post_routing_email_outbound_domain_testconnection) | Tests the custom SMTP server integration connection set on this outbound domain|
 |[**post_routing_email_outbound_domains**](#post_routing_email_outbound_domains) | Create a domain|
 |[**post_routing_email_outbound_domains_simulated**](#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
+|[**post_routing_email_setting**](#post_routing_email_setting) | Create a new email setting. Used to define various settings, that can then be associated with email domains|
 |[**post_routing_languages**](#post_routing_languages) | Create Language|
 |[**post_routing_predictors**](#post_routing_predictors) | Create a predictor.|
 |[**post_routing_predictors_keyperformanceindicators**](#post_routing_predictors_keyperformanceindicators) | Create a custom Key Performance Indicator.|
@@ -406,6 +411,53 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_routing_email_setting_email_setting_id
+
+>  delete_routing_email_setting_email_setting_id(email_setting_id)
+
+
+Delete an email setting. Removes the email setting and its associated settings
+
+Wraps DELETE /api/v2/routing/email/setting/{emailSettingId} 
+
+Requires ALL permissions: 
+
+* email:settings:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+email_setting_id = 'email_setting_id_example' # str | Email Setting ID
+
+try:
+    # Delete an email setting. Removes the email setting and its associated settings
+    api_instance.delete_routing_email_setting_email_setting_id(email_setting_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_email_setting_email_setting_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **email_setting_id** | **str**| Email Setting ID |  |
 
 ### Return type
 
@@ -2268,6 +2320,104 @@ except ApiException as e:
 [**OutboundDomainEntityListing**](OutboundDomainEntityListing)
 
 
+## get_routing_email_setting
+
+> [**EmailSettingEntityListing**](EmailSettingEntityListing) get_routing_email_setting(page_size=page_size, page_number=page_number)
+
+
+Get a paged list of email routing settings.
+
+Wraps GET /api/v2/routing/email/setting 
+
+Requires ALL permissions: 
+
+* email:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a paged list of email routing settings.
+    api_response = api_instance.get_routing_email_setting(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+
+### Return type
+
+[**EmailSettingEntityListing**](EmailSettingEntityListing)
+
+
+## get_routing_email_setting_email_setting_id
+
+> [**EmailSetting**](EmailSetting) get_routing_email_setting_email_setting_id(email_setting_id)
+
+
+Get email setting. Returns the specified email setting that defines settings for email
+
+Wraps GET /api/v2/routing/email/setting/{emailSettingId} 
+
+Requires ALL permissions: 
+
+* email:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+email_setting_id = 'email_setting_id_example' # str | Email Setting ID
+
+try:
+    # Get email setting. Returns the specified email setting that defines settings for email
+    api_response = api_instance.get_routing_email_setting_email_setting_id(email_setting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_email_setting_email_setting_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **email_setting_id** | **str**| Email Setting ID |  |
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
+
+
 ## get_routing_email_setup
 
 > [**EmailSetup**](EmailSetup) get_routing_email_setup()
@@ -3527,7 +3677,7 @@ sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | Queue ID(s) (optional)
-division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s). Including '*' will query for all divisions (optional)
 
 try:
     # Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
@@ -3548,7 +3698,7 @@ except ApiException as e:
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str)| Queue ID(s) | [optional]  |
-| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s). Including &#39;*&#39; will query for all divisions | [optional]  |
 
 ### Return type
 
@@ -4207,7 +4357,7 @@ except ApiException as e:
 > [**SkillEntityListing**](SkillEntityListing) get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
 
 
-Get the list of routing skills.
+Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 
 Wraps GET /api/v2/routing/skills 
 
@@ -4234,7 +4384,7 @@ name = 'name_example' # str | Filter for results that start with this value (opt
 id = ['id_example'] # list[str] | id (optional)
 
 try:
-    # Get the list of routing skills.
+    # Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
     api_response = api_instance.get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
     pprint(api_response)
 except ApiException as e:
@@ -5513,6 +5663,56 @@ except ApiException as e:
 ### Return type
 
 [**OutboundDomain**](OutboundDomain)
+
+
+## patch_routing_email_setting_email_setting_id
+
+> [**EmailSetting**](EmailSetting) patch_routing_email_setting_email_setting_id(email_setting_id, body)
+
+
+Update an email setting. Modifies the settings for email setting
+
+Wraps PATCH /api/v2/routing/email/setting/{emailSettingId} 
+
+Requires ALL permissions: 
+
+* email:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+email_setting_id = 'email_setting_id_example' # str | Email Setting ID
+body = PureCloudPlatformClientV2.EmailSetting() # EmailSetting | EmailSetting
+
+try:
+    # Update an email setting. Modifies the settings for email setting
+    api_response = api_instance.patch_routing_email_setting_email_setting_id(email_setting_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_email_setting_email_setting_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **email_setting_id** | **str**| Email Setting ID |  |
+| **body** | [**EmailSetting**](EmailSetting)| EmailSetting |  |
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
 
 
 ## patch_routing_predictor
@@ -6980,6 +7180,54 @@ except ApiException as e:
 ### Return type
 
 [**EmailOutboundDomainResult**](EmailOutboundDomainResult)
+
+
+## post_routing_email_setting
+
+> [**EmailSetting**](EmailSetting) post_routing_email_setting(body)
+
+
+Create a new email setting. Used to define various settings, that can then be associated with email domains
+
+Wraps POST /api/v2/routing/email/setting 
+
+Requires ANY permissions: 
+
+* email:settings:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.EmailSetting() # EmailSetting | EmailSetting
+
+try:
+    # Create a new email setting. Used to define various settings, that can then be associated with email domains
+    api_response = api_instance.post_routing_email_setting(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_email_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EmailSetting**](EmailSetting)| EmailSetting |  |
+
+### Return type
+
+[**EmailSetting**](EmailSetting)
 
 
 ## post_routing_languages
@@ -8770,4 +9018,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import KnowledgeGenerationSetting
     from . import V3SourceRef
+    from . import V3SourceTagFilter
 
 class KnowledgeSettingsRequest(object):
     """
@@ -54,7 +55,8 @@ class KnowledgeSettingsRequest(object):
             'description': 'str',
             'sources': 'list[V3SourceRef]',
             'generation_setting': 'KnowledgeGenerationSetting',
-            'stateful': 'bool'
+            'stateful': 'bool',
+            'filter': 'V3SourceTagFilter'
         }
 
         self.attribute_map = {
@@ -62,7 +64,8 @@ class KnowledgeSettingsRequest(object):
             'description': 'description',
             'sources': 'sources',
             'generation_setting': 'generationSetting',
-            'stateful': 'stateful'
+            'stateful': 'stateful',
+            'filter': 'filter'
         }
 
         self._name = None
@@ -70,6 +73,7 @@ class KnowledgeSettingsRequest(object):
         self._sources = None
         self._generation_setting = None
         self._stateful = None
+        self._filter = None
 
     @property
     def name(self) -> str:
@@ -190,6 +194,30 @@ class KnowledgeSettingsRequest(object):
         
 
         self._stateful = stateful
+
+    @property
+    def filter(self) -> 'V3SourceTagFilter':
+        """
+        Gets the filter of this KnowledgeSettingsRequest.
+        Composite tag filter of search results.
+
+        :return: The filter of this KnowledgeSettingsRequest.
+        :rtype: V3SourceTagFilter
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter: 'V3SourceTagFilter') -> None:
+        """
+        Sets the filter of this KnowledgeSettingsRequest.
+        Composite tag filter of search results.
+
+        :param filter: The filter of this KnowledgeSettingsRequest.
+        :type: V3SourceTagFilter
+        """
+        
+
+        self._filter = filter
 
     def to_dict(self):
         """

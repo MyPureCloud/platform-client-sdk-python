@@ -66,7 +66,7 @@ class StepplansWorktypeReference(object):
     def id(self) -> str:
         """
         Gets the id of this StepplansWorktypeReference.
-        The id of the worktype.
+        The Worktype ID.
 
         :return: The id of this StepplansWorktypeReference.
         :rtype: str
@@ -77,7 +77,7 @@ class StepplansWorktypeReference(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this StepplansWorktypeReference.
-        The id of the worktype.
+        The Worktype ID.
 
         :param id: The id of this StepplansWorktypeReference.
         :type: str

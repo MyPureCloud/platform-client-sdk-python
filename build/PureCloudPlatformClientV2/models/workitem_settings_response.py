@@ -62,7 +62,7 @@ class WorkitemSettingsResponse(object):
     def worktype(self) -> 'StepplansWorktypeReference':
         """
         Gets the worktype of this WorkitemSettingsResponse.
-        The worktype information for the workitem settings.
+        The Worktype information for the Workitem settings.
 
         :return: The worktype of this WorkitemSettingsResponse.
         :rtype: StepplansWorktypeReference
@@ -73,7 +73,7 @@ class WorkitemSettingsResponse(object):
     def worktype(self, worktype: 'StepplansWorktypeReference') -> None:
         """
         Sets the worktype of this WorkitemSettingsResponse.
-        The worktype information for the workitem settings.
+        The Worktype information for the Workitem settings.
 
         :param worktype: The worktype of this WorkitemSettingsResponse.
         :type: StepplansWorktypeReference

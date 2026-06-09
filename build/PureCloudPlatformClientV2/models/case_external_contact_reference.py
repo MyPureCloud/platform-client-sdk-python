@@ -63,7 +63,7 @@ class CaseExternalContactReference(object):
     def id(self) -> str:
         """
         Gets the id of this CaseExternalContactReference.
-        The globally unique identifier for the object.
+        The globally unique identifier for the External Contact.
 
         :return: The id of this CaseExternalContactReference.
         :rtype: str
@@ -74,7 +74,7 @@ class CaseExternalContactReference(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this CaseExternalContactReference.
-        The globally unique identifier for the object.
+        The globally unique identifier for the External Contact.
 
         :param id: The id of this CaseExternalContactReference.
         :type: str

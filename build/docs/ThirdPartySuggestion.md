@@ -7,7 +7,9 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **text** | str | The third party suggestion text. | [optional] |
+| **title** | str | The title of the suggestion. | [optional] |
+| **sources** | [list[ThirdPartySuggestionSource]](ThirdPartySuggestionSource) | A list of source references attributing the suggestion to its origin sources. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

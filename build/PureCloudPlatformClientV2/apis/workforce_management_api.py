@@ -6565,12 +6565,13 @@ class WorkforceManagementApi(object):
         :param str business_unit_id: The ID of the business unit (required)
         :param str management_unit_id: The ID of the management unit to get management unit specific staffing groups
         :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
+        :param list[str] expand: Include to access additional data for the time-off plans
         :return: BuTimeOffPlanListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'management_unit_id', 'force_download_service']
+        all_params = ['business_unit_id', 'management_unit_id', 'force_download_service', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -6598,6 +6599,8 @@ class WorkforceManagementApi(object):
             query_params['managementUnitId'] = params['management_unit_id']
         if 'force_download_service' in params:
             query_params['forceDownloadService'] = params['force_download_service']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -7287,6 +7290,8 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit (required)
         :param str week_id: First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules (required)
+        :param date earliest_week_date: If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date latest_week_date: If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :param bool include_only_published: includeOnlyPublished
         :param str expand: expand
         :return: BuScheduleListing
@@ -7294,7 +7299,7 @@ class WorkforceManagementApi(object):
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'week_id', 'include_only_published', 'expand']
+        all_params = ['business_unit_id', 'week_id', 'earliest_week_date', 'latest_week_date', 'include_only_published', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -7323,6 +7328,10 @@ class WorkforceManagementApi(object):
             path_params['weekId'] = params['week_id']
 
         query_params = {}
+        if 'earliest_week_date' in params:
+            query_params['earliestWeekDate'] = params['earliest_week_date']
+        if 'latest_week_date' in params:
+            query_params['latestWeekDate'] = params['latest_week_date']
         if 'include_only_published' in params:
             query_params['includeOnlyPublished'] = params['include_only_published']
         if 'expand' in params:
@@ -23833,12 +23842,13 @@ class WorkforceManagementApi(object):
         :param str management_unit_id: The ID of the management unit (required)
         :param str user_id: The id of the user for whom the time off request estimate is requested (required)
         :param EstimateAvailableTimeOffRequest body: body (required)
+        :param str include_only: Limit response to the specified field
         :return: EstimateAvailableTimeOffResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'user_id', 'body']
+        all_params = ['management_unit_id', 'user_id', 'body', 'include_only']
         all_params.append('callback')
 
         params = locals()
@@ -23870,6 +23880,8 @@ class WorkforceManagementApi(object):
             path_params['userId'] = params['user_id']
 
         query_params = {}
+        if 'include_only' in params:
+            query_params['includeOnly'] = params['include_only']
 
         header_params = {}
 
@@ -25801,12 +25813,13 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param EstimateAvailableTimeOffRequest body: body (required)
+        :param str include_only: Limit response to the specified field
         :return: EstimateAvailableTimeOffResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['body', 'include_only']
         all_params.append('callback')
 
         params = locals()
@@ -25828,6 +25841,8 @@ class WorkforceManagementApi(object):
         path_params = {}
 
         query_params = {}
+        if 'include_only' in params:
+            query_params['includeOnly'] = params['include_only']
 
         header_params = {}
 

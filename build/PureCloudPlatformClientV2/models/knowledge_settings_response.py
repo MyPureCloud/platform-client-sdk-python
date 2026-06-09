@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import KnowledgeGenerationSetting
     from . import UserReference
     from . import V3SourceRef
+    from . import V3SourceTagFilter
 
 class KnowledgeSettingsResponse(object):
     """
@@ -57,6 +58,7 @@ class KnowledgeSettingsResponse(object):
             'sources': 'list[V3SourceRef]',
             'generation_setting': 'KnowledgeGenerationSetting',
             'stateful': 'bool',
+            'filter': 'V3SourceTagFilter',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'modified_by': 'UserReference',
@@ -70,6 +72,7 @@ class KnowledgeSettingsResponse(object):
             'sources': 'sources',
             'generation_setting': 'generationSetting',
             'stateful': 'stateful',
+            'filter': 'filter',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy',
@@ -82,6 +85,7 @@ class KnowledgeSettingsResponse(object):
         self._sources = None
         self._generation_setting = None
         self._stateful = None
+        self._filter = None
         self._date_created = None
         self._date_modified = None
         self._modified_by = None
@@ -230,6 +234,30 @@ class KnowledgeSettingsResponse(object):
         
 
         self._stateful = stateful
+
+    @property
+    def filter(self) -> 'V3SourceTagFilter':
+        """
+        Gets the filter of this KnowledgeSettingsResponse.
+        Composite tag filter of search results.
+
+        :return: The filter of this KnowledgeSettingsResponse.
+        :rtype: V3SourceTagFilter
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter: 'V3SourceTagFilter') -> None:
+        """
+        Sets the filter of this KnowledgeSettingsResponse.
+        Composite tag filter of search results.
+
+        :param filter: The filter of this KnowledgeSettingsResponse.
+        :type: V3SourceTagFilter
+        """
+        
+
+        self._filter = filter
 
     @property
     def date_created(self) -> datetime:

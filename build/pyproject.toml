@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PureCloudPlatformClientV2"
-version = "258.0.0"
+version = "259.0.0"
 authors = [
     {name = "Genesys Developer Evangelists", email = "DeveloperEvangelists@Genesys.com"},
 ]
@@ -19,7 +19,7 @@ classifiers = [
 license = {file = "License.txt"}
 dependencies = [
     "certifi>=2026.4.22",
-    "urllib3>=2.6.3",
+    "urllib3>=2.7.0",
     "python-dateutil>=2.9.0.post0",
     "watchdog>=6.0.0"
 ]

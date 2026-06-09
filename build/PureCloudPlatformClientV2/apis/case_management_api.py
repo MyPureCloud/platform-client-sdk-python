@@ -49,7 +49,9 @@ from ..models import CaseSummaryUpdate
 from ..models import Caseplan
 from ..models import CaseplanCreate
 from ..models import CaseplanCreateResponse
+from ..models import CaseplanDataSchema
 from ..models import CaseplanDataSchemaListing
+from ..models import CaseplanDataSchemaRequest
 from ..models import CaseplanListing
 from ..models import CaseplanQueryEntityListing
 from ..models import CaseplanQueryRequest
@@ -89,7 +91,6 @@ class CaseManagementApi(object):
         """
         Delete a Case.
         
-	    delete_casemanagement_case is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -101,7 +102,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
+        :param str case_id: Case identifier. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +169,6 @@ class CaseManagementApi(object):
         """
         Delete a Caseplan.
         
-	    delete_casemanagement_caseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -180,7 +180,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
+        :param str caseplan_id: Caseplan identifier. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -245,11 +245,96 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_casemanagement_caseplan_dataschema(self, caseplan_id: str, schema_key_name: str, **kwargs) -> object:
+        """
+        Remove a data schema from a draft Caseplan.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str schema_key_name: Schema key (for example \"default\"). (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['caseplan_id', 'schema_key_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_casemanagement_caseplan_dataschema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'caseplan_id' is set
+        if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
+            raise ValueError("Missing the required parameter `caseplan_id` when calling `delete_casemanagement_caseplan_dataschema`")
+        # verify the required parameter 'schema_key_name' is set
+        if ('schema_key_name' not in params) or (params['schema_key_name'] is None):
+            raise ValueError("Missing the required parameter `schema_key_name` when calling `delete_casemanagement_caseplan_dataschema`")
+
+        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+            raise ValueError("Invalid value for parameter `caseplan_id` when calling `delete_casemanagement_caseplan_dataschema`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'caseplan_id' in params:
+            path_params['caseplanId'] = params['caseplan_id']
+        if 'schema_key_name' in params:
+            path_params['schemaKeyName'] = params['schema_key_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='object',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_casemanagement_case(self, case_id: str, **kwargs) -> 'Case':
         """
         Get a Case.
         
-	    get_casemanagement_case is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -261,8 +346,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param str expands: Which fields to expand.
+        :param str case_id: Case identifier. (required)
+        :param str expands: Fields to expand.
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -331,7 +416,6 @@ class CaseManagementApi(object):
         """
         Get a Case Association.
         
-	    get_casemanagement_case_association is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -343,8 +427,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param str association_id: Case Association ID (required)
+        :param str case_id: Case identifier. (required)
+        :param str association_id: Case association identifier. (required)
         :return: CaseAssociation
                  If the method is called asynchronously,
                  returns the request thread.
@@ -418,9 +502,8 @@ class CaseManagementApi(object):
 
     def get_casemanagement_case_associations(self, case_id: str, **kwargs) -> 'CaseAssociationListing':
         """
-        Get a list of case associations for a provided case.
+        Get a list of Case associations for the Case.
         
-	    get_casemanagement_case_associations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -432,7 +515,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID. (required)
+        :param str case_id: Case identifier. (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
@@ -510,7 +593,6 @@ class CaseManagementApi(object):
         """
         Get a Stage.
         
-	    get_casemanagement_case_stage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -522,8 +604,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param str stage_id: Stage ID (required)
+        :param str case_id: Case identifier. (required)
+        :param str stage_id: Stage identifier. (required)
         :return: Stage
                  If the method is called asynchronously,
                  returns the request thread.
@@ -599,7 +681,6 @@ class CaseManagementApi(object):
         """
         Get a Step.
         
-	    get_casemanagement_case_stage_step is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -611,9 +692,9 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param str stage_id: Stage ID (required)
-        :param str step_id: Step ID (required)
+        :param str case_id: Case identifier. (required)
+        :param str stage_id: Stage identifier. (required)
+        :param str step_id: Step identifier. (required)
         :return: Step
                  If the method is called asynchronously,
                  returns the request thread.
@@ -696,7 +777,6 @@ class CaseManagementApi(object):
         """
         Get a list of Steps.
         
-	    get_casemanagement_case_stage_steps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -708,8 +788,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param str stage_id: Stage ID (required)
+        :param str case_id: Case identifier. (required)
+        :param str stage_id: Stage identifier. (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
@@ -794,7 +874,6 @@ class CaseManagementApi(object):
         """
         Get a list of Stages.
         
-	    get_casemanagement_case_stages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -806,7 +885,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
+        :param str case_id: Case identifier. (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
@@ -884,7 +963,6 @@ class CaseManagementApi(object):
         """
         Get a Terminate Job for a Case.
         
-	    get_casemanagement_case_terminate_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -896,8 +974,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param str job_id: Job ID (required)
+        :param str case_id: Case identifier. (required)
+        :param str job_id: Terminate Job identifier. (required)
         :return: TerminateJob
                  If the method is called asynchronously,
                  returns the request thread.
@@ -973,7 +1051,6 @@ class CaseManagementApi(object):
         """
         Get a Caseplan.
         
-	    get_casemanagement_caseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -985,7 +1062,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
+        :param str caseplan_id: Caseplan identifier. (required)
         :return: Caseplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1054,7 +1131,6 @@ class CaseManagementApi(object):
         """
         Get a Caseplan version.
         
-	    get_casemanagement_caseplan_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1066,8 +1142,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str version_id: Version of the caseplan (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str version_id: Caseplan version identifier. (required)
         :return: Caseplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1139,9 +1215,8 @@ class CaseManagementApi(object):
 
     def get_casemanagement_caseplan_version_dataschemas(self, caseplan_id: str, version_id: str, **kwargs) -> 'CaseplanDataSchemaListing':
         """
-        Get the dataSchemas for a caseplan version.
+        Get the data schemas for a Caseplan version.
         
-	    get_casemanagement_caseplan_version_dataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1153,8 +1228,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str version_id: Version of the caseplan (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str version_id: Caseplan version identifier. (required)
         :return: CaseplanDataSchemaListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1228,7 +1303,6 @@ class CaseManagementApi(object):
         """
         Get the intake settings for a Caseplan version.
         
-	    get_casemanagement_caseplan_version_intakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1240,8 +1314,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str version_id: Version of the caseplan (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str version_id: Caseplan version identifier. (required)
         :return: IntakeSettingsListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1315,7 +1389,6 @@ class CaseManagementApi(object):
         """
         Get a Stageplan.
         
-	    get_casemanagement_caseplan_version_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1327,10 +1400,10 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str version_id: Version ID (required)
-        :param str stageplan_id: Stageplan ID (required)
-        :param list[str] expands: Which fields to expand.
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str version_id: Caseplan version identifier. (required)
+        :param str stageplan_id: Stageplan identifier. (required)
+        :param list[str] expands: Fields to expand.
         :return: Stageplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1413,7 +1486,6 @@ class CaseManagementApi(object):
         """
         Get a Stepplan.
         
-	    get_casemanagement_caseplan_version_stageplan_stepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1425,11 +1497,11 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str version_id: Version ID (required)
-        :param str stageplan_id: Stageplan ID (required)
-        :param str stepplan_id: Stepplan ID (required)
-        :param list[str] expands: Which fields to expand.
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str version_id: Caseplan version identifier. (required)
+        :param str stageplan_id: Stageplan identifier. (required)
+        :param str stepplan_id: Stepplan identifier. (required)
+        :param list[str] expands: Fields to expand.
         :return: Stepplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1519,7 +1591,6 @@ class CaseManagementApi(object):
         """
         Get a list of Stepplans.
         
-	    get_casemanagement_caseplan_version_stageplan_stepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1531,13 +1602,13 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str version_id: Version ID (required)
-        :param str stageplan_id: Stageplan ID (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str version_id: Caseplan version identifier. (required)
+        :param str stageplan_id: Stageplan identifier. (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
-        :param list[str] expands: Which fields to expand.
+        :param list[str] expands: Fields to expand.
         :return: StepplanListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1626,7 +1697,6 @@ class CaseManagementApi(object):
         """
         Get a list of Stageplans.
         
-	    get_casemanagement_caseplan_version_stageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1638,12 +1708,12 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str version_id: Version ID (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str version_id: Caseplan version identifier. (required)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 200.
-        :param list[str] expands: Which fields to expand.
+        :param list[str] expands: Fields to expand.
         :return: StageplanListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1725,7 +1795,6 @@ class CaseManagementApi(object):
         """
         Get a list of Caseplans.
         
-	    get_casemanagement_caseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1737,10 +1806,10 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str after: The cursor that points to the end of the set of caseplans that has been returned.
-        :param int page_size: Number of caseplans to return. Maximum of 200.
-        :param str customer_intent_id: Filter by Customer Intent.
-        :param str division_ids: Filter by Divisions.
+        :param str after: Cursor that points to the end of the previously returned set of Caseplans.
+        :param int page_size: Number of Caseplans to return. Maximum is 200.
+        :param str customer_intent_id: Filter by customer intent.
+        :param str division_ids: Filter by divisions.
         :return: CaseplanListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1810,9 +1879,8 @@ class CaseManagementApi(object):
 
     def get_casemanagement_cases_externalcontact(self, external_contact_id: str, **kwargs) -> 'CaseListing':
         """
-        Get a list of cases for provided external contact id.
+        Get a list of Cases for an External Contact.
         
-	    get_casemanagement_cases_externalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1824,11 +1892,11 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str external_contact_id: External Contact ID (required)
-        :param str after: The cursor that points to the end of the set of cases that has been returned.
-        :param int page_size: Number of cases to return. Maximum of 200.
-        :param str division_ids: Filter by Divisions
-        :param list[str] expands: Which fields to expand.
+        :param str external_contact_id: External contact identifier. (required)
+        :param str after: Cursor pointing to the end of the previously returned page of Cases.
+        :param int page_size: Number of Cases to return (maximum 200).
+        :param str division_ids: Filter by divisions.
+        :param list[str] expands: Fields to expand.
         :return: CaseListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1907,7 +1975,6 @@ class CaseManagementApi(object):
         """
         Get a Case by reference.
         
-	    get_casemanagement_cases_reference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1919,8 +1986,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str reference_id: Reference (required)
-        :param str expands: Which fields to expand.
+        :param str reference_id: Case reference. (required)
+        :param str expands: Fields to expand.
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1987,9 +2054,8 @@ class CaseManagementApi(object):
 
     def patch_casemanagement_case_datedue(self, case_id: str, body: 'CaseDateDueUpdate', **kwargs) -> 'Case':
         """
-        Update date due of a Case.
+        Update the due date of a Case.
         
-	    patch_casemanagement_case_datedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2001,8 +2067,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param CaseDateDueUpdate body: Date due (required)
+        :param str case_id: Case identifier. (required)
+        :param CaseDateDueUpdate body: Due date update. (required)
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2074,7 +2140,6 @@ class CaseManagementApi(object):
         """
         Update priority of a Case.
         
-	    patch_casemanagement_case_priority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2086,8 +2151,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param CasePriorityUpdate body: Priority (required)
+        :param str case_id: Case identifier. (required)
+        :param CasePriorityUpdate body: Priority update. (required)
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2159,7 +2224,6 @@ class CaseManagementApi(object):
         """
         Update summary of a Case.
         
-	    patch_casemanagement_case_summary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2171,8 +2235,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
-        :param CaseSummaryUpdate body: Summary (required)
+        :param str case_id: Case identifier. (required)
+        :param CaseSummaryUpdate body: Summary update. (required)
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2244,7 +2308,6 @@ class CaseManagementApi(object):
         """
         Update the attributes of a Caseplan.
         
-	    patch_casemanagement_caseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2256,8 +2319,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param CaseplanUpdate body: Caseplan (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param CaseplanUpdate body: Caseplan update. (required)
         :return: Caseplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2331,7 +2394,6 @@ class CaseManagementApi(object):
         """
         Update the attributes of a Stageplan.
         
-	    patch_casemanagement_caseplan_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2343,9 +2405,9 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str stageplan_id: Stageplan ID (required)
-        :param StageplanUpdate body: Stageplan (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str stageplan_id: Stageplan identifier. (required)
+        :param StageplanUpdate body: Stageplan update. (required)
         :return: Stageplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2426,7 +2488,6 @@ class CaseManagementApi(object):
         """
         Update the attributes of a Stepplan.
         
-	    patch_casemanagement_caseplan_stageplan_stepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2438,10 +2499,10 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param str stageplan_id: Stageplan ID (required)
-        :param str stepplan_id: Stepplan ID (required)
-        :param StepplanUpdate body: Stepplan (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str stageplan_id: Stageplan identifier. (required)
+        :param str stepplan_id: Stepplan identifier. (required)
+        :param StepplanUpdate body: Stepplan update. (required)
         :return: Stepplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2525,11 +2586,10 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_casemanagement_case_associations(self, case_id: str, **kwargs) -> 'CaseAssociation':
+    def post_casemanagement_case_associations(self, case_id: str, body: 'CaseAssociationCreate', **kwargs) -> 'CaseAssociation':
         """
-        Create a case association.
+        Create a Case association.
         
-	    post_casemanagement_case_associations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2537,12 +2597,12 @@ class CaseManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_casemanagement_case_associations(case_id, callback=callback_function)
+        >>> thread = api.post_casemanagement_case_associations(case_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID. (required)
-        :param CaseAssociationCreate body: Case Association
+        :param str case_id: Case identifier. (required)
+        :param CaseAssociationCreate body: Case association create request. (required)
         :return: CaseAssociation
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2564,6 +2624,9 @@ class CaseManagementApi(object):
         # verify the required parameter 'case_id' is set
         if ('case_id' not in params) or (params['case_id'] is None):
             raise ValueError("Missing the required parameter `case_id` when calling `post_casemanagement_case_associations`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_case_associations`")
 
         if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `post_casemanagement_case_associations`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
@@ -2613,7 +2676,6 @@ class CaseManagementApi(object):
         """
         Create a Terminate Job for a Case.
         
-	    post_casemanagement_case_terminate_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2625,7 +2687,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str case_id: Case ID (required)
+        :param str case_id: Case identifier. (required)
         :return: TerminateJob
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2690,11 +2752,96 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_casemanagement_caseplan_dataschemas(self, caseplan_id: str, body: 'CaseplanDataSchemaRequest', **kwargs) -> 'CaseplanDataSchema':
+        """
+        Add a data schema to a draft Caseplan.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_casemanagement_caseplan_dataschemas(caseplan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param CaseplanDataSchemaRequest body: Data schema reference. (required)
+        :return: CaseplanDataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['caseplan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_casemanagement_caseplan_dataschemas" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'caseplan_id' is set
+        if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
+            raise ValueError("Missing the required parameter `caseplan_id` when calling `post_casemanagement_caseplan_dataschemas`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_caseplan_dataschemas`")
+
+        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+            raise ValueError("Invalid value for parameter `caseplan_id` when calling `post_casemanagement_caseplan_dataschemas`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas'.replace('{format}', 'json')
+        path_params = {}
+        if 'caseplan_id' in params:
+            path_params['caseplanId'] = params['caseplan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CaseplanDataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_casemanagement_caseplan_publish(self, caseplan_id: str, **kwargs) -> 'Caseplan':
         """
         Publish Caseplan.
         
-	    post_casemanagement_caseplan_publish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2706,7 +2853,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
+        :param str caseplan_id: Caseplan identifier. (required)
         :return: Caseplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2775,7 +2922,6 @@ class CaseManagementApi(object):
         """
         Create Caseplan version.
         
-	    post_casemanagement_caseplan_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2787,7 +2933,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
+        :param str caseplan_id: Caseplan identifier. (required)
         :return: Caseplan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2856,7 +3002,6 @@ class CaseManagementApi(object):
         """
         Create a Caseplan.
         
-	    post_casemanagement_caseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2868,7 +3013,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CaseplanCreate body: Caseplan (required)
+        :param CaseplanCreate body: Caseplan create request. (required)
         :return: CaseplanCreateResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2933,9 +3078,8 @@ class CaseManagementApi(object):
 
     def post_casemanagement_caseplans_query(self, body: 'CaseplanQueryRequest', **kwargs) -> 'CaseplanQueryEntityListing':
         """
-        Query for caseplans
+        Query for Caseplans.
         
-	    post_casemanagement_caseplans_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2947,7 +3091,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CaseplanQueryRequest body: CaseplanQueryRequest (required)
+        :param CaseplanQueryRequest body: Caseplan query request. (required)
         :return: CaseplanQueryEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3014,7 +3158,6 @@ class CaseManagementApi(object):
         """
         Create a Case.
         
-	    post_casemanagement_cases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3026,7 +3169,7 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CaseCreate body: Case (required)
+        :param CaseCreate body: Case create request. (required)
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3089,11 +3232,10 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_casemanagement_cases_associations_query(self, **kwargs) -> 'CaseAssociationQueryEntityListing':
+    def post_casemanagement_cases_associations_query(self, body: 'CaseAssociationQuery', **kwargs) -> 'CaseAssociationQueryEntityListing':
         """
-        Query for case associations
+        Query for Case associations by interaction.
         
-	    post_casemanagement_cases_associations_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3101,11 +3243,11 @@ class CaseManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_casemanagement_cases_associations_query(callback=callback_function)
+        >>> thread = api.post_casemanagement_cases_associations_query(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CaseAssociationQuery body: Case Association
+        :param CaseAssociationQuery body: Case association query request. (required)
         :return: CaseAssociationQueryEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3124,6 +3266,9 @@ class CaseManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_cases_associations_query`")
 
 
         resource_path = '/api/v2/casemanagement/cases/associations/query'.replace('{format}', 'json')
@@ -3165,11 +3310,102 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_casemanagement_caseplan_dataschema(self, caseplan_id: str, schema_key_name: str, body: 'CaseplanDataSchemaRequest', **kwargs) -> 'CaseplanDataSchema':
+        """
+        Update a data schema on a draft Caseplan.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str schema_key_name: Schema key (for example \"default\"). (required)
+        :param CaseplanDataSchemaRequest body: Data schema reference. (required)
+        :return: CaseplanDataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['caseplan_id', 'schema_key_name', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_casemanagement_caseplan_dataschema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'caseplan_id' is set
+        if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
+            raise ValueError("Missing the required parameter `caseplan_id` when calling `put_casemanagement_caseplan_dataschema`")
+        # verify the required parameter 'schema_key_name' is set
+        if ('schema_key_name' not in params) or (params['schema_key_name'] is None):
+            raise ValueError("Missing the required parameter `schema_key_name` when calling `put_casemanagement_caseplan_dataschema`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_casemanagement_caseplan_dataschema`")
+
+        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+            raise ValueError("Invalid value for parameter `caseplan_id` when calling `put_casemanagement_caseplan_dataschema`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}'.replace('{format}', 'json')
+        path_params = {}
+        if 'caseplan_id' in params:
+            path_params['caseplanId'] = params['caseplan_id']
+        if 'schema_key_name' in params:
+            path_params['schemaKeyName'] = params['schema_key_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CaseplanDataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_casemanagement_caseplan_intakesettings(self, caseplan_id: str, body: 'IntakeSettingsUpdate', **kwargs) -> 'IntakeSettingsListing':
         """
         Update the intake settings for a Caseplan.
         
-	    put_casemanagement_caseplan_intakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3181,8 +3417,8 @@ class CaseManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str caseplan_id: Caseplan ID (required)
-        :param IntakeSettingsUpdate body: Intake Settings (required)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param IntakeSettingsUpdate body: Intake settings update. (required)
         :return: IntakeSettingsListing
                  If the method is called asynchronously,
                  returns the request thread.

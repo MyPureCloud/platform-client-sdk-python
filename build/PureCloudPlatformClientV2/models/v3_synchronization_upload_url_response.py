@@ -31,6 +31,9 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import V3SynchronizationRef
+    from . import V3SynchronizationUploadMetadata
 
 class V3SynchronizationUploadUrlResponse(object):
     """
@@ -47,17 +50,128 @@ class V3SynchronizationUploadUrlResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'file_id': 'str',
+            'file_name': 'str',
+            'metadata': 'V3SynchronizationUploadMetadata',
+            'synchronization': 'V3SynchronizationRef',
             'url': 'str',
-            'headers': 'dict(str, str)'
+            'headers': 'dict(str, str)',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'file_id': 'fileId',
+            'file_name': 'fileName',
+            'metadata': 'metadata',
+            'synchronization': 'synchronization',
             'url': 'url',
-            'headers': 'headers'
+            'headers': 'headers',
+            'self_uri': 'selfUri'
         }
 
+        self._file_id = None
+        self._file_name = None
+        self._metadata = None
+        self._synchronization = None
         self._url = None
         self._headers = None
+        self._self_uri = None
+
+    @property
+    def file_id(self) -> str:
+        """
+        Gets the file_id of this V3SynchronizationUploadUrlResponse.
+        The unique identifier for the upload object.
+
+        :return: The file_id of this V3SynchronizationUploadUrlResponse.
+        :rtype: str
+        """
+        return self._file_id
+
+    @file_id.setter
+    def file_id(self, file_id: str) -> None:
+        """
+        Sets the file_id of this V3SynchronizationUploadUrlResponse.
+        The unique identifier for the upload object.
+
+        :param file_id: The file_id of this V3SynchronizationUploadUrlResponse.
+        :type: str
+        """
+        
+
+        self._file_id = file_id
+
+    @property
+    def file_name(self) -> str:
+        """
+        Gets the file_name of this V3SynchronizationUploadUrlResponse.
+        Name of the uploaded file.
+
+        :return: The file_name of this V3SynchronizationUploadUrlResponse.
+        :rtype: str
+        """
+        return self._file_name
+
+    @file_name.setter
+    def file_name(self, file_name: str) -> None:
+        """
+        Sets the file_name of this V3SynchronizationUploadUrlResponse.
+        Name of the uploaded file.
+
+        :param file_name: The file_name of this V3SynchronizationUploadUrlResponse.
+        :type: str
+        """
+        
+
+        self._file_name = file_name
+
+    @property
+    def metadata(self) -> 'V3SynchronizationUploadMetadata':
+        """
+        Gets the metadata of this V3SynchronizationUploadUrlResponse.
+        The metadata of the uploaded file
+
+        :return: The metadata of this V3SynchronizationUploadUrlResponse.
+        :rtype: V3SynchronizationUploadMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata: 'V3SynchronizationUploadMetadata') -> None:
+        """
+        Sets the metadata of this V3SynchronizationUploadUrlResponse.
+        The metadata of the uploaded file
+
+        :param metadata: The metadata of this V3SynchronizationUploadUrlResponse.
+        :type: V3SynchronizationUploadMetadata
+        """
+        
+
+        self._metadata = metadata
+
+    @property
+    def synchronization(self) -> 'V3SynchronizationRef':
+        """
+        Gets the synchronization of this V3SynchronizationUploadUrlResponse.
+        The synchronization of the file upload.
+
+        :return: The synchronization of this V3SynchronizationUploadUrlResponse.
+        :rtype: V3SynchronizationRef
+        """
+        return self._synchronization
+
+    @synchronization.setter
+    def synchronization(self, synchronization: 'V3SynchronizationRef') -> None:
+        """
+        Sets the synchronization of this V3SynchronizationUploadUrlResponse.
+        The synchronization of the file upload.
+
+        :param synchronization: The synchronization of this V3SynchronizationUploadUrlResponse.
+        :type: V3SynchronizationRef
+        """
+        
+
+        self._synchronization = synchronization
 
     @property
     def url(self) -> str:
@@ -106,6 +220,30 @@ class V3SynchronizationUploadUrlResponse(object):
         
 
         self._headers = headers
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this V3SynchronizationUploadUrlResponse.
+        The URI for this object
+
+        :return: The self_uri of this V3SynchronizationUploadUrlResponse.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this V3SynchronizationUploadUrlResponse.
+        The URI for this object
+
+        :param self_uri: The self_uri of this V3SynchronizationUploadUrlResponse.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

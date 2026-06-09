@@ -294,7 +294,7 @@ class CaseplanCreate(object):
     def division_id(self) -> str:
         """
         Gets the division_id of this CaseplanCreate.
-        The ID of the division the Caseplan belongs to. Use '*' for divisionless caseplans.
+        The ID of the division the Caseplan belongs to. Use '*' for divisionless Caseplans.
 
         :return: The division_id of this CaseplanCreate.
         :rtype: str
@@ -305,7 +305,7 @@ class CaseplanCreate(object):
     def division_id(self, division_id: str) -> None:
         """
         Sets the division_id of this CaseplanCreate.
-        The ID of the division the Caseplan belongs to. Use '*' for divisionless caseplans.
+        The ID of the division the Caseplan belongs to. Use '*' for divisionless Caseplans.
 
         :param division_id: The division_id of this CaseplanCreate.
         :type: str
@@ -321,7 +321,7 @@ class CaseplanCreate(object):
     def data_schemas(self) -> List['CaseplanDataSchema']:
         """
         Gets the data_schemas of this CaseplanCreate.
-        The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
+        The schemas that define all data for Cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
 
         :return: The data_schemas of this CaseplanCreate.
         :rtype: list[CaseplanDataSchema]
@@ -332,7 +332,7 @@ class CaseplanCreate(object):
     def data_schemas(self, data_schemas: List['CaseplanDataSchema']) -> None:
         """
         Sets the data_schemas of this CaseplanCreate.
-        The schemas that define all data for cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
+        The schemas that define all data for Cases from this Caseplan. The schema must be defined in the TaskManagement namespace. Omit or leave null to create a draft Caseplan without a schema; assign a schema before publish.
 
         :param data_schemas: The data_schemas of this CaseplanCreate.
         :type: list[CaseplanDataSchema]
@@ -345,7 +345,7 @@ class CaseplanCreate(object):
     def intake_settings(self) -> List['IntakeSetting']:
         """
         Gets the intake_settings of this CaseplanCreate.
-        The intake format when collecting data for a case from this caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.
+        The intake format when collecting data for a Case from this Caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.
 
         :return: The intake_settings of this CaseplanCreate.
         :rtype: list[IntakeSetting]
@@ -356,7 +356,7 @@ class CaseplanCreate(object):
     def intake_settings(self, intake_settings: List['IntakeSetting']) -> None:
         """
         Sets the intake_settings of this CaseplanCreate.
-        The intake format when collecting data for a case from this caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.
+        The intake format when collecting data for a Case from this Caseplan. There can be a maximum of 10 IntakeSettings defined for a Caseplan.
 
         :param intake_settings: The intake_settings of this CaseplanCreate.
         :type: list[IntakeSetting]

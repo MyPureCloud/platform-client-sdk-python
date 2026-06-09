@@ -184,6 +184,8 @@ from .agent_schedule_shift_activity import AgentScheduleShiftActivity
 from .agent_schedule_unavailable_time import AgentScheduleUnavailableTime
 from .agent_scoring_rule import AgentScoringRule
 from .agent_scoring_rule_entity_listing import AgentScoringRuleEntityListing
+from .agent_state_activity_category_count import AgentStateActivityCategoryCount
+from .agent_state_adherence_state_count import AgentStateAdherenceStateCount
 from .agent_state_agent_query_clause import AgentStateAgentQueryClause
 from .agent_state_agent_query_predicate import AgentStateAgentQueryPredicate
 from .agent_state_counts_request import AgentStateCountsRequest
@@ -314,6 +316,7 @@ from .apple_integration import AppleIntegration
 from .apple_integration_entity_listing import AppleIntegrationEntityListing
 from .apple_integration_request import AppleIntegrationRequest
 from .apple_integration_update_request import AppleIntegrationUpdateRequest
+from .apple_invitation import AppleInvitation
 from .apple_opaque_id import AppleOpaqueId
 from .apple_pay import ApplePay
 from .approval_namespace import ApprovalNamespace
@@ -627,6 +630,8 @@ from .bu_update_agent_schedule_shift import BuUpdateAgentScheduleShift
 from .bu_update_agent_schedule_upload_schema import BuUpdateAgentScheduleUploadSchema
 from .bu_update_time_off_plan_request import BuUpdateTimeOffPlanRequest
 from .bu_user_listing import BuUserListing
+from .bulk_add_decision_table_rows_request import BulkAddDecisionTableRowsRequest
+from .bulk_add_decision_table_rows_response import BulkAddDecisionTableRowsResponse
 from .bulk_add_opportunities_request import BulkAddOpportunitiesRequest
 from .bulk_add_opportunities_response import BulkAddOpportunitiesResponse
 from .bulk_add_source_intents_request import BulkAddSourceIntentsRequest
@@ -637,6 +642,7 @@ from .bulk_contacts_enrich_request import BulkContactsEnrichRequest
 from .bulk_contacts_enrich_response import BulkContactsEnrichResponse
 from .bulk_contacts_request import BulkContactsRequest
 from .bulk_contacts_response import BulkContactsResponse
+from .bulk_delete_decision_table_rows_request import BulkDeleteDecisionTableRowsRequest
 from .bulk_delete_response import BulkDeleteResponse
 from .bulk_entity_error_contact_enrich_request import BulkEntityErrorContactEnrichRequest
 from .bulk_entity_error_entity import BulkEntityErrorEntity
@@ -701,6 +707,8 @@ from .bulk_result import BulkResult
 from .bulk_results import BulkResults
 from .bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .bulk_source_intents_response import BulkSourceIntentsResponse
+from .bulk_update_decision_table_rows_request import BulkUpdateDecisionTableRowsRequest
+from .bulk_update_decision_table_rows_response import BulkUpdateDecisionTableRowsResponse
 from .bulk_update_opportunity_enrollments_status_response import BulkUpdateOpportunityEnrollmentsStatusResponse
 from .bulk_update_shift_trade_list_job_request import BulkUpdateShiftTradeListJobRequest
 from .bulk_update_shift_trade_state_request_item import BulkUpdateShiftTradeStateRequestItem
@@ -871,6 +879,7 @@ from .caseplan_create import CaseplanCreate
 from .caseplan_create_response import CaseplanCreateResponse
 from .caseplan_data_schema import CaseplanDataSchema
 from .caseplan_data_schema_listing import CaseplanDataSchemaListing
+from .caseplan_data_schema_request import CaseplanDataSchemaRequest
 from .caseplan_listing import CaseplanListing
 from .caseplan_query_entity_listing import CaseplanQueryEntityListing
 from .caseplan_query_request import CaseplanQueryRequest
@@ -1094,6 +1103,7 @@ from .contacts_export import ContactsExport
 from .contacts_export_field_filter import ContactsExportFieldFilter
 from .contacts_export_field_list_filter import ContactsExportFieldListFilter
 from .contacts_export_filter import ContactsExportFilter
+from .contacts_export_listing import ContactsExportListing
 from .contacts_export_query_conditions import ContactsExportQueryConditions
 from .contacts_export_request import ContactsExportRequest
 from .contacts_patch_change import ContactsPatchChange
@@ -1542,6 +1552,7 @@ from .conversation_summaries_get_response import ConversationSummariesGetRespons
 from .conversation_summary import ConversationSummary
 from .conversation_summary_extracted_entity import ConversationSummaryExtractedEntity
 from .conversation_summary_followup import ConversationSummaryFollowup
+from .conversation_summary_label import ConversationSummaryLabel
 from .conversation_summary_reason import ConversationSummaryReason
 from .conversation_summary_resolution import ConversationSummaryResolution
 from .conversation_summary_topic_conversation_followup_action import ConversationSummaryTopicConversationFollowupAction
@@ -1647,6 +1658,7 @@ from .create_callback_response import CreateCallbackResponse
 from .create_capacity_plan_staffing_group_metric_change_request import CreateCapacityPlanStaffingGroupMetricChangeRequest
 from .create_coaching_appointment_request import CreateCoachingAppointmentRequest
 from .create_decision_table_columns_request import CreateDecisionTableColumnsRequest
+from .create_decision_table_import_job_request import CreateDecisionTableImportJobRequest
 from .create_decision_table_request import CreateDecisionTableRequest
 from .create_decision_table_row_request import CreateDecisionTableRowRequest
 from .create_email_request import CreateEmailRequest
@@ -1663,6 +1675,7 @@ from .create_management_unit_api_request import CreateManagementUnitApiRequest
 from .create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .create_metric import CreateMetric
 from .create_objective import CreateObjective
+from .create_organization_link import CreateOrganizationLink
 from .create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .create_outbound_messaging_conversation_response import CreateOutboundMessagingConversationResponse
 from .create_performance_profile import CreatePerformanceProfile
@@ -1819,9 +1832,18 @@ from .decision_table_columns import DecisionTableColumns
 from .decision_table_contract import DecisionTableContract
 from .decision_table_execution_request import DecisionTableExecutionRequest
 from .decision_table_execution_response import DecisionTableExecutionResponse
+from .decision_table_export_job import DecisionTableExportJob
+from .decision_table_export_job_error import DecisionTableExportJobError
+from .decision_table_export_job_listing import DecisionTableExportJobListing
+from .decision_table_export_job_request import DecisionTableExportJobRequest
+from .decision_table_import_job import DecisionTableImportJob
+from .decision_table_import_job_error import DecisionTableImportJobError
+from .decision_table_import_job_listing import DecisionTableImportJobListing
+from .decision_table_import_row_metrics import DecisionTableImportRowMetrics
 from .decision_table_input_column import DecisionTableInputColumn
 from .decision_table_input_column_expression import DecisionTableInputColumnExpression
 from .decision_table_input_column_request import DecisionTableInputColumnRequest
+from .decision_table_job_validation_error import DecisionTableJobValidationError
 from .decision_table_listing import DecisionTableListing
 from .decision_table_output_column import DecisionTableOutputColumn
 from .decision_table_output_column_request import DecisionTableOutputColumnRequest
@@ -1981,6 +2003,7 @@ from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disable_site_connections_request import DisableSiteConnectionsRequest
 from .disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
+from .disaster_recovery_all_routing_request import DisasterRecoveryAllRoutingRequest
 from .disconnect_reason import DisconnectReason
 from .disposition import Disposition
 from .disposition_amd_timeout import DispositionAmdTimeout
@@ -2207,6 +2230,7 @@ from .email_progress_transfer_event import EmailProgressTransferEvent
 from .email_routing_established_event import EmailRoutingEstablishedEvent
 from .email_routing_transfer_event import EmailRoutingTransferEvent
 from .email_setting import EmailSetting
+from .email_setting_entity_listing import EmailSettingEntityListing
 from .email_setting_reference import EmailSettingReference
 from .email_settings import EmailSettings
 from .email_setup import EmailSetup
@@ -2339,7 +2363,6 @@ from .expandable_web_deployment_entity_listing import ExpandableWebDeploymentEnt
 from .expansion_criterium import ExpansionCriterium
 from .expired_edge_listing import ExpiredEdgeListing
 from .export_details import ExportDetails
-from .export_listing import ExportListing
 from .export_script_request import ExportScriptRequest
 from .export_script_response import ExportScriptResponse
 from .export_uri import ExportUri
@@ -3636,6 +3659,10 @@ from .nuance_mix_dlg_settings import NuanceMixDlgSettings
 from .nuance_organization import NuanceOrganization
 from .number import Number
 from .number_plan import NumberPlan
+from .number_routing import NumberRouting
+from .number_routing_listing import NumberRoutingListing
+from .number_routing_request import NumberRoutingRequest
+from .number_routing_reset_organization_request import NumberRoutingResetOrganizationRequest
 from .numeric_range import NumericRange
 from .o_auth_apple_authorization_response import OAuthAppleAuthorizationResponse
 from .o_auth_apple_authorization_response_error import OAuthAppleAuthorizationResponseError
@@ -3726,6 +3753,9 @@ from .org_whitelist_settings import OrgWhitelistSettings
 from .organization import Organization
 from .organization_call_metrics import OrganizationCallMetrics
 from .organization_features import OrganizationFeatures
+from .organization_link import OrganizationLink
+from .organization_link_approval_request import OrganizationLinkApprovalRequest
+from .organization_link_response import OrganizationLinkResponse
 from .organization_presence import OrganizationPresence
 from .organization_presence_definition import OrganizationPresenceDefinition
 from .organization_presence_definition_entity_listing import OrganizationPresenceDefinitionEntityListing
@@ -4493,6 +4523,7 @@ from .recording_message_receipt import RecordingMessageReceipt
 from .recording_message_receipt_reason import RecordingMessageReceiptReason
 from .recording_messaging_message import RecordingMessagingMessage
 from .recording_metadata import RecordingMetadata
+from .recording_notification_response import RecordingNotificationResponse
 from .recording_notification_template import RecordingNotificationTemplate
 from .recording_retention import RecordingRetention
 from .recording_retention_cursor_entity_listing import RecordingRetentionCursorEntityListing
@@ -4515,6 +4546,7 @@ from .recurrence_period import RecurrencePeriod
 from .recurrence_settings import RecurrenceSettings
 from .recurrence_settings_base import RecurrenceSettingsBase
 from .referrer import Referrer
+from .region_response import RegionResponse
 from .region_time_zone import RegionTimeZone
 from .register_architect_export_job import RegisterArchitectExportJob
 from .register_architect_export_job_response import RegisterArchitectExportJobResponse
@@ -4649,6 +4681,7 @@ from .routing_status_detail_query_clause import RoutingStatusDetailQueryClause
 from .routing_status_detail_query_filter import RoutingStatusDetailQueryFilter
 from .routing_status_detail_query_predicate import RoutingStatusDetailQueryPredicate
 from .routing_transfer_event import RoutingTransferEvent
+from .row import Row
 from .row_search_filter import RowSearchFilter
 from .row_search_predicate import RowSearchPredicate
 from .rule_config import RuleConfig
@@ -4678,6 +4711,9 @@ from .schedule_group_entity_listing import ScheduleGroupEntityListing
 from .schedule_interval import ScheduleInterval
 from .schedule_reference_with_business_unit import ScheduleReferenceWithBusinessUnit
 from .schedule_upload_processing_response import ScheduleUploadProcessingResponse
+from .schedule_visibility_range import ScheduleVisibilityRange
+from .schedule_visibility_settings_request import ScheduleVisibilitySettingsRequest
+from .schedule_visibility_settings_response import ScheduleVisibilitySettingsResponse
 from .scheduled_trigger import ScheduledTrigger
 from .scheduled_trigger_entity_listing import ScheduledTriggerEntityListing
 from .scheduler_message_argument import SchedulerMessageArgument
@@ -4937,6 +4973,7 @@ from .social_media_query_predicate import SocialMediaQueryPredicate
 from .social_media_query_sort import SocialMediaQuerySort
 from .social_media_statistical_response import SocialMediaStatisticalResponse
 from .social_media_statistical_summary import SocialMediaStatisticalSummary
+from .social_numeric_range import SocialNumericRange
 from .social_topic_patch_request import SocialTopicPatchRequest
 from .social_topic_request import SocialTopicRequest
 from .social_topic_response import SocialTopicResponse
@@ -5205,6 +5242,7 @@ from .text_bots_rich_media_input_event import TextBotsRichMediaInputEvent
 from .text_message_listing import TextMessageListing
 from .text_style_properties import TextStyleProperties
 from .third_party_suggestion import ThirdPartySuggestion
+from .third_party_suggestion_source import ThirdPartySuggestionSource
 from .ticker import Ticker
 from .time_allowed import TimeAllowed
 from .time_and_date_sub_condition import TimeAndDateSubCondition
@@ -5413,6 +5451,7 @@ from .update_coaching_appointment_request import UpdateCoachingAppointmentReques
 from .update_conference_request import UpdateConferenceRequest
 from .update_contact_column_action_settings import UpdateContactColumnActionSettings
 from .update_decision_table_columns_request import UpdateDecisionTableColumnsRequest
+from .update_decision_table_import_job_request import UpdateDecisionTableImportJobRequest
 from .update_decision_table_request import UpdateDecisionTableRequest
 from .update_decision_table_version_request import UpdateDecisionTableVersionRequest
 from .update_draft_input import UpdateDraftInput
@@ -5711,10 +5750,12 @@ from .v3_source_last_synchronization import V3SourceLastSynchronization
 from .v3_source_ref import V3SourceRef
 from .v3_source_schedule_settings import V3SourceScheduleSettings
 from .v3_source_site_details import V3SourceSiteDetails
+from .v3_source_tag_filter import V3SourceTagFilter
 from .v3_source_update_request import V3SourceUpdateRequest
 from .v3_start_manual_sync_request import V3StartManualSyncRequest
 from .v3_synchronization import V3Synchronization
 from .v3_synchronization_listing import V3SynchronizationListing
+from .v3_synchronization_ref import V3SynchronizationRef
 from .v3_synchronization_statistics import V3SynchronizationStatistics
 from .v3_synchronization_update_request import V3SynchronizationUpdateRequest
 from .v3_synchronization_upload_metadata import V3SynchronizationUploadMetadata

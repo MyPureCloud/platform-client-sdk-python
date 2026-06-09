@@ -6,9 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **workitem_id** | str | The ID of the workitem to associate with the case. | [optional] |
-| **conversation_id** | str | The ID of the conversation to associate with the case. | [optional] |
+| **workitem_id** | str | The ID of the Workitem to associate with the Case. | [optional] |
+| **conversation_id** | str | The ID of the Conversation to associate with the Case. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

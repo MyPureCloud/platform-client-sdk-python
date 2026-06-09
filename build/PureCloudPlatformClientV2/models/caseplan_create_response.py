@@ -288,7 +288,7 @@ class CaseplanCreateResponse(object):
     def default_case_owner(self) -> 'UserReference':
         """
         Gets the default_case_owner of this CaseplanCreateResponse.
-        The default case owner for Cases created from the Caseplan.
+        The default Case owner for Cases created from the Caseplan.
 
         :return: The default_case_owner of this CaseplanCreateResponse.
         :rtype: UserReference
@@ -299,7 +299,7 @@ class CaseplanCreateResponse(object):
     def default_case_owner(self, default_case_owner: 'UserReference') -> None:
         """
         Sets the default_case_owner of this CaseplanCreateResponse.
-        The default case owner for Cases created from the Caseplan.
+        The default Case owner for Cases created from the Caseplan.
 
         :param default_case_owner: The default_case_owner of this CaseplanCreateResponse.
         :type: UserReference
@@ -432,7 +432,7 @@ class CaseplanCreateResponse(object):
     def modified_by(self) -> 'UserReference':
         """
         Gets the modified_by of this CaseplanCreateResponse.
-        The id of the User who modified the Caseplan.
+        The ID of the User who modified the Caseplan.
 
         :return: The modified_by of this CaseplanCreateResponse.
         :rtype: UserReference
@@ -443,7 +443,7 @@ class CaseplanCreateResponse(object):
     def modified_by(self, modified_by: 'UserReference') -> None:
         """
         Sets the modified_by of this CaseplanCreateResponse.
-        The id of the User who modified the Caseplan.
+        The ID of the User who modified the Caseplan.
 
         :param modified_by: The modified_by of this CaseplanCreateResponse.
         :type: UserReference
@@ -456,7 +456,7 @@ class CaseplanCreateResponse(object):
     def customer_intent(self) -> 'CustomerIntentReference':
         """
         Gets the customer_intent of this CaseplanCreateResponse.
-        The customer intent for the Cases created from the caseplan.
+        The customer intent for Cases created from this Caseplan.
 
         :return: The customer_intent of this CaseplanCreateResponse.
         :rtype: CustomerIntentReference
@@ -467,7 +467,7 @@ class CaseplanCreateResponse(object):
     def customer_intent(self, customer_intent: 'CustomerIntentReference') -> None:
         """
         Sets the customer_intent of this CaseplanCreateResponse.
-        The customer intent for the Cases created from the caseplan.
+        The customer intent for Cases created from this Caseplan.
 
         :param customer_intent: The customer_intent of this CaseplanCreateResponse.
         :type: CustomerIntentReference
@@ -509,7 +509,7 @@ class CaseplanCreateResponse(object):
     def data_schemas(self) -> List['CaseplanDataSchema']:
         """
         Gets the data_schemas of this CaseplanCreateResponse.
-        The schemas that define all data for cases from this Caseplan.
+        The schemas that define all data for Cases from this Caseplan.
 
         :return: The data_schemas of this CaseplanCreateResponse.
         :rtype: list[CaseplanDataSchema]
@@ -520,7 +520,7 @@ class CaseplanCreateResponse(object):
     def data_schemas(self, data_schemas: List['CaseplanDataSchema']) -> None:
         """
         Sets the data_schemas of this CaseplanCreateResponse.
-        The schemas that define all data for cases from this Caseplan.
+        The schemas that define all data for Cases from this Caseplan.
 
         :param data_schemas: The data_schemas of this CaseplanCreateResponse.
         :type: list[CaseplanDataSchema]
@@ -533,7 +533,7 @@ class CaseplanCreateResponse(object):
     def intake_settings(self) -> List['IntakeSetting']:
         """
         Gets the intake_settings of this CaseplanCreateResponse.
-        The intake format when collecting data for a case from this caseplan.
+        The intake format when collecting data for a Case from this Caseplan.
 
         :return: The intake_settings of this CaseplanCreateResponse.
         :rtype: list[IntakeSetting]
@@ -544,7 +544,7 @@ class CaseplanCreateResponse(object):
     def intake_settings(self, intake_settings: List['IntakeSetting']) -> None:
         """
         Sets the intake_settings of this CaseplanCreateResponse.
-        The intake format when collecting data for a case from this caseplan.
+        The intake format when collecting data for a Case from this Caseplan.
 
         :param intake_settings: The intake_settings of this CaseplanCreateResponse.
         :type: list[IntakeSetting]

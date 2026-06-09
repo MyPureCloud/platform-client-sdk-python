@@ -35,6 +35,11 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import BulkAddDecisionTableRowsRequest
+from ..models import BulkAddDecisionTableRowsResponse
+from ..models import BulkDeleteDecisionTableRowsRequest
+from ..models import BulkUpdateDecisionTableRowsRequest
+from ..models import BulkUpdateDecisionTableRowsResponse
 from ..models import BusinessRulesDataSchema
 from ..models import BusinessRulesDataSchemaListing
 from ..models import BusinessRulesSchemaCreateRequest
@@ -42,11 +47,17 @@ from ..models import BusinessRulesSchemaUpdateRequest
 from ..models import CopyDecisionTableRequest
 from ..models import Coretype
 from ..models import CoretypeListing
+from ..models import CreateDecisionTableImportJobRequest
 from ..models import CreateDecisionTableRequest
 from ..models import CreateDecisionTableRowRequest
 from ..models import DecisionTable
 from ..models import DecisionTableExecutionRequest
 from ..models import DecisionTableExecutionResponse
+from ..models import DecisionTableExportJob
+from ..models import DecisionTableExportJobListing
+from ..models import DecisionTableExportJobRequest
+from ..models import DecisionTableImportJob
+from ..models import DecisionTableImportJobListing
 from ..models import DecisionTableListing
 from ..models import DecisionTableRow
 from ..models import DecisionTableRowListing
@@ -55,6 +66,7 @@ from ..models import DecisionTableVersionListing
 from ..models import ErrorBody
 from ..models import PutDecisionTableRowRequest
 from ..models import SearchDecisionTableRowsRequest
+from ..models import UpdateDecisionTableImportJobRequest
 from ..models import UpdateDecisionTableRequest
 from ..models import UpdateDecisionTableVersionRequest
 
@@ -122,6 +134,174 @@ class BusinessRulesApi(object):
         query_params = {}
         if 'force_delete' in params:
             query_params['forceDelete'] = params['force_delete']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_businessrules_decisiontable_export(self, table_id: str, export_job_id: str, **kwargs) -> None:
+        """
+        Delete an export job for a decision table
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_businessrules_decisiontable_export(table_id, export_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param str export_job_id: Export Job ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'export_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_businessrules_decisiontable_export" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `delete_businessrules_decisiontable_export`")
+        # verify the required parameter 'export_job_id' is set
+        if ('export_job_id' not in params) or (params['export_job_id'] is None):
+            raise ValueError("Missing the required parameter `export_job_id` when calling `delete_businessrules_decisiontable_export`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'export_job_id' in params:
+            path_params['exportJobId'] = params['export_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_businessrules_decisiontable_import(self, table_id: str, import_job_id: str, **kwargs) -> None:
+        """
+        Delete decision table row import job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_businessrules_decisiontable_import(table_id, import_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param str import_job_id: Import job ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'import_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_businessrules_decisiontable_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `delete_businessrules_decisiontable_import`")
+        # verify the required parameter 'import_job_id' is set
+        if ('import_job_id' not in params) or (params['import_job_id'] is None):
+            raise ValueError("Missing the required parameter `import_job_id` when calling `delete_businessrules_decisiontable_import`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'import_job_id' in params:
+            path_params['importJobId'] = params['import_job_id']
+
+        query_params = {}
 
         header_params = {}
 
@@ -481,6 +661,342 @@ class BusinessRulesApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DecisionTable',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_businessrules_decisiontable_export(self, table_id: str, export_job_id: str, **kwargs) -> 'DecisionTableExportJob':
+        """
+        Get an export job for a decision table
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_businessrules_decisiontable_export(table_id, export_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param str export_job_id: Export Job ID (required)
+        :return: DecisionTableExportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'export_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_businessrules_decisiontable_export" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `get_businessrules_decisiontable_export`")
+        # verify the required parameter 'export_job_id' is set
+        if ('export_job_id' not in params) or (params['export_job_id'] is None):
+            raise ValueError("Missing the required parameter `export_job_id` when calling `get_businessrules_decisiontable_export`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'export_job_id' in params:
+            path_params['exportJobId'] = params['export_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableExportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_businessrules_decisiontable_exports(self, table_id: str, **kwargs) -> 'DecisionTableExportJobListing':
+        """
+        List export jobs for a decision table
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_businessrules_decisiontable_exports(table_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 100.
+        :return: DecisionTableExportJobListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_businessrules_decisiontable_exports" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `get_businessrules_decisiontable_exports`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/exports'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableExportJobListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_businessrules_decisiontable_import(self, table_id: str, import_job_id: str, **kwargs) -> 'DecisionTableImportJob':
+        """
+        Get decision table row import job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_businessrules_decisiontable_import(table_id, import_job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param str import_job_id: Import job ID (required)
+        :return: DecisionTableImportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'import_job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_businessrules_decisiontable_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `get_businessrules_decisiontable_import`")
+        # verify the required parameter 'import_job_id' is set
+        if ('import_job_id' not in params) or (params['import_job_id'] is None):
+            raise ValueError("Missing the required parameter `import_job_id` when calling `get_businessrules_decisiontable_import`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'import_job_id' in params:
+            path_params['importJobId'] = params['import_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableImportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_businessrules_decisiontable_imports(self, table_id: str, **kwargs) -> 'DecisionTableImportJobListing':
+        """
+        List decision table row import jobs
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_businessrules_decisiontable_imports(table_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 100.
+        :return: DecisionTableImportJobListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_businessrules_decisiontable_imports" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `get_businessrules_decisiontable_imports`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/imports'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableImportJobListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1394,6 +1910,96 @@ class BusinessRulesApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_businessrules_decisiontable_import(self, table_id: str, import_job_id: str, body: 'UpdateDecisionTableImportJobRequest', **kwargs) -> 'DecisionTableImportJob':
+        """
+        Update decision table row import job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_businessrules_decisiontable_import(table_id, import_job_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param str import_job_id: Import job ID (required)
+        :param UpdateDecisionTableImportJobRequest body: Import job update request (required)
+        :return: DecisionTableImportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'import_job_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_businessrules_decisiontable_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `patch_businessrules_decisiontable_import`")
+        # verify the required parameter 'import_job_id' is set
+        if ('import_job_id' not in params) or (params['import_job_id'] is None):
+            raise ValueError("Missing the required parameter `import_job_id` when calling `patch_businessrules_decisiontable_import`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_businessrules_decisiontable_import`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'import_job_id' in params:
+            path_params['importJobId'] = params['import_job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableImportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_businessrules_decisiontable_version(self, table_id: str, table_version: int, body: 'UpdateDecisionTableVersionRequest', **kwargs) -> 'DecisionTableVersion':
         """
         Update a decision table version
@@ -1564,6 +2170,174 @@ class BusinessRulesApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DecisionTableExecutionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_businessrules_decisiontable_exports(self, table_id: str, body: 'DecisionTableExportJobRequest', **kwargs) -> 'DecisionTableExportJob':
+        """
+        Create an export job for a decision table version
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_businessrules_decisiontable_exports(table_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param DecisionTableExportJobRequest body: Export job request (required)
+        :return: DecisionTableExportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_businessrules_decisiontable_exports" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `post_businessrules_decisiontable_exports`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_businessrules_decisiontable_exports`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/exports'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableExportJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_businessrules_decisiontable_imports(self, table_id: str, body: 'CreateDecisionTableImportJobRequest', **kwargs) -> 'DecisionTableImportJob':
+        """
+        Create a decision table row import job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_businessrules_decisiontable_imports(table_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param CreateDecisionTableImportJobRequest body: Import job create request (required)
+        :return: DecisionTableImportJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_businessrules_decisiontable_imports" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `post_businessrules_decisiontable_imports`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_businessrules_decisiontable_imports`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/imports'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableImportJob',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1834,6 +2608,276 @@ class BusinessRulesApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DecisionTableRow',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_businessrules_decisiontable_version_rows_bulk_add(self, table_id: str, table_version: int, body: 'BulkAddDecisionTableRowsRequest', **kwargs) -> 'BulkAddDecisionTableRowsResponse':
+        """
+        Bulk add decision table rows
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_businessrules_decisiontable_version_rows_bulk_add(table_id, table_version, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param int table_version: Table Version (required)
+        :param BulkAddDecisionTableRowsRequest body: Bulk add decision table rows request (required)
+        :return: BulkAddDecisionTableRowsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'table_version', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_businessrules_decisiontable_version_rows_bulk_add" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `post_businessrules_decisiontable_version_rows_bulk_add`")
+        # verify the required parameter 'table_version' is set
+        if ('table_version' not in params) or (params['table_version'] is None):
+            raise ValueError("Missing the required parameter `table_version` when calling `post_businessrules_decisiontable_version_rows_bulk_add`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_businessrules_decisiontable_version_rows_bulk_add`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'table_version' in params:
+            path_params['tableVersion'] = params['table_version']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkAddDecisionTableRowsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_businessrules_decisiontable_version_rows_bulk_remove(self, table_id: str, table_version: int, body: 'BulkDeleteDecisionTableRowsRequest', **kwargs) -> None:
+        """
+        Bulk delete decision table rows
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_businessrules_decisiontable_version_rows_bulk_remove(table_id, table_version, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param int table_version: Table Version (required)
+        :param BulkDeleteDecisionTableRowsRequest body:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'table_version', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_businessrules_decisiontable_version_rows_bulk_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `post_businessrules_decisiontable_version_rows_bulk_remove`")
+        # verify the required parameter 'table_version' is set
+        if ('table_version' not in params) or (params['table_version'] is None):
+            raise ValueError("Missing the required parameter `table_version` when calling `post_businessrules_decisiontable_version_rows_bulk_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_businessrules_decisiontable_version_rows_bulk_remove`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'table_version' in params:
+            path_params['tableVersion'] = params['table_version']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_businessrules_decisiontable_version_rows_bulk_update(self, table_id: str, table_version: int, body: 'BulkUpdateDecisionTableRowsRequest', **kwargs) -> 'BulkUpdateDecisionTableRowsResponse':
+        """
+        Bulk update decision table rows
+        Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_businessrules_decisiontable_version_rows_bulk_update(table_id, table_version, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param int table_version: Table Version (required)
+        :param BulkUpdateDecisionTableRowsRequest body: Bulk update decision table rows request (required)
+        :return: BulkUpdateDecisionTableRowsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'table_version', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_businessrules_decisiontable_version_rows_bulk_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `post_businessrules_decisiontable_version_rows_bulk_update`")
+        # verify the required parameter 'table_version' is set
+        if ('table_version' not in params) or (params['table_version'] is None):
+            raise ValueError("Missing the required parameter `table_version` when calling `post_businessrules_decisiontable_version_rows_bulk_update`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_businessrules_decisiontable_version_rows_bulk_update`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'table_version' in params:
+            path_params['tableVersion'] = params['table_version']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkUpdateDecisionTableRowsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

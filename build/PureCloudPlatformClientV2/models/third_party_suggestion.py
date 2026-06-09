@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ThirdPartySuggestionSource
 
 class ThirdPartySuggestion(object):
     """
@@ -47,14 +49,20 @@ class ThirdPartySuggestion(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'text': 'str'
+            'text': 'str',
+            'title': 'str',
+            'sources': 'list[ThirdPartySuggestionSource]'
         }
 
         self.attribute_map = {
-            'text': 'text'
+            'text': 'text',
+            'title': 'title',
+            'sources': 'sources'
         }
 
         self._text = None
+        self._title = None
+        self._sources = None
 
     @property
     def text(self) -> str:
@@ -79,6 +87,54 @@ class ThirdPartySuggestion(object):
         
 
         self._text = text
+
+    @property
+    def title(self) -> str:
+        """
+        Gets the title of this ThirdPartySuggestion.
+        The title of the suggestion.
+
+        :return: The title of this ThirdPartySuggestion.
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title: str) -> None:
+        """
+        Sets the title of this ThirdPartySuggestion.
+        The title of the suggestion.
+
+        :param title: The title of this ThirdPartySuggestion.
+        :type: str
+        """
+        
+
+        self._title = title
+
+    @property
+    def sources(self) -> List['ThirdPartySuggestionSource']:
+        """
+        Gets the sources of this ThirdPartySuggestion.
+        A list of source references attributing the suggestion to its origin sources.
+
+        :return: The sources of this ThirdPartySuggestion.
+        :rtype: list[ThirdPartySuggestionSource]
+        """
+        return self._sources
+
+    @sources.setter
+    def sources(self, sources: List['ThirdPartySuggestionSource']) -> None:
+        """
+        Sets the sources of this ThirdPartySuggestion.
+        A list of source references attributing the suggestion to its origin sources.
+
+        :param sources: The sources of this ThirdPartySuggestion.
+        :type: list[ThirdPartySuggestionSource]
+        """
+        
+
+        self._sources = sources
 
     def to_dict(self):
         """

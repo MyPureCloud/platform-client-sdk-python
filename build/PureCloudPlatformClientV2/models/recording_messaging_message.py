@@ -720,7 +720,7 @@ class RecordingMessagingMessage(object):
         """
         if isinstance(content_type, int):
             content_type = str(content_type)
-        allowed_values = ["QuickReply", "Story", "Card", "Carousel", "Attachment", "Location", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "DatePicker", "ListPicker", "InteractiveApplication", "PaymentRequest", "PaymentResponse", "Form", "RichLink", "RoadsideAssistance"]
+        allowed_values = ["QuickReply", "Story", "Card", "Carousel", "Attachment", "Location", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse", "DatePicker", "ListPicker", "InteractiveApplication", "PaymentRequest", "PaymentResponse", "Form", "RichLink", "RoadsideAssistance", "NotificationResponse"]
         if content_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for content_type -> " + content_type)
             self._content_type = "outdated_sdk_version"

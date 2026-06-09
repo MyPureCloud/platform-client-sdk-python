@@ -125,7 +125,7 @@ class StepplanUpdate(object):
     def workitem_settings(self) -> 'WorkitemSettings':
         """
         Gets the workitem_settings of this StepplanUpdate.
-        The workitemSettings of the Stepplan.
+        The Workitem settings of the Stepplan.
 
         :return: The workitem_settings of this StepplanUpdate.
         :rtype: WorkitemSettings
@@ -136,7 +136,7 @@ class StepplanUpdate(object):
     def workitem_settings(self, workitem_settings: 'WorkitemSettings') -> None:
         """
         Sets the workitem_settings of this StepplanUpdate.
-        The workitemSettings of the Stepplan.
+        The Workitem settings of the Stepplan.
 
         :param workitem_settings: The workitem_settings of this StepplanUpdate.
         :type: WorkitemSettings
@@ -149,7 +149,7 @@ class StepplanUpdate(object):
     def activity_type(self) -> str:
         """
         Gets the activity_type of this StepplanUpdate.
-        The activityType of the Stepplan.
+        The activity type of the Stepplan.
 
         :return: The activity_type of this StepplanUpdate.
         :rtype: str
@@ -160,7 +160,7 @@ class StepplanUpdate(object):
     def activity_type(self, activity_type: str) -> None:
         """
         Sets the activity_type of this StepplanUpdate.
-        The activityType of the Stepplan.
+        The activity type of the Stepplan.
 
         :param activity_type: The activity_type of this StepplanUpdate.
         :type: str

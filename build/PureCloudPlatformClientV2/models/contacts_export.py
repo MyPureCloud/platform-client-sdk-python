@@ -52,32 +52,32 @@ class ContactsExport(object):
         self.swagger_types = {
             'id': 'str',
             'division_ids': 'list[str]',
-            'query_conditions': 'ContactsExportQueryConditions',
             'created_by': 'DomainEntityRef',
             'date_created': 'datetime',
             'status': 'str',
             'download_url': 'str',
+            'query_conditions': 'ContactsExportQueryConditions',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'division_ids': 'divisionIds',
-            'query_conditions': 'queryConditions',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'status': 'status',
             'download_url': 'downloadUrl',
+            'query_conditions': 'queryConditions',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._division_ids = None
-        self._query_conditions = None
         self._created_by = None
         self._date_created = None
         self._status = None
         self._download_url = None
+        self._query_conditions = None
         self._self_uri = None
 
     @property
@@ -127,30 +127,6 @@ class ContactsExport(object):
         
 
         self._division_ids = division_ids
-
-    @property
-    def query_conditions(self) -> 'ContactsExportQueryConditions':
-        """
-        Gets the query_conditions of this ContactsExport.
-        Query conditions to apply on export
-
-        :return: The query_conditions of this ContactsExport.
-        :rtype: ContactsExportQueryConditions
-        """
-        return self._query_conditions
-
-    @query_conditions.setter
-    def query_conditions(self, query_conditions: 'ContactsExportQueryConditions') -> None:
-        """
-        Sets the query_conditions of this ContactsExport.
-        Query conditions to apply on export
-
-        :param query_conditions: The query_conditions of this ContactsExport.
-        :type: ContactsExportQueryConditions
-        """
-        
-
-        self._query_conditions = query_conditions
 
     @property
     def created_by(self) -> 'DomainEntityRef':
@@ -252,6 +228,30 @@ class ContactsExport(object):
         
 
         self._download_url = download_url
+
+    @property
+    def query_conditions(self) -> 'ContactsExportQueryConditions':
+        """
+        Gets the query_conditions of this ContactsExport.
+        Query conditions to apply on export
+
+        :return: The query_conditions of this ContactsExport.
+        :rtype: ContactsExportQueryConditions
+        """
+        return self._query_conditions
+
+    @query_conditions.setter
+    def query_conditions(self, query_conditions: 'ContactsExportQueryConditions') -> None:
+        """
+        Sets the query_conditions of this ContactsExport.
+        Query conditions to apply on export
+
+        :param query_conditions: The query_conditions of this ContactsExport.
+        :type: ContactsExportQueryConditions
+        """
+        
+
+        self._query_conditions = query_conditions
 
     @property
     def self_uri(self) -> str:

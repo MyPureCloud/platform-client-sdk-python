@@ -8,9 +8,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_casemanagement_case**](#delete_casemanagement_case) | Delete a Case.|
 |[**delete_casemanagement_caseplan**](#delete_casemanagement_caseplan) | Delete a Caseplan.|
+|[**delete_casemanagement_caseplan_dataschema**](#delete_casemanagement_caseplan_dataschema) | Remove a data schema from a draft Caseplan.|
 |[**get_casemanagement_case**](#get_casemanagement_case) | Get a Case.|
 |[**get_casemanagement_case_association**](#get_casemanagement_case_association) | Get a Case Association.|
-|[**get_casemanagement_case_associations**](#get_casemanagement_case_associations) | Get a list of case associations for a provided case.|
+|[**get_casemanagement_case_associations**](#get_casemanagement_case_associations) | Get a list of Case associations for the Case.|
 |[**get_casemanagement_case_stage**](#get_casemanagement_case_stage) | Get a Stage.|
 |[**get_casemanagement_case_stage_step**](#get_casemanagement_case_stage_step) | Get a Step.|
 |[**get_casemanagement_case_stage_steps**](#get_casemanagement_case_stage_steps) | Get a list of Steps.|
@@ -18,29 +19,31 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_casemanagement_case_terminate_job**](#get_casemanagement_case_terminate_job) | Get a Terminate Job for a Case.|
 |[**get_casemanagement_caseplan**](#get_casemanagement_caseplan) | Get a Caseplan.|
 |[**get_casemanagement_caseplan_version**](#get_casemanagement_caseplan_version) | Get a Caseplan version.|
-|[**get_casemanagement_caseplan_version_dataschemas**](#get_casemanagement_caseplan_version_dataschemas) | Get the dataSchemas for a caseplan version.|
+|[**get_casemanagement_caseplan_version_dataschemas**](#get_casemanagement_caseplan_version_dataschemas) | Get the data schemas for a Caseplan version.|
 |[**get_casemanagement_caseplan_version_intakesettings**](#get_casemanagement_caseplan_version_intakesettings) | Get the intake settings for a Caseplan version.|
 |[**get_casemanagement_caseplan_version_stageplan**](#get_casemanagement_caseplan_version_stageplan) | Get a Stageplan.|
 |[**get_casemanagement_caseplan_version_stageplan_stepplan**](#get_casemanagement_caseplan_version_stageplan_stepplan) | Get a Stepplan.|
 |[**get_casemanagement_caseplan_version_stageplan_stepplans**](#get_casemanagement_caseplan_version_stageplan_stepplans) | Get a list of Stepplans.|
 |[**get_casemanagement_caseplan_version_stageplans**](#get_casemanagement_caseplan_version_stageplans) | Get a list of Stageplans.|
 |[**get_casemanagement_caseplans**](#get_casemanagement_caseplans) | Get a list of Caseplans.|
-|[**get_casemanagement_cases_externalcontact**](#get_casemanagement_cases_externalcontact) | Get a list of cases for provided external contact id.|
+|[**get_casemanagement_cases_externalcontact**](#get_casemanagement_cases_externalcontact) | Get a list of Cases for an External Contact.|
 |[**get_casemanagement_cases_reference**](#get_casemanagement_cases_reference) | Get a Case by reference.|
-|[**patch_casemanagement_case_datedue**](#patch_casemanagement_case_datedue) | Update date due of a Case.|
+|[**patch_casemanagement_case_datedue**](#patch_casemanagement_case_datedue) | Update the due date of a Case.|
 |[**patch_casemanagement_case_priority**](#patch_casemanagement_case_priority) | Update priority of a Case.|
 |[**patch_casemanagement_case_summary**](#patch_casemanagement_case_summary) | Update summary of a Case.|
 |[**patch_casemanagement_caseplan**](#patch_casemanagement_caseplan) | Update the attributes of a Caseplan.|
 |[**patch_casemanagement_caseplan_stageplan**](#patch_casemanagement_caseplan_stageplan) | Update the attributes of a Stageplan.|
 |[**patch_casemanagement_caseplan_stageplan_stepplan**](#patch_casemanagement_caseplan_stageplan_stepplan) | Update the attributes of a Stepplan.|
-|[**post_casemanagement_case_associations**](#post_casemanagement_case_associations) | Create a case association.|
+|[**post_casemanagement_case_associations**](#post_casemanagement_case_associations) | Create a Case association.|
 |[**post_casemanagement_case_terminate_jobs**](#post_casemanagement_case_terminate_jobs) | Create a Terminate Job for a Case.|
+|[**post_casemanagement_caseplan_dataschemas**](#post_casemanagement_caseplan_dataschemas) | Add a data schema to a draft Caseplan.|
 |[**post_casemanagement_caseplan_publish**](#post_casemanagement_caseplan_publish) | Publish Caseplan.|
 |[**post_casemanagement_caseplan_versions**](#post_casemanagement_caseplan_versions) | Create Caseplan version.|
 |[**post_casemanagement_caseplans**](#post_casemanagement_caseplans) | Create a Caseplan.|
-|[**post_casemanagement_caseplans_query**](#post_casemanagement_caseplans_query) | Query for caseplans|
+|[**post_casemanagement_caseplans_query**](#post_casemanagement_caseplans_query) | Query for Caseplans.|
 |[**post_casemanagement_cases**](#post_casemanagement_cases) | Create a Case.|
-|[**post_casemanagement_cases_associations_query**](#post_casemanagement_cases_associations_query) | Query for case associations|
+|[**post_casemanagement_cases_associations_query**](#post_casemanagement_cases_associations_query) | Query for Case associations by interaction.|
+|[**put_casemanagement_caseplan_dataschema**](#put_casemanagement_caseplan_dataschema) | Update a data schema on a draft Caseplan.|
 |[**put_casemanagement_caseplan_intakesettings**](#put_casemanagement_caseplan_intakesettings) | Update the intake settings for a Caseplan.|
 
 
@@ -51,8 +54,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 Delete a Case.
-
-delete_casemanagement_case is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/casemanagement/cases/{caseId} 
 
@@ -73,7 +74,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
+case_id = 'case_id_example' # str | Case identifier.
 
 try:
     # Delete a Case.
@@ -88,7 +89,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
+| **case_id** | **str**| Case identifier. |  |
 
 ### Return type
 
@@ -101,8 +102,6 @@ except ApiException as e:
 
 
 Delete a Caseplan.
-
-delete_casemanagement_caseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/casemanagement/caseplans/{caseplanId} 
 
@@ -123,7 +122,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
 
 try:
     # Delete a Caseplan.
@@ -138,7 +137,57 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+
+### Return type
+
+**object**
+
+
+## delete_casemanagement_caseplan_dataschema
+
+> object** delete_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name)
+
+
+Remove a data schema from a draft Caseplan.
+
+Wraps DELETE /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName} 
+
+Requires ALL permissions: 
+
+* caseManagement:caseplanDataSchemas:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+schema_key_name = 'schema_key_name_example' # str | Schema key (for example \"default\").
+
+try:
+    # Remove a data schema from a draft Caseplan.
+    api_response = api_instance.delete_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->delete_casemanagement_caseplan_dataschema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **schema_key_name** | **str**| Schema key (for example \&quot;default\&quot;). |  |
 
 ### Return type
 
@@ -151,8 +200,6 @@ except ApiException as e:
 
 
 Get a Case.
-
-get_casemanagement_case is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/{caseId} 
 
@@ -173,8 +220,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-expands = 'expands_example' # str | Which fields to expand. (optional)
+case_id = 'case_id_example' # str | Case identifier.
+expands = 'expands_example' # str | Fields to expand. (optional)
 
 try:
     # Get a Case.
@@ -189,8 +236,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **expands** | **str**| Which fields to expand. | [optional] <br />**Values**: caseplan |
+| **case_id** | **str**| Case identifier. |  |
+| **expands** | **str**| Fields to expand. | [optional] <br />**Values**: caseplan |
 
 ### Return type
 
@@ -203,8 +250,6 @@ except ApiException as e:
 
 
 Get a Case Association.
-
-get_casemanagement_case_association is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/{caseId}/associations/{associationId} 
 
@@ -225,8 +270,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-association_id = 'association_id_example' # str | Case Association ID
+case_id = 'case_id_example' # str | Case identifier.
+association_id = 'association_id_example' # str | Case association identifier.
 
 try:
     # Get a Case Association.
@@ -241,8 +286,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **association_id** | **str**| Case Association ID |  |
+| **case_id** | **str**| Case identifier. |  |
+| **association_id** | **str**| Case association identifier. |  |
 
 ### Return type
 
@@ -254,9 +299,7 @@ except ApiException as e:
 > [**CaseAssociationListing**](CaseAssociationListing) get_casemanagement_case_associations(case_id, before=before, after=after, page_size=page_size)
 
 
-Get a list of case associations for a provided case.
-
-get_casemanagement_case_associations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Get a list of Case associations for the Case.
 
 Wraps GET /api/v2/casemanagement/cases/{caseId}/associations 
 
@@ -277,13 +320,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID.
+case_id = 'case_id_example' # str | Case identifier.
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 
 try:
-    # Get a list of case associations for a provided case.
+    # Get a list of Case associations for the Case.
     api_response = api_instance.get_casemanagement_case_associations(case_id, before=before, after=after, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
@@ -295,7 +338,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID. |  |
+| **case_id** | **str**| Case identifier. |  |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
@@ -311,8 +354,6 @@ except ApiException as e:
 
 
 Get a Stage.
-
-get_casemanagement_case_stage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId} 
 
@@ -333,8 +374,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-stage_id = 'stage_id_example' # str | Stage ID
+case_id = 'case_id_example' # str | Case identifier.
+stage_id = 'stage_id_example' # str | Stage identifier.
 
 try:
     # Get a Stage.
@@ -349,8 +390,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **stage_id** | **str**| Stage ID |  |
+| **case_id** | **str**| Case identifier. |  |
+| **stage_id** | **str**| Stage identifier. |  |
 
 ### Return type
 
@@ -363,8 +404,6 @@ except ApiException as e:
 
 
 Get a Step.
-
-get_casemanagement_case_stage_step is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps/{stepId} 
 
@@ -385,9 +424,9 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-stage_id = 'stage_id_example' # str | Stage ID
-step_id = 'step_id_example' # str | Step ID
+case_id = 'case_id_example' # str | Case identifier.
+stage_id = 'stage_id_example' # str | Stage identifier.
+step_id = 'step_id_example' # str | Step identifier.
 
 try:
     # Get a Step.
@@ -402,9 +441,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **stage_id** | **str**| Stage ID |  |
-| **step_id** | **str**| Step ID |  |
+| **case_id** | **str**| Case identifier. |  |
+| **stage_id** | **str**| Stage identifier. |  |
+| **step_id** | **str**| Step identifier. |  |
 
 ### Return type
 
@@ -417,8 +456,6 @@ except ApiException as e:
 
 
 Get a list of Steps.
-
-get_casemanagement_case_stage_steps is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps 
 
@@ -439,8 +476,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-stage_id = 'stage_id_example' # str | Stage ID
+case_id = 'case_id_example' # str | Case identifier.
+stage_id = 'stage_id_example' # str | Stage identifier.
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
@@ -458,8 +495,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **stage_id** | **str**| Stage ID |  |
+| **case_id** | **str**| Case identifier. |  |
+| **stage_id** | **str**| Stage identifier. |  |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
@@ -475,8 +512,6 @@ except ApiException as e:
 
 
 Get a list of Stages.
-
-get_casemanagement_case_stages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/{caseId}/stages 
 
@@ -497,7 +532,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
+case_id = 'case_id_example' # str | Case identifier.
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
@@ -515,7 +550,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
+| **case_id** | **str**| Case identifier. |  |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
@@ -531,8 +566,6 @@ except ApiException as e:
 
 
 Get a Terminate Job for a Case.
-
-get_casemanagement_case_terminate_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/{caseId}/terminate/jobs/{jobId} 
 
@@ -553,8 +586,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-job_id = 'job_id_example' # str | Job ID
+case_id = 'case_id_example' # str | Case identifier.
+job_id = 'job_id_example' # str | Terminate Job identifier.
 
 try:
     # Get a Terminate Job for a Case.
@@ -569,8 +602,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **job_id** | **str**| Job ID |  |
+| **case_id** | **str**| Case identifier. |  |
+| **job_id** | **str**| Terminate Job identifier. |  |
 
 ### Return type
 
@@ -583,8 +616,6 @@ except ApiException as e:
 
 
 Get a Caseplan.
-
-get_casemanagement_caseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId} 
 
@@ -605,7 +636,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
 
 try:
     # Get a Caseplan.
@@ -620,7 +651,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
 
 ### Return type
 
@@ -633,8 +664,6 @@ except ApiException as e:
 
 
 Get a Caseplan version.
-
-get_casemanagement_caseplan_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId} 
 
@@ -655,8 +684,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-version_id = 'version_id_example' # str | Version of the caseplan
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+version_id = 'version_id_example' # str | Caseplan version identifier.
 
 try:
     # Get a Caseplan version.
@@ -671,8 +700,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **version_id** | **str**| Version of the caseplan |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **version_id** | **str**| Caseplan version identifier. |  |
 
 ### Return type
 
@@ -684,9 +713,7 @@ except ApiException as e:
 > [**CaseplanDataSchemaListing**](CaseplanDataSchemaListing) get_casemanagement_caseplan_version_dataschemas(caseplan_id, version_id)
 
 
-Get the dataSchemas for a caseplan version.
-
-get_casemanagement_caseplan_version_dataschemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Get the data schemas for a Caseplan version.
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas 
 
@@ -707,11 +734,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-version_id = 'version_id_example' # str | Version of the caseplan
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+version_id = 'version_id_example' # str | Caseplan version identifier.
 
 try:
-    # Get the dataSchemas for a caseplan version.
+    # Get the data schemas for a Caseplan version.
     api_response = api_instance.get_casemanagement_caseplan_version_dataschemas(caseplan_id, version_id)
     pprint(api_response)
 except ApiException as e:
@@ -723,8 +750,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **version_id** | **str**| Version of the caseplan |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **version_id** | **str**| Caseplan version identifier. |  |
 
 ### Return type
 
@@ -737,8 +764,6 @@ except ApiException as e:
 
 
 Get the intake settings for a Caseplan version.
-
-get_casemanagement_caseplan_version_intakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/intakesettings 
 
@@ -759,8 +784,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-version_id = 'version_id_example' # str | Version of the caseplan
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+version_id = 'version_id_example' # str | Caseplan version identifier.
 
 try:
     # Get the intake settings for a Caseplan version.
@@ -775,8 +800,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **version_id** | **str**| Version of the caseplan |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **version_id** | **str**| Caseplan version identifier. |  |
 
 ### Return type
 
@@ -789,8 +814,6 @@ except ApiException as e:
 
 
 Get a Stageplan.
-
-get_casemanagement_caseplan_version_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId} 
 
@@ -811,10 +834,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-version_id = 'version_id_example' # str | Version ID
-stageplan_id = 'stageplan_id_example' # str | Stageplan ID
-expands = ['expands_example'] # list[str] | Which fields to expand. (optional)
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+version_id = 'version_id_example' # str | Caseplan version identifier.
+stageplan_id = 'stageplan_id_example' # str | Stageplan identifier.
+expands = ['expands_example'] # list[str] | Fields to expand. (optional)
 
 try:
     # Get a Stageplan.
@@ -829,10 +852,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **version_id** | **str**| Version ID |  |
-| **stageplan_id** | **str**| Stageplan ID |  |
-| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: caseplan |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **version_id** | **str**| Caseplan version identifier. |  |
+| **stageplan_id** | **str**| Stageplan identifier. |  |
+| **expands** | [**list[str]**](str)| Fields to expand. | [optional] <br />**Values**: caseplan |
 
 ### Return type
 
@@ -845,8 +868,6 @@ except ApiException as e:
 
 
 Get a Stepplan.
-
-get_casemanagement_caseplan_version_stageplan_stepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans/{stepplanId} 
 
@@ -867,11 +888,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-version_id = 'version_id_example' # str | Version ID
-stageplan_id = 'stageplan_id_example' # str | Stageplan ID
-stepplan_id = 'stepplan_id_example' # str | Stepplan ID
-expands = ['expands_example'] # list[str] | Which fields to expand. (optional)
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+version_id = 'version_id_example' # str | Caseplan version identifier.
+stageplan_id = 'stageplan_id_example' # str | Stageplan identifier.
+stepplan_id = 'stepplan_id_example' # str | Stepplan identifier.
+expands = ['expands_example'] # list[str] | Fields to expand. (optional)
 
 try:
     # Get a Stepplan.
@@ -886,11 +907,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **version_id** | **str**| Version ID |  |
-| **stageplan_id** | **str**| Stageplan ID |  |
-| **stepplan_id** | **str**| Stepplan ID |  |
-| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: stageplan, caseplan, worktype |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **version_id** | **str**| Caseplan version identifier. |  |
+| **stageplan_id** | **str**| Stageplan identifier. |  |
+| **stepplan_id** | **str**| Stepplan identifier. |  |
+| **expands** | [**list[str]**](str)| Fields to expand. | [optional] <br />**Values**: stageplan, caseplan, worktype |
 
 ### Return type
 
@@ -903,8 +924,6 @@ except ApiException as e:
 
 
 Get a list of Stepplans.
-
-get_casemanagement_caseplan_version_stageplan_stepplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans 
 
@@ -925,13 +944,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-version_id = 'version_id_example' # str | Version ID
-stageplan_id = 'stageplan_id_example' # str | Stageplan ID
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+version_id = 'version_id_example' # str | Caseplan version identifier.
+stageplan_id = 'stageplan_id_example' # str | Stageplan identifier.
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
-expands = ['expands_example'] # list[str] | Which fields to expand. (optional)
+expands = ['expands_example'] # list[str] | Fields to expand. (optional)
 
 try:
     # Get a list of Stepplans.
@@ -946,13 +965,13 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **version_id** | **str**| Version ID |  |
-| **stageplan_id** | **str**| Stageplan ID |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **version_id** | **str**| Caseplan version identifier. |  |
+| **stageplan_id** | **str**| Stageplan identifier. |  |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: caseplan, stageplan, worktype |
+| **expands** | [**list[str]**](str)| Fields to expand. | [optional] <br />**Values**: caseplan, stageplan, worktype |
 
 ### Return type
 
@@ -965,8 +984,6 @@ except ApiException as e:
 
 
 Get a list of Stageplans.
-
-get_casemanagement_caseplan_version_stageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans 
 
@@ -987,12 +1004,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-version_id = 'version_id_example' # str | Version ID
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+version_id = 'version_id_example' # str | Caseplan version identifier.
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
-expands = ['expands_example'] # list[str] | Which fields to expand. (optional)
+expands = ['expands_example'] # list[str] | Fields to expand. (optional)
 
 try:
     # Get a list of Stageplans.
@@ -1007,12 +1024,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **version_id** | **str**| Version ID |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **version_id** | **str**| Caseplan version identifier. |  |
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: caseplan |
+| **expands** | [**list[str]**](str)| Fields to expand. | [optional] <br />**Values**: caseplan |
 
 ### Return type
 
@@ -1025,8 +1042,6 @@ except ApiException as e:
 
 
 Get a list of Caseplans.
-
-get_casemanagement_caseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/caseplans 
 
@@ -1047,10 +1062,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-after = 'after_example' # str | The cursor that points to the end of the set of caseplans that has been returned. (optional)
-page_size = 56 # int | Number of caseplans to return. Maximum of 200. (optional)
-customer_intent_id = 'customer_intent_id_example' # str | Filter by Customer Intent. (optional)
-division_ids = 'division_ids_example' # str | Filter by Divisions. (optional)
+after = 'after_example' # str | Cursor that points to the end of the previously returned set of Caseplans. (optional)
+page_size = 56 # int | Number of Caseplans to return. Maximum is 200. (optional)
+customer_intent_id = 'customer_intent_id_example' # str | Filter by customer intent. (optional)
+division_ids = 'division_ids_example' # str | Filter by divisions. (optional)
 
 try:
     # Get a list of Caseplans.
@@ -1065,10 +1080,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **after** | **str**| The cursor that points to the end of the set of caseplans that has been returned. | [optional]  |
-| **page_size** | **int**| Number of caseplans to return. Maximum of 200. | [optional]  |
-| **customer_intent_id** | **str**| Filter by Customer Intent. | [optional]  |
-| **division_ids** | **str**| Filter by Divisions. | [optional]  |
+| **after** | **str**| Cursor that points to the end of the previously returned set of Caseplans. | [optional]  |
+| **page_size** | **int**| Number of Caseplans to return. Maximum is 200. | [optional]  |
+| **customer_intent_id** | **str**| Filter by customer intent. | [optional]  |
+| **division_ids** | **str**| Filter by divisions. | [optional]  |
 
 ### Return type
 
@@ -1080,9 +1095,7 @@ except ApiException as e:
 > [**CaseListing**](CaseListing) get_casemanagement_cases_externalcontact(external_contact_id, after=after, page_size=page_size, division_ids=division_ids, expands=expands)
 
 
-Get a list of cases for provided external contact id.
-
-get_casemanagement_cases_externalcontact is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Get a list of Cases for an External Contact.
 
 Wraps GET /api/v2/casemanagement/cases/externalcontacts/{externalContactId} 
 
@@ -1103,14 +1116,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-external_contact_id = 'external_contact_id_example' # str | External Contact ID
-after = 'after_example' # str | The cursor that points to the end of the set of cases that has been returned. (optional)
-page_size = 56 # int | Number of cases to return. Maximum of 200. (optional)
-division_ids = 'division_ids_example' # str | Filter by Divisions (optional)
-expands = ['expands_example'] # list[str] | Which fields to expand. (optional)
+external_contact_id = 'external_contact_id_example' # str | External contact identifier.
+after = 'after_example' # str | Cursor pointing to the end of the previously returned page of Cases. (optional)
+page_size = 56 # int | Number of Cases to return (maximum 200). (optional)
+division_ids = 'division_ids_example' # str | Filter by divisions. (optional)
+expands = ['expands_example'] # list[str] | Fields to expand. (optional)
 
 try:
-    # Get a list of cases for provided external contact id.
+    # Get a list of Cases for an External Contact.
     api_response = api_instance.get_casemanagement_cases_externalcontact(external_contact_id, after=after, page_size=page_size, division_ids=division_ids, expands=expands)
     pprint(api_response)
 except ApiException as e:
@@ -1122,11 +1135,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **external_contact_id** | **str**| External Contact ID |  |
-| **after** | **str**| The cursor that points to the end of the set of cases that has been returned. | [optional]  |
-| **page_size** | **int**| Number of cases to return. Maximum of 200. | [optional]  |
-| **division_ids** | **str**| Filter by Divisions | [optional]  |
-| **expands** | [**list[str]**](str)| Which fields to expand. | [optional] <br />**Values**: caseplan |
+| **external_contact_id** | **str**| External contact identifier. |  |
+| **after** | **str**| Cursor pointing to the end of the previously returned page of Cases. | [optional]  |
+| **page_size** | **int**| Number of Cases to return (maximum 200). | [optional]  |
+| **division_ids** | **str**| Filter by divisions. | [optional]  |
+| **expands** | [**list[str]**](str)| Fields to expand. | [optional] <br />**Values**: caseplan |
 
 ### Return type
 
@@ -1139,8 +1152,6 @@ except ApiException as e:
 
 
 Get a Case by reference.
-
-get_casemanagement_cases_reference is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/references/{referenceId} 
 
@@ -1161,8 +1172,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-reference_id = 'reference_id_example' # str | Reference
-expands = 'expands_example' # str | Which fields to expand. (optional)
+reference_id = 'reference_id_example' # str | Case reference.
+expands = 'expands_example' # str | Fields to expand. (optional)
 
 try:
     # Get a Case by reference.
@@ -1177,8 +1188,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **reference_id** | **str**| Reference |  |
-| **expands** | **str**| Which fields to expand. | [optional] <br />**Values**: caseplan |
+| **reference_id** | **str**| Case reference. |  |
+| **expands** | **str**| Fields to expand. | [optional] <br />**Values**: caseplan |
 
 ### Return type
 
@@ -1190,9 +1201,7 @@ except ApiException as e:
 > [**Case**](Case) patch_casemanagement_case_datedue(case_id, body)
 
 
-Update date due of a Case.
-
-patch_casemanagement_case_datedue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Update the due date of a Case.
 
 Wraps PATCH /api/v2/casemanagement/cases/{caseId}/datedue 
 
@@ -1213,11 +1222,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-body = PureCloudPlatformClientV2.CaseDateDueUpdate() # CaseDateDueUpdate | Date due
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CaseDateDueUpdate() # CaseDateDueUpdate | Due date update.
 
 try:
-    # Update date due of a Case.
+    # Update the due date of a Case.
     api_response = api_instance.patch_casemanagement_case_datedue(case_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -1229,8 +1238,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **body** | [**CaseDateDueUpdate**](CaseDateDueUpdate)| Date due |  |
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CaseDateDueUpdate**](CaseDateDueUpdate)| Due date update. |  |
 
 ### Return type
 
@@ -1243,8 +1252,6 @@ except ApiException as e:
 
 
 Update priority of a Case.
-
-patch_casemanagement_case_priority is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/casemanagement/cases/{caseId}/priority 
 
@@ -1265,8 +1272,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-body = PureCloudPlatformClientV2.CasePriorityUpdate() # CasePriorityUpdate | Priority
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CasePriorityUpdate() # CasePriorityUpdate | Priority update.
 
 try:
     # Update priority of a Case.
@@ -1281,8 +1288,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **body** | [**CasePriorityUpdate**](CasePriorityUpdate)| Priority |  |
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CasePriorityUpdate**](CasePriorityUpdate)| Priority update. |  |
 
 ### Return type
 
@@ -1295,8 +1302,6 @@ except ApiException as e:
 
 
 Update summary of a Case.
-
-patch_casemanagement_case_summary is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/casemanagement/cases/{caseId}/summary 
 
@@ -1317,8 +1322,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
-body = PureCloudPlatformClientV2.CaseSummaryUpdate() # CaseSummaryUpdate | Summary
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CaseSummaryUpdate() # CaseSummaryUpdate | Summary update.
 
 try:
     # Update summary of a Case.
@@ -1333,8 +1338,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
-| **body** | [**CaseSummaryUpdate**](CaseSummaryUpdate)| Summary |  |
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CaseSummaryUpdate**](CaseSummaryUpdate)| Summary update. |  |
 
 ### Return type
 
@@ -1347,8 +1352,6 @@ except ApiException as e:
 
 
 Update the attributes of a Caseplan.
-
-patch_casemanagement_caseplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/casemanagement/caseplans/{caseplanId} 
 
@@ -1369,8 +1372,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-body = PureCloudPlatformClientV2.CaseplanUpdate() # CaseplanUpdate | Caseplan
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+body = PureCloudPlatformClientV2.CaseplanUpdate() # CaseplanUpdate | Caseplan update.
 
 try:
     # Update the attributes of a Caseplan.
@@ -1385,8 +1388,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **body** | [**CaseplanUpdate**](CaseplanUpdate)| Caseplan |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **body** | [**CaseplanUpdate**](CaseplanUpdate)| Caseplan update. |  |
 
 ### Return type
 
@@ -1399,8 +1402,6 @@ except ApiException as e:
 
 
 Update the attributes of a Stageplan.
-
-patch_casemanagement_caseplan_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId} 
 
@@ -1421,9 +1422,9 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-stageplan_id = 'stageplan_id_example' # str | Stageplan ID
-body = PureCloudPlatformClientV2.StageplanUpdate() # StageplanUpdate | Stageplan
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+stageplan_id = 'stageplan_id_example' # str | Stageplan identifier.
+body = PureCloudPlatformClientV2.StageplanUpdate() # StageplanUpdate | Stageplan update.
 
 try:
     # Update the attributes of a Stageplan.
@@ -1438,9 +1439,9 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **stageplan_id** | **str**| Stageplan ID |  |
-| **body** | [**StageplanUpdate**](StageplanUpdate)| Stageplan |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **stageplan_id** | **str**| Stageplan identifier. |  |
+| **body** | [**StageplanUpdate**](StageplanUpdate)| Stageplan update. |  |
 
 ### Return type
 
@@ -1453,8 +1454,6 @@ except ApiException as e:
 
 
 Update the attributes of a Stepplan.
-
-patch_casemanagement_caseplan_stageplan_stepplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans/{stepplanId} 
 
@@ -1475,10 +1474,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-stageplan_id = 'stageplan_id_example' # str | Stageplan ID
-stepplan_id = 'stepplan_id_example' # str | Stepplan ID
-body = PureCloudPlatformClientV2.StepplanUpdate() # StepplanUpdate | Stepplan
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+stageplan_id = 'stageplan_id_example' # str | Stageplan identifier.
+stepplan_id = 'stepplan_id_example' # str | Stepplan identifier.
+body = PureCloudPlatformClientV2.StepplanUpdate() # StepplanUpdate | Stepplan update.
 
 try:
     # Update the attributes of a Stepplan.
@@ -1493,10 +1492,10 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **stageplan_id** | **str**| Stageplan ID |  |
-| **stepplan_id** | **str**| Stepplan ID |  |
-| **body** | [**StepplanUpdate**](StepplanUpdate)| Stepplan |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **stageplan_id** | **str**| Stageplan identifier. |  |
+| **stepplan_id** | **str**| Stepplan identifier. |  |
+| **body** | [**StepplanUpdate**](StepplanUpdate)| Stepplan update. |  |
 
 ### Return type
 
@@ -1505,12 +1504,10 @@ except ApiException as e:
 
 ## post_casemanagement_case_associations
 
-> [**CaseAssociation**](CaseAssociation) post_casemanagement_case_associations(case_id, body=body)
+> [**CaseAssociation**](CaseAssociation) post_casemanagement_case_associations(case_id, body)
 
 
-Create a case association.
-
-post_casemanagement_case_associations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Create a Case association.
 
 Wraps POST /api/v2/casemanagement/cases/{caseId}/associations 
 
@@ -1531,12 +1528,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID.
-body = PureCloudPlatformClientV2.CaseAssociationCreate() # CaseAssociationCreate | Case Association (optional)
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CaseAssociationCreate() # CaseAssociationCreate | Case association create request.
 
 try:
-    # Create a case association.
-    api_response = api_instance.post_casemanagement_case_associations(case_id, body=body)
+    # Create a Case association.
+    api_response = api_instance.post_casemanagement_case_associations(case_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CaseManagementApi->post_casemanagement_case_associations: %s\n" % e)
@@ -1547,8 +1544,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID. |  |
-| **body** | [**CaseAssociationCreate**](CaseAssociationCreate)| Case Association | [optional]  |
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CaseAssociationCreate**](CaseAssociationCreate)| Case association create request. |  |
 
 ### Return type
 
@@ -1561,8 +1558,6 @@ except ApiException as e:
 
 
 Create a Terminate Job for a Case.
-
-post_casemanagement_case_terminate_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/casemanagement/cases/{caseId}/terminate/jobs 
 
@@ -1583,7 +1578,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-case_id = 'case_id_example' # str | Case ID
+case_id = 'case_id_example' # str | Case identifier.
 
 try:
     # Create a Terminate Job for a Case.
@@ -1598,11 +1593,61 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **case_id** | **str**| Case ID |  |
+| **case_id** | **str**| Case identifier. |  |
 
 ### Return type
 
 [**TerminateJob**](TerminateJob)
+
+
+## post_casemanagement_caseplan_dataschemas
+
+> [**CaseplanDataSchema**](CaseplanDataSchema) post_casemanagement_caseplan_dataschemas(caseplan_id, body)
+
+
+Add a data schema to a draft Caseplan.
+
+Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas 
+
+Requires ALL permissions: 
+
+* caseManagement:caseplanDataSchemas:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+body = PureCloudPlatformClientV2.CaseplanDataSchemaRequest() # CaseplanDataSchemaRequest | Data schema reference.
+
+try:
+    # Add a data schema to a draft Caseplan.
+    api_response = api_instance.post_casemanagement_caseplan_dataschemas(caseplan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->post_casemanagement_caseplan_dataschemas: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **body** | [**CaseplanDataSchemaRequest**](CaseplanDataSchemaRequest)| Data schema reference. |  |
+
+### Return type
+
+[**CaseplanDataSchema**](CaseplanDataSchema)
 
 
 ## post_casemanagement_caseplan_publish
@@ -1611,8 +1656,6 @@ except ApiException as e:
 
 
 Publish Caseplan.
-
-post_casemanagement_caseplan_publish is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/publish 
 
@@ -1633,7 +1676,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
 
 try:
     # Publish Caseplan.
@@ -1648,7 +1691,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
 
 ### Return type
 
@@ -1661,8 +1704,6 @@ except ApiException as e:
 
 
 Create Caseplan version.
-
-post_casemanagement_caseplan_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/versions 
 
@@ -1683,7 +1724,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
 
 try:
     # Create Caseplan version.
@@ -1698,7 +1739,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
 
 ### Return type
 
@@ -1711,8 +1752,6 @@ except ApiException as e:
 
 
 Create a Caseplan.
-
-post_casemanagement_caseplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/casemanagement/caseplans 
 
@@ -1733,7 +1772,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-body = PureCloudPlatformClientV2.CaseplanCreate() # CaseplanCreate | Caseplan
+body = PureCloudPlatformClientV2.CaseplanCreate() # CaseplanCreate | Caseplan create request.
 
 try:
     # Create a Caseplan.
@@ -1748,7 +1787,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CaseplanCreate**](CaseplanCreate)| Caseplan |  |
+| **body** | [**CaseplanCreate**](CaseplanCreate)| Caseplan create request. |  |
 
 ### Return type
 
@@ -1760,9 +1799,7 @@ except ApiException as e:
 > [**CaseplanQueryEntityListing**](CaseplanQueryEntityListing) post_casemanagement_caseplans_query(body)
 
 
-Query for caseplans
-
-post_casemanagement_caseplans_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Query for Caseplans.
 
 Wraps POST /api/v2/casemanagement/caseplans/query 
 
@@ -1783,10 +1820,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-body = PureCloudPlatformClientV2.CaseplanQueryRequest() # CaseplanQueryRequest | CaseplanQueryRequest
+body = PureCloudPlatformClientV2.CaseplanQueryRequest() # CaseplanQueryRequest | Caseplan query request.
 
 try:
-    # Query for caseplans
+    # Query for Caseplans.
     api_response = api_instance.post_casemanagement_caseplans_query(body)
     pprint(api_response)
 except ApiException as e:
@@ -1798,7 +1835,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CaseplanQueryRequest**](CaseplanQueryRequest)| CaseplanQueryRequest |  |
+| **body** | [**CaseplanQueryRequest**](CaseplanQueryRequest)| Caseplan query request. |  |
 
 ### Return type
 
@@ -1811,8 +1848,6 @@ except ApiException as e:
 
 
 Create a Case.
-
-post_casemanagement_cases is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/casemanagement/cases 
 
@@ -1833,7 +1868,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-body = PureCloudPlatformClientV2.CaseCreate() # CaseCreate | Case
+body = PureCloudPlatformClientV2.CaseCreate() # CaseCreate | Case create request.
 
 try:
     # Create a Case.
@@ -1848,7 +1883,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CaseCreate**](CaseCreate)| Case |  |
+| **body** | [**CaseCreate**](CaseCreate)| Case create request. |  |
 
 ### Return type
 
@@ -1857,12 +1892,10 @@ except ApiException as e:
 
 ## post_casemanagement_cases_associations_query
 
-> [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing) post_casemanagement_cases_associations_query(body=body)
+> [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing) post_casemanagement_cases_associations_query(body)
 
 
-Query for case associations
-
-post_casemanagement_cases_associations_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+Query for Case associations by interaction.
 
 Wraps POST /api/v2/casemanagement/cases/associations/query 
 
@@ -1883,11 +1916,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-body = PureCloudPlatformClientV2.CaseAssociationQuery() # CaseAssociationQuery | Case Association (optional)
+body = PureCloudPlatformClientV2.CaseAssociationQuery() # CaseAssociationQuery | Case association query request.
 
 try:
-    # Query for case associations
-    api_response = api_instance.post_casemanagement_cases_associations_query(body=body)
+    # Query for Case associations by interaction.
+    api_response = api_instance.post_casemanagement_cases_associations_query(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CaseManagementApi->post_casemanagement_cases_associations_query: %s\n" % e)
@@ -1898,11 +1931,63 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CaseAssociationQuery**](CaseAssociationQuery)| Case Association | [optional]  |
+| **body** | [**CaseAssociationQuery**](CaseAssociationQuery)| Case association query request. |  |
 
 ### Return type
 
 [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing)
+
+
+## put_casemanagement_caseplan_dataschema
+
+> [**CaseplanDataSchema**](CaseplanDataSchema) put_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name, body)
+
+
+Update a data schema on a draft Caseplan.
+
+Wraps PUT /api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName} 
+
+Requires ALL permissions: 
+
+* caseManagement:caseplanDataSchemas:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+schema_key_name = 'schema_key_name_example' # str | Schema key (for example \"default\").
+body = PureCloudPlatformClientV2.CaseplanDataSchemaRequest() # CaseplanDataSchemaRequest | Data schema reference.
+
+try:
+    # Update a data schema on a draft Caseplan.
+    api_response = api_instance.put_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->put_casemanagement_caseplan_dataschema: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **schema_key_name** | **str**| Schema key (for example \&quot;default\&quot;). |  |
+| **body** | [**CaseplanDataSchemaRequest**](CaseplanDataSchemaRequest)| Data schema reference. |  |
+
+### Return type
+
+[**CaseplanDataSchema**](CaseplanDataSchema)
 
 
 ## put_casemanagement_caseplan_intakesettings
@@ -1911,8 +1996,6 @@ except ApiException as e:
 
 
 Update the intake settings for a Caseplan.
-
-put_casemanagement_caseplan_intakesettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/casemanagement/caseplans/{caseplanId}/intakesettings 
 
@@ -1933,8 +2016,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
-caseplan_id = 'caseplan_id_example' # str | Caseplan ID
-body = PureCloudPlatformClientV2.IntakeSettingsUpdate() # IntakeSettingsUpdate | Intake Settings
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+body = PureCloudPlatformClientV2.IntakeSettingsUpdate() # IntakeSettingsUpdate | Intake settings update.
 
 try:
     # Update the intake settings for a Caseplan.
@@ -1949,12 +2032,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **caseplan_id** | **str**| Caseplan ID |  |
-| **body** | [**IntakeSettingsUpdate**](IntakeSettingsUpdate)| Intake Settings |  |
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **body** | [**IntakeSettingsUpdate**](IntakeSettingsUpdate)| Intake settings update. |  |
 
 ### Return type
 
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

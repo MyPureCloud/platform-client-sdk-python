@@ -365,7 +365,7 @@ class Stage(object):
     def case(self) -> 'CaseReference':
         """
         Gets the case of this Stage.
-        The parent case of the Stage.
+        The parent Case of the Stage.
 
         :return: The case of this Stage.
         :rtype: CaseReference
@@ -376,7 +376,7 @@ class Stage(object):
     def case(self, case: 'CaseReference') -> None:
         """
         Sets the case of this Stage.
-        The parent case of the Stage.
+        The parent Case of the Stage.
 
         :param case: The case of this Stage.
         :type: CaseReference

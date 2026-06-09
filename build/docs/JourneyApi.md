@@ -111,8 +111,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request for journey aggregates
 
-delete_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -598,8 +596,6 @@ except ApiException as e:
 
 Get status for async query for journey aggregates
 
-get_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -647,8 +643,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async aggregates query
-
-get_analytics_journeys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results 
 
@@ -3576,8 +3570,6 @@ except ApiException as e:
 
 Query for journey aggregates asynchronously
 
-post_analytics_journeys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/journeys/aggregates/jobs 
 
 Requires ANY permissions: 
@@ -4911,4 +4903,4 @@ except ApiException as e:
 [**ActivateExternalEventResponse**](ActivateExternalEventResponse)
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

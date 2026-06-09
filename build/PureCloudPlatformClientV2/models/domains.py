@@ -49,14 +49,20 @@ class Domains(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'authorized_domains': 'AuthorizedDomains'
+            'authorized_domains': 'AuthorizedDomains',
+            'allow_existing_email_participants': 'bool',
+            'allow_outbound_to_any_domain_acd': 'bool'
         }
 
         self.attribute_map = {
-            'authorized_domains': 'authorizedDomains'
+            'authorized_domains': 'authorizedDomains',
+            'allow_existing_email_participants': 'allowExistingEmailParticipants',
+            'allow_outbound_to_any_domain_acd': 'allowOutboundToAnyDomainAcd'
         }
 
         self._authorized_domains = None
+        self._allow_existing_email_participants = None
+        self._allow_outbound_to_any_domain_acd = None
 
     @property
     def authorized_domains(self) -> 'AuthorizedDomains':
@@ -81,6 +87,54 @@ class Domains(object):
         
 
         self._authorized_domains = authorized_domains
+
+    @property
+    def allow_existing_email_participants(self) -> bool:
+        """
+        Gets the allow_existing_email_participants of this Domains.
+        Allow reply and forward to recipients included in the previous email, ignoring the authorized domains list
+
+        :return: The allow_existing_email_participants of this Domains.
+        :rtype: bool
+        """
+        return self._allow_existing_email_participants
+
+    @allow_existing_email_participants.setter
+    def allow_existing_email_participants(self, allow_existing_email_participants: bool) -> None:
+        """
+        Sets the allow_existing_email_participants of this Domains.
+        Allow reply and forward to recipients included in the previous email, ignoring the authorized domains list
+
+        :param allow_existing_email_participants: The allow_existing_email_participants of this Domains.
+        :type: bool
+        """
+        
+
+        self._allow_existing_email_participants = allow_existing_email_participants
+
+    @property
+    def allow_outbound_to_any_domain_acd(self) -> bool:
+        """
+        Gets the allow_outbound_to_any_domain_acd of this Domains.
+        Allow new outbound email (no existing conversation) to be sent to any domain, ignoring the authorized domains list.This setting applies only to new outbound emails sent on behalf of queue or agentless, NOT campaigns.This setting can only be true if allowExistingEmailParticipants is also true.
+
+        :return: The allow_outbound_to_any_domain_acd of this Domains.
+        :rtype: bool
+        """
+        return self._allow_outbound_to_any_domain_acd
+
+    @allow_outbound_to_any_domain_acd.setter
+    def allow_outbound_to_any_domain_acd(self, allow_outbound_to_any_domain_acd: bool) -> None:
+        """
+        Sets the allow_outbound_to_any_domain_acd of this Domains.
+        Allow new outbound email (no existing conversation) to be sent to any domain, ignoring the authorized domains list.This setting applies only to new outbound emails sent on behalf of queue or agentless, NOT campaigns.This setting can only be true if allowExistingEmailParticipants is also true.
+
+        :param allow_outbound_to_any_domain_acd: The allow_outbound_to_any_domain_acd of this Domains.
+        :type: bool
+        """
+        
+
+        self._allow_outbound_to_any_domain_acd = allow_outbound_to_any_domain_acd
 
     def to_dict(self):
         """

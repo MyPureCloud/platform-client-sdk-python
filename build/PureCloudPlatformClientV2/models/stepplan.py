@@ -287,7 +287,7 @@ class Stepplan(object):
     def activity_type(self) -> str:
         """
         Gets the activity_type of this Stepplan.
-        The activityType of the Stepplan.
+        The activity type of the Stepplan.
 
         :return: The activity_type of this Stepplan.
         :rtype: str
@@ -298,7 +298,7 @@ class Stepplan(object):
     def activity_type(self, activity_type: str) -> None:
         """
         Sets the activity_type of this Stepplan.
-        The activityType of the Stepplan.
+        The activity type of the Stepplan.
 
         :param activity_type: The activity_type of this Stepplan.
         :type: str
@@ -316,7 +316,7 @@ class Stepplan(object):
     def workitem_settings(self) -> 'WorkitemSettingsResponse':
         """
         Gets the workitem_settings of this Stepplan.
-        The workitemSettings of the Stepplan.
+        The Workitem settings of the Stepplan.
 
         :return: The workitem_settings of this Stepplan.
         :rtype: WorkitemSettingsResponse
@@ -327,7 +327,7 @@ class Stepplan(object):
     def workitem_settings(self, workitem_settings: 'WorkitemSettingsResponse') -> None:
         """
         Sets the workitem_settings of this Stepplan.
-        The workitemSettings of the Stepplan.
+        The Workitem settings of the Stepplan.
 
         :param workitem_settings: The workitem_settings of this Stepplan.
         :type: WorkitemSettingsResponse

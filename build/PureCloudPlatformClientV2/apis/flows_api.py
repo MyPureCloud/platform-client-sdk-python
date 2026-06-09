@@ -67,7 +67,6 @@ class FlowsApi(object):
         """
         Delete/cancel an async request for flow aggregates
         
-	    delete_analytics_flows_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -146,7 +145,6 @@ class FlowsApi(object):
         """
         Get status for async query for Flow aggregates
         
-	    get_analytics_flows_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -225,7 +223,6 @@ class FlowsApi(object):
         """
         Fetch a page of results for an async aggregates query
         
-	    get_analytics_flows_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -391,7 +388,6 @@ class FlowsApi(object):
         """
         Query for flow aggregates asynchronously
         
-	    post_analytics_flows_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

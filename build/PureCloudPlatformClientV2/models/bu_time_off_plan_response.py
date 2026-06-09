@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ActivityCodesReference
     from . import BuTimeOffLimitReference
     from . import HrisTimeOffType
+    from . import OverrideDate
     from . import TimeOffPlanBusinessUnitAssociation
     from . import TimeOffPlanManagementUnitAssociation
     from . import WfmVersionedEntityMetadata
@@ -62,6 +63,7 @@ class BuTimeOffPlanResponse(object):
             'days_before_start_to_expire_from_waitlist': 'int',
             'auto_publish_approved_time_off_requests': 'bool',
             'restricted_activity_codes': 'ActivityCodesReference',
+            'override_dates': 'list[OverrideDate]',
             'hris_time_off_type': 'HrisTimeOffType',
             'enabled': 'bool',
             'count_against_time_off_limits': 'bool',
@@ -80,6 +82,7 @@ class BuTimeOffPlanResponse(object):
             'days_before_start_to_expire_from_waitlist': 'daysBeforeStartToExpireFromWaitlist',
             'auto_publish_approved_time_off_requests': 'autoPublishApprovedTimeOffRequests',
             'restricted_activity_codes': 'restrictedActivityCodes',
+            'override_dates': 'overrideDates',
             'hris_time_off_type': 'hrisTimeOffType',
             'enabled': 'enabled',
             'count_against_time_off_limits': 'countAgainstTimeOffLimits',
@@ -97,6 +100,7 @@ class BuTimeOffPlanResponse(object):
         self._days_before_start_to_expire_from_waitlist = None
         self._auto_publish_approved_time_off_requests = None
         self._restricted_activity_codes = None
+        self._override_dates = None
         self._hris_time_off_type = None
         self._enabled = None
         self._count_against_time_off_limits = None
@@ -301,6 +305,30 @@ class BuTimeOffPlanResponse(object):
         
 
         self._restricted_activity_codes = restricted_activity_codes
+
+    @property
+    def override_dates(self) -> List['OverrideDate']:
+        """
+        Gets the override_dates of this BuTimeOffPlanResponse.
+        A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved
+
+        :return: The override_dates of this BuTimeOffPlanResponse.
+        :rtype: list[OverrideDate]
+        """
+        return self._override_dates
+
+    @override_dates.setter
+    def override_dates(self, override_dates: List['OverrideDate']) -> None:
+        """
+        Sets the override_dates of this BuTimeOffPlanResponse.
+        A list of override dates to check for conflicts with time-off request dates. If a conflict is found, the request will not be auto-approved
+
+        :param override_dates: The override_dates of this BuTimeOffPlanResponse.
+        :type: list[OverrideDate]
+        """
+        
+
+        self._override_dates = override_dates
 
     @property
     def hris_time_off_type(self) -> 'HrisTimeOffType':

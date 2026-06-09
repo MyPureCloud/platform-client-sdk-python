@@ -186,7 +186,7 @@ class TerminateJob(object):
     def date_created(self) -> datetime:
         """
         Gets the date_created of this TerminateJob.
-        The job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The Job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this TerminateJob.
         :rtype: datetime
@@ -197,7 +197,7 @@ class TerminateJob(object):
     def date_created(self, date_created: datetime) -> None:
         """
         Sets the date_created of this TerminateJob.
-        The job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The Job creation date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this TerminateJob.
         :type: datetime
@@ -210,7 +210,7 @@ class TerminateJob(object):
     def date_modified(self) -> datetime:
         """
         Gets the date_modified of this TerminateJob.
-        The job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The Job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this TerminateJob.
         :rtype: datetime
@@ -221,7 +221,7 @@ class TerminateJob(object):
     def date_modified(self, date_modified: datetime) -> None:
         """
         Sets the date_modified of this TerminateJob.
-        The job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        The Job modification date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this TerminateJob.
         :type: datetime

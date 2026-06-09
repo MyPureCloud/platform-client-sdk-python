@@ -184,6 +184,8 @@ from .models.agent_schedule_shift_activity import AgentScheduleShiftActivity
 from .models.agent_schedule_unavailable_time import AgentScheduleUnavailableTime
 from .models.agent_scoring_rule import AgentScoringRule
 from .models.agent_scoring_rule_entity_listing import AgentScoringRuleEntityListing
+from .models.agent_state_activity_category_count import AgentStateActivityCategoryCount
+from .models.agent_state_adherence_state_count import AgentStateAdherenceStateCount
 from .models.agent_state_agent_query_clause import AgentStateAgentQueryClause
 from .models.agent_state_agent_query_predicate import AgentStateAgentQueryPredicate
 from .models.agent_state_counts_request import AgentStateCountsRequest
@@ -314,6 +316,7 @@ from .models.apple_integration import AppleIntegration
 from .models.apple_integration_entity_listing import AppleIntegrationEntityListing
 from .models.apple_integration_request import AppleIntegrationRequest
 from .models.apple_integration_update_request import AppleIntegrationUpdateRequest
+from .models.apple_invitation import AppleInvitation
 from .models.apple_opaque_id import AppleOpaqueId
 from .models.apple_pay import ApplePay
 from .models.approval_namespace import ApprovalNamespace
@@ -627,6 +630,8 @@ from .models.bu_update_agent_schedule_shift import BuUpdateAgentScheduleShift
 from .models.bu_update_agent_schedule_upload_schema import BuUpdateAgentScheduleUploadSchema
 from .models.bu_update_time_off_plan_request import BuUpdateTimeOffPlanRequest
 from .models.bu_user_listing import BuUserListing
+from .models.bulk_add_decision_table_rows_request import BulkAddDecisionTableRowsRequest
+from .models.bulk_add_decision_table_rows_response import BulkAddDecisionTableRowsResponse
 from .models.bulk_add_opportunities_request import BulkAddOpportunitiesRequest
 from .models.bulk_add_opportunities_response import BulkAddOpportunitiesResponse
 from .models.bulk_add_source_intents_request import BulkAddSourceIntentsRequest
@@ -637,6 +642,7 @@ from .models.bulk_contacts_enrich_request import BulkContactsEnrichRequest
 from .models.bulk_contacts_enrich_response import BulkContactsEnrichResponse
 from .models.bulk_contacts_request import BulkContactsRequest
 from .models.bulk_contacts_response import BulkContactsResponse
+from .models.bulk_delete_decision_table_rows_request import BulkDeleteDecisionTableRowsRequest
 from .models.bulk_delete_response import BulkDeleteResponse
 from .models.bulk_entity_error_contact_enrich_request import BulkEntityErrorContactEnrichRequest
 from .models.bulk_entity_error_entity import BulkEntityErrorEntity
@@ -701,6 +707,8 @@ from .models.bulk_result import BulkResult
 from .models.bulk_results import BulkResults
 from .models.bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .models.bulk_source_intents_response import BulkSourceIntentsResponse
+from .models.bulk_update_decision_table_rows_request import BulkUpdateDecisionTableRowsRequest
+from .models.bulk_update_decision_table_rows_response import BulkUpdateDecisionTableRowsResponse
 from .models.bulk_update_opportunity_enrollments_status_response import BulkUpdateOpportunityEnrollmentsStatusResponse
 from .models.bulk_update_shift_trade_list_job_request import BulkUpdateShiftTradeListJobRequest
 from .models.bulk_update_shift_trade_state_request_item import BulkUpdateShiftTradeStateRequestItem
@@ -871,6 +879,7 @@ from .models.caseplan_create import CaseplanCreate
 from .models.caseplan_create_response import CaseplanCreateResponse
 from .models.caseplan_data_schema import CaseplanDataSchema
 from .models.caseplan_data_schema_listing import CaseplanDataSchemaListing
+from .models.caseplan_data_schema_request import CaseplanDataSchemaRequest
 from .models.caseplan_listing import CaseplanListing
 from .models.caseplan_query_entity_listing import CaseplanQueryEntityListing
 from .models.caseplan_query_request import CaseplanQueryRequest
@@ -1094,6 +1103,7 @@ from .models.contacts_export import ContactsExport
 from .models.contacts_export_field_filter import ContactsExportFieldFilter
 from .models.contacts_export_field_list_filter import ContactsExportFieldListFilter
 from .models.contacts_export_filter import ContactsExportFilter
+from .models.contacts_export_listing import ContactsExportListing
 from .models.contacts_export_query_conditions import ContactsExportQueryConditions
 from .models.contacts_export_request import ContactsExportRequest
 from .models.contacts_patch_change import ContactsPatchChange
@@ -1542,6 +1552,7 @@ from .models.conversation_summaries_get_response import ConversationSummariesGet
 from .models.conversation_summary import ConversationSummary
 from .models.conversation_summary_extracted_entity import ConversationSummaryExtractedEntity
 from .models.conversation_summary_followup import ConversationSummaryFollowup
+from .models.conversation_summary_label import ConversationSummaryLabel
 from .models.conversation_summary_reason import ConversationSummaryReason
 from .models.conversation_summary_resolution import ConversationSummaryResolution
 from .models.conversation_summary_topic_conversation_followup_action import ConversationSummaryTopicConversationFollowupAction
@@ -1647,6 +1658,7 @@ from .models.create_callback_response import CreateCallbackResponse
 from .models.create_capacity_plan_staffing_group_metric_change_request import CreateCapacityPlanStaffingGroupMetricChangeRequest
 from .models.create_coaching_appointment_request import CreateCoachingAppointmentRequest
 from .models.create_decision_table_columns_request import CreateDecisionTableColumnsRequest
+from .models.create_decision_table_import_job_request import CreateDecisionTableImportJobRequest
 from .models.create_decision_table_request import CreateDecisionTableRequest
 from .models.create_decision_table_row_request import CreateDecisionTableRowRequest
 from .models.create_email_request import CreateEmailRequest
@@ -1663,6 +1675,7 @@ from .models.create_management_unit_api_request import CreateManagementUnitApiRe
 from .models.create_management_unit_settings_request import CreateManagementUnitSettingsRequest
 from .models.create_metric import CreateMetric
 from .models.create_objective import CreateObjective
+from .models.create_organization_link import CreateOrganizationLink
 from .models.create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
 from .models.create_outbound_messaging_conversation_response import CreateOutboundMessagingConversationResponse
 from .models.create_performance_profile import CreatePerformanceProfile
@@ -1819,9 +1832,18 @@ from .models.decision_table_columns import DecisionTableColumns
 from .models.decision_table_contract import DecisionTableContract
 from .models.decision_table_execution_request import DecisionTableExecutionRequest
 from .models.decision_table_execution_response import DecisionTableExecutionResponse
+from .models.decision_table_export_job import DecisionTableExportJob
+from .models.decision_table_export_job_error import DecisionTableExportJobError
+from .models.decision_table_export_job_listing import DecisionTableExportJobListing
+from .models.decision_table_export_job_request import DecisionTableExportJobRequest
+from .models.decision_table_import_job import DecisionTableImportJob
+from .models.decision_table_import_job_error import DecisionTableImportJobError
+from .models.decision_table_import_job_listing import DecisionTableImportJobListing
+from .models.decision_table_import_row_metrics import DecisionTableImportRowMetrics
 from .models.decision_table_input_column import DecisionTableInputColumn
 from .models.decision_table_input_column_expression import DecisionTableInputColumnExpression
 from .models.decision_table_input_column_request import DecisionTableInputColumnRequest
+from .models.decision_table_job_validation_error import DecisionTableJobValidationError
 from .models.decision_table_listing import DecisionTableListing
 from .models.decision_table_output_column import DecisionTableOutputColumn
 from .models.decision_table_output_column_request import DecisionTableOutputColumnRequest
@@ -1981,6 +2003,7 @@ from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disable_site_connections_request import DisableSiteConnectionsRequest
 from .models.disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .models.disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
+from .models.disaster_recovery_all_routing_request import DisasterRecoveryAllRoutingRequest
 from .models.disconnect_reason import DisconnectReason
 from .models.disposition import Disposition
 from .models.disposition_amd_timeout import DispositionAmdTimeout
@@ -2207,6 +2230,7 @@ from .models.email_progress_transfer_event import EmailProgressTransferEvent
 from .models.email_routing_established_event import EmailRoutingEstablishedEvent
 from .models.email_routing_transfer_event import EmailRoutingTransferEvent
 from .models.email_setting import EmailSetting
+from .models.email_setting_entity_listing import EmailSettingEntityListing
 from .models.email_setting_reference import EmailSettingReference
 from .models.email_settings import EmailSettings
 from .models.email_setup import EmailSetup
@@ -2339,7 +2363,6 @@ from .models.expandable_web_deployment_entity_listing import ExpandableWebDeploy
 from .models.expansion_criterium import ExpansionCriterium
 from .models.expired_edge_listing import ExpiredEdgeListing
 from .models.export_details import ExportDetails
-from .models.export_listing import ExportListing
 from .models.export_script_request import ExportScriptRequest
 from .models.export_script_response import ExportScriptResponse
 from .models.export_uri import ExportUri
@@ -3636,6 +3659,10 @@ from .models.nuance_mix_dlg_settings import NuanceMixDlgSettings
 from .models.nuance_organization import NuanceOrganization
 from .models.number import Number
 from .models.number_plan import NumberPlan
+from .models.number_routing import NumberRouting
+from .models.number_routing_listing import NumberRoutingListing
+from .models.number_routing_request import NumberRoutingRequest
+from .models.number_routing_reset_organization_request import NumberRoutingResetOrganizationRequest
 from .models.numeric_range import NumericRange
 from .models.o_auth_apple_authorization_response import OAuthAppleAuthorizationResponse
 from .models.o_auth_apple_authorization_response_error import OAuthAppleAuthorizationResponseError
@@ -3726,6 +3753,9 @@ from .models.org_whitelist_settings import OrgWhitelistSettings
 from .models.organization import Organization
 from .models.organization_call_metrics import OrganizationCallMetrics
 from .models.organization_features import OrganizationFeatures
+from .models.organization_link import OrganizationLink
+from .models.organization_link_approval_request import OrganizationLinkApprovalRequest
+from .models.organization_link_response import OrganizationLinkResponse
 from .models.organization_presence import OrganizationPresence
 from .models.organization_presence_definition import OrganizationPresenceDefinition
 from .models.organization_presence_definition_entity_listing import OrganizationPresenceDefinitionEntityListing
@@ -4493,6 +4523,7 @@ from .models.recording_message_receipt import RecordingMessageReceipt
 from .models.recording_message_receipt_reason import RecordingMessageReceiptReason
 from .models.recording_messaging_message import RecordingMessagingMessage
 from .models.recording_metadata import RecordingMetadata
+from .models.recording_notification_response import RecordingNotificationResponse
 from .models.recording_notification_template import RecordingNotificationTemplate
 from .models.recording_retention import RecordingRetention
 from .models.recording_retention_cursor_entity_listing import RecordingRetentionCursorEntityListing
@@ -4515,6 +4546,7 @@ from .models.recurrence_period import RecurrencePeriod
 from .models.recurrence_settings import RecurrenceSettings
 from .models.recurrence_settings_base import RecurrenceSettingsBase
 from .models.referrer import Referrer
+from .models.region_response import RegionResponse
 from .models.region_time_zone import RegionTimeZone
 from .models.register_architect_export_job import RegisterArchitectExportJob
 from .models.register_architect_export_job_response import RegisterArchitectExportJobResponse
@@ -4649,6 +4681,7 @@ from .models.routing_status_detail_query_clause import RoutingStatusDetailQueryC
 from .models.routing_status_detail_query_filter import RoutingStatusDetailQueryFilter
 from .models.routing_status_detail_query_predicate import RoutingStatusDetailQueryPredicate
 from .models.routing_transfer_event import RoutingTransferEvent
+from .models.row import Row
 from .models.row_search_filter import RowSearchFilter
 from .models.row_search_predicate import RowSearchPredicate
 from .models.rule_config import RuleConfig
@@ -4678,6 +4711,9 @@ from .models.schedule_group_entity_listing import ScheduleGroupEntityListing
 from .models.schedule_interval import ScheduleInterval
 from .models.schedule_reference_with_business_unit import ScheduleReferenceWithBusinessUnit
 from .models.schedule_upload_processing_response import ScheduleUploadProcessingResponse
+from .models.schedule_visibility_range import ScheduleVisibilityRange
+from .models.schedule_visibility_settings_request import ScheduleVisibilitySettingsRequest
+from .models.schedule_visibility_settings_response import ScheduleVisibilitySettingsResponse
 from .models.scheduled_trigger import ScheduledTrigger
 from .models.scheduled_trigger_entity_listing import ScheduledTriggerEntityListing
 from .models.scheduler_message_argument import SchedulerMessageArgument
@@ -4937,6 +4973,7 @@ from .models.social_media_query_predicate import SocialMediaQueryPredicate
 from .models.social_media_query_sort import SocialMediaQuerySort
 from .models.social_media_statistical_response import SocialMediaStatisticalResponse
 from .models.social_media_statistical_summary import SocialMediaStatisticalSummary
+from .models.social_numeric_range import SocialNumericRange
 from .models.social_topic_patch_request import SocialTopicPatchRequest
 from .models.social_topic_request import SocialTopicRequest
 from .models.social_topic_response import SocialTopicResponse
@@ -5205,6 +5242,7 @@ from .models.text_bots_rich_media_input_event import TextBotsRichMediaInputEvent
 from .models.text_message_listing import TextMessageListing
 from .models.text_style_properties import TextStyleProperties
 from .models.third_party_suggestion import ThirdPartySuggestion
+from .models.third_party_suggestion_source import ThirdPartySuggestionSource
 from .models.ticker import Ticker
 from .models.time_allowed import TimeAllowed
 from .models.time_and_date_sub_condition import TimeAndDateSubCondition
@@ -5413,6 +5451,7 @@ from .models.update_coaching_appointment_request import UpdateCoachingAppointmen
 from .models.update_conference_request import UpdateConferenceRequest
 from .models.update_contact_column_action_settings import UpdateContactColumnActionSettings
 from .models.update_decision_table_columns_request import UpdateDecisionTableColumnsRequest
+from .models.update_decision_table_import_job_request import UpdateDecisionTableImportJobRequest
 from .models.update_decision_table_request import UpdateDecisionTableRequest
 from .models.update_decision_table_version_request import UpdateDecisionTableVersionRequest
 from .models.update_draft_input import UpdateDraftInput
@@ -5711,10 +5750,12 @@ from .models.v3_source_last_synchronization import V3SourceLastSynchronization
 from .models.v3_source_ref import V3SourceRef
 from .models.v3_source_schedule_settings import V3SourceScheduleSettings
 from .models.v3_source_site_details import V3SourceSiteDetails
+from .models.v3_source_tag_filter import V3SourceTagFilter
 from .models.v3_source_update_request import V3SourceUpdateRequest
 from .models.v3_start_manual_sync_request import V3StartManualSyncRequest
 from .models.v3_synchronization import V3Synchronization
 from .models.v3_synchronization_listing import V3SynchronizationListing
+from .models.v3_synchronization_ref import V3SynchronizationRef
 from .models.v3_synchronization_statistics import V3SynchronizationStatistics
 from .models.v3_synchronization_update_request import V3SynchronizationUpdateRequest
 from .models.v3_synchronization_upload_metadata import V3SynchronizationUploadMetadata

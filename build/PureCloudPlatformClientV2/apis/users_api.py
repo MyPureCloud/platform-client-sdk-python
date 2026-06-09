@@ -127,7 +127,6 @@ class UsersApi(object):
         """
         Delete/cancel an async request for user aggregates
         
-	    delete_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1412,7 +1411,6 @@ class UsersApi(object):
         """
         Get status for async query for user aggregates
         
-	    get_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1491,7 +1489,6 @@ class UsersApi(object):
         """
         Fetch a page of results for an async aggregates query
         
-	    get_analytics_users_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7057,7 +7054,6 @@ class UsersApi(object):
         """
         Query for user aggregates asynchronously
         
-	    post_analytics_users_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

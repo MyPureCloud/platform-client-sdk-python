@@ -1,4 +1,4 @@
 certifi >= 2026.4.22
 python_dateutil >= 2.9.0.post0
-urllib3 >= 2.6.3
+urllib3 >= 2.7.0
 watchdog >= 6.0.0

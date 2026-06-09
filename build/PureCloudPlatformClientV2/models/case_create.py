@@ -83,7 +83,7 @@ class CaseCreate(object):
     def caseplan_id(self) -> str:
         """
         Gets the caseplan_id of this CaseCreate.
-        The ID of the caseplan to create the case from.
+        The ID of the Caseplan used to create the Case.
 
         :return: The caseplan_id of this CaseCreate.
         :rtype: str
@@ -94,7 +94,7 @@ class CaseCreate(object):
     def caseplan_id(self, caseplan_id: str) -> None:
         """
         Sets the caseplan_id of this CaseCreate.
-        The ID of the caseplan to create the case from.
+        The ID of the Caseplan used to create the Case.
 
         :param caseplan_id: The caseplan_id of this CaseCreate.
         :type: str
@@ -110,7 +110,7 @@ class CaseCreate(object):
     def owner_id(self) -> str:
         """
         Gets the owner_id of this CaseCreate.
-        The ID of the owner of the case.
+        The ID of the owner of the Case.
 
         :return: The owner_id of this CaseCreate.
         :rtype: str
@@ -121,7 +121,7 @@ class CaseCreate(object):
     def owner_id(self, owner_id: str) -> None:
         """
         Sets the owner_id of this CaseCreate.
-        The ID of the owner of the case.
+        The ID of the owner of the Case.
 
         :param owner_id: The owner_id of this CaseCreate.
         :type: str
@@ -194,7 +194,7 @@ class CaseCreate(object):
     def conversation_id(self) -> str:
         """
         Gets the conversation_id of this CaseCreate.
-        The ID of conversation associated with the Case.
+        The ID of the Conversation associated with the Case.
 
         :return: The conversation_id of this CaseCreate.
         :rtype: str
@@ -205,7 +205,7 @@ class CaseCreate(object):
     def conversation_id(self, conversation_id: str) -> None:
         """
         Sets the conversation_id of this CaseCreate.
-        The ID of conversation associated with the Case.
+        The ID of the Conversation associated with the Case.
 
         :param conversation_id: The conversation_id of this CaseCreate.
         :type: str
@@ -221,7 +221,7 @@ class CaseCreate(object):
     def workitem_id(self) -> str:
         """
         Gets the workitem_id of this CaseCreate.
-        The ID of the workitem associated with the Case.
+        The ID of the Workitem associated with the Case.
 
         :return: The workitem_id of this CaseCreate.
         :rtype: str
@@ -232,7 +232,7 @@ class CaseCreate(object):
     def workitem_id(self, workitem_id: str) -> None:
         """
         Sets the workitem_id of this CaseCreate.
-        The ID of the workitem associated with the Case.
+        The ID of the Workitem associated with the Case.
 
         :param workitem_id: The workitem_id of this CaseCreate.
         :type: str
@@ -248,7 +248,7 @@ class CaseCreate(object):
     def ttl_seconds(self) -> int:
         """
         Gets the ttl_seconds of this CaseCreate.
-        The epoch timestamp in seconds specifying the time-to-live for the lifetime of the Case. Can not be greater than 365 days from the current time.
+        Epoch timestamp in seconds for the Case time-to-live. Cannot be more than 365 days after the current time.
 
         :return: The ttl_seconds of this CaseCreate.
         :rtype: int
@@ -259,7 +259,7 @@ class CaseCreate(object):
     def ttl_seconds(self, ttl_seconds: int) -> None:
         """
         Sets the ttl_seconds of this CaseCreate.
-        The epoch timestamp in seconds specifying the time-to-live for the lifetime of the Case. Can not be greater than 365 days from the current time.
+        Epoch timestamp in seconds for the Case time-to-live. Cannot be more than 365 days after the current time.
 
         :param ttl_seconds: The ttl_seconds of this CaseCreate.
         :type: int

@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CarouselCard
 
 class Carousel(object):
     """
@@ -47,13 +49,38 @@ class Carousel(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'cards': 'list[CarouselCard]'
         }
 
         self.attribute_map = {
-            
+            'cards': 'cards'
         }
 
+        self._cards = None
+
+    @property
+    def cards(self) -> List['CarouselCard']:
+        """
+        Gets the cards of this Carousel.
+        List of cards in a carousels template.
+
+        :return: The cards of this Carousel.
+        :rtype: list[CarouselCard]
+        """
+        return self._cards
+
+    @cards.setter
+    def cards(self, cards: List['CarouselCard']) -> None:
+        """
+        Sets the cards of this Carousel.
+        List of cards in a carousels template.
+
+        :param cards: The cards of this Carousel.
+        :type: list[CarouselCard]
+        """
+        
+
+        self._cards = cards
 
     def to_dict(self):
         """

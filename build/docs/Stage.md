@@ -17,8 +17,8 @@
 | **version** | int | The version of the Stage. | [optional] |
 | **status** | str | The Status of the Stage. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
-| **case** | [CaseReference](CaseReference) | The parent case of the Stage. | [optional] |
+| **case** | [CaseReference](CaseReference) | The parent Case of the Stage. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

@@ -6,8 +6,8 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **worktype** | [StepplansWorktypeReference](StepplansWorktypeReference) | The worktype information for the workitem settings. | [optional] |
+| **worktype** | [StepplansWorktypeReference](StepplansWorktypeReference) | The Worktype information for the Workitem settings. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

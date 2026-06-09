@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ConversationProperties
     from . import NumericRange
     from . import SocialKeyword
+    from . import SocialNumericRange
     from . import TranscriptTopics
     from . import Transcripts
     from . import WorkitemStatusFilter
@@ -288,6 +289,8 @@ class ViewFilter(object):
             'sentiment_trend_categories': 'list[str]',
             'content_moderation_flags': 'list[str]',
             'social_source_types': 'list[str]',
+            'social_follower_range': 'SocialNumericRange',
+            'social_verification_status': 'bool',
             'session_expired': 'bool',
             'screen_monitored': 'bool',
             'engagement_sources': 'list[str]',
@@ -530,6 +533,8 @@ class ViewFilter(object):
             'sentiment_trend_categories': 'sentimentTrendCategories',
             'content_moderation_flags': 'contentModerationFlags',
             'social_source_types': 'socialSourceTypes',
+            'social_follower_range': 'socialFollowerRange',
+            'social_verification_status': 'socialVerificationStatus',
             'session_expired': 'sessionExpired',
             'screen_monitored': 'screenMonitored',
             'engagement_sources': 'engagementSources',
@@ -771,6 +776,8 @@ class ViewFilter(object):
         self._sentiment_trend_categories = None
         self._content_moderation_flags = None
         self._social_source_types = None
+        self._social_follower_range = None
+        self._social_verification_status = None
         self._session_expired = None
         self._screen_monitored = None
         self._engagement_sources = None
@@ -6422,6 +6429,54 @@ class ViewFilter(object):
         
 
         self._social_source_types = social_source_types
+
+    @property
+    def social_follower_range(self) -> 'SocialNumericRange':
+        """
+        Gets the social_follower_range of this ViewFilter.
+        The follower range used to filter the view
+
+        :return: The social_follower_range of this ViewFilter.
+        :rtype: SocialNumericRange
+        """
+        return self._social_follower_range
+
+    @social_follower_range.setter
+    def social_follower_range(self, social_follower_range: 'SocialNumericRange') -> None:
+        """
+        Sets the social_follower_range of this ViewFilter.
+        The follower range used to filter the view
+
+        :param social_follower_range: The social_follower_range of this ViewFilter.
+        :type: SocialNumericRange
+        """
+        
+
+        self._social_follower_range = social_follower_range
+
+    @property
+    def social_verification_status(self) -> bool:
+        """
+        Gets the social_verification_status of this ViewFilter.
+        Filter to indicate if the posts from verified user
+
+        :return: The social_verification_status of this ViewFilter.
+        :rtype: bool
+        """
+        return self._social_verification_status
+
+    @social_verification_status.setter
+    def social_verification_status(self, social_verification_status: bool) -> None:
+        """
+        Sets the social_verification_status of this ViewFilter.
+        Filter to indicate if the posts from verified user
+
+        :param social_verification_status: The social_verification_status of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._social_verification_status = social_verification_status
 
     @property
     def session_expired(self) -> bool:

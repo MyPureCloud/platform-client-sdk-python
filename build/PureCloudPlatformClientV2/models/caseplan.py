@@ -280,7 +280,7 @@ class Caseplan(object):
     def default_case_owner(self) -> 'UserReference':
         """
         Gets the default_case_owner of this Caseplan.
-        The default case owner for Cases created from the Caseplan.
+        The default Case owner for Cases created from the Caseplan.
 
         :return: The default_case_owner of this Caseplan.
         :rtype: UserReference
@@ -291,7 +291,7 @@ class Caseplan(object):
     def default_case_owner(self, default_case_owner: 'UserReference') -> None:
         """
         Sets the default_case_owner of this Caseplan.
-        The default case owner for Cases created from the Caseplan.
+        The default Case owner for Cases created from the Caseplan.
 
         :param default_case_owner: The default_case_owner of this Caseplan.
         :type: UserReference
@@ -424,7 +424,7 @@ class Caseplan(object):
     def modified_by(self) -> 'UserReference':
         """
         Gets the modified_by of this Caseplan.
-        The id of the User who modified the Caseplan.
+        The ID of the User who modified the Caseplan.
 
         :return: The modified_by of this Caseplan.
         :rtype: UserReference
@@ -435,7 +435,7 @@ class Caseplan(object):
     def modified_by(self, modified_by: 'UserReference') -> None:
         """
         Sets the modified_by of this Caseplan.
-        The id of the User who modified the Caseplan.
+        The ID of the User who modified the Caseplan.
 
         :param modified_by: The modified_by of this Caseplan.
         :type: UserReference
@@ -448,7 +448,7 @@ class Caseplan(object):
     def customer_intent(self) -> 'CustomerIntentReference':
         """
         Gets the customer_intent of this Caseplan.
-        The customer intent for the Cases created from the caseplan.
+        The customer intent for Cases created from this Caseplan.
 
         :return: The customer_intent of this Caseplan.
         :rtype: CustomerIntentReference
@@ -459,7 +459,7 @@ class Caseplan(object):
     def customer_intent(self, customer_intent: 'CustomerIntentReference') -> None:
         """
         Sets the customer_intent of this Caseplan.
-        The customer intent for the Cases created from the caseplan.
+        The customer intent for Cases created from this Caseplan.
 
         :param customer_intent: The customer_intent of this Caseplan.
         :type: CustomerIntentReference

@@ -50,20 +50,23 @@ class EstimateAvailablePartialDayTimeOffResponse(object):
             'date': 'datetime',
             'duration_minutes': 'int',
             'payable_minutes': 'int',
-            'flexible': 'bool'
+            'flexible': 'bool',
+            'override_date_type': 'str'
         }
 
         self.attribute_map = {
             'date': 'date',
             'duration_minutes': 'durationMinutes',
             'payable_minutes': 'payableMinutes',
-            'flexible': 'flexible'
+            'flexible': 'flexible',
+            'override_date_type': 'overrideDateType'
         }
 
         self._date = None
         self._duration_minutes = None
         self._payable_minutes = None
         self._flexible = None
+        self._override_date_type = None
 
     @property
     def date(self) -> datetime:
@@ -160,6 +163,35 @@ class EstimateAvailablePartialDayTimeOffResponse(object):
         
 
         self._flexible = flexible
+
+    @property
+    def override_date_type(self) -> str:
+        """
+        Gets the override_date_type of this EstimateAvailablePartialDayTimeOffResponse.
+        The override date type, if the partial day request overlaps with an override date
+
+        :return: The override_date_type of this EstimateAvailablePartialDayTimeOffResponse.
+        :rtype: str
+        """
+        return self._override_date_type
+
+    @override_date_type.setter
+    def override_date_type(self, override_date_type: str) -> None:
+        """
+        Sets the override_date_type of this EstimateAvailablePartialDayTimeOffResponse.
+        The override date type, if the partial day request overlaps with an override date
+
+        :param override_date_type: The override_date_type of this EstimateAvailablePartialDayTimeOffResponse.
+        :type: str
+        """
+        if isinstance(override_date_type, int):
+            override_date_type = str(override_date_type)
+        allowed_values = ["Blocked", "ManualReview"]
+        if override_date_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for override_date_type -> " + override_date_type)
+            self._override_date_type = "outdated_sdk_version"
+        else:
+            self._override_date_type = override_date_type
 
     def to_dict(self):
         """

@@ -11,7 +11,8 @@
 | **generation_setting** | [KnowledgeGenerationSetting](KnowledgeGenerationSetting) | Setting for answer generation. | |
 | **stateful** | bool | Indicates if stateful search and generation is enabled for the knowledge setting. | [optional] |
 | **conversation_turns** | [list[KnowledgeConversationTurn]](KnowledgeConversationTurn) | List of conversation turns to use for stateful search. | [optional] |
+| **filter** | [V3SourceTagFilter](V3SourceTagFilter) | Composite tag filter applied to the search preview. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

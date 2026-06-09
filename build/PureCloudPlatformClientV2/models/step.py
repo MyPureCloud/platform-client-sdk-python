@@ -345,7 +345,7 @@ class Step(object):
     def stage(self) -> 'StageReference':
         """
         Gets the stage of this Step.
-        The parent stage of the step.
+        The parent Stage of the Step.
 
         :return: The stage of this Step.
         :rtype: StageReference
@@ -356,7 +356,7 @@ class Step(object):
     def stage(self, stage: 'StageReference') -> None:
         """
         Sets the stage of this Step.
-        The parent stage of the step.
+        The parent Stage of the Step.
 
         :param stage: The stage of this Step.
         :type: StageReference
@@ -393,7 +393,7 @@ class Step(object):
     def case(self) -> 'CaseReference':
         """
         Gets the case of this Step.
-        The parent case of the step.
+        The parent Case of the Step.
 
         :return: The case of this Step.
         :rtype: CaseReference
@@ -404,7 +404,7 @@ class Step(object):
     def case(self, case: 'CaseReference') -> None:
         """
         Sets the case of this Step.
-        The parent case of the step.
+        The parent Case of the Step.
 
         :param case: The case of this Step.
         :type: CaseReference

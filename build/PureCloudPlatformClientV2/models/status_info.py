@@ -47,13 +47,65 @@ class StatusInfo(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'code': 'str',
+            'message': 'str'
         }
 
         self.attribute_map = {
-            
+            'code': 'code',
+            'message': 'message'
         }
 
+        self._code = None
+        self._message = None
+
+    @property
+    def code(self) -> str:
+        """
+        Gets the code of this StatusInfo.
+        Status code
+
+        :return: The code of this StatusInfo.
+        :rtype: str
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code: str) -> None:
+        """
+        Sets the code of this StatusInfo.
+        Status code
+
+        :param code: The code of this StatusInfo.
+        :type: str
+        """
+        
+
+        self._code = code
+
+    @property
+    def message(self) -> str:
+        """
+        Gets the message of this StatusInfo.
+        Status Message
+
+        :return: The message of this StatusInfo.
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message: str) -> None:
+        """
+        Sets the message of this StatusInfo.
+        Status Message
+
+        :param message: The message of this StatusInfo.
+        :type: str
+        """
+        
+
+        self._message = message
 
     def to_dict(self):
         """

@@ -246,7 +246,7 @@ class Case(object):
     def caseplan(self) -> 'CaseplanReference':
         """
         Gets the caseplan of this Case.
-        The Caseplan the case was created from.
+        The Caseplan the Case was created from.
 
         :return: The caseplan of this Case.
         :rtype: CaseplanReference
@@ -257,7 +257,7 @@ class Case(object):
     def caseplan(self, caseplan: 'CaseplanReference') -> None:
         """
         Sets the caseplan of this Case.
-        The Caseplan the case was created from.
+        The Caseplan the Case was created from.
 
         :param caseplan: The caseplan of this Case.
         :type: CaseplanReference
@@ -496,7 +496,7 @@ class Case(object):
     def modified_by(self) -> 'UserReference':
         """
         Gets the modified_by of this Case.
-        The id of the User who modified the Case.
+        The ID of the User who modified the Case.
 
         :return: The modified_by of this Case.
         :rtype: UserReference
@@ -507,7 +507,7 @@ class Case(object):
     def modified_by(self, modified_by: 'UserReference') -> None:
         """
         Sets the modified_by of this Case.
-        The id of the User who modified the Case.
+        The ID of the User who modified the Case.
 
         :param modified_by: The modified_by of this Case.
         :type: UserReference
@@ -568,7 +568,7 @@ class Case(object):
     def creation_status(self) -> str:
         """
         Gets the creation_status of this Case.
-        The creation status of the Case
+        The creation status of the Case.
 
         :return: The creation_status of this Case.
         :rtype: str
@@ -579,7 +579,7 @@ class Case(object):
     def creation_status(self, creation_status: str) -> None:
         """
         Sets the creation_status of this Case.
-        The creation status of the Case
+        The creation status of the Case.
 
         :param creation_status: The creation_status of this Case.
         :type: str

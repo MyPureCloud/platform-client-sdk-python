@@ -7,10 +7,10 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **page_size** | int | The number of entities to return in the response. | [optional] |
-| **after** | str | The cursor that points to the end of the set of entities that has been returned. | [optional] |
+| **after** | str | Cursor pointing to the end of the previously returned page of associations. | [optional] |
 | **workitem_id** | str | The Workitem ID to query by. | [optional] |
-| **conversation_id** | str | The conversation ID to query by. | [optional] |
+| **conversation_id** | str | The Conversation ID to query by. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

@@ -31,6 +31,10 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import Button
+    from . import CardBodyText
+    from . import MessageHeader
 
 class CarouselCard(object):
     """
@@ -47,13 +51,92 @@ class CarouselCard(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'header': 'MessageHeader',
+            'buttons': 'list[Button]',
+            'card_body_text': 'CardBodyText'
         }
 
         self.attribute_map = {
-            
+            'header': 'header',
+            'buttons': 'buttons',
+            'card_body_text': 'cardBodyText'
         }
 
+        self._header = None
+        self._buttons = None
+        self._card_body_text = None
+
+    @property
+    def header(self) -> 'MessageHeader':
+        """
+        Gets the header of this CarouselCard.
+        Header for whatsApp carousel card
+
+        :return: The header of this CarouselCard.
+        :rtype: MessageHeader
+        """
+        return self._header
+
+    @header.setter
+    def header(self, header: 'MessageHeader') -> None:
+        """
+        Sets the header of this CarouselCard.
+        Header for whatsApp carousel card
+
+        :param header: The header of this CarouselCard.
+        :type: MessageHeader
+        """
+        
+
+        self._header = header
+
+    @property
+    def buttons(self) -> List['Button']:
+        """
+        Gets the buttons of this CarouselCard.
+        List of buttons to be included in the whatsApp carousel messages template
+
+        :return: The buttons of this CarouselCard.
+        :rtype: list[Button]
+        """
+        return self._buttons
+
+    @buttons.setter
+    def buttons(self, buttons: List['Button']) -> None:
+        """
+        Sets the buttons of this CarouselCard.
+        List of buttons to be included in the whatsApp carousel messages template
+
+        :param buttons: The buttons of this CarouselCard.
+        :type: list[Button]
+        """
+        
+
+        self._buttons = buttons
+
+    @property
+    def card_body_text(self) -> 'CardBodyText':
+        """
+        Gets the card_body_text of this CarouselCard.
+        Optional card body text to be included in the whatsApp carousel messages template
+
+        :return: The card_body_text of this CarouselCard.
+        :rtype: CardBodyText
+        """
+        return self._card_body_text
+
+    @card_body_text.setter
+    def card_body_text(self, card_body_text: 'CardBodyText') -> None:
+        """
+        Sets the card_body_text of this CarouselCard.
+        Optional card body text to be included in the whatsApp carousel messages template
+
+        :param card_body_text: The card_body_text of this CarouselCard.
+        :type: CardBodyText
+        """
+        
+
+        self._card_body_text = card_body_text
 
     def to_dict(self):
         """

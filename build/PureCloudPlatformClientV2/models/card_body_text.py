@@ -47,13 +47,70 @@ class CardBodyText(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'content': 'str',
+            'content_type': 'str'
         }
 
         self.attribute_map = {
-            
+            'content': 'content',
+            'content_type': 'contentType'
         }
 
+        self._content = None
+        self._content_type = None
+
+    @property
+    def content(self) -> str:
+        """
+        Gets the content of this CardBodyText.
+        Body content for carousel card.
+
+        :return: The content of this CardBodyText.
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content: str) -> None:
+        """
+        Sets the content of this CardBodyText.
+        Body content for carousel card.
+
+        :param content: The content of this CardBodyText.
+        :type: str
+        """
+        
+
+        self._content = content
+
+    @property
+    def content_type(self) -> str:
+        """
+        Gets the content_type of this CardBodyText.
+        Body content type for carousel card. Allowed value: text/plain
+
+        :return: The content_type of this CardBodyText.
+        :rtype: str
+        """
+        return self._content_type
+
+    @content_type.setter
+    def content_type(self, content_type: str) -> None:
+        """
+        Sets the content_type of this CardBodyText.
+        Body content type for carousel card. Allowed value: text/plain
+
+        :param content_type: The content_type of this CardBodyText.
+        :type: str
+        """
+        if isinstance(content_type, int):
+            content_type = str(content_type)
+        allowed_values = ["text/plain"]
+        if content_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for content_type -> " + content_type)
+            self._content_type = "outdated_sdk_version"
+        else:
+            self._content_type = content_type
 
     def to_dict(self):
         """

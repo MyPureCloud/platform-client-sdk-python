@@ -278,7 +278,6 @@ class ConversationsApi(object):
         """
         Delete/cancel an async request for conversation aggregates
         
-	    delete_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1960,7 +1959,6 @@ class ConversationsApi(object):
         """
         Get status for async query for conversation aggregates
         
-	    get_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2039,7 +2037,6 @@ class ConversationsApi(object):
         """
         Fetch a page of results for an async aggregates query
         
-	    get_analytics_conversations_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -16550,7 +16547,6 @@ class ConversationsApi(object):
         """
         Query for conversation aggregates asynchronously
         
-	    post_analytics_conversations_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -23604,7 +23600,7 @@ class ConversationsApi(object):
     def post_conversations_messages_agentless(self, body: 'SendAgentlessOutboundMessageRequest', **kwargs) -> 'SendAgentlessOutboundMessageResponse':
         """
         Send an agentless outbound message
-        Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
+        Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

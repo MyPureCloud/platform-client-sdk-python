@@ -63,7 +63,7 @@ class CaseAssociationCreate(object):
     def workitem_id(self) -> str:
         """
         Gets the workitem_id of this CaseAssociationCreate.
-        The ID of the workitem to associate with the case.
+        The ID of the Workitem to associate with the Case.
 
         :return: The workitem_id of this CaseAssociationCreate.
         :rtype: str
@@ -74,7 +74,7 @@ class CaseAssociationCreate(object):
     def workitem_id(self, workitem_id: str) -> None:
         """
         Sets the workitem_id of this CaseAssociationCreate.
-        The ID of the workitem to associate with the case.
+        The ID of the Workitem to associate with the Case.
 
         :param workitem_id: The workitem_id of this CaseAssociationCreate.
         :type: str
@@ -90,7 +90,7 @@ class CaseAssociationCreate(object):
     def conversation_id(self) -> str:
         """
         Gets the conversation_id of this CaseAssociationCreate.
-        The ID of the conversation to associate with the case.
+        The ID of the Conversation to associate with the Case.
 
         :return: The conversation_id of this CaseAssociationCreate.
         :rtype: str
@@ -101,7 +101,7 @@ class CaseAssociationCreate(object):
     def conversation_id(self, conversation_id: str) -> None:
         """
         Sets the conversation_id of this CaseAssociationCreate.
-        The ID of the conversation to associate with the case.
+        The ID of the Conversation to associate with the Case.
 
         :param conversation_id: The conversation_id of this CaseAssociationCreate.
         :type: str
