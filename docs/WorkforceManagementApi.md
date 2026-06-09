@@ -3242,7 +3242,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -4280,7 +4280,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_businessunit_timeoffplans
 
-> [**BuTimeOffPlanListing**](BuTimeOffPlanListing) get_workforcemanagement_businessunit_timeoffplans(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
+> [**BuTimeOffPlanListing**](BuTimeOffPlanListing) get_workforcemanagement_businessunit_timeoffplans(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service, expand=expand)
 
 
 Gets a list of time-off plans
@@ -4307,10 +4307,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit to get management unit specific staffing groups (optional)
 force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+expand = ['expand_example'] # list[str] | Include to access additional data for the time-off plans (optional)
 
 try:
     # Gets a list of time-off plans
-    api_response = api_instance.get_workforcemanagement_businessunit_timeoffplans(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
+    api_response = api_instance.get_workforcemanagement_businessunit_timeoffplans(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_timeoffplans: %s\n" % e)
@@ -4324,6 +4325,7 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **management_unit_id** | **str**| The ID of the management unit to get management unit specific staffing groups | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+| **expand** | [**list[str]**](str)| Include to access additional data for the time-off plans | [optional] <br />**Values**: overrideDates |
 
 ### Return type
 
@@ -4708,7 +4710,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_businessunit_week_schedules
 
-> [**BuScheduleListing**](BuScheduleListing) get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
+> [**BuScheduleListing**](BuScheduleListing) get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date, include_only_published=include_only_published, expand=expand)
 
 
 Get the list of week schedules for the specified week
@@ -4737,12 +4739,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
 week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
+earliest_week_date = '2013-10-20' # date | If weekId == 'recent', specify the earliest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+latest_week_date = '2013-10-20' # date | If weekId == 'recent', specify the latest schedule start week date (inclusive) to include in the 'recent' range, in yyyy-MM-dd format. Ignored if weekId != 'recent'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 include_only_published = True # bool | includeOnlyPublished (optional)
 expand = 'expand_example' # str | expand (optional)
 
 try:
     # Get the list of week schedules for the specified week
-    api_response = api_instance.get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date, include_only_published=include_only_published, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedules: %s\n" % e)
@@ -4755,8 +4759,10 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **str**| First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules |  |
+| **earliest_week_date** | **date**| If weekId &#x3D;&#x3D; &#39;recent&#39;, specify the earliest schedule start week date (inclusive) to include in the &#39;recent&#39; range, in yyyy-MM-dd format. Ignored if weekId !&#x3D; &#39;recent&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **latest_week_date** | **date**| If weekId &#x3D;&#x3D; &#39;recent&#39;, specify the latest schedule start week date (inclusive) to include in the &#39;recent&#39; range, in yyyy-MM-dd format. Ignored if weekId !&#x3D; &#39;recent&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **include_only_published** | **bool**| includeOnlyPublished | [optional]  |
-| **expand** | **str**| expand | [optional] <br />**Values**: forecast.description |
+| **expand** | **str**| expand | [optional] <br />**Values**: shortTermForecast.description |
 
 ### Return type
 
@@ -5439,7 +5445,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of business units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -7193,7 +7199,7 @@ except ApiException as e:
 | **page_size** | **int**| Deprecated, paging is not supported | [optional]  |
 | **page_number** | **int**| Deprecated, paging is not supported | [optional]  |
 | **expand** | **str**| Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -14829,7 +14835,7 @@ except ApiException as e:
 
 ## post_workforcemanagement_managementunit_user_timeoffrequests_estimate
 
-> [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse) post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body)
+> [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse) post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body, include_only=include_only)
 
 
 Estimates available time off for an agent
@@ -14856,10 +14862,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
 user_id = 'user_id_example' # str | The id of the user for whom the time off request estimate is requested
 body = PureCloudPlatformClientV2.EstimateAvailableTimeOffRequest() # EstimateAvailableTimeOffRequest | body
+include_only = 'include_only_example' # str | Limit response to the specified field (optional)
 
 try:
     # Estimates available time off for an agent
-    api_response = api_instance.post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body)
+    api_response = api_instance.post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body, include_only=include_only)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_user_timeoffrequests_estimate: %s\n" % e)
@@ -14873,6 +14880,7 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit |  |
 | **user_id** | **str**| The id of the user for whom the time off request estimate is requested |  |
 | **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body |  |
+| **include_only** | **str**| Limit response to the specified field | [optional] <br />**Values**: overrideDateType |
 
 ### Return type
 
@@ -16031,7 +16039,7 @@ except ApiException as e:
 
 ## post_workforcemanagement_timeoffrequests_estimate
 
-> [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse) post_workforcemanagement_timeoffrequests_estimate(body)
+> [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse) post_workforcemanagement_timeoffrequests_estimate(body, include_only=include_only)
 
 
 Estimates available time off for current user
@@ -16056,10 +16064,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 body = PureCloudPlatformClientV2.EstimateAvailableTimeOffRequest() # EstimateAvailableTimeOffRequest | body
+include_only = 'include_only_example' # str | Limit response to the specified field (optional)
 
 try:
     # Estimates available time off for current user
-    api_response = api_instance.post_workforcemanagement_timeoffrequests_estimate(body)
+    api_response = api_instance.post_workforcemanagement_timeoffrequests_estimate(body, include_only=include_only)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_timeoffrequests_estimate: %s\n" % e)
@@ -16071,6 +16080,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body |  |
+| **include_only** | **str**| Limit response to the specified field | [optional] <br />**Values**: overrideDateType |
 
 ### Return type
 
@@ -16379,4 +16389,4 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

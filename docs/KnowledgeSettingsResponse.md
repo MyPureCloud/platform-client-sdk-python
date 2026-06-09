@@ -12,6 +12,7 @@
 | **sources** | [list[V3SourceRef]](V3SourceRef) | Knowledge source information searched upon. | [optional] |
 | **generation_setting** | [KnowledgeGenerationSetting](KnowledgeGenerationSetting) | Settings for answer generation. | [optional] |
 | **stateful** | bool | Indicates if stateful search and generation is enabled for the knowledge setting. | [optional] |
+| **filter** | [V3SourceTagFilter](V3SourceTagFilter) | Composite tag filter of search results. | [optional] |
 | **date_created** | datetime | Knowledge setting created date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **date_modified** | datetime | Knowledge setting last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **modified_by** | [UserReference](UserReference) | The user who modified the knowledge setting. | [optional] |
@@ -19,4 +20,4 @@
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

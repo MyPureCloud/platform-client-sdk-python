@@ -1090,7 +1090,7 @@ except ApiException as e:
 
 ## get_externalcontacts_contacts_exports
 
-> [**ExportListing**](ExportListing) get_externalcontacts_contacts_exports(division_ids=division_ids, after=after, page_size=page_size)
+> [**ContactsExportListing**](ContactsExportListing) get_externalcontacts_contacts_exports(division_ids=division_ids, after=after, page_size=page_size)
 
 
 List exports for organization
@@ -1138,7 +1138,7 @@ except ApiException as e:
 
 ### Return type
 
-[**ExportListing**](ExportListing)
+[**ContactsExportListing**](ContactsExportListing)
 
 
 ## get_externalcontacts_contacts_schema
@@ -6191,4 +6191,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

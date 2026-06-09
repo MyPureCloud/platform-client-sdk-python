@@ -1,16 +1,16 @@
-# ExportListing
+# DecisionTableExportJobListing
 
-## ExportListing
+## DecisionTableExportJobListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [list[ContactsExport]](ContactsExport) |  | [optional] |
+| **entities** | [list[DecisionTableExportJob]](DecisionTableExportJob) |  | [optional] |
 | **next_uri** | str |  | [optional] |
 | **self_uri** | str |  | [optional] |
 | **previous_uri** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

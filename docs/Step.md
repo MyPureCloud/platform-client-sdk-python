@@ -16,10 +16,10 @@
 | **modified_by** | [UserReference](UserReference) | The ID of the User who modified the Step. | [optional] |
 | **version** | int | The version of the Step. | [optional] |
 | **status** | str | The Status of the Step. | [optional] |
-| **stage** | [StageReference](StageReference) | The parent stage of the step. | [optional] |
+| **stage** | [StageReference](StageReference) | The parent Stage of the Step. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
-| **case** | [CaseReference](CaseReference) | The parent case of the step. | [optional] |
+| **case** | [CaseReference](CaseReference) | The parent Case of the Step. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

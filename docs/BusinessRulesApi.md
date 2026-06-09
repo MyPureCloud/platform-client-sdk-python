@@ -7,10 +7,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_businessrules_decisiontable**](#delete_businessrules_decisiontable) | Delete a decision table|
+|[**delete_businessrules_decisiontable_export**](#delete_businessrules_decisiontable_export) | Delete an export job for a decision table|
+|[**delete_businessrules_decisiontable_import**](#delete_businessrules_decisiontable_import) | Delete decision table row import job|
 |[**delete_businessrules_decisiontable_version**](#delete_businessrules_decisiontable_version) | Delete a decision table version|
 |[**delete_businessrules_decisiontable_version_row**](#delete_businessrules_decisiontable_version_row) | Delete a decision table row|
 |[**delete_businessrules_schema**](#delete_businessrules_schema) | Delete a schema|
 |[**get_businessrules_decisiontable**](#get_businessrules_decisiontable) | Get a decision table|
+|[**get_businessrules_decisiontable_export**](#get_businessrules_decisiontable_export) | Get an export job for a decision table|
+|[**get_businessrules_decisiontable_exports**](#get_businessrules_decisiontable_exports) | List export jobs for a decision table|
+|[**get_businessrules_decisiontable_import**](#get_businessrules_decisiontable_import) | Get decision table row import job|
+|[**get_businessrules_decisiontable_imports**](#get_businessrules_decisiontable_imports) | List decision table row import jobs|
 |[**get_businessrules_decisiontable_version**](#get_businessrules_decisiontable_version) | Get a decision table version|
 |[**get_businessrules_decisiontable_version_row**](#get_businessrules_decisiontable_version_row) | Get a decision table row|
 |[**get_businessrules_decisiontable_version_rows**](#get_businessrules_decisiontable_version_rows) | Get a list of decision table rows.|
@@ -22,11 +28,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_businessrules_schemas_coretype**](#get_businessrules_schemas_coretype) | Get a specific named core type.|
 |[**get_businessrules_schemas_coretypes**](#get_businessrules_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**patch_businessrules_decisiontable**](#patch_businessrules_decisiontable) | Update a decision table|
+|[**patch_businessrules_decisiontable_import**](#patch_businessrules_decisiontable_import) | Update decision table row import job|
 |[**patch_businessrules_decisiontable_version**](#patch_businessrules_decisiontable_version) | Update a decision table version|
 |[**post_businessrules_decisiontable_execute**](#post_businessrules_decisiontable_execute) | Execute a published decision table|
+|[**post_businessrules_decisiontable_exports**](#post_businessrules_decisiontable_exports) | Create an export job for a decision table version|
+|[**post_businessrules_decisiontable_imports**](#post_businessrules_decisiontable_imports) | Create a decision table row import job|
 |[**post_businessrules_decisiontable_version_copy**](#post_businessrules_decisiontable_version_copy) | Copy a decision table version|
 |[**post_businessrules_decisiontable_version_execute**](#post_businessrules_decisiontable_version_execute) | Execute a decision table version|
 |[**post_businessrules_decisiontable_version_rows**](#post_businessrules_decisiontable_version_rows) | Create a decision table row|
+|[**post_businessrules_decisiontable_version_rows_bulk_add**](#post_businessrules_decisiontable_version_rows_bulk_add) | Bulk add decision table rows|
+|[**post_businessrules_decisiontable_version_rows_bulk_remove**](#post_businessrules_decisiontable_version_rows_bulk_remove) | Bulk delete decision table rows|
+|[**post_businessrules_decisiontable_version_rows_bulk_update**](#post_businessrules_decisiontable_version_rows_bulk_update) | Bulk update decision table rows|
 |[**post_businessrules_decisiontable_version_rows_search**](#post_businessrules_decisiontable_version_rows_search) | Search for decision table rows|
 |[**post_businessrules_decisiontable_version_sync**](#post_businessrules_decisiontable_version_sync) | Update the Business Rules Schema to the latest version for a given decision table version|
 |[**post_businessrules_decisiontable_versions**](#post_businessrules_decisiontable_versions) | Create a new decision table version|
@@ -81,6 +93,104 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **table_id** | **str**| Table ID |  |
 | **force_delete** | **bool**| Force delete decision table (under certain conditions) | [optional] [default to False] |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_businessrules_decisiontable_export
+
+>  delete_businessrules_decisiontable_export(table_id, export_job_id)
+
+
+Delete an export job for a decision table
+
+Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId} 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+export_job_id = 'export_job_id_example' # str | Export Job ID
+
+try:
+    # Delete an export job for a decision table
+    api_instance.delete_businessrules_decisiontable_export(table_id, export_job_id)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->delete_businessrules_decisiontable_export: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **export_job_id** | **str**| Export Job ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_businessrules_decisiontable_import
+
+>  delete_businessrules_decisiontable_import(table_id, import_job_id)
+
+
+Delete decision table row import job
+
+Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+import_job_id = 'import_job_id_example' # str | Import job ID
+
+try:
+    # Delete decision table row import job
+    api_instance.delete_businessrules_decisiontable_import(table_id, import_job_id)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->delete_businessrules_decisiontable_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **import_job_id** | **str**| Import job ID |  |
 
 ### Return type
 
@@ -283,6 +393,210 @@ except ApiException as e:
 ### Return type
 
 [**DecisionTable**](DecisionTable)
+
+
+## get_businessrules_decisiontable_export
+
+> [**DecisionTableExportJob**](DecisionTableExportJob) get_businessrules_decisiontable_export(table_id, export_job_id)
+
+
+Get an export job for a decision table
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/exports/{exportJobId} 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+export_job_id = 'export_job_id_example' # str | Export Job ID
+
+try:
+    # Get an export job for a decision table
+    api_response = api_instance.get_businessrules_decisiontable_export(table_id, export_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->get_businessrules_decisiontable_export: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **export_job_id** | **str**| Export Job ID |  |
+
+### Return type
+
+[**DecisionTableExportJob**](DecisionTableExportJob)
+
+
+## get_businessrules_decisiontable_exports
+
+> [**DecisionTableExportJobListing**](DecisionTableExportJobListing) get_businessrules_decisiontable_exports(table_id, after=after, page_size=page_size)
+
+
+List export jobs for a decision table
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/exports 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
+
+try:
+    # List export jobs for a decision table
+    api_response = api_instance.get_businessrules_decisiontable_exports(table_id, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->get_businessrules_decisiontable_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
+
+### Return type
+
+[**DecisionTableExportJobListing**](DecisionTableExportJobListing)
+
+
+## get_businessrules_decisiontable_import
+
+> [**DecisionTableImportJob**](DecisionTableImportJob) get_businessrules_decisiontable_import(table_id, import_job_id)
+
+
+Get decision table row import job
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+import_job_id = 'import_job_id_example' # str | Import job ID
+
+try:
+    # Get decision table row import job
+    api_response = api_instance.get_businessrules_decisiontable_import(table_id, import_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->get_businessrules_decisiontable_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **import_job_id** | **str**| Import job ID |  |
+
+### Return type
+
+[**DecisionTableImportJob**](DecisionTableImportJob)
+
+
+## get_businessrules_decisiontable_imports
+
+> [**DecisionTableImportJobListing**](DecisionTableImportJobListing) get_businessrules_decisiontable_imports(table_id, after=after, page_size=page_size)
+
+
+List decision table row import jobs
+
+Wraps GET /api/v2/businessrules/decisiontables/{tableId}/imports 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
+
+try:
+    # List decision table row import jobs
+    api_response = api_instance.get_businessrules_decisiontable_imports(table_id, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->get_businessrules_decisiontable_imports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
+
+### Return type
+
+[**DecisionTableImportJobListing**](DecisionTableImportJobListing)
 
 
 ## get_businessrules_decisiontable_version
@@ -845,6 +1159,58 @@ except ApiException as e:
 [**DecisionTable**](DecisionTable)
 
 
+## patch_businessrules_decisiontable_import
+
+> [**DecisionTableImportJob**](DecisionTableImportJob) patch_businessrules_decisiontable_import(table_id, import_job_id, body)
+
+
+Update decision table row import job
+
+Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+import_job_id = 'import_job_id_example' # str | Import job ID
+body = PureCloudPlatformClientV2.UpdateDecisionTableImportJobRequest() # UpdateDecisionTableImportJobRequest | Import job update request
+
+try:
+    # Update decision table row import job
+    api_response = api_instance.patch_businessrules_decisiontable_import(table_id, import_job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->patch_businessrules_decisiontable_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **import_job_id** | **str**| Import job ID |  |
+| **body** | [**UpdateDecisionTableImportJobRequest**](UpdateDecisionTableImportJobRequest)| Import job update request |  |
+
+### Return type
+
+[**DecisionTableImportJob**](DecisionTableImportJob)
+
+
 ## patch_businessrules_decisiontable_version
 
 > [**DecisionTableVersion**](DecisionTableVersion) patch_businessrules_decisiontable_version(table_id, table_version, body)
@@ -945,6 +1311,106 @@ except ApiException as e:
 ### Return type
 
 [**DecisionTableExecutionResponse**](DecisionTableExecutionResponse)
+
+
+## post_businessrules_decisiontable_exports
+
+> [**DecisionTableExportJob**](DecisionTableExportJob) post_businessrules_decisiontable_exports(table_id, body)
+
+
+Create an export job for a decision table version
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/exports 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableExportJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+body = PureCloudPlatformClientV2.DecisionTableExportJobRequest() # DecisionTableExportJobRequest | Export job request
+
+try:
+    # Create an export job for a decision table version
+    api_response = api_instance.post_businessrules_decisiontable_exports(table_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **body** | [**DecisionTableExportJobRequest**](DecisionTableExportJobRequest)| Export job request |  |
+
+### Return type
+
+[**DecisionTableExportJob**](DecisionTableExportJob)
+
+
+## post_businessrules_decisiontable_imports
+
+> [**DecisionTableImportJob**](DecisionTableImportJob) post_businessrules_decisiontable_imports(table_id, body)
+
+
+Create a decision table row import job
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/imports 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableImportJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+body = PureCloudPlatformClientV2.CreateDecisionTableImportJobRequest() # CreateDecisionTableImportJobRequest | Import job create request
+
+try:
+    # Create a decision table row import job
+    api_response = api_instance.post_businessrules_decisiontable_imports(table_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_imports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **body** | [**CreateDecisionTableImportJobRequest**](CreateDecisionTableImportJobRequest)| Import job create request |  |
+
+### Return type
+
+[**DecisionTableImportJob**](DecisionTableImportJob)
 
 
 ## post_businessrules_decisiontable_version_copy
@@ -1104,6 +1570,170 @@ except ApiException as e:
 ### Return type
 
 [**DecisionTableRow**](DecisionTableRow)
+
+
+## post_businessrules_decisiontable_version_rows_bulk_add
+
+> [**BulkAddDecisionTableRowsResponse**](BulkAddDecisionTableRowsResponse) post_businessrules_decisiontable_version_rows_bulk_add(table_id, table_version, body)
+
+
+Bulk add decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/add 
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:add
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+body = PureCloudPlatformClientV2.BulkAddDecisionTableRowsRequest() # BulkAddDecisionTableRowsRequest | Bulk add decision table rows request
+
+try:
+    # Bulk add decision table rows
+    api_response = api_instance.post_businessrules_decisiontable_version_rows_bulk_add(table_id, table_version, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_version_rows_bulk_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **table_version** | **int**| Table Version |  |
+| **body** | [**BulkAddDecisionTableRowsRequest**](BulkAddDecisionTableRowsRequest)| Bulk add decision table rows request |  |
+
+### Return type
+
+[**BulkAddDecisionTableRowsResponse**](BulkAddDecisionTableRowsResponse)
+
+
+## post_businessrules_decisiontable_version_rows_bulk_remove
+
+>  post_businessrules_decisiontable_version_rows_bulk_remove(table_id, table_version, body)
+
+
+Bulk delete decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/remove 
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:delete
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+body = PureCloudPlatformClientV2.BulkDeleteDecisionTableRowsRequest() # BulkDeleteDecisionTableRowsRequest | 
+
+try:
+    # Bulk delete decision table rows
+    api_instance.post_businessrules_decisiontable_version_rows_bulk_remove(table_id, table_version, body)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_version_rows_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **table_version** | **int**| Table Version |  |
+| **body** | [**BulkDeleteDecisionTableRowsRequest**](BulkDeleteDecisionTableRowsRequest)|  |  |
+
+### Return type
+
+void (empty response body)
+
+
+## post_businessrules_decisiontable_version_rows_bulk_update
+
+> [**BulkUpdateDecisionTableRowsResponse**](BulkUpdateDecisionTableRowsResponse) post_businessrules_decisiontable_version_rows_bulk_update(table_id, table_version, body)
+
+
+Bulk update decision table rows
+
+Required permissions depend on table content: if the table or row contains queue references, routing:queue:view is required in each queue's division. Future platform objects will require their associated permissions in the relevant divisions when the table or row contains references to them.
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rows/bulk/update 
+
+Requires ALL permissions: 
+
+* businessrules:decisionTableRow:edit
+* routing:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+body = PureCloudPlatformClientV2.BulkUpdateDecisionTableRowsRequest() # BulkUpdateDecisionTableRowsRequest | Bulk update decision table rows request
+
+try:
+    # Bulk update decision table rows
+    api_response = api_instance.post_businessrules_decisiontable_version_rows_bulk_update(table_id, table_version, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_version_rows_bulk_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **table_version** | **int**| Table Version |  |
+| **body** | [**BulkUpdateDecisionTableRowsRequest**](BulkUpdateDecisionTableRowsRequest)| Bulk update decision table rows request |  |
+
+### Return type
+
+[**BulkUpdateDecisionTableRowsResponse**](BulkUpdateDecisionTableRowsResponse)
 
 
 ## post_businessrules_decisiontable_version_rows_search
@@ -1517,4 +2147,4 @@ except ApiException as e:
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_

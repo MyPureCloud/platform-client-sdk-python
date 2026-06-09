@@ -340,8 +340,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request for conversation aggregates
 
-delete_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1349,8 +1347,6 @@ except ApiException as e:
 
 Get status for async query for conversation aggregates
 
-get_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1398,8 +1394,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async aggregates query
-
-get_analytics_conversations_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results 
 
@@ -10218,8 +10212,6 @@ except ApiException as e:
 
 Query for conversation aggregates asynchronously
 
-post_analytics_conversations_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/conversations/aggregates/jobs 
 
 Requires ANY permissions: 
@@ -14469,7 +14461,7 @@ except ApiException as e:
 
 Send an agentless outbound message
 
-Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
+Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and recipient specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
 
 Wraps POST /api/v2/conversations/messages/agentless 
 
@@ -16795,4 +16787,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 258.0.0_
+_PureCloudPlatformClientV2 259.0.0_
