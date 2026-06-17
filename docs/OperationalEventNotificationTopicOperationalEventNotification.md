@@ -17,8 +17,10 @@
 | **entity_type** | str |  | [optional] |
 | **conversation_id** | str |  | [optional] |
 | **entity_token** | str |  | [optional] |
+| **phone_number** | str |  | [optional] |
+| **external_contact_id** | str |  | [optional] |
 | **timestamp** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

@@ -28,7 +28,8 @@
 | **last_edited_by** | [ConversationSummaryTopicConversationSummaryParticipant](ConversationSummaryTopicConversationSummaryParticipant) |  | [optional] |
 | **error_type** | str |  | [optional] |
 | **duration_ms** | int |  | [optional] |
+| **labels** | [list[ConversationSummaryTopicConversationSummaryLabel]](ConversationSummaryTopicConversationSummaryLabel) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

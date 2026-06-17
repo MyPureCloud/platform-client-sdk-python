@@ -28,7 +28,8 @@
 | **last_edited_by** | [ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  | [optional] |
 | **error_type** | str |  | [optional] |
 | **duration_ms** | int |  | [optional] |
+| **labels** | [list[ConversationSummaryTopicVirtualAgentsConversationSummaryLabel]](ConversationSummaryTopicVirtualAgentsConversationSummaryLabel) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

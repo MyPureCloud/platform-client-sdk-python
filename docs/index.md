@@ -5,7 +5,7 @@
 
 Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-Documentation version PureCloudPlatformClientV2 259.0.0
+Documentation version PureCloudPlatformClientV2 260.0.0
 
 ## Preview APIs
 

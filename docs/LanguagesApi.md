@@ -418,4 +418,4 @@ except ApiException as e:
 [**Language**](Language)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

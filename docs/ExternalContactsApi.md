@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contact_unresolved**](#get_externalcontacts_contact_unresolved) | Fetch an unresolved external contact|
 |[**get_externalcontacts_contacts**](#get_externalcontacts_contacts) | Search for external contacts|
 |[**get_externalcontacts_contacts_export**](#get_externalcontacts_contacts_export) | Get export for exportId|
-|[**get_externalcontacts_contacts_exports**](#get_externalcontacts_contacts_exports) | List exports for organization|
+|[**get_externalcontacts_contacts_exports**](#get_externalcontacts_contacts_exports) | List contact exports for organization|
 |[**get_externalcontacts_contacts_schema**](#get_externalcontacts_contacts_schema) | Get a schema|
 |[**get_externalcontacts_contacts_schema_version**](#get_externalcontacts_contacts_schema_version) | Get a specific version of a schema|
 |[**get_externalcontacts_contacts_schema_versions**](#get_externalcontacts_contacts_schema_versions) | Get all versions of an external contact&#39;s schema|
@@ -1093,7 +1093,7 @@ except ApiException as e:
 > [**ContactsExportListing**](ContactsExportListing) get_externalcontacts_contacts_exports(division_ids=division_ids, after=after, page_size=page_size)
 
 
-List exports for organization
+List contact exports for organization
 
 Wraps GET /api/v2/externalcontacts/contacts/exports 
 
@@ -1120,7 +1120,7 @@ after = 'after_example' # str | The cursor that points to the end of the set of 
 page_size = 56 # int | Number of entities to return (optional)
 
 try:
-    # List exports for organization
+    # List contact exports for organization
     api_response = api_instance.get_externalcontacts_contacts_exports(division_ids=division_ids, after=after, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
@@ -6191,4 +6191,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

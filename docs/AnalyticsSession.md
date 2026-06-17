@@ -41,6 +41,7 @@
 | **edge_id** | str | Unique identifier of the edge device | [optional] |
 | **eligible_agent_counts** | list[int] | Number of eligible agents for each predictive routing attempt | [optional] |
 | **engagement_source** | str | Open Messaging engagement source type | [optional] |
+| **error_code_description** | str | Error code description extracted from the first disconnectReason | [optional] |
 | **extended_delivery_status** | str | Extended delivery status | [optional] |
 | **flow_in_type** | str | Type of flow in that occurred when entering ACD. | [optional] |
 | **flow_out_type** | str | Type of flow out that occurred when emitting tFlowOut. | [optional] |
@@ -97,4 +98,4 @@
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

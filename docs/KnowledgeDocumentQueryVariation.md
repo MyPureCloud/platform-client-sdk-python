@@ -14,10 +14,10 @@
 | **document** | [KnowledgeDocumentReference](KnowledgeDocumentReference) | The reference to document to which the variation is associated. | [optional] |
 | **priority** | int | The priority of the variation. | [optional] |
 | **name** | str | The name of the variation. | [optional] |
-| **body** | [DocumentBodyResponse](DocumentBodyResponse) | The content for the variation. | [optional] |
+| **body** | [DocumentBody](DocumentBody) | The content for the variation. | [optional] |
 | **chunks** | [list[DocumentVariationQueryChunkBlock]](DocumentVariationQueryChunkBlock) | The chunk blocks associated with the variation. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_
