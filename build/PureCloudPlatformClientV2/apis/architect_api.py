@@ -37,6 +37,7 @@ from typing import Any
 from ..models import Empty
 from ..models import ArchitectExportJobStateResponse
 from ..models import ArchitectJobStateResponse
+from ..models import ArchitectValidateJobStateResponse
 from ..models import ConsumedResourcesEntityListing
 from ..models import ConsumingResourcesEntityListing
 from ..models import CriteriaQuery
@@ -102,6 +103,8 @@ from ..models import PromptEntityListing
 from ..models import RegisterArchitectExportJob
 from ..models import RegisterArchitectExportJobResponse
 from ..models import RegisterArchitectJobResponse
+from ..models import RegisterArchitectValidateJob
+from ..models import RegisterArchitectValidateJobResponse
 from ..models import Schedule
 from ..models import ScheduleDivisionViewEntityListing
 from ..models import ScheduleEntityListing
@@ -8068,6 +8071,88 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flows_validate_job(self, job_id: str, **kwargs) -> 'ArchitectValidateJobStateResponse':
+        """
+        Fetch Architect Validate Job Status
+        
+	    get_flows_validate_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_validate_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: Job ID (required)
+        :param list[str] expand: Which fields, if any, to expand.
+        :return: ArchitectValidateJobStateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_validate_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_flows_validate_job`")
+
+
+        resource_path = '/api/v2/flows/validate/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ArchitectValidateJobStateResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_architect_grammar(self, grammar_id: str, **kwargs) -> 'Grammar':
         """
         Updates a grammar
@@ -11364,6 +11449,85 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FlowOutcome',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_flows_validate_jobs(self, body: 'RegisterArchitectValidateJob', **kwargs) -> 'RegisterArchitectValidateJobResponse':
+        """
+        Register Architect Validate Job
+        
+	    post_flows_validate_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flows_validate_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param RegisterArchitectValidateJob body:  (required)
+        :return: RegisterArchitectValidateJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flows_validate_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flows_validate_jobs`")
+
+
+        resource_path = '/api/v2/flows/validate/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RegisterArchitectValidateJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

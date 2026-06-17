@@ -8,9 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **name** | str | Name of the context. | |
 | **type** | str | Type of the context. | |
-| **participant_data_properties** | [ParticipantDataProperties](ParticipantDataProperties) | Participant data properties. | [optional] |
 | **conversation_attribute_properties** | [ConversationAttributeProperties](ConversationAttributeProperties) | Conversation attribute properties. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

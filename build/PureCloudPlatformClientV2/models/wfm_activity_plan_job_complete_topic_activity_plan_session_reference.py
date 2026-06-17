@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WfmActivityPlanJobCompleteTopicUserReference
 
 class WfmActivityPlanJobCompleteTopicActivityPlanSessionReference(object):
     """
@@ -48,7 +50,7 @@ class WfmActivityPlanJobCompleteTopicActivityPlanSessionReference(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'users': 'list[str]'
+            'users': 'list[WfmActivityPlanJobCompleteTopicUserReference]'
         }
 
         self.attribute_map = {
@@ -84,24 +86,24 @@ class WfmActivityPlanJobCompleteTopicActivityPlanSessionReference(object):
         self._id = id
 
     @property
-    def users(self) -> List[str]:
+    def users(self) -> List['WfmActivityPlanJobCompleteTopicUserReference']:
         """
         Gets the users of this WfmActivityPlanJobCompleteTopicActivityPlanSessionReference.
 
 
         :return: The users of this WfmActivityPlanJobCompleteTopicActivityPlanSessionReference.
-        :rtype: list[str]
+        :rtype: list[WfmActivityPlanJobCompleteTopicUserReference]
         """
         return self._users
 
     @users.setter
-    def users(self, users: List[str]) -> None:
+    def users(self, users: List['WfmActivityPlanJobCompleteTopicUserReference']) -> None:
         """
         Sets the users of this WfmActivityPlanJobCompleteTopicActivityPlanSessionReference.
 
 
         :param users: The users of this WfmActivityPlanJobCompleteTopicActivityPlanSessionReference.
-        :type: list[str]
+        :type: list[WfmActivityPlanJobCompleteTopicUserReference]
         """
         
 

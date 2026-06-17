@@ -60,6 +60,8 @@ class WorkPlanBid(object):
             'agent_ranking_type': 'str',
             'ranking_tiebreaker_type': 'str',
             'published_date': 'datetime',
+            'bid_type': 'str',
+            'end_overrides_and_rotations': 'bool',
             'work_plan_fields_visible_to_agents': 'list[str]',
             'metadata': 'WorkPlanBidMetadata',
             'self_uri': 'str'
@@ -76,6 +78,8 @@ class WorkPlanBid(object):
             'agent_ranking_type': 'agentRankingType',
             'ranking_tiebreaker_type': 'rankingTiebreakerType',
             'published_date': 'publishedDate',
+            'bid_type': 'bidType',
+            'end_overrides_and_rotations': 'endOverridesAndRotations',
             'work_plan_fields_visible_to_agents': 'workPlanFieldsVisibleToAgents',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
@@ -91,6 +95,8 @@ class WorkPlanBid(object):
         self._agent_ranking_type = None
         self._ranking_tiebreaker_type = None
         self._published_date = None
+        self._bid_type = None
+        self._end_overrides_and_rotations = None
         self._work_plan_fields_visible_to_agents = None
         self._metadata = None
         self._self_uri = None
@@ -349,6 +355,59 @@ class WorkPlanBid(object):
         
 
         self._published_date = published_date
+
+    @property
+    def bid_type(self) -> str:
+        """
+        Gets the bid_type of this WorkPlanBid.
+        The type of bid created
+
+        :return: The bid_type of this WorkPlanBid.
+        :rtype: str
+        """
+        return self._bid_type
+
+    @bid_type.setter
+    def bid_type(self, bid_type: str) -> None:
+        """
+        Sets the bid_type of this WorkPlanBid.
+        The type of bid created
+
+        :param bid_type: The bid_type of this WorkPlanBid.
+        :type: str
+        """
+        if isinstance(bid_type, int):
+            bid_type = str(bid_type)
+        allowed_values = ["WorkPlanBid", "ScheduleBid"]
+        if bid_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for bid_type -> " + bid_type)
+            self._bid_type = "outdated_sdk_version"
+        else:
+            self._bid_type = bid_type
+
+    @property
+    def end_overrides_and_rotations(self) -> bool:
+        """
+        Gets the end_overrides_and_rotations of this WorkPlanBid.
+        If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+
+        :return: The end_overrides_and_rotations of this WorkPlanBid.
+        :rtype: bool
+        """
+        return self._end_overrides_and_rotations
+
+    @end_overrides_and_rotations.setter
+    def end_overrides_and_rotations(self, end_overrides_and_rotations: bool) -> None:
+        """
+        Sets the end_overrides_and_rotations of this WorkPlanBid.
+        If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+
+        :param end_overrides_and_rotations: The end_overrides_and_rotations of this WorkPlanBid.
+        :type: bool
+        """
+        
+
+        self._end_overrides_and_rotations = end_overrides_and_rotations
 
     @property
     def work_plan_fields_visible_to_agents(self) -> List[str]:

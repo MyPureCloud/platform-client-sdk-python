@@ -148,7 +148,7 @@ class ArchitectExportJobStateResponse(object):
         """
         if isinstance(command, int):
             command = str(command)
-        allowed_values = ["Publish", "Create", "Update", "Export"]
+        allowed_values = ["Publish", "Create", "Update", "Export", "Validate"]
         if command.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for command -> " + command)
             self._command = "outdated_sdk_version"

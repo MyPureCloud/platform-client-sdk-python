@@ -16,10 +16,12 @@
 | **agent_ranking_type** | str | The type of agent ranking selected for this bid | |
 | **ranking_tiebreaker_type** | str | Ranking tiebreaker | |
 | **published_date** | datetime | The date the work plan bid published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **bid_type** | str | The type of bid created | |
+| **end_overrides_and_rotations** | bool | If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid | |
 | **work_plan_fields_visible_to_agents** | list[str] | The work plan fields visible to agents whenever work plan preferences are made | |
 | **metadata** | [WorkPlanBidMetadata](WorkPlanBidMetadata) | The meta data of this bid | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

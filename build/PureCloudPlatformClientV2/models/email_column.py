@@ -49,17 +49,20 @@ class EmailColumn(object):
         self.swagger_types = {
             'column_name': 'str',
             'type': 'str',
+            'contactable_time_column_name': 'str',
             'contactable_time_column': 'str'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
             'type': 'type',
+            'contactable_time_column_name': 'contactableTimeColumnName',
             'contactable_time_column': 'contactableTimeColumn'
         }
 
         self._column_name = None
         self._type = None
+        self._contactable_time_column_name = None
         self._contactable_time_column = None
 
     @property
@@ -109,6 +112,30 @@ class EmailColumn(object):
         
 
         self._type = type
+
+    @property
+    def contactable_time_column_name(self) -> str:
+        """
+        Gets the contactable_time_column_name of this EmailColumn.
+        A name of the contactableTimeColumn
+
+        :return: The contactable_time_column_name of this EmailColumn.
+        :rtype: str
+        """
+        return self._contactable_time_column_name
+
+    @contactable_time_column_name.setter
+    def contactable_time_column_name(self, contactable_time_column_name: str) -> None:
+        """
+        Sets the contactable_time_column_name of this EmailColumn.
+        A name of the contactableTimeColumn
+
+        :param contactable_time_column_name: The contactable_time_column_name of this EmailColumn.
+        :type: str
+        """
+        
+
+        self._contactable_time_column_name = contactable_time_column_name
 
     @property
     def contactable_time_column(self) -> str:

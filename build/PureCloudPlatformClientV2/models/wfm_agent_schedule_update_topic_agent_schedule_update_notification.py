@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate
+    from . import WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange
     from . import WfmAgentScheduleUpdateTopicUserReference
 
 class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification(object):
@@ -53,20 +54,23 @@ class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification(object):
             'user': 'WfmAgentScheduleUpdateTopicUserReference',
             'start_date': 'datetime',
             'end_date': 'datetime',
-            'updates': 'list[WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate]'
+            'updates': 'list[WfmAgentScheduleUpdateTopicAgentScheduleShiftUpdate]',
+            'visibility_range': 'WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange'
         }
 
         self.attribute_map = {
             'user': 'user',
             'start_date': 'startDate',
             'end_date': 'endDate',
-            'updates': 'updates'
+            'updates': 'updates',
+            'visibility_range': 'visibilityRange'
         }
 
         self._user = None
         self._start_date = None
         self._end_date = None
         self._updates = None
+        self._visibility_range = None
 
     @property
     def user(self) -> 'WfmAgentScheduleUpdateTopicUserReference':
@@ -163,6 +167,30 @@ class WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification(object):
         
 
         self._updates = updates
+
+    @property
+    def visibility_range(self) -> 'WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange':
+        """
+        Gets the visibility_range of this WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification.
+
+
+        :return: The visibility_range of this WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification.
+        :rtype: WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange
+        """
+        return self._visibility_range
+
+    @visibility_range.setter
+    def visibility_range(self, visibility_range: 'WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange') -> None:
+        """
+        Sets the visibility_range of this WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification.
+
+
+        :param visibility_range: The visibility_range of this WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification.
+        :type: WfmAgentScheduleUpdateTopicAgentScheduleVisibilityRange
+        """
+        
+
+        self._visibility_range = visibility_range
 
     def to_dict(self):
         """

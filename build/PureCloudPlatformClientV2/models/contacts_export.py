@@ -54,8 +54,10 @@ class ContactsExport(object):
             'division_ids': 'list[str]',
             'created_by': 'DomainEntityRef',
             'date_created': 'datetime',
+            'date_completion': 'datetime',
             'status': 'str',
             'download_url': 'str',
+            'result_row_count': 'int',
             'query_conditions': 'ContactsExportQueryConditions',
             'self_uri': 'str'
         }
@@ -65,8 +67,10 @@ class ContactsExport(object):
             'division_ids': 'divisionIds',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
+            'date_completion': 'dateCompletion',
             'status': 'status',
             'download_url': 'downloadUrl',
+            'result_row_count': 'resultRowCount',
             'query_conditions': 'queryConditions',
             'self_uri': 'selfUri'
         }
@@ -75,8 +79,10 @@ class ContactsExport(object):
         self._division_ids = None
         self._created_by = None
         self._date_created = None
+        self._date_completion = None
         self._status = None
         self._download_url = None
+        self._result_row_count = None
         self._query_conditions = None
         self._self_uri = None
 
@@ -177,6 +183,30 @@ class ContactsExport(object):
         self._date_created = date_created
 
     @property
+    def date_completion(self) -> datetime:
+        """
+        Gets the date_completion of this ContactsExport.
+        When the request reached a terminal state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_completion of this ContactsExport.
+        :rtype: datetime
+        """
+        return self._date_completion
+
+    @date_completion.setter
+    def date_completion(self, date_completion: datetime) -> None:
+        """
+        Sets the date_completion of this ContactsExport.
+        When the request reached a terminal state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_completion: The date_completion of this ContactsExport.
+        :type: datetime
+        """
+        
+
+        self._date_completion = date_completion
+
+    @property
     def status(self) -> str:
         """
         Gets the status of this ContactsExport.
@@ -228,6 +258,30 @@ class ContactsExport(object):
         
 
         self._download_url = download_url
+
+    @property
+    def result_row_count(self) -> int:
+        """
+        Gets the result_row_count of this ContactsExport.
+        Number of rows returned by the export query
+
+        :return: The result_row_count of this ContactsExport.
+        :rtype: int
+        """
+        return self._result_row_count
+
+    @result_row_count.setter
+    def result_row_count(self, result_row_count: int) -> None:
+        """
+        Sets the result_row_count of this ContactsExport.
+        Number of rows returned by the export query
+
+        :param result_row_count: The result_row_count of this ContactsExport.
+        :type: int
+        """
+        
+
+        self._result_row_count = result_row_count
 
     @property
     def query_conditions(self) -> 'ContactsExportQueryConditions':

@@ -54,6 +54,7 @@ class AgentWorkPlanBid(object):
             'effective_date': 'date',
             'status': 'str',
             'work_plan_fields_visible_to_agents': 'list[str]',
+            'bid_type': 'str',
             'self_uri': 'str'
         }
 
@@ -65,6 +66,7 @@ class AgentWorkPlanBid(object):
             'effective_date': 'effectiveDate',
             'status': 'status',
             'work_plan_fields_visible_to_agents': 'workPlanFieldsVisibleToAgents',
+            'bid_type': 'bidType',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +77,7 @@ class AgentWorkPlanBid(object):
         self._effective_date = None
         self._status = None
         self._work_plan_fields_visible_to_agents = None
+        self._bid_type = None
         self._self_uri = None
 
     @property
@@ -249,6 +252,35 @@ class AgentWorkPlanBid(object):
         
 
         self._work_plan_fields_visible_to_agents = work_plan_fields_visible_to_agents
+
+    @property
+    def bid_type(self) -> str:
+        """
+        Gets the bid_type of this AgentWorkPlanBid.
+        The type of the bid
+
+        :return: The bid_type of this AgentWorkPlanBid.
+        :rtype: str
+        """
+        return self._bid_type
+
+    @bid_type.setter
+    def bid_type(self, bid_type: str) -> None:
+        """
+        Sets the bid_type of this AgentWorkPlanBid.
+        The type of the bid
+
+        :param bid_type: The bid_type of this AgentWorkPlanBid.
+        :type: str
+        """
+        if isinstance(bid_type, int):
+            bid_type = str(bid_type)
+        allowed_values = ["WorkPlanBid", "ScheduleBid"]
+        if bid_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for bid_type -> " + bid_type)
+            self._bid_type = "outdated_sdk_version"
+        else:
+            self._bid_type = bid_type
 
     @property
     def self_uri(self) -> str:

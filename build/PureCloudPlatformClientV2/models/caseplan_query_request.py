@@ -48,6 +48,7 @@ class CaseplanQueryRequest(object):
         """
         self.swagger_types = {
             'name': 'str',
+            'name_search_type': 'str',
             'page_size': 'int',
             'after': 'str',
             'division_ids': 'list[str]'
@@ -55,12 +56,14 @@ class CaseplanQueryRequest(object):
 
         self.attribute_map = {
             'name': 'name',
+            'name_search_type': 'nameSearchType',
             'page_size': 'pageSize',
             'after': 'after',
             'division_ids': 'divisionIds'
         }
 
         self._name = None
+        self._name_search_type = None
         self._page_size = None
         self._after = None
         self._division_ids = None
@@ -94,6 +97,35 @@ class CaseplanQueryRequest(object):
 
 
         self._name = name
+
+    @property
+    def name_search_type(self) -> str:
+        """
+        Gets the name_search_type of this CaseplanQueryRequest.
+        Type of name search to perform. Default is BEGINS_WITH.
+
+        :return: The name_search_type of this CaseplanQueryRequest.
+        :rtype: str
+        """
+        return self._name_search_type
+
+    @name_search_type.setter
+    def name_search_type(self, name_search_type: str) -> None:
+        """
+        Sets the name_search_type of this CaseplanQueryRequest.
+        Type of name search to perform. Default is BEGINS_WITH.
+
+        :param name_search_type: The name_search_type of this CaseplanQueryRequest.
+        :type: str
+        """
+        if isinstance(name_search_type, int):
+            name_search_type = str(name_search_type)
+        allowed_values = ["BEGINS_WITH", "CONTAINS"]
+        if name_search_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for name_search_type -> " + name_search_type)
+            self._name_search_type = "outdated_sdk_version"
+        else:
+            self._name_search_type = name_search_type
 
     @property
     def page_size(self) -> int:

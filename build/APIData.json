@@ -6068,6 +6068,25 @@
     "return": "FlowOutcomeDivisionViewEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nsort_by = ''id'' # str | Sort by (optional) (default to 'id')\nsort_order = ''asc'' # str | Sort order (optional) (default to 'asc')\nid = ['id_example'] # list[str] | ID (optional)\nname = 'name_example' # str | Name (optional)\ndivision_id = ['division_id_example'] # list[str] | division ID(s) (optional)\n\ntry:\n    # Get a pageable list of basic flow outcome information objects filterable by query parameters.\n    api_response = api_instance.get_flows_outcomes_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->get_flows_outcomes_divisionviews: %s\\n\" % e)"
   },
+  "get_flows_validate_job": {
+    "operationId": "get_flows_validate_job",
+    "functionName": "get_flows_validate_job",
+    "signature": "get_flows_validate_job(job_id, expand)",
+    "parameters": [
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
+    "return": "ArchitectValidateJobStateResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\njob_id = 'job_id_example' # str | Job ID\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)\n\ntry:\n    # Fetch Architect Validate Job Status\n    api_response = api_instance.get_flows_validate_job(job_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->get_flows_validate_job: %s\\n\" % e)"
+  },
   "patch_architect_grammar": {
     "operationId": "patch_architect_grammar",
     "functionName": "patch_architect_grammar",
@@ -6748,6 +6767,20 @@
     ],
     "return": "FlowOutcome",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nbody = PureCloudPlatformClientV2.FlowOutcome() # FlowOutcome |  (optional)\n\ntry:\n    # Create a flow outcome\n    api_response = api_instance.post_flows_outcomes(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->post_flows_outcomes: %s\\n\" % e)"
+  },
+  "post_flows_validate_jobs": {
+    "operationId": "post_flows_validate_jobs",
+    "functionName": "post_flows_validate_jobs",
+    "signature": "post_flows_validate_jobs(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "RegisterArchitectValidateJob",
+        "required": "true"
+      }
+    ],
+    "return": "RegisterArchitectValidateJobResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nbody = PureCloudPlatformClientV2.RegisterArchitectValidateJob() # RegisterArchitectValidateJob | \n\ntry:\n    # Register Architect Validate Job\n    api_response = api_instance.post_flows_validate_jobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->post_flows_validate_jobs: %s\\n\" % e)"
   },
   "put_architect_emergencygroup": {
     "operationId": "put_architect_emergencygroup",
@@ -19046,7 +19079,7 @@
       }
     ],
     "return": "ContactsExportListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\ndivision_ids = ['division_ids_example'] # list[str] | Division IDs of entities (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities (optional)\npage_size = 56 # int | Number of entities to return (optional)\n\ntry:\n    # List exports for organization\n    api_response = api_instance.get_externalcontacts_contacts_exports(division_ids=division_ids, after=after, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_contacts_exports: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\ndivision_ids = ['division_ids_example'] # list[str] | Division IDs of entities (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities (optional)\npage_size = 56 # int | Number of entities to return (optional)\n\ntry:\n    # List contact exports for organization\n    api_response = api_instance.get_externalcontacts_contacts_exports(division_ids=division_ids, after=after, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->get_externalcontacts_contacts_exports: %s\\n\" % e)"
   },
   "get_externalcontacts_contacts_schema": {
     "operationId": "get_externalcontacts_contacts_schema",
@@ -30442,12 +30475,12 @@
       },
       {
         "name": "body",
-        "type": "KnowledgeDocumentCreateRequest",
+        "type": "KnowledgeDocumentReq",
         "required": "true"
       }
     ],
     "return": "KnowledgeDocumentResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nknowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID\nbody = PureCloudPlatformClientV2.KnowledgeDocumentCreateRequest() # KnowledgeDocumentCreateRequest | \n\ntry:\n    # Create document.\n    api_response = api_instance.post_knowledge_knowledgebase_documents(knowledge_base_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nknowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID\nbody = PureCloudPlatformClientV2.KnowledgeDocumentReq() # KnowledgeDocumentReq | \n\ntry:\n    # Create document.\n    api_response = api_instance.post_knowledge_knowledgebase_documents(knowledge_base_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents: %s\\n\" % e)"
   },
   "post_knowledge_knowledgebase_documents_answers": {
     "operationId": "post_knowledge_knowledgebase_documents_answers",
@@ -48718,7 +48751,7 @@
       }
     ],
     "return": "DictionaryFeedbackEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndialect = 'en-US' # str | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)\ntranscription_engine = 'transcription_engine_example' # str | Filter by transcription engine, If not provided, all transcription engines will be considered (optional)\nnext_page = 'next_page_example' # str | The key for listing the next page (optional)\npage_size = 500 # int | The page size for the listing (optional) (default to 500)\n\ntry:\n    # Get the list of Speech & Text Analytics dictionary feedbacks\n    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, transcription_engine=transcription_engine, next_page=next_page, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dictionaryfeedback: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndialect = 'en-US' # str | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)\ntranscription_engine = 'transcription_engine_example' # str | Filter by transcription engine, If not provided, all transcription engines will be considered (optional)\nnext_page = 'next_page_example' # str | The key for listing the next page (optional)\npage_size = 500 # int | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. (optional) (default to 500)\n\ntry:\n    # Get the list of Speech & Text Analytics dictionary feedbacks\n    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, transcription_engine=transcription_engine, next_page=next_page, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dictionaryfeedback: %s\\n\" % e)"
   },
   "get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id": {
     "operationId": "get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id",
@@ -57304,6 +57337,47 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit.\nplanning_group_id = 'planning_group_id_example' # str | The ID of a planning group to delete\n\ntry:\n    # Deletes the planning group\n    api_instance.delete_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_planninggroup: %s\\n\" % e)"
   },
+  "delete_workforcemanagement_businessunit_schedulebid": {
+    "operationId": "delete_workforcemanagement_businessunit_schedulebid",
+    "functionName": "delete_workforcemanagement_businessunit_schedulebid",
+    "signature": "delete_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid\n\ntry:\n    # Delete a schedule bid\n    api_instance.delete_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_schedulebid: %s\\n\" % e)"
+  },
+  "delete_workforcemanagement_businessunit_schedulebid_group": {
+    "operationId": "delete_workforcemanagement_businessunit_schedulebid_group",
+    "functionName": "delete_workforcemanagement_businessunit_schedulebid_group",
+    "signature": "delete_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups\nbid_group_id = 'bid_group_id_example' # str | Schedule Bid Group id\n\ntry:\n    # Delete a schedule bid group by bid group Id\n    api_instance.delete_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_schedulebid_group: %s\\n\" % e)"
+  },
   "delete_workforcemanagement_businessunit_scheduling_run": {
     "operationId": "delete_workforcemanagement_businessunit_scheduling_run",
     "functionName": "delete_workforcemanagement_businessunit_scheduling_run",
@@ -58253,6 +58327,116 @@
     ],
     "return": "PlanningGroupList",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit.\n\ntry:\n    # Gets list of planning groups\n    api_response = api_instance.get_workforcemanagement_businessunit_planninggroups(business_unit_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_planninggroups: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_schedulebid": {
+    "operationId": "get_workforcemanagement_businessunit_schedulebid",
+    "functionName": "get_workforcemanagement_businessunit_schedulebid",
+    "signature": "get_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid\n\ntry:\n    # Get a schedule bid\n    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_schedulebid_group": {
+    "operationId": "get_workforcemanagement_businessunit_schedulebid_group",
+    "functionName": "get_workforcemanagement_businessunit_schedulebid_group",
+    "signature": "get_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_group_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups\nbid_group_id = 'bid_group_id_example' # str | Schedule Bid Group id\n\ntry:\n    # Get a schedule bid group\n    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid_group: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_schedulebid_group_preferences": {
+    "operationId": "get_workforcemanagement_businessunit_schedulebid_group_preferences",
+    "functionName": "get_workforcemanagement_businessunit_schedulebid_group_preferences",
+    "signature": "get_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, force_download_service, expand)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "force_download_service",
+        "type": "bool",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
+    "return": "AdminAgentScheduleBidPreferenceResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups\nbid_group_id = 'bid_group_id_example' # str | The ID of the schedule bid group\nforce_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)\nexpand = ['expand_example'] # list[str] | Include to fetch agents' preferences with priorities (optional)\n\ntry:\n    # Get agents schedule bid preferences for a bid group\n    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, force_download_service=force_download_service, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid_group_preferences: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_schedulebid_groups_summary": {
+    "operationId": "get_workforcemanagement_businessunit_schedulebid_groups_summary",
+    "functionName": "get_workforcemanagement_businessunit_schedulebid_groups_summary",
+    "signature": "get_workforcemanagement_businessunit_schedulebid_groups_summary(business_unit_id, bid_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupSummaryList",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups\n\ntry:\n    # Get summary of bid groups that belong to a schedule bid\n    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid_groups_summary(business_unit_id, bid_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid_groups_summary: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_businessunit_schedulebids": {
+    "operationId": "get_workforcemanagement_businessunit_schedulebids",
+    "functionName": "get_workforcemanagement_businessunit_schedulebids",
+    "signature": "get_workforcemanagement_businessunit_schedulebids(business_unit_id)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidListResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\n\ntry:\n    # Get list of schedule bids\n    api_response = api_instance.get_workforcemanagement_businessunit_schedulebids(business_unit_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebids: %s\\n\" % e)"
   },
   "get_workforcemanagement_businessunit_scheduler_settings": {
     "operationId": "get_workforcemanagement_businessunit_scheduler_settings",
@@ -59747,6 +59931,41 @@
     "return": "NotificationsResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\n\ntry:\n    # Get a list of notifications for the current user\n    api_response = api_instance.get_workforcemanagement_notifications()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_notifications: %s\\n\" % e)"
   },
+  "get_workforcemanagement_schedulebid_preference": {
+    "operationId": "get_workforcemanagement_schedulebid_preference",
+    "functionName": "get_workforcemanagement_schedulebid_preference",
+    "signature": "get_workforcemanagement_schedulebid_preference(bid_id)",
+    "parameters": [
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBiddingPreferenceResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbid_id = 'bid_id_example' # str | The ID of the schedule bid\n\ntry:\n    # Gets an agent's schedule bidding preference\n    api_response = api_instance.get_workforcemanagement_schedulebid_preference(bid_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulebid_preference: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_schedulebid_schedulesets": {
+    "operationId": "get_workforcemanagement_schedulebid_schedulesets",
+    "functionName": "get_workforcemanagement_schedulebid_schedulesets",
+    "signature": "get_workforcemanagement_schedulebid_schedulesets(bid_id)",
+    "parameters": [
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBidScheduleSetResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbid_id = 'bid_id_example' # str | The ID of the schedule bid\n\ntry:\n    # Gets an agent's schedule sets for a bid\n    api_response = api_instance.get_workforcemanagement_schedulebid_schedulesets(bid_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulebid_schedulesets: %s\\n\" % e)"
+  },
+  "get_workforcemanagement_schedulebids": {
+    "operationId": "get_workforcemanagement_schedulebids",
+    "functionName": "get_workforcemanagement_schedulebids",
+    "signature": "get_workforcemanagement_schedulebids()",
+    "return": "AgentScheduleBids",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\n\ntry:\n    # Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently\n    api_response = api_instance.get_workforcemanagement_schedulebids()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulebids: %s\\n\" % e)"
+  },
   "get_workforcemanagement_schedulingjob": {
     "operationId": "get_workforcemanagement_schedulingjob",
     "functionName": "get_workforcemanagement_schedulingjob",
@@ -60238,6 +60457,88 @@
     ],
     "return": "PlanningGroup",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit.\nplanning_group_id = 'planning_group_id_example' # str | The ID of a planning group to update\nbody = PureCloudPlatformClientV2.UpdatePlanningGroupRequest() # UpdatePlanningGroupRequest | body\n\ntry:\n    # Updates the planning group\n    api_response = api_instance.patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_planninggroup: %s\\n\" % e)"
+  },
+  "patch_workforcemanagement_businessunit_schedulebid": {
+    "operationId": "patch_workforcemanagement_businessunit_schedulebid",
+    "functionName": "patch_workforcemanagement_businessunit_schedulebid",
+    "signature": "patch_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UpdateScheduleBid",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid\nbody = PureCloudPlatformClientV2.UpdateScheduleBid() # UpdateScheduleBid | The schedule bid to be updated\n\ntry:\n    # Update a schedule bid\n    api_response = api_instance.patch_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_schedulebid: %s\\n\" % e)"
+  },
+  "patch_workforcemanagement_businessunit_schedulebid_group": {
+    "operationId": "patch_workforcemanagement_businessunit_schedulebid_group",
+    "functionName": "patch_workforcemanagement_businessunit_schedulebid_group",
+    "signature": "patch_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScheduleBidGroupUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups\nbid_group_id = 'bid_group_id_example' # str | Schedule Bid Group id\nbody = PureCloudPlatformClientV2.ScheduleBidGroupUpdate() # ScheduleBidGroupUpdate | body\n\ntry:\n    # Update a schedule bid group by bid group Id\n    api_response = api_instance.patch_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_schedulebid_group: %s\\n\" % e)"
+  },
+  "patch_workforcemanagement_businessunit_schedulebid_group_preferences": {
+    "operationId": "patch_workforcemanagement_businessunit_schedulebid_group_preferences",
+    "functionName": "patch_workforcemanagement_businessunit_schedulebid_group_preferences",
+    "signature": "patch_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_group_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "AgentsBidAssignedScheduleSetOverrideRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AdminAgentScheduleBidPreferenceResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups\nbid_group_id = 'bid_group_id_example' # str | The ID of the schedule bid group\nbody = PureCloudPlatformClientV2.AgentsBidAssignedScheduleSetOverrideRequest() # AgentsBidAssignedScheduleSetOverrideRequest | body\n\ntry:\n    # Overrides the assigned schedule bid for the specified agents\n    api_response = api_instance.patch_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_schedulebid_group_preferences: %s\\n\" % e)"
   },
   "patch_workforcemanagement_businessunit_scheduler_settings": {
     "operationId": "patch_workforcemanagement_businessunit_scheduler_settings",
@@ -61595,6 +61896,92 @@
     ],
     "return": "PlanningGroup",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit.\nbody = PureCloudPlatformClientV2.CreatePlanningGroupRequest() # CreatePlanningGroupRequest | body\n\ntry:\n    # Adds a new planning group\n    api_response = api_instance.post_workforcemanagement_businessunit_planninggroups(business_unit_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_planninggroups: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_schedulebid_copy": {
+    "operationId": "post_workforcemanagement_businessunit_schedulebid_copy",
+    "functionName": "post_workforcemanagement_businessunit_schedulebid_copy",
+    "signature": "post_workforcemanagement_businessunit_schedulebid_copy(business_unit_id, bid_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CopyScheduleBid",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid to copy\nbody = PureCloudPlatformClientV2.CopyScheduleBid() # CopyScheduleBid | body\n\ntry:\n    # Copy a schedule bid\n    api_response = api_instance.post_workforcemanagement_businessunit_schedulebid_copy(business_unit_id, bid_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebid_copy: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_schedulebid_groups": {
+    "operationId": "post_workforcemanagement_businessunit_schedulebid_groups",
+    "functionName": "post_workforcemanagement_businessunit_schedulebid_groups",
+    "signature": "post_workforcemanagement_businessunit_schedulebid_groups(business_unit_id, bid_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ScheduleBidGroupCreate",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBidGroupResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups\nbody = PureCloudPlatformClientV2.ScheduleBidGroupCreate() # ScheduleBidGroupCreate | body\n\ntry:\n    # Add a bid group in a given schedule bid\n    api_response = api_instance.post_workforcemanagement_businessunit_schedulebid_groups(business_unit_id, bid_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebid_groups: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_schedulebids": {
+    "operationId": "post_workforcemanagement_businessunit_schedulebids",
+    "functionName": "post_workforcemanagement_businessunit_schedulebids",
+    "signature": "post_workforcemanagement_businessunit_schedulebids(business_unit_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "CreateScheduleBid",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleBid",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbody = PureCloudPlatformClientV2.CreateScheduleBid() # CreateScheduleBid | The schedule bid to be created\n\ntry:\n    # Create a new schedule bid\n    api_response = api_instance.post_workforcemanagement_businessunit_schedulebids(business_unit_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebids: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets": {
+    "operationId": "post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets",
+    "functionName": "post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets",
+    "signature": "post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets(business_unit_id, body)",
+    "parameters": [
+      {
+        "name": "business_unit_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "QueryEffectiveScheduleSetsRequest",
+        "required": "true"
+      }
+    ],
+    "return": "AgentsEffectiveScheduleSetResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit\nbody = PureCloudPlatformClientV2.QueryEffectiveScheduleSetsRequest() # QueryEffectiveScheduleSetsRequest | body\n\ntry:\n    # Fetch all the agents with effective schedule set for the given BU\n    api_response = api_instance.post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets(business_unit_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets: %s\\n\" % e)"
   },
   "post_workforcemanagement_businessunit_servicegoaltemplates": {
     "operationId": "post_workforcemanagement_businessunit_servicegoaltemplates",
@@ -63413,5 +63800,24 @@
     ],
     "return": "TimeOffLimit",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nmanagement_unit_id = 'management_unit_id_example' # str | The ID of the management unit.\ntime_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time off limit object to set values for\nbody = PureCloudPlatformClientV2.SetTimeOffLimitValuesRequest() # SetTimeOffLimitValuesRequest | body\n\ntry:\n    # Sets daily values for a date range of time off limit object\n    api_response = api_instance.put_workforcemanagement_managementunit_timeofflimit_values(management_unit_id, time_off_limit_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->put_workforcemanagement_managementunit_timeofflimit_values: %s\\n\" % e)"
+  },
+  "put_workforcemanagement_schedulebid_preference": {
+    "operationId": "put_workforcemanagement_schedulebid_preference",
+    "functionName": "put_workforcemanagement_schedulebid_preference",
+    "signature": "put_workforcemanagement_schedulebid_preference(bid_id, body)",
+    "parameters": [
+      {
+        "name": "bid_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UpdateAgentScheduleBiddingPreference",
+        "required": "true"
+      }
+    ],
+    "return": "AgentScheduleBiddingPreferenceResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbid_id = 'bid_id_example' # str | The ID of the schedule bid\nbody = PureCloudPlatformClientV2.UpdateAgentScheduleBiddingPreference() # UpdateAgentScheduleBiddingPreference | body\n\ntry:\n    # Update an agent's schedule set preference\n    api_response = api_instance.put_workforcemanagement_schedulebid_preference(bid_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->put_workforcemanagement_schedulebid_preference: %s\\n\" % e)"
   }
 }

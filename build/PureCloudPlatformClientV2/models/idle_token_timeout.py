@@ -74,7 +74,7 @@ class IdleTokenTimeout(object):
     def idle_token_timeout_seconds(self) -> int:
         """
         Gets the idle_token_timeout_seconds of this IdleTokenTimeout.
-        Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).
+        Token timeout length in seconds. Must be at least 5 minutes and at most 8 hours. HIPAA-enabled organizations may be subject to a stricter 15-minute maximum during rollout.
 
         :return: The idle_token_timeout_seconds of this IdleTokenTimeout.
         :rtype: int
@@ -85,7 +85,7 @@ class IdleTokenTimeout(object):
     def idle_token_timeout_seconds(self, idle_token_timeout_seconds: int) -> None:
         """
         Sets the idle_token_timeout_seconds of this IdleTokenTimeout.
-        Token timeout length in seconds. Must be at least 5 minutes and 8 hours or less (if HIPAA is disabled) or 15 minutes or less (if HIPAA is enabled).
+        Token timeout length in seconds. Must be at least 5 minutes and at most 8 hours. HIPAA-enabled organizations may be subject to a stricter 15-minute maximum during rollout.
 
         :param idle_token_timeout_seconds: The idle_token_timeout_seconds of this IdleTokenTimeout.
         :type: int

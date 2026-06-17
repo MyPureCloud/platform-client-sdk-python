@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext
 
 class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
     """
@@ -55,7 +57,8 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
             'utterance_id': 'str',
             'message_id': 'str',
             'query_statement': 'str',
-            'language': 'str'
+            'language': 'str',
+            'query_reformulation_context': 'ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext'
         }
 
         self.attribute_map = {
@@ -67,7 +70,8 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
             'utterance_id': 'utteranceId',
             'message_id': 'messageId',
             'query_statement': 'queryStatement',
-            'language': 'language'
+            'language': 'language',
+            'query_reformulation_context': 'queryReformulationContext'
         }
 
         self._queue_id = None
@@ -79,6 +83,7 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
         self._message_id = None
         self._query_statement = None
         self._language = None
+        self._query_reformulation_context = None
 
     @property
     def queue_id(self) -> str:
@@ -300,6 +305,30 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
         
 
         self._language = language
+
+    @property
+    def query_reformulation_context(self) -> 'ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext':
+        """
+        Gets the query_reformulation_context of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+
+
+        :return: The query_reformulation_context of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+        :rtype: ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext
+        """
+        return self._query_reformulation_context
+
+    @query_reformulation_context.setter
+    def query_reformulation_context(self, query_reformulation_context: 'ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext') -> None:
+        """
+        Sets the query_reformulation_context of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+
+
+        :param query_reformulation_context: The query_reformulation_context of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+        :type: ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext
+        """
+        
+
+        self._query_reformulation_context = query_reformulation_context
 
     def to_dict(self):
         """

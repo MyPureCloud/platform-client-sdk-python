@@ -59,7 +59,9 @@ class BillingCharge(object):
             'overage_quantity': 'int',
             'overage_rate': 'float',
             'overage_charge': 'float',
-            'overage_currency': 'str'
+            'overage_currency': 'str',
+            'converted_token_count': 'float',
+            'token_conversion_rate': 'float'
         }
 
         self.attribute_map = {
@@ -72,7 +74,9 @@ class BillingCharge(object):
             'overage_quantity': 'overageQuantity',
             'overage_rate': 'overageRate',
             'overage_charge': 'overageCharge',
-            'overage_currency': 'overageCurrency'
+            'overage_currency': 'overageCurrency',
+            'converted_token_count': 'convertedTokenCount',
+            'token_conversion_rate': 'tokenConversionRate'
         }
 
         self._id = None
@@ -85,6 +89,8 @@ class BillingCharge(object):
         self._overage_rate = None
         self._overage_charge = None
         self._overage_currency = None
+        self._converted_token_count = None
+        self._token_conversion_rate = None
 
     @property
     def id(self) -> str:
@@ -325,6 +331,54 @@ class BillingCharge(object):
         
 
         self._overage_currency = overage_currency
+
+    @property
+    def converted_token_count(self) -> float:
+        """
+        Gets the converted_token_count of this BillingCharge.
+        AI Token Count after the conversion for AI Products.
+
+        :return: The converted_token_count of this BillingCharge.
+        :rtype: float
+        """
+        return self._converted_token_count
+
+    @converted_token_count.setter
+    def converted_token_count(self, converted_token_count: float) -> None:
+        """
+        Sets the converted_token_count of this BillingCharge.
+        AI Token Count after the conversion for AI Products.
+
+        :param converted_token_count: The converted_token_count of this BillingCharge.
+        :type: float
+        """
+        
+
+        self._converted_token_count = converted_token_count
+
+    @property
+    def token_conversion_rate(self) -> float:
+        """
+        Gets the token_conversion_rate of this BillingCharge.
+        AI Token Conversion Rate — Units per token conversion ratio.
+
+        :return: The token_conversion_rate of this BillingCharge.
+        :rtype: float
+        """
+        return self._token_conversion_rate
+
+    @token_conversion_rate.setter
+    def token_conversion_rate(self, token_conversion_rate: float) -> None:
+        """
+        Sets the token_conversion_rate of this BillingCharge.
+        AI Token Conversion Rate — Units per token conversion ratio.
+
+        :param token_conversion_rate: The token_conversion_rate of this BillingCharge.
+        :type: float
+        """
+        
+
+        self._token_conversion_rate = token_conversion_rate
 
     def to_dict(self):
         """

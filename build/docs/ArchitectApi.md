@@ -98,6 +98,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_outcome**](#get_flows_outcome) | Get a flow outcome|
 |[**get_flows_outcomes**](#get_flows_outcomes) | Get a pageable list of flow outcomes, filtered by query parameters|
 |[**get_flows_outcomes_divisionviews**](#get_flows_outcomes_divisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters.|
+|[**get_flows_validate_job**](#get_flows_validate_job) | Fetch Architect Validate Job Status|
 |[**patch_architect_grammar**](#patch_architect_grammar) | Updates a grammar|
 |[**patch_architect_grammar_language**](#patch_architect_grammar_language) | Updates a grammar language|
 |[**patch_flows_instances_settings_executiondata**](#patch_flows_instances_settings_executiondata) | Edit the execution history enabled setting.|
@@ -139,6 +140,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_jobs**](#post_flows_jobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.|
 |[**post_flows_milestones**](#post_flows_milestones) | Create a flow milestone|
 |[**post_flows_outcomes**](#post_flows_outcomes) | Create a flow outcome|
+|[**post_flows_validate_jobs**](#post_flows_validate_jobs) | Register Architect Validate Job|
 |[**put_architect_emergencygroup**](#put_architect_emergencygroup) | Updates a emergency group by ID|
 |[**put_architect_ivr**](#put_architect_ivr) | Update an IVR Config.|
 |[**put_architect_ivr_identityresolution**](#put_architect_ivr_identityresolution) | Update an IVR IdentityResolutionConfig.|
@@ -5136,6 +5138,58 @@ except ApiException as e:
 [**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing)
 
 
+## get_flows_validate_job
+
+> [**ArchitectValidateJobStateResponse**](ArchitectValidateJobStateResponse) get_flows_validate_job(job_id, expand=expand)
+
+
+Fetch Architect Validate Job Status
+
+get_flows_validate_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/flows/validate/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* architect:jobValidate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+job_id = 'job_id_example' # str | Job ID
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+
+try:
+    # Fetch Architect Validate Job Status
+    api_response = api_instance.get_flows_validate_job(job_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_validate_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| Job ID |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+
+### Return type
+
+[**ArchitectValidateJobStateResponse**](ArchitectValidateJobStateResponse)
+
+
 ## patch_architect_grammar
 
 > [**Grammar**](Grammar) patch_architect_grammar(grammar_id, body=body)
@@ -7194,6 +7248,56 @@ except ApiException as e:
 [**FlowOutcome**](FlowOutcome)
 
 
+## post_flows_validate_jobs
+
+> [**RegisterArchitectValidateJobResponse**](RegisterArchitectValidateJobResponse) post_flows_validate_jobs(body)
+
+
+Register Architect Validate Job
+
+post_flows_validate_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/flows/validate/jobs 
+
+Requires ALL permissions: 
+
+* architect:jobValidate:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.RegisterArchitectValidateJob() # RegisterArchitectValidateJob | 
+
+try:
+    # Register Architect Validate Job
+    api_response = api_instance.post_flows_validate_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_flows_validate_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RegisterArchitectValidateJob**](RegisterArchitectValidateJob)|  |  |
+
+### Return type
+
+[**RegisterArchitectValidateJobResponse**](RegisterArchitectValidateJobResponse)
+
+
 ## put_architect_emergencygroup
 
 > [**EmergencyGroup**](EmergencyGroup) put_architect_emergencygroup(emergency_group_id, body)
@@ -7966,4 +8070,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

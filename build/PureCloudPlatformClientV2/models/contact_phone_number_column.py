@@ -49,17 +49,20 @@ class ContactPhoneNumberColumn(object):
         self.swagger_types = {
             'column_name': 'str',
             'type': 'str',
+            'callable_time_column_name': 'str',
             'callable_time_column': 'str'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
             'type': 'type',
+            'callable_time_column_name': 'callableTimeColumnName',
             'callable_time_column': 'callableTimeColumn'
         }
 
         self._column_name = None
         self._type = None
+        self._callable_time_column_name = None
         self._callable_time_column = None
 
     @property
@@ -109,6 +112,30 @@ class ContactPhoneNumberColumn(object):
         
 
         self._type = type
+
+    @property
+    def callable_time_column_name(self) -> str:
+        """
+        Gets the callable_time_column_name of this ContactPhoneNumberColumn.
+        A name of the callableTimeColumn
+
+        :return: The callable_time_column_name of this ContactPhoneNumberColumn.
+        :rtype: str
+        """
+        return self._callable_time_column_name
+
+    @callable_time_column_name.setter
+    def callable_time_column_name(self, callable_time_column_name: str) -> None:
+        """
+        Sets the callable_time_column_name of this ContactPhoneNumberColumn.
+        A name of the callableTimeColumn
+
+        :param callable_time_column_name: The callable_time_column_name of this ContactPhoneNumberColumn.
+        :type: str
+        """
+        
+
+        self._callable_time_column_name = callable_time_column_name
 
     @property
     def callable_time_column(self) -> str:

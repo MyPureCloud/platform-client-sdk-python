@@ -33,7 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
-    from . import DocumentBodyRequest
+    from . import DocumentBody
     from . import DocumentVariationContext
     from . import KnowledgeDocumentReference
 
@@ -60,7 +60,7 @@ class DocumentVariationRequest(object):
             'document': 'KnowledgeDocumentReference',
             'priority': 'int',
             'name': 'str',
-            'body': 'DocumentBodyRequest',
+            'body': 'DocumentBody',
             'self_uri': 'str'
         }
 
@@ -281,24 +281,24 @@ class DocumentVariationRequest(object):
         self._name = name
 
     @property
-    def body(self) -> 'DocumentBodyRequest':
+    def body(self) -> 'DocumentBody':
         """
         Gets the body of this DocumentVariationRequest.
         The content for the variation.
 
         :return: The body of this DocumentVariationRequest.
-        :rtype: DocumentBodyRequest
+        :rtype: DocumentBody
         """
         return self._body
 
     @body.setter
-    def body(self, body: 'DocumentBodyRequest') -> None:
+    def body(self, body: 'DocumentBody') -> None:
         """
         Sets the body of this DocumentVariationRequest.
         The content for the variation.
 
         :param body: The body of this DocumentVariationRequest.
-        :type: DocumentBodyRequest
+        :type: DocumentBody
         """
         
 

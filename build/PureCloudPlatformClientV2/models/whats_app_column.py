@@ -48,16 +48,22 @@ class WhatsAppColumn(object):
         """
         self.swagger_types = {
             'column_name': 'str',
-            'type': 'str'
+            'type': 'str',
+            'contactable_time_column_name': 'str',
+            'contactable_time_column': 'str'
         }
 
         self.attribute_map = {
             'column_name': 'columnName',
-            'type': 'type'
+            'type': 'type',
+            'contactable_time_column_name': 'contactableTimeColumnName',
+            'contactable_time_column': 'contactableTimeColumn'
         }
 
         self._column_name = None
         self._type = None
+        self._contactable_time_column_name = None
+        self._contactable_time_column = None
 
     @property
     def column_name(self) -> str:
@@ -106,6 +112,54 @@ class WhatsAppColumn(object):
         
 
         self._type = type
+
+    @property
+    def contactable_time_column_name(self) -> str:
+        """
+        Gets the contactable_time_column_name of this WhatsAppColumn.
+        A name of the contactableTimeColumn
+
+        :return: The contactable_time_column_name of this WhatsAppColumn.
+        :rtype: str
+        """
+        return self._contactable_time_column_name
+
+    @contactable_time_column_name.setter
+    def contactable_time_column_name(self, contactable_time_column_name: str) -> None:
+        """
+        Sets the contactable_time_column_name of this WhatsAppColumn.
+        A name of the contactableTimeColumn
+
+        :param contactable_time_column_name: The contactable_time_column_name of this WhatsAppColumn.
+        :type: str
+        """
+        
+
+        self._contactable_time_column_name = contactable_time_column_name
+
+    @property
+    def contactable_time_column(self) -> str:
+        """
+        Gets the contactable_time_column of this WhatsAppColumn.
+        A column that indicates the timezone to use for a given contact when checking contactable times.
+
+        :return: The contactable_time_column of this WhatsAppColumn.
+        :rtype: str
+        """
+        return self._contactable_time_column
+
+    @contactable_time_column.setter
+    def contactable_time_column(self, contactable_time_column: str) -> None:
+        """
+        Sets the contactable_time_column of this WhatsAppColumn.
+        A column that indicates the timezone to use for a given contact when checking contactable times.
+
+        :param contactable_time_column: The contactable_time_column of this WhatsAppColumn.
+        :type: str
+        """
+        
+
+        self._contactable_time_column = contactable_time_column
 
     def to_dict(self):
         """

@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationAttributeProperties
-    from . import ParticipantDataProperties
 
 class CopilotContextValue(object):
     """
@@ -52,20 +51,17 @@ class CopilotContextValue(object):
         self.swagger_types = {
             'name': 'str',
             'type': 'str',
-            'participant_data_properties': 'ParticipantDataProperties',
             'conversation_attribute_properties': 'ConversationAttributeProperties'
         }
 
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
-            'participant_data_properties': 'participantDataProperties',
             'conversation_attribute_properties': 'conversationAttributeProperties'
         }
 
         self._name = None
         self._type = None
-        self._participant_data_properties = None
         self._conversation_attribute_properties = None
 
     @property
@@ -114,36 +110,12 @@ class CopilotContextValue(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["ActiveIntent", "ConversationAttribute", "ParticipantData"]
+        allowed_values = ["ActiveIntent", "ConversationAttribute"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
-
-    @property
-    def participant_data_properties(self) -> 'ParticipantDataProperties':
-        """
-        Gets the participant_data_properties of this CopilotContextValue.
-        Participant data properties.
-
-        :return: The participant_data_properties of this CopilotContextValue.
-        :rtype: ParticipantDataProperties
-        """
-        return self._participant_data_properties
-
-    @participant_data_properties.setter
-    def participant_data_properties(self, participant_data_properties: 'ParticipantDataProperties') -> None:
-        """
-        Sets the participant_data_properties of this CopilotContextValue.
-        Participant data properties.
-
-        :param participant_data_properties: The participant_data_properties of this CopilotContextValue.
-        :type: ParticipantDataProperties
-        """
-        
-
-        self._participant_data_properties = participant_data_properties
 
     @property
     def conversation_attribute_properties(self) -> 'ConversationAttributeProperties':

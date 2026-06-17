@@ -1086,4 +1086,4 @@ except ApiException as e:
 [**SummarySetting**](SummarySetting)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

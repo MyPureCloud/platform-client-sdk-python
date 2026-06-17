@@ -1,0 +1,12 @@
+# WhatsAppBusinessScopedId
+
+## WhatsAppBusinessScopedId
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+
+
+
+_PureCloudPlatformClientV2 260.0.0_

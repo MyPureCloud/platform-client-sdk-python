@@ -61,6 +61,7 @@ class DictionaryFeedback(object):
             'modified_by': 'UserReference',
             'transcription_engine': 'str',
             'status': 'str',
+            'invalid_reason': 'str',
             'display_as': 'str',
             'example_phrases': 'list[DictionaryFeedbackExamplePhrase]',
             'sounds_like': 'list[str]',
@@ -79,6 +80,7 @@ class DictionaryFeedback(object):
             'modified_by': 'modifiedBy',
             'transcription_engine': 'transcriptionEngine',
             'status': 'status',
+            'invalid_reason': 'invalidReason',
             'display_as': 'displayAs',
             'example_phrases': 'examplePhrases',
             'sounds_like': 'soundsLike',
@@ -96,6 +98,7 @@ class DictionaryFeedback(object):
         self._modified_by = None
         self._transcription_engine = None
         self._status = None
+        self._invalid_reason = None
         self._display_as = None
         self._example_phrases = None
         self._sounds_like = None
@@ -355,7 +358,7 @@ class DictionaryFeedback(object):
     def status(self) -> str:
         """
         Gets the status of this DictionaryFeedback.
-        The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+        The status of the dictionary feedback
 
         :return: The status of this DictionaryFeedback.
         :rtype: str
@@ -366,14 +369,14 @@ class DictionaryFeedback(object):
     def status(self, status: str) -> None:
         """
         Sets the status of this DictionaryFeedback.
-        The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled.
+        The status of the dictionary feedback
 
         :param status: The status of this DictionaryFeedback.
         :type: str
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["Active", "Pending", "Failed", "Saved"]
+        allowed_values = ["Active", "Pending", "Failed", "Saved", "Invalid"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
@@ -381,10 +384,34 @@ class DictionaryFeedback(object):
             self._status = status
 
     @property
+    def invalid_reason(self) -> str:
+        """
+        Gets the invalid_reason of this DictionaryFeedback.
+        The reason the dictionary feedback is invalid
+
+        :return: The invalid_reason of this DictionaryFeedback.
+        :rtype: str
+        """
+        return self._invalid_reason
+
+    @invalid_reason.setter
+    def invalid_reason(self, invalid_reason: str) -> None:
+        """
+        Sets the invalid_reason of this DictionaryFeedback.
+        The reason the dictionary feedback is invalid
+
+        :param invalid_reason: The invalid_reason of this DictionaryFeedback.
+        :type: str
+        """
+        
+
+        self._invalid_reason = invalid_reason
+
+    @property
     def display_as(self) -> str:
         """
         Gets the display_as of this DictionaryFeedback.
-        The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+        The display name for the dictionary feedback.
 
         :return: The display_as of this DictionaryFeedback.
         :rtype: str
@@ -395,7 +422,7 @@ class DictionaryFeedback(object):
     def display_as(self, display_as: str) -> None:
         """
         Sets the display_as of this DictionaryFeedback.
-        The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine.
+        The display name for the dictionary feedback.
 
         :param display_as: The display_as of this DictionaryFeedback.
         :type: str
@@ -408,7 +435,7 @@ class DictionaryFeedback(object):
     def example_phrases(self) -> List['DictionaryFeedbackExamplePhrase']:
         """
         Gets the example_phrases of this DictionaryFeedback.
-        A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
+        A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid for Genesys transcription engine. Not applicable for English and Spanish dialects
 
         :return: The example_phrases of this DictionaryFeedback.
         :rtype: list[DictionaryFeedbackExamplePhrase]
@@ -419,7 +446,7 @@ class DictionaryFeedback(object):
     def example_phrases(self, example_phrases: List['DictionaryFeedbackExamplePhrase']) -> None:
         """
         Sets the example_phrases of this DictionaryFeedback.
-        A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine.
+        A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid for Genesys transcription engine. Not applicable for English and Spanish dialects
 
         :param example_phrases: The example_phrases of this DictionaryFeedback.
         :type: list[DictionaryFeedbackExamplePhrase]

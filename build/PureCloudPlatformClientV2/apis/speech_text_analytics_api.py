@@ -1322,7 +1322,7 @@ class SpeechTextAnalyticsApi(object):
         :param str dialect: The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
         :param str transcription_engine: Filter by transcription engine, If not provided, all transcription engines will be considered
         :param str next_page: The key for listing the next page
-        :param int page_size: The page size for the listing
+        :param int page_size: The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary.
         :return: DictionaryFeedbackEntityListing
                  If the method is called asynchronously,
                  returns the request thread.

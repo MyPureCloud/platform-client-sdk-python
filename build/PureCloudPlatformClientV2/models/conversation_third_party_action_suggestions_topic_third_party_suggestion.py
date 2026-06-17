@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource
 
 class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion(object):
     """
@@ -47,14 +49,20 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'text': 'str'
+            'text': 'str',
+            'title': 'str',
+            'sources': 'list[ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource]'
         }
 
         self.attribute_map = {
-            'text': 'text'
+            'text': 'text',
+            'title': 'title',
+            'sources': 'sources'
         }
 
         self._text = None
+        self._title = None
+        self._sources = None
 
     @property
     def text(self) -> str:
@@ -79,6 +87,54 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion(object):
         
 
         self._text = text
+
+    @property
+    def title(self) -> str:
+        """
+        Gets the title of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+
+
+        :return: The title of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title: str) -> None:
+        """
+        Sets the title of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+
+
+        :param title: The title of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+        :type: str
+        """
+        
+
+        self._title = title
+
+    @property
+    def sources(self) -> List['ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource']:
+        """
+        Gets the sources of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+
+
+        :return: The sources of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+        :rtype: list[ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource]
+        """
+        return self._sources
+
+    @sources.setter
+    def sources(self, sources: List['ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource']) -> None:
+        """
+        Sets the sources of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+
+
+        :param sources: The sources of this ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion.
+        :type: list[ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestionSource]
+        """
+        
+
+        self._sources = sources
 
     def to_dict(self):
         """

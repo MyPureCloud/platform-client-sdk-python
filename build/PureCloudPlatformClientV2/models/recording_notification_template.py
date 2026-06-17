@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import RecordingTemplateBody
     from . import RecordingTemplateButton
+    from . import RecordingTemplateCarousel
     from . import RecordingTemplateFooter
     from . import RecordingTemplateHeader
 
@@ -57,6 +58,7 @@ class RecordingNotificationTemplate(object):
             'header': 'RecordingTemplateHeader',
             'body': 'RecordingTemplateBody',
             'buttons': 'list[RecordingTemplateButton]',
+            'carousel': 'RecordingTemplateCarousel',
             'footer': 'RecordingTemplateFooter'
         }
 
@@ -66,6 +68,7 @@ class RecordingNotificationTemplate(object):
             'header': 'header',
             'body': 'body',
             'buttons': 'buttons',
+            'carousel': 'carousel',
             'footer': 'footer'
         }
 
@@ -74,6 +77,7 @@ class RecordingNotificationTemplate(object):
         self._header = None
         self._body = None
         self._buttons = None
+        self._carousel = None
         self._footer = None
 
     @property
@@ -195,6 +199,30 @@ class RecordingNotificationTemplate(object):
         
 
         self._buttons = buttons
+
+    @property
+    def carousel(self) -> 'RecordingTemplateCarousel':
+        """
+        Gets the carousel of this RecordingNotificationTemplate.
+        The template carousel
+
+        :return: The carousel of this RecordingNotificationTemplate.
+        :rtype: RecordingTemplateCarousel
+        """
+        return self._carousel
+
+    @carousel.setter
+    def carousel(self, carousel: 'RecordingTemplateCarousel') -> None:
+        """
+        Sets the carousel of this RecordingNotificationTemplate.
+        The template carousel
+
+        :param carousel: The carousel of this RecordingNotificationTemplate.
+        :type: RecordingTemplateCarousel
+        """
+        
+
+        self._carousel = carousel
 
     @property
     def footer(self) -> 'RecordingTemplateFooter':

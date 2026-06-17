@@ -16,12 +16,13 @@
 | **date_modified** | datetime | The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **modified_by** | [UserReference](UserReference) | The Id of the user who modified the dictionary feedback | [optional] |
 | **transcription_engine** | str | The transcription engine for the dictionary feedback. Only returned when GenesysExtended feature is enabled. | [optional] |
-| **status** | str | The status of the dictionary feedback. Only returned when GenesysExtended feature is enabled. | [optional] |
-| **display_as** | str | The display name for the dictionary feedback. Only returned when GenesysExtended feature is enabled. This field is only valid for Extended Services transcription engine. | [optional] |
-| **example_phrases** | [list[DictionaryFeedbackExamplePhrase]](DictionaryFeedbackExamplePhrase) | A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid and required for Genesys transcription engine. | [optional] |
+| **status** | str | The status of the dictionary feedback | [optional] |
+| **invalid_reason** | str | The reason the dictionary feedback is invalid | [optional] |
+| **display_as** | str | The display name for the dictionary feedback. | [optional] |
+| **example_phrases** | [list[DictionaryFeedbackExamplePhrase]](DictionaryFeedbackExamplePhrase) | A list of at least 3 and up to 20 unique phrases that are example usage of the term. This field is only valid for Genesys transcription engine. Not applicable for English and Spanish dialects | [optional] |
 | **sounds_like** | list[str] | A list of up to 10 terms that give examples of how the term sounds. This field is only valid for Genesys transcription engine. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

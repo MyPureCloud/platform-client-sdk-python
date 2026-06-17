@@ -59,7 +59,9 @@ class OperationalEvent(object):
             'parent_entity_id': 'str',
             'conversation': 'AddressableEntityRef',
             'date_created': 'datetime',
-            'entity_version': 'str'
+            'entity_version': 'str',
+            'phone_number': 'str',
+            'external_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -73,7 +75,9 @@ class OperationalEvent(object):
             'parent_entity_id': 'parentEntityId',
             'conversation': 'conversation',
             'date_created': 'dateCreated',
-            'entity_version': 'entityVersion'
+            'entity_version': 'entityVersion',
+            'phone_number': 'phoneNumber',
+            'external_contact_id': 'externalContactId'
         }
 
         self._event_definition = None
@@ -87,6 +91,8 @@ class OperationalEvent(object):
         self._conversation = None
         self._date_created = None
         self._entity_version = None
+        self._phone_number = None
+        self._external_contact_id = None
 
     @property
     def event_definition(self) -> 'AddressableEntityRef':
@@ -351,6 +357,54 @@ class OperationalEvent(object):
         
 
         self._entity_version = entity_version
+
+    @property
+    def phone_number(self) -> str:
+        """
+        Gets the phone_number of this OperationalEvent.
+        The phone number associated with the event
+
+        :return: The phone_number of this OperationalEvent.
+        :rtype: str
+        """
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number: str) -> None:
+        """
+        Sets the phone_number of this OperationalEvent.
+        The phone number associated with the event
+
+        :param phone_number: The phone_number of this OperationalEvent.
+        :type: str
+        """
+        
+
+        self._phone_number = phone_number
+
+    @property
+    def external_contact_id(self) -> str:
+        """
+        Gets the external_contact_id of this OperationalEvent.
+        The external contact ID associated with the event
+
+        :return: The external_contact_id of this OperationalEvent.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id: str) -> None:
+        """
+        Sets the external_contact_id of this OperationalEvent.
+        The external contact ID associated with the event
+
+        :param external_contact_id: The external_contact_id of this OperationalEvent.
+        :type: str
+        """
+        
+
+        self._external_contact_id = external_contact_id
 
     def to_dict(self):
         """

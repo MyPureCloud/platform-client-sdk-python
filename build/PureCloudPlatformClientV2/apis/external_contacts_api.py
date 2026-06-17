@@ -1676,7 +1676,7 @@ class ExternalContactsApi(object):
 
     def get_externalcontacts_contacts_exports(self, **kwargs) -> 'ContactsExportListing':
         """
-        List exports for organization
+        List contact exports for organization
         
 
         This method makes a synchronous HTTP request by default. To make an

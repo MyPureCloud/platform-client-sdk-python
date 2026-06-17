@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ContactsExportComparisonFieldFilter
     from . import ContactsExportFieldFilter
     from . import ContactsExportFieldListFilter
 
@@ -52,6 +53,8 @@ class ContactsExportFilter(object):
         self.swagger_types = {
             'eq': 'ContactsExportFieldFilter',
             'pcIn': 'ContactsExportFieldListFilter',
+            'lte': 'ContactsExportComparisonFieldFilter',
+            'gte': 'ContactsExportComparisonFieldFilter',
             'pcAnd': 'list[ContactsExportFilter]',
             'pcOr': 'list[ContactsExportFilter]',
             'pcNot': 'ContactsExportFilter'
@@ -60,6 +63,8 @@ class ContactsExportFilter(object):
         self.attribute_map = {
             'eq': 'eq',
             'pcIn': 'in',
+            'lte': 'lte',
+            'gte': 'gte',
             'pcAnd': 'and',
             'pcOr': 'or',
             'pcNot': 'not'
@@ -67,6 +72,8 @@ class ContactsExportFilter(object):
 
         self._eq = None
         self._pcIn = None
+        self._lte = None
+        self._gte = None
         self._pcAnd = None
         self._pcOr = None
         self._pcNot = None
@@ -118,6 +125,54 @@ class ContactsExportFilter(object):
         
 
         self._pcIn = pcIn
+
+    @property
+    def lte(self) -> 'ContactsExportComparisonFieldFilter':
+        """
+        Gets the lte of this ContactsExportFilter.
+        Filtered field should be less than or equal to the value
+
+        :return: The lte of this ContactsExportFilter.
+        :rtype: ContactsExportComparisonFieldFilter
+        """
+        return self._lte
+
+    @lte.setter
+    def lte(self, lte: 'ContactsExportComparisonFieldFilter') -> None:
+        """
+        Sets the lte of this ContactsExportFilter.
+        Filtered field should be less than or equal to the value
+
+        :param lte: The lte of this ContactsExportFilter.
+        :type: ContactsExportComparisonFieldFilter
+        """
+        
+
+        self._lte = lte
+
+    @property
+    def gte(self) -> 'ContactsExportComparisonFieldFilter':
+        """
+        Gets the gte of this ContactsExportFilter.
+        Filtered field should be greater than or equal to the value
+
+        :return: The gte of this ContactsExportFilter.
+        :rtype: ContactsExportComparisonFieldFilter
+        """
+        return self._gte
+
+    @gte.setter
+    def gte(self, gte: 'ContactsExportComparisonFieldFilter') -> None:
+        """
+        Sets the gte of this ContactsExportFilter.
+        Filtered field should be greater than or equal to the value
+
+        :param gte: The gte of this ContactsExportFilter.
+        :type: ContactsExportComparisonFieldFilter
+        """
+        
+
+        self._gte = gte
 
     @property
     def pcAnd(self) -> List['ContactsExportFilter']:

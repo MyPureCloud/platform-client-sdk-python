@@ -50,15 +50,18 @@ class CallableTime(object):
         """
         self.swagger_types = {
             'time_slots': 'list[CampaignTimeSlot]',
+            'name': 'str',
             'time_zone_id': 'str'
         }
 
         self.attribute_map = {
             'time_slots': 'timeSlots',
+            'name': 'name',
             'time_zone_id': 'timeZoneId'
         }
 
         self._time_slots = None
+        self._name = None
         self._time_zone_id = None
 
     @property
@@ -84,6 +87,30 @@ class CallableTime(object):
         
 
         self._time_slots = time_slots
+
+    @property
+    def name(self) -> str:
+        """
+        Gets the name of this CallableTime.
+        The name for the callable time.
+
+        :return: The name of this CallableTime.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: str) -> None:
+        """
+        Sets the name of this CallableTime.
+        The name for the callable time.
+
+        :param name: The name of this CallableTime.
+        :type: str
+        """
+        
+
+        self._name = name
 
     @property
     def time_zone_id(self) -> str:

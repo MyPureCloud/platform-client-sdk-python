@@ -57,6 +57,7 @@ class UpdateWorkPlanBid(object):
             'effective_date': 'date',
             'agent_ranking_type': 'str',
             'ranking_tiebreaker_type': 'str',
+            'end_overrides_and_rotations': 'bool',
             'work_plan_fields_visible_to_agents': 'ListWrapperAgentWorkPlanField',
             'status': 'str'
         }
@@ -69,6 +70,7 @@ class UpdateWorkPlanBid(object):
             'effective_date': 'effectiveDate',
             'agent_ranking_type': 'agentRankingType',
             'ranking_tiebreaker_type': 'rankingTiebreakerType',
+            'end_overrides_and_rotations': 'endOverridesAndRotations',
             'work_plan_fields_visible_to_agents': 'workPlanFieldsVisibleToAgents',
             'status': 'status'
         }
@@ -80,6 +82,7 @@ class UpdateWorkPlanBid(object):
         self._effective_date = None
         self._agent_ranking_type = None
         self._ranking_tiebreaker_type = None
+        self._end_overrides_and_rotations = None
         self._work_plan_fields_visible_to_agents = None
         self._status = None
 
@@ -260,6 +263,30 @@ class UpdateWorkPlanBid(object):
             self._ranking_tiebreaker_type = "outdated_sdk_version"
         else:
             self._ranking_tiebreaker_type = ranking_tiebreaker_type
+
+    @property
+    def end_overrides_and_rotations(self) -> bool:
+        """
+        Gets the end_overrides_and_rotations of this UpdateWorkPlanBid.
+        If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+
+        :return: The end_overrides_and_rotations of this UpdateWorkPlanBid.
+        :rtype: bool
+        """
+        return self._end_overrides_and_rotations
+
+    @end_overrides_and_rotations.setter
+    def end_overrides_and_rotations(self, end_overrides_and_rotations: bool) -> None:
+        """
+        Sets the end_overrides_and_rotations of this UpdateWorkPlanBid.
+        If true, all existing overrides, workplan rotations will be ended one day before effective date of this bid
+
+        :param end_overrides_and_rotations: The end_overrides_and_rotations of this UpdateWorkPlanBid.
+        :type: bool
+        """
+        
+
+        self._end_overrides_and_rotations = end_overrides_and_rotations
 
     @property
     def work_plan_fields_visible_to_agents(self) -> 'ListWrapperAgentWorkPlanField':

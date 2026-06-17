@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_businessunit_activitycode**](#delete_workforcemanagement_businessunit_activitycode) | Deletes an activity code|
 |[**delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory**](#delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory) | Delete staffing group allocations history created for a capacity plan before the given date|
 |[**delete_workforcemanagement_businessunit_planninggroup**](#delete_workforcemanagement_businessunit_planninggroup) | Deletes the planning group|
+|[**delete_workforcemanagement_businessunit_schedulebid**](#delete_workforcemanagement_businessunit_schedulebid) | Delete a schedule bid|
+|[**delete_workforcemanagement_businessunit_schedulebid_group**](#delete_workforcemanagement_businessunit_schedulebid_group) | Delete a schedule bid group by bid group Id|
 |[**delete_workforcemanagement_businessunit_scheduling_run**](#delete_workforcemanagement_businessunit_scheduling_run) | Cancel a scheduling run|
 |[**delete_workforcemanagement_businessunit_servicegoaltemplate**](#delete_workforcemanagement_businessunit_servicegoaltemplate) | Delete a service goal template|
 |[**delete_workforcemanagement_businessunit_staffinggroup**](#delete_workforcemanagement_businessunit_staffinggroup) | Deletes a staffing group|
@@ -65,6 +67,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_opportunity**](#get_workforcemanagement_businessunit_opportunity) | Get opportunity details|
 |[**get_workforcemanagement_businessunit_planninggroup**](#get_workforcemanagement_businessunit_planninggroup) | Get a planning group|
 |[**get_workforcemanagement_businessunit_planninggroups**](#get_workforcemanagement_businessunit_planninggroups) | Gets list of planning groups|
+|[**get_workforcemanagement_businessunit_schedulebid**](#get_workforcemanagement_businessunit_schedulebid) | Get a schedule bid|
+|[**get_workforcemanagement_businessunit_schedulebid_group**](#get_workforcemanagement_businessunit_schedulebid_group) | Get a schedule bid group|
+|[**get_workforcemanagement_businessunit_schedulebid_group_preferences**](#get_workforcemanagement_businessunit_schedulebid_group_preferences) | Get agents schedule bid preferences for a bid group|
+|[**get_workforcemanagement_businessunit_schedulebid_groups_summary**](#get_workforcemanagement_businessunit_schedulebid_groups_summary) | Get summary of bid groups that belong to a schedule bid|
+|[**get_workforcemanagement_businessunit_schedulebids**](#get_workforcemanagement_businessunit_schedulebids) | Get list of schedule bids|
 |[**get_workforcemanagement_businessunit_scheduler_settings**](#get_workforcemanagement_businessunit_scheduler_settings) | Get scheduler settings for a business unit|
 |[**get_workforcemanagement_businessunit_scheduling_run**](#get_workforcemanagement_businessunit_scheduling_run) | Get a scheduling run|
 |[**get_workforcemanagement_businessunit_scheduling_run_result**](#get_workforcemanagement_businessunit_scheduling_run_result) | Get the result of a rescheduling operation|
@@ -137,6 +144,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_managementunits**](#get_workforcemanagement_managementunits) | Get management units|
 |[**get_workforcemanagement_managementunits_divisionviews**](#get_workforcemanagement_managementunits_divisionviews) | Get management units across divisions|
 |[**get_workforcemanagement_notifications**](#get_workforcemanagement_notifications) | Get a list of notifications for the current user|
+|[**get_workforcemanagement_schedulebid_preference**](#get_workforcemanagement_schedulebid_preference) | Gets an agent&#39;s schedule bidding preference|
+|[**get_workforcemanagement_schedulebid_schedulesets**](#get_workforcemanagement_schedulebid_schedulesets) | Gets an agent&#39;s schedule sets for a bid|
+|[**get_workforcemanagement_schedulebids**](#get_workforcemanagement_schedulebids) | Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently|
 |[**get_workforcemanagement_schedulingjob**](#get_workforcemanagement_schedulingjob) | Get status of the scheduling job|
 |[**get_workforcemanagement_shifttrades**](#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
 |[**get_workforcemanagement_shifttrading_trade_job**](#get_workforcemanagement_shifttrading_trade_job) | View result of update trade operation. Only the user who started the operation can query the status|
@@ -167,6 +177,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_minimumstaffing_settings**](#patch_workforcemanagement_businessunit_minimumstaffing_settings) | Update minimum staffing settings for a business unit|
 |[**patch_workforcemanagement_businessunit_opportunity**](#patch_workforcemanagement_businessunit_opportunity) | Update the opportunity|
 |[**patch_workforcemanagement_businessunit_planninggroup**](#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
+|[**patch_workforcemanagement_businessunit_schedulebid**](#patch_workforcemanagement_businessunit_schedulebid) | Update a schedule bid|
+|[**patch_workforcemanagement_businessunit_schedulebid_group**](#patch_workforcemanagement_businessunit_schedulebid_group) | Update a schedule bid group by bid group Id|
+|[**patch_workforcemanagement_businessunit_schedulebid_group_preferences**](#patch_workforcemanagement_businessunit_schedulebid_group_preferences) | Overrides the assigned schedule bid for the specified agents|
 |[**patch_workforcemanagement_businessunit_scheduler_settings**](#patch_workforcemanagement_businessunit_scheduler_settings) | Update scheduler settings for a business unit|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
@@ -232,6 +245,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_opportunities_externalactivities_query**](#post_workforcemanagement_businessunit_opportunities_externalactivities_query) | Query opportunities by external activity IDs|
 |[**post_workforcemanagement_businessunit_opportunities_query**](#post_workforcemanagement_businessunit_opportunities_query) | Query opportunities within the specified date range|
 |[**post_workforcemanagement_businessunit_planninggroups**](#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
+|[**post_workforcemanagement_businessunit_schedulebid_copy**](#post_workforcemanagement_businessunit_schedulebid_copy) | Copy a schedule bid|
+|[**post_workforcemanagement_businessunit_schedulebid_groups**](#post_workforcemanagement_businessunit_schedulebid_groups) | Add a bid group in a given schedule bid|
+|[**post_workforcemanagement_businessunit_schedulebids**](#post_workforcemanagement_businessunit_schedulebids) | Create a new schedule bid|
+|[**post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets**](#post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets) | Fetch all the agents with effective schedule set for the given BU|
 |[**post_workforcemanagement_businessunit_servicegoaltemplates**](#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
 |[**post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs**](#post_workforcemanagement_businessunit_shifttrading_trades_evaluate_jobs) | Queries and evaluates against shift trade configuration shift trades in a management unit per week|
 |[**post_workforcemanagement_businessunit_shifttrading_trades_query_jobs**](#post_workforcemanagement_businessunit_shifttrading_trades_query_jobs) | Queries shift trades in a management unit per user|
@@ -314,6 +331,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_workforcemanagement_agent_integrations_hris**](#put_workforcemanagement_agent_integrations_hris) | Update integrations for agent|
 |[**put_workforcemanagement_businessunit_timeofflimit_values**](#put_workforcemanagement_businessunit_timeofflimit_values) | Sets daily values for a date range of time-off limit object|
 |[**put_workforcemanagement_managementunit_timeofflimit_values**](#put_workforcemanagement_managementunit_timeofflimit_values) | Sets daily values for a date range of time off limit object|
+|[**put_workforcemanagement_schedulebid_preference**](#put_workforcemanagement_schedulebid_preference) | Update an agent&#39;s schedule set preference|
 
 
 
@@ -509,6 +527,106 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
 | **planning_group_id** | **str**| The ID of a planning group to delete |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_workforcemanagement_businessunit_schedulebid
+
+>  delete_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)
+
+
+Delete a schedule bid
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId} 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid
+
+try:
+    # Delete a schedule bid
+    api_instance.delete_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_schedulebid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_workforcemanagement_businessunit_schedulebid_group
+
+>  delete_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)
+
+
+Delete a schedule bid group by bid group Id
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups
+bid_group_id = 'bid_group_id_example' # str | Schedule Bid Group id
+
+try:
+    # Delete a schedule bid group by bid group Id
+    api_instance.delete_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_schedulebid_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid associated with the bid groups |  |
+| **bid_group_id** | **str**| Schedule Bid Group id |  |
 
 ### Return type
 
@@ -3451,6 +3569,262 @@ except ApiException as e:
 ### Return type
 
 [**PlanningGroupList**](PlanningGroupList)
+
+
+## get_workforcemanagement_businessunit_schedulebid
+
+> [**ScheduleBid**](ScheduleBid) get_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)
+
+
+Get a schedule bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId} 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid
+
+try:
+    # Get a schedule bid
+    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid |  |
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+## get_workforcemanagement_businessunit_schedulebid_group
+
+> [**ScheduleBidGroupResponse**](ScheduleBidGroupResponse) get_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)
+
+
+Get a schedule bid group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups
+bid_group_id = 'bid_group_id_example' # str | Schedule Bid Group id
+
+try:
+    # Get a schedule bid group
+    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid associated with the bid groups |  |
+| **bid_group_id** | **str**| Schedule Bid Group id |  |
+
+### Return type
+
+[**ScheduleBidGroupResponse**](ScheduleBidGroupResponse)
+
+
+## get_workforcemanagement_businessunit_schedulebid_group_preferences
+
+> [**AdminAgentScheduleBidPreferenceResponse**](AdminAgentScheduleBidPreferenceResponse) get_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, force_download_service=force_download_service, expand=expand)
+
+
+Get agents schedule bid preferences for a bid group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups
+bid_group_id = 'bid_group_id_example' # str | The ID of the schedule bid group
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+expand = ['expand_example'] # list[str] | Include to fetch agents' preferences with priorities (optional)
+
+try:
+    # Get agents schedule bid preferences for a bid group
+    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, force_download_service=force_download_service, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid_group_preferences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid associated with the bid groups |  |
+| **bid_group_id** | **str**| The ID of the schedule bid group |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+| **expand** | [**list[str]**](str)| Include to fetch agents&#39; preferences with priorities | [optional] <br />**Values**: agentsScheduleBidPreferences.agentScheduleBidPreferencePriorities |
+
+### Return type
+
+[**AdminAgentScheduleBidPreferenceResponse**](AdminAgentScheduleBidPreferenceResponse)
+
+
+## get_workforcemanagement_businessunit_schedulebid_groups_summary
+
+> [**ScheduleBidGroupSummaryList**](ScheduleBidGroupSummaryList) get_workforcemanagement_businessunit_schedulebid_groups_summary(business_unit_id, bid_id)
+
+
+Get summary of bid groups that belong to a schedule bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/summary 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups
+
+try:
+    # Get summary of bid groups that belong to a schedule bid
+    api_response = api_instance.get_workforcemanagement_businessunit_schedulebid_groups_summary(business_unit_id, bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebid_groups_summary: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid associated with the bid groups |  |
+
+### Return type
+
+[**ScheduleBidGroupSummaryList**](ScheduleBidGroupSummaryList)
+
+
+## get_workforcemanagement_businessunit_schedulebids
+
+> [**ScheduleBidListResponse**](ScheduleBidListResponse) get_workforcemanagement_businessunit_schedulebids(business_unit_id)
+
+
+Get list of schedule bids
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get list of schedule bids
+    api_response = api_instance.get_workforcemanagement_businessunit_schedulebids(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulebids: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**ScheduleBidListResponse**](ScheduleBidListResponse)
 
 
 ## get_workforcemanagement_businessunit_scheduler_settings
@@ -7300,6 +7674,146 @@ This endpoint does not need any parameters.
 [**NotificationsResponse**](NotificationsResponse)
 
 
+## get_workforcemanagement_schedulebid_preference
+
+> [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse) get_workforcemanagement_schedulebid_preference(bid_id)
+
+
+Gets an agent's schedule bidding preference
+
+Wraps GET /api/v2/workforcemanagement/schedulebids/{bidId}/preference 
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bid_id = 'bid_id_example' # str | The ID of the schedule bid
+
+try:
+    # Gets an agent's schedule bidding preference
+    api_response = api_instance.get_workforcemanagement_schedulebid_preference(bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulebid_preference: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bid_id** | **str**| The ID of the schedule bid |  |
+
+### Return type
+
+[**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
+
+
+## get_workforcemanagement_schedulebid_schedulesets
+
+> [**AgentScheduleBidScheduleSetResponse**](AgentScheduleBidScheduleSetResponse) get_workforcemanagement_schedulebid_schedulesets(bid_id)
+
+
+Gets an agent's schedule sets for a bid
+
+Wraps GET /api/v2/workforcemanagement/schedulebids/{bidId}/schedulesets 
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bid_id = 'bid_id_example' # str | The ID of the schedule bid
+
+try:
+    # Gets an agent's schedule sets for a bid
+    api_response = api_instance.get_workforcemanagement_schedulebid_schedulesets(bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulebid_schedulesets: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bid_id** | **str**| The ID of the schedule bid |  |
+
+### Return type
+
+[**AgentScheduleBidScheduleSetResponse**](AgentScheduleBidScheduleSetResponse)
+
+
+## get_workforcemanagement_schedulebids
+
+> [**AgentScheduleBids**](AgentScheduleBids) get_workforcemanagement_schedulebids()
+
+
+Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+
+Wraps GET /api/v2/workforcemanagement/schedulebids 
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently
+    api_response = api_instance.get_workforcemanagement_schedulebids()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulebids: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**AgentScheduleBids**](AgentScheduleBids)
+
+
 ## get_workforcemanagement_schedulingjob
 
 > [**SchedulingStatusResponse**](SchedulingStatusResponse) get_workforcemanagement_schedulingjob(job_id)
@@ -8786,6 +9300,166 @@ except ApiException as e:
 ### Return type
 
 [**PlanningGroup**](PlanningGroup)
+
+
+## patch_workforcemanagement_businessunit_schedulebid
+
+> [**ScheduleBid**](ScheduleBid) patch_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id, body)
+
+
+Update a schedule bid
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId} 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid
+body = PureCloudPlatformClientV2.UpdateScheduleBid() # UpdateScheduleBid | The schedule bid to be updated
+
+try:
+    # Update a schedule bid
+    api_response = api_instance.patch_workforcemanagement_businessunit_schedulebid(business_unit_id, bid_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_schedulebid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid |  |
+| **body** | [**UpdateScheduleBid**](UpdateScheduleBid)| The schedule bid to be updated |  |
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+## patch_workforcemanagement_businessunit_schedulebid_group
+
+> [**ScheduleBidGroupResponse**](ScheduleBidGroupResponse) patch_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id, body)
+
+
+Update a schedule bid group by bid group Id
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups
+bid_group_id = 'bid_group_id_example' # str | Schedule Bid Group id
+body = PureCloudPlatformClientV2.ScheduleBidGroupUpdate() # ScheduleBidGroupUpdate | body
+
+try:
+    # Update a schedule bid group by bid group Id
+    api_response = api_instance.patch_workforcemanagement_businessunit_schedulebid_group(business_unit_id, bid_id, bid_group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_schedulebid_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid associated with the bid groups |  |
+| **bid_group_id** | **str**| Schedule Bid Group id |  |
+| **body** | [**ScheduleBidGroupUpdate**](ScheduleBidGroupUpdate)| body |  |
+
+### Return type
+
+[**ScheduleBidGroupResponse**](ScheduleBidGroupResponse)
+
+
+## patch_workforcemanagement_businessunit_schedulebid_group_preferences
+
+> [**AdminAgentScheduleBidPreferenceResponse**](AdminAgentScheduleBidPreferenceResponse) patch_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, body)
+
+
+Overrides the assigned schedule bid for the specified agents
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups/{bidGroupId}/preferences 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups
+bid_group_id = 'bid_group_id_example' # str | The ID of the schedule bid group
+body = PureCloudPlatformClientV2.AgentsBidAssignedScheduleSetOverrideRequest() # AgentsBidAssignedScheduleSetOverrideRequest | body
+
+try:
+    # Overrides the assigned schedule bid for the specified agents
+    api_response = api_instance.patch_workforcemanagement_businessunit_schedulebid_group_preferences(business_unit_id, bid_id, bid_group_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_schedulebid_group_preferences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid associated with the bid groups |  |
+| **bid_group_id** | **str**| The ID of the schedule bid group |  |
+| **body** | [**AgentsBidAssignedScheduleSetOverrideRequest**](AgentsBidAssignedScheduleSetOverrideRequest)| body |  |
+
+### Return type
+
+[**AdminAgentScheduleBidPreferenceResponse**](AdminAgentScheduleBidPreferenceResponse)
 
 
 ## patch_workforcemanagement_businessunit_scheduler_settings
@@ -12115,6 +12789,210 @@ except ApiException as e:
 ### Return type
 
 [**PlanningGroup**](PlanningGroup)
+
+
+## post_workforcemanagement_businessunit_schedulebid_copy
+
+> [**ScheduleBid**](ScheduleBid) post_workforcemanagement_businessunit_schedulebid_copy(business_unit_id, bid_id, body)
+
+
+Copy a schedule bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/copy 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid to copy
+body = PureCloudPlatformClientV2.CopyScheduleBid() # CopyScheduleBid | body
+
+try:
+    # Copy a schedule bid
+    api_response = api_instance.post_workforcemanagement_businessunit_schedulebid_copy(business_unit_id, bid_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebid_copy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid to copy |  |
+| **body** | [**CopyScheduleBid**](CopyScheduleBid)| body |  |
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+## post_workforcemanagement_businessunit_schedulebid_groups
+
+> [**ScheduleBidGroupResponse**](ScheduleBidGroupResponse) post_workforcemanagement_businessunit_schedulebid_groups(business_unit_id, bid_id, body)
+
+
+Add a bid group in a given schedule bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/{bidId}/groups 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBidGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the schedule bid associated with the bid groups
+body = PureCloudPlatformClientV2.ScheduleBidGroupCreate() # ScheduleBidGroupCreate | body
+
+try:
+    # Add a bid group in a given schedule bid
+    api_response = api_instance.post_workforcemanagement_businessunit_schedulebid_groups(business_unit_id, bid_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebid_groups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the schedule bid associated with the bid groups |  |
+| **body** | [**ScheduleBidGroupCreate**](ScheduleBidGroupCreate)| body |  |
+
+### Return type
+
+[**ScheduleBidGroupResponse**](ScheduleBidGroupResponse)
+
+
+## post_workforcemanagement_businessunit_schedulebids
+
+> [**ScheduleBid**](ScheduleBid) post_workforcemanagement_businessunit_schedulebids(business_unit_id, body)
+
+
+Create a new schedule bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CreateScheduleBid() # CreateScheduleBid | The schedule bid to be created
+
+try:
+    # Create a new schedule bid
+    api_response = api_instance.post_workforcemanagement_businessunit_schedulebids(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebids: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CreateScheduleBid**](CreateScheduleBid)| The schedule bid to be created |  |
+
+### Return type
+
+[**ScheduleBid**](ScheduleBid)
+
+
+## post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets
+
+> [**AgentsEffectiveScheduleSetResponse**](AgentsEffectiveScheduleSetResponse) post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets(business_unit_id, body)
+
+
+Fetch all the agents with effective schedule set for the given BU
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulebids/effectiveschedulesets 
+
+Requires ANY permissions: 
+
+* wfm:scheduleBid:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryEffectiveScheduleSetsRequest() # QueryEffectiveScheduleSetsRequest | body
+
+try:
+    # Fetch all the agents with effective schedule set for the given BU
+    api_response = api_instance.post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_schedulebids_effectiveschedulesets: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryEffectiveScheduleSetsRequest**](QueryEffectiveScheduleSetsRequest)| body |  |
+
+### Return type
+
+[**AgentsEffectiveScheduleSetResponse**](AgentsEffectiveScheduleSetResponse)
 
 
 ## post_workforcemanagement_businessunit_servicegoaltemplates
@@ -16389,4 +17267,54 @@ except ApiException as e:
 [**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+## put_workforcemanagement_schedulebid_preference
+
+> [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse) put_workforcemanagement_schedulebid_preference(bid_id, body)
+
+
+Update an agent's schedule set preference
+
+Wraps PUT /api/v2/workforcemanagement/schedulebids/{bidId}/preference 
+
+Requires ANY permissions: 
+
+* wfm:agentScheduleBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bid_id = 'bid_id_example' # str | The ID of the schedule bid
+body = PureCloudPlatformClientV2.UpdateAgentScheduleBiddingPreference() # UpdateAgentScheduleBiddingPreference | body
+
+try:
+    # Update an agent's schedule set preference
+    api_response = api_instance.put_workforcemanagement_schedulebid_preference(bid_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->put_workforcemanagement_schedulebid_preference: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bid_id** | **str**| The ID of the schedule bid |  |
+| **body** | [**UpdateAgentScheduleBiddingPreference**](UpdateAgentScheduleBiddingPreference)| body |  |
+
+### Return type
+
+[**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
+
+
+_PureCloudPlatformClientV2 260.0.0_

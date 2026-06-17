@@ -89,6 +89,7 @@ class AnalyticsSession(object):
             'edge_id': 'str',
             'eligible_agent_counts': 'list[int]',
             'engagement_source': 'str',
+            'error_code_description': 'str',
             'extended_delivery_status': 'str',
             'flow_in_type': 'str',
             'flow_out_type': 'str',
@@ -180,6 +181,7 @@ class AnalyticsSession(object):
             'edge_id': 'edgeId',
             'eligible_agent_counts': 'eligibleAgentCounts',
             'engagement_source': 'engagementSource',
+            'error_code_description': 'errorCodeDescription',
             'extended_delivery_status': 'extendedDeliveryStatus',
             'flow_in_type': 'flowInType',
             'flow_out_type': 'flowOutType',
@@ -270,6 +272,7 @@ class AnalyticsSession(object):
         self._edge_id = None
         self._eligible_agent_counts = None
         self._engagement_source = None
+        self._error_code_description = None
         self._extended_delivery_status = None
         self._flow_in_type = None
         self._flow_out_type = None
@@ -1178,6 +1181,30 @@ class AnalyticsSession(object):
             self._engagement_source = "outdated_sdk_version"
         else:
             self._engagement_source = engagement_source
+
+    @property
+    def error_code_description(self) -> str:
+        """
+        Gets the error_code_description of this AnalyticsSession.
+        Error code description extracted from the first disconnectReason
+
+        :return: The error_code_description of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._error_code_description
+
+    @error_code_description.setter
+    def error_code_description(self, error_code_description: str) -> None:
+        """
+        Sets the error_code_description of this AnalyticsSession.
+        Error code description extracted from the first disconnectReason
+
+        :param error_code_description: The error_code_description of this AnalyticsSession.
+        :type: str
+        """
+        
+
+        self._error_code_description = error_code_description
 
     @property
     def extended_delivery_status(self) -> str:

@@ -67,7 +67,6 @@ from ..models import KnowledgeDocumentBulkVersionAddRequest
 from ..models import KnowledgeDocumentChunkRequest
 from ..models import KnowledgeDocumentChunkResponse
 from ..models import KnowledgeDocumentCopy
-from ..models import KnowledgeDocumentCreateRequest
 from ..models import KnowledgeDocumentFeedback
 from ..models import KnowledgeDocumentFeedbackResponse
 from ..models import KnowledgeDocumentFeedbackResponseListing
@@ -8060,7 +8059,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_documents(self, knowledge_base_id: str, body: 'KnowledgeDocumentCreateRequest', **kwargs) -> 'KnowledgeDocumentResponse':
+    def post_knowledge_knowledgebase_documents(self, knowledge_base_id: str, body: 'KnowledgeDocumentReq', **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Create document.
         
@@ -8076,7 +8075,7 @@ class KnowledgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
-        :param KnowledgeDocumentCreateRequest body:  (required)
+        :param KnowledgeDocumentReq body:  (required)
         :return: KnowledgeDocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.

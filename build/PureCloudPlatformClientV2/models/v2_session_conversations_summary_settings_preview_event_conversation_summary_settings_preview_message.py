@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import V2SessionConversationsSummarySettingsPreviewEventConversationReasonMessage
     from . import V2SessionConversationsSummarySettingsPreviewEventConversationResolutionMessage
     from . import V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity
+    from . import V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel
     from . import V2SessionConversationsSummarySettingsPreviewEventConversationSummaryMessage
 
 class V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage(object):
@@ -65,6 +66,7 @@ class V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettin
             'resolution': 'V2SessionConversationsSummarySettingsPreviewEventConversationResolutionMessage',
             'followup_actions': 'list[V2SessionConversationsSummarySettingsPreviewEventConversationFollowupAction]',
             'extracted_entities': 'list[V2SessionConversationsSummarySettingsPreviewEventConversationSummaryExtractedEntity]',
+            'labels': 'list[V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel]',
             'error_type': 'str',
             'duration_ms': 'int'
         }
@@ -82,6 +84,7 @@ class V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettin
             'resolution': 'resolution',
             'followup_actions': 'followupActions',
             'extracted_entities': 'extractedEntities',
+            'labels': 'labels',
             'error_type': 'errorType',
             'duration_ms': 'durationMs'
         }
@@ -98,6 +101,7 @@ class V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettin
         self._resolution = None
         self._followup_actions = None
         self._extracted_entities = None
+        self._labels = None
         self._error_type = None
         self._duration_ms = None
 
@@ -393,6 +397,30 @@ class V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettin
         
 
         self._extracted_entities = extracted_entities
+
+    @property
+    def labels(self) -> List['V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel']:
+        """
+        Gets the labels of this V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.
+
+
+        :return: The labels of this V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.
+        :rtype: list[V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels: List['V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel']) -> None:
+        """
+        Sets the labels of this V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.
+
+
+        :param labels: The labels of this V2SessionConversationsSummarySettingsPreviewEventConversationSummarySettingsPreviewMessage.
+        :type: list[V2SessionConversationsSummarySettingsPreviewEventConversationSummaryLabel]
+        """
+        
+
+        self._labels = labels
 
     @property
     def error_type(self) -> str:

@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ConversationIntentSuggestionsTopicQueryReformulationContext
 
 class ConversationIntentSuggestionsTopicSuggestionContext(object):
     """
@@ -55,7 +57,8 @@ class ConversationIntentSuggestionsTopicSuggestionContext(object):
             'utterance_id': 'str',
             'message_id': 'str',
             'query_statement': 'str',
-            'language': 'str'
+            'language': 'str',
+            'query_reformulation_context': 'ConversationIntentSuggestionsTopicQueryReformulationContext'
         }
 
         self.attribute_map = {
@@ -67,7 +70,8 @@ class ConversationIntentSuggestionsTopicSuggestionContext(object):
             'utterance_id': 'utteranceId',
             'message_id': 'messageId',
             'query_statement': 'queryStatement',
-            'language': 'language'
+            'language': 'language',
+            'query_reformulation_context': 'queryReformulationContext'
         }
 
         self._queue_id = None
@@ -79,6 +83,7 @@ class ConversationIntentSuggestionsTopicSuggestionContext(object):
         self._message_id = None
         self._query_statement = None
         self._language = None
+        self._query_reformulation_context = None
 
     @property
     def queue_id(self) -> str:
@@ -300,6 +305,30 @@ class ConversationIntentSuggestionsTopicSuggestionContext(object):
         
 
         self._language = language
+
+    @property
+    def query_reformulation_context(self) -> 'ConversationIntentSuggestionsTopicQueryReformulationContext':
+        """
+        Gets the query_reformulation_context of this ConversationIntentSuggestionsTopicSuggestionContext.
+
+
+        :return: The query_reformulation_context of this ConversationIntentSuggestionsTopicSuggestionContext.
+        :rtype: ConversationIntentSuggestionsTopicQueryReformulationContext
+        """
+        return self._query_reformulation_context
+
+    @query_reformulation_context.setter
+    def query_reformulation_context(self, query_reformulation_context: 'ConversationIntentSuggestionsTopicQueryReformulationContext') -> None:
+        """
+        Sets the query_reformulation_context of this ConversationIntentSuggestionsTopicSuggestionContext.
+
+
+        :param query_reformulation_context: The query_reformulation_context of this ConversationIntentSuggestionsTopicSuggestionContext.
+        :type: ConversationIntentSuggestionsTopicQueryReformulationContext
+        """
+        
+
+        self._query_reformulation_context = query_reformulation_context
 
     def to_dict(self):
         """

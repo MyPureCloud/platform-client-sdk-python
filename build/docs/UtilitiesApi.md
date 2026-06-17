@@ -195,4 +195,4 @@ except ApiException as e:
 [**ParsedCertificate**](ParsedCertificate)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

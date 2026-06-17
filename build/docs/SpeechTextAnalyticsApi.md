@@ -837,7 +837,7 @@ api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 dialect = 'en-US' # str | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
 transcription_engine = 'transcription_engine_example' # str | Filter by transcription engine, If not provided, all transcription engines will be considered (optional)
 next_page = 'next_page_example' # str | The key for listing the next page (optional)
-page_size = 500 # int | The page size for the listing (optional) (default to 500)
+page_size = 500 # int | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. (optional) (default to 500)
 
 try:
     # Get the list of Speech & Text Analytics dictionary feedbacks
@@ -855,7 +855,7 @@ except ApiException as e:
 | **dialect** | **str**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
 | **transcription_engine** | **str**| Filter by transcription engine, If not provided, all transcription engines will be considered | [optional] <br />**Values**: Genesys, GenesysExtended |
 | **next_page** | **str**| The key for listing the next page | [optional]  |
-| **page_size** | **int**| The page size for the listing | [optional] [default to 500] |
+| **page_size** | **int**| The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. | [optional] [default to 500] |
 
 ### Return type
 
@@ -3224,4 +3224,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

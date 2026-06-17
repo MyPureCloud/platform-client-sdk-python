@@ -54,7 +54,8 @@ class OrgAuthSettings(object):
             'domain_allowlist': 'list[str]',
             'ip_address_allowlist': 'list[str]',
             'password_requirements': 'PasswordRequirements',
-            'inactivity_timeout_exclusions': 'list[str]'
+            'inactivity_timeout_exclusions': 'list[str]',
+            'universal_logout': 'bool'
         }
 
         self.attribute_map = {
@@ -63,7 +64,8 @@ class OrgAuthSettings(object):
             'domain_allowlist': 'domainAllowlist',
             'ip_address_allowlist': 'ipAddressAllowlist',
             'password_requirements': 'passwordRequirements',
-            'inactivity_timeout_exclusions': 'inactivityTimeoutExclusions'
+            'inactivity_timeout_exclusions': 'inactivityTimeoutExclusions',
+            'universal_logout': 'universalLogout'
         }
 
         self._multifactor_authentication_required = None
@@ -72,6 +74,7 @@ class OrgAuthSettings(object):
         self._ip_address_allowlist = None
         self._password_requirements = None
         self._inactivity_timeout_exclusions = None
+        self._universal_logout = None
 
     @property
     def multifactor_authentication_required(self) -> bool:
@@ -216,6 +219,30 @@ class OrgAuthSettings(object):
         
 
         self._inactivity_timeout_exclusions = inactivity_timeout_exclusions
+
+    @property
+    def universal_logout(self) -> bool:
+        """
+        Gets the universal_logout of this OrgAuthSettings.
+        Indicates whether universal logout is enabled for the organization.
+
+        :return: The universal_logout of this OrgAuthSettings.
+        :rtype: bool
+        """
+        return self._universal_logout
+
+    @universal_logout.setter
+    def universal_logout(self, universal_logout: bool) -> None:
+        """
+        Sets the universal_logout of this OrgAuthSettings.
+        Indicates whether universal logout is enabled for the organization.
+
+        :param universal_logout: The universal_logout of this OrgAuthSettings.
+        :type: bool
+        """
+        
+
+        self._universal_logout = universal_logout
 
     def to_dict(self):
         """

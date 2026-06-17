@@ -121,7 +121,7 @@ class CaseManagementAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["caseId", "caseplanId", "customerIntentId", "divisionId", "ownerId", "priority", "status"]
+        allowed_values = ["associationType", "caseId", "caseplanId", "conversationId", "customerIntentId", "divisionId", "ownerId", "priority", "stageId", "status", "stepId", "workitemId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

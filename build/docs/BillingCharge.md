@@ -16,7 +16,9 @@
 | **overage_rate** | float | The rate charged per unit of overage. | [optional] |
 | **overage_charge** | float | The total charge for overage usage. | [optional] |
 | **overage_currency** | str | The currency in which the overage charge is billed. | [optional] |
+| **converted_token_count** | float | AI Token Count after the conversion for AI Products. | [optional] |
+| **token_conversion_rate** | float | AI Token Conversion Rate — Units per token conversion ratio. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_

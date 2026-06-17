@@ -60,6 +60,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'entity_type': 'str',
             'conversation_id': 'str',
             'entity_token': 'str',
+            'phone_number': 'str',
+            'external_contact_id': 'str',
             'timestamp': 'int'
         }
 
@@ -75,6 +77,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'entity_type': 'entityType',
             'conversation_id': 'conversationId',
             'entity_token': 'entityToken',
+            'phone_number': 'phoneNumber',
+            'external_contact_id': 'externalContactId',
             'timestamp': 'timestamp'
         }
 
@@ -89,6 +93,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         self._entity_type = None
         self._conversation_id = None
         self._entity_token = None
+        self._phone_number = None
+        self._external_contact_id = None
         self._timestamp = None
 
     @property
@@ -354,6 +360,54 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         
 
         self._entity_token = entity_token
+
+    @property
+    def phone_number(self) -> str:
+        """
+        Gets the phone_number of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The phone_number of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number: str) -> None:
+        """
+        Sets the phone_number of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param phone_number: The phone_number of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._phone_number = phone_number
+
+    @property
+    def external_contact_id(self) -> str:
+        """
+        Gets the external_contact_id of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The external_contact_id of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id: str) -> None:
+        """
+        Sets the external_contact_id of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param external_contact_id: The external_contact_id of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._external_contact_id = external_contact_id
 
     @property
     def timestamp(self) -> int:

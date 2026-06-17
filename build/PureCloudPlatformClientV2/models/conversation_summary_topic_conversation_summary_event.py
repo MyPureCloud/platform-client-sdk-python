@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ConversationSummaryTopicConversationReason
     from . import ConversationSummaryTopicConversationResolution
     from . import ConversationSummaryTopicConversationSummary
+    from . import ConversationSummaryTopicConversationSummaryLabel
     from . import ConversationSummaryTopicConversationSummaryParticipant
     from . import ConversationSummaryTopicConversationWrapUpCode
     from . import ConversationSummaryTopicSummaryExtractedCustomEntity
@@ -78,7 +79,8 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'trigger_type': 'str',
             'last_edited_by': 'ConversationSummaryTopicConversationSummaryParticipant',
             'error_type': 'str',
-            'duration_ms': 'int'
+            'duration_ms': 'int',
+            'labels': 'list[ConversationSummaryTopicConversationSummaryLabel]'
         }
 
         self.attribute_map = {
@@ -103,7 +105,8 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'trigger_type': 'triggerType',
             'last_edited_by': 'lastEditedBy',
             'error_type': 'errorType',
-            'duration_ms': 'durationMs'
+            'duration_ms': 'durationMs',
+            'labels': 'labels'
         }
 
         self._conversation_id = None
@@ -128,6 +131,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         self._last_edited_by = None
         self._error_type = None
         self._duration_ms = None
+        self._labels = None
 
     @property
     def conversation_id(self) -> str:
@@ -681,6 +685,30 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         
 
         self._duration_ms = duration_ms
+
+    @property
+    def labels(self) -> List['ConversationSummaryTopicConversationSummaryLabel']:
+        """
+        Gets the labels of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :return: The labels of this ConversationSummaryTopicConversationSummaryEvent.
+        :rtype: list[ConversationSummaryTopicConversationSummaryLabel]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels: List['ConversationSummaryTopicConversationSummaryLabel']) -> None:
+        """
+        Sets the labels of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :param labels: The labels of this ConversationSummaryTopicConversationSummaryEvent.
+        :type: list[ConversationSummaryTopicConversationSummaryLabel]
+        """
+        
+
+        self._labels = labels
 
     def to_dict(self):
         """

@@ -50,20 +50,26 @@ class OpenSocialMediaPublicMetadata(object):
             'root_id': 'str',
             'reply_to_id': 'str',
             'source': 'str',
-            'url': 'str'
+            'url': 'str',
+            'mention_ids': 'list[str]',
+            'tag_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'root_id': 'rootId',
             'reply_to_id': 'replyToId',
             'source': 'source',
-            'url': 'url'
+            'url': 'url',
+            'mention_ids': 'mentionIds',
+            'tag_ids': 'tagIds'
         }
 
         self._root_id = None
         self._reply_to_id = None
         self._source = None
         self._url = None
+        self._mention_ids = None
+        self._tag_ids = None
 
     @property
     def root_id(self) -> str:
@@ -160,6 +166,54 @@ class OpenSocialMediaPublicMetadata(object):
         
 
         self._url = url
+
+    @property
+    def mention_ids(self) -> List[str]:
+        """
+        Gets the mention_ids of this OpenSocialMediaPublicMetadata.
+        IDs of accounts referenced by name within the message text or caption (for example '@brandpage' in a post body or comment). A 'mention' here uses the same convention as Meta (Facebook, Instagram) and LinkedIn, where it denotes a textual reference to an account. Distinct from tagIds, which represent explicit associations with the message. Null or absent when no accounts are referenced in the text.
+
+        :return: The mention_ids of this OpenSocialMediaPublicMetadata.
+        :rtype: list[str]
+        """
+        return self._mention_ids
+
+    @mention_ids.setter
+    def mention_ids(self, mention_ids: List[str]) -> None:
+        """
+        Sets the mention_ids of this OpenSocialMediaPublicMetadata.
+        IDs of accounts referenced by name within the message text or caption (for example '@brandpage' in a post body or comment). A 'mention' here uses the same convention as Meta (Facebook, Instagram) and LinkedIn, where it denotes a textual reference to an account. Distinct from tagIds, which represent explicit associations with the message. Null or absent when no accounts are referenced in the text.
+
+        :param mention_ids: The mention_ids of this OpenSocialMediaPublicMetadata.
+        :type: list[str]
+        """
+        
+
+        self._mention_ids = mention_ids
+
+    @property
+    def tag_ids(self) -> List[str]:
+        """
+        Gets the tag_ids of this OpenSocialMediaPublicMetadata.
+        IDs of accounts attached to the message itself, independent of the text (for example a person tagged in an Instagram photo so their profile is linked from the image). A 'tag' here uses the same convention as Meta (Facebook, Instagram) and LinkedIn, where it denotes an explicit association with content rather than a textual reference. Distinct from mentionIds, which represent in-text/caption references. Null or absent when no accounts are tagged on the message.
+
+        :return: The tag_ids of this OpenSocialMediaPublicMetadata.
+        :rtype: list[str]
+        """
+        return self._tag_ids
+
+    @tag_ids.setter
+    def tag_ids(self, tag_ids: List[str]) -> None:
+        """
+        Sets the tag_ids of this OpenSocialMediaPublicMetadata.
+        IDs of accounts attached to the message itself, independent of the text (for example a person tagged in an Instagram photo so their profile is linked from the image). A 'tag' here uses the same convention as Meta (Facebook, Instagram) and LinkedIn, where it denotes an explicit association with content rather than a textual reference. Distinct from mentionIds, which represent in-text/caption references. Null or absent when no accounts are tagged on the message.
+
+        :param tag_ids: The tag_ids of this OpenSocialMediaPublicMetadata.
+        :type: list[str]
+        """
+        
+
+        self._tag_ids = tag_ids
 
     def to_dict(self):
         """

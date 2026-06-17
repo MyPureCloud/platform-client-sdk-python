@@ -4845,7 +4845,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
-body = PureCloudPlatformClientV2.KnowledgeDocumentCreateRequest() # KnowledgeDocumentCreateRequest | 
+body = PureCloudPlatformClientV2.KnowledgeDocumentReq() # KnowledgeDocumentReq | 
 
 try:
     # Create document.
@@ -4861,7 +4861,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentCreateRequest**](KnowledgeDocumentCreateRequest)|  |  |
+| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  |  |
 
 ### Return type
 
@@ -6323,4 +6323,4 @@ except ApiException as e:
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_PureCloudPlatformClientV2 259.0.0_
+_PureCloudPlatformClientV2 260.0.0_
