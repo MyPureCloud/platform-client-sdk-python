@@ -7,6 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **business_unit_date** | date | The date of the time off marker, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] |
+| **start_offset_minutes** | int | The start offset in minutes for the time-off marker | [optional] |
+| **end_offset_minutes** | int | The end offset in minutes for the time-off marker | [optional] |
 | **length_minutes** | int | The length of the time off marker in minutes | [optional] |
 | **description** | str | The description of the time off marker | [optional] |
 | **activity_code_id** | str | The ID of the activity code associated with the time off marker | [optional] |
@@ -18,4 +20,4 @@
 
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

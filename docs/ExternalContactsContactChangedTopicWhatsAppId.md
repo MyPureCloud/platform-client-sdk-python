@@ -8,7 +8,9 @@
 |------------ | ------------- | ------------- | -------------|
 | **phone_number** | [ExternalContactsContactChangedTopicPhoneNumber](ExternalContactsContactChangedTopicPhoneNumber) |  | [optional] |
 | **display_name** | str |  | [optional] |
+| **username** | str |  | [optional] |
+| **whats_app_business_scoped_ids** | [list[ExternalContactsContactChangedTopicWhatsAppBusinessScopedId]](ExternalContactsContactChangedTopicWhatsAppBusinessScopedId) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

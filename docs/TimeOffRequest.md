@@ -19,6 +19,8 @@
 | **daily_duration_minutes** | int | The daily duration of this time off request in minutes | [optional] |
 | **duration_minutes** | list[int] | Daily durations for each day of this time off request in minutes | [optional] |
 | **payable_minutes** | list[int] | Payable minutes for each day of this time off request | [optional] |
+| **full_day_earliest_start_offset_minutes** | list[int] | Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available | [optional] |
+| **full_day_latest_end_offset_minutes** | list[int] | Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available | [optional] |
 | **notes** | str | Notes about the time off request | [optional] |
 | **submitted_by** | [UserReference](UserReference) | The user who submitted this time off request. The id may be &#39;System&#39; if it was an automated process | [optional] |
 | **submitted_date** | datetime | The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -30,4 +32,4 @@
 
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_
