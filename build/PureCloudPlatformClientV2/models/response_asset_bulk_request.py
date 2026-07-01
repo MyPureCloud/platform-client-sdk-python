@@ -47,14 +47,20 @@ class ResponseAssetBulkRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'asset_ids': 'list[str]'
+            'asset_ids': 'list[str]',
+            'sort_by': 'str',
+            'sort_order': 'str'
         }
 
         self.attribute_map = {
-            'asset_ids': 'assetIds'
+            'asset_ids': 'assetIds',
+            'sort_by': 'sortBy',
+            'sort_order': 'sortOrder'
         }
 
         self._asset_ids = None
+        self._sort_by = None
+        self._sort_order = None
 
     @property
     def asset_ids(self) -> List[str]:
@@ -79,6 +85,59 @@ class ResponseAssetBulkRequest(object):
         
 
         self._asset_ids = asset_ids
+
+    @property
+    def sort_by(self) -> str:
+        """
+        Gets the sort_by of this ResponseAssetBulkRequest.
+        The field in the resource that you want to sort the results by. Allowed values: name, dateCreated, dateModified, contentLength
+
+        :return: The sort_by of this ResponseAssetBulkRequest.
+        :rtype: str
+        """
+        return self._sort_by
+
+    @sort_by.setter
+    def sort_by(self, sort_by: str) -> None:
+        """
+        Sets the sort_by of this ResponseAssetBulkRequest.
+        The field in the resource that you want to sort the results by. Allowed values: name, dateCreated, dateModified, contentLength
+
+        :param sort_by: The sort_by of this ResponseAssetBulkRequest.
+        :type: str
+        """
+        
+
+        self._sort_by = sort_by
+
+    @property
+    def sort_order(self) -> str:
+        """
+        Gets the sort_order of this ResponseAssetBulkRequest.
+        The sort order for results
+
+        :return: The sort_order of this ResponseAssetBulkRequest.
+        :rtype: str
+        """
+        return self._sort_order
+
+    @sort_order.setter
+    def sort_order(self, sort_order: str) -> None:
+        """
+        Sets the sort_order of this ResponseAssetBulkRequest.
+        The sort order for results
+
+        :param sort_order: The sort_order of this ResponseAssetBulkRequest.
+        :type: str
+        """
+        if isinstance(sort_order, int):
+            sort_order = str(sort_order)
+        allowed_values = ["asc", "desc"]
+        if sort_order.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for sort_order -> " + sort_order)
+            self._sort_order = "outdated_sdk_version"
+        else:
+            self._sort_order = sort_order
 
     def to_dict(self):
         """

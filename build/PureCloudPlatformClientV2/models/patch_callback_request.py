@@ -53,7 +53,8 @@ class PatchCallbackRequest(object):
             'callback_scheduled_time': 'datetime',
             'country_code': 'str',
             'callback_numbers': 'list[str]',
-            'validate_callback_numbers': 'bool'
+            'validate_callback_numbers': 'bool',
+            'customer_first_callback_delivery_mode': 'str'
         }
 
         self.attribute_map = {
@@ -63,7 +64,8 @@ class PatchCallbackRequest(object):
             'callback_scheduled_time': 'callbackScheduledTime',
             'country_code': 'countryCode',
             'callback_numbers': 'callbackNumbers',
-            'validate_callback_numbers': 'validateCallbackNumbers'
+            'validate_callback_numbers': 'validateCallbackNumbers',
+            'customer_first_callback_delivery_mode': 'customerFirstCallbackDeliveryMode'
         }
 
         self._conversation_id = None
@@ -73,6 +75,7 @@ class PatchCallbackRequest(object):
         self._country_code = None
         self._callback_numbers = None
         self._validate_callback_numbers = None
+        self._customer_first_callback_delivery_mode = None
 
     @property
     def conversation_id(self) -> str:
@@ -241,6 +244,35 @@ class PatchCallbackRequest(object):
         
 
         self._validate_callback_numbers = validate_callback_numbers
+
+    @property
+    def customer_first_callback_delivery_mode(self) -> str:
+        """
+        Gets the customer_first_callback_delivery_mode of this PatchCallbackRequest.
+        How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+
+        :return: The customer_first_callback_delivery_mode of this PatchCallbackRequest.
+        :rtype: str
+        """
+        return self._customer_first_callback_delivery_mode
+
+    @customer_first_callback_delivery_mode.setter
+    def customer_first_callback_delivery_mode(self, customer_first_callback_delivery_mode: str) -> None:
+        """
+        Sets the customer_first_callback_delivery_mode of this PatchCallbackRequest.
+        How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+
+        :param customer_first_callback_delivery_mode: The customer_first_callback_delivery_mode of this PatchCallbackRequest.
+        :type: str
+        """
+        if isinstance(customer_first_callback_delivery_mode, int):
+            customer_first_callback_delivery_mode = str(customer_first_callback_delivery_mode)
+        allowed_values = ["UseQueueSetting", "UseAgentReservation", "NoAgentReservation"]
+        if customer_first_callback_delivery_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for customer_first_callback_delivery_mode -> " + customer_first_callback_delivery_mode)
+            self._customer_first_callback_delivery_mode = "outdated_sdk_version"
+        else:
+            self._customer_first_callback_delivery_mode = customer_first_callback_delivery_mode
 
     def to_dict(self):
         """

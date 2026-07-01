@@ -49,18 +49,21 @@ class ConversationEventTopicDisconnectReason(object):
         self.swagger_types = {
             'type': 'str',
             'code': 'int',
-            'phrase': 'str'
+            'phrase': 'str',
+            'reason': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'code': 'code',
-            'phrase': 'phrase'
+            'phrase': 'phrase',
+            'reason': 'reason'
         }
 
         self._type = None
         self._code = None
         self._phrase = None
+        self._reason = None
 
     @property
     def type(self) -> str:
@@ -138,6 +141,30 @@ class ConversationEventTopicDisconnectReason(object):
         
 
         self._phrase = phrase
+
+    @property
+    def reason(self) -> str:
+        """
+        Gets the reason of this ConversationEventTopicDisconnectReason.
+        Final disconnect reason code that triggered the disposition result.
+
+        :return: The reason of this ConversationEventTopicDisconnectReason.
+        :rtype: str
+        """
+        return self._reason
+
+    @reason.setter
+    def reason(self, reason: str) -> None:
+        """
+        Sets the reason of this ConversationEventTopicDisconnectReason.
+        Final disconnect reason code that triggered the disposition result.
+
+        :param reason: The reason of this ConversationEventTopicDisconnectReason.
+        :type: str
+        """
+        
+
+        self._reason = reason
 
     def to_dict(self):
         """

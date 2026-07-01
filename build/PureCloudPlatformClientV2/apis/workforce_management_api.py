@@ -149,6 +149,7 @@ from ..models import BusinessUnitListing
 from ..models import BusinessUnitResponse
 from ..models import CalendarUrlResponse
 from ..models import CapacityPlanDeleteRequest
+from ..models import CapacityPlanForecastInputsResponse
 from ..models import CapacityPlanRequest
 from ..models import CapacityPlanResponse
 from ..models import CapacityPlanStaffingGroupAllocationsResponse
@@ -4301,6 +4302,93 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CapacityPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_capacityplan_forecast(self, business_unit_id: str, capacity_plan_id: str, **kwargs) -> 'CapacityPlanForecastInputsResponse':
+        """
+        Get a capacity plan's forecast inputs
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_capacityplan_forecast(business_unit_id, capacity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str capacity_plan_id: The ID of the capacity plan (required)
+        :param str granularity: Granularity to access capacity plan forecast data, defaults to weekly
+        :return: CapacityPlanForecastInputsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'capacity_plan_id', 'granularity']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_capacityplan_forecast" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_capacityplan_forecast`")
+        # verify the required parameter 'capacity_plan_id' is set
+        if ('capacity_plan_id' not in params) or (params['capacity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `capacity_plan_id` when calling `get_workforcemanagement_businessunit_capacityplan_forecast`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/forecast'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'capacity_plan_id' in params:
+            path_params['capacityPlanId'] = params['capacity_plan_id']
+
+        query_params = {}
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CapacityPlanForecastInputsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

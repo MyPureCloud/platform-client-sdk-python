@@ -51,17 +51,20 @@ class VideoSettings(object):
         """
         self.swagger_types = {
             'enabled': 'bool',
+            'channels': 'list[str]',
             'agent': 'AgentVideoSettings',
             'user': 'UserVideoSettings'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
+            'channels': 'channels',
             'agent': 'agent',
             'user': 'user'
         }
 
         self._enabled = None
+        self._channels = None
         self._agent = None
         self._user = None
 
@@ -88,6 +91,30 @@ class VideoSettings(object):
         
 
         self._enabled = enabled
+
+    @property
+    def channels(self) -> List[str]:
+        """
+        Gets the channels of this VideoSettings.
+        The channels on which video chat is available
+
+        :return: The channels of this VideoSettings.
+        :rtype: list[str]
+        """
+        return self._channels
+
+    @channels.setter
+    def channels(self, channels: List[str]) -> None:
+        """
+        Sets the channels of this VideoSettings.
+        The channels on which video chat is available
+
+        :param channels: The channels of this VideoSettings.
+        :type: list[str]
+        """
+        
+
+        self._channels = channels
 
     @property
     def agent(self) -> 'AgentVideoSettings':

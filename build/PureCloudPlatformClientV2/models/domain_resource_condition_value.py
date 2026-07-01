@@ -32,9 +32,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import Queue
-    from . import Team
-    from . import User
+    from . import QueueFullReference
+    from . import TeamFullReference
+    from . import UserFullReference
 
 class DomainResourceConditionValue(object):
     """
@@ -51,9 +51,9 @@ class DomainResourceConditionValue(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'user': 'User',
-            'queue': 'Queue',
-            'team': 'Team',
+            'user': 'UserFullReference',
+            'queue': 'QueueFullReference',
+            'team': 'TeamFullReference',
             'value': 'str',
             'type': 'str'
         }
@@ -73,72 +73,72 @@ class DomainResourceConditionValue(object):
         self._type = None
 
     @property
-    def user(self) -> 'User':
+    def user(self) -> 'UserFullReference':
         """
         Gets the user of this DomainResourceConditionValue.
 
 
         :return: The user of this DomainResourceConditionValue.
-        :rtype: User
+        :rtype: UserFullReference
         """
         return self._user
 
     @user.setter
-    def user(self, user: 'User') -> None:
+    def user(self, user: 'UserFullReference') -> None:
         """
         Sets the user of this DomainResourceConditionValue.
 
 
         :param user: The user of this DomainResourceConditionValue.
-        :type: User
+        :type: UserFullReference
         """
         
 
         self._user = user
 
     @property
-    def queue(self) -> 'Queue':
+    def queue(self) -> 'QueueFullReference':
         """
         Gets the queue of this DomainResourceConditionValue.
 
 
         :return: The queue of this DomainResourceConditionValue.
-        :rtype: Queue
+        :rtype: QueueFullReference
         """
         return self._queue
 
     @queue.setter
-    def queue(self, queue: 'Queue') -> None:
+    def queue(self, queue: 'QueueFullReference') -> None:
         """
         Sets the queue of this DomainResourceConditionValue.
 
 
         :param queue: The queue of this DomainResourceConditionValue.
-        :type: Queue
+        :type: QueueFullReference
         """
         
 
         self._queue = queue
 
     @property
-    def team(self) -> 'Team':
+    def team(self) -> 'TeamFullReference':
         """
         Gets the team of this DomainResourceConditionValue.
 
 
         :return: The team of this DomainResourceConditionValue.
-        :rtype: Team
+        :rtype: TeamFullReference
         """
         return self._team
 
     @team.setter
-    def team(self, team: 'Team') -> None:
+    def team(self, team: 'TeamFullReference') -> None:
         """
         Sets the team of this DomainResourceConditionValue.
 
 
         :param team: The team of this DomainResourceConditionValue.
-        :type: Team
+        :type: TeamFullReference
         """
         
 

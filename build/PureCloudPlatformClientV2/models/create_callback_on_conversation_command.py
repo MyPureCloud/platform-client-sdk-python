@@ -52,6 +52,7 @@ class CreateCallbackOnConversationCommand(object):
             'script_id': 'str',
             'queue_id': 'str',
             'routing_data': 'RoutingData',
+            'customer_first_callback_delivery_mode': 'str',
             'callback_user_name': 'str',
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'datetime',
@@ -66,6 +67,7 @@ class CreateCallbackOnConversationCommand(object):
             'script_id': 'scriptId',
             'queue_id': 'queueId',
             'routing_data': 'routingData',
+            'customer_first_callback_delivery_mode': 'customerFirstCallbackDeliveryMode',
             'callback_user_name': 'callbackUserName',
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
@@ -79,6 +81,7 @@ class CreateCallbackOnConversationCommand(object):
         self._script_id = None
         self._queue_id = None
         self._routing_data = None
+        self._customer_first_callback_delivery_mode = None
         self._callback_user_name = None
         self._callback_numbers = None
         self._callback_scheduled_time = None
@@ -159,6 +162,35 @@ class CreateCallbackOnConversationCommand(object):
         
 
         self._routing_data = routing_data
+
+    @property
+    def customer_first_callback_delivery_mode(self) -> str:
+        """
+        Gets the customer_first_callback_delivery_mode of this CreateCallbackOnConversationCommand.
+        How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+
+        :return: The customer_first_callback_delivery_mode of this CreateCallbackOnConversationCommand.
+        :rtype: str
+        """
+        return self._customer_first_callback_delivery_mode
+
+    @customer_first_callback_delivery_mode.setter
+    def customer_first_callback_delivery_mode(self, customer_first_callback_delivery_mode: str) -> None:
+        """
+        Sets the customer_first_callback_delivery_mode of this CreateCallbackOnConversationCommand.
+        How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration.
+
+        :param customer_first_callback_delivery_mode: The customer_first_callback_delivery_mode of this CreateCallbackOnConversationCommand.
+        :type: str
+        """
+        if isinstance(customer_first_callback_delivery_mode, int):
+            customer_first_callback_delivery_mode = str(customer_first_callback_delivery_mode)
+        allowed_values = ["UseQueueSetting", "UseAgentReservation", "NoAgentReservation"]
+        if customer_first_callback_delivery_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for customer_first_callback_delivery_mode -> " + customer_first_callback_delivery_mode)
+            self._customer_first_callback_delivery_mode = "outdated_sdk_version"
+        else:
+            self._customer_first_callback_delivery_mode = customer_first_callback_delivery_mode
 
     @property
     def callback_user_name(self) -> str:

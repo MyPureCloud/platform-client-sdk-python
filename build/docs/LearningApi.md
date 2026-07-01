@@ -654,7 +654,7 @@ except ApiException as e:
 
 ## get_learning_modules
 
-> [**LearningModuleList**](LearningModuleList) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)
+> [**LearningModuleList**](LearningModuleList) get_learning_modules(types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, statuses=statuses, external_ids=external_ids)
 
 
 Get all learning modules of an organization
@@ -678,7 +678,6 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LearningApi()
-is_archived = False # bool | Archive status (optional) (default to False)
 types = ['types_example'] # list[str] | Specifies the module types. Informational, AssessedContent and Assessment are deprecated (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
@@ -686,13 +685,12 @@ sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending'
 sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 search_term = 'search_term_example' # str | Search Term (searchable by name) (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)
-is_published = ''Any'' # str | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional) (default to 'Any')
 statuses = ['statuses_example'] # list[str] | Specifies the module statuses to filter by (optional)
 external_ids = ['external_ids_example'] # list[str] | Specifies the module external IDs to filter by. Only one ID is allowed (optional)
 
 try:
     # Get all learning modules of an organization
-    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)
+    api_response = api_instance.get_learning_modules(types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, statuses=statuses, external_ids=external_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->get_learning_modules: %s\n" % e)
@@ -703,7 +701,6 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **is_archived** | **bool**| Archive status | [optional] [default to False] |
 | **types** | [**list[str]**](str)| Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
@@ -711,7 +708,6 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, createddate, percentpassed, averagescore |
 | **search_term** | **str**| Search Term (searchable by name) | [optional]  |
 | **expand** | [**list[str]**](str)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
-| **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **statuses** | [**list[str]**](str)| Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
 | **external_ids** | [**list[str]**](str)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
 
@@ -2030,4 +2026,4 @@ except ApiException as e:
 [**LearningModuleRule**](LearningModuleRule)
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

@@ -54,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_alternativeshifts_trade**](#get_workforcemanagement_businessunit_alternativeshifts_trade) | Get an alternative shifts trade in a business unit for a given trade ID|
 |[**get_workforcemanagement_businessunit_alternativeshifts_trades_search_job**](#get_workforcemanagement_businessunit_alternativeshifts_trades_search_job) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_businessunit_capacityplan**](#get_workforcemanagement_businessunit_capacityplan) | Get a capacity plan|
+|[**get_workforcemanagement_businessunit_capacityplan_forecast**](#get_workforcemanagement_businessunit_capacityplan_forecast) | Get a capacity plan&#39;s forecast inputs|
 |[**get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations**](#get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations) | Get a capacity plan&#39;s staffing group allocations|
 |[**get_workforcemanagement_businessunit_capacityplan_staffingrequirements**](#get_workforcemanagement_businessunit_capacityplan_staffingrequirements) | Get a capacity plan&#39;s staffing requirements|
 |[**get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast**](#get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast) | Get the latest long term staffing requirements for a business unit|
@@ -2905,6 +2906,58 @@ except ApiException as e:
 ### Return type
 
 [**CapacityPlanResponse**](CapacityPlanResponse)
+
+
+## get_workforcemanagement_businessunit_capacityplan_forecast
+
+> [**CapacityPlanForecastInputsResponse**](CapacityPlanForecastInputsResponse) get_workforcemanagement_businessunit_capacityplan_forecast(business_unit_id, capacity_plan_id, granularity=granularity)
+
+
+Get a capacity plan's forecast inputs
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/forecast 
+
+Requires ANY permissions: 
+
+* wfm:capacityPlanForecastInputs:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+capacity_plan_id = 'capacity_plan_id_example' # str | The ID of the capacity plan
+granularity = 'granularity_example' # str | Granularity to access capacity plan forecast data, defaults to weekly (optional)
+
+try:
+    # Get a capacity plan's forecast inputs
+    api_response = api_instance.get_workforcemanagement_businessunit_capacityplan_forecast(business_unit_id, capacity_plan_id, granularity=granularity)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_capacityplan_forecast: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **capacity_plan_id** | **str**| The ID of the capacity plan |  |
+| **granularity** | **str**| Granularity to access capacity plan forecast data, defaults to weekly | [optional] <br />**Values**: weekly, monthly |
+
+### Return type
+
+[**CapacityPlanForecastInputsResponse**](CapacityPlanForecastInputsResponse)
 
 
 ## get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations
@@ -17317,4 +17370,4 @@ except ApiException as e:
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ListWrapperInteger
     from . import WfmVersionedEntityMetadata
 
 class AdminTimeOffRequestPatch(object):
@@ -54,6 +55,8 @@ class AdminTimeOffRequestPatch(object):
             'paid': 'bool',
             'notes': 'str',
             'full_day_management_unit_dates': 'list[str]',
+            'full_day_earliest_start_offset_minutes': 'ListWrapperInteger',
+            'full_day_latest_end_offset_minutes': 'ListWrapperInteger',
             'partial_day_start_date_times': 'list[datetime]',
             'daily_duration_minutes': 'int',
             'duration_minutes': 'list[int]',
@@ -67,6 +70,8 @@ class AdminTimeOffRequestPatch(object):
             'paid': 'paid',
             'notes': 'notes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
+            'full_day_earliest_start_offset_minutes': 'fullDayEarliestStartOffsetMinutes',
+            'full_day_latest_end_offset_minutes': 'fullDayLatestEndOffsetMinutes',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'daily_duration_minutes': 'dailyDurationMinutes',
             'duration_minutes': 'durationMinutes',
@@ -79,6 +84,8 @@ class AdminTimeOffRequestPatch(object):
         self._paid = None
         self._notes = None
         self._full_day_management_unit_dates = None
+        self._full_day_earliest_start_offset_minutes = None
+        self._full_day_latest_end_offset_minutes = None
         self._partial_day_start_date_times = None
         self._daily_duration_minutes = None
         self._duration_minutes = None
@@ -209,6 +216,54 @@ class AdminTimeOffRequestPatch(object):
         
 
         self._full_day_management_unit_dates = full_day_management_unit_dates
+
+    @property
+    def full_day_earliest_start_offset_minutes(self) -> 'ListWrapperInteger':
+        """
+        Gets the full_day_earliest_start_offset_minutes of this AdminTimeOffRequestPatch.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_earliest_start_offset_minutes of this AdminTimeOffRequestPatch.
+        :rtype: ListWrapperInteger
+        """
+        return self._full_day_earliest_start_offset_minutes
+
+    @full_day_earliest_start_offset_minutes.setter
+    def full_day_earliest_start_offset_minutes(self, full_day_earliest_start_offset_minutes: 'ListWrapperInteger') -> None:
+        """
+        Sets the full_day_earliest_start_offset_minutes of this AdminTimeOffRequestPatch.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_earliest_start_offset_minutes: The full_day_earliest_start_offset_minutes of this AdminTimeOffRequestPatch.
+        :type: ListWrapperInteger
+        """
+        
+
+        self._full_day_earliest_start_offset_minutes = full_day_earliest_start_offset_minutes
+
+    @property
+    def full_day_latest_end_offset_minutes(self) -> 'ListWrapperInteger':
+        """
+        Gets the full_day_latest_end_offset_minutes of this AdminTimeOffRequestPatch.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_latest_end_offset_minutes of this AdminTimeOffRequestPatch.
+        :rtype: ListWrapperInteger
+        """
+        return self._full_day_latest_end_offset_minutes
+
+    @full_day_latest_end_offset_minutes.setter
+    def full_day_latest_end_offset_minutes(self, full_day_latest_end_offset_minutes: 'ListWrapperInteger') -> None:
+        """
+        Sets the full_day_latest_end_offset_minutes of this AdminTimeOffRequestPatch.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_latest_end_offset_minutes: The full_day_latest_end_offset_minutes of this AdminTimeOffRequestPatch.
+        :type: ListWrapperInteger
+        """
+        
+
+        self._full_day_latest_end_offset_minutes = full_day_latest_end_offset_minutes
 
     @property
     def partial_day_start_date_times(self) -> List[datetime]:

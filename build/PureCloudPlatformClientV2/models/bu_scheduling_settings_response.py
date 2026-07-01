@@ -52,6 +52,7 @@ class BuSchedulingSettingsResponse(object):
         self.swagger_types = {
             'message_severities': 'list[SchedulerMessageTypeSeverity]',
             'sync_time_off_properties': 'list[str]',
+            'enable_time_off_full_day_estimation': 'bool',
             'service_goal_impact': 'WfmServiceGoalImpactSettings',
             'allow_work_plan_per_minute_granularity': 'bool',
             'activity_smoothing_type': 'str',
@@ -61,6 +62,7 @@ class BuSchedulingSettingsResponse(object):
         self.attribute_map = {
             'message_severities': 'messageSeverities',
             'sync_time_off_properties': 'syncTimeOffProperties',
+            'enable_time_off_full_day_estimation': 'enableTimeOffFullDayEstimation',
             'service_goal_impact': 'serviceGoalImpact',
             'allow_work_plan_per_minute_granularity': 'allowWorkPlanPerMinuteGranularity',
             'activity_smoothing_type': 'activitySmoothingType',
@@ -69,6 +71,7 @@ class BuSchedulingSettingsResponse(object):
 
         self._message_severities = None
         self._sync_time_off_properties = None
+        self._enable_time_off_full_day_estimation = None
         self._service_goal_impact = None
         self._allow_work_plan_per_minute_granularity = None
         self._activity_smoothing_type = None
@@ -121,6 +124,30 @@ class BuSchedulingSettingsResponse(object):
         
 
         self._sync_time_off_properties = sync_time_off_properties
+
+    @property
+    def enable_time_off_full_day_estimation(self) -> bool:
+        """
+        Gets the enable_time_off_full_day_estimation of this BuSchedulingSettingsResponse.
+        Enables start and end time estimation for full-day time-off requests
+
+        :return: The enable_time_off_full_day_estimation of this BuSchedulingSettingsResponse.
+        :rtype: bool
+        """
+        return self._enable_time_off_full_day_estimation
+
+    @enable_time_off_full_day_estimation.setter
+    def enable_time_off_full_day_estimation(self, enable_time_off_full_day_estimation: bool) -> None:
+        """
+        Sets the enable_time_off_full_day_estimation of this BuSchedulingSettingsResponse.
+        Enables start and end time estimation for full-day time-off requests
+
+        :param enable_time_off_full_day_estimation: The enable_time_off_full_day_estimation of this BuSchedulingSettingsResponse.
+        :type: bool
+        """
+        
+
+        self._enable_time_off_full_day_estimation = enable_time_off_full_day_estimation
 
     @property
     def service_goal_impact(self) -> 'WfmServiceGoalImpactSettings':

@@ -62,7 +62,7 @@ class ExternalContactsPatchRequest(object):
     def changes(self) -> List['ContactsPatchChange']:
         """
         Gets the changes of this ExternalContactsPatchRequest.
-        A list of changes to apply to the provided contact entity
+        A list of changes to apply to the provided entity
 
         :return: The changes of this ExternalContactsPatchRequest.
         :rtype: list[ContactsPatchChange]
@@ -73,7 +73,7 @@ class ExternalContactsPatchRequest(object):
     def changes(self, changes: List['ContactsPatchChange']) -> None:
         """
         Sets the changes of this ExternalContactsPatchRequest.
-        A list of changes to apply to the provided contact entity
+        A list of changes to apply to the provided entity
 
         :param changes: The changes of this ExternalContactsPatchRequest.
         :type: list[ContactsPatchChange]

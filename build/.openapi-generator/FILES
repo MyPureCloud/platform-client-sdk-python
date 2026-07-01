@@ -64,6 +64,7 @@ PureCloudPlatformClientV2/apis/recording_api.py
 PureCloudPlatformClientV2/apis/response_management_api.py
 PureCloudPlatformClientV2/apis/routing_api.py
 PureCloudPlatformClientV2/apis/scim_api.py
+PureCloudPlatformClientV2/apis/screen_monitoring_api.py
 PureCloudPlatformClientV2/apis/scripts_api.py
 PureCloudPlatformClientV2/apis/search_api.py
 PureCloudPlatformClientV2/apis/settings_api.py
@@ -422,6 +423,7 @@ PureCloudPlatformClientV2/models/apple_integration_entity_listing.py
 PureCloudPlatformClientV2/models/apple_integration_request.py
 PureCloudPlatformClientV2/models/apple_integration_update_request.py
 PureCloudPlatformClientV2/models/apple_invitation.py
+PureCloudPlatformClientV2/models/apple_invitation_notification_parameters.py
 PureCloudPlatformClientV2/models/apple_opaque_id.py
 PureCloudPlatformClientV2/models/apple_pay.py
 PureCloudPlatformClientV2/models/approval_namespace.py
@@ -828,6 +830,7 @@ PureCloudPlatformClientV2/models/bulk_update_shift_trade_state_result_item.py
 PureCloudPlatformClientV2/models/bullseye.py
 PureCloudPlatformClientV2/models/business_rules_data_schema.py
 PureCloudPlatformClientV2/models/business_rules_data_schema_listing.py
+PureCloudPlatformClientV2/models/business_rules_parent_schema_ref.py
 PureCloudPlatformClientV2/models/business_rules_schema_create_request.py
 PureCloudPlatformClientV2/models/business_rules_schema_update_request.py
 PureCloudPlatformClientV2/models/business_unit_activity_code.py
@@ -939,6 +942,9 @@ PureCloudPlatformClientV2/models/campaign_stats.py
 PureCloudPlatformClientV2/models/campaign_time_slot.py
 PureCloudPlatformClientV2/models/canned_response_libraries.py
 PureCloudPlatformClientV2/models/capacity_plan_delete_request.py
+PureCloudPlatformClientV2/models/capacity_plan_forecast_inputs_response.py
+PureCloudPlatformClientV2/models/capacity_plan_forecast_inputs_template.py
+PureCloudPlatformClientV2/models/capacity_plan_forecast_metrics.py
 PureCloudPlatformClientV2/models/capacity_plan_list_item.py
 PureCloudPlatformClientV2/models/capacity_plan_metadata.py
 PureCloudPlatformClientV2/models/capacity_plan_metrics_summary.py
@@ -2513,6 +2519,7 @@ PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_object.
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_phone_number.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_ticker.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_twitter_id.py
+PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_whats_app_business_scoped_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_whats_app_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_note_changed_topic_division.py
 PureCloudPlatformClientV2/models/external_contacts_contact_note_changed_topic_note.py
@@ -2558,6 +2565,7 @@ PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_to
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_phone_number.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_ticker.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_twitter_id.py
+PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_whats_app_business_scoped_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_whats_app_id.py
 PureCloudPlatformClientV2/models/external_data_source.py
 PureCloudPlatformClientV2/models/external_established_event.py
@@ -2731,6 +2739,7 @@ PureCloudPlatformClientV2/models/followers_filter.py
 PureCloudPlatformClientV2/models/footer_template.py
 PureCloudPlatformClientV2/models/forecast_abandon_rate_response.py
 PureCloudPlatformClientV2/models/forecast_average_speed_of_answer_response.py
+PureCloudPlatformClientV2/models/forecast_input_planning_group_data.py
 PureCloudPlatformClientV2/models/forecast_metadata.py
 PureCloudPlatformClientV2/models/forecast_planning_group_data.py
 PureCloudPlatformClientV2/models/forecast_planning_group_response.py
@@ -3352,6 +3361,7 @@ PureCloudPlatformClientV2/models/knowledge_sync_job_statistics.py
 PureCloudPlatformClientV2/models/knowledge_sync_request.py
 PureCloudPlatformClientV2/models/knowledge_v3_conversation_context.py
 PureCloudPlatformClientV2/models/knowledge_v3_conversation_context_response.py
+PureCloudPlatformClientV2/models/knowledge_v3_preview_conversation_context.py
 PureCloudPlatformClientV2/models/kpi_result.py
 PureCloudPlatformClientV2/models/label.py
 PureCloudPlatformClientV2/models/label_create_request.py
@@ -4253,6 +4263,7 @@ PureCloudPlatformClientV2/models/query_opportunity_enrollments_response.py
 PureCloudPlatformClientV2/models/query_opportunity_enrollments_result.py
 PureCloudPlatformClientV2/models/query_planning_group_to_staffing_groups_request.py
 PureCloudPlatformClientV2/models/query_processing_config.py
+PureCloudPlatformClientV2/models/query_reformulation_context.py
 PureCloudPlatformClientV2/models/query_request.py
 PureCloudPlatformClientV2/models/query_request_clause.py
 PureCloudPlatformClientV2/models/query_request_filter.py
@@ -4571,6 +4582,7 @@ PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_workflow.p
 PureCloudPlatformClientV2/models/queue_conversation_video_event_topic_wrapup.py
 PureCloudPlatformClientV2/models/queue_email_address.py
 PureCloudPlatformClientV2/models/queue_entity_listing.py
+PureCloudPlatformClientV2/models/queue_full_reference.py
 PureCloudPlatformClientV2/models/queue_media_settings.py
 PureCloudPlatformClientV2/models/queue_member.py
 PureCloudPlatformClientV2/models/queue_member_entity_listing.py
@@ -4900,7 +4912,13 @@ PureCloudPlatformClientV2/models/scim_v2_schema_list_response.py
 PureCloudPlatformClientV2/models/scim_v2_user.py
 PureCloudPlatformClientV2/models/scorable_survey.py
 PureCloudPlatformClientV2/models/scored_agent.py
+PureCloudPlatformClientV2/models/screen_monitor_settings.py
 PureCloudPlatformClientV2/models/screen_monitoring.py
+PureCloudPlatformClientV2/models/screen_monitoring_details.py
+PureCloudPlatformClientV2/models/screen_monitoring_session.py
+PureCloudPlatformClientV2/models/screen_monitoring_session_entity_listing.py
+PureCloudPlatformClientV2/models/screen_monitoring_user_details.py
+PureCloudPlatformClientV2/models/screen_monitoring_user_details_entity_listing.py
 PureCloudPlatformClientV2/models/screen_recording_active_sessions.py
 PureCloudPlatformClientV2/models/screen_recording_meta_data.py
 PureCloudPlatformClientV2/models/screen_recording_meta_data_request.py
@@ -5134,6 +5152,7 @@ PureCloudPlatformClientV2/models/speech_text_analytics_conversation_summary.py
 PureCloudPlatformClientV2/models/speech_text_analytics_conversation_summary_listing.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_response.py
+PureCloudPlatformClientV2/models/speech_text_analytics_summary_label.py
 PureCloudPlatformClientV2/models/splitting_information.py
 PureCloudPlatformClientV2/models/sta_category.py
 PureCloudPlatformClientV2/models/staffing_group_allocation.py
@@ -5153,6 +5172,7 @@ PureCloudPlatformClientV2/models/stageplan_listing.py
 PureCloudPlatformClientV2/models/stageplan_reference.py
 PureCloudPlatformClientV2/models/stageplan_update.py
 PureCloudPlatformClientV2/models/starrable_division.py
+PureCloudPlatformClientV2/models/start_screen_monitor_response_body.py
 PureCloudPlatformClientV2/models/stat_event_campaign_topic_interval_metrics.py
 PureCloudPlatformClientV2/models/stat_event_campaign_topic_metric_stats.py
 PureCloudPlatformClientV2/models/stat_event_campaign_topic_stats_notification.py
@@ -5323,6 +5343,7 @@ PureCloudPlatformClientV2/models/team_activity_query_predicate.py
 PureCloudPlatformClientV2/models/team_activity_response.py
 PureCloudPlatformClientV2/models/team_add_member_failure.py
 PureCloudPlatformClientV2/models/team_entity_listing.py
+PureCloudPlatformClientV2/models/team_full_reference.py
 PureCloudPlatformClientV2/models/team_member_add_listing_response.py
 PureCloudPlatformClientV2/models/team_member_entity_listing.py
 PureCloudPlatformClientV2/models/team_members.py
@@ -5702,6 +5723,7 @@ PureCloudPlatformClientV2/models/user_entity_listing.py
 PureCloudPlatformClientV2/models/user_established_event.py
 PureCloudPlatformClientV2/models/user_expands.py
 PureCloudPlatformClientV2/models/user_external_identifier.py
+PureCloudPlatformClientV2/models/user_full_reference.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting_audio_file.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting_owner.py
@@ -5882,6 +5904,7 @@ PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_historical_event_ma
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification.py
 PureCloudPlatformClientV2/models/v3_knowledge_search_client_application.py
+PureCloudPlatformClientV2/models/v3_knowledge_search_preview_client_application.py
 PureCloudPlatformClientV2/models/v3_source_create_request.py
 PureCloudPlatformClientV2/models/v3_source_detailed_response.py
 PureCloudPlatformClientV2/models/v3_source_expandable_list_response.py
@@ -6818,6 +6841,7 @@ docs/AppleIntegrationEntityListing.md
 docs/AppleIntegrationRequest.md
 docs/AppleIntegrationUpdateRequest.md
 docs/AppleInvitation.md
+docs/AppleInvitationNotificationParameters.md
 docs/AppleOpaqueId.md
 docs/ApplePay.md
 docs/ApprovalNamespace.md
@@ -7238,6 +7262,7 @@ docs/BusinessRulesApi.json
 docs/BusinessRulesApi.md
 docs/BusinessRulesDataSchema.md
 docs/BusinessRulesDataSchemaListing.md
+docs/BusinessRulesParentSchemaRef.md
 docs/BusinessRulesSchemaCreateRequest.md
 docs/BusinessRulesSchemaUpdateRequest.md
 docs/BusinessUnitActivityCode.md
@@ -7349,6 +7374,9 @@ docs/CampaignStats.md
 docs/CampaignTimeSlot.md
 docs/CannedResponseLibraries.md
 docs/CapacityPlanDeleteRequest.md
+docs/CapacityPlanForecastInputsResponse.md
+docs/CapacityPlanForecastInputsTemplate.md
+docs/CapacityPlanForecastMetrics.md
 docs/CapacityPlanListItem.md
 docs/CapacityPlanMetadata.md
 docs/CapacityPlanMetricsSummary.md
@@ -8949,6 +8977,7 @@ docs/ExternalContactsContactChangedTopicObject.md
 docs/ExternalContactsContactChangedTopicPhoneNumber.md
 docs/ExternalContactsContactChangedTopicTicker.md
 docs/ExternalContactsContactChangedTopicTwitterId.md
+docs/ExternalContactsContactChangedTopicWhatsAppBusinessScopedId.md
 docs/ExternalContactsContactChangedTopicWhatsAppId.md
 docs/ExternalContactsContactNoteChangedTopicDivision.md
 docs/ExternalContactsContactNoteChangedTopicNote.md
@@ -8994,6 +9023,7 @@ docs/ExternalContactsUnresolvedContactChangedTopicObject.md
 docs/ExternalContactsUnresolvedContactChangedTopicPhoneNumber.md
 docs/ExternalContactsUnresolvedContactChangedTopicTicker.md
 docs/ExternalContactsUnresolvedContactChangedTopicTwitterId.md
+docs/ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId.md
 docs/ExternalContactsUnresolvedContactChangedTopicWhatsAppId.md
 docs/ExternalDataSource.md
 docs/ExternalEstablishedEvent.md
@@ -9171,6 +9201,7 @@ docs/FollowersFilter.md
 docs/FooterTemplate.md
 docs/ForecastAbandonRateResponse.md
 docs/ForecastAverageSpeedOfAnswerResponse.md
+docs/ForecastInputPlanningGroupData.md
 docs/ForecastMetadata.md
 docs/ForecastPlanningGroupData.md
 docs/ForecastPlanningGroupResponse.md
@@ -9814,6 +9845,7 @@ docs/KnowledgeSyncJobStatistics.md
 docs/KnowledgeSyncRequest.md
 docs/KnowledgeV3ConversationContext.md
 docs/KnowledgeV3ConversationContextResponse.md
+docs/KnowledgeV3PreviewConversationContext.md
 docs/KpiResult.md
 docs/Label.md
 docs/LabelCreateRequest.md
@@ -10751,6 +10783,7 @@ docs/QueryOpportunityEnrollmentsResponse.md
 docs/QueryOpportunityEnrollmentsResult.md
 docs/QueryPlanningGroupToStaffingGroupsRequest.md
 docs/QueryProcessingConfig.md
+docs/QueryReformulationContext.md
 docs/QueryRequest.md
 docs/QueryRequestClause.md
 docs/QueryRequestFilter.md
@@ -11069,6 +11102,7 @@ docs/QueueConversationVideoEventTopicWorkflow.md
 docs/QueueConversationVideoEventTopicWrapup.md
 docs/QueueEmailAddress.md
 docs/QueueEntityListing.md
+docs/QueueFullReference.md
 docs/QueueMediaSettings.md
 docs/QueueMember.md
 docs/QueueMemberEntityListing.md
@@ -11408,7 +11442,15 @@ docs/ScimV2SchemaListResponse.md
 docs/ScimV2User.md
 docs/ScorableSurvey.md
 docs/ScoredAgent.md
+docs/ScreenMonitorSettings.md
 docs/ScreenMonitoring.md
+docs/ScreenMonitoringApi.json
+docs/ScreenMonitoringApi.md
+docs/ScreenMonitoringDetails.md
+docs/ScreenMonitoringSession.md
+docs/ScreenMonitoringSessionEntityListing.md
+docs/ScreenMonitoringUserDetails.md
+docs/ScreenMonitoringUserDetailsEntityListing.md
 docs/ScreenRecordingActiveSessions.md
 docs/ScreenRecordingMetaData.md
 docs/ScreenRecordingMetaDataRequest.md
@@ -11650,6 +11692,7 @@ docs/SpeechTextAnalyticsConversationSummary.md
 docs/SpeechTextAnalyticsConversationSummaryListing.md
 docs/SpeechTextAnalyticsSettingsRequest.md
 docs/SpeechTextAnalyticsSettingsResponse.md
+docs/SpeechTextAnalyticsSummaryLabel.md
 docs/SplittingInformation.md
 docs/StaCategory.md
 docs/StaffingGroupAllocation.md
@@ -11669,6 +11712,7 @@ docs/StageplanListing.md
 docs/StageplanReference.md
 docs/StageplanUpdate.md
 docs/StarrableDivision.md
+docs/StartScreenMonitorResponseBody.md
 docs/StatEventCampaignTopicIntervalMetrics.md
 docs/StatEventCampaignTopicMetricStats.md
 docs/StatEventCampaignTopicStatsNotification.md
@@ -11845,6 +11889,7 @@ docs/TeamActivityQueryPredicate.md
 docs/TeamActivityResponse.md
 docs/TeamAddMemberFailure.md
 docs/TeamEntityListing.md
+docs/TeamFullReference.md
 docs/TeamMemberAddListingResponse.md
 docs/TeamMemberEntityListing.md
 docs/TeamMembers.md
@@ -12238,6 +12283,7 @@ docs/UserEntityListing.md
 docs/UserEstablishedEvent.md
 docs/UserExpands.md
 docs/UserExternalIdentifier.md
+docs/UserFullReference.md
 docs/UserGreetingEventGreeting.md
 docs/UserGreetingEventGreetingAudioFile.md
 docs/UserGreetingEventGreetingOwner.md
@@ -12426,6 +12472,7 @@ docs/V2WfmMainForecastExportHistoricalEventMainForecastExportNotification.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastExportNotification.md
 docs/V3KnowledgeSearchClientApplication.md
+docs/V3KnowledgeSearchPreviewClientApplication.md
 docs/V3SourceCreateRequest.md
 docs/V3SourceDetailedResponse.md
 docs/V3SourceExpandableListResponse.md
@@ -13112,6 +13159,7 @@ docs/delete_conversation-example.txt
 docs/delete_conversation_customattribute-example.txt
 docs/delete_conversation_participant_code-example.txt
 docs/delete_conversation_participant_flaggedreason-example.txt
+docs/delete_conversation_participant_screenmonitors_session-example.txt
 docs/delete_conversation_recording_annotation-example.txt
 docs/delete_conversations_call_participant_communication_postflowaction-example.txt
 docs/delete_conversations_call_participant_consult-example.txt
@@ -13359,6 +13407,7 @@ docs/delete_user_routinglanguage-example.txt
 docs/delete_user_routinglanguage-example.txt
 docs/delete_user_routingskill-example.txt
 docs/delete_user_routingskill-example.txt
+docs/delete_user_screenmonitors_session-example.txt
 docs/delete_user_station_associatedstation-example.txt
 docs/delete_user_station_defaultstation-example.txt
 docs/delete_user_verifier-example.txt
@@ -13665,6 +13714,7 @@ docs/get_conversation_communication_internalmessage-example.txt
 docs/get_conversation_communication_internalmessages-example.txt
 docs/get_conversation_customattribute-example.txt
 docs/get_conversation_customattributes-example.txt
+docs/get_conversation_participant_screenmonitors_session-example.txt
 docs/get_conversation_participant_secureivrsession-example.txt
 docs/get_conversation_participant_secureivrsessions-example.txt
 docs/get_conversation_participant_wrapup-example.txt
@@ -13892,6 +13942,7 @@ docs/get_flows_instances_settings_loglevels-example.txt
 docs/get_flows_instances_settings_loglevels_characteristics-example.txt
 docs/get_flows_instances_settings_loglevels_default-example.txt
 docs/get_flows_job-example.txt
+docs/get_flows_lookup-example.txt
 docs/get_flows_milestone-example.txt
 docs/get_flows_milestones-example.txt
 docs/get_flows_milestones_divisionviews-example.txt
@@ -14500,6 +14551,9 @@ docs/get_scim_v2_schemas-example.txt
 docs/get_scim_v2_serviceproviderconfig-example.txt
 docs/get_scim_v2_user-example.txt
 docs/get_scim_v2_users-example.txt
+docs/get_screenmonitors_sessions_details-example.txt
+docs/get_screenmonitors_settings-example.txt
+docs/get_screenmonitors_user_sessions-example.txt
 docs/get_script-example.txt
 docs/get_script_page-example.txt
 docs/get_script_pages-example.txt
@@ -14742,6 +14796,7 @@ docs/get_user_routinglanguages-example.txt
 docs/get_user_routingskills-example.txt
 docs/get_user_routingskills-example.txt
 docs/get_user_routingstatus-example.txt
+docs/get_user_screenmonitors_session-example.txt
 docs/get_user_skillgroups-example.txt
 docs/get_user_skillgroups-example.txt
 docs/get_user_state-example.txt
@@ -14845,6 +14900,7 @@ docs/get_workforcemanagement_businessunit_alternativeshifts_settings-example.txt
 docs/get_workforcemanagement_businessunit_alternativeshifts_trade-example.txt
 docs/get_workforcemanagement_businessunit_alternativeshifts_trades_search_job-example.txt
 docs/get_workforcemanagement_businessunit_capacityplan-example.txt
+docs/get_workforcemanagement_businessunit_capacityplan_forecast-example.txt
 docs/get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations-example.txt
 docs/get_workforcemanagement_businessunit_capacityplan_staffingrequirements-example.txt
 docs/get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast-example.txt
@@ -15051,7 +15107,11 @@ docs/patch_employeeengagement_celebration-example.txt
 docs/patch_employeeperformance_externalmetrics_definition-example.txt
 docs/patch_externalcontacts_contact-example.txt
 docs/patch_externalcontacts_contact_identifiers-example.txt
+docs/patch_externalcontacts_contact_note-example.txt
+docs/patch_externalcontacts_organization-example.txt
 docs/patch_externalcontacts_organization_identifiers-example.txt
+docs/patch_externalcontacts_organization_note-example.txt
+docs/patch_externalcontacts_relationship-example.txt
 docs/patch_flows_instances_settings_executiondata-example.txt
 docs/patch_gamification_contest-example.txt
 docs/patch_geolocations_settings-example.txt
@@ -15412,6 +15472,7 @@ docs/post_conversation_participant_replace_agent-example.txt
 docs/post_conversation_participant_replace_contact_external-example.txt
 docs/post_conversation_participant_replace_external-example.txt
 docs/post_conversation_participant_replace_queue-example.txt
+docs/post_conversation_participant_screenmonitors_sessions-example.txt
 docs/post_conversation_participant_secureivrsessions-example.txt
 docs/post_conversation_participant_transfer-example.txt
 docs/post_conversation_recording_annotations-example.txt
@@ -15866,6 +15927,7 @@ docs/post_routing_utilization_labels-example.txt
 docs/post_routing_wrapupcodes-example.txt
 docs/post_scim_users-example.txt
 docs/post_scim_v2_users-example.txt
+docs/post_screenmonitors_sessions_users_details-example.txt
 docs/post_screenrecording_token-example.txt
 docs/post_script_export-example.txt
 docs/post_scripts_published-example.txt
@@ -15971,6 +16033,7 @@ docs/post_user_routinglanguages-example.txt
 docs/post_user_routinglanguages-example.txt
 docs/post_user_routingskills-example.txt
 docs/post_user_routingskills-example.txt
+docs/post_user_screenmonitors_sessions-example.txt
 docs/post_users-example.txt
 docs/post_users_customattributes_schemas-example.txt
 docs/post_users_development_activities_aggregates_query-example.txt
@@ -16337,6 +16400,7 @@ docs/put_scim_group-example.txt
 docs/put_scim_user-example.txt
 docs/put_scim_v2_group-example.txt
 docs/put_scim_v2_user-example.txt
+docs/put_screenmonitors_settings-example.txt
 docs/put_socialmedia_escalationrule-example.txt
 docs/put_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id-example.txt
 docs/put_socialmedia_topic_dataingestionrules_googlebusinessprofile_google_business_profile_ingestion_rule_id-example.txt

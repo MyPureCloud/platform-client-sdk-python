@@ -47,13 +47,124 @@ class AppleInvitation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'business_name': 'str',
+            'transcript_message': 'str',
+            'template_type': 'str',
+            'locale': 'str'
         }
 
         self.attribute_map = {
-            
+            'business_name': 'businessName',
+            'transcript_message': 'transcriptMessage',
+            'template_type': 'templateType',
+            'locale': 'locale'
         }
 
+        self._business_name = None
+        self._transcript_message = None
+        self._template_type = None
+        self._locale = None
+
+    @property
+    def business_name(self) -> str:
+        """
+        Gets the business_name of this AppleInvitation.
+        The business name displayed in the invitation
+
+        :return: The business_name of this AppleInvitation.
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name: str) -> None:
+        """
+        Sets the business_name of this AppleInvitation.
+        The business name displayed in the invitation
+
+        :param business_name: The business_name of this AppleInvitation.
+        :type: str
+        """
+        
+
+        self._business_name = business_name
+
+    @property
+    def transcript_message(self) -> str:
+        """
+        Gets the transcript_message of this AppleInvitation.
+        The transcript message displayed in the invitation
+
+        :return: The transcript_message of this AppleInvitation.
+        :rtype: str
+        """
+        return self._transcript_message
+
+    @transcript_message.setter
+    def transcript_message(self, transcript_message: str) -> None:
+        """
+        Sets the transcript_message of this AppleInvitation.
+        The transcript message displayed in the invitation
+
+        :param transcript_message: The transcript_message of this AppleInvitation.
+        :type: str
+        """
+        
+
+        self._transcript_message = transcript_message
+
+    @property
+    def template_type(self) -> str:
+        """
+        Gets the template_type of this AppleInvitation.
+        The template type for the invitation
+
+        :return: The template_type of this AppleInvitation.
+        :rtype: str
+        """
+        return self._template_type
+
+    @template_type.setter
+    def template_type(self, template_type: str) -> None:
+        """
+        Sets the template_type of this AppleInvitation.
+        The template type for the invitation
+
+        :param template_type: The template_type of this AppleInvitation.
+        :type: str
+        """
+        if isinstance(template_type, int):
+            template_type = str(template_type)
+        allowed_values = ["WithImage", "WithoutImage"]
+        if template_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for template_type -> " + template_type)
+            self._template_type = "outdated_sdk_version"
+        else:
+            self._template_type = template_type
+
+    @property
+    def locale(self) -> str:
+        """
+        Gets the locale of this AppleInvitation.
+        The locale for the invitation
+
+        :return: The locale of this AppleInvitation.
+        :rtype: str
+        """
+        return self._locale
+
+    @locale.setter
+    def locale(self, locale: str) -> None:
+        """
+        Sets the locale of this AppleInvitation.
+        The locale for the invitation
+
+        :param locale: The locale of this AppleInvitation.
+        :type: str
+        """
+        
+
+        self._locale = locale
 
     def to_dict(self):
         """

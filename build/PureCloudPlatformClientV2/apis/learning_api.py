@@ -1074,7 +1074,6 @@ class LearningApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param bool is_archived: Archive status
         :param list[str] types: Specifies the module types. Informational, AssessedContent and Assessment are deprecated
         :param int page_size: Page size
         :param int page_number: Page number
@@ -1082,7 +1081,6 @@ class LearningApi(object):
         :param str sort_by: Sort by
         :param str search_term: Search Term (searchable by name)
         :param list[str] expand: Fields to expand in response(case insensitive)
-        :param str is_published: Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
         :param list[str] statuses: Specifies the module statuses to filter by
         :param list[str] external_ids: Specifies the module external IDs to filter by. Only one ID is allowed
         :return: LearningModuleList
@@ -1090,7 +1088,7 @@ class LearningApi(object):
                  returns the request thread.
         """
 
-        all_params = ['is_archived', 'types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand', 'is_published', 'statuses', 'external_ids']
+        all_params = ['types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand', 'statuses', 'external_ids']
         all_params.append('callback')
 
         params = locals()
@@ -1109,8 +1107,6 @@ class LearningApi(object):
         path_params = {}
 
         query_params = {}
-        if 'is_archived' in params:
-            query_params['isArchived'] = params['is_archived']
         if 'types' in params:
             query_params['types'] = params['types']
         if 'page_size' in params:
@@ -1125,8 +1121,6 @@ class LearningApi(object):
             query_params['searchTerm'] = params['search_term']
         if 'expand' in params:
             query_params['expand'] = params['expand']
-        if 'is_published' in params:
-            query_params['isPublished'] = params['is_published']
         if 'statuses' in params:
             query_params['statuses'] = params['statuses']
         if 'external_ids' in params:

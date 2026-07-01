@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DomainEntityRef
+    from . import BusinessRulesParentSchemaRef
     from . import JsonSchemaDocument
 
 class DecisionTableContract(object):
@@ -50,7 +50,7 @@ class DecisionTableContract(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'parent_schema': 'DomainEntityRef',
+            'parent_schema': 'BusinessRulesParentSchemaRef',
             'row_authoring_schema': 'JsonSchemaDocument',
             'execution_input_schema': 'JsonSchemaDocument',
             'execution_output_schema': 'JsonSchemaDocument'
@@ -69,24 +69,24 @@ class DecisionTableContract(object):
         self._execution_output_schema = None
 
     @property
-    def parent_schema(self) -> 'DomainEntityRef':
+    def parent_schema(self) -> 'BusinessRulesParentSchemaRef':
         """
         Gets the parent_schema of this DecisionTableContract.
         DSS schema entity defining source properties for the decision table contract schemas
 
         :return: The parent_schema of this DecisionTableContract.
-        :rtype: DomainEntityRef
+        :rtype: BusinessRulesParentSchemaRef
         """
         return self._parent_schema
 
     @parent_schema.setter
-    def parent_schema(self, parent_schema: 'DomainEntityRef') -> None:
+    def parent_schema(self, parent_schema: 'BusinessRulesParentSchemaRef') -> None:
         """
         Sets the parent_schema of this DecisionTableContract.
         DSS schema entity defining source properties for the decision table contract schemas
 
         :param parent_schema: The parent_schema of this DecisionTableContract.
-        :type: DomainEntityRef
+        :type: BusinessRulesParentSchemaRef
         """
         
 

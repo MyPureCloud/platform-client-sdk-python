@@ -48,6 +48,8 @@ class BuFullDayTimeOffMarker(object):
         """
         self.swagger_types = {
             'business_unit_date': 'date',
+            'start_offset_minutes': 'int',
+            'end_offset_minutes': 'int',
             'length_minutes': 'int',
             'description': 'str',
             'activity_code_id': 'str',
@@ -60,6 +62,8 @@ class BuFullDayTimeOffMarker(object):
 
         self.attribute_map = {
             'business_unit_date': 'businessUnitDate',
+            'start_offset_minutes': 'startOffsetMinutes',
+            'end_offset_minutes': 'endOffsetMinutes',
             'length_minutes': 'lengthMinutes',
             'description': 'description',
             'activity_code_id': 'activityCodeId',
@@ -71,6 +75,8 @@ class BuFullDayTimeOffMarker(object):
         }
 
         self._business_unit_date = None
+        self._start_offset_minutes = None
+        self._end_offset_minutes = None
         self._length_minutes = None
         self._description = None
         self._activity_code_id = None
@@ -103,6 +109,54 @@ class BuFullDayTimeOffMarker(object):
         
 
         self._business_unit_date = business_unit_date
+
+    @property
+    def start_offset_minutes(self) -> int:
+        """
+        Gets the start_offset_minutes of this BuFullDayTimeOffMarker.
+        The start offset in minutes for the time-off marker
+
+        :return: The start_offset_minutes of this BuFullDayTimeOffMarker.
+        :rtype: int
+        """
+        return self._start_offset_minutes
+
+    @start_offset_minutes.setter
+    def start_offset_minutes(self, start_offset_minutes: int) -> None:
+        """
+        Sets the start_offset_minutes of this BuFullDayTimeOffMarker.
+        The start offset in minutes for the time-off marker
+
+        :param start_offset_minutes: The start_offset_minutes of this BuFullDayTimeOffMarker.
+        :type: int
+        """
+        
+
+        self._start_offset_minutes = start_offset_minutes
+
+    @property
+    def end_offset_minutes(self) -> int:
+        """
+        Gets the end_offset_minutes of this BuFullDayTimeOffMarker.
+        The end offset in minutes for the time-off marker
+
+        :return: The end_offset_minutes of this BuFullDayTimeOffMarker.
+        :rtype: int
+        """
+        return self._end_offset_minutes
+
+    @end_offset_minutes.setter
+    def end_offset_minutes(self, end_offset_minutes: int) -> None:
+        """
+        Sets the end_offset_minutes of this BuFullDayTimeOffMarker.
+        The end offset in minutes for the time-off marker
+
+        :param end_offset_minutes: The end_offset_minutes of this BuFullDayTimeOffMarker.
+        :type: int
+        """
+        
+
+        self._end_offset_minutes = end_offset_minutes
 
     @property
     def length_minutes(self) -> int:

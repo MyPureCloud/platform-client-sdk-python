@@ -5206,7 +5206,7 @@ class OutboundApi(object):
     def get_outbound_contactlists(self, **kwargs) -> 'ContactListEntityListing':
         """
         Query a list of contact lists.
-        
+        Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

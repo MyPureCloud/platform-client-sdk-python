@@ -53,10 +53,10 @@ class BillingCharge(object):
             'id': 'str',
             'product': 'BillingProduct',
             'organizations': 'list[NamedEntity]',
-            'prepaid_quantity': 'int',
-            'fairuse_quantity': 'int',
-            'actual_quantity': 'int',
-            'overage_quantity': 'int',
+            'prepaid_quantity': 'float',
+            'fairuse_quantity': 'float',
+            'actual_quantity': 'float',
+            'overage_quantity': 'float',
             'overage_rate': 'float',
             'overage_charge': 'float',
             'overage_currency': 'str',
@@ -165,96 +165,96 @@ class BillingCharge(object):
         self._organizations = organizations
 
     @property
-    def prepaid_quantity(self) -> int:
+    def prepaid_quantity(self) -> float:
         """
         Gets the prepaid_quantity of this BillingCharge.
         The quantity of usage that is prepaid.
 
         :return: The prepaid_quantity of this BillingCharge.
-        :rtype: int
+        :rtype: float
         """
         return self._prepaid_quantity
 
     @prepaid_quantity.setter
-    def prepaid_quantity(self, prepaid_quantity: int) -> None:
+    def prepaid_quantity(self, prepaid_quantity: float) -> None:
         """
         Sets the prepaid_quantity of this BillingCharge.
         The quantity of usage that is prepaid.
 
         :param prepaid_quantity: The prepaid_quantity of this BillingCharge.
-        :type: int
+        :type: float
         """
         
 
         self._prepaid_quantity = prepaid_quantity
 
     @property
-    def fairuse_quantity(self) -> int:
+    def fairuse_quantity(self) -> float:
         """
         Gets the fairuse_quantity of this BillingCharge.
         The quantity of usage allowed under fair use policies.
 
         :return: The fairuse_quantity of this BillingCharge.
-        :rtype: int
+        :rtype: float
         """
         return self._fairuse_quantity
 
     @fairuse_quantity.setter
-    def fairuse_quantity(self, fairuse_quantity: int) -> None:
+    def fairuse_quantity(self, fairuse_quantity: float) -> None:
         """
         Sets the fairuse_quantity of this BillingCharge.
         The quantity of usage allowed under fair use policies.
 
         :param fairuse_quantity: The fairuse_quantity of this BillingCharge.
-        :type: int
+        :type: float
         """
         
 
         self._fairuse_quantity = fairuse_quantity
 
     @property
-    def actual_quantity(self) -> int:
+    def actual_quantity(self) -> float:
         """
         Gets the actual_quantity of this BillingCharge.
         The actual quantity of usage.
 
         :return: The actual_quantity of this BillingCharge.
-        :rtype: int
+        :rtype: float
         """
         return self._actual_quantity
 
     @actual_quantity.setter
-    def actual_quantity(self, actual_quantity: int) -> None:
+    def actual_quantity(self, actual_quantity: float) -> None:
         """
         Sets the actual_quantity of this BillingCharge.
         The actual quantity of usage.
 
         :param actual_quantity: The actual_quantity of this BillingCharge.
-        :type: int
+        :type: float
         """
         
 
         self._actual_quantity = actual_quantity
 
     @property
-    def overage_quantity(self) -> int:
+    def overage_quantity(self) -> float:
         """
         Gets the overage_quantity of this BillingCharge.
         The quantity of usage that exceeds prepaid or fair use limits.
 
         :return: The overage_quantity of this BillingCharge.
-        :rtype: int
+        :rtype: float
         """
         return self._overage_quantity
 
     @overage_quantity.setter
-    def overage_quantity(self, overage_quantity: int) -> None:
+    def overage_quantity(self, overage_quantity: float) -> None:
         """
         Sets the overage_quantity of this BillingCharge.
         The quantity of usage that exceeds prepaid or fair use limits.
 
         :param overage_quantity: The overage_quantity of this BillingCharge.
-        :type: int
+        :type: float
         """
         
 

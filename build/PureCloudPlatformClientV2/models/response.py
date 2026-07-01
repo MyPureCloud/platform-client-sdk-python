@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AppleInvitation
     from . import DomainEntityRef
     from . import FooterTemplate
     from . import JsonSchemaDocument
@@ -70,6 +71,7 @@ class Response(object):
             'messaging_template': 'MessagingTemplate',
             'assets': 'list[RmsAssetAddressableRef]',
             'footer': 'FooterTemplate',
+            'apple_invitation': 'AppleInvitation',
             'self_uri': 'str'
         }
 
@@ -88,6 +90,7 @@ class Response(object):
             'messaging_template': 'messagingTemplate',
             'assets': 'assets',
             'footer': 'footer',
+            'apple_invitation': 'appleInvitation',
             'self_uri': 'selfUri'
         }
 
@@ -105,6 +108,7 @@ class Response(object):
         self._messaging_template = None
         self._assets = None
         self._footer = None
+        self._apple_invitation = None
         self._self_uri = None
 
     @property
@@ -207,7 +211,7 @@ class Response(object):
     def texts(self) -> List['ResponseText']:
         """
         Gets the texts of this Response.
-        One or more texts associated with the response.
+        One or more texts associated with the response. Required for responseTypes: Standard, Footer, MessagingTemplate and CampaignEmailTemplate
 
         :return: The texts of this Response.
         :rtype: list[ResponseText]
@@ -218,7 +222,7 @@ class Response(object):
     def texts(self, texts: List['ResponseText']) -> None:
         """
         Sets the texts of this Response.
-        One or more texts associated with the response.
+        One or more texts associated with the response. Required for responseTypes: Standard, Footer, MessagingTemplate and CampaignEmailTemplate
 
         :param texts: The texts of this Response.
         :type: list[ResponseText]
@@ -452,6 +456,30 @@ class Response(object):
         
 
         self._footer = footer
+
+    @property
+    def apple_invitation(self) -> 'AppleInvitation':
+        """
+        Gets the apple_invitation of this Response.
+        Apple Messages for Business invitation template definition for responseType.AppleInvitation.
+
+        :return: The apple_invitation of this Response.
+        :rtype: AppleInvitation
+        """
+        return self._apple_invitation
+
+    @apple_invitation.setter
+    def apple_invitation(self, apple_invitation: 'AppleInvitation') -> None:
+        """
+        Sets the apple_invitation of this Response.
+        Apple Messages for Business invitation template definition for responseType.AppleInvitation.
+
+        :param apple_invitation: The apple_invitation of this Response.
+        :type: AppleInvitation
+        """
+        
+
+        self._apple_invitation = apple_invitation
 
     @property
     def self_uri(self) -> str:

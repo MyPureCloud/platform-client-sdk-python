@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ListWrapperInteger
 
 class AgentTimeOffRequestPatch(object):
     """
@@ -49,18 +51,24 @@ class AgentTimeOffRequestPatch(object):
         self.swagger_types = {
             'marked_as_read': 'bool',
             'status': 'str',
-            'notes': 'str'
+            'notes': 'str',
+            'full_day_earliest_start_offset_minutes': 'ListWrapperInteger',
+            'full_day_latest_end_offset_minutes': 'ListWrapperInteger'
         }
 
         self.attribute_map = {
             'marked_as_read': 'markedAsRead',
             'status': 'status',
-            'notes': 'notes'
+            'notes': 'notes',
+            'full_day_earliest_start_offset_minutes': 'fullDayEarliestStartOffsetMinutes',
+            'full_day_latest_end_offset_minutes': 'fullDayLatestEndOffsetMinutes'
         }
 
         self._marked_as_read = None
         self._status = None
         self._notes = None
+        self._full_day_earliest_start_offset_minutes = None
+        self._full_day_latest_end_offset_minutes = None
 
     @property
     def marked_as_read(self) -> bool:
@@ -138,6 +146,54 @@ class AgentTimeOffRequestPatch(object):
         
 
         self._notes = notes
+
+    @property
+    def full_day_earliest_start_offset_minutes(self) -> 'ListWrapperInteger':
+        """
+        Gets the full_day_earliest_start_offset_minutes of this AgentTimeOffRequestPatch.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_earliest_start_offset_minutes of this AgentTimeOffRequestPatch.
+        :rtype: ListWrapperInteger
+        """
+        return self._full_day_earliest_start_offset_minutes
+
+    @full_day_earliest_start_offset_minutes.setter
+    def full_day_earliest_start_offset_minutes(self, full_day_earliest_start_offset_minutes: 'ListWrapperInteger') -> None:
+        """
+        Sets the full_day_earliest_start_offset_minutes of this AgentTimeOffRequestPatch.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_earliest_start_offset_minutes: The full_day_earliest_start_offset_minutes of this AgentTimeOffRequestPatch.
+        :type: ListWrapperInteger
+        """
+        
+
+        self._full_day_earliest_start_offset_minutes = full_day_earliest_start_offset_minutes
+
+    @property
+    def full_day_latest_end_offset_minutes(self) -> 'ListWrapperInteger':
+        """
+        Gets the full_day_latest_end_offset_minutes of this AgentTimeOffRequestPatch.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_latest_end_offset_minutes of this AgentTimeOffRequestPatch.
+        :rtype: ListWrapperInteger
+        """
+        return self._full_day_latest_end_offset_minutes
+
+    @full_day_latest_end_offset_minutes.setter
+    def full_day_latest_end_offset_minutes(self, full_day_latest_end_offset_minutes: 'ListWrapperInteger') -> None:
+        """
+        Sets the full_day_latest_end_offset_minutes of this AgentTimeOffRequestPatch.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_latest_end_offset_minutes: The full_day_latest_end_offset_minutes of this AgentTimeOffRequestPatch.
+        :type: ListWrapperInteger
+        """
+        
+
+        self._full_day_latest_end_offset_minutes = full_day_latest_end_offset_minutes
 
     def to_dict(self):
         """

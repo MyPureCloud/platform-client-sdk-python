@@ -159,7 +159,7 @@ class BillingProduct(object):
         """
         if isinstance(unit_of_measure, int):
             unit_of_measure = str(unit_of_measure)
-        allowed_values = ["Call", "Character", "Conversation", "Course", "Day", "Each", "Employee", "Engagement", "Event", "Exam", "GB", "Hour", "Instance", "Interaction", "Invocation", "Message", "MillionCharacters", "Minute", "Person", "PhoneNumber", "Port", "Segment", "Session", "Stream", "Token", "Transaction", "Turn", "Unit", "User"]
+        allowed_values = ["Call", "Character", "Conversation", "Course", "Day", "EA", "Each", "Employee", "Engagement", "Evaluation", "Event", "Exam", "GB", "Guide", "Hour", "Ingestion", "Instance", "Interaction", "Invocation", "Message", "MillionCharacters", "Minute", "Person", "PhoneNumber", "Port", "RateTable", "Segment", "Session", "Stream", "Summary", "Token", "Transaction", "Translation", "Turn", "Unit", "User"]
         if unit_of_measure.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for unit_of_measure -> " + unit_of_measure)
             self._unit_of_measure = "outdated_sdk_version"

@@ -331,6 +331,7 @@ from .models.apple_integration_entity_listing import AppleIntegrationEntityListi
 from .models.apple_integration_request import AppleIntegrationRequest
 from .models.apple_integration_update_request import AppleIntegrationUpdateRequest
 from .models.apple_invitation import AppleInvitation
+from .models.apple_invitation_notification_parameters import AppleInvitationNotificationParameters
 from .models.apple_opaque_id import AppleOpaqueId
 from .models.apple_pay import ApplePay
 from .models.approval_namespace import ApprovalNamespace
@@ -737,6 +738,7 @@ from .models.bulk_update_shift_trade_state_result_item import BulkUpdateShiftTra
 from .models.bullseye import Bullseye
 from .models.business_rules_data_schema import BusinessRulesDataSchema
 from .models.business_rules_data_schema_listing import BusinessRulesDataSchemaListing
+from .models.business_rules_parent_schema_ref import BusinessRulesParentSchemaRef
 from .models.business_rules_schema_create_request import BusinessRulesSchemaCreateRequest
 from .models.business_rules_schema_update_request import BusinessRulesSchemaUpdateRequest
 from .models.business_unit_activity_code import BusinessUnitActivityCode
@@ -848,6 +850,9 @@ from .models.campaign_stats import CampaignStats
 from .models.campaign_time_slot import CampaignTimeSlot
 from .models.canned_response_libraries import CannedResponseLibraries
 from .models.capacity_plan_delete_request import CapacityPlanDeleteRequest
+from .models.capacity_plan_forecast_inputs_response import CapacityPlanForecastInputsResponse
+from .models.capacity_plan_forecast_inputs_template import CapacityPlanForecastInputsTemplate
+from .models.capacity_plan_forecast_metrics import CapacityPlanForecastMetrics
 from .models.capacity_plan_list_item import CapacityPlanListItem
 from .models.capacity_plan_metadata import CapacityPlanMetadata
 from .models.capacity_plan_metrics_summary import CapacityPlanMetricsSummary
@@ -2422,6 +2427,7 @@ from .models.external_contacts_contact_changed_topic_object import ExternalConta
 from .models.external_contacts_contact_changed_topic_phone_number import ExternalContactsContactChangedTopicPhoneNumber
 from .models.external_contacts_contact_changed_topic_ticker import ExternalContactsContactChangedTopicTicker
 from .models.external_contacts_contact_changed_topic_twitter_id import ExternalContactsContactChangedTopicTwitterId
+from .models.external_contacts_contact_changed_topic_whats_app_business_scoped_id import ExternalContactsContactChangedTopicWhatsAppBusinessScopedId
 from .models.external_contacts_contact_changed_topic_whats_app_id import ExternalContactsContactChangedTopicWhatsAppId
 from .models.external_contacts_contact_note_changed_topic_division import ExternalContactsContactNoteChangedTopicDivision
 from .models.external_contacts_contact_note_changed_topic_note import ExternalContactsContactNoteChangedTopicNote
@@ -2467,6 +2473,7 @@ from .models.external_contacts_unresolved_contact_changed_topic_object import Ex
 from .models.external_contacts_unresolved_contact_changed_topic_phone_number import ExternalContactsUnresolvedContactChangedTopicPhoneNumber
 from .models.external_contacts_unresolved_contact_changed_topic_ticker import ExternalContactsUnresolvedContactChangedTopicTicker
 from .models.external_contacts_unresolved_contact_changed_topic_twitter_id import ExternalContactsUnresolvedContactChangedTopicTwitterId
+from .models.external_contacts_unresolved_contact_changed_topic_whats_app_business_scoped_id import ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId
 from .models.external_contacts_unresolved_contact_changed_topic_whats_app_id import ExternalContactsUnresolvedContactChangedTopicWhatsAppId
 from .models.external_data_source import ExternalDataSource
 from .models.external_established_event import ExternalEstablishedEvent
@@ -2640,6 +2647,7 @@ from .models.followers_filter import FollowersFilter
 from .models.footer_template import FooterTemplate
 from .models.forecast_abandon_rate_response import ForecastAbandonRateResponse
 from .models.forecast_average_speed_of_answer_response import ForecastAverageSpeedOfAnswerResponse
+from .models.forecast_input_planning_group_data import ForecastInputPlanningGroupData
 from .models.forecast_metadata import ForecastMetadata
 from .models.forecast_planning_group_data import ForecastPlanningGroupData
 from .models.forecast_planning_group_response import ForecastPlanningGroupResponse
@@ -3261,6 +3269,7 @@ from .models.knowledge_sync_job_statistics import KnowledgeSyncJobStatistics
 from .models.knowledge_sync_request import KnowledgeSyncRequest
 from .models.knowledge_v3_conversation_context import KnowledgeV3ConversationContext
 from .models.knowledge_v3_conversation_context_response import KnowledgeV3ConversationContextResponse
+from .models.knowledge_v3_preview_conversation_context import KnowledgeV3PreviewConversationContext
 from .models.kpi_result import KpiResult
 from .models.label import Label
 from .models.label_create_request import LabelCreateRequest
@@ -4162,6 +4171,7 @@ from .models.query_opportunity_enrollments_response import QueryOpportunityEnrol
 from .models.query_opportunity_enrollments_result import QueryOpportunityEnrollmentsResult
 from .models.query_planning_group_to_staffing_groups_request import QueryPlanningGroupToStaffingGroupsRequest
 from .models.query_processing_config import QueryProcessingConfig
+from .models.query_reformulation_context import QueryReformulationContext
 from .models.query_request import QueryRequest
 from .models.query_request_clause import QueryRequestClause
 from .models.query_request_filter import QueryRequestFilter
@@ -4480,6 +4490,7 @@ from .models.queue_conversation_video_event_topic_workflow import QueueConversat
 from .models.queue_conversation_video_event_topic_wrapup import QueueConversationVideoEventTopicWrapup
 from .models.queue_email_address import QueueEmailAddress
 from .models.queue_entity_listing import QueueEntityListing
+from .models.queue_full_reference import QueueFullReference
 from .models.queue_media_settings import QueueMediaSettings
 from .models.queue_member import QueueMember
 from .models.queue_member_entity_listing import QueueMemberEntityListing
@@ -4811,7 +4822,13 @@ from .models.scim_v2_schema_list_response import ScimV2SchemaListResponse
 from .models.scim_v2_user import ScimV2User
 from .models.scorable_survey import ScorableSurvey
 from .models.scored_agent import ScoredAgent
+from .models.screen_monitor_settings import ScreenMonitorSettings
 from .models.screen_monitoring import ScreenMonitoring
+from .models.screen_monitoring_details import ScreenMonitoringDetails
+from .models.screen_monitoring_session import ScreenMonitoringSession
+from .models.screen_monitoring_session_entity_listing import ScreenMonitoringSessionEntityListing
+from .models.screen_monitoring_user_details import ScreenMonitoringUserDetails
+from .models.screen_monitoring_user_details_entity_listing import ScreenMonitoringUserDetailsEntityListing
 from .models.screen_recording_active_sessions import ScreenRecordingActiveSessions
 from .models.screen_recording_meta_data import ScreenRecordingMetaData
 from .models.screen_recording_meta_data_request import ScreenRecordingMetaDataRequest
@@ -5043,6 +5060,7 @@ from .models.speech_text_analytics_conversation_summary import SpeechTextAnalyti
 from .models.speech_text_analytics_conversation_summary_listing import SpeechTextAnalyticsConversationSummaryListing
 from .models.speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
 from .models.speech_text_analytics_settings_response import SpeechTextAnalyticsSettingsResponse
+from .models.speech_text_analytics_summary_label import SpeechTextAnalyticsSummaryLabel
 from .models.splitting_information import SplittingInformation
 from .models.sta_category import StaCategory
 from .models.staffing_group_allocation import StaffingGroupAllocation
@@ -5062,6 +5080,7 @@ from .models.stageplan_listing import StageplanListing
 from .models.stageplan_reference import StageplanReference
 from .models.stageplan_update import StageplanUpdate
 from .models.starrable_division import StarrableDivision
+from .models.start_screen_monitor_response_body import StartScreenMonitorResponseBody
 from .models.stat_event_campaign_topic_interval_metrics import StatEventCampaignTopicIntervalMetrics
 from .models.stat_event_campaign_topic_metric_stats import StatEventCampaignTopicMetricStats
 from .models.stat_event_campaign_topic_stats_notification import StatEventCampaignTopicStatsNotification
@@ -5232,6 +5251,7 @@ from .models.team_activity_query_predicate import TeamActivityQueryPredicate
 from .models.team_activity_response import TeamActivityResponse
 from .models.team_add_member_failure import TeamAddMemberFailure
 from .models.team_entity_listing import TeamEntityListing
+from .models.team_full_reference import TeamFullReference
 from .models.team_member_add_listing_response import TeamMemberAddListingResponse
 from .models.team_member_entity_listing import TeamMemberEntityListing
 from .models.team_members import TeamMembers
@@ -5611,6 +5631,7 @@ from .models.user_entity_listing import UserEntityListing
 from .models.user_established_event import UserEstablishedEvent
 from .models.user_expands import UserExpands
 from .models.user_external_identifier import UserExternalIdentifier
+from .models.user_full_reference import UserFullReference
 from .models.user_greeting_event_greeting import UserGreetingEventGreeting
 from .models.user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAudioFile
 from .models.user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner
@@ -5791,6 +5812,7 @@ from .models.v2_wfm_main_forecast_export_historical_event_main_forecast_export_n
 from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body import V2WfmMainForecastExportSnapshotEventMainForecastErrorBody
 from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification import V2WfmMainForecastExportSnapshotEventMainForecastExportNotification
 from .models.v3_knowledge_search_client_application import V3KnowledgeSearchClientApplication
+from .models.v3_knowledge_search_preview_client_application import V3KnowledgeSearchPreviewClientApplication
 from .models.v3_source_create_request import V3SourceCreateRequest
 from .models.v3_source_detailed_response import V3SourceDetailedResponse
 from .models.v3_source_expandable_list_response import V3SourceExpandableListResponse
@@ -6446,6 +6468,7 @@ from .apis.recording_api import RecordingApi
 from .apis.response_management_api import ResponseManagementApi
 from .apis.routing_api import RoutingApi
 from .apis.scim_api import SCIMApi
+from .apis.screen_monitoring_api import ScreenMonitoringApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
 from .apis.settings_api import SettingsApi
@@ -6532,6 +6555,7 @@ from .apis.recording_api import RecordingApi
 from .apis.response_management_api import ResponseManagementApi
 from .apis.routing_api import RoutingApi
 from .apis.scim_api import SCIMApi
+from .apis.screen_monitoring_api import ScreenMonitoringApi
 from .apis.scripts_api import ScriptsApi
 from .apis.search_api import SearchApi
 from .apis.settings_api import SettingsApi

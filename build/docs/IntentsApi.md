@@ -829,4 +829,4 @@ except ApiException as e:
 [**CustomerIntentResponse**](CustomerIntentResponse)
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

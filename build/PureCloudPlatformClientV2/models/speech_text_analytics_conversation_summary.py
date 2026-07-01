@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ConversationInsight
 
 class SpeechTextAnalyticsConversationSummary(object):
     """
@@ -50,29 +52,38 @@ class SpeechTextAnalyticsConversationSummary(object):
             'summary_type': 'str',
             'media_type': 'str',
             'language': 'str',
+            'summary_id': 'str',
+            'agent_id': 'str',
             'source_id': 'str',
             'summary': 'str',
             'generated': 'bool',
-            'date_created': 'datetime'
+            'date_created': 'datetime',
+            'insights': 'list[ConversationInsight]'
         }
 
         self.attribute_map = {
             'summary_type': 'summaryType',
             'media_type': 'mediaType',
             'language': 'language',
+            'summary_id': 'summaryId',
+            'agent_id': 'agentId',
             'source_id': 'sourceId',
             'summary': 'summary',
             'generated': 'generated',
-            'date_created': 'dateCreated'
+            'date_created': 'dateCreated',
+            'insights': 'insights'
         }
 
         self._summary_type = None
         self._media_type = None
         self._language = None
+        self._summary_id = None
+        self._agent_id = None
         self._source_id = None
         self._summary = None
         self._generated = None
         self._date_created = None
+        self._insights = None
 
     @property
     def summary_type(self) -> str:
@@ -155,6 +166,54 @@ class SpeechTextAnalyticsConversationSummary(object):
         
 
         self._language = language
+
+    @property
+    def summary_id(self) -> str:
+        """
+        Gets the summary_id of this SpeechTextAnalyticsConversationSummary.
+        The id of the summary
+
+        :return: The summary_id of this SpeechTextAnalyticsConversationSummary.
+        :rtype: str
+        """
+        return self._summary_id
+
+    @summary_id.setter
+    def summary_id(self, summary_id: str) -> None:
+        """
+        Sets the summary_id of this SpeechTextAnalyticsConversationSummary.
+        The id of the summary
+
+        :param summary_id: The summary_id of this SpeechTextAnalyticsConversationSummary.
+        :type: str
+        """
+        
+
+        self._summary_id = summary_id
+
+    @property
+    def agent_id(self) -> str:
+        """
+        Gets the agent_id of this SpeechTextAnalyticsConversationSummary.
+        The id of the agent associated with the summary
+
+        :return: The agent_id of this SpeechTextAnalyticsConversationSummary.
+        :rtype: str
+        """
+        return self._agent_id
+
+    @agent_id.setter
+    def agent_id(self, agent_id: str) -> None:
+        """
+        Sets the agent_id of this SpeechTextAnalyticsConversationSummary.
+        The id of the agent associated with the summary
+
+        :param agent_id: The agent_id of this SpeechTextAnalyticsConversationSummary.
+        :type: str
+        """
+        
+
+        self._agent_id = agent_id
 
     @property
     def source_id(self) -> str:
@@ -251,6 +310,30 @@ class SpeechTextAnalyticsConversationSummary(object):
         
 
         self._date_created = date_created
+
+    @property
+    def insights(self) -> List['ConversationInsight']:
+        """
+        Gets the insights of this SpeechTextAnalyticsConversationSummary.
+        Insights of the conversation
+
+        :return: The insights of this SpeechTextAnalyticsConversationSummary.
+        :rtype: list[ConversationInsight]
+        """
+        return self._insights
+
+    @insights.setter
+    def insights(self, insights: List['ConversationInsight']) -> None:
+        """
+        Sets the insights of this SpeechTextAnalyticsConversationSummary.
+        Insights of the conversation
+
+        :param insights: The insights of this SpeechTextAnalyticsConversationSummary.
+        :type: list[ConversationInsight]
+        """
+        
+
+        self._insights = insights
 
     def to_dict(self):
         """

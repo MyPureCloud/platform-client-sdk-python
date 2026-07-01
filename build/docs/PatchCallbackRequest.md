@@ -13,7 +13,8 @@
 | **country_code** | str | The countryCode | [optional] |
 | **callback_numbers** | list[str] | The callbackNumbers | [optional] |
 | **validate_callback_numbers** | bool | validateCallbackNumbers | [optional] |
+| **customer_first_callback_delivery_mode** | str | How customer-first callback agent reservation is applied for this callback. useAgentReservation forces reservation on; noAgentReservation forces it off; useQueueSetting uses the queue configuration. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

@@ -53,6 +53,7 @@ class BuSchedulingSettingsRequest(object):
         self.swagger_types = {
             'message_severities': 'list[SchedulerMessageTypeSeverity]',
             'sync_time_off_properties': 'SetWrapperSyncTimeOffProperty',
+            'enable_time_off_full_day_estimation': 'bool',
             'service_goal_impact': 'WfmServiceGoalImpactSettings',
             'allow_work_plan_per_minute_granularity': 'bool',
             'activity_smoothing_type': 'str',
@@ -62,6 +63,7 @@ class BuSchedulingSettingsRequest(object):
         self.attribute_map = {
             'message_severities': 'messageSeverities',
             'sync_time_off_properties': 'syncTimeOffProperties',
+            'enable_time_off_full_day_estimation': 'enableTimeOffFullDayEstimation',
             'service_goal_impact': 'serviceGoalImpact',
             'allow_work_plan_per_minute_granularity': 'allowWorkPlanPerMinuteGranularity',
             'activity_smoothing_type': 'activitySmoothingType',
@@ -70,6 +72,7 @@ class BuSchedulingSettingsRequest(object):
 
         self._message_severities = None
         self._sync_time_off_properties = None
+        self._enable_time_off_full_day_estimation = None
         self._service_goal_impact = None
         self._allow_work_plan_per_minute_granularity = None
         self._activity_smoothing_type = None
@@ -122,6 +125,30 @@ class BuSchedulingSettingsRequest(object):
         
 
         self._sync_time_off_properties = sync_time_off_properties
+
+    @property
+    def enable_time_off_full_day_estimation(self) -> bool:
+        """
+        Gets the enable_time_off_full_day_estimation of this BuSchedulingSettingsRequest.
+        Enables start and end time estimation for full-day time-off requests. When enabled, syncTimeOffProperties must include FullDayEarliestStartOffsetMinutes and FullDayLatestEndOffsetMinutes
+
+        :return: The enable_time_off_full_day_estimation of this BuSchedulingSettingsRequest.
+        :rtype: bool
+        """
+        return self._enable_time_off_full_day_estimation
+
+    @enable_time_off_full_day_estimation.setter
+    def enable_time_off_full_day_estimation(self, enable_time_off_full_day_estimation: bool) -> None:
+        """
+        Sets the enable_time_off_full_day_estimation of this BuSchedulingSettingsRequest.
+        Enables start and end time estimation for full-day time-off requests. When enabled, syncTimeOffProperties must include FullDayEarliestStartOffsetMinutes and FullDayLatestEndOffsetMinutes
+
+        :param enable_time_off_full_day_estimation: The enable_time_off_full_day_estimation of this BuSchedulingSettingsRequest.
+        :type: bool
+        """
+        
+
+        self._enable_time_off_full_day_estimation = enable_time_off_full_day_estimation
 
     @property
     def service_goal_impact(self) -> 'WfmServiceGoalImpactSettings':

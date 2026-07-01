@@ -62,6 +62,7 @@ from .recording_api import RecordingApi
 from .response_management_api import ResponseManagementApi
 from .routing_api import RoutingApi
 from .scim_api import SCIMApi
+from .screen_monitoring_api import ScreenMonitoringApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
 from .settings_api import SettingsApi
@@ -148,6 +149,7 @@ from .recording_api import RecordingApi
 from .response_management_api import ResponseManagementApi
 from .routing_api import RoutingApi
 from .scim_api import SCIMApi
+from .screen_monitoring_api import ScreenMonitoringApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
 from .settings_api import SettingsApi

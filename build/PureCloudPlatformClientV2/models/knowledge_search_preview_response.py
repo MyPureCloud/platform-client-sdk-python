@@ -33,6 +33,8 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import KnowledgeSearchResult
+    from . import KnowledgeV3PreviewConversationContext
+    from . import V3KnowledgeSearchPreviewClientApplication
 
 class KnowledgeSearchPreviewResponse(object):
     """
@@ -52,20 +54,26 @@ class KnowledgeSearchPreviewResponse(object):
             'query': 'str',
             'search_id': 'str',
             'session_id': 'str',
-            'result': 'KnowledgeSearchResult'
+            'result': 'KnowledgeSearchResult',
+            'application': 'V3KnowledgeSearchPreviewClientApplication',
+            'conversation_context': 'KnowledgeV3PreviewConversationContext'
         }
 
         self.attribute_map = {
             'query': 'query',
             'search_id': 'searchId',
             'session_id': 'sessionId',
-            'result': 'result'
+            'result': 'result',
+            'application': 'application',
+            'conversation_context': 'conversationContext'
         }
 
         self._query = None
         self._search_id = None
         self._session_id = None
         self._result = None
+        self._application = None
+        self._conversation_context = None
 
     @property
     def query(self) -> str:
@@ -162,6 +170,54 @@ class KnowledgeSearchPreviewResponse(object):
         
 
         self._result = result
+
+    @property
+    def application(self) -> 'V3KnowledgeSearchPreviewClientApplication':
+        """
+        Gets the application of this KnowledgeSearchPreviewResponse.
+        The touchpoint application used for the preview.
+
+        :return: The application of this KnowledgeSearchPreviewResponse.
+        :rtype: V3KnowledgeSearchPreviewClientApplication
+        """
+        return self._application
+
+    @application.setter
+    def application(self, application: 'V3KnowledgeSearchPreviewClientApplication') -> None:
+        """
+        Sets the application of this KnowledgeSearchPreviewResponse.
+        The touchpoint application used for the preview.
+
+        :param application: The application of this KnowledgeSearchPreviewResponse.
+        :type: V3KnowledgeSearchPreviewClientApplication
+        """
+        
+
+        self._application = application
+
+    @property
+    def conversation_context(self) -> 'KnowledgeV3PreviewConversationContext':
+        """
+        Gets the conversation_context of this KnowledgeSearchPreviewResponse.
+        The channel context used for the preview.
+
+        :return: The conversation_context of this KnowledgeSearchPreviewResponse.
+        :rtype: KnowledgeV3PreviewConversationContext
+        """
+        return self._conversation_context
+
+    @conversation_context.setter
+    def conversation_context(self, conversation_context: 'KnowledgeV3PreviewConversationContext') -> None:
+        """
+        Sets the conversation_context of this KnowledgeSearchPreviewResponse.
+        The channel context used for the preview.
+
+        :param conversation_context: The conversation_context of this KnowledgeSearchPreviewResponse.
+        :type: KnowledgeV3PreviewConversationContext
+        """
+        
+
+        self._conversation_context = conversation_context
 
     def to_dict(self):
         """

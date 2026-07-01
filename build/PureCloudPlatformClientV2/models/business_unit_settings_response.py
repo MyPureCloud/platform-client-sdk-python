@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import BuActivitySettingsResponse
     from . import BuNotificationSettingsResponse
     from . import BuSchedulingSettingsResponse
     from . import BuShortTermForecastingSettings
@@ -57,6 +58,8 @@ class BusinessUnitSettingsResponse(object):
             'short_term_forecasting': 'BuShortTermForecastingSettings',
             'scheduling': 'BuSchedulingSettingsResponse',
             'notifications': 'BuNotificationSettingsResponse',
+            'learning': 'BuActivitySettingsResponse',
+            'coaching': 'BuActivitySettingsResponse',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -66,6 +69,8 @@ class BusinessUnitSettingsResponse(object):
             'short_term_forecasting': 'shortTermForecasting',
             'scheduling': 'scheduling',
             'notifications': 'notifications',
+            'learning': 'learning',
+            'coaching': 'coaching',
             'metadata': 'metadata'
         }
 
@@ -74,6 +79,8 @@ class BusinessUnitSettingsResponse(object):
         self._short_term_forecasting = None
         self._scheduling = None
         self._notifications = None
+        self._learning = None
+        self._coaching = None
         self._metadata = None
 
     @property
@@ -200,6 +207,54 @@ class BusinessUnitSettingsResponse(object):
         
 
         self._notifications = notifications
+
+    @property
+    def learning(self) -> 'BuActivitySettingsResponse':
+        """
+        Gets the learning of this BusinessUnitSettingsResponse.
+        Learning settings
+
+        :return: The learning of this BusinessUnitSettingsResponse.
+        :rtype: BuActivitySettingsResponse
+        """
+        return self._learning
+
+    @learning.setter
+    def learning(self, learning: 'BuActivitySettingsResponse') -> None:
+        """
+        Sets the learning of this BusinessUnitSettingsResponse.
+        Learning settings
+
+        :param learning: The learning of this BusinessUnitSettingsResponse.
+        :type: BuActivitySettingsResponse
+        """
+        
+
+        self._learning = learning
+
+    @property
+    def coaching(self) -> 'BuActivitySettingsResponse':
+        """
+        Gets the coaching of this BusinessUnitSettingsResponse.
+        Coaching settings
+
+        :return: The coaching of this BusinessUnitSettingsResponse.
+        :rtype: BuActivitySettingsResponse
+        """
+        return self._coaching
+
+    @coaching.setter
+    def coaching(self, coaching: 'BuActivitySettingsResponse') -> None:
+        """
+        Sets the coaching of this BusinessUnitSettingsResponse.
+        Coaching settings
+
+        :param coaching: The coaching of this BusinessUnitSettingsResponse.
+        :type: BuActivitySettingsResponse
+        """
+        
+
+        self._coaching = coaching
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import BuActivitySettingsRequest
     from . import BuNotificationSettingsRequest
     from . import BuSchedulingSettingsRequest
     from . import BuShortTermForecastingSettings
@@ -57,6 +58,8 @@ class UpdateBusinessUnitSettingsRequest(object):
             'short_term_forecasting': 'BuShortTermForecastingSettings',
             'scheduling': 'BuSchedulingSettingsRequest',
             'notifications': 'BuNotificationSettingsRequest',
+            'learning': 'BuActivitySettingsRequest',
+            'coaching': 'BuActivitySettingsRequest',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -66,6 +69,8 @@ class UpdateBusinessUnitSettingsRequest(object):
             'short_term_forecasting': 'shortTermForecasting',
             'scheduling': 'scheduling',
             'notifications': 'notifications',
+            'learning': 'learning',
+            'coaching': 'coaching',
             'metadata': 'metadata'
         }
 
@@ -74,6 +79,8 @@ class UpdateBusinessUnitSettingsRequest(object):
         self._short_term_forecasting = None
         self._scheduling = None
         self._notifications = None
+        self._learning = None
+        self._coaching = None
         self._metadata = None
 
     @property
@@ -200,6 +207,54 @@ class UpdateBusinessUnitSettingsRequest(object):
         
 
         self._notifications = notifications
+
+    @property
+    def learning(self) -> 'BuActivitySettingsRequest':
+        """
+        Gets the learning of this UpdateBusinessUnitSettingsRequest.
+        Learning settings
+
+        :return: The learning of this UpdateBusinessUnitSettingsRequest.
+        :rtype: BuActivitySettingsRequest
+        """
+        return self._learning
+
+    @learning.setter
+    def learning(self, learning: 'BuActivitySettingsRequest') -> None:
+        """
+        Sets the learning of this UpdateBusinessUnitSettingsRequest.
+        Learning settings
+
+        :param learning: The learning of this UpdateBusinessUnitSettingsRequest.
+        :type: BuActivitySettingsRequest
+        """
+        
+
+        self._learning = learning
+
+    @property
+    def coaching(self) -> 'BuActivitySettingsRequest':
+        """
+        Gets the coaching of this UpdateBusinessUnitSettingsRequest.
+        Coaching settings
+
+        :return: The coaching of this UpdateBusinessUnitSettingsRequest.
+        :rtype: BuActivitySettingsRequest
+        """
+        return self._coaching
+
+    @coaching.setter
+    def coaching(self, coaching: 'BuActivitySettingsRequest') -> None:
+        """
+        Sets the coaching of this UpdateBusinessUnitSettingsRequest.
+        Coaching settings
+
+        :param coaching: The coaching of this UpdateBusinessUnitSettingsRequest.
+        :type: BuActivitySettingsRequest
+        """
+        
+
+        self._coaching = coaching
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

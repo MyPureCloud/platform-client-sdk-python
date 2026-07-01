@@ -160,7 +160,7 @@ class Caseplan(object):
     def division(self) -> 'StarrableDivision':
         """
         Gets the division of this Caseplan.
-        The division to which this entity belongs.
+        The division to which this Caseplan belongs.
 
         :return: The division of this Caseplan.
         :rtype: StarrableDivision
@@ -171,7 +171,7 @@ class Caseplan(object):
     def division(self, division: 'StarrableDivision') -> None:
         """
         Sets the division of this Caseplan.
-        The division to which this entity belongs.
+        The division to which this Caseplan belongs.
 
         :param division: The division of this Caseplan.
         :type: StarrableDivision

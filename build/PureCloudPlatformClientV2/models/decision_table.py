@@ -61,6 +61,7 @@ class DecisionTable(object):
             'date_published': 'datetime',
             'published': 'DecisionTableVersionEntity',
             'latest': 'DecisionTableVersionEntity',
+            'latest_version_status': 'str',
             'columns': 'DecisionTableColumns',
             'published_contract': 'DecisionTableContract',
             'self_uri': 'str'
@@ -76,6 +77,7 @@ class DecisionTable(object):
             'date_published': 'datePublished',
             'published': 'published',
             'latest': 'latest',
+            'latest_version_status': 'latestVersionStatus',
             'columns': 'columns',
             'published_contract': 'publishedContract',
             'self_uri': 'selfUri'
@@ -90,6 +92,7 @@ class DecisionTable(object):
         self._date_published = None
         self._published = None
         self._latest = None
+        self._latest_version_status = None
         self._columns = None
         self._published_contract = None
         self._self_uri = None
@@ -309,6 +312,35 @@ class DecisionTable(object):
         
 
         self._latest = latest
+
+    @property
+    def latest_version_status(self) -> str:
+        """
+        Gets the latest_version_status of this DecisionTable.
+        The status of the most recently created decision table version. Lets clients distinguish e.g. a Draft latest version from a Superseded one without an extra request.
+
+        :return: The latest_version_status of this DecisionTable.
+        :rtype: str
+        """
+        return self._latest_version_status
+
+    @latest_version_status.setter
+    def latest_version_status(self, latest_version_status: str) -> None:
+        """
+        Sets the latest_version_status of this DecisionTable.
+        The status of the most recently created decision table version. Lets clients distinguish e.g. a Draft latest version from a Superseded one without an extra request.
+
+        :param latest_version_status: The latest_version_status of this DecisionTable.
+        :type: str
+        """
+        if isinstance(latest_version_status, int):
+            latest_version_status = str(latest_version_status)
+        allowed_values = ["Draft", "Published", "Error", "Preparing", "Superseded"]
+        if latest_version_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for latest_version_status -> " + latest_version_status)
+            self._latest_version_status = "outdated_sdk_version"
+        else:
+            self._latest_version_status = latest_version_status
 
     @property
     def columns(self) -> 'DecisionTableColumns':

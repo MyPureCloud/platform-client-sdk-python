@@ -50,6 +50,8 @@ class CreateAgentTimeOffRequest(object):
             'activity_code_id': 'str',
             'notes': 'str',
             'full_day_management_unit_dates': 'list[str]',
+            'full_day_earliest_start_offset_minutes': 'list[int]',
+            'full_day_latest_end_offset_minutes': 'list[int]',
             'partial_day_start_date_times': 'list[datetime]',
             'daily_duration_minutes': 'int',
             'duration_minutes': 'list[int]',
@@ -60,6 +62,8 @@ class CreateAgentTimeOffRequest(object):
             'activity_code_id': 'activityCodeId',
             'notes': 'notes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
+            'full_day_earliest_start_offset_minutes': 'fullDayEarliestStartOffsetMinutes',
+            'full_day_latest_end_offset_minutes': 'fullDayLatestEndOffsetMinutes',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'daily_duration_minutes': 'dailyDurationMinutes',
             'duration_minutes': 'durationMinutes',
@@ -69,6 +73,8 @@ class CreateAgentTimeOffRequest(object):
         self._activity_code_id = None
         self._notes = None
         self._full_day_management_unit_dates = None
+        self._full_day_earliest_start_offset_minutes = None
+        self._full_day_latest_end_offset_minutes = None
         self._partial_day_start_date_times = None
         self._daily_duration_minutes = None
         self._duration_minutes = None
@@ -145,6 +151,54 @@ class CreateAgentTimeOffRequest(object):
         
 
         self._full_day_management_unit_dates = full_day_management_unit_dates
+
+    @property
+    def full_day_earliest_start_offset_minutes(self) -> List[int]:
+        """
+        Gets the full_day_earliest_start_offset_minutes of this CreateAgentTimeOffRequest.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_earliest_start_offset_minutes of this CreateAgentTimeOffRequest.
+        :rtype: list[int]
+        """
+        return self._full_day_earliest_start_offset_minutes
+
+    @full_day_earliest_start_offset_minutes.setter
+    def full_day_earliest_start_offset_minutes(self, full_day_earliest_start_offset_minutes: List[int]) -> None:
+        """
+        Sets the full_day_earliest_start_offset_minutes of this CreateAgentTimeOffRequest.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_earliest_start_offset_minutes: The full_day_earliest_start_offset_minutes of this CreateAgentTimeOffRequest.
+        :type: list[int]
+        """
+        
+
+        self._full_day_earliest_start_offset_minutes = full_day_earliest_start_offset_minutes
+
+    @property
+    def full_day_latest_end_offset_minutes(self) -> List[int]:
+        """
+        Gets the full_day_latest_end_offset_minutes of this CreateAgentTimeOffRequest.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_latest_end_offset_minutes of this CreateAgentTimeOffRequest.
+        :rtype: list[int]
+        """
+        return self._full_day_latest_end_offset_minutes
+
+    @full_day_latest_end_offset_minutes.setter
+    def full_day_latest_end_offset_minutes(self, full_day_latest_end_offset_minutes: List[int]) -> None:
+        """
+        Sets the full_day_latest_end_offset_minutes of this CreateAgentTimeOffRequest.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_latest_end_offset_minutes: The full_day_latest_end_offset_minutes of this CreateAgentTimeOffRequest.
+        :type: list[int]
+        """
+        
+
+        self._full_day_latest_end_offset_minutes = full_day_latest_end_offset_minutes
 
     @property
     def partial_day_start_date_times(self) -> List[datetime]:

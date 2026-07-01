@@ -400,7 +400,7 @@ except ApiException as e:
 
 ## get_integrations
 
-> [**IntegrationEntityListing**](IntegrationEntityListing) get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, ids=ids, integration_type=integration_type, reported_state=reported_state)
+> [**IntegrationEntityListing**](IntegrationEntityListing) get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, ids=ids, integration_type=integration_type, reported_state=reported_state, credential_id=credential_id)
 
 
 List integrations
@@ -433,10 +433,11 @@ previous_page = 'previous_page_example' # str | Previous page token (optional)
 ids = ['7c97172d-b029-490b-a975-ded1d17ce8e4,d21e2369-eb5a-4d5d-8798-61d21bc6a376'] # list[str] | Comma-separated list of integration IDs to filter by (max 100) (optional)
 integration_type = 'webhook' # str | Filter integrations by integration type ID (optional)
 reported_state = 'ACTIVE' # str | Filter integrations by reported state (case-insensitive) (optional)
+credential_id = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890' # str | Filter integrations by credential ID (optional)
 
 try:
     # List integrations
-    api_response = api_instance.get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, ids=ids, integration_type=integration_type, reported_state=reported_state)
+    api_response = api_instance.get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, ids=ids, integration_type=integration_type, reported_state=reported_state, credential_id=credential_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IntegrationsApi->get_integrations: %s\n" % e)
@@ -456,6 +457,7 @@ except ApiException as e:
 | **ids** | [**list[str]**](str)| Comma-separated list of integration IDs to filter by (max 100) | [optional]  |
 | **integration_type** | **str**| Filter integrations by integration type ID | [optional]  |
 | **reported_state** | **str**| Filter integrations by reported state (case-insensitive) | [optional] <br />**Values**: ACTIVE, ACTIVATING, INACTIVE, DEACTIVATING, ERROR |
+| **credential_id** | **str**| Filter integrations by credential ID | [optional]  |
 
 ### Return type
 
@@ -4864,4 +4866,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

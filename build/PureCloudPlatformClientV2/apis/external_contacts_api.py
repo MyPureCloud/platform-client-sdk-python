@@ -5217,6 +5217,180 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_externalcontacts_contact_note(self, contact_id: str, note_id: str, body: 'ExternalContactsPatchRequest', **kwargs) -> 'Note':
+        """
+        Update a Contact Note
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_externalcontacts_contact_note(contact_id, note_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_id: ExternalContact Id (required)
+        :param str note_id: Note Id (required)
+        :param ExternalContactsPatchRequest body: Note field to update (required)
+        :return: Note
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_id', 'note_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_externalcontacts_contact_note" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_id' is set
+        if ('contact_id' not in params) or (params['contact_id'] is None):
+            raise ValueError("Missing the required parameter `contact_id` when calling `patch_externalcontacts_contact_note`")
+        # verify the required parameter 'note_id' is set
+        if ('note_id' not in params) or (params['note_id'] is None):
+            raise ValueError("Missing the required parameter `note_id` when calling `patch_externalcontacts_contact_note`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_externalcontacts_contact_note`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_id' in params:
+            path_params['contactId'] = params['contact_id']
+        if 'note_id' in params:
+            path_params['noteId'] = params['note_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Note',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_externalcontacts_organization(self, external_organization_id: str, body: 'ExternalContactsPatchRequest', **kwargs) -> 'ExternalOrganization':
+        """
+        Update specific fields of an external organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_externalcontacts_organization(external_organization_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_organization_id: External Organization ID (required)
+        :param ExternalContactsPatchRequest body: External Organization fields to update (required)
+        :return: ExternalOrganization
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_organization_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_externalcontacts_organization" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_organization_id' is set
+        if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
+            raise ValueError("Missing the required parameter `external_organization_id` when calling `patch_externalcontacts_organization`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_externalcontacts_organization`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_organization_id' in params:
+            path_params['externalOrganizationId'] = params['external_organization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalOrganization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_externalcontacts_organization_identifiers(self, external_organization_id: str, body: 'ExternalOrganizationIdentifierClaimRequest', **kwargs) -> 'ExternalOrganizationIdentifier':
         """
         Claim or release identifiers for an external organization
@@ -5297,6 +5471,180 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalOrganizationIdentifier',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_externalcontacts_organization_note(self, external_organization_id: str, note_id: str, body: 'ExternalContactsPatchRequest', **kwargs) -> 'Note':
+        """
+        Update an External Organization Note
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_externalcontacts_organization_note(external_organization_id, note_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_organization_id: External Organization Id (required)
+        :param str note_id: Note Id (required)
+        :param ExternalContactsPatchRequest body: Note field to update (required)
+        :return: Note
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_organization_id', 'note_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_externalcontacts_organization_note" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_organization_id' is set
+        if ('external_organization_id' not in params) or (params['external_organization_id'] is None):
+            raise ValueError("Missing the required parameter `external_organization_id` when calling `patch_externalcontacts_organization_note`")
+        # verify the required parameter 'note_id' is set
+        if ('note_id' not in params) or (params['note_id'] is None):
+            raise ValueError("Missing the required parameter `note_id` when calling `patch_externalcontacts_organization_note`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_externalcontacts_organization_note`")
+
+
+        resource_path = '/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_organization_id' in params:
+            path_params['externalOrganizationId'] = params['external_organization_id']
+        if 'note_id' in params:
+            path_params['noteId'] = params['note_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Note',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_externalcontacts_relationship(self, relationship_id: str, body: 'ExternalContactsPatchRequest', **kwargs) -> 'Relationship':
+        """
+        Update specific fields of a relationship
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_externalcontacts_relationship(relationship_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str relationship_id: Relationship Id (required)
+        :param ExternalContactsPatchRequest body: Relationship fields to update (required)
+        :return: Relationship
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['relationship_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_externalcontacts_relationship" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'relationship_id' is set
+        if ('relationship_id' not in params) or (params['relationship_id'] is None):
+            raise ValueError("Missing the required parameter `relationship_id` when calling `patch_externalcontacts_relationship`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_externalcontacts_relationship`")
+
+
+        resource_path = '/api/v2/externalcontacts/relationships/{relationshipId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'relationship_id' in params:
+            path_params['relationshipId'] = params['relationship_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Relationship',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -51,7 +51,9 @@ class EstimateAvailableFullDayTimeOffResponse(object):
             'duration_minutes': 'int',
             'payable_minutes': 'int',
             'flexible': 'bool',
-            'override_date_type': 'str'
+            'override_date_type': 'str',
+            'earliest_start_offset_minutes': 'int',
+            'latest_end_offset_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -59,7 +61,9 @@ class EstimateAvailableFullDayTimeOffResponse(object):
             'duration_minutes': 'durationMinutes',
             'payable_minutes': 'payableMinutes',
             'flexible': 'flexible',
-            'override_date_type': 'overrideDateType'
+            'override_date_type': 'overrideDateType',
+            'earliest_start_offset_minutes': 'earliestStartOffsetMinutes',
+            'latest_end_offset_minutes': 'latestEndOffsetMinutes'
         }
 
         self._date = None
@@ -67,6 +71,8 @@ class EstimateAvailableFullDayTimeOffResponse(object):
         self._payable_minutes = None
         self._flexible = None
         self._override_date_type = None
+        self._earliest_start_offset_minutes = None
+        self._latest_end_offset_minutes = None
 
     @property
     def date(self) -> date:
@@ -192,6 +198,54 @@ class EstimateAvailableFullDayTimeOffResponse(object):
             self._override_date_type = "outdated_sdk_version"
         else:
             self._override_date_type = override_date_type
+
+    @property
+    def earliest_start_offset_minutes(self) -> int:
+        """
+        Gets the earliest_start_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+
+        :return: The earliest_start_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        :rtype: int
+        """
+        return self._earliest_start_offset_minutes
+
+    @earliest_start_offset_minutes.setter
+    def earliest_start_offset_minutes(self, earliest_start_offset_minutes: int) -> None:
+        """
+        Sets the earliest_start_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        Earliest start time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+
+        :param earliest_start_offset_minutes: The earliest_start_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        :type: int
+        """
+        
+
+        self._earliest_start_offset_minutes = earliest_start_offset_minutes
+
+    @property
+    def latest_end_offset_minutes(self) -> int:
+        """
+        Gets the latest_end_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+
+        :return: The latest_end_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        :rtype: int
+        """
+        return self._latest_end_offset_minutes
+
+    @latest_end_offset_minutes.setter
+    def latest_end_offset_minutes(self, latest_end_offset_minutes: int) -> None:
+        """
+        Sets the latest_end_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        Latest end time in minutes from midnight for full day request. Value may be null when time-off estimation is disabled
+
+        :param latest_end_offset_minutes: The latest_end_offset_minutes of this EstimateAvailableFullDayTimeOffResponse.
+        :type: int
+        """
+        
+
+        self._latest_end_offset_minutes = latest_end_offset_minutes
 
     def to_dict(self):
         """

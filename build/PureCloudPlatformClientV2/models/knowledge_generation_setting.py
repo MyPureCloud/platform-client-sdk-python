@@ -105,7 +105,7 @@ class KnowledgeGenerationSetting(object):
         """
         if isinstance(generation_language, int):
             generation_language = str(generation_language)
-        allowed_values = ["ar-AE", "cs-CZ", "da-DK", "de-AT", "de-CH", "de-DE", "en-AU", "en-CA", "en-GB", "en-HK", "en-IE", "en-IN", "en-NZ", "en-PH", "en-SG", "en-US", "en-ZA", "es-AR", "es-CO", "es-ES", "es-MX", "es-US", "fi-FI", "fr-BE", "fr-CA", "fr-CH", "fr-FR", "hi-IN", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-BE", "nl-NL", "pt-BR", "pt-PT", "sv-SE", "tr-TR"]
+        allowed_values = ["ar-AE", "cs-CZ", "da-DK", "de-AT", "de-CH", "de-DE", "en-AU", "en-CA", "en-GB", "en-HK", "en-IE", "en-IN", "en-NZ", "en-PH", "en-SG", "en-US", "en-ZA", "es-AR", "es-CO", "es-ES", "es-MX", "es-US", "fi-FI", "fr-BE", "fr-CA", "fr-CH", "fr-FR", "hi-IN", "hu-HU", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-BE", "nl-NL", "pt-BR", "pt-PT", "sv-SE", "tr-TR", "el-GR", "fil-PH", "he-IL", "ms-MY", "pl-PL", "th-TH"]
         if generation_language.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for generation_language -> " + generation_language)
             self._generation_language = "outdated_sdk_version"

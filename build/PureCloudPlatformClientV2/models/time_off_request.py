@@ -63,6 +63,8 @@ class TimeOffRequest(object):
             'daily_duration_minutes': 'int',
             'duration_minutes': 'list[int]',
             'payable_minutes': 'list[int]',
+            'full_day_earliest_start_offset_minutes': 'list[int]',
+            'full_day_latest_end_offset_minutes': 'list[int]',
             'notes': 'str',
             'submitted_by': 'UserReference',
             'submitted_date': 'datetime',
@@ -87,6 +89,8 @@ class TimeOffRequest(object):
             'daily_duration_minutes': 'dailyDurationMinutes',
             'duration_minutes': 'durationMinutes',
             'payable_minutes': 'payableMinutes',
+            'full_day_earliest_start_offset_minutes': 'fullDayEarliestStartOffsetMinutes',
+            'full_day_latest_end_offset_minutes': 'fullDayLatestEndOffsetMinutes',
             'notes': 'notes',
             'submitted_by': 'submittedBy',
             'submitted_date': 'submittedDate',
@@ -110,6 +114,8 @@ class TimeOffRequest(object):
         self._daily_duration_minutes = None
         self._duration_minutes = None
         self._payable_minutes = None
+        self._full_day_earliest_start_offset_minutes = None
+        self._full_day_latest_end_offset_minutes = None
         self._notes = None
         self._submitted_by = None
         self._submitted_date = None
@@ -440,6 +446,54 @@ class TimeOffRequest(object):
         
 
         self._payable_minutes = payable_minutes
+
+    @property
+    def full_day_earliest_start_offset_minutes(self) -> List[int]:
+        """
+        Gets the full_day_earliest_start_offset_minutes of this TimeOffRequest.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_earliest_start_offset_minutes of this TimeOffRequest.
+        :rtype: list[int]
+        """
+        return self._full_day_earliest_start_offset_minutes
+
+    @full_day_earliest_start_offset_minutes.setter
+    def full_day_earliest_start_offset_minutes(self, full_day_earliest_start_offset_minutes: List[int]) -> None:
+        """
+        Sets the full_day_earliest_start_offset_minutes of this TimeOffRequest.
+        Earliest start offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_earliest_start_offset_minutes: The full_day_earliest_start_offset_minutes of this TimeOffRequest.
+        :type: list[int]
+        """
+        
+
+        self._full_day_earliest_start_offset_minutes = full_day_earliest_start_offset_minutes
+
+    @property
+    def full_day_latest_end_offset_minutes(self) -> List[int]:
+        """
+        Gets the full_day_latest_end_offset_minutes of this TimeOffRequest.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :return: The full_day_latest_end_offset_minutes of this TimeOffRequest.
+        :rtype: list[int]
+        """
+        return self._full_day_latest_end_offset_minutes
+
+    @full_day_latest_end_offset_minutes.setter
+    def full_day_latest_end_offset_minutes(self, full_day_latest_end_offset_minutes: List[int]) -> None:
+        """
+        Sets the full_day_latest_end_offset_minutes of this TimeOffRequest.
+        Latest end offset in minutes for each full-day request date. Values may be null when time-off estimation is disabled or no estimate is available
+
+        :param full_day_latest_end_offset_minutes: The full_day_latest_end_offset_minutes of this TimeOffRequest.
+        :type: list[int]
+        """
+        
+
+        self._full_day_latest_end_offset_minutes = full_day_latest_end_offset_minutes
 
     @property
     def notes(self) -> str:

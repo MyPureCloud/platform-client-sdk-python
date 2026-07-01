@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import TextBotErrorInputEvent
     from . import TextBotTurnReference
     from . import TextBotUserInputEvent
+    from . import TextBotsRichMediaInputEvent
 
 class TextBotFlowTurnRequest(object):
     """
@@ -54,6 +55,7 @@ class TextBotFlowTurnRequest(object):
             'previous_turn': 'TextBotTurnReference',
             'input_event_type': 'str',
             'input_event_user_input': 'TextBotUserInputEvent',
+            'input_event_rich_media': 'TextBotsRichMediaInputEvent',
             'input_event_error': 'TextBotErrorInputEvent'
         }
 
@@ -61,12 +63,14 @@ class TextBotFlowTurnRequest(object):
             'previous_turn': 'previousTurn',
             'input_event_type': 'inputEventType',
             'input_event_user_input': 'inputEventUserInput',
+            'input_event_rich_media': 'inputEventRichMedia',
             'input_event_error': 'inputEventError'
         }
 
         self._previous_turn = None
         self._input_event_type = None
         self._input_event_user_input = None
+        self._input_event_rich_media = None
         self._input_event_error = None
 
     @property
@@ -145,6 +149,30 @@ class TextBotFlowTurnRequest(object):
         
 
         self._input_event_user_input = input_event_user_input
+
+    @property
+    def input_event_rich_media(self) -> 'TextBotsRichMediaInputEvent':
+        """
+        Gets the input_event_rich_media of this TextBotFlowTurnRequest.
+        The data for the Rich Media input event of this turn if it is a Rich Media input event. Only one inputEvent may be set. Only ButtonResponse, PaymentResponse, Form, Presence are supported.
+
+        :return: The input_event_rich_media of this TextBotFlowTurnRequest.
+        :rtype: TextBotsRichMediaInputEvent
+        """
+        return self._input_event_rich_media
+
+    @input_event_rich_media.setter
+    def input_event_rich_media(self, input_event_rich_media: 'TextBotsRichMediaInputEvent') -> None:
+        """
+        Sets the input_event_rich_media of this TextBotFlowTurnRequest.
+        The data for the Rich Media input event of this turn if it is a Rich Media input event. Only one inputEvent may be set. Only ButtonResponse, PaymentResponse, Form, Presence are supported.
+
+        :param input_event_rich_media: The input_event_rich_media of this TextBotFlowTurnRequest.
+        :type: TextBotsRichMediaInputEvent
+        """
+        
+
+        self._input_event_rich_media = input_event_rich_media
 
     @property
     def input_event_error(self) -> 'TextBotErrorInputEvent':

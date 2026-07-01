@@ -92,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_instances_settings_loglevels_characteristics**](#get_flows_instances_settings_loglevels_characteristics) | Gets the available flow log level characteristics for this organization.|
 |[**get_flows_instances_settings_loglevels_default**](#get_flows_instances_settings_loglevels_default) | Returns the flow default log level.|
 |[**get_flows_job**](#get_flows_job) | Fetch Architect Job Status|
+|[**get_flows_lookup**](#get_flows_lookup) | Look up flows by ID|
 |[**get_flows_milestone**](#get_flows_milestone) | Get a flow milestone|
 |[**get_flows_milestones**](#get_flows_milestones) | Get a pageable list of flow milestones, filtered by query parameters|
 |[**get_flows_milestones_divisionviews**](#get_flows_milestones_divisionviews) | Get a pageable list of basic flow milestone information objects filterable by query parameters.|
@@ -4782,6 +4783,64 @@ except ApiException as e:
 [**ArchitectJobStateResponse**](ArchitectJobStateResponse)
 
 
+## get_flows_lookup
+
+> [**FlowEntityListing**](FlowEntityListing) get_flows_lookup(id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+
+
+Look up flows by ID
+
+Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+
+Wraps GET /api/v2/flows/lookup 
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+id = ['id_example'] # list[str] | Flow ID(s)
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+
+try:
+    # Look up flows by ID
+    api_response = api_instance.get_flows_lookup(id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_lookup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str)| Flow ID(s) |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
+
+### Return type
+
+[**FlowEntityListing**](FlowEntityListing)
+
+
 ## get_flows_milestone
 
 > [**FlowMilestone**](FlowMilestone) get_flows_milestone(milestone_id)
@@ -8070,4 +8129,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

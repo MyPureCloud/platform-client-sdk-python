@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ExternalContactsUnresolvedContactChangedTopicPhoneNumber
+    from . import ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId
 
 class ExternalContactsUnresolvedContactChangedTopicWhatsAppId(object):
     """
@@ -50,16 +51,22 @@ class ExternalContactsUnresolvedContactChangedTopicWhatsAppId(object):
         """
         self.swagger_types = {
             'phone_number': 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber',
-            'display_name': 'str'
+            'display_name': 'str',
+            'username': 'str',
+            'whats_app_business_scoped_ids': 'list[ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId]'
         }
 
         self.attribute_map = {
             'phone_number': 'phoneNumber',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'username': 'username',
+            'whats_app_business_scoped_ids': 'whatsAppBusinessScopedIds'
         }
 
         self._phone_number = None
         self._display_name = None
+        self._username = None
+        self._whats_app_business_scoped_ids = None
 
     @property
     def phone_number(self) -> 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber':
@@ -108,6 +115,54 @@ class ExternalContactsUnresolvedContactChangedTopicWhatsAppId(object):
         
 
         self._display_name = display_name
+
+    @property
+    def username(self) -> str:
+        """
+        Gets the username of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+
+
+        :return: The username of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username: str) -> None:
+        """
+        Sets the username of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+
+
+        :param username: The username of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+        :type: str
+        """
+        
+
+        self._username = username
+
+    @property
+    def whats_app_business_scoped_ids(self) -> List['ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId']:
+        """
+        Gets the whats_app_business_scoped_ids of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+
+
+        :return: The whats_app_business_scoped_ids of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+        :rtype: list[ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId]
+        """
+        return self._whats_app_business_scoped_ids
+
+    @whats_app_business_scoped_ids.setter
+    def whats_app_business_scoped_ids(self, whats_app_business_scoped_ids: List['ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId']) -> None:
+        """
+        Sets the whats_app_business_scoped_ids of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+
+
+        :param whats_app_business_scoped_ids: The whats_app_business_scoped_ids of this ExternalContactsUnresolvedContactChangedTopicWhatsAppId.
+        :type: list[ExternalContactsUnresolvedContactChangedTopicWhatsAppBusinessScopedId]
+        """
+        
+
+        self._whats_app_business_scoped_ids = whats_app_business_scoped_ids
 
     def to_dict(self):
         """

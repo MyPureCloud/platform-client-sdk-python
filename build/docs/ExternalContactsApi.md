@@ -69,7 +69,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_scan_relationships_divisionviews_all**](#get_externalcontacts_scan_relationships_divisionviews_all) | Scan for relationships|
 |[**patch_externalcontacts_contact**](#patch_externalcontacts_contact) | Update specific fields of an external contact|
 |[**patch_externalcontacts_contact_identifiers**](#patch_externalcontacts_contact_identifiers) | Claim or release identifiers for a contact|
+|[**patch_externalcontacts_contact_note**](#patch_externalcontacts_contact_note) | Update a Contact Note|
+|[**patch_externalcontacts_organization**](#patch_externalcontacts_organization) | Update specific fields of an external organization|
 |[**patch_externalcontacts_organization_identifiers**](#patch_externalcontacts_organization_identifiers) | Claim or release identifiers for an external organization|
+|[**patch_externalcontacts_organization_note**](#patch_externalcontacts_organization_note) | Update an External Organization Note|
+|[**patch_externalcontacts_relationship**](#patch_externalcontacts_relationship) | Update specific fields of a relationship|
 |[**post_externalcontacts_bulk_contacts**](#post_externalcontacts_bulk_contacts) | Bulk fetch contacts|
 |[**post_externalcontacts_bulk_contacts_add**](#post_externalcontacts_bulk_contacts_add) | Bulk add contacts|
 |[**post_externalcontacts_bulk_contacts_divisionviews**](#post_externalcontacts_bulk_contacts_divisionviews) | Bulk fetch contacts across divisions|
@@ -3308,6 +3312,108 @@ except ApiException as e:
 [**ContactIdentifier**](ContactIdentifier)
 
 
+## patch_externalcontacts_contact_note
+
+> [**Note**](Note) patch_externalcontacts_contact_note(contact_id, note_id, body)
+
+
+Update a Contact Note
+
+Wraps PATCH /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+contact_id = 'contact_id_example' # str | ExternalContact Id
+note_id = 'note_id_example' # str | Note Id
+body = PureCloudPlatformClientV2.ExternalContactsPatchRequest() # ExternalContactsPatchRequest | Note field to update
+
+try:
+    # Update a Contact Note
+    api_response = api_instance.patch_externalcontacts_contact_note(contact_id, note_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->patch_externalcontacts_contact_note: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact Id |  |
+| **note_id** | **str**| Note Id |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Note field to update |  |
+
+### Return type
+
+[**Note**](Note)
+
+
+## patch_externalcontacts_organization
+
+> [**ExternalOrganization**](ExternalOrganization) patch_externalcontacts_organization(external_organization_id, body)
+
+
+Update specific fields of an external organization
+
+Wraps PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_organization_id = 'external_organization_id_example' # str | External Organization ID
+body = PureCloudPlatformClientV2.ExternalContactsPatchRequest() # ExternalContactsPatchRequest | External Organization fields to update
+
+try:
+    # Update specific fields of an external organization
+    api_response = api_instance.patch_externalcontacts_organization(external_organization_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->patch_externalcontacts_organization: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_organization_id** | **str**| External Organization ID |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| External Organization fields to update |  |
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization)
+
+
 ## patch_externalcontacts_organization_identifiers
 
 > [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier) patch_externalcontacts_organization_identifiers(external_organization_id, body)
@@ -3356,6 +3462,108 @@ except ApiException as e:
 ### Return type
 
 [**ExternalOrganizationIdentifier**](ExternalOrganizationIdentifier)
+
+
+## patch_externalcontacts_organization_note
+
+> [**Note**](Note) patch_externalcontacts_organization_note(external_organization_id, note_id, body)
+
+
+Update an External Organization Note
+
+Wraps PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_organization_id = 'external_organization_id_example' # str | External Organization Id
+note_id = 'note_id_example' # str | Note Id
+body = PureCloudPlatformClientV2.ExternalContactsPatchRequest() # ExternalContactsPatchRequest | Note field to update
+
+try:
+    # Update an External Organization Note
+    api_response = api_instance.patch_externalcontacts_organization_note(external_organization_id, note_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->patch_externalcontacts_organization_note: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_organization_id** | **str**| External Organization Id |  |
+| **note_id** | **str**| Note Id |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Note field to update |  |
+
+### Return type
+
+[**Note**](Note)
+
+
+## patch_externalcontacts_relationship
+
+> [**Relationship**](Relationship) patch_externalcontacts_relationship(relationship_id, body)
+
+
+Update specific fields of a relationship
+
+Wraps PATCH /api/v2/externalcontacts/relationships/{relationshipId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+relationship_id = 'relationship_id_example' # str | Relationship Id
+body = PureCloudPlatformClientV2.ExternalContactsPatchRequest() # ExternalContactsPatchRequest | Relationship fields to update
+
+try:
+    # Update specific fields of a relationship
+    api_response = api_instance.patch_externalcontacts_relationship(relationship_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->patch_externalcontacts_relationship: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **relationship_id** | **str**| Relationship Id |  |
+| **body** | [**ExternalContactsPatchRequest**](ExternalContactsPatchRequest)| Relationship fields to update |  |
+
+### Return type
+
+[**Relationship**](Relationship)
 
 
 ## post_externalcontacts_bulk_contacts
@@ -6191,4 +6399,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 260.0.0_
+_PureCloudPlatformClientV2 261.0.0_

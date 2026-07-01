@@ -633,12 +633,13 @@ class IntegrationsApi(object):
         :param list[str] ids: Comma-separated list of integration IDs to filter by (max 100)
         :param str integration_type: Filter integrations by integration type ID
         :param str reported_state: Filter integrations by reported state (case-insensitive)
+        :param str credential_id: Filter integrations by credential ID
         :return: IntegrationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'ids', 'integration_type', 'reported_state']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'ids', 'integration_type', 'reported_state', 'credential_id']
         all_params.append('callback')
 
         params = locals()
@@ -675,6 +676,8 @@ class IntegrationsApi(object):
             query_params['integrationType'] = params['integration_type']
         if 'reported_state' in params:
             query_params['reportedState'] = params['reported_state']
+        if 'credential_id' in params:
+            query_params['credentialId'] = params['credential_id']
 
         header_params = {}
 
