@@ -39,7 +39,8 @@
 | **queue_media_settings** | [QueueConversationVideoEventTopicQueueMediaSettings](QueueConversationVideoEventTopicQueueMediaSettings) |  | [optional] |
 | **disposition** | [QueueConversationVideoEventTopicDisposition](QueueConversationVideoEventTopicDisposition) |  | [optional] |
 | **transfer_source** | str | Indicates how call reaches the agent. | [optional] |
+| **public_ip_address** | str | The reported client IP of the phone for the call. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

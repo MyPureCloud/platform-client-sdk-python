@@ -64,7 +64,8 @@
 | **barged_time** | datetime |  | [optional] |
 | **consult_participant_id** | str |  | [optional] |
 | **fax_status** | [QueueConversationCallEventTopicFaxStatus](QueueConversationCallEventTopicFaxStatus) |  | [optional] |
+| **public_ip_address** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_knowledge_knowledgebase_synchronize_job**](#delete_knowledge_knowledgebase_synchronize_job) | Delete synchronization job|
 |[**delete_knowledge_setting**](#delete_knowledge_setting) | Delete Knowledge setting.|
 |[**delete_knowledge_source**](#delete_knowledge_source) | Delete source|
+|[**delete_knowledge_source_synchronization_deletion**](#delete_knowledge_source_synchronization_deletion) | Remove a deletion entry associated with the synchronization|
+|[**delete_knowledge_source_synchronization_upload**](#delete_knowledge_source_synchronization_upload) | Remove a file upload entry associated with the synchronization|
 |[**get_knowledge_connection**](#get_knowledge_connection) | Get connection|
 |[**get_knowledge_connection_options**](#get_knowledge_connection_options) | Get connection options|
 |[**get_knowledge_connections**](#get_knowledge_connections) | Get connections|
@@ -60,6 +62,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_settings**](#get_knowledge_settings) | Get Knowledge settings.|
 |[**get_knowledge_source**](#get_knowledge_source) | Get source|
 |[**get_knowledge_source_synchronization**](#get_knowledge_source_synchronization) | Get a specific synchronization of a source.|
+|[**get_knowledge_source_synchronization_deletion**](#get_knowledge_source_synchronization_deletion) | Get a deletion entry associated with the synchronization|
+|[**get_knowledge_source_synchronization_deletions**](#get_knowledge_source_synchronization_deletions) | Get deletion entries associated with the synchronization.|
+|[**get_knowledge_source_synchronization_upload**](#get_knowledge_source_synchronization_upload) | Get a file upload entry associated with the synchronization|
+|[**get_knowledge_source_synchronization_uploads**](#get_knowledge_source_synchronization_uploads) | Get file upload entries associated with the synchronization|
 |[**get_knowledge_source_synchronizations**](#get_knowledge_source_synchronizations) | Get synchronizations of a source.|
 |[**get_knowledge_sources**](#get_knowledge_sources) | List sources|
 |[**get_knowledge_sources_synchronizations**](#get_knowledge_sources_synchronizations) | Get synchronizations of all sources of the organization.|
@@ -120,6 +126,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_search**](#post_knowledge_search) | Get Knowledge Search|
 |[**post_knowledge_search_preview**](#post_knowledge_search_preview) | Get Knowledge Search Preview|
 |[**post_knowledge_settings**](#post_knowledge_settings) | Create Knowledge setting.|
+|[**post_knowledge_source_synchronization_deletions**](#post_knowledge_source_synchronization_deletions) | Mark a previously synced file for deletion in the synchronization.|
 |[**post_knowledge_source_synchronization_uploads**](#post_knowledge_source_synchronization_uploads) | Create presigned URL for uploading a file in the synchronization.|
 |[**post_knowledge_source_synchronizations**](#post_knowledge_source_synchronizations) | Start a manual synchronization from a source.|
 |[**post_knowledge_sources**](#post_knowledge_sources) | Create a new source|
@@ -759,6 +766,108 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **source_id** | **str**| Source ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_knowledge_source_synchronization_deletion
+
+>  delete_knowledge_source_synchronization_deletion(source_id, synchronization_id, file_id)
+
+
+Remove a deletion entry associated with the synchronization
+
+Wraps DELETE /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId} 
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+file_id = 'file_id_example' # str | File ID
+
+try:
+    # Remove a deletion entry associated with the synchronization
+    api_instance.delete_knowledge_source_synchronization_deletion(source_id, synchronization_id, file_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_source_synchronization_deletion: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **file_id** | **str**| File ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_knowledge_source_synchronization_upload
+
+>  delete_knowledge_source_synchronization_upload(source_id, synchronization_id, file_id)
+
+
+Remove a file upload entry associated with the synchronization
+
+Wraps DELETE /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId} 
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+file_id = 'file_id_example' # str | File ID
+
+try:
+    # Remove a file upload entry associated with the synchronization
+    api_instance.delete_knowledge_source_synchronization_upload(source_id, synchronization_id, file_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_source_synchronization_upload: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **file_id** | **str**| File ID |  |
 
 ### Return type
 
@@ -3011,6 +3120,222 @@ except ApiException as e:
 ### Return type
 
 [**V3Synchronization**](V3Synchronization)
+
+
+## get_knowledge_source_synchronization_deletion
+
+> [**V3SynchronizationDeletion**](V3SynchronizationDeletion) get_knowledge_source_synchronization_deletion(source_id, synchronization_id, file_id)
+
+
+Get a deletion entry associated with the synchronization
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId} 
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+file_id = 'file_id_example' # str | File ID
+
+try:
+    # Get a deletion entry associated with the synchronization
+    api_response = api_instance.get_knowledge_source_synchronization_deletion(source_id, synchronization_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_source_synchronization_deletion: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **file_id** | **str**| File ID |  |
+
+### Return type
+
+[**V3SynchronizationDeletion**](V3SynchronizationDeletion)
+
+
+## get_knowledge_source_synchronization_deletions
+
+> [**V3SynchronizationDeletionListing**](V3SynchronizationDeletionListing) get_knowledge_source_synchronization_deletions(source_id, synchronization_id, before=before, after=after, page_size=page_size)
+
+
+Get deletion entries associated with the synchronization.
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions 
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileDeletion:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+
+try:
+    # Get deletion entries associated with the synchronization.
+    api_response = api_instance.get_knowledge_source_synchronization_deletions(source_id, synchronization_id, before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_source_synchronization_deletions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**V3SynchronizationDeletionListing**](V3SynchronizationDeletionListing)
+
+
+## get_knowledge_source_synchronization_upload
+
+> [**V3SynchronizationUpload**](V3SynchronizationUpload) get_knowledge_source_synchronization_upload(source_id, synchronization_id, file_id)
+
+
+Get a file upload entry associated with the synchronization
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId} 
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+file_id = 'file_id_example' # str | File ID
+
+try:
+    # Get a file upload entry associated with the synchronization
+    api_response = api_instance.get_knowledge_source_synchronization_upload(source_id, synchronization_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_source_synchronization_upload: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **file_id** | **str**| File ID |  |
+
+### Return type
+
+[**V3SynchronizationUpload**](V3SynchronizationUpload)
+
+
+## get_knowledge_source_synchronization_uploads
+
+> [**V3SynchronizationUploadListing**](V3SynchronizationUploadListing) get_knowledge_source_synchronization_uploads(source_id, synchronization_id, before=before, after=after, page_size=page_size)
+
+
+Get file upload entries associated with the synchronization
+
+Wraps GET /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads 
+
+Requires ALL permissions: 
+
+* knowledge:synchronizationFileUpload:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+
+try:
+    # Get file upload entries associated with the synchronization
+    api_response = api_instance.get_knowledge_source_synchronization_uploads(source_id, synchronization_id, before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_source_synchronization_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+
+### Return type
+
+[**V3SynchronizationUploadListing**](V3SynchronizationUploadListing)
 
 
 ## get_knowledge_source_synchronizations
@@ -6019,6 +6344,58 @@ except ApiException as e:
 [**KnowledgeSettingsResponse**](KnowledgeSettingsResponse)
 
 
+## post_knowledge_source_synchronization_deletions
+
+> [**V3SynchronizationDeletion**](V3SynchronizationDeletion) post_knowledge_source_synchronization_deletions(source_id, synchronization_id, body)
+
+
+Mark a previously synced file for deletion in the synchronization.
+
+Wraps POST /api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions 
+
+Requires ALL permissions: 
+
+* knowledge:synchronization:deleteFile
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+source_id = 'source_id_example' # str | Source ID
+synchronization_id = 'synchronization_id_example' # str | Synchronization ID
+body = PureCloudPlatformClientV2.V3SynchronizationFileDeletionRequest() # V3SynchronizationFileDeletionRequest | 
+
+try:
+    # Mark a previously synced file for deletion in the synchronization.
+    api_response = api_instance.post_knowledge_source_synchronization_deletions(source_id, synchronization_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_source_synchronization_deletions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| Source ID |  |
+| **synchronization_id** | **str**| Synchronization ID |  |
+| **body** | [**V3SynchronizationFileDeletionRequest**](V3SynchronizationFileDeletionRequest)|  |  |
+
+### Return type
+
+[**V3SynchronizationDeletion**](V3SynchronizationDeletion)
+
+
 ## post_knowledge_source_synchronization_uploads
 
 > [**V3SynchronizationUploadUrlResponse**](V3SynchronizationUploadUrlResponse) post_knowledge_source_synchronization_uploads(source_id, synchronization_id, body)
@@ -6323,4 +6700,4 @@ except ApiException as e:
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

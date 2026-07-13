@@ -1801,6 +1801,8 @@ except ApiException as e:
 
 Query for Caseplans.
 
+This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
+
 Wraps POST /api/v2/casemanagement/caseplans/query 
 
 Requires ANY permissions: 
@@ -2040,4 +2042,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

@@ -43,6 +43,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_import_jobs**](#get_externalcontacts_import_jobs) | List jobs for organization|
 |[**get_externalcontacts_import_setting**](#get_externalcontacts_import_setting) | Get setting based on id|
 |[**get_externalcontacts_import_settings**](#get_externalcontacts_import_settings) | List settings for organization|
+|[**get_externalcontacts_notes_export**](#get_externalcontacts_notes_export) | Get notes export for exportId|
+|[**get_externalcontacts_notes_exports**](#get_externalcontacts_notes_exports) | List note exports for organization|
 |[**get_externalcontacts_organization**](#get_externalcontacts_organization) | Fetch an external organization|
 |[**get_externalcontacts_organization_contacts**](#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
 |[**get_externalcontacts_organization_identifiers**](#get_externalcontacts_organization_identifiers) | List the identifiers for an external organization|
@@ -50,6 +52,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_organization_notes**](#get_externalcontacts_organization_notes) | List notes for an external organization|
 |[**get_externalcontacts_organization_relationships**](#get_externalcontacts_organization_relationships) | Fetch a relationship for an external organization|
 |[**get_externalcontacts_organizations**](#get_externalcontacts_organizations) | Search for external organizations|
+|[**get_externalcontacts_organizations_export**](#get_externalcontacts_organizations_export) | Get organizations export for exportId|
+|[**get_externalcontacts_organizations_exports**](#get_externalcontacts_organizations_exports) | List organization exports for organization|
 |[**get_externalcontacts_organizations_schema**](#get_externalcontacts_organizations_schema) | Get a schema|
 |[**get_externalcontacts_organizations_schema_version**](#get_externalcontacts_organizations_schema_version) | Get a specific version of a schema|
 |[**get_externalcontacts_organizations_schema_versions**](#get_externalcontacts_organizations_schema_versions) | Get all versions of an external organization&#39;s schema|
@@ -58,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_organizations_schemas_coretypes**](#get_externalcontacts_organizations_schemas_coretypes) | Get the core types from which all schemas are built.|
 |[**get_externalcontacts_organizations_schemas_limits**](#get_externalcontacts_organizations_schemas_limits) | Get quantitative limits on schemas|
 |[**get_externalcontacts_relationship**](#get_externalcontacts_relationship) | Fetch a relationship|
+|[**get_externalcontacts_relationships_export**](#get_externalcontacts_relationships_export) | Get relationships export for exportId|
+|[**get_externalcontacts_relationships_exports**](#get_externalcontacts_relationships_exports) | List relationship exports for organization|
 |[**get_externalcontacts_reversewhitepageslookup**](#get_externalcontacts_reversewhitepageslookup) | Look up contacts based on an attribute. Maximum of 25 values returned.|
 |[**get_externalcontacts_scan_contacts**](#get_externalcontacts_scan_contacts) | Scan for external contacts using paging|
 |[**get_externalcontacts_scan_contacts_divisionviews_all**](#get_externalcontacts_scan_contacts_divisionviews_all) | Scan for external contacts using paging|
@@ -113,11 +119,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_import_jobs**](#post_externalcontacts_import_jobs) | Create a new job|
 |[**post_externalcontacts_import_settings**](#post_externalcontacts_import_settings) | Create a new settings|
 |[**post_externalcontacts_merge_contacts**](#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
+|[**post_externalcontacts_notes_exports**](#post_externalcontacts_notes_exports) | Create notes export|
 |[**post_externalcontacts_organization_notes**](#post_externalcontacts_organization_notes) | Create a note for an external organization|
 |[**post_externalcontacts_organizations**](#post_externalcontacts_organizations) | Create an external organization|
 |[**post_externalcontacts_organizations_enrich**](#post_externalcontacts_organizations_enrich) | Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.|
+|[**post_externalcontacts_organizations_exports**](#post_externalcontacts_organizations_exports) | Create organizations export|
 |[**post_externalcontacts_organizations_schemas**](#post_externalcontacts_organizations_schemas) | Create a schema|
 |[**post_externalcontacts_relationships**](#post_externalcontacts_relationships) | Create a relationship|
+|[**post_externalcontacts_relationships_exports**](#post_externalcontacts_relationships_exports) | Create relationships export|
 |[**put_externalcontacts_contact**](#put_externalcontacts_contact) | Update an external contact|
 |[**put_externalcontacts_contact_note**](#put_externalcontacts_contact_note) | Update a note for an external contact|
 |[**put_externalcontacts_contacts_schema**](#put_externalcontacts_contacts_schema) | Update a schema|
@@ -1981,6 +1990,110 @@ except ApiException as e:
 [**ContactImportSettingsEntityListing**](ContactImportSettingsEntityListing)
 
 
+## get_externalcontacts_notes_export
+
+> [**NotesExport**](NotesExport) get_externalcontacts_notes_export(export_id)
+
+
+Get notes export for exportId
+
+Wraps GET /api/v2/externalcontacts/notes/exports/{exportId} 
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+export_id = 'export_id_example' # str | Export id
+
+try:
+    # Get notes export for exportId
+    api_response = api_instance.get_externalcontacts_notes_export(export_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_notes_export: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **export_id** | **str**| Export id |  |
+
+### Return type
+
+[**NotesExport**](NotesExport)
+
+
+## get_externalcontacts_notes_exports
+
+> [**NotesExportListing**](NotesExportListing) get_externalcontacts_notes_exports(division_ids=division_ids, after=after, page_size=page_size)
+
+
+List note exports for organization
+
+Wraps GET /api/v2/externalcontacts/notes/exports 
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+division_ids = ['division_ids_example'] # list[str] | Division IDs of entities (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities (optional)
+page_size = 56 # int | Number of entities to return (optional)
+
+try:
+    # List note exports for organization
+    api_response = api_instance.get_externalcontacts_notes_exports(division_ids=division_ids, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_notes_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_ids** | [**list[str]**](str)| Division IDs of entities | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities | [optional]  |
+| **page_size** | **int**| Number of entities to return | [optional]  |
+
+### Return type
+
+[**NotesExportListing**](NotesExportListing)
+
+
 ## get_externalcontacts_organization
 
 > [**ExternalOrganization**](ExternalOrganization) get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
@@ -2371,6 +2484,108 @@ except ApiException as e:
 [**ExternalOrganizationListing**](ExternalOrganizationListing)
 
 
+## get_externalcontacts_organizations_export
+
+> [**OrganizationsExport**](OrganizationsExport) get_externalcontacts_organizations_export(export_id)
+
+
+Get organizations export for exportId
+
+Wraps GET /api/v2/externalcontacts/organizations/exports/{exportId} 
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+export_id = 'export_id_example' # str | Export id
+
+try:
+    # Get organizations export for exportId
+    api_response = api_instance.get_externalcontacts_organizations_export(export_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_export: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **export_id** | **str**| Export id |  |
+
+### Return type
+
+[**OrganizationsExport**](OrganizationsExport)
+
+
+## get_externalcontacts_organizations_exports
+
+> [**OrganizationsExportListing**](OrganizationsExportListing) get_externalcontacts_organizations_exports(division_ids=division_ids, after=after, page_size=page_size)
+
+
+List organization exports for organization
+
+Wraps GET /api/v2/externalcontacts/organizations/exports 
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+division_ids = ['division_ids_example'] # list[str] | Division IDs of entities (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities (optional)
+page_size = 56 # int | Number of entities to return (optional)
+
+try:
+    # List organization exports for organization
+    api_response = api_instance.get_externalcontacts_organizations_exports(division_ids=division_ids, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_organizations_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_ids** | [**list[str]**](str)| Division IDs of entities | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities | [optional]  |
+| **page_size** | **int**| Number of entities to return | [optional]  |
+
+### Return type
+
+[**OrganizationsExportListing**](OrganizationsExportListing)
+
+
 ## get_externalcontacts_organizations_schema
 
 > [**DataSchema**](DataSchema) get_externalcontacts_organizations_schema(schema_id)
@@ -2746,6 +2961,108 @@ except ApiException as e:
 ### Return type
 
 [**Relationship**](Relationship)
+
+
+## get_externalcontacts_relationships_export
+
+> [**RelationshipsExport**](RelationshipsExport) get_externalcontacts_relationships_export(export_id)
+
+
+Get relationships export for exportId
+
+Wraps GET /api/v2/externalcontacts/relationships/exports/{exportId} 
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+export_id = 'export_id_example' # str | Export id
+
+try:
+    # Get relationships export for exportId
+    api_response = api_instance.get_externalcontacts_relationships_export(export_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_relationships_export: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **export_id** | **str**| Export id |  |
+
+### Return type
+
+[**RelationshipsExport**](RelationshipsExport)
+
+
+## get_externalcontacts_relationships_exports
+
+> [**RelationshipsExportListing**](RelationshipsExportListing) get_externalcontacts_relationships_exports(division_ids=division_ids, after=after, page_size=page_size)
+
+
+List relationship exports for organization
+
+Wraps GET /api/v2/externalcontacts/relationships/exports 
+
+Requires ALL permissions: 
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+division_ids = ['division_ids_example'] # list[str] | Division IDs of entities (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities (optional)
+page_size = 56 # int | Number of entities to return (optional)
+
+try:
+    # List relationship exports for organization
+    api_response = api_instance.get_externalcontacts_relationships_exports(division_ids=division_ids, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_relationships_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **division_ids** | [**list[str]**](str)| Division IDs of entities | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities | [optional]  |
+| **page_size** | **int**| Number of entities to return | [optional]  |
+
+### Return type
+
+[**RelationshipsExportListing**](RelationshipsExportListing)
 
 
 ## get_externalcontacts_reversewhitepageslookup
@@ -5489,6 +5806,56 @@ except ApiException as e:
 [**ExternalContact**](ExternalContact)
 
 
+## post_externalcontacts_notes_exports
+
+> [**NotesExport**](NotesExport) post_externalcontacts_notes_exports(body)
+
+
+Create notes export
+
+Wraps POST /api/v2/externalcontacts/notes/exports 
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.NotesExport() # NotesExport | Export
+
+try:
+    # Create notes export
+    api_response = api_instance.post_externalcontacts_notes_exports(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_notes_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**NotesExport**](NotesExport)| Export |  |
+
+### Return type
+
+[**NotesExport**](NotesExport)
+
+
 ## post_externalcontacts_organization_notes
 
 > [**Note**](Note) post_externalcontacts_organization_notes(external_organization_id, body)
@@ -5641,6 +6008,55 @@ except ApiException as e:
 [**ExternalOrganization**](ExternalOrganization)
 
 
+## post_externalcontacts_organizations_exports
+
+> [**OrganizationsExport**](OrganizationsExport) post_externalcontacts_organizations_exports(body)
+
+
+Create organizations export
+
+Wraps POST /api/v2/externalcontacts/organizations/exports 
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.OrganizationsExport() # OrganizationsExport | Export
+
+try:
+    # Create organizations export
+    api_response = api_instance.post_externalcontacts_organizations_exports(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_organizations_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OrganizationsExport**](OrganizationsExport)| Export |  |
+
+### Return type
+
+[**OrganizationsExport**](OrganizationsExport)
+
+
 ## post_externalcontacts_organizations_schemas
 
 > [**DataSchema**](DataSchema) post_externalcontacts_organizations_schemas(body)
@@ -5736,6 +6152,55 @@ except ApiException as e:
 ### Return type
 
 [**Relationship**](Relationship)
+
+
+## post_externalcontacts_relationships_exports
+
+> [**RelationshipsExport**](RelationshipsExport) post_externalcontacts_relationships_exports(body)
+
+
+Create relationships export
+
+Wraps POST /api/v2/externalcontacts/relationships/exports 
+
+Requires ALL permissions: 
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.RelationshipsExport() # RelationshipsExport | Export
+
+try:
+    # Create relationships export
+    api_response = api_instance.post_externalcontacts_relationships_exports(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_relationships_exports: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RelationshipsExport**](RelationshipsExport)| Export |  |
+
+### Return type
+
+[**RelationshipsExport**](RelationshipsExport)
 
 
 ## put_externalcontacts_contact
@@ -6399,4 +6864,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

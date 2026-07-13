@@ -1370,4 +1370,4 @@ except ApiException as e:
 [**list[UserPresence]**](UserPresence)
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_
