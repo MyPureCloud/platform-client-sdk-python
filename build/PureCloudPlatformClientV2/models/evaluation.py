@@ -36,8 +36,10 @@ if TYPE_CHECKING:
     from . import Calibration
     from . import ConversationReference
     from . import EvaluationForm
+    from . import EvaluationReference
     from . import EvaluationScoringSet
     from . import EvaluationSource
+    from . import PagelessDomainEntityListingEvaluationVersion
     from . import Queue
     from . import Team
     from . import User
@@ -92,6 +94,12 @@ class Evaluation(object):
             'authorized_actions': 'list[str]',
             'has_assistance_failed': 'bool',
             'evaluation_source': 'EvaluationSource',
+            'dispute_count': 'int',
+            'version': 'int',
+            'version_history': 'PagelessDomainEntityListingEvaluationVersion',
+            'declined_review': 'bool',
+            'evaluation_context_id': 'str',
+            'retracted_evaluation': 'EvaluationReference',
             'ai_scoring': 'AiScoring',
             'self_uri': 'str'
         }
@@ -132,6 +140,12 @@ class Evaluation(object):
             'authorized_actions': 'authorizedActions',
             'has_assistance_failed': 'hasAssistanceFailed',
             'evaluation_source': 'evaluationSource',
+            'dispute_count': 'disputeCount',
+            'version': 'version',
+            'version_history': 'versionHistory',
+            'declined_review': 'declinedReview',
+            'evaluation_context_id': 'evaluationContextId',
+            'retracted_evaluation': 'retractedEvaluation',
             'ai_scoring': 'aiScoring',
             'self_uri': 'selfUri'
         }
@@ -171,6 +185,12 @@ class Evaluation(object):
         self._authorized_actions = None
         self._has_assistance_failed = None
         self._evaluation_source = None
+        self._dispute_count = None
+        self._version = None
+        self._version_history = None
+        self._declined_review = None
+        self._evaluation_context_id = None
+        self._retracted_evaluation = None
         self._ai_scoring = None
         self._self_uri = None
 
@@ -1023,6 +1043,150 @@ class Evaluation(object):
         
 
         self._evaluation_source = evaluation_source
+
+    @property
+    def dispute_count(self) -> int:
+        """
+        Gets the dispute_count of this Evaluation.
+        The number of times this evaluation has been disputed
+
+        :return: The dispute_count of this Evaluation.
+        :rtype: int
+        """
+        return self._dispute_count
+
+    @dispute_count.setter
+    def dispute_count(self, dispute_count: int) -> None:
+        """
+        Sets the dispute_count of this Evaluation.
+        The number of times this evaluation has been disputed
+
+        :param dispute_count: The dispute_count of this Evaluation.
+        :type: int
+        """
+        
+
+        self._dispute_count = dispute_count
+
+    @property
+    def version(self) -> int:
+        """
+        Gets the version of this Evaluation.
+        The evaluation version number
+
+        :return: The version of this Evaluation.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version: int) -> None:
+        """
+        Sets the version of this Evaluation.
+        The evaluation version number
+
+        :param version: The version of this Evaluation.
+        :type: int
+        """
+        
+
+        self._version = version
+
+    @property
+    def version_history(self) -> 'PagelessDomainEntityListingEvaluationVersion':
+        """
+        Gets the version_history of this Evaluation.
+        List of all versions of the evaluation
+
+        :return: The version_history of this Evaluation.
+        :rtype: PagelessDomainEntityListingEvaluationVersion
+        """
+        return self._version_history
+
+    @version_history.setter
+    def version_history(self, version_history: 'PagelessDomainEntityListingEvaluationVersion') -> None:
+        """
+        Sets the version_history of this Evaluation.
+        List of all versions of the evaluation
+
+        :param version_history: The version_history of this Evaluation.
+        :type: PagelessDomainEntityListingEvaluationVersion
+        """
+        
+
+        self._version_history = version_history
+
+    @property
+    def declined_review(self) -> bool:
+        """
+        Gets the declined_review of this Evaluation.
+        Is true when the evaluation review was declined
+
+        :return: The declined_review of this Evaluation.
+        :rtype: bool
+        """
+        return self._declined_review
+
+    @declined_review.setter
+    def declined_review(self, declined_review: bool) -> None:
+        """
+        Sets the declined_review of this Evaluation.
+        Is true when the evaluation review was declined
+
+        :param declined_review: The declined_review of this Evaluation.
+        :type: bool
+        """
+        
+
+        self._declined_review = declined_review
+
+    @property
+    def evaluation_context_id(self) -> str:
+        """
+        Gets the evaluation_context_id of this Evaluation.
+        The shared id for different versions of an evaluation
+
+        :return: The evaluation_context_id of this Evaluation.
+        :rtype: str
+        """
+        return self._evaluation_context_id
+
+    @evaluation_context_id.setter
+    def evaluation_context_id(self, evaluation_context_id: str) -> None:
+        """
+        Sets the evaluation_context_id of this Evaluation.
+        The shared id for different versions of an evaluation
+
+        :param evaluation_context_id: The evaluation_context_id of this Evaluation.
+        :type: str
+        """
+        
+
+        self._evaluation_context_id = evaluation_context_id
+
+    @property
+    def retracted_evaluation(self) -> 'EvaluationReference':
+        """
+        Gets the retracted_evaluation of this Evaluation.
+        The previous evaluation version
+
+        :return: The retracted_evaluation of this Evaluation.
+        :rtype: EvaluationReference
+        """
+        return self._retracted_evaluation
+
+    @retracted_evaluation.setter
+    def retracted_evaluation(self, retracted_evaluation: 'EvaluationReference') -> None:
+        """
+        Sets the retracted_evaluation of this Evaluation.
+        The previous evaluation version
+
+        :param retracted_evaluation: The retracted_evaluation of this Evaluation.
+        :type: EvaluationReference
+        """
+        
+
+        self._retracted_evaluation = retracted_evaluation
 
     @property
     def ai_scoring(self) -> 'AiScoring':

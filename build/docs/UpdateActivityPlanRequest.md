@@ -16,7 +16,12 @@
 | **optimization_objective** | str | The optimization objective of this activity plan | [optional] |
 | **state** | str | The state of this activity plan | [optional] |
 | **fixed_availability** | [ListWrapperFixedAvailability](ListWrapperFixedAvailability) | Fixed availability configuration for the activity plan | [optional] |
+| **activity_code_id** | str | The activity code associated with the activity plan | [optional] |
+| **type** | str | The type of the activity plan | [optional] |
+| **length_minutes** | int | The length in minutes of the activity plan | [optional] |
+| **counts_as_paid_time** | bool | Whether the activity should count as paid time | [optional] |
+| **recurrence_settings** | [RecurrenceSettingsBase](RecurrenceSettingsBase) | Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once | [optional] |
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

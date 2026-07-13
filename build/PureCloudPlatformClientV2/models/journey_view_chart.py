@@ -54,6 +54,7 @@ class JourneyViewChart(object):
             'id': 'str',
             'name': 'str',
             'version': 'int',
+            'rank': 'int',
             'group_by_time': 'str',
             'group_by_attributes': 'list[JourneyViewChartGroupByAttribute]',
             'metrics': 'list[JourneyViewChartMetric]',
@@ -66,6 +67,7 @@ class JourneyViewChart(object):
             'id': 'id',
             'name': 'name',
             'version': 'version',
+            'rank': 'rank',
             'group_by_time': 'groupByTime',
             'group_by_attributes': 'groupByAttributes',
             'metrics': 'metrics',
@@ -77,6 +79,7 @@ class JourneyViewChart(object):
         self._id = None
         self._name = None
         self._version = None
+        self._rank = None
         self._group_by_time = None
         self._group_by_attributes = None
         self._metrics = None
@@ -155,6 +158,30 @@ class JourneyViewChart(object):
         
 
         self._version = version
+
+    @property
+    def rank(self) -> int:
+        """
+        Gets the rank of this JourneyViewChart.
+        The rank of the journey view chart for ordering display
+
+        :return: The rank of this JourneyViewChart.
+        :rtype: int
+        """
+        return self._rank
+
+    @rank.setter
+    def rank(self, rank: int) -> None:
+        """
+        Sets the rank of this JourneyViewChart.
+        The rank of the journey view chart for ordering display
+
+        :param rank: The rank of this JourneyViewChart.
+        :type: int
+        """
+        
+
+        self._rank = rank
 
     @property
     def group_by_time(self) -> str:

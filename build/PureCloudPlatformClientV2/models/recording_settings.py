@@ -51,7 +51,8 @@ class RecordingSettings(object):
             'max_configurable_screen_recording_streams': 'int',
             'regional_recording_storage_enabled': 'bool',
             'recording_playback_url_ttl': 'int',
-            'recording_batch_download_url_ttl': 'int'
+            'recording_batch_download_url_ttl': 'int',
+            'stop_recording_when_only_external_participants': 'bool'
         }
 
         self.attribute_map = {
@@ -59,7 +60,8 @@ class RecordingSettings(object):
             'max_configurable_screen_recording_streams': 'maxConfigurableScreenRecordingStreams',
             'regional_recording_storage_enabled': 'regionalRecordingStorageEnabled',
             'recording_playback_url_ttl': 'recordingPlaybackUrlTtl',
-            'recording_batch_download_url_ttl': 'recordingBatchDownloadUrlTtl'
+            'recording_batch_download_url_ttl': 'recordingBatchDownloadUrlTtl',
+            'stop_recording_when_only_external_participants': 'stopRecordingWhenOnlyExternalParticipants'
         }
 
         self._max_simultaneous_streams = None
@@ -67,6 +69,7 @@ class RecordingSettings(object):
         self._regional_recording_storage_enabled = None
         self._recording_playback_url_ttl = None
         self._recording_batch_download_url_ttl = None
+        self._stop_recording_when_only_external_participants = None
 
     @property
     def max_simultaneous_streams(self) -> int:
@@ -187,6 +190,30 @@ class RecordingSettings(object):
         
 
         self._recording_batch_download_url_ttl = recording_batch_download_url_ttl
+
+    @property
+    def stop_recording_when_only_external_participants(self) -> bool:
+        """
+        Gets the stop_recording_when_only_external_participants of this RecordingSettings.
+        Whether to stop recording in conference when only external participants remain
+
+        :return: The stop_recording_when_only_external_participants of this RecordingSettings.
+        :rtype: bool
+        """
+        return self._stop_recording_when_only_external_participants
+
+    @stop_recording_when_only_external_participants.setter
+    def stop_recording_when_only_external_participants(self, stop_recording_when_only_external_participants: bool) -> None:
+        """
+        Sets the stop_recording_when_only_external_participants of this RecordingSettings.
+        Whether to stop recording in conference when only external participants remain
+
+        :param stop_recording_when_only_external_participants: The stop_recording_when_only_external_participants of this RecordingSettings.
+        :type: bool
+        """
+        
+
+        self._stop_recording_when_only_external_participants = stop_recording_when_only_external_participants
 
     def to_dict(self):
         """

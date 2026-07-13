@@ -23,7 +23,9 @@
 | **invoking_context** | [V2FlowExecutionDataFlowidTopicInvokingContextInfo](V2FlowExecutionDataFlowidTopicInvokingContextInfo) |  | [optional] |
 | **start_date_time** | datetime | The start date time for this flow instance execution data. | [optional] |
 | **warnings** | [list[V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo]](V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo) | If the flow encountered a warning during execution, this is an array of the warnings. | [optional] |
+| **execution_history_uri** | str | A signed URI to download the execution history data. | [optional] |
+| **execution_history_uri_ttl** | int | Time to live in seconds for the executionHistoryUri. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

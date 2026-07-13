@@ -33,10 +33,10 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CaseExternalContactReference
+    from . import CaseUserReference
     from . import CaseplanReference
     from . import CustomerIntentReference
     from . import StarrableDivision
-    from . import UserReference
 
 class Case(object):
     """
@@ -60,7 +60,7 @@ class Case(object):
             'reference': 'str',
             'caseplan': 'CaseplanReference',
             'summary': 'str',
-            'owner': 'UserReference',
+            'owner': 'CaseUserReference',
             'status': 'str',
             'priority': 'str',
             'date_due': 'datetime',
@@ -68,7 +68,7 @@ class Case(object):
             'date_closed': 'datetime',
             'date_created': 'datetime',
             'date_modified': 'datetime',
-            'modified_by': 'UserReference',
+            'modified_by': 'CaseUserReference',
             'external_contact': 'CaseExternalContactReference',
             'customer_intent': 'CustomerIntentReference',
             'creation_status': 'str',
@@ -291,24 +291,24 @@ class Case(object):
         self._summary = summary
 
     @property
-    def owner(self) -> 'UserReference':
+    def owner(self) -> 'CaseUserReference':
         """
         Gets the owner of this Case.
         The owner of the Case.
 
         :return: The owner of this Case.
-        :rtype: UserReference
+        :rtype: CaseUserReference
         """
         return self._owner
 
     @owner.setter
-    def owner(self, owner: 'UserReference') -> None:
+    def owner(self, owner: 'CaseUserReference') -> None:
         """
         Sets the owner of this Case.
         The owner of the Case.
 
         :param owner: The owner of this Case.
-        :type: UserReference
+        :type: CaseUserReference
         """
         
 
@@ -493,24 +493,24 @@ class Case(object):
         self._date_modified = date_modified
 
     @property
-    def modified_by(self) -> 'UserReference':
+    def modified_by(self) -> 'CaseUserReference':
         """
         Gets the modified_by of this Case.
         The ID of the User who modified the Case.
 
         :return: The modified_by of this Case.
-        :rtype: UserReference
+        :rtype: CaseUserReference
         """
         return self._modified_by
 
     @modified_by.setter
-    def modified_by(self, modified_by: 'UserReference') -> None:
+    def modified_by(self, modified_by: 'CaseUserReference') -> None:
         """
         Sets the modified_by of this Case.
         The ID of the User who modified the Case.
 
         :param modified_by: The modified_by of this Case.
-        :type: UserReference
+        :type: CaseUserReference
         """
         
 

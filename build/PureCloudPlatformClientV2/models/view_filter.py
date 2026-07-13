@@ -295,7 +295,8 @@ class ViewFilter(object):
             'screen_monitored': 'bool',
             'engagement_sources': 'list[str]',
             'is_snippet_recorded': 'bool',
-            'takeover': 'bool'
+            'takeover': 'bool',
+            'social_post_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -539,7 +540,8 @@ class ViewFilter(object):
             'screen_monitored': 'screenMonitored',
             'engagement_sources': 'engagementSources',
             'is_snippet_recorded': 'isSnippetRecorded',
-            'takeover': 'takeover'
+            'takeover': 'takeover',
+            'social_post_types': 'socialPostTypes'
         }
 
         self._media_types = None
@@ -783,6 +785,7 @@ class ViewFilter(object):
         self._engagement_sources = None
         self._is_snippet_recorded = None
         self._takeover = None
+        self._social_post_types = None
 
     @property
     def media_types(self) -> List[str]:
@@ -6597,6 +6600,30 @@ class ViewFilter(object):
         
 
         self._takeover = takeover
+
+    @property
+    def social_post_types(self) -> List[str]:
+        """
+        Gets the social_post_types of this ViewFilter.
+        The social post types used to filter the view
+
+        :return: The social_post_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._social_post_types
+
+    @social_post_types.setter
+    def social_post_types(self, social_post_types: List[str]) -> None:
+        """
+        Sets the social_post_types of this ViewFilter.
+        The social post types used to filter the view
+
+        :param social_post_types: The social_post_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._social_post_types = social_post_types
 
     def to_dict(self):
         """

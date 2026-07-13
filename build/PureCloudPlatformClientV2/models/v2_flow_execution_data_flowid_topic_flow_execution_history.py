@@ -67,7 +67,9 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
             'message_type': 'str',
             'invoking_context': 'V2FlowExecutionDataFlowidTopicInvokingContextInfo',
             'start_date_time': 'datetime',
-            'warnings': 'list[V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo]'
+            'warnings': 'list[V2FlowExecutionDataFlowidTopicFlowErrorWarningInfo]',
+            'execution_history_uri': 'str',
+            'execution_history_uri_ttl': 'int'
         }
 
         self.attribute_map = {
@@ -87,7 +89,9 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
             'message_type': 'messageType',
             'invoking_context': 'invokingContext',
             'start_date_time': 'startDateTime',
-            'warnings': 'warnings'
+            'warnings': 'warnings',
+            'execution_history_uri': 'executionHistoryUri',
+            'execution_history_uri_ttl': 'executionHistoryUriTtl'
         }
 
         self._execution_id = None
@@ -107,6 +111,8 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
         self._invoking_context = None
         self._start_date_time = None
         self._warnings = None
+        self._execution_history_uri = None
+        self._execution_history_uri_ttl = None
 
     @property
     def execution_id(self) -> str:
@@ -520,6 +526,54 @@ class V2FlowExecutionDataFlowidTopicFlowExecutionHistory(object):
         
 
         self._warnings = warnings
+
+    @property
+    def execution_history_uri(self) -> str:
+        """
+        Gets the execution_history_uri of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        A signed URI to download the execution history data.
+
+        :return: The execution_history_uri of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        :rtype: str
+        """
+        return self._execution_history_uri
+
+    @execution_history_uri.setter
+    def execution_history_uri(self, execution_history_uri: str) -> None:
+        """
+        Sets the execution_history_uri of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        A signed URI to download the execution history data.
+
+        :param execution_history_uri: The execution_history_uri of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        :type: str
+        """
+        
+
+        self._execution_history_uri = execution_history_uri
+
+    @property
+    def execution_history_uri_ttl(self) -> int:
+        """
+        Gets the execution_history_uri_ttl of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        Time to live in seconds for the executionHistoryUri.
+
+        :return: The execution_history_uri_ttl of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        :rtype: int
+        """
+        return self._execution_history_uri_ttl
+
+    @execution_history_uri_ttl.setter
+    def execution_history_uri_ttl(self, execution_history_uri_ttl: int) -> None:
+        """
+        Sets the execution_history_uri_ttl of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        Time to live in seconds for the executionHistoryUri.
+
+        :param execution_history_uri_ttl: The execution_history_uri_ttl of this V2FlowExecutionDataFlowidTopicFlowExecutionHistory.
+        :type: int
+        """
+        
+
+        self._execution_history_uri_ttl = execution_history_uri_ttl
 
     def to_dict(self):
         """

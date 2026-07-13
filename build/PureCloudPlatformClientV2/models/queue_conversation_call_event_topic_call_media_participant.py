@@ -114,7 +114,8 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'barged_participant_id': 'str',
             'barged_time': 'datetime',
             'consult_participant_id': 'str',
-            'fax_status': 'QueueConversationCallEventTopicFaxStatus'
+            'fax_status': 'QueueConversationCallEventTopicFaxStatus',
+            'public_ip_address': 'str'
         }
 
         self.attribute_map = {
@@ -175,7 +176,8 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'barged_participant_id': 'bargedParticipantId',
             'barged_time': 'bargedTime',
             'consult_participant_id': 'consultParticipantId',
-            'fax_status': 'faxStatus'
+            'fax_status': 'faxStatus',
+            'public_ip_address': 'publicIpAddress'
         }
 
         self._id = None
@@ -236,6 +238,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         self._barged_time = None
         self._consult_participant_id = None
         self._fax_status = None
+        self._public_ip_address = None
 
     @property
     def id(self) -> str:
@@ -1658,6 +1661,30 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         
 
         self._fax_status = fax_status
+
+    @property
+    def public_ip_address(self) -> str:
+        """
+        Gets the public_ip_address of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The public_ip_address of this QueueConversationCallEventTopicCallMediaParticipant.
+        :rtype: str
+        """
+        return self._public_ip_address
+
+    @public_ip_address.setter
+    def public_ip_address(self, public_ip_address: str) -> None:
+        """
+        Sets the public_ip_address of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :param public_ip_address: The public_ip_address of this QueueConversationCallEventTopicCallMediaParticipant.
+        :type: str
+        """
+        
+
+        self._public_ip_address = public_ip_address
 
     def to_dict(self):
         """

@@ -24,7 +24,8 @@
 | **state** | str | The state of this activity plan | |
 | **counts_as_paid_time** | bool | Whether the activity should count as paid time | |
 | **fixed_availability** | [list[FixedAvailability]](FixedAvailability) | Fixed availability configuration for the activity plan | [optional] |
+| **start_time_increment_minutes** | int | The valid start times available when scheduling sessions | [optional] |
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

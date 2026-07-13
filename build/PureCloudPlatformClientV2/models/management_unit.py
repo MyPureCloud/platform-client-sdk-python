@@ -62,8 +62,8 @@ class ManagementUnit(object):
             'metadata': 'WfmVersionedEntityMetadata',
             'division': 'DivisionReference',
             'modified_by': 'UserReference',
-            'version': 'int',
             'date_modified': 'datetime',
+            'version': 'int',
             'self_uri': 'str'
         }
 
@@ -77,8 +77,8 @@ class ManagementUnit(object):
             'metadata': 'metadata',
             'division': 'division',
             'modified_by': 'modifiedBy',
-            'version': 'version',
             'date_modified': 'dateModified',
+            'version': 'version',
             'self_uri': 'selfUri'
         }
 
@@ -91,8 +91,8 @@ class ManagementUnit(object):
         self._metadata = None
         self._division = None
         self._modified_by = None
-        self._version = None
         self._date_modified = None
+        self._version = None
         self._self_uri = None
 
     @property
@@ -317,30 +317,6 @@ class ManagementUnit(object):
         self._modified_by = modified_by
 
     @property
-    def version(self) -> int:
-        """
-        Gets the version of this ManagementUnit.
-        The version of the underlying entity.  Deprecated, use field from settings.metadata instead
-
-        :return: The version of this ManagementUnit.
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version: int) -> None:
-        """
-        Sets the version of this ManagementUnit.
-        The version of the underlying entity.  Deprecated, use field from settings.metadata instead
-
-        :param version: The version of this ManagementUnit.
-        :type: int
-        """
-        
-
-        self._version = version
-
-    @property
     def date_modified(self) -> datetime:
         """
         Gets the date_modified of this ManagementUnit.
@@ -363,6 +339,30 @@ class ManagementUnit(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def version(self) -> int:
+        """
+        Gets the version of this ManagementUnit.
+        The version of the underlying entity.  Deprecated, use field from settings.metadata instead
+
+        :return: The version of this ManagementUnit.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version: int) -> None:
+        """
+        Sets the version of this ManagementUnit.
+        The version of the underlying entity.  Deprecated, use field from settings.metadata instead
+
+        :param version: The version of this ManagementUnit.
+        :type: int
+        """
+        
+
+        self._version = version
 
     @property
     def self_uri(self) -> str:

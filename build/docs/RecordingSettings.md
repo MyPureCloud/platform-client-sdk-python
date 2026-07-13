@@ -11,7 +11,8 @@
 | **regional_recording_storage_enabled** | bool | Store call recordings in the region where they are intended to be recorded, otherwise in the organization&#39;s home region | [optional] |
 | **recording_playback_url_ttl** | int | The duration in minutes for which the generated URL for recording playback remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes. | [optional] |
 | **recording_batch_download_url_ttl** | int | The duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes. | [optional] |
+| **stop_recording_when_only_external_participants** | bool | Whether to stop recording in conference when only external participants remain | [optional] |
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

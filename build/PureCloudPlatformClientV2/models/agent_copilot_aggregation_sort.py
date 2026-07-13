@@ -81,7 +81,7 @@ class AgentCopilotAggregationSort(object):
         """
         if isinstance(name, int):
             name = str(name)
-        allowed_values = ["nCannedResponseSuggestions", "nDistinctSuggestions", "nKnowledgeAnswerSuggestions", "nKnowledgeArticleSuggestions", "nKnowledgeSearchSuggestions", "nScriptSuggestions"]
+        allowed_values = ["nCannedResponseSuggestions", "nDistinctConversations", "nDistinctSuggestions", "nKnowledgeAnswerSuggestions", "nKnowledgeArticleSuggestions", "nKnowledgeSearchSuggestions", "nScriptSuggestions"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"

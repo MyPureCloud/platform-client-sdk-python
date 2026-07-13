@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CaseplanFilter
 
 class CaseplanQueryRequest(object):
     """
@@ -49,24 +51,30 @@ class CaseplanQueryRequest(object):
         self.swagger_types = {
             'name': 'str',
             'name_search_type': 'str',
+            'division_ids': 'list[str]',
+            'filters': 'list[CaseplanFilter]',
+            'attributes': 'list[str]',
             'page_size': 'int',
-            'after': 'str',
-            'division_ids': 'list[str]'
+            'after': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
             'name_search_type': 'nameSearchType',
+            'division_ids': 'divisionIds',
+            'filters': 'filters',
+            'attributes': 'attributes',
             'page_size': 'pageSize',
-            'after': 'after',
-            'division_ids': 'divisionIds'
+            'after': 'after'
         }
 
         self._name = None
         self._name_search_type = None
+        self._division_ids = None
+        self._filters = None
+        self._attributes = None
         self._page_size = None
         self._after = None
-        self._division_ids = None
 
     @property
     def name(self) -> str:
@@ -128,6 +136,78 @@ class CaseplanQueryRequest(object):
             self._name_search_type = name_search_type
 
     @property
+    def division_ids(self) -> List[str]:
+        """
+        Gets the division_ids of this CaseplanQueryRequest.
+        Divisions to filter by. Accepts a list of UUIDs and/or '*'.
+
+        :return: The division_ids of this CaseplanQueryRequest.
+        :rtype: list[str]
+        """
+        return self._division_ids
+
+    @division_ids.setter
+    def division_ids(self, division_ids: List[str]) -> None:
+        """
+        Sets the division_ids of this CaseplanQueryRequest.
+        Divisions to filter by. Accepts a list of UUIDs and/or '*'.
+
+        :param division_ids: The division_ids of this CaseplanQueryRequest.
+        :type: list[str]
+        """
+        
+
+        self._division_ids = division_ids
+
+    @property
+    def filters(self) -> List['CaseplanFilter']:
+        """
+        Gets the filters of this CaseplanQueryRequest.
+        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.
+
+        :return: The filters of this CaseplanQueryRequest.
+        :rtype: list[CaseplanFilter]
+        """
+        return self._filters
+
+    @filters.setter
+    def filters(self, filters: List['CaseplanFilter']) -> None:
+        """
+        Sets the filters of this CaseplanQueryRequest.
+        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.
+
+        :param filters: The filters of this CaseplanQueryRequest.
+        :type: list[CaseplanFilter]
+        """
+        
+
+        self._filters = filters
+
+    @property
+    def attributes(self) -> List[str]:
+        """
+        Gets the attributes of this CaseplanQueryRequest.
+        List of entity attributes to be retrieved in the result.
+
+        :return: The attributes of this CaseplanQueryRequest.
+        :rtype: list[str]
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes: List[str]) -> None:
+        """
+        Sets the attributes of this CaseplanQueryRequest.
+        List of entity attributes to be retrieved in the result.
+
+        :param attributes: The attributes of this CaseplanQueryRequest.
+        :type: list[str]
+        """
+        
+
+        self._attributes = attributes
+
+    @property
     def page_size(self) -> int:
         """
         Gets the page_size of this CaseplanQueryRequest.
@@ -180,30 +260,6 @@ class CaseplanQueryRequest(object):
         
 
         self._after = after
-
-    @property
-    def division_ids(self) -> List[str]:
-        """
-        Gets the division_ids of this CaseplanQueryRequest.
-        Divisions to filter by. Accepts a list of UUIDs and/or '*'.
-
-        :return: The division_ids of this CaseplanQueryRequest.
-        :rtype: list[str]
-        """
-        return self._division_ids
-
-    @division_ids.setter
-    def division_ids(self, division_ids: List[str]) -> None:
-        """
-        Sets the division_ids of this CaseplanQueryRequest.
-        Divisions to filter by. Accepts a list of UUIDs and/or '*'.
-
-        :param division_ids: The division_ids of this CaseplanQueryRequest.
-        :type: list[str]
-        """
-        
-
-        self._division_ids = division_ids
 
     def to_dict(self):
         """

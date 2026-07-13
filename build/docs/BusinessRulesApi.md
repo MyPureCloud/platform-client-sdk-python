@@ -41,7 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_businessrules_decisiontable_version_rows_bulk_update**](#post_businessrules_decisiontable_version_rows_bulk_update) | Bulk update decision table rows|
 |[**post_businessrules_decisiontable_version_rows_search**](#post_businessrules_decisiontable_version_rows_search) | Search for decision table rows|
 |[**post_businessrules_decisiontable_version_sync**](#post_businessrules_decisiontable_version_sync) | Update the Business Rules Schema to the latest version for a given decision table version|
-|[**post_businessrules_decisiontable_versions**](#post_businessrules_decisiontable_versions) | Create a new decision table version|
+|[**post_businessrules_decisiontable_versions**](#post_businessrules_decisiontable_versions) | Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.|
 |[**post_businessrules_decisiontables**](#post_businessrules_decisiontables) | Create a decision table|
 |[**post_businessrules_schemas**](#post_businessrules_schemas) | Create a schema|
 |[**put_businessrules_decisiontable_version_publish**](#put_businessrules_decisiontable_version_publish) | Publish a decision table version|
@@ -1844,10 +1844,10 @@ except ApiException as e:
 
 ## post_businessrules_decisiontable_versions
 
-> [**DecisionTableVersion**](DecisionTableVersion) post_businessrules_decisiontable_versions(table_id)
+> [**DecisionTableVersion**](DecisionTableVersion) post_businessrules_decisiontable_versions(table_id, body=body)
 
 
-Create a new decision table version
+Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions 
 
@@ -1869,10 +1869,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 table_id = 'table_id_example' # str | Table ID
+body = PureCloudPlatformClientV2.CreateDecisionTableVersionRequest() # CreateDecisionTableVersionRequest | Decision Table Version (optional)
 
 try:
-    # Create a new decision table version
-    api_response = api_instance.post_businessrules_decisiontable_versions(table_id)
+    # Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
+    api_response = api_instance.post_businessrules_decisiontable_versions(table_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_versions: %s\n" % e)
@@ -1884,6 +1885,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **table_id** | **str**| Table ID |  |
+| **body** | [**CreateDecisionTableVersionRequest**](CreateDecisionTableVersionRequest)| Decision Table Version | [optional]  |
 
 ### Return type
 
@@ -2147,4 +2149,4 @@ except ApiException as e:
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

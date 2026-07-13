@@ -81,7 +81,7 @@ class ContactsExportFieldFilter(object):
         """
         if isinstance(field, int):
             field = str(field)
-        allowed_values = ["DivisionId", "ContactClassification", "ExternalOrganizationId"]
+        allowed_values = ["DivisionId", "ContactClassification", "ExternalOrganizationId", "ExternalSourceId", "SchemaId", "SchemaVersion"]
         if field.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for field -> " + field)
             self._field = "outdated_sdk_version"

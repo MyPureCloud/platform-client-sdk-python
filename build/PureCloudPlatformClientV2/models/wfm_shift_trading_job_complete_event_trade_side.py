@@ -50,16 +50,19 @@ class WfmShiftTradingJobCompleteEventTradeSide(object):
         """
         self.swagger_types = {
             'user_id': 'str',
-            'shift': 'WfmShiftTradingJobCompleteEventTradeShift'
+            'shift': 'WfmShiftTradingJobCompleteEventTradeShift',
+            'review_note': 'str'
         }
 
         self.attribute_map = {
             'user_id': 'userId',
-            'shift': 'shift'
+            'shift': 'shift',
+            'review_note': 'reviewNote'
         }
 
         self._user_id = None
         self._shift = None
+        self._review_note = None
 
     @property
     def user_id(self) -> str:
@@ -108,6 +111,30 @@ class WfmShiftTradingJobCompleteEventTradeSide(object):
         
 
         self._shift = shift
+
+    @property
+    def review_note(self) -> str:
+        """
+        Gets the review_note of this WfmShiftTradingJobCompleteEventTradeSide.
+
+
+        :return: The review_note of this WfmShiftTradingJobCompleteEventTradeSide.
+        :rtype: str
+        """
+        return self._review_note
+
+    @review_note.setter
+    def review_note(self, review_note: str) -> None:
+        """
+        Sets the review_note of this WfmShiftTradingJobCompleteEventTradeSide.
+
+
+        :param review_note: The review_note of this WfmShiftTradingJobCompleteEventTradeSide.
+        :type: str
+        """
+        
+
+        self._review_note = review_note
 
     def to_dict(self):
         """

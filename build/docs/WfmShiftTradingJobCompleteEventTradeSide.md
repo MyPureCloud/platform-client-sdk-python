@@ -8,7 +8,8 @@
 |------------ | ------------- | ------------- | -------------|
 | **user_id** | str |  | [optional] |
 | **shift** | [WfmShiftTradingJobCompleteEventTradeShift](WfmShiftTradingJobCompleteEventTradeShift) |  | [optional] |
+| **review_note** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

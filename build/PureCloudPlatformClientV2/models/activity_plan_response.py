@@ -82,6 +82,7 @@ class ActivityPlanResponse(object):
             'modified_by': 'UserReference',
             'last_run_date': 'datetime',
             'last_run_by': 'UserReference',
+            'start_time_increment_minutes': 'int',
             'self_uri': 'str'
         }
 
@@ -111,6 +112,7 @@ class ActivityPlanResponse(object):
             'modified_by': 'modifiedBy',
             'last_run_date': 'lastRunDate',
             'last_run_by': 'lastRunBy',
+            'start_time_increment_minutes': 'startTimeIncrementMinutes',
             'self_uri': 'selfUri'
         }
 
@@ -139,6 +141,7 @@ class ActivityPlanResponse(object):
         self._modified_by = None
         self._last_run_date = None
         self._last_run_by = None
+        self._start_time_increment_minutes = None
         self._self_uri = None
 
     @property
@@ -755,6 +758,30 @@ class ActivityPlanResponse(object):
         
 
         self._last_run_by = last_run_by
+
+    @property
+    def start_time_increment_minutes(self) -> int:
+        """
+        Gets the start_time_increment_minutes of this ActivityPlanResponse.
+        The valid start times available when scheduling sessions
+
+        :return: The start_time_increment_minutes of this ActivityPlanResponse.
+        :rtype: int
+        """
+        return self._start_time_increment_minutes
+
+    @start_time_increment_minutes.setter
+    def start_time_increment_minutes(self, start_time_increment_minutes: int) -> None:
+        """
+        Sets the start_time_increment_minutes of this ActivityPlanResponse.
+        The valid start times available when scheduling sessions
+
+        :param start_time_increment_minutes: The start_time_increment_minutes of this ActivityPlanResponse.
+        :type: int
+        """
+        
+
+        self._start_time_increment_minutes = start_time_increment_minutes
 
     @property
     def self_uri(self) -> str:

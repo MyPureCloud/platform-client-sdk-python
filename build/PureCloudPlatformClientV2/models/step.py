@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import CaseReference
     from . import StageReference
     from . import UserReference
+    from . import WorkitemActivityReference
 
 class Step(object):
     """
@@ -62,6 +63,7 @@ class Step(object):
             'version': 'int',
             'status': 'str',
             'stage': 'StageReference',
+            'workitem_activity': 'WorkitemActivityReference',
             'self_uri': 'str',
             'case': 'CaseReference'
         }
@@ -78,6 +80,7 @@ class Step(object):
             'version': 'version',
             'status': 'status',
             'stage': 'stage',
+            'workitem_activity': 'workitemActivity',
             'self_uri': 'selfUri',
             'case': 'case'
         }
@@ -93,6 +96,7 @@ class Step(object):
         self._version = None
         self._status = None
         self._stage = None
+        self._workitem_activity = None
         self._self_uri = None
         self._case = None
 
@@ -364,6 +368,30 @@ class Step(object):
         
 
         self._stage = stage
+
+    @property
+    def workitem_activity(self) -> 'WorkitemActivityReference':
+        """
+        Gets the workitem_activity of this Step.
+        The workitem activity linked to this step. Present only for workitem-type steps that have been activated.
+
+        :return: The workitem_activity of this Step.
+        :rtype: WorkitemActivityReference
+        """
+        return self._workitem_activity
+
+    @workitem_activity.setter
+    def workitem_activity(self, workitem_activity: 'WorkitemActivityReference') -> None:
+        """
+        Sets the workitem_activity of this Step.
+        The workitem activity linked to this step. Present only for workitem-type steps that have been activated.
+
+        :param workitem_activity: The workitem_activity of this Step.
+        :type: WorkitemActivityReference
+        """
+        
+
+        self._workitem_activity = workitem_activity
 
     @property
     def self_uri(self) -> str:

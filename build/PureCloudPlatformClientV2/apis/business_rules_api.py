@@ -50,6 +50,7 @@ from ..models import CoretypeListing
 from ..models import CreateDecisionTableImportJobRequest
 from ..models import CreateDecisionTableRequest
 from ..models import CreateDecisionTableRowRequest
+from ..models import CreateDecisionTableVersionRequest
 from ..models import DecisionTable
 from ..models import DecisionTableExecutionRequest
 from ..models import DecisionTableExecutionResponse
@@ -3064,7 +3065,7 @@ class BusinessRulesApi(object):
 
     def post_businessrules_decisiontable_versions(self, table_id: str, **kwargs) -> 'DecisionTableVersion':
         """
-        Create a new decision table version
+        Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3078,12 +3079,13 @@ class BusinessRulesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str table_id: Table ID (required)
+        :param CreateDecisionTableVersionRequest body: Decision Table Version
         :return: DecisionTableVersion
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['table_id']
+        all_params = ['table_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -3114,6 +3116,8 @@ class BusinessRulesApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\

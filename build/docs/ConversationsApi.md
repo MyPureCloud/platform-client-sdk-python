@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_conversations_details_job_results**](#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_conversation**](#get_conversation) | Get conversation|
+|[**get_conversation_accessattributes**](#get_conversation_accessattributes) | Get the access attributes on a conversation.|
 |[**get_conversation_assistant_copilotcontext**](#get_conversation_assistant_copilotcontext) | Get copilot context values for a conversation.|
 |[**get_conversation_communication_agentchecklist**](#get_conversation_communication_agentchecklist) | Get checklist info for a single checklist.|
 |[**get_conversation_communication_agentchecklist_job**](#get_conversation_communication_agentchecklist_job) | Get inference job status|
@@ -262,6 +263,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_email_inboundmessages**](#post_conversations_email_inboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.|
 |[**post_conversations_email_messages**](#post_conversations_email_messages) | Send an email reply|
 |[**post_conversations_email_messages_draft_attachments_copy**](#post_conversations_email_messages_draft_attachments_copy) | Copy attachments from an email message to the current draft.|
+|[**post_conversations_email_messages_draft_attachments_uploads**](#post_conversations_email_messages_draft_attachments_uploads) | Create a URL to upload a message attachment file|
 |[**post_conversations_email_participant_communication_wrapup**](#post_conversations_email_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_email_participant_replace**](#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_email_reconnect**](#post_conversations_email_reconnect) | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation|
@@ -303,6 +305,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_video_agentconference_communication**](#post_conversations_video_agentconference_communication) | Create an Agent-Type video conference and assign an agent to it|
 |[**post_conversations_video_participant_communication_wrapup**](#post_conversations_video_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_videos_meetings**](#post_conversations_videos_meetings) | Generate a meetingId for a given conferenceId|
+|[**put_conversation_accessattributes**](#put_conversation_accessattributes) | Set the access attributes on a conversation.|
 |[**put_conversation_customattributes**](#put_conversation_customattributes) | Create or update a single custom attributes record. Updating replaces all data with the provided fields.|
 |[**put_conversation_customattributes_bulk**](#put_conversation_customattributes_bulk) | Create or update a list of custom attributes records. Updating replaces all data with the provided fields.|
 |[**put_conversation_participant_flaggedreason**](#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
@@ -1679,6 +1682,56 @@ except ApiException as e:
 ### Return type
 
 [**Conversation**](Conversation)
+
+
+## get_conversation_accessattributes
+
+> [**ConversationAccessAttributesResponse**](ConversationAccessAttributesResponse) get_conversation_accessattributes(conversation_id)
+
+
+Get the access attributes on a conversation.
+
+get_conversation_accessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/accessattributes 
+
+Requires ANY permissions: 
+
+* conversation:accessAttributes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+
+try:
+    # Get the access attributes on a conversation.
+    api_response = api_instance.get_conversation_accessattributes(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_accessattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+
+### Return type
+
+[**ConversationAccessAttributesResponse**](ConversationAccessAttributesResponse)
 
 
 ## get_conversation_assistant_copilotcontext
@@ -13313,6 +13366,58 @@ except ApiException as e:
 [**EmailMessage**](EmailMessage)
 
 
+## post_conversations_email_messages_draft_attachments_uploads
+
+> [**UploadAttachmentResponse**](UploadAttachmentResponse) post_conversations_email_messages_draft_attachments_uploads(conversation_id, body)
+
+
+Create a URL to upload a message attachment file
+
+See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads 
+
+Requires ANY permissions: 
+
+* conversation:emailAttachment:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.UploadAttachmentRequest() # UploadAttachmentRequest | Create attachment pre-signed URL request
+
+try:
+    # Create a URL to upload a message attachment file
+    api_response = api_instance.post_conversations_email_messages_draft_attachments_uploads(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_email_messages_draft_attachments_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **body** | [**UploadAttachmentRequest**](UploadAttachmentRequest)| Create attachment pre-signed URL request |  |
+
+### Return type
+
+[**UploadAttachmentResponse**](UploadAttachmentResponse)
+
+
 ## post_conversations_email_participant_communication_wrapup
 
 >  post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
@@ -15416,6 +15521,58 @@ except ApiException as e:
 [**MeetingIdRecord**](MeetingIdRecord)
 
 
+## put_conversation_accessattributes
+
+> str** put_conversation_accessattributes(conversation_id, body)
+
+
+Set the access attributes on a conversation.
+
+put_conversation_accessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/conversations/{conversationId}/accessattributes 
+
+Requires ANY permissions: 
+
+* conversation:accessAttributes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.ConversationAccessAttributesUpdate() # ConversationAccessAttributesUpdate | Conversation Access Attributes
+
+try:
+    # Set the access attributes on a conversation.
+    api_response = api_instance.put_conversation_accessattributes(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversation_accessattributes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**ConversationAccessAttributesUpdate**](ConversationAccessAttributesUpdate)| Conversation Access Attributes |  |
+
+### Return type
+
+**str**
+
+
 ## put_conversation_customattributes
 
 > [**CustomAttributesIdResponse**](CustomAttributesIdResponse) put_conversation_customattributes(conversation_id, body=body)
@@ -16787,4 +16944,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

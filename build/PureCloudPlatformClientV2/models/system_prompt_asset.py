@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import AudioFormat
 
 class SystemPromptAsset(object):
     """
@@ -53,6 +55,7 @@ class SystemPromptAsset(object):
             'language': 'str',
             'duration_seconds': 'float',
             'media_uri': 'str',
+            'audio_format': 'AudioFormat',
             'tts_string': 'str',
             'text': 'str',
             'upload_uri': 'str',
@@ -70,6 +73,7 @@ class SystemPromptAsset(object):
             'language': 'language',
             'duration_seconds': 'durationSeconds',
             'media_uri': 'mediaUri',
+            'audio_format': 'audioFormat',
             'tts_string': 'ttsString',
             'text': 'text',
             'upload_uri': 'uploadUri',
@@ -86,6 +90,7 @@ class SystemPromptAsset(object):
         self._language = None
         self._duration_seconds = None
         self._media_uri = None
+        self._audio_format = None
         self._tts_string = None
         self._text = None
         self._upload_uri = None
@@ -238,6 +243,30 @@ class SystemPromptAsset(object):
         
 
         self._media_uri = media_uri
+
+    @property
+    def audio_format(self) -> 'AudioFormat':
+        """
+        Gets the audio_format of this SystemPromptAsset.
+        Audio format info
+
+        :return: The audio_format of this SystemPromptAsset.
+        :rtype: AudioFormat
+        """
+        return self._audio_format
+
+    @audio_format.setter
+    def audio_format(self, audio_format: 'AudioFormat') -> None:
+        """
+        Sets the audio_format of this SystemPromptAsset.
+        Audio format info
+
+        :param audio_format: The audio_format of this SystemPromptAsset.
+        :type: AudioFormat
+        """
+        
+
+        self._audio_format = audio_format
 
     @property
     def tts_string(self) -> str:

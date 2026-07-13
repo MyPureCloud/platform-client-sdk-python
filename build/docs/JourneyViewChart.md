@@ -9,6 +9,7 @@
 | **id** | str | The globally unique identifier for the object. | [optional] |
 | **name** | str |  | [optional] |
 | **version** | int | The version of the journey view chart | [optional] |
+| **rank** | int | The rank of the journey view chart for ordering display | [optional] |
 | **group_by_time** | str | A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified. | [optional] |
 | **group_by_attributes** | [list[JourneyViewChartGroupByAttribute]](JourneyViewChartGroupByAttribute) | A list of attributes to group the metrics by. There is a limit on the number of groupBy properties which can be specified. | [optional] |
 | **metrics** | [list[JourneyViewChartMetric]](JourneyViewChartMetric) | A list of metrics to calculate within the chart by (aka the y axis) | |
@@ -18,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 261.0.0_
+_PureCloudPlatformClientV2 262.0.0_

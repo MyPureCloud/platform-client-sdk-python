@@ -145,8 +145,13 @@ from ..models import V3SourceExpandableResponse
 from ..models import V3SourceUpdateRequest
 from ..models import V3StartManualSyncRequest
 from ..models import V3Synchronization
+from ..models import V3SynchronizationDeletion
+from ..models import V3SynchronizationDeletionListing
+from ..models import V3SynchronizationFileDeletionRequest
 from ..models import V3SynchronizationListing
 from ..models import V3SynchronizationUpdateRequest
+from ..models import V3SynchronizationUpload
+from ..models import V3SynchronizationUploadListing
 from ..models import V3SynchronizationUploadUrlRequest
 from ..models import V3SynchronizationUploadUrlResponse
 
@@ -1205,6 +1210,186 @@ class KnowledgeApi(object):
         path_params = {}
         if 'source_id' in params:
             path_params['sourceId'] = params['source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_source_synchronization_deletion(self, source_id: str, synchronization_id: str, file_id: str, **kwargs) -> None:
+        """
+        Remove a deletion entry associated with the synchronization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_source_synchronization_deletion(source_id, synchronization_id, file_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param str file_id: File ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'file_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_source_synchronization_deletion" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `delete_knowledge_source_synchronization_deletion`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `delete_knowledge_source_synchronization_deletion`")
+        # verify the required parameter 'file_id' is set
+        if ('file_id' not in params) or (params['file_id'] is None):
+            raise ValueError("Missing the required parameter `file_id` when calling `delete_knowledge_source_synchronization_deletion`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+        if 'file_id' in params:
+            path_params['fileId'] = params['file_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_knowledge_source_synchronization_upload(self, source_id: str, synchronization_id: str, file_id: str, **kwargs) -> None:
+        """
+        Remove a file upload entry associated with the synchronization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_knowledge_source_synchronization_upload(source_id, synchronization_id, file_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param str file_id: File ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'file_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_knowledge_source_synchronization_upload" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `delete_knowledge_source_synchronization_upload`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `delete_knowledge_source_synchronization_upload`")
+        # verify the required parameter 'file_id' is set
+        if ('file_id' not in params) or (params['file_id'] is None):
+            raise ValueError("Missing the required parameter `file_id` when calling `delete_knowledge_source_synchronization_upload`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+        if 'file_id' in params:
+            path_params['fileId'] = params['file_id']
 
         query_params = {}
 
@@ -4953,6 +5138,372 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V3Synchronization',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_source_synchronization_deletion(self, source_id: str, synchronization_id: str, file_id: str, **kwargs) -> 'V3SynchronizationDeletion':
+        """
+        Get a deletion entry associated with the synchronization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_source_synchronization_deletion(source_id, synchronization_id, file_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param str file_id: File ID (required)
+        :return: V3SynchronizationDeletion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'file_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_source_synchronization_deletion" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_knowledge_source_synchronization_deletion`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `get_knowledge_source_synchronization_deletion`")
+        # verify the required parameter 'file_id' is set
+        if ('file_id' not in params) or (params['file_id'] is None):
+            raise ValueError("Missing the required parameter `file_id` when calling `get_knowledge_source_synchronization_deletion`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions/{fileId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+        if 'file_id' in params:
+            path_params['fileId'] = params['file_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationDeletion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_source_synchronization_deletions(self, source_id: str, synchronization_id: str, **kwargs) -> 'V3SynchronizationDeletionListing':
+        """
+        Get deletion entries associated with the synchronization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_source_synchronization_deletions(source_id, synchronization_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: V3SynchronizationDeletionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_source_synchronization_deletions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_knowledge_source_synchronization_deletions`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `get_knowledge_source_synchronization_deletions`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationDeletionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_source_synchronization_upload(self, source_id: str, synchronization_id: str, file_id: str, **kwargs) -> 'V3SynchronizationUpload':
+        """
+        Get a file upload entry associated with the synchronization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_source_synchronization_upload(source_id, synchronization_id, file_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param str file_id: File ID (required)
+        :return: V3SynchronizationUpload
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'file_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_source_synchronization_upload" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_knowledge_source_synchronization_upload`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `get_knowledge_source_synchronization_upload`")
+        # verify the required parameter 'file_id' is set
+        if ('file_id' not in params) or (params['file_id'] is None):
+            raise ValueError("Missing the required parameter `file_id` when calling `get_knowledge_source_synchronization_upload`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads/{fileId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+        if 'file_id' in params:
+            path_params['fileId'] = params['file_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationUpload',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_source_synchronization_uploads(self, source_id: str, synchronization_id: str, **kwargs) -> 'V3SynchronizationUploadListing':
+        """
+        Get file upload entries associated with the synchronization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_source_synchronization_uploads(source_id, synchronization_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :return: V3SynchronizationUploadListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_source_synchronization_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_knowledge_source_synchronization_uploads`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `get_knowledge_source_synchronization_uploads`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/uploads'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationUploadListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10044,6 +10595,96 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='KnowledgeSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_source_synchronization_deletions(self, source_id: str, synchronization_id: str, body: 'V3SynchronizationFileDeletionRequest', **kwargs) -> 'V3SynchronizationDeletion':
+        """
+        Mark a previously synced file for deletion in the synchronization.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_source_synchronization_deletions(source_id, synchronization_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: Source ID (required)
+        :param str synchronization_id: Synchronization ID (required)
+        :param V3SynchronizationFileDeletionRequest body:  (required)
+        :return: V3SynchronizationDeletion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'synchronization_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_source_synchronization_deletions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `post_knowledge_source_synchronization_deletions`")
+        # verify the required parameter 'synchronization_id' is set
+        if ('synchronization_id' not in params) or (params['synchronization_id'] is None):
+            raise ValueError("Missing the required parameter `synchronization_id` when calling `post_knowledge_source_synchronization_deletions`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_source_synchronization_deletions`")
+
+
+        resource_path = '/api/v2/knowledge/sources/{sourceId}/synchronizations/{synchronizationId}/deletions'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+        if 'synchronization_id' in params:
+            path_params['synchronizationId'] = params['synchronization_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SynchronizationDeletion',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

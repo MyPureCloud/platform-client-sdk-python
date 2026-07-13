@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ActivityCodeReference
     from . import ManagementUnitReference
     from . import RecurrenceSettings
+    from . import SchedulingPeriodBase
     from . import UserReference
 
 class ActivityPlanListItem(object):
@@ -67,6 +68,7 @@ class ActivityPlanListItem(object):
             'created_by': 'UserReference',
             'modified_date': 'datetime',
             'modified_by': 'UserReference',
+            'initial_schedule_period': 'SchedulingPeriodBase',
             'self_uri': 'str'
         }
 
@@ -86,6 +88,7 @@ class ActivityPlanListItem(object):
             'created_by': 'createdBy',
             'modified_date': 'modifiedDate',
             'modified_by': 'modifiedBy',
+            'initial_schedule_period': 'initialSchedulePeriod',
             'self_uri': 'selfUri'
         }
 
@@ -104,6 +107,7 @@ class ActivityPlanListItem(object):
         self._created_by = None
         self._modified_date = None
         self._modified_by = None
+        self._initial_schedule_period = None
         self._self_uri = None
 
     @property
@@ -480,6 +484,30 @@ class ActivityPlanListItem(object):
         
 
         self._modified_by = modified_by
+
+    @property
+    def initial_schedule_period(self) -> 'SchedulingPeriodBase':
+        """
+        Gets the initial_schedule_period of this ActivityPlanListItem.
+        The initial schedule period of the activity plan
+
+        :return: The initial_schedule_period of this ActivityPlanListItem.
+        :rtype: SchedulingPeriodBase
+        """
+        return self._initial_schedule_period
+
+    @initial_schedule_period.setter
+    def initial_schedule_period(self, initial_schedule_period: 'SchedulingPeriodBase') -> None:
+        """
+        Sets the initial_schedule_period of this ActivityPlanListItem.
+        The initial schedule period of the activity plan
+
+        :param initial_schedule_period: The initial_schedule_period of this ActivityPlanListItem.
+        :type: SchedulingPeriodBase
+        """
+        
+
+        self._initial_schedule_period = initial_schedule_period
 
     @property
     def self_uri(self) -> str:

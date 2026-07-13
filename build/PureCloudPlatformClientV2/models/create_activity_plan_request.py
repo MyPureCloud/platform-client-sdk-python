@@ -71,7 +71,8 @@ class CreateActivityPlanRequest(object):
             'optimization_objective': 'str',
             'state': 'str',
             'counts_as_paid_time': 'bool',
-            'fixed_availability': 'list[FixedAvailability]'
+            'fixed_availability': 'list[FixedAvailability]',
+            'start_time_increment_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -92,7 +93,8 @@ class CreateActivityPlanRequest(object):
             'optimization_objective': 'optimizationObjective',
             'state': 'state',
             'counts_as_paid_time': 'countsAsPaidTime',
-            'fixed_availability': 'fixedAvailability'
+            'fixed_availability': 'fixedAvailability',
+            'start_time_increment_minutes': 'startTimeIncrementMinutes'
         }
 
         self._name = None
@@ -113,6 +115,7 @@ class CreateActivityPlanRequest(object):
         self._state = None
         self._counts_as_paid_time = None
         self._fixed_availability = None
+        self._start_time_increment_minutes = None
 
     @property
     def name(self) -> str:
@@ -560,6 +563,30 @@ class CreateActivityPlanRequest(object):
         
 
         self._fixed_availability = fixed_availability
+
+    @property
+    def start_time_increment_minutes(self) -> int:
+        """
+        Gets the start_time_increment_minutes of this CreateActivityPlanRequest.
+        The valid start times available when scheduling sessions
+
+        :return: The start_time_increment_minutes of this CreateActivityPlanRequest.
+        :rtype: int
+        """
+        return self._start_time_increment_minutes
+
+    @start_time_increment_minutes.setter
+    def start_time_increment_minutes(self, start_time_increment_minutes: int) -> None:
+        """
+        Sets the start_time_increment_minutes of this CreateActivityPlanRequest.
+        The valid start times available when scheduling sessions
+
+        :param start_time_increment_minutes: The start_time_increment_minutes of this CreateActivityPlanRequest.
+        :type: int
+        """
+        
+
+        self._start_time_increment_minutes = start_time_increment_minutes
 
     def to_dict(self):
         """

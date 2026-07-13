@@ -89,7 +89,8 @@ class QueueConversationVideoEventTopicCall(object):
             'agent_assistant_id': 'str',
             'queue_media_settings': 'QueueConversationVideoEventTopicQueueMediaSettings',
             'disposition': 'QueueConversationVideoEventTopicDisposition',
-            'transfer_source': 'str'
+            'transfer_source': 'str',
+            'public_ip_address': 'str'
         }
 
         self.attribute_map = {
@@ -125,7 +126,8 @@ class QueueConversationVideoEventTopicCall(object):
             'agent_assistant_id': 'agentAssistantId',
             'queue_media_settings': 'queueMediaSettings',
             'disposition': 'disposition',
-            'transfer_source': 'transferSource'
+            'transfer_source': 'transferSource',
+            'public_ip_address': 'publicIpAddress'
         }
 
         self._id = None
@@ -161,6 +163,7 @@ class QueueConversationVideoEventTopicCall(object):
         self._queue_media_settings = None
         self._disposition = None
         self._transfer_source = None
+        self._public_ip_address = None
 
     @property
     def id(self) -> str:
@@ -978,6 +981,30 @@ class QueueConversationVideoEventTopicCall(object):
         
 
         self._transfer_source = transfer_source
+
+    @property
+    def public_ip_address(self) -> str:
+        """
+        Gets the public_ip_address of this QueueConversationVideoEventTopicCall.
+        The reported client IP of the phone for the call.
+
+        :return: The public_ip_address of this QueueConversationVideoEventTopicCall.
+        :rtype: str
+        """
+        return self._public_ip_address
+
+    @public_ip_address.setter
+    def public_ip_address(self, public_ip_address: str) -> None:
+        """
+        Sets the public_ip_address of this QueueConversationVideoEventTopicCall.
+        The reported client IP of the phone for the call.
+
+        :param public_ip_address: The public_ip_address of this QueueConversationVideoEventTopicCall.
+        :type: str
+        """
+        
+
+        self._public_ip_address = public_ip_address
 
     def to_dict(self):
         """

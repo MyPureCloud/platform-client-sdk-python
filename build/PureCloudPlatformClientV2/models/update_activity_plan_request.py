@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ListWrapperFixedAvailability
+    from . import RecurrenceSettingsBase
     from . import ValueWrapperActivityPlanServiceGoalImpactOverrides
     from . import ValueWrapperGroupSettings
     from . import ValueWrapperUserSearchRule
@@ -61,7 +62,12 @@ class UpdateActivityPlanRequest(object):
             'service_goal_impact_overrides': 'ValueWrapperActivityPlanServiceGoalImpactOverrides',
             'optimization_objective': 'str',
             'state': 'str',
-            'fixed_availability': 'ListWrapperFixedAvailability'
+            'fixed_availability': 'ListWrapperFixedAvailability',
+            'activity_code_id': 'str',
+            'type': 'str',
+            'length_minutes': 'int',
+            'counts_as_paid_time': 'bool',
+            'recurrence_settings': 'RecurrenceSettingsBase'
         }
 
         self.attribute_map = {
@@ -74,7 +80,12 @@ class UpdateActivityPlanRequest(object):
             'service_goal_impact_overrides': 'serviceGoalImpactOverrides',
             'optimization_objective': 'optimizationObjective',
             'state': 'state',
-            'fixed_availability': 'fixedAvailability'
+            'fixed_availability': 'fixedAvailability',
+            'activity_code_id': 'activityCodeId',
+            'type': 'type',
+            'length_minutes': 'lengthMinutes',
+            'counts_as_paid_time': 'countsAsPaidTime',
+            'recurrence_settings': 'recurrenceSettings'
         }
 
         self._name = None
@@ -87,6 +98,11 @@ class UpdateActivityPlanRequest(object):
         self._optimization_objective = None
         self._state = None
         self._fixed_availability = None
+        self._activity_code_id = None
+        self._type = None
+        self._length_minutes = None
+        self._counts_as_paid_time = None
+        self._recurrence_settings = None
 
     @property
     def name(self) -> str:
@@ -337,6 +353,131 @@ class UpdateActivityPlanRequest(object):
         
 
         self._fixed_availability = fixed_availability
+
+    @property
+    def activity_code_id(self) -> str:
+        """
+        Gets the activity_code_id of this UpdateActivityPlanRequest.
+        The activity code associated with the activity plan
+
+        :return: The activity_code_id of this UpdateActivityPlanRequest.
+        :rtype: str
+        """
+        return self._activity_code_id
+
+    @activity_code_id.setter
+    def activity_code_id(self, activity_code_id: str) -> None:
+        """
+        Sets the activity_code_id of this UpdateActivityPlanRequest.
+        The activity code associated with the activity plan
+
+        :param activity_code_id: The activity_code_id of this UpdateActivityPlanRequest.
+        :type: str
+        """
+        
+
+        self._activity_code_id = activity_code_id
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this UpdateActivityPlanRequest.
+        The type of the activity plan
+
+        :return: The type of this UpdateActivityPlanRequest.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this UpdateActivityPlanRequest.
+        The type of the activity plan
+
+        :param type: The type of this UpdateActivityPlanRequest.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["Individual", "Group"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
+    def length_minutes(self) -> int:
+        """
+        Gets the length_minutes of this UpdateActivityPlanRequest.
+        The length in minutes of the activity plan
+
+        :return: The length_minutes of this UpdateActivityPlanRequest.
+        :rtype: int
+        """
+        return self._length_minutes
+
+    @length_minutes.setter
+    def length_minutes(self, length_minutes: int) -> None:
+        """
+        Sets the length_minutes of this UpdateActivityPlanRequest.
+        The length in minutes of the activity plan
+
+        :param length_minutes: The length_minutes of this UpdateActivityPlanRequest.
+        :type: int
+        """
+        
+
+        self._length_minutes = length_minutes
+
+    @property
+    def counts_as_paid_time(self) -> bool:
+        """
+        Gets the counts_as_paid_time of this UpdateActivityPlanRequest.
+        Whether the activity should count as paid time
+
+        :return: The counts_as_paid_time of this UpdateActivityPlanRequest.
+        :rtype: bool
+        """
+        return self._counts_as_paid_time
+
+    @counts_as_paid_time.setter
+    def counts_as_paid_time(self, counts_as_paid_time: bool) -> None:
+        """
+        Sets the counts_as_paid_time of this UpdateActivityPlanRequest.
+        Whether the activity should count as paid time
+
+        :param counts_as_paid_time: The counts_as_paid_time of this UpdateActivityPlanRequest.
+        :type: bool
+        """
+        
+
+        self._counts_as_paid_time = counts_as_paid_time
+
+    @property
+    def recurrence_settings(self) -> 'RecurrenceSettingsBase':
+        """
+        Gets the recurrence_settings of this UpdateActivityPlanRequest.
+        Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once
+
+        :return: The recurrence_settings of this UpdateActivityPlanRequest.
+        :rtype: RecurrenceSettingsBase
+        """
+        return self._recurrence_settings
+
+    @recurrence_settings.setter
+    def recurrence_settings(self, recurrence_settings: 'RecurrenceSettingsBase') -> None:
+        """
+        Sets the recurrence_settings of this UpdateActivityPlanRequest.
+        Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once
+
+        :param recurrence_settings: The recurrence_settings of this UpdateActivityPlanRequest.
+        :type: RecurrenceSettingsBase
+        """
+        
+
+        self._recurrence_settings = recurrence_settings
 
     def to_dict(self):
         """

@@ -3079,7 +3079,7 @@ class CaseManagementApi(object):
     def post_casemanagement_caseplans_query(self, body: 'CaseplanQueryRequest', **kwargs) -> 'CaseplanQueryEntityListing':
         """
         Query for Caseplans.
-        
+        This endpoint supports two filtering modes. The recommended approach uses 'filters' (generic filter model) and 'attributes' (field projection). During the migration period, the legacy fields 'name', 'nameSearchType', and 'divisionIds' remain available as an alternative.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
