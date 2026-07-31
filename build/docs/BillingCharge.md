@@ -7,6 +7,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
+| **name** | str | The name of the object. | [optional] |
 | **product** | [BillingProduct](BillingProduct) | Represents the details of a product. | [optional] |
 | **organizations** | [list[NamedEntity]](NamedEntity) | List of plans within the organization. | [optional] |
 | **prepaid_quantity** | float | The quantity of usage that is prepaid. | [optional] |
@@ -21,4 +22,4 @@
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import DomainEntityListingEvaluationForm
     from . import EvaluationQuestionGroup
     from . import EvaluationSettings
+    from . import WritableStarrableDivision
 
 class EvaluationFormSearchResponse(object):
     """
@@ -53,6 +54,7 @@ class EvaluationFormSearchResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'WritableStarrableDivision',
             'modified_date': 'datetime',
             'published': 'bool',
             'context_id': 'str',
@@ -68,6 +70,7 @@ class EvaluationFormSearchResponse(object):
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'modified_date': 'modifiedDate',
             'published': 'published',
             'context_id': 'contextId',
@@ -82,6 +85,7 @@ class EvaluationFormSearchResponse(object):
         }
 
         self._id = None
+        self._division = None
         self._modified_date = None
         self._published = None
         self._context_id = None
@@ -117,6 +121,30 @@ class EvaluationFormSearchResponse(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this EvaluationFormSearchResponse.
+        The division to which this entity belongs.
+
+        :return: The division of this EvaluationFormSearchResponse.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this EvaluationFormSearchResponse.
+        The division to which this entity belongs.
+
+        :param division: The division of this EvaluationFormSearchResponse.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def modified_date(self) -> datetime:

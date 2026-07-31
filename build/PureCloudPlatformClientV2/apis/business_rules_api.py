@@ -1914,7 +1914,7 @@ class BusinessRulesApi(object):
     def patch_businessrules_decisiontable_import(self, table_id: str, import_job_id: str, body: 'UpdateDecisionTableImportJobRequest', **kwargs) -> 'DecisionTableImportJob':
         """
         Update decision table row import job
-        
+        Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2094,7 +2094,7 @@ class BusinessRulesApi(object):
     def post_businessrules_decisiontable_execute(self, table_id: str, body: 'DecisionTableExecutionRequest', **kwargs) -> 'DecisionTableExecutionResponse':
         """
         Execute a published decision table
-        
+        Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2436,7 +2436,7 @@ class BusinessRulesApi(object):
     def post_businessrules_decisiontable_version_execute(self, table_id: str, table_version: int, body: 'DecisionTableExecutionRequest', **kwargs) -> 'DecisionTableExecutionResponse':
         """
         Execute a decision table version
-        
+        Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

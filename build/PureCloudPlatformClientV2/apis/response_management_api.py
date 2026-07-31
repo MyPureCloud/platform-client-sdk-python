@@ -40,6 +40,8 @@ from ..models import CreateResponseAssetResponse
 from ..models import ErrorBody
 from ..models import Library
 from ..models import LibraryBatchRequest
+from ..models import LibraryDivisionView
+from ..models import LibraryDivisionViewEntityListing
 from ..models import LibraryEntityListing
 from ..models import QueryCriteriaQuery
 from ..models import Response
@@ -50,6 +52,8 @@ from ..models import ResponseAssetRequest
 from ..models import ResponseAssetSearchRequest
 from ..models import ResponseAssetSearchResults
 from ..models import ResponseAssetStatus
+from ..models import ResponseDivisionView
+from ..models import ResponseDivisionViewQueryResults
 from ..models import ResponseEntityListing
 from ..models import ResponseQueryRequest
 from ..models import ResponseQueryResults
@@ -384,6 +388,168 @@ class ResponseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LibraryEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_responsemanagement_libraries_divisionview(self, library_id: str, **kwargs) -> 'LibraryDivisionView':
+        """
+        Get details about an existing response library.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_responsemanagement_libraries_divisionview(library_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str library_id: Library ID (required)
+        :return: LibraryDivisionView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['library_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_responsemanagement_libraries_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'library_id' is set
+        if ('library_id' not in params) or (params['library_id'] is None):
+            raise ValueError("Missing the required parameter `library_id` when calling `get_responsemanagement_libraries_divisionview`")
+
+
+        resource_path = '/api/v2/responsemanagement/libraries/divisionviews/{libraryId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'library_id' in params:
+            path_params['libraryId'] = params['library_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LibraryDivisionView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_responsemanagement_libraries_divisionviews(self, **kwargs) -> 'LibraryDivisionViewEntityListing':
+        """
+        Gets a list of existing response libraries.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_responsemanagement_libraries_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str messaging_template_filter: Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+        :param str library_prefix: Returns a list of libraries that contain the prefix provided
+        :return: LibraryDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'messaging_template_filter', 'library_prefix']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_responsemanagement_libraries_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/responsemanagement/libraries/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'messaging_template_filter' in params:
+            query_params['messagingTemplateFilter'] = params['messaging_template_filter']
+        if 'library_prefix' in params:
+            query_params['libraryPrefix'] = params['library_prefix']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LibraryDivisionViewEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -786,6 +952,84 @@ class ResponseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ResponseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_responsemanagement_responses_divisionview(self, response_id: str, **kwargs) -> 'ResponseDivisionView':
+        """
+        Get details about an existing response.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_responsemanagement_responses_divisionview(response_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str response_id: Response ID (required)
+        :return: ResponseDivisionView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['response_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_responsemanagement_responses_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'response_id' is set
+        if ('response_id' not in params) or (params['response_id'] is None):
+            raise ValueError("Missing the required parameter `response_id` when calling `get_responsemanagement_responses_divisionview`")
+
+
+        resource_path = '/api/v2/responsemanagement/responses/divisionviews/{responseId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'response_id' in params:
+            path_params['responseId'] = params['response_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ResponseDivisionView',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1344,6 +1588,84 @@ class ResponseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Response',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_responsemanagement_responses_divisionviews_query(self, body: 'ResponseQueryRequest', **kwargs) -> 'ResponseDivisionViewQueryResults':
+        """
+        Query responses
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_responsemanagement_responses_divisionviews_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ResponseQueryRequest body: Response (required)
+        :return: ResponseDivisionViewQueryResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_responsemanagement_responses_divisionviews_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_responsemanagement_responses_divisionviews_query`")
+
+
+        resource_path = '/api/v2/responsemanagement/responses/divisionviews/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ResponseDivisionViewQueryResults',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

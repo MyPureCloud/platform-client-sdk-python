@@ -55,7 +55,8 @@ class OrgAuthSettings(object):
             'ip_address_allowlist': 'list[str]',
             'password_requirements': 'PasswordRequirements',
             'inactivity_timeout_exclusions': 'list[str]',
-            'universal_logout': 'bool'
+            'universal_logout': 'bool',
+            'token_storage_location': 'str'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class OrgAuthSettings(object):
             'ip_address_allowlist': 'ipAddressAllowlist',
             'password_requirements': 'passwordRequirements',
             'inactivity_timeout_exclusions': 'inactivityTimeoutExclusions',
-            'universal_logout': 'universalLogout'
+            'universal_logout': 'universalLogout',
+            'token_storage_location': 'tokenStorageLocation'
         }
 
         self._multifactor_authentication_required = None
@@ -75,6 +77,7 @@ class OrgAuthSettings(object):
         self._password_requirements = None
         self._inactivity_timeout_exclusions = None
         self._universal_logout = None
+        self._token_storage_location = None
 
     @property
     def multifactor_authentication_required(self) -> bool:
@@ -243,6 +246,35 @@ class OrgAuthSettings(object):
         
 
         self._universal_logout = universal_logout
+
+    @property
+    def token_storage_location(self) -> str:
+        """
+        Gets the token_storage_location of this OrgAuthSettings.
+        The browser storage location used for authentication tokens.
+
+        :return: The token_storage_location of this OrgAuthSettings.
+        :rtype: str
+        """
+        return self._token_storage_location
+
+    @token_storage_location.setter
+    def token_storage_location(self, token_storage_location: str) -> None:
+        """
+        Sets the token_storage_location of this OrgAuthSettings.
+        The browser storage location used for authentication tokens.
+
+        :param token_storage_location: The token_storage_location of this OrgAuthSettings.
+        :type: str
+        """
+        if isinstance(token_storage_location, int):
+            token_storage_location = str(token_storage_location)
+        allowed_values = ["persistent", "session"]
+        if token_storage_location.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for token_storage_location -> " + token_storage_location)
+            self._token_storage_location = "outdated_sdk_version"
+        else:
+            self._token_storage_location = token_storage_location
 
     def to_dict(self):
         """

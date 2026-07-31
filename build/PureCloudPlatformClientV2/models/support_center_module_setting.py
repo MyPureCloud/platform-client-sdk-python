@@ -72,7 +72,7 @@ class SupportCenterModuleSetting(object):
     def type(self) -> str:
         """
         Gets the type of this SupportCenterModuleSetting.
-        Screen module type
+        Screen module type. Required if support center is enabled
 
         :return: The type of this SupportCenterModuleSetting.
         :rtype: str
@@ -83,7 +83,7 @@ class SupportCenterModuleSetting(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this SupportCenterModuleSetting.
-        Screen module type
+        Screen module type. Required if support center is enabled
 
         :param type: The type of this SupportCenterModuleSetting.
         :type: str
@@ -101,7 +101,7 @@ class SupportCenterModuleSetting(object):
     def enabled(self) -> bool:
         """
         Gets the enabled of this SupportCenterModuleSetting.
-        Whether or not knowledge portal (previously support center) screen module is enabled
+        Whether or not knowledge portal (previously support center) screen module is enabled. If not provided, the module is treated as hidden
 
         :return: The enabled of this SupportCenterModuleSetting.
         :rtype: bool
@@ -112,7 +112,7 @@ class SupportCenterModuleSetting(object):
     def enabled(self, enabled: bool) -> None:
         """
         Sets the enabled of this SupportCenterModuleSetting.
-        Whether or not knowledge portal (previously support center) screen module is enabled
+        Whether or not knowledge portal (previously support center) screen module is enabled. If not provided, the module is treated as hidden
 
         :param enabled: The enabled of this SupportCenterModuleSetting.
         :type: bool

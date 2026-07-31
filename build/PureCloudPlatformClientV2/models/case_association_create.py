@@ -80,7 +80,7 @@ class CaseAssociationCreate(object):
         :type: str
         """
         
-        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', workitem_id):
+        if not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', workitem_id):
             raise ValueError("Invalid value for `workitem_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
 
 
@@ -107,7 +107,7 @@ class CaseAssociationCreate(object):
         :type: str
         """
         
-        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', conversation_id):
+        if not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', conversation_id):
             raise ValueError("Invalid value for `conversation_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
 
 

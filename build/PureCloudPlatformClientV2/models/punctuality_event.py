@@ -54,6 +54,7 @@ class PunctualityEvent(object):
             'activity_code_id': 'str',
             'activity_code': 'str',
             'activity_name': 'str',
+            'activity_color': 'str',
             'category': 'str',
             'points': 'int',
             'delta': 'float',
@@ -68,6 +69,7 @@ class PunctualityEvent(object):
             'activity_code_id': 'activityCodeId',
             'activity_code': 'activityCode',
             'activity_name': 'activityName',
+            'activity_color': 'activityColor',
             'category': 'category',
             'points': 'points',
             'delta': 'delta',
@@ -81,6 +83,7 @@ class PunctualityEvent(object):
         self._activity_code_id = None
         self._activity_code = None
         self._activity_name = None
+        self._activity_color = None
         self._category = None
         self._points = None
         self._delta = None
@@ -253,6 +256,30 @@ class PunctualityEvent(object):
         
 
         self._activity_name = activity_name
+
+    @property
+    def activity_color(self) -> str:
+        """
+        Gets the activity_color of this PunctualityEvent.
+        The activity color
+
+        :return: The activity_color of this PunctualityEvent.
+        :rtype: str
+        """
+        return self._activity_color
+
+    @activity_color.setter
+    def activity_color(self, activity_color: str) -> None:
+        """
+        Sets the activity_color of this PunctualityEvent.
+        The activity color
+
+        :param activity_color: The activity_color of this PunctualityEvent.
+        :type: str
+        """
+        
+
+        self._activity_color = activity_color
 
     @property
     def category(self) -> str:

@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import Credential
 
 class UpdateVerifierRequest(object):
     """
@@ -49,24 +51,27 @@ class UpdateVerifierRequest(object):
         self.swagger_types = {
             'name': 'str',
             'enabled': 'bool',
+            'credential': 'Credential',
             'default': 'bool'
         }
 
         self.attribute_map = {
             'name': 'name',
             'enabled': 'enabled',
+            'credential': 'credential',
             'default': 'default'
         }
 
         self._name = None
         self._enabled = None
+        self._credential = None
         self._default = None
 
     @property
     def name(self) -> str:
         """
         Gets the name of this UpdateVerifierRequest.
-        The name of the verifier.
+        The name of the verifier. Maximum length is 100 characters.
 
         :return: The name of this UpdateVerifierRequest.
         :rtype: str
@@ -77,12 +82,18 @@ class UpdateVerifierRequest(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this UpdateVerifierRequest.
-        The name of the verifier.
+        The name of the verifier. Maximum length is 100 characters.
 
         :param name: The name of this UpdateVerifierRequest.
         :type: str
         """
         
+        if len(name) > 100:
+            raise ValueError("Invalid value for `name`, length must be less than `100`")
+
+        if len(name) < 0:
+            raise ValueError("Invalid value for `name`, length must be greater than or equal to `0`")
+
 
         self._name = name
 
@@ -109,6 +120,30 @@ class UpdateVerifierRequest(object):
         
 
         self._enabled = enabled
+
+    @property
+    def credential(self) -> 'Credential':
+        """
+        Gets the credential of this UpdateVerifierRequest.
+        The WebAuthn credential associated with this verifier.
+
+        :return: The credential of this UpdateVerifierRequest.
+        :rtype: Credential
+        """
+        return self._credential
+
+    @credential.setter
+    def credential(self, credential: 'Credential') -> None:
+        """
+        Sets the credential of this UpdateVerifierRequest.
+        The WebAuthn credential associated with this verifier.
+
+        :param credential: The credential of this UpdateVerifierRequest.
+        :type: Credential
+        """
+        
+
+        self._credential = credential
 
     @property
     def default(self) -> bool:

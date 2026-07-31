@@ -35,12 +35,12 @@ if TYPE_CHECKING:
     from . import AutoStatusTransitionDetail
     from . import Division
     from . import ExternalContactReference
-    from . import LanguageReference
-    from . import RoutingSkillReference
     from . import UserReference
     from . import UserReferenceWithName
     from . import WorkbinReference
+    from . import WorkitemLanguageReference
     from . import WorkitemQueueReference
+    from . import WorkitemRoutingSkillReference
     from . import WorkitemSchema
     from . import WorkitemScoredAgent
     from . import WorkitemScriptReference
@@ -68,7 +68,7 @@ class WorkitemVersion(object):
             'division': 'Division',
             'type': 'WorktypeReference',
             'description': 'str',
-            'language': 'LanguageReference',
+            'language': 'WorkitemLanguageReference',
             'utilization_label': 'WorkitemUtilizationLabelReference',
             'priority': 'int',
             'date_created': 'datetime',
@@ -91,7 +91,7 @@ class WorkitemVersion(object):
             'assignment_state': 'str',
             'date_assignment_state_changed': 'datetime',
             'alert_timeout_seconds': 'int',
-            'skills': 'list[RoutingSkillReference]',
+            'skills': 'list[WorkitemRoutingSkillReference]',
             'preferred_agents': 'list[UserReference]',
             'auto_status_transition': 'bool',
             'schema': 'WorkitemSchema',
@@ -304,24 +304,24 @@ class WorkitemVersion(object):
         self._description = description
 
     @property
-    def language(self) -> 'LanguageReference':
+    def language(self) -> 'WorkitemLanguageReference':
         """
         Gets the language of this WorkitemVersion.
         The language of the Workitem.
 
         :return: The language of this WorkitemVersion.
-        :rtype: LanguageReference
+        :rtype: WorkitemLanguageReference
         """
         return self._language
 
     @language.setter
-    def language(self, language: 'LanguageReference') -> None:
+    def language(self, language: 'WorkitemLanguageReference') -> None:
         """
         Sets the language of this WorkitemVersion.
         The language of the Workitem.
 
         :param language: The language of this WorkitemVersion.
-        :type: LanguageReference
+        :type: WorkitemLanguageReference
         """
         
 
@@ -866,24 +866,24 @@ class WorkitemVersion(object):
         self._alert_timeout_seconds = alert_timeout_seconds
 
     @property
-    def skills(self) -> List['RoutingSkillReference']:
+    def skills(self) -> List['WorkitemRoutingSkillReference']:
         """
         Gets the skills of this WorkitemVersion.
         The skills of the Workitem.
 
         :return: The skills of this WorkitemVersion.
-        :rtype: list[RoutingSkillReference]
+        :rtype: list[WorkitemRoutingSkillReference]
         """
         return self._skills
 
     @skills.setter
-    def skills(self, skills: List['RoutingSkillReference']) -> None:
+    def skills(self, skills: List['WorkitemRoutingSkillReference']) -> None:
         """
         Sets the skills of this WorkitemVersion.
         The skills of the Workitem.
 
         :param skills: The skills of this WorkitemVersion.
-        :type: list[RoutingSkillReference]
+        :type: list[WorkitemRoutingSkillReference]
         """
         
 

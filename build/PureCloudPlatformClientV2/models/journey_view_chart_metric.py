@@ -50,20 +50,23 @@ class JourneyViewChartMetric(object):
             'id': 'str',
             'element_id': 'str',
             'aggregate': 'str',
-            'display_label': 'str'
+            'display_label': 'str',
+            'attribute': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'element_id': 'elementId',
             'aggregate': 'aggregate',
-            'display_label': 'displayLabel'
+            'display_label': 'displayLabel',
+            'attribute': 'attribute'
         }
 
         self._id = None
         self._element_id = None
         self._aggregate = None
         self._display_label = None
+        self._attribute = None
 
     @property
     def id(self) -> str:
@@ -165,6 +168,30 @@ class JourneyViewChartMetric(object):
         
 
         self._display_label = display_label
+
+    @property
+    def attribute(self) -> str:
+        """
+        Gets the attribute of this JourneyViewChartMetric.
+        Attribute name
+
+        :return: The attribute of this JourneyViewChartMetric.
+        :rtype: str
+        """
+        return self._attribute
+
+    @attribute.setter
+    def attribute(self, attribute: str) -> None:
+        """
+        Sets the attribute of this JourneyViewChartMetric.
+        Attribute name
+
+        :param attribute: The attribute of this JourneyViewChartMetric.
+        :type: str
+        """
+        
+
+        self._attribute = attribute
 
     def to_dict(self):
         """

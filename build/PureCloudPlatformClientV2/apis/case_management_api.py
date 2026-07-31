@@ -56,6 +56,9 @@ from ..models import CaseplanListing
 from ..models import CaseplanQueryEntityListing
 from ..models import CaseplanQueryRequest
 from ..models import CaseplanUpdate
+from ..models import Comment
+from ..models import CommentCreate
+from ..models import CommentListing
 from ..models import ErrorBody
 from ..models import IntakeSettingsListing
 from ..models import IntakeSettingsUpdate
@@ -165,6 +168,94 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_casemanagement_case_comments_me_comment_id(self, case_id: str, comment_id: str, **kwargs) -> object:
+        """
+        Delete my Comment.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_casemanagement_case_comments_me_comment_id(case_id, comment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str case_id: Case identifier. (required)
+        :param str comment_id: Comment identifier. (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['case_id', 'comment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_casemanagement_case_comments_me_comment_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'case_id' is set
+        if ('case_id' not in params) or (params['case_id'] is None):
+            raise ValueError("Missing the required parameter `case_id` when calling `delete_casemanagement_case_comments_me_comment_id`")
+        # verify the required parameter 'comment_id' is set
+        if ('comment_id' not in params) or (params['comment_id'] is None):
+            raise ValueError("Missing the required parameter `comment_id` when calling `delete_casemanagement_case_comments_me_comment_id`")
+
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+            raise ValueError("Invalid value for parameter `case_id` when calling `delete_casemanagement_case_comments_me_comment_id`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+        if 'comment_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['comment_id']): 
+            raise ValueError("Invalid value for parameter `comment_id` when calling `delete_casemanagement_case_comments_me_comment_id`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/cases/{caseId}/comments/me/{commentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'case_id' in params:
+            path_params['caseId'] = params['case_id']
+        if 'comment_id' in params:
+            path_params['commentId'] = params['comment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='object',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_casemanagement_caseplan(self, caseplan_id: str, **kwargs) -> object:
         """
         Delete a Caseplan.
@@ -203,7 +294,7 @@ class CaseManagementApi(object):
         if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
             raise ValueError("Missing the required parameter `caseplan_id` when calling `delete_casemanagement_caseplan`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `delete_casemanagement_caseplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}'.replace('{format}', 'json')
@@ -287,7 +378,7 @@ class CaseManagementApi(object):
         if ('schema_key_name' not in params) or (params['schema_key_name'] is None):
             raise ValueError("Missing the required parameter `schema_key_name` when calling `delete_casemanagement_caseplan_dataschema`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `delete_casemanagement_caseplan_dataschema`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}'.replace('{format}', 'json')
@@ -347,7 +438,7 @@ class CaseManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str case_id: Case identifier. (required)
-        :param str expands: Fields to expand.
+        :param list[str] expands: Attributes to expand. Comma-separated if more than one.
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -454,9 +545,9 @@ class CaseManagementApi(object):
         if ('association_id' not in params) or (params['association_id'] is None):
             raise ValueError("Missing the required parameter `association_id` when calling `get_casemanagement_case_association`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_association`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'association_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['association_id']): 
+        if 'association_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['association_id']): 
             raise ValueError("Invalid value for parameter `association_id` when calling `get_casemanagement_case_association`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/associations/{associationId}'.replace('{format}', 'json')
@@ -541,7 +632,7 @@ class CaseManagementApi(object):
         if ('case_id' not in params) or (params['case_id'] is None):
             raise ValueError("Missing the required parameter `case_id` when calling `get_casemanagement_case_associations`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_associations`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/associations'.replace('{format}', 'json')
@@ -589,6 +680,187 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_casemanagement_case_comment(self, case_id: str, comment_id: str, **kwargs) -> 'Comment':
+        """
+        Get a Comment.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_casemanagement_case_comment(case_id, comment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str case_id: Case identifier. (required)
+        :param str comment_id: Comment identifier. (required)
+        :return: Comment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['case_id', 'comment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_casemanagement_case_comment" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'case_id' is set
+        if ('case_id' not in params) or (params['case_id'] is None):
+            raise ValueError("Missing the required parameter `case_id` when calling `get_casemanagement_case_comment`")
+        # verify the required parameter 'comment_id' is set
+        if ('comment_id' not in params) or (params['comment_id'] is None):
+            raise ValueError("Missing the required parameter `comment_id` when calling `get_casemanagement_case_comment`")
+
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+            raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_comment`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+        if 'comment_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['comment_id']): 
+            raise ValueError("Invalid value for parameter `comment_id` when calling `get_casemanagement_case_comment`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/cases/{caseId}/comments/{commentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'case_id' in params:
+            path_params['caseId'] = params['case_id']
+        if 'comment_id' in params:
+            path_params['commentId'] = params['comment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Comment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_casemanagement_case_comments(self, case_id: str, **kwargs) -> 'CommentListing':
+        """
+        Get comments for a Case.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_casemanagement_case_comments(case_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str case_id: Case identifier. (required)
+        :param str after: Cursor pointing to the end of the previously returned page of comments.
+        :param int page_size: Number of comments to return. Maximum is 100.
+        :param str sort_order: Ascending or descending sort order.
+        :return: CommentListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['case_id', 'after', 'page_size', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_casemanagement_case_comments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'case_id' is set
+        if ('case_id' not in params) or (params['case_id'] is None):
+            raise ValueError("Missing the required parameter `case_id` when calling `get_casemanagement_case_comments`")
+
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+            raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_comments`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+        if 'page_size' in params and params['page_size'] > 100: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_casemanagement_case_comments`, must be a value less than or equal to  `100`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_casemanagement_case_comments`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/casemanagement/cases/{caseId}/comments'.replace('{format}', 'json')
+        path_params = {}
+        if 'case_id' in params:
+            path_params['caseId'] = params['case_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CommentListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_casemanagement_case_stage(self, case_id: str, stage_id: str, **kwargs) -> 'Stage':
         """
         Get a Stage.
@@ -631,9 +903,9 @@ class CaseManagementApi(object):
         if ('stage_id' not in params) or (params['stage_id'] is None):
             raise ValueError("Missing the required parameter `stage_id` when calling `get_casemanagement_case_stage`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_stage`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stage_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stage_id']): 
+        if 'stage_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stage_id']): 
             raise ValueError("Invalid value for parameter `stage_id` when calling `get_casemanagement_case_stage`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/stages/{stageId}'.replace('{format}', 'json')
@@ -723,11 +995,11 @@ class CaseManagementApi(object):
         if ('step_id' not in params) or (params['step_id'] is None):
             raise ValueError("Missing the required parameter `step_id` when calling `get_casemanagement_case_stage_step`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_stage_step`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stage_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stage_id']): 
+        if 'stage_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stage_id']): 
             raise ValueError("Invalid value for parameter `stage_id` when calling `get_casemanagement_case_stage_step`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'step_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['step_id']): 
+        if 'step_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['step_id']): 
             raise ValueError("Invalid value for parameter `step_id` when calling `get_casemanagement_case_stage_step`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps/{stepId}'.replace('{format}', 'json')
@@ -818,9 +1090,9 @@ class CaseManagementApi(object):
         if ('stage_id' not in params) or (params['stage_id'] is None):
             raise ValueError("Missing the required parameter `stage_id` when calling `get_casemanagement_case_stage_steps`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_stage_steps`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stage_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stage_id']): 
+        if 'stage_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stage_id']): 
             raise ValueError("Invalid value for parameter `stage_id` when calling `get_casemanagement_case_stage_steps`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/stages/{stageId}/steps'.replace('{format}', 'json')
@@ -911,7 +1183,7 @@ class CaseManagementApi(object):
         if ('case_id' not in params) or (params['case_id'] is None):
             raise ValueError("Missing the required parameter `case_id` when calling `get_casemanagement_case_stages`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_stages`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/stages'.replace('{format}', 'json')
@@ -1001,9 +1273,9 @@ class CaseManagementApi(object):
         if ('job_id' not in params) or (params['job_id'] is None):
             raise ValueError("Missing the required parameter `job_id` when calling `get_casemanagement_case_terminate_job`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `get_casemanagement_case_terminate_job`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'job_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['job_id']): 
+        if 'job_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['job_id']): 
             raise ValueError("Invalid value for parameter `job_id` when calling `get_casemanagement_case_terminate_job`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/terminate/jobs/{jobId}'.replace('{format}', 'json')
@@ -1085,7 +1357,7 @@ class CaseManagementApi(object):
         if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
             raise ValueError("Missing the required parameter `caseplan_id` when calling `get_casemanagement_caseplan`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}'.replace('{format}', 'json')
@@ -1169,7 +1441,7 @@ class CaseManagementApi(object):
         if ('version_id' not in params) or (params['version_id'] is None):
             raise ValueError("Missing the required parameter `version_id` when calling `get_casemanagement_caseplan_version`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan_version`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}'.replace('{format}', 'json')
@@ -1255,7 +1527,7 @@ class CaseManagementApi(object):
         if ('version_id' not in params) or (params['version_id'] is None):
             raise ValueError("Missing the required parameter `version_id` when calling `get_casemanagement_caseplan_version_dataschemas`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan_version_dataschemas`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/dataschemas'.replace('{format}', 'json')
@@ -1341,7 +1613,7 @@ class CaseManagementApi(object):
         if ('version_id' not in params) or (params['version_id'] is None):
             raise ValueError("Missing the required parameter `version_id` when calling `get_casemanagement_caseplan_version_intakesettings`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan_version_intakesettings`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/intakesettings'.replace('{format}', 'json')
@@ -1432,9 +1704,9 @@ class CaseManagementApi(object):
         if ('stageplan_id' not in params) or (params['stageplan_id'] is None):
             raise ValueError("Missing the required parameter `stageplan_id` when calling `get_casemanagement_caseplan_version_stageplan`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan_version_stageplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stageplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
+        if 'stageplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
             raise ValueError("Invalid value for parameter `stageplan_id` when calling `get_casemanagement_caseplan_version_stageplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}'.replace('{format}', 'json')
@@ -1533,11 +1805,11 @@ class CaseManagementApi(object):
         if ('stepplan_id' not in params) or (params['stepplan_id'] is None):
             raise ValueError("Missing the required parameter `stepplan_id` when calling `get_casemanagement_caseplan_version_stageplan_stepplan`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan_version_stageplan_stepplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stageplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
+        if 'stageplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
             raise ValueError("Invalid value for parameter `stageplan_id` when calling `get_casemanagement_caseplan_version_stageplan_stepplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stepplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stepplan_id']): 
+        if 'stepplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stepplan_id']): 
             raise ValueError("Invalid value for parameter `stepplan_id` when calling `get_casemanagement_caseplan_version_stageplan_stepplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans/{stepplanId}'.replace('{format}', 'json')
@@ -1637,9 +1909,9 @@ class CaseManagementApi(object):
         if ('stageplan_id' not in params) or (params['stageplan_id'] is None):
             raise ValueError("Missing the required parameter `stageplan_id` when calling `get_casemanagement_caseplan_version_stageplan_stepplans`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan_version_stageplan_stepplans`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stageplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
+        if 'stageplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
             raise ValueError("Invalid value for parameter `stageplan_id` when calling `get_casemanagement_caseplan_version_stageplan_stepplans`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans/{stageplanId}/stepplans'.replace('{format}', 'json')
@@ -1739,7 +2011,7 @@ class CaseManagementApi(object):
         if ('version_id' not in params) or (params['version_id'] is None):
             raise ValueError("Missing the required parameter `version_id` when calling `get_casemanagement_caseplan_version_stageplans`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `get_casemanagement_caseplan_version_stageplans`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions/{versionId}/stageplans'.replace('{format}', 'json')
@@ -1987,7 +2259,7 @@ class CaseManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str reference_id: Case reference. (required)
-        :param str expands: Fields to expand.
+        :param list[str] expands: Attributes to expand. Comma-separated if more than one.
         :return: Case
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2346,7 +2618,7 @@ class CaseManagementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_casemanagement_caseplan`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `patch_casemanagement_caseplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}'.replace('{format}', 'json')
@@ -2436,9 +2708,9 @@ class CaseManagementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_casemanagement_caseplan_stageplan`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `patch_casemanagement_caseplan_stageplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stageplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
+        if 'stageplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
             raise ValueError("Invalid value for parameter `stageplan_id` when calling `patch_casemanagement_caseplan_stageplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}'.replace('{format}', 'json')
@@ -2534,11 +2806,11 @@ class CaseManagementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `patch_casemanagement_caseplan_stageplan_stepplan`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `patch_casemanagement_caseplan_stageplan_stepplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stageplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
+        if 'stageplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
             raise ValueError("Invalid value for parameter `stageplan_id` when calling `patch_casemanagement_caseplan_stageplan_stepplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
-        if 'stepplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stepplan_id']): 
+        if 'stepplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stepplan_id']): 
             raise ValueError("Invalid value for parameter `stepplan_id` when calling `patch_casemanagement_caseplan_stageplan_stepplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/stepplans/{stepplanId}'.replace('{format}', 'json')
@@ -2628,7 +2900,7 @@ class CaseManagementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_case_associations`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `post_casemanagement_case_associations`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/associations'.replace('{format}', 'json')
@@ -2672,6 +2944,92 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_casemanagement_case_comments(self, case_id: str, body: 'CommentCreate', **kwargs) -> 'Comment':
+        """
+        Add a comment to a Case.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_casemanagement_case_comments(case_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str case_id: Case identifier. (required)
+        :param CommentCreate body: Comment create request. (required)
+        :return: Comment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['case_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_casemanagement_case_comments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'case_id' is set
+        if ('case_id' not in params) or (params['case_id'] is None):
+            raise ValueError("Missing the required parameter `case_id` when calling `post_casemanagement_case_comments`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_case_comments`")
+
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+            raise ValueError("Invalid value for parameter `case_id` when calling `post_casemanagement_case_comments`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/cases/{caseId}/comments'.replace('{format}', 'json')
+        path_params = {}
+        if 'case_id' in params:
+            path_params['caseId'] = params['case_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Comment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_casemanagement_case_terminate_jobs(self, case_id: str, **kwargs) -> 'TerminateJob':
         """
         Create a Terminate Job for a Case.
@@ -2710,7 +3068,7 @@ class CaseManagementApi(object):
         if ('case_id' not in params) or (params['case_id'] is None):
             raise ValueError("Missing the required parameter `case_id` when calling `post_casemanagement_case_terminate_jobs`")
 
-        if 'case_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
+        if 'case_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['case_id']): 
             raise ValueError("Invalid value for parameter `case_id` when calling `post_casemanagement_case_terminate_jobs`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/terminate/jobs'.replace('{format}', 'json')
@@ -2794,7 +3152,7 @@ class CaseManagementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_caseplan_dataschemas`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `post_casemanagement_caseplan_dataschemas`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas'.replace('{format}', 'json')
@@ -2876,7 +3234,7 @@ class CaseManagementApi(object):
         if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
             raise ValueError("Missing the required parameter `caseplan_id` when calling `post_casemanagement_caseplan_publish`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `post_casemanagement_caseplan_publish`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/publish'.replace('{format}', 'json')
@@ -2956,7 +3314,7 @@ class CaseManagementApi(object):
         if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
             raise ValueError("Missing the required parameter `caseplan_id` when calling `post_casemanagement_caseplan_versions`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `post_casemanagement_caseplan_versions`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/versions'.replace('{format}', 'json')
@@ -3356,7 +3714,7 @@ class CaseManagementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `put_casemanagement_caseplan_dataschema`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `put_casemanagement_caseplan_dataschema`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/dataschemas/{schemaKeyName}'.replace('{format}', 'json')
@@ -3444,7 +3802,7 @@ class CaseManagementApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `put_casemanagement_caseplan_intakesettings`")
 
-        if 'caseplan_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
             raise ValueError("Invalid value for parameter `caseplan_id` when calling `put_casemanagement_caseplan_intakesettings`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/intakesettings'.replace('{format}', 'json')

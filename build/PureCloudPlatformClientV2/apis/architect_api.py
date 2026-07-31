@@ -5760,7 +5760,7 @@ class ArchitectApi(object):
         :param int page_size: Page size
         :param str sort_by: Sort by
         :param str sort_order: Sort order
-        :param list[str] id: ID
+        :param list[str] id: ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead
         :param str name: Name
         :param str description: Description
         :param str name_or_description: Name or description

@@ -112,7 +112,8 @@ class CallMediaParticipant(object):
             'barged_time': 'datetime',
             'secure_pause': 'bool',
             'disposition': 'Disposition',
-            'transfer_source': 'str'
+            'transfer_source': 'str',
+            'client_ip_address': 'str'
         }
 
         self.attribute_map = {
@@ -172,7 +173,8 @@ class CallMediaParticipant(object):
             'barged_time': 'bargedTime',
             'secure_pause': 'securePause',
             'disposition': 'disposition',
-            'transfer_source': 'transferSource'
+            'transfer_source': 'transferSource',
+            'client_ip_address': 'clientIpAddress'
         }
 
         self._id = None
@@ -232,6 +234,7 @@ class CallMediaParticipant(object):
         self._secure_pause = None
         self._disposition = None
         self._transfer_source = None
+        self._client_ip_address = None
 
     @property
     def id(self) -> str:
@@ -1625,6 +1628,30 @@ class CallMediaParticipant(object):
         
 
         self._transfer_source = transfer_source
+
+    @property
+    def client_ip_address(self) -> str:
+        """
+        Gets the client_ip_address of this CallMediaParticipant.
+        The reported client IP of the phone for the call.
+
+        :return: The client_ip_address of this CallMediaParticipant.
+        :rtype: str
+        """
+        return self._client_ip_address
+
+    @client_ip_address.setter
+    def client_ip_address(self, client_ip_address: str) -> None:
+        """
+        Sets the client_ip_address of this CallMediaParticipant.
+        The reported client IP of the phone for the call.
+
+        :param client_ip_address: The client_ip_address of this CallMediaParticipant.
+        :type: str
+        """
+        
+
+        self._client_ip_address = client_ip_address
 
     def to_dict(self):
         """

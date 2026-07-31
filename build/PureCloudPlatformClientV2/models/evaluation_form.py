@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import DomainEntityListingEvaluationForm
     from . import EvaluationQuestionGroup
     from . import EvaluationSettings
+    from . import WritableStarrableDivision
 
 class EvaluationForm(object):
     """
@@ -54,6 +55,7 @@ class EvaluationForm(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'WritableStarrableDivision',
             'modified_date': 'datetime',
             'published': 'bool',
             'context_id': 'str',
@@ -62,6 +64,7 @@ class EvaluationForm(object):
             'evaluation_settings': 'EvaluationSettings',
             'latest_version_form_name': 'str',
             'ai_scoring': 'AiScoringSettings',
+            'redacted': 'bool',
             'dialect': 'str',
             'self_uri': 'str'
         }
@@ -69,6 +72,7 @@ class EvaluationForm(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'modified_date': 'modifiedDate',
             'published': 'published',
             'context_id': 'contextId',
@@ -77,12 +81,14 @@ class EvaluationForm(object):
             'evaluation_settings': 'evaluationSettings',
             'latest_version_form_name': 'latestVersionFormName',
             'ai_scoring': 'aiScoring',
+            'redacted': 'redacted',
             'dialect': 'dialect',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._division = None
         self._modified_date = None
         self._published = None
         self._context_id = None
@@ -91,6 +97,7 @@ class EvaluationForm(object):
         self._evaluation_settings = None
         self._latest_version_form_name = None
         self._ai_scoring = None
+        self._redacted = None
         self._dialect = None
         self._self_uri = None
 
@@ -141,6 +148,30 @@ class EvaluationForm(object):
         
 
         self._name = name
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this EvaluationForm.
+        The division to which this entity belongs.
+
+        :return: The division of this EvaluationForm.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this EvaluationForm.
+        The division to which this entity belongs.
+
+        :param division: The division of this EvaluationForm.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def modified_date(self) -> datetime:
@@ -333,6 +364,30 @@ class EvaluationForm(object):
         
 
         self._ai_scoring = ai_scoring
+
+    @property
+    def redacted(self) -> bool:
+        """
+        Gets the redacted of this EvaluationForm.
+        Is this form redacted
+
+        :return: The redacted of this EvaluationForm.
+        :rtype: bool
+        """
+        return self._redacted
+
+    @redacted.setter
+    def redacted(self, redacted: bool) -> None:
+        """
+        Sets the redacted of this EvaluationForm.
+        Is this form redacted
+
+        :param redacted: The redacted of this EvaluationForm.
+        :type: bool
+        """
+        
+
+        self._redacted = redacted
 
     @property
     def dialect(self) -> str:

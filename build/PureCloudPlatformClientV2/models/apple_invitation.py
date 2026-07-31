@@ -117,7 +117,7 @@ class AppleInvitation(object):
     def template_type(self) -> str:
         """
         Gets the template_type of this AppleInvitation.
-        The template type for the invitation
+        The template type for the invitation. Only 'WithImage' is supported.
 
         :return: The template_type of this AppleInvitation.
         :rtype: str
@@ -128,14 +128,14 @@ class AppleInvitation(object):
     def template_type(self, template_type: str) -> None:
         """
         Sets the template_type of this AppleInvitation.
-        The template type for the invitation
+        The template type for the invitation. Only 'WithImage' is supported.
 
         :param template_type: The template_type of this AppleInvitation.
         :type: str
         """
         if isinstance(template_type, int):
             template_type = str(template_type)
-        allowed_values = ["WithImage", "WithoutImage"]
+        allowed_values = ["WithImage"]
         if template_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for template_type -> " + template_type)
             self._template_type = "outdated_sdk_version"

@@ -51,6 +51,7 @@ class BillingCharge(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'name': 'str',
             'product': 'BillingProduct',
             'organizations': 'list[NamedEntity]',
             'prepaid_quantity': 'float',
@@ -66,6 +67,7 @@ class BillingCharge(object):
 
         self.attribute_map = {
             'id': 'id',
+            'name': 'name',
             'product': 'product',
             'organizations': 'organizations',
             'prepaid_quantity': 'prepaidQuantity',
@@ -80,6 +82,7 @@ class BillingCharge(object):
         }
 
         self._id = None
+        self._name = None
         self._product = None
         self._organizations = None
         self._prepaid_quantity = None
@@ -115,6 +118,30 @@ class BillingCharge(object):
         
 
         self._id = id
+
+    @property
+    def name(self) -> str:
+        """
+        Gets the name of this BillingCharge.
+        The name of the object.
+
+        :return: The name of this BillingCharge.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: str) -> None:
+        """
+        Sets the name of this BillingCharge.
+        The name of the object.
+
+        :param name: The name of this BillingCharge.
+        :type: str
+        """
+        
+
+        self._name = name
 
     @property
     def product(self) -> 'BillingProduct':

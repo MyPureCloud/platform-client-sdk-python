@@ -85,7 +85,7 @@ class SupportCenterCategory(object):
         :type: str
         """
         
-        if not re.search('^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$', id):
+        if not re.match('^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$', id):
             raise ValueError("Invalid value for `id`, must be a follow pattern or equal to `/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/`")
 
 

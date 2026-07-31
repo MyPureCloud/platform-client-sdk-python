@@ -92,7 +92,7 @@ class SupportCenterSettings(object):
     def enabled(self) -> bool:
         """
         Gets the enabled of this SupportCenterSettings.
-        Whether or not knowledge portal (previously support center) is enabled
+        Whether or not knowledge portal (previously support center) is enabled.
 
         :return: The enabled of this SupportCenterSettings.
         :rtype: bool
@@ -103,7 +103,7 @@ class SupportCenterSettings(object):
     def enabled(self, enabled: bool) -> None:
         """
         Sets the enabled of this SupportCenterSettings.
-        Whether or not knowledge portal (previously support center) is enabled
+        Whether or not knowledge portal (previously support center) is enabled.
 
         :param enabled: The enabled of this SupportCenterSettings.
         :type: bool
@@ -116,7 +116,7 @@ class SupportCenterSettings(object):
     def knowledge_base(self) -> 'AddressableEntityRef':
         """
         Gets the knowledge_base of this SupportCenterSettings.
-        The knowledge base for knowledge portal (previously support center)
+        The knowledge base for knowledge portal (previously support center). Required if support center is enabled
 
         :return: The knowledge_base of this SupportCenterSettings.
         :rtype: AddressableEntityRef
@@ -127,7 +127,7 @@ class SupportCenterSettings(object):
     def knowledge_base(self, knowledge_base: 'AddressableEntityRef') -> None:
         """
         Sets the knowledge_base of this SupportCenterSettings.
-        The knowledge base for knowledge portal (previously support center)
+        The knowledge base for knowledge portal (previously support center). Required if support center is enabled
 
         :param knowledge_base: The knowledge_base of this SupportCenterSettings.
         :type: AddressableEntityRef
@@ -140,7 +140,7 @@ class SupportCenterSettings(object):
     def custom_messages(self) -> List['SupportCenterCustomMessage']:
         """
         Gets the custom_messages of this SupportCenterSettings.
-        Customizable display texts for knowledge portal (previously support center)
+        Customizable display texts for knowledge portal (previously support center). Required if support center is enabled, must contain both Welcome and Fallback message entries
 
         :return: The custom_messages of this SupportCenterSettings.
         :rtype: list[SupportCenterCustomMessage]
@@ -151,7 +151,7 @@ class SupportCenterSettings(object):
     def custom_messages(self, custom_messages: List['SupportCenterCustomMessage']) -> None:
         """
         Sets the custom_messages of this SupportCenterSettings.
-        Customizable display texts for knowledge portal (previously support center)
+        Customizable display texts for knowledge portal (previously support center). Required if support center is enabled, must contain both Welcome and Fallback message entries
 
         :param custom_messages: The custom_messages of this SupportCenterSettings.
         :type: list[SupportCenterCustomMessage]
@@ -193,7 +193,7 @@ class SupportCenterSettings(object):
     def screens(self) -> List['SupportCenterScreen']:
         """
         Gets the screens of this SupportCenterSettings.
-        Available screens for the knowledge portal (previously support center) with its modules
+        Available screens for the knowledge portal (previously support center) with its modules. Required if support center is enabled
 
         :return: The screens of this SupportCenterSettings.
         :rtype: list[SupportCenterScreen]
@@ -204,7 +204,7 @@ class SupportCenterSettings(object):
     def screens(self, screens: List['SupportCenterScreen']) -> None:
         """
         Sets the screens of this SupportCenterSettings.
-        Available screens for the knowledge portal (previously support center) with its modules
+        Available screens for the knowledge portal (previously support center) with its modules. Required if support center is enabled
 
         :param screens: The screens of this SupportCenterSettings.
         :type: list[SupportCenterScreen]
@@ -217,7 +217,7 @@ class SupportCenterSettings(object):
     def enabled_categories(self) -> List['SupportCenterCategory']:
         """
         Gets the enabled_categories of this SupportCenterSettings.
-        Featured categories for knowledge portal (previously support center) home screen
+        Featured categories for knowledge portal (previously support center) home screen. Required if support center is enabled
 
         :return: The enabled_categories of this SupportCenterSettings.
         :rtype: list[SupportCenterCategory]
@@ -228,7 +228,7 @@ class SupportCenterSettings(object):
     def enabled_categories(self, enabled_categories: List['SupportCenterCategory']) -> None:
         """
         Sets the enabled_categories of this SupportCenterSettings.
-        Featured categories for knowledge portal (previously support center) home screen
+        Featured categories for knowledge portal (previously support center) home screen. Required if support center is enabled
 
         :param enabled_categories: The enabled_categories of this SupportCenterSettings.
         :type: list[SupportCenterCategory]
@@ -265,7 +265,7 @@ class SupportCenterSettings(object):
     def style_setting(self) -> 'SupportCenterStyleSetting':
         """
         Gets the style_setting of this SupportCenterSettings.
-        Style attributes for knowledge portal (previously support center)
+        Style attributes for knowledge portal (previously support center). Required if support center is enabled
 
         :return: The style_setting of this SupportCenterSettings.
         :rtype: SupportCenterStyleSetting
@@ -276,7 +276,7 @@ class SupportCenterSettings(object):
     def style_setting(self, style_setting: 'SupportCenterStyleSetting') -> None:
         """
         Sets the style_setting of this SupportCenterSettings.
-        Style attributes for knowledge portal (previously support center)
+        Style attributes for knowledge portal (previously support center). Required if support center is enabled
 
         :param style_setting: The style_setting of this SupportCenterSettings.
         :type: SupportCenterStyleSetting

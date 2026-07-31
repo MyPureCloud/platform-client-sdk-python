@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ListWrapperSecondaryPresence
     from . import ListWrapperString
+    from . import ValueWrapperActivityCodeStyle
     from . import WfmVersionedEntityMetadata
 
 class UpdateActivityCodeRequest(object):
@@ -61,6 +62,7 @@ class UpdateActivityCodeRequest(object):
             'planned_shrinkage': 'bool',
             'interruptible': 'bool',
             'planning_group_ids': 'ListWrapperString',
+            'style': 'ValueWrapperActivityCodeStyle',
             'metadata': 'WfmVersionedEntityMetadata',
             'secondary_presences': 'ListWrapperSecondaryPresence'
         }
@@ -76,6 +78,7 @@ class UpdateActivityCodeRequest(object):
             'planned_shrinkage': 'plannedShrinkage',
             'interruptible': 'interruptible',
             'planning_group_ids': 'planningGroupIds',
+            'style': 'style',
             'metadata': 'metadata',
             'secondary_presences': 'secondaryPresences'
         }
@@ -90,6 +93,7 @@ class UpdateActivityCodeRequest(object):
         self._planned_shrinkage = None
         self._interruptible = None
         self._planning_group_ids = None
+        self._style = None
         self._metadata = None
         self._secondary_presences = None
 
@@ -337,6 +341,30 @@ class UpdateActivityCodeRequest(object):
         
 
         self._planning_group_ids = planning_group_ids
+
+    @property
+    def style(self) -> 'ValueWrapperActivityCodeStyle':
+        """
+        Gets the style of this UpdateActivityCodeRequest.
+        The style configuration for the activity code
+
+        :return: The style of this UpdateActivityCodeRequest.
+        :rtype: ValueWrapperActivityCodeStyle
+        """
+        return self._style
+
+    @style.setter
+    def style(self, style: 'ValueWrapperActivityCodeStyle') -> None:
+        """
+        Sets the style of this UpdateActivityCodeRequest.
+        The style configuration for the activity code
+
+        :param style: The style of this UpdateActivityCodeRequest.
+        :type: ValueWrapperActivityCodeStyle
+        """
+        
+
+        self._style = style
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

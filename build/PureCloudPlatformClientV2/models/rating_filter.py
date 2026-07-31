@@ -48,21 +48,15 @@ class RatingFilter(object):
         """
         self.swagger_types = {
             'operator': 'str',
-            'pcFrom': 'int',
-            'to': 'int',
             'values': 'list[int]'
         }
 
         self.attribute_map = {
             'operator': 'operator',
-            'pcFrom': 'from',
-            'to': 'to',
             'values': 'values'
         }
 
         self._operator = None
-        self._pcFrom = None
-        self._to = None
         self._values = None
 
     @property
@@ -87,60 +81,12 @@ class RatingFilter(object):
         """
         if isinstance(operator, int):
             operator = str(operator)
-        allowed_values = ["EqualTo", "GreaterThan", "GreaterThanOrEqualTo", "LessThan", "LessThanOrEqualTo", "Between"]
+        allowed_values = ["EqualTo"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"
         else:
             self._operator = operator
-
-    @property
-    def pcFrom(self) -> int:
-        """
-        Gets the pcFrom of this RatingFilter.
-        The lower bound for the Between operator
-
-        :return: The pcFrom of this RatingFilter.
-        :rtype: int
-        """
-        return self._pcFrom
-
-    @pcFrom.setter
-    def pcFrom(self, pcFrom: int) -> None:
-        """
-        Sets the pcFrom of this RatingFilter.
-        The lower bound for the Between operator
-
-        :param pcFrom: The pcFrom of this RatingFilter.
-        :type: int
-        """
-        
-
-        self._pcFrom = pcFrom
-
-    @property
-    def to(self) -> int:
-        """
-        Gets the to of this RatingFilter.
-        The upper bound for the Between operator
-
-        :return: The to of this RatingFilter.
-        :rtype: int
-        """
-        return self._to
-
-    @to.setter
-    def to(self, to: int) -> None:
-        """
-        Sets the to of this RatingFilter.
-        The upper bound for the Between operator
-
-        :param to: The to of this RatingFilter.
-        :type: int
-        """
-        
-
-        self._to = to
 
     @property
     def values(self) -> List[int]:

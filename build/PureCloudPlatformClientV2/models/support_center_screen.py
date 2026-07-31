@@ -65,7 +65,7 @@ class SupportCenterScreen(object):
     def type(self) -> str:
         """
         Gets the type of this SupportCenterScreen.
-        The type of the screen
+        The type of the screen. Required if support center is enabled
 
         :return: The type of this SupportCenterScreen.
         :rtype: str
@@ -76,7 +76,7 @@ class SupportCenterScreen(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this SupportCenterScreen.
-        The type of the screen
+        The type of the screen. Required if support center is enabled
 
         :param type: The type of this SupportCenterScreen.
         :type: str
@@ -94,7 +94,7 @@ class SupportCenterScreen(object):
     def module_settings(self) -> List['SupportCenterModuleSetting']:
         """
         Gets the module_settings of this SupportCenterScreen.
-        Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
+        Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; Required if support center is enabled
 
         :return: The module_settings of this SupportCenterScreen.
         :rtype: list[SupportCenterModuleSetting]
@@ -105,7 +105,7 @@ class SupportCenterScreen(object):
     def module_settings(self, module_settings: List['SupportCenterModuleSetting']) -> None:
         """
         Sets the module_settings of this SupportCenterScreen.
-        Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
+        Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article; Required if support center is enabled
 
         :param module_settings: The module_settings of this SupportCenterScreen.
         :type: list[SupportCenterModuleSetting]

@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_station_defaultstation**](#delete_user_station_defaultstation) | Clear default station|
 |[**delete_user_verifier**](#delete_user_verifier) | Delete a verifier|
 |[**delete_users_customattributes_schema**](#delete_users_customattributes_schema) | Delete a schema|
+|[**delete_users_me_verifier**](#delete_users_me_verifier) | Delete a verifier|
 |[**delete_users_stations_me_associatedstation**](#delete_users_stations_me_associatedstation) | Clear self associated station|
 |[**get_analytics_users_aggregates_job**](#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
 |[**get_analytics_users_aggregates_job_results**](#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
@@ -75,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_users_development_activity**](#get_users_development_activity) | Get a Development Activity|
 |[**get_users_externalid_authority_name_external_key**](#get_users_externalid_authority_name_external_key) | Get the user associated with external identifier.|
 |[**get_users_me**](#get_users_me) | Get current user details.|
+|[**get_users_me_verifiers**](#get_users_me_verifiers) | Get a list of my verifiers|
 |[**get_users_query**](#get_users_query) | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required|
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**get_users_stations_me**](#get_users_stations_me) | Get station information for self|
@@ -108,6 +110,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users_customattributes_schemas**](#post_users_customattributes_schemas) | Create a schema|
 |[**post_users_development_activities_aggregates_query**](#post_users_development_activities_aggregates_query) | Retrieve aggregated development activity data|
 |[**post_users_me_password**](#post_users_me_password) | Change your password|
+|[**post_users_me_verifiers_totp**](#post_users_me_verifiers_totp) | Add a new TOTP verifier|
+|[**post_users_me_verifiers_totp_verifier_id**](#post_users_me_verifiers_totp_verifier_id) | Validate a TOTP verifier|
+|[**post_users_me_verifiers_webauthn_register**](#post_users_me_verifiers_webauthn_register) | Finish WebAuthn verifier registration|
+|[**post_users_me_verifiers_webauthn_register_options**](#post_users_me_verifiers_webauthn_register_options) | Begin WebAuthn verifier registration|
 |[**post_users_search**](#post_users_search) | Search users|
 |[**post_users_search_conversation_target**](#post_users_search_conversation_target) | Search users as conversation targets|
 |[**post_users_search_queuemembers_manage**](#post_users_search_queuemembers_manage) | Search manage queue member|
@@ -128,6 +134,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_station_defaultstation_station_id**](#put_user_station_defaultstation_station_id) | Set default station|
 |[**put_user_verifier**](#put_user_verifier) | Update a verifier|
 |[**put_users_customattributes_schema**](#put_users_customattributes_schema) | Update a schema|
+|[**put_users_me_verifier**](#put_users_me_verifier) | Update a verifier|
 |[**put_users_stations_me_associatedstation_station_id**](#put_users_stations_me_associatedstation_station_id) | Set self associated station|
 
 
@@ -848,6 +855,52 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_users_me_verifier
+
+>  delete_users_me_verifier(verifier_id)
+
+
+Delete a verifier
+
+Wraps DELETE /api/v2/users/me/verifiers/{verifierId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+verifier_id = 'verifier_id_example' # str | Verifier ID
+
+try:
+    # Delete a verifier
+    api_instance.delete_users_me_verifier(verifier_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_users_me_verifier: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **verifier_id** | **str**| Verifier ID |  |
 
 ### Return type
 
@@ -3612,6 +3665,49 @@ except ApiException as e:
 [**UserMe**](UserMe)
 
 
+## get_users_me_verifiers
+
+> [**VerifierEntityListing**](VerifierEntityListing) get_users_me_verifiers()
+
+
+Get a list of my verifiers
+
+Wraps GET /api/v2/users/me/verifiers 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Get a list of my verifiers
+    api_response = api_instance.get_users_me_verifiers()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_me_verifiers: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**VerifierEntityListing**](VerifierEntityListing)
+
+
 ## get_users_query
 
 > [**UserCursorEntityListing**](UserCursorEntityListing) get_users_query(cursor=cursor, page_size=page_size, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, user_custom_attribute_schema_ids=user_custom_attribute_schema_ids, state=state)
@@ -5281,6 +5377,195 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_users_me_verifiers_totp
+
+> [**CreateVerifierResponse**](CreateVerifierResponse) post_users_me_verifiers_totp(body)
+
+
+Add a new TOTP verifier
+
+Wraps POST /api/v2/users/me/verifiers/totp 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.CreateVerifierRequest() # CreateVerifierRequest | Verifier
+
+try:
+    # Add a new TOTP verifier
+    api_response = api_instance.post_users_me_verifiers_totp(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_me_verifiers_totp: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateVerifierRequest**](CreateVerifierRequest)| Verifier |  |
+
+### Return type
+
+[**CreateVerifierResponse**](CreateVerifierResponse)
+
+
+## post_users_me_verifiers_totp_verifier_id
+
+>  post_users_me_verifiers_totp_verifier_id(verifier_id, body)
+
+
+Validate a TOTP verifier
+
+Wraps POST /api/v2/users/me/verifiers/totp/{verifierId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+verifier_id = 'verifier_id_example' # str | Verifier ID
+body = PureCloudPlatformClientV2.ValidateVerifierRequest() # ValidateVerifierRequest | Verifier Validate
+
+try:
+    # Validate a TOTP verifier
+    api_instance.post_users_me_verifiers_totp_verifier_id(verifier_id, body)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_me_verifiers_totp_verifier_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **verifier_id** | **str**| Verifier ID |  |
+| **body** | [**ValidateVerifierRequest**](ValidateVerifierRequest)| Verifier Validate |  |
+
+### Return type
+
+void (empty response body)
+
+
+## post_users_me_verifiers_webauthn_register
+
+> [**Verifier**](Verifier) post_users_me_verifiers_webauthn_register(body)
+
+
+Finish WebAuthn verifier registration
+
+Completes registration of a new WebAuthn authenticator by submitting the credential creation response produced by navigator.credentials.create().
+
+Wraps POST /api/v2/users/me/verifiers/webauthn/register 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.FinishWebAuthnRegistrationRequest() # FinishWebAuthnRegistrationRequest | WebAuthn registration result
+
+try:
+    # Finish WebAuthn verifier registration
+    api_response = api_instance.post_users_me_verifiers_webauthn_register(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_me_verifiers_webauthn_register: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FinishWebAuthnRegistrationRequest**](FinishWebAuthnRegistrationRequest)| WebAuthn registration result |  |
+
+### Return type
+
+[**Verifier**](Verifier)
+
+
+## post_users_me_verifiers_webauthn_register_options
+
+> [**BeginWebAuthnRegistrationResponse**](BeginWebAuthnRegistrationResponse) post_users_me_verifiers_webauthn_register_options()
+
+
+Begin WebAuthn verifier registration
+
+Returns the public key credential creation options the client passes to navigator.credentials.create() to start registering a new WebAuthn authenticator.
+
+Wraps POST /api/v2/users/me/verifiers/webauthn/register/options 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Begin WebAuthn verifier registration
+    api_response = api_instance.post_users_me_verifiers_webauthn_register_options()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_me_verifiers_webauthn_register_options: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**BeginWebAuthnRegistrationResponse**](BeginWebAuthnRegistrationResponse)
+
+
 ## post_users_search
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search(body)
@@ -6277,6 +6562,55 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
+## put_users_me_verifier
+
+> [**Verifier**](Verifier) put_users_me_verifier(verifier_id, body)
+
+
+Update a verifier
+
+Wraps PUT /api/v2/users/me/verifiers/{verifierId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+verifier_id = 'verifier_id_example' # str | Verifier ID
+body = PureCloudPlatformClientV2.UpdateVerifierRequest() # UpdateVerifierRequest | Verifier Update
+
+try:
+    # Update a verifier
+    api_response = api_instance.put_users_me_verifier(verifier_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_users_me_verifier: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **verifier_id** | **str**| Verifier ID |  |
+| **body** | [**UpdateVerifierRequest**](UpdateVerifierRequest)| Verifier Update |  |
+
+### Return type
+
+[**Verifier**](Verifier)
+
+
 ## put_users_stations_me_associatedstation_station_id
 
 >  put_users_stations_me_associatedstation_station_id(station_id)
@@ -6324,4 +6658,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

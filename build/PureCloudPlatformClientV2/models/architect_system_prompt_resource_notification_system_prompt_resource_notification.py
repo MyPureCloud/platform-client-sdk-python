@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat
 
 class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(object):
     """
@@ -52,7 +54,8 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
             'language': 'str',
             'media_uri': 'str',
             'upload_status': 'str',
-            'duration_seconds': 'float'
+            'duration_seconds': 'float',
+            'audio_format': 'ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat'
         }
 
         self.attribute_map = {
@@ -61,7 +64,8 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
             'language': 'language',
             'media_uri': 'mediaUri',
             'upload_status': 'uploadStatus',
-            'duration_seconds': 'durationSeconds'
+            'duration_seconds': 'durationSeconds',
+            'audio_format': 'audioFormat'
         }
 
         self._prompt_id = None
@@ -70,6 +74,7 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
         self._media_uri = None
         self._upload_status = None
         self._duration_seconds = None
+        self._audio_format = None
 
     @property
     def prompt_id(self) -> str:
@@ -214,6 +219,30 @@ class ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification(
         
 
         self._duration_seconds = duration_seconds
+
+    @property
+    def audio_format(self) -> 'ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat':
+        """
+        Gets the audio_format of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
+
+
+        :return: The audio_format of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
+        :rtype: ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat
+        """
+        return self._audio_format
+
+    @audio_format.setter
+    def audio_format(self, audio_format: 'ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat') -> None:
+        """
+        Sets the audio_format of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
+
+
+        :param audio_format: The audio_format of this ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.
+        :type: ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat
+        """
+        
+
+        self._audio_format = audio_format
 
     def to_dict(self):
         """

@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import AddressableEntityRef
 
 class SttEngineEntity(object):
     """
@@ -50,6 +52,7 @@ class SttEngineEntity(object):
             'id': 'str',
             'name': 'str',
             'grammar_based': 'bool',
+            'replaced_by': 'AddressableEntityRef',
             'self_uri': 'str'
         }
 
@@ -57,12 +60,14 @@ class SttEngineEntity(object):
             'id': 'id',
             'name': 'name',
             'grammar_based': 'grammarBased',
+            'replaced_by': 'replacedBy',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._grammar_based = None
+        self._replaced_by = None
         self._self_uri = None
 
     @property
@@ -136,6 +141,30 @@ class SttEngineEntity(object):
         
 
         self._grammar_based = grammar_based
+
+    @property
+    def replaced_by(self) -> 'AddressableEntityRef':
+        """
+        Gets the replaced_by of this SttEngineEntity.
+        If this STT engine has been deprecated, the STT engine that should be used as a replacement
+
+        :return: The replaced_by of this SttEngineEntity.
+        :rtype: AddressableEntityRef
+        """
+        return self._replaced_by
+
+    @replaced_by.setter
+    def replaced_by(self, replaced_by: 'AddressableEntityRef') -> None:
+        """
+        Sets the replaced_by of this SttEngineEntity.
+        If this STT engine has been deprecated, the STT engine that should be used as a replacement
+
+        :param replaced_by: The replaced_by of this SttEngineEntity.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._replaced_by = replaced_by
 
     @property
     def self_uri(self) -> str:

@@ -1166,6 +1166,8 @@ except ApiException as e:
 
 Update decision table row import job
 
+Cancels an in-progress import job by supplying a status of Cancelled. Cancellation is idempotent: cancelling a job that is already Cancelled returns 200 with the cancelled job. Cancelling a job that is still Uploading or Processing returns 200. A job that has already finished (Complete or Failed) can no longer be cancelled.
+
 Wraps PATCH /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId} 
 
 Requires ANY permissions: 
@@ -1269,6 +1271,8 @@ except ApiException as e:
 
 
 Execute a published decision table
+
+Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/execute 
 
@@ -1471,6 +1475,8 @@ except ApiException as e:
 
 
 Execute a decision table version
+
+Example request payload: {\"inputs\":{\"schemaPropertykey1\":\"inputValue1\",\"schemaPropertykey2\":\"inputValue2\"}}
 
 Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute 
 
@@ -2149,4 +2155,4 @@ except ApiException as e:
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

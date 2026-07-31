@@ -11,7 +11,7 @@
 | **division** | [Division](Division) | The division to which this entity belongs. | [optional] |
 | **type** | [WorktypeReference](WorktypeReference) | The Worktype of the Workitem. | [optional] |
 | **description** | str | The description of the Workitem. | [optional] |
-| **language** | [LanguageReference](LanguageReference) | The language of the Workitem. | [optional] |
+| **language** | [WorkitemLanguageReference](WorkitemLanguageReference) | The language of the Workitem. | [optional] |
 | **utilization_label** | [WorkitemUtilizationLabelReference](WorkitemUtilizationLabelReference) | The utilization label of the Workitem. | [optional] |
 | **priority** | int | The priority of the Workitem. The valid range is between -25,000,000 and 25,000,000. | [optional] |
 | **date_created** | datetime | The creation date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
@@ -34,7 +34,7 @@
 | **assignment_state** | str | The assignment state of the workitem. | [optional] |
 | **date_assignment_state_changed** | datetime | The assignment state change date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **alert_timeout_seconds** | int | The duration in seconds before an alert will timeout. | [optional] |
-| **skills** | [list[RoutingSkillReference]](RoutingSkillReference) | The skills of the Workitem. | [optional] |
+| **skills** | [list[WorkitemRoutingSkillReference]](WorkitemRoutingSkillReference) | The skills of the Workitem. | [optional] |
 | **preferred_agents** | [list[UserReference]](UserReference) | The preferred agents of the Workitem. | [optional] |
 | **auto_status_transition** | bool | Set it to false to disable auto status transition. By default, it is enabled. | [optional] |
 | **schema** | [WorkitemSchema](WorkitemSchema) | The schema defining the custom fields of the Workitem. The schema is inherited from the Workitems Worktype at creation time. | [optional] |
@@ -46,4 +46,4 @@
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

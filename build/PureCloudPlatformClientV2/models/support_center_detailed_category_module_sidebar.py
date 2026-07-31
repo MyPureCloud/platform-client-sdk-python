@@ -60,7 +60,7 @@ class SupportCenterDetailedCategoryModuleSidebar(object):
     def enabled(self) -> bool:
         """
         Gets the enabled of this SupportCenterDetailedCategoryModuleSidebar.
-        Whether sidebar is enabled or not
+        Whether sidebar is enabled or not. Required if support center is enabled
 
         :return: The enabled of this SupportCenterDetailedCategoryModuleSidebar.
         :rtype: bool
@@ -71,7 +71,7 @@ class SupportCenterDetailedCategoryModuleSidebar(object):
     def enabled(self, enabled: bool) -> None:
         """
         Sets the enabled of this SupportCenterDetailedCategoryModuleSidebar.
-        Whether sidebar is enabled or not
+        Whether sidebar is enabled or not. Required if support center is enabled
 
         :param enabled: The enabled of this SupportCenterDetailedCategoryModuleSidebar.
         :type: bool

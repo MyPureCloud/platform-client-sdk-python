@@ -229,7 +229,7 @@ class ActivityPlanJobResponse(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["RunPlan", "DeleteActivityPlan", "DeleteOccurrence", "DeleteOccurrences", "DeleteSessions", "DeleteSessionUsers"]
+        allowed_values = ["RunPlan", "DeleteActivityPlan", "DeleteOccurrence", "DeleteOccurrences", "DeleteSessions", "DeleteSessionUsers", "MaximizeOccurrence", "CreateSession", "EditSession"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

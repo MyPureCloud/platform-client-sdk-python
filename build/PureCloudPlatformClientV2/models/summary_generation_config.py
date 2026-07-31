@@ -32,6 +32,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ModelConfig
+    from . import OnDemandSummaryConfig
     from . import SummarySettingEntity
 
 class SummaryGenerationConfig(object):
@@ -50,16 +52,25 @@ class SummaryGenerationConfig(object):
         """
         self.swagger_types = {
             'enabled': 'bool',
-            'summary_setting': 'SummarySettingEntity'
+            'summary_setting': 'SummarySettingEntity',
+            'retention_seconds': 'int',
+            'on_demand_summary_config': 'OnDemandSummaryConfig',
+            'model_config': 'ModelConfig'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
-            'summary_setting': 'summarySetting'
+            'summary_setting': 'summarySetting',
+            'retention_seconds': 'retentionSeconds',
+            'on_demand_summary_config': 'onDemandSummaryConfig',
+            'model_config': 'modelConfig'
         }
 
         self._enabled = None
         self._summary_setting = None
+        self._retention_seconds = None
+        self._on_demand_summary_config = None
+        self._model_config = None
 
     @property
     def enabled(self) -> bool:
@@ -108,6 +119,84 @@ class SummaryGenerationConfig(object):
         
 
         self._summary_setting = summary_setting
+
+    @property
+    def retention_seconds(self) -> int:
+        """
+        Gets the retention_seconds of this SummaryGenerationConfig.
+        Summary retention time in seconds. Can only be modified on the parent assistant.
+
+        :return: The retention_seconds of this SummaryGenerationConfig.
+        :rtype: int
+        """
+        return self._retention_seconds
+
+    @retention_seconds.setter
+    def retention_seconds(self, retention_seconds: int) -> None:
+        """
+        Sets the retention_seconds of this SummaryGenerationConfig.
+        Summary retention time in seconds. Can only be modified on the parent assistant.
+
+        :param retention_seconds: The retention_seconds of this SummaryGenerationConfig.
+        :type: int
+        """
+        
+        if retention_seconds > 864000:
+            raise ValueError("Invalid value for `retention_seconds`, must be a value less than or equal to `864000`")
+
+        if retention_seconds < 3600:
+            raise ValueError("Invalid value for `retention_seconds`, must be a value greater than or equal to `3600`")
+
+
+        self._retention_seconds = retention_seconds
+
+    @property
+    def on_demand_summary_config(self) -> 'OnDemandSummaryConfig':
+        """
+        Gets the on_demand_summary_config of this SummaryGenerationConfig.
+        On-demand summary configuration.
+
+        :return: The on_demand_summary_config of this SummaryGenerationConfig.
+        :rtype: OnDemandSummaryConfig
+        """
+        return self._on_demand_summary_config
+
+    @on_demand_summary_config.setter
+    def on_demand_summary_config(self, on_demand_summary_config: 'OnDemandSummaryConfig') -> None:
+        """
+        Sets the on_demand_summary_config of this SummaryGenerationConfig.
+        On-demand summary configuration.
+
+        :param on_demand_summary_config: The on_demand_summary_config of this SummaryGenerationConfig.
+        :type: OnDemandSummaryConfig
+        """
+        
+
+        self._on_demand_summary_config = on_demand_summary_config
+
+    @property
+    def model_config(self) -> 'ModelConfig':
+        """
+        Gets the model_config of this SummaryGenerationConfig.
+        Model configuration for summarization.
+
+        :return: The model_config of this SummaryGenerationConfig.
+        :rtype: ModelConfig
+        """
+        return self._model_config
+
+    @model_config.setter
+    def model_config(self, model_config: 'ModelConfig') -> None:
+        """
+        Sets the model_config of this SummaryGenerationConfig.
+        Model configuration for summarization.
+
+        :param model_config: The model_config of this SummaryGenerationConfig.
+        :type: ModelConfig
+        """
+        
+
+        self._model_config = model_config
 
     def to_dict(self):
         """

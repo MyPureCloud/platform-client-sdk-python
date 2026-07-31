@@ -120,7 +120,7 @@ class WhatsAppDefinition(object):
     def namespace(self) -> str:
         """
         Gets the namespace of this WhatsAppDefinition.
-        The messaging template namespace.
+        The messaging template namespace. This field is deprecated.
 
         :return: The namespace of this WhatsAppDefinition.
         :rtype: str
@@ -131,7 +131,7 @@ class WhatsAppDefinition(object):
     def namespace(self, namespace: str) -> None:
         """
         Sets the namespace of this WhatsAppDefinition.
-        The messaging template namespace.
+        The messaging template namespace. This field is deprecated.
 
         :param namespace: The namespace of this WhatsAppDefinition.
         :type: str

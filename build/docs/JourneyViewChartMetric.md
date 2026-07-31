@@ -10,7 +10,8 @@
 | **element_id** | str | The element in the list of elements which the metric is measuring | |
 | **aggregate** | str | How to aggregate the given element, defaults to CustomerCount | [optional] |
 | **display_label** | str | A display label for the metric | [optional] |
+| **attribute** | str | Attribute name | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

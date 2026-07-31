@@ -59,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_capacityplan_staffingrequirements**](#get_workforcemanagement_businessunit_capacityplan_staffingrequirements) | Get a capacity plan&#39;s staffing requirements|
 |[**get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast**](#get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast) | Get the latest long term staffing requirements for a business unit|
 |[**get_workforcemanagement_businessunit_capacityplans**](#get_workforcemanagement_businessunit_capacityplans) | Get list of capacity plans for a business unit|
+|[**get_workforcemanagement_businessunit_decisionmetrics_job**](#get_workforcemanagement_businessunit_decisionmetrics_job) | Gets the status of the given job|
 |[**get_workforcemanagement_businessunit_intraday_planninggroups**](#get_workforcemanagement_businessunit_intraday_planninggroups) | Get intraday planning groups for the given date|
 |[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session) | Get the latest session for the business unit ID|
 |[**get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id**](#get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id) | Get the session details for the session ID|
@@ -87,6 +88,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_staffinggroup**](#get_workforcemanagement_businessunit_staffinggroup) | Gets a staffing group|
 |[**get_workforcemanagement_businessunit_staffinggroups**](#get_workforcemanagement_businessunit_staffinggroups) | Gets a list of staffing groups|
 |[**get_workforcemanagement_businessunit_timeofflimit**](#get_workforcemanagement_businessunit_timeofflimit) | Gets a time-off limit object|
+|[**get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job**](#get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job) | Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.|
+|[**get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs**](#get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs) | Query the list of convert time-off limit granularity job operation.|
 |[**get_workforcemanagement_businessunit_timeofflimits**](#get_workforcemanagement_businessunit_timeofflimits) | Gets a list of time-off limit objects|
 |[**get_workforcemanagement_businessunit_timeoffplan**](#get_workforcemanagement_businessunit_timeoffplan) | Gets a time-off plan|
 |[**get_workforcemanagement_businessunit_timeoffplans**](#get_workforcemanagement_businessunit_timeoffplans) | Gets a list of time-off plans|
@@ -125,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_managementunit_adherence**](#get_workforcemanagement_managementunit_adherence) | Get a list of user schedule adherence records for the requested management unit|
 |[**get_workforcemanagement_managementunit_agent**](#get_workforcemanagement_managementunit_agent) | Get data for agent in the management unit|
 |[**get_workforcemanagement_managementunit_agent_shifttrades**](#get_workforcemanagement_managementunit_agent_shifttrades) | Gets all the shift trades for a given agent|
+|[**get_workforcemanagement_managementunit_decisionmetrics**](#get_workforcemanagement_managementunit_decisionmetrics) | Gets the decision metrics of all user in given management unit|
 |[**get_workforcemanagement_managementunit_shifttrades_matched**](#get_workforcemanagement_managementunit_shifttrades_matched) | Gets a summary of all shift trades in the matched state|
 |[**get_workforcemanagement_managementunit_shifttrades_users**](#get_workforcemanagement_managementunit_shifttrades_users) | Gets list of users available for whom you can send direct shift trade requests|
 |[**get_workforcemanagement_managementunit_timeofflimit**](#get_workforcemanagement_managementunit_timeofflimit) | Gets a time off limit object|
@@ -172,6 +176,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_alternativeshifts_trades_state_jobs**](#patch_workforcemanagement_alternativeshifts_trades_state_jobs) | Bulk update alternative shift trade states|
 |[**patch_workforcemanagement_businessunit**](#patch_workforcemanagement_businessunit) | Update business unit|
 |[**patch_workforcemanagement_businessunit_activitycode**](#patch_workforcemanagement_businessunit_activitycode) | Update an activity code|
+|[**patch_workforcemanagement_businessunit_activitycodes_bulk**](#patch_workforcemanagement_businessunit_activitycodes_bulk) | Update multiple activity codes|
 |[**patch_workforcemanagement_businessunit_activityplan**](#patch_workforcemanagement_businessunit_activityplan) | Update an activity plan|
 |[**patch_workforcemanagement_businessunit_alternativeshifts_settings**](#patch_workforcemanagement_businessunit_alternativeshifts_settings) | Update alternative shifts settings for a business unit|
 |[**patch_workforcemanagement_businessunit_capacityplan**](#patch_workforcemanagement_businessunit_capacityplan) | Update a capacity plan configuration|
@@ -236,6 +241,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate**](#post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate) | Force regenerate the latest long term staffing requirements for a business unit|
 |[**post_workforcemanagement_businessunit_capacityplans**](#post_workforcemanagement_businessunit_capacityplans) | Create a new capacity plan|
 |[**post_workforcemanagement_businessunit_capacityplans_bulk_remove**](#post_workforcemanagement_businessunit_capacityplans_bulk_remove) | Delete capacity plans in a business unit|
+|[**post_workforcemanagement_businessunit_decisionmetrics_update**](#post_workforcemanagement_businessunit_decisionmetrics_update) | Initiates the decision metrics update process|
+|[**post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl**](#post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl) | Creates a signed upload URL for updating decision metrics|
 |[**post_workforcemanagement_businessunit_intraday**](#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
 |[**post_workforcemanagement_businessunit_opportunities_bulk_add**](#post_workforcemanagement_businessunit_opportunities_bulk_add) | Bulk add opportunities|
 |[**post_workforcemanagement_businessunit_opportunities_bulk_publish**](#post_workforcemanagement_businessunit_opportunities_bulk_publish) | Bulk publish opportunities|
@@ -259,6 +266,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_staffinggroups**](#post_workforcemanagement_businessunit_staffinggroups) | Creates a new staffing group|
 |[**post_workforcemanagement_businessunit_staffinggroups_planninggroups_query**](#post_workforcemanagement_businessunit_staffinggroups_planninggroups_query) | Gets a list of planning group to staffing groups list association|
 |[**post_workforcemanagement_businessunit_staffinggroups_query**](#post_workforcemanagement_businessunit_staffinggroups_query) | Gets staffing group associations for a list of user IDs|
+|[**post_workforcemanagement_businessunit_timeofflimit_granularityconversion**](#post_workforcemanagement_businessunit_timeofflimit_granularityconversion) | Converts existing time-off limit to another granularity.|
+|[**post_workforcemanagement_businessunit_timeofflimit_values_import**](#post_workforcemanagement_businessunit_timeofflimit_values_import) | Starts importing the uploaded time-off limit values|
+|[**post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl**](#post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl) | Creates a signed upload URL for importing values into time-off limit|
+|[**post_workforcemanagement_businessunit_timeofflimit_values_query**](#post_workforcemanagement_businessunit_timeofflimit_values_query) | Retrieves time-off limit related values based on a given set of filters.|
 |[**post_workforcemanagement_businessunit_timeofflimits**](#post_workforcemanagement_businessunit_timeofflimits) | Creates a new time-off limit object|
 |[**post_workforcemanagement_businessunit_timeofflimits_values_query**](#post_workforcemanagement_businessunit_timeofflimits_values_query) | Retrieves time-off limit related values based on a given set of filters.|
 |[**post_workforcemanagement_businessunit_timeoffplans**](#post_workforcemanagement_businessunit_timeoffplans) | Creates a new time-off plan|
@@ -3164,6 +3175,56 @@ except ApiException as e:
 [**CapacityPlansListResponse**](CapacityPlansListResponse)
 
 
+## get_workforcemanagement_businessunit_decisionmetrics_job
+
+> [**DecisionMetricsUpdateJobResponse**](DecisionMetricsUpdateJobResponse) get_workforcemanagement_businessunit_decisionmetrics_job(business_unit_id, job_id)
+
+
+Gets the status of the given job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the update job
+
+try:
+    # Gets the status of the given job
+    api_response = api_instance.get_workforcemanagement_businessunit_decisionmetrics_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_decisionmetrics_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the update job |  |
+
+### Return type
+
+[**DecisionMetricsUpdateJobResponse**](DecisionMetricsUpdateJobResponse)
+
+
 ## get_workforcemanagement_businessunit_intraday_planninggroups
 
 > [**WfmIntradayPlanningGroupListing**](WfmIntradayPlanningGroupListing) get_workforcemanagement_businessunit_intraday_planninggroups(business_unit_id, date)
@@ -4602,6 +4663,110 @@ except ApiException as e:
 ### Return type
 
 [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse)
+
+
+## get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job
+
+> [**BuConvertTimeOffLimitGranularityJobResponse**](BuConvertTimeOffLimitGranularityJobResponse) get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job(business_unit_id, time_off_limit_id, job_id)
+
+
+Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:convertGranularity
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit
+job_id = 'job_id_example' # str | The ID of the convert time off limit granularity job
+
+try:
+    # Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+    api_response = api_instance.get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job(business_unit_id, time_off_limit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit |  |
+| **job_id** | **str**| The ID of the convert time off limit granularity job |  |
+
+### Return type
+
+[**BuConvertTimeOffLimitGranularityJobResponse**](BuConvertTimeOffLimitGranularityJobResponse)
+
+
+## get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs
+
+> [**BuConvertTimeOffGranularityLimitJobListing**](BuConvertTimeOffGranularityLimitJobListing) get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs(business_unit_id, time_off_limit_id, statuses=statuses)
+
+
+Query the list of convert time-off limit granularity job operation.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:convertGranularity
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit
+statuses = 'statuses_example' # str | Status to filter the list of jobs (optional)
+
+try:
+    # Query the list of convert time-off limit granularity job operation.
+    api_response = api_instance.get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs(business_unit_id, time_off_limit_id, statuses=statuses)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit |  |
+| **statuses** | **str**| Status to filter the list of jobs | [optional] <br />**Values**: Complete, Error, Processing |
+
+### Return type
+
+[**BuConvertTimeOffGranularityLimitJobListing**](BuConvertTimeOffGranularityLimitJobListing)
 
 
 ## get_workforcemanagement_businessunit_timeofflimits
@@ -6668,6 +6833,54 @@ except ApiException as e:
 ### Return type
 
 [**ShiftTradeListResponse**](ShiftTradeListResponse)
+
+
+## get_workforcemanagement_managementunit_decisionmetrics
+
+> [**DecisionMetricsResponse**](DecisionMetricsResponse) get_workforcemanagement_managementunit_decisionmetrics(management_unit_id)
+
+
+Gets the decision metrics of all user in given management unit
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics 
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
+
+try:
+    # Gets the decision metrics of all user in given management unit
+    api_response = api_instance.get_workforcemanagement_managementunit_decisionmetrics(management_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_decisionmetrics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit |  |
+
+### Return type
+
+[**DecisionMetricsResponse**](DecisionMetricsResponse)
 
 
 ## get_workforcemanagement_managementunit_shifttrades_matched
@@ -9038,6 +9251,56 @@ except ApiException as e:
 ### Return type
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode)
+
+
+## patch_workforcemanagement_businessunit_activitycodes_bulk
+
+> [**BulkUpdateActivityCodeResponse**](BulkUpdateActivityCodeResponse) patch_workforcemanagement_businessunit_activitycodes_bulk(business_unit_id, body)
+
+
+Update multiple activity codes
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk 
+
+Requires ANY permissions: 
+
+* wfm:activityCodes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+body = PureCloudPlatformClientV2.BulkUpdateActivityCodeRequest() # BulkUpdateActivityCodeRequest | body
+
+try:
+    # Update multiple activity codes
+    api_response = api_instance.patch_workforcemanagement_businessunit_activitycodes_bulk(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_activitycodes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **body** | [**BulkUpdateActivityCodeRequest**](BulkUpdateActivityCodeRequest)| body |  |
+
+### Return type
+
+[**BulkUpdateActivityCodeResponse**](BulkUpdateActivityCodeResponse)
 
 
 ## patch_workforcemanagement_businessunit_activityplan
@@ -12323,6 +12586,106 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_workforcemanagement_businessunit_decisionmetrics_update
+
+> [**DecisionMetricsUpdateJobResponse**](DecisionMetricsUpdateJobResponse) post_workforcemanagement_businessunit_decisionmetrics_update(business_unit_id, body)
+
+
+Initiates the decision metrics update process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update 
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.DecisionMetricsUpdateJobRequest() # DecisionMetricsUpdateJobRequest | body
+
+try:
+    # Initiates the decision metrics update process
+    api_response = api_instance.post_workforcemanagement_businessunit_decisionmetrics_update(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_decisionmetrics_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**DecisionMetricsUpdateJobRequest**](DecisionMetricsUpdateJobRequest)| body |  |
+
+### Return type
+
+[**DecisionMetricsUpdateJobResponse**](DecisionMetricsUpdateJobResponse)
+
+
+## post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl
+
+> [**DecisionMetricsUploadResponse**](DecisionMetricsUploadResponse) post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl(business_unit_id, body)
+
+
+Creates a signed upload URL for updating decision metrics
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl 
+
+Requires ANY permissions: 
+
+* wfm:decisionMetrics:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body
+
+try:
+    # Creates a signed upload URL for updating decision metrics
+    api_response = api_instance.post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body |  |
+
+### Return type
+
+[**DecisionMetricsUploadResponse**](DecisionMetricsUploadResponse)
+
+
 ## post_workforcemanagement_businessunit_intraday
 
 > [**AsyncIntradayResponse**](AsyncIntradayResponse) post_workforcemanagement_businessunit_intraday(business_unit_id, body, force_async=force_async)
@@ -13519,6 +13882,218 @@ except ApiException as e:
 ### Return type
 
 [**UserStaffingGroupListing**](UserStaffingGroupListing)
+
+
+## post_workforcemanagement_businessunit_timeofflimit_granularityconversion
+
+> [**BuConvertTimeOffLimitGranularityJobResponse**](BuConvertTimeOffLimitGranularityJobResponse) post_workforcemanagement_businessunit_timeofflimit_granularityconversion(business_unit_id, time_off_limit_id, body)
+
+
+Converts existing time-off limit to another granularity.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:convertGranularity
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit
+body = PureCloudPlatformClientV2.BuConvertTimeOffLimitGranularityJobRequest() # BuConvertTimeOffLimitGranularityJobRequest | body
+
+try:
+    # Converts existing time-off limit to another granularity.
+    api_response = api_instance.post_workforcemanagement_businessunit_timeofflimit_granularityconversion(business_unit_id, time_off_limit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_timeofflimit_granularityconversion: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit |  |
+| **body** | [**BuConvertTimeOffLimitGranularityJobRequest**](BuConvertTimeOffLimitGranularityJobRequest)| body |  |
+
+### Return type
+
+[**BuConvertTimeOffLimitGranularityJobResponse**](BuConvertTimeOffLimitGranularityJobResponse)
+
+
+## post_workforcemanagement_businessunit_timeofflimit_values_import
+
+> [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse) post_workforcemanagement_businessunit_timeofflimit_values_import(business_unit_id, time_off_limit_id, body)
+
+
+Starts importing the uploaded time-off limit values
+
+Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit object to set limit values for
+body = PureCloudPlatformClientV2.BuImportTimeOffLimitValuesRequest() # BuImportTimeOffLimitValuesRequest | body
+
+try:
+    # Starts importing the uploaded time-off limit values
+    api_response = api_instance.post_workforcemanagement_businessunit_timeofflimit_values_import(business_unit_id, time_off_limit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_timeofflimit_values_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit object to set limit values for |  |
+| **body** | [**BuImportTimeOffLimitValuesRequest**](BuImportTimeOffLimitValuesRequest)| body |  |
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse)
+
+
+## post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl
+
+> [**BuImportTimeOffLimitValuesUploadResponse**](BuImportTimeOffLimitValuesUploadResponse) post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl(business_unit_id, time_off_limit_id, body)
+
+
+Creates a signed upload URL for importing values into time-off limit
+
+Once the upload is complete, call the /import route to start the import process
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit object to set values for
+body = PureCloudPlatformClientV2.BuTimeOffLimitValuesImportUploadUrlRequest() # BuTimeOffLimitValuesImportUploadUrlRequest | body
+
+try:
+    # Creates a signed upload URL for importing values into time-off limit
+    api_response = api_instance.post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl(business_unit_id, time_off_limit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit object to set values for |  |
+| **body** | [**BuTimeOffLimitValuesImportUploadUrlRequest**](BuTimeOffLimitValuesImportUploadUrlRequest)| body |  |
+
+### Return type
+
+[**BuImportTimeOffLimitValuesUploadResponse**](BuImportTimeOffLimitValuesUploadResponse)
+
+
+## post_workforcemanagement_businessunit_timeofflimit_values_query
+
+> [**BuTimeOffLimitValuesForGranularityResponse**](BuTimeOffLimitValuesForGranularityResponse) post_workforcemanagement_businessunit_timeofflimit_values_query(business_unit_id, time_off_limit_id, body)
+
+
+Retrieves time-off limit related values based on a given set of filters.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit
+body = PureCloudPlatformClientV2.QueryTimeOffLimitValuesForGranularityRequest() # QueryTimeOffLimitValuesForGranularityRequest | body
+
+try:
+    # Retrieves time-off limit related values based on a given set of filters.
+    api_response = api_instance.post_workforcemanagement_businessunit_timeofflimit_values_query(business_unit_id, time_off_limit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_timeofflimit_values_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit |  |
+| **body** | [**QueryTimeOffLimitValuesForGranularityRequest**](QueryTimeOffLimitValuesForGranularityRequest)| body |  |
+
+### Return type
+
+[**BuTimeOffLimitValuesForGranularityResponse**](BuTimeOffLimitValuesForGranularityResponse)
 
 
 ## post_workforcemanagement_businessunit_timeofflimits
@@ -17370,4 +17945,4 @@ except ApiException as e:
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

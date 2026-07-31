@@ -82,6 +82,7 @@ from .user_recordings_api import UserRecordingsApi
 from .users_api import UsersApi
 from .users_rules_api import UsersRulesApi
 from .utilities_api import UtilitiesApi
+from .virtual_agents_api import VirtualAgentsApi
 from .voicemail_api import VoicemailApi
 from .web_chat_api import WebChatApi
 from .web_messaging_api import WebMessagingApi
@@ -169,6 +170,7 @@ from .user_recordings_api import UserRecordingsApi
 from .users_api import UsersApi
 from .users_rules_api import UsersRulesApi
 from .utilities_api import UtilitiesApi
+from .virtual_agents_api import VirtualAgentsApi
 from .voicemail_api import VoicemailApi
 from .web_chat_api import WebChatApi
 from .web_messaging_api import WebMessagingApi

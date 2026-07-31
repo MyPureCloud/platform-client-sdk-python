@@ -35,6 +35,12 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import AgenticVirtualAgent
+from ..models import AgenticVirtualAgentEntityListing
+from ..models import AgenticVirtualAgentJob
+from ..models import AgenticVirtualAgentVersionPublishJob
+from ..models import AgenticVirtualAgentVersionPublishJobRequest
+from ..models import CreateAgenticVirtualAgent
 from ..models import CreateGuide
 from ..models import CreateGuideVersion
 from ..models import ErrorBody
@@ -51,6 +57,7 @@ from ..models import GuideVersionPublishJobRequest
 from ..models import SummarySetting
 from ..models import SummarySettingEntityListing
 from ..models import SummarySettingWithTranscript
+from ..models import UpdateAgenticVirtualAgent
 from ..models import UpdateGuide
 from ..models import UpdateGuideVersion
 from ..models import UploadUrlRequest
@@ -71,6 +78,84 @@ class AIStudioApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_agentic_virtualagent_jobs(self, virtual_agent_id: str, **kwargs) -> 'AgenticVirtualAgentJob':
+        """
+        Start the deletion of a virtualAgent.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_agentic_virtualagent_jobs(virtual_agent_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str virtual_agent_id: Virtual Agent ID (required)
+        :return: AgenticVirtualAgentJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['virtual_agent_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_agentic_virtualagent_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'virtual_agent_id' is set
+        if ('virtual_agent_id' not in params) or (params['virtual_agent_id'] is None):
+            raise ValueError("Missing the required parameter `virtual_agent_id` when calling `delete_agentic_virtualagent_jobs`")
+
+
+        resource_path = '/api/v2/agentic/virtualagents/{virtualAgentId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'virtual_agent_id' in params:
+            path_params['virtualAgentId'] = params['virtual_agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgenticVirtualAgentJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_conversations_summaries_setting(self, summary_setting_id: str, **kwargs) -> None:
         """
@@ -110,7 +195,7 @@ class AIStudioApi(object):
         if ('summary_setting_id' not in params) or (params['summary_setting_id'] is None):
             raise ValueError("Missing the required parameter `summary_setting_id` when calling `delete_conversations_summaries_setting`")
 
-        if 'summary_setting_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
+        if 'summary_setting_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
             raise ValueError("Invalid value for parameter `summary_setting_id` when calling `delete_conversations_summaries_setting`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/conversations/summaries/settings/{summarySettingId}'.replace('{format}', 'json')
@@ -230,6 +315,261 @@ class AIStudioApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_agentic_virtualagent(self, virtual_agent_id: str, **kwargs) -> 'AgenticVirtualAgent':
+        """
+        Get virtual agent.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_agentic_virtualagent(virtual_agent_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str virtual_agent_id: Virtual Agent ID (required)
+        :return: AgenticVirtualAgent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['virtual_agent_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_agentic_virtualagent" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'virtual_agent_id' is set
+        if ('virtual_agent_id' not in params) or (params['virtual_agent_id'] is None):
+            raise ValueError("Missing the required parameter `virtual_agent_id` when calling `get_agentic_virtualagent`")
+
+
+        resource_path = '/api/v2/agentic/virtualagents/{virtualAgentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'virtual_agent_id' in params:
+            path_params['virtualAgentId'] = params['virtual_agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgenticVirtualAgent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_agentic_virtualagent_job(self, virtual_agent_id: str, job_id: str, **kwargs) -> 'AgenticVirtualAgentJob':
+        """
+        Get a virtualAgent job.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_agentic_virtualagent_job(virtual_agent_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str virtual_agent_id: Virtual Agent ID (required)
+        :param str job_id: jobId (required)
+        :return: AgenticVirtualAgentJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['virtual_agent_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_agentic_virtualagent_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'virtual_agent_id' is set
+        if ('virtual_agent_id' not in params) or (params['virtual_agent_id'] is None):
+            raise ValueError("Missing the required parameter `virtual_agent_id` when calling `get_agentic_virtualagent_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_agentic_virtualagent_job`")
+
+
+        resource_path = '/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'virtual_agent_id' in params:
+            path_params['virtualAgentId'] = params['virtual_agent_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgenticVirtualAgentJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_agentic_virtualagents(self, **kwargs) -> 'AgenticVirtualAgentEntityListing':
+        """
+        Get all virtual agents.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_agentic_virtualagents(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str name: Filter by matching name - case insensitive.
+        :param str name_contains: Filter by name contains - case insensitive.
+        :param str status: Filter by status.
+        :param str sort_by: Sort by. Default value dateModified.
+        :param str sort_order: Sort Order. Default value desc.
+        :param int page_number: Page number.
+        :param int page_size: Page size. The maximum page size is 100.
+        :return: AgenticVirtualAgentEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'name_contains', 'status', 'sort_by', 'sort_order', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_agentic_virtualagents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/agentic/virtualagents'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'name_contains' in params:
+            query_params['nameContains'] = params['name_contains']
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgenticVirtualAgentEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_conversations_summaries_setting(self, summary_setting_id: str, **kwargs) -> 'SummarySetting':
         """
         Receive a summary setting.
@@ -268,7 +608,7 @@ class AIStudioApi(object):
         if ('summary_setting_id' not in params) or (params['summary_setting_id'] is None):
             raise ValueError("Missing the required parameter `summary_setting_id` when calling `get_conversations_summaries_setting`")
 
-        if 'summary_setting_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
+        if 'summary_setting_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
             raise ValueError("Invalid value for parameter `summary_setting_id` when calling `get_conversations_summaries_setting`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/conversations/summaries/settings/{summarySettingId}'.replace('{format}', 'json')
@@ -913,6 +1253,90 @@ class AIStudioApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_agentic_virtualagent(self, virtual_agent_id: str, body: 'UpdateAgenticVirtualAgent', **kwargs) -> 'AgenticVirtualAgent':
+        """
+        Update a virtual agent.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_agentic_virtualagent(virtual_agent_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str virtual_agent_id: Virtual Agent ID (required)
+        :param UpdateAgenticVirtualAgent body:  (required)
+        :return: AgenticVirtualAgent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['virtual_agent_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_agentic_virtualagent" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'virtual_agent_id' is set
+        if ('virtual_agent_id' not in params) or (params['virtual_agent_id'] is None):
+            raise ValueError("Missing the required parameter `virtual_agent_id` when calling `patch_agentic_virtualagent`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_agentic_virtualagent`")
+
+
+        resource_path = '/api/v2/agentic/virtualagents/{virtualAgentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'virtual_agent_id' in params:
+            path_params['virtualAgentId'] = params['virtual_agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgenticVirtualAgent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_guide(self, guide_id: str, body: 'UpdateGuide', **kwargs) -> 'Guide':
         """
         Update a guide.
@@ -1083,6 +1507,174 @@ class AIStudioApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='GuideVersion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_agentic_virtualagent_version_jobs(self, virtual_agent_id: str, version_id: str, body: 'AgenticVirtualAgentVersionPublishJobRequest', **kwargs) -> 'AgenticVirtualAgentVersionPublishJob':
+        """
+        Start the publishing of a virtual agent version.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_agentic_virtualagent_version_jobs(virtual_agent_id, version_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str virtual_agent_id: Virtual Agent ID (required)
+        :param str version_id: Version ID (required)
+        :param AgenticVirtualAgentVersionPublishJobRequest body:  (required)
+        :return: AgenticVirtualAgentVersionPublishJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['virtual_agent_id', 'version_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_agentic_virtualagent_version_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'virtual_agent_id' is set
+        if ('virtual_agent_id' not in params) or (params['virtual_agent_id'] is None):
+            raise ValueError("Missing the required parameter `virtual_agent_id` when calling `post_agentic_virtualagent_version_jobs`")
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `post_agentic_virtualagent_version_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_agentic_virtualagent_version_jobs`")
+
+
+        resource_path = '/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'virtual_agent_id' in params:
+            path_params['virtualAgentId'] = params['virtual_agent_id']
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgenticVirtualAgentVersionPublishJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_agentic_virtualagents(self, body: 'CreateAgenticVirtualAgent', **kwargs) -> 'AgenticVirtualAgent':
+        """
+        Create a virtual agent.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_agentic_virtualagents(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateAgenticVirtualAgent body:  (required)
+        :return: AgenticVirtualAgent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_agentic_virtualagents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_agentic_virtualagents`")
+
+
+        resource_path = '/api/v2/agentic/virtualagents'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgenticVirtualAgent',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1780,7 +2372,7 @@ class AIStudioApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `put_conversations_summaries_setting`")
 
-        if 'summary_setting_id' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
+        if 'summary_setting_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}', params['summary_setting_id']): 
             raise ValueError("Invalid value for parameter `summary_setting_id` when calling `put_conversations_summaries_setting`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/conversations/summaries/settings/{summarySettingId}'.replace('{format}', 'json')

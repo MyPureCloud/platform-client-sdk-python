@@ -135,7 +135,7 @@ class Configuration(object):
         # if live_reload_config set, start the config_updater thread
         if self.live_reload_config:
             run_observer = threading.Thread(target=self._run_observer)
-            run_observer.setDaemon(True)
+            run_observer.daemon = True
             run_observer.start()
 
             self._config_updater()
@@ -256,7 +256,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: 262.0.0".\
+               "SDK Package Version: 263.0.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def _update_config_from_file(self):

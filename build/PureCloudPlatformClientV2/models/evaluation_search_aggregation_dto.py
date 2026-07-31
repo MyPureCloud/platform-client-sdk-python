@@ -132,7 +132,7 @@ class EvaluationSearchAggregationDTO(object):
         """
         if isinstance(field, int):
             field = str(field)
-        allowed_values = ["formId", "formIdReleased", "contextId", "questionGroupId", "questionId", "questionAnswerId", "evaluationStatus", "aiScoringFailureType", "questionAiAnswerFailureType", "released", "questionGroupMarkedNA", "questionMarkedNA", "questionAiScored", "questionEaScored", "totalScore", "totalCriticalScore", "questionGroupScorePercentage", "criticalQuestionGroupScorePercentage", "questionGroupScore", "criticalQuestionGroupScore", "questionScore", "disputeCount", "rescoreCount", "eaSuggestionCount", "eaAcceptedSuggestionCount", "aiSuggestionCount", "aiAcceptedSuggestionCount", "conversationDate", "createdDate", "submittedDate", "releaseDate"]
+        allowed_values = ["formId", "formIdReleased", "agentId", "evaluatorId", "contextId", "questionGroupId", "questionId", "questionAnswerId", "evaluationStatus", "aiScoringFailureType", "questionAiAnswerFailureType", "released", "questionGroupMarkedNA", "questionMarkedNA", "questionAiScored", "questionEaScored", "totalScore", "totalCriticalScore", "questionGroupScorePercentage", "criticalQuestionGroupScorePercentage", "questionGroupScore", "criticalQuestionGroupScore", "questionScore", "disputeCount", "rescoreCount", "eaSuggestionCount", "eaAcceptedSuggestionCount", "aiSuggestionCount", "aiAcceptedSuggestionCount", "conversationDate", "createdDate", "submittedDate", "releaseDate"]
         if field.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for field -> " + field)
             self._field = "outdated_sdk_version"

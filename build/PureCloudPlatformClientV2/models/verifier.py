@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import Credential
 
 class Verifier(object):
     """
@@ -49,7 +51,9 @@ class Verifier(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'type': 'str',
             'enabled': 'bool',
+            'credential': 'Credential',
             'default': 'bool',
             'self_uri': 'str'
         }
@@ -57,14 +61,18 @@ class Verifier(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'type': 'type',
             'enabled': 'enabled',
+            'credential': 'credential',
             'default': 'default',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._type = None
         self._enabled = None
+        self._credential = None
         self._default = None
         self._self_uri = None
 
@@ -117,6 +125,35 @@ class Verifier(object):
         self._name = name
 
     @property
+    def type(self) -> str:
+        """
+        Gets the type of this Verifier.
+        The type of verifier.
+
+        :return: The type of this Verifier.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this Verifier.
+        The type of verifier.
+
+        :param type: The type of this Verifier.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["TOTP", "WEBAUTHN"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
+
+    @property
     def enabled(self) -> bool:
         """
         Gets the enabled of this Verifier.
@@ -139,6 +176,30 @@ class Verifier(object):
         
 
         self._enabled = enabled
+
+    @property
+    def credential(self) -> 'Credential':
+        """
+        Gets the credential of this Verifier.
+        The WebAuthn credential associated with this verifier.
+
+        :return: The credential of this Verifier.
+        :rtype: Credential
+        """
+        return self._credential
+
+    @credential.setter
+    def credential(self, credential: 'Credential') -> None:
+        """
+        Sets the credential of this Verifier.
+        The WebAuthn credential associated with this verifier.
+
+        :param credential: The credential of this Verifier.
+        :type: Credential
+        """
+        
+
+        self._credential = credential
 
     @property
     def default(self) -> bool:

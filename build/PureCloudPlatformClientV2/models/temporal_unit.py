@@ -31,8 +31,6 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
-if TYPE_CHECKING:
-    from . import Duration
 
 class TemporalUnit(object):
     """
@@ -50,7 +48,7 @@ class TemporalUnit(object):
         """
         self.swagger_types = {
             'duration_estimated': 'bool',
-            'duration': 'Duration',
+            'duration': 'str',
             'time_based': 'bool',
             'date_based': 'bool'
         }
@@ -92,24 +90,24 @@ class TemporalUnit(object):
         self._duration_estimated = duration_estimated
 
     @property
-    def duration(self) -> 'Duration':
+    def duration(self) -> 'str':
         """
         Gets the duration of this TemporalUnit.
 
 
         :return: The duration of this TemporalUnit.
-        :rtype: Duration
+        :rtype: str
         """
         return self._duration
 
     @duration.setter
-    def duration(self, duration: 'Duration') -> None:
+    def duration(self, duration: 'str') -> None:
         """
         Sets the duration of this TemporalUnit.
 
 
         :param duration: The duration of this TemporalUnit.
-        :type: Duration
+        :type: str
         """
         
 

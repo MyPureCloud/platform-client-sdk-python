@@ -48,15 +48,18 @@ class BuTimeOffLimitRange(object):
         """
         self.swagger_types = {
             'start_date': 'date',
+            'limit_minutes_per_fifteen_minutes': 'list[int]',
             'limit_minutes_per_day': 'list[int]'
         }
 
         self.attribute_map = {
             'start_date': 'startDate',
+            'limit_minutes_per_fifteen_minutes': 'limitMinutesPerFifteenMinutes',
             'limit_minutes_per_day': 'limitMinutesPerDay'
         }
 
         self._start_date = None
+        self._limit_minutes_per_fifteen_minutes = None
         self._limit_minutes_per_day = None
 
     @property
@@ -82,6 +85,30 @@ class BuTimeOffLimitRange(object):
         
 
         self._start_date = start_date
+
+    @property
+    def limit_minutes_per_fifteen_minutes(self) -> List[int]:
+        """
+        Gets the limit_minutes_per_fifteen_minutes of this BuTimeOffLimitRange.
+        The list of time-off limit values in minutes per fifteen minute interval. It must be set if 'granularity' on time-off limit is fifteen minutes. If count of limit minutes array exceeds a day for given 'startDate', the slots overflowing into next day, should not be duplicated in another range entry with next day as 'startDate'.For example startDate 03/01/2026 - limitMinutesPerFifteenMinutes with 120 intervals, 03/02/2026 - limitMinutesPerFifteenMinutes with 20 intervals has overlap and not allowed
+
+        :return: The limit_minutes_per_fifteen_minutes of this BuTimeOffLimitRange.
+        :rtype: list[int]
+        """
+        return self._limit_minutes_per_fifteen_minutes
+
+    @limit_minutes_per_fifteen_minutes.setter
+    def limit_minutes_per_fifteen_minutes(self, limit_minutes_per_fifteen_minutes: List[int]) -> None:
+        """
+        Sets the limit_minutes_per_fifteen_minutes of this BuTimeOffLimitRange.
+        The list of time-off limit values in minutes per fifteen minute interval. It must be set if 'granularity' on time-off limit is fifteen minutes. If count of limit minutes array exceeds a day for given 'startDate', the slots overflowing into next day, should not be duplicated in another range entry with next day as 'startDate'.For example startDate 03/01/2026 - limitMinutesPerFifteenMinutes with 120 intervals, 03/02/2026 - limitMinutesPerFifteenMinutes with 20 intervals has overlap and not allowed
+
+        :param limit_minutes_per_fifteen_minutes: The limit_minutes_per_fifteen_minutes of this BuTimeOffLimitRange.
+        :type: list[int]
+        """
+        
+
+        self._limit_minutes_per_fifteen_minutes = limit_minutes_per_fifteen_minutes
 
     @property
     def limit_minutes_per_day(self) -> List[int]:

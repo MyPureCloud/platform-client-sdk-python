@@ -96,6 +96,9 @@ from ..models import BuAsyncAgentSchedulesQueryResponse
 from ..models import BuAsyncAgentSchedulesSearchResponse
 from ..models import BuAsyncScheduleResponse
 from ..models import BuAsyncScheduleRunResponse
+from ..models import BuConvertTimeOffGranularityLimitJobListing
+from ..models import BuConvertTimeOffLimitGranularityJobRequest
+from ..models import BuConvertTimeOffLimitGranularityJobResponse
 from ..models import BuCopyScheduleRequest
 from ..models import BuCreateBlankScheduleRequest
 from ..models import BuCreateTimeOffLimitRequest
@@ -107,6 +110,8 @@ from ..models import BuForecastStaffingRequirementsResultResponse
 from ..models import BuGenerateScheduleRequest
 from ..models import BuGetCurrentAgentScheduleRequest
 from ..models import BuHeadcountForecastResponse
+from ..models import BuImportTimeOffLimitValuesRequest
+from ..models import BuImportTimeOffLimitValuesUploadResponse
 from ..models import BuListAlternativeShiftTradesResponse
 from ..models import BuQueryAdherenceExplanationsRequest
 from ..models import BuQueryAdherenceExplanationsResponse
@@ -125,6 +130,8 @@ from ..models import BuShortTermForecast
 from ..models import BuShortTermForecastListing
 from ..models import BuTimeOffLimitListing
 from ..models import BuTimeOffLimitResponse
+from ..models import BuTimeOffLimitValuesForGranularityResponse
+from ..models import BuTimeOffLimitValuesImportUploadUrlRequest
 from ..models import BuTimeOffLimitValuesResponse
 from ..models import BuTimeOffPlanListing
 from ..models import BuTimeOffPlanResponse
@@ -140,6 +147,8 @@ from ..models import BulkOpportunityEnrollmentsStatusUpdateRequest
 from ..models import BulkPublishOpportunitiesResponse
 from ..models import BulkRemoveOpportunitiesResponse
 from ..models import BulkShiftTradeStateUpdateRequest
+from ..models import BulkUpdateActivityCodeRequest
+from ..models import BulkUpdateActivityCodeResponse
 from ..models import BulkUpdateOpportunityEnrollmentsStatusResponse
 from ..models import BulkUpdateShiftTradeListJobRequest
 from ..models import BulkUpdateShiftTradeStateResponse
@@ -184,6 +193,10 @@ from ..models import CreateWorkPlan
 from ..models import CreateWorkPlanBid
 from ..models import CurrentUserScheduleRequestBody
 from ..models import CurrentUserTimeOffIntegrationStatusRequest
+from ..models import DecisionMetricsResponse
+from ..models import DecisionMetricsUpdateJobRequest
+from ..models import DecisionMetricsUpdateJobResponse
+from ..models import DecisionMetricsUploadResponse
 from ..models import EntityListing
 from ..models import ErrorBody
 from ..models import EstimateAvailableTimeOffRequest
@@ -250,6 +263,7 @@ from ..models import QueryOpportunityEnrollmentsResponse
 from ..models import QueryPlanningGroupToStaffingGroupsRequest
 from ..models import QueryShiftTradeListJobRequest
 from ..models import QueryTimeOffIntegrationStatusRequest
+from ..models import QueryTimeOffLimitValuesForGranularityRequest
 from ..models import QueryTimeOffLimitValuesRequest
 from ..models import QueryTimeOffLimitValuesResponse
 from ..models import QueryUserStaffingGroupListRequest
@@ -4735,6 +4749,90 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_businessunit_decisionmetrics_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'DecisionMetricsUpdateJobResponse':
+        """
+        Gets the status of the given job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_decisionmetrics_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the update job (required)
+        :return: DecisionMetricsUpdateJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_decisionmetrics_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_decisionmetrics_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_decisionmetrics_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionMetricsUpdateJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_businessunit_intraday_planninggroups(self, business_unit_id: str, date: date, **kwargs) -> 'WfmIntradayPlanningGroupListing':
         """
         Get intraday planning groups for the given date
@@ -7089,6 +7187,183 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BuTimeOffLimitResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job(self, business_unit_id: str, time_off_limit_id: str, job_id: str, **kwargs) -> 'BuConvertTimeOffLimitGranularityJobResponse':
+        """
+        Query the convert time-off limit granularity job operation. Only the user who started the operation can query the status.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job(business_unit_id, time_off_limit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str time_off_limit_id: The ID of the time-off limit (required)
+        :param str job_id: The ID of the convert time off limit granularity job (required)
+        :return: BuConvertTimeOffLimitGranularityJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'time_off_limit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job`")
+        # verify the required parameter 'time_off_limit_id' is set
+        if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_limit_id` when calling `get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'time_off_limit_id' in params:
+            path_params['timeOffLimitId'] = params['time_off_limit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuConvertTimeOffLimitGranularityJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs(self, business_unit_id: str, time_off_limit_id: str, **kwargs) -> 'BuConvertTimeOffGranularityLimitJobListing':
+        """
+        Query the list of convert time-off limit granularity job operation.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs(business_unit_id, time_off_limit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str time_off_limit_id: The ID of the time-off limit (required)
+        :param str statuses: Status to filter the list of jobs
+        :return: BuConvertTimeOffGranularityLimitJobListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'time_off_limit_id', 'statuses']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs`")
+        # verify the required parameter 'time_off_limit_id' is set
+        if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_limit_id` when calling `get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'time_off_limit_id' in params:
+            path_params['timeOffLimitId'] = params['time_off_limit_id']
+
+        query_params = {}
+        if 'statuses' in params:
+            query_params['statuses'] = params['statuses']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuConvertTimeOffGranularityLimitJobListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10313,6 +10588,84 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ShiftTradeListResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_managementunit_decisionmetrics(self, management_unit_id: str, **kwargs) -> 'DecisionMetricsResponse':
+        """
+        Gets the decision metrics of all user in given management unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_managementunit_decisionmetrics(management_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit (required)
+        :return: DecisionMetricsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_managementunit_decisionmetrics" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_decisionmetrics`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionMetricsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -14125,6 +14478,90 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BusinessUnitActivityCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_activitycodes_bulk(self, business_unit_id: str, body: 'BulkUpdateActivityCodeRequest', **kwargs) -> 'BulkUpdateActivityCodeResponse':
+        """
+        Update multiple activity codes
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_activitycodes_bulk(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
+        :param BulkUpdateActivityCodeRequest body: body (required)
+        :return: BulkUpdateActivityCodeResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_activitycodes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_activitycodes_bulk`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_activitycodes_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkUpdateActivityCodeResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -19638,6 +20075,174 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_businessunit_decisionmetrics_update(self, business_unit_id: str, body: 'DecisionMetricsUpdateJobRequest', **kwargs) -> 'DecisionMetricsUpdateJobResponse':
+        """
+        Initiates the decision metrics update process
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_decisionmetrics_update(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param DecisionMetricsUpdateJobRequest body: body (required)
+        :return: DecisionMetricsUpdateJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_decisionmetrics_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_decisionmetrics_update`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_decisionmetrics_update`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionMetricsUpdateJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl(self, business_unit_id: str, body: 'UploadUrlRequestBody', **kwargs) -> 'DecisionMetricsUploadResponse':
+        """
+        Creates a signed upload URL for updating decision metrics
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param UploadUrlRequestBody body: body (required)
+        :return: DecisionMetricsUploadResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionMetricsUploadResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_businessunit_intraday(self, business_unit_id: str, body: 'IntradayPlanningGroupRequest', **kwargs) -> 'AsyncIntradayResponse':
         """
         Get intraday data for the given date for the requested planningGroupIds
@@ -21620,6 +22225,366 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UserStaffingGroupListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_timeofflimit_granularityconversion(self, business_unit_id: str, time_off_limit_id: str, body: 'BuConvertTimeOffLimitGranularityJobRequest', **kwargs) -> 'BuConvertTimeOffLimitGranularityJobResponse':
+        """
+        Converts existing time-off limit to another granularity.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_timeofflimit_granularityconversion(business_unit_id, time_off_limit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str time_off_limit_id: The ID of the time-off limit (required)
+        :param BuConvertTimeOffLimitGranularityJobRequest body: body (required)
+        :return: BuConvertTimeOffLimitGranularityJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'time_off_limit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_timeofflimit_granularityconversion" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_granularityconversion`")
+        # verify the required parameter 'time_off_limit_id' is set
+        if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_limit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_granularityconversion`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_timeofflimit_granularityconversion`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'time_off_limit_id' in params:
+            path_params['timeOffLimitId'] = params['time_off_limit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuConvertTimeOffLimitGranularityJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_timeofflimit_values_import(self, business_unit_id: str, time_off_limit_id: str, body: 'BuImportTimeOffLimitValuesRequest', **kwargs) -> 'BuTimeOffLimitResponse':
+        """
+        Starts importing the uploaded time-off limit values
+        Call after uploading the time-off limit values data to the url supplied by the /import/uploadurl route
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_timeofflimit_values_import(business_unit_id, time_off_limit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str time_off_limit_id: The ID of the time-off limit object to set limit values for (required)
+        :param BuImportTimeOffLimitValuesRequest body: body (required)
+        :return: BuTimeOffLimitResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'time_off_limit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_timeofflimit_values_import" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_values_import`")
+        # verify the required parameter 'time_off_limit_id' is set
+        if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_limit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_values_import`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_timeofflimit_values_import`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'time_off_limit_id' in params:
+            path_params['timeOffLimitId'] = params['time_off_limit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuTimeOffLimitResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl(self, business_unit_id: str, time_off_limit_id: str, body: 'BuTimeOffLimitValuesImportUploadUrlRequest', **kwargs) -> 'BuImportTimeOffLimitValuesUploadResponse':
+        """
+        Creates a signed upload URL for importing values into time-off limit
+        Once the upload is complete, call the /import route to start the import process
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl(business_unit_id, time_off_limit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str time_off_limit_id: The ID of the time-off limit object to set values for (required)
+        :param BuTimeOffLimitValuesImportUploadUrlRequest body: body (required)
+        :return: BuImportTimeOffLimitValuesUploadResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'time_off_limit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl`")
+        # verify the required parameter 'time_off_limit_id' is set
+        if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_limit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'time_off_limit_id' in params:
+            path_params['timeOffLimitId'] = params['time_off_limit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuImportTimeOffLimitValuesUploadResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_timeofflimit_values_query(self, business_unit_id: str, time_off_limit_id: str, body: 'QueryTimeOffLimitValuesForGranularityRequest', **kwargs) -> 'BuTimeOffLimitValuesForGranularityResponse':
+        """
+        Retrieves time-off limit related values based on a given set of filters.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_timeofflimit_values_query(business_unit_id, time_off_limit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str time_off_limit_id: The ID of the time-off limit (required)
+        :param QueryTimeOffLimitValuesForGranularityRequest body: body (required)
+        :return: BuTimeOffLimitValuesForGranularityResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'time_off_limit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_timeofflimit_values_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_values_query`")
+        # verify the required parameter 'time_off_limit_id' is set
+        if ('time_off_limit_id' not in params) or (params['time_off_limit_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_limit_id` when calling `post_workforcemanagement_businessunit_timeofflimit_values_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_timeofflimit_values_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'time_off_limit_id' in params:
+            path_params['timeOffLimitId'] = params['time_off_limit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuTimeOffLimitValuesForGranularityResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

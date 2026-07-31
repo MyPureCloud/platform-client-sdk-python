@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import TimeOffRequest
+    from . import TimeOffRequestListItem
 
 class TimeOffRequestListing(object):
     """
@@ -49,7 +49,7 @@ class TimeOffRequestListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[TimeOffRequest]',
+            'entities': 'list[TimeOffRequestListItem]',
             'download_url': 'str'
         }
 
@@ -62,24 +62,24 @@ class TimeOffRequestListing(object):
         self._download_url = None
 
     @property
-    def entities(self) -> List['TimeOffRequest']:
+    def entities(self) -> List['TimeOffRequestListItem']:
         """
         Gets the entities of this TimeOffRequestListing.
         List of time off requests
 
         :return: The entities of this TimeOffRequestListing.
-        :rtype: list[TimeOffRequest]
+        :rtype: list[TimeOffRequestListItem]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['TimeOffRequest']) -> None:
+    def entities(self, entities: List['TimeOffRequestListItem']) -> None:
         """
         Sets the entities of this TimeOffRequestListing.
         List of time off requests
 
         :param entities: The entities of this TimeOffRequestListing.
-        :type: list[TimeOffRequest]
+        :type: list[TimeOffRequestListItem]
         """
         
 

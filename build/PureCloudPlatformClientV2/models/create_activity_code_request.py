@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ActivityCodeStyle
     from . import SecondaryPresence
 
 class CreateActivityCodeRequest(object):
@@ -59,7 +60,8 @@ class CreateActivityCodeRequest(object):
             'planned_shrinkage': 'bool',
             'interruptible': 'bool',
             'secondary_presences': 'list[SecondaryPresence]',
-            'planning_group_ids': 'list[str]'
+            'planning_group_ids': 'list[str]',
+            'style': 'ActivityCodeStyle'
         }
 
         self.attribute_map = {
@@ -73,7 +75,8 @@ class CreateActivityCodeRequest(object):
             'planned_shrinkage': 'plannedShrinkage',
             'interruptible': 'interruptible',
             'secondary_presences': 'secondaryPresences',
-            'planning_group_ids': 'planningGroupIds'
+            'planning_group_ids': 'planningGroupIds',
+            'style': 'style'
         }
 
         self._name = None
@@ -87,6 +90,7 @@ class CreateActivityCodeRequest(object):
         self._interruptible = None
         self._secondary_presences = None
         self._planning_group_ids = None
+        self._style = None
 
     @property
     def name(self) -> str:
@@ -356,6 +360,30 @@ class CreateActivityCodeRequest(object):
         
 
         self._planning_group_ids = planning_group_ids
+
+    @property
+    def style(self) -> 'ActivityCodeStyle':
+        """
+        Gets the style of this CreateActivityCodeRequest.
+        The style configuration for the activity code
+
+        :return: The style of this CreateActivityCodeRequest.
+        :rtype: ActivityCodeStyle
+        """
+        return self._style
+
+    @style.setter
+    def style(self, style: 'ActivityCodeStyle') -> None:
+        """
+        Sets the style of this CreateActivityCodeRequest.
+        The style configuration for the activity code
+
+        :param style: The style of this CreateActivityCodeRequest.
+        :type: ActivityCodeStyle
+        """
+        
+
+        self._style = style
 
     def to_dict(self):
         """

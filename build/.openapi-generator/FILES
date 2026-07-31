@@ -84,6 +84,7 @@ PureCloudPlatformClientV2/apis/user_recordings_api.py
 PureCloudPlatformClientV2/apis/users_api.py
 PureCloudPlatformClientV2/apis/users_rules_api.py
 PureCloudPlatformClientV2/apis/utilities_api.py
+PureCloudPlatformClientV2/apis/virtual_agents_api.py
 PureCloudPlatformClientV2/apis/voicemail_api.py
 PureCloudPlatformClientV2/apis/web_chat_api.py
 PureCloudPlatformClientV2/apis/web_deployments_api.py
@@ -326,6 +327,19 @@ PureCloudPlatformClientV2/models/agent_work_plan_bids.py
 PureCloudPlatformClientV2/models/agent_work_plan_list_response.py
 PureCloudPlatformClientV2/models/agent_work_plan_shift.py
 PureCloudPlatformClientV2/models/agent_work_plans.py
+PureCloudPlatformClientV2/models/agentic_version_addressable_entity.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_comfort_statement_settings.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_entity_listing.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_guardrail_instruction.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_guardrails.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_job.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_property_definition.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_type_definition.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_version_publish.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_version_publish_job.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_version_publish_job_request.py
+PureCloudPlatformClientV2/models/agentic_virtual_agent_version_settings.py
 PureCloudPlatformClientV2/models/agentless_email_send_request_dto.py
 PureCloudPlatformClientV2/models/agentless_email_send_response_dto.py
 PureCloudPlatformClientV2/models/agents_bid_assigned_schedule_set_override_request.py
@@ -458,7 +472,9 @@ PureCloudPlatformClientV2/models/architect_prompt_notification_error_message_par
 PureCloudPlatformClientV2/models/architect_prompt_notification_home_organization.py
 PureCloudPlatformClientV2/models/architect_prompt_notification_prompt_notification.py
 PureCloudPlatformClientV2/models/architect_prompt_notification_user.py
+PureCloudPlatformClientV2/models/architect_prompt_resource_notification_prompt_resource_audio_format.py
 PureCloudPlatformClientV2/models/architect_prompt_resource_notification_prompt_resource_notification.py
+PureCloudPlatformClientV2/models/architect_system_prompt_resource_notification_prompt_resource_audio_format.py
 PureCloudPlatformClientV2/models/architect_system_prompt_resource_notification_system_prompt_resource_notification.py
 PureCloudPlatformClientV2/models/architect_validate_job_state_response.py
 PureCloudPlatformClientV2/models/archive_retention.py
@@ -544,6 +560,8 @@ PureCloudPlatformClientV2/models/audit_topic_message_info.py
 PureCloudPlatformClientV2/models/audit_topic_property_change.py
 PureCloudPlatformClientV2/models/authentication_properties.py
 PureCloudPlatformClientV2/models/authentication_settings.py
+PureCloudPlatformClientV2/models/authenticator_attestation_response.py
+PureCloudPlatformClientV2/models/authenticator_selection.py
 PureCloudPlatformClientV2/models/authoring_knowledge_settings.py
 PureCloudPlatformClientV2/models/authorization_policy.py
 PureCloudPlatformClientV2/models/authorization_policy_entity_listing.py
@@ -588,6 +606,7 @@ PureCloudPlatformClientV2/models/batch_event_response.py
 PureCloudPlatformClientV2/models/batch_predictive_routing_custom_kpi_attribution_event_request.py
 PureCloudPlatformClientV2/models/batch_user_presence_event_request.py
 PureCloudPlatformClientV2/models/batch_user_routing_status_event_request.py
+PureCloudPlatformClientV2/models/begin_web_authn_registration_response.py
 PureCloudPlatformClientV2/models/benefit_assessment.py
 PureCloudPlatformClientV2/models/benefit_assessment_job.py
 PureCloudPlatformClientV2/models/bid_group_schedule_set.py
@@ -612,6 +631,7 @@ PureCloudPlatformClientV2/models/billing_usage_report.py
 PureCloudPlatformClientV2/models/billing_usage_resource.py
 PureCloudPlatformClientV2/models/billing_wallet.py
 PureCloudPlatformClientV2/models/biography.py
+PureCloudPlatformClientV2/models/blending_settings.py
 PureCloudPlatformClientV2/models/bot.py
 PureCloudPlatformClientV2/models/bot_aggregate_data_container.py
 PureCloudPlatformClientV2/models/bot_aggregate_query_clause.py
@@ -671,6 +691,10 @@ PureCloudPlatformClientV2/models/bu_async_agent_schedules_search_response.py
 PureCloudPlatformClientV2/models/bu_async_schedule_response.py
 PureCloudPlatformClientV2/models/bu_async_schedule_run_response.py
 PureCloudPlatformClientV2/models/bu_average_speed_of_answer.py
+PureCloudPlatformClientV2/models/bu_convert_time_off_granularity_limit_job_listing.py
+PureCloudPlatformClientV2/models/bu_convert_time_off_limit_granularity_job_progress.py
+PureCloudPlatformClientV2/models/bu_convert_time_off_limit_granularity_job_request.py
+PureCloudPlatformClientV2/models/bu_convert_time_off_limit_granularity_job_response.py
 PureCloudPlatformClientV2/models/bu_copy_schedule_request.py
 PureCloudPlatformClientV2/models/bu_create_blank_schedule_request.py
 PureCloudPlatformClientV2/models/bu_create_time_off_limit_request.py
@@ -692,6 +716,10 @@ PureCloudPlatformClientV2/models/bu_headcount_forecast_bu_planning_group_headcou
 PureCloudPlatformClientV2/models/bu_headcount_forecast_response.py
 PureCloudPlatformClientV2/models/bu_import_agent_schedule_upload_schema.py
 PureCloudPlatformClientV2/models/bu_import_short_term_forecast_schema.py
+PureCloudPlatformClientV2/models/bu_import_time_off_limit_value.py
+PureCloudPlatformClientV2/models/bu_import_time_off_limit_values_request.py
+PureCloudPlatformClientV2/models/bu_import_time_off_limit_values_schema.py
+PureCloudPlatformClientV2/models/bu_import_time_off_limit_values_upload_response.py
 PureCloudPlatformClientV2/models/bu_intraday_data_group.py
 PureCloudPlatformClientV2/models/bu_intraday_forecast_data.py
 PureCloudPlatformClientV2/models/bu_intraday_response.py
@@ -736,6 +764,9 @@ PureCloudPlatformClientV2/models/bu_time_off_limit_range.py
 PureCloudPlatformClientV2/models/bu_time_off_limit_reference.py
 PureCloudPlatformClientV2/models/bu_time_off_limit_response.py
 PureCloudPlatformClientV2/models/bu_time_off_limit_value_range.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_values.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_values_for_granularity_response.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_values_import_upload_url_request.py
 PureCloudPlatformClientV2/models/bu_time_off_limit_values_response.py
 PureCloudPlatformClientV2/models/bu_time_off_plan_listing.py
 PureCloudPlatformClientV2/models/bu_time_off_plan_response.py
@@ -820,6 +851,9 @@ PureCloudPlatformClientV2/models/bulk_result.py
 PureCloudPlatformClientV2/models/bulk_results.py
 PureCloudPlatformClientV2/models/bulk_shift_trade_state_update_request.py
 PureCloudPlatformClientV2/models/bulk_source_intents_response.py
+PureCloudPlatformClientV2/models/bulk_update_activity_code_request.py
+PureCloudPlatformClientV2/models/bulk_update_activity_code_request_item.py
+PureCloudPlatformClientV2/models/bulk_update_activity_code_response.py
 PureCloudPlatformClientV2/models/bulk_update_decision_table_rows_request.py
 PureCloudPlatformClientV2/models/bulk_update_decision_table_rows_response.py
 PureCloudPlatformClientV2/models/bulk_update_opportunity_enrollments_status_response.py
@@ -1103,6 +1137,9 @@ PureCloudPlatformClientV2/models/column_data_type_specification.py
 PureCloudPlatformClientV2/models/column_status.py
 PureCloudPlatformClientV2/models/command_status.py
 PureCloudPlatformClientV2/models/command_status_entity_listing.py
+PureCloudPlatformClientV2/models/comment.py
+PureCloudPlatformClientV2/models/comment_create.py
+PureCloudPlatformClientV2/models/comment_listing.py
 PureCloudPlatformClientV2/models/common_alert.py
 PureCloudPlatformClientV2/models/common_alert_bulk_update_request.py
 PureCloudPlatformClientV2/models/common_all_alert_update_request.py
@@ -1777,6 +1814,7 @@ PureCloudPlatformClientV2/models/create_activity_code_request.py
 PureCloudPlatformClientV2/models/create_activity_plan_request.py
 PureCloudPlatformClientV2/models/create_admin_time_off_request.py
 PureCloudPlatformClientV2/models/create_agent_time_off_request.py
+PureCloudPlatformClientV2/models/create_agentic_virtual_agent.py
 PureCloudPlatformClientV2/models/create_alternative_shift_trade_request.py
 PureCloudPlatformClientV2/models/create_benefit_assessment_job_request.py
 PureCloudPlatformClientV2/models/create_benefit_assessment_request.py
@@ -1803,6 +1841,7 @@ PureCloudPlatformClientV2/models/create_general_program_topics_definitions_job.p
 PureCloudPlatformClientV2/models/create_guide.py
 PureCloudPlatformClientV2/models/create_guide_version.py
 PureCloudPlatformClientV2/models/create_integration_request.py
+PureCloudPlatformClientV2/models/create_join_video_response.py
 PureCloudPlatformClientV2/models/create_kpi_request.py
 PureCloudPlatformClientV2/models/create_management_unit_api_request.py
 PureCloudPlatformClientV2/models/create_management_unit_settings_request.py
@@ -1843,6 +1882,8 @@ PureCloudPlatformClientV2/models/create_upload_source_url_job_response.py
 PureCloudPlatformClientV2/models/create_user.py
 PureCloudPlatformClientV2/models/create_user_assignments_request.py
 PureCloudPlatformClientV2/models/create_utilization_label_request.py
+PureCloudPlatformClientV2/models/create_verifier_request.py
+PureCloudPlatformClientV2/models/create_verifier_response.py
 PureCloudPlatformClientV2/models/create_web_chat_conversation_request.py
 PureCloudPlatformClientV2/models/create_web_chat_conversation_response.py
 PureCloudPlatformClientV2/models/create_web_chat_message_request.py
@@ -1852,9 +1893,11 @@ PureCloudPlatformClientV2/models/create_work_plan_activity.py
 PureCloudPlatformClientV2/models/create_work_plan_bid.py
 PureCloudPlatformClientV2/models/create_work_plan_shift.py
 PureCloudPlatformClientV2/models/credential.py
+PureCloudPlatformClientV2/models/credential_descriptor.py
 PureCloudPlatformClientV2/models/credential_info.py
 PureCloudPlatformClientV2/models/credential_info_cursor_listing.py
 PureCloudPlatformClientV2/models/credential_info_listing.py
+PureCloudPlatformClientV2/models/credential_parameter.py
 PureCloudPlatformClientV2/models/credential_specification.py
 PureCloudPlatformClientV2/models/credential_type.py
 PureCloudPlatformClientV2/models/criteria.py
@@ -1953,6 +1996,18 @@ PureCloudPlatformClientV2/models/date_picker_available_date_time.py
 PureCloudPlatformClientV2/models/date_range.py
 PureCloudPlatformClientV2/models/date_range_with_optional_end.py
 PureCloudPlatformClientV2/models/day_of_week_minimums.py
+PureCloudPlatformClientV2/models/decision_metrics_admin_notification_topic_addressable_entity_ref.py
+PureCloudPlatformClientV2/models/decision_metrics_admin_notification_topic_decision_metrics_job_notification.py
+PureCloudPlatformClientV2/models/decision_metrics_admin_notification_topic_decision_metrics_update_error.py
+PureCloudPlatformClientV2/models/decision_metrics_data.py
+PureCloudPlatformClientV2/models/decision_metrics_job_reference.py
+PureCloudPlatformClientV2/models/decision_metrics_response.py
+PureCloudPlatformClientV2/models/decision_metrics_update_error.py
+PureCloudPlatformClientV2/models/decision_metrics_update_job_request.py
+PureCloudPlatformClientV2/models/decision_metrics_update_job_response.py
+PureCloudPlatformClientV2/models/decision_metrics_upload_data.py
+PureCloudPlatformClientV2/models/decision_metrics_upload_response.py
+PureCloudPlatformClientV2/models/decision_metrics_upload_schema.py
 PureCloudPlatformClientV2/models/decision_table.py
 PureCloudPlatformClientV2/models/decision_table_column_default_row_value.py
 PureCloudPlatformClientV2/models/decision_table_columns.py
@@ -2239,6 +2294,7 @@ PureCloudPlatformClientV2/models/domain_entity.py
 PureCloudPlatformClientV2/models/domain_entity_listing.py
 PureCloudPlatformClientV2/models/domain_entity_listing_evaluation_form.py
 PureCloudPlatformClientV2/models/domain_entity_listing_query_result.py
+PureCloudPlatformClientV2/models/domain_entity_listing_response_division_view.py
 PureCloudPlatformClientV2/models/domain_entity_listing_survey_form.py
 PureCloudPlatformClientV2/models/domain_entity_ref.py
 PureCloudPlatformClientV2/models/domain_logical_interface.py
@@ -2360,6 +2416,7 @@ PureCloudPlatformClientV2/models/email_message_preview_listing.py
 PureCloudPlatformClientV2/models/email_message_reply.py
 PureCloudPlatformClientV2/models/email_outbound_domain_result.py
 PureCloudPlatformClientV2/models/email_progress_transfer_event.py
+PureCloudPlatformClientV2/models/email_refinement_config.py
 PureCloudPlatformClientV2/models/email_routing_established_event.py
 PureCloudPlatformClientV2/models/email_routing_transfer_event.py
 PureCloudPlatformClientV2/models/email_setting.py
@@ -2439,6 +2496,8 @@ PureCloudPlatformClientV2/models/evaluation_detail_query_predicate.py
 PureCloudPlatformClientV2/models/evaluation_entity_listing.py
 PureCloudPlatformClientV2/models/evaluation_form.py
 PureCloudPlatformClientV2/models/evaluation_form_and_scoring_set.py
+PureCloudPlatformClientV2/models/evaluation_form_division_view.py
+PureCloudPlatformClientV2/models/evaluation_form_division_view_listing.py
 PureCloudPlatformClientV2/models/evaluation_form_response.py
 PureCloudPlatformClientV2/models/evaluation_form_response_entity_listing.py
 PureCloudPlatformClientV2/models/evaluation_form_search_response.py
@@ -2655,6 +2714,7 @@ PureCloudPlatformClientV2/models/file_upload_mode.py
 PureCloudPlatformClientV2/models/file_upload_settings.py
 PureCloudPlatformClientV2/models/filter.py
 PureCloudPlatformClientV2/models/filter_preview_response.py
+PureCloudPlatformClientV2/models/finish_web_authn_registration_request.py
 PureCloudPlatformClientV2/models/fixed_availability.py
 PureCloudPlatformClientV2/models/flattened_json_schema_document.py
 PureCloudPlatformClientV2/models/flow.py
@@ -3358,6 +3418,7 @@ PureCloudPlatformClientV2/models/knowledge_setting_listing.py
 PureCloudPlatformClientV2/models/knowledge_settings.py
 PureCloudPlatformClientV2/models/knowledge_settings_request.py
 PureCloudPlatformClientV2/models/knowledge_settings_response.py
+PureCloudPlatformClientV2/models/knowledge_source.py
 PureCloudPlatformClientV2/models/knowledge_sources_search_request.py
 PureCloudPlatformClientV2/models/knowledge_sources_search_response.py
 PureCloudPlatformClientV2/models/knowledge_suggestion_config.py
@@ -3487,6 +3548,8 @@ PureCloudPlatformClientV2/models/lex_v2_intent.py
 PureCloudPlatformClientV2/models/lex_v2_slot.py
 PureCloudPlatformClientV2/models/library.py
 PureCloudPlatformClientV2/models/library_batch_request.py
+PureCloudPlatformClientV2/models/library_division_view.py
+PureCloudPlatformClientV2/models/library_division_view_entity_listing.py
 PureCloudPlatformClientV2/models/library_entity_listing.py
 PureCloudPlatformClientV2/models/license_assignment_request.py
 PureCloudPlatformClientV2/models/license_batch_assignment_request.py
@@ -3825,6 +3888,8 @@ PureCloudPlatformClientV2/models/observation_metric_data.py
 PureCloudPlatformClientV2/models/observation_value.py
 PureCloudPlatformClientV2/models/occurrence_details.py
 PureCloudPlatformClientV2/models/okta.py
+PureCloudPlatformClientV2/models/on_demand_conversation_summary_request.py
+PureCloudPlatformClientV2/models/on_demand_summary_accepted_response.py
 PureCloudPlatformClientV2/models/on_demand_summary_config.py
 PureCloudPlatformClientV2/models/one_login.py
 PureCloudPlatformClientV2/models/one_on_one.py
@@ -4228,6 +4293,8 @@ PureCloudPlatformClientV2/models/property_change.py
 PureCloudPlatformClientV2/models/property_definition.py
 PureCloudPlatformClientV2/models/property_index_request.py
 PureCloudPlatformClientV2/models/provision_info.py
+PureCloudPlatformClientV2/models/public_key_credential_creation_options.py
+PureCloudPlatformClientV2/models/public_key_credential_creation_response.py
 PureCloudPlatformClientV2/models/publish_draft_input.py
 PureCloudPlatformClientV2/models/publish_form.py
 PureCloudPlatformClientV2/models/publish_program_test_phrase_detected_phrase.py
@@ -4297,6 +4364,7 @@ PureCloudPlatformClientV2/models/query_result.py
 PureCloudPlatformClientV2/models/query_results.py
 PureCloudPlatformClientV2/models/query_shift_trade_list_job_request.py
 PureCloudPlatformClientV2/models/query_time_off_integration_status_request.py
+PureCloudPlatformClientV2/models/query_time_off_limit_values_for_granularity_request.py
 PureCloudPlatformClientV2/models/query_time_off_limit_values_request.py
 PureCloudPlatformClientV2/models/query_time_off_limit_values_response.py
 PureCloudPlatformClientV2/models/query_user_staffing_group_list_request.py
@@ -4701,6 +4769,7 @@ PureCloudPlatformClientV2/models/recurrence_period.py
 PureCloudPlatformClientV2/models/recurrence_settings.py
 PureCloudPlatformClientV2/models/recurrence_settings_base.py
 PureCloudPlatformClientV2/models/referrer.py
+PureCloudPlatformClientV2/models/refinement_setting_entity.py
 PureCloudPlatformClientV2/models/region_response.py
 PureCloudPlatformClientV2/models/region_time_zone.py
 PureCloudPlatformClientV2/models/register_architect_export_job.py
@@ -4718,6 +4787,7 @@ PureCloudPlatformClientV2/models/relationships_export_field_list_filter.py
 PureCloudPlatformClientV2/models/relationships_export_filter.py
 PureCloudPlatformClientV2/models/relationships_export_listing.py
 PureCloudPlatformClientV2/models/relationships_export_query_conditions.py
+PureCloudPlatformClientV2/models/relying_party_entity.py
 PureCloudPlatformClientV2/models/remove_entities_request.py
 PureCloudPlatformClientV2/models/remove_entity.py
 PureCloudPlatformClientV2/models/reoccurrence.py
@@ -4735,8 +4805,10 @@ PureCloudPlatformClientV2/models/reporting_export_metadata_job_response.py
 PureCloudPlatformClientV2/models/reporting_interval.py
 PureCloudPlatformClientV2/models/reporting_turn.py
 PureCloudPlatformClientV2/models/reporting_turn_action.py
+PureCloudPlatformClientV2/models/reporting_turn_action_agent_details.py
 PureCloudPlatformClientV2/models/reporting_turn_bot_flow_invocation_event.py
 PureCloudPlatformClientV2/models/reporting_turn_flow.py
+PureCloudPlatformClientV2/models/reporting_turn_guardrail_event.py
 PureCloudPlatformClientV2/models/reporting_turn_intent.py
 PureCloudPlatformClientV2/models/reporting_turn_intent_slot.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge.py
@@ -4744,8 +4816,10 @@ PureCloudPlatformClientV2/models/reporting_turn_knowledge_document.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_events.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_feedback.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_feedback_event.py
+PureCloudPlatformClientV2/models/reporting_turn_knowledge_metadata.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_search.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_search_event.py
+PureCloudPlatformClientV2/models/reporting_turn_tool_call.py
 PureCloudPlatformClientV2/models/reporting_turns_response.py
 PureCloudPlatformClientV2/models/reprocess_interactions_by_job_id_response.py
 PureCloudPlatformClientV2/models/reprocess_job_entity_listing_response.py
@@ -4792,6 +4866,8 @@ PureCloudPlatformClientV2/models/response_asset_search_request.py
 PureCloudPlatformClientV2/models/response_asset_search_results.py
 PureCloudPlatformClientV2/models/response_asset_status.py
 PureCloudPlatformClientV2/models/response_config.py
+PureCloudPlatformClientV2/models/response_division_view.py
+PureCloudPlatformClientV2/models/response_division_view_query_results.py
 PureCloudPlatformClientV2/models/response_entity_list.py
 PureCloudPlatformClientV2/models/response_entity_listing.py
 PureCloudPlatformClientV2/models/response_filter.py
@@ -5257,6 +5333,7 @@ PureCloudPlatformClientV2/models/suggestion_knowledge_answer.py
 PureCloudPlatformClientV2/models/suggestion_knowledge_article.py
 PureCloudPlatformClientV2/models/suggestion_knowledge_search.py
 PureCloudPlatformClientV2/models/suggestion_listing.py
+PureCloudPlatformClientV2/models/suggestion_patch_request.py
 PureCloudPlatformClientV2/models/suggestion_script.py
 PureCloudPlatformClientV2/models/summary_aggregate_data_container.py
 PureCloudPlatformClientV2/models/summary_aggregate_query_clause.py
@@ -5317,6 +5394,8 @@ PureCloudPlatformClientV2/models/survey_detail_query_predicate.py
 PureCloudPlatformClientV2/models/survey_error_details.py
 PureCloudPlatformClientV2/models/survey_form.py
 PureCloudPlatformClientV2/models/survey_form_and_scoring_set.py
+PureCloudPlatformClientV2/models/survey_form_division_view.py
+PureCloudPlatformClientV2/models/survey_form_division_view_listing.py
 PureCloudPlatformClientV2/models/survey_form_entity_listing.py
 PureCloudPlatformClientV2/models/survey_question.py
 PureCloudPlatformClientV2/models/survey_question_group.py
@@ -5450,12 +5529,13 @@ PureCloudPlatformClientV2/models/time_off_limit_listing.py
 PureCloudPlatformClientV2/models/time_off_limit_range.py
 PureCloudPlatformClientV2/models/time_off_limit_reference.py
 PureCloudPlatformClientV2/models/time_off_limit_value_range.py
+PureCloudPlatformClientV2/models/time_off_limit_values.py
 PureCloudPlatformClientV2/models/time_off_plan.py
 PureCloudPlatformClientV2/models/time_off_plan_business_unit_association.py
 PureCloudPlatformClientV2/models/time_off_plan_listing.py
 PureCloudPlatformClientV2/models/time_off_plan_management_unit_association.py
-PureCloudPlatformClientV2/models/time_off_request.py
 PureCloudPlatformClientV2/models/time_off_request_list.py
+PureCloudPlatformClientV2/models/time_off_request_list_item.py
 PureCloudPlatformClientV2/models/time_off_request_listing.py
 PureCloudPlatformClientV2/models/time_off_request_lookup.py
 PureCloudPlatformClientV2/models/time_off_request_notification.py
@@ -5631,6 +5711,7 @@ PureCloudPlatformClientV2/models/update_activity_plan_request.py
 PureCloudPlatformClientV2/models/update_adherence_explanation_status_request.py
 PureCloudPlatformClientV2/models/update_agent_schedule_bidding_preference.py
 PureCloudPlatformClientV2/models/update_agent_work_plan_bidding_preference.py
+PureCloudPlatformClientV2/models/update_agentic_virtual_agent.py
 PureCloudPlatformClientV2/models/update_alternative_shift_bu_settings_request.py
 PureCloudPlatformClientV2/models/update_analytics_data_retention_request.py
 PureCloudPlatformClientV2/models/update_business_unit_request.py
@@ -5747,6 +5828,7 @@ PureCloudPlatformClientV2/models/user_details_datalake_availability_topic_data_a
 PureCloudPlatformClientV2/models/user_details_query.py
 PureCloudPlatformClientV2/models/user_device.py
 PureCloudPlatformClientV2/models/user_end_detail_event_topic_user_end_event.py
+PureCloudPlatformClientV2/models/user_entity.py
 PureCloudPlatformClientV2/models/user_entity_listing.py
 PureCloudPlatformClientV2/models/user_established_event.py
 PureCloudPlatformClientV2/models/user_expands.py
@@ -5925,12 +6007,14 @@ PureCloudPlatformClientV2/models/v2_wem_engagement_celebration_updates_topic_con
 PureCloudPlatformClientV2/models/v2_wem_engagement_celebration_updates_topic_engagement_celebration.py
 PureCloudPlatformClientV2/models/v2_wem_engagement_celebration_updates_topic_source_entity.py
 PureCloudPlatformClientV2/models/v2_wem_engagement_celebration_updates_topic_user_id.py
+PureCloudPlatformClientV2/models/v2_wfm_agent_opportunity_topic_agent_opportunity_notification.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_forecast_event_main_forecast_error_body.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_forecast_event_main_forecast_export_notification.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_historical_event_main_forecast_error_body.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_historical_event_main_forecast_export_notification.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body.py
 PureCloudPlatformClientV2/models/v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification.py
+PureCloudPlatformClientV2/models/v2_wfm_opportunity_topic_opportunity_notification.py
 PureCloudPlatformClientV2/models/v3_knowledge_search_client_application.py
 PureCloudPlatformClientV2/models/v3_knowledge_search_preview_client_application.py
 PureCloudPlatformClientV2/models/v3_source_create_request.py
@@ -5967,6 +6051,7 @@ PureCloudPlatformClientV2/models/validate_agent_unavailable_times_request.py
 PureCloudPlatformClientV2/models/validate_agent_unavailable_times_response.py
 PureCloudPlatformClientV2/models/validate_assign_users.py
 PureCloudPlatformClientV2/models/validate_details.py
+PureCloudPlatformClientV2/models/validate_verifier_request.py
 PureCloudPlatformClientV2/models/validate_work_plan_messages.py
 PureCloudPlatformClientV2/models/validate_work_plan_response.py
 PureCloudPlatformClientV2/models/validation_error.py
@@ -5983,6 +6068,7 @@ PureCloudPlatformClientV2/models/value_wrapper_date.py
 PureCloudPlatformClientV2/models/value_wrapper_group_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_hris_time_off_type.py
 PureCloudPlatformClientV2/models/value_wrapper_instant.py
+PureCloudPlatformClientV2/models/value_wrapper_integer.py
 PureCloudPlatformClientV2/models/value_wrapper_local_date.py
 PureCloudPlatformClientV2/models/value_wrapper_monthly_planning_period_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_planning_period_settings.py
@@ -6197,6 +6283,7 @@ PureCloudPlatformClientV2/models/wfm_bulk_shift_trade_state_update_notification_
 PureCloudPlatformClientV2/models/wfm_bulk_shift_trade_state_update_notification_topic_user_reference.py
 PureCloudPlatformClientV2/models/wfm_bulk_shift_trade_state_update_notification_topic_wfm_versioned_entity_metadata.py
 PureCloudPlatformClientV2/models/wfm_business_unit_reference.py
+PureCloudPlatformClientV2/models/wfm_entity_metadata.py
 PureCloudPlatformClientV2/models/wfm_forecast_modification_interval_offset_value.py
 PureCloudPlatformClientV2/models/wfm_historical_adherence_agent_calculations_complete_topic_secondary_presence_reference.py
 PureCloudPlatformClientV2/models/wfm_historical_adherence_agent_calculations_complete_topic_user_reference.py
@@ -6413,6 +6500,7 @@ PureCloudPlatformClientV2/models/workitem_date_based_rule_update.py
 PureCloudPlatformClientV2/models/workitem_delta.py
 PureCloudPlatformClientV2/models/workitem_filter.py
 PureCloudPlatformClientV2/models/workitem_flow_reference.py
+PureCloudPlatformClientV2/models/workitem_language_reference.py
 PureCloudPlatformClientV2/models/workitem_manual_assign.py
 PureCloudPlatformClientV2/models/workitem_on_attribute_change_condition.py
 PureCloudPlatformClientV2/models/workitem_on_attribute_change_condition_update.py
@@ -6438,6 +6526,7 @@ PureCloudPlatformClientV2/models/workitem_query_post_request.py
 PureCloudPlatformClientV2/models/workitem_query_sort.py
 PureCloudPlatformClientV2/models/workitem_queue_reference.py
 PureCloudPlatformClientV2/models/workitem_reference.py
+PureCloudPlatformClientV2/models/workitem_routing_skill_reference.py
 PureCloudPlatformClientV2/models/workitem_rule_action.py
 PureCloudPlatformClientV2/models/workitem_rule_settings.py
 PureCloudPlatformClientV2/models/workitem_schema.py
@@ -6774,6 +6863,19 @@ docs/AgentWorkPlanBids.md
 docs/AgentWorkPlanListResponse.md
 docs/AgentWorkPlanShift.md
 docs/AgentWorkPlans.md
+docs/AgenticVersionAddressableEntity.md
+docs/AgenticVirtualAgent.md
+docs/AgenticVirtualAgentComfortStatementSettings.md
+docs/AgenticVirtualAgentEntityListing.md
+docs/AgenticVirtualAgentGuardrailInstruction.md
+docs/AgenticVirtualAgentGuardrails.md
+docs/AgenticVirtualAgentJob.md
+docs/AgenticVirtualAgentPropertyDefinition.md
+docs/AgenticVirtualAgentTypeDefinition.md
+docs/AgenticVirtualAgentVersionPublish.md
+docs/AgenticVirtualAgentVersionPublishJob.md
+docs/AgenticVirtualAgentVersionPublishJobRequest.md
+docs/AgenticVirtualAgentVersionSettings.md
 docs/AgentlessEmailSendRequestDto.md
 docs/AgentlessEmailSendResponseDto.md
 docs/AgentsBidAssignedScheduleSetOverrideRequest.md
@@ -6912,7 +7014,9 @@ docs/ArchitectPromptNotificationErrorMessageParams.md
 docs/ArchitectPromptNotificationHomeOrganization.md
 docs/ArchitectPromptNotificationPromptNotification.md
 docs/ArchitectPromptNotificationUser.md
+docs/ArchitectPromptResourceNotificationPromptResourceAudioFormat.md
 docs/ArchitectPromptResourceNotificationPromptResourceNotification.md
+docs/ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat.md
 docs/ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.md
 docs/ArchitectValidateJobStateResponse.md
 docs/ArchiveRetention.md
@@ -7002,6 +7106,8 @@ docs/AuditTopicMessageInfo.md
 docs/AuditTopicPropertyChange.md
 docs/AuthenticationProperties.md
 docs/AuthenticationSettings.md
+docs/AuthenticatorAttestationResponse.md
+docs/AuthenticatorSelection.md
 docs/AuthoringKnowledgeSettings.md
 docs/AuthorizationApi.json
 docs/AuthorizationApi.md
@@ -7050,6 +7156,7 @@ docs/BatchEventResponse.md
 docs/BatchPredictiveRoutingCustomKpiAttributionEventRequest.md
 docs/BatchUserPresenceEventRequest.md
 docs/BatchUserRoutingStatusEventRequest.md
+docs/BeginWebAuthnRegistrationResponse.md
 docs/BenefitAssessment.md
 docs/BenefitAssessmentJob.md
 docs/BidGroupScheduleSet.md
@@ -7076,6 +7183,7 @@ docs/BillingUsageReport.md
 docs/BillingUsageResource.md
 docs/BillingWallet.md
 docs/Biography.md
+docs/BlendingSettings.md
 docs/Bot.md
 docs/BotAggregateDataContainer.md
 docs/BotAggregateQueryClause.md
@@ -7135,6 +7243,10 @@ docs/BuAsyncAgentSchedulesSearchResponse.md
 docs/BuAsyncScheduleResponse.md
 docs/BuAsyncScheduleRunResponse.md
 docs/BuAverageSpeedOfAnswer.md
+docs/BuConvertTimeOffGranularityLimitJobListing.md
+docs/BuConvertTimeOffLimitGranularityJobProgress.md
+docs/BuConvertTimeOffLimitGranularityJobRequest.md
+docs/BuConvertTimeOffLimitGranularityJobResponse.md
 docs/BuCopyScheduleRequest.md
 docs/BuCreateBlankScheduleRequest.md
 docs/BuCreateTimeOffLimitRequest.md
@@ -7156,6 +7268,10 @@ docs/BuHeadcountForecastBuPlanningGroupHeadcountForecastUploadSchema.md
 docs/BuHeadcountForecastResponse.md
 docs/BuImportAgentScheduleUploadSchema.md
 docs/BuImportShortTermForecastSchema.md
+docs/BuImportTimeOffLimitValue.md
+docs/BuImportTimeOffLimitValuesRequest.md
+docs/BuImportTimeOffLimitValuesSchema.md
+docs/BuImportTimeOffLimitValuesUploadResponse.md
 docs/BuIntradayDataGroup.md
 docs/BuIntradayForecastData.md
 docs/BuIntradayResponse.md
@@ -7200,6 +7316,9 @@ docs/BuTimeOffLimitRange.md
 docs/BuTimeOffLimitReference.md
 docs/BuTimeOffLimitResponse.md
 docs/BuTimeOffLimitValueRange.md
+docs/BuTimeOffLimitValues.md
+docs/BuTimeOffLimitValuesForGranularityResponse.md
+docs/BuTimeOffLimitValuesImportUploadUrlRequest.md
 docs/BuTimeOffLimitValuesResponse.md
 docs/BuTimeOffPlanListing.md
 docs/BuTimeOffPlanResponse.md
@@ -7284,6 +7403,9 @@ docs/BulkResult.md
 docs/BulkResults.md
 docs/BulkShiftTradeStateUpdateRequest.md
 docs/BulkSourceIntentsResponse.md
+docs/BulkUpdateActivityCodeRequest.md
+docs/BulkUpdateActivityCodeRequestItem.md
+docs/BulkUpdateActivityCodeResponse.md
 docs/BulkUpdateDecisionTableRowsRequest.md
 docs/BulkUpdateDecisionTableRowsResponse.md
 docs/BulkUpdateOpportunityEnrollmentsStatusResponse.md
@@ -7577,6 +7699,9 @@ docs/ColumnDataTypeSpecification.md
 docs/ColumnStatus.md
 docs/CommandStatus.md
 docs/CommandStatusEntityListing.md
+docs/Comment.md
+docs/CommentCreate.md
+docs/CommentListing.md
 docs/CommonAlert.md
 docs/CommonAlertBulkUpdateRequest.md
 docs/CommonAllAlertUpdateRequest.md
@@ -8255,6 +8380,7 @@ docs/CreateActivityCodeRequest.md
 docs/CreateActivityPlanRequest.md
 docs/CreateAdminTimeOffRequest.md
 docs/CreateAgentTimeOffRequest.md
+docs/CreateAgenticVirtualAgent.md
 docs/CreateAlternativeShiftTradeRequest.md
 docs/CreateBenefitAssessmentJobRequest.md
 docs/CreateBenefitAssessmentRequest.md
@@ -8281,6 +8407,7 @@ docs/CreateGeneralProgramTopicsDefinitionsJob.md
 docs/CreateGuide.md
 docs/CreateGuideVersion.md
 docs/CreateIntegrationRequest.md
+docs/CreateJoinVideoResponse.md
 docs/CreateKpiRequest.md
 docs/CreateManagementUnitApiRequest.md
 docs/CreateManagementUnitSettingsRequest.md
@@ -8321,6 +8448,8 @@ docs/CreateUploadSourceUrlJobResponse.md
 docs/CreateUser.md
 docs/CreateUserAssignmentsRequest.md
 docs/CreateUtilizationLabelRequest.md
+docs/CreateVerifierRequest.md
+docs/CreateVerifierResponse.md
 docs/CreateWebChatConversationRequest.md
 docs/CreateWebChatConversationResponse.md
 docs/CreateWebChatMessageRequest.md
@@ -8330,9 +8459,11 @@ docs/CreateWorkPlanActivity.md
 docs/CreateWorkPlanBid.md
 docs/CreateWorkPlanShift.md
 docs/Credential.md
+docs/CredentialDescriptor.md
 docs/CredentialInfo.md
 docs/CredentialInfoCursorListing.md
 docs/CredentialInfoListing.md
+docs/CredentialParameter.md
 docs/CredentialSpecification.md
 docs/CredentialType.md
 docs/Criteria.md
@@ -8442,6 +8573,18 @@ docs/DatePickerAvailableDateTime.md
 docs/DateRange.md
 docs/DateRangeWithOptionalEnd.md
 docs/DayOfWeekMinimums.md
+docs/DecisionMetricsAdminNotificationTopicAddressableEntityRef.md
+docs/DecisionMetricsAdminNotificationTopicDecisionMetricsJobNotification.md
+docs/DecisionMetricsAdminNotificationTopicDecisionMetricsUpdateError.md
+docs/DecisionMetricsData.md
+docs/DecisionMetricsJobReference.md
+docs/DecisionMetricsResponse.md
+docs/DecisionMetricsUpdateError.md
+docs/DecisionMetricsUpdateJobRequest.md
+docs/DecisionMetricsUpdateJobResponse.md
+docs/DecisionMetricsUploadData.md
+docs/DecisionMetricsUploadResponse.md
+docs/DecisionMetricsUploadSchema.md
 docs/DecisionTable.md
 docs/DecisionTableColumnDefaultRowValue.md
 docs/DecisionTableColumns.md
@@ -8721,6 +8864,7 @@ docs/DomainEntity.md
 docs/DomainEntityListing.md
 docs/DomainEntityListingEvaluationForm.md
 docs/DomainEntityListingQueryResult.md
+docs/DomainEntityListingResponseDivisionView.md
 docs/DomainEntityListingSurveyForm.md
 docs/DomainEntityRef.md
 docs/DomainLogicalInterface.md
@@ -8844,6 +8988,7 @@ docs/EmailMessagePreviewListing.md
 docs/EmailMessageReply.md
 docs/EmailOutboundDomainResult.md
 docs/EmailProgressTransferEvent.md
+docs/EmailRefinementConfig.md
 docs/EmailRoutingEstablishedEvent.md
 docs/EmailRoutingTransferEvent.md
 docs/EmailSetting.md
@@ -8927,6 +9072,8 @@ docs/EvaluationDetailQueryPredicate.md
 docs/EvaluationEntityListing.md
 docs/EvaluationForm.md
 docs/EvaluationFormAndScoringSet.md
+docs/EvaluationFormDivisionView.md
+docs/EvaluationFormDivisionViewListing.md
 docs/EvaluationFormResponse.md
 docs/EvaluationFormResponseEntityListing.md
 docs/EvaluationFormSearchResponse.md
@@ -9149,6 +9296,7 @@ docs/FileUploadMode.md
 docs/FileUploadSettings.md
 docs/Filter.md
 docs/FilterPreviewResponse.md
+docs/FinishWebAuthnRegistrationRequest.md
 docs/FixedAvailability.md
 docs/FlattenedJsonSchemaDocument.md
 docs/Flow.md
@@ -9876,6 +10024,7 @@ docs/KnowledgeSettingListing.md
 docs/KnowledgeSettings.md
 docs/KnowledgeSettingsRequest.md
 docs/KnowledgeSettingsResponse.md
+docs/KnowledgeSource.md
 docs/KnowledgeSourcesSearchRequest.md
 docs/KnowledgeSourcesSearchResponse.md
 docs/KnowledgeSuggestionConfig.md
@@ -10011,6 +10160,8 @@ docs/LexV2Intent.md
 docs/LexV2Slot.md
 docs/Library.md
 docs/LibraryBatchRequest.md
+docs/LibraryDivisionView.md
+docs/LibraryDivisionViewEntityListing.md
 docs/LibraryEntityListing.md
 docs/LicenseApi.json
 docs/LicenseApi.md
@@ -10365,6 +10516,8 @@ docs/ObservationMetricData.md
 docs/ObservationValue.md
 docs/OccurrenceDetails.md
 docs/Okta.md
+docs/OnDemandConversationSummaryRequest.md
+docs/OnDemandSummaryAcceptedResponse.md
 docs/OnDemandSummaryConfig.md
 docs/OneLogin.md
 docs/OneOnOne.md
@@ -10780,6 +10933,8 @@ docs/PropertyChange.md
 docs/PropertyDefinition.md
 docs/PropertyIndexRequest.md
 docs/ProvisionInfo.md
+docs/PublicKeyCredentialCreationOptions.md
+docs/PublicKeyCredentialCreationResponse.md
 docs/PublishDraftInput.md
 docs/PublishForm.md
 docs/PublishProgramTestPhraseDetectedPhrase.md
@@ -10851,6 +11006,7 @@ docs/QueryResult.md
 docs/QueryResults.md
 docs/QueryShiftTradeListJobRequest.md
 docs/QueryTimeOffIntegrationStatusRequest.md
+docs/QueryTimeOffLimitValuesForGranularityRequest.md
 docs/QueryTimeOffLimitValuesRequest.md
 docs/QueryTimeOffLimitValuesResponse.md
 docs/QueryUserStaffingGroupListRequest.md
@@ -11257,6 +11413,7 @@ docs/RecurrencePeriod.md
 docs/RecurrenceSettings.md
 docs/RecurrenceSettingsBase.md
 docs/Referrer.md
+docs/RefinementSettingEntity.md
 docs/RegionResponse.md
 docs/RegionTimeZone.md
 docs/RegisterArchitectExportJob.md
@@ -11274,6 +11431,7 @@ docs/RelationshipsExportFieldListFilter.md
 docs/RelationshipsExportFilter.md
 docs/RelationshipsExportListing.md
 docs/RelationshipsExportQueryConditions.md
+docs/RelyingPartyEntity.md
 docs/RemoveEntitiesRequest.md
 docs/RemoveEntity.md
 docs/Reoccurrence.md
@@ -11291,8 +11449,10 @@ docs/ReportingExportMetadataJobResponse.md
 docs/ReportingInterval.md
 docs/ReportingTurn.md
 docs/ReportingTurnAction.md
+docs/ReportingTurnActionAgentDetails.md
 docs/ReportingTurnBotFlowInvocationEvent.md
 docs/ReportingTurnFlow.md
+docs/ReportingTurnGuardrailEvent.md
 docs/ReportingTurnIntent.md
 docs/ReportingTurnIntentSlot.md
 docs/ReportingTurnKnowledge.md
@@ -11300,8 +11460,10 @@ docs/ReportingTurnKnowledgeDocument.md
 docs/ReportingTurnKnowledgeEvents.md
 docs/ReportingTurnKnowledgeFeedback.md
 docs/ReportingTurnKnowledgeFeedbackEvent.md
+docs/ReportingTurnKnowledgeMetadata.md
 docs/ReportingTurnKnowledgeSearch.md
 docs/ReportingTurnKnowledgeSearchEvent.md
+docs/ReportingTurnToolCall.md
 docs/ReportingTurnsResponse.md
 docs/ReprocessInteractionsByJobIdResponse.md
 docs/ReprocessJobEntityListingResponse.md
@@ -11348,6 +11510,8 @@ docs/ResponseAssetSearchRequest.md
 docs/ResponseAssetSearchResults.md
 docs/ResponseAssetStatus.md
 docs/ResponseConfig.md
+docs/ResponseDivisionView.md
+docs/ResponseDivisionViewQueryResults.md
 docs/ResponseEntityList.md
 docs/ResponseEntityListing.md
 docs/ResponseFilter.md
@@ -11835,6 +11999,7 @@ docs/SuggestionKnowledgeAnswer.md
 docs/SuggestionKnowledgeArticle.md
 docs/SuggestionKnowledgeSearch.md
 docs/SuggestionListing.md
+docs/SuggestionPatchRequest.md
 docs/SuggestionScript.md
 docs/SummaryAggregateDataContainer.md
 docs/SummaryAggregateQueryClause.md
@@ -11895,6 +12060,8 @@ docs/SurveyDetailQueryPredicate.md
 docs/SurveyErrorDetails.md
 docs/SurveyForm.md
 docs/SurveyFormAndScoringSet.md
+docs/SurveyFormDivisionView.md
+docs/SurveyFormDivisionViewListing.md
 docs/SurveyFormEntityListing.md
 docs/SurveyQuestion.md
 docs/SurveyQuestionGroup.md
@@ -12038,12 +12205,13 @@ docs/TimeOffLimitListing.md
 docs/TimeOffLimitRange.md
 docs/TimeOffLimitReference.md
 docs/TimeOffLimitValueRange.md
+docs/TimeOffLimitValues.md
 docs/TimeOffPlan.md
 docs/TimeOffPlanBusinessUnitAssociation.md
 docs/TimeOffPlanListing.md
 docs/TimeOffPlanManagementUnitAssociation.md
-docs/TimeOffRequest.md
 docs/TimeOffRequestList.md
+docs/TimeOffRequestListItem.md
 docs/TimeOffRequestListing.md
 docs/TimeOffRequestLookup.md
 docs/TimeOffRequestNotification.md
@@ -12221,6 +12389,7 @@ docs/UpdateActivityPlanRequest.md
 docs/UpdateAdherenceExplanationStatusRequest.md
 docs/UpdateAgentScheduleBiddingPreference.md
 docs/UpdateAgentWorkPlanBiddingPreference.md
+docs/UpdateAgenticVirtualAgent.md
 docs/UpdateAlternativeShiftBuSettingsRequest.md
 docs/UpdateAnalyticsDataRetentionRequest.md
 docs/UpdateBusinessUnitRequest.md
@@ -12341,6 +12510,7 @@ docs/UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.md
 docs/UserDetailsQuery.md
 docs/UserDevice.md
 docs/UserEndDetailEventTopicUserEndEvent.md
+docs/UserEntity.md
 docs/UserEntityListing.md
 docs/UserEstablishedEvent.md
 docs/UserExpands.md
@@ -12527,12 +12697,14 @@ docs/V2WemEngagementCelebrationUpdatesTopicContestWinnersUsers.md
 docs/V2WemEngagementCelebrationUpdatesTopicEngagementCelebration.md
 docs/V2WemEngagementCelebrationUpdatesTopicSourceEntity.md
 docs/V2WemEngagementCelebrationUpdatesTopicUserId.md
+docs/V2WfmAgentOpportunityTopicAgentOpportunityNotification.md
 docs/V2WfmMainForecastExportForecastEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportForecastEventMainForecastExportNotification.md
 docs/V2WfmMainForecastExportHistoricalEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportHistoricalEventMainForecastExportNotification.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportSnapshotEventMainForecastExportNotification.md
+docs/V2WfmOpportunityTopicOpportunityNotification.md
 docs/V3KnowledgeSearchClientApplication.md
 docs/V3KnowledgeSearchPreviewClientApplication.md
 docs/V3SourceCreateRequest.md
@@ -12569,6 +12741,7 @@ docs/ValidateAgentUnavailableTimesRequest.md
 docs/ValidateAgentUnavailableTimesResponse.md
 docs/ValidateAssignUsers.md
 docs/ValidateDetails.md
+docs/ValidateVerifierRequest.md
 docs/ValidateWorkPlanMessages.md
 docs/ValidateWorkPlanResponse.md
 docs/ValidationError.md
@@ -12585,6 +12758,7 @@ docs/ValueWrapperDate.md
 docs/ValueWrapperGroupSettings.md
 docs/ValueWrapperHrisTimeOffType.md
 docs/ValueWrapperInstant.md
+docs/ValueWrapperInteger.md
 docs/ValueWrapperLocalDate.md
 docs/ValueWrapperMonthlyPlanningPeriodSettings.md
 docs/ValueWrapperPlanningPeriodSettings.md
@@ -12602,6 +12776,8 @@ docs/VideoConferenceUpdateTopicParticipantInfo.md
 docs/VideoConferenceUpdateTopicVideoConference.md
 docs/VideoSettings.md
 docs/ViewFilter.md
+docs/VirtualAgentsApi.json
+docs/VirtualAgentsApi.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
 docs/Voicemail.md
@@ -12807,6 +12983,7 @@ docs/WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResul
 docs/WfmBulkShiftTradeStateUpdateNotificationTopicUserReference.md
 docs/WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata.md
 docs/WfmBusinessUnitReference.md
+docs/WfmEntityMetadata.md
 docs/WfmForecastModificationIntervalOffsetValue.md
 docs/WfmHistoricalAdherenceAgentCalculationsCompleteTopicSecondaryPresenceReference.md
 docs/WfmHistoricalAdherenceAgentCalculationsCompleteTopicUserReference.md
@@ -13027,6 +13204,7 @@ docs/WorkitemDateBasedRuleUpdate.md
 docs/WorkitemDelta.md
 docs/WorkitemFilter.md
 docs/WorkitemFlowReference.md
+docs/WorkitemLanguageReference.md
 docs/WorkitemManualAssign.md
 docs/WorkitemOnAttributeChangeCondition.md
 docs/WorkitemOnAttributeChangeConditionUpdate.md
@@ -13052,6 +13230,7 @@ docs/WorkitemQueryPostRequest.md
 docs/WorkitemQuerySort.md
 docs/WorkitemQueueReference.md
 docs/WorkitemReference.md
+docs/WorkitemRoutingSkillReference.md
 docs/WorkitemRuleAction.md
 docs/WorkitemRuleSettings.md
 docs/WorkitemSchema.md
@@ -13145,6 +13324,8 @@ docs/WritableDialerContact.md
 docs/WritableDivision.md
 docs/WritableEntity.md
 docs/WritableStarrableDivision.md
+docs/delete_agentic_virtualagent_jobs-example.txt
+docs/delete_agentic_virtualagent_jobs-example.txt
 docs/delete_alerting_alert-example.txt
 docs/delete_alerting_alerts_all-example.txt
 docs/delete_alerting_rule-example.txt
@@ -13207,6 +13388,7 @@ docs/delete_businessrules_decisiontable_version-example.txt
 docs/delete_businessrules_decisiontable_version_row-example.txt
 docs/delete_businessrules_schema-example.txt
 docs/delete_casemanagement_case-example.txt
+docs/delete_casemanagement_case_comments_me_comment_id-example.txt
 docs/delete_casemanagement_caseplan-example.txt
 docs/delete_casemanagement_caseplan_dataschema-example.txt
 docs/delete_chats_room_message-example.txt
@@ -13485,6 +13667,7 @@ docs/delete_userrecording-example.txt
 docs/delete_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/delete_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/delete_users_customattributes_schema-example.txt
+docs/delete_users_me_verifier-example.txt
 docs/delete_users_rule-example.txt
 docs/delete_users_stations_me_associatedstation-example.txt
 docs/delete_voicemail_message-example.txt
@@ -13519,6 +13702,12 @@ docs/delete_workforcemanagement_managementunit_timeofflimit-example.txt
 docs/delete_workforcemanagement_managementunit_timeoffplan-example.txt
 docs/delete_workforcemanagement_managementunit_workplan-example.txt
 docs/delete_workforcemanagement_managementunit_workplanrotation-example.txt
+docs/get_agentic_virtualagent-example.txt
+docs/get_agentic_virtualagent-example.txt
+docs/get_agentic_virtualagent_job-example.txt
+docs/get_agentic_virtualagent_job-example.txt
+docs/get_agentic_virtualagents-example.txt
+docs/get_agentic_virtualagents-example.txt
 docs/get_alerting_alert-example.txt
 docs/get_alerting_rule-example.txt
 docs/get_analytics_actions_aggregates_job-example.txt
@@ -13718,6 +13907,8 @@ docs/get_carrierservices_integrations_emergencylocations_me-example.txt
 docs/get_casemanagement_case-example.txt
 docs/get_casemanagement_case_association-example.txt
 docs/get_casemanagement_case_associations-example.txt
+docs/get_casemanagement_case_comment-example.txt
+docs/get_casemanagement_case_comments-example.txt
 docs/get_casemanagement_case_stage-example.txt
 docs/get_casemanagement_case_stage_step-example.txt
 docs/get_casemanagement_case_stage_steps-example.txt
@@ -14511,8 +14702,12 @@ docs/get_quality_publishedform-example.txt
 docs/get_quality_publishedforms-example.txt
 docs/get_quality_publishedforms_evaluation-example.txt
 docs/get_quality_publishedforms_evaluations-example.txt
+docs/get_quality_publishedforms_evaluations_divisionview-example.txt
+docs/get_quality_publishedforms_evaluations_divisionviews-example.txt
 docs/get_quality_publishedforms_survey-example.txt
 docs/get_quality_publishedforms_surveys-example.txt
+docs/get_quality_publishedforms_surveys_divisionview-example.txt
+docs/get_quality_publishedforms_surveys_divisionviews-example.txt
 docs/get_quality_survey-example.txt
 docs/get_quality_surveys_scorable-example.txt
 docs/get_recording_batchrequest-example.txt
@@ -14532,11 +14727,14 @@ docs/get_recording_uploads_report-example.txt
 docs/get_recordings_retention_query-example.txt
 docs/get_recordings_screensessions_details-example.txt
 docs/get_responsemanagement_libraries-example.txt
+docs/get_responsemanagement_libraries_divisionview-example.txt
+docs/get_responsemanagement_libraries_divisionviews-example.txt
 docs/get_responsemanagement_library-example.txt
 docs/get_responsemanagement_response-example.txt
 docs/get_responsemanagement_responseasset-example.txt
 docs/get_responsemanagement_responseassets_status_status_id-example.txt
 docs/get_responsemanagement_responses-example.txt
+docs/get_responsemanagement_responses_divisionview-example.txt
 docs/get_routing_assessment-example.txt
 docs/get_routing_assessments-example.txt
 docs/get_routing_assessments_job-example.txt
@@ -14904,6 +15102,7 @@ docs/get_users_development_activities_me-example.txt
 docs/get_users_development_activity-example.txt
 docs/get_users_externalid_authority_name_external_key-example.txt
 docs/get_users_me-example.txt
+docs/get_users_me_verifiers-example.txt
 docs/get_users_presence_bulk-example.txt
 docs/get_users_presences_purecloud_bulk-example.txt
 docs/get_users_query-example.txt
@@ -14985,6 +15184,7 @@ docs/get_workforcemanagement_businessunit_capacityplan_staffinggroupallocations-
 docs/get_workforcemanagement_businessunit_capacityplan_staffingrequirements-example.txt
 docs/get_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast-example.txt
 docs/get_workforcemanagement_businessunit_capacityplans-example.txt
+docs/get_workforcemanagement_businessunit_decisionmetrics_job-example.txt
 docs/get_workforcemanagement_businessunit_intraday_planninggroups-example.txt
 docs/get_workforcemanagement_businessunit_mainforecast_continuousforecast_session-example.txt
 docs/get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_session_id-example.txt
@@ -15013,6 +15213,8 @@ docs/get_workforcemanagement_businessunit_shifttrading_weeks_summary_job-example
 docs/get_workforcemanagement_businessunit_staffinggroup-example.txt
 docs/get_workforcemanagement_businessunit_staffinggroups-example.txt
 docs/get_workforcemanagement_businessunit_timeofflimit-example.txt
+docs/get_workforcemanagement_businessunit_timeofflimit_granularityconversion_job-example.txt
+docs/get_workforcemanagement_businessunit_timeofflimit_granularityconversion_jobs-example.txt
 docs/get_workforcemanagement_businessunit_timeofflimits-example.txt
 docs/get_workforcemanagement_businessunit_timeoffplan-example.txt
 docs/get_workforcemanagement_businessunit_timeoffplans-example.txt
@@ -15051,6 +15253,7 @@ docs/get_workforcemanagement_managementunit_activitycodes-example.txt
 docs/get_workforcemanagement_managementunit_adherence-example.txt
 docs/get_workforcemanagement_managementunit_agent-example.txt
 docs/get_workforcemanagement_managementunit_agent_shifttrades-example.txt
+docs/get_workforcemanagement_managementunit_decisionmetrics-example.txt
 docs/get_workforcemanagement_managementunit_shifttrades_matched-example.txt
 docs/get_workforcemanagement_managementunit_shifttrades_users-example.txt
 docs/get_workforcemanagement_managementunit_timeofflimit-example.txt
@@ -15095,6 +15298,8 @@ docs/get_workforcemanagement_workplanbid_workplans-example.txt
 docs/get_workforcemanagement_workplanbids-example.txt
 docs/head_notifications_channel-example.txt
 docs/head_tokens_me-example.txt
+docs/patch_agentic_virtualagent-example.txt
+docs/patch_agentic_virtualagent-example.txt
 docs/patch_alerting_alert-example.txt
 docs/patch_alerting_alerts_all-example.txt
 docs/patch_alerting_alerts_bulk-example.txt
@@ -15131,6 +15336,7 @@ docs/patch_conversation_participant-example.txt
 docs/patch_conversation_participant_attributes-example.txt
 docs/patch_conversation_recordingstate-example.txt
 docs/patch_conversation_secureattributes-example.txt
+docs/patch_conversation_suggestion-example.txt
 docs/patch_conversation_summary_engagements-example.txt
 docs/patch_conversation_summary_feedback-example.txt
 docs/patch_conversation_utilizationlabel-example.txt
@@ -15321,6 +15527,7 @@ docs/patch_workforcemanagement_alternativeshifts_trade-example.txt
 docs/patch_workforcemanagement_alternativeshifts_trades_state_jobs-example.txt
 docs/patch_workforcemanagement_businessunit-example.txt
 docs/patch_workforcemanagement_businessunit_activitycode-example.txt
+docs/patch_workforcemanagement_businessunit_activitycodes_bulk-example.txt
 docs/patch_workforcemanagement_businessunit_activityplan-example.txt
 docs/patch_workforcemanagement_businessunit_alternativeshifts_settings-example.txt
 docs/patch_workforcemanagement_businessunit_capacityplan-example.txt
@@ -15354,6 +15561,10 @@ docs/patch_workforcemanagement_unavailabletimes-example.txt
 docs/patch_workforcemanagement_user_workplanbidranks-example.txt
 docs/patch_workforcemanagement_users_workplanbidranks_bulk-example.txt
 docs/patch_workforcemanagement_workplanbid_preferences-example.txt
+docs/post_agentic_virtualagent_version_jobs-example.txt
+docs/post_agentic_virtualagent_version_jobs-example.txt
+docs/post_agentic_virtualagents-example.txt
+docs/post_agentic_virtualagents-example.txt
 docs/post_alerting_alerts_query-example.txt
 docs/post_alerting_rules-example.txt
 docs/post_alerting_rules_bulk_remove-example.txt
@@ -15505,6 +15716,7 @@ docs/post_businessrules_decisiontables-example.txt
 docs/post_businessrules_schemas-example.txt
 docs/post_carrierservices_integrations_emergencylocations_me-example.txt
 docs/post_casemanagement_case_associations-example.txt
+docs/post_casemanagement_case_comments-example.txt
 docs/post_casemanagement_case_terminate_jobs-example.txt
 docs/post_casemanagement_caseplan_dataschemas-example.txt
 docs/post_casemanagement_caseplan_publish-example.txt
@@ -15562,6 +15774,7 @@ docs/post_conversation_summary_feedback-example.txt
 docs/post_conversations_call-example.txt
 docs/post_conversations_call_participant_barge-example.txt
 docs/post_conversations_call_participant_coach-example.txt
+docs/post_conversations_call_participant_communication_summaries-example.txt
 docs/post_conversations_call_participant_communication_wrapup-example.txt
 docs/post_conversations_call_participant_consult-example.txt
 docs/post_conversations_call_participant_consult_agent-example.txt
@@ -15613,6 +15826,7 @@ docs/post_conversations_message_inbound_open_message-example.txt
 docs/post_conversations_message_inbound_open_receipt-example.txt
 docs/post_conversations_message_inbound_open_structured_response-example.txt
 docs/post_conversations_message_messages_bulk-example.txt
+docs/post_conversations_message_participant_communication_summaries-example.txt
 docs/post_conversations_message_participant_communication_wrapup-example.txt
 docs/post_conversations_message_participant_monitor-example.txt
 docs/post_conversations_message_participant_replace-example.txt
@@ -15980,6 +16194,7 @@ docs/post_responsemanagement_responseassets_bulk-example.txt
 docs/post_responsemanagement_responseassets_search-example.txt
 docs/post_responsemanagement_responseassets_uploads-example.txt
 docs/post_responsemanagement_responses-example.txt
+docs/post_responsemanagement_responses_divisionviews_query-example.txt
 docs/post_responsemanagement_responses_query-example.txt
 docs/post_routing_assessments-example.txt
 docs/post_routing_assessments_jobs-example.txt
@@ -16123,6 +16338,10 @@ docs/post_users-example.txt
 docs/post_users_customattributes_schemas-example.txt
 docs/post_users_development_activities_aggregates_query-example.txt
 docs/post_users_me_password-example.txt
+docs/post_users_me_verifiers_totp-example.txt
+docs/post_users_me_verifiers_totp_verifier_id-example.txt
+docs/post_users_me_verifiers_webauthn_register-example.txt
+docs/post_users_me_verifiers_webauthn_register_options-example.txt
 docs/post_users_rules-example.txt
 docs/post_users_rules_query-example.txt
 docs/post_users_search-example.txt
@@ -16178,6 +16397,8 @@ docs/post_workforcemanagement_businessunit_capacityplan_staffinggroupallocations
 docs/post_workforcemanagement_businessunit_capacityplanning_longtermrequirements_automaticbestmethod_week_forecast_forceregenerate-example.txt
 docs/post_workforcemanagement_businessunit_capacityplans-example.txt
 docs/post_workforcemanagement_businessunit_capacityplans_bulk_remove-example.txt
+docs/post_workforcemanagement_businessunit_decisionmetrics_update-example.txt
+docs/post_workforcemanagement_businessunit_decisionmetrics_update_uploadurl-example.txt
 docs/post_workforcemanagement_businessunit_intraday-example.txt
 docs/post_workforcemanagement_businessunit_opportunities_bulk_add-example.txt
 docs/post_workforcemanagement_businessunit_opportunities_bulk_publish-example.txt
@@ -16201,6 +16422,10 @@ docs/post_workforcemanagement_businessunit_shifttrading_weeks_summary_jobs-examp
 docs/post_workforcemanagement_businessunit_staffinggroups-example.txt
 docs/post_workforcemanagement_businessunit_staffinggroups_planninggroups_query-example.txt
 docs/post_workforcemanagement_businessunit_staffinggroups_query-example.txt
+docs/post_workforcemanagement_businessunit_timeofflimit_granularityconversion-example.txt
+docs/post_workforcemanagement_businessunit_timeofflimit_values_import-example.txt
+docs/post_workforcemanagement_businessunit_timeofflimit_values_import_uploadurl-example.txt
+docs/post_workforcemanagement_businessunit_timeofflimit_values_query-example.txt
 docs/post_workforcemanagement_businessunit_timeofflimits-example.txt
 docs/post_workforcemanagement_businessunit_timeofflimits_values_query-example.txt
 docs/post_workforcemanagement_businessunit_timeoffplans-example.txt
@@ -16541,6 +16766,7 @@ docs/put_userrecording-example.txt
 docs/put_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/put_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/put_users_customattributes_schema-example.txt
+docs/put_users_me_verifier-example.txt
 docs/put_users_presences_bulk-example.txt
 docs/put_users_stations_me_associatedstation_station_id-example.txt
 docs/put_voicemail_message-example.txt

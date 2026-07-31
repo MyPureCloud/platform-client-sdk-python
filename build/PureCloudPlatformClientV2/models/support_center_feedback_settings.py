@@ -60,7 +60,7 @@ class SupportCenterFeedbackSettings(object):
     def enabled(self) -> bool:
         """
         Gets the enabled of this SupportCenterFeedbackSettings.
-        Whether or not requesting customer feedback on article content and article search results is enabled
+        Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled
 
         :return: The enabled of this SupportCenterFeedbackSettings.
         :rtype: bool
@@ -71,7 +71,7 @@ class SupportCenterFeedbackSettings(object):
     def enabled(self, enabled: bool) -> None:
         """
         Sets the enabled of this SupportCenterFeedbackSettings.
-        Whether or not requesting customer feedback on article content and article search results is enabled
+        Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled
 
         :param enabled: The enabled of this SupportCenterFeedbackSettings.
         :type: bool

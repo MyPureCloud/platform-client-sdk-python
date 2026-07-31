@@ -75,7 +75,7 @@ class SupportCenterGlobalStyle(object):
     def background_color(self) -> str:
         """
         Gets the background_color of this SupportCenterGlobalStyle.
-        Global background color, in hexadecimal format, eg #ffffff
+        Global background color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :return: The background_color of this SupportCenterGlobalStyle.
         :rtype: str
@@ -86,13 +86,13 @@ class SupportCenterGlobalStyle(object):
     def background_color(self, background_color: str) -> None:
         """
         Sets the background_color of this SupportCenterGlobalStyle.
-        Global background color, in hexadecimal format, eg #ffffff
+        Global background color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :param background_color: The background_color of this SupportCenterGlobalStyle.
         :type: str
         """
         
-        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', background_color):
+        if not re.match('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', background_color):
             raise ValueError("Invalid value for `background_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
 
 
@@ -102,7 +102,7 @@ class SupportCenterGlobalStyle(object):
     def primary_color(self) -> str:
         """
         Gets the primary_color of this SupportCenterGlobalStyle.
-        Global primary color, in hexadecimal format, eg #ffffff
+        Global primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :return: The primary_color of this SupportCenterGlobalStyle.
         :rtype: str
@@ -113,13 +113,13 @@ class SupportCenterGlobalStyle(object):
     def primary_color(self, primary_color: str) -> None:
         """
         Sets the primary_color of this SupportCenterGlobalStyle.
-        Global primary color, in hexadecimal format, eg #ffffff
+        Global primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :param primary_color: The primary_color of this SupportCenterGlobalStyle.
         :type: str
         """
         
-        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color):
+        if not re.match('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color):
             raise ValueError("Invalid value for `primary_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
 
 
@@ -129,7 +129,7 @@ class SupportCenterGlobalStyle(object):
     def primary_color_dark(self) -> str:
         """
         Gets the primary_color_dark of this SupportCenterGlobalStyle.
-        Global dark primary color, in hexadecimal format, eg #ffffff
+        Global dark primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :return: The primary_color_dark of this SupportCenterGlobalStyle.
         :rtype: str
@@ -140,13 +140,13 @@ class SupportCenterGlobalStyle(object):
     def primary_color_dark(self, primary_color_dark: str) -> None:
         """
         Sets the primary_color_dark of this SupportCenterGlobalStyle.
-        Global dark primary color, in hexadecimal format, eg #ffffff
+        Global dark primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :param primary_color_dark: The primary_color_dark of this SupportCenterGlobalStyle.
         :type: str
         """
         
-        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color_dark):
+        if not re.match('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color_dark):
             raise ValueError("Invalid value for `primary_color_dark`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
 
 
@@ -156,7 +156,7 @@ class SupportCenterGlobalStyle(object):
     def primary_color_light(self) -> str:
         """
         Gets the primary_color_light of this SupportCenterGlobalStyle.
-        Global light primary color, in hexadecimal format, eg #ffffff
+        Global light primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :return: The primary_color_light of this SupportCenterGlobalStyle.
         :rtype: str
@@ -167,13 +167,13 @@ class SupportCenterGlobalStyle(object):
     def primary_color_light(self, primary_color_light: str) -> None:
         """
         Sets the primary_color_light of this SupportCenterGlobalStyle.
-        Global light primary color, in hexadecimal format, eg #ffffff
+        Global light primary color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :param primary_color_light: The primary_color_light of this SupportCenterGlobalStyle.
         :type: str
         """
         
-        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color_light):
+        if not re.match('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color_light):
             raise ValueError("Invalid value for `primary_color_light`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
 
 
@@ -183,7 +183,7 @@ class SupportCenterGlobalStyle(object):
     def text_color(self) -> str:
         """
         Gets the text_color of this SupportCenterGlobalStyle.
-        Global text color, in hexadecimal format, eg #ffffff
+        Global text color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :return: The text_color of this SupportCenterGlobalStyle.
         :rtype: str
@@ -194,13 +194,13 @@ class SupportCenterGlobalStyle(object):
     def text_color(self, text_color: str) -> None:
         """
         Sets the text_color of this SupportCenterGlobalStyle.
-        Global text color, in hexadecimal format, eg #ffffff
+        Global text color, in hexadecimal format, eg #ffffff. Required when globalStyle is provided
 
         :param text_color: The text_color of this SupportCenterGlobalStyle.
         :type: str
         """
         
-        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', text_color):
+        if not re.match('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', text_color):
             raise ValueError("Invalid value for `text_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
 
 
@@ -210,7 +210,7 @@ class SupportCenterGlobalStyle(object):
     def font_family(self) -> str:
         """
         Gets the font_family of this SupportCenterGlobalStyle.
-        Global font family
+        Global font family. Required when globalStyle is provided
 
         :return: The font_family of this SupportCenterGlobalStyle.
         :rtype: str
@@ -221,7 +221,7 @@ class SupportCenterGlobalStyle(object):
     def font_family(self, font_family: str) -> None:
         """
         Sets the font_family of this SupportCenterGlobalStyle.
-        Global font family
+        Global font family. Required when globalStyle is provided
 
         :param font_family: The font_family of this SupportCenterGlobalStyle.
         :type: str

@@ -6,8 +6,8 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **source** | [SupportCenterImageSource](SupportCenterImageSource) | Source URLs for image | |
+| **source** | [SupportCenterImageSource](SupportCenterImageSource) | Source URLs for image | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

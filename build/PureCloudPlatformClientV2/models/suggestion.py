@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import SuggestionKnowledgeArticle
     from . import SuggestionKnowledgeSearch
     from . import SuggestionScript
+    from . import ThirdPartySuggestion
 
 class Suggestion(object):
     """
@@ -71,6 +72,7 @@ class Suggestion(object):
             'knowledge_article': 'SuggestionKnowledgeArticle',
             'canned_response': 'SuggestionCannedResponse',
             'script': 'SuggestionScript',
+            'third_party_suggestion': 'ThirdPartySuggestion',
             'self_uri': 'str'
         }
 
@@ -90,6 +92,7 @@ class Suggestion(object):
             'knowledge_article': 'knowledgeArticle',
             'canned_response': 'cannedResponse',
             'script': 'script',
+            'third_party_suggestion': 'thirdPartySuggestion',
             'self_uri': 'selfUri'
         }
 
@@ -108,6 +111,7 @@ class Suggestion(object):
         self._knowledge_article = None
         self._canned_response = None
         self._script = None
+        self._third_party_suggestion = None
         self._self_uri = None
 
     @property
@@ -484,6 +488,30 @@ class Suggestion(object):
         
 
         self._script = script
+
+    @property
+    def third_party_suggestion(self) -> 'ThirdPartySuggestion':
+        """
+        Gets the third_party_suggestion of this Suggestion.
+        The third-party suggestion.
+
+        :return: The third_party_suggestion of this Suggestion.
+        :rtype: ThirdPartySuggestion
+        """
+        return self._third_party_suggestion
+
+    @third_party_suggestion.setter
+    def third_party_suggestion(self, third_party_suggestion: 'ThirdPartySuggestion') -> None:
+        """
+        Sets the third_party_suggestion of this Suggestion.
+        The third-party suggestion.
+
+        :param third_party_suggestion: The third_party_suggestion of this Suggestion.
+        :type: ThirdPartySuggestion
+        """
+        
+
+        self._third_party_suggestion = third_party_suggestion
 
     @property
     def self_uri(self) -> str:

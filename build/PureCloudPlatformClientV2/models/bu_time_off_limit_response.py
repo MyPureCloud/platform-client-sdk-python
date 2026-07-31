@@ -54,7 +54,9 @@ class BuTimeOffLimitResponse(object):
             'id': 'str',
             'staffing_group': 'StaffingGroupReference',
             'management_unit': 'ManagementUnitReference',
+            'granularity': 'str',
             'metadata': 'WfmVersionedEntityMetadata',
+            'full_day_time_off_start_time': 'str',
             'self_uri': 'str'
         }
 
@@ -62,14 +64,18 @@ class BuTimeOffLimitResponse(object):
             'id': 'id',
             'staffing_group': 'staffingGroup',
             'management_unit': 'managementUnit',
+            'granularity': 'granularity',
             'metadata': 'metadata',
+            'full_day_time_off_start_time': 'fullDayTimeOffStartTime',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._staffing_group = None
         self._management_unit = None
+        self._granularity = None
         self._metadata = None
+        self._full_day_time_off_start_time = None
         self._self_uri = None
 
     @property
@@ -145,6 +151,35 @@ class BuTimeOffLimitResponse(object):
         self._management_unit = management_unit
 
     @property
+    def granularity(self) -> str:
+        """
+        Gets the granularity of this BuTimeOffLimitResponse.
+        Granularity choice for time off limit
+
+        :return: The granularity of this BuTimeOffLimitResponse.
+        :rtype: str
+        """
+        return self._granularity
+
+    @granularity.setter
+    def granularity(self, granularity: str) -> None:
+        """
+        Sets the granularity of this BuTimeOffLimitResponse.
+        Granularity choice for time off limit
+
+        :param granularity: The granularity of this BuTimeOffLimitResponse.
+        :type: str
+        """
+        if isinstance(granularity, int):
+            granularity = str(granularity)
+        allowed_values = ["Daily", "FifteenMinutes"]
+        if granularity.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for granularity -> " + granularity)
+            self._granularity = "outdated_sdk_version"
+        else:
+            self._granularity = granularity
+
+    @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':
         """
         Gets the metadata of this BuTimeOffLimitResponse.
@@ -167,6 +202,30 @@ class BuTimeOffLimitResponse(object):
         
 
         self._metadata = metadata
+
+    @property
+    def full_day_time_off_start_time(self) -> str:
+        """
+        Gets the full_day_time_off_start_time of this BuTimeOffLimitResponse.
+        The start time of full day time off requests associated with this limit interval in HH:mm format.
+
+        :return: The full_day_time_off_start_time of this BuTimeOffLimitResponse.
+        :rtype: str
+        """
+        return self._full_day_time_off_start_time
+
+    @full_day_time_off_start_time.setter
+    def full_day_time_off_start_time(self, full_day_time_off_start_time: str) -> None:
+        """
+        Sets the full_day_time_off_start_time of this BuTimeOffLimitResponse.
+        The start time of full day time off requests associated with this limit interval in HH:mm format.
+
+        :param full_day_time_off_start_time: The full_day_time_off_start_time of this BuTimeOffLimitResponse.
+        :type: str
+        """
+        
+
+        self._full_day_time_off_start_time = full_day_time_off_start_time
 
     @property
     def self_uri(self) -> str:

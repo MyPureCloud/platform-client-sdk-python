@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ActivityCodeStyle
     from . import PlanningGroupReference
     from . import SecondaryPresence
     from . import WfmVersionedEntityMetadata
@@ -65,6 +66,7 @@ class BusinessUnitActivityCode(object):
             'interruptible': 'bool',
             'secondary_presences': 'list[SecondaryPresence]',
             'planning_groups': 'list[PlanningGroupReference]',
+            'style': 'ActivityCodeStyle',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
@@ -84,6 +86,7 @@ class BusinessUnitActivityCode(object):
             'interruptible': 'interruptible',
             'secondary_presences': 'secondaryPresences',
             'planning_groups': 'planningGroups',
+            'style': 'style',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
@@ -102,6 +105,7 @@ class BusinessUnitActivityCode(object):
         self._interruptible = None
         self._secondary_presences = None
         self._planning_groups = None
+        self._style = None
         self._metadata = None
         self._self_uri = None
 
@@ -445,6 +449,30 @@ class BusinessUnitActivityCode(object):
         
 
         self._planning_groups = planning_groups
+
+    @property
+    def style(self) -> 'ActivityCodeStyle':
+        """
+        Gets the style of this BusinessUnitActivityCode.
+        The style configuration for the activity code
+
+        :return: The style of this BusinessUnitActivityCode.
+        :rtype: ActivityCodeStyle
+        """
+        return self._style
+
+    @style.setter
+    def style(self, style: 'ActivityCodeStyle') -> None:
+        """
+        Sets the style of this BusinessUnitActivityCode.
+        The style configuration for the activity code
+
+        :param style: The style of this BusinessUnitActivityCode.
+        :type: ActivityCodeStyle
+        """
+        
+
+        self._style = style
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

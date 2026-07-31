@@ -89,7 +89,7 @@ class SupportCenterDetailedCategoryModuleTemplate(object):
     def sidebar(self) -> 'SupportCenterDetailedCategoryModuleSidebar':
         """
         Gets the sidebar of this SupportCenterDetailedCategoryModuleTemplate.
-        Sidebar settings for the template
+        Sidebar settings for the template. Required if support center is enabled
 
         :return: The sidebar of this SupportCenterDetailedCategoryModuleTemplate.
         :rtype: SupportCenterDetailedCategoryModuleSidebar
@@ -100,7 +100,7 @@ class SupportCenterDetailedCategoryModuleTemplate(object):
     def sidebar(self, sidebar: 'SupportCenterDetailedCategoryModuleSidebar') -> None:
         """
         Sets the sidebar of this SupportCenterDetailedCategoryModuleTemplate.
-        Sidebar settings for the template
+        Sidebar settings for the template. Required if support center is enabled
 
         :param sidebar: The sidebar of this SupportCenterDetailedCategoryModuleTemplate.
         :type: SupportCenterDetailedCategoryModuleSidebar

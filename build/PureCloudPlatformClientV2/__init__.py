@@ -234,6 +234,19 @@ from .models.agent_work_plan_bids import AgentWorkPlanBids
 from .models.agent_work_plan_list_response import AgentWorkPlanListResponse
 from .models.agent_work_plan_shift import AgentWorkPlanShift
 from .models.agent_work_plans import AgentWorkPlans
+from .models.agentic_version_addressable_entity import AgenticVersionAddressableEntity
+from .models.agentic_virtual_agent import AgenticVirtualAgent
+from .models.agentic_virtual_agent_comfort_statement_settings import AgenticVirtualAgentComfortStatementSettings
+from .models.agentic_virtual_agent_entity_listing import AgenticVirtualAgentEntityListing
+from .models.agentic_virtual_agent_guardrail_instruction import AgenticVirtualAgentGuardrailInstruction
+from .models.agentic_virtual_agent_guardrails import AgenticVirtualAgentGuardrails
+from .models.agentic_virtual_agent_job import AgenticVirtualAgentJob
+from .models.agentic_virtual_agent_property_definition import AgenticVirtualAgentPropertyDefinition
+from .models.agentic_virtual_agent_type_definition import AgenticVirtualAgentTypeDefinition
+from .models.agentic_virtual_agent_version_publish import AgenticVirtualAgentVersionPublish
+from .models.agentic_virtual_agent_version_publish_job import AgenticVirtualAgentVersionPublishJob
+from .models.agentic_virtual_agent_version_publish_job_request import AgenticVirtualAgentVersionPublishJobRequest
+from .models.agentic_virtual_agent_version_settings import AgenticVirtualAgentVersionSettings
 from .models.agentless_email_send_request_dto import AgentlessEmailSendRequestDto
 from .models.agentless_email_send_response_dto import AgentlessEmailSendResponseDto
 from .models.agents_bid_assigned_schedule_set_override_request import AgentsBidAssignedScheduleSetOverrideRequest
@@ -366,7 +379,9 @@ from .models.architect_prompt_notification_error_message_params import Architect
 from .models.architect_prompt_notification_home_organization import ArchitectPromptNotificationHomeOrganization
 from .models.architect_prompt_notification_prompt_notification import ArchitectPromptNotificationPromptNotification
 from .models.architect_prompt_notification_user import ArchitectPromptNotificationUser
+from .models.architect_prompt_resource_notification_prompt_resource_audio_format import ArchitectPromptResourceNotificationPromptResourceAudioFormat
 from .models.architect_prompt_resource_notification_prompt_resource_notification import ArchitectPromptResourceNotificationPromptResourceNotification
+from .models.architect_system_prompt_resource_notification_prompt_resource_audio_format import ArchitectSystemPromptResourceNotificationPromptResourceAudioFormat
 from .models.architect_system_prompt_resource_notification_system_prompt_resource_notification import ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification
 from .models.architect_validate_job_state_response import ArchitectValidateJobStateResponse
 from .models.archive_retention import ArchiveRetention
@@ -452,6 +467,8 @@ from .models.audit_topic_message_info import AuditTopicMessageInfo
 from .models.audit_topic_property_change import AuditTopicPropertyChange
 from .models.authentication_properties import AuthenticationProperties
 from .models.authentication_settings import AuthenticationSettings
+from .models.authenticator_attestation_response import AuthenticatorAttestationResponse
+from .models.authenticator_selection import AuthenticatorSelection
 from .models.authoring_knowledge_settings import AuthoringKnowledgeSettings
 from .models.authorization_policy import AuthorizationPolicy
 from .models.authorization_policy_entity_listing import AuthorizationPolicyEntityListing
@@ -496,6 +513,7 @@ from .models.batch_event_response import BatchEventResponse
 from .models.batch_predictive_routing_custom_kpi_attribution_event_request import BatchPredictiveRoutingCustomKpiAttributionEventRequest
 from .models.batch_user_presence_event_request import BatchUserPresenceEventRequest
 from .models.batch_user_routing_status_event_request import BatchUserRoutingStatusEventRequest
+from .models.begin_web_authn_registration_response import BeginWebAuthnRegistrationResponse
 from .models.benefit_assessment import BenefitAssessment
 from .models.benefit_assessment_job import BenefitAssessmentJob
 from .models.bid_group_schedule_set import BidGroupScheduleSet
@@ -520,6 +538,7 @@ from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
 from .models.billing_wallet import BillingWallet
 from .models.biography import Biography
+from .models.blending_settings import BlendingSettings
 from .models.bot import Bot
 from .models.bot_aggregate_data_container import BotAggregateDataContainer
 from .models.bot_aggregate_query_clause import BotAggregateQueryClause
@@ -579,6 +598,10 @@ from .models.bu_async_agent_schedules_search_response import BuAsyncAgentSchedul
 from .models.bu_async_schedule_response import BuAsyncScheduleResponse
 from .models.bu_async_schedule_run_response import BuAsyncScheduleRunResponse
 from .models.bu_average_speed_of_answer import BuAverageSpeedOfAnswer
+from .models.bu_convert_time_off_granularity_limit_job_listing import BuConvertTimeOffGranularityLimitJobListing
+from .models.bu_convert_time_off_limit_granularity_job_progress import BuConvertTimeOffLimitGranularityJobProgress
+from .models.bu_convert_time_off_limit_granularity_job_request import BuConvertTimeOffLimitGranularityJobRequest
+from .models.bu_convert_time_off_limit_granularity_job_response import BuConvertTimeOffLimitGranularityJobResponse
 from .models.bu_copy_schedule_request import BuCopyScheduleRequest
 from .models.bu_create_blank_schedule_request import BuCreateBlankScheduleRequest
 from .models.bu_create_time_off_limit_request import BuCreateTimeOffLimitRequest
@@ -600,6 +623,10 @@ from .models.bu_headcount_forecast_bu_planning_group_headcount_forecast_upload_s
 from .models.bu_headcount_forecast_response import BuHeadcountForecastResponse
 from .models.bu_import_agent_schedule_upload_schema import BuImportAgentScheduleUploadSchema
 from .models.bu_import_short_term_forecast_schema import BuImportShortTermForecastSchema
+from .models.bu_import_time_off_limit_value import BuImportTimeOffLimitValue
+from .models.bu_import_time_off_limit_values_request import BuImportTimeOffLimitValuesRequest
+from .models.bu_import_time_off_limit_values_schema import BuImportTimeOffLimitValuesSchema
+from .models.bu_import_time_off_limit_values_upload_response import BuImportTimeOffLimitValuesUploadResponse
 from .models.bu_intraday_data_group import BuIntradayDataGroup
 from .models.bu_intraday_forecast_data import BuIntradayForecastData
 from .models.bu_intraday_response import BuIntradayResponse
@@ -644,6 +671,9 @@ from .models.bu_time_off_limit_range import BuTimeOffLimitRange
 from .models.bu_time_off_limit_reference import BuTimeOffLimitReference
 from .models.bu_time_off_limit_response import BuTimeOffLimitResponse
 from .models.bu_time_off_limit_value_range import BuTimeOffLimitValueRange
+from .models.bu_time_off_limit_values import BuTimeOffLimitValues
+from .models.bu_time_off_limit_values_for_granularity_response import BuTimeOffLimitValuesForGranularityResponse
+from .models.bu_time_off_limit_values_import_upload_url_request import BuTimeOffLimitValuesImportUploadUrlRequest
 from .models.bu_time_off_limit_values_response import BuTimeOffLimitValuesResponse
 from .models.bu_time_off_plan_listing import BuTimeOffPlanListing
 from .models.bu_time_off_plan_response import BuTimeOffPlanResponse
@@ -728,6 +758,9 @@ from .models.bulk_result import BulkResult
 from .models.bulk_results import BulkResults
 from .models.bulk_shift_trade_state_update_request import BulkShiftTradeStateUpdateRequest
 from .models.bulk_source_intents_response import BulkSourceIntentsResponse
+from .models.bulk_update_activity_code_request import BulkUpdateActivityCodeRequest
+from .models.bulk_update_activity_code_request_item import BulkUpdateActivityCodeRequestItem
+from .models.bulk_update_activity_code_response import BulkUpdateActivityCodeResponse
 from .models.bulk_update_decision_table_rows_request import BulkUpdateDecisionTableRowsRequest
 from .models.bulk_update_decision_table_rows_response import BulkUpdateDecisionTableRowsResponse
 from .models.bulk_update_opportunity_enrollments_status_response import BulkUpdateOpportunityEnrollmentsStatusResponse
@@ -1011,6 +1044,9 @@ from .models.column_data_type_specification import ColumnDataTypeSpecification
 from .models.column_status import ColumnStatus
 from .models.command_status import CommandStatus
 from .models.command_status_entity_listing import CommandStatusEntityListing
+from .models.comment import Comment
+from .models.comment_create import CommentCreate
+from .models.comment_listing import CommentListing
 from .models.common_alert import CommonAlert
 from .models.common_alert_bulk_update_request import CommonAlertBulkUpdateRequest
 from .models.common_all_alert_update_request import CommonAllAlertUpdateRequest
@@ -1685,6 +1721,7 @@ from .models.create_activity_code_request import CreateActivityCodeRequest
 from .models.create_activity_plan_request import CreateActivityPlanRequest
 from .models.create_admin_time_off_request import CreateAdminTimeOffRequest
 from .models.create_agent_time_off_request import CreateAgentTimeOffRequest
+from .models.create_agentic_virtual_agent import CreateAgenticVirtualAgent
 from .models.create_alternative_shift_trade_request import CreateAlternativeShiftTradeRequest
 from .models.create_benefit_assessment_job_request import CreateBenefitAssessmentJobRequest
 from .models.create_benefit_assessment_request import CreateBenefitAssessmentRequest
@@ -1711,6 +1748,7 @@ from .models.create_general_program_topics_definitions_job import CreateGeneralP
 from .models.create_guide import CreateGuide
 from .models.create_guide_version import CreateGuideVersion
 from .models.create_integration_request import CreateIntegrationRequest
+from .models.create_join_video_response import CreateJoinVideoResponse
 from .models.create_kpi_request import CreateKpiRequest
 from .models.create_management_unit_api_request import CreateManagementUnitApiRequest
 from .models.create_management_unit_settings_request import CreateManagementUnitSettingsRequest
@@ -1751,6 +1789,8 @@ from .models.create_upload_source_url_job_response import CreateUploadSourceUrlJ
 from .models.create_user import CreateUser
 from .models.create_user_assignments_request import CreateUserAssignmentsRequest
 from .models.create_utilization_label_request import CreateUtilizationLabelRequest
+from .models.create_verifier_request import CreateVerifierRequest
+from .models.create_verifier_response import CreateVerifierResponse
 from .models.create_web_chat_conversation_request import CreateWebChatConversationRequest
 from .models.create_web_chat_conversation_response import CreateWebChatConversationResponse
 from .models.create_web_chat_message_request import CreateWebChatMessageRequest
@@ -1760,9 +1800,11 @@ from .models.create_work_plan_activity import CreateWorkPlanActivity
 from .models.create_work_plan_bid import CreateWorkPlanBid
 from .models.create_work_plan_shift import CreateWorkPlanShift
 from .models.credential import Credential
+from .models.credential_descriptor import CredentialDescriptor
 from .models.credential_info import CredentialInfo
 from .models.credential_info_cursor_listing import CredentialInfoCursorListing
 from .models.credential_info_listing import CredentialInfoListing
+from .models.credential_parameter import CredentialParameter
 from .models.credential_specification import CredentialSpecification
 from .models.credential_type import CredentialType
 from .models.criteria import Criteria
@@ -1868,6 +1910,18 @@ from .models.date_picker_available_date_time import DatePickerAvailableDateTime
 from .models.date_range import DateRange
 from .models.date_range_with_optional_end import DateRangeWithOptionalEnd
 from .models.day_of_week_minimums import DayOfWeekMinimums
+from .models.decision_metrics_admin_notification_topic_addressable_entity_ref import DecisionMetricsAdminNotificationTopicAddressableEntityRef
+from .models.decision_metrics_admin_notification_topic_decision_metrics_job_notification import DecisionMetricsAdminNotificationTopicDecisionMetricsJobNotification
+from .models.decision_metrics_admin_notification_topic_decision_metrics_update_error import DecisionMetricsAdminNotificationTopicDecisionMetricsUpdateError
+from .models.decision_metrics_data import DecisionMetricsData
+from .models.decision_metrics_job_reference import DecisionMetricsJobReference
+from .models.decision_metrics_response import DecisionMetricsResponse
+from .models.decision_metrics_update_error import DecisionMetricsUpdateError
+from .models.decision_metrics_update_job_request import DecisionMetricsUpdateJobRequest
+from .models.decision_metrics_update_job_response import DecisionMetricsUpdateJobResponse
+from .models.decision_metrics_upload_data import DecisionMetricsUploadData
+from .models.decision_metrics_upload_response import DecisionMetricsUploadResponse
+from .models.decision_metrics_upload_schema import DecisionMetricsUploadSchema
 from .models.decision_table import DecisionTable
 from .models.decision_table_column_default_row_value import DecisionTableColumnDefaultRowValue
 from .models.decision_table_columns import DecisionTableColumns
@@ -2147,6 +2201,7 @@ from .models.domain_entity import DomainEntity
 from .models.domain_entity_listing import DomainEntityListing
 from .models.domain_entity_listing_evaluation_form import DomainEntityListingEvaluationForm
 from .models.domain_entity_listing_query_result import DomainEntityListingQueryResult
+from .models.domain_entity_listing_response_division_view import DomainEntityListingResponseDivisionView
 from .models.domain_entity_listing_survey_form import DomainEntityListingSurveyForm
 from .models.domain_entity_ref import DomainEntityRef
 from .models.domain_logical_interface import DomainLogicalInterface
@@ -2268,6 +2323,7 @@ from .models.email_message_preview_listing import EmailMessagePreviewListing
 from .models.email_message_reply import EmailMessageReply
 from .models.email_outbound_domain_result import EmailOutboundDomainResult
 from .models.email_progress_transfer_event import EmailProgressTransferEvent
+from .models.email_refinement_config import EmailRefinementConfig
 from .models.email_routing_established_event import EmailRoutingEstablishedEvent
 from .models.email_routing_transfer_event import EmailRoutingTransferEvent
 from .models.email_setting import EmailSetting
@@ -2347,6 +2403,8 @@ from .models.evaluation_detail_query_predicate import EvaluationDetailQueryPredi
 from .models.evaluation_entity_listing import EvaluationEntityListing
 from .models.evaluation_form import EvaluationForm
 from .models.evaluation_form_and_scoring_set import EvaluationFormAndScoringSet
+from .models.evaluation_form_division_view import EvaluationFormDivisionView
+from .models.evaluation_form_division_view_listing import EvaluationFormDivisionViewListing
 from .models.evaluation_form_response import EvaluationFormResponse
 from .models.evaluation_form_response_entity_listing import EvaluationFormResponseEntityListing
 from .models.evaluation_form_search_response import EvaluationFormSearchResponse
@@ -2563,6 +2621,7 @@ from .models.file_upload_mode import FileUploadMode
 from .models.file_upload_settings import FileUploadSettings
 from .models.filter import Filter
 from .models.filter_preview_response import FilterPreviewResponse
+from .models.finish_web_authn_registration_request import FinishWebAuthnRegistrationRequest
 from .models.fixed_availability import FixedAvailability
 from .models.flattened_json_schema_document import FlattenedJsonSchemaDocument
 from .models.flow import Flow
@@ -3266,6 +3325,7 @@ from .models.knowledge_setting_listing import KnowledgeSettingListing
 from .models.knowledge_settings import KnowledgeSettings
 from .models.knowledge_settings_request import KnowledgeSettingsRequest
 from .models.knowledge_settings_response import KnowledgeSettingsResponse
+from .models.knowledge_source import KnowledgeSource
 from .models.knowledge_sources_search_request import KnowledgeSourcesSearchRequest
 from .models.knowledge_sources_search_response import KnowledgeSourcesSearchResponse
 from .models.knowledge_suggestion_config import KnowledgeSuggestionConfig
@@ -3395,6 +3455,8 @@ from .models.lex_v2_intent import LexV2Intent
 from .models.lex_v2_slot import LexV2Slot
 from .models.library import Library
 from .models.library_batch_request import LibraryBatchRequest
+from .models.library_division_view import LibraryDivisionView
+from .models.library_division_view_entity_listing import LibraryDivisionViewEntityListing
 from .models.library_entity_listing import LibraryEntityListing
 from .models.license_assignment_request import LicenseAssignmentRequest
 from .models.license_batch_assignment_request import LicenseBatchAssignmentRequest
@@ -3733,6 +3795,8 @@ from .models.observation_metric_data import ObservationMetricData
 from .models.observation_value import ObservationValue
 from .models.occurrence_details import OccurrenceDetails
 from .models.okta import Okta
+from .models.on_demand_conversation_summary_request import OnDemandConversationSummaryRequest
+from .models.on_demand_summary_accepted_response import OnDemandSummaryAcceptedResponse
 from .models.on_demand_summary_config import OnDemandSummaryConfig
 from .models.one_login import OneLogin
 from .models.one_on_one import OneOnOne
@@ -4136,6 +4200,8 @@ from .models.property_change import PropertyChange
 from .models.property_definition import PropertyDefinition
 from .models.property_index_request import PropertyIndexRequest
 from .models.provision_info import ProvisionInfo
+from .models.public_key_credential_creation_options import PublicKeyCredentialCreationOptions
+from .models.public_key_credential_creation_response import PublicKeyCredentialCreationResponse
 from .models.publish_draft_input import PublishDraftInput
 from .models.publish_form import PublishForm
 from .models.publish_program_test_phrase_detected_phrase import PublishProgramTestPhraseDetectedPhrase
@@ -4205,6 +4271,7 @@ from .models.query_result import QueryResult
 from .models.query_results import QueryResults
 from .models.query_shift_trade_list_job_request import QueryShiftTradeListJobRequest
 from .models.query_time_off_integration_status_request import QueryTimeOffIntegrationStatusRequest
+from .models.query_time_off_limit_values_for_granularity_request import QueryTimeOffLimitValuesForGranularityRequest
 from .models.query_time_off_limit_values_request import QueryTimeOffLimitValuesRequest
 from .models.query_time_off_limit_values_response import QueryTimeOffLimitValuesResponse
 from .models.query_user_staffing_group_list_request import QueryUserStaffingGroupListRequest
@@ -4609,6 +4676,7 @@ from .models.recurrence_period import RecurrencePeriod
 from .models.recurrence_settings import RecurrenceSettings
 from .models.recurrence_settings_base import RecurrenceSettingsBase
 from .models.referrer import Referrer
+from .models.refinement_setting_entity import RefinementSettingEntity
 from .models.region_response import RegionResponse
 from .models.region_time_zone import RegionTimeZone
 from .models.register_architect_export_job import RegisterArchitectExportJob
@@ -4626,6 +4694,7 @@ from .models.relationships_export_field_list_filter import RelationshipsExportFi
 from .models.relationships_export_filter import RelationshipsExportFilter
 from .models.relationships_export_listing import RelationshipsExportListing
 from .models.relationships_export_query_conditions import RelationshipsExportQueryConditions
+from .models.relying_party_entity import RelyingPartyEntity
 from .models.remove_entities_request import RemoveEntitiesRequest
 from .models.remove_entity import RemoveEntity
 from .models.reoccurrence import Reoccurrence
@@ -4643,8 +4712,10 @@ from .models.reporting_export_metadata_job_response import ReportingExportMetada
 from .models.reporting_interval import ReportingInterval
 from .models.reporting_turn import ReportingTurn
 from .models.reporting_turn_action import ReportingTurnAction
+from .models.reporting_turn_action_agent_details import ReportingTurnActionAgentDetails
 from .models.reporting_turn_bot_flow_invocation_event import ReportingTurnBotFlowInvocationEvent
 from .models.reporting_turn_flow import ReportingTurnFlow
+from .models.reporting_turn_guardrail_event import ReportingTurnGuardrailEvent
 from .models.reporting_turn_intent import ReportingTurnIntent
 from .models.reporting_turn_intent_slot import ReportingTurnIntentSlot
 from .models.reporting_turn_knowledge import ReportingTurnKnowledge
@@ -4652,8 +4723,10 @@ from .models.reporting_turn_knowledge_document import ReportingTurnKnowledgeDocu
 from .models.reporting_turn_knowledge_events import ReportingTurnKnowledgeEvents
 from .models.reporting_turn_knowledge_feedback import ReportingTurnKnowledgeFeedback
 from .models.reporting_turn_knowledge_feedback_event import ReportingTurnKnowledgeFeedbackEvent
+from .models.reporting_turn_knowledge_metadata import ReportingTurnKnowledgeMetadata
 from .models.reporting_turn_knowledge_search import ReportingTurnKnowledgeSearch
 from .models.reporting_turn_knowledge_search_event import ReportingTurnKnowledgeSearchEvent
+from .models.reporting_turn_tool_call import ReportingTurnToolCall
 from .models.reporting_turns_response import ReportingTurnsResponse
 from .models.reprocess_interactions_by_job_id_response import ReprocessInteractionsByJobIdResponse
 from .models.reprocess_job_entity_listing_response import ReprocessJobEntityListingResponse
@@ -4700,6 +4773,8 @@ from .models.response_asset_search_request import ResponseAssetSearchRequest
 from .models.response_asset_search_results import ResponseAssetSearchResults
 from .models.response_asset_status import ResponseAssetStatus
 from .models.response_config import ResponseConfig
+from .models.response_division_view import ResponseDivisionView
+from .models.response_division_view_query_results import ResponseDivisionViewQueryResults
 from .models.response_entity_list import ResponseEntityList
 from .models.response_entity_listing import ResponseEntityListing
 from .models.response_filter import ResponseFilter
@@ -5165,6 +5240,7 @@ from .models.suggestion_knowledge_answer import SuggestionKnowledgeAnswer
 from .models.suggestion_knowledge_article import SuggestionKnowledgeArticle
 from .models.suggestion_knowledge_search import SuggestionKnowledgeSearch
 from .models.suggestion_listing import SuggestionListing
+from .models.suggestion_patch_request import SuggestionPatchRequest
 from .models.suggestion_script import SuggestionScript
 from .models.summary_aggregate_data_container import SummaryAggregateDataContainer
 from .models.summary_aggregate_query_clause import SummaryAggregateQueryClause
@@ -5225,6 +5301,8 @@ from .models.survey_detail_query_predicate import SurveyDetailQueryPredicate
 from .models.survey_error_details import SurveyErrorDetails
 from .models.survey_form import SurveyForm
 from .models.survey_form_and_scoring_set import SurveyFormAndScoringSet
+from .models.survey_form_division_view import SurveyFormDivisionView
+from .models.survey_form_division_view_listing import SurveyFormDivisionViewListing
 from .models.survey_form_entity_listing import SurveyFormEntityListing
 from .models.survey_question import SurveyQuestion
 from .models.survey_question_group import SurveyQuestionGroup
@@ -5358,12 +5436,13 @@ from .models.time_off_limit_listing import TimeOffLimitListing
 from .models.time_off_limit_range import TimeOffLimitRange
 from .models.time_off_limit_reference import TimeOffLimitReference
 from .models.time_off_limit_value_range import TimeOffLimitValueRange
+from .models.time_off_limit_values import TimeOffLimitValues
 from .models.time_off_plan import TimeOffPlan
 from .models.time_off_plan_business_unit_association import TimeOffPlanBusinessUnitAssociation
 from .models.time_off_plan_listing import TimeOffPlanListing
 from .models.time_off_plan_management_unit_association import TimeOffPlanManagementUnitAssociation
-from .models.time_off_request import TimeOffRequest
 from .models.time_off_request_list import TimeOffRequestList
+from .models.time_off_request_list_item import TimeOffRequestListItem
 from .models.time_off_request_listing import TimeOffRequestListing
 from .models.time_off_request_lookup import TimeOffRequestLookup
 from .models.time_off_request_notification import TimeOffRequestNotification
@@ -5539,6 +5618,7 @@ from .models.update_activity_plan_request import UpdateActivityPlanRequest
 from .models.update_adherence_explanation_status_request import UpdateAdherenceExplanationStatusRequest
 from .models.update_agent_schedule_bidding_preference import UpdateAgentScheduleBiddingPreference
 from .models.update_agent_work_plan_bidding_preference import UpdateAgentWorkPlanBiddingPreference
+from .models.update_agentic_virtual_agent import UpdateAgenticVirtualAgent
 from .models.update_alternative_shift_bu_settings_request import UpdateAlternativeShiftBuSettingsRequest
 from .models.update_analytics_data_retention_request import UpdateAnalyticsDataRetentionRequest
 from .models.update_business_unit_request import UpdateBusinessUnitRequest
@@ -5655,6 +5735,7 @@ from .models.user_details_datalake_availability_topic_data_availability_change_n
 from .models.user_details_query import UserDetailsQuery
 from .models.user_device import UserDevice
 from .models.user_end_detail_event_topic_user_end_event import UserEndDetailEventTopicUserEndEvent
+from .models.user_entity import UserEntity
 from .models.user_entity_listing import UserEntityListing
 from .models.user_established_event import UserEstablishedEvent
 from .models.user_expands import UserExpands
@@ -5833,12 +5914,14 @@ from .models.v2_wem_engagement_celebration_updates_topic_contest_winners_users i
 from .models.v2_wem_engagement_celebration_updates_topic_engagement_celebration import V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
 from .models.v2_wem_engagement_celebration_updates_topic_source_entity import V2WemEngagementCelebrationUpdatesTopicSourceEntity
 from .models.v2_wem_engagement_celebration_updates_topic_user_id import V2WemEngagementCelebrationUpdatesTopicUserId
+from .models.v2_wfm_agent_opportunity_topic_agent_opportunity_notification import V2WfmAgentOpportunityTopicAgentOpportunityNotification
 from .models.v2_wfm_main_forecast_export_forecast_event_main_forecast_error_body import V2WfmMainForecastExportForecastEventMainForecastErrorBody
 from .models.v2_wfm_main_forecast_export_forecast_event_main_forecast_export_notification import V2WfmMainForecastExportForecastEventMainForecastExportNotification
 from .models.v2_wfm_main_forecast_export_historical_event_main_forecast_error_body import V2WfmMainForecastExportHistoricalEventMainForecastErrorBody
 from .models.v2_wfm_main_forecast_export_historical_event_main_forecast_export_notification import V2WfmMainForecastExportHistoricalEventMainForecastExportNotification
 from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_error_body import V2WfmMainForecastExportSnapshotEventMainForecastErrorBody
 from .models.v2_wfm_main_forecast_export_snapshot_event_main_forecast_export_notification import V2WfmMainForecastExportSnapshotEventMainForecastExportNotification
+from .models.v2_wfm_opportunity_topic_opportunity_notification import V2WfmOpportunityTopicOpportunityNotification
 from .models.v3_knowledge_search_client_application import V3KnowledgeSearchClientApplication
 from .models.v3_knowledge_search_preview_client_application import V3KnowledgeSearchPreviewClientApplication
 from .models.v3_source_create_request import V3SourceCreateRequest
@@ -5875,6 +5958,7 @@ from .models.validate_agent_unavailable_times_request import ValidateAgentUnavai
 from .models.validate_agent_unavailable_times_response import ValidateAgentUnavailableTimesResponse
 from .models.validate_assign_users import ValidateAssignUsers
 from .models.validate_details import ValidateDetails
+from .models.validate_verifier_request import ValidateVerifierRequest
 from .models.validate_work_plan_messages import ValidateWorkPlanMessages
 from .models.validate_work_plan_response import ValidateWorkPlanResponse
 from .models.validation_error import ValidationError
@@ -5891,6 +5975,7 @@ from .models.value_wrapper_date import ValueWrapperDate
 from .models.value_wrapper_group_settings import ValueWrapperGroupSettings
 from .models.value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType
 from .models.value_wrapper_instant import ValueWrapperInstant
+from .models.value_wrapper_integer import ValueWrapperInteger
 from .models.value_wrapper_local_date import ValueWrapperLocalDate
 from .models.value_wrapper_monthly_planning_period_settings import ValueWrapperMonthlyPlanningPeriodSettings
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
@@ -6105,6 +6190,7 @@ from .models.wfm_bulk_shift_trade_state_update_notification_topic_bulk_shift_tra
 from .models.wfm_bulk_shift_trade_state_update_notification_topic_user_reference import WfmBulkShiftTradeStateUpdateNotificationTopicUserReference
 from .models.wfm_bulk_shift_trade_state_update_notification_topic_wfm_versioned_entity_metadata import WfmBulkShiftTradeStateUpdateNotificationTopicWfmVersionedEntityMetadata
 from .models.wfm_business_unit_reference import WfmBusinessUnitReference
+from .models.wfm_entity_metadata import WfmEntityMetadata
 from .models.wfm_forecast_modification_interval_offset_value import WfmForecastModificationIntervalOffsetValue
 from .models.wfm_historical_adherence_agent_calculations_complete_topic_secondary_presence_reference import WfmHistoricalAdherenceAgentCalculationsCompleteTopicSecondaryPresenceReference
 from .models.wfm_historical_adherence_agent_calculations_complete_topic_user_reference import WfmHistoricalAdherenceAgentCalculationsCompleteTopicUserReference
@@ -6321,6 +6407,7 @@ from .models.workitem_date_based_rule_update import WorkitemDateBasedRuleUpdate
 from .models.workitem_delta import WorkitemDelta
 from .models.workitem_filter import WorkitemFilter
 from .models.workitem_flow_reference import WorkitemFlowReference
+from .models.workitem_language_reference import WorkitemLanguageReference
 from .models.workitem_manual_assign import WorkitemManualAssign
 from .models.workitem_on_attribute_change_condition import WorkitemOnAttributeChangeCondition
 from .models.workitem_on_attribute_change_condition_update import WorkitemOnAttributeChangeConditionUpdate
@@ -6346,6 +6433,7 @@ from .models.workitem_query_post_request import WorkitemQueryPostRequest
 from .models.workitem_query_sort import WorkitemQuerySort
 from .models.workitem_queue_reference import WorkitemQueueReference
 from .models.workitem_reference import WorkitemReference
+from .models.workitem_routing_skill_reference import WorkitemRoutingSkillReference
 from .models.workitem_rule_action import WorkitemRuleAction
 from .models.workitem_rule_settings import WorkitemRuleSettings
 from .models.workitem_schema import WorkitemSchema
@@ -6522,6 +6610,7 @@ from .apis.user_recordings_api import UserRecordingsApi
 from .apis.users_api import UsersApi
 from .apis.users_rules_api import UsersRulesApi
 from .apis.utilities_api import UtilitiesApi
+from .apis.virtual_agents_api import VirtualAgentsApi
 from .apis.voicemail_api import VoicemailApi
 from .apis.web_chat_api import WebChatApi
 from .apis.web_messaging_api import WebMessagingApi
@@ -6609,6 +6698,7 @@ from .apis.user_recordings_api import UserRecordingsApi
 from .apis.users_api import UsersApi
 from .apis.users_rules_api import UsersRulesApi
 from .apis.utilities_api import UtilitiesApi
+from .apis.virtual_agents_api import VirtualAgentsApi
 from .apis.voicemail_api import VoicemailApi
 from .apis.web_chat_api import WebChatApi
 from .apis.web_messaging_api import WebMessagingApi

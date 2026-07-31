@@ -63,7 +63,7 @@ class FunctionUploadRequest(object):
     def file_name(self) -> str:
         """
         Gets the file_name of this FunctionUploadRequest.
-        Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )
+        Name of the file to upload.File name can only contain letters, numbers, spaces, and the following special characters: + - _ . ( )
 
         :return: The file_name of this FunctionUploadRequest.
         :rtype: str
@@ -74,14 +74,14 @@ class FunctionUploadRequest(object):
     def file_name(self, file_name: str) -> None:
         """
         Sets the file_name of this FunctionUploadRequest.
-        Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )
+        Name of the file to upload.File name can only contain letters, numbers, spaces, and the following special characters: + - _ . ( )
 
         :param file_name: The file_name of this FunctionUploadRequest.
         :type: str
         """
         
-        if not re.search('^[a-zA-Z0-9\.\+\-\_\(\)\s]+$', file_name):
-            raise ValueError("Invalid value for `file_name`, must be a follow pattern or equal to `/^[a-zA-Z0-9\.\+\-\_\(\)\s]+$/`")
+        if not re.match('^[a-zA-Z0-9\\.\\+\\-\\_\\(\\)\\s]+$', file_name):
+            raise ValueError("Invalid value for `file_name`, must be a follow pattern or equal to `/^[a-zA-Z0-9\\.\\+\\-\\_\\(\\)\\s]+$/`")
 
 
         self._file_name = file_name

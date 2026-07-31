@@ -7,11 +7,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_casemanagement_case**](#delete_casemanagement_case) | Delete a Case.|
+|[**delete_casemanagement_case_comments_me_comment_id**](#delete_casemanagement_case_comments_me_comment_id) | Delete my Comment.|
 |[**delete_casemanagement_caseplan**](#delete_casemanagement_caseplan) | Delete a Caseplan.|
 |[**delete_casemanagement_caseplan_dataschema**](#delete_casemanagement_caseplan_dataschema) | Remove a data schema from a draft Caseplan.|
 |[**get_casemanagement_case**](#get_casemanagement_case) | Get a Case.|
 |[**get_casemanagement_case_association**](#get_casemanagement_case_association) | Get a Case Association.|
 |[**get_casemanagement_case_associations**](#get_casemanagement_case_associations) | Get a list of Case associations for the Case.|
+|[**get_casemanagement_case_comment**](#get_casemanagement_case_comment) | Get a Comment.|
+|[**get_casemanagement_case_comments**](#get_casemanagement_case_comments) | Get comments for a Case.|
 |[**get_casemanagement_case_stage**](#get_casemanagement_case_stage) | Get a Stage.|
 |[**get_casemanagement_case_stage_step**](#get_casemanagement_case_stage_step) | Get a Step.|
 |[**get_casemanagement_case_stage_steps**](#get_casemanagement_case_stage_steps) | Get a list of Steps.|
@@ -35,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_casemanagement_caseplan_stageplan**](#patch_casemanagement_caseplan_stageplan) | Update the attributes of a Stageplan.|
 |[**patch_casemanagement_caseplan_stageplan_stepplan**](#patch_casemanagement_caseplan_stageplan_stepplan) | Update the attributes of a Stepplan.|
 |[**post_casemanagement_case_associations**](#post_casemanagement_case_associations) | Create a Case association.|
+|[**post_casemanagement_case_comments**](#post_casemanagement_case_comments) | Add a comment to a Case.|
 |[**post_casemanagement_case_terminate_jobs**](#post_casemanagement_case_terminate_jobs) | Create a Terminate Job for a Case.|
 |[**post_casemanagement_caseplan_dataschemas**](#post_casemanagement_caseplan_dataschemas) | Add a data schema to a draft Caseplan.|
 |[**post_casemanagement_caseplan_publish**](#post_casemanagement_caseplan_publish) | Publish Caseplan.|
@@ -90,6 +94,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **case_id** | **str**| Case identifier. |  |
+
+### Return type
+
+**object**
+
+
+## delete_casemanagement_case_comments_me_comment_id
+
+> object** delete_casemanagement_case_comments_me_comment_id(case_id, comment_id)
+
+
+Delete my Comment.
+
+Wraps DELETE /api/v2/casemanagement/cases/{caseId}/comments/me/{commentId} 
+
+Requires ANY permissions: 
+
+* caseManagement:commentSelf:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+case_id = 'case_id_example' # str | Case identifier.
+comment_id = 'comment_id_example' # str | Comment identifier.
+
+try:
+    # Delete my Comment.
+    api_response = api_instance.delete_casemanagement_case_comments_me_comment_id(case_id, comment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->delete_casemanagement_case_comments_me_comment_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **case_id** | **str**| Case identifier. |  |
+| **comment_id** | **str**| Comment identifier. |  |
 
 ### Return type
 
@@ -221,7 +275,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
 case_id = 'case_id_example' # str | Case identifier.
-expands = 'expands_example' # str | Fields to expand. (optional)
+expands = ['expands_example'] # list[str] | Attributes to expand. Comma-separated if more than one. (optional)
 
 try:
     # Get a Case.
@@ -237,7 +291,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **case_id** | **str**| Case identifier. |  |
-| **expands** | **str**| Fields to expand. | [optional] <br />**Values**: caseplan |
+| **expands** | [**list[str]**](str)| Attributes to expand. Comma-separated if more than one. | [optional] <br />**Values**: caseplan, owner, modifiedBy, externalContact, customerIntent |
 
 ### Return type
 
@@ -346,6 +400,110 @@ except ApiException as e:
 ### Return type
 
 [**CaseAssociationListing**](CaseAssociationListing)
+
+
+## get_casemanagement_case_comment
+
+> [**Comment**](Comment) get_casemanagement_case_comment(case_id, comment_id)
+
+
+Get a Comment.
+
+Wraps GET /api/v2/casemanagement/cases/{caseId}/comments/{commentId} 
+
+Requires ANY permissions: 
+
+* caseManagement:comment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+case_id = 'case_id_example' # str | Case identifier.
+comment_id = 'comment_id_example' # str | Comment identifier.
+
+try:
+    # Get a Comment.
+    api_response = api_instance.get_casemanagement_case_comment(case_id, comment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->get_casemanagement_case_comment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **case_id** | **str**| Case identifier. |  |
+| **comment_id** | **str**| Comment identifier. |  |
+
+### Return type
+
+[**Comment**](Comment)
+
+
+## get_casemanagement_case_comments
+
+> [**CommentListing**](CommentListing) get_casemanagement_case_comments(case_id, after=after, page_size=page_size, sort_order=sort_order)
+
+
+Get comments for a Case.
+
+Wraps GET /api/v2/casemanagement/cases/{caseId}/comments 
+
+Requires ANY permissions: 
+
+* caseManagement:comment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+case_id = 'case_id_example' # str | Case identifier.
+after = 'after_example' # str | Cursor pointing to the end of the previously returned page of comments. (optional)
+page_size = 56 # int | Number of comments to return. Maximum is 100. (optional)
+sort_order = ''desc'' # str | Ascending or descending sort order. (optional) (default to 'desc')
+
+try:
+    # Get comments for a Case.
+    api_response = api_instance.get_casemanagement_case_comments(case_id, after=after, page_size=page_size, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->get_casemanagement_case_comments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **case_id** | **str**| Case identifier. |  |
+| **after** | **str**| Cursor pointing to the end of the previously returned page of comments. | [optional]  |
+| **page_size** | **int**| Number of comments to return. Maximum is 100. | [optional]  |
+| **sort_order** | **str**| Ascending or descending sort order. | [optional] [default to &#39;desc&#39;]<br />**Values**: asc, desc |
+
+### Return type
+
+[**CommentListing**](CommentListing)
 
 
 ## get_casemanagement_case_stage
@@ -1173,7 +1331,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.CaseManagementApi()
 reference_id = 'reference_id_example' # str | Case reference.
-expands = 'expands_example' # str | Fields to expand. (optional)
+expands = ['expands_example'] # list[str] | Attributes to expand. Comma-separated if more than one. (optional)
 
 try:
     # Get a Case by reference.
@@ -1189,7 +1347,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **reference_id** | **str**| Case reference. |  |
-| **expands** | **str**| Fields to expand. | [optional] <br />**Values**: caseplan |
+| **expands** | [**list[str]**](str)| Attributes to expand. Comma-separated if more than one. | [optional] <br />**Values**: caseplan, owner, modifiedBy, externalContact, customerIntent |
 
 ### Return type
 
@@ -1550,6 +1708,56 @@ except ApiException as e:
 ### Return type
 
 [**CaseAssociation**](CaseAssociation)
+
+
+## post_casemanagement_case_comments
+
+> [**Comment**](Comment) post_casemanagement_case_comments(case_id, body)
+
+
+Add a comment to a Case.
+
+Wraps POST /api/v2/casemanagement/cases/{caseId}/comments 
+
+Requires ANY permissions: 
+
+* caseManagement:comment:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CommentCreate() # CommentCreate | Comment create request.
+
+try:
+    # Add a comment to a Case.
+    api_response = api_instance.post_casemanagement_case_comments(case_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->post_casemanagement_case_comments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CommentCreate**](CommentCreate)| Comment create request. |  |
+
+### Return type
+
+[**Comment**](Comment)
 
 
 ## post_casemanagement_case_terminate_jobs
@@ -2042,4 +2250,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

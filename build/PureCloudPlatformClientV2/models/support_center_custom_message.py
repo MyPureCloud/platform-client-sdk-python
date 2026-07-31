@@ -63,7 +63,7 @@ class SupportCenterCustomMessage(object):
     def default_value(self) -> str:
         """
         Gets the default_value of this SupportCenterCustomMessage.
-        Default value for the message
+        Default value for the message. Required for each custom message entry
 
         :return: The default_value of this SupportCenterCustomMessage.
         :rtype: str
@@ -74,7 +74,7 @@ class SupportCenterCustomMessage(object):
     def default_value(self, default_value: str) -> None:
         """
         Sets the default_value of this SupportCenterCustomMessage.
-        Default value for the message
+        Default value for the message. Required for each custom message entry
 
         :param default_value: The default_value of this SupportCenterCustomMessage.
         :type: str
@@ -93,7 +93,7 @@ class SupportCenterCustomMessage(object):
     def type(self) -> str:
         """
         Gets the type of this SupportCenterCustomMessage.
-        Type of the message
+        Type of the message. Required for each custom message entry
 
         :return: The type of this SupportCenterCustomMessage.
         :rtype: str
@@ -104,7 +104,7 @@ class SupportCenterCustomMessage(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this SupportCenterCustomMessage.
-        Type of the message
+        Type of the message. Required for each custom message entry
 
         :param type: The type of this SupportCenterCustomMessage.
         :type: str

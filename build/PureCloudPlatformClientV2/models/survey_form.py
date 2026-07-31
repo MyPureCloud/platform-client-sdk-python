@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DomainEntityListingSurveyForm
     from . import SurveyQuestionGroup
+    from . import WritableStarrableDivision
 
 class SurveyForm(object):
     """
@@ -52,6 +53,7 @@ class SurveyForm(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'WritableStarrableDivision',
             'modified_date': 'datetime',
             'published': 'bool',
             'disabled': 'bool',
@@ -61,12 +63,14 @@ class SurveyForm(object):
             'footer': 'str',
             'question_groups': 'list[SurveyQuestionGroup]',
             'published_versions': 'DomainEntityListingSurveyForm',
+            'redacted': 'bool',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'modified_date': 'modifiedDate',
             'published': 'published',
             'disabled': 'disabled',
@@ -76,11 +80,13 @@ class SurveyForm(object):
             'footer': 'footer',
             'question_groups': 'questionGroups',
             'published_versions': 'publishedVersions',
+            'redacted': 'redacted',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._division = None
         self._modified_date = None
         self._published = None
         self._disabled = None
@@ -90,6 +96,7 @@ class SurveyForm(object):
         self._footer = None
         self._question_groups = None
         self._published_versions = None
+        self._redacted = None
         self._self_uri = None
 
     @property
@@ -139,6 +146,30 @@ class SurveyForm(object):
         
 
         self._name = name
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this SurveyForm.
+        The division to which this entity belongs.
+
+        :return: The division of this SurveyForm.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this SurveyForm.
+        The division to which this entity belongs.
+
+        :param division: The division of this SurveyForm.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def modified_date(self) -> datetime:
@@ -355,6 +386,30 @@ class SurveyForm(object):
         
 
         self._published_versions = published_versions
+
+    @property
+    def redacted(self) -> bool:
+        """
+        Gets the redacted of this SurveyForm.
+        Is this form redacted
+
+        :return: The redacted of this SurveyForm.
+        :rtype: bool
+        """
+        return self._redacted
+
+    @redacted.setter
+    def redacted(self, redacted: bool) -> None:
+        """
+        Sets the redacted of this SurveyForm.
+        Is this form redacted
+
+        :param redacted: The redacted of this SurveyForm.
+        :type: bool
+        """
+        
+
+        self._redacted = redacted
 
     @property
     def self_uri(self) -> str:

@@ -120,6 +120,7 @@ from ..models import CreateCallbackCommand
 from ..models import CreateCallbackOnConversationCommand
 from ..models import CreateCallbackResponse
 from ..models import CreateEmailRequest
+from ..models import CreateJoinVideoResponse
 from ..models import CreateOutboundMessagingConversationRequest
 from ..models import CreateOutboundMessagingConversationResponse
 from ..models import CreateSecureSession
@@ -195,6 +196,8 @@ from ..models import MessagingSettingDefaultRequest
 from ..models import MessagingSettingPatchRequest
 from ..models import MessagingSettingRequest
 from ..models import OAuthAppleAuthorizationResponse
+from ..models import OnDemandConversationSummaryRequest
+from ..models import OnDemandSummaryAcceptedResponse
 from ..models import OpenEventNormalizedMessage
 from ..models import OpenInboundNormalizedEvent
 from ..models import OpenInboundNormalizedMessage
@@ -227,6 +230,7 @@ from ..models import SocialMediaMessageData
 from ..models import Suggestion
 from ..models import SuggestionEngagement
 from ..models import SuggestionListing
+from ..models import SuggestionPatchRequest
 from ..models import SupportedContent
 from ..models import SupportedContentListing
 from ..models import SupportedContentReference
@@ -12321,6 +12325,96 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_conversation_suggestion(self, conversation_id: str, suggestion_id: str, body: 'SuggestionPatchRequest', **kwargs) -> 'Suggestion':
+        """
+        Update a suggestion.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversation_suggestion(conversation_id, suggestion_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str suggestion_id: Suggestion ID (required)
+        :param SuggestionPatchRequest body:  (required)
+        :return: Suggestion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'suggestion_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversation_suggestion" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversation_suggestion`")
+        # verify the required parameter 'suggestion_id' is set
+        if ('suggestion_id' not in params) or (params['suggestion_id'] is None):
+            raise ValueError("Missing the required parameter `suggestion_id` when calling `patch_conversation_suggestion`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversation_suggestion`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/suggestions/{suggestionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'suggestion_id' in params:
+            path_params['suggestionId'] = params['suggestion_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Suggestion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_conversation_summary_engagements(self, conversation_id: str, summary_id: str, **kwargs) -> None:
         """
         Update agent's engagement for the summary.
@@ -19131,6 +19225,99 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_call_participant_communication_summaries(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'OnDemandSummaryAcceptedResponse':
+        """
+        Request an on-demand summary for a call communication.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_call_participant_communication_summaries(conversation_id, participant_id, communication_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str participant_id: Participant ID (required)
+        :param str communication_id: Communication ID (required)
+        :param OnDemandConversationSummaryRequest body: On-demand summary request
+        :return: OnDemandSummaryAcceptedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_call_participant_communication_summaries" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_call_participant_communication_summaries`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_call_participant_communication_summaries`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversations_call_participant_communication_summaries`")
+
+
+        resource_path = '/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OnDemandSummaryAcceptedResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_call_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -23419,6 +23606,99 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversations_message_participant_communication_summaries(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'OnDemandSummaryAcceptedResponse':
+        """
+        Request an on-demand summary for a message communication.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_message_participant_communication_summaries(conversation_id, participant_id, communication_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str participant_id: Participant ID (required)
+        :param str communication_id: Communication ID (required)
+        :param OnDemandConversationSummaryRequest body: On-demand summary request
+        :return: OnDemandSummaryAcceptedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'communication_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_message_participant_communication_summaries" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversations_message_participant_communication_summaries`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `post_conversations_message_participant_communication_summaries`")
+        # verify the required parameter 'communication_id' is set
+        if ('communication_id' not in params) or (params['communication_id'] is None):
+            raise ValueError("Missing the required parameter `communication_id` when calling `post_conversations_message_participant_communication_summaries`")
+
+
+        resource_path = '/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+        if 'communication_id' in params:
+            path_params['communicationId'] = params['communication_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OnDemandSummaryAcceptedResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_message_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -25050,7 +25330,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_video_agentconference_communication(self, conversation_id: str, communication_id: str, **kwargs) -> 'VideoConferenceDetails':
+    def post_conversations_video_agentconference_communication(self, conversation_id: str, communication_id: str, **kwargs) -> 'CreateJoinVideoResponse':
         """
         Create an Agent-Type video conference and assign an agent to it
         
@@ -25068,7 +25348,7 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param str communication_id: communicationId (required)
-        :return: VideoConferenceDetails
+        :return: CreateJoinVideoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -25130,7 +25410,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='VideoConferenceDetails',
+                                            response_type='CreateJoinVideoResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

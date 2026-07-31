@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import Image
     from . import UserPresence
 
 class CaseUserReference(object):
@@ -52,6 +53,7 @@ class CaseUserReference(object):
             'id': 'str',
             'name': 'str',
             'presence': 'UserPresence',
+            'images': 'list[Image]',
             'self_uri': 'str'
         }
 
@@ -59,12 +61,14 @@ class CaseUserReference(object):
             'id': 'id',
             'name': 'name',
             'presence': 'presence',
+            'images': 'images',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._presence = None
+        self._images = None
         self._self_uri = None
 
     @property
@@ -138,6 +142,30 @@ class CaseUserReference(object):
         
 
         self._presence = presence
+
+    @property
+    def images(self) -> List['Image']:
+        """
+        Gets the images of this CaseUserReference.
+        Profile images for the user
+
+        :return: The images of this CaseUserReference.
+        :rtype: list[Image]
+        """
+        return self._images
+
+    @images.setter
+    def images(self, images: List['Image']) -> None:
+        """
+        Sets the images of this CaseUserReference.
+        Profile images for the user
+
+        :param images: The images of this CaseUserReference.
+        :type: list[Image]
+        """
+        
+
+        self._images = images
 
     @property
     def self_uri(self) -> str:

@@ -48,16 +48,22 @@ class BuCreateTimeOffLimitRequest(object):
         """
         self.swagger_types = {
             'staffing_group_id': 'str',
-            'management_unit_id': 'str'
+            'management_unit_id': 'str',
+            'granularity': 'str',
+            'full_day_time_off_start_time': 'str'
         }
 
         self.attribute_map = {
             'staffing_group_id': 'staffingGroupId',
-            'management_unit_id': 'managementUnitId'
+            'management_unit_id': 'managementUnitId',
+            'granularity': 'granularity',
+            'full_day_time_off_start_time': 'fullDayTimeOffStartTime'
         }
 
         self._staffing_group_id = None
         self._management_unit_id = None
+        self._granularity = None
+        self._full_day_time_off_start_time = None
 
     @property
     def staffing_group_id(self) -> str:
@@ -106,6 +112,59 @@ class BuCreateTimeOffLimitRequest(object):
         
 
         self._management_unit_id = management_unit_id
+
+    @property
+    def granularity(self) -> str:
+        """
+        Gets the granularity of this BuCreateTimeOffLimitRequest.
+        Granularity choice for time off limit
+
+        :return: The granularity of this BuCreateTimeOffLimitRequest.
+        :rtype: str
+        """
+        return self._granularity
+
+    @granularity.setter
+    def granularity(self, granularity: str) -> None:
+        """
+        Sets the granularity of this BuCreateTimeOffLimitRequest.
+        Granularity choice for time off limit
+
+        :param granularity: The granularity of this BuCreateTimeOffLimitRequest.
+        :type: str
+        """
+        if isinstance(granularity, int):
+            granularity = str(granularity)
+        allowed_values = ["Daily", "FifteenMinutes"]
+        if granularity.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for granularity -> " + granularity)
+            self._granularity = "outdated_sdk_version"
+        else:
+            self._granularity = granularity
+
+    @property
+    def full_day_time_off_start_time(self) -> str:
+        """
+        Gets the full_day_time_off_start_time of this BuCreateTimeOffLimitRequest.
+        The start time of full day time off requests associated with this limit interval in HH:mm format.Setting this value is allowed only for time-off limit with fifteen minutes granularity
+
+        :return: The full_day_time_off_start_time of this BuCreateTimeOffLimitRequest.
+        :rtype: str
+        """
+        return self._full_day_time_off_start_time
+
+    @full_day_time_off_start_time.setter
+    def full_day_time_off_start_time(self, full_day_time_off_start_time: str) -> None:
+        """
+        Sets the full_day_time_off_start_time of this BuCreateTimeOffLimitRequest.
+        The start time of full day time off requests associated with this limit interval in HH:mm format.Setting this value is allowed only for time-off limit with fifteen minutes granularity
+
+        :param full_day_time_off_start_time: The full_day_time_off_start_time of this BuCreateTimeOffLimitRequest.
+        :type: str
+        """
+        
+
+        self._full_day_time_off_start_time = full_day_time_off_start_time
 
     def to_dict(self):
         """

@@ -7,6 +7,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
+| **division** | [WritableStarrableDivision](WritableStarrableDivision) | The division to which this entity belongs. | [optional] |
 | **modified_date** | datetime | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **published** | bool |  | [optional] |
 | **context_id** | str |  | [optional] |
@@ -21,4 +22,4 @@
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

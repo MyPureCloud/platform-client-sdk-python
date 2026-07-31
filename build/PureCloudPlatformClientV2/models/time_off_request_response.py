@@ -207,7 +207,7 @@ class TimeOffRequestResponse(object):
     def marked_as_read(self) -> bool:
         """
         Gets the marked_as_read of this TimeOffRequestResponse.
-        Whether this request has been marked as read by the agent
+        Deprecated - Always returns true.
 
         :return: The marked_as_read of this TimeOffRequestResponse.
         :rtype: bool
@@ -218,7 +218,7 @@ class TimeOffRequestResponse(object):
     def marked_as_read(self, marked_as_read: bool) -> None:
         """
         Sets the marked_as_read of this TimeOffRequestResponse.
-        Whether this request has been marked as read by the agent
+        Deprecated - Always returns true.
 
         :param marked_as_read: The marked_as_read of this TimeOffRequestResponse.
         :type: bool

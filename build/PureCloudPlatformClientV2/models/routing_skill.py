@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import Division
 
 class RoutingSkill(object):
     """
@@ -49,6 +51,7 @@ class RoutingSkill(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'Division',
             'date_modified': 'datetime',
             'state': 'str',
             'version': 'str',
@@ -58,6 +61,7 @@ class RoutingSkill(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'date_modified': 'dateModified',
             'state': 'state',
             'version': 'version',
@@ -66,6 +70,7 @@ class RoutingSkill(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._date_modified = None
         self._state = None
         self._version = None
@@ -118,6 +123,30 @@ class RoutingSkill(object):
         
 
         self._name = name
+
+    @property
+    def division(self) -> 'Division':
+        """
+        Gets the division of this RoutingSkill.
+        The id of the division this skill belongs to.
+
+        :return: The division of this RoutingSkill.
+        :rtype: Division
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'Division') -> None:
+        """
+        Sets the division of this RoutingSkill.
+        The id of the division this skill belongs to.
+
+        :param division: The division of this RoutingSkill.
+        :type: Division
+        """
+        
+
+        self._division = division
 
     @property
     def date_modified(self) -> datetime:

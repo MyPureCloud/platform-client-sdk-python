@@ -60,7 +60,7 @@ class SupportCenterCompactCategoryModuleTemplate(object):
     def active(self) -> bool:
         """
         Gets the active of this SupportCenterCompactCategoryModuleTemplate.
-        Whether this template is active or not
+        Whether this template is active or not. Required if support center is enabled
 
         :return: The active of this SupportCenterCompactCategoryModuleTemplate.
         :rtype: bool
@@ -71,7 +71,7 @@ class SupportCenterCompactCategoryModuleTemplate(object):
     def active(self, active: bool) -> None:
         """
         Sets the active of this SupportCenterCompactCategoryModuleTemplate.
-        Whether this template is active or not
+        Whether this template is active or not. Required if support center is enabled
 
         :param active: The active of this SupportCenterCompactCategoryModuleTemplate.
         :type: bool

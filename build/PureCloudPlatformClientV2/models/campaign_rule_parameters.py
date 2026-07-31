@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
-    from . import Duration
 
 class CampaignRuleParameters(object):
     """
@@ -64,7 +63,7 @@ class CampaignRuleParameters(object):
             'email_messages_per_minute': 'int',
             'sms_content_template': 'DomainEntityRef',
             'email_content_template': 'DomainEntityRef',
-            'for_duration': 'Duration'
+            'for_duration': 'str'
         }
 
         self.attribute_map = {
@@ -453,24 +452,24 @@ class CampaignRuleParameters(object):
         self._email_content_template = email_content_template
 
     @property
-    def for_duration(self) -> 'Duration':
+    def for_duration(self) -> 'str':
         """
         Gets the for_duration of this CampaignRuleParameters.
         ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true
 
         :return: The for_duration of this CampaignRuleParameters.
-        :rtype: Duration
+        :rtype: str
         """
         return self._for_duration
 
     @for_duration.setter
-    def for_duration(self, for_duration: 'Duration') -> None:
+    def for_duration(self, for_duration: 'str') -> None:
         """
         Sets the for_duration of this CampaignRuleParameters.
         ISO-8601 Duration for which condition expression must be continuously true before condition is evaluated as true
 
         :param for_duration: The for_duration of this CampaignRuleParameters.
-        :type: Duration
+        :type: str
         """
         
 

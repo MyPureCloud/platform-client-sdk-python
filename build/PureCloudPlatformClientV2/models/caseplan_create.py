@@ -200,7 +200,7 @@ class CaseplanCreate(object):
         if len(reference_prefix) < 2:
             raise ValueError("Invalid value for `reference_prefix`, length must be greater than or equal to `2`")
 
-        if not re.search('^[A-Za-z0-9]+$', reference_prefix):
+        if not re.match('^[A-Za-z0-9]+$', reference_prefix):
             raise ValueError("Invalid value for `reference_prefix`, must be a follow pattern or equal to `/^[A-Za-z0-9]+$/`")
 
 
@@ -227,7 +227,7 @@ class CaseplanCreate(object):
         :type: str
         """
         
-        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', customer_intent_id):
+        if not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', customer_intent_id):
             raise ValueError("Invalid value for `customer_intent_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
 
@@ -284,7 +284,7 @@ class CaseplanCreate(object):
         :type: str
         """
         
-        if not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', default_case_owner_id):
+        if not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', default_case_owner_id):
             raise ValueError("Invalid value for `default_case_owner_id`, must be a follow pattern or equal to `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
 
@@ -311,8 +311,8 @@ class CaseplanCreate(object):
         :type: str
         """
         
-        if not re.search('([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|\*)', division_id):
-            raise ValueError("Invalid value for `division_id`, must be a follow pattern or equal to `/([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|\*)/`")
+        if not re.match('([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|\\*)', division_id):
+            raise ValueError("Invalid value for `division_id`, must be a follow pattern or equal to `/([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|\\*)/`")
 
 
         self._division_id = division_id

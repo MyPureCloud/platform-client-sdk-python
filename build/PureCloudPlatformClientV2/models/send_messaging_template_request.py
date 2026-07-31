@@ -102,7 +102,7 @@ class SendMessagingTemplateRequest(object):
     def parameters(self) -> List['TemplateParameter']:
         """
         Gets the parameters of this SendMessagingTemplateRequest.
-        A list of Response Management response substitutions for the response's messaging template. (Deprecated) use bodyParameters instead.
+        (Deprecated) use bodyParameters instead.
 
         :return: The parameters of this SendMessagingTemplateRequest.
         :rtype: list[TemplateParameter]
@@ -113,7 +113,7 @@ class SendMessagingTemplateRequest(object):
     def parameters(self, parameters: List['TemplateParameter']) -> None:
         """
         Sets the parameters of this SendMessagingTemplateRequest.
-        A list of Response Management response substitutions for the response's messaging template. (Deprecated) use bodyParameters instead.
+        (Deprecated) use bodyParameters instead.
 
         :param parameters: The parameters of this SendMessagingTemplateRequest.
         :type: list[TemplateParameter]

@@ -13,6 +13,7 @@
 | **activity_code_id** | str | The ID of the activity code associated with this activity | [optional] |
 | **activity_code** | str | The activity code | [optional] |
 | **activity_name** | str | The activity name | [optional] |
+| **activity_color** | str | The activity color | [optional] |
 | **category** | str | The category for the activity | [optional] |
 | **points** | int | The points earned for this activity | [optional] |
 | **delta** | float | Difference between this activity and the last activity in seconds | [optional] |
@@ -20,4 +21,4 @@
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

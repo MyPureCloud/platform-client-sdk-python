@@ -383,7 +383,7 @@ class PresenceApi(object):
 
     def get_presence_definitions(self, **kwargs) -> 'OrganizationPresenceDefinitionEntityListing':
         """
-        Get a list of Presence Definitions
+        Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
         
 
         This method makes a synchronous HTTP request by default. To make an

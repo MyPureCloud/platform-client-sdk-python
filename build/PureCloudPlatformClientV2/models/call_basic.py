@@ -92,6 +92,7 @@ class CallBasic(object):
             'agent_assistant_id': 'str',
             'transfer_source': 'str',
             'queue_media_settings': 'ConversationQueueMediaSettings',
+            'client_ip_address': 'str',
             'disposition': 'Disposition'
         }
 
@@ -130,6 +131,7 @@ class CallBasic(object):
             'agent_assistant_id': 'agentAssistantId',
             'transfer_source': 'transferSource',
             'queue_media_settings': 'queueMediaSettings',
+            'client_ip_address': 'clientIpAddress',
             'disposition': 'disposition'
         }
 
@@ -167,6 +169,7 @@ class CallBasic(object):
         self._agent_assistant_id = None
         self._transfer_source = None
         self._queue_media_settings = None
+        self._client_ip_address = None
         self._disposition = None
 
     @property
@@ -1009,6 +1012,30 @@ class CallBasic(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def client_ip_address(self) -> str:
+        """
+        Gets the client_ip_address of this CallBasic.
+        The reported client IP of the phone for the call.
+
+        :return: The client_ip_address of this CallBasic.
+        :rtype: str
+        """
+        return self._client_ip_address
+
+    @client_ip_address.setter
+    def client_ip_address(self, client_ip_address: str) -> None:
+        """
+        Sets the client_ip_address of this CallBasic.
+        The reported client IP of the phone for the call.
+
+        :param client_ip_address: The client_ip_address of this CallBasic.
+        :type: str
+        """
+        
+
+        self._client_ip_address = client_ip_address
 
     @property
     def disposition(self) -> 'Disposition':

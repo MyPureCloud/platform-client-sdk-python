@@ -49,18 +49,21 @@ class AiAnswer(object):
         self.swagger_types = {
             'answer_id': 'str',
             'explanation': 'str',
-            'failure_type': 'str'
+            'failure_type': 'str',
+            'marked_not_applicable': 'bool'
         }
 
         self.attribute_map = {
             'answer_id': 'answerId',
             'explanation': 'explanation',
-            'failure_type': 'failureType'
+            'failure_type': 'failureType',
+            'marked_not_applicable': 'markedNotApplicable'
         }
 
         self._answer_id = None
         self._explanation = None
         self._failure_type = None
+        self._marked_not_applicable = None
 
     @property
     def answer_id(self) -> str:
@@ -138,6 +141,30 @@ class AiAnswer(object):
             self._failure_type = "outdated_sdk_version"
         else:
             self._failure_type = failure_type
+
+    @property
+    def marked_not_applicable(self) -> bool:
+        """
+        Gets the marked_not_applicable of this AiAnswer.
+        Indicates whether the AI answer is marked as not applicable.
+
+        :return: The marked_not_applicable of this AiAnswer.
+        :rtype: bool
+        """
+        return self._marked_not_applicable
+
+    @marked_not_applicable.setter
+    def marked_not_applicable(self, marked_not_applicable: bool) -> None:
+        """
+        Sets the marked_not_applicable of this AiAnswer.
+        Indicates whether the AI answer is marked as not applicable.
+
+        :param marked_not_applicable: The marked_not_applicable of this AiAnswer.
+        :type: bool
+        """
+        
+
+        self._marked_not_applicable = marked_not_applicable
 
     def to_dict(self):
         """

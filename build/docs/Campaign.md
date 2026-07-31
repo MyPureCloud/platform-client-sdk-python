@@ -47,8 +47,9 @@
 | **callback_auto_answer** | bool | The option manages the auto-answer callback calls | [optional] |
 | **dynamic_line_balancing_settings** | [DynamicLineBalancingSettings](DynamicLineBalancingSettings) | Dynamic line balancing settings | [optional] |
 | **diagnostics_settings** | [DiagnosticsSettings](DiagnosticsSettings) | Campaign diagnostics settings | [optional] |
+| **precise_dialing_enabled** | bool | Option to enable precise dialing | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

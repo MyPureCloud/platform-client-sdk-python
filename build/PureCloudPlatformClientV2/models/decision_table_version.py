@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AddressableEntityRef
     from . import DecisionTableColumns
     from . import DecisionTableContract
     from . import Division
@@ -62,6 +63,8 @@ class DecisionTableVersion(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'date_published': 'datetime',
+            'created_by': 'AddressableEntityRef',
+            'published_by': 'AddressableEntityRef',
             'columns': 'DecisionTableColumns',
             'contract': 'DecisionTableContract',
             'self_uri': 'str'
@@ -79,6 +82,8 @@ class DecisionTableVersion(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'date_published': 'datePublished',
+            'created_by': 'createdBy',
+            'published_by': 'publishedBy',
             'columns': 'columns',
             'contract': 'contract',
             'self_uri': 'selfUri'
@@ -95,6 +100,8 @@ class DecisionTableVersion(object):
         self._date_created = None
         self._date_modified = None
         self._date_published = None
+        self._created_by = None
+        self._published_by = None
         self._columns = None
         self._contract = None
         self._self_uri = None
@@ -367,6 +374,54 @@ class DecisionTableVersion(object):
         
 
         self._date_published = date_published
+
+    @property
+    def created_by(self) -> 'AddressableEntityRef':
+        """
+        Gets the created_by of this DecisionTableVersion.
+        The user who created this decision table version.
+
+        :return: The created_by of this DecisionTableVersion.
+        :rtype: AddressableEntityRef
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by: 'AddressableEntityRef') -> None:
+        """
+        Sets the created_by of this DecisionTableVersion.
+        The user who created this decision table version.
+
+        :param created_by: The created_by of this DecisionTableVersion.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._created_by = created_by
+
+    @property
+    def published_by(self) -> 'AddressableEntityRef':
+        """
+        Gets the published_by of this DecisionTableVersion.
+        The user who published this decision table version.
+
+        :return: The published_by of this DecisionTableVersion.
+        :rtype: AddressableEntityRef
+        """
+        return self._published_by
+
+    @published_by.setter
+    def published_by(self, published_by: 'AddressableEntityRef') -> None:
+        """
+        Sets the published_by of this DecisionTableVersion.
+        The user who published this decision table version.
+
+        :param published_by: The published_by of this DecisionTableVersion.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._published_by = published_by
 
     @property
     def columns(self) -> 'DecisionTableColumns':

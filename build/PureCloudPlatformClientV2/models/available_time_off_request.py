@@ -50,16 +50,19 @@ class AvailableTimeOffRequest(object):
         """
         self.swagger_types = {
             'activity_code_id': 'str',
-            'date_ranges': 'list[LocalDateRange]'
+            'date_ranges': 'list[LocalDateRange]',
+            'supported_granularities': 'list[str]'
         }
 
         self.attribute_map = {
             'activity_code_id': 'activityCodeId',
-            'date_ranges': 'dateRanges'
+            'date_ranges': 'dateRanges',
+            'supported_granularities': 'supportedGranularities'
         }
 
         self._activity_code_id = None
         self._date_ranges = None
+        self._supported_granularities = None
 
     @property
     def activity_code_id(self) -> str:
@@ -108,6 +111,30 @@ class AvailableTimeOffRequest(object):
         
 
         self._date_ranges = date_ranges
+
+    @property
+    def supported_granularities(self) -> List[str]:
+        """
+        Gets the supported_granularities of this AvailableTimeOffRequest.
+        Granularity of time off limits supported to query availability information. Default is 'Daily'
+
+        :return: The supported_granularities of this AvailableTimeOffRequest.
+        :rtype: list[str]
+        """
+        return self._supported_granularities
+
+    @supported_granularities.setter
+    def supported_granularities(self, supported_granularities: List[str]) -> None:
+        """
+        Sets the supported_granularities of this AvailableTimeOffRequest.
+        Granularity of time off limits supported to query availability information. Default is 'Daily'
+
+        :param supported_granularities: The supported_granularities of this AvailableTimeOffRequest.
+        :type: list[str]
+        """
+        
+
+        self._supported_granularities = supported_granularities
 
     def to_dict(self):
         """

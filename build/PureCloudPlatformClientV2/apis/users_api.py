@@ -45,6 +45,7 @@ from ..models import AsyncQueryStatus
 from ..models import AsyncUserDetailsQuery
 from ..models import AuthzDivision
 from ..models import AuthzSubject
+from ..models import BeginWebAuthnRegistrationResponse
 from ..models import CallForwarding
 from ..models import ChangeMyPasswordRequest
 from ..models import ChangePasswordRequest
@@ -52,6 +53,8 @@ from ..models import ChatItemCursorListing
 from ..models import Coretype
 from ..models import CoretypeListing
 from ..models import CreateUser
+from ..models import CreateVerifierRequest
+from ..models import CreateVerifierResponse
 from ..models import DataAvailabilityResponse
 from ..models import DataSchema
 from ..models import DataSchemaListing
@@ -62,6 +65,7 @@ from ..models import DevelopmentActivityListing
 from ..models import DivsPermittedEntityListing
 from ..models import ErrorBody
 from ..models import FieldConfig
+from ..models import FinishWebAuthnRegistrationRequest
 from ..models import Geolocation
 from ..models import OutOfOffice
 from ..models import PatchUser
@@ -104,6 +108,7 @@ from ..models import UserState
 from ..models import UserStations
 from ..models import UsersSearchResponse
 from ..models import UtilizationRequest
+from ..models import ValidateVerifierRequest
 from ..models import Verifier
 from ..models import VerifierEntityListing
 
@@ -1300,6 +1305,84 @@ class UsersApi(object):
         path_params = {}
         if 'schema_id' in params:
             path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_users_me_verifier(self, verifier_id: str, **kwargs) -> None:
+        """
+        Delete a verifier
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_users_me_verifier(verifier_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str verifier_id: Verifier ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['verifier_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_users_me_verifier" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'verifier_id' is set
+        if ('verifier_id' not in params) or (params['verifier_id'] is None):
+            raise ValueError("Missing the required parameter `verifier_id` when calling `delete_users_me_verifier`")
+
+
+        resource_path = '/api/v2/users/me/verifiers/{verifierId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'verifier_id' in params:
+            path_params['verifierId'] = params['verifier_id']
 
         query_params = {}
 
@@ -5778,6 +5861,78 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_users_me_verifiers(self, **kwargs) -> 'VerifierEntityListing':
+        """
+        Get a list of my verifiers
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_me_verifiers(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: VerifierEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_me_verifiers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/users/me/verifiers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='VerifierEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_users_query(self, **kwargs) -> 'UserCursorEntityListing':
         """
         Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
@@ -8520,6 +8675,318 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_users_me_verifiers_totp(self, body: 'CreateVerifierRequest', **kwargs) -> 'CreateVerifierResponse':
+        """
+        Add a new TOTP verifier
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_users_me_verifiers_totp(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateVerifierRequest body: Verifier (required)
+        :return: CreateVerifierResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_users_me_verifiers_totp" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_users_me_verifiers_totp`")
+
+
+        resource_path = '/api/v2/users/me/verifiers/totp'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CreateVerifierResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_users_me_verifiers_totp_verifier_id(self, verifier_id: str, body: 'ValidateVerifierRequest', **kwargs) -> None:
+        """
+        Validate a TOTP verifier
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_users_me_verifiers_totp_verifier_id(verifier_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str verifier_id: Verifier ID (required)
+        :param ValidateVerifierRequest body: Verifier Validate (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['verifier_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_users_me_verifiers_totp_verifier_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'verifier_id' is set
+        if ('verifier_id' not in params) or (params['verifier_id'] is None):
+            raise ValueError("Missing the required parameter `verifier_id` when calling `post_users_me_verifiers_totp_verifier_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_users_me_verifiers_totp_verifier_id`")
+
+
+        resource_path = '/api/v2/users/me/verifiers/totp/{verifierId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'verifier_id' in params:
+            path_params['verifierId'] = params['verifier_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_users_me_verifiers_webauthn_register(self, body: 'FinishWebAuthnRegistrationRequest', **kwargs) -> 'Verifier':
+        """
+        Finish WebAuthn verifier registration
+        Completes registration of a new WebAuthn authenticator by submitting the credential creation response produced by navigator.credentials.create().
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_users_me_verifiers_webauthn_register(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param FinishWebAuthnRegistrationRequest body: WebAuthn registration result (required)
+        :return: Verifier
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_users_me_verifiers_webauthn_register" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_users_me_verifiers_webauthn_register`")
+
+
+        resource_path = '/api/v2/users/me/verifiers/webauthn/register'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Verifier',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_users_me_verifiers_webauthn_register_options(self, **kwargs) -> 'BeginWebAuthnRegistrationResponse':
+        """
+        Begin WebAuthn verifier registration
+        Returns the public key credential creation options the client passes to navigator.credentials.create() to start registering a new WebAuthn authenticator.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_users_me_verifiers_webauthn_register_options(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: BeginWebAuthnRegistrationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_users_me_verifiers_webauthn_register_options" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/users/me/verifiers/webauthn/register/options'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BeginWebAuthnRegistrationResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_users_search(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users
@@ -10180,6 +10647,90 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_users_me_verifier(self, verifier_id: str, body: 'UpdateVerifierRequest', **kwargs) -> 'Verifier':
+        """
+        Update a verifier
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_users_me_verifier(verifier_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str verifier_id: Verifier ID (required)
+        :param UpdateVerifierRequest body: Verifier Update (required)
+        :return: Verifier
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['verifier_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_users_me_verifier" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'verifier_id' is set
+        if ('verifier_id' not in params) or (params['verifier_id'] is None):
+            raise ValueError("Missing the required parameter `verifier_id` when calling `put_users_me_verifier`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_users_me_verifier`")
+
+
+        resource_path = '/api/v2/users/me/verifiers/{verifierId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'verifier_id' in params:
+            path_params['verifierId'] = params['verifier_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Verifier',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

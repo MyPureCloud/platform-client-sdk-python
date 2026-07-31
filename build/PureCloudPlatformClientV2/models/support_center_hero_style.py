@@ -68,7 +68,7 @@ class SupportCenterHeroStyle(object):
     def background_color(self) -> str:
         """
         Gets the background_color of this SupportCenterHeroStyle.
-        Background color for hero section, in hexadecimal format, eg #ffffff
+        Background color for hero section, in hexadecimal format, eg #ffffff. Required when heroStyle is provided
 
         :return: The background_color of this SupportCenterHeroStyle.
         :rtype: str
@@ -79,13 +79,13 @@ class SupportCenterHeroStyle(object):
     def background_color(self, background_color: str) -> None:
         """
         Sets the background_color of this SupportCenterHeroStyle.
-        Background color for hero section, in hexadecimal format, eg #ffffff
+        Background color for hero section, in hexadecimal format, eg #ffffff. Required when heroStyle is provided
 
         :param background_color: The background_color of this SupportCenterHeroStyle.
         :type: str
         """
         
-        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', background_color):
+        if not re.match('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', background_color):
             raise ValueError("Invalid value for `background_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
 
 
@@ -95,7 +95,7 @@ class SupportCenterHeroStyle(object):
     def text_color(self) -> str:
         """
         Gets the text_color of this SupportCenterHeroStyle.
-        Text color for hero section, in hexadecimal format, eg #ffffff
+        Text color for hero section, in hexadecimal format, eg #ffffff. Required when heroStyle is provided
 
         :return: The text_color of this SupportCenterHeroStyle.
         :rtype: str
@@ -106,13 +106,13 @@ class SupportCenterHeroStyle(object):
     def text_color(self, text_color: str) -> None:
         """
         Sets the text_color of this SupportCenterHeroStyle.
-        Text color for hero section, in hexadecimal format, eg #ffffff
+        Text color for hero section, in hexadecimal format, eg #ffffff. Required when heroStyle is provided
 
         :param text_color: The text_color of this SupportCenterHeroStyle.
         :type: str
         """
         
-        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', text_color):
+        if not re.match('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', text_color):
             raise ValueError("Invalid value for `text_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
 
 

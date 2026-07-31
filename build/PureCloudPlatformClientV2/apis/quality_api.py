@@ -57,6 +57,8 @@ from ..models import EvaluationCreateBody
 from ..models import EvaluationEntityListing
 from ..models import EvaluationForm
 from ..models import EvaluationFormAndScoringSet
+from ..models import EvaluationFormDivisionView
+from ..models import EvaluationFormDivisionViewListing
 from ..models import EvaluationFormResponse
 from ..models import EvaluationFormResponseEntityListing
 from ..models import EvaluationResponse
@@ -76,6 +78,8 @@ from ..models import SurveyAsyncAggregateQueryResponse
 from ..models import SurveyAsyncAggregationQuery
 from ..models import SurveyForm
 from ..models import SurveyFormAndScoringSet
+from ..models import SurveyFormDivisionView
+from ..models import SurveyFormDivisionViewListing
 from ..models import SurveyFormEntityListing
 from ..models import SurveyScoringSet
 
@@ -3524,6 +3528,174 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_quality_publishedforms_evaluations_divisionview(self, evaluation_form_id: str, **kwargs) -> 'EvaluationFormDivisionView':
+        """
+        Get the most recent published version of an evaluation form across any division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_publishedforms_evaluations_divisionview(evaluation_form_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str evaluation_form_id: Evaluation Form ID (required)
+        :return: EvaluationFormDivisionView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['evaluation_form_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_publishedforms_evaluations_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'evaluation_form_id' is set
+        if ('evaluation_form_id' not in params) or (params['evaluation_form_id'] is None):
+            raise ValueError("Missing the required parameter `evaluation_form_id` when calling `get_quality_publishedforms_evaluations_divisionview`")
+
+
+        resource_path = '/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'evaluation_form_id' in params:
+            path_params['evaluationFormId'] = params['evaluation_form_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EvaluationFormDivisionView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_publishedforms_evaluations_divisionviews(self, id: List['str'], **kwargs) -> 'EvaluationFormDivisionViewListing':
+        """
+        Get the published evaluation forms across any division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_publishedforms_evaluations_divisionviews(id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] id: A comma-delimited list of valid, published evaluation form ids (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str name: Name
+        :param str division_id: divisionId
+        :return: EvaluationFormDivisionViewListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'page_size', 'page_number', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_publishedforms_evaluations_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `get_quality_publishedforms_evaluations_divisionviews`")
+
+
+        resource_path = '/api/v2/quality/publishedforms/evaluations/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EvaluationFormDivisionViewListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_quality_publishedforms_survey(self, form_id: str, **kwargs) -> 'SurveyForm':
         """
         Get the most recent published version of a survey form.
@@ -3682,6 +3854,174 @@ class QualityApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='SurveyFormEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_publishedforms_surveys_divisionview(self, survey_form_id: str, **kwargs) -> 'SurveyFormDivisionView':
+        """
+        Get the most recent published version of an enabled survey form across any division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_publishedforms_surveys_divisionview(survey_form_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str survey_form_id: Survey Form ID (required)
+        :return: SurveyFormDivisionView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['survey_form_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_publishedforms_surveys_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'survey_form_id' is set
+        if ('survey_form_id' not in params) or (params['survey_form_id'] is None):
+            raise ValueError("Missing the required parameter `survey_form_id` when calling `get_quality_publishedforms_surveys_divisionview`")
+
+
+        resource_path = '/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'survey_form_id' in params:
+            path_params['surveyFormId'] = params['survey_form_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SurveyFormDivisionView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_quality_publishedforms_surveys_divisionviews(self, id: List['str'], **kwargs) -> 'SurveyFormDivisionViewListing':
+        """
+        Get the published and enabled survey forms across any division.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_quality_publishedforms_surveys_divisionviews(id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] id: A comma-delimited list of valid, published evaluation form ids (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str name: Name
+        :param str division_id: divisionId
+        :return: SurveyFormDivisionViewListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'page_size', 'page_number', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_quality_publishedforms_surveys_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `get_quality_publishedforms_surveys_divisionviews`")
+
+
+        resource_path = '/api/v2/quality/publishedforms/surveys/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SurveyFormDivisionViewListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4363,7 +4703,7 @@ class QualityApi(object):
         if ('body' not in params) or (params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `post_quality_conversation_evaluations`")
 
-        if 'idempotency_key' in params and not re.search('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['idempotency_key']): 
+        if 'idempotency_key' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['idempotency_key']): 
             raise ValueError("Invalid value for parameter `idempotency_key` when calling `post_quality_conversation_evaluations`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
 
         resource_path = '/api/v2/quality/conversations/{conversationId}/evaluations'.replace('{format}', 'json')

@@ -33,12 +33,12 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Division
-    from . import LanguageReference
-    from . import RoutingSkillReference
     from . import UserReference
     from . import WorkbinReference
     from . import WorkitemFlowReference
+    from . import WorkitemLanguageReference
     from . import WorkitemQueueReference
+    from . import WorkitemRoutingSkillReference
     from . import WorkitemRuleSettings
     from . import WorkitemSchema
     from . import WorkitemScriptReference
@@ -73,11 +73,11 @@ class WorktypeVersion(object):
             'default_expiration_seconds': 'int',
             'default_due_duration_seconds': 'int',
             'default_priority': 'int',
-            'default_language': 'LanguageReference',
+            'default_language': 'WorkitemLanguageReference',
             'default_ttl_seconds': 'int',
             'modified_by': 'UserReference',
             'default_queue': 'WorkitemQueueReference',
-            'default_skills': 'list[RoutingSkillReference]',
+            'default_skills': 'list[WorkitemRoutingSkillReference]',
             'assignment_enabled': 'bool',
             'schema': 'WorkitemSchema',
             'service_level_target': 'int',
@@ -460,24 +460,24 @@ class WorktypeVersion(object):
         self._default_priority = default_priority
 
     @property
-    def default_language(self) -> 'LanguageReference':
+    def default_language(self) -> 'WorkitemLanguageReference':
         """
         Gets the default_language of this WorktypeVersion.
         The default language for Workitems created from the Worktype.
 
         :return: The default_language of this WorktypeVersion.
-        :rtype: LanguageReference
+        :rtype: WorkitemLanguageReference
         """
         return self._default_language
 
     @default_language.setter
-    def default_language(self, default_language: 'LanguageReference') -> None:
+    def default_language(self, default_language: 'WorkitemLanguageReference') -> None:
         """
         Sets the default_language of this WorktypeVersion.
         The default language for Workitems created from the Worktype.
 
         :param default_language: The default_language of this WorktypeVersion.
-        :type: LanguageReference
+        :type: WorkitemLanguageReference
         """
         
 
@@ -556,24 +556,24 @@ class WorktypeVersion(object):
         self._default_queue = default_queue
 
     @property
-    def default_skills(self) -> List['RoutingSkillReference']:
+    def default_skills(self) -> List['WorkitemRoutingSkillReference']:
         """
         Gets the default_skills of this WorktypeVersion.
         The default skills for Workitems created from the Worktype.
 
         :return: The default_skills of this WorktypeVersion.
-        :rtype: list[RoutingSkillReference]
+        :rtype: list[WorkitemRoutingSkillReference]
         """
         return self._default_skills
 
     @default_skills.setter
-    def default_skills(self, default_skills: List['RoutingSkillReference']) -> None:
+    def default_skills(self, default_skills: List['WorkitemRoutingSkillReference']) -> None:
         """
         Sets the default_skills of this WorktypeVersion.
         The default skills for Workitems created from the Worktype.
 
         :param default_skills: The default_skills of this WorktypeVersion.
-        :type: list[RoutingSkillReference]
+        :type: list[WorkitemRoutingSkillReference]
         """
         
 

@@ -9,8 +9,9 @@
 | **id** | str | The globally unique identifier for the object. | [optional] |
 | **name** | str |  | [optional] |
 | **grammar_based** | bool | The STT engine is intended to be used for Grammars | [optional] |
+| **replaced_by** | [AddressableEntityRef](AddressableEntityRef) | If this STT engine has been deprecated, the STT engine that should be used as a replacement | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

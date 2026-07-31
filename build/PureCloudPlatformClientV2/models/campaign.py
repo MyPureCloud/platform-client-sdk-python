@@ -96,6 +96,7 @@ class Campaign(object):
             'callback_auto_answer': 'bool',
             'dynamic_line_balancing_settings': 'DynamicLineBalancingSettings',
             'diagnostics_settings': 'DiagnosticsSettings',
+            'precise_dialing_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -141,6 +142,7 @@ class Campaign(object):
             'callback_auto_answer': 'callbackAutoAnswer',
             'dynamic_line_balancing_settings': 'dynamicLineBalancingSettings',
             'diagnostics_settings': 'diagnosticsSettings',
+            'precise_dialing_enabled': 'preciseDialingEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -185,6 +187,7 @@ class Campaign(object):
         self._callback_auto_answer = None
         self._dynamic_line_balancing_settings = None
         self._diagnostics_settings = None
+        self._precise_dialing_enabled = None
         self._self_uri = None
 
     @property
@@ -1180,6 +1183,30 @@ class Campaign(object):
         
 
         self._diagnostics_settings = diagnostics_settings
+
+    @property
+    def precise_dialing_enabled(self) -> bool:
+        """
+        Gets the precise_dialing_enabled of this Campaign.
+        Option to enable precise dialing
+
+        :return: The precise_dialing_enabled of this Campaign.
+        :rtype: bool
+        """
+        return self._precise_dialing_enabled
+
+    @precise_dialing_enabled.setter
+    def precise_dialing_enabled(self, precise_dialing_enabled: bool) -> None:
+        """
+        Sets the precise_dialing_enabled of this Campaign.
+        Option to enable precise dialing
+
+        :param precise_dialing_enabled: The precise_dialing_enabled of this Campaign.
+        :type: bool
+        """
+        
+
+        self._precise_dialing_enabled = precise_dialing_enabled
 
     @property
     def self_uri(self) -> str:

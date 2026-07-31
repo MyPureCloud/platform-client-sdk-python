@@ -202,8 +202,6 @@ void (empty response body)
 
 Delete/cancel an async request for agent copilot aggregates
 
-delete_analytics_agentcopilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1250,8 +1248,6 @@ except ApiException as e:
 
 Get status for async query for agent copilot aggregates
 
-get_analytics_agentcopilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1299,8 +1295,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async aggregates query
-
-get_analytics_agentcopilots_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results 
 
@@ -4171,8 +4165,6 @@ except ApiException as e:
 
 Query for agent copilot aggregates asynchronously
 
-post_analytics_agentcopilots_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/agentcopilots/aggregates/jobs 
 
 Requires ANY permissions: 
@@ -6945,4 +6937,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_
