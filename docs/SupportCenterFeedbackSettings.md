@@ -6,8 +6,8 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **enabled** | bool | Whether or not requesting customer feedback on article content and article search results is enabled | |
+| **enabled** | bool | Whether or not requesting customer feedback on article content and article search results is enabled. Required if support center is enabled | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

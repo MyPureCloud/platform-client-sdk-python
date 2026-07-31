@@ -154,6 +154,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversation_participant_attributes**](#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_recordingstate**](#patch_conversation_recordingstate) | Update a conversation by setting its recording state|
 |[**patch_conversation_secureattributes**](#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
+|[**patch_conversation_suggestion**](#patch_conversation_suggestion) | Update a suggestion.|
 |[**patch_conversation_summary_engagements**](#patch_conversation_summary_engagements) | Update agent&#39;s engagement for the summary.|
 |[**patch_conversation_summary_feedback**](#patch_conversation_summary_feedback) | Update the feedback for the summary.|
 |[**patch_conversation_utilizationlabel**](#patch_conversation_utilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied|
@@ -232,6 +233,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_call**](#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_barge**](#post_conversations_call_participant_barge) | Barge a given participant&#39;s call creating a barged in conference of connected participants.|
 |[**post_conversations_call_participant_coach**](#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
+|[**post_conversations_call_participant_communication_summaries**](#post_conversations_call_participant_communication_summaries) | Request an on-demand summary for a call communication.|
 |[**post_conversations_call_participant_communication_wrapup**](#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_call_participant_consult**](#post_conversations_call_participant_consult) | Initiate and update consult transfer (Deprecated)|
 |[**post_conversations_call_participant_consult_agent**](#post_conversations_call_participant_consult_agent) | Initiate a consult transfer to an agent|
@@ -282,6 +284,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_inbound_open_receipt**](#post_conversations_message_inbound_open_receipt) | Send an inbound Open Receipt Message|
 |[**post_conversations_message_inbound_open_structured_response**](#post_conversations_message_inbound_open_structured_response) | Send inbound Open Response|
 |[**post_conversations_message_messages_bulk**](#post_conversations_message_messages_bulk) | Get messages in batch|
+|[**post_conversations_message_participant_communication_summaries**](#post_conversations_message_participant_communication_summaries) | Request an on-demand summary for a message communication.|
 |[**post_conversations_message_participant_communication_wrapup**](#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_message_participant_monitor**](#post_conversations_message_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_message_participant_replace**](#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
@@ -7699,6 +7702,58 @@ except ApiException as e:
 **str**
 
 
+## patch_conversation_suggestion
+
+> [**Suggestion**](Suggestion) patch_conversation_suggestion(conversation_id, suggestion_id, body)
+
+
+Update a suggestion.
+
+Wraps PATCH /api/v2/conversations/{conversationId}/suggestions/{suggestionId} 
+
+Requires ALL permissions: 
+
+* conversation:suggestion:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+suggestion_id = 'suggestion_id_example' # str | Suggestion ID
+body = PureCloudPlatformClientV2.SuggestionPatchRequest() # SuggestionPatchRequest | 
+
+try:
+    # Update a suggestion.
+    api_response = api_instance.patch_conversation_suggestion(conversation_id, suggestion_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_suggestion: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **suggestion_id** | **str**| Suggestion ID |  |
+| **body** | [**SuggestionPatchRequest**](SuggestionPatchRequest)|  |  |
+
+### Return type
+
+[**Suggestion**](Suggestion)
+
+
 ## patch_conversation_summary_engagements
 
 >  patch_conversation_summary_engagements(conversation_id, summary_id, body=body)
@@ -11753,6 +11808,60 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_conversations_call_participant_communication_summaries
+
+> [**OnDemandSummaryAcceptedResponse**](OnDemandSummaryAcceptedResponse) post_conversations_call_participant_communication_summaries(conversation_id, participant_id, communication_id, body=body)
+
+
+Request an on-demand summary for a call communication.
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries 
+
+Requires ALL permissions: 
+
+* conversation:summary:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+participant_id = 'participant_id_example' # str | Participant ID
+communication_id = 'communication_id_example' # str | Communication ID
+body = PureCloudPlatformClientV2.OnDemandConversationSummaryRequest() # OnDemandConversationSummaryRequest | On-demand summary request (optional)
+
+try:
+    # Request an on-demand summary for a call communication.
+    api_response = api_instance.post_conversations_call_participant_communication_summaries(conversation_id, participant_id, communication_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_communication_summaries: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **participant_id** | **str**| Participant ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **body** | [**OnDemandConversationSummaryRequest**](OnDemandConversationSummaryRequest)| On-demand summary request | [optional]  |
+
+### Return type
+
+[**OnDemandSummaryAcceptedResponse**](OnDemandSummaryAcceptedResponse)
+
+
 ## post_conversations_call_participant_communication_wrapup
 
 >  post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
@@ -14356,6 +14465,60 @@ except ApiException as e:
 [**TextMessageListing**](TextMessageListing)
 
 
+## post_conversations_message_participant_communication_summaries
+
+> [**OnDemandSummaryAcceptedResponse**](OnDemandSummaryAcceptedResponse) post_conversations_message_participant_communication_summaries(conversation_id, participant_id, communication_id, body=body)
+
+
+Request an on-demand summary for a message communication.
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries 
+
+Requires ALL permissions: 
+
+* conversation:summary:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+participant_id = 'participant_id_example' # str | Participant ID
+communication_id = 'communication_id_example' # str | Communication ID
+body = PureCloudPlatformClientV2.OnDemandConversationSummaryRequest() # OnDemandConversationSummaryRequest | On-demand summary request (optional)
+
+try:
+    # Request an on-demand summary for a message communication.
+    api_response = api_instance.post_conversations_message_participant_communication_summaries(conversation_id, participant_id, communication_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_participant_communication_summaries: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **participant_id** | **str**| Participant ID |  |
+| **communication_id** | **str**| Communication ID |  |
+| **body** | [**OnDemandConversationSummaryRequest**](OnDemandConversationSummaryRequest)| On-demand summary request | [optional]  |
+
+### Return type
+
+[**OnDemandSummaryAcceptedResponse**](OnDemandSummaryAcceptedResponse)
+
+
 ## post_conversations_message_participant_communication_wrapup
 
 >  post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
@@ -15370,7 +15533,7 @@ void (empty response body)
 
 ## post_conversations_video_agentconference_communication
 
-> [**VideoConferenceDetails**](VideoConferenceDetails) post_conversations_video_agentconference_communication(conversation_id, communication_id)
+> [**CreateJoinVideoResponse**](CreateJoinVideoResponse) post_conversations_video_agentconference_communication(conversation_id, communication_id)
 
 
 Create an Agent-Type video conference and assign an agent to it
@@ -15417,7 +15580,7 @@ except ApiException as e:
 
 ### Return type
 
-[**VideoConferenceDetails**](VideoConferenceDetails)
+[**CreateJoinVideoResponse**](CreateJoinVideoResponse)
 
 
 ## post_conversations_video_participant_communication_wrapup
@@ -16944,4 +17107,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

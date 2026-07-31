@@ -13,7 +13,8 @@
 | **password_requirements** | [PasswordRequirements](PasswordRequirements) | The password requirements for the organization. | [optional] |
 | **inactivity_timeout_exclusions** | list[str] | The list of exempt apis from inactivity timeout. | [optional] |
 | **universal_logout** | bool | Indicates whether universal logout is enabled for the organization. | [optional] |
+| **token_storage_location** | str | The browser storage location used for authentication tokens. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

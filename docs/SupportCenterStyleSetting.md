@@ -6,9 +6,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **hero_style** | [SupportCenterHeroStyle](SupportCenterHeroStyle) | Knowledge portal (previously support center) hero customizations | |
-| **global_style** | [SupportCenterGlobalStyle](SupportCenterGlobalStyle) | Knowledge portal (previously support center) global customizations | |
+| **hero_style** | [SupportCenterHeroStyle](SupportCenterHeroStyle) | Knowledge portal (previously support center) hero customizations. Required when styleSetting is provided | [optional] |
+| **global_style** | [SupportCenterGlobalStyle](SupportCenterGlobalStyle) | Knowledge portal (previously support center) global customizations. Required when styleSetting is provided | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

@@ -10,7 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_presence_source**](#delete_presence_source) | Delete a Presence Source|
 |[**delete_presencedefinition**](#delete_presencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead|
 |[**get_presence_definition**](#get_presence_definition) | Get a Presence Definition|
-|[**get_presence_definitions**](#get_presence_definitions) | Get a list of Presence Definitions|
+|[**get_presence_definitions**](#get_presence_definitions) | Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division|
 |[**get_presence_settings**](#get_presence_settings) | Get the presence settings|
 |[**get_presence_source**](#get_presence_source) | Get a Presence Source|
 |[**get_presence_sources**](#get_presence_sources) | Get a list of Presence Sources|
@@ -237,7 +237,7 @@ except ApiException as e:
 > [**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing) get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
 
 
-Get a list of Presence Definitions
+Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
 
 Wraps GET /api/v2/presence/definitions 
 
@@ -263,7 +263,7 @@ division_id = ['division_id_example'] # list[str] | One or more division IDs. If
 locale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
 
 try:
-    # Get a list of Presence Definitions
+    # Get a list of Presence Definitions. View permission enforcement only applies to presence definitions assigned to a division
     api_response = api_instance.get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
@@ -1370,4 +1370,4 @@ except ApiException as e:
 [**list[UserPresence]**](UserPresence)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

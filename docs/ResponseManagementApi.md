@@ -10,11 +10,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_responsemanagement_response**](#delete_responsemanagement_response) | Delete an existing response.|
 |[**delete_responsemanagement_responseasset**](#delete_responsemanagement_responseasset) | Delete response asset|
 |[**get_responsemanagement_libraries**](#get_responsemanagement_libraries) | Gets a list of existing response libraries.|
+|[**get_responsemanagement_libraries_divisionview**](#get_responsemanagement_libraries_divisionview) | Get details about an existing response library.|
+|[**get_responsemanagement_libraries_divisionviews**](#get_responsemanagement_libraries_divisionviews) | Gets a list of existing response libraries.|
 |[**get_responsemanagement_library**](#get_responsemanagement_library) | Get details about an existing response library.|
 |[**get_responsemanagement_response**](#get_responsemanagement_response) | Get details about an existing response.|
 |[**get_responsemanagement_responseasset**](#get_responsemanagement_responseasset) | Get response asset information|
 |[**get_responsemanagement_responseassets_status_status_id**](#get_responsemanagement_responseassets_status_status_id) | Get response asset upload status|
 |[**get_responsemanagement_responses**](#get_responsemanagement_responses) | Gets a list of existing responses.|
+|[**get_responsemanagement_responses_divisionview**](#get_responsemanagement_responses_divisionview) | Get details about an existing response.|
 |[**post_responsemanagement_libraries**](#post_responsemanagement_libraries) | Create a response library.|
 |[**post_responsemanagement_libraries_bulk**](#post_responsemanagement_libraries_bulk) | Get response libraries.|
 |[**post_responsemanagement_libraries_query**](#post_responsemanagement_libraries_query) | Query libraries using criteria. Users can set DivisionId parameter as &#39;*&#39; to fetch libraries that aren&#39;t associated with any divisions.|
@@ -22,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_responsemanagement_responseassets_search**](#post_responsemanagement_responseassets_search) | Search response assets|
 |[**post_responsemanagement_responseassets_uploads**](#post_responsemanagement_responseassets_uploads) | Creates pre-signed url for uploading response asset|
 |[**post_responsemanagement_responses**](#post_responsemanagement_responses) | Create a response.|
+|[**post_responsemanagement_responses_divisionviews_query**](#post_responsemanagement_responses_divisionviews_query) | Query responses|
 |[**post_responsemanagement_responses_query**](#post_responsemanagement_responses_query) | Query responses|
 |[**put_responsemanagement_library**](#put_responsemanagement_library) | Update an existing response library.|
 |[**put_responsemanagement_response**](#put_responsemanagement_response) | Update an existing response.|
@@ -226,6 +230,108 @@ except ApiException as e:
 ### Return type
 
 [**LibraryEntityListing**](LibraryEntityListing)
+
+
+## get_responsemanagement_libraries_divisionview
+
+> [**LibraryDivisionView**](LibraryDivisionView) get_responsemanagement_libraries_divisionview(library_id)
+
+
+Get details about an existing response library.
+
+Wraps GET /api/v2/responsemanagement/libraries/divisionviews/{libraryId} 
+
+Requires ANY permissions: 
+
+* responses:library:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+library_id = 'library_id_example' # str | Library ID
+
+try:
+    # Get details about an existing response library.
+    api_response = api_instance.get_responsemanagement_libraries_divisionview(library_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_libraries_divisionview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **library_id** | **str**| Library ID |  |
+
+### Return type
+
+[**LibraryDivisionView**](LibraryDivisionView)
+
+
+## get_responsemanagement_libraries_divisionviews
+
+> [**LibraryDivisionViewEntityListing**](LibraryDivisionViewEntityListing) get_responsemanagement_libraries_divisionviews(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter, library_prefix=library_prefix)
+
+
+Gets a list of existing response libraries.
+
+Wraps GET /api/v2/responsemanagement/libraries/divisionviews 
+
+Requires ANY permissions: 
+
+* responses:library:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+messaging_template_filter = 'messaging_template_filter_example' # str | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel (optional)
+library_prefix = 'library_prefix_example' # str | Returns a list of libraries that contain the prefix provided (optional)
+
+try:
+    # Gets a list of existing response libraries.
+    api_response = api_instance.get_responsemanagement_libraries_divisionviews(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter, library_prefix=library_prefix)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_libraries_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **messaging_template_filter** | **str**| Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional] <br />**Values**: whatsapp |
+| **library_prefix** | **str**| Returns a list of libraries that contain the prefix provided | [optional]  |
+
+### Return type
+
+[**LibraryDivisionViewEntityListing**](LibraryDivisionViewEntityListing)
 
 
 ## get_responsemanagement_library
@@ -474,6 +580,54 @@ except ApiException as e:
 ### Return type
 
 [**ResponseEntityListing**](ResponseEntityListing)
+
+
+## get_responsemanagement_responses_divisionview
+
+> [**ResponseDivisionView**](ResponseDivisionView) get_responsemanagement_responses_divisionview(response_id)
+
+
+Get details about an existing response.
+
+Wraps GET /api/v2/responsemanagement/responses/divisionviews/{responseId} 
+
+Requires ANY permissions: 
+
+* responses:response:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+response_id = 'response_id_example' # str | Response ID
+
+try:
+    # Get details about an existing response.
+    api_response = api_instance.get_responsemanagement_responses_divisionview(response_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->get_responsemanagement_responses_divisionview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **response_id** | **str**| Response ID |  |
+
+### Return type
+
+[**ResponseDivisionView**](ResponseDivisionView)
 
 
 ## post_responsemanagement_libraries
@@ -820,6 +974,54 @@ except ApiException as e:
 [**Response**](Response)
 
 
+## post_responsemanagement_responses_divisionviews_query
+
+> [**ResponseDivisionViewQueryResults**](ResponseDivisionViewQueryResults) post_responsemanagement_responses_divisionviews_query(body)
+
+
+Query responses
+
+Wraps POST /api/v2/responsemanagement/responses/divisionviews/query 
+
+Requires ANY permissions: 
+
+* responses:response:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+body = PureCloudPlatformClientV2.ResponseQueryRequest() # ResponseQueryRequest | Response
+
+try:
+    # Query responses
+    api_response = api_instance.post_responsemanagement_responses_divisionviews_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_responses_divisionviews_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ResponseQueryRequest**](ResponseQueryRequest)| Response |  |
+
+### Return type
+
+[**ResponseDivisionViewQueryResults**](ResponseDivisionViewQueryResults)
+
+
 ## post_responsemanagement_responses_query
 
 > [**ResponseQueryResults**](ResponseQueryResults) post_responsemanagement_responses_query(body)
@@ -1024,4 +1226,4 @@ except ApiException as e:
 [**ResponseAsset**](ResponseAsset)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

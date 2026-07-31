@@ -3657,7 +3657,7 @@ page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_by = ''id'' # str | Sort by (optional) (default to 'id')
 sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
-id = ['id_example'] # list[str] | ID (optional)
+id = ['id_example'] # list[str] | ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead (optional)
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
@@ -3691,7 +3691,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
-| **id** | [**list[str]**](str)| ID | [optional]  |
+| **id** | [**list[str]**](str)| ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead | [optional]  |
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
 | **name_or_description** | **str**| Name or description | [optional]  |
@@ -8129,4 +8129,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_

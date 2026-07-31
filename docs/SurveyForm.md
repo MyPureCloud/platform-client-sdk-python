@@ -8,6 +8,7 @@
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
 | **name** | str | The survey form name | |
+| **division** | [WritableStarrableDivision](WritableStarrableDivision) | The division to which this entity belongs. | [optional] |
 | **modified_date** | datetime | Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **published** | bool | Is this form published | [optional] |
 | **disabled** | bool | Is this form disabled | [optional] |
@@ -17,8 +18,9 @@
 | **footer** | str | Markdown text for the bottom of the form. | [optional] |
 | **question_groups** | [list[SurveyQuestionGroup]](SurveyQuestionGroup) | A list of question groups | [optional] |
 | **published_versions** | [DomainEntityListingSurveyForm](DomainEntityListingSurveyForm) | List of published version of this form | [optional] |
+| **redacted** | bool | Is this form redacted | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 262.0.0_
+_PureCloudPlatformClientV2 263.0.0_
