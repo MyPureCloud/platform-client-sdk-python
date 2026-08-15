@@ -421,7 +421,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str)| expand | [optional]  |
-| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 
 ### Return type
 
@@ -1293,4 +1293,4 @@ except ApiException as e:
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

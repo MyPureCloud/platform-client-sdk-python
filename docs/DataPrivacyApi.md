@@ -300,4 +300,4 @@ except ApiException as e:
 [**MaskingRuleValidateResponse**](MaskingRuleValidateResponse)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

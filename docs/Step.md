@@ -18,9 +18,10 @@
 | **status** | str | The Status of the Step. | [optional] |
 | **stage** | [StageReference](StageReference) | The parent Stage of the Step. | [optional] |
 | **workitem_activity** | [WorkitemActivityReference](WorkitemActivityReference) | The workitem activity linked to this step. Present only for workitem-type steps that have been activated. | [optional] |
+| **failure_reason** | [FailureReason](FailureReason) | The reason the Step failed, if applicable. | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 | **case** | [CaseReference](CaseReference) | The parent Case of the Step. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

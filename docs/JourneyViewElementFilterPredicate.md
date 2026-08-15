@@ -8,9 +8,9 @@
 |------------ | ------------- | ------------- | -------------|
 | **dimension** | str | the element&#39;s attribute being filtered on | |
 | **values** | list[str] | the values of the attribute to filter on | |
-| **operator** | str | Optional operator, default is Matches. Valid values: Matches | [optional] |
+| **operator** | str | Optional operator, default is Matches. Valid values: Matches, NotMatches | [optional] |
 | **no_value** | bool | set this to true if no specific value to be considered | [optional] |
 
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

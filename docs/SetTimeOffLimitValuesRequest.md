@@ -7,8 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **values** | [list[TimeOffLimitRange]](TimeOffLimitRange) |  | [optional] |
-| **metadata** | [WfmVersionedEntityMetadata](WfmVersionedEntityMetadata) | Version metadata for the time off limit | |
+| **metadata** | [WfmVersionedEntityMetadata](WfmVersionedEntityMetadata) | Deprecated. Version metadata for the time off limit | |
 
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

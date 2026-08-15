@@ -30,8 +30,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_casemanagement_caseplan_version_stageplans**](#get_casemanagement_caseplan_version_stageplans) | Get a list of Stageplans.|
 |[**get_casemanagement_caseplans**](#get_casemanagement_caseplans) | Get a list of Caseplans.|
 |[**get_casemanagement_cases_externalcontact**](#get_casemanagement_cases_externalcontact) | Get a list of Cases for an External Contact.|
+|[**get_casemanagement_cases_query_job**](#get_casemanagement_cases_query_job) | Get a case query job by id|
+|[**get_casemanagement_cases_query_job_results**](#get_casemanagement_cases_query_job_results) | Get results for a case query job|
 |[**get_casemanagement_cases_reference**](#get_casemanagement_cases_reference) | Get a Case by reference.|
 |[**patch_casemanagement_case_datedue**](#patch_casemanagement_case_datedue) | Update the due date of a Case.|
+|[**patch_casemanagement_case_owner**](#patch_casemanagement_case_owner) | Update the ownerId of a Case|
 |[**patch_casemanagement_case_priority**](#patch_casemanagement_case_priority) | Update priority of a Case.|
 |[**patch_casemanagement_case_summary**](#patch_casemanagement_case_summary) | Update summary of a Case.|
 |[**patch_casemanagement_caseplan**](#patch_casemanagement_caseplan) | Update the attributes of a Caseplan.|
@@ -47,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_casemanagement_caseplans_query**](#post_casemanagement_caseplans_query) | Query for Caseplans.|
 |[**post_casemanagement_cases**](#post_casemanagement_cases) | Create a Case.|
 |[**post_casemanagement_cases_associations_query**](#post_casemanagement_cases_associations_query) | Query for Case associations by interaction.|
+|[**post_casemanagement_cases_query_jobs**](#post_casemanagement_cases_query_jobs) | Create a Case query job.|
 |[**put_casemanagement_caseplan_dataschema**](#put_casemanagement_caseplan_dataschema) | Update a data schema on a draft Caseplan.|
 |[**put_casemanagement_caseplan_intakesettings**](#put_casemanagement_caseplan_intakesettings) | Update the intake settings for a Caseplan.|
 
@@ -1304,6 +1308,106 @@ except ApiException as e:
 [**CaseListing**](CaseListing)
 
 
+## get_casemanagement_cases_query_job
+
+> [**CaseQueryJobResponse**](CaseQueryJobResponse) get_casemanagement_cases_query_job(job_id)
+
+
+Get a case query job by id
+
+get_casemanagement_cases_query_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* caseManagement:queryJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+job_id = 'job_id_example' # str | Job ID
+
+try:
+    # Get a case query job by id
+    api_response = api_instance.get_casemanagement_cases_query_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->get_casemanagement_cases_query_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| Job ID |  |
+
+### Return type
+
+[**CaseQueryJobResponse**](CaseQueryJobResponse)
+
+
+## get_casemanagement_cases_query_job_results
+
+> [**CaseQueryJobResultsResponse**](CaseQueryJobResultsResponse) get_casemanagement_cases_query_job_results(job_id)
+
+
+Get results for a case query job
+
+get_casemanagement_cases_query_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId}/results 
+
+Requires ALL permissions: 
+
+* caseManagement:queryJobResults:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+job_id = 'job_id_example' # str | Job ID
+
+try:
+    # Get results for a case query job
+    api_response = api_instance.get_casemanagement_cases_query_job_results(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->get_casemanagement_cases_query_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| Job ID |  |
+
+### Return type
+
+[**CaseQueryJobResultsResponse**](CaseQueryJobResultsResponse)
+
+
 ## get_casemanagement_cases_reference
 
 > [**Case**](Case) get_casemanagement_cases_reference(reference_id, expands=expands)
@@ -1398,6 +1502,58 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **case_id** | **str**| Case identifier. |  |
 | **body** | [**CaseDateDueUpdate**](CaseDateDueUpdate)| Due date update. |  |
+
+### Return type
+
+[**Case**](Case)
+
+
+## patch_casemanagement_case_owner
+
+> [**Case**](Case) patch_casemanagement_case_owner(case_id, body)
+
+
+Update the ownerId of a Case
+
+patch_casemanagement_case_owner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/casemanagement/cases/{caseId}/owner 
+
+Requires ANY permissions: 
+
+* caseManagement:caseOwner:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CaseOwnerUpdate() # CaseOwnerUpdate | OwnerId
+
+try:
+    # Update the ownerId of a Case
+    api_response = api_instance.patch_casemanagement_case_owner(case_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->patch_casemanagement_case_owner: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CaseOwnerUpdate**](CaseOwnerUpdate)| OwnerId |  |
 
 ### Return type
 
@@ -2148,6 +2304,56 @@ except ApiException as e:
 [**CaseAssociationQueryEntityListing**](CaseAssociationQueryEntityListing)
 
 
+## post_casemanagement_cases_query_jobs
+
+> [**CaseQueryJobResponse**](CaseQueryJobResponse) post_casemanagement_cases_query_jobs(body)
+
+
+Create a Case query job.
+
+post_casemanagement_cases_query_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/cases/query/jobs 
+
+Requires ANY permissions: 
+
+* caseManagement:queryJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+body = PureCloudPlatformClientV2.CaseQueryJobCreate() # CaseQueryJobCreate | Case query job create request.
+
+try:
+    # Create a Case query job.
+    api_response = api_instance.post_casemanagement_cases_query_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->post_casemanagement_cases_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CaseQueryJobCreate**](CaseQueryJobCreate)| Case query job create request. |  |
+
+### Return type
+
+[**CaseQueryJobResponse**](CaseQueryJobResponse)
+
+
 ## put_casemanagement_caseplan_dataschema
 
 > [**CaseplanDataSchema**](CaseplanDataSchema) put_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name, body)
@@ -2250,4 +2456,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

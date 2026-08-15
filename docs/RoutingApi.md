@@ -566,8 +566,6 @@ void (empty response body)
 
 Delete a custom Key Performance Indicator.
 
-delete_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/routing/predictors/keyperformanceindicators/{kpiId} 
 
 Requires ANY permissions: 
@@ -2880,8 +2878,6 @@ except ApiException as e:
 
 Retrieve a single Key Performance Indicator.
 
-get_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/predictors/keyperformanceindicators/{kpiId} 
 
 Requires ANY permissions: 
@@ -2981,8 +2977,6 @@ except ApiException as e:
 
 
 Get a list of Key Performance Indicators Types available.
-
-get_routing_predictors_keyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/predictors/keyperformanceindicatortypes 
 
@@ -5773,8 +5767,6 @@ except ApiException as e:
 
 Update a custom Key Performance Indicator.
 
-patch_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/routing/predictors/keyperformanceindicators/{kpiId} 
 
 Requires ANY permissions: 
@@ -7333,8 +7325,6 @@ except ApiException as e:
 
 
 Create a custom Key Performance Indicator.
-
-post_routing_predictors_keyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/routing/predictors/keyperformanceindicators 
 
@@ -9018,4 +9008,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

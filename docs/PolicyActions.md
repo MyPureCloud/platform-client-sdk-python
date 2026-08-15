@@ -16,9 +16,8 @@
 | **assign_surveys** | [list[SurveyAssignment]](SurveyAssignment) |  | [optional] |
 | **retention_duration** | [RetentionDuration](RetentionDuration) |  | [optional] |
 | **initiate_screen_recording** | [InitiateScreenRecording](InitiateScreenRecording) |  | [optional] |
-| **media_transcriptions** | [list[MediaTranscription]](MediaTranscription) | Deprecated. The Voci and Call Journey transcription integrations are no longer supported. | [optional] |
 | **integration_export** | [IntegrationExport](IntegrationExport) | Policy action for exporting recordings using an integration to 3rd party s3. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_
