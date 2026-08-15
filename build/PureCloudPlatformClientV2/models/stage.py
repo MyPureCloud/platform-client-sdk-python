@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CaseReference
+    from . import FailureReason
     from . import UserReference
 
 class Stage(object):
@@ -60,6 +61,7 @@ class Stage(object):
             'modified_by': 'UserReference',
             'version': 'int',
             'status': 'str',
+            'failure_reason': 'FailureReason',
             'self_uri': 'str',
             'case': 'CaseReference'
         }
@@ -75,6 +77,7 @@ class Stage(object):
             'modified_by': 'modifiedBy',
             'version': 'version',
             'status': 'status',
+            'failure_reason': 'failureReason',
             'self_uri': 'selfUri',
             'case': 'case'
         }
@@ -89,6 +92,7 @@ class Stage(object):
         self._modified_by = None
         self._version = None
         self._status = None
+        self._failure_reason = None
         self._self_uri = None
         self._case = None
 
@@ -330,12 +334,36 @@ class Stage(object):
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["Unknown", "InProgress", "Open", "Completed", "Terminated"]
+        allowed_values = ["Unknown", "InProgress", "Open", "Completed", "Terminated", "Failed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
         else:
             self._status = status
+
+    @property
+    def failure_reason(self) -> 'FailureReason':
+        """
+        Gets the failure_reason of this Stage.
+        The reason the Stage failed, if applicable.
+
+        :return: The failure_reason of this Stage.
+        :rtype: FailureReason
+        """
+        return self._failure_reason
+
+    @failure_reason.setter
+    def failure_reason(self, failure_reason: 'FailureReason') -> None:
+        """
+        Sets the failure_reason of this Stage.
+        The reason the Stage failed, if applicable.
+
+        :param failure_reason: The failure_reason of this Stage.
+        :type: FailureReason
+        """
+        
+
+        self._failure_reason = failure_reason
 
     @property
     def self_uri(self) -> str:

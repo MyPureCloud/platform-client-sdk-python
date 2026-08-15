@@ -44,7 +44,11 @@ from ..models import CaseAssociationQueryEntityListing
 from ..models import CaseCreate
 from ..models import CaseDateDueUpdate
 from ..models import CaseListing
+from ..models import CaseOwnerUpdate
 from ..models import CasePriorityUpdate
+from ..models import CaseQueryJobCreate
+from ..models import CaseQueryJobResponse
+from ..models import CaseQueryJobResultsResponse
 from ..models import CaseSummaryUpdate
 from ..models import Caseplan
 from ..models import CaseplanCreate
@@ -2243,6 +2247,164 @@ class CaseManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_casemanagement_cases_query_job(self, job_id: str, **kwargs) -> 'CaseQueryJobResponse':
+        """
+        Get a case query job by id
+        
+	    get_casemanagement_cases_query_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_casemanagement_cases_query_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: Job ID (required)
+        :return: CaseQueryJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_casemanagement_cases_query_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_casemanagement_cases_query_job`")
+
+
+        resource_path = '/api/v2/casemanagement/cases/query/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CaseQueryJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_casemanagement_cases_query_job_results(self, job_id: str, **kwargs) -> 'CaseQueryJobResultsResponse':
+        """
+        Get results for a case query job
+        
+	    get_casemanagement_cases_query_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_casemanagement_cases_query_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: Job ID (required)
+        :return: CaseQueryJobResultsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_casemanagement_cases_query_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_casemanagement_cases_query_job_results`")
+
+
+        resource_path = '/api/v2/casemanagement/cases/query/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CaseQueryJobResultsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_casemanagement_cases_reference(self, reference_id: str, **kwargs) -> 'Case':
         """
         Get a Case by reference.
@@ -2368,6 +2530,91 @@ class CaseManagementApi(object):
 
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/datedue'.replace('{format}', 'json')
+        path_params = {}
+        if 'case_id' in params:
+            path_params['caseId'] = params['case_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Case',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_casemanagement_case_owner(self, case_id: str, body: 'CaseOwnerUpdate', **kwargs) -> 'Case':
+        """
+        Update the ownerId of a Case
+        
+	    patch_casemanagement_case_owner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_casemanagement_case_owner(case_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str case_id: Case identifier. (required)
+        :param CaseOwnerUpdate body: OwnerId (required)
+        :return: Case
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['case_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_casemanagement_case_owner" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'case_id' is set
+        if ('case_id' not in params) or (params['case_id'] is None):
+            raise ValueError("Missing the required parameter `case_id` when calling `patch_casemanagement_case_owner`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_casemanagement_case_owner`")
+
+
+        resource_path = '/api/v2/casemanagement/cases/{caseId}/owner'.replace('{format}', 'json')
         path_params = {}
         if 'case_id' in params:
             path_params['caseId'] = params['case_id']
@@ -3664,6 +3911,85 @@ class CaseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CaseAssociationQueryEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_casemanagement_cases_query_jobs(self, body: 'CaseQueryJobCreate', **kwargs) -> 'CaseQueryJobResponse':
+        """
+        Create a Case query job.
+        
+	    post_casemanagement_cases_query_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_casemanagement_cases_query_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CaseQueryJobCreate body: Case query job create request. (required)
+        :return: CaseQueryJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_casemanagement_cases_query_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_cases_query_jobs`")
+
+
+        resource_path = '/api/v2/casemanagement/cases/query/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CaseQueryJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

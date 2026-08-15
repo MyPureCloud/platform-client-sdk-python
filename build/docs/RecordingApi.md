@@ -2981,7 +2981,7 @@ except ApiException as e:
 
 ## put_recordings_deletionprotection
 
->  put_recordings_deletionprotection(protect=protect, body=body)
+> [**ManageDeleteProtectionResult**](ManageDeleteProtectionResult) put_recordings_deletionprotection(protect=protect, body=body)
 
 
 Apply or revoke recording protection for conversations
@@ -3011,7 +3011,8 @@ body = PureCloudPlatformClientV2.ConversationDeletionProtectionQuery() # Convers
 
 try:
     # Apply or revoke recording protection for conversations
-    api_instance.put_recordings_deletionprotection(protect=protect, body=body)
+    api_response = api_instance.put_recordings_deletionprotection(protect=protect, body=body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecordingApi->put_recordings_deletionprotection: %s\n" % e)
 ```
@@ -3026,7 +3027,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**ManageDeleteProtectionResult**](ManageDeleteProtectionResult)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

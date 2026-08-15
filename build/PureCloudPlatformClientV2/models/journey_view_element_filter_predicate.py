@@ -117,7 +117,7 @@ class JourneyViewElementFilterPredicate(object):
     def operator(self) -> str:
         """
         Gets the operator of this JourneyViewElementFilterPredicate.
-        Optional operator, default is Matches. Valid values: Matches
+        Optional operator, default is Matches. Valid values: Matches, NotMatches
 
         :return: The operator of this JourneyViewElementFilterPredicate.
         :rtype: str
@@ -128,7 +128,7 @@ class JourneyViewElementFilterPredicate(object):
     def operator(self, operator: str) -> None:
         """
         Sets the operator of this JourneyViewElementFilterPredicate.
-        Optional operator, default is Matches. Valid values: Matches
+        Optional operator, default is Matches. Valid values: Matches, NotMatches
 
         :param operator: The operator of this JourneyViewElementFilterPredicate.
         :type: str

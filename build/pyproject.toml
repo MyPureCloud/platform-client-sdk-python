@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PureCloudPlatformClientV2"
-version = "263.0.0"
+version = "264.0.0"
 authors = [
     {name = "Genesys Developer Evangelists", email = "DeveloperEvangelists@Genesys.com"},
 ]

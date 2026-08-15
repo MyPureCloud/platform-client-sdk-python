@@ -90,7 +90,7 @@ class SetTimeOffLimitValuesRequest(object):
     def metadata(self) -> 'WfmVersionedEntityMetadata':
         """
         Gets the metadata of this SetTimeOffLimitValuesRequest.
-        Version metadata for the time off limit
+        Deprecated. Version metadata for the time off limit
 
         :return: The metadata of this SetTimeOffLimitValuesRequest.
         :rtype: WfmVersionedEntityMetadata
@@ -101,7 +101,7 @@ class SetTimeOffLimitValuesRequest(object):
     def metadata(self, metadata: 'WfmVersionedEntityMetadata') -> None:
         """
         Sets the metadata of this SetTimeOffLimitValuesRequest.
-        Version metadata for the time off limit
+        Deprecated. Version metadata for the time off limit
 
         :param metadata: The metadata of this SetTimeOffLimitValuesRequest.
         :type: WfmVersionedEntityMetadata

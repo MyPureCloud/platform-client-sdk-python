@@ -7,6 +7,7 @@ from .models.accelerator_list import AcceleratorList
 from .models.accelerator_metadata import AcceleratorMetadata
 from .models.accelerator_parameter import AcceleratorParameter
 from .models.accelerator_specification import AcceleratorSpecification
+from .models.access_restriction import AccessRestriction
 from .models.acd_end_detail_event_topic_acd_end_event import AcdEndDetailEventTopicAcdEndEvent
 from .models.acd_start_detail_event_topic_acd_start_event import AcdStartDetailEventTopicAcdStartEvent
 from .models.achieved_outcome import AchievedOutcome
@@ -237,11 +238,15 @@ from .models.agent_work_plans import AgentWorkPlans
 from .models.agentic_version_addressable_entity import AgenticVersionAddressableEntity
 from .models.agentic_virtual_agent import AgenticVirtualAgent
 from .models.agentic_virtual_agent_comfort_statement_settings import AgenticVirtualAgentComfortStatementSettings
+from .models.agentic_virtual_agent_dynamic_turn_instructions import AgenticVirtualAgentDynamicTurnInstructions
 from .models.agentic_virtual_agent_entity_listing import AgenticVirtualAgentEntityListing
 from .models.agentic_virtual_agent_guardrail_instruction import AgenticVirtualAgentGuardrailInstruction
 from .models.agentic_virtual_agent_guardrails import AgenticVirtualAgentGuardrails
 from .models.agentic_virtual_agent_job import AgenticVirtualAgentJob
 from .models.agentic_virtual_agent_property_definition import AgenticVirtualAgentPropertyDefinition
+from .models.agentic_virtual_agent_repetition_check import AgenticVirtualAgentRepetitionCheck
+from .models.agentic_virtual_agent_target_definition import AgenticVirtualAgentTargetDefinition
+from .models.agentic_virtual_agent_target_reference_definition import AgenticVirtualAgentTargetReferenceDefinition
 from .models.agentic_virtual_agent_type_definition import AgenticVirtualAgentTypeDefinition
 from .models.agentic_virtual_agent_version_publish import AgenticVirtualAgentVersionPublish
 from .models.agentic_virtual_agent_version_publish_job import AgenticVirtualAgentVersionPublishJob
@@ -257,6 +262,14 @@ from .models.agents_work_plans_response import AgentsWorkPlansResponse
 from .models.aggregate_historical_availability import AggregateHistoricalAvailability
 from .models.aggregate_metric_data import AggregateMetricData
 from .models.aggregate_view_data import AggregateViewData
+from .models.aggregated_export_job_request import AggregatedExportJobRequest
+from .models.aggregated_export_snapshot_job_request import AggregatedExportSnapshotJobRequest
+from .models.aggregated_historical_export_job_response import AggregatedHistoricalExportJobResponse
+from .models.aggregated_historical_export_job_status import AggregatedHistoricalExportJobStatus
+from .models.aggregated_session_export_job_response import AggregatedSessionExportJobResponse
+from .models.aggregated_session_export_job_status import AggregatedSessionExportJobStatus
+from .models.aggregated_snapshot_export_job_response import AggregatedSnapshotExportJobResponse
+from .models.aggregated_snapshot_export_job_status import AggregatedSnapshotExportJobStatus
 from .models.aggregation_range import AggregationRange
 from .models.aggregation_result import AggregationResult
 from .models.aggregation_result_entry import AggregationResultEntry
@@ -371,6 +384,7 @@ from .models.architect_flow_outcome_notification_home_organization import Archit
 from .models.architect_flow_outcome_notification_user import ArchitectFlowOutcomeNotificationUser
 from .models.architect_flow_reference import ArchitectFlowReference
 from .models.architect_job_message import ArchitectJobMessage
+from .models.architect_job_message_detail import ArchitectJobMessageDetail
 from .models.architect_job_state_response import ArchitectJobStateResponse
 from .models.architect_prompt_notification_architect_operation import ArchitectPromptNotificationArchitectOperation
 from .models.architect_prompt_notification_client import ArchitectPromptNotificationClient
@@ -510,6 +524,7 @@ from .models.batch_download_job_submission import BatchDownloadJobSubmission
 from .models.batch_download_job_submission_result import BatchDownloadJobSubmissionResult
 from .models.batch_download_request import BatchDownloadRequest
 from .models.batch_event_response import BatchEventResponse
+from .models.batch_get_customer_intents_request import BatchGetCustomerIntentsRequest
 from .models.batch_predictive_routing_custom_kpi_attribution_event_request import BatchPredictiveRoutingCustomKpiAttributionEventRequest
 from .models.batch_user_presence_event_request import BatchUserPresenceEventRequest
 from .models.batch_user_routing_status_event_request import BatchUserRoutingStatusEventRequest
@@ -538,7 +553,6 @@ from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
 from .models.billing_wallet import BillingWallet
 from .models.biography import Biography
-from .models.blending_settings import BlendingSettings
 from .models.bot import Bot
 from .models.bot_aggregate_data_container import BotAggregateDataContainer
 from .models.bot_aggregate_query_clause import BotAggregateQueryClause
@@ -929,7 +943,14 @@ from .models.case_management_aggregation_sort import CaseManagementAggregationSo
 from .models.case_management_aggregation_view import CaseManagementAggregationView
 from .models.case_management_async_aggregate_query_response import CaseManagementAsyncAggregateQueryResponse
 from .models.case_management_async_aggregation_query import CaseManagementAsyncAggregationQuery
+from .models.case_owner_update import CaseOwnerUpdate
 from .models.case_priority_update import CasePriorityUpdate
+from .models.case_query_job_create import CaseQueryJobCreate
+from .models.case_query_job_error import CaseQueryJobError
+from .models.case_query_job_filter import CaseQueryJobFilter
+from .models.case_query_job_response import CaseQueryJobResponse
+from .models.case_query_job_results_response import CaseQueryJobResultsResponse
+from .models.case_query_job_sort import CaseQueryJobSort
 from .models.case_reference import CaseReference
 from .models.case_summary_update import CaseSummaryUpdate
 from .models.case_user_reference import CaseUserReference
@@ -971,12 +992,9 @@ from .models.chart_column import ChartColumn
 from .models.chat import Chat
 from .models.chat_badge_topic_badge_entity import ChatBadgeTopicBadgeEntity
 from .models.chat_badge_topic_chat_badge import ChatBadgeTopicChatBadge
-from .models.chat_conversation import ChatConversation
-from .models.chat_conversation_entity_listing import ChatConversationEntityListing
 from .models.chat_favorite import ChatFavorite
 from .models.chat_item import ChatItem
 from .models.chat_item_cursor_listing import ChatItemCursorListing
-from .models.chat_media_participant import ChatMediaParticipant
 from .models.chat_media_policy import ChatMediaPolicy
 from .models.chat_media_policy_conditions import ChatMediaPolicyConditions
 from .models.chat_message import ChatMessage
@@ -1229,6 +1247,8 @@ from .models.context_pattern import ContextPattern
 from .models.continuous_forecast_get_session_response import ContinuousForecastGetSessionResponse
 from .models.continuous_forecast_session_response import ContinuousForecastSessionResponse
 from .models.continuous_forecast_snapshot_response import ContinuousForecastSnapshotResponse
+from .models.continuous_forecast_time_series import ContinuousForecastTimeSeries
+from .models.continuous_forecast_weeks import ContinuousForecastWeeks
 from .models.contractual import Contractual
 from .models.conversation import Conversation
 from .models.conversation_access_attributes_response import ConversationAccessAttributesResponse
@@ -1791,10 +1811,6 @@ from .models.create_user_assignments_request import CreateUserAssignmentsRequest
 from .models.create_utilization_label_request import CreateUtilizationLabelRequest
 from .models.create_verifier_request import CreateVerifierRequest
 from .models.create_verifier_response import CreateVerifierResponse
-from .models.create_web_chat_conversation_request import CreateWebChatConversationRequest
-from .models.create_web_chat_conversation_response import CreateWebChatConversationResponse
-from .models.create_web_chat_message_request import CreateWebChatMessageRequest
-from .models.create_web_chat_request import CreateWebChatRequest
 from .models.create_work_plan import CreateWorkPlan
 from .models.create_work_plan_activity import CreateWorkPlanActivity
 from .models.create_work_plan_bid import CreateWorkPlanBid
@@ -1821,6 +1837,7 @@ from .models.cross_platform_policy import CrossPlatformPolicy
 from .models.cross_platform_policy_actions import CrossPlatformPolicyActions
 from .models.cross_platform_policy_create import CrossPlatformPolicyCreate
 from .models.cross_platform_policy_update import CrossPlatformPolicyUpdate
+from .models.csv_export_error_details import CsvExportErrorDetails
 from .models.csv_job_request import CsvJobRequest
 from .models.csv_job_response import CsvJobResponse
 from .models.csv_mapping_entry import CsvMappingEntry
@@ -1961,6 +1978,9 @@ from .models.deletable_user_reference import DeletableUserReference
 from .models.delete_program_response import DeleteProgramResponse
 from .models.delete_retention import DeleteRetention
 from .models.dependency import Dependency
+from .models.dependency_count import DependencyCount
+from .models.dependency_entity import DependencyEntity
+from .models.dependency_entity_listing import DependencyEntityListing
 from .models.dependency_object import DependencyObject
 from .models.dependency_object_entity_listing import DependencyObjectEntityListing
 from .models.dependency_status import DependencyStatus
@@ -2353,6 +2373,7 @@ from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.end_consult_transfer_event import EndConsultTransferEvent
 from .models.end_transfer_event import EndTransferEvent
 from .models.endpoint import Endpoint
+from .models.engagement_filter import EngagementFilter
 from .models.engagement_request import EngagementRequest
 from .models.engine_integration import EngineIntegration
 from .models.enrich_field_rule import EnrichFieldRule
@@ -2592,8 +2613,10 @@ from .models.facet_entry import FacetEntry
 from .models.facet_key_attribute import FacetKeyAttribute
 from .models.facet_statistics import FacetStatistics
 from .models.facet_term import FacetTerm
+from .models.failed_delete_protection_update import FailedDeleteProtectionUpdate
 from .models.failed_object import FailedObject
 from .models.failed_recording_entity_listing import FailedRecordingEntityListing
+from .models.failure_reason import FailureReason
 from .models.fallback import Fallback
 from .models.faq import Faq
 from .models.fax_config import FaxConfig
@@ -2762,6 +2785,10 @@ from .models.gamification_scorecard_change_topic_punctuality_event import Gamifi
 from .models.gamification_scorecard_change_topic_scorecard_change import GamificationScorecardChangeTopicScorecardChange
 from .models.gamification_status import GamificationStatus
 from .models.gcucc_teams_calendar_events_gcucc_teams_calendar_event_v2 import GcuccTeamsCalendarEventsGCUCCTeamsCalendarEventV2
+from .models.gen_ai_phrases_job import GenAIPhrasesJob
+from .models.gen_ai_phrases_job_request import GenAIPhrasesJobRequest
+from .models.gen_ai_phrases_job_topic import GenAIPhrasesJobTopic
+from .models.gen_ai_phrases_jobs import GenAIPhrasesJobs
 from .models.gen_ai_phrases_test_phrase_detected_phrase import GenAiPhrasesTestPhraseDetectedPhrase
 from .models.gen_ai_phrases_test_phrase_matched_transcript import GenAiPhrasesTestPhraseMatchedTranscript
 from .models.gen_ai_phrases_test_topic_phrase_results import GenAiPhrasesTestTopicPhraseResults
@@ -2840,7 +2867,6 @@ from .models.group_update import GroupUpdate
 from .models.groups_search_response import GroupsSearchResponse
 from .models.guest_category_reference import GuestCategoryReference
 from .models.guest_category_response_listing import GuestCategoryResponseListing
-from .models.guest_member_info import GuestMemberInfo
 from .models.guest_response_category import GuestResponseCategory
 from .models.guide import Guide
 from .models.guide_content_generation_job import GuideContentGenerationJob
@@ -3002,6 +3028,7 @@ from .models.integration_status_info import IntegrationStatusInfo
 from .models.integration_type import IntegrationType
 from .models.integration_type_entity_listing import IntegrationTypeEntityListing
 from .models.intent import Intent
+from .models.intent_classifier_info import IntentClassifierInfo
 from .models.intent_definition import IntentDefinition
 from .models.intent_feedback import IntentFeedback
 from .models.intent_reference import IntentReference
@@ -3543,6 +3570,7 @@ from .models.maestro_webhooks_invocation_topic_object import MaestroWebhooksInvo
 from .models.maestro_webhooks_invocation_topic_public_webhooks_event import MaestroWebhooksInvocationTopicPublicWebhooksEvent
 from .models.maestro_webhooks_invocation_topic_webhooks_invocation import MaestroWebhooksInvocationTopicWebhooksInvocation
 from .models.mail_from_result import MailFromResult
+from .models.manage_delete_protection_result import ManageDeleteProtectionResult
 from .models.management_unit import ManagementUnit
 from .models.management_unit_availability_settings_response import ManagementUnitAvailabilitySettingsResponse
 from .models.management_unit_listing import ManagementUnitListing
@@ -3586,7 +3614,6 @@ from .models.media_statistics_listing import MediaStatisticsListing
 from .models.media_statistics_trunk_info import MediaStatisticsTrunkInfo
 from .models.media_summary import MediaSummary
 from .models.media_summary_detail import MediaSummaryDetail
-from .models.media_transcription import MediaTranscription
 from .models.media_type import MediaType
 from .models.media_type_access import MediaTypeAccess
 from .models.media_types import MediaTypes
@@ -3896,6 +3923,7 @@ from .models.other_profile_assignment import OtherProfileAssignment
 from .models.out_of_office import OutOfOffice
 from .models.out_of_office_event_out_of_office import OutOfOfficeEventOutOfOffice
 from .models.out_of_office_event_user import OutOfOfficeEventUser
+from .models.outbound_blending_settings import OutboundBlendingSettings
 from .models.outbound_detail_event_topic_outbound_init_event import OutboundDetailEventTopicOutboundInitEvent
 from .models.outbound_domain import OutboundDomain
 from .models.outbound_domain_create_request import OutboundDomainCreateRequest
@@ -5009,6 +5037,7 @@ from .models.session_listing import SessionListing
 from .models.session_meta_data import SessionMetaData
 from .models.session_meta_data_result import SessionMetaDataResult
 from .models.session_metric_data import SessionMetricData
+from .models.session_planning_groups import SessionPlanningGroups
 from .models.session_segment_assignment import SessionSegmentAssignment
 from .models.sessions_response import SessionsResponse
 from .models.set_content_template_action_settings import SetContentTemplateActionSettings
@@ -5454,7 +5483,6 @@ from .models.time_off_settings_response import TimeOffSettingsResponse
 from .models.time_slot import TimeSlot
 from .models.time_zone_entity_listing import TimeZoneEntityListing
 from .models.time_zone_mapping_preview import TimeZoneMappingPreview
-from .models.timeseries import Timeseries
 from .models.token_info import TokenInfo
 from .models.token_info_cloned_user import TokenInfoClonedUser
 from .models.topic import Topic
@@ -6018,19 +6046,6 @@ from .models.waitlist_position import WaitlistPosition
 from .models.waitlist_position_listing import WaitlistPositionListing
 from .models.warning import Warning
 from .models.web_action_event import WebActionEvent
-from .models.web_chat_config import WebChatConfig
-from .models.web_chat_conversation import WebChatConversation
-from .models.web_chat_deployment import WebChatDeployment
-from .models.web_chat_deployment_entity_listing import WebChatDeploymentEntityListing
-from .models.web_chat_guest_media_request import WebChatGuestMediaRequest
-from .models.web_chat_guest_media_request_entity_list import WebChatGuestMediaRequestEntityList
-from .models.web_chat_member_info import WebChatMemberInfo
-from .models.web_chat_member_info_entity_list import WebChatMemberInfoEntityList
-from .models.web_chat_message import WebChatMessage
-from .models.web_chat_message_entity_list import WebChatMessageEntityList
-from .models.web_chat_routing_target import WebChatRoutingTarget
-from .models.web_chat_settings import WebChatSettings
-from .models.web_chat_typing import WebChatTyping
 from .models.web_deployment import WebDeployment
 from .models.web_deployment_active_configuration_on_deployment import WebDeploymentActiveConfigurationOnDeployment
 from .models.web_deployment_configuration_version import WebDeploymentConfigurationVersion
@@ -6079,7 +6094,6 @@ from .models.week_shift_trade_list_response import WeekShiftTradeListResponse
 from .models.week_shift_trade_matches_summary_response import WeekShiftTradeMatchesSummaryResponse
 from .models.week_shift_trade_response import WeekShiftTradeResponse
 from .models.weekly import Weekly
-from .models.weeks import Weeks
 from .models.wem_coaching_schedule_slot_job_complete_topic_coaching_schedule_slot_job_complete import WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobComplete
 from .models.wem_coaching_schedule_slot_job_complete_topic_coaching_schedule_slot_job_results import WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobResults
 from .models.wem_coaching_schedule_slot_job_complete_topic_coaching_schedule_slot_job_results_slot import WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobResultsSlot
@@ -6332,13 +6346,6 @@ from .models.whatsapp_campaign_schedule_config_change_whats_app_campaign_schedul
 from .models.wheel_picker import WheelPicker
 from .models.wheel_picker_item import WheelPickerItem
 from .models.widget import Widget
-from .models.widget_client_config import WidgetClientConfig
-from .models.widget_client_config_third_party import WidgetClientConfigThirdParty
-from .models.widget_client_config_v1 import WidgetClientConfigV1
-from .models.widget_client_config_v1_http import WidgetClientConfigV1Http
-from .models.widget_client_config_v2 import WidgetClientConfigV2
-from .models.widget_deployment import WidgetDeployment
-from .models.widget_deployment_entity_listing import WidgetDeploymentEntityListing
 from .models.work_plan import WorkPlan
 from .models.work_plan_activity import WorkPlanActivity
 from .models.work_plan_bid import WorkPlanBid
@@ -6550,6 +6557,7 @@ from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
 from .apis.data_privacy_api import DataPrivacyApi
+from .apis.dependencies_api import DependenciesApi
 from .apis.downloads_api import DownloadsApi
 from .apis.emails_api import EmailsApi
 from .apis.employee_engagement_api import EmployeeEngagementApi
@@ -6612,10 +6620,8 @@ from .apis.users_rules_api import UsersRulesApi
 from .apis.utilities_api import UtilitiesApi
 from .apis.virtual_agents_api import VirtualAgentsApi
 from .apis.voicemail_api import VoicemailApi
-from .apis.web_chat_api import WebChatApi
 from .apis.web_messaging_api import WebMessagingApi
 from .apis.web_deployments_api import WebDeploymentsApi
-from .apis.widgets_api import WidgetsApi
 from .apis.workforce_management_api import WorkforceManagementApi
 from .apis.ai_studio_api import AIStudioApi
 from .apis.agent_assistants_api import AgentAssistantsApi
@@ -6638,6 +6644,7 @@ from .apis.content_management_api import ContentManagementApi
 from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
 from .apis.data_privacy_api import DataPrivacyApi
+from .apis.dependencies_api import DependenciesApi
 from .apis.downloads_api import DownloadsApi
 from .apis.emails_api import EmailsApi
 from .apis.employee_engagement_api import EmployeeEngagementApi
@@ -6700,10 +6707,8 @@ from .apis.users_rules_api import UsersRulesApi
 from .apis.utilities_api import UtilitiesApi
 from .apis.virtual_agents_api import VirtualAgentsApi
 from .apis.voicemail_api import VoicemailApi
-from .apis.web_chat_api import WebChatApi
 from .apis.web_messaging_api import WebMessagingApi
 from .apis.web_deployments_api import WebDeploymentsApi
-from .apis.widgets_api import WidgetsApi
 from .apis.workforce_management_api import WorkforceManagementApi
 
 # import ApiClient

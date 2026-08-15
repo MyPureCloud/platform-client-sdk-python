@@ -133,7 +133,7 @@ class ConversationMessagingChannel(object):
         """
         if isinstance(platform, int):
             platform = str(platform)
-        allowed_values = ["Twitter", "Facebook", "Instagram", "Line", "Whatsapp", "WebMessaging", "Open", "Apple", "Sms"]
+        allowed_values = ["Twitter", "Facebook", "Instagram", "Line", "Whatsapp", "WebMessaging", "Open", "Apple", "Sms", "LinkedIn"]
         if platform.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for platform -> " + platform)
             self._platform = "outdated_sdk_version"

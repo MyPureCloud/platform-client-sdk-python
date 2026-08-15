@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CaseReference
+    from . import FailureReason
     from . import StageReference
     from . import UserReference
     from . import WorkitemActivityReference
@@ -64,6 +65,7 @@ class Step(object):
             'status': 'str',
             'stage': 'StageReference',
             'workitem_activity': 'WorkitemActivityReference',
+            'failure_reason': 'FailureReason',
             'self_uri': 'str',
             'case': 'CaseReference'
         }
@@ -81,6 +83,7 @@ class Step(object):
             'status': 'status',
             'stage': 'stage',
             'workitem_activity': 'workitemActivity',
+            'failure_reason': 'failureReason',
             'self_uri': 'selfUri',
             'case': 'case'
         }
@@ -97,6 +100,7 @@ class Step(object):
         self._status = None
         self._stage = None
         self._workitem_activity = None
+        self._failure_reason = None
         self._self_uri = None
         self._case = None
 
@@ -338,7 +342,7 @@ class Step(object):
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["Unknown", "InProgress", "Open", "Completed", "Terminated"]
+        allowed_values = ["Unknown", "InProgress", "Open", "Completed", "Terminated", "Failed"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
@@ -392,6 +396,30 @@ class Step(object):
         
 
         self._workitem_activity = workitem_activity
+
+    @property
+    def failure_reason(self) -> 'FailureReason':
+        """
+        Gets the failure_reason of this Step.
+        The reason the Step failed, if applicable.
+
+        :return: The failure_reason of this Step.
+        :rtype: FailureReason
+        """
+        return self._failure_reason
+
+    @failure_reason.setter
+    def failure_reason(self, failure_reason: 'FailureReason') -> None:
+        """
+        Sets the failure_reason of this Step.
+        The reason the Step failed, if applicable.
+
+        :param failure_reason: The failure_reason of this Step.
+        :type: FailureReason
+        """
+        
+
+        self._failure_reason = failure_reason
 
     @property
     def self_uri(self) -> str:

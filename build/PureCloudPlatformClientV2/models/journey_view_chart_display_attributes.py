@@ -50,6 +50,7 @@ class JourneyViewChartDisplayAttributes(object):
             'type': 'str',
             'group_by_title': 'str',
             'metrics_title': 'str',
+            'secondary_metrics_title': 'str',
             'show_legend': 'bool'
         }
 
@@ -57,12 +58,14 @@ class JourneyViewChartDisplayAttributes(object):
             'type': 'type',
             'group_by_title': 'groupByTitle',
             'metrics_title': 'metricsTitle',
+            'secondary_metrics_title': 'secondaryMetricsTitle',
             'show_legend': 'showLegend'
         }
 
         self._type = None
         self._group_by_title = None
         self._metrics_title = None
+        self._secondary_metrics_title = None
         self._show_legend = None
 
     @property
@@ -141,6 +144,30 @@ class JourneyViewChartDisplayAttributes(object):
         
 
         self._metrics_title = metrics_title
+
+    @property
+    def secondary_metrics_title(self) -> str:
+        """
+        Gets the secondary_metrics_title of this JourneyViewChartDisplayAttributes.
+        A title for the metrics on secondary axis
+
+        :return: The secondary_metrics_title of this JourneyViewChartDisplayAttributes.
+        :rtype: str
+        """
+        return self._secondary_metrics_title
+
+    @secondary_metrics_title.setter
+    def secondary_metrics_title(self, secondary_metrics_title: str) -> None:
+        """
+        Sets the secondary_metrics_title of this JourneyViewChartDisplayAttributes.
+        A title for the metrics on secondary axis
+
+        :param secondary_metrics_title: The secondary_metrics_title of this JourneyViewChartDisplayAttributes.
+        :type: str
+        """
+        
+
+        self._secondary_metrics_title = secondary_metrics_title
 
     @property
     def show_legend(self) -> bool:

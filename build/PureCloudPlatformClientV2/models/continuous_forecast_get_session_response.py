@@ -50,7 +50,6 @@ class ContinuousForecastGetSessionResponse(object):
             'session_id': 'str',
             'last_successful_session_id': 'str',
             'state': 'str',
-            'forecast_data_state': 'str',
             'error_code': 'str'
         }
 
@@ -58,14 +57,12 @@ class ContinuousForecastGetSessionResponse(object):
             'session_id': 'sessionId',
             'last_successful_session_id': 'lastSuccessfulSessionId',
             'state': 'state',
-            'forecast_data_state': 'forecastDataState',
             'error_code': 'errorCode'
         }
 
         self._session_id = None
         self._last_successful_session_id = None
         self._state = None
-        self._forecast_data_state = None
         self._error_code = None
 
     @property
@@ -144,35 +141,6 @@ class ContinuousForecastGetSessionResponse(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
-
-    @property
-    def forecast_data_state(self) -> str:
-        """
-        Gets the forecast_data_state of this ContinuousForecastGetSessionResponse.
-        State of the forecast data
-
-        :return: The forecast_data_state of this ContinuousForecastGetSessionResponse.
-        :rtype: str
-        """
-        return self._forecast_data_state
-
-    @forecast_data_state.setter
-    def forecast_data_state(self, forecast_data_state: str) -> None:
-        """
-        Sets the forecast_data_state of this ContinuousForecastGetSessionResponse.
-        State of the forecast data
-
-        :param forecast_data_state: The forecast_data_state of this ContinuousForecastGetSessionResponse.
-        :type: str
-        """
-        if isinstance(forecast_data_state, int):
-            forecast_data_state = str(forecast_data_state)
-        allowed_values = ["Current", "Stale", "Processing"]
-        if forecast_data_state.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for forecast_data_state -> " + forecast_data_state)
-            self._forecast_data_state = "outdated_sdk_version"
-        else:
-            self._forecast_data_state = forecast_data_state
 
     @property
     def error_code(self) -> str:

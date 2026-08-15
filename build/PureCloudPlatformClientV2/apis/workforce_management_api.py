@@ -80,6 +80,14 @@ from ..models import AgentsBidAssignedWorkPlanOverrideRequest
 from ..models import AgentsEffectiveScheduleSetResponse
 from ..models import AgentsIntegrationsListing
 from ..models import AgentsWorkPlansResponse
+from ..models import AggregatedExportJobRequest
+from ..models import AggregatedExportSnapshotJobRequest
+from ..models import AggregatedHistoricalExportJobResponse
+from ..models import AggregatedHistoricalExportJobStatus
+from ..models import AggregatedSessionExportJobResponse
+from ..models import AggregatedSessionExportJobStatus
+from ..models import AggregatedSnapshotExportJobResponse
+from ..models import AggregatedSnapshotExportJobStatus
 from ..models import AlternativeShiftAsyncResponse
 from ..models import AlternativeShiftBuSettingsResponse
 from ..models import AlternativeShiftJobResponse
@@ -1833,9 +1841,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_workforcemanagement_managementunit_timeofflimit is deprecated")
     def delete_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> None:
         """
-        Deletes a time off limit object
+        Deletes a time off limit object. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1917,9 +1926,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_workforcemanagement_managementunit_timeoffplan is deprecated")
     def delete_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, **kwargs) -> None:
         """
-        Deletes a time off plan
+        Deletes a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -4992,6 +5002,258 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContinuousForecastGetSessionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'AggregatedSessionExportJobStatus':
+        """
+        Get status of the session export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The job ID (required)
+        :return: AggregatedSessionExportJobStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AggregatedSessionExportJobStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'AggregatedHistoricalExportJobStatus':
+        """
+        Get status of the historical export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The job ID (required)
+        :return: AggregatedHistoricalExportJobStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AggregatedHistoricalExportJobStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'AggregatedSnapshotExportJobStatus':
+        """
+        Get status of the snapshot export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The job ID (required)
+        :return: AggregatedSnapshotExportJobStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AggregatedSnapshotExportJobStatus',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10827,10 +11089,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_managementunit_timeofflimit is deprecated")
     def get_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> 'TimeOffLimit':
         """
         Gets a time off limit object
-        Returns properties of time off limit object, but not daily values.
+        Returns properties of time off limit object, but not daily values. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10911,10 +11174,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_managementunit_timeofflimits is deprecated")
     def get_workforcemanagement_managementunit_timeofflimits(self, management_unit_id: str, **kwargs) -> 'TimeOffLimitListing':
         """
         Gets a list of time off limit objects under management unit.
-        Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+        Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10989,9 +11253,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_managementunit_timeoffplan is deprecated")
     def get_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, **kwargs) -> 'TimeOffPlan':
         """
-        Gets a time off plan
+        Gets a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -11073,9 +11338,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_managementunit_timeoffplans is deprecated")
     def get_workforcemanagement_managementunit_timeoffplans(self, management_unit_id: str, **kwargs) -> 'TimeOffPlanListing':
         """
-        Gets a list of time off plans
+        Gets a list of time off plans. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -16354,10 +16620,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_workforcemanagement_managementunit_timeofflimit is deprecated")
     def patch_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, body: 'UpdateTimeOffLimitRequest', **kwargs) -> 'TimeOffLimit':
         """
         Updates a time off limit object.
-        Updates time off limit object properties, but not daily values.
+        Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -16444,9 +16711,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_workforcemanagement_managementunit_timeoffplan is deprecated")
     def patch_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, body: 'UpdateTimeOffPlanRequest', **kwargs) -> 'TimeOffPlan':
         """
-        Updates a time off plan
+        Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -20330,6 +20598,258 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_jobs(self, business_unit_id: str, body: 'AggregatedExportJobRequest', **kwargs) -> 'AggregatedSessionExportJobResponse':
+        """
+        Create a session export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param AggregatedExportJobRequest body: The request body (required)
+        :return: AggregatedSessionExportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_forecast_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AggregatedSessionExportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_jobs(self, business_unit_id: str, body: 'AggregatedExportJobRequest', **kwargs) -> 'AggregatedHistoricalExportJobResponse':
+        """
+        Create a historical export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param AggregatedExportJobRequest body: The request body (required)
+        :return: AggregatedHistoricalExportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_historical_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AggregatedHistoricalExportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_jobs(self, business_unit_id: str, body: 'AggregatedExportSnapshotJobRequest', **kwargs) -> 'AggregatedSnapshotExportJobResponse':
+        """
+        Create a snapshot export job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param AggregatedExportSnapshotJobRequest body: The request body (required)
+        :return: AggregatedSnapshotExportJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_mainforecast_continuousforecast_session_export_snapshot_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AggregatedSnapshotExportJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_businessunit_opportunities_bulk_add(self, business_unit_id: str, body: 'BulkAddOpportunitiesRequest', **kwargs) -> 'BulkAddOpportunitiesResponse':
         """
         Bulk add opportunities
@@ -22673,9 +23193,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_businessunit_timeofflimits_values_query is deprecated")
     def post_workforcemanagement_businessunit_timeofflimits_values_query(self, business_unit_id: str, body: 'QueryTimeOffLimitValuesRequest', **kwargs) -> 'BuTimeOffLimitValuesResponse':
         """
-        Retrieves time-off limit related values based on a given set of filters.
+        Retrieves time-off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -25587,10 +26108,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_managementunit_timeofflimits is deprecated")
     def post_workforcemanagement_managementunit_timeofflimits(self, management_unit_id: str, body: 'CreateTimeOffLimitRequest', **kwargs) -> 'TimeOffLimit':
         """
         Creates a new time off limit object under management unit.
-        Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+        Only one limit object is allowed under management unit, so an attempt to create second object will fail. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -25671,9 +26193,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_managementunit_timeofflimits_values_query is deprecated")
     def post_workforcemanagement_managementunit_timeofflimits_values_query(self, management_unit_id: str, body: 'QueryTimeOffLimitValuesRequest', **kwargs) -> 'QueryTimeOffLimitValuesResponse':
         """
-        Retrieves time off limit related values based on a given set of filters.
+        Retrieves time off limit related values based on a given set of filters. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -25755,9 +26278,10 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_managementunit_timeoffplans is deprecated")
     def post_workforcemanagement_managementunit_timeoffplans(self, management_unit_id: str, body: 'CreateTimeOffPlanRequest', **kwargs) -> 'TimeOffPlan':
         """
-        Creates a new time off plan
+        Creates a new time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -28820,10 +29344,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_workforcemanagement_managementunit_timeofflimit_values is deprecated")
     def put_workforcemanagement_managementunit_timeofflimit_values(self, management_unit_id: str, time_off_limit_id: str, body: 'SetTimeOffLimitValuesRequest', **kwargs) -> 'TimeOffLimit':
         """
         Sets daily values for a date range of time off limit object
-        Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+        Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

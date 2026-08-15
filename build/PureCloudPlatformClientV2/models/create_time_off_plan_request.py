@@ -80,7 +80,7 @@ class CreateTimeOffPlanRequest(object):
     def name(self) -> str:
         """
         Gets the name of this CreateTimeOffPlanRequest.
-        The name of this time off plan.
+        Deprecated. The name of this time off plan.
 
         :return: The name of this CreateTimeOffPlanRequest.
         :rtype: str
@@ -91,7 +91,7 @@ class CreateTimeOffPlanRequest(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this CreateTimeOffPlanRequest.
-        The name of this time off plan.
+        Deprecated. The name of this time off plan.
 
         :param name: The name of this CreateTimeOffPlanRequest.
         :type: str
@@ -104,7 +104,7 @@ class CreateTimeOffPlanRequest(object):
     def activity_code_ids(self) -> List[str]:
         """
         Gets the activity_code_ids of this CreateTimeOffPlanRequest.
-        The set of activity code IDs to associate with this time off plan.
+        Deprecated. The set of activity code IDs to associate with this time off plan.
 
         :return: The activity_code_ids of this CreateTimeOffPlanRequest.
         :rtype: list[str]
@@ -115,7 +115,7 @@ class CreateTimeOffPlanRequest(object):
     def activity_code_ids(self, activity_code_ids: List[str]) -> None:
         """
         Sets the activity_code_ids of this CreateTimeOffPlanRequest.
-        The set of activity code IDs to associate with this time off plan.
+        Deprecated. The set of activity code IDs to associate with this time off plan.
 
         :param activity_code_ids: The activity_code_ids of this CreateTimeOffPlanRequest.
         :type: list[str]
@@ -128,7 +128,7 @@ class CreateTimeOffPlanRequest(object):
     def time_off_limit_ids(self) -> List[str]:
         """
         Gets the time_off_limit_ids of this CreateTimeOffPlanRequest.
-        The set of time off limit IDs to associate with this time off plan.
+        Deprecated. The set of time off limit IDs to associate with this time off plan.
 
         :return: The time_off_limit_ids of this CreateTimeOffPlanRequest.
         :rtype: list[str]
@@ -139,7 +139,7 @@ class CreateTimeOffPlanRequest(object):
     def time_off_limit_ids(self, time_off_limit_ids: List[str]) -> None:
         """
         Sets the time_off_limit_ids of this CreateTimeOffPlanRequest.
-        The set of time off limit IDs to associate with this time off plan.
+        Deprecated. The set of time off limit IDs to associate with this time off plan.
 
         :param time_off_limit_ids: The time_off_limit_ids of this CreateTimeOffPlanRequest.
         :type: list[str]
@@ -152,7 +152,7 @@ class CreateTimeOffPlanRequest(object):
     def auto_approval_rule(self) -> str:
         """
         Gets the auto_approval_rule of this CreateTimeOffPlanRequest.
-        Auto approval rule for the time off plan.
+        Deprecated. Auto approval rule for the time off plan.
 
         :return: The auto_approval_rule of this CreateTimeOffPlanRequest.
         :rtype: str
@@ -163,7 +163,7 @@ class CreateTimeOffPlanRequest(object):
     def auto_approval_rule(self, auto_approval_rule: str) -> None:
         """
         Sets the auto_approval_rule of this CreateTimeOffPlanRequest.
-        Auto approval rule for the time off plan.
+        Deprecated. Auto approval rule for the time off plan.
 
         :param auto_approval_rule: The auto_approval_rule of this CreateTimeOffPlanRequest.
         :type: str
@@ -181,7 +181,7 @@ class CreateTimeOffPlanRequest(object):
     def days_before_start_to_expire_from_waitlist(self) -> int:
         """
         Gets the days_before_start_to_expire_from_waitlist of this CreateTimeOffPlanRequest.
-        The number of days before the time off request start date for when the request will be expired from the waitlist.
+        Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
 
         :return: The days_before_start_to_expire_from_waitlist of this CreateTimeOffPlanRequest.
         :rtype: int
@@ -192,7 +192,7 @@ class CreateTimeOffPlanRequest(object):
     def days_before_start_to_expire_from_waitlist(self, days_before_start_to_expire_from_waitlist: int) -> None:
         """
         Sets the days_before_start_to_expire_from_waitlist of this CreateTimeOffPlanRequest.
-        The number of days before the time off request start date for when the request will be expired from the waitlist.
+        Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
 
         :param days_before_start_to_expire_from_waitlist: The days_before_start_to_expire_from_waitlist of this CreateTimeOffPlanRequest.
         :type: int
@@ -205,7 +205,7 @@ class CreateTimeOffPlanRequest(object):
     def hris_time_off_type(self) -> 'HrisTimeOffType':
         """
         Gets the hris_time_off_type of this CreateTimeOffPlanRequest.
-        Time off type, if this time off plan is associated with the integration.
+        Deprecated. Time off type, if this time off plan is associated with the integration.
 
         :return: The hris_time_off_type of this CreateTimeOffPlanRequest.
         :rtype: HrisTimeOffType
@@ -216,7 +216,7 @@ class CreateTimeOffPlanRequest(object):
     def hris_time_off_type(self, hris_time_off_type: 'HrisTimeOffType') -> None:
         """
         Sets the hris_time_off_type of this CreateTimeOffPlanRequest.
-        Time off type, if this time off plan is associated with the integration.
+        Deprecated. Time off type, if this time off plan is associated with the integration.
 
         :param hris_time_off_type: The hris_time_off_type of this CreateTimeOffPlanRequest.
         :type: HrisTimeOffType
@@ -229,7 +229,7 @@ class CreateTimeOffPlanRequest(object):
     def active(self) -> bool:
         """
         Gets the active of this CreateTimeOffPlanRequest.
-        Whether this time off plan should be used by agents.
+        Deprecated. Whether this time off plan should be used by agents.
 
         :return: The active of this CreateTimeOffPlanRequest.
         :rtype: bool
@@ -240,7 +240,7 @@ class CreateTimeOffPlanRequest(object):
     def active(self, active: bool) -> None:
         """
         Sets the active of this CreateTimeOffPlanRequest.
-        Whether this time off plan should be used by agents.
+        Deprecated. Whether this time off plan should be used by agents.
 
         :param active: The active of this CreateTimeOffPlanRequest.
         :type: bool

@@ -10,6 +10,7 @@
 | **queue_id** | str |  | [optional] |
 | **participants** | [list[ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant]](ConversationSummaryTopicVirtualAgentsConversationSummaryParticipant) |  | [optional] |
 | **communication_ids** | list[str] |  | [optional] |
+| **latest_communication_id** | str |  | [optional] |
 | **created_date** | datetime |  | [optional] |
 | **message_type** | str |  | [optional] |
 | **media_type** | str |  | [optional] |
@@ -32,4 +33,4 @@
 
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

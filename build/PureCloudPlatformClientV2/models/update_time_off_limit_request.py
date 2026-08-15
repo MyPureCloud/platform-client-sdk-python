@@ -65,7 +65,7 @@ class UpdateTimeOffLimitRequest(object):
     def default_limit_minutes(self) -> int:
         """
         Gets the default_limit_minutes of this UpdateTimeOffLimitRequest.
-        The default time off limit value in minutes per granularity
+        Deprecated. The default time off limit value in minutes per granularity
 
         :return: The default_limit_minutes of this UpdateTimeOffLimitRequest.
         :rtype: int
@@ -76,7 +76,7 @@ class UpdateTimeOffLimitRequest(object):
     def default_limit_minutes(self, default_limit_minutes: int) -> None:
         """
         Sets the default_limit_minutes of this UpdateTimeOffLimitRequest.
-        The default time off limit value in minutes per granularity
+        Deprecated. The default time off limit value in minutes per granularity
 
         :param default_limit_minutes: The default_limit_minutes of this UpdateTimeOffLimitRequest.
         :type: int
@@ -89,7 +89,7 @@ class UpdateTimeOffLimitRequest(object):
     def metadata(self) -> 'WfmVersionedEntityMetadata':
         """
         Gets the metadata of this UpdateTimeOffLimitRequest.
-        Version metadata for the time off limit
+        Deprecated. Version metadata for the time off limit
 
         :return: The metadata of this UpdateTimeOffLimitRequest.
         :rtype: WfmVersionedEntityMetadata
@@ -100,7 +100,7 @@ class UpdateTimeOffLimitRequest(object):
     def metadata(self, metadata: 'WfmVersionedEntityMetadata') -> None:
         """
         Sets the metadata of this UpdateTimeOffLimitRequest.
-        Version metadata for the time off limit
+        Deprecated. Version metadata for the time off limit
 
         :param metadata: The metadata of this UpdateTimeOffLimitRequest.
         :type: WfmVersionedEntityMetadata

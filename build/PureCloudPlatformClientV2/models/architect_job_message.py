@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ArchitectJobMessageDetail
 
 class ArchitectJobMessage(object):
     """
@@ -49,18 +51,21 @@ class ArchitectJobMessage(object):
         self.swagger_types = {
             'date_time': 'datetime',
             'type': 'str',
-            'text': 'str'
+            'text': 'str',
+            'details': 'list[ArchitectJobMessageDetail]'
         }
 
         self.attribute_map = {
             'date_time': 'dateTime',
             'type': 'type',
-            'text': 'text'
+            'text': 'text',
+            'details': 'details'
         }
 
         self._date_time = None
         self._type = None
         self._text = None
+        self._details = None
 
     @property
     def date_time(self) -> datetime:
@@ -108,7 +113,7 @@ class ArchitectJobMessage(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Error", "Warning"]
+        allowed_values = ["Error", "Warning", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -138,6 +143,30 @@ class ArchitectJobMessage(object):
         
 
         self._text = text
+
+    @property
+    def details(self) -> List['ArchitectJobMessageDetail']:
+        """
+        Gets the details of this ArchitectJobMessage.
+        Structured information about the message, absent from the large majority of messages. Populated only by publish jobs, and only on errors raised when a Genesys Cloud entity reference in the flow definition could not be resolved. Export and validate jobs resolve an existing flow by id rather than processing a flow definition, so they never return it. Holds one entry per request captured within the failing lookup, ordered oldest request first, and more than one entry is normal. Entries for requests that succeeded are included alongside the request that failed. A lookup failure usually also produces a separate message with similar text and no details.
+
+        :return: The details of this ArchitectJobMessage.
+        :rtype: list[ArchitectJobMessageDetail]
+        """
+        return self._details
+
+    @details.setter
+    def details(self, details: List['ArchitectJobMessageDetail']) -> None:
+        """
+        Sets the details of this ArchitectJobMessage.
+        Structured information about the message, absent from the large majority of messages. Populated only by publish jobs, and only on errors raised when a Genesys Cloud entity reference in the flow definition could not be resolved. Export and validate jobs resolve an existing flow by id rather than processing a flow definition, so they never return it. Holds one entry per request captured within the failing lookup, ordered oldest request first, and more than one entry is normal. Entries for requests that succeeded are included alongside the request that failed. A lookup failure usually also produces a separate message with similar text and no details.
+
+        :param details: The details of this ArchitectJobMessage.
+        :type: list[ArchitectJobMessageDetail]
+        """
+        
+
+        self._details = details
 
     def to_dict(self):
         """

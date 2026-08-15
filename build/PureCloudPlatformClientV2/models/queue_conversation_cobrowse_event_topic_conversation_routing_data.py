@@ -54,7 +54,8 @@ class QueueConversationCobrowseEventTopicConversationRoutingData(object):
             'language': 'QueueConversationCobrowseEventTopicUriReference',
             'priority': 'int',
             'skills': 'list[QueueConversationCobrowseEventTopicUriReference]',
-            'scored_agents': 'list[QueueConversationCobrowseEventTopicScoredAgent]'
+            'scored_agents': 'list[QueueConversationCobrowseEventTopicScoredAgent]',
+            'skill_expression_id': 'QueueConversationCobrowseEventTopicUriReference'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class QueueConversationCobrowseEventTopicConversationRoutingData(object):
             'language': 'language',
             'priority': 'priority',
             'skills': 'skills',
-            'scored_agents': 'scoredAgents'
+            'scored_agents': 'scoredAgents',
+            'skill_expression_id': 'skillExpressionId'
         }
 
         self._queue = None
@@ -70,6 +72,7 @@ class QueueConversationCobrowseEventTopicConversationRoutingData(object):
         self._priority = None
         self._skills = None
         self._scored_agents = None
+        self._skill_expression_id = None
 
     @property
     def queue(self) -> 'QueueConversationCobrowseEventTopicUriReference':
@@ -190,6 +193,30 @@ class QueueConversationCobrowseEventTopicConversationRoutingData(object):
         
 
         self._scored_agents = scored_agents
+
+    @property
+    def skill_expression_id(self) -> 'QueueConversationCobrowseEventTopicUriReference':
+        """
+        Gets the skill_expression_id of this QueueConversationCobrowseEventTopicConversationRoutingData.
+        A UriReference for a resource
+
+        :return: The skill_expression_id of this QueueConversationCobrowseEventTopicConversationRoutingData.
+        :rtype: QueueConversationCobrowseEventTopicUriReference
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: 'QueueConversationCobrowseEventTopicUriReference') -> None:
+        """
+        Sets the skill_expression_id of this QueueConversationCobrowseEventTopicConversationRoutingData.
+        A UriReference for a resource
+
+        :param skill_expression_id: The skill_expression_id of this QueueConversationCobrowseEventTopicConversationRoutingData.
+        :type: QueueConversationCobrowseEventTopicUriReference
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     def to_dict(self):
         """

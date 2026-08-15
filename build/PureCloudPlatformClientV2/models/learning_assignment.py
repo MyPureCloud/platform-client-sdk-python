@@ -55,6 +55,7 @@ class LearningAssignment(object):
         self.swagger_types = {
             'id': 'str',
             'assessment': 'LearningAssessment',
+            'date_completed': 'datetime',
             'created_by': 'UserReference',
             'date_created': 'datetime',
             'modified_by': 'UserReference',
@@ -83,6 +84,7 @@ class LearningAssignment(object):
         self.attribute_map = {
             'id': 'id',
             'assessment': 'assessment',
+            'date_completed': 'dateCompleted',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'modified_by': 'modifiedBy',
@@ -110,6 +112,7 @@ class LearningAssignment(object):
 
         self._id = None
         self._assessment = None
+        self._date_completed = None
         self._created_by = None
         self._date_created = None
         self._modified_by = None
@@ -181,6 +184,30 @@ class LearningAssignment(object):
         
 
         self._assessment = assessment
+
+    @property
+    def date_completed(self) -> datetime:
+        """
+        Gets the date_completed of this LearningAssignment.
+        The date the assignment was completed. If not yet completed, this will be null. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_completed of this LearningAssignment.
+        :rtype: datetime
+        """
+        return self._date_completed
+
+    @date_completed.setter
+    def date_completed(self, date_completed: datetime) -> None:
+        """
+        Sets the date_completed of this LearningAssignment.
+        The date the assignment was completed. If not yet completed, this will be null. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_completed: The date_completed of this LearningAssignment.
+        :type: datetime
+        """
+        
+
+        self._date_completed = date_completed
 
     @property
     def created_by(self) -> 'UserReference':

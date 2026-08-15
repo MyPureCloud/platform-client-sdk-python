@@ -115,7 +115,7 @@ class TimeOffPlan(object):
     def name(self) -> str:
         """
         Gets the name of this TimeOffPlan.
-        The name of this time off plan.
+        Deprecated. The name of this time off plan.
 
         :return: The name of this TimeOffPlan.
         :rtype: str
@@ -126,7 +126,7 @@ class TimeOffPlan(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this TimeOffPlan.
-        The name of this time off plan.
+        Deprecated. The name of this time off plan.
 
         :param name: The name of this TimeOffPlan.
         :type: str
@@ -139,7 +139,7 @@ class TimeOffPlan(object):
     def activity_code_ids(self) -> List[str]:
         """
         Gets the activity_code_ids of this TimeOffPlan.
-        The set of activity code IDs associated with this time off plan.
+        Deprecated. The set of activity code IDs associated with this time off plan.
 
         :return: The activity_code_ids of this TimeOffPlan.
         :rtype: list[str]
@@ -150,7 +150,7 @@ class TimeOffPlan(object):
     def activity_code_ids(self, activity_code_ids: List[str]) -> None:
         """
         Sets the activity_code_ids of this TimeOffPlan.
-        The set of activity code IDs associated with this time off plan.
+        Deprecated. The set of activity code IDs associated with this time off plan.
 
         :param activity_code_ids: The activity_code_ids of this TimeOffPlan.
         :type: list[str]
@@ -163,7 +163,7 @@ class TimeOffPlan(object):
     def time_off_limits(self) -> List['TimeOffLimitReference']:
         """
         Gets the time_off_limits of this TimeOffPlan.
-        The set of time off limit IDs associated with this time off plan.
+        Deprecated. The set of time off limit IDs associated with this time off plan.
 
         :return: The time_off_limits of this TimeOffPlan.
         :rtype: list[TimeOffLimitReference]
@@ -174,7 +174,7 @@ class TimeOffPlan(object):
     def time_off_limits(self, time_off_limits: List['TimeOffLimitReference']) -> None:
         """
         Sets the time_off_limits of this TimeOffPlan.
-        The set of time off limit IDs associated with this time off plan.
+        Deprecated. The set of time off limit IDs associated with this time off plan.
 
         :param time_off_limits: The time_off_limits of this TimeOffPlan.
         :type: list[TimeOffLimitReference]
@@ -187,7 +187,7 @@ class TimeOffPlan(object):
     def auto_approval_rule(self) -> str:
         """
         Gets the auto_approval_rule of this TimeOffPlan.
-        Auto approval rule for this time off plan
+        Deprecated. Auto approval rule for this time off plan
 
         :return: The auto_approval_rule of this TimeOffPlan.
         :rtype: str
@@ -198,7 +198,7 @@ class TimeOffPlan(object):
     def auto_approval_rule(self, auto_approval_rule: str) -> None:
         """
         Sets the auto_approval_rule of this TimeOffPlan.
-        Auto approval rule for this time off plan
+        Deprecated. Auto approval rule for this time off plan
 
         :param auto_approval_rule: The auto_approval_rule of this TimeOffPlan.
         :type: str
@@ -216,7 +216,7 @@ class TimeOffPlan(object):
     def days_before_start_to_expire_from_waitlist(self) -> int:
         """
         Gets the days_before_start_to_expire_from_waitlist of this TimeOffPlan.
-        The number of days before the time off request start date for when the request will be expired from the waitlist.
+        Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
 
         :return: The days_before_start_to_expire_from_waitlist of this TimeOffPlan.
         :rtype: int
@@ -227,7 +227,7 @@ class TimeOffPlan(object):
     def days_before_start_to_expire_from_waitlist(self, days_before_start_to_expire_from_waitlist: int) -> None:
         """
         Sets the days_before_start_to_expire_from_waitlist of this TimeOffPlan.
-        The number of days before the time off request start date for when the request will be expired from the waitlist.
+        Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
 
         :param days_before_start_to_expire_from_waitlist: The days_before_start_to_expire_from_waitlist of this TimeOffPlan.
         :type: int
@@ -240,7 +240,7 @@ class TimeOffPlan(object):
     def hris_time_off_type(self) -> 'HrisTimeOffType':
         """
         Gets the hris_time_off_type of this TimeOffPlan.
-        Time off type, if this time off plan is associated with the integration.
+        Deprecated. Time off type, if this time off plan is associated with the integration.
 
         :return: The hris_time_off_type of this TimeOffPlan.
         :rtype: HrisTimeOffType
@@ -251,7 +251,7 @@ class TimeOffPlan(object):
     def hris_time_off_type(self, hris_time_off_type: 'HrisTimeOffType') -> None:
         """
         Sets the hris_time_off_type of this TimeOffPlan.
-        Time off type, if this time off plan is associated with the integration.
+        Deprecated. Time off type, if this time off plan is associated with the integration.
 
         :param hris_time_off_type: The hris_time_off_type of this TimeOffPlan.
         :type: HrisTimeOffType
@@ -264,7 +264,7 @@ class TimeOffPlan(object):
     def active(self) -> bool:
         """
         Gets the active of this TimeOffPlan.
-        Whether this time off plan is currently being used by agents.
+        Deprecated. Whether this time off plan is currently being used by agents.
 
         :return: The active of this TimeOffPlan.
         :rtype: bool
@@ -275,7 +275,7 @@ class TimeOffPlan(object):
     def active(self, active: bool) -> None:
         """
         Sets the active of this TimeOffPlan.
-        Whether this time off plan is currently being used by agents.
+        Deprecated. Whether this time off plan is currently being used by agents.
 
         :param active: The active of this TimeOffPlan.
         :type: bool
@@ -288,7 +288,7 @@ class TimeOffPlan(object):
     def metadata(self) -> 'WfmVersionedEntityMetadata':
         """
         Gets the metadata of this TimeOffPlan.
-        Version metadata for the time off plan.
+        Deprecated. Version metadata for the time off plan.
 
         :return: The metadata of this TimeOffPlan.
         :rtype: WfmVersionedEntityMetadata
@@ -299,7 +299,7 @@ class TimeOffPlan(object):
     def metadata(self, metadata: 'WfmVersionedEntityMetadata') -> None:
         """
         Sets the metadata of this TimeOffPlan.
-        Version metadata for the time off plan.
+        Deprecated. Version metadata for the time off plan.
 
         :param metadata: The metadata of this TimeOffPlan.
         :type: WfmVersionedEntityMetadata

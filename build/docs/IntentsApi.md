@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_intents_customerintent_sourceintents_bulk_add**](#post_intents_customerintent_sourceintents_bulk_add) | Bulk add source intents to a customer intent|
 |[**post_intents_customerintent_sourceintents_bulk_remove**](#post_intents_customerintent_sourceintents_bulk_remove) | Bulk remove source intents mapped to a customer intent|
 |[**post_intents_customerintents**](#post_intents_customerintents) | Create customer intents|
+|[**post_intents_customerintents_bulk_retrieve**](#post_intents_customerintents_bulk_retrieve) | Get customer intents by IDs|
 
 
 
@@ -829,4 +830,54 @@ except ApiException as e:
 [**CustomerIntentResponse**](CustomerIntentResponse)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+## post_intents_customerintents_bulk_retrieve
+
+> [**list[CustomerIntentResponse]**](CustomerIntentResponse) post_intents_customerintents_bulk_retrieve(body)
+
+
+Get customer intents by IDs
+
+post_intents_customerintents_bulk_retrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/intents/customerintents/bulk/retrieve 
+
+Requires ANY permissions: 
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntentsApi()
+body = PureCloudPlatformClientV2.BatchGetCustomerIntentsRequest() # BatchGetCustomerIntentsRequest | Customer intent IDs to retrieve
+
+try:
+    # Get customer intents by IDs
+    api_response = api_instance.post_intents_customerintents_bulk_retrieve(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntentsApi->post_intents_customerintents_bulk_retrieve: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BatchGetCustomerIntentsRequest**](BatchGetCustomerIntentsRequest)| Customer intent IDs to retrieve |  |
+
+### Return type
+
+[**list[CustomerIntentResponse]**](CustomerIntentResponse)
+
+
+_PureCloudPlatformClientV2 264.0.0_

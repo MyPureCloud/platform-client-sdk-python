@@ -68,7 +68,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def time_off_limit_id(self) -> str:
         """
         Gets the time_off_limit_id of this QueryTimeOffLimitValuesRequest.
-        The time off limit object id to retrieve values for. Required if activityCodeId is not specified
+        Deprecated. The time off limit object id to retrieve values for. Required if activityCodeId is not specified
 
         :return: The time_off_limit_id of this QueryTimeOffLimitValuesRequest.
         :rtype: str
@@ -79,7 +79,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def time_off_limit_id(self, time_off_limit_id: str) -> None:
         """
         Sets the time_off_limit_id of this QueryTimeOffLimitValuesRequest.
-        The time off limit object id to retrieve values for. Required if activityCodeId is not specified
+        Deprecated. The time off limit object id to retrieve values for. Required if activityCodeId is not specified
 
         :param time_off_limit_id: The time_off_limit_id of this QueryTimeOffLimitValuesRequest.
         :type: str
@@ -92,7 +92,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def activity_code_id(self) -> str:
         """
         Gets the activity_code_id of this QueryTimeOffLimitValuesRequest.
-        The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
+        Deprecated. The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
 
         :return: The activity_code_id of this QueryTimeOffLimitValuesRequest.
         :rtype: str
@@ -103,7 +103,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def activity_code_id(self, activity_code_id: str) -> None:
         """
         Sets the activity_code_id of this QueryTimeOffLimitValuesRequest.
-        The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
+        Deprecated. The ID of the activity code by which to filter the affected limit objects. Required if timeOffLimitId is not specified
 
         :param activity_code_id: The activity_code_id of this QueryTimeOffLimitValuesRequest.
         :type: str
@@ -116,7 +116,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def date_ranges(self) -> List['LocalDateRange']:
         """
         Gets the date_ranges of this QueryTimeOffLimitValuesRequest.
-        The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
+        Deprecated. The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
 
         :return: The date_ranges of this QueryTimeOffLimitValuesRequest.
         :rtype: list[LocalDateRange]
@@ -127,7 +127,7 @@ class QueryTimeOffLimitValuesRequest(object):
     def date_ranges(self, date_ranges: List['LocalDateRange']) -> None:
         """
         Sets the date_ranges of this QueryTimeOffLimitValuesRequest.
-        The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
+        Deprecated. The list of the date ranges to return time off limit, allocated and waitlisted minutes. The valid number of date ranges is between 1 and 30. Maximum total number of days in all ranges in 366.
 
         :param date_ranges: The date_ranges of this QueryTimeOffLimitValuesRequest.
         :type: list[LocalDateRange]

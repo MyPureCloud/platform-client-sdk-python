@@ -1226,4 +1226,4 @@ except ApiException as e:
 [**ResponseAsset**](ResponseAsset)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

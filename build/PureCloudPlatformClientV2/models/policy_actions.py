@@ -36,7 +36,6 @@ if TYPE_CHECKING:
     from . import EvaluationAssignment
     from . import InitiateScreenRecording
     from . import IntegrationExport
-    from . import MediaTranscription
     from . import MeteredAssignmentByAgent
     from . import MeteredEvaluationAssignment
     from . import RetentionDuration
@@ -67,7 +66,6 @@ class PolicyActions(object):
             'assign_surveys': 'list[SurveyAssignment]',
             'retention_duration': 'RetentionDuration',
             'initiate_screen_recording': 'InitiateScreenRecording',
-            'media_transcriptions': 'list[MediaTranscription]',
             'integration_export': 'IntegrationExport'
         }
 
@@ -82,7 +80,6 @@ class PolicyActions(object):
             'assign_surveys': 'assignSurveys',
             'retention_duration': 'retentionDuration',
             'initiate_screen_recording': 'initiateScreenRecording',
-            'media_transcriptions': 'mediaTranscriptions',
             'integration_export': 'integrationExport'
         }
 
@@ -96,7 +93,6 @@ class PolicyActions(object):
         self._assign_surveys = None
         self._retention_duration = None
         self._initiate_screen_recording = None
-        self._media_transcriptions = None
         self._integration_export = None
 
     @property
@@ -338,30 +334,6 @@ class PolicyActions(object):
         
 
         self._initiate_screen_recording = initiate_screen_recording
-
-    @property
-    def media_transcriptions(self) -> List['MediaTranscription']:
-        """
-        Gets the media_transcriptions of this PolicyActions.
-        Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
-
-        :return: The media_transcriptions of this PolicyActions.
-        :rtype: list[MediaTranscription]
-        """
-        return self._media_transcriptions
-
-    @media_transcriptions.setter
-    def media_transcriptions(self, media_transcriptions: List['MediaTranscription']) -> None:
-        """
-        Sets the media_transcriptions of this PolicyActions.
-        Deprecated. The Voci and Call Journey transcription integrations are no longer supported.
-
-        :param media_transcriptions: The media_transcriptions of this PolicyActions.
-        :type: list[MediaTranscription]
-        """
-        
-
-        self._media_transcriptions = media_transcriptions
 
     @property
     def integration_export(self) -> 'IntegrationExport':

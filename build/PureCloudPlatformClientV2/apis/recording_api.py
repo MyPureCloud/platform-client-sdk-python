@@ -52,6 +52,7 @@ from ..models import ExecuteRecordingJobsQuery
 from ..models import FailedRecordingEntityListing
 from ..models import KeyRotationSchedule
 from ..models import LocalEncryptionKeyRequest
+from ..models import ManageDeleteProtectionResult
 from ..models import OrphanRecording
 from ..models import OrphanRecordingListing
 from ..models import OrphanUpdateRequest
@@ -4727,7 +4728,7 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_recordings_deletionprotection(self, **kwargs) -> None:
+    def put_recordings_deletionprotection(self, **kwargs) -> 'ManageDeleteProtectionResult':
         """
         Apply or revoke recording protection for conversations
         
@@ -4744,7 +4745,7 @@ class RecordingApi(object):
             for asynchronous request. (optional)
         :param bool protect: Check for apply, uncheck for revoke (each action requires the respective permission)
         :param ConversationDeletionProtectionQuery body: 
-        :return: None
+        :return: ManageDeleteProtectionResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4800,7 +4801,7 @@ class RecordingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ManageDeleteProtectionResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

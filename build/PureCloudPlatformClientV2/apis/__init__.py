@@ -22,6 +22,7 @@ from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
 from .data_privacy_api import DataPrivacyApi
+from .dependencies_api import DependenciesApi
 from .downloads_api import DownloadsApi
 from .emails_api import EmailsApi
 from .employee_engagement_api import EmployeeEngagementApi
@@ -84,10 +85,8 @@ from .users_rules_api import UsersRulesApi
 from .utilities_api import UtilitiesApi
 from .virtual_agents_api import VirtualAgentsApi
 from .voicemail_api import VoicemailApi
-from .web_chat_api import WebChatApi
 from .web_messaging_api import WebMessagingApi
 from .web_deployments_api import WebDeploymentsApi
-from .widgets_api import WidgetsApi
 from .workforce_management_api import WorkforceManagementApi
 from .ai_studio_api import AIStudioApi
 from .agent_assistants_api import AgentAssistantsApi
@@ -110,6 +109,7 @@ from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
 from .data_privacy_api import DataPrivacyApi
+from .dependencies_api import DependenciesApi
 from .downloads_api import DownloadsApi
 from .emails_api import EmailsApi
 from .employee_engagement_api import EmployeeEngagementApi
@@ -172,8 +172,6 @@ from .users_rules_api import UsersRulesApi
 from .utilities_api import UtilitiesApi
 from .virtual_agents_api import VirtualAgentsApi
 from .voicemail_api import VoicemailApi
-from .web_chat_api import WebChatApi
 from .web_messaging_api import WebMessagingApi
 from .web_deployments_api import WebDeploymentsApi
-from .widgets_api import WidgetsApi
 from .workforce_management_api import WorkforceManagementApi

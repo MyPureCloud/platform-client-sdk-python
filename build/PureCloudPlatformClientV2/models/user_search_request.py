@@ -278,7 +278,7 @@ class UserSearchRequest(object):
         """
         if isinstance(integration_presence_source, int):
             integration_presence_source = str(integration_presence_source)
-        allowed_values = ["MicrosoftTeams", "ZoomPhone", "EightByEight"]
+        allowed_values = ["MicrosoftTeams", "ZoomPhone", "EightByEight", "RingCentral"]
         if integration_presence_source.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for integration_presence_source -> " + integration_presence_source)
             self._integration_presence_source = "outdated_sdk_version"

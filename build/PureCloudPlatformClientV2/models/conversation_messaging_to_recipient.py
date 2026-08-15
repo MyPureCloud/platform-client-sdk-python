@@ -57,6 +57,7 @@ class ConversationMessagingToRecipient(object):
             'last_name': 'str',
             'email': 'str',
             'external_contact_id': 'str',
+            'external_contact_division_id': 'str',
             'additional_ids': 'list[ConversationRecipientAdditionalIdentifier]'
         }
 
@@ -69,6 +70,7 @@ class ConversationMessagingToRecipient(object):
             'last_name': 'lastName',
             'email': 'email',
             'external_contact_id': 'externalContactId',
+            'external_contact_division_id': 'externalContactDivisionId',
             'additional_ids': 'additionalIds'
         }
 
@@ -80,6 +82,7 @@ class ConversationMessagingToRecipient(object):
         self._last_name = None
         self._email = None
         self._external_contact_id = None
+        self._external_contact_division_id = None
         self._additional_ids = None
 
     @property
@@ -278,6 +281,30 @@ class ConversationMessagingToRecipient(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def external_contact_division_id(self) -> str:
+        """
+        Gets the external_contact_division_id of this ConversationMessagingToRecipient.
+        The division identifier of the external contact.
+
+        :return: The external_contact_division_id of this ConversationMessagingToRecipient.
+        :rtype: str
+        """
+        return self._external_contact_division_id
+
+    @external_contact_division_id.setter
+    def external_contact_division_id(self, external_contact_division_id: str) -> None:
+        """
+        Sets the external_contact_division_id of this ConversationMessagingToRecipient.
+        The division identifier of the external contact.
+
+        :param external_contact_division_id: The external_contact_division_id of this ConversationMessagingToRecipient.
+        :type: str
+        """
+        
+
+        self._external_contact_division_id = external_contact_division_id
 
     @property
     def additional_ids(self) -> List['ConversationRecipientAdditionalIdentifier']:

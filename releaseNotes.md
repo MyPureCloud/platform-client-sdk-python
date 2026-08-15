@@ -1,839 +1,760 @@
-Platform API version: 10662
+Platform API version: 10706
 
 
 
 
-# Major Changes (21 changes)
+# Major Changes (86 changes)
 
-**GET /api/v2/casemanagement/cases/{caseId}** (1 change)
+**/api/v2/conversations/chats/{conversationId}/messages/{messageId}** (1 change)
 
-* Parameter expands was changed from string to array
+* Path /api/v2/conversations/chats/{conversationId}/messages/{messageId} was removed
 
-**GET /api/v2/casemanagement/cases/references/{referenceId}** (1 change)
+**/api/v2/conversations/chats/{conversationId}/messages** (1 change)
 
-* Parameter expands was changed from string to array
+* Path /api/v2/conversations/chats/{conversationId}/messages was removed
 
-**POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}** (1 change)
+**/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages** (1 change)
 
-* Response 200 type was changed from VideoConferenceDetails to CreateJoinVideoResponse
+* Path /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages was removed
 
-**TimeOffRequest** (1 change)
+**/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing** (1 change)
 
-* Model TimeOffRequest was removed
+* Path /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing was removed
 
-**AppleInvitation** (1 change)
+**/api/v2/conversations/chats** (1 change)
 
-* Enum value WithoutImage was removed from property templateType
+* Path /api/v2/conversations/chats was removed
 
-**RatingFilter** (7 changes)
+**/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace** (1 change)
 
-* Property from was removed
-* Property to was removed
-* Enum value GreaterThan was removed from property operator
-* Enum value GreaterThanOrEqualTo was removed from property operator
-* Enum value LessThan was removed from property operator
-* Enum value LessThanOrEqualTo was removed from property operator
-* Enum value Between was removed from property operator
+* Path /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace was removed
 
-**TimeOffRequestListing** (1 change)
+**/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes** (1 change)
 
-* Property entities was changed from TimeOffRequest[] to TimeOffRequestListItem[]
+* Path /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes was removed
 
-**Workitem** (2 changes)
+**/api/v2/conversations/chats/{conversationId}** (1 change)
 
-* Property language was changed from LanguageReference to WorkitemLanguageReference
-* Property skills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
+* Path /api/v2/conversations/chats/{conversationId} was removed
 
-**WorkitemVersion** (2 changes)
+**/api/v2/conversations/chats/{conversationId}/recordingstate** (1 change)
 
-* Property language was changed from LanguageReference to WorkitemLanguageReference
-* Property skills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
+* Path /api/v2/conversations/chats/{conversationId}/recordingstate was removed
 
-**Worktype** (2 changes)
+**/api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes** (1 change)
 
-* Property defaultLanguage was changed from LanguageReference to WorkitemLanguageReference
-* Property defaultSkills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
+* Path /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes was removed
 
-**WorktypeVersion** (2 changes)
+**/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup** (1 change)
 
-* Property defaultLanguage was changed from LanguageReference to WorkitemLanguageReference
-* Property defaultSkills was changed from RoutingSkillReference[] to WorkitemRoutingSkillReference[]
+* Path /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup was removed
 
+**/api/v2/conversations/chats/{conversationId}/participants/{participantId}** (1 change)
 
-# Minor Changes (231 changes)
+* Path /api/v2/conversations/chats/{conversationId}/participants/{participantId} was removed
 
-**/api/v2/users/me/verifiers** (2 changes)
+**/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}** (1 change)
 
-* Path was added
-* Operation GET was added
+* Path /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} was removed
 
-**/api/v2/users/me/verifiers/totp** (2 changes)
+**/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup** (1 change)
 
-* Path was added
-* Operation POST was added
+* Path /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup was removed
 
-**/api/v2/users/me/verifiers/webauthn/register/options** (2 changes)
+**/api/v2/webchat/guest/conversations** (1 change)
 
-* Path was added
-* Operation POST was added
+* Path /api/v2/webchat/guest/conversations was removed
 
-**/api/v2/users/me/verifiers/webauthn/register** (2 changes)
+**/api/v2/webchat/deployments/{deploymentId}** (1 change)
 
-* Path was added
-* Operation POST was added
+* Path /api/v2/webchat/deployments/{deploymentId} was removed
 
-**/api/v2/users/me/verifiers/{verifierId}** (3 changes)
+**/api/v2/webchat/deployments** (1 change)
 
-* Path was added
-* Operation PUT was added
-* Operation DELETE was added
+* Path /api/v2/webchat/deployments was removed
 
-**/api/v2/users/me/verifiers/totp/{verifierId}** (2 changes)
+**/api/v2/webchat/settings** (1 change)
 
-* Path was added
-* Operation POST was added
+* Path /api/v2/webchat/settings was removed
 
-**/api/v2/agentic/virtualagents/{virtualAgentId}/jobs** (2 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}** (1 change)
 
-* Path was added
-* Operation DELETE was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId} was removed
 
-**/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}** (2 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/mediarequests** (1 change)
 
-* Path was added
-* Operation GET was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/mediarequests was removed
 
-**/api/v2/agentic/virtualagents/{virtualAgentId}** (3 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId} was removed
 
-**/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}** (3 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages was removed
 
-**/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs** (2 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing** (1 change)
 
-* Path was added
-* Operation POST was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing was removed
 
-**/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs/{jobId}** (2 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/members** (1 change)
 
-* Path was added
-* Operation GET was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/members was removed
 
-**/api/v2/agentic/virtualagents/{virtualAgentId}/versions** (2 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}** (1 change)
 
-* Path was added
-* Operation POST was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId} was removed
 
-**/api/v2/agentic/virtualagents** (3 changes)
+**/api/v2/webchat/guest/conversations/{conversationId}/messages** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Path /api/v2/webchat/guest/conversations/{conversationId}/messages was removed
 
-**POST /api/v2/casemanagement/cases** (1 change)
+**/api/v2/widgets/deployments/{deploymentId}** (1 change)
 
-* Response 422 was added
+* Path /api/v2/widgets/deployments/{deploymentId} was removed
 
-**/api/v2/casemanagement/cases/{caseId}/comments/me/{commentId}** (2 changes)
+**/api/v2/widgets/deployments** (1 change)
 
-* Path was added
-* Operation DELETE was added
+* Path /api/v2/widgets/deployments was removed
 
-**/api/v2/casemanagement/cases/{caseId}/comments/{commentId}** (2 changes)
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/casemanagement/cases/{caseId}/comments** (3 changes)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Has been deprecated
 
-**/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries** (2 changes)
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
 
-* Path was added
-* Operation POST was added
+* Has been deprecated
 
-**/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries** (2 changes)
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
 
-* Path was added
-* Operation POST was added
+* Has been deprecated
 
-**/api/v2/conversations/{conversationId}/suggestions/{suggestionId}** (1 change)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits** (1 change)
 
-* Operation patch was added. Summary: Update a suggestion.
+* Has been deprecated
 
-**/api/v2/quality/publishedforms/evaluations/divisionviews/{evaluationFormId}** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/quality/publishedforms/evaluations/divisionviews** (2 changes)
+**PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/quality/publishedforms/surveys/divisionviews/{surveyFormId}** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/quality/publishedforms/surveys/divisionviews** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/responsemanagement/libraries/divisionviews** (2 changes)
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/responsemanagement/libraries/divisionviews/{libraryId}** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/responsemanagement/responses/divisionviews/{responseId}** (2 changes)
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
 
-* Path was added
-* Operation GET was added
+* Has been deprecated
 
-**/api/v2/responsemanagement/responses/divisionviews/query** (2 changes)
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
 
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/bulk** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/decisionmetrics** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/decisionmetrics/update/uploadurl** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/granularityconversion/jobs** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import/uploadurl** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values/import** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**Verifier** (2 changes)
-
-* Optional property type was added
-* Optional property credential was added
-
-**CreateVerifierResponse** (1 change)
-
-* Model was added
-
-**CreateVerifierRequest** (1 change)
-
-* Model was added
-
-**AuthenticatorSelection** (1 change)
-
-* Model was added
-
-**BeginWebAuthnRegistrationResponse** (1 change)
-
-* Model was added
-
-**CredentialDescriptor** (1 change)
-
-* Model was added
-
-**CredentialParameter** (1 change)
-
-* Model was added
-
-**PublicKeyCredentialCreationOptions** (1 change)
-
-* Model was added
-
-**RelyingPartyEntity** (1 change)
-
-* Model was added
-
-**UserEntity** (1 change)
-
-* Model was added
-
-**AuthenticatorAttestationResponse** (1 change)
-
-* Model was added
-
-**FinishWebAuthnRegistrationRequest** (1 change)
-
-* Model was added
-
-**PublicKeyCredentialCreationResponse** (1 change)
-
-* Model was added
-
-**UpdateVerifierRequest** (1 change)
-
-* Optional property credential was added
-
-**ValidateVerifierRequest** (1 change)
-
-* Model was added
-
-**OrgAuthSettings** (1 change)
-
-* Optional property tokenStorageLocation was added
-
-**AgenticVirtualAgentJob** (1 change)
-
-* Model was added
-
-**Limit** (2 changes)
-
-* Enum value admin.notice was added to property namespace
-* Enum value sda was added to property namespace
-
-**AgenticVersionAddressableEntity** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgent** (1 change)
-
-* Model was added
-
-**UpdateAgenticVirtualAgent** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentComfortStatementSettings** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentEventSettings** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentGuardrailInstruction** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentGuardrails** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentPropertyDefinition** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentTool** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentToolOutputInstruction** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentTypeDefinition** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentVersion** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentVersionDefinition** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentVersionSettings** (1 change)
-
-* Model was added
-
-**UpdateAgenticVirtualAgentVersion** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentVersionPublishJob** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentVersionPublish** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentVersionPublishJobRequest** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentVersionJob** (1 change)
-
-* Model was added
-
-**CreateAgenticVirtualAgentVersion** (1 change)
-
-* Model was added
-
-**AgenticVirtualAgentEntityListing** (1 change)
-
-* Model was added
-
-**CreateAgenticVirtualAgent** (1 change)
-
-* Model was added
-
-**KnowledgeSource** (1 change)
-
-* Model was added
-
-**ReportingTurnAction** (1 change)
-
-* Enum value AgenticAnythingElseAction was added to property actionType
-
-**ReportingTurnActionAgentDetails** (1 change)
-
-* Model was added
-
-**ReportingTurnGuardrailEvent** (1 change)
-
-* Model was added
-
-**ReportingTurnKnowledgeMetadata** (1 change)
-
-* Model was added
-
-**ReportingTurnToolCall** (1 change)
-
-* Model was added
-
-**EmailRefinementConfig** (1 change)
-
-* Model was added
-
-**RefinementSettingEntity** (1 change)
-
-* Model was added
-
-**SummaryGenerationConfig** (3 changes)
-
-* Optional property retentionSeconds was added
-* Optional property onDemandSummaryConfig was added
-* Optional property modelConfig was added
+* Has been deprecated
 
 **BlendingSettings** (1 change)
 
-* Model was added
+* Model BlendingSettings was removed
 
-**DecisionTableVersion** (2 changes)
+**MediaTranscription** (1 change)
 
-* Optional property createdBy was added
-* Optional property publishedBy was added
+* Model MediaTranscription was removed
 
-**CaseUserReference** (1 change)
+**WebChatConversation** (1 change)
 
-* Optional property images was added
+* Model WebChatConversation was removed
 
-**Comment** (1 change)
+**WebChatMemberInfo** (1 change)
 
-* Model was added
+* Model WebChatMemberInfo was removed
 
-**CommentCreate** (1 change)
+**WebChatMessage** (1 change)
 
-* Model was added
+* Model WebChatMessage was removed
 
-**CommentListing** (1 change)
+**WebChatMessageEntityList** (1 change)
 
-* Model was added
+* Model WebChatMessageEntityList was removed
 
-**EvaluationForm** (2 changes)
+**CreateWebChatMessageRequest** (1 change)
 
-* Optional property division was added
-* Optional property redacted was added
+* Model CreateWebChatMessageRequest was removed
 
-**AiAnswer** (1 change)
+**WebChatTyping** (1 change)
 
-* Optional property markedNotApplicable was added
+* Model WebChatTyping was removed
 
-**Call** (1 change)
+**ChatConversation** (1 change)
 
-* Optional property clientIpAddress was added
+* Model ChatConversation was removed
 
-**CallMediaParticipant** (1 change)
+**ChatConversationEntityListing** (1 change)
 
-* Optional property clientIpAddress was added
+* Model ChatConversationEntityListing was removed
 
-**Campaign** (1 change)
+**ChatMediaParticipant** (1 change)
 
-* Optional property preciseDialingEnabled was added
+* Model ChatMediaParticipant was removed
 
-**OnDemandSummaryAcceptedResponse** (1 change)
+**CreateWebChatRequest** (1 change)
 
-* Model was added
+* Model CreateWebChatRequest was removed
 
-**OnDemandConversationSummaryRequest** (1 change)
+**CreateWebChatConversationResponse** (1 change)
 
-* Model was added
+* Model CreateWebChatConversationResponse was removed
 
-**ConversationContentReaction** (2 changes)
+**CreateWebChatConversationRequest** (1 change)
 
-* Enum value Repost was added to property reactionType
-* Enum value Save was added to property reactionType
+* Model CreateWebChatConversationRequest was removed
 
-**Suggestion** (1 change)
+**GuestMemberInfo** (1 change)
 
-* Optional property thirdPartySuggestion was added
+* Model GuestMemberInfo was removed
 
-**SuggestionPatchRequest** (1 change)
+**WebChatRoutingTarget** (1 change)
 
-* Model was added
+* Model WebChatRoutingTarget was removed
 
-**CallBasic** (1 change)
+**WebChatConfig** (1 change)
 
-* Optional property clientIpAddress was added
+* Model WebChatConfig was removed
 
-**PunctualityEvent** (1 change)
+**WebChatDeployment** (1 change)
 
-* Optional property activityColor was added
+* Model WebChatDeployment was removed
 
-**SttEngineEntity** (1 change)
+**WebChatDeploymentEntityListing** (1 change)
 
-* Optional property replacedBy was added
+* Model WebChatDeploymentEntityListing was removed
 
-**JourneyViewChartMetric** (1 change)
+**WebChatSettings** (1 change)
 
-* Optional property attribute was added
+* Model WebChatSettings was removed
 
-**V3SourceLastSynchronization** (1 change)
+**WebChatGuestMediaRequest** (1 change)
 
-* Enum value Throttled was added to property status
+* Model WebChatGuestMediaRequest was removed
 
-**V3Synchronization** (1 change)
+**WebChatGuestMediaRequestEntityList** (1 change)
 
-* Enum value Throttled was added to property status
+* Model WebChatGuestMediaRequestEntityList was removed
 
-**ApprovalNamespace** (2 changes)
+**WebChatMemberInfoEntityList** (1 change)
 
-* Enum value admin.notice was added to property namespace
-* Enum value sda was added to property namespace
+* Model WebChatMemberInfoEntityList was removed
 
-**LimitChangeRequestDetails** (2 changes)
+**WidgetClientConfig** (1 change)
 
-* Enum value admin.notice was added to property namespace
-* Enum value sda was added to property namespace
+* Model WidgetClientConfig was removed
 
-**StatusChange** (2 changes)
+**WidgetClientConfigThirdParty** (1 change)
 
-* Enum value admin.notice was added to property namespace
-* Enum value sda was added to property namespace
+* Model WidgetClientConfigThirdParty was removed
 
-**SurveyForm** (2 changes)
+**WidgetClientConfigV1** (1 change)
 
-* Optional property division was added
-* Optional property redacted was added
+* Model WidgetClientConfigV1 was removed
 
-**EvaluationFormResponse** (1 change)
+**WidgetClientConfigV1Http** (1 change)
 
-* Optional property division was added
+* Model WidgetClientConfigV1Http was removed
 
-**EvaluationFormSearchResponse** (1 change)
+**WidgetClientConfigV2** (1 change)
 
-* Optional property division was added
+* Model WidgetClientConfigV2 was removed
 
-**EvaluationSearchAggregationDTO** (2 changes)
+**WidgetDeployment** (1 change)
 
-* Enum value agentId was added to property field
-* Enum value evaluatorId was added to property field
+* Model WidgetDeployment was removed
 
-**EvaluationSearchSubAggregationDTO** (2 changes)
+**WidgetDeploymentEntityListing** (1 change)
 
-* Enum value agentId was added to property field
-* Enum value evaluatorId was added to property field
+* Model WidgetDeploymentEntityListing was removed
 
-**EvaluationFormDivisionView** (1 change)
+**Timeseries** (1 change)
 
-* Model was added
+* Model Timeseries was removed
 
-**EvaluationFormDivisionViewListing** (1 change)
+**Weeks** (1 change)
 
-* Model was added
+* Model Weeks was removed
 
-**SurveyFormDivisionView** (1 change)
+**Limit** (1 change)
 
-* Model was added
+* Enum value admin.notice was removed from property namespace
 
-**SurveyFormDivisionViewListing** (1 change)
+**PolicyActions** (1 change)
 
-* Model was added
+* Property mediaTranscriptions was removed
 
-**LibraryDivisionView** (1 change)
+**CrossPlatformPolicyActions** (1 change)
 
-* Model was added
+* Property mediaTranscriptions was removed
 
-**LibraryDivisionViewEntityListing** (1 change)
+**ApprovalNamespace** (1 change)
 
-* Model was added
+* Enum value admin.notice was removed from property namespace
 
-**ResponseDivisionView** (1 change)
+**LimitChangeRequestDetails** (1 change)
 
-* Model was added
+* Enum value admin.notice was removed from property namespace
 
-**DomainEntityListingResponseDivisionView** (1 change)
+**StatusChange** (1 change)
 
-* Model was added
+* Enum value admin.notice was removed from property namespace
 
-**ResponseDivisionViewQueryResults** (1 change)
+**ArchitectJobMessage** (3 changes)
 
-* Model was added
+* dateTime has been made readonly
+* type has been made readonly
+* text has been made readonly
 
-**RoutingSkill** (1 change)
+**ContinuousForecastGetSessionResponse** (1 change)
 
-* Optional property division was added
+* Property forecastDataState was removed
 
-**SocialMediaAsyncAggregationQuery** (1 change)
+**Daily** (1 change)
 
-* Enum value postType was added to property groupBy
+* Property downloadResult was changed from Timeseries[] to ContinuousForecastTimeSeries[]
 
-**SocialMediaQueryPredicate** (1 change)
+**QuarterHourly** (1 change)
 
-* Enum value postType was added to property dimension
+* Property downloadResult was changed from Timeseries[] to ContinuousForecastTimeSeries[]
 
-**BusinessUnitActivityCode** (1 change)
+**Weekly** (1 change)
 
-* Optional property style was added
+* Property downloadResult was changed from Timeseries[] to ContinuousForecastTimeSeries[]
 
-**CreateActivityCodeRequest** (1 change)
 
-* Optional property style was added
+# Minor Changes (107 changes)
 
-**UpdateActivityCodeRequest** (1 change)
+**/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requires** (2 changes)
 
-* Optional property style was added
+* Path was added
+* Operation GET was added
 
-**BulkUpdateActivityCodeResponse** (1 change)
+**/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredby** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**BulkUpdateActivityCodeRequest** (1 change)
+**/api/v2/dependencies/type/{entityType}/id/{entityId}/connections/requiredbycounts** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**BulkUpdateActivityCodeRequestItem** (1 change)
+**PUT /api/v2/recordings/deletionprotection** (1 change)
 
-* Model was added
+* Response 200 was added
 
-**ActivityPlanJobResponse** (3 changes)
+**/api/v2/speechandtextanalytics/topics/generatedphrases/jobs/{jobId}** (2 changes)
 
-* Enum value MaximizeOccurrence was added to property type
-* Enum value CreateSession was added to property type
-* Enum value EditSession was added to property type
+* Path was added
+* Operation GET was added
 
-**AvailableTimeOffRequest** (1 change)
+**/api/v2/speechandtextanalytics/topics/generatedphrases/jobs** (2 changes)
 
-* Optional property supportedGranularities was added
+* Path was added
+* Operation POST was added
 
-**DecisionMetricsData** (1 change)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs/{jobId}** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**DecisionMetricsResponse** (1 change)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/historical/jobs** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**WfmEntityMetadata** (1 change)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs/{jobId}** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**DecisionMetricsJobReference** (1 change)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/forecast/jobs** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**DecisionMetricsUpdateError** (1 change)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs/{jobId}** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**DecisionMetricsUpdateJobResponse** (1 change)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/export/snapshot/jobs** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**DecisionMetricsUpdateJobRequest** (1 change)
+**/api/v2/casemanagement/cases/{caseId}/owner** (2 changes)
 
-* Model was added
+* Path was added
+* Operation PATCH was added
 
-**DecisionMetricsUploadData** (1 change)
+**/api/v2/casemanagement/cases/query/jobs/{jobId}** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**DecisionMetricsUploadResponse** (1 change)
+**/api/v2/casemanagement/cases/query/jobs/{jobId}/results** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**DecisionMetricsUploadSchema** (1 change)
+**/api/v2/casemanagement/cases/query/jobs** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**ValueWrapperInteger** (1 change)
+**/api/v2/intents/customerintents/bulk/retrieve** (2 changes)
 
-* Model was added
+* Path was added
+* Operation POST was added
 
-**TimeOffRequestListItem** (1 change)
+**Limit** (1 change)
 
-* Model was added
+* Enum value organization.notice was added to property namespace
 
-**BuTimeOffLimitResponse** (2 changes)
-
-* Optional property granularity was added
-* Optional property fullDayTimeOffStartTime was added
-
-**BuCreateTimeOffLimitRequest** (2 changes)
-
-* Optional property granularity was added
-* Optional property fullDayTimeOffStartTime was added
-
-**BuTimeOffLimitRange** (1 change)
-
-* Optional property limitMinutesPerFifteenMinutes was added
-
-**BuTimeOffLimitValues** (1 change)
+**AgenticVirtualAgentDynamicTurnInstructions** (1 change)
 
 * Model was added
 
-**BuTimeOffLimitValuesForGranularityResponse** (1 change)
+**AgenticVirtualAgentRepetitionCheck** (1 change)
 
 * Model was added
 
-**TimeOffLimitValues** (1 change)
+**AgenticVirtualAgentTargetDefinition** (1 change)
 
 * Model was added
 
-**QueryTimeOffLimitValuesForGranularityRequest** (1 change)
+**AgenticVirtualAgentTargetReferenceDefinition** (1 change)
 
 * Model was added
 
-**BuConvertTimeOffLimitGranularityJobProgress** (1 change)
+**ReportingTurnAction** (6 changes)
+
+* Enum value CreateConversationAttributeAction was added to property actionType
+* Enum value GetConversationAttributeAction was added to property actionType
+* Enum value GetConversationAttributesAction was added to property actionType
+* Enum value UpdateConversationAttributeAction was added to property actionType
+* Enum value FindDivisionAction was added to property actionType
+* Enum value FindDivisionsAction was added to property actionType
+
+**EmailSummarySettingsEntity** (1 change)
+
+* id is no longer readonly
+
+**RefinementSettingEntity** (1 change)
+
+* id is no longer readonly
+
+**SummarySettingEntity** (1 change)
+
+* id is no longer readonly
+
+**OutboundBlendingSettings** (1 change)
 
 * Model was added
 
-**BuConvertTimeOffLimitGranularityJobResponse** (1 change)
+**Case** (1 change)
+
+* Optional property failureReason was added
+
+**FailureReason** (1 change)
 
 * Model was added
 
-**BuConvertTimeOffLimitGranularityJobRequest** (1 change)
+**Stage** (2 changes)
+
+* Enum value Failed was added to property status
+* Optional property failureReason was added
+
+**Step** (2 changes)
+
+* Enum value Failed was added to property status
+* Optional property failureReason was added
+
+**ConversationMessagingChannel** (1 change)
+
+* Enum value LinkedIn was added to property platform
+
+**ConversationMessagingFromRecipient** (1 change)
+
+* Optional property externalContactDivisionId was added
+
+**ConversationMessagingToRecipient** (1 change)
+
+* Optional property externalContactDivisionId was added
+
+**DependencyEntity** (1 change)
 
 * Model was added
 
-**BuConvertTimeOffGranularityLimitJobListing** (1 change)
+**DependencyEntityListing** (1 change)
 
 * Model was added
 
-**BuImportTimeOffLimitValue** (1 change)
+**DependencyCount** (1 change)
 
 * Model was added
 
-**BuImportTimeOffLimitValuesSchema** (1 change)
+**CampaignRuleAction** (1 change)
+
+* Enum value setCampaignReservation was added to property actionType
+
+**CampaignRuleWarningParameters** (1 change)
+
+* Enum value setCampaignReservation was added to property actionType
+
+**ReplacementTerm** (1 change)
+
+* Enum value WHATSAPP was added to property type
+
+**SocialHandle** (1 change)
+
+* Enum value WHATSAPP was added to property type
+
+**JourneyViewChartDisplayAttributes** (1 change)
+
+* Optional property secondaryMetricsTitle was added
+
+**AccessRestriction** (1 change)
 
 * Model was added
 
-**BuImportTimeOffLimitValuesUploadResponse** (1 change)
+**ApprovalNamespace** (1 change)
+
+* Enum value organization.notice was added to property namespace
+
+**LimitChangeRequestDetails** (1 change)
+
+* Enum value organization.notice was added to property namespace
+
+**StatusChange** (1 change)
+
+* Enum value organization.notice was added to property namespace
+
+**FailedDeleteProtectionUpdate** (1 change)
 
 * Model was added
 
-**BuTimeOffLimitValuesImportUploadUrlRequest** (1 change)
+**ManageDeleteProtectionResult** (1 change)
 
 * Model was added
 
-**BuImportTimeOffLimitValuesRequest** (1 change)
+**IntentClassifierInfo** (1 change)
 
 * Model was added
 
-**WorkitemLanguageReference** (1 change)
+**SocialMediaAsyncAggregationQuery** (2 changes)
+
+* Enum value reposts was added to property groupBy
+* Enum value saves was added to property groupBy
+
+**SocialMediaQueryPredicate** (2 changes)
+
+* Enum value reposts was added to property dimension
+* Enum value saves was added to property dimension
+
+**EngagementFilter** (1 change)
 
 * Model was added
 
-**WorkitemRoutingSkillReference** (1 change)
+**GenAIPhrasesJob** (1 change)
 
 * Model was added
 
-**BillingCharge** (1 change)
+**GenAIPhrasesJobs** (1 change)
 
-* Optional property name was added
+* Model was added
 
-**CreateJoinVideoResponse** (1 change)
+**GenAIPhrasesJobRequest** (1 change)
+
+* Model was added
+
+**GenAIPhrasesJobTopic** (1 change)
+
+* Model was added
+
+**UnifiedCommunicationsIntegration** (1 change)
+
+* Enum value RingCentral was added to property integrationPresenceSource
+
+**UserSearchRequest** (1 change)
+
+* Enum value RingCentral was added to property integrationPresenceSource
+
+**ArchitectJobMessage** (2 changes)
+
+* Enum value Unknown was added to property type
+* Optional property details was added
+
+**ArchitectJobMessageDetail** (1 change)
+
+* Model was added
+
+**AggregatedHistoricalExportJobStatus** (1 change)
+
+* Model was added
+
+**CsvExportErrorDetails** (1 change)
+
+* Model was added
+
+**AggregatedHistoricalExportJobResponse** (1 change)
+
+* Model was added
+
+**AggregatedExportJobRequest** (1 change)
+
+* Model was added
+
+**AggregatedSessionExportJobStatus** (1 change)
+
+* Model was added
+
+**AggregatedSessionExportJobResponse** (1 change)
+
+* Model was added
+
+**AggregatedSnapshotExportJobStatus** (1 change)
+
+* Model was added
+
+**AggregatedSnapshotExportJobResponse** (1 change)
+
+* Model was added
+
+**AggregatedExportSnapshotJobRequest** (1 change)
+
+* Model was added
+
+**LearningAssignment** (1 change)
+
+* Optional property dateCompleted was added
+
+**CaseOwnerUpdate** (1 change)
+
+* Model was added
+
+**CaseQueryJobError** (1 change)
+
+* Model was added
+
+**CaseQueryJobResponse** (1 change)
+
+* Model was added
+
+**CaseQueryJobResultsResponse** (1 change)
+
+* Model was added
+
+**CaseQueryJobCreate** (1 change)
+
+* Model was added
+
+**CaseQueryJobFilter** (1 change)
+
+* Model was added
+
+**CaseQueryJobSort** (1 change)
+
+* Model was added
+
+**BatchGetCustomerIntentsRequest** (1 change)
+
+* Model was added
+
+**ContinuousForecastTimeSeries** (1 change)
+
+* Model was added
+
+**ContinuousForecastWeeks** (1 change)
+
+* Model was added
+
+**SessionPlanningGroups** (1 change)
 
 * Model was added
 
 
-# Point Changes (8 changes)
+# Point Changes (15 changes)
 
-**POST /api/v2/businessrules/decisiontables/{tableId}/execute** (1 change)
-
-* Description was changed
-
-**POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/execute** (1 change)
-
-* Description was changed
-
-**PATCH /api/v2/businessrules/decisiontables/{tableId}/imports/{importJobId}** (2 changes)
-
-* Description was changed
-* Response 200 was changed from successful operation to Import job cancelled, or already cancelled (idempotent no-op)
-
-**GET /api/v2/casemanagement/cases/{caseId}** (1 change)
-
-* Description was changed for parameter expands
-
-**GET /api/v2/casemanagement/cases/references/{referenceId}** (1 change)
-
-* Description was changed for parameter expands
-
-**GET /api/v2/presence/definitions** (1 change)
+**POST /api/v2/speechandtextanalytics/topics/testphrase/jobs** (1 change)
 
 * Summary was changed
 
-**GET /api/v2/flows** (1 change)
+**PATCH /api/v2/users/{userId}** (1 change)
 
-* Description was changed for parameter id
+* Description was changed
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Description was changed
+
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Summary was changed
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}** (1 change)
+
+* Description was changed
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits** (1 change)
+
+* Description was changed
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits** (1 change)
+
+* Description was changed
+
+**PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values** (1 change)
+
+* Description was changed
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Summary was changed
+
+**DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Summary was changed
+
+**PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}** (1 change)
+
+* Summary was changed

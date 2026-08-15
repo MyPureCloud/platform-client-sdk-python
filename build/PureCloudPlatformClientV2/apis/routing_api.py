@@ -789,7 +789,6 @@ class RoutingApi(object):
         """
         Delete a custom Key Performance Indicator.
         
-	    delete_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4550,7 +4549,6 @@ class RoutingApi(object):
         """
         Retrieve a single Key Performance Indicator.
         
-	    get_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4710,7 +4708,6 @@ class RoutingApi(object):
         """
         Get a list of Key Performance Indicators Types available.
         
-	    get_routing_predictors_keyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9173,7 +9170,6 @@ class RoutingApi(object):
         """
         Update a custom Key Performance Indicator.
         
-	    patch_routing_predictors_keyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11711,7 +11707,6 @@ class RoutingApi(object):
         """
         Create a custom Key Performance Indicator.
         
-	    post_routing_predictors_keyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

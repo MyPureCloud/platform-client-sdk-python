@@ -35,7 +35,6 @@ if TYPE_CHECKING:
     from . import CalibrationAssignment
     from . import EvaluationAssignment
     from . import IntegrationExport
-    from . import MediaTranscription
     from . import MeteredAssignmentByAgent
     from . import MeteredEvaluationAssignment
     from . import RetentionDuration
@@ -63,7 +62,6 @@ class CrossPlatformPolicyActions(object):
             'assign_metered_assignment_by_agent': 'list[MeteredAssignmentByAgent]',
             'assign_calibrations': 'list[CalibrationAssignment]',
             'retention_duration': 'RetentionDuration',
-            'media_transcriptions': 'list[MediaTranscription]',
             'integration_export': 'IntegrationExport'
         }
 
@@ -76,7 +74,6 @@ class CrossPlatformPolicyActions(object):
             'assign_metered_assignment_by_agent': 'assignMeteredAssignmentByAgent',
             'assign_calibrations': 'assignCalibrations',
             'retention_duration': 'retentionDuration',
-            'media_transcriptions': 'mediaTranscriptions',
             'integration_export': 'integrationExport'
         }
 
@@ -88,7 +85,6 @@ class CrossPlatformPolicyActions(object):
         self._assign_metered_assignment_by_agent = None
         self._assign_calibrations = None
         self._retention_duration = None
-        self._media_transcriptions = None
         self._integration_export = None
 
     @property
@@ -282,30 +278,6 @@ class CrossPlatformPolicyActions(object):
         
 
         self._retention_duration = retention_duration
-
-    @property
-    def media_transcriptions(self) -> List['MediaTranscription']:
-        """
-        Gets the media_transcriptions of this CrossPlatformPolicyActions.
-
-
-        :return: The media_transcriptions of this CrossPlatformPolicyActions.
-        :rtype: list[MediaTranscription]
-        """
-        return self._media_transcriptions
-
-    @media_transcriptions.setter
-    def media_transcriptions(self, media_transcriptions: List['MediaTranscription']) -> None:
-        """
-        Sets the media_transcriptions of this CrossPlatformPolicyActions.
-
-
-        :param media_transcriptions: The media_transcriptions of this CrossPlatformPolicyActions.
-        :type: list[MediaTranscription]
-        """
-        
-
-        self._media_transcriptions = media_transcriptions
 
     @property
     def integration_export(self) -> 'IntegrationExport':

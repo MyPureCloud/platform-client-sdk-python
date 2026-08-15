@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import Timeseries
+    from . import ContinuousForecastTimeSeries
 
 class QuarterHourly(object):
     """
@@ -50,7 +50,7 @@ class QuarterHourly(object):
         """
         self.swagger_types = {
             'download_urls': 'list[str]',
-            'download_result': 'list[Timeseries]'
+            'download_result': 'list[ContinuousForecastTimeSeries]'
         }
 
         self.attribute_map = {
@@ -86,24 +86,24 @@ class QuarterHourly(object):
         self._download_urls = download_urls
 
     @property
-    def download_result(self) -> List['Timeseries']:
+    def download_result(self) -> List['ContinuousForecastTimeSeries']:
         """
         Gets the download_result of this QuarterHourly.
         Result will always come via downloadUrls; however the schema is included for documentation
 
         :return: The download_result of this QuarterHourly.
-        :rtype: list[Timeseries]
+        :rtype: list[ContinuousForecastTimeSeries]
         """
         return self._download_result
 
     @download_result.setter
-    def download_result(self, download_result: List['Timeseries']) -> None:
+    def download_result(self, download_result: List['ContinuousForecastTimeSeries']) -> None:
         """
         Sets the download_result of this QuarterHourly.
         Result will always come via downloadUrls; however the schema is included for documentation
 
         :param download_result: The download_result of this QuarterHourly.
-        :type: list[Timeseries]
+        :type: list[ContinuousForecastTimeSeries]
         """
         
 

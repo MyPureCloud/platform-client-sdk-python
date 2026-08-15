@@ -98,7 +98,7 @@ class TimeOffLimit(object):
     def granularity(self) -> str:
         """
         Gets the granularity of this TimeOffLimit.
-        Granularity choice for the time off limit
+        Deprecated. Granularity choice for the time off limit
 
         :return: The granularity of this TimeOffLimit.
         :rtype: str
@@ -109,7 +109,7 @@ class TimeOffLimit(object):
     def granularity(self, granularity: str) -> None:
         """
         Sets the granularity of this TimeOffLimit.
-        Granularity choice for the time off limit
+        Deprecated. Granularity choice for the time off limit
 
         :param granularity: The granularity of this TimeOffLimit.
         :type: str
@@ -127,7 +127,7 @@ class TimeOffLimit(object):
     def default_limit_minutes(self) -> int:
         """
         Gets the default_limit_minutes of this TimeOffLimit.
-        The default time off limit value in minutes per granularity interval
+        Deprecated. The default time off limit value in minutes per granularity interval
 
         :return: The default_limit_minutes of this TimeOffLimit.
         :rtype: int
@@ -138,7 +138,7 @@ class TimeOffLimit(object):
     def default_limit_minutes(self, default_limit_minutes: int) -> None:
         """
         Sets the default_limit_minutes of this TimeOffLimit.
-        The default time off limit value in minutes per granularity interval
+        Deprecated. The default time off limit value in minutes per granularity interval
 
         :param default_limit_minutes: The default_limit_minutes of this TimeOffLimit.
         :type: int
@@ -151,7 +151,7 @@ class TimeOffLimit(object):
     def metadata(self) -> 'WfmVersionedEntityMetadata':
         """
         Gets the metadata of this TimeOffLimit.
-        Version metadata for the time off limit
+        Deprecated. Version metadata for the time off limit
 
         :return: The metadata of this TimeOffLimit.
         :rtype: WfmVersionedEntityMetadata
@@ -162,7 +162,7 @@ class TimeOffLimit(object):
     def metadata(self, metadata: 'WfmVersionedEntityMetadata') -> None:
         """
         Sets the metadata of this TimeOffLimit.
-        Version metadata for the time off limit
+        Deprecated. Version metadata for the time off limit
 
         :param metadata: The metadata of this TimeOffLimit.
         :type: WfmVersionedEntityMetadata

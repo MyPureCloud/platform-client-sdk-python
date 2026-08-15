@@ -1559,7 +1559,7 @@ except ApiException as e:
 | **jid** | [**list[str]**](str)| jid | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
-| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 
 ### Return type
 
@@ -1753,7 +1753,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
-| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 | **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 100 | [optional]  |
 | **state** | **str**| Search for a user with this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, deleted |
 
@@ -2309,7 +2309,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes |
-| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 
 ### Return type
 
@@ -2974,7 +2974,7 @@ except ApiException as e:
 | **jabber_id** | [**list[str]**](str)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
-| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 | **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 5 | [optional]  |
 | **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 
@@ -3657,7 +3657,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
-| **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 | **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 100 | [optional]  |
 
 ### Return type
@@ -3759,7 +3759,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ASC, DESC |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
-| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 | **user_custom_attribute_schema_ids** | [**list[str]**](str)| Gets custom user attribute values for given schemas set for user. This parameter will only be used when customAttributes is provided as an \&quot;expand\&quot;. The maximum number of schemaIds that can be requested is 5 | [optional]  |
 | **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 
@@ -3813,7 +3813,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
 | **expand** | [**list[str]**](str)| expand | [optional]  |
-| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+| **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight, RingCentral |
 
 ### Return type
 
@@ -3870,6 +3870,8 @@ This endpoint does not need any parameters.
 
 
 Update user
+
+Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
 
 Wraps PATCH /api/v2/users/{userId} 
 
@@ -6658,4 +6660,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

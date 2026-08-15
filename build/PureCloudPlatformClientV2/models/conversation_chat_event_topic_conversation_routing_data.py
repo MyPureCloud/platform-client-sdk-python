@@ -54,7 +54,8 @@ class ConversationChatEventTopicConversationRoutingData(object):
             'language': 'ConversationChatEventTopicUriReference',
             'priority': 'int',
             'skills': 'list[ConversationChatEventTopicUriReference]',
-            'scored_agents': 'list[ConversationChatEventTopicScoredAgent]'
+            'scored_agents': 'list[ConversationChatEventTopicScoredAgent]',
+            'skill_expression_id': 'ConversationChatEventTopicUriReference'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class ConversationChatEventTopicConversationRoutingData(object):
             'language': 'language',
             'priority': 'priority',
             'skills': 'skills',
-            'scored_agents': 'scoredAgents'
+            'scored_agents': 'scoredAgents',
+            'skill_expression_id': 'skillExpressionId'
         }
 
         self._queue = None
@@ -70,6 +72,7 @@ class ConversationChatEventTopicConversationRoutingData(object):
         self._priority = None
         self._skills = None
         self._scored_agents = None
+        self._skill_expression_id = None
 
     @property
     def queue(self) -> 'ConversationChatEventTopicUriReference':
@@ -190,6 +193,30 @@ class ConversationChatEventTopicConversationRoutingData(object):
         
 
         self._scored_agents = scored_agents
+
+    @property
+    def skill_expression_id(self) -> 'ConversationChatEventTopicUriReference':
+        """
+        Gets the skill_expression_id of this ConversationChatEventTopicConversationRoutingData.
+        A UriReference for a resource
+
+        :return: The skill_expression_id of this ConversationChatEventTopicConversationRoutingData.
+        :rtype: ConversationChatEventTopicUriReference
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: 'ConversationChatEventTopicUriReference') -> None:
+        """
+        Sets the skill_expression_id of this ConversationChatEventTopicConversationRoutingData.
+        A UriReference for a resource
+
+        :param skill_expression_id: The skill_expression_id of this ConversationChatEventTopicConversationRoutingData.
+        :type: ConversationChatEventTopicUriReference
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     def to_dict(self):
         """

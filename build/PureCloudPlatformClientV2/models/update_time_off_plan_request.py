@@ -85,7 +85,7 @@ class UpdateTimeOffPlanRequest(object):
     def name(self) -> str:
         """
         Gets the name of this UpdateTimeOffPlanRequest.
-        The name of this time off plan.
+        Deprecated. The name of this time off plan.
 
         :return: The name of this UpdateTimeOffPlanRequest.
         :rtype: str
@@ -96,7 +96,7 @@ class UpdateTimeOffPlanRequest(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this UpdateTimeOffPlanRequest.
-        The name of this time off plan.
+        Deprecated. The name of this time off plan.
 
         :param name: The name of this UpdateTimeOffPlanRequest.
         :type: str
@@ -109,7 +109,7 @@ class UpdateTimeOffPlanRequest(object):
     def activity_code_ids(self) -> 'SetWrapperString':
         """
         Gets the activity_code_ids of this UpdateTimeOffPlanRequest.
-        The set of activity code IDs to associate with this time off plan.
+        Deprecated. The set of activity code IDs to associate with this time off plan.
 
         :return: The activity_code_ids of this UpdateTimeOffPlanRequest.
         :rtype: SetWrapperString
@@ -120,7 +120,7 @@ class UpdateTimeOffPlanRequest(object):
     def activity_code_ids(self, activity_code_ids: 'SetWrapperString') -> None:
         """
         Sets the activity_code_ids of this UpdateTimeOffPlanRequest.
-        The set of activity code IDs to associate with this time off plan.
+        Deprecated. The set of activity code IDs to associate with this time off plan.
 
         :param activity_code_ids: The activity_code_ids of this UpdateTimeOffPlanRequest.
         :type: SetWrapperString
@@ -133,7 +133,7 @@ class UpdateTimeOffPlanRequest(object):
     def time_off_limit_ids(self) -> 'SetWrapperString':
         """
         Gets the time_off_limit_ids of this UpdateTimeOffPlanRequest.
-        The set of time off limit IDs to associate with this time off plan.
+        Deprecated. The set of time off limit IDs to associate with this time off plan.
 
         :return: The time_off_limit_ids of this UpdateTimeOffPlanRequest.
         :rtype: SetWrapperString
@@ -144,7 +144,7 @@ class UpdateTimeOffPlanRequest(object):
     def time_off_limit_ids(self, time_off_limit_ids: 'SetWrapperString') -> None:
         """
         Sets the time_off_limit_ids of this UpdateTimeOffPlanRequest.
-        The set of time off limit IDs to associate with this time off plan.
+        Deprecated. The set of time off limit IDs to associate with this time off plan.
 
         :param time_off_limit_ids: The time_off_limit_ids of this UpdateTimeOffPlanRequest.
         :type: SetWrapperString
@@ -157,7 +157,7 @@ class UpdateTimeOffPlanRequest(object):
     def auto_approval_rule(self) -> str:
         """
         Gets the auto_approval_rule of this UpdateTimeOffPlanRequest.
-        Auto approval rule for the time off plan.
+        Deprecated. Auto approval rule for the time off plan.
 
         :return: The auto_approval_rule of this UpdateTimeOffPlanRequest.
         :rtype: str
@@ -168,7 +168,7 @@ class UpdateTimeOffPlanRequest(object):
     def auto_approval_rule(self, auto_approval_rule: str) -> None:
         """
         Sets the auto_approval_rule of this UpdateTimeOffPlanRequest.
-        Auto approval rule for the time off plan.
+        Deprecated. Auto approval rule for the time off plan.
 
         :param auto_approval_rule: The auto_approval_rule of this UpdateTimeOffPlanRequest.
         :type: str
@@ -186,7 +186,7 @@ class UpdateTimeOffPlanRequest(object):
     def days_before_start_to_expire_from_waitlist(self) -> int:
         """
         Gets the days_before_start_to_expire_from_waitlist of this UpdateTimeOffPlanRequest.
-        The number of days before the time off request start date for when the request will be expired from the waitlist.
+        Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
 
         :return: The days_before_start_to_expire_from_waitlist of this UpdateTimeOffPlanRequest.
         :rtype: int
@@ -197,7 +197,7 @@ class UpdateTimeOffPlanRequest(object):
     def days_before_start_to_expire_from_waitlist(self, days_before_start_to_expire_from_waitlist: int) -> None:
         """
         Sets the days_before_start_to_expire_from_waitlist of this UpdateTimeOffPlanRequest.
-        The number of days before the time off request start date for when the request will be expired from the waitlist.
+        Deprecated. The number of days before the time off request start date for when the request will be expired from the waitlist.
 
         :param days_before_start_to_expire_from_waitlist: The days_before_start_to_expire_from_waitlist of this UpdateTimeOffPlanRequest.
         :type: int
@@ -210,7 +210,7 @@ class UpdateTimeOffPlanRequest(object):
     def hris_time_off_type(self) -> 'ValueWrapperHrisTimeOffType':
         """
         Gets the hris_time_off_type of this UpdateTimeOffPlanRequest.
-        Time off type, if this time off plan is associated with the integration.
+        Deprecated Time off type, if this time off plan is associated with the integration.
 
         :return: The hris_time_off_type of this UpdateTimeOffPlanRequest.
         :rtype: ValueWrapperHrisTimeOffType
@@ -221,7 +221,7 @@ class UpdateTimeOffPlanRequest(object):
     def hris_time_off_type(self, hris_time_off_type: 'ValueWrapperHrisTimeOffType') -> None:
         """
         Sets the hris_time_off_type of this UpdateTimeOffPlanRequest.
-        Time off type, if this time off plan is associated with the integration.
+        Deprecated Time off type, if this time off plan is associated with the integration.
 
         :param hris_time_off_type: The hris_time_off_type of this UpdateTimeOffPlanRequest.
         :type: ValueWrapperHrisTimeOffType
@@ -234,7 +234,7 @@ class UpdateTimeOffPlanRequest(object):
     def active(self) -> bool:
         """
         Gets the active of this UpdateTimeOffPlanRequest.
-        Whether this time off plan should be used by agents.
+        Deprecated. Whether this time off plan should be used by agents.
 
         :return: The active of this UpdateTimeOffPlanRequest.
         :rtype: bool
@@ -245,7 +245,7 @@ class UpdateTimeOffPlanRequest(object):
     def active(self, active: bool) -> None:
         """
         Sets the active of this UpdateTimeOffPlanRequest.
-        Whether this time off plan should be used by agents.
+        Deprecated. Whether this time off plan should be used by agents.
 
         :param active: The active of this UpdateTimeOffPlanRequest.
         :type: bool
@@ -258,7 +258,7 @@ class UpdateTimeOffPlanRequest(object):
     def metadata(self) -> 'WfmVersionedEntityMetadata':
         """
         Gets the metadata of this UpdateTimeOffPlanRequest.
-        Version metadata for the time off plan
+        Deprecated. Version metadata for the time off plan
 
         :return: The metadata of this UpdateTimeOffPlanRequest.
         :rtype: WfmVersionedEntityMetadata
@@ -269,7 +269,7 @@ class UpdateTimeOffPlanRequest(object):
     def metadata(self, metadata: 'WfmVersionedEntityMetadata') -> None:
         """
         Sets the metadata of this UpdateTimeOffPlanRequest.
-        Version metadata for the time off plan
+        Deprecated. Version metadata for the time off plan
 
         :param metadata: The metadata of this UpdateTimeOffPlanRequest.
         :type: WfmVersionedEntityMetadata

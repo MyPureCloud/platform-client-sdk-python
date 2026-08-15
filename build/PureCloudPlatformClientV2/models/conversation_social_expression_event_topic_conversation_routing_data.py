@@ -54,7 +54,8 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
             'language': 'ConversationSocialExpressionEventTopicUriReference',
             'priority': 'int',
             'skills': 'list[ConversationSocialExpressionEventTopicUriReference]',
-            'scored_agents': 'list[ConversationSocialExpressionEventTopicScoredAgent]'
+            'scored_agents': 'list[ConversationSocialExpressionEventTopicScoredAgent]',
+            'skill_expression_id': 'ConversationSocialExpressionEventTopicUriReference'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
             'language': 'language',
             'priority': 'priority',
             'skills': 'skills',
-            'scored_agents': 'scoredAgents'
+            'scored_agents': 'scoredAgents',
+            'skill_expression_id': 'skillExpressionId'
         }
 
         self._queue = None
@@ -70,6 +72,7 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
         self._priority = None
         self._skills = None
         self._scored_agents = None
+        self._skill_expression_id = None
 
     @property
     def queue(self) -> 'ConversationSocialExpressionEventTopicUriReference':
@@ -190,6 +193,30 @@ class ConversationSocialExpressionEventTopicConversationRoutingData(object):
         
 
         self._scored_agents = scored_agents
+
+    @property
+    def skill_expression_id(self) -> 'ConversationSocialExpressionEventTopicUriReference':
+        """
+        Gets the skill_expression_id of this ConversationSocialExpressionEventTopicConversationRoutingData.
+        A UriReference for a resource
+
+        :return: The skill_expression_id of this ConversationSocialExpressionEventTopicConversationRoutingData.
+        :rtype: ConversationSocialExpressionEventTopicUriReference
+        """
+        return self._skill_expression_id
+
+    @skill_expression_id.setter
+    def skill_expression_id(self, skill_expression_id: 'ConversationSocialExpressionEventTopicUriReference') -> None:
+        """
+        Sets the skill_expression_id of this ConversationSocialExpressionEventTopicConversationRoutingData.
+        A UriReference for a resource
+
+        :param skill_expression_id: The skill_expression_id of this ConversationSocialExpressionEventTopicConversationRoutingData.
+        :type: ConversationSocialExpressionEventTopicUriReference
+        """
+        
+
+        self._skill_expression_id = skill_expression_id
 
     def to_dict(self):
         """

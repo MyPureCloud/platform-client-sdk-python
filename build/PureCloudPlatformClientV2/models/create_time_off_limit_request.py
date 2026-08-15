@@ -63,7 +63,7 @@ class CreateTimeOffLimitRequest(object):
     def granularity(self) -> str:
         """
         Gets the granularity of this CreateTimeOffLimitRequest.
-        Granularity choice for time off limit. If not specified, 'Daily' is assumed
+        Deprecated. Granularity choice for time off limit. If not specified, 'Daily' is assumed
 
         :return: The granularity of this CreateTimeOffLimitRequest.
         :rtype: str
@@ -74,7 +74,7 @@ class CreateTimeOffLimitRequest(object):
     def granularity(self, granularity: str) -> None:
         """
         Sets the granularity of this CreateTimeOffLimitRequest.
-        Granularity choice for time off limit. If not specified, 'Daily' is assumed
+        Deprecated. Granularity choice for time off limit. If not specified, 'Daily' is assumed
 
         :param granularity: The granularity of this CreateTimeOffLimitRequest.
         :type: str
@@ -92,7 +92,7 @@ class CreateTimeOffLimitRequest(object):
     def default_limit_minutes(self) -> int:
         """
         Gets the default_limit_minutes of this CreateTimeOffLimitRequest.
-        The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
+        Deprecated. The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
 
         :return: The default_limit_minutes of this CreateTimeOffLimitRequest.
         :rtype: int
@@ -103,7 +103,7 @@ class CreateTimeOffLimitRequest(object):
     def default_limit_minutes(self, default_limit_minutes: int) -> None:
         """
         Sets the default_limit_minutes of this CreateTimeOffLimitRequest.
-        The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
+        Deprecated. The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
 
         :param default_limit_minutes: The default_limit_minutes of this CreateTimeOffLimitRequest.
         :type: int

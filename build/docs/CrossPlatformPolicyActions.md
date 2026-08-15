@@ -14,9 +14,8 @@
 | **assign_metered_assignment_by_agent** | [list[MeteredAssignmentByAgent]](MeteredAssignmentByAgent) |  | [optional] |
 | **assign_calibrations** | [list[CalibrationAssignment]](CalibrationAssignment) |  | [optional] |
 | **retention_duration** | [RetentionDuration](RetentionDuration) |  | [optional] |
-| **media_transcriptions** | [list[MediaTranscription]](MediaTranscription) |  | [optional] |
 | **integration_export** | [IntegrationExport](IntegrationExport) | Policy action for exporting recordings using an integration to 3rd party s3. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 263.0.0_
+_PureCloudPlatformClientV2 264.0.0_

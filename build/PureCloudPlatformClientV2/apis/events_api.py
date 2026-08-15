@@ -140,7 +140,6 @@ class EventsApi(object):
         """
         Publish Predictive Routing Custom Kpi Attribution Batch Events
         
-	    post_events_routing_customkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

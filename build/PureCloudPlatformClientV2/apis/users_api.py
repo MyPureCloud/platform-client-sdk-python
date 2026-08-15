@@ -6185,7 +6185,7 @@ class UsersApi(object):
     def patch_user(self, user_id: str, body: 'UpdateUser', **kwargs) -> 'User':
         """
         Update user
-        
+        Updating some fields, like a user's extension, requires the telephony:extension:assign permission for the relevant division. Without it, the request will return 403 Forbidden.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

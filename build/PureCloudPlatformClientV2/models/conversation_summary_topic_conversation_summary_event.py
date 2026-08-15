@@ -62,6 +62,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'queue_id': 'str',
             'participants': 'list[ConversationSummaryTopicConversationSummaryParticipant]',
             'communication_ids': 'list[str]',
+            'latest_communication_id': 'str',
             'created_date': 'datetime',
             'message_type': 'str',
             'media_type': 'str',
@@ -88,6 +89,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'queue_id': 'queueId',
             'participants': 'participants',
             'communication_ids': 'communicationIds',
+            'latest_communication_id': 'latestCommunicationId',
             'created_date': 'createdDate',
             'message_type': 'messageType',
             'media_type': 'mediaType',
@@ -113,6 +115,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         self._queue_id = None
         self._participants = None
         self._communication_ids = None
+        self._latest_communication_id = None
         self._created_date = None
         self._message_type = None
         self._media_type = None
@@ -228,6 +231,30 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         
 
         self._communication_ids = communication_ids
+
+    @property
+    def latest_communication_id(self) -> str:
+        """
+        Gets the latest_communication_id of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :return: The latest_communication_id of this ConversationSummaryTopicConversationSummaryEvent.
+        :rtype: str
+        """
+        return self._latest_communication_id
+
+    @latest_communication_id.setter
+    def latest_communication_id(self, latest_communication_id: str) -> None:
+        """
+        Sets the latest_communication_id of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :param latest_communication_id: The latest_communication_id of this ConversationSummaryTopicConversationSummaryEvent.
+        :type: str
+        """
+        
+
+        self._latest_communication_id = latest_communication_id
 
     @property
     def created_date(self) -> datetime:

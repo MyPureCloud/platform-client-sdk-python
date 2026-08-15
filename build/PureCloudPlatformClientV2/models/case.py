@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import CaseUserReference
     from . import CaseplanReference
     from . import CustomerIntentReference
+    from . import FailureReason
     from . import StarrableDivision
 
 class Case(object):
@@ -73,6 +74,7 @@ class Case(object):
             'customer_intent': 'CustomerIntentReference',
             'creation_status': 'str',
             'ttl_seconds': 'int',
+            'failure_reason': 'FailureReason',
             'self_uri': 'str'
         }
 
@@ -97,6 +99,7 @@ class Case(object):
             'customer_intent': 'customerIntent',
             'creation_status': 'creationStatus',
             'ttl_seconds': 'ttlSeconds',
+            'failure_reason': 'failureReason',
             'self_uri': 'selfUri'
         }
 
@@ -120,6 +123,7 @@ class Case(object):
         self._customer_intent = None
         self._creation_status = None
         self._ttl_seconds = None
+        self._failure_reason = None
         self._self_uri = None
 
     @property
@@ -616,6 +620,30 @@ class Case(object):
         
 
         self._ttl_seconds = ttl_seconds
+
+    @property
+    def failure_reason(self) -> 'FailureReason':
+        """
+        Gets the failure_reason of this Case.
+        The reason the Case failed, if applicable.
+
+        :return: The failure_reason of this Case.
+        :rtype: FailureReason
+        """
+        return self._failure_reason
+
+    @failure_reason.setter
+    def failure_reason(self, failure_reason: 'FailureReason') -> None:
+        """
+        Sets the failure_reason of this Case.
+        The reason the Case failed, if applicable.
+
+        :param failure_reason: The failure_reason of this Case.
+        :type: FailureReason
+        """
+        
+
+        self._failure_reason = failure_reason
 
     @property
     def self_uri(self) -> str:

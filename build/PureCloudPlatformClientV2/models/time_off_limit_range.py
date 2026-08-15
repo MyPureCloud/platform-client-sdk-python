@@ -66,7 +66,7 @@ class TimeOffLimitRange(object):
     def start_date(self) -> date:
         """
         Gets the start_date of this TimeOffLimitRange.
-        Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        Deprecated. Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :return: The start_date of this TimeOffLimitRange.
         :rtype: date
@@ -77,7 +77,7 @@ class TimeOffLimitRange(object):
     def start_date(self, start_date: date) -> None:
         """
         Sets the start_date of this TimeOffLimitRange.
-        Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        Deprecated. Start date of the range. The end date is determined by 'granularity' and the size of 'limitMinutesPerInterval'. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
         :param start_date: The start_date of this TimeOffLimitRange.
         :type: date
@@ -90,7 +90,7 @@ class TimeOffLimitRange(object):
     def granularity(self) -> str:
         """
         Gets the granularity of this TimeOffLimitRange.
-        Granularity choice for the time-off limit
+        Deprecated. Granularity choice for the time-off limit
 
         :return: The granularity of this TimeOffLimitRange.
         :rtype: str
@@ -101,7 +101,7 @@ class TimeOffLimitRange(object):
     def granularity(self, granularity: str) -> None:
         """
         Sets the granularity of this TimeOffLimitRange.
-        Granularity choice for the time-off limit
+        Deprecated. Granularity choice for the time-off limit
 
         :param granularity: The granularity of this TimeOffLimitRange.
         :type: str
@@ -119,7 +119,7 @@ class TimeOffLimitRange(object):
     def limit_minutes_per_interval(self) -> List[int]:
         """
         Gets the limit_minutes_per_interval of this TimeOffLimitRange.
-        The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value
+        Deprecated. The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value
 
         :return: The limit_minutes_per_interval of this TimeOffLimitRange.
         :rtype: list[int]
@@ -130,7 +130,7 @@ class TimeOffLimitRange(object):
     def limit_minutes_per_interval(self, limit_minutes_per_interval: List[int]) -> None:
         """
         Sets the limit_minutes_per_interval of this TimeOffLimitRange.
-        The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value
+        Deprecated. The list of time off limit values in minutes per granularity interval. If 'null' is specified, then interval specific value is cleared. Such interval will have 'defaultLimitMinutes' value
 
         :param limit_minutes_per_interval: The limit_minutes_per_interval of this TimeOffLimitRange.
         :type: list[int]
