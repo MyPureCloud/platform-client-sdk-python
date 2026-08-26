@@ -55,8 +55,8 @@ class ScreenMonitoringSession(object):
             'participant_id': 'str',
             'monitoring_type': 'str',
             'date_created': 'datetime',
-            'screen_monitoring_id': 'str',
-            'self_uri': 'str'
+            'self_uri': 'str',
+            'screen_monitoring_id': 'str'
         }
 
         self.attribute_map = {
@@ -66,8 +66,8 @@ class ScreenMonitoringSession(object):
             'participant_id': 'participantId',
             'monitoring_type': 'monitoringType',
             'date_created': 'dateCreated',
-            'screen_monitoring_id': 'screenMonitoringId',
-            'self_uri': 'selfUri'
+            'self_uri': 'selfUri',
+            'screen_monitoring_id': 'screenMonitoringId'
         }
 
         self._source_user = None
@@ -76,8 +76,8 @@ class ScreenMonitoringSession(object):
         self._participant_id = None
         self._monitoring_type = None
         self._date_created = None
-        self._screen_monitoring_id = None
         self._self_uri = None
+        self._screen_monitoring_id = None
 
     @property
     def source_user(self) -> 'AddressableEntityRef':
@@ -229,30 +229,6 @@ class ScreenMonitoringSession(object):
         self._date_created = date_created
 
     @property
-    def screen_monitoring_id(self) -> str:
-        """
-        Gets the screen_monitoring_id of this ScreenMonitoringSession.
-        The unique identifier for this screen monitoring session
-
-        :return: The screen_monitoring_id of this ScreenMonitoringSession.
-        :rtype: str
-        """
-        return self._screen_monitoring_id
-
-    @screen_monitoring_id.setter
-    def screen_monitoring_id(self, screen_monitoring_id: str) -> None:
-        """
-        Sets the screen_monitoring_id of this ScreenMonitoringSession.
-        The unique identifier for this screen monitoring session
-
-        :param screen_monitoring_id: The screen_monitoring_id of this ScreenMonitoringSession.
-        :type: str
-        """
-        
-
-        self._screen_monitoring_id = screen_monitoring_id
-
-    @property
     def self_uri(self) -> str:
         """
         Gets the self_uri of this ScreenMonitoringSession.
@@ -275,6 +251,30 @@ class ScreenMonitoringSession(object):
         
 
         self._self_uri = self_uri
+
+    @property
+    def screen_monitoring_id(self) -> str:
+        """
+        Gets the screen_monitoring_id of this ScreenMonitoringSession.
+        The unique identifier for this screen monitoring session
+
+        :return: The screen_monitoring_id of this ScreenMonitoringSession.
+        :rtype: str
+        """
+        return self._screen_monitoring_id
+
+    @screen_monitoring_id.setter
+    def screen_monitoring_id(self, screen_monitoring_id: str) -> None:
+        """
+        Sets the screen_monitoring_id of this ScreenMonitoringSession.
+        The unique identifier for this screen monitoring session
+
+        :param screen_monitoring_id: The screen_monitoring_id of this ScreenMonitoringSession.
+        :type: str
+        """
+        
+
+        self._screen_monitoring_id = screen_monitoring_id
 
     def to_dict(self):
         """

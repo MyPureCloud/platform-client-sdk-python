@@ -65,7 +65,7 @@ class QuarterHourly(object):
     def download_urls(self) -> List[str]:
         """
         Gets the download_urls of this QuarterHourly.
-        List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete
+        List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line
 
         :return: The download_urls of this QuarterHourly.
         :rtype: list[str]
@@ -76,7 +76,7 @@ class QuarterHourly(object):
     def download_urls(self, download_urls: List[str]) -> None:
         """
         Sets the download_urls of this QuarterHourly.
-        List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete
+        List of download URLs to fetch the result of quarter hour time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line
 
         :param download_urls: The download_urls of this QuarterHourly.
         :type: list[str]

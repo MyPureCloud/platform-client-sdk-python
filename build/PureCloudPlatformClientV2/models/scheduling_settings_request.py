@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ScheduleVisibilitySettingsRequest
     from . import ShrinkageOverrides
     from . import ValueWrapperMonthlyPlanningPeriodSettings
     from . import ValueWrapperPlanningPeriodSettings
@@ -56,7 +57,8 @@ class SchedulingSettingsRequest(object):
             'shrinkage_overrides': 'ShrinkageOverrides',
             'planning_period': 'ValueWrapperPlanningPeriodSettings',
             'monthly_planning_period': 'ValueWrapperMonthlyPlanningPeriodSettings',
-            'start_day_of_weekend': 'str'
+            'start_day_of_weekend': 'str',
+            'schedule_visibility': 'ScheduleVisibilitySettingsRequest'
         }
 
         self.attribute_map = {
@@ -65,7 +67,8 @@ class SchedulingSettingsRequest(object):
             'shrinkage_overrides': 'shrinkageOverrides',
             'planning_period': 'planningPeriod',
             'monthly_planning_period': 'monthlyPlanningPeriod',
-            'start_day_of_weekend': 'startDayOfWeekend'
+            'start_day_of_weekend': 'startDayOfWeekend',
+            'schedule_visibility': 'scheduleVisibility'
         }
 
         self._max_occupancy_percent_for_deferred_work = None
@@ -74,6 +77,7 @@ class SchedulingSettingsRequest(object):
         self._planning_period = None
         self._monthly_planning_period = None
         self._start_day_of_weekend = None
+        self._schedule_visibility = None
 
     @property
     def max_occupancy_percent_for_deferred_work(self) -> int:
@@ -223,6 +227,30 @@ class SchedulingSettingsRequest(object):
             self._start_day_of_weekend = "outdated_sdk_version"
         else:
             self._start_day_of_weekend = start_day_of_weekend
+
+    @property
+    def schedule_visibility(self) -> 'ScheduleVisibilitySettingsRequest':
+        """
+        Gets the schedule_visibility of this SchedulingSettingsRequest.
+        Schedule visibility settings for agents
+
+        :return: The schedule_visibility of this SchedulingSettingsRequest.
+        :rtype: ScheduleVisibilitySettingsRequest
+        """
+        return self._schedule_visibility
+
+    @schedule_visibility.setter
+    def schedule_visibility(self, schedule_visibility: 'ScheduleVisibilitySettingsRequest') -> None:
+        """
+        Sets the schedule_visibility of this SchedulingSettingsRequest.
+        Schedule visibility settings for agents
+
+        :param schedule_visibility: The schedule_visibility of this SchedulingSettingsRequest.
+        :type: ScheduleVisibilitySettingsRequest
+        """
+        
+
+        self._schedule_visibility = schedule_visibility
 
     def to_dict(self):
         """

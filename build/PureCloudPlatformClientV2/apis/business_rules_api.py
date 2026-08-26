@@ -50,6 +50,7 @@ from ..models import CoretypeListing
 from ..models import CreateDecisionTableImportJobRequest
 from ..models import CreateDecisionTableRequest
 from ..models import CreateDecisionTableRowRequest
+from ..models import CreateDecisionTableSnapshotRequest
 from ..models import CreateDecisionTableVersionRequest
 from ..models import DecisionTable
 from ..models import DecisionTableExecutionRequest
@@ -66,6 +67,7 @@ from ..models import DecisionTableVersion
 from ..models import DecisionTableVersionListing
 from ..models import ErrorBody
 from ..models import PutDecisionTableRowRequest
+from ..models import RollbackDecisionTableVersionRequest
 from ..models import SearchDecisionTableRowsRequest
 from ..models import UpdateDecisionTableImportJobRequest
 from ..models import UpdateDecisionTableRequest
@@ -475,6 +477,90 @@ class BusinessRulesApi(object):
             path_params['tableVersion'] = params['table_version']
         if 'row_id' in params:
             path_params['rowId'] = params['row_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_businessrules_decisiontable_version_snapshot(self, table_id: str, table_version: int, **kwargs) -> None:
+        """
+        Deletes a decision table version snapshot
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_businessrules_decisiontable_version_snapshot(table_id, table_version, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param int table_version: Table Version (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'table_version']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_businessrules_decisiontable_version_snapshot" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `delete_businessrules_decisiontable_version_snapshot`")
+        # verify the required parameter 'table_version' is set
+        if ('table_version' not in params) or (params['table_version'] is None):
+            raise ValueError("Missing the required parameter `table_version` when calling `delete_businessrules_decisiontable_version_snapshot`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'table_version' in params:
+            path_params['tableVersion'] = params['table_version']
 
         query_params = {}
 
@@ -1284,12 +1370,14 @@ class BusinessRulesApi(object):
         :param str table_id: Table ID (required)
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param str page_size: Number of entities to return. Maximum of 100.
+        :param list[str] status: Filter by version status. Repeatable.
+        :param bool has_snapshot: When true, returns only versions that have snapshot metadata.
         :return: DecisionTableVersionListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['table_id', 'after', 'page_size']
+        all_params = ['table_id', 'after', 'page_size', 'status', 'has_snapshot']
         all_params.append('callback')
 
         params = locals()
@@ -1317,6 +1405,10 @@ class BusinessRulesApi(object):
             query_params['after'] = params['after']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'has_snapshot' in params:
+            query_params['hasSnapshot'] = params['has_snapshot']
 
         header_params = {}
 
@@ -1601,6 +1693,181 @@ class BusinessRulesApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BusinessRulesDataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_businessrules_schema_version(self, schema_id: str, schema_version: str, **kwargs) -> 'BusinessRulesDataSchema':
+        """
+        Get a schema version
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_businessrules_schema_version(schema_id, schema_version, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param str schema_version: Schema version number (required)
+        :return: BusinessRulesDataSchema
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'schema_version']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_businessrules_schema_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_businessrules_schema_version`")
+        # verify the required parameter 'schema_version' is set
+        if ('schema_version' not in params) or (params['schema_version'] is None):
+            raise ValueError("Missing the required parameter `schema_version` when calling `get_businessrules_schema_version`")
+
+
+        resource_path = '/api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion}'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+        if 'schema_version' in params:
+            path_params['schemaVersion'] = params['schema_version']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BusinessRulesDataSchema',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_businessrules_schema_versions(self, schema_id: str, **kwargs) -> 'BusinessRulesDataSchemaListing':
+        """
+        List schema versions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_businessrules_schema_versions(schema_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str schema_id: Schema ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of items per page (must be between 1 and 100)
+        :return: BusinessRulesDataSchemaListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['schema_id', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_businessrules_schema_versions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'schema_id' is set
+        if ('schema_id' not in params) or (params['schema_id'] is None):
+            raise ValueError("Missing the required parameter `schema_id` when calling `get_businessrules_schema_versions`")
+
+        if 'page_size' in params and params['page_size'] > 100: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_businessrules_schema_versions`, must be a value less than or equal to  `100`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_businessrules_schema_versions`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/businessrules/schemas/{schemaId}/versions'.replace('{format}', 'json')
+        path_params = {}
+        if 'schema_id' in params:
+            path_params['schemaId'] = params['schema_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BusinessRulesDataSchemaListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2523,6 +2790,93 @@ class BusinessRulesApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_businessrules_decisiontable_version_rollback(self, table_id: str, table_version: int, **kwargs) -> 'DecisionTableVersion':
+        """
+        Re-publish a superseded decision table version as the current published version
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_businessrules_decisiontable_version_rollback(table_id, table_version, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param int table_version: Table Version (required)
+        :param RollbackDecisionTableVersionRequest body: Rollback request
+        :return: DecisionTableVersion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'table_version', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_businessrules_decisiontable_version_rollback" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `post_businessrules_decisiontable_version_rollback`")
+        # verify the required parameter 'table_version' is set
+        if ('table_version' not in params) or (params['table_version'] is None):
+            raise ValueError("Missing the required parameter `table_version` when calling `post_businessrules_decisiontable_version_rollback`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'table_version' in params:
+            path_params['tableVersion'] = params['table_version']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableVersion',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_businessrules_decisiontable_version_rows(self, table_id: str, table_version: int, body: 'CreateDecisionTableRowRequest', **kwargs) -> 'DecisionTableRow':
         """
         Create a decision table row
@@ -2975,6 +3329,96 @@ class BusinessRulesApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DecisionTableRowListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_businessrules_decisiontable_version_snapshot(self, table_id: str, table_version: int, body: 'CreateDecisionTableSnapshotRequest', **kwargs) -> 'DecisionTableVersion':
+        """
+        Creates a decision table version snapshot
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_businessrules_decisiontable_version_snapshot(table_id, table_version, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str table_id: Table ID (required)
+        :param int table_version: Table Version (required)
+        :param CreateDecisionTableSnapshotRequest body: Snapshot request (required)
+        :return: DecisionTableVersion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['table_id', 'table_version', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_businessrules_decisiontable_version_snapshot" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'table_id' is set
+        if ('table_id' not in params) or (params['table_id'] is None):
+            raise ValueError("Missing the required parameter `table_id` when calling `post_businessrules_decisiontable_version_snapshot`")
+        # verify the required parameter 'table_version' is set
+        if ('table_version' not in params) or (params['table_version'] is None):
+            raise ValueError("Missing the required parameter `table_version` when calling `post_businessrules_decisiontable_version_snapshot`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_businessrules_decisiontable_version_snapshot`")
+
+
+        resource_path = '/api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot'.replace('{format}', 'json')
+        path_params = {}
+        if 'table_id' in params:
+            path_params['tableId'] = params['table_id']
+        if 'table_version' in params:
+            path_params['tableVersion'] = params['table_version']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DecisionTableVersion',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -67,6 +67,7 @@ class TrustGroup(object):
             'roles_enabled': 'bool',
             'include_owners': 'bool',
             'calls_enabled': 'bool',
+            'email': 'str',
             'owners': 'list[User]',
             'date_created': 'datetime',
             'created_by': 'OrgUser'
@@ -88,6 +89,7 @@ class TrustGroup(object):
             'roles_enabled': 'rolesEnabled',
             'include_owners': 'includeOwners',
             'calls_enabled': 'callsEnabled',
+            'email': 'email',
             'owners': 'owners',
             'date_created': 'dateCreated',
             'created_by': 'createdBy'
@@ -108,6 +110,7 @@ class TrustGroup(object):
         self._roles_enabled = None
         self._include_owners = None
         self._calls_enabled = None
+        self._email = None
         self._owners = None
         self._date_created = None
         self._created_by = None
@@ -486,6 +489,30 @@ class TrustGroup(object):
         
 
         self._calls_enabled = calls_enabled
+
+    @property
+    def email(self) -> str:
+        """
+        Gets the email of this TrustGroup.
+        Email address for the group.
+
+        :return: The email of this TrustGroup.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email: str) -> None:
+        """
+        Sets the email of this TrustGroup.
+        Email address for the group.
+
+        :param email: The email of this TrustGroup.
+        :type: str
+        """
+        
+
+        self._email = email
 
     @property
     def owners(self) -> List['User']:

@@ -7272,13 +7272,12 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str message_id: messageId (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :return: MessageData
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['message_id', 'use_normalized_message']
+        all_params = ['message_id']
         all_params.append('callback')
 
         params = locals()
@@ -7302,8 +7301,6 @@ class ConversationsApi(object):
             path_params['messageId'] = params['message_id']
 
         query_params = {}
-        if 'use_normalized_message' in params:
-            query_params['useNormalizedMessage'] = params['use_normalized_message']
 
         header_params = {}
 
@@ -7354,13 +7351,12 @@ class ConversationsApi(object):
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
         :param str message_id: messageId (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :return: MessageData
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'message_id', 'use_normalized_message']
+        all_params = ['conversation_id', 'message_id']
         all_params.append('callback')
 
         params = locals()
@@ -7389,8 +7385,6 @@ class ConversationsApi(object):
             path_params['messageId'] = params['message_id']
 
         query_params = {}
-        if 'use_normalized_message' in params:
-            query_params['useNormalizedMessage'] = params['use_normalized_message']
 
         header_params = {}
 
@@ -21347,13 +21341,12 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str communication_id: communicationId (required)
         :param AdditionalMessage body: Message (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :return: MessageData
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'communication_id', 'body', 'use_normalized_message']
+        all_params = ['conversation_id', 'communication_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -21385,8 +21378,6 @@ class ConversationsApi(object):
             path_params['communicationId'] = params['communication_id']
 
         query_params = {}
-        if 'use_normalized_message' in params:
-            query_params['useNormalizedMessage'] = params['use_normalized_message']
 
         header_params = {}
 
@@ -22132,14 +22123,13 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id:  (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, media)
         :param list[str] body: messageIds
         :return: TextMessageListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['conversation_id', 'use_normalized_message', 'body']
+        all_params = ['conversation_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -22163,8 +22153,6 @@ class ConversationsApi(object):
             path_params['conversationId'] = params['conversation_id']
 
         query_params = {}
-        if 'use_normalized_message' in params:
-            query_params['useNormalizedMessage'] = params['use_normalized_message']
 
         header_params = {}
 
@@ -22654,13 +22642,12 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param SendAgentlessOutboundMessageRequest body: Create agentless outbound messaging request (required)
-        :param bool use_normalized_message: If true, response removes deprecated fields (textBody, messagingTemplate)
         :return: SendAgentlessOutboundMessageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'use_normalized_message']
+        all_params = ['body']
         all_params.append('callback')
 
         params = locals()
@@ -22682,8 +22669,6 @@ class ConversationsApi(object):
         path_params = {}
 
         query_params = {}
-        if 'use_normalized_message' in params:
-            query_params['useNormalizedMessage'] = params['use_normalized_message']
 
         header_params = {}
 

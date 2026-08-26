@@ -11,7 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_alerting_rule**](#delete_alerting_rule) | Delete a rule.|
 |[**get_alerting_alert**](#get_alerting_alert) | Get an alert|
 |[**get_alerting_rule**](#get_alerting_rule) | Get a rule.|
-|[**patch_alerting_alert**](#patch_alerting_alert) | Allows an entity to mute/snooze an alert or update the unread status of the alert.|
+|[**patch_alerting_alert**](#patch_alerting_alert) | Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.|
 |[**patch_alerting_alerts_all**](#patch_alerting_alerts_all) | Updates all alerts|
 |[**patch_alerting_alerts_bulk**](#patch_alerting_alerts_bulk) | Bulk alert updates|
 |[**patch_alerting_rules_bulk**](#patch_alerting_rules_bulk) | Bulk update of notification lists|
@@ -263,9 +263,9 @@ except ApiException as e:
 > [**CommonAlert**](CommonAlert) patch_alerting_alert(alert_id, body=body)
 
 
-Allows an entity to mute/snooze an alert or update the unread status of the alert.
+Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
 
-Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals.
+Snoozing an alert temporarily stop it from resending notifications to individualsas well as other services within Genesys Cloud for a given period.  Muting an alert will only block the notifications to individuals. Closing an alert will mark it as closed.
 
 Wraps PATCH /api/v2/alerting/alerts/{alertId} 
 
@@ -290,7 +290,7 @@ alert_id = 'alert_id_example' # str | Alert ID
 body = PureCloudPlatformClientV2.AlertRequest() # AlertRequest |  (optional)
 
 try:
-    # Allows an entity to mute/snooze an alert or update the unread status of the alert.
+    # Allows an entity to mute/snooze an alert, update the unread status of the alert, or close an alert.
     api_response = api_instance.patch_alerting_alert(alert_id, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -746,4 +746,4 @@ except ApiException as e:
 [**CommonRule**](CommonRule)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

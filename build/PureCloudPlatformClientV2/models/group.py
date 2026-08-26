@@ -66,6 +66,7 @@ class Group(object):
             'roles_enabled': 'bool',
             'include_owners': 'bool',
             'calls_enabled': 'bool',
+            'email': 'str',
             'owners': 'list[User]',
             'self_uri': 'str'
         }
@@ -86,6 +87,7 @@ class Group(object):
             'roles_enabled': 'rolesEnabled',
             'include_owners': 'includeOwners',
             'calls_enabled': 'callsEnabled',
+            'email': 'email',
             'owners': 'owners',
             'self_uri': 'selfUri'
         }
@@ -105,6 +107,7 @@ class Group(object):
         self._roles_enabled = None
         self._include_owners = None
         self._calls_enabled = None
+        self._email = None
         self._owners = None
         self._self_uri = None
 
@@ -482,6 +485,30 @@ class Group(object):
         
 
         self._calls_enabled = calls_enabled
+
+    @property
+    def email(self) -> str:
+        """
+        Gets the email of this Group.
+        Email address for the group.
+
+        :return: The email of this Group.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email: str) -> None:
+        """
+        Sets the email of this Group.
+        Email address for the group.
+
+        :param email: The email of this Group.
+        :type: str
+        """
+        
+
+        self._email = email
 
     @property
     def owners(self) -> List['User']:

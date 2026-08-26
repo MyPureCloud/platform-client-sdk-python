@@ -50,17 +50,71 @@ class UserStaffingGroupResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'start_date': 'date',
+            'end_date': 'date',
             'user': 'UserReference',
             'staffing_group': 'StaffingGroupReference'
         }
 
         self.attribute_map = {
+            'start_date': 'startDate',
+            'end_date': 'endDate',
             'user': 'user',
             'staffing_group': 'staffingGroup'
         }
 
+        self._start_date = None
+        self._end_date = None
         self._user = None
         self._staffing_group = None
+
+    @property
+    def start_date(self) -> date:
+        """
+        Gets the start_date of this UserStaffingGroupResponse.
+        Effective start date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on start-date.
+
+        :return: The start_date of this UserStaffingGroupResponse.
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date: date) -> None:
+        """
+        Sets the start_date of this UserStaffingGroupResponse.
+        Effective start date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on start-date.
+
+        :param start_date: The start_date of this UserStaffingGroupResponse.
+        :type: date
+        """
+        
+
+        self._start_date = start_date
+
+    @property
+    def end_date(self) -> date:
+        """
+        Gets the end_date of this UserStaffingGroupResponse.
+        Effective end date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on end-date.
+
+        :return: The end_date of this UserStaffingGroupResponse.
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date: date) -> None:
+        """
+        Sets the end_date of this UserStaffingGroupResponse.
+        Effective end date of the user assignment in ISO-8601 format or empty value. Empty value means no limit on end-date.
+
+        :param end_date: The end_date of this UserStaffingGroupResponse.
+        :type: date
+        """
+        
+
+        self._end_date = end_date
 
     @property
     def user(self) -> 'UserReference':
@@ -90,7 +144,7 @@ class UserStaffingGroupResponse(object):
     def staffing_group(self) -> 'StaffingGroupReference':
         """
         Gets the staffing_group of this UserStaffingGroupResponse.
-        The current staffing group of the user
+        The staffing group associated with the user
 
         :return: The staffing_group of this UserStaffingGroupResponse.
         :rtype: StaffingGroupReference
@@ -101,7 +155,7 @@ class UserStaffingGroupResponse(object):
     def staffing_group(self, staffing_group: 'StaffingGroupReference') -> None:
         """
         Sets the staffing_group of this UserStaffingGroupResponse.
-        The current staffing group of the user
+        The staffing group associated with the user
 
         :param staffing_group: The staffing_group of this UserStaffingGroupResponse.
         :type: StaffingGroupReference

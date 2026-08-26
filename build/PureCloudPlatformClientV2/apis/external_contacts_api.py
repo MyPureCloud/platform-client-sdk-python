@@ -53,6 +53,11 @@ from ..models import BulkOrganizationsRequest
 from ..models import BulkOrganizationsResponse
 from ..models import BulkRelationshipsRequest
 from ..models import BulkRelationshipsResponse
+from ..models import Cluster
+from ..models import ClusterList
+from ..models import ClusterScan
+from ..models import ClusterScanList
+from ..models import ClusterScanStatistics
 from ..models import ContactEnrichRequest
 from ..models import ContactIdentifier
 from ..models import ContactIdentifierListing
@@ -95,6 +100,7 @@ from ..models import ExternalOrganizationIdentifierListing
 from ..models import ExternalOrganizationListing
 from ..models import ExternalOrganizationTrustorLink
 from ..models import ExternalSource
+from ..models import GraphSettings
 from ..models import IdentifierClaimRequest
 from ..models import Listing
 from ..models import MergeContactsRequest
@@ -2453,6 +2459,647 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CursorExternalSourceListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_clusterscan(self, scan_id: str, **kwargs) -> 'ClusterScan':
+        """
+        Returns a single cluster scan
+        
+	    get_externalcontacts_graphs_clusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_clusterscan(scan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scan_id: Cluster scan ID (required)
+        :param list[str] expand: which fields, if any, to expand
+        :return: ClusterScan
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scan_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_clusterscan" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scan_id' is set
+        if ('scan_id' not in params) or (params['scan_id'] is None):
+            raise ValueError("Missing the required parameter `scan_id` when calling `get_externalcontacts_graphs_clusterscan`")
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans/{scanId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scan_id' in params:
+            path_params['scanId'] = params['scan_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClusterScan',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_clusterscan_cluster(self, scan_id: str, cluster_id: str, **kwargs) -> 'Cluster':
+        """
+        Returns a single cluster found by a scan
+        
+	    get_externalcontacts_graphs_clusterscan_cluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_clusterscan_cluster(scan_id, cluster_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scan_id: Cluster scan ID (required)
+        :param str cluster_id: Cluster ID (required)
+        :return: Cluster
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scan_id', 'cluster_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_clusterscan_cluster" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scan_id' is set
+        if ('scan_id' not in params) or (params['scan_id'] is None):
+            raise ValueError("Missing the required parameter `scan_id` when calling `get_externalcontacts_graphs_clusterscan_cluster`")
+        # verify the required parameter 'cluster_id' is set
+        if ('cluster_id' not in params) or (params['cluster_id'] is None):
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_externalcontacts_graphs_clusterscan_cluster`")
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scan_id' in params:
+            path_params['scanId'] = params['scan_id']
+        if 'cluster_id' in params:
+            path_params['clusterId'] = params['cluster_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Cluster',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_clusterscan_clusters(self, scan_id: str, **kwargs) -> 'ClusterList':
+        """
+        Returns a list of clusters found by a scan
+        
+	    get_externalcontacts_graphs_clusterscan_clusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_clusterscan_clusters(scan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scan_id: Cluster scan ID (required)
+        :param int limit: Max number of records to return (must be between 1 and 100)
+        :param str cursor: Cursor to continue scanning
+        :param list[str] division_ids: which divisions to filter results to, up to 50 (defaults to all divisions use has access to)
+        :param str merge_info_status: which merge statuses to filter results to
+        :return: ClusterList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scan_id', 'limit', 'cursor', 'division_ids', 'merge_info_status']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_clusterscan_clusters" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scan_id' is set
+        if ('scan_id' not in params) or (params['scan_id'] is None):
+            raise ValueError("Missing the required parameter `scan_id` when calling `get_externalcontacts_graphs_clusterscan_clusters`")
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters'.replace('{format}', 'json')
+        path_params = {}
+        if 'scan_id' in params:
+            path_params['scanId'] = params['scan_id']
+
+        query_params = {}
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'division_ids' in params:
+            query_params['divisionIds'] = params['division_ids']
+        if 'merge_info_status' in params:
+            query_params['mergeInfo.status'] = params['merge_info_status']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClusterList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_clusterscan_statistics(self, scan_id: str, **kwargs) -> 'ClusterScanStatistics':
+        """
+        Returns the statistics about a single cluster scan
+        
+	    get_externalcontacts_graphs_clusterscan_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_clusterscan_statistics(scan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scan_id: Cluster scan ID (required)
+        :return: ClusterScanStatistics
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_clusterscan_statistics" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scan_id' is set
+        if ('scan_id' not in params) or (params['scan_id'] is None):
+            raise ValueError("Missing the required parameter `scan_id` when calling `get_externalcontacts_graphs_clusterscan_statistics`")
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics'.replace('{format}', 'json')
+        path_params = {}
+        if 'scan_id' in params:
+            path_params['scanId'] = params['scan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClusterScanStatistics',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_clusterscans(self, **kwargs) -> 'ClusterScanList':
+        """
+        Returns a list of cluster scans
+        
+	    get_externalcontacts_graphs_clusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_clusterscans(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int limit: Max number of records to return (must be between 1 and 100)
+        :param str cursor: Cursor to continue scanning
+        :param list[str] expand: which fields, if any, to expand
+        :return: ClusterScanList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['limit', 'cursor', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_clusterscans" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClusterScanList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_clusterscans_latest(self, **kwargs) -> 'ClusterScan':
+        """
+        Returns the latest cluster scan
+        
+	    get_externalcontacts_graphs_clusterscans_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_clusterscans_latest(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] expand: which fields, if any, to expand
+        :return: ClusterScan
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_clusterscans_latest" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans/latest'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClusterScan',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_clusterscans_latest_statistics(self, **kwargs) -> 'ClusterScanStatistics':
+        """
+        Returns the statistics about the latest cluster scan
+        
+	    get_externalcontacts_graphs_clusterscans_latest_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_clusterscans_latest_statistics(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ClusterScanStatistics
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_clusterscans_latest_statistics" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans/latest/statistics'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ClusterScanStatistics',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_graphs_settings(self, **kwargs) -> 'GraphSettings':
+        """
+        Returns the org-wide settings for ExternalContact graph operations
+        
+	    get_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_graphs_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: GraphSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_graphs_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GraphSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10258,6 +10905,170 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalSource',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_graphs_clusterscan_cluster_merge(self, scan_id: str, cluster_id: str, **kwargs) -> 'Cluster':
+        """
+        Merge a single cluster found by a scan
+        
+	    put_externalcontacts_graphs_clusterscan_cluster_merge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_graphs_clusterscan_cluster_merge(scan_id, cluster_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scan_id: Cluster scan ID (required)
+        :param str cluster_id: Cluster ID (required)
+        :return: Cluster
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scan_id', 'cluster_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_graphs_clusterscan_cluster_merge" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scan_id' is set
+        if ('scan_id' not in params) or (params['scan_id'] is None):
+            raise ValueError("Missing the required parameter `scan_id` when calling `put_externalcontacts_graphs_clusterscan_cluster_merge`")
+        # verify the required parameter 'cluster_id' is set
+        if ('cluster_id' not in params) or (params['cluster_id'] is None):
+            raise ValueError("Missing the required parameter `cluster_id` when calling `put_externalcontacts_graphs_clusterscan_cluster_merge`")
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge'.replace('{format}', 'json')
+        path_params = {}
+        if 'scan_id' in params:
+            path_params['scanId'] = params['scan_id']
+        if 'cluster_id' in params:
+            path_params['clusterId'] = params['cluster_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Cluster',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_graphs_settings(self, body: 'GraphSettings', **kwargs) -> 'GraphSettings':
+        """
+        Updates the org-wide settings for ExternalContact graph operations
+        
+	    put_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_graphs_settings(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param GraphSettings body: OrgConfiguration (required)
+        :return: GraphSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_graphs_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_graphs_settings`")
+
+
+        resource_path = '/api/v2/externalcontacts/graphs/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GraphSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

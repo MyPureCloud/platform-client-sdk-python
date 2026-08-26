@@ -41,6 +41,7 @@ from ..models import FaxConfig
 from ..models import FaxDocument
 from ..models import FaxDocumentEntityListing
 from ..models import FaxSummary
+from ..models import OutboundFaxStatus
 
 class FaxApi(object):
     """
@@ -366,6 +367,84 @@ class FaxApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FaxDocumentEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_fax_fax_id_status(self, fax_id: str, **kwargs) -> 'OutboundFaxStatus':
+        """
+        Get fax status
+        Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users' faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_fax_fax_id_status(fax_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str fax_id: Fax ID of an outbound fax sent by the authenticated user only. (required)
+        :return: OutboundFaxStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fax_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_fax_fax_id_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'fax_id' is set
+        if ('fax_id' not in params) or (params['fax_id'] is None):
+            raise ValueError("Missing the required parameter `fax_id` when calling `get_fax_fax_id_status`")
+
+
+        resource_path = '/api/v2/fax/{faxId}/status'.replace('{format}', 'json')
+        path_params = {}
+        if 'fax_id' in params:
+            path_params['faxId'] = params['fax_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OutboundFaxStatus',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

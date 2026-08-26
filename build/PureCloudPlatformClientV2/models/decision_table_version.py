@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import DecisionTableColumns
     from . import DecisionTableContract
+    from . import DecisionTableSnapshot
     from . import Division
 
 class DecisionTableVersion(object):
@@ -65,8 +66,10 @@ class DecisionTableVersion(object):
             'date_published': 'datetime',
             'created_by': 'AddressableEntityRef',
             'published_by': 'AddressableEntityRef',
+            'rollback_reason': 'str',
             'columns': 'DecisionTableColumns',
             'contract': 'DecisionTableContract',
+            'snapshot': 'DecisionTableSnapshot',
             'self_uri': 'str'
         }
 
@@ -84,8 +87,10 @@ class DecisionTableVersion(object):
             'date_published': 'datePublished',
             'created_by': 'createdBy',
             'published_by': 'publishedBy',
+            'rollback_reason': 'rollbackReason',
             'columns': 'columns',
             'contract': 'contract',
+            'snapshot': 'snapshot',
             'self_uri': 'selfUri'
         }
 
@@ -102,8 +107,10 @@ class DecisionTableVersion(object):
         self._date_published = None
         self._created_by = None
         self._published_by = None
+        self._rollback_reason = None
         self._columns = None
         self._contract = None
+        self._snapshot = None
         self._self_uri = None
 
     @property
@@ -424,6 +431,30 @@ class DecisionTableVersion(object):
         self._published_by = published_by
 
     @property
+    def rollback_reason(self) -> str:
+        """
+        Gets the rollback_reason of this DecisionTableVersion.
+        Optional note recorded when this version was last published via rollback. Present while Published after rollback; cleared when Superseded. Not set on normal publish.
+
+        :return: The rollback_reason of this DecisionTableVersion.
+        :rtype: str
+        """
+        return self._rollback_reason
+
+    @rollback_reason.setter
+    def rollback_reason(self, rollback_reason: str) -> None:
+        """
+        Sets the rollback_reason of this DecisionTableVersion.
+        Optional note recorded when this version was last published via rollback. Present while Published after rollback; cleared when Superseded. Not set on normal publish.
+
+        :param rollback_reason: The rollback_reason of this DecisionTableVersion.
+        :type: str
+        """
+        
+
+        self._rollback_reason = rollback_reason
+
+    @property
     def columns(self) -> 'DecisionTableColumns':
         """
         Gets the columns of this DecisionTableVersion.
@@ -470,6 +501,30 @@ class DecisionTableVersion(object):
         
 
         self._contract = contract
+
+    @property
+    def snapshot(self) -> 'DecisionTableSnapshot':
+        """
+        Gets the snapshot of this DecisionTableVersion.
+        Snapshot metadata on this version, if one exists.
+
+        :return: The snapshot of this DecisionTableVersion.
+        :rtype: DecisionTableSnapshot
+        """
+        return self._snapshot
+
+    @snapshot.setter
+    def snapshot(self, snapshot: 'DecisionTableSnapshot') -> None:
+        """
+        Sets the snapshot of this DecisionTableVersion.
+        Snapshot metadata on this version, if one exists.
+
+        :param snapshot: The snapshot of this DecisionTableVersion.
+        :type: DecisionTableSnapshot
+        """
+        
+
+        self._snapshot = snapshot
 
     @property
     def self_uri(self) -> str:

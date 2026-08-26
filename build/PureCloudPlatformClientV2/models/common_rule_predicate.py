@@ -55,6 +55,7 @@ class CommonRulePredicate(object):
             'value': 'float',
             'status': 'str',
             'topic': 'str',
+            'characteristic': 'str',
             'entity': 'CommonRulePredicateEntity',
             'media_type': 'str',
             'metric': 'str'
@@ -67,6 +68,7 @@ class CommonRulePredicate(object):
             'value': 'value',
             'status': 'status',
             'topic': 'topic',
+            'characteristic': 'characteristic',
             'entity': 'entity',
             'media_type': 'mediaType',
             'metric': 'metric'
@@ -78,6 +80,7 @@ class CommonRulePredicate(object):
         self._value = None
         self._status = None
         self._topic = None
+        self._characteristic = None
         self._entity = None
         self._media_type = None
         self._metric = None
@@ -240,6 +243,35 @@ class CommonRulePredicate(object):
         
 
         self._topic = topic
+
+    @property
+    def characteristic(self) -> str:
+        """
+        Gets the characteristic of this CommonRulePredicate.
+        The anomaly detection characteristic being evaluated with respect to the metric.
+
+        :return: The characteristic of this CommonRulePredicate.
+        :rtype: str
+        """
+        return self._characteristic
+
+    @characteristic.setter
+    def characteristic(self, characteristic: str) -> None:
+        """
+        Sets the characteristic of this CommonRulePredicate.
+        The anomaly detection characteristic being evaluated with respect to the metric.
+
+        :param characteristic: The characteristic of this CommonRulePredicate.
+        :type: str
+        """
+        if isinstance(characteristic, int):
+            characteristic = str(characteristic)
+        allowed_values = ["Deviation", "Score", "Unknown"]
+        if characteristic.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for characteristic -> " + characteristic)
+            self._characteristic = "outdated_sdk_version"
+        else:
+            self._characteristic = characteristic
 
     @property
     def entity(self) -> 'CommonRulePredicateEntity':

@@ -4534,7 +4534,7 @@ except ApiException as e:
 
 ## get_conversations_message_details
 
-> [**MessageData**](MessageData) get_conversations_message_details(message_id, use_normalized_message=use_normalized_message)
+> [**MessageData**](MessageData) get_conversations_message_details(message_id)
 
 
 Get message
@@ -4560,11 +4560,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 message_id = 'message_id_example' # str | messageId
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 
 try:
     # Get message
-    api_response = api_instance.get_conversations_message_details(message_id, use_normalized_message=use_normalized_message)
+    api_response = api_instance.get_conversations_message_details(message_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_message_details: %s\n" % e)
@@ -4576,7 +4575,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| messageId |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 
 ### Return type
 
@@ -4585,7 +4583,7 @@ except ApiException as e:
 
 ## get_conversations_message_message
 
-> [**MessageData**](MessageData) get_conversations_message_message(conversation_id, message_id, use_normalized_message=use_normalized_message)
+> [**MessageData**](MessageData) get_conversations_message_message(conversation_id, message_id)
 
 
 Get conversation message
@@ -4612,11 +4610,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 message_id = 'message_id_example' # str | messageId
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 
 try:
     # Get conversation message
-    api_response = api_instance.get_conversations_message_message(conversation_id, message_id, use_normalized_message=use_normalized_message)
+    api_response = api_instance.get_conversations_message_message(conversation_id, message_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->get_conversations_message_message: %s\n" % e)
@@ -4629,7 +4626,6 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **message_id** | **str**| messageId |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 
 ### Return type
 
@@ -13021,7 +13017,7 @@ except ApiException as e:
 
 ## post_conversations_message_communication_messages
 
-> [**MessageData**](MessageData) post_conversations_message_communication_messages(conversation_id, communication_id, body, use_normalized_message=use_normalized_message)
+> [**MessageData**](MessageData) post_conversations_message_communication_messages(conversation_id, communication_id, body)
 
 
 Send message
@@ -13051,11 +13047,10 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.AdditionalMessage() # AdditionalMessage | Message
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 
 try:
     # Send message
-    api_response = api_instance.post_conversations_message_communication_messages(conversation_id, communication_id, body, use_normalized_message=use_normalized_message)
+    api_response = api_instance.post_conversations_message_communication_messages(conversation_id, communication_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_message_communication_messages: %s\n" % e)
@@ -13069,7 +13064,6 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
 | **body** | [**AdditionalMessage**](AdditionalMessage)| Message |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 
 ### Return type
 
@@ -13509,7 +13503,7 @@ except ApiException as e:
 
 ## post_conversations_message_messages_bulk
 
-> [**TextMessageListing**](TextMessageListing) post_conversations_message_messages_bulk(conversation_id, use_normalized_message=use_normalized_message, body=body)
+> [**TextMessageListing**](TextMessageListing) post_conversations_message_messages_bulk(conversation_id, body=body)
 
 
 Get messages in batch
@@ -13537,12 +13531,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 conversation_id = 'conversation_id_example' # str | 
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, media) (optional) (default to False)
 body = ['body_example'] # list[str] | messageIds (optional)
 
 try:
     # Get messages in batch
-    api_response = api_instance.post_conversations_message_messages_bulk(conversation_id, use_normalized_message=use_normalized_message, body=body)
+    api_response = api_instance.post_conversations_message_messages_bulk(conversation_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_message_messages_bulk: %s\n" % e)
@@ -13554,7 +13547,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**|  |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media) | [optional] [default to False] |
 | **body** | [**list[str]**](str)| messageIds | [optional]  |
 
 ### Return type
@@ -13821,7 +13813,7 @@ except ApiException as e:
 
 ## post_conversations_messages_agentless
 
-> [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse) post_conversations_messages_agentless(body, use_normalized_message=use_normalized_message)
+> [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse) post_conversations_messages_agentless(body)
 
 
 Send an agentless outbound message
@@ -13848,11 +13840,10 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
 body = PureCloudPlatformClientV2.SendAgentlessOutboundMessageRequest() # SendAgentlessOutboundMessageRequest | Create agentless outbound messaging request
-use_normalized_message = False # bool | If true, response removes deprecated fields (textBody, messagingTemplate) (optional) (default to False)
 
 try:
     # Send an agentless outbound message
-    api_response = api_instance.post_conversations_messages_agentless(body, use_normalized_message=use_normalized_message)
+    api_response = api_instance.post_conversations_messages_agentless(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->post_conversations_messages_agentless: %s\n" % e)
@@ -13864,7 +13855,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest)| Create agentless outbound messaging request |  |
-| **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to False] |
 
 ### Return type
 
@@ -16149,4 +16139,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

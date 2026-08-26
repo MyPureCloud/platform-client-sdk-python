@@ -11,12 +11,12 @@
 | **page_number** | int |  | [optional] |
 | **total** | int |  | [optional] |
 | **page_count** | int | Total number of pages | [optional] |
+| **last_uri** | str |  | [optional] |
 | **first_uri** | str |  | [optional] |
+| **self_uri** | str |  | [optional] |
 | **next_uri** | str |  | [optional] |
 | **previous_uri** | str |  | [optional] |
-| **last_uri** | str |  | [optional] |
-| **self_uri** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

@@ -65,7 +65,7 @@ class Weekly(object):
     def download_url(self) -> str:
         """
         Gets the download_url of this Weekly.
-        Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete
+        Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line
 
         :return: The download_url of this Weekly.
         :rtype: str
@@ -76,7 +76,7 @@ class Weekly(object):
     def download_url(self, download_url: str) -> None:
         """
         Sets the download_url of this Weekly.
-        Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete
+        Download URL to fetch the result of weekly time series. This field is populated only if session state is Complete. The downloaded data contains Newline Delimited JSON (NDJSON): one JSON object per line
 
         :param download_url: The download_url of this Weekly.
         :type: str

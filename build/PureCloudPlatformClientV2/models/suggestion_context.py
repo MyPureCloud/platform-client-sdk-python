@@ -53,6 +53,7 @@ class SuggestionContext(object):
         self.swagger_types = {
             'queue': 'AddressableEntityRef',
             'media_type': 'str',
+            'participant_type': 'str',
             'user': 'UserReference',
             'external_contact': 'AddressableEntityRef',
             'utterance': 'Entity',
@@ -63,6 +64,7 @@ class SuggestionContext(object):
         self.attribute_map = {
             'queue': 'queue',
             'media_type': 'mediaType',
+            'participant_type': 'participantType',
             'user': 'user',
             'external_contact': 'externalContact',
             'utterance': 'utterance',
@@ -72,6 +74,7 @@ class SuggestionContext(object):
 
         self._queue = None
         self._media_type = None
+        self._participant_type = None
         self._user = None
         self._external_contact = None
         self._utterance = None
@@ -130,6 +133,35 @@ class SuggestionContext(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def participant_type(self) -> str:
+        """
+        Gets the participant_type of this SuggestionContext.
+        The type of the participant whose turn triggered the suggestion.
+
+        :return: The participant_type of this SuggestionContext.
+        :rtype: str
+        """
+        return self._participant_type
+
+    @participant_type.setter
+    def participant_type(self, participant_type: str) -> None:
+        """
+        Sets the participant_type of this SuggestionContext.
+        The type of the participant whose turn triggered the suggestion.
+
+        :param participant_type: The participant_type of this SuggestionContext.
+        :type: str
+        """
+        if isinstance(participant_type, int):
+            participant_type = str(participant_type)
+        allowed_values = ["Unknown", "Agent", "Customer"]
+        if participant_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for participant_type -> " + participant_type)
+            self._participant_type = "outdated_sdk_version"
+        else:
+            self._participant_type = participant_type
 
     @property
     def user(self) -> 'UserReference':

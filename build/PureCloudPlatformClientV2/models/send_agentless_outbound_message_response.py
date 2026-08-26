@@ -34,7 +34,6 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import MessageData
-    from . import SendMessagingTemplateRequest
 
 class SendAgentlessOutboundMessageResponse(object):
     """
@@ -56,8 +55,6 @@ class SendAgentlessOutboundMessageResponse(object):
             'from_address': 'str',
             'to_address': 'str',
             'messenger_type': 'str',
-            'text_body': 'str',
-            'messaging_template': 'SendMessagingTemplateRequest',
             'use_existing_active_conversation': 'bool',
             'message': 'MessageData',
             'timestamp': 'datetime',
@@ -71,8 +68,6 @@ class SendAgentlessOutboundMessageResponse(object):
             'from_address': 'fromAddress',
             'to_address': 'toAddress',
             'messenger_type': 'messengerType',
-            'text_body': 'textBody',
-            'messaging_template': 'messagingTemplate',
             'use_existing_active_conversation': 'useExistingActiveConversation',
             'message': 'message',
             'timestamp': 'timestamp',
@@ -85,8 +80,6 @@ class SendAgentlessOutboundMessageResponse(object):
         self._from_address = None
         self._to_address = None
         self._messenger_type = None
-        self._text_body = None
-        self._messaging_template = None
         self._use_existing_active_conversation = None
         self._message = None
         self._timestamp = None
@@ -217,54 +210,6 @@ class SendAgentlessOutboundMessageResponse(object):
             self._messenger_type = "outdated_sdk_version"
         else:
             self._messenger_type = messenger_type
-
-    @property
-    def text_body(self) -> str:
-        """
-        Gets the text_body of this SendAgentlessOutboundMessageResponse.
-        The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
-
-        :return: The text_body of this SendAgentlessOutboundMessageResponse.
-        :rtype: str
-        """
-        return self._text_body
-
-    @text_body.setter
-    def text_body(self, text_body: str) -> None:
-        """
-        Sets the text_body of this SendAgentlessOutboundMessageResponse.
-        The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
-
-        :param text_body: The text_body of this SendAgentlessOutboundMessageResponse.
-        :type: str
-        """
-        
-
-        self._text_body = text_body
-
-    @property
-    def messaging_template(self) -> 'SendMessagingTemplateRequest':
-        """
-        Gets the messaging_template of this SendAgentlessOutboundMessageResponse.
-        The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
-
-        :return: The messaging_template of this SendAgentlessOutboundMessageResponse.
-        :rtype: SendMessagingTemplateRequest
-        """
-        return self._messaging_template
-
-    @messaging_template.setter
-    def messaging_template(self, messaging_template: 'SendMessagingTemplateRequest') -> None:
-        """
-        Sets the messaging_template of this SendAgentlessOutboundMessageResponse.
-        The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
-
-        :param messaging_template: The messaging_template of this SendAgentlessOutboundMessageResponse.
-        :type: SendMessagingTemplateRequest
-        """
-        
-
-        self._messaging_template = messaging_template
 
     @property
     def use_existing_active_conversation(self) -> bool:

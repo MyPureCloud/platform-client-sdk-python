@@ -84,7 +84,7 @@ class DataIngestionRuleCriteria(object):
         """
         if isinstance(effective_platform, int):
             effective_platform = str(effective_platform)
-        allowed_values = ["Facebook", "Instagram", "Twitter", "Open", "GoogleBusinessProfile"]
+        allowed_values = ["Facebook", "Instagram", "Twitter", "Open", "GoogleBusinessProfile", "LinkedIn"]
         if effective_platform.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for effective_platform -> " + effective_platform)
             self._effective_platform = "outdated_sdk_version"

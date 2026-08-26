@@ -52,19 +52,19 @@ class NluDetectionResponse(object):
         """
         self.swagger_types = {
             'version': 'NluDomainVersion',
-            'output': 'NluDetectionOutput',
-            'input': 'NluDetectionInput'
+            'input': 'NluDetectionInput',
+            'output': 'NluDetectionOutput'
         }
 
         self.attribute_map = {
             'version': 'version',
-            'output': 'output',
-            'input': 'input'
+            'input': 'input',
+            'output': 'output'
         }
 
         self._version = None
-        self._output = None
         self._input = None
+        self._output = None
 
     @property
     def version(self) -> 'NluDomainVersion':
@@ -91,30 +91,6 @@ class NluDetectionResponse(object):
         self._version = version
 
     @property
-    def output(self) -> 'NluDetectionOutput':
-        """
-        Gets the output of this NluDetectionResponse.
-
-
-        :return: The output of this NluDetectionResponse.
-        :rtype: NluDetectionOutput
-        """
-        return self._output
-
-    @output.setter
-    def output(self, output: 'NluDetectionOutput') -> None:
-        """
-        Sets the output of this NluDetectionResponse.
-
-
-        :param output: The output of this NluDetectionResponse.
-        :type: NluDetectionOutput
-        """
-        
-
-        self._output = output
-
-    @property
     def input(self) -> 'NluDetectionInput':
         """
         Gets the input of this NluDetectionResponse.
@@ -137,6 +113,30 @@ class NluDetectionResponse(object):
         
 
         self._input = input
+
+    @property
+    def output(self) -> 'NluDetectionOutput':
+        """
+        Gets the output of this NluDetectionResponse.
+
+
+        :return: The output of this NluDetectionResponse.
+        :rtype: NluDetectionOutput
+        """
+        return self._output
+
+    @output.setter
+    def output(self, output: 'NluDetectionOutput') -> None:
+        """
+        Sets the output of this NluDetectionResponse.
+
+
+        :param output: The output of this NluDetectionResponse.
+        :type: NluDetectionOutput
+        """
+        
+
+        self._output = output
 
     def to_dict(self):
         """

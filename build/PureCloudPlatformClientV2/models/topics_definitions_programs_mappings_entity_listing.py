@@ -51,24 +51,24 @@ class TopicsDefinitionsProgramsMappingsEntityListing(object):
         self.swagger_types = {
             'entities': 'list[TopicsDefinitionsProgramMappings]',
             'page_size': 'int',
+            'self_uri': 'str',
             'page_count': 'int',
-            'next_uri': 'str',
-            'self_uri': 'str'
+            'next_uri': 'str'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
+            'self_uri': 'selfUri',
             'page_count': 'pageCount',
-            'next_uri': 'nextUri',
-            'self_uri': 'selfUri'
+            'next_uri': 'nextUri'
         }
 
         self._entities = None
         self._page_size = None
+        self._self_uri = None
         self._page_count = None
         self._next_uri = None
-        self._self_uri = None
 
     @property
     def entities(self) -> List['TopicsDefinitionsProgramMappings']:
@@ -119,6 +119,30 @@ class TopicsDefinitionsProgramsMappingsEntityListing(object):
         self._page_size = page_size
 
     @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
+
+
+        :return: The self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
+
+
+        :param self_uri: The self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
+
+    @property
     def page_count(self) -> int:
         """
         Gets the page_count of this TopicsDefinitionsProgramsMappingsEntityListing.
@@ -165,30 +189,6 @@ class TopicsDefinitionsProgramsMappingsEntityListing(object):
         
 
         self._next_uri = next_uri
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
-
-
-        :return: The self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
-
-
-        :param self_uri: The self_uri of this TopicsDefinitionsProgramsMappingsEntityListing.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
 
     def to_dict(self):
         """

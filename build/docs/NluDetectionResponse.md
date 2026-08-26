@@ -7,9 +7,9 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **version** | [NluDomainVersion](NluDomainVersion) | The NLU domain version which performed the detection. | [optional] |
-| **output** | [NluDetectionOutput](NluDetectionOutput) |  | [optional] |
 | **input** | [NluDetectionInput](NluDetectionInput) |  | [optional] |
+| **output** | [NluDetectionOutput](NluDetectionOutput) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

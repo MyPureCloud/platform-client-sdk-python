@@ -60,6 +60,8 @@ from ..models import EdgeMetrics
 from ..models import EdgeNetworkDiagnostic
 from ..models import EdgeNetworkDiagnosticRequest
 from ..models import EdgeNetworkDiagnosticResponse
+from ..models import EdgeOfflineConfiguration
+from ..models import EdgeOfflineConfigurationResponse
 from ..models import EdgeRebootParameters
 from ..models import EdgeServiceStateRequest
 from ..models import EdgeTrunkBase
@@ -94,11 +96,14 @@ from ..models import SiteConnections
 from ..models import SiteEntityListing
 from ..models import SiteSearchRequest
 from ..models import SitesSearchResponse
+from ..models import TelephonySearchRequest
 from ..models import TimeZoneEntityListing
 from ..models import Trunk
 from ..models import TrunkBase
 from ..models import TrunkBaseEntityListing
+from ..models import TrunkBasesSearchResponse
 from ..models import TrunkEntityListing
+from ..models import TrunkInstanceSearchResponse
 from ..models import TrunkMetabaseEntityListing
 from ..models import TrunkMetrics
 from ..models import TrunkRecordingEnabledCount
@@ -6676,6 +6681,96 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_telephony_providers_edges_trunkbasesettings_site_site_id(self, site_id: str, **kwargs) -> 'TrunkBaseEntityListing':
+        """
+        Get Trunk Base Settings listing for site
+        Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_providers_edges_trunkbasesettings_site_site_id(site_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str site_id: Site ID for trunk bases (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Value by which to sort
+        :param str sort_order: Sort order
+        :return: TrunkBaseEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['site_id', 'page_number', 'page_size', 'sort_by', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_providers_edges_trunkbasesettings_site_site_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'site_id' is set
+        if ('site_id' not in params) or (params['site_id'] is None):
+            raise ValueError("Missing the required parameter `site_id` when calling `get_telephony_providers_edges_trunkbasesettings_site_site_id`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'site_id' in params:
+            path_params['siteId'] = params['site_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrunkBaseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_telephony_providers_edges_trunkbasesettings_template(self, trunk_metabase_id: str, **kwargs) -> 'TrunkBase':
         """
         Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
@@ -7674,6 +7769,90 @@ class TelephonyProvidersEdgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='EdgeLogsJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edge_offlineconfiguration(self, edge_id: str, body: 'EdgeOfflineConfiguration', **kwargs) -> 'EdgeOfflineConfigurationResponse':
+        """
+        Create a file that can be used to configure a hardware Edge's settings.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edge_offlineconfiguration(edge_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str edge_id: Edge Id (required)
+        :param EdgeOfflineConfiguration body: EdgeOfflineConfiguration (required)
+        :return: EdgeOfflineConfigurationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['edge_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edge_offlineconfiguration" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'edge_id' is set
+        if ('edge_id' not in params) or (params['edge_id'] is None):
+            raise ValueError("Missing the required parameter `edge_id` when calling `post_telephony_providers_edge_offlineconfiguration`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edge_offlineconfiguration`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration'.replace('{format}', 'json')
+        path_params = {}
+        if 'edge_id' in params:
+            path_params['edgeId'] = params['edge_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EdgeOfflineConfigurationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9096,6 +9275,162 @@ class TelephonyProvidersEdgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TrunkBase',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edges_trunkbasesettings_search(self, body: 'TelephonySearchRequest', **kwargs) -> 'TrunkBasesSearchResponse':
+        """
+        Search Trunk Base Settings
+        Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edges_trunkbasesettings_search(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TelephonySearchRequest body: Telephony search request (required)
+        :return: TrunkBasesSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edges_trunkbasesettings_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edges_trunkbasesettings_search`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/trunkbasesettings/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrunkBasesSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_providers_edges_trunks_search(self, body: 'TelephonySearchRequest', **kwargs) -> 'TrunkInstanceSearchResponse':
+        """
+        Search for trunks
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_providers_edges_trunks_search(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TelephonySearchRequest body: Telephony search request (required)
+        :return: TrunkInstanceSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_providers_edges_trunks_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_providers_edges_trunks_search`")
+
+
+        resource_path = '/api/v2/telephony/providers/edges/trunks/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TrunkInstanceSearchResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

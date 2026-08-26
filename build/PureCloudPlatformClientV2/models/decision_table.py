@@ -62,6 +62,7 @@ class DecisionTable(object):
             'published': 'DecisionTableVersionEntity',
             'latest': 'DecisionTableVersionEntity',
             'latest_version_status': 'str',
+            'snapshot_count': 'int',
             'columns': 'DecisionTableColumns',
             'published_contract': 'DecisionTableContract',
             'self_uri': 'str'
@@ -78,6 +79,7 @@ class DecisionTable(object):
             'published': 'published',
             'latest': 'latest',
             'latest_version_status': 'latestVersionStatus',
+            'snapshot_count': 'snapshotCount',
             'columns': 'columns',
             'published_contract': 'publishedContract',
             'self_uri': 'selfUri'
@@ -93,6 +95,7 @@ class DecisionTable(object):
         self._published = None
         self._latest = None
         self._latest_version_status = None
+        self._snapshot_count = None
         self._columns = None
         self._published_contract = None
         self._self_uri = None
@@ -341,6 +344,30 @@ class DecisionTable(object):
             self._latest_version_status = "outdated_sdk_version"
         else:
             self._latest_version_status = latest_version_status
+
+    @property
+    def snapshot_count(self) -> int:
+        """
+        Gets the snapshot_count of this DecisionTable.
+        Number of snapshotted versions on this decision table.
+
+        :return: The snapshot_count of this DecisionTable.
+        :rtype: int
+        """
+        return self._snapshot_count
+
+    @snapshot_count.setter
+    def snapshot_count(self, snapshot_count: int) -> None:
+        """
+        Sets the snapshot_count of this DecisionTable.
+        Number of snapshotted versions on this decision table.
+
+        :param snapshot_count: The snapshot_count of this DecisionTable.
+        :type: int
+        """
+        
+
+        self._snapshot_count = snapshot_count
 
     @property
     def columns(self) -> 'DecisionTableColumns':

@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_fax_document**](#get_fax_document) | Get a document.|
 |[**get_fax_document_content**](#get_fax_document_content) | Download a fax document.|
 |[**get_fax_documents**](#get_fax_documents) | Get a list of fax documents.|
+|[**get_fax_fax_id_status**](#get_fax_fax_id_status) | Get fax status|
 |[**get_fax_settings**](#get_fax_settings) | Get organization config for given organization|
 |[**get_fax_summary**](#get_fax_summary) | Get fax summary|
 |[**put_fax_document**](#put_fax_document) | Update a fax document.|
@@ -206,6 +207,56 @@ except ApiException as e:
 [**FaxDocumentEntityListing**](FaxDocumentEntityListing)
 
 
+## get_fax_fax_id_status
+
+> [**OutboundFaxStatus**](OutboundFaxStatus) get_fax_fax_id_status(fax_id)
+
+
+Get fax status
+
+Retrieves status for an outbound (sent) fax. Only the authenticated user who sent the fax can fetch its status; this operation does not expose inbound or other users' faxes. When the `result` field is present on the response body, it describes the terminal outcome of **transmitting** the fax to the remote endpoint (e.g. SUCCESS or FAILURE). 
+
+Wraps GET /api/v2/fax/{faxId}/status 
+
+Requires ANY permissions: 
+
+* conversation:fax:send
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.FaxApi()
+fax_id = 'fax_id_example' # str | Fax ID of an outbound fax sent by the authenticated user only.
+
+try:
+    # Get fax status
+    api_response = api_instance.get_fax_fax_id_status(fax_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FaxApi->get_fax_fax_id_status: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **fax_id** | **str**| Fax ID of an outbound fax sent by the authenticated user only. |  |
+
+### Return type
+
+[**OutboundFaxStatus**](OutboundFaxStatus)
+
+
 ## get_fax_settings
 
 > [**FaxConfig**](FaxConfig) get_fax_settings()
@@ -389,4 +440,4 @@ except ApiException as e:
 [**FaxConfig**](FaxConfig)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

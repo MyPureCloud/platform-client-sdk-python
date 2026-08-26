@@ -36,6 +36,9 @@ from typing import Any
 
 from ..models import Empty
 from ..models import AgentGreeting
+from ..models import BulkPrefixesRequest
+from ..models import BulkPrefixesResponse
+from ..models import CallSimulationResult
 from ..models import Callheader
 from ..models import Callmessage
 from ..models import CreateOrganizationLink
@@ -49,6 +52,7 @@ from ..models import OrganizationCallMetrics
 from ..models import OrganizationLink
 from ..models import OrganizationLinkApprovalRequest
 from ..models import OrganizationLinkResponse
+from ..models import PrefixListing
 from ..models import RegionResponse
 from ..models import SIPSearchPublicRequest
 from ..models import SelfAgentGreeting
@@ -681,6 +685,174 @@ class TelephonyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[RegionResponse]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_telephony_prefixes(self, type: str, **kwargs) -> 'PrefixListing':
+        """
+        Get prefixes
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_prefixes(type, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str type: Filter by prefix type (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str prefix: Filter by phone number prefix
+        :return: PrefixListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['type', 'before', 'after', 'page_size', 'prefix']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_prefixes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'type' is set
+        if ('type' not in params) or (params['type'] is None):
+            raise ValueError("Missing the required parameter `type` when calling `get_telephony_prefixes`")
+
+
+        resource_path = '/api/v2/telephony/prefixes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'prefix' in params:
+            query_params['prefix'] = params['prefix']
+        if 'type' in params:
+            query_params['type'] = params['type']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PrefixListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_telephony_prefixes_simulate_call(self, number: str, **kwargs) -> 'CallSimulationResult':
+        """
+        Simulate call to test fraud prefix functionality
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_telephony_prefixes_simulate_call(number, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str number: Phone number to simulate (required)
+        :return: CallSimulationResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_telephony_prefixes_simulate_call" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'number' is set
+        if ('number' not in params) or (params['number'] is None):
+            raise ValueError("Missing the required parameter `number` when calling `get_telephony_prefixes_simulate_call`")
+
+
+        resource_path = '/api/v2/telephony/prefixes/simulate/call'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'number' in params:
+            query_params['number'] = params['number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CallSimulationResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1482,6 +1654,84 @@ class TelephonyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='OrganizationLink',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_telephony_prefixes_bulk(self, body: 'BulkPrefixesRequest', **kwargs) -> 'BulkPrefixesResponse':
+        """
+        Bulk save prefixes
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_telephony_prefixes_bulk(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param BulkPrefixesRequest body: Bulk save request with list of prefixes (required)
+        :return: BulkPrefixesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_telephony_prefixes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_telephony_prefixes_bulk`")
+
+
+        resource_path = '/api/v2/telephony/prefixes/bulk'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkPrefixesResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

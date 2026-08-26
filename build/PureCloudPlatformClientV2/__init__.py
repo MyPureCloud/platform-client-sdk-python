@@ -715,6 +715,7 @@ from .models.bulk_entity_error_external_contact import BulkEntityErrorExternalCo
 from .models.bulk_entity_error_external_organization import BulkEntityErrorExternalOrganization
 from .models.bulk_entity_error_external_organization_enrich_request import BulkEntityErrorExternalOrganizationEnrichRequest
 from .models.bulk_entity_error_note import BulkEntityErrorNote
+from .models.bulk_entity_error_prefix import BulkEntityErrorPrefix
 from .models.bulk_entity_error_relationship import BulkEntityErrorRelationship
 from .models.bulk_error import BulkError
 from .models.bulk_error_detail import BulkErrorDetail
@@ -750,6 +751,8 @@ from .models.bulk_organizations_enrich_request import BulkOrganizationsEnrichReq
 from .models.bulk_organizations_enrich_response import BulkOrganizationsEnrichResponse
 from .models.bulk_organizations_request import BulkOrganizationsRequest
 from .models.bulk_organizations_response import BulkOrganizationsResponse
+from .models.bulk_prefixes_request import BulkPrefixesRequest
+from .models.bulk_prefixes_response import BulkPrefixesResponse
 from .models.bulk_publish_opportunities_response import BulkPublishOpportunitiesResponse
 from .models.bulk_relationships_request import BulkRelationshipsRequest
 from .models.bulk_relationships_response import BulkRelationshipsResponse
@@ -765,6 +768,7 @@ from .models.bulk_response_result_external_organization_external_organization_bu
 from .models.bulk_response_result_external_organization_external_organization_enrich_request_bulk_entity_error_external_organization_enrich_request import BulkResponseResultExternalOrganizationExternalOrganizationEnrichRequestBulkEntityErrorExternalOrganizationEnrichRequest
 from .models.bulk_response_result_note_entity_bulk_entity_error_entity import BulkResponseResultNoteEntityBulkEntityErrorEntity
 from .models.bulk_response_result_note_note_bulk_entity_error_note import BulkResponseResultNoteNoteBulkEntityErrorNote
+from .models.bulk_response_result_prefix_prefix_bulk_entity_error_prefix import BulkResponseResultPrefixPrefixBulkEntityErrorPrefix
 from .models.bulk_response_result_relationship_entity_bulk_entity_error_entity import BulkResponseResultRelationshipEntityBulkEntityErrorEntity
 from .models.bulk_response_result_relationship_relationship_bulk_entity_error_relationship import BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship
 from .models.bulk_response_result_void_entity_bulk_entity_error_entity import BulkResponseResultVoidEntityBulkEntityErrorEntity
@@ -824,6 +828,7 @@ from .models.call_media_policy import CallMediaPolicy
 from .models.call_media_policy_conditions import CallMediaPolicyConditions
 from .models.call_record import CallRecord
 from .models.call_route import CallRoute
+from .models.call_simulation_result import CallSimulationResult
 from .models.call_target import CallTarget
 from .models.call_to_action import CallToAction
 from .models.callable_contacts_diagnostic import CallableContactsDiagnostic
@@ -901,6 +906,8 @@ from .models.capacity_plan_delete_request import CapacityPlanDeleteRequest
 from .models.capacity_plan_forecast_inputs_response import CapacityPlanForecastInputsResponse
 from .models.capacity_plan_forecast_inputs_template import CapacityPlanForecastInputsTemplate
 from .models.capacity_plan_forecast_metrics import CapacityPlanForecastMetrics
+from .models.capacity_plan_imported_forecast import CapacityPlanImportedForecast
+from .models.capacity_plan_imported_forecast_request import CapacityPlanImportedForecastRequest
 from .models.capacity_plan_list_item import CapacityPlanListItem
 from .models.capacity_plan_metadata import CapacityPlanMetadata
 from .models.capacity_plan_metrics_summary import CapacityPlanMetricsSummary
@@ -1026,6 +1033,12 @@ from .models.client_usage_query_response import ClientUsageQueryResponse
 from .models.cloned_user import ClonedUser
 from .models.cloned_user_entity_listing import ClonedUserEntityListing
 from .models.close_button_style_properties import CloseButtonStyleProperties
+from .models.cluster import Cluster
+from .models.cluster_list import ClusterList
+from .models.cluster_scan import ClusterScan
+from .models.cluster_scan_list import ClusterScanList
+from .models.cluster_scan_statistics import ClusterScanStatistics
+from .models.cluster_statistics import ClusterStatistics
 from .models.coaching_annotation import CoachingAnnotation
 from .models.coaching_annotation_create_request import CoachingAnnotationCreateRequest
 from .models.coaching_annotation_list import CoachingAnnotationList
@@ -1173,6 +1186,7 @@ from .models.contact_listing_request import ContactListingRequest
 from .models.contact_listing_response import ContactListingResponse
 from .models.contact_phone_number_column import ContactPhoneNumberColumn
 from .models.contact_sort import ContactSort
+from .models.contact_vertex import ContactVertex
 from .models.contactable_status import ContactableStatus
 from .models.contactlist_download_ready_export_uri import ContactlistDownloadReadyExportUri
 from .models.contactlist_download_ready_object import ContactlistDownloadReadyObject
@@ -1724,6 +1738,7 @@ from .models.copilot_fallback_action import CopilotFallbackAction
 from .models.copilot_nlu_domain import CopilotNluDomain
 from .models.copilot_nlu_domain_version import CopilotNluDomainVersion
 from .models.copilot_rule import CopilotRule
+from .models.copilot_sentiment_settings import CopilotSentimentSettings
 from .models.copilot_transcription_config import CopilotTranscriptionConfig
 from .models.copy_attachments_request import CopyAttachmentsRequest
 from .models.copy_bu_forecast_request import CopyBuForecastRequest
@@ -1758,6 +1773,7 @@ from .models.create_decision_table_columns_request import CreateDecisionTableCol
 from .models.create_decision_table_import_job_request import CreateDecisionTableImportJobRequest
 from .models.create_decision_table_request import CreateDecisionTableRequest
 from .models.create_decision_table_row_request import CreateDecisionTableRowRequest
+from .models.create_decision_table_snapshot_request import CreateDecisionTableSnapshotRequest
 from .models.create_decision_table_version_request import CreateDecisionTableVersionRequest
 from .models.create_email_request import CreateEmailRequest
 from .models.create_external_events_configuration_request import CreateExternalEventsConfigurationRequest
@@ -2297,6 +2313,10 @@ from .models.edge_metrics_topic_uri_reference import EdgeMetricsTopicUriReferenc
 from .models.edge_network_diagnostic import EdgeNetworkDiagnostic
 from .models.edge_network_diagnostic_request import EdgeNetworkDiagnosticRequest
 from .models.edge_network_diagnostic_response import EdgeNetworkDiagnosticResponse
+from .models.edge_offline_configuration import EdgeOfflineConfiguration
+from .models.edge_offline_configuration_interface import EdgeOfflineConfigurationInterface
+from .models.edge_offline_configuration_network import EdgeOfflineConfigurationNetwork
+from .models.edge_offline_configuration_response import EdgeOfflineConfigurationResponse
 from .models.edge_reboot_parameters import EdgeRebootParameters
 from .models.edge_service_state_request import EdgeServiceStateRequest
 from .models.edge_software_update_topic_domain_edge_software_update import EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate
@@ -2842,7 +2862,11 @@ from .models.grammar_language import GrammarLanguage
 from .models.grammar_language_file_metadata import GrammarLanguageFileMetadata
 from .models.grammar_language_update import GrammarLanguageUpdate
 from .models.grammar_listing import GrammarListing
+from .models.graph import Graph
 from .models.graph_api_settings import GraphApiSettings
+from .models.graph_edge import GraphEdge
+from .models.graph_settings import GraphSettings
+from .models.graph_vertices import GraphVertices
 from .models.greeting import Greeting
 from .models.greeting_audio_file import GreetingAudioFile
 from .models.greeting_listing import GreetingListing
@@ -2930,6 +2954,7 @@ from .models.ivr_entity_listing import IVREntityListing
 from .models.ivr_identity_resolution_config import IVRIdentityResolutionConfig
 from .models.icon import Icon
 from .models.identifier_claim_request import IdentifierClaimRequest
+from .models.identifier_vertex import IdentifierVertex
 from .models.identity_now import IdentityNow
 from .models.identity_provider import IdentityProvider
 from .models.identity_provider_entity_listing import IdentityProviderEntityListing
@@ -3624,6 +3649,8 @@ from .models.member_entity import MemberEntity
 from .models.member_group import MemberGroup
 from .models.member_listing import MemberListing
 from .models.merge_contacts_request import MergeContactsRequest
+from .models.merge_error import MergeError
+from .models.merge_info import MergeInfo
 from .models.merge_operation import MergeOperation
 from .models.merge_request import MergeRequest
 from .models.message import Message
@@ -3929,6 +3956,7 @@ from .models.outbound_domain import OutboundDomain
 from .models.outbound_domain_create_request import OutboundDomainCreateRequest
 from .models.outbound_domain_entity_listing import OutboundDomainEntityListing
 from .models.outbound_domain_patch_request import OutboundDomainPatchRequest
+from .models.outbound_fax_status import OutboundFaxStatus
 from .models.outbound_messaging_campaign_post_contact_email_event_topic_email_attributes import OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes
 from .models.outbound_messaging_campaign_post_contact_email_event_topic_outbound_messaging_campaign_post_contact_email_event import OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent
 from .models.outbound_messaging_campaign_post_contact_sms_event_topic_outbound_messaging_campaign_post_contact_sms_event import OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent
@@ -4189,6 +4217,9 @@ from .models.predictor_model_retraining_error import PredictorModelRetrainingErr
 from .models.predictor_models import PredictorModels
 from .models.predictor_schedule import PredictorSchedule
 from .models.predictor_workload_balancing import PredictorWorkloadBalancing
+from .models.prefix import Prefix
+from .models.prefix_listing import PrefixListing
+from .models.prefix_listing_item import PrefixListingItem
 from .models.preprocessing_rule import PreprocessingRule
 from .models.presence_definition import PresenceDefinition
 from .models.presence_detail_query_clause import PresenceDetailQueryClause
@@ -4826,6 +4857,7 @@ from .models.role_division import RoleDivision
 from .models.role_division_grants import RoleDivisionGrants
 from .models.role_division_pair import RoleDivisionPair
 from .models.role_settings import RoleSettings
+from .models.rollback_decision_table_version_request import RollbackDecisionTableVersionRequest
 from .models.room import Room
 from .models.room_participant import RoomParticipant
 from .models.room_participant_response import RoomParticipantResponse
@@ -5394,6 +5426,8 @@ from .models.team_reference import TeamReference
 from .models.team_search_criteria import TeamSearchCriteria
 from .models.team_search_request import TeamSearchRequest
 from .models.teams_search_response import TeamsSearchResponse
+from .models.telephony_search_criteria import TelephonySearchCriteria
+from .models.telephony_search_request import TelephonySearchRequest
 from .models.telephony_settings import TelephonySettings
 from .models.template_parameter import TemplateParameter
 from .models.temporal_unit import TemporalUnit
@@ -5550,10 +5584,12 @@ from .models.trunk import Trunk
 from .models.trunk_base import TrunkBase
 from .models.trunk_base_assignment import TrunkBaseAssignment
 from .models.trunk_base_entity_listing import TrunkBaseEntityListing
+from .models.trunk_bases_search_response import TrunkBasesSearchResponse
 from .models.trunk_connected_status import TrunkConnectedStatus
 from .models.trunk_entity_listing import TrunkEntityListing
 from .models.trunk_error_info import TrunkErrorInfo
 from .models.trunk_error_info_details import TrunkErrorInfoDetails
+from .models.trunk_instance_search_response import TrunkInstanceSearchResponse
 from .models.trunk_instance_topic_trunk import TrunkInstanceTopicTrunk
 from .models.trunk_instance_topic_trunk_connected_status import TrunkInstanceTopicTrunkConnectedStatus
 from .models.trunk_instance_topic_trunk_error_info import TrunkInstanceTopicTrunkErrorInfo
@@ -5999,6 +6035,7 @@ from .models.validation_service_request import ValidationServiceRequest
 from .models.value_wrapper_activity_code_style import ValueWrapperActivityCodeStyle
 from .models.value_wrapper_activity_plan_service_goal_impact_overrides import ValueWrapperActivityPlanServiceGoalImpactOverrides
 from .models.value_wrapper_bu_short_term_forecast_reference import ValueWrapperBuShortTermForecastReference
+from .models.value_wrapper_capacity_plan_imported_forecast_request import ValueWrapperCapacityPlanImportedForecastRequest
 from .models.value_wrapper_date import ValueWrapperDate
 from .models.value_wrapper_group_settings import ValueWrapperGroupSettings
 from .models.value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType

@@ -60,7 +60,7 @@ class AppleInvitationNotificationParameters(object):
     def reference_id(self) -> str:
         """
         Gets the reference_id of this AppleInvitationNotificationParameters.
-        An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).
+        An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID). Max: 1000 characters. Must not be empty and must not contain '?' or apostrophe (') characters.
 
         :return: The reference_id of this AppleInvitationNotificationParameters.
         :rtype: str
@@ -71,7 +71,7 @@ class AppleInvitationNotificationParameters(object):
     def reference_id(self, reference_id: str) -> None:
         """
         Sets the reference_id of this AppleInvitationNotificationParameters.
-        An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID).
+        An opaque, caller-supplied string that provides business context for the notification message (e.g., an order number or case ID). Max: 1000 characters. Must not be empty and must not contain '?' or apostrophe (') characters.
 
         :param reference_id: The reference_id of this AppleInvitationNotificationParameters.
         :type: str

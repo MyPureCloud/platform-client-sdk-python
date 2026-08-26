@@ -99,7 +99,7 @@ class GetAlertQuery(object):
         """
         if isinstance(rule_type, int):
             rule_type = str(rule_type)
-        allowed_values = ["Conversation", "Presence", "All"]
+        allowed_values = ["Conversation", "Presence", "WorkforceManagement", "OperationalConsole", "Anomaly", "All"]
         if rule_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for rule_type -> " + rule_type)
             self._rule_type = "outdated_sdk_version"

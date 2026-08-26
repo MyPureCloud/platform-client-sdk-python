@@ -35,6 +35,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contacts_schemas_limits**](#get_externalcontacts_contacts_schemas_limits) | Get quantitative limits on schemas|
 |[**get_externalcontacts_externalsource**](#get_externalcontacts_externalsource) | Fetch an External Source|
 |[**get_externalcontacts_externalsources**](#get_externalcontacts_externalsources) | Fetch a list of External Sources|
+|[**get_externalcontacts_graphs_clusterscan**](#get_externalcontacts_graphs_clusterscan) | Returns a single cluster scan|
+|[**get_externalcontacts_graphs_clusterscan_cluster**](#get_externalcontacts_graphs_clusterscan_cluster) | Returns a single cluster found by a scan|
+|[**get_externalcontacts_graphs_clusterscan_clusters**](#get_externalcontacts_graphs_clusterscan_clusters) | Returns a list of clusters found by a scan|
+|[**get_externalcontacts_graphs_clusterscan_statistics**](#get_externalcontacts_graphs_clusterscan_statistics) | Returns the statistics about a single cluster scan|
+|[**get_externalcontacts_graphs_clusterscans**](#get_externalcontacts_graphs_clusterscans) | Returns a list of cluster scans|
+|[**get_externalcontacts_graphs_clusterscans_latest**](#get_externalcontacts_graphs_clusterscans_latest) | Returns the latest cluster scan|
+|[**get_externalcontacts_graphs_clusterscans_latest_statistics**](#get_externalcontacts_graphs_clusterscans_latest_statistics) | Returns the statistics about the latest cluster scan|
+|[**get_externalcontacts_graphs_settings**](#get_externalcontacts_graphs_settings) | Returns the org-wide settings for ExternalContact graph operations|
 |[**get_externalcontacts_import_csv_setting**](#get_externalcontacts_import_csv_setting) | Get settings for CSV import|
 |[**get_externalcontacts_import_csv_settings**](#get_externalcontacts_import_csv_settings) | Retrieve all settings for organization filtered by externalSettingsId if provided|
 |[**get_externalcontacts_import_csv_upload_details**](#get_externalcontacts_import_csv_upload_details) | Get details for CSV upload|
@@ -132,6 +140,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_externalcontacts_contacts_schema**](#put_externalcontacts_contacts_schema) | Update a schema|
 |[**put_externalcontacts_conversation**](#put_externalcontacts_conversation) | Associate/disassociate an external contact with a conversation|
 |[**put_externalcontacts_externalsource**](#put_externalcontacts_externalsource) | Update an External Source|
+|[**put_externalcontacts_graphs_clusterscan_cluster_merge**](#put_externalcontacts_graphs_clusterscan_cluster_merge) | Merge a single cluster found by a scan|
+|[**put_externalcontacts_graphs_settings**](#put_externalcontacts_graphs_settings) | Updates the org-wide settings for ExternalContact graph operations|
 |[**put_externalcontacts_import_csv_setting**](#put_externalcontacts_import_csv_setting) | Update settings for CSV import|
 |[**put_externalcontacts_import_job**](#put_externalcontacts_import_job) | Update Job&#39;s workflow status|
 |[**put_externalcontacts_import_setting**](#put_externalcontacts_import_setting) | Update settings|
@@ -1584,6 +1594,414 @@ except ApiException as e:
 ### Return type
 
 [**CursorExternalSourceListing**](CursorExternalSourceListing)
+
+
+## get_externalcontacts_graphs_clusterscan
+
+> [**ClusterScan**](ClusterScan) get_externalcontacts_graphs_clusterscan(scan_id, expand=expand)
+
+
+Returns a single cluster scan
+
+get_externalcontacts_graphs_clusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId} 
+
+Requires ANY permissions: 
+
+* externalContacts:graphClusterScan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+scan_id = 'scan_id_example' # str | Cluster scan ID
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
+
+try:
+    # Returns a single cluster scan
+    api_response = api_instance.get_externalcontacts_graphs_clusterscan(scan_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_clusterscan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **scan_id** | **str**| Cluster scan ID |  |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated |
+
+### Return type
+
+[**ClusterScan**](ClusterScan)
+
+
+## get_externalcontacts_graphs_clusterscan_cluster
+
+> [**Cluster**](Cluster) get_externalcontacts_graphs_clusterscan_cluster(scan_id, cluster_id)
+
+
+Returns a single cluster found by a scan
+
+get_externalcontacts_graphs_clusterscan_cluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId} 
+
+Requires ANY permissions: 
+
+* externalContacts:graphCluster:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+scan_id = 'scan_id_example' # str | Cluster scan ID
+cluster_id = 'cluster_id_example' # str | Cluster ID
+
+try:
+    # Returns a single cluster found by a scan
+    api_response = api_instance.get_externalcontacts_graphs_clusterscan_cluster(scan_id, cluster_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_clusterscan_cluster: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **scan_id** | **str**| Cluster scan ID |  |
+| **cluster_id** | **str**| Cluster ID |  |
+
+### Return type
+
+[**Cluster**](Cluster)
+
+
+## get_externalcontacts_graphs_clusterscan_clusters
+
+> [**ClusterList**](ClusterList) get_externalcontacts_graphs_clusterscan_clusters(scan_id, limit=limit, cursor=cursor, division_ids=division_ids, merge_info_status=merge_info_status)
+
+
+Returns a list of clusters found by a scan
+
+get_externalcontacts_graphs_clusterscan_clusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters 
+
+Requires ANY permissions: 
+
+* externalContacts:graphCluster:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+scan_id = 'scan_id_example' # str | Cluster scan ID
+limit = 20 # int | Max number of records to return (must be between 1 and 100) (optional) (default to 20)
+cursor = 'cursor_example' # str | Cursor to continue scanning (optional)
+division_ids = ['division_ids_example'] # list[str] | which divisions to filter results to, up to 50 (defaults to all divisions use has access to) (optional)
+merge_info_status = 'merge_info_status_example' # str | which merge statuses to filter results to (optional)
+
+try:
+    # Returns a list of clusters found by a scan
+    api_response = api_instance.get_externalcontacts_graphs_clusterscan_clusters(scan_id, limit=limit, cursor=cursor, division_ids=division_ids, merge_info_status=merge_info_status)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_clusterscan_clusters: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **scan_id** | **str**| Cluster scan ID |  |
+| **limit** | **int**| Max number of records to return (must be between 1 and 100) | [optional] [default to 20] |
+| **cursor** | **str**| Cursor to continue scanning | [optional]  |
+| **division_ids** | [**list[str]**](str)| which divisions to filter results to, up to 50 (defaults to all divisions use has access to) | [optional]  |
+| **merge_info_status** | **str**| which merge statuses to filter results to | [optional] <br />**Values**: AutoQueued, AutoSucceeded, AutoFailed, ManualQueued, ManualSucceeded, ManualFailed, NotMerged |
+
+### Return type
+
+[**ClusterList**](ClusterList)
+
+
+## get_externalcontacts_graphs_clusterscan_statistics
+
+> [**ClusterScanStatistics**](ClusterScanStatistics) get_externalcontacts_graphs_clusterscan_statistics(scan_id)
+
+
+Returns the statistics about a single cluster scan
+
+get_externalcontacts_graphs_clusterscan_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics 
+
+Requires ANY permissions: 
+
+* externalContacts:graphClusterScan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+scan_id = 'scan_id_example' # str | Cluster scan ID
+
+try:
+    # Returns the statistics about a single cluster scan
+    api_response = api_instance.get_externalcontacts_graphs_clusterscan_statistics(scan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_clusterscan_statistics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **scan_id** | **str**| Cluster scan ID |  |
+
+### Return type
+
+[**ClusterScanStatistics**](ClusterScanStatistics)
+
+
+## get_externalcontacts_graphs_clusterscans
+
+> [**ClusterScanList**](ClusterScanList) get_externalcontacts_graphs_clusterscans(limit=limit, cursor=cursor, expand=expand)
+
+
+Returns a list of cluster scans
+
+get_externalcontacts_graphs_clusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans 
+
+Requires ANY permissions: 
+
+* externalContacts:graphClusterScan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+limit = 20 # int | Max number of records to return (must be between 1 and 100) (optional) (default to 20)
+cursor = 'cursor_example' # str | Cursor to continue scanning (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
+
+try:
+    # Returns a list of cluster scans
+    api_response = api_instance.get_externalcontacts_graphs_clusterscans(limit=limit, cursor=cursor, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_clusterscans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **int**| Max number of records to return (must be between 1 and 100) | [optional] [default to 20] |
+| **cursor** | **str**| Cursor to continue scanning | [optional]  |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated |
+
+### Return type
+
+[**ClusterScanList**](ClusterScanList)
+
+
+## get_externalcontacts_graphs_clusterscans_latest
+
+> [**ClusterScan**](ClusterScan) get_externalcontacts_graphs_clusterscans_latest(expand=expand)
+
+
+Returns the latest cluster scan
+
+get_externalcontacts_graphs_clusterscans_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
+
+try:
+    # Returns the latest cluster scan
+    api_response = api_instance.get_externalcontacts_graphs_clusterscans_latest(expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_clusterscans_latest: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated |
+
+### Return type
+
+[**ClusterScan**](ClusterScan)
+
+
+## get_externalcontacts_graphs_clusterscans_latest_statistics
+
+> [**ClusterScanStatistics**](ClusterScanStatistics) get_externalcontacts_graphs_clusterscans_latest_statistics()
+
+
+Returns the statistics about the latest cluster scan
+
+get_externalcontacts_graphs_clusterscans_latest_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest/statistics 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+
+try:
+    # Returns the statistics about the latest cluster scan
+    api_response = api_instance.get_externalcontacts_graphs_clusterscans_latest_statistics()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_clusterscans_latest_statistics: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**ClusterScanStatistics**](ClusterScanStatistics)
+
+
+## get_externalcontacts_graphs_settings
+
+> [**GraphSettings**](GraphSettings) get_externalcontacts_graphs_settings()
+
+
+Returns the org-wide settings for ExternalContact graph operations
+
+get_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/graphs/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:graphSettingsGlobal:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+
+try:
+    # Returns the org-wide settings for ExternalContact graph operations
+    api_response = api_instance.get_externalcontacts_graphs_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_graphs_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**GraphSettings**](GraphSettings)
 
 
 ## get_externalcontacts_import_csv_setting
@@ -6459,6 +6877,108 @@ except ApiException as e:
 [**ExternalSource**](ExternalSource)
 
 
+## put_externalcontacts_graphs_clusterscan_cluster_merge
+
+> [**Cluster**](Cluster) put_externalcontacts_graphs_clusterscan_cluster_merge(scan_id, cluster_id)
+
+
+Merge a single cluster found by a scan
+
+put_externalcontacts_graphs_clusterscan_cluster_merge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge 
+
+Requires ANY permissions: 
+
+* externalContacts:graphCluster:merge
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+scan_id = 'scan_id_example' # str | Cluster scan ID
+cluster_id = 'cluster_id_example' # str | Cluster ID
+
+try:
+    # Merge a single cluster found by a scan
+    api_response = api_instance.put_externalcontacts_graphs_clusterscan_cluster_merge(scan_id, cluster_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_graphs_clusterscan_cluster_merge: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **scan_id** | **str**| Cluster scan ID |  |
+| **cluster_id** | **str**| Cluster ID |  |
+
+### Return type
+
+[**Cluster**](Cluster)
+
+
+## put_externalcontacts_graphs_settings
+
+> [**GraphSettings**](GraphSettings) put_externalcontacts_graphs_settings(body)
+
+
+Updates the org-wide settings for ExternalContact graph operations
+
+put_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/externalcontacts/graphs/settings 
+
+Requires ANY permissions: 
+
+* externalContacts:graphSettingsGlobal:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.GraphSettings() # GraphSettings | OrgConfiguration
+
+try:
+    # Updates the org-wide settings for ExternalContact graph operations
+    api_response = api_instance.put_externalcontacts_graphs_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_graphs_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GraphSettings**](GraphSettings)| OrgConfiguration |  |
+
+### Return type
+
+[**GraphSettings**](GraphSettings)
+
+
 ## put_externalcontacts_import_csv_setting
 
 > [**CsvSettings**](CsvSettings) put_externalcontacts_import_csv_setting(settings_id, body)
@@ -6864,4 +7384,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

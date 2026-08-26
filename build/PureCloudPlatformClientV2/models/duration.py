@@ -53,6 +53,7 @@ class Duration(object):
             'zero': 'bool',
             'nano': 'int',
             'negative': 'bool',
+            'positive': 'bool',
             'units': 'list[TemporalUnit]'
         }
 
@@ -61,6 +62,7 @@ class Duration(object):
             'zero': 'zero',
             'nano': 'nano',
             'negative': 'negative',
+            'positive': 'positive',
             'units': 'units'
         }
 
@@ -68,6 +70,7 @@ class Duration(object):
         self._zero = None
         self._nano = None
         self._negative = None
+        self._positive = None
         self._units = None
 
     @property
@@ -165,6 +168,30 @@ class Duration(object):
         
 
         self._negative = negative
+
+    @property
+    def positive(self) -> bool:
+        """
+        Gets the positive of this Duration.
+
+
+        :return: The positive of this Duration.
+        :rtype: bool
+        """
+        return self._positive
+
+    @positive.setter
+    def positive(self, positive: bool) -> None:
+        """
+        Sets the positive of this Duration.
+
+
+        :param positive: The positive of this Duration.
+        :type: bool
+        """
+        
+
+        self._positive = positive
 
     @property
     def units(self) -> List['TemporalUnit']:

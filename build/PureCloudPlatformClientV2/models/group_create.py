@@ -65,6 +65,7 @@ class GroupCreate(object):
             'roles_enabled': 'bool',
             'include_owners': 'bool',
             'calls_enabled': 'bool',
+            'email': 'str',
             'owner_ids': 'list[str]',
             'self_uri': 'str'
         }
@@ -85,6 +86,7 @@ class GroupCreate(object):
             'roles_enabled': 'rolesEnabled',
             'include_owners': 'includeOwners',
             'calls_enabled': 'callsEnabled',
+            'email': 'email',
             'owner_ids': 'ownerIds',
             'self_uri': 'selfUri'
         }
@@ -104,6 +106,7 @@ class GroupCreate(object):
         self._roles_enabled = None
         self._include_owners = None
         self._calls_enabled = None
+        self._email = None
         self._owner_ids = None
         self._self_uri = None
 
@@ -481,6 +484,30 @@ class GroupCreate(object):
         
 
         self._calls_enabled = calls_enabled
+
+    @property
+    def email(self) -> str:
+        """
+        Gets the email of this GroupCreate.
+        Email address for the group.
+
+        :return: The email of this GroupCreate.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email: str) -> None:
+        """
+        Sets the email of this GroupCreate.
+        Email address for the group.
+
+        :param email: The email of this GroupCreate.
+        :type: str
+        """
+        
+
+        self._email = email
 
     @property
     def owner_ids(self) -> List[str]:

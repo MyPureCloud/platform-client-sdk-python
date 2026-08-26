@@ -372,4 +372,4 @@ except ApiException as e:
 [**AgenticVirtualAgent**](AgenticVirtualAgent)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationNormalizedMessage
-    from . import MessageMedia
     from . import User
 
 class MessageData(object):
@@ -59,9 +58,7 @@ class MessageData(object):
             'to_address': 'str',
             'direction': 'str',
             'messenger_type': 'str',
-            'text_body': 'str',
             'status': 'str',
-            'media': 'list[MessageMedia]',
             'normalized_message': 'ConversationNormalizedMessage',
             'normalized_receipts': 'list[ConversationNormalizedMessage]',
             'created_by': 'User',
@@ -78,9 +75,7 @@ class MessageData(object):
             'to_address': 'toAddress',
             'direction': 'direction',
             'messenger_type': 'messengerType',
-            'text_body': 'textBody',
             'status': 'status',
-            'media': 'media',
             'normalized_message': 'normalizedMessage',
             'normalized_receipts': 'normalizedReceipts',
             'created_by': 'createdBy',
@@ -96,9 +91,7 @@ class MessageData(object):
         self._to_address = None
         self._direction = None
         self._messenger_type = None
-        self._text_body = None
         self._status = None
-        self._media = None
         self._normalized_message = None
         self._normalized_receipts = None
         self._created_by = None
@@ -308,30 +301,6 @@ class MessageData(object):
             self._messenger_type = messenger_type
 
     @property
-    def text_body(self) -> str:
-        """
-        Gets the text_body of this MessageData.
-        The body of the text message. (Deprecated - Instead use normalizedMessage.text)
-
-        :return: The text_body of this MessageData.
-        :rtype: str
-        """
-        return self._text_body
-
-    @text_body.setter
-    def text_body(self, text_body: str) -> None:
-        """
-        Sets the text_body of this MessageData.
-        The body of the text message. (Deprecated - Instead use normalizedMessage.text)
-
-        :param text_body: The text_body of this MessageData.
-        :type: str
-        """
-        
-
-        self._text_body = text_body
-
-    @property
     def status(self) -> str:
         """
         Gets the status of this MessageData.
@@ -359,30 +328,6 @@ class MessageData(object):
             self._status = "outdated_sdk_version"
         else:
             self._status = status
-
-    @property
-    def media(self) -> List['MessageMedia']:
-        """
-        Gets the media of this MessageData.
-        The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
-
-        :return: The media of this MessageData.
-        :rtype: list[MessageMedia]
-        """
-        return self._media
-
-    @media.setter
-    def media(self, media: List['MessageMedia']) -> None:
-        """
-        Sets the media of this MessageData.
-        The media details associated to a message. (Deprecated - Instead use normalizedMessage.content[index].attachment)
-
-        :param media: The media of this MessageData.
-        :type: list[MessageMedia]
-        """
-        
-
-        self._media = media
 
     @property
     def normalized_message(self) -> 'ConversationNormalizedMessage':

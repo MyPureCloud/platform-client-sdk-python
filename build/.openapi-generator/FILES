@@ -807,6 +807,7 @@ PureCloudPlatformClientV2/models/bulk_entity_error_external_contact.py
 PureCloudPlatformClientV2/models/bulk_entity_error_external_organization.py
 PureCloudPlatformClientV2/models/bulk_entity_error_external_organization_enrich_request.py
 PureCloudPlatformClientV2/models/bulk_entity_error_note.py
+PureCloudPlatformClientV2/models/bulk_entity_error_prefix.py
 PureCloudPlatformClientV2/models/bulk_entity_error_relationship.py
 PureCloudPlatformClientV2/models/bulk_error.py
 PureCloudPlatformClientV2/models/bulk_error_detail.py
@@ -842,6 +843,8 @@ PureCloudPlatformClientV2/models/bulk_organizations_enrich_request.py
 PureCloudPlatformClientV2/models/bulk_organizations_enrich_response.py
 PureCloudPlatformClientV2/models/bulk_organizations_request.py
 PureCloudPlatformClientV2/models/bulk_organizations_response.py
+PureCloudPlatformClientV2/models/bulk_prefixes_request.py
+PureCloudPlatformClientV2/models/bulk_prefixes_response.py
 PureCloudPlatformClientV2/models/bulk_publish_opportunities_response.py
 PureCloudPlatformClientV2/models/bulk_relationships_request.py
 PureCloudPlatformClientV2/models/bulk_relationships_response.py
@@ -857,6 +860,7 @@ PureCloudPlatformClientV2/models/bulk_response_result_external_organization_exte
 PureCloudPlatformClientV2/models/bulk_response_result_external_organization_external_organization_enrich_request_bulk_entity_error_external_organization_enrich_request.py
 PureCloudPlatformClientV2/models/bulk_response_result_note_entity_bulk_entity_error_entity.py
 PureCloudPlatformClientV2/models/bulk_response_result_note_note_bulk_entity_error_note.py
+PureCloudPlatformClientV2/models/bulk_response_result_prefix_prefix_bulk_entity_error_prefix.py
 PureCloudPlatformClientV2/models/bulk_response_result_relationship_entity_bulk_entity_error_entity.py
 PureCloudPlatformClientV2/models/bulk_response_result_relationship_relationship_bulk_entity_error_relationship.py
 PureCloudPlatformClientV2/models/bulk_response_result_void_entity_bulk_entity_error_entity.py
@@ -916,6 +920,7 @@ PureCloudPlatformClientV2/models/call_media_policy.py
 PureCloudPlatformClientV2/models/call_media_policy_conditions.py
 PureCloudPlatformClientV2/models/call_record.py
 PureCloudPlatformClientV2/models/call_route.py
+PureCloudPlatformClientV2/models/call_simulation_result.py
 PureCloudPlatformClientV2/models/call_target.py
 PureCloudPlatformClientV2/models/call_to_action.py
 PureCloudPlatformClientV2/models/callable_contacts_diagnostic.py
@@ -993,6 +998,8 @@ PureCloudPlatformClientV2/models/capacity_plan_delete_request.py
 PureCloudPlatformClientV2/models/capacity_plan_forecast_inputs_response.py
 PureCloudPlatformClientV2/models/capacity_plan_forecast_inputs_template.py
 PureCloudPlatformClientV2/models/capacity_plan_forecast_metrics.py
+PureCloudPlatformClientV2/models/capacity_plan_imported_forecast.py
+PureCloudPlatformClientV2/models/capacity_plan_imported_forecast_request.py
 PureCloudPlatformClientV2/models/capacity_plan_list_item.py
 PureCloudPlatformClientV2/models/capacity_plan_metadata.py
 PureCloudPlatformClientV2/models/capacity_plan_metrics_summary.py
@@ -1118,6 +1125,12 @@ PureCloudPlatformClientV2/models/client_usage_query_response.py
 PureCloudPlatformClientV2/models/cloned_user.py
 PureCloudPlatformClientV2/models/cloned_user_entity_listing.py
 PureCloudPlatformClientV2/models/close_button_style_properties.py
+PureCloudPlatformClientV2/models/cluster.py
+PureCloudPlatformClientV2/models/cluster_list.py
+PureCloudPlatformClientV2/models/cluster_scan.py
+PureCloudPlatformClientV2/models/cluster_scan_list.py
+PureCloudPlatformClientV2/models/cluster_scan_statistics.py
+PureCloudPlatformClientV2/models/cluster_statistics.py
 PureCloudPlatformClientV2/models/coaching_annotation.py
 PureCloudPlatformClientV2/models/coaching_annotation_create_request.py
 PureCloudPlatformClientV2/models/coaching_annotation_list.py
@@ -1265,6 +1278,7 @@ PureCloudPlatformClientV2/models/contact_listing_request.py
 PureCloudPlatformClientV2/models/contact_listing_response.py
 PureCloudPlatformClientV2/models/contact_phone_number_column.py
 PureCloudPlatformClientV2/models/contact_sort.py
+PureCloudPlatformClientV2/models/contact_vertex.py
 PureCloudPlatformClientV2/models/contactable_status.py
 PureCloudPlatformClientV2/models/contactlist_download_ready_export_uri.py
 PureCloudPlatformClientV2/models/contactlist_download_ready_object.py
@@ -1816,6 +1830,7 @@ PureCloudPlatformClientV2/models/copilot_fallback_action.py
 PureCloudPlatformClientV2/models/copilot_nlu_domain.py
 PureCloudPlatformClientV2/models/copilot_nlu_domain_version.py
 PureCloudPlatformClientV2/models/copilot_rule.py
+PureCloudPlatformClientV2/models/copilot_sentiment_settings.py
 PureCloudPlatformClientV2/models/copilot_transcription_config.py
 PureCloudPlatformClientV2/models/copy_attachments_request.py
 PureCloudPlatformClientV2/models/copy_bu_forecast_request.py
@@ -1850,6 +1865,7 @@ PureCloudPlatformClientV2/models/create_decision_table_columns_request.py
 PureCloudPlatformClientV2/models/create_decision_table_import_job_request.py
 PureCloudPlatformClientV2/models/create_decision_table_request.py
 PureCloudPlatformClientV2/models/create_decision_table_row_request.py
+PureCloudPlatformClientV2/models/create_decision_table_snapshot_request.py
 PureCloudPlatformClientV2/models/create_decision_table_version_request.py
 PureCloudPlatformClientV2/models/create_email_request.py
 PureCloudPlatformClientV2/models/create_external_events_configuration_request.py
@@ -2389,6 +2405,10 @@ PureCloudPlatformClientV2/models/edge_metrics_topic_uri_reference.py
 PureCloudPlatformClientV2/models/edge_network_diagnostic.py
 PureCloudPlatformClientV2/models/edge_network_diagnostic_request.py
 PureCloudPlatformClientV2/models/edge_network_diagnostic_response.py
+PureCloudPlatformClientV2/models/edge_offline_configuration.py
+PureCloudPlatformClientV2/models/edge_offline_configuration_interface.py
+PureCloudPlatformClientV2/models/edge_offline_configuration_network.py
+PureCloudPlatformClientV2/models/edge_offline_configuration_response.py
 PureCloudPlatformClientV2/models/edge_reboot_parameters.py
 PureCloudPlatformClientV2/models/edge_service_state_request.py
 PureCloudPlatformClientV2/models/edge_software_update_topic_domain_edge_software_update.py
@@ -2934,7 +2954,11 @@ PureCloudPlatformClientV2/models/grammar_language.py
 PureCloudPlatformClientV2/models/grammar_language_file_metadata.py
 PureCloudPlatformClientV2/models/grammar_language_update.py
 PureCloudPlatformClientV2/models/grammar_listing.py
+PureCloudPlatformClientV2/models/graph.py
 PureCloudPlatformClientV2/models/graph_api_settings.py
+PureCloudPlatformClientV2/models/graph_edge.py
+PureCloudPlatformClientV2/models/graph_settings.py
+PureCloudPlatformClientV2/models/graph_vertices.py
 PureCloudPlatformClientV2/models/greeting.py
 PureCloudPlatformClientV2/models/greeting_audio_file.py
 PureCloudPlatformClientV2/models/greeting_listing.py
@@ -3017,6 +3041,7 @@ PureCloudPlatformClientV2/models/hris_time_off_types_response.py
 PureCloudPlatformClientV2/models/humanize.py
 PureCloudPlatformClientV2/models/icon.py
 PureCloudPlatformClientV2/models/identifier_claim_request.py
+PureCloudPlatformClientV2/models/identifier_vertex.py
 PureCloudPlatformClientV2/models/identity_now.py
 PureCloudPlatformClientV2/models/identity_provider.py
 PureCloudPlatformClientV2/models/identity_provider_entity_listing.py
@@ -3716,6 +3741,8 @@ PureCloudPlatformClientV2/models/member_entity.py
 PureCloudPlatformClientV2/models/member_group.py
 PureCloudPlatformClientV2/models/member_listing.py
 PureCloudPlatformClientV2/models/merge_contacts_request.py
+PureCloudPlatformClientV2/models/merge_error.py
+PureCloudPlatformClientV2/models/merge_info.py
 PureCloudPlatformClientV2/models/merge_operation.py
 PureCloudPlatformClientV2/models/merge_request.py
 PureCloudPlatformClientV2/models/message.py
@@ -4021,6 +4048,7 @@ PureCloudPlatformClientV2/models/outbound_domain.py
 PureCloudPlatformClientV2/models/outbound_domain_create_request.py
 PureCloudPlatformClientV2/models/outbound_domain_entity_listing.py
 PureCloudPlatformClientV2/models/outbound_domain_patch_request.py
+PureCloudPlatformClientV2/models/outbound_fax_status.py
 PureCloudPlatformClientV2/models/outbound_messaging_campaign_post_contact_email_event_topic_email_attributes.py
 PureCloudPlatformClientV2/models/outbound_messaging_campaign_post_contact_email_event_topic_outbound_messaging_campaign_post_contact_email_event.py
 PureCloudPlatformClientV2/models/outbound_messaging_campaign_post_contact_sms_event_topic_outbound_messaging_campaign_post_contact_sms_event.py
@@ -4281,6 +4309,9 @@ PureCloudPlatformClientV2/models/predictor_model_retraining_error.py
 PureCloudPlatformClientV2/models/predictor_models.py
 PureCloudPlatformClientV2/models/predictor_schedule.py
 PureCloudPlatformClientV2/models/predictor_workload_balancing.py
+PureCloudPlatformClientV2/models/prefix.py
+PureCloudPlatformClientV2/models/prefix_listing.py
+PureCloudPlatformClientV2/models/prefix_listing_item.py
 PureCloudPlatformClientV2/models/preprocessing_rule.py
 PureCloudPlatformClientV2/models/presence_definition.py
 PureCloudPlatformClientV2/models/presence_detail_query_clause.py
@@ -4918,6 +4949,7 @@ PureCloudPlatformClientV2/models/role_division.py
 PureCloudPlatformClientV2/models/role_division_grants.py
 PureCloudPlatformClientV2/models/role_division_pair.py
 PureCloudPlatformClientV2/models/role_settings.py
+PureCloudPlatformClientV2/models/rollback_decision_table_version_request.py
 PureCloudPlatformClientV2/models/room.py
 PureCloudPlatformClientV2/models/room_participant.py
 PureCloudPlatformClientV2/models/room_participant_response.py
@@ -5486,6 +5518,8 @@ PureCloudPlatformClientV2/models/team_reference.py
 PureCloudPlatformClientV2/models/team_search_criteria.py
 PureCloudPlatformClientV2/models/team_search_request.py
 PureCloudPlatformClientV2/models/teams_search_response.py
+PureCloudPlatformClientV2/models/telephony_search_criteria.py
+PureCloudPlatformClientV2/models/telephony_search_request.py
 PureCloudPlatformClientV2/models/telephony_settings.py
 PureCloudPlatformClientV2/models/template_parameter.py
 PureCloudPlatformClientV2/models/temporal_unit.py
@@ -5642,10 +5676,12 @@ PureCloudPlatformClientV2/models/trunk.py
 PureCloudPlatformClientV2/models/trunk_base.py
 PureCloudPlatformClientV2/models/trunk_base_assignment.py
 PureCloudPlatformClientV2/models/trunk_base_entity_listing.py
+PureCloudPlatformClientV2/models/trunk_bases_search_response.py
 PureCloudPlatformClientV2/models/trunk_connected_status.py
 PureCloudPlatformClientV2/models/trunk_entity_listing.py
 PureCloudPlatformClientV2/models/trunk_error_info.py
 PureCloudPlatformClientV2/models/trunk_error_info_details.py
+PureCloudPlatformClientV2/models/trunk_instance_search_response.py
 PureCloudPlatformClientV2/models/trunk_instance_topic_trunk.py
 PureCloudPlatformClientV2/models/trunk_instance_topic_trunk_connected_status.py
 PureCloudPlatformClientV2/models/trunk_instance_topic_trunk_error_info.py
@@ -6091,6 +6127,7 @@ PureCloudPlatformClientV2/models/validation_service_request.py
 PureCloudPlatformClientV2/models/value_wrapper_activity_code_style.py
 PureCloudPlatformClientV2/models/value_wrapper_activity_plan_service_goal_impact_overrides.py
 PureCloudPlatformClientV2/models/value_wrapper_bu_short_term_forecast_reference.py
+PureCloudPlatformClientV2/models/value_wrapper_capacity_plan_imported_forecast_request.py
 PureCloudPlatformClientV2/models/value_wrapper_date.py
 PureCloudPlatformClientV2/models/value_wrapper_group_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_hris_time_off_type.py
@@ -7366,6 +7403,7 @@ docs/BulkEntityErrorExternalContact.md
 docs/BulkEntityErrorExternalOrganization.md
 docs/BulkEntityErrorExternalOrganizationEnrichRequest.md
 docs/BulkEntityErrorNote.md
+docs/BulkEntityErrorPrefix.md
 docs/BulkEntityErrorRelationship.md
 docs/BulkError.md
 docs/BulkErrorDetail.md
@@ -7401,6 +7439,8 @@ docs/BulkOrganizationsEnrichRequest.md
 docs/BulkOrganizationsEnrichResponse.md
 docs/BulkOrganizationsRequest.md
 docs/BulkOrganizationsResponse.md
+docs/BulkPrefixesRequest.md
+docs/BulkPrefixesResponse.md
 docs/BulkPublishOpportunitiesResponse.md
 docs/BulkRelationshipsRequest.md
 docs/BulkRelationshipsResponse.md
@@ -7416,6 +7456,7 @@ docs/BulkResponseResultExternalOrganizationExternalOrganizationBulkEntityErrorEx
 docs/BulkResponseResultExternalOrganizationExternalOrganizationEnrichRequestBulkEntityErrorExternalOrganizationEnrichRequest.md
 docs/BulkResponseResultNoteEntityBulkEntityErrorEntity.md
 docs/BulkResponseResultNoteNoteBulkEntityErrorNote.md
+docs/BulkResponseResultPrefixPrefixBulkEntityErrorPrefix.md
 docs/BulkResponseResultRelationshipEntityBulkEntityErrorEntity.md
 docs/BulkResponseResultRelationshipRelationshipBulkEntityErrorRelationship.md
 docs/BulkResponseResultVoidEntityBulkEntityErrorEntity.md
@@ -7477,6 +7518,7 @@ docs/CallMediaPolicy.md
 docs/CallMediaPolicyConditions.md
 docs/CallRecord.md
 docs/CallRoute.md
+docs/CallSimulationResult.md
 docs/CallTarget.md
 docs/CallToAction.md
 docs/CallableContactsDiagnostic.md
@@ -7554,6 +7596,8 @@ docs/CapacityPlanDeleteRequest.md
 docs/CapacityPlanForecastInputsResponse.md
 docs/CapacityPlanForecastInputsTemplate.md
 docs/CapacityPlanForecastMetrics.md
+docs/CapacityPlanImportedForecast.md
+docs/CapacityPlanImportedForecastRequest.md
 docs/CapacityPlanListItem.md
 docs/CapacityPlanMetadata.md
 docs/CapacityPlanMetricsSummary.md
@@ -7685,6 +7729,12 @@ docs/ClientUsageQueryResponse.md
 docs/ClonedUser.md
 docs/ClonedUserEntityListing.md
 docs/CloseButtonStyleProperties.md
+docs/Cluster.md
+docs/ClusterList.md
+docs/ClusterScan.md
+docs/ClusterScanList.md
+docs/ClusterScanStatistics.md
+docs/ClusterStatistics.md
 docs/CoachingAnnotation.md
 docs/CoachingAnnotationCreateRequest.md
 docs/CoachingAnnotationList.md
@@ -7834,6 +7884,7 @@ docs/ContactListingRequest.md
 docs/ContactListingResponse.md
 docs/ContactPhoneNumberColumn.md
 docs/ContactSort.md
+docs/ContactVertex.md
 docs/ContactableStatus.md
 docs/ContactlistDownloadReadyExportUri.md
 docs/ContactlistDownloadReadyObject.md
@@ -8389,6 +8440,7 @@ docs/CopilotFallbackAction.md
 docs/CopilotNluDomain.md
 docs/CopilotNluDomainVersion.md
 docs/CopilotRule.md
+docs/CopilotSentimentSettings.md
 docs/CopilotTranscriptionConfig.md
 docs/CopyAttachmentsRequest.md
 docs/CopyBuForecastRequest.md
@@ -8423,6 +8475,7 @@ docs/CreateDecisionTableColumnsRequest.md
 docs/CreateDecisionTableImportJobRequest.md
 docs/CreateDecisionTableRequest.md
 docs/CreateDecisionTableRowRequest.md
+docs/CreateDecisionTableSnapshotRequest.md
 docs/CreateDecisionTableVersionRequest.md
 docs/CreateEmailRequest.md
 docs/CreateExternalEventsConfigurationRequest.md
@@ -8970,6 +9023,10 @@ docs/EdgeMetricsTopicUriReference.md
 docs/EdgeNetworkDiagnostic.md
 docs/EdgeNetworkDiagnosticRequest.md
 docs/EdgeNetworkDiagnosticResponse.md
+docs/EdgeOfflineConfiguration.md
+docs/EdgeOfflineConfigurationInterface.md
+docs/EdgeOfflineConfigurationNetwork.md
+docs/EdgeOfflineConfigurationResponse.md
 docs/EdgeRebootParameters.md
 docs/EdgeServiceStateRequest.md
 docs/EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate.md
@@ -9533,7 +9590,11 @@ docs/GrammarLanguage.md
 docs/GrammarLanguageFileMetadata.md
 docs/GrammarLanguageUpdate.md
 docs/GrammarListing.md
+docs/Graph.md
 docs/GraphApiSettings.md
+docs/GraphEdge.md
+docs/GraphSettings.md
+docs/GraphVertices.md
 docs/Greeting.md
 docs/GreetingAudioFile.md
 docs/GreetingListing.md
@@ -9625,6 +9686,7 @@ docs/IVREntityListing.md
 docs/IVRIdentityResolutionConfig.md
 docs/Icon.md
 docs/IdentifierClaimRequest.md
+docs/IdentifierVertex.md
 docs/IdentityNow.md
 docs/IdentityProvider.md
 docs/IdentityProviderApi.json
@@ -10343,6 +10405,8 @@ docs/MemberEntity.md
 docs/MemberGroup.md
 docs/MemberListing.md
 docs/MergeContactsRequest.md
+docs/MergeError.md
+docs/MergeInfo.md
 docs/MergeOperation.md
 docs/MergeRequest.md
 docs/Message.md
@@ -10666,6 +10730,7 @@ docs/OutboundDomain.md
 docs/OutboundDomainCreateRequest.md
 docs/OutboundDomainEntityListing.md
 docs/OutboundDomainPatchRequest.md
+docs/OutboundFaxStatus.md
 docs/OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes.md
 docs/OutboundMessagingCampaignPostContactEmailEventTopicOutboundMessagingCampaignPostContactEmailEvent.md
 docs/OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.md
@@ -10926,6 +10991,9 @@ docs/PredictorModelRetrainingError.md
 docs/PredictorModels.md
 docs/PredictorSchedule.md
 docs/PredictorWorkloadBalancing.md
+docs/Prefix.md
+docs/PrefixListing.md
+docs/PrefixListingItem.md
 docs/PreprocessingRule.md
 docs/PresenceApi.json
 docs/PresenceApi.md
@@ -11573,6 +11641,7 @@ docs/RoleDivision.md
 docs/RoleDivisionGrants.md
 docs/RoleDivisionPair.md
 docs/RoleSettings.md
+docs/RollbackDecisionTableVersionRequest.md
 docs/Room.md
 docs/RoomParticipant.md
 docs/RoomParticipantResponse.md
@@ -12169,6 +12238,8 @@ docs/TelephonyApi.json
 docs/TelephonyApi.md
 docs/TelephonyProvidersEdgeApi.json
 docs/TelephonyProvidersEdgeApi.md
+docs/TelephonySearchCriteria.md
+docs/TelephonySearchRequest.md
 docs/TelephonySettings.md
 docs/TemplateParameter.md
 docs/TemporalUnit.md
@@ -12329,10 +12400,12 @@ docs/Trunk.md
 docs/TrunkBase.md
 docs/TrunkBaseAssignment.md
 docs/TrunkBaseEntityListing.md
+docs/TrunkBasesSearchResponse.md
 docs/TrunkConnectedStatus.md
 docs/TrunkEntityListing.md
 docs/TrunkErrorInfo.md
 docs/TrunkErrorInfoDetails.md
+docs/TrunkInstanceSearchResponse.md
 docs/TrunkInstanceTopicTrunk.md
 docs/TrunkInstanceTopicTrunkConnectedStatus.md
 docs/TrunkInstanceTopicTrunkErrorInfo.md
@@ -12790,6 +12863,7 @@ docs/ValidationServiceRequest.md
 docs/ValueWrapperActivityCodeStyle.md
 docs/ValueWrapperActivityPlanServiceGoalImpactOverrides.md
 docs/ValueWrapperBuShortTermForecastReference.md
+docs/ValueWrapperCapacityPlanImportedForecastRequest.md
 docs/ValueWrapperDate.md
 docs/ValueWrapperGroupSettings.md
 docs/ValueWrapperHrisTimeOffType.md
@@ -13397,6 +13471,7 @@ docs/delete_businessrules_decisiontable_export-example.txt
 docs/delete_businessrules_decisiontable_import-example.txt
 docs/delete_businessrules_decisiontable_version-example.txt
 docs/delete_businessrules_decisiontable_version_row-example.txt
+docs/delete_businessrules_decisiontable_version_snapshot-example.txt
 docs/delete_businessrules_schema-example.txt
 docs/delete_casemanagement_case-example.txt
 docs/delete_casemanagement_case_comments_me_comment_id-example.txt
@@ -13907,6 +13982,8 @@ docs/get_businessrules_decisiontable_versions-example.txt
 docs/get_businessrules_decisiontables-example.txt
 docs/get_businessrules_decisiontables_search-example.txt
 docs/get_businessrules_schema-example.txt
+docs/get_businessrules_schema_version-example.txt
+docs/get_businessrules_schema_versions-example.txt
 docs/get_businessrules_schemas-example.txt
 docs/get_businessrules_schemas_coretype-example.txt
 docs/get_businessrules_schemas_coretypes-example.txt
@@ -14137,6 +14214,14 @@ docs/get_externalcontacts_contacts_schemas_coretypes-example.txt
 docs/get_externalcontacts_contacts_schemas_limits-example.txt
 docs/get_externalcontacts_externalsource-example.txt
 docs/get_externalcontacts_externalsources-example.txt
+docs/get_externalcontacts_graphs_clusterscan-example.txt
+docs/get_externalcontacts_graphs_clusterscan_cluster-example.txt
+docs/get_externalcontacts_graphs_clusterscan_clusters-example.txt
+docs/get_externalcontacts_graphs_clusterscan_statistics-example.txt
+docs/get_externalcontacts_graphs_clusterscans-example.txt
+docs/get_externalcontacts_graphs_clusterscans_latest-example.txt
+docs/get_externalcontacts_graphs_clusterscans_latest_statistics-example.txt
+docs/get_externalcontacts_graphs_settings-example.txt
 docs/get_externalcontacts_import_csv_setting-example.txt
 docs/get_externalcontacts_import_csv_settings-example.txt
 docs/get_externalcontacts_import_csv_upload_details-example.txt
@@ -14179,6 +14264,7 @@ docs/get_externalcontacts_settings-example.txt
 docs/get_fax_document-example.txt
 docs/get_fax_document_content-example.txt
 docs/get_fax_documents-example.txt
+docs/get_fax_fax_id_status-example.txt
 docs/get_fax_settings-example.txt
 docs/get_fax_summary-example.txt
 docs/get_fieldconfig-example.txt
@@ -14966,6 +15052,8 @@ docs/get_telephony_mediaregions-example.txt
 docs/get_telephony_numbers_routing-example.txt
 docs/get_telephony_organization_link-example.txt
 docs/get_telephony_organization_link_regions-example.txt
+docs/get_telephony_prefixes-example.txt
+docs/get_telephony_prefixes_simulate_call-example.txt
 docs/get_telephony_providers_edge-example.txt
 docs/get_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/get_telephony_providers_edge_diagnostic_ping-example.txt
@@ -15034,6 +15122,7 @@ docs/get_telephony_providers_edges_trunk_metrics-example.txt
 docs/get_telephony_providers_edges_trunkbasesetting-example.txt
 docs/get_telephony_providers_edges_trunkbasesettings-example.txt
 docs/get_telephony_providers_edges_trunkbasesettings_availablemetabases-example.txt
+docs/get_telephony_providers_edges_trunkbasesettings_site_site_id-example.txt
 docs/get_telephony_providers_edges_trunkbasesettings_template-example.txt
 docs/get_telephony_providers_edges_trunks-example.txt
 docs/get_telephony_providers_edges_trunks_metrics-example.txt
@@ -15699,11 +15788,13 @@ docs/post_businessrules_decisiontable_exports-example.txt
 docs/post_businessrules_decisiontable_imports-example.txt
 docs/post_businessrules_decisiontable_version_copy-example.txt
 docs/post_businessrules_decisiontable_version_execute-example.txt
+docs/post_businessrules_decisiontable_version_rollback-example.txt
 docs/post_businessrules_decisiontable_version_rows-example.txt
 docs/post_businessrules_decisiontable_version_rows_bulk_add-example.txt
 docs/post_businessrules_decisiontable_version_rows_bulk_remove-example.txt
 docs/post_businessrules_decisiontable_version_rows_bulk_update-example.txt
 docs/post_businessrules_decisiontable_version_rows_search-example.txt
+docs/post_businessrules_decisiontable_version_snapshot-example.txt
 docs/post_businessrules_decisiontable_version_sync-example.txt
 docs/post_businessrules_decisiontable_versions-example.txt
 docs/post_businessrules_decisiontables-example.txt
@@ -16277,6 +16368,7 @@ docs/post_telephony_numbers_routing-example.txt
 docs/post_telephony_numbers_routing_all-example.txt
 docs/post_telephony_numbers_routing_reset-example.txt
 docs/post_telephony_organization_link-example.txt
+docs/post_telephony_prefixes_bulk-example.txt
 docs/post_telephony_providers_edge_diagnostic_nslookup-example.txt
 docs/post_telephony_providers_edge_diagnostic_ping-example.txt
 docs/post_telephony_providers_edge_diagnostic_route-example.txt
@@ -16284,6 +16376,7 @@ docs/post_telephony_providers_edge_diagnostic_tracepath-example.txt
 docs/post_telephony_providers_edge_logicalinterfaces-example.txt
 docs/post_telephony_providers_edge_logs_job_upload-example.txt
 docs/post_telephony_providers_edge_logs_jobs-example.txt
+docs/post_telephony_providers_edge_offlineconfiguration-example.txt
 docs/post_telephony_providers_edge_reboot-example.txt
 docs/post_telephony_providers_edge_softwareupdate-example.txt
 docs/post_telephony_providers_edge_statuscode-example.txt
@@ -16303,6 +16396,8 @@ docs/post_telephony_providers_edges_sites-example.txt
 docs/post_telephony_providers_edges_sites_search-example.txt
 docs/post_telephony_providers_edges_sites_search-example.txt
 docs/post_telephony_providers_edges_trunkbasesettings-example.txt
+docs/post_telephony_providers_edges_trunkbasesettings_search-example.txt
+docs/post_telephony_providers_edges_trunks_search-example.txt
 docs/post_telephony_siptraces_download-example.txt
 docs/post_textbots_botflows_session_turns-example.txt
 docs/post_textbots_botflows_sessions-example.txt
@@ -16555,6 +16650,8 @@ docs/put_externalcontacts_contact_note-example.txt
 docs/put_externalcontacts_contacts_schema-example.txt
 docs/put_externalcontacts_conversation-example.txt
 docs/put_externalcontacts_externalsource-example.txt
+docs/put_externalcontacts_graphs_clusterscan_cluster_merge-example.txt
+docs/put_externalcontacts_graphs_settings-example.txt
 docs/put_externalcontacts_import_csv_setting-example.txt
 docs/put_externalcontacts_import_job-example.txt
 docs/put_externalcontacts_import_setting-example.txt
