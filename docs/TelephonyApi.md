@@ -14,6 +14,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_numbers_routing**](#get_telephony_numbers_routing) | Get Number Routings by organizationId|
 |[**get_telephony_organization_link**](#get_telephony_organization_link) | Get organization links|
 |[**get_telephony_organization_link_regions**](#get_telephony_organization_link_regions) | Get all the replica regions by primary region|
+|[**get_telephony_prefixes**](#get_telephony_prefixes) | Get prefixes|
+|[**get_telephony_prefixes_simulate_call**](#get_telephony_prefixes_simulate_call) | Simulate call to test fraud prefix functionality|
 |[**get_telephony_settings**](#get_telephony_settings) | Get the global telephony configuration.|
 |[**get_telephony_sipmessages_conversation**](#get_telephony_sipmessages_conversation) | Get a SIP message.|
 |[**get_telephony_sipmessages_conversation_headers**](#get_telephony_sipmessages_conversation_headers) | Get SIP headers.|
@@ -24,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_numbers_routing_all**](#post_telephony_numbers_routing_all) | Re-route all numbers on an organization|
 |[**post_telephony_numbers_routing_reset**](#post_telephony_numbers_routing_reset) | Reset routing for organization|
 |[**post_telephony_organization_link**](#post_telephony_organization_link) | Create a link with an organization|
+|[**post_telephony_prefixes_bulk**](#post_telephony_prefixes_bulk) | Bulk save prefixes|
 |[**post_telephony_siptraces_download**](#post_telephony_siptraces_download) | Request a download of a pcap file to S3|
 |[**put_telephony_agent_greetings**](#put_telephony_agent_greetings) | Updates an agent&#39;s greetings.|
 |[**put_telephony_agents_greetings_me**](#put_telephony_agents_greetings_me) | Updates the agent&#39;s own greetings.|
@@ -408,6 +411,110 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**list[RegionResponse]**](RegionResponse)
+
+
+## get_telephony_prefixes
+
+> [**PrefixListing**](PrefixListing) get_telephony_prefixes(type, before=before, after=after, page_size=page_size, prefix=prefix)
+
+
+Get prefixes
+
+Wraps GET /api/v2/telephony/prefixes 
+
+Requires ALL permissions: 
+
+* telephony:prefix:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+type = 'type_example' # str | Filter by prefix type
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+prefix = 'prefix_example' # str | Filter by phone number prefix (optional)
+
+try:
+    # Get prefixes
+    api_response = api_instance.get_telephony_prefixes(type, before=before, after=after, page_size=page_size, prefix=prefix)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_prefixes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **type** | **str**| Filter by prefix type | <br />**Values**: Allow, Block |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **prefix** | **str**| Filter by phone number prefix | [optional]  |
+
+### Return type
+
+[**PrefixListing**](PrefixListing)
+
+
+## get_telephony_prefixes_simulate_call
+
+> [**CallSimulationResult**](CallSimulationResult) get_telephony_prefixes_simulate_call(number)
+
+
+Simulate call to test fraud prefix functionality
+
+Wraps GET /api/v2/telephony/prefixes/simulate/call 
+
+Requires ALL permissions: 
+
+* telephony:prefix:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+number = 'number_example' # str | Phone number to simulate
+
+try:
+    # Simulate call to test fraud prefix functionality
+    api_response = api_instance.get_telephony_prefixes_simulate_call(number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_prefixes_simulate_call: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **number** | **str**| Phone number to simulate |  |
+
+### Return type
+
+[**CallSimulationResult**](CallSimulationResult)
 
 
 ## get_telephony_settings
@@ -902,6 +1009,54 @@ except ApiException as e:
 [**OrganizationLink**](OrganizationLink)
 
 
+## post_telephony_prefixes_bulk
+
+> [**BulkPrefixesResponse**](BulkPrefixesResponse) post_telephony_prefixes_bulk(body)
+
+
+Bulk save prefixes
+
+Wraps POST /api/v2/telephony/prefixes/bulk 
+
+Requires ALL permissions: 
+
+* telephony:prefix:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+body = PureCloudPlatformClientV2.BulkPrefixesRequest() # BulkPrefixesRequest | Bulk save request with list of prefixes
+
+try:
+    # Bulk save prefixes
+    api_response = api_instance.post_telephony_prefixes_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->post_telephony_prefixes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BulkPrefixesRequest**](BulkPrefixesRequest)| Bulk save request with list of prefixes |  |
+
+### Return type
+
+[**BulkPrefixesResponse**](BulkPrefixesResponse)
+
+
 ## post_telephony_siptraces_download
 
 > [**SipDownloadResponse**](SipDownloadResponse) post_telephony_siptraces_download(sip_search_public_request)
@@ -1096,4 +1251,4 @@ except ApiException as e:
 [**TelephonySettings**](TelephonySettings)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

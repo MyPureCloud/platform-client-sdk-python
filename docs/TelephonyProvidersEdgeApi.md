@@ -86,6 +86,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_trunkbasesetting**](#get_telephony_providers_edges_trunkbasesetting) | Get a Trunk Base Settings object by ID|
 |[**get_telephony_providers_edges_trunkbasesettings**](#get_telephony_providers_edges_trunkbasesettings) | Get Trunk Base Settings listing|
 |[**get_telephony_providers_edges_trunkbasesettings_availablemetabases**](#get_telephony_providers_edges_trunkbasesettings_availablemetabases) | Get a list of available makes and models to create a new Trunk Base Settings|
+|[**get_telephony_providers_edges_trunkbasesettings_site_site_id**](#get_telephony_providers_edges_trunkbasesettings_site_site_id) | Get Trunk Base Settings listing for site|
 |[**get_telephony_providers_edges_trunkbasesettings_template**](#get_telephony_providers_edges_trunkbasesettings_template) | Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance|
 |[**get_telephony_providers_edges_trunks**](#get_telephony_providers_edges_trunks) | Get the list of available trunks.|
 |[**get_telephony_providers_edges_trunks_metrics**](#get_telephony_providers_edges_trunks_metrics) | Get the metrics for a list of trunks.|
@@ -98,6 +99,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edge_logicalinterfaces**](#post_telephony_providers_edge_logicalinterfaces) | Create an edge logical interface.|
 |[**post_telephony_providers_edge_logs_job_upload**](#post_telephony_providers_edge_logs_job_upload) | Request that the specified fileIds be uploaded from the Edge.|
 |[**post_telephony_providers_edge_logs_jobs**](#post_telephony_providers_edge_logs_jobs) | Create a job to upload a list of Edge logs.|
+|[**post_telephony_providers_edge_offlineconfiguration**](#post_telephony_providers_edge_offlineconfiguration) | Create a file that can be used to configure a hardware Edge&#39;s settings.|
 |[**post_telephony_providers_edge_reboot**](#post_telephony_providers_edge_reboot) | Reboot an Edge|
 |[**post_telephony_providers_edge_softwareupdate**](#post_telephony_providers_edge_softwareupdate) | Starts a software update for this edge.|
 |[**post_telephony_providers_edge_statuscode**](#post_telephony_providers_edge_statuscode) | Take an Edge in or out of service|
@@ -116,6 +118,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_sites**](#post_telephony_providers_edges_sites) | Create a Site.|
 |[**post_telephony_providers_edges_sites_search**](#post_telephony_providers_edges_sites_search) | Search sites|
 |[**post_telephony_providers_edges_trunkbasesettings**](#post_telephony_providers_edges_trunkbasesettings) | Create a Trunk Base Settings object|
+|[**post_telephony_providers_edges_trunkbasesettings_search**](#post_telephony_providers_edges_trunkbasesettings_search) | Search Trunk Base Settings|
+|[**post_telephony_providers_edges_trunks_search**](#post_telephony_providers_edges_trunks_search) | Search for trunks|
 |[**put_telephony_providers_edge**](#put_telephony_providers_edge) | Update a edge.|
 |[**put_telephony_providers_edge_logicalinterface**](#put_telephony_providers_edge_logicalinterface) | Update an edge logical interface.|
 |[**put_telephony_providers_edges_alertablepresences**](#put_telephony_providers_edges_alertablepresences) | Creates or updates alertable presences overrides.|
@@ -4207,6 +4211,64 @@ except ApiException as e:
 [**TrunkMetabaseEntityListing**](TrunkMetabaseEntityListing)
 
 
+## get_telephony_providers_edges_trunkbasesettings_site_site_id
+
+> [**TrunkBaseEntityListing**](TrunkBaseEntityListing) get_telephony_providers_edges_trunkbasesettings_site_site_id(site_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+
+
+Get Trunk Base Settings listing for site
+
+Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+
+Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/site/{siteId} 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID for trunk bases
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''name'' # str | Value by which to sort (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+
+try:
+    # Get Trunk Base Settings listing for site
+    api_response = api_instance.get_telephony_providers_edges_trunkbasesettings_site_site_id(site_id, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_trunkbasesettings_site_site_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID for trunk bases |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Value by which to sort | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
+
+### Return type
+
+[**TrunkBaseEntityListing**](TrunkBaseEntityListing)
+
+
 ## get_telephony_providers_edges_trunkbasesettings_template
 
 > [**TrunkBase**](TrunkBase) get_telephony_providers_edges_trunkbasesettings_template(trunk_metabase_id)
@@ -4815,6 +4877,56 @@ except ApiException as e:
 ### Return type
 
 [**EdgeLogsJobResponse**](EdgeLogsJobResponse)
+
+
+## post_telephony_providers_edge_offlineconfiguration
+
+> [**EdgeOfflineConfigurationResponse**](EdgeOfflineConfigurationResponse) post_telephony_providers_edge_offlineconfiguration(edge_id, body)
+
+
+Create a file that can be used to configure a hardware Edge's settings.
+
+Wraps POST /api/v2/telephony/providers/edges/{edgeId}/offlineconfiguration 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+edge_id = 'edge_id_example' # str | Edge Id
+body = PureCloudPlatformClientV2.EdgeOfflineConfiguration() # EdgeOfflineConfiguration | EdgeOfflineConfiguration
+
+try:
+    # Create a file that can be used to configure a hardware Edge's settings.
+    api_response = api_instance.post_telephony_providers_edge_offlineconfiguration(edge_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edge_offlineconfiguration: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **edge_id** | **str**| Edge Id |  |
+| **body** | [**EdgeOfflineConfiguration**](EdgeOfflineConfiguration)| EdgeOfflineConfiguration |  |
+
+### Return type
+
+[**EdgeOfflineConfigurationResponse**](EdgeOfflineConfigurationResponse)
 
 
 ## post_telephony_providers_edge_reboot
@@ -5686,6 +5798,104 @@ except ApiException as e:
 [**TrunkBase**](TrunkBase)
 
 
+## post_telephony_providers_edges_trunkbasesettings_search
+
+> [**TrunkBasesSearchResponse**](TrunkBasesSearchResponse) post_telephony_providers_edges_trunkbasesettings_search(body)
+
+
+Search Trunk Base Settings
+
+Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
+
+Wraps POST /api/v2/telephony/providers/edges/trunkbasesettings/search 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.TelephonySearchRequest() # TelephonySearchRequest | Telephony search request
+
+try:
+    # Search Trunk Base Settings
+    api_response = api_instance.post_telephony_providers_edges_trunkbasesettings_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_trunkbasesettings_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TelephonySearchRequest**](TelephonySearchRequest)| Telephony search request |  |
+
+### Return type
+
+[**TrunkBasesSearchResponse**](TrunkBasesSearchResponse)
+
+
+## post_telephony_providers_edges_trunks_search
+
+> [**TrunkInstanceSearchResponse**](TrunkInstanceSearchResponse) post_telephony_providers_edges_trunks_search(body)
+
+
+Search for trunks
+
+Wraps POST /api/v2/telephony/providers/edges/trunks/search 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.TelephonySearchRequest() # TelephonySearchRequest | Telephony search request
+
+try:
+    # Search for trunks
+    api_response = api_instance.post_telephony_providers_edges_trunks_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_trunks_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TelephonySearchRequest**](TelephonySearchRequest)| Telephony search request |  |
+
+### Return type
+
+[**TrunkInstanceSearchResponse**](TrunkInstanceSearchResponse)
+
+
 ## put_telephony_providers_edge
 
 > [**Edge**](Edge) put_telephony_providers_edge(edge_id, body)
@@ -6439,4 +6649,4 @@ except ApiException as e:
 [**TrunkBase**](TrunkBase)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

@@ -21,9 +21,10 @@
 | **roles_enabled** | bool | Allow roles to be assigned to this group | [optional] |
 | **include_owners** | bool | Allow owners to be included as members of the group | [optional] |
 | **calls_enabled** | bool | Allow calls to be placed to this group. | [optional] |
+| **email** | str | Email address for the group. | [optional] |
 | **owner_ids** | list[str] | Owners of the group | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

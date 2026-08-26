@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_businessrules_decisiontable_import**](#delete_businessrules_decisiontable_import) | Delete decision table row import job|
 |[**delete_businessrules_decisiontable_version**](#delete_businessrules_decisiontable_version) | Delete a decision table version|
 |[**delete_businessrules_decisiontable_version_row**](#delete_businessrules_decisiontable_version_row) | Delete a decision table row|
+|[**delete_businessrules_decisiontable_version_snapshot**](#delete_businessrules_decisiontable_version_snapshot) | Deletes a decision table version snapshot|
 |[**delete_businessrules_schema**](#delete_businessrules_schema) | Delete a schema|
 |[**get_businessrules_decisiontable**](#get_businessrules_decisiontable) | Get a decision table|
 |[**get_businessrules_decisiontable_export**](#get_businessrules_decisiontable_export) | Get an export job for a decision table|
@@ -24,6 +25,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_businessrules_decisiontables**](#get_businessrules_decisiontables) | Get a list of decision tables.|
 |[**get_businessrules_decisiontables_search**](#get_businessrules_decisiontables_search) | Search for decision tables.|
 |[**get_businessrules_schema**](#get_businessrules_schema) | Get a schema|
+|[**get_businessrules_schema_version**](#get_businessrules_schema_version) | Get a schema version|
+|[**get_businessrules_schema_versions**](#get_businessrules_schema_versions) | List schema versions|
 |[**get_businessrules_schemas**](#get_businessrules_schemas) | Get a list of schemas.|
 |[**get_businessrules_schemas_coretype**](#get_businessrules_schemas_coretype) | Get a specific named core type.|
 |[**get_businessrules_schemas_coretypes**](#get_businessrules_schemas_coretypes) | Get the core types from which all schemas are built.|
@@ -35,11 +38,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_businessrules_decisiontable_imports**](#post_businessrules_decisiontable_imports) | Create a decision table row import job|
 |[**post_businessrules_decisiontable_version_copy**](#post_businessrules_decisiontable_version_copy) | Copy a decision table version|
 |[**post_businessrules_decisiontable_version_execute**](#post_businessrules_decisiontable_version_execute) | Execute a decision table version|
+|[**post_businessrules_decisiontable_version_rollback**](#post_businessrules_decisiontable_version_rollback) | Re-publish a superseded decision table version as the current published version|
 |[**post_businessrules_decisiontable_version_rows**](#post_businessrules_decisiontable_version_rows) | Create a decision table row|
 |[**post_businessrules_decisiontable_version_rows_bulk_add**](#post_businessrules_decisiontable_version_rows_bulk_add) | Bulk add decision table rows|
 |[**post_businessrules_decisiontable_version_rows_bulk_remove**](#post_businessrules_decisiontable_version_rows_bulk_remove) | Bulk delete decision table rows|
 |[**post_businessrules_decisiontable_version_rows_bulk_update**](#post_businessrules_decisiontable_version_rows_bulk_update) | Bulk update decision table rows|
 |[**post_businessrules_decisiontable_version_rows_search**](#post_businessrules_decisiontable_version_rows_search) | Search for decision table rows|
+|[**post_businessrules_decisiontable_version_snapshot**](#post_businessrules_decisiontable_version_snapshot) | Creates a decision table version snapshot|
 |[**post_businessrules_decisiontable_version_sync**](#post_businessrules_decisiontable_version_sync) | Update the Business Rules Schema to the latest version for a given decision table version|
 |[**post_businessrules_decisiontable_versions**](#post_businessrules_decisiontable_versions) | Create a new decision table version. When sourceVersion is not provided, the draft is created from the published version.|
 |[**post_businessrules_decisiontables**](#post_businessrules_decisiontables) | Create a decision table|
@@ -294,6 +299,55 @@ except ApiException as e:
 | **table_id** | **str**| Table ID |  |
 | **table_version** | **int**| Table Version |  |
 | **row_id** | **str**| Row ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_businessrules_decisiontable_version_snapshot
+
+>  delete_businessrules_decisiontable_version_snapshot(table_id, table_version)
+
+
+Deletes a decision table version snapshot
+
+Wraps DELETE /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableSnapshot:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+
+try:
+    # Deletes a decision table version snapshot
+    api_instance.delete_businessrules_decisiontable_version_snapshot(table_id, table_version)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->delete_businessrules_decisiontable_version_snapshot: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **table_version** | **int**| Table Version |  |
 
 ### Return type
 
@@ -757,7 +811,7 @@ except ApiException as e:
 
 ## get_businessrules_decisiontable_versions
 
-> [**DecisionTableVersionListing**](DecisionTableVersionListing) get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size)
+> [**DecisionTableVersionListing**](DecisionTableVersionListing) get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size, status=status, has_snapshot=has_snapshot)
 
 
 Get a list of decision table versions
@@ -784,10 +838,12 @@ api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
 table_id = 'table_id_example' # str | Table ID
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
+status = ['status_example'] # list[str] | Filter by version status. Repeatable. (optional)
+has_snapshot = True # bool | When true, returns only versions that have snapshot metadata. (optional)
 
 try:
     # Get a list of decision table versions
-    api_response = api_instance.get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size)
+    api_response = api_instance.get_businessrules_decisiontable_versions(table_id, after=after, page_size=page_size, status=status, has_snapshot=has_snapshot)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BusinessRulesApi->get_businessrules_decisiontable_versions: %s\n" % e)
@@ -801,6 +857,8 @@ except ApiException as e:
 | **table_id** | **str**| Table ID |  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
+| **status** | [**list[str]**](str)| Filter by version status. Repeatable. | [optional] <br />**Values**: Draft, Published, Error, Preparing, Superseded |
+| **has_snapshot** | **bool**| When true, returns only versions that have snapshot metadata. | [optional]  |
 
 ### Return type
 
@@ -967,6 +1025,110 @@ except ApiException as e:
 ### Return type
 
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
+
+
+## get_businessrules_schema_version
+
+> [**BusinessRulesDataSchema**](BusinessRulesDataSchema) get_businessrules_schema_version(schema_id, schema_version)
+
+
+Get a schema version
+
+Wraps GET /api/v2/businessrules/schemas/{schemaId}/versions/{schemaVersion} 
+
+Requires ANY permissions: 
+
+* businessrules:businessRulesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+schema_id = 'schema_id_example' # str | Schema ID
+schema_version = 'schema_version_example' # str | Schema version number
+
+try:
+    # Get a schema version
+    api_response = api_instance.get_businessrules_schema_version(schema_id, schema_version)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->get_businessrules_schema_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **schema_version** | **str**| Schema version number |  |
+
+### Return type
+
+[**BusinessRulesDataSchema**](BusinessRulesDataSchema)
+
+
+## get_businessrules_schema_versions
+
+> [**BusinessRulesDataSchemaListing**](BusinessRulesDataSchemaListing) get_businessrules_schema_versions(schema_id, before=before, after=after, page_size=page_size)
+
+
+List schema versions
+
+Wraps GET /api/v2/businessrules/schemas/{schemaId}/versions 
+
+Requires ANY permissions: 
+
+* businessrules:businessRulesSchema:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+schema_id = 'schema_id_example' # str | Schema ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of items per page (must be between 1 and 100) (optional)
+
+try:
+    # List schema versions
+    api_response = api_instance.get_businessrules_schema_versions(schema_id, before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->get_businessrules_schema_versions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **schema_id** | **str**| Schema ID |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of items per page (must be between 1 and 100) | [optional]  |
+
+### Return type
+
+[**BusinessRulesDataSchemaListing**](BusinessRulesDataSchemaListing)
 
 
 ## get_businessrules_schemas
@@ -1523,6 +1685,58 @@ except ApiException as e:
 [**DecisionTableExecutionResponse**](DecisionTableExecutionResponse)
 
 
+## post_businessrules_decisiontable_version_rollback
+
+> [**DecisionTableVersion**](DecisionTableVersion) post_businessrules_decisiontable_version_rollback(table_id, table_version, body=body)
+
+
+Re-publish a superseded decision table version as the current published version
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/rollback 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTable:rollback
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+body = PureCloudPlatformClientV2.RollbackDecisionTableVersionRequest() # RollbackDecisionTableVersionRequest | Rollback request (optional)
+
+try:
+    # Re-publish a superseded decision table version as the current published version
+    api_response = api_instance.post_businessrules_decisiontable_version_rollback(table_id, table_version, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_version_rollback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **table_version** | **int**| Table Version |  |
+| **body** | [**RollbackDecisionTableVersionRequest**](RollbackDecisionTableVersionRequest)| Rollback request | [optional]  |
+
+### Return type
+
+[**DecisionTableVersion**](DecisionTableVersion)
+
+
 ## post_businessrules_decisiontable_version_rows
 
 > [**DecisionTableRow**](DecisionTableRow) post_businessrules_decisiontable_version_rows(table_id, table_version, body)
@@ -1796,6 +2010,58 @@ except ApiException as e:
 ### Return type
 
 [**DecisionTableRowListing**](DecisionTableRowListing)
+
+
+## post_businessrules_decisiontable_version_snapshot
+
+> [**DecisionTableVersion**](DecisionTableVersion) post_businessrules_decisiontable_version_snapshot(table_id, table_version, body)
+
+
+Creates a decision table version snapshot
+
+Wraps POST /api/v2/businessrules/decisiontables/{tableId}/versions/{tableVersion}/snapshot 
+
+Requires ANY permissions: 
+
+* businessrules:decisionTableSnapshot:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BusinessRulesApi()
+table_id = 'table_id_example' # str | Table ID
+table_version = 56 # int | Table Version
+body = PureCloudPlatformClientV2.CreateDecisionTableSnapshotRequest() # CreateDecisionTableSnapshotRequest | Snapshot request
+
+try:
+    # Creates a decision table version snapshot
+    api_response = api_instance.post_businessrules_decisiontable_version_snapshot(table_id, table_version, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BusinessRulesApi->post_businessrules_decisiontable_version_snapshot: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **table_id** | **str**| Table ID |  |
+| **table_version** | **int**| Table Version |  |
+| **body** | [**CreateDecisionTableSnapshotRequest**](CreateDecisionTableSnapshotRequest)| Snapshot request |  |
+
+### Return type
+
+[**DecisionTableVersion**](DecisionTableVersion)
 
 
 ## post_businessrules_decisiontable_version_sync
@@ -2155,4 +2421,4 @@ except ApiException as e:
 [**BusinessRulesDataSchema**](BusinessRulesDataSchema)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_

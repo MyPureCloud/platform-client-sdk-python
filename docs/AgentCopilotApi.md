@@ -69,9 +69,10 @@ Get information about the support of features for all the languages or only for 
 
 Wraps GET /api/v2/assistants/copilot/featuresupport 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * assistants:copilot:view
+* assistants:copilotFeatureSupport:view
 
 ### Example
 
@@ -158,4 +159,4 @@ except ApiException as e:
 [**Copilot**](Copilot)
 
 
-_PureCloudPlatformClientV2 264.0.0_
+_PureCloudPlatformClientV2 265.0.0_
