@@ -291,6 +291,10 @@ class ViewFilter(object):
             'social_source_types': 'list[str]',
             'social_follower_range': 'SocialNumericRange',
             'social_verification_status': 'bool',
+            'social_engagement_likes': 'NumericRange',
+            'social_engagement_shares': 'NumericRange',
+            'social_engagement_comments': 'NumericRange',
+            'social_engagement_views': 'NumericRange',
             'session_expired': 'bool',
             'screen_monitored': 'bool',
             'engagement_sources': 'list[str]',
@@ -536,6 +540,10 @@ class ViewFilter(object):
             'social_source_types': 'socialSourceTypes',
             'social_follower_range': 'socialFollowerRange',
             'social_verification_status': 'socialVerificationStatus',
+            'social_engagement_likes': 'socialEngagementLikes',
+            'social_engagement_shares': 'socialEngagementShares',
+            'social_engagement_comments': 'socialEngagementComments',
+            'social_engagement_views': 'socialEngagementViews',
             'session_expired': 'sessionExpired',
             'screen_monitored': 'screenMonitored',
             'engagement_sources': 'engagementSources',
@@ -780,6 +788,10 @@ class ViewFilter(object):
         self._social_source_types = None
         self._social_follower_range = None
         self._social_verification_status = None
+        self._social_engagement_likes = None
+        self._social_engagement_shares = None
+        self._social_engagement_comments = None
+        self._social_engagement_views = None
         self._session_expired = None
         self._screen_monitored = None
         self._engagement_sources = None
@@ -6480,6 +6492,102 @@ class ViewFilter(object):
         
 
         self._social_verification_status = social_verification_status
+
+    @property
+    def social_engagement_likes(self) -> 'NumericRange':
+        """
+        Gets the social_engagement_likes of this ViewFilter.
+        The likes range used to filter the view
+
+        :return: The social_engagement_likes of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._social_engagement_likes
+
+    @social_engagement_likes.setter
+    def social_engagement_likes(self, social_engagement_likes: 'NumericRange') -> None:
+        """
+        Sets the social_engagement_likes of this ViewFilter.
+        The likes range used to filter the view
+
+        :param social_engagement_likes: The social_engagement_likes of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._social_engagement_likes = social_engagement_likes
+
+    @property
+    def social_engagement_shares(self) -> 'NumericRange':
+        """
+        Gets the social_engagement_shares of this ViewFilter.
+        The shares range used to filter the view
+
+        :return: The social_engagement_shares of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._social_engagement_shares
+
+    @social_engagement_shares.setter
+    def social_engagement_shares(self, social_engagement_shares: 'NumericRange') -> None:
+        """
+        Sets the social_engagement_shares of this ViewFilter.
+        The shares range used to filter the view
+
+        :param social_engagement_shares: The social_engagement_shares of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._social_engagement_shares = social_engagement_shares
+
+    @property
+    def social_engagement_comments(self) -> 'NumericRange':
+        """
+        Gets the social_engagement_comments of this ViewFilter.
+        The comments range used to filter the view
+
+        :return: The social_engagement_comments of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._social_engagement_comments
+
+    @social_engagement_comments.setter
+    def social_engagement_comments(self, social_engagement_comments: 'NumericRange') -> None:
+        """
+        Sets the social_engagement_comments of this ViewFilter.
+        The comments range used to filter the view
+
+        :param social_engagement_comments: The social_engagement_comments of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._social_engagement_comments = social_engagement_comments
+
+    @property
+    def social_engagement_views(self) -> 'NumericRange':
+        """
+        Gets the social_engagement_views of this ViewFilter.
+        The views range used to filter the view
+
+        :return: The social_engagement_views of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._social_engagement_views
+
+    @social_engagement_views.setter
+    def social_engagement_views(self, social_engagement_views: 'NumericRange') -> None:
+        """
+        Sets the social_engagement_views of this ViewFilter.
+        The views range used to filter the view
+
+        :param social_engagement_views: The social_engagement_views of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._social_engagement_views = social_engagement_views
 
     @property
     def session_expired(self) -> bool:

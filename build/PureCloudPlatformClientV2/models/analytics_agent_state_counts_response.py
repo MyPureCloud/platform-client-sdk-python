@@ -32,6 +32,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AgentStateActivityCategoryCount
+    from . import AgentStateAdherenceStateCount
     from . import AgentStateIsOutOfOfficeCount
     from . import AgentStatePresenceCount
     from . import AgentStateRoutingStatusCount
@@ -55,20 +57,29 @@ class AnalyticsAgentStateCountsResponse(object):
             'segment_counts': 'list[AgentStateSegmentTypeCount]',
             'presence_counts': 'list[AgentStatePresenceCount]',
             'routing_status_counts': 'list[AgentStateRoutingStatusCount]',
-            'is_out_of_office_counts': 'list[AgentStateIsOutOfOfficeCount]'
+            'is_out_of_office_counts': 'list[AgentStateIsOutOfOfficeCount]',
+            'adherence_state_counts': 'list[AgentStateAdherenceStateCount]',
+            'scheduled_activity_category_counts': 'list[AgentStateActivityCategoryCount]',
+            'actual_activity_category_counts': 'list[AgentStateActivityCategoryCount]'
         }
 
         self.attribute_map = {
             'segment_counts': 'segmentCounts',
             'presence_counts': 'presenceCounts',
             'routing_status_counts': 'routingStatusCounts',
-            'is_out_of_office_counts': 'isOutOfOfficeCounts'
+            'is_out_of_office_counts': 'isOutOfOfficeCounts',
+            'adherence_state_counts': 'adherenceStateCounts',
+            'scheduled_activity_category_counts': 'scheduledActivityCategoryCounts',
+            'actual_activity_category_counts': 'actualActivityCategoryCounts'
         }
 
         self._segment_counts = None
         self._presence_counts = None
         self._routing_status_counts = None
         self._is_out_of_office_counts = None
+        self._adherence_state_counts = None
+        self._scheduled_activity_category_counts = None
+        self._actual_activity_category_counts = None
 
     @property
     def segment_counts(self) -> List['AgentStateSegmentTypeCount']:
@@ -165,6 +176,78 @@ class AnalyticsAgentStateCountsResponse(object):
         
 
         self._is_out_of_office_counts = is_out_of_office_counts
+
+    @property
+    def adherence_state_counts(self) -> List['AgentStateAdherenceStateCount']:
+        """
+        Gets the adherence_state_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by adherence state
+
+        :return: The adherence_state_counts of this AnalyticsAgentStateCountsResponse.
+        :rtype: list[AgentStateAdherenceStateCount]
+        """
+        return self._adherence_state_counts
+
+    @adherence_state_counts.setter
+    def adherence_state_counts(self, adherence_state_counts: List['AgentStateAdherenceStateCount']) -> None:
+        """
+        Sets the adherence_state_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by adherence state
+
+        :param adherence_state_counts: The adherence_state_counts of this AnalyticsAgentStateCountsResponse.
+        :type: list[AgentStateAdherenceStateCount]
+        """
+        
+
+        self._adherence_state_counts = adherence_state_counts
+
+    @property
+    def scheduled_activity_category_counts(self) -> List['AgentStateActivityCategoryCount']:
+        """
+        Gets the scheduled_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by scheduled activity category
+
+        :return: The scheduled_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        :rtype: list[AgentStateActivityCategoryCount]
+        """
+        return self._scheduled_activity_category_counts
+
+    @scheduled_activity_category_counts.setter
+    def scheduled_activity_category_counts(self, scheduled_activity_category_counts: List['AgentStateActivityCategoryCount']) -> None:
+        """
+        Sets the scheduled_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by scheduled activity category
+
+        :param scheduled_activity_category_counts: The scheduled_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        :type: list[AgentStateActivityCategoryCount]
+        """
+        
+
+        self._scheduled_activity_category_counts = scheduled_activity_category_counts
+
+    @property
+    def actual_activity_category_counts(self) -> List['AgentStateActivityCategoryCount']:
+        """
+        Gets the actual_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by actual activity category
+
+        :return: The actual_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        :rtype: list[AgentStateActivityCategoryCount]
+        """
+        return self._actual_activity_category_counts
+
+    @actual_activity_category_counts.setter
+    def actual_activity_category_counts(self, actual_activity_category_counts: List['AgentStateActivityCategoryCount']) -> None:
+        """
+        Sets the actual_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        List of count by actual activity category
+
+        :param actual_activity_category_counts: The actual_activity_category_counts of this AnalyticsAgentStateCountsResponse.
+        :type: list[AgentStateActivityCategoryCount]
+        """
+        
+
+        self._actual_activity_category_counts = actual_activity_category_counts
 
     def to_dict(self):
         """

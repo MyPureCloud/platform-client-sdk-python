@@ -58,6 +58,7 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
             'status': 'str',
             'media_type': 'str',
             'topic': 'str',
+            'characteristic': 'str',
             'comparison_operator': 'str'
         }
 
@@ -71,6 +72,7 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
             'status': 'status',
             'media_type': 'mediaType',
             'topic': 'topic',
+            'characteristic': 'characteristic',
             'comparison_operator': 'comparisonOperator'
         }
 
@@ -83,6 +85,7 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
         self._status = None
         self._media_type = None
         self._topic = None
+        self._characteristic = None
         self._comparison_operator = None
 
     @property
@@ -315,6 +318,35 @@ class V2MobiusAlertsTopicConditionRulePredicate(object):
         
 
         self._topic = topic
+
+    @property
+    def characteristic(self) -> str:
+        """
+        Gets the characteristic of this V2MobiusAlertsTopicConditionRulePredicate.
+
+
+        :return: The characteristic of this V2MobiusAlertsTopicConditionRulePredicate.
+        :rtype: str
+        """
+        return self._characteristic
+
+    @characteristic.setter
+    def characteristic(self, characteristic: str) -> None:
+        """
+        Sets the characteristic of this V2MobiusAlertsTopicConditionRulePredicate.
+
+
+        :param characteristic: The characteristic of this V2MobiusAlertsTopicConditionRulePredicate.
+        :type: str
+        """
+        if isinstance(characteristic, int):
+            characteristic = str(characteristic)
+        allowed_values = ["Unknown", "Deviation", "Score"]
+        if characteristic.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for characteristic -> " + characteristic)
+            self._characteristic = "outdated_sdk_version"
+        else:
+            self._characteristic = characteristic
 
     @property
     def comparison_operator(self) -> str:

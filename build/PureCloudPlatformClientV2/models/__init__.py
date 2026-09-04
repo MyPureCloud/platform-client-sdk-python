@@ -220,7 +220,6 @@ from .agent_utilization_aggregate_query_filter import AgentUtilizationAggregateQ
 from .agent_utilization_aggregate_query_predicate import AgentUtilizationAggregateQueryPredicate
 from .agent_utilization_aggregate_query_response import AgentUtilizationAggregateQueryResponse
 from .agent_utilization_aggregation_query import AgentUtilizationAggregationQuery
-from .agent_utilization_aggregation_sort import AgentUtilizationAggregationSort
 from .agent_utilization_aggregation_view import AgentUtilizationAggregationView
 from .agent_utilization_async_aggregate_query_response import AgentUtilizationAsyncAggregateQueryResponse
 from .agent_utilization_async_aggregation_query import AgentUtilizationAsyncAggregationQuery
@@ -286,6 +285,8 @@ from .alert_summary_entity import AlertSummaryEntity
 from .alertable_presences import AlertablePresences
 from .alerting_unread_status import AlertingUnreadStatus
 from .all_time_points import AllTimePoints
+from .allocation_outputs_template import AllocationOutputsTemplate
+from .allocation_results_template import AllocationResultsTemplate
 from .alteration import Alteration
 from .alternative_shift_agent_scheduled_shift import AlternativeShiftAgentScheduledShift
 from .alternative_shift_async_response import AlternativeShiftAsyncResponse
@@ -1185,6 +1186,9 @@ from .contact_listing import ContactListing
 from .contact_listing_request import ContactListingRequest
 from .contact_listing_response import ContactListingResponse
 from .contact_phone_number_column import ContactPhoneNumberColumn
+from .contact_search_operation import ContactSearchOperation
+from .contact_search_request import ContactSearchRequest
+from .contact_simple_search import ContactSimpleSearch
 from .contact_sort import ContactSort
 from .contact_vertex import ContactVertex
 from .contactable_status import ContactableStatus
@@ -1924,8 +1928,6 @@ from .data_extraction_file_schema_listing import DataExtractionFileSchemaListing
 from .data_extraction_file_url import DataExtractionFileUrl
 from .data_extraction_file_url_listing import DataExtractionFileUrlListing
 from .data_ingestion_rule_criteria import DataIngestionRuleCriteria
-from .data_ingestion_rule_response import DataIngestionRuleResponse
-from .data_ingestion_rule_response_entity_listing import DataIngestionRuleResponseEntityListing
 from .data_ingestion_rule_status_patch_request import DataIngestionRuleStatusPatchRequest
 from .data_ingestion_rules_metadata import DataIngestionRulesMetadata
 from .data_range import DataRange
@@ -2821,6 +2823,8 @@ from .generate_bu_forecast_request import GenerateBuForecastRequest
 from .generate_guide_content_request import GenerateGuideContentRequest
 from .generate_meeting_id_request import GenerateMeetingIdRequest
 from .generated_guide_content import GeneratedGuideContent
+from .generic_data_ingestion_rule_response import GenericDataIngestionRuleResponse
+from .generic_data_ingestion_rule_response_entity_listing import GenericDataIngestionRuleResponseEntityListing
 from .generic_saml import GenericSAML
 from .generic_template import GenericTemplate
 from .genesys_bot_connector import GenesysBotConnector
@@ -5240,8 +5244,10 @@ from .stage import Stage
 from .stage_listing import StageListing
 from .stage_reference import StageReference
 from .stageplan import Stageplan
+from .stageplan_create import StageplanCreate
 from .stageplan_listing import StageplanListing
 from .stageplan_reference import StageplanReference
+from .stageplan_reposition import StageplanReposition
 from .stageplan_update import StageplanUpdate
 from .starrable_division import StarrableDivision
 from .start_screen_monitor_response_body import StartScreenMonitorResponseBody

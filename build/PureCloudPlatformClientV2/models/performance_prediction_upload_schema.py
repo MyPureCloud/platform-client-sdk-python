@@ -65,7 +65,7 @@ class PerformancePredictionUploadSchema(object):
     def calculation_start_date(self) -> datetime:
         """
         Gets the calculation_start_date of this PerformancePredictionUploadSchema.
-        Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results
+        The beginning of the performance prediction results, in ISO-8601 format
 
         :return: The calculation_start_date of this PerformancePredictionUploadSchema.
         :rtype: datetime
@@ -76,7 +76,7 @@ class PerformancePredictionUploadSchema(object):
     def calculation_start_date(self, calculation_start_date: datetime) -> None:
         """
         Sets the calculation_start_date of this PerformancePredictionUploadSchema.
-        Date as an ISO-8601 string, corresponding to the beginning of the performance prediction results
+        The beginning of the performance prediction results, in ISO-8601 format
 
         :param calculation_start_date: The calculation_start_date of this PerformancePredictionUploadSchema.
         :type: datetime

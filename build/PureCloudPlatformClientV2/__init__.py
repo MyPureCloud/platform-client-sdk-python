@@ -220,7 +220,6 @@ from .models.agent_utilization_aggregate_query_filter import AgentUtilizationAgg
 from .models.agent_utilization_aggregate_query_predicate import AgentUtilizationAggregateQueryPredicate
 from .models.agent_utilization_aggregate_query_response import AgentUtilizationAggregateQueryResponse
 from .models.agent_utilization_aggregation_query import AgentUtilizationAggregationQuery
-from .models.agent_utilization_aggregation_sort import AgentUtilizationAggregationSort
 from .models.agent_utilization_aggregation_view import AgentUtilizationAggregationView
 from .models.agent_utilization_async_aggregate_query_response import AgentUtilizationAsyncAggregateQueryResponse
 from .models.agent_utilization_async_aggregation_query import AgentUtilizationAsyncAggregationQuery
@@ -286,6 +285,8 @@ from .models.alert_summary_entity import AlertSummaryEntity
 from .models.alertable_presences import AlertablePresences
 from .models.alerting_unread_status import AlertingUnreadStatus
 from .models.all_time_points import AllTimePoints
+from .models.allocation_outputs_template import AllocationOutputsTemplate
+from .models.allocation_results_template import AllocationResultsTemplate
 from .models.alteration import Alteration
 from .models.alternative_shift_agent_scheduled_shift import AlternativeShiftAgentScheduledShift
 from .models.alternative_shift_async_response import AlternativeShiftAsyncResponse
@@ -1185,6 +1186,9 @@ from .models.contact_listing import ContactListing
 from .models.contact_listing_request import ContactListingRequest
 from .models.contact_listing_response import ContactListingResponse
 from .models.contact_phone_number_column import ContactPhoneNumberColumn
+from .models.contact_search_operation import ContactSearchOperation
+from .models.contact_search_request import ContactSearchRequest
+from .models.contact_simple_search import ContactSimpleSearch
 from .models.contact_sort import ContactSort
 from .models.contact_vertex import ContactVertex
 from .models.contactable_status import ContactableStatus
@@ -1924,8 +1928,6 @@ from .models.data_extraction_file_schema_listing import DataExtractionFileSchema
 from .models.data_extraction_file_url import DataExtractionFileUrl
 from .models.data_extraction_file_url_listing import DataExtractionFileUrlListing
 from .models.data_ingestion_rule_criteria import DataIngestionRuleCriteria
-from .models.data_ingestion_rule_response import DataIngestionRuleResponse
-from .models.data_ingestion_rule_response_entity_listing import DataIngestionRuleResponseEntityListing
 from .models.data_ingestion_rule_status_patch_request import DataIngestionRuleStatusPatchRequest
 from .models.data_ingestion_rules_metadata import DataIngestionRulesMetadata
 from .models.data_range import DataRange
@@ -2821,6 +2823,8 @@ from .models.generate_bu_forecast_request import GenerateBuForecastRequest
 from .models.generate_guide_content_request import GenerateGuideContentRequest
 from .models.generate_meeting_id_request import GenerateMeetingIdRequest
 from .models.generated_guide_content import GeneratedGuideContent
+from .models.generic_data_ingestion_rule_response import GenericDataIngestionRuleResponse
+from .models.generic_data_ingestion_rule_response_entity_listing import GenericDataIngestionRuleResponseEntityListing
 from .models.generic_saml import GenericSAML
 from .models.generic_template import GenericTemplate
 from .models.genesys_bot_connector import GenesysBotConnector
@@ -5240,8 +5244,10 @@ from .models.stage import Stage
 from .models.stage_listing import StageListing
 from .models.stage_reference import StageReference
 from .models.stageplan import Stageplan
+from .models.stageplan_create import StageplanCreate
 from .models.stageplan_listing import StageplanListing
 from .models.stageplan_reference import StageplanReference
+from .models.stageplan_reposition import StageplanReposition
 from .models.stageplan_update import StageplanUpdate
 from .models.starrable_division import StarrableDivision
 from .models.start_screen_monitor_response_body import StartScreenMonitorResponseBody

@@ -69,7 +69,7 @@ class ContinuousForecastGetSessionResponse(object):
     def session_id(self) -> str:
         """
         Gets the session_id of this ContinuousForecastGetSessionResponse.
-        Latest session ID of the business unit
+        The ID of the latest session, regardless of the session's status
 
         :return: The session_id of this ContinuousForecastGetSessionResponse.
         :rtype: str
@@ -80,7 +80,7 @@ class ContinuousForecastGetSessionResponse(object):
     def session_id(self, session_id: str) -> None:
         """
         Sets the session_id of this ContinuousForecastGetSessionResponse.
-        Latest session ID of the business unit
+        The ID of the latest session, regardless of the session's status
 
         :param session_id: The session_id of this ContinuousForecastGetSessionResponse.
         :type: str
@@ -93,7 +93,7 @@ class ContinuousForecastGetSessionResponse(object):
     def last_successful_session_id(self) -> str:
         """
         Gets the last_successful_session_id of this ContinuousForecastGetSessionResponse.
-        Last successful session ID of the business unit
+        The ID of the last session that has a state of Complete
 
         :return: The last_successful_session_id of this ContinuousForecastGetSessionResponse.
         :rtype: str
@@ -104,7 +104,7 @@ class ContinuousForecastGetSessionResponse(object):
     def last_successful_session_id(self, last_successful_session_id: str) -> None:
         """
         Sets the last_successful_session_id of this ContinuousForecastGetSessionResponse.
-        Last successful session ID of the business unit
+        The ID of the last session that has a state of Complete
 
         :param last_successful_session_id: The last_successful_session_id of this ContinuousForecastGetSessionResponse.
         :type: str
@@ -117,7 +117,7 @@ class ContinuousForecastGetSessionResponse(object):
     def state(self) -> str:
         """
         Gets the state of this ContinuousForecastGetSessionResponse.
-        State of the latest session
+        The state of the latest session
 
         :return: The state of this ContinuousForecastGetSessionResponse.
         :rtype: str
@@ -128,7 +128,7 @@ class ContinuousForecastGetSessionResponse(object):
     def state(self, state: str) -> None:
         """
         Sets the state of this ContinuousForecastGetSessionResponse.
-        State of the latest session
+        The state of the latest session
 
         :param state: The state of this ContinuousForecastGetSessionResponse.
         :type: str
@@ -146,7 +146,7 @@ class ContinuousForecastGetSessionResponse(object):
     def error_code(self) -> str:
         """
         Gets the error_code of this ContinuousForecastGetSessionResponse.
-        Failed session error code
+        The error code if the latest session has a state of Error
 
         :return: The error_code of this ContinuousForecastGetSessionResponse.
         :rtype: str
@@ -157,7 +157,7 @@ class ContinuousForecastGetSessionResponse(object):
     def error_code(self, error_code: str) -> None:
         """
         Sets the error_code of this ContinuousForecastGetSessionResponse.
-        Failed session error code
+        The error code if the latest session has a state of Error
 
         :param error_code: The error_code of this ContinuousForecastGetSessionResponse.
         :type: str

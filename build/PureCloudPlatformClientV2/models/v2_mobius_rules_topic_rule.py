@@ -186,7 +186,7 @@ class V2MobiusRulesTopicRule(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["ConversationMetrics", "UserPresence", "WorkforceManagement", "OperationalConsole", "Unknown"]
+        allowed_values = ["ConversationMetrics", "UserPresence", "WorkforceManagement", "OperationalConsole", "Anomaly", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

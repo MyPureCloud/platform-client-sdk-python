@@ -312,7 +312,6 @@ PureCloudPlatformClientV2/models/agent_utilization_aggregate_query_filter.py
 PureCloudPlatformClientV2/models/agent_utilization_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/agent_utilization_aggregate_query_response.py
 PureCloudPlatformClientV2/models/agent_utilization_aggregation_query.py
-PureCloudPlatformClientV2/models/agent_utilization_aggregation_sort.py
 PureCloudPlatformClientV2/models/agent_utilization_aggregation_view.py
 PureCloudPlatformClientV2/models/agent_utilization_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/agent_utilization_async_aggregation_query.py
@@ -378,6 +377,8 @@ PureCloudPlatformClientV2/models/alert_summary_entity.py
 PureCloudPlatformClientV2/models/alertable_presences.py
 PureCloudPlatformClientV2/models/alerting_unread_status.py
 PureCloudPlatformClientV2/models/all_time_points.py
+PureCloudPlatformClientV2/models/allocation_outputs_template.py
+PureCloudPlatformClientV2/models/allocation_results_template.py
 PureCloudPlatformClientV2/models/alteration.py
 PureCloudPlatformClientV2/models/alternative_shift_agent_scheduled_shift.py
 PureCloudPlatformClientV2/models/alternative_shift_async_response.py
@@ -1277,6 +1278,9 @@ PureCloudPlatformClientV2/models/contact_listing.py
 PureCloudPlatformClientV2/models/contact_listing_request.py
 PureCloudPlatformClientV2/models/contact_listing_response.py
 PureCloudPlatformClientV2/models/contact_phone_number_column.py
+PureCloudPlatformClientV2/models/contact_search_operation.py
+PureCloudPlatformClientV2/models/contact_search_request.py
+PureCloudPlatformClientV2/models/contact_simple_search.py
 PureCloudPlatformClientV2/models/contact_sort.py
 PureCloudPlatformClientV2/models/contact_vertex.py
 PureCloudPlatformClientV2/models/contactable_status.py
@@ -2009,8 +2013,6 @@ PureCloudPlatformClientV2/models/data_extraction_file_schema_listing.py
 PureCloudPlatformClientV2/models/data_extraction_file_url.py
 PureCloudPlatformClientV2/models/data_extraction_file_url_listing.py
 PureCloudPlatformClientV2/models/data_ingestion_rule_criteria.py
-PureCloudPlatformClientV2/models/data_ingestion_rule_response.py
-PureCloudPlatformClientV2/models/data_ingestion_rule_response_entity_listing.py
 PureCloudPlatformClientV2/models/data_ingestion_rule_status_patch_request.py
 PureCloudPlatformClientV2/models/data_ingestion_rules_metadata.py
 PureCloudPlatformClientV2/models/data_range.py
@@ -2909,6 +2911,8 @@ PureCloudPlatformClientV2/models/generate_bu_forecast_request.py
 PureCloudPlatformClientV2/models/generate_guide_content_request.py
 PureCloudPlatformClientV2/models/generate_meeting_id_request.py
 PureCloudPlatformClientV2/models/generated_guide_content.py
+PureCloudPlatformClientV2/models/generic_data_ingestion_rule_response.py
+PureCloudPlatformClientV2/models/generic_data_ingestion_rule_response_entity_listing.py
 PureCloudPlatformClientV2/models/generic_saml.py
 PureCloudPlatformClientV2/models/generic_template.py
 PureCloudPlatformClientV2/models/genesys_bot_connector.py
@@ -5332,8 +5336,10 @@ PureCloudPlatformClientV2/models/stage.py
 PureCloudPlatformClientV2/models/stage_listing.py
 PureCloudPlatformClientV2/models/stage_reference.py
 PureCloudPlatformClientV2/models/stageplan.py
+PureCloudPlatformClientV2/models/stageplan_create.py
 PureCloudPlatformClientV2/models/stageplan_listing.py
 PureCloudPlatformClientV2/models/stageplan_reference.py
+PureCloudPlatformClientV2/models/stageplan_reposition.py
 PureCloudPlatformClientV2/models/stageplan_update.py
 PureCloudPlatformClientV2/models/starrable_division.py
 PureCloudPlatformClientV2/models/start_screen_monitor_response_body.py
@@ -6892,7 +6898,6 @@ docs/AgentUtilizationAggregateQueryFilter.md
 docs/AgentUtilizationAggregateQueryPredicate.md
 docs/AgentUtilizationAggregateQueryResponse.md
 docs/AgentUtilizationAggregationQuery.md
-docs/AgentUtilizationAggregationSort.md
 docs/AgentUtilizationAggregationView.md
 docs/AgentUtilizationAsyncAggregateQueryResponse.md
 docs/AgentUtilizationAsyncAggregationQuery.md
@@ -6960,6 +6965,8 @@ docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AlertingUnreadStatus.md
 docs/AllTimePoints.md
+docs/AllocationOutputsTemplate.md
+docs/AllocationResultsTemplate.md
 docs/Alteration.md
 docs/AlternativeShiftAgentScheduledShift.md
 docs/AlternativeShiftAsyncResponse.md
@@ -7883,6 +7890,9 @@ docs/ContactListing.md
 docs/ContactListingRequest.md
 docs/ContactListingResponse.md
 docs/ContactPhoneNumberColumn.md
+docs/ContactSearchOperation.md
+docs/ContactSearchRequest.md
+docs/ContactSimpleSearch.md
 docs/ContactSort.md
 docs/ContactVertex.md
 docs/ContactableStatus.md
@@ -8628,8 +8638,6 @@ docs/DataExtractionFileSchemaListing.md
 docs/DataExtractionFileUrl.md
 docs/DataExtractionFileUrlListing.md
 docs/DataIngestionRuleCriteria.md
-docs/DataIngestionRuleResponse.md
-docs/DataIngestionRuleResponseEntityListing.md
 docs/DataIngestionRuleStatusPatchRequest.md
 docs/DataIngestionRulesMetadata.md
 docs/DataPrivacyApi.json
@@ -9547,6 +9555,8 @@ docs/GenerateBuForecastRequest.md
 docs/GenerateGuideContentRequest.md
 docs/GenerateMeetingIdRequest.md
 docs/GeneratedGuideContent.md
+docs/GenericDataIngestionRuleResponse.md
+docs/GenericDataIngestionRuleResponseEntityListing.md
 docs/GenericSAML.md
 docs/GenericTemplate.md
 docs/GenesysBotConnector.md
@@ -12040,8 +12050,10 @@ docs/Stage.md
 docs/StageListing.md
 docs/StageReference.md
 docs/Stageplan.md
+docs/StageplanCreate.md
 docs/StageplanListing.md
 docs/StageplanReference.md
+docs/StageplanReposition.md
 docs/StageplanUpdate.md
 docs/StarrableDivision.md
 docs/StartScreenMonitorResponseBody.md
@@ -13477,6 +13489,7 @@ docs/delete_casemanagement_case-example.txt
 docs/delete_casemanagement_case_comments_me_comment_id-example.txt
 docs/delete_casemanagement_caseplan-example.txt
 docs/delete_casemanagement_caseplan_dataschema-example.txt
+docs/delete_casemanagement_caseplan_stageplan-example.txt
 docs/delete_chats_room_message-example.txt
 docs/delete_chats_room_messages_pin-example.txt
 docs/delete_chats_room_participant-example.txt
@@ -15805,6 +15818,8 @@ docs/post_casemanagement_case_comments-example.txt
 docs/post_casemanagement_case_terminate_jobs-example.txt
 docs/post_casemanagement_caseplan_dataschemas-example.txt
 docs/post_casemanagement_caseplan_publish-example.txt
+docs/post_casemanagement_caseplan_stageplan_reposition-example.txt
+docs/post_casemanagement_caseplan_stageplans-example.txt
 docs/post_casemanagement_caseplan_versions-example.txt
 docs/post_casemanagement_caseplans-example.txt
 docs/post_casemanagement_caseplans_query-example.txt
@@ -15979,6 +15994,7 @@ docs/post_externalcontacts_contacts_enrich-example.txt
 docs/post_externalcontacts_contacts_exports-example.txt
 docs/post_externalcontacts_contacts_merge-example.txt
 docs/post_externalcontacts_contacts_schemas-example.txt
+docs/post_externalcontacts_contacts_search-example.txt
 docs/post_externalcontacts_externalsources-example.txt
 docs/post_externalcontacts_identifierlookup-example.txt
 docs/post_externalcontacts_identifierlookup_contacts-example.txt

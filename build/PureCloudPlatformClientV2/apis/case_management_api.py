@@ -69,7 +69,9 @@ from ..models import IntakeSettingsUpdate
 from ..models import Stage
 from ..models import StageListing
 from ..models import Stageplan
+from ..models import StageplanCreate
 from ..models import StageplanListing
+from ..models import StageplanReposition
 from ..models import StageplanUpdate
 from ..models import Step
 from ..models import StepListing
@@ -391,6 +393,95 @@ class CaseManagementApi(object):
             path_params['caseplanId'] = params['caseplan_id']
         if 'schema_key_name' in params:
             path_params['schemaKeyName'] = params['schema_key_name']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='object',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_casemanagement_caseplan_stageplan(self, caseplan_id: str, stageplan_id: str, **kwargs) -> object:
+        """
+        Delete a Stageplan from a draft Caseplan.
+        
+	    delete_casemanagement_caseplan_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_casemanagement_caseplan_stageplan(caseplan_id, stageplan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str stageplan_id: Stageplan identifier. (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['caseplan_id', 'stageplan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_casemanagement_caseplan_stageplan" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'caseplan_id' is set
+        if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
+            raise ValueError("Missing the required parameter `caseplan_id` when calling `delete_casemanagement_caseplan_stageplan`")
+        # verify the required parameter 'stageplan_id' is set
+        if ('stageplan_id' not in params) or (params['stageplan_id'] is None):
+            raise ValueError("Missing the required parameter `stageplan_id` when calling `delete_casemanagement_caseplan_stageplan`")
+
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+            raise ValueError("Invalid value for parameter `caseplan_id` when calling `delete_casemanagement_caseplan_stageplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+        if 'stageplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
+            raise ValueError("Invalid value for parameter `stageplan_id` when calling `delete_casemanagement_caseplan_stageplan`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'caseplan_id' in params:
+            path_params['caseplanId'] = params['caseplan_id']
+        if 'stageplan_id' in params:
+            path_params['stageplanId'] = params['stageplan_id']
 
         query_params = {}
 
@@ -3519,6 +3610,188 @@ class CaseManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Caseplan',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_casemanagement_caseplan_stageplan_reposition(self, caseplan_id: str, stageplan_id: str, body: 'StageplanReposition', **kwargs) -> object:
+        """
+        Reposition a Stageplan within a draft Caseplan.
+        
+	    post_casemanagement_caseplan_stageplan_reposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_casemanagement_caseplan_stageplan_reposition(caseplan_id, stageplan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param str stageplan_id: Stageplan identifier. (required)
+        :param StageplanReposition body: Stageplan reposition request. (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['caseplan_id', 'stageplan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_casemanagement_caseplan_stageplan_reposition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'caseplan_id' is set
+        if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
+            raise ValueError("Missing the required parameter `caseplan_id` when calling `post_casemanagement_caseplan_stageplan_reposition`")
+        # verify the required parameter 'stageplan_id' is set
+        if ('stageplan_id' not in params) or (params['stageplan_id'] is None):
+            raise ValueError("Missing the required parameter `stageplan_id` when calling `post_casemanagement_caseplan_stageplan_reposition`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_caseplan_stageplan_reposition`")
+
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+            raise ValueError("Invalid value for parameter `caseplan_id` when calling `post_casemanagement_caseplan_stageplan_reposition`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+        if 'stageplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['stageplan_id']): 
+            raise ValueError("Invalid value for parameter `stageplan_id` when calling `post_casemanagement_caseplan_stageplan_reposition`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition'.replace('{format}', 'json')
+        path_params = {}
+        if 'caseplan_id' in params:
+            path_params['caseplanId'] = params['caseplan_id']
+        if 'stageplan_id' in params:
+            path_params['stageplanId'] = params['stageplan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='object',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_casemanagement_caseplan_stageplans(self, caseplan_id: str, body: 'StageplanCreate', **kwargs) -> 'Stageplan':
+        """
+        Create a Stageplan on a draft Caseplan.
+        
+	    post_casemanagement_caseplan_stageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_casemanagement_caseplan_stageplans(caseplan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str caseplan_id: Caseplan identifier. (required)
+        :param StageplanCreate body: Stageplan create request. (required)
+        :return: Stageplan
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['caseplan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_casemanagement_caseplan_stageplans" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'caseplan_id' is set
+        if ('caseplan_id' not in params) or (params['caseplan_id'] is None):
+            raise ValueError("Missing the required parameter `caseplan_id` when calling `post_casemanagement_caseplan_stageplans`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_casemanagement_caseplan_stageplans`")
+
+        if 'caseplan_id' in params and not re.match('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}', params['caseplan_id']): 
+            raise ValueError("Invalid value for parameter `caseplan_id` when calling `post_casemanagement_caseplan_stageplans`, must conform to the pattern `/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/`")
+
+        resource_path = '/api/v2/casemanagement/caseplans/{caseplanId}/stageplans'.replace('{format}', 'json')
+        path_params = {}
+        if 'caseplan_id' in params:
+            path_params['caseplanId'] = params['caseplan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Stageplan',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

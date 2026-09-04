@@ -51,6 +51,7 @@ class SendAgentlessOutboundMessageRequest(object):
         self.swagger_types = {
             'from_address': 'str',
             'to_address': 'str',
+            'external_contact_id': 'str',
             'to_address_messenger_type': 'str',
             'text_body': 'str',
             'messaging_template': 'SendMessagingTemplateRequest',
@@ -60,6 +61,7 @@ class SendAgentlessOutboundMessageRequest(object):
         self.attribute_map = {
             'from_address': 'fromAddress',
             'to_address': 'toAddress',
+            'external_contact_id': 'externalContactId',
             'to_address_messenger_type': 'toAddressMessengerType',
             'text_body': 'textBody',
             'messaging_template': 'messagingTemplate',
@@ -68,6 +70,7 @@ class SendAgentlessOutboundMessageRequest(object):
 
         self._from_address = None
         self._to_address = None
+        self._external_contact_id = None
         self._to_address_messenger_type = None
         self._text_body = None
         self._messaging_template = None
@@ -120,6 +123,30 @@ class SendAgentlessOutboundMessageRequest(object):
         
 
         self._to_address = to_address
+
+    @property
+    def external_contact_id(self) -> str:
+        """
+        Gets the external_contact_id of this SendAgentlessOutboundMessageRequest.
+        The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+
+        :return: The external_contact_id of this SendAgentlessOutboundMessageRequest.
+        :rtype: str
+        """
+        return self._external_contact_id
+
+    @external_contact_id.setter
+    def external_contact_id(self, external_contact_id: str) -> None:
+        """
+        Sets the external_contact_id of this SendAgentlessOutboundMessageRequest.
+        The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+
+        :param external_contact_id: The external_contact_id of this SendAgentlessOutboundMessageRequest.
+        :type: str
+        """
+        
+
+        self._external_contact_id = external_contact_id
 
     @property
     def to_address_messenger_type(self) -> str:

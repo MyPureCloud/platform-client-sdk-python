@@ -60,7 +60,15 @@ class AnalyticsAgentStateAgentResponse(object):
             'presence_date': 'datetime',
             'routing_status': 'str',
             'routing_status_date': 'datetime',
-            'is_out_of_office': 'bool'
+            'is_out_of_office': 'bool',
+            'management_unit_id': 'str',
+            'business_unit_id': 'str',
+            'adherence_state': 'str',
+            'adherence_impact': 'str',
+            'adherence_date': 'datetime',
+            'scheduled_activity_code_id': 'str',
+            'scheduled_activity_category': 'str',
+            'actual_activity_category': 'str'
         }
 
         self.attribute_map = {
@@ -75,7 +83,15 @@ class AnalyticsAgentStateAgentResponse(object):
             'presence_date': 'presenceDate',
             'routing_status': 'routingStatus',
             'routing_status_date': 'routingStatusDate',
-            'is_out_of_office': 'isOutOfOffice'
+            'is_out_of_office': 'isOutOfOffice',
+            'management_unit_id': 'managementUnitId',
+            'business_unit_id': 'businessUnitId',
+            'adherence_state': 'adherenceState',
+            'adherence_impact': 'adherenceImpact',
+            'adherence_date': 'adherenceDate',
+            'scheduled_activity_code_id': 'scheduledActivityCodeId',
+            'scheduled_activity_category': 'scheduledActivityCategory',
+            'actual_activity_category': 'actualActivityCategory'
         }
 
         self._user_id = None
@@ -90,6 +106,14 @@ class AnalyticsAgentStateAgentResponse(object):
         self._routing_status = None
         self._routing_status_date = None
         self._is_out_of_office = None
+        self._management_unit_id = None
+        self._business_unit_id = None
+        self._adherence_state = None
+        self._adherence_impact = None
+        self._adherence_date = None
+        self._scheduled_activity_code_id = None
+        self._scheduled_activity_category = None
+        self._actual_activity_category = None
 
     @property
     def user_id(self) -> str:
@@ -388,6 +412,218 @@ class AnalyticsAgentStateAgentResponse(object):
         
 
         self._is_out_of_office = is_out_of_office
+
+    @property
+    def management_unit_id(self) -> str:
+        """
+        Gets the management_unit_id of this AnalyticsAgentStateAgentResponse.
+        The id of the user's management unit
+
+        :return: The management_unit_id of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._management_unit_id
+
+    @management_unit_id.setter
+    def management_unit_id(self, management_unit_id: str) -> None:
+        """
+        Sets the management_unit_id of this AnalyticsAgentStateAgentResponse.
+        The id of the user's management unit
+
+        :param management_unit_id: The management_unit_id of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        
+
+        self._management_unit_id = management_unit_id
+
+    @property
+    def business_unit_id(self) -> str:
+        """
+        Gets the business_unit_id of this AnalyticsAgentStateAgentResponse.
+        The id of the user's business unit
+
+        :return: The business_unit_id of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._business_unit_id
+
+    @business_unit_id.setter
+    def business_unit_id(self, business_unit_id: str) -> None:
+        """
+        Sets the business_unit_id of this AnalyticsAgentStateAgentResponse.
+        The id of the user's business unit
+
+        :param business_unit_id: The business_unit_id of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        
+
+        self._business_unit_id = business_unit_id
+
+    @property
+    def adherence_state(self) -> str:
+        """
+        Gets the adherence_state of this AnalyticsAgentStateAgentResponse.
+        The user's adherence state
+
+        :return: The adherence_state of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._adherence_state
+
+    @adherence_state.setter
+    def adherence_state(self, adherence_state: str) -> None:
+        """
+        Sets the adherence_state of this AnalyticsAgentStateAgentResponse.
+        The user's adherence state
+
+        :param adherence_state: The adherence_state of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        if isinstance(adherence_state, int):
+            adherence_state = str(adherence_state)
+        allowed_values = ["InAdherence", "OutOfAdherence", "Unscheduled", "Unknown", "Ignored", "Explained"]
+        if adherence_state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for adherence_state -> " + adherence_state)
+            self._adherence_state = "outdated_sdk_version"
+        else:
+            self._adherence_state = adherence_state
+
+    @property
+    def adherence_impact(self) -> str:
+        """
+        Gets the adherence_impact of this AnalyticsAgentStateAgentResponse.
+        The user's adherence impact
+
+        :return: The adherence_impact of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._adherence_impact
+
+    @adherence_impact.setter
+    def adherence_impact(self, adherence_impact: str) -> None:
+        """
+        Sets the adherence_impact of this AnalyticsAgentStateAgentResponse.
+        The user's adherence impact
+
+        :param adherence_impact: The adherence_impact of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        if isinstance(adherence_impact, int):
+            adherence_impact = str(adherence_impact)
+        allowed_values = ["Positive", "Negative", "Neutral", "Unknown"]
+        if adherence_impact.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for adherence_impact -> " + adherence_impact)
+            self._adherence_impact = "outdated_sdk_version"
+        else:
+            self._adherence_impact = adherence_impact
+
+    @property
+    def adherence_date(self) -> datetime:
+        """
+        Gets the adherence_date of this AnalyticsAgentStateAgentResponse.
+        The timestamp for when the user's adherence state began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The adherence_date of this AnalyticsAgentStateAgentResponse.
+        :rtype: datetime
+        """
+        return self._adherence_date
+
+    @adherence_date.setter
+    def adherence_date(self, adherence_date: datetime) -> None:
+        """
+        Sets the adherence_date of this AnalyticsAgentStateAgentResponse.
+        The timestamp for when the user's adherence state began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param adherence_date: The adherence_date of this AnalyticsAgentStateAgentResponse.
+        :type: datetime
+        """
+        
+
+        self._adherence_date = adherence_date
+
+    @property
+    def scheduled_activity_code_id(self) -> str:
+        """
+        Gets the scheduled_activity_code_id of this AnalyticsAgentStateAgentResponse.
+        The id of the user's scheduled activity code
+
+        :return: The scheduled_activity_code_id of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._scheduled_activity_code_id
+
+    @scheduled_activity_code_id.setter
+    def scheduled_activity_code_id(self, scheduled_activity_code_id: str) -> None:
+        """
+        Sets the scheduled_activity_code_id of this AnalyticsAgentStateAgentResponse.
+        The id of the user's scheduled activity code
+
+        :param scheduled_activity_code_id: The scheduled_activity_code_id of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        
+
+        self._scheduled_activity_code_id = scheduled_activity_code_id
+
+    @property
+    def scheduled_activity_category(self) -> str:
+        """
+        Gets the scheduled_activity_category of this AnalyticsAgentStateAgentResponse.
+        The user's scheduled activity category
+
+        :return: The scheduled_activity_category of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._scheduled_activity_category
+
+    @scheduled_activity_category.setter
+    def scheduled_activity_category(self, scheduled_activity_category: str) -> None:
+        """
+        Sets the scheduled_activity_category of this AnalyticsAgentStateAgentResponse.
+        The user's scheduled activity category
+
+        :param scheduled_activity_category: The scheduled_activity_category of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        if isinstance(scheduled_activity_category, int):
+            scheduled_activity_category = str(scheduled_activity_category)
+        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled", "Unknown"]
+        if scheduled_activity_category.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for scheduled_activity_category -> " + scheduled_activity_category)
+            self._scheduled_activity_category = "outdated_sdk_version"
+        else:
+            self._scheduled_activity_category = scheduled_activity_category
+
+    @property
+    def actual_activity_category(self) -> str:
+        """
+        Gets the actual_activity_category of this AnalyticsAgentStateAgentResponse.
+        The user's actual activity category
+
+        :return: The actual_activity_category of this AnalyticsAgentStateAgentResponse.
+        :rtype: str
+        """
+        return self._actual_activity_category
+
+    @actual_activity_category.setter
+    def actual_activity_category(self, actual_activity_category: str) -> None:
+        """
+        Sets the actual_activity_category of this AnalyticsAgentStateAgentResponse.
+        The user's actual activity category
+
+        :param actual_activity_category: The actual_activity_category of this AnalyticsAgentStateAgentResponse.
+        :type: str
+        """
+        if isinstance(actual_activity_category, int):
+            actual_activity_category = str(actual_activity_category)
+        allowed_values = ["OnQueueWork", "Break", "Meal", "Meeting", "OffQueueWork", "TimeOff", "Training", "Unavailable", "Unscheduled", "Unknown"]
+        if actual_activity_category.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for actual_activity_category -> " + actual_activity_category)
+            self._actual_activity_category = "outdated_sdk_version"
+        else:
+            self._actual_activity_category = actual_activity_category
 
     def to_dict(self):
         """

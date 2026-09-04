@@ -52,6 +52,7 @@ class PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNot
             'schedule_id': 'str',
             'week_date': 'str',
             'download_url': 'str',
+            'allocation_download_url': 'str',
             'state': 'str',
             'error': 'PerformancePredictionCompleteEventTopicErrorBody'
         }
@@ -60,6 +61,7 @@ class PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNot
             'schedule_id': 'scheduleId',
             'week_date': 'weekDate',
             'download_url': 'downloadUrl',
+            'allocation_download_url': 'allocationDownloadUrl',
             'state': 'state',
             'error': 'error'
         }
@@ -67,6 +69,7 @@ class PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNot
         self._schedule_id = None
         self._week_date = None
         self._download_url = None
+        self._allocation_download_url = None
         self._state = None
         self._error = None
 
@@ -141,6 +144,30 @@ class PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNot
         
 
         self._download_url = download_url
+
+    @property
+    def allocation_download_url(self) -> str:
+        """
+        Gets the allocation_download_url of this PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.
+
+
+        :return: The allocation_download_url of this PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.
+        :rtype: str
+        """
+        return self._allocation_download_url
+
+    @allocation_download_url.setter
+    def allocation_download_url(self, allocation_download_url: str) -> None:
+        """
+        Sets the allocation_download_url of this PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.
+
+
+        :param allocation_download_url: The allocation_download_url of this PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.
+        :type: str
+        """
+        
+
+        self._allocation_download_url = allocation_download_url
 
     @property
     def state(self) -> str:

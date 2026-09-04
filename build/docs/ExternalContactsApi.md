@@ -117,6 +117,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_contacts_exports**](#post_externalcontacts_contacts_exports) | Create bulk export|
 |[**post_externalcontacts_contacts_merge**](#post_externalcontacts_contacts_merge) | Merge up to 25 contacts into a new contact record|
 |[**post_externalcontacts_contacts_schemas**](#post_externalcontacts_contacts_schemas) | Create a schema|
+|[**post_externalcontacts_contacts_search**](#post_externalcontacts_contacts_search) | Search for external contacts|
 |[**post_externalcontacts_externalsources**](#post_externalcontacts_externalsources) | Create an External Source|
 |[**post_externalcontacts_identifierlookup**](#post_externalcontacts_identifierlookup) | Fetch a contact using an identifier type and value.|
 |[**post_externalcontacts_identifierlookup_contacts**](#post_externalcontacts_identifierlookup_contacts) | Fetch a contact using an identifier type and value.|
@@ -5723,6 +5724,54 @@ except ApiException as e:
 [**DataSchema**](DataSchema)
 
 
+## post_externalcontacts_contacts_search
+
+> [**ContactListing**](ContactListing) post_externalcontacts_contacts_search(body)
+
+
+Search for external contacts
+
+Wraps POST /api/v2/externalcontacts/contacts/search 
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.ContactSearchRequest() # ContactSearchRequest | Search request
+
+try:
+    # Search for external contacts
+    api_response = api_instance.post_externalcontacts_contacts_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_contacts_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactSearchRequest**](ContactSearchRequest)| Search request |  |
+
+### Return type
+
+[**ContactListing**](ContactListing)
+
+
 ## post_externalcontacts_externalsources
 
 > [**ExternalSource**](ExternalSource) post_externalcontacts_externalsources(body)
@@ -7384,4 +7433,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 265.0.0_
+_PureCloudPlatformClientV2 266.0.0_

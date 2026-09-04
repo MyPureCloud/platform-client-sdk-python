@@ -58,8 +58,8 @@ class TwitterDataIngestionRuleVersionResponse(object):
             'date_modified': 'datetime',
             'platform': 'str',
             'ingestion_rule_info': 'MessageInfo',
-            'countries': 'list[str]',
             'search_terms': 'str',
+            'countries': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -73,8 +73,8 @@ class TwitterDataIngestionRuleVersionResponse(object):
             'date_modified': 'dateModified',
             'platform': 'platform',
             'ingestion_rule_info': 'ingestionRuleInfo',
-            'countries': 'countries',
             'search_terms': 'searchTerms',
+            'countries': 'countries',
             'self_uri': 'selfUri'
         }
 
@@ -87,8 +87,8 @@ class TwitterDataIngestionRuleVersionResponse(object):
         self._date_modified = None
         self._platform = None
         self._ingestion_rule_info = None
-        self._countries = None
         self._search_terms = None
+        self._countries = None
         self._self_uri = None
 
     @property
@@ -313,30 +313,6 @@ class TwitterDataIngestionRuleVersionResponse(object):
         self._ingestion_rule_info = ingestion_rule_info
 
     @property
-    def countries(self) -> List[str]:
-        """
-        Gets the countries of this TwitterDataIngestionRuleVersionResponse.
-        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-
-        :return: The countries of this TwitterDataIngestionRuleVersionResponse.
-        :rtype: list[str]
-        """
-        return self._countries
-
-    @countries.setter
-    def countries(self, countries: List[str]) -> None:
-        """
-        Sets the countries of this TwitterDataIngestionRuleVersionResponse.
-        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-
-        :param countries: The countries of this TwitterDataIngestionRuleVersionResponse.
-        :type: list[str]
-        """
-        
-
-        self._countries = countries
-
-    @property
     def search_terms(self) -> str:
         """
         Gets the search_terms of this TwitterDataIngestionRuleVersionResponse.
@@ -359,6 +335,30 @@ class TwitterDataIngestionRuleVersionResponse(object):
         
 
         self._search_terms = search_terms
+
+    @property
+    def countries(self) -> List[str]:
+        """
+        Gets the countries of this TwitterDataIngestionRuleVersionResponse.
+        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+
+        :return: The countries of this TwitterDataIngestionRuleVersionResponse.
+        :rtype: list[str]
+        """
+        return self._countries
+
+    @countries.setter
+    def countries(self, countries: List[str]) -> None:
+        """
+        Sets the countries of this TwitterDataIngestionRuleVersionResponse.
+        ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
+
+        :param countries: The countries of this TwitterDataIngestionRuleVersionResponse.
+        :type: list[str]
+        """
+        
+
+        self._countries = countries
 
     @property
     def self_uri(self) -> str:

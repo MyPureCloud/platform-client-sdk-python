@@ -83,7 +83,7 @@ class WfmActivityPlanRunJobCompleteTopicActivityPlanJobException(object):
         """
         if isinstance(exception_type, int):
             exception_type = str(exception_type)
-        allowed_values = ["UnscheduledAttendees", "SessionsNotDeleted"]
+        allowed_values = ["UnscheduledAttendees", "SessionsNotDeleted", "InvalidUserIds", "InvalidFacilitatorId", "RuleError", "InvalidOccurrence", "NoScheduleFound", "SessionUsersNotRemoved"]
         if exception_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for exception_type -> " + exception_type)
             self._exception_type = "outdated_sdk_version"

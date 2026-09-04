@@ -58,7 +58,6 @@ class InstagramDataIngestionRuleVersionResponse(object):
             'date_modified': 'datetime',
             'platform': 'str',
             'ingestion_rule_info': 'MessageInfo',
-            'countries': 'list[str]',
             'integration_id': 'str',
             'self_uri': 'str'
         }
@@ -73,7 +72,6 @@ class InstagramDataIngestionRuleVersionResponse(object):
             'date_modified': 'dateModified',
             'platform': 'platform',
             'ingestion_rule_info': 'ingestionRuleInfo',
-            'countries': 'countries',
             'integration_id': 'integrationId',
             'self_uri': 'selfUri'
         }
@@ -87,7 +85,6 @@ class InstagramDataIngestionRuleVersionResponse(object):
         self._date_modified = None
         self._platform = None
         self._ingestion_rule_info = None
-        self._countries = None
         self._integration_id = None
         self._self_uri = None
 
@@ -311,30 +308,6 @@ class InstagramDataIngestionRuleVersionResponse(object):
         
 
         self._ingestion_rule_info = ingestion_rule_info
-
-    @property
-    def countries(self) -> List[str]:
-        """
-        Gets the countries of this InstagramDataIngestionRuleVersionResponse.
-        The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-
-        :return: The countries of this InstagramDataIngestionRuleVersionResponse.
-        :rtype: list[str]
-        """
-        return self._countries
-
-    @countries.setter
-    def countries(self, countries: List[str]) -> None:
-        """
-        Sets the countries of this InstagramDataIngestionRuleVersionResponse.
-        The countries is available only on twitter data ingestion rule. ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide.
-
-        :param countries: The countries of this InstagramDataIngestionRuleVersionResponse.
-        :type: list[str]
-        """
-        
-
-        self._countries = countries
 
     @property
     def integration_id(self) -> str:

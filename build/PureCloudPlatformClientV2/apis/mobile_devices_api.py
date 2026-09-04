@@ -55,9 +55,10 @@ class MobileDevicesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    @deprecated("delete_mobiledevice is deprecated")
     def delete_mobiledevice(self, device_id: str, **kwargs) -> None:
         """
-        Delete device
+        (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -133,9 +134,10 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_mobiledevice is deprecated")
     def get_mobiledevice(self, device_id: str, **kwargs) -> 'UserDevice':
         """
-        Get device
+        (Deprecated) Get device
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -211,9 +213,10 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_mobiledevices is deprecated")
     def get_mobiledevices(self, **kwargs) -> 'DirectoryUserDevicesListing':
         """
-        Get a list of all devices.
+        (Deprecated) Get a list of all devices.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -292,9 +295,10 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_mobiledevices is deprecated")
     def post_mobiledevices(self, body: 'UserDevice', **kwargs) -> 'UserDevice':
         """
-        Create User device
+        (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -370,9 +374,10 @@ class MobileDevicesApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_mobiledevice is deprecated")
     def put_mobiledevice(self, device_id: str, **kwargs) -> 'UserDevice':
         """
-        Update device
+        (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device
         
 
         This method makes a synchronous HTTP request by default. To make an

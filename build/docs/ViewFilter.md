@@ -242,6 +242,10 @@
 | **social_source_types** | list[str] | A set of Source Types for social filtering | [optional] |
 | **social_follower_range** | [SocialNumericRange](SocialNumericRange) | The follower range used to filter the view | [optional] |
 | **social_verification_status** | bool | Filter to indicate if the posts from verified user | [optional] |
+| **social_engagement_likes** | [NumericRange](NumericRange) | The likes range used to filter the view | [optional] |
+| **social_engagement_shares** | [NumericRange](NumericRange) | The shares range used to filter the view | [optional] |
+| **social_engagement_comments** | [NumericRange](NumericRange) | The comments range used to filter the view | [optional] |
+| **social_engagement_views** | [NumericRange](NumericRange) | The views range used to filter the view | [optional] |
 | **session_expired** | bool | Filter to indicate for if session is expired | [optional] |
 | **screen_monitored** | bool | Filter to indicate if the interaction was screen monitored | [optional] |
 | **engagement_sources** | list[str] | The engagement sources used to filter the view | [optional] |
@@ -251,4 +255,4 @@
 
 
 
-_PureCloudPlatformClientV2 265.0.0_
+_PureCloudPlatformClientV2 266.0.0_

@@ -514,7 +514,7 @@ class WrapupDetailEventTopicWrapupEvent(object):
         """
         if isinstance(message_type, int):
             message_type = str(message_type)
-        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM", "APPLE"]
+        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM", "APPLE", "LINKEDIN"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)
             self._message_type = "outdated_sdk_version"

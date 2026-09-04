@@ -48,6 +48,7 @@ if TYPE_CHECKING:
     from . import RecordingContentStory
     from . import RecordingForm
     from . import RecordingMessageReceipt
+    from . import RecordingNotificationResponse
     from . import RecordingNotificationTemplate
     from . import RecordingRoadsideAssistance
     from . import RichLink
@@ -99,7 +100,8 @@ class RecordingMessagingMessage(object):
             'form': 'RecordingForm',
             'roadside_assistance': 'RecordingRoadsideAssistance',
             'rich_link': 'RichLink',
-            'message_receipts': 'list[RecordingMessageReceipt]'
+            'message_receipts': 'list[RecordingMessageReceipt]',
+            'notification_response': 'RecordingNotificationResponse'
         }
 
         self.attribute_map = {
@@ -134,7 +136,8 @@ class RecordingMessagingMessage(object):
             'form': 'form',
             'roadside_assistance': 'roadsideAssistance',
             'rich_link': 'richLink',
-            'message_receipts': 'messageReceipts'
+            'message_receipts': 'messageReceipts',
+            'notification_response': 'notificationResponse'
         }
 
         self._pcFrom = None
@@ -169,6 +172,7 @@ class RecordingMessagingMessage(object):
         self._roadside_assistance = None
         self._rich_link = None
         self._message_receipts = None
+        self._notification_response = None
 
     @property
     def pcFrom(self) -> str:
@@ -947,6 +951,30 @@ class RecordingMessagingMessage(object):
         
 
         self._message_receipts = message_receipts
+
+    @property
+    def notification_response(self) -> 'RecordingNotificationResponse':
+        """
+        Gets the notification_response of this RecordingMessagingMessage.
+        Notification Response content.
+
+        :return: The notification_response of this RecordingMessagingMessage.
+        :rtype: RecordingNotificationResponse
+        """
+        return self._notification_response
+
+    @notification_response.setter
+    def notification_response(self, notification_response: 'RecordingNotificationResponse') -> None:
+        """
+        Sets the notification_response of this RecordingMessagingMessage.
+        Notification Response content.
+
+        :param notification_response: The notification_response of this RecordingMessagingMessage.
+        :type: RecordingNotificationResponse
+        """
+        
+
+        self._notification_response = notification_response
 
     def to_dict(self):
         """

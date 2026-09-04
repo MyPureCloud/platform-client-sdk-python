@@ -37,7 +37,6 @@ from typing import Any
 from ..models import Empty
 from ..models import AsyncQueryResponse
 from ..models import AsyncQueryStatus
-from ..models import DataIngestionRuleResponseEntityListing
 from ..models import DataIngestionRuleStatusPatchRequest
 from ..models import ErrorBody
 from ..models import EscalationRuleRequest
@@ -46,6 +45,7 @@ from ..models import FacebookDataIngestionRuleRequest
 from ..models import FacebookDataIngestionRuleResponse
 from ..models import FacebookDataIngestionRuleVersionResponse
 from ..models import FacebookDataIngestionRuleVersionResponseEntityListing
+from ..models import GenericDataIngestionRuleResponseEntityListing
 from ..models import GoogleBusinessProfileDataIngestionRuleRequest
 from ..models import GoogleBusinessProfileDataIngestionRuleResponse
 from ..models import GoogleBusinessProfileDataIngestionRuleVersionResponse
@@ -1335,7 +1335,7 @@ class SocialMediaApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_socialmedia_topic_dataingestionrules(self, topic_id: str, **kwargs) -> 'DataIngestionRuleResponseEntityListing':
+    def get_socialmedia_topic_dataingestionrules(self, topic_id: str, **kwargs) -> 'GenericDataIngestionRuleResponseEntityListing':
         """
         Retrieve all social topic data ingestion rules with pagination.
         
@@ -1354,7 +1354,7 @@ class SocialMediaApi(object):
         :param int page_number: Page number
         :param int page_size: Page size
         :param bool include_deleted: Determines whether to include soft-deleted items in the result.
-        :return: DataIngestionRuleResponseEntityListing
+        :return: GenericDataIngestionRuleResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1417,7 +1417,7 @@ class SocialMediaApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='DataIngestionRuleResponseEntityListing',
+                                            response_type='GenericDataIngestionRuleResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

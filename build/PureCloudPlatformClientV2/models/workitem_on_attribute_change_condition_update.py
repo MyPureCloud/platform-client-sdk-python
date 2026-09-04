@@ -49,18 +49,24 @@ class WorkitemOnAttributeChangeConditionUpdate(object):
         self.swagger_types = {
             'attribute': 'str',
             'new_value': 'str',
-            'old_value': 'str'
+            'old_value': 'str',
+            'operator': 'str',
+            'value': 'int'
         }
 
         self.attribute_map = {
             'attribute': 'attribute',
             'new_value': 'newValue',
-            'old_value': 'oldValue'
+            'old_value': 'oldValue',
+            'operator': 'operator',
+            'value': 'value'
         }
 
         self._attribute = None
         self._new_value = None
         self._old_value = None
+        self._operator = None
+        self._value = None
 
     @property
     def attribute(self) -> str:
@@ -84,7 +90,7 @@ class WorkitemOnAttributeChangeConditionUpdate(object):
         """
         if isinstance(attribute, int):
             attribute = str(attribute)
-        allowed_values = ["statusId"]
+        allowed_values = ["statusId", "priority", "queueId", "assigneeId", "assignmentState", "languageId", "externalTag", "wrapup"]
         if attribute.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for attribute -> " + attribute)
             self._attribute = "outdated_sdk_version"
@@ -95,7 +101,7 @@ class WorkitemOnAttributeChangeConditionUpdate(object):
     def new_value(self) -> str:
         """
         Gets the new_value of this WorkitemOnAttributeChangeConditionUpdate.
-        The new value of the attribute. If the attribute is updated to this value this part of the condition will be met.
+        The new value of the attribute. If the attribute is updated to this value this part of the condition will be met. Required for exact-match conditions (when operator is not set).
 
         :return: The new_value of this WorkitemOnAttributeChangeConditionUpdate.
         :rtype: str
@@ -106,7 +112,7 @@ class WorkitemOnAttributeChangeConditionUpdate(object):
     def new_value(self, new_value: str) -> None:
         """
         Sets the new_value of this WorkitemOnAttributeChangeConditionUpdate.
-        The new value of the attribute. If the attribute is updated to this value this part of the condition will be met.
+        The new value of the attribute. If the attribute is updated to this value this part of the condition will be met. Required for exact-match conditions (when operator is not set).
 
         :param new_value: The new_value of this WorkitemOnAttributeChangeConditionUpdate.
         :type: str
@@ -138,6 +144,59 @@ class WorkitemOnAttributeChangeConditionUpdate(object):
         
 
         self._old_value = old_value
+
+    @property
+    def operator(self) -> str:
+        """
+        Gets the operator of this WorkitemOnAttributeChangeConditionUpdate.
+        The comparison operator used to evaluate the priority attribute against the value.
+
+        :return: The operator of this WorkitemOnAttributeChangeConditionUpdate.
+        :rtype: str
+        """
+        return self._operator
+
+    @operator.setter
+    def operator(self, operator: str) -> None:
+        """
+        Sets the operator of this WorkitemOnAttributeChangeConditionUpdate.
+        The comparison operator used to evaluate the priority attribute against the value.
+
+        :param operator: The operator of this WorkitemOnAttributeChangeConditionUpdate.
+        :type: str
+        """
+        if isinstance(operator, int):
+            operator = str(operator)
+        allowed_values = ["EQ", "GT", "LT", "GTE", "LTE"]
+        if operator.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for operator -> " + operator)
+            self._operator = "outdated_sdk_version"
+        else:
+            self._operator = operator
+
+    @property
+    def value(self) -> int:
+        """
+        Gets the value of this WorkitemOnAttributeChangeConditionUpdate.
+        The numeric value compared against the priority attribute using the operator. Required when operator is set. Only supported for the priority attribute.
+
+        :return: The value of this WorkitemOnAttributeChangeConditionUpdate.
+        :rtype: int
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: int) -> None:
+        """
+        Sets the value of this WorkitemOnAttributeChangeConditionUpdate.
+        The numeric value compared against the priority attribute using the operator. Required when operator is set. Only supported for the priority attribute.
+
+        :param value: The value of this WorkitemOnAttributeChangeConditionUpdate.
+        :type: int
+        """
+        
+
+        self._value = value
 
     def to_dict(self):
         """

@@ -58,7 +58,8 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
             'message_id': 'str',
             'query_statement': 'str',
             'language': 'str',
-            'query_reformulation_context': 'ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext'
+            'query_reformulation_context': 'ConversationKnowledgeArticleSuggestionsTopicQueryReformulationContext',
+            'participant_type': 'str'
         }
 
         self.attribute_map = {
@@ -71,7 +72,8 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
             'message_id': 'messageId',
             'query_statement': 'queryStatement',
             'language': 'language',
-            'query_reformulation_context': 'queryReformulationContext'
+            'query_reformulation_context': 'queryReformulationContext',
+            'participant_type': 'participantType'
         }
 
         self._queue_id = None
@@ -84,6 +86,7 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
         self._query_statement = None
         self._language = None
         self._query_reformulation_context = None
+        self._participant_type = None
 
     @property
     def queue_id(self) -> str:
@@ -329,6 +332,35 @@ class ConversationKnowledgeArticleSuggestionsTopicSuggestionContext(object):
         
 
         self._query_reformulation_context = query_reformulation_context
+
+    @property
+    def participant_type(self) -> str:
+        """
+        Gets the participant_type of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+
+
+        :return: The participant_type of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+        :rtype: str
+        """
+        return self._participant_type
+
+    @participant_type.setter
+    def participant_type(self, participant_type: str) -> None:
+        """
+        Sets the participant_type of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+
+
+        :param participant_type: The participant_type of this ConversationKnowledgeArticleSuggestionsTopicSuggestionContext.
+        :type: str
+        """
+        if isinstance(participant_type, int):
+            participant_type = str(participant_type)
+        allowed_values = ["UNKNOWN", "AGENT", "CUSTOMER"]
+        if participant_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for participant_type -> " + participant_type)
+            self._participant_type = "outdated_sdk_version"
+        else:
+            self._participant_type = participant_type
 
     def to_dict(self):
         """

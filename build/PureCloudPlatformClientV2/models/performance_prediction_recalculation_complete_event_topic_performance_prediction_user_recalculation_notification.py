@@ -51,6 +51,7 @@ class PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionU
         self.swagger_types = {
             'operation_id': 'str',
             'download_url': 'str',
+            'allocation_download_url': 'str',
             'state': 'str',
             'error': 'PerformancePredictionRecalculationCompleteEventTopicErrorBody'
         }
@@ -58,12 +59,14 @@ class PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionU
         self.attribute_map = {
             'operation_id': 'operationId',
             'download_url': 'downloadUrl',
+            'allocation_download_url': 'allocationDownloadUrl',
             'state': 'state',
             'error': 'error'
         }
 
         self._operation_id = None
         self._download_url = None
+        self._allocation_download_url = None
         self._state = None
         self._error = None
 
@@ -114,6 +117,30 @@ class PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionU
         
 
         self._download_url = download_url
+
+    @property
+    def allocation_download_url(self) -> str:
+        """
+        Gets the allocation_download_url of this PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.
+
+
+        :return: The allocation_download_url of this PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.
+        :rtype: str
+        """
+        return self._allocation_download_url
+
+    @allocation_download_url.setter
+    def allocation_download_url(self, allocation_download_url: str) -> None:
+        """
+        Sets the allocation_download_url of this PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.
+
+
+        :param allocation_download_url: The allocation_download_url of this PerformancePredictionRecalculationCompleteEventTopicPerformancePredictionUserRecalculationNotification.
+        :type: str
+        """
+        
+
+        self._allocation_download_url = allocation_download_url
 
     @property
     def state(self) -> str:

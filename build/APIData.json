@@ -9982,6 +9982,25 @@
     "return": "object",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.CaseManagementApi();\ncaseplan_id = 'caseplan_id_example' # str | Caseplan identifier.\nschema_key_name = 'schema_key_name_example' # str | Schema key (for example \\\"default\\\").\n\ntry:\n    # Remove a data schema from a draft Caseplan.\n    api_response = api_instance.delete_casemanagement_caseplan_dataschema(caseplan_id, schema_key_name)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling CaseManagementApi->delete_casemanagement_caseplan_dataschema: %s\\n\" % e)"
   },
+  "delete_casemanagement_caseplan_stageplan": {
+    "operationId": "delete_casemanagement_caseplan_stageplan",
+    "functionName": "delete_casemanagement_caseplan_stageplan",
+    "signature": "delete_casemanagement_caseplan_stageplan(caseplan_id, stageplan_id)",
+    "parameters": [
+      {
+        "name": "caseplan_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "stageplan_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "object",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.CaseManagementApi();\ncaseplan_id = 'caseplan_id_example' # str | Caseplan identifier.\nstageplan_id = 'stageplan_id_example' # str | Stageplan identifier.\n\ntry:\n    # Delete a Stageplan from a draft Caseplan.\n    api_response = api_instance.delete_casemanagement_caseplan_stageplan(caseplan_id, stageplan_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling CaseManagementApi->delete_casemanagement_caseplan_stageplan: %s\\n\" % e)"
+  },
   "get_casemanagement_case": {
     "operationId": "get_casemanagement_case",
     "functionName": "get_casemanagement_case",
@@ -10781,6 +10800,49 @@
     ],
     "return": "Caseplan",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.CaseManagementApi();\ncaseplan_id = 'caseplan_id_example' # str | Caseplan identifier.\n\ntry:\n    # Publish Caseplan.\n    api_response = api_instance.post_casemanagement_caseplan_publish(caseplan_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling CaseManagementApi->post_casemanagement_caseplan_publish: %s\\n\" % e)"
+  },
+  "post_casemanagement_caseplan_stageplan_reposition": {
+    "operationId": "post_casemanagement_caseplan_stageplan_reposition",
+    "functionName": "post_casemanagement_caseplan_stageplan_reposition",
+    "signature": "post_casemanagement_caseplan_stageplan_reposition(caseplan_id, stageplan_id, body)",
+    "parameters": [
+      {
+        "name": "caseplan_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "stageplan_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "StageplanReposition",
+        "required": "true"
+      }
+    ],
+    "return": "object",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.CaseManagementApi();\ncaseplan_id = 'caseplan_id_example' # str | Caseplan identifier.\nstageplan_id = 'stageplan_id_example' # str | Stageplan identifier.\nbody = PureCloudPlatformClientV2.StageplanReposition() # StageplanReposition | Stageplan reposition request.\n\ntry:\n    # Reposition a Stageplan within a draft Caseplan.\n    api_response = api_instance.post_casemanagement_caseplan_stageplan_reposition(caseplan_id, stageplan_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling CaseManagementApi->post_casemanagement_caseplan_stageplan_reposition: %s\\n\" % e)"
+  },
+  "post_casemanagement_caseplan_stageplans": {
+    "operationId": "post_casemanagement_caseplan_stageplans",
+    "functionName": "post_casemanagement_caseplan_stageplans",
+    "signature": "post_casemanagement_caseplan_stageplans(caseplan_id, body)",
+    "parameters": [
+      {
+        "name": "caseplan_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "StageplanCreate",
+        "required": "true"
+      }
+    ],
+    "return": "Stageplan",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.CaseManagementApi();\ncaseplan_id = 'caseplan_id_example' # str | Caseplan identifier.\nbody = PureCloudPlatformClientV2.StageplanCreate() # StageplanCreate | Stageplan create request.\n\ntry:\n    # Create a Stageplan on a draft Caseplan.\n    api_response = api_instance.post_casemanagement_caseplan_stageplans(caseplan_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling CaseManagementApi->post_casemanagement_caseplan_stageplans: %s\\n\" % e)"
   },
   "post_casemanagement_caseplan_versions": {
     "operationId": "post_casemanagement_caseplan_versions",
@@ -21014,6 +21076,20 @@
     ],
     "return": "DataSchema",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nbody = PureCloudPlatformClientV2.DataSchema() # DataSchema | Schema\n\ntry:\n    # Create a schema\n    api_response = api_instance.post_externalcontacts_contacts_schemas(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->post_externalcontacts_contacts_schemas: %s\\n\" % e)"
+  },
+  "post_externalcontacts_contacts_search": {
+    "operationId": "post_externalcontacts_contacts_search",
+    "functionName": "post_externalcontacts_contacts_search",
+    "signature": "post_externalcontacts_contacts_search(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ContactSearchRequest",
+        "required": "true"
+      }
+    ],
+    "return": "ContactListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ExternalContactsApi();\nbody = PureCloudPlatformClientV2.ContactSearchRequest() # ContactSearchRequest | Search request\n\ntry:\n    # Search for external contacts\n    api_response = api_instance.post_externalcontacts_contacts_search(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ExternalContactsApi->post_externalcontacts_contacts_search: %s\\n\" % e)"
   },
   "post_externalcontacts_externalsources": {
     "operationId": "post_externalcontacts_externalsources",
@@ -34357,7 +34433,7 @@
         "required": "true"
       }
     ],
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\ndevice_id = 'device_id_example' # str | Device ID\n\ntry:\n    # Delete device\n    api_instance.delete_mobiledevice(device_id)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->delete_mobiledevice: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\ndevice_id = 'device_id_example' # str | Device ID\n\ntry:\n    # (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Delete device\n    api_instance.delete_mobiledevice(device_id)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->delete_mobiledevice: %s\\n\" % e)"
   },
   "get_mobiledevice": {
     "operationId": "get_mobiledevice",
@@ -34371,7 +34447,7 @@
       }
     ],
     "return": "UserDevice",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\ndevice_id = 'device_id_example' # str | Device ID\n\ntry:\n    # Get device\n    api_response = api_instance.get_mobiledevice(device_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->get_mobiledevice: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\ndevice_id = 'device_id_example' # str | Device ID\n\ntry:\n    # (Deprecated) Get device\n    api_response = api_instance.get_mobiledevice(device_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->get_mobiledevice: %s\\n\" % e)"
   },
   "get_mobiledevices": {
     "operationId": "get_mobiledevices",
@@ -34395,7 +34471,7 @@
       }
     ],
     "return": "DirectoryUserDevicesListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''ascending'' # str | Ascending or descending sort order (optional) (default to 'ascending')\n\ntry:\n    # Get a list of all devices.\n    api_response = api_instance.get_mobiledevices(page_size=page_size, page_number=page_number, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->get_mobiledevices: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''ascending'' # str | Ascending or descending sort order (optional) (default to 'ascending')\n\ntry:\n    # (Deprecated) Get a list of all devices.\n    api_response = api_instance.get_mobiledevices(page_size=page_size, page_number=page_number, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->get_mobiledevices: %s\\n\" % e)"
   },
   "post_mobiledevices": {
     "operationId": "post_mobiledevices",
@@ -34409,7 +34485,7 @@
       }
     ],
     "return": "UserDevice",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\nbody = PureCloudPlatformClientV2.UserDevice() # UserDevice | Device\n\ntry:\n    # Create User device\n    api_response = api_instance.post_mobiledevices(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->post_mobiledevices: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\nbody = PureCloudPlatformClientV2.UserDevice() # UserDevice | Device\n\ntry:\n    # (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Create User device\n    api_response = api_instance.post_mobiledevices(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->post_mobiledevices: %s\\n\" % e)"
   },
   "put_mobiledevice": {
     "operationId": "put_mobiledevice",
@@ -34428,7 +34504,7 @@
       }
     ],
     "return": "UserDevice",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\ndevice_id = 'device_id_example' # str | Device ID\nbody = PureCloudPlatformClientV2.UserDevice() # UserDevice | Device (optional)\n\ntry:\n    # Update device\n    api_response = api_instance.put_mobiledevice(device_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->put_mobiledevice: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.MobileDevicesApi();\ndevice_id = 'device_id_example' # str | Device ID\nbody = PureCloudPlatformClientV2.UserDevice() # UserDevice | Device (optional)\n\ntry:\n    # (Deprecated, see https://apicentral.genesys.cloud/api-explorer#webmessaging for alternative) Update device\n    api_response = api_instance.put_mobiledevice(device_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling MobileDevicesApi->put_mobiledevice: %s\\n\" % e)"
   },
   "delete_notifications_channel_subscriptions": {
     "operationId": "delete_notifications_channel_subscriptions",
@@ -48719,7 +48795,7 @@
         "required": "false"
       }
     ],
-    "return": "DataIngestionRuleResponseEntityListing",
+    "return": "GenericDataIngestionRuleResponseEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SocialMediaApi();\ntopic_id = 'topic_id_example' # str | topicId\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\ninclude_deleted = True # bool | Determines whether to include soft-deleted items in the result. (optional)\n\ntry:\n    # Retrieve all social topic data ingestion rules with pagination.\n    api_response = api_instance.get_socialmedia_topic_dataingestionrules(topic_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SocialMediaApi->get_socialmedia_topic_dataingestionrules: %s\\n\" % e)"
   },
   "get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id": {
