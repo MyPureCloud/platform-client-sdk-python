@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_casemanagement_case_comments_me_comment_id**](#delete_casemanagement_case_comments_me_comment_id) | Delete my Comment.|
 |[**delete_casemanagement_caseplan**](#delete_casemanagement_caseplan) | Delete a Caseplan.|
 |[**delete_casemanagement_caseplan_dataschema**](#delete_casemanagement_caseplan_dataschema) | Remove a data schema from a draft Caseplan.|
+|[**delete_casemanagement_caseplan_stageplan**](#delete_casemanagement_caseplan_stageplan) | Delete a Stageplan from a draft Caseplan.|
 |[**get_casemanagement_case**](#get_casemanagement_case) | Get a Case.|
 |[**get_casemanagement_case_association**](#get_casemanagement_case_association) | Get a Case Association.|
 |[**get_casemanagement_case_associations**](#get_casemanagement_case_associations) | Get a list of Case associations for the Case.|
@@ -45,6 +46,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_casemanagement_case_terminate_jobs**](#post_casemanagement_case_terminate_jobs) | Create a Terminate Job for a Case.|
 |[**post_casemanagement_caseplan_dataschemas**](#post_casemanagement_caseplan_dataschemas) | Add a data schema to a draft Caseplan.|
 |[**post_casemanagement_caseplan_publish**](#post_casemanagement_caseplan_publish) | Publish Caseplan.|
+|[**post_casemanagement_caseplan_stageplan_reposition**](#post_casemanagement_caseplan_stageplan_reposition) | Reposition a Stageplan within a draft Caseplan.|
+|[**post_casemanagement_caseplan_stageplans**](#post_casemanagement_caseplan_stageplans) | Create a Stageplan on a draft Caseplan.|
 |[**post_casemanagement_caseplan_versions**](#post_casemanagement_caseplan_versions) | Create Caseplan version.|
 |[**post_casemanagement_caseplans**](#post_casemanagement_caseplans) | Create a Caseplan.|
 |[**post_casemanagement_caseplans_query**](#post_casemanagement_caseplans_query) | Query for Caseplans.|
@@ -246,6 +249,58 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **caseplan_id** | **str**| Caseplan identifier. |  |
 | **schema_key_name** | **str**| Schema key (for example \&quot;default\&quot;). |  |
+
+### Return type
+
+**object**
+
+
+## delete_casemanagement_caseplan_stageplan
+
+> object** delete_casemanagement_caseplan_stageplan(caseplan_id, stageplan_id)
+
+
+Delete a Stageplan from a draft Caseplan.
+
+delete_casemanagement_caseplan_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId} 
+
+Requires ANY permissions: 
+
+* caseManagement:stageplan:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+stageplan_id = 'stageplan_id_example' # str | Stageplan identifier.
+
+try:
+    # Delete a Stageplan from a draft Caseplan.
+    api_response = api_instance.delete_casemanagement_caseplan_stageplan(caseplan_id, stageplan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->delete_casemanagement_caseplan_stageplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **stageplan_id** | **str**| Stageplan identifier. |  |
 
 ### Return type
 
@@ -2062,6 +2117,112 @@ except ApiException as e:
 [**Caseplan**](Caseplan)
 
 
+## post_casemanagement_caseplan_stageplan_reposition
+
+> object** post_casemanagement_caseplan_stageplan_reposition(caseplan_id, stageplan_id, body)
+
+
+Reposition a Stageplan within a draft Caseplan.
+
+post_casemanagement_caseplan_stageplan_reposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition 
+
+Requires ANY permissions: 
+
+* caseManagement:stageplan:reposition
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+stageplan_id = 'stageplan_id_example' # str | Stageplan identifier.
+body = PureCloudPlatformClientV2.StageplanReposition() # StageplanReposition | Stageplan reposition request.
+
+try:
+    # Reposition a Stageplan within a draft Caseplan.
+    api_response = api_instance.post_casemanagement_caseplan_stageplan_reposition(caseplan_id, stageplan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->post_casemanagement_caseplan_stageplan_reposition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **stageplan_id** | **str**| Stageplan identifier. |  |
+| **body** | [**StageplanReposition**](StageplanReposition)| Stageplan reposition request. |  |
+
+### Return type
+
+**object**
+
+
+## post_casemanagement_caseplan_stageplans
+
+> [**Stageplan**](Stageplan) post_casemanagement_caseplan_stageplans(caseplan_id, body)
+
+
+Create a Stageplan on a draft Caseplan.
+
+post_casemanagement_caseplan_stageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans 
+
+Requires ANY permissions: 
+
+* caseManagement:stageplan:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+caseplan_id = 'caseplan_id_example' # str | Caseplan identifier.
+body = PureCloudPlatformClientV2.StageplanCreate() # StageplanCreate | Stageplan create request.
+
+try:
+    # Create a Stageplan on a draft Caseplan.
+    api_response = api_instance.post_casemanagement_caseplan_stageplans(caseplan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->post_casemanagement_caseplan_stageplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **caseplan_id** | **str**| Caseplan identifier. |  |
+| **body** | [**StageplanCreate**](StageplanCreate)| Stageplan create request. |  |
+
+### Return type
+
+[**Stageplan**](Stageplan)
+
+
 ## post_casemanagement_caseplan_versions
 
 > [**Caseplan**](Caseplan) post_casemanagement_caseplan_versions(caseplan_id)
@@ -2456,4 +2617,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 265.0.0_
+_PureCloudPlatformClientV2 266.0.0_

@@ -9,9 +9,10 @@
 | **schedule_id** | str |  | [optional] |
 | **week_date** | str |  | [optional] |
 | **download_url** | str |  | [optional] |
+| **allocation_download_url** | str |  | [optional] |
 | **state** | str |  | [optional] |
 | **error** | [PerformancePredictionCompleteEventTopicErrorBody](PerformancePredictionCompleteEventTopicErrorBody) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 265.0.0_
+_PureCloudPlatformClientV2 266.0.0_

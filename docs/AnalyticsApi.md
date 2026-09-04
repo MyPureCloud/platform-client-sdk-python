@@ -4297,7 +4297,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**AgentStateCountsRequest**](AgentStateCountsRequest)| query |  |
-| **group_by** | [**list[str]**](str)| Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType | [optional] <br />**Values**: segmentType, presence, routingStatus, isOutOfOffice |
+| **group_by** | [**list[str]**](str)| Include to choose which groupings to count by and return. If not included it will return only counts grouped by segmentType | [optional] <br />**Values**: segmentType, presence, routingStatus, isOutOfOffice, adherenceState, scheduledActivityCategory, actualActivityCategory |
 
 ### Return type
 
@@ -6937,4 +6937,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 265.0.0_
+_PureCloudPlatformClientV2 266.0.0_

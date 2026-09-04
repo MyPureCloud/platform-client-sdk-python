@@ -818,7 +818,7 @@ except ApiException as e:
 
 ## get_socialmedia_topic_dataingestionrules
 
-> [**DataIngestionRuleResponseEntityListing**](DataIngestionRuleResponseEntityListing) get_socialmedia_topic_dataingestionrules(topic_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)
+> [**GenericDataIngestionRuleResponseEntityListing**](GenericDataIngestionRuleResponseEntityListing) get_socialmedia_topic_dataingestionrules(topic_id, page_number=page_number, page_size=page_size, include_deleted=include_deleted)
 
 
 Retrieve all social topic data ingestion rules with pagination.
@@ -867,7 +867,7 @@ except ApiException as e:
 
 ### Return type
 
-[**DataIngestionRuleResponseEntityListing**](DataIngestionRuleResponseEntityListing)
+[**GenericDataIngestionRuleResponseEntityListing**](GenericDataIngestionRuleResponseEntityListing)
 
 
 ## get_socialmedia_topic_dataingestionrules_facebook_facebook_ingestion_rule_id
@@ -3018,4 +3018,4 @@ except ApiException as e:
 [**TwitterDataIngestionRuleResponse**](TwitterDataIngestionRuleResponse)
 
 
-_PureCloudPlatformClientV2 265.0.0_
+_PureCloudPlatformClientV2 266.0.0_
