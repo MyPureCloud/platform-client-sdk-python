@@ -651,7 +651,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
-user_id = 'user_id_example' # str | user Id
+user_id = 'user_id_example' # str | User ID (UUID)
 source_id = 'source_id_example' # str | Presence source ID
 
 try:
@@ -667,7 +667,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id |  |
+| **user_id** | **str**| User ID (UUID) |  |
 | **source_id** | **str**| Presence source ID |  |
 
 ### Return type
@@ -702,7 +702,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
-user_id = 'user_id_example' # str | user Id
+user_id = 'user_id_example' # str | User ID (UUID)
 
 try:
     # Get a user's Genesys Cloud presence.
@@ -717,7 +717,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id |  |
+| **user_id** | **str**| User ID (UUID) |  |
 
 ### Return type
 
@@ -847,7 +847,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
-user_id = 'user_id_example' # str | user Id
+user_id = 'user_id_example' # str | User ID (UUID)
 source_id = 'source_id_example' # str | Presence source ID
 body = PureCloudPlatformClientV2.UserPresence() # UserPresence | User presence
 
@@ -864,7 +864,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id |  |
+| **user_id** | **str**| User ID (UUID) |  |
 | **source_id** | **str**| Presence source ID |  |
 | **body** | [**UserPresence**](UserPresence)| User presence |  |
 
@@ -900,7 +900,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
-user_id = 'user_id_example' # str | user Id
+user_id = 'user_id_example' # str | User ID (UUID)
 body = PureCloudPlatformClientV2.UserPresence() # UserPresence | User presence
 
 try:
@@ -916,7 +916,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | **str**| user Id |  |
+| **user_id** | **str**| User ID (UUID) |  |
 | **body** | [**UserPresence**](UserPresence)| User presence |  |
 
 ### Return type
@@ -1370,4 +1370,4 @@ except ApiException as e:
 [**list[UserPresence]**](UserPresence)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

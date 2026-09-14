@@ -155,7 +155,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.BillingApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 10. (optional)
 date_start = '2013-10-20' # date | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 date_end = '2013-10-20' # date | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 status = 'status_example' # str | Filter by the status of contracts (optional)
@@ -176,7 +176,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 10. | [optional]  |
 | **date_start** | **date**| Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **date_end** | **date**| End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **status** | **str**| Filter by the status of contracts | [optional] <br />**Values**: Active, Inactive |
@@ -464,4 +464,4 @@ except ApiException as e:
 [**TrusteeBillingOverview**](TrusteeBillingOverview)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

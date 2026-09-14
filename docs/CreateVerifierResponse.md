@@ -11,8 +11,9 @@
 | **type** | str | The type of verifier. | [optional] |
 | **enabled** | bool | Indicates whether this verifier is enabled. | [optional] |
 | **key_uri** | str | The key URI for TOTP authenticator app registration. | [optional] |
+| **encoded_quick_response_code** | str | Base64-encoded PNG of the TOTP registration QR code. | [optional] |
 | **default** | bool | Indicates whether this is the default verifier. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

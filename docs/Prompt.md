@@ -8,6 +8,7 @@
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The prompt identifier | [optional] |
 | **name** | str | The prompt name. | |
+| **division** | [WritableStarrableDivision](WritableStarrableDivision) | The division to which this entity belongs. | [optional] |
 | **description** | str |  | [optional] |
 | **resources** | [list[PromptAsset]](PromptAsset) | List of resources associated with this prompt | [optional] |
 | **current_operation** | [Operation](Operation) | Current prompt operation status | [optional] |
@@ -15,4 +16,4 @@
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

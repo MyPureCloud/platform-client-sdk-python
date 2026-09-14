@@ -16,7 +16,8 @@
 | **assistant_id** | str | Assistant ID. | [optional] |
 | **media_type** | str | Media type. | [optional] |
 | **direction** | str | Direction of the conversation. | [optional] |
+| **preview** | bool | Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

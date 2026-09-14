@@ -139,6 +139,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlistfilters_bulk_retrieve**](#post_outbound_contactlistfilters_bulk_retrieve) | Retrieve multiple contact list filters|
 |[**post_outbound_contactlistfilters_preview**](#post_outbound_contactlistfilters_preview) | Get a preview of the output of a contact list filter|
 |[**post_outbound_contactlists**](#post_outbound_contactlists) | Create a contact List.|
+|[**post_outbound_contactlists_bulk_update**](#post_outbound_contactlists_bulk_update) | Bulk update contact lists.|
 |[**post_outbound_contactlists_uploads**](#post_outbound_contactlists_uploads) | Generate presigned upload URL for contact list.|
 |[**post_outbound_contactlisttemplates**](#post_outbound_contactlisttemplates) | Create Contact List Template|
 |[**post_outbound_contactlisttemplates_bulk_add**](#post_outbound_contactlisttemplates_bulk_add) | Add multiple contact list templates|
@@ -3329,7 +3330,7 @@ except ApiException as e:
 
 ## get_outbound_contactlists
 
-> [**ContactListEntityListing**](ContactListEntityListing) get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+> [**ContactListEntityListing**](ContactListEntityListing) get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, time_zone=time_zone, date_expiration=date_expiration, sort_by=sort_by, sort_order=sort_order)
 
 
 Query a list of contact lists.
@@ -3364,12 +3365,14 @@ filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
 id = ['id_example'] # list[str] | id (optional)
 division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+time_zone = 'time_zone_example' # str | Filter by time zone (optional)
+date_expiration = ['date_expiration_example'] # list[str] | Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of contact lists.
-    api_response = api_instance.get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, time_zone=time_zone, date_expiration=date_expiration, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_contactlists: %s\n" % e)
@@ -3389,6 +3392,8 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **id** | [**list[str]**](str)| id | [optional]  |
 | **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
+| **time_zone** | **str**| Filter by time zone | [optional]  |
+| **date_expiration** | [**list[str]**](str)| Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
@@ -3567,7 +3572,7 @@ except ApiException as e:
 
 ## get_outbound_contactlisttemplates
 
-> [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing) get_outbound_contactlisttemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+> [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing) get_outbound_contactlisttemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, time_zone=time_zone, sort_by=sort_by, sort_order=sort_order)
 
 
 Query a list of contact list templates
@@ -3596,12 +3601,13 @@ page_number = 1 # int | Page number (optional) (default to 1)
 allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
 filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
 name = 'name_example' # str | Name (optional)
+time_zone = 'time_zone_example' # str | Filter by time zone (optional)
 sort_by = 'sort_by_example' # str | Sort by (optional)
 sort_order = ''a'' # str | Sort order (optional) (default to 'a')
 
 try:
     # Query a list of contact list templates
-    api_response = api_instance.get_outbound_contactlisttemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_outbound_contactlisttemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, time_zone=time_zone, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_contactlisttemplates: %s\n" % e)
@@ -3617,6 +3623,7 @@ except ApiException as e:
 | **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
+| **time_zone** | **str**| Filter by time zone | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
@@ -7009,6 +7016,56 @@ except ApiException as e:
 [**ContactList**](ContactList)
 
 
+## post_outbound_contactlists_bulk_update
+
+> [**ContactListsBulkEditResponse**](ContactListsBulkEditResponse) post_outbound_contactlists_bulk_update(body)
+
+
+Bulk update contact lists.
+
+A maximum of 100 contact lists can be updated per request.
+
+Wraps POST /api/v2/outbound/contactlists/bulk/update 
+
+Requires ANY permissions: 
+
+* outbound:contactList:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ContactListsBulkEditRequest() # ContactListsBulkEditRequest | Contact lists bulk edit request.
+
+try:
+    # Bulk update contact lists.
+    api_response = api_instance.post_outbound_contactlists_bulk_update(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlists_bulk_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactListsBulkEditRequest**](ContactListsBulkEditRequest)| Contact lists bulk edit request. |  |
+
+### Return type
+
+[**ContactListsBulkEditResponse**](ContactListsBulkEditResponse)
+
+
 ## post_outbound_contactlists_uploads
 
 > [**UploadUrlResponse**](UploadUrlResponse) post_outbound_contactlists_uploads(body)
@@ -9151,4 +9208,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

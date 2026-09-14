@@ -19,8 +19,11 @@
 | **compliance_abandon_rate_denominator** | str | The denominator to be used in determining the compliance abandon rate | [optional] |
 | **automatic_time_zone_mapping** | [AutomaticTimeZoneMappingSettings](AutomaticTimeZoneMappingSettings) | The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns. | [optional] |
 | **reschedule_time_zone_skipped_contacts** | bool | Whether or not to reschedule time-zone blocked contacts | [optional] |
+| **contact_list_default_retention_type** | str | The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays. | [optional] |
+| **contact_list_default_retention_days** | int | The default number of days to retain newly created contact lists and contact list templates. Only applicable when retentionType is RetentionDays. | [optional] |
+| **time_zone** | str | The time zone for newly created lists&#39; retention when option Today is used; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

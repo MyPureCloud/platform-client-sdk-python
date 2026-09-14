@@ -434,6 +434,7 @@ Requires ANY permissions:
 
 * admin
 * directory:user:delete
+* directory:user:hardDelete
 * directory:organization:admin
 
 ### Example
@@ -6660,4 +6661,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

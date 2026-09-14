@@ -16,7 +16,10 @@
 | **phone_number_status** | [dict(str, PhoneNumberStatus)](PhoneNumberStatus) | A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not. | [optional] |
 | **contactable_status** | [dict(str, ContactableStatus)](ContactableStatus) | A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type. | [optional] |
 | **date_created** | datetime | Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **retention_type** | str | The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration | [optional] |
+| **retention_days** | int | The number of days to retain this contact. Required when retentionType is RetentionDays. | [optional] |
+| **date_expiration** | datetime | The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

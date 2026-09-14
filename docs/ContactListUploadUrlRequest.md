@@ -15,7 +15,10 @@
 | **clear_system_data** | bool | Whether to clear system data | [optional] |
 | **division_id_for_target_contact_lists** | str | Id of the division to be used for the creation of the target contact lists. If not provided, Home division will be used. | [optional] |
 | **file_specification_template_id** | str | File specification template ID | [optional] |
+| **retention_type_column** | str | The column name from your file to get retention type values from. | [optional] |
+| **retention_days_column** | str | The column name from your file to get retention day values from. | [optional] |
+| **retention_date_expiration_column** | str | The column name from your file to get date expiration values from. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

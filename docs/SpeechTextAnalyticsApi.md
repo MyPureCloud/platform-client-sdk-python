@@ -1903,7 +1903,7 @@ except ApiException as e:
 | **name** | **str**| Case insensitive partial name to filter by | [optional]  |
 | **ids** | [**list[str]**](str)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
 | **dialects** | [**list[str]**](str)| Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR |
-| **sort_by** | **str**| Sort results by. Defaults to name | [optional] <br />**Values**: name, matchingType |
+| **sort_by** | **str**| Sort results by. Defaults to name | [optional] <br />**Values**: name, matchingType, realTime |
 | **sort_order** | **str**| Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 
 ### Return type
@@ -3322,4 +3322,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

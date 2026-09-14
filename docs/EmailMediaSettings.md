@@ -11,7 +11,8 @@
 | **service_level** | [ServiceLevel](ServiceLevel) | The targeted service level for the media type | [optional] |
 | **auto_answer_alert_tone_seconds** | float | How long to play the alerting tone for an auto-answer interaction | [optional] |
 | **manual_answer_alert_tone_seconds** | float | How long to play the alerting tone for a manual-answer interaction | [optional] |
+| **all_outbound_email_addresses** | [list[QueueEmailAddress]](QueueEmailAddress) | The list of email addresses that are assigned to the queue and can be used by agents as an outbound email address. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_
